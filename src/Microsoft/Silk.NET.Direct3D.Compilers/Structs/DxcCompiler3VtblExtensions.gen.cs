@@ -758,12 +758,12 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(FlowDirection.In)] Buffer* pSource, char** pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, out ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int Compile<TI0, TI1>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(FlowDirection.In)] Buffer* pSource, char** pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, out ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppResult = default;
-        return @this->Compile(pSource, pArguments, argCount, pIncludeHandler, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppResult.GetAddressOf());
+        return @this->Compile(pSource, pArguments, argCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, SilkMarshal.GuidPtrOf<TI1>(), (void**) ppResult.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -776,6 +776,14 @@ public unsafe static class DxcCompiler3VtblExtensions
         SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
         SilkMarshal.Free((nint) pArguments);
         return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(FlowDirection.In)] Buffer* pSource, char** pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, Guid* riid, ref void* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->Compile(pSource, pArguments, argCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, riid, ref ppResult);
     }
 
     /// <summary>To be documented.</summary>
@@ -799,6 +807,14 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(FlowDirection.In)] Buffer* pSource, char** pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, ref Guid riid, void** ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->Compile(pSource, pArguments, argCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref riid, ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(FlowDirection.In)] Buffer* pSource, string[] pArgumentsSa, uint argCount, IDxcIncludeHandler* pIncludeHandler, ref Guid riid, ref void* ppResult)
     {
         var @this = thisVtbl.Handle;
@@ -816,6 +832,14 @@ public unsafe static class DxcCompiler3VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Compile(pSource, pArguments, argCount, pIncludeHandler, ref riid.GetPinnableReference(), ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(FlowDirection.In)] Buffer* pSource, char** pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, ref Guid riid, ref void* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->Compile(pSource, pArguments, argCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref riid, ref ppResult);
     }
 
     /// <summary>To be documented.</summary>
@@ -908,12 +932,20 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(FlowDirection.In)] Buffer* pSource, ref char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, out ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int Compile<TI0, TI1>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(FlowDirection.In)] Buffer* pSource, ref char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, out ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppResult = default;
-        return @this->Compile(pSource, ref pArguments, argCount, pIncludeHandler, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppResult.GetAddressOf());
+        return @this->Compile(pSource, ref pArguments, argCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, SilkMarshal.GuidPtrOf<TI1>(), (void**) ppResult.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(FlowDirection.In)] Buffer* pSource, ref char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, Guid* riid, ref void* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->Compile(pSource, ref pArguments, argCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, riid, ref ppResult);
     }
 
     /// <summary>To be documented.</summary>
@@ -925,11 +957,27 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(FlowDirection.In)] Buffer* pSource, ref char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, ref Guid riid, void** ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->Compile(pSource, ref pArguments, argCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref riid, ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(FlowDirection.In)] Buffer* pSource, ref char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Span<Guid> riid, ref void* ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Compile(pSource, ref pArguments, argCount, pIncludeHandler, ref riid.GetPinnableReference(), ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(FlowDirection.In)] Buffer* pSource, ref char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, ref Guid riid, ref void* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->Compile(pSource, ref pArguments, argCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref riid, ref ppResult);
     }
 
     /// <summary>To be documented.</summary>
@@ -994,12 +1042,12 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(FlowDirection.In)] in Buffer pSource, char** pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, out ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int Compile<TI0, TI1>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(FlowDirection.In)] in Buffer pSource, char** pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, out ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppResult = default;
-        return @this->Compile(in pSource, pArguments, argCount, pIncludeHandler, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppResult.GetAddressOf());
+        return @this->Compile(in pSource, pArguments, argCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, SilkMarshal.GuidPtrOf<TI1>(), (void**) ppResult.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -1023,6 +1071,14 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(FlowDirection.In)] in Buffer pSource, char** pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, Guid* riid, ref void* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->Compile(in pSource, pArguments, argCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, riid, ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(FlowDirection.In)] in Buffer pSource, string[] pArgumentsSa, uint argCount, IDxcIncludeHandler* pIncludeHandler, ref Guid riid, void** ppResult)
     {
         var @this = thisVtbl.Handle;
@@ -1043,6 +1099,14 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(FlowDirection.In)] in Buffer pSource, char** pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, ref Guid riid, void** ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->Compile(in pSource, pArguments, argCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref riid, ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(FlowDirection.In)] in Buffer pSource, string[] pArgumentsSa, uint argCount, IDxcIncludeHandler* pIncludeHandler, ref Guid riid, ref void* ppResult)
     {
         var @this = thisVtbl.Handle;
@@ -1060,6 +1124,14 @@ public unsafe static class DxcCompiler3VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Compile(in pSource.GetPinnableReference(), pArguments, argCount, pIncludeHandler, ref riid.GetPinnableReference(), ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(FlowDirection.In)] in Buffer pSource, char** pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, ref Guid riid, ref void* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->Compile(in pSource, pArguments, argCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref riid, ref ppResult);
     }
 
     /// <summary>To be documented.</summary>
@@ -1160,12 +1232,12 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(FlowDirection.In)] in Buffer pSource, ref char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, out ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int Compile<TI0, TI1>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(FlowDirection.In)] in Buffer pSource, ref char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, out ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppResult = default;
-        return @this->Compile(in pSource, ref pArguments, argCount, pIncludeHandler, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppResult.GetAddressOf());
+        return @this->Compile(in pSource, ref pArguments, argCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, SilkMarshal.GuidPtrOf<TI1>(), (void**) ppResult.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -1177,6 +1249,14 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(FlowDirection.In)] in Buffer pSource, ref char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, Guid* riid, ref void* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->Compile(in pSource, ref pArguments, argCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, riid, ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pSource, ref char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Span<Guid> riid, void** ppResult)
     {
         var @this = thisVtbl.Handle;
@@ -1185,11 +1265,27 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(FlowDirection.In)] in Buffer pSource, ref char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, ref Guid riid, void** ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->Compile(in pSource, ref pArguments, argCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref riid, ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pSource, ref char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Span<Guid> riid, ref void* ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Compile(in pSource.GetPinnableReference(), ref pArguments, argCount, pIncludeHandler, ref riid.GetPinnableReference(), ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(FlowDirection.In)] in Buffer pSource, ref char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, ref Guid riid, ref void* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->Compile(in pSource, ref pArguments, argCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref riid, ref ppResult);
     }
 
     /// <summary>To be documented.</summary>
@@ -1309,11 +1405,11 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(FlowDirection.In)] Buffer* pSource, char** pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI1> Compile<TI0, TI1>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(FlowDirection.In)] Buffer* pSource, char** pArguments, uint argCount, ComPtr<TI0> pIncludeHandler) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
-        SilkMarshal.ThrowHResult(@this->Compile(pSource, pArguments, argCount, pIncludeHandler, out ComPtr<TI0> silkRet));
+        SilkMarshal.ThrowHResult(@this->Compile(pSource, pArguments, argCount, pIncludeHandler, out ComPtr<TI1> silkRet));
         return silkRet;
     }
 
@@ -1327,11 +1423,11 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(FlowDirection.In)] Buffer* pSource, ref char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI1> Compile<TI0, TI1>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(FlowDirection.In)] Buffer* pSource, ref char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
-        SilkMarshal.ThrowHResult(@this->Compile(pSource, ref pArguments, argCount, pIncludeHandler, out ComPtr<TI0> silkRet));
+        SilkMarshal.ThrowHResult(@this->Compile(pSource, ref pArguments, argCount, pIncludeHandler, out ComPtr<TI1> silkRet));
         return silkRet;
     }
 
@@ -1345,11 +1441,11 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(FlowDirection.In)] in Buffer pSource, char** pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI1> Compile<TI0, TI1>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(FlowDirection.In)] in Buffer pSource, char** pArguments, uint argCount, ComPtr<TI0> pIncludeHandler) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
-        SilkMarshal.ThrowHResult(@this->Compile(in pSource, pArguments, argCount, pIncludeHandler, out ComPtr<TI0> silkRet));
+        SilkMarshal.ThrowHResult(@this->Compile(in pSource, pArguments, argCount, pIncludeHandler, out ComPtr<TI1> silkRet));
         return silkRet;
     }
 
@@ -1363,11 +1459,11 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(FlowDirection.In)] in Buffer pSource, ref char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI1> Compile<TI0, TI1>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(FlowDirection.In)] in Buffer pSource, ref char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
-        SilkMarshal.ThrowHResult(@this->Compile(in pSource, ref pArguments, argCount, pIncludeHandler, out ComPtr<TI0> silkRet));
+        SilkMarshal.ThrowHResult(@this->Compile(in pSource, ref pArguments, argCount, pIncludeHandler, out ComPtr<TI1> silkRet));
         return silkRet;
     }
 

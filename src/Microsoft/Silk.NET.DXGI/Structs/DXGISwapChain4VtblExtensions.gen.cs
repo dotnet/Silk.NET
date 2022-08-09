@@ -1154,6 +1154,14 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateDataInterface<TI0>(this ComPtr<IDXGISwapChain4> thisVtbl, Guid* Name, [Flow(FlowDirection.In)] ComPtr<TI0> pUnknown) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->SetPrivateDataInterface(Name, (Silk.NET.Core.Native.IUnknown*) pUnknown.Handle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int SetPrivateDataInterface(this ComPtr<IDXGISwapChain4> thisVtbl, Guid* Name, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pUnknown)
     {
         var @this = thisVtbl.Handle;
@@ -1167,6 +1175,14 @@ public unsafe static class DXGISwapChain4VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->SetPrivateDataInterface(ref Name.GetPinnableReference(), pUnknown);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPrivateDataInterface<TI0>(this ComPtr<IDXGISwapChain4> thisVtbl, ref Guid Name, [Flow(FlowDirection.In)] ComPtr<TI0> pUnknown) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->SetPrivateDataInterface(ref Name, (Silk.NET.Core.Native.IUnknown*) pUnknown.Handle);
     }
 
     /// <summary>To be documented.</summary>
@@ -1306,6 +1322,14 @@ public unsafe static class DXGISwapChain4VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetBuffer(Buffer, ref riid.GetPinnableReference(), ref ppSurface);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetFullscreenState<TI0>(this ComPtr<IDXGISwapChain4> thisVtbl, int Fullscreen, ComPtr<TI0> pTarget) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->SetFullscreenState(Fullscreen, (IDXGIOutput*) pTarget.Handle);
     }
 
     /// <summary>To be documented.</summary>
@@ -1534,11 +1558,27 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int ResizeBuffers1<TI0>(this ComPtr<IDXGISwapChain4> thisVtbl, uint BufferCount, uint Width, uint Height, Silk.NET.DXGI.Format Format, uint SwapChainFlags, uint* pCreationNodeMask, ref ComPtr<TI0> ppPresentQueue) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->ResizeBuffers1(BufferCount, Width, Height, Format, SwapChainFlags, pCreationNodeMask, (Silk.NET.Core.Native.IUnknown**) ppPresentQueue.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int ResizeBuffers1(this ComPtr<IDXGISwapChain4> thisVtbl, uint BufferCount, uint Width, uint Height, Silk.NET.DXGI.Format Format, uint SwapChainFlags, Span<uint> pCreationNodeMask, Silk.NET.Core.Native.IUnknown** ppPresentQueue)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->ResizeBuffers1(BufferCount, Width, Height, Format, SwapChainFlags, ref pCreationNodeMask.GetPinnableReference(), ppPresentQueue);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int ResizeBuffers1<TI0>(this ComPtr<IDXGISwapChain4> thisVtbl, uint BufferCount, uint Width, uint Height, Silk.NET.DXGI.Format Format, uint SwapChainFlags, ref uint pCreationNodeMask, ref ComPtr<TI0> ppPresentQueue) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->ResizeBuffers1(BufferCount, Width, Height, Format, SwapChainFlags, ref pCreationNodeMask, (Silk.NET.Core.Native.IUnknown**) ppPresentQueue.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>

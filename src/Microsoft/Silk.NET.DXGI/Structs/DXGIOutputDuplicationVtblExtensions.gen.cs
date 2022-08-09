@@ -694,6 +694,14 @@ public unsafe static class DXGIOutputDuplicationVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateDataInterface<TI0>(this ComPtr<IDXGIOutputDuplication> thisVtbl, Guid* Name, [Flow(FlowDirection.In)] ComPtr<TI0> pUnknown) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->SetPrivateDataInterface(Name, (Silk.NET.Core.Native.IUnknown*) pUnknown.Handle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int SetPrivateDataInterface(this ComPtr<IDXGIOutputDuplication> thisVtbl, Guid* Name, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pUnknown)
     {
         var @this = thisVtbl.Handle;
@@ -707,6 +715,14 @@ public unsafe static class DXGIOutputDuplicationVtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->SetPrivateDataInterface(ref Name.GetPinnableReference(), pUnknown);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPrivateDataInterface<TI0>(this ComPtr<IDXGIOutputDuplication> thisVtbl, ref Guid Name, [Flow(FlowDirection.In)] ComPtr<TI0> pUnknown) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->SetPrivateDataInterface(ref Name, (Silk.NET.Core.Native.IUnknown*) pUnknown.Handle);
     }
 
     /// <summary>To be documented.</summary>

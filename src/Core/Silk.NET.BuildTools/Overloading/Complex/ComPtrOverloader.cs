@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using Silk.NET.BuildTools.Common;
@@ -12,12 +13,18 @@ namespace Silk.NET.BuildTools.Overloading;
 
 public class ComPtrOverloader : IComplexFunctionOverloader
 {
-    static bool IsComRef(Parameter param, Project core, bool prevRiid = false)
+    private static bool IsComStruct(string name, Project core)
+    {
+        return core.ComRefs.Contains(name) || core.Structs.Any
+        (
+            x => x.ComBases.Contains(name) ||
+                 x.Name == name && x.Uuid is not null && (x.Vtbl?.Count > 0 || x.ComBases?.Count > 0)
+        );
+    }
+
+    private static bool IsComRef(Parameter param, Project core, bool prevRiid = false)
         => prevRiid && param.Type.ToString() == "void**" ||
-           param.Type.IndirectionLevels == 2 && core.Structs.Any
-           (
-               x => x.Name == param.Type.Name && x.Uuid is not null && (x.Vtbl?.Count > 0 || x.ComBases?.Count > 0)
-           );
+           param.Type.IndirectionLevels == 2 && IsComStruct(param.Type.Name, core);
 
     public bool TryGetFunctionVariant(Function original, out ImplementedFunction varied, Project core)
     {
@@ -95,6 +102,30 @@ public class ComPtrOverloader : IComplexFunctionOverloader
                             GenericTypes = new List<Type>
                                 { new() { Name = $"TI{nti}", IsGenericTypeParameterReference = true } },
                             IsByRef = true
+                        }
+                    )
+                    .Build();
+                nti++; // we've added a generic type parameter
+            }
+            else if (param.Type.IndirectionLevels == 1 && !param.Type.IsByRef && !param.Type.IsOut && !param.Type.IsIn && IsComStruct(param.Type.Name, core))
+            {
+                gens.Add
+                (
+                    new GenericTypeParameter
+                    (
+                        $"TI{nti}",
+                        new[] { "unmanaged", $"IComVtbl<{parameters[i - nrm].Type.Name}>", $"IComVtbl<TI{nti}>" }
+                    )
+                );
+                inv[i] = $"({parameters[i - nrm].Type}) {parameters[i - nrm].Name}.Handle";
+                parameters[i - nrm] = new ParameterSignatureBuilder(parameters[i - nrm])
+                    .WithType
+                    (
+                        new Type
+                        {
+                            Name = "ComPtr",
+                            GenericTypes = new List<Type>
+                                { new() { Name = $"TI{nti}", IsGenericTypeParameterReference = true } }
                         }
                     )
                     .Build();

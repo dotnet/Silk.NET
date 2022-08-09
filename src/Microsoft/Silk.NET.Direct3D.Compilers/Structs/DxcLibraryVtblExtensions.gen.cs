@@ -712,6 +712,14 @@ public unsafe static class DxcLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int SetMalloc<TI0>(this ComPtr<IDxcLibrary> thisVtbl, ComPtr<TI0> pMalloc) where TI0 : unmanaged, IComVtbl<IMalloc>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->SetMalloc((IMalloc*) pMalloc.Handle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static int SetMalloc(this ComPtr<IDxcLibrary> thisVtbl, Span<IMalloc> pMalloc)
     {
         var @this = thisVtbl.Handle;
@@ -720,11 +728,19 @@ public unsafe static class DxcLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBlobFromBlob<TI0>(this ComPtr<IDxcLibrary> thisVtbl, IDxcBlob* pBlob, uint offset, uint length, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+    public static int CreateBlobFromBlob<TI0, TI1>(this ComPtr<IDxcLibrary> thisVtbl, ComPtr<TI0> pBlob, uint offset, uint length, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateBlobFromBlob(pBlob, offset, length, (IDxcBlob**) ppResult.GetAddressOf());
+        return @this->CreateBlobFromBlob((IDxcBlob*) pBlob.Handle, offset, length, (IDxcBlob**) ppResult.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateBlobFromBlob<TI0>(this ComPtr<IDxcLibrary> thisVtbl, ComPtr<TI0> pBlob, uint offset, uint length, ref IDxcBlob* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateBlobFromBlob((IDxcBlob*) pBlob.Handle, offset, length, ref ppResult);
     }
 
     /// <summary>To be documented.</summary>
@@ -928,11 +944,19 @@ public unsafe static class DxcLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBlobWithEncodingOnMalloc<TI0>(this ComPtr<IDxcLibrary> thisVtbl, void* pText, IMalloc* pIMalloc, uint size, uint codePage, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
+    public static unsafe int CreateBlobWithEncodingOnMalloc<TI0, TI1>(this ComPtr<IDxcLibrary> thisVtbl, void* pText, ComPtr<TI0> pIMalloc, uint size, uint codePage, ref ComPtr<TI1> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IMalloc>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateBlobWithEncodingOnMalloc(pText, pIMalloc, size, codePage, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
+        return @this->CreateBlobWithEncodingOnMalloc(pText, (IMalloc*) pIMalloc.Handle, size, codePage, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateBlobWithEncodingOnMalloc<TI0>(this ComPtr<IDxcLibrary> thisVtbl, void* pText, ComPtr<TI0> pIMalloc, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where TI0 : unmanaged, IComVtbl<IMalloc>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateBlobWithEncodingOnMalloc(pText, (IMalloc*) pIMalloc.Handle, size, codePage, ref pBlobEncoding);
     }
 
     /// <summary>To be documented.</summary>
@@ -968,11 +992,11 @@ public unsafe static class DxcLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBlobWithEncodingOnMalloc<T0, TI0>(this ComPtr<IDxcLibrary> thisVtbl, ref T0 pText, IMalloc* pIMalloc, uint size, uint codePage, ref ComPtr<TI0> pBlobEncoding) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
+    public static int CreateBlobWithEncodingOnMalloc<T0, TI0, TI1>(this ComPtr<IDxcLibrary> thisVtbl, ref T0 pText, ComPtr<TI0> pIMalloc, uint size, uint codePage, ref ComPtr<TI1> pBlobEncoding) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IMalloc>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateBlobWithEncodingOnMalloc(ref pText, pIMalloc, size, codePage, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
+        return @this->CreateBlobWithEncodingOnMalloc(ref pText, (IMalloc*) pIMalloc.Handle, size, codePage, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -981,6 +1005,14 @@ public unsafe static class DxcLibraryVtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateBlobWithEncodingOnMalloc(ref pText.GetPinnableReference(), pIMalloc, size, codePage, ref pBlobEncoding);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateBlobWithEncodingOnMalloc<T0, TI0>(this ComPtr<IDxcLibrary> thisVtbl, ref T0 pText, ComPtr<TI0> pIMalloc, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IMalloc>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateBlobWithEncodingOnMalloc(ref pText, (IMalloc*) pIMalloc.Handle, size, codePage, ref pBlobEncoding);
     }
 
     /// <summary>To be documented.</summary>
@@ -1016,6 +1048,22 @@ public unsafe static class DxcLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateStreamFromBlobReadOnly<TI0>(this ComPtr<IDxcLibrary> thisVtbl, ComPtr<TI0> pBlob, void** ppStream) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateStreamFromBlobReadOnly((IDxcBlob*) pBlob.Handle, ppStream);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateStreamFromBlobReadOnly<TI0>(this ComPtr<IDxcLibrary> thisVtbl, ComPtr<TI0> pBlob, ref void* ppStream) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateStreamFromBlobReadOnly((IDxcBlob*) pBlob.Handle, ref ppStream);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateStreamFromBlobReadOnly(this ComPtr<IDxcLibrary> thisVtbl, Span<IDxcBlob> pBlob, void** ppStream)
     {
         var @this = thisVtbl.Handle;
@@ -1032,11 +1080,19 @@ public unsafe static class DxcLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBlobAsUtf8<TI0>(this ComPtr<IDxcLibrary> thisVtbl, IDxcBlob* pBlob, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
+    public static int GetBlobAsUtf8<TI0, TI1>(this ComPtr<IDxcLibrary> thisVtbl, ComPtr<TI0> pBlob, ref ComPtr<TI1> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->GetBlobAsUtf8(pBlob, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
+        return @this->GetBlobAsUtf8((IDxcBlob*) pBlob.Handle, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetBlobAsUtf8<TI0>(this ComPtr<IDxcLibrary> thisVtbl, ComPtr<TI0> pBlob, ref IDxcBlobEncoding* pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->GetBlobAsUtf8((IDxcBlob*) pBlob.Handle, ref pBlobEncoding);
     }
 
     /// <summary>To be documented.</summary>
@@ -1064,11 +1120,19 @@ public unsafe static class DxcLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBlobAsUtf16<TI0>(this ComPtr<IDxcLibrary> thisVtbl, IDxcBlob* pBlob, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
+    public static int GetBlobAsUtf16<TI0, TI1>(this ComPtr<IDxcLibrary> thisVtbl, ComPtr<TI0> pBlob, ref ComPtr<TI1> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->GetBlobAsUtf16(pBlob, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
+        return @this->GetBlobAsUtf16((IDxcBlob*) pBlob.Handle, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetBlobAsUtf16<TI0>(this ComPtr<IDxcLibrary> thisVtbl, ComPtr<TI0> pBlob, ref IDxcBlobEncoding* pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->GetBlobAsUtf16((IDxcBlob*) pBlob.Handle, ref pBlobEncoding);
     }
 
     /// <summary>To be documented.</summary>

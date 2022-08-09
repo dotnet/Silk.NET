@@ -182,11 +182,27 @@ public unsafe static class DxcContainerBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int Load<TI0>(this ComPtr<IDxcContainerBuilder> thisVtbl, ComPtr<TI0> pDxilContainerHeader) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->Load((IDxcBlob*) pDxilContainerHeader.Handle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static int Load(this ComPtr<IDxcContainerBuilder> thisVtbl, Span<IDxcBlob> pDxilContainerHeader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Load(ref pDxilContainerHeader.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int AddPart<TI0>(this ComPtr<IDxcContainerBuilder> thisVtbl, uint fourCC, ComPtr<TI0> pSource) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->AddPart(fourCC, (IDxcBlob*) pSource.Handle);
     }
 
     /// <summary>To be documented.</summary>

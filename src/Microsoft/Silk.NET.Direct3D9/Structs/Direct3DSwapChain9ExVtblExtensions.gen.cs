@@ -490,6 +490,14 @@ public unsafe static class Direct3DSwapChain9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int GetFrontBufferData<TI0>(this ComPtr<IDirect3DSwapChain9Ex> thisVtbl, ComPtr<TI0> pDestSurface) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->GetFrontBufferData((IDirect3DSurface9*) pDestSurface.Handle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static int GetFrontBufferData(this ComPtr<IDirect3DSwapChain9Ex> thisVtbl, Span<IDirect3DSurface9> pDestSurface)
     {
         var @this = thisVtbl.Handle;

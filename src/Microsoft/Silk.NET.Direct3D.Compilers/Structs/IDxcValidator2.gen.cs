@@ -279,11 +279,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Validate<TI0>(IDxcBlob* pShader, uint Flags, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly int Validate<TI0, TI1>(ComPtr<TI0> pShader, uint Flags, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcValidator2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Validate(pShader, Flags, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Validate((IDxcBlob*) pShader.Handle, Flags, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Validate<TI0>(ComPtr<TI0> pShader, uint Flags, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcValidator2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Validate((IDxcBlob*) pShader.Handle, Flags, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -295,19 +303,35 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ValidateWithDebug<TI0>(IDxcBlob* pShader, uint Flags, Buffer* pOptDebugBitcode, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int ValidateWithDebug<TI0, TI1>(ComPtr<TI0> pShader, uint Flags, Buffer* pOptDebugBitcode, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcValidator2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->ValidateWithDebug(pShader, Flags, pOptDebugBitcode, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->ValidateWithDebug((IDxcBlob*) pShader.Handle, Flags, pOptDebugBitcode, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ValidateWithDebug<TI0>(IDxcBlob* pShader, uint Flags, ref Buffer pOptDebugBitcode, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int ValidateWithDebug<TI0>(ComPtr<TI0> pShader, uint Flags, Buffer* pOptDebugBitcode, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
         {
             var @this = (IDxcValidator2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->ValidateWithDebug(pShader, Flags, ref pOptDebugBitcode, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->ValidateWithDebug((IDxcBlob*) pShader.Handle, Flags, pOptDebugBitcode, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int ValidateWithDebug<TI0, TI1>(ComPtr<TI0> pShader, uint Flags, ref Buffer pOptDebugBitcode, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
+        {
+            var @this = (IDxcValidator2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->ValidateWithDebug((IDxcBlob*) pShader.Handle, Flags, ref pOptDebugBitcode, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int ValidateWithDebug<TI0>(ComPtr<TI0> pShader, uint Flags, ref Buffer pOptDebugBitcode, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcValidator2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->ValidateWithDebug((IDxcBlob*) pShader.Handle, Flags, ref pOptDebugBitcode, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>

@@ -929,6 +929,262 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int EncryptionBlt<TI0, TI1>(ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, uint DstSurfaceSize, void* pIV) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->EncryptionBlt((IDirect3DSurface9*) pSrcSurface.Handle, (IDirect3DSurface9*) pDstSurface.Handle, DstSurfaceSize, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int EncryptionBlt<T0, TI0, TI1>(ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, uint DstSurfaceSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->EncryptionBlt((IDirect3DSurface9*) pSrcSurface.Handle, (IDirect3DSurface9*) pDstSurface.Handle, DstSurfaceSize, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int EncryptionBlt<TI0>(ComPtr<TI0> pSrcSurface, ref IDirect3DSurface9 pDstSurface, uint DstSurfaceSize, void* pIV) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->EncryptionBlt((IDirect3DSurface9*) pSrcSurface.Handle, ref pDstSurface, DstSurfaceSize, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int EncryptionBlt<T0, TI0>(ComPtr<TI0> pSrcSurface, ref IDirect3DSurface9 pDstSurface, uint DstSurfaceSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->EncryptionBlt((IDirect3DSurface9*) pSrcSurface.Handle, ref pDstSurface, DstSurfaceSize, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int EncryptionBlt<TI0>(ref IDirect3DSurface9 pSrcSurface, ComPtr<TI0> pDstSurface, uint DstSurfaceSize, void* pIV) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->EncryptionBlt(ref pSrcSurface, (IDirect3DSurface9*) pDstSurface.Handle, DstSurfaceSize, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int EncryptionBlt<T0, TI0>(ref IDirect3DSurface9 pSrcSurface, ComPtr<TI0> pDstSurface, uint DstSurfaceSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->EncryptionBlt(ref pSrcSurface, (IDirect3DSurface9*) pDstSurface.Handle, DstSurfaceSize, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecryptionBlt<TI0, TI1>(ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, uint SrcSurfaceSize, EncryptedBlockInfo* pEncryptedBlockInfo, void* pContentKey, void* pIV) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt((IDirect3DSurface9*) pSrcSurface.Handle, (IDirect3DSurface9*) pDstSurface.Handle, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecryptionBlt<T0, TI0, TI1>(ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, uint SrcSurfaceSize, EncryptedBlockInfo* pEncryptedBlockInfo, void* pContentKey, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt((IDirect3DSurface9*) pSrcSurface.Handle, (IDirect3DSurface9*) pDstSurface.Handle, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecryptionBlt<T0, TI0, TI1>(ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, uint SrcSurfaceSize, EncryptedBlockInfo* pEncryptedBlockInfo, ref T0 pContentKey, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt((IDirect3DSurface9*) pSrcSurface.Handle, (IDirect3DSurface9*) pDstSurface.Handle, SrcSurfaceSize, pEncryptedBlockInfo, ref pContentKey, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecryptionBlt<T0, T1, TI0, TI1>(ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, uint SrcSurfaceSize, EncryptedBlockInfo* pEncryptedBlockInfo, ref T0 pContentKey, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt((IDirect3DSurface9*) pSrcSurface.Handle, (IDirect3DSurface9*) pDstSurface.Handle, SrcSurfaceSize, pEncryptedBlockInfo, ref pContentKey, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecryptionBlt<TI0, TI1>(ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, uint SrcSurfaceSize, ref EncryptedBlockInfo pEncryptedBlockInfo, void* pContentKey, void* pIV) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt((IDirect3DSurface9*) pSrcSurface.Handle, (IDirect3DSurface9*) pDstSurface.Handle, SrcSurfaceSize, ref pEncryptedBlockInfo, pContentKey, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecryptionBlt<T0, TI0, TI1>(ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, uint SrcSurfaceSize, ref EncryptedBlockInfo pEncryptedBlockInfo, void* pContentKey, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt((IDirect3DSurface9*) pSrcSurface.Handle, (IDirect3DSurface9*) pDstSurface.Handle, SrcSurfaceSize, ref pEncryptedBlockInfo, pContentKey, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecryptionBlt<T0, TI0, TI1>(ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, uint SrcSurfaceSize, ref EncryptedBlockInfo pEncryptedBlockInfo, ref T0 pContentKey, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt((IDirect3DSurface9*) pSrcSurface.Handle, (IDirect3DSurface9*) pDstSurface.Handle, SrcSurfaceSize, ref pEncryptedBlockInfo, ref pContentKey, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int DecryptionBlt<T0, T1, TI0, TI1>(ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, uint SrcSurfaceSize, ref EncryptedBlockInfo pEncryptedBlockInfo, ref T0 pContentKey, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt((IDirect3DSurface9*) pSrcSurface.Handle, (IDirect3DSurface9*) pDstSurface.Handle, SrcSurfaceSize, ref pEncryptedBlockInfo, ref pContentKey, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecryptionBlt<TI0>(ComPtr<TI0> pSrcSurface, ref IDirect3DSurface9 pDstSurface, uint SrcSurfaceSize, EncryptedBlockInfo* pEncryptedBlockInfo, void* pContentKey, void* pIV) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt((IDirect3DSurface9*) pSrcSurface.Handle, ref pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecryptionBlt<T0, TI0>(ComPtr<TI0> pSrcSurface, ref IDirect3DSurface9 pDstSurface, uint SrcSurfaceSize, EncryptedBlockInfo* pEncryptedBlockInfo, void* pContentKey, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt((IDirect3DSurface9*) pSrcSurface.Handle, ref pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecryptionBlt<T0, TI0>(ComPtr<TI0> pSrcSurface, ref IDirect3DSurface9 pDstSurface, uint SrcSurfaceSize, EncryptedBlockInfo* pEncryptedBlockInfo, ref T0 pContentKey, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt((IDirect3DSurface9*) pSrcSurface.Handle, ref pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, ref pContentKey, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecryptionBlt<T0, T1, TI0>(ComPtr<TI0> pSrcSurface, ref IDirect3DSurface9 pDstSurface, uint SrcSurfaceSize, EncryptedBlockInfo* pEncryptedBlockInfo, ref T0 pContentKey, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt((IDirect3DSurface9*) pSrcSurface.Handle, ref pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, ref pContentKey, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecryptionBlt<TI0>(ComPtr<TI0> pSrcSurface, ref IDirect3DSurface9 pDstSurface, uint SrcSurfaceSize, ref EncryptedBlockInfo pEncryptedBlockInfo, void* pContentKey, void* pIV) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt((IDirect3DSurface9*) pSrcSurface.Handle, ref pDstSurface, SrcSurfaceSize, ref pEncryptedBlockInfo, pContentKey, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecryptionBlt<T0, TI0>(ComPtr<TI0> pSrcSurface, ref IDirect3DSurface9 pDstSurface, uint SrcSurfaceSize, ref EncryptedBlockInfo pEncryptedBlockInfo, void* pContentKey, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt((IDirect3DSurface9*) pSrcSurface.Handle, ref pDstSurface, SrcSurfaceSize, ref pEncryptedBlockInfo, pContentKey, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecryptionBlt<T0, TI0>(ComPtr<TI0> pSrcSurface, ref IDirect3DSurface9 pDstSurface, uint SrcSurfaceSize, ref EncryptedBlockInfo pEncryptedBlockInfo, ref T0 pContentKey, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt((IDirect3DSurface9*) pSrcSurface.Handle, ref pDstSurface, SrcSurfaceSize, ref pEncryptedBlockInfo, ref pContentKey, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int DecryptionBlt<T0, T1, TI0>(ComPtr<TI0> pSrcSurface, ref IDirect3DSurface9 pDstSurface, uint SrcSurfaceSize, ref EncryptedBlockInfo pEncryptedBlockInfo, ref T0 pContentKey, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt((IDirect3DSurface9*) pSrcSurface.Handle, ref pDstSurface, SrcSurfaceSize, ref pEncryptedBlockInfo, ref pContentKey, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecryptionBlt<TI0>(ref IDirect3DSurface9 pSrcSurface, ComPtr<TI0> pDstSurface, uint SrcSurfaceSize, EncryptedBlockInfo* pEncryptedBlockInfo, void* pContentKey, void* pIV) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt(ref pSrcSurface, (IDirect3DSurface9*) pDstSurface.Handle, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecryptionBlt<T0, TI0>(ref IDirect3DSurface9 pSrcSurface, ComPtr<TI0> pDstSurface, uint SrcSurfaceSize, EncryptedBlockInfo* pEncryptedBlockInfo, void* pContentKey, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt(ref pSrcSurface, (IDirect3DSurface9*) pDstSurface.Handle, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecryptionBlt<T0, TI0>(ref IDirect3DSurface9 pSrcSurface, ComPtr<TI0> pDstSurface, uint SrcSurfaceSize, EncryptedBlockInfo* pEncryptedBlockInfo, ref T0 pContentKey, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt(ref pSrcSurface, (IDirect3DSurface9*) pDstSurface.Handle, SrcSurfaceSize, pEncryptedBlockInfo, ref pContentKey, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecryptionBlt<T0, T1, TI0>(ref IDirect3DSurface9 pSrcSurface, ComPtr<TI0> pDstSurface, uint SrcSurfaceSize, EncryptedBlockInfo* pEncryptedBlockInfo, ref T0 pContentKey, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt(ref pSrcSurface, (IDirect3DSurface9*) pDstSurface.Handle, SrcSurfaceSize, pEncryptedBlockInfo, ref pContentKey, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecryptionBlt<TI0>(ref IDirect3DSurface9 pSrcSurface, ComPtr<TI0> pDstSurface, uint SrcSurfaceSize, ref EncryptedBlockInfo pEncryptedBlockInfo, void* pContentKey, void* pIV) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt(ref pSrcSurface, (IDirect3DSurface9*) pDstSurface.Handle, SrcSurfaceSize, ref pEncryptedBlockInfo, pContentKey, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecryptionBlt<T0, TI0>(ref IDirect3DSurface9 pSrcSurface, ComPtr<TI0> pDstSurface, uint SrcSurfaceSize, ref EncryptedBlockInfo pEncryptedBlockInfo, void* pContentKey, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt(ref pSrcSurface, (IDirect3DSurface9*) pDstSurface.Handle, SrcSurfaceSize, ref pEncryptedBlockInfo, pContentKey, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecryptionBlt<T0, TI0>(ref IDirect3DSurface9 pSrcSurface, ComPtr<TI0> pDstSurface, uint SrcSurfaceSize, ref EncryptedBlockInfo pEncryptedBlockInfo, ref T0 pContentKey, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt(ref pSrcSurface, (IDirect3DSurface9*) pDstSurface.Handle, SrcSurfaceSize, ref pEncryptedBlockInfo, ref pContentKey, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int DecryptionBlt<T0, T1, TI0>(ref IDirect3DSurface9 pSrcSurface, ComPtr<TI0> pDstSurface, uint SrcSurfaceSize, ref EncryptedBlockInfo pEncryptedBlockInfo, ref T0 pContentKey, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt(ref pSrcSurface, (IDirect3DSurface9*) pDstSurface.Handle, SrcSurfaceSize, ref pEncryptedBlockInfo, ref pContentKey, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetSurfacePitch<TI0>(ComPtr<TI0> pSrcSurface, uint* pSurfacePitch) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetSurfacePitch((IDirect3DSurface9*) pSrcSurface.Handle, pSurfacePitch);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetSurfacePitch<TI0>(ComPtr<TI0> pSrcSurface, ref uint pSurfacePitch) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetSurfacePitch((IDirect3DSurface9*) pSrcSurface.Handle, ref pSurfacePitch);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

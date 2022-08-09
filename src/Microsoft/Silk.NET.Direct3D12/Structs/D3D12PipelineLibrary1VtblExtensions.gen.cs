@@ -1669,6 +1669,14 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateDataInterface<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, Guid* guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->SetPrivateDataInterface(guid, (Silk.NET.Core.Native.IUnknown*) pData.Handle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, Guid* guid, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData)
     {
         var @this = thisVtbl.Handle;
@@ -1682,6 +1690,14 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->SetPrivateDataInterface(ref guid.GetPinnableReference(), pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPrivateDataInterface<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, ref Guid guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->SetPrivateDataInterface(ref guid, (Silk.NET.Core.Native.IUnknown*) pData.Handle);
     }
 
     /// <summary>To be documented.</summary>
@@ -1726,6 +1742,14 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int StorePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, char* pName, ComPtr<TI0> pPipeline) where TI0 : unmanaged, IComVtbl<ID3D12PipelineState>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->StorePipeline(pName, (ID3D12PipelineState*) pPipeline.Handle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int StorePipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, char* pName, Span<ID3D12PipelineState> pPipeline)
     {
         var @this = thisVtbl.Handle;
@@ -1742,11 +1766,27 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int StorePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, ref char pName, ComPtr<TI0> pPipeline) where TI0 : unmanaged, IComVtbl<ID3D12PipelineState>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->StorePipeline(ref pName, (ID3D12PipelineState*) pPipeline.Handle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static int StorePipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, Span<char> pName, Span<ID3D12PipelineState> pPipeline)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->StorePipeline(ref pName.GetPinnableReference(), ref pPipeline.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int StorePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ComPtr<TI0> pPipeline) where TI0 : unmanaged, IComVtbl<ID3D12PipelineState>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->StorePipeline(pName, (ID3D12PipelineState*) pPipeline.Handle);
     }
 
     /// <summary>To be documented.</summary>

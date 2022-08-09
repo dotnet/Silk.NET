@@ -215,6 +215,14 @@ public unsafe static class D3D11ShaderReflectionTypeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int IsEqual<TI0>(this ComPtr<ID3D11ShaderReflectionType> thisVtbl, ComPtr<TI0> pType) where TI0 : unmanaged, IComVtbl<ID3D11ShaderReflectionType>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->IsEqual((ID3D11ShaderReflectionType*) pType.Handle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static int IsEqual(this ComPtr<ID3D11ShaderReflectionType> thisVtbl, Span<ID3D11ShaderReflectionType> pType)
     {
         var @this = thisVtbl.Handle;
@@ -223,11 +231,27 @@ public unsafe static class D3D11ShaderReflectionTypeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int IsOfType<TI0>(this ComPtr<ID3D11ShaderReflectionType> thisVtbl, ComPtr<TI0> pType) where TI0 : unmanaged, IComVtbl<ID3D11ShaderReflectionType>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->IsOfType((ID3D11ShaderReflectionType*) pType.Handle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static int IsOfType(this ComPtr<ID3D11ShaderReflectionType> thisVtbl, Span<ID3D11ShaderReflectionType> pType)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->IsOfType(ref pType.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int ImplementsInterface<TI0>(this ComPtr<ID3D11ShaderReflectionType> thisVtbl, ComPtr<TI0> pBase) where TI0 : unmanaged, IComVtbl<ID3D11ShaderReflectionType>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->ImplementsInterface((ID3D11ShaderReflectionType*) pBase.Handle);
     }
 
     /// <summary>To be documented.</summary>

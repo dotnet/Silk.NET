@@ -1566,6 +1566,54 @@ namespace Silk.NET.Direct3D12
         public unsafe partial int GetInterface(ref Guid rclsid, ref Guid riid, ref void* ppvDebug);
 
         /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 3944, Column 16 in d3d12.h")]
+        public unsafe int SerializeRootSignature<TI0, TI1>(RootSignatureDesc* pRootSignature, D3DRootSignatureVersion Version, ref ComPtr<TI0> ppBlob, ref ComPtr<TI1> ppErrorBlob) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI1>
+        {
+            // ComPtrOverloader
+            return SerializeRootSignature(pRootSignature, Version, (Silk.NET.Core.Native.ID3D10Blob**) ppBlob.GetAddressOf(), (Silk.NET.Core.Native.ID3D10Blob**) ppErrorBlob.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 3944, Column 16 in d3d12.h")]
+        public unsafe int SerializeRootSignature<TI0>(RootSignatureDesc* pRootSignature, D3DRootSignatureVersion Version, ref ComPtr<TI0> ppBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBlob) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            return SerializeRootSignature(pRootSignature, Version, (Silk.NET.Core.Native.ID3D10Blob**) ppBlob.GetAddressOf(), ref ppErrorBlob);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 3944, Column 16 in d3d12.h")]
+        public unsafe int SerializeRootSignature<TI0>(RootSignatureDesc* pRootSignature, D3DRootSignatureVersion Version, ref Silk.NET.Core.Native.ID3D10Blob* ppBlob, ref ComPtr<TI0> ppErrorBlob) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            return SerializeRootSignature(pRootSignature, Version, ref ppBlob, (Silk.NET.Core.Native.ID3D10Blob**) ppErrorBlob.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 3944, Column 16 in d3d12.h")]
+        public unsafe int SerializeRootSignature<TI0, TI1>(ref RootSignatureDesc pRootSignature, D3DRootSignatureVersion Version, ref ComPtr<TI0> ppBlob, ref ComPtr<TI1> ppErrorBlob) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI1>
+        {
+            // ComPtrOverloader
+            return SerializeRootSignature(ref pRootSignature, Version, (Silk.NET.Core.Native.ID3D10Blob**) ppBlob.GetAddressOf(), (Silk.NET.Core.Native.ID3D10Blob**) ppErrorBlob.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 3944, Column 16 in d3d12.h")]
+        public unsafe int SerializeRootSignature<TI0>(ref RootSignatureDesc pRootSignature, D3DRootSignatureVersion Version, ref ComPtr<TI0> ppBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBlob) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            return SerializeRootSignature(ref pRootSignature, Version, (Silk.NET.Core.Native.ID3D10Blob**) ppBlob.GetAddressOf(), ref ppErrorBlob);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 3944, Column 16 in d3d12.h")]
+        public unsafe int SerializeRootSignature<TI0>(ref RootSignatureDesc pRootSignature, D3DRootSignatureVersion Version, ref Silk.NET.Core.Native.ID3D10Blob* ppBlob, ref ComPtr<TI0> ppErrorBlob) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            return SerializeRootSignature(ref pRootSignature, Version, ref ppBlob, (Silk.NET.Core.Native.ID3D10Blob**) ppErrorBlob.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3956, Column 16 in d3d12.h")]
         public unsafe int CreateRootSignatureDeserializer<TI0>(void* pSrcData, nuint SrcDataSizeInBytes, out ComPtr<TI0> ppRootSignatureDeserializer) where TI0 : unmanaged, IComVtbl<TI0>
         {
@@ -1581,6 +1629,54 @@ namespace Silk.NET.Direct3D12
             // ComPtrOverloader
             ppRootSignatureDeserializer = default;
             return CreateRootSignatureDeserializer(ref pSrcData, SrcDataSizeInBytes, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppRootSignatureDeserializer.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 3967, Column 16 in d3d12.h")]
+        public unsafe int SerializeVersionedRootSignature<TI0, TI1>(VersionedRootSignatureDesc* pRootSignature, ref ComPtr<TI0> ppBlob, ref ComPtr<TI1> ppErrorBlob) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI1>
+        {
+            // ComPtrOverloader
+            return SerializeVersionedRootSignature(pRootSignature, (Silk.NET.Core.Native.ID3D10Blob**) ppBlob.GetAddressOf(), (Silk.NET.Core.Native.ID3D10Blob**) ppErrorBlob.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 3967, Column 16 in d3d12.h")]
+        public unsafe int SerializeVersionedRootSignature<TI0>(VersionedRootSignatureDesc* pRootSignature, ref ComPtr<TI0> ppBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBlob) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            return SerializeVersionedRootSignature(pRootSignature, (Silk.NET.Core.Native.ID3D10Blob**) ppBlob.GetAddressOf(), ref ppErrorBlob);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 3967, Column 16 in d3d12.h")]
+        public unsafe int SerializeVersionedRootSignature<TI0>(VersionedRootSignatureDesc* pRootSignature, ref Silk.NET.Core.Native.ID3D10Blob* ppBlob, ref ComPtr<TI0> ppErrorBlob) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            return SerializeVersionedRootSignature(pRootSignature, ref ppBlob, (Silk.NET.Core.Native.ID3D10Blob**) ppErrorBlob.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 3967, Column 16 in d3d12.h")]
+        public unsafe int SerializeVersionedRootSignature<TI0, TI1>(ref VersionedRootSignatureDesc pRootSignature, ref ComPtr<TI0> ppBlob, ref ComPtr<TI1> ppErrorBlob) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI1>
+        {
+            // ComPtrOverloader
+            return SerializeVersionedRootSignature(ref pRootSignature, (Silk.NET.Core.Native.ID3D10Blob**) ppBlob.GetAddressOf(), (Silk.NET.Core.Native.ID3D10Blob**) ppErrorBlob.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 3967, Column 16 in d3d12.h")]
+        public unsafe int SerializeVersionedRootSignature<TI0>(ref VersionedRootSignatureDesc pRootSignature, ref ComPtr<TI0> ppBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBlob) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            return SerializeVersionedRootSignature(ref pRootSignature, (Silk.NET.Core.Native.ID3D10Blob**) ppBlob.GetAddressOf(), ref ppErrorBlob);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 3967, Column 16 in d3d12.h")]
+        public unsafe int SerializeVersionedRootSignature<TI0>(ref VersionedRootSignatureDesc pRootSignature, ref Silk.NET.Core.Native.ID3D10Blob* ppBlob, ref ComPtr<TI0> ppErrorBlob) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            return SerializeVersionedRootSignature(ref pRootSignature, ref ppBlob, (Silk.NET.Core.Native.ID3D10Blob**) ppErrorBlob.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -1603,11 +1699,35 @@ namespace Silk.NET.Direct3D12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 22472, Column 16 in d3d12.h")]
-        public unsafe int CreateDevice<TI0>(Silk.NET.Core.Native.IUnknown* pAdapter, Silk.NET.Core.Native.D3DFeatureLevel MinimumFeatureLevel, out ComPtr<TI0> ppDevice) where TI0 : unmanaged, IComVtbl<TI0>
+        public unsafe int CreateDevice<TI0, TI1>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DFeatureLevel MinimumFeatureLevel, out ComPtr<TI1> ppDevice) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             // ComPtrOverloader
             ppDevice = default;
-            return CreateDevice(pAdapter, MinimumFeatureLevel, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppDevice.GetAddressOf());
+            return CreateDevice((Silk.NET.Core.Native.IUnknown*) pAdapter.Handle, MinimumFeatureLevel, SilkMarshal.GuidPtrOf<TI1>(), (void**) ppDevice.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 22472, Column 16 in d3d12.h")]
+        public unsafe int CreateDevice<TI0>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DFeatureLevel MinimumFeatureLevel, Guid* riid, ref void* ppDevice) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            return CreateDevice((Silk.NET.Core.Native.IUnknown*) pAdapter.Handle, MinimumFeatureLevel, riid, ref ppDevice);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 22472, Column 16 in d3d12.h")]
+        public unsafe int CreateDevice<TI0>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DFeatureLevel MinimumFeatureLevel, ref Guid riid, void** ppDevice) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            return CreateDevice((Silk.NET.Core.Native.IUnknown*) pAdapter.Handle, MinimumFeatureLevel, ref riid, ppDevice);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 22472, Column 16 in d3d12.h")]
+        public unsafe int CreateDevice<TI0>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DFeatureLevel MinimumFeatureLevel, ref Guid riid, ref void* ppDevice) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            return CreateDevice((Silk.NET.Core.Native.IUnknown*) pAdapter.Handle, MinimumFeatureLevel, ref riid, ref ppDevice);
         }
 
         /// <summary>To be documented.</summary>
@@ -1684,10 +1804,10 @@ namespace Silk.NET.Direct3D12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 22472, Column 16 in d3d12.h")]
-        public unsafe ComPtr<TI0> CreateDevice<TI0>(Silk.NET.Core.Native.IUnknown* pAdapter, Silk.NET.Core.Native.D3DFeatureLevel MinimumFeatureLevel) where TI0 : unmanaged, IComVtbl<TI0>
+        public unsafe ComPtr<TI1> CreateDevice<TI0, TI1>(ComPtr<TI0> pAdapter, Silk.NET.Core.Native.D3DFeatureLevel MinimumFeatureLevel) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(CreateDevice(pAdapter, MinimumFeatureLevel, out ComPtr<TI0> silkRet));
+            SilkMarshal.ThrowHResult(CreateDevice(pAdapter, MinimumFeatureLevel, out ComPtr<TI1> silkRet));
             return silkRet;
         }
 

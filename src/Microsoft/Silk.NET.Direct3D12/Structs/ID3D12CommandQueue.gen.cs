@@ -3297,6 +3297,22 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int SetPrivateDataInterface<TI0>(Guid* guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetPrivateDataInterface(guid, (Silk.NET.Core.Native.IUnknown*) pData.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetPrivateDataInterface<TI0>(ref Guid guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetPrivateDataInterface(ref guid, (Silk.NET.Core.Native.IUnknown*) pData.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly int GetDevice<TI0>(out ComPtr<TI0> ppvDevice) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3306,11 +3322,987 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, uint* pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, pResourceRegionStartCoordinates, pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, pRangeFlags, pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, uint* pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, pResourceRegionStartCoordinates, pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, pRangeFlags, pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, ref uint pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, pResourceRegionStartCoordinates, pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, pRangeFlags, ref pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, ref uint pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, pResourceRegionStartCoordinates, pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, pRangeFlags, ref pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, uint* pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, pResourceRegionStartCoordinates, pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, ref pRangeFlags, pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, uint* pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, pResourceRegionStartCoordinates, pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, ref pRangeFlags, pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, ref uint pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, pResourceRegionStartCoordinates, pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, ref pRangeFlags, ref pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, ref uint pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, pResourceRegionStartCoordinates, pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, ref pRangeFlags, ref pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ComPtr<TI0> pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, uint* pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, pResourceRegionStartCoordinates, pResourceRegionSizes, ref pHeap, NumRanges, pRangeFlags, pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ComPtr<TI0> pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, uint* pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, pResourceRegionStartCoordinates, pResourceRegionSizes, ref pHeap, NumRanges, pRangeFlags, pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ComPtr<TI0> pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, ref uint pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, pResourceRegionStartCoordinates, pResourceRegionSizes, ref pHeap, NumRanges, pRangeFlags, ref pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ComPtr<TI0> pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, ref uint pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, pResourceRegionStartCoordinates, pResourceRegionSizes, ref pHeap, NumRanges, pRangeFlags, ref pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ComPtr<TI0> pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, uint* pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, pResourceRegionStartCoordinates, pResourceRegionSizes, ref pHeap, NumRanges, ref pRangeFlags, pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ComPtr<TI0> pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, uint* pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, pResourceRegionStartCoordinates, pResourceRegionSizes, ref pHeap, NumRanges, ref pRangeFlags, pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ComPtr<TI0> pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, ref uint pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, pResourceRegionStartCoordinates, pResourceRegionSizes, ref pHeap, NumRanges, ref pRangeFlags, ref pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ComPtr<TI0> pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, ref uint pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, pResourceRegionStartCoordinates, pResourceRegionSizes, ref pHeap, NumRanges, ref pRangeFlags, ref pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, uint* pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, pResourceRegionStartCoordinates, ref pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, pRangeFlags, pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, uint* pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, pResourceRegionStartCoordinates, ref pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, pRangeFlags, pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, ref uint pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, pResourceRegionStartCoordinates, ref pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, pRangeFlags, ref pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, ref uint pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, pResourceRegionStartCoordinates, ref pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, pRangeFlags, ref pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, uint* pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, pResourceRegionStartCoordinates, ref pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, ref pRangeFlags, pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, uint* pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, pResourceRegionStartCoordinates, ref pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, ref pRangeFlags, pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, ref uint pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, pResourceRegionStartCoordinates, ref pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, ref pRangeFlags, ref pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, ref uint pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, pResourceRegionStartCoordinates, ref pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, ref pRangeFlags, ref pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ComPtr<TI0> pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, uint* pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, pResourceRegionStartCoordinates, ref pResourceRegionSizes, ref pHeap, NumRanges, pRangeFlags, pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ComPtr<TI0> pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, uint* pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, pResourceRegionStartCoordinates, ref pResourceRegionSizes, ref pHeap, NumRanges, pRangeFlags, pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ComPtr<TI0> pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, ref uint pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, pResourceRegionStartCoordinates, ref pResourceRegionSizes, ref pHeap, NumRanges, pRangeFlags, ref pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ComPtr<TI0> pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, ref uint pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, pResourceRegionStartCoordinates, ref pResourceRegionSizes, ref pHeap, NumRanges, pRangeFlags, ref pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ComPtr<TI0> pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, uint* pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, pResourceRegionStartCoordinates, ref pResourceRegionSizes, ref pHeap, NumRanges, ref pRangeFlags, pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ComPtr<TI0> pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, uint* pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, pResourceRegionStartCoordinates, ref pResourceRegionSizes, ref pHeap, NumRanges, ref pRangeFlags, pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ComPtr<TI0> pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, ref uint pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, pResourceRegionStartCoordinates, ref pResourceRegionSizes, ref pHeap, NumRanges, ref pRangeFlags, ref pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ComPtr<TI0> pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, ref uint pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, pResourceRegionStartCoordinates, ref pResourceRegionSizes, ref pHeap, NumRanges, ref pRangeFlags, ref pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, uint* pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, ref pResourceRegionStartCoordinates, pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, pRangeFlags, pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, uint* pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, ref pResourceRegionStartCoordinates, pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, pRangeFlags, pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, ref uint pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, ref pResourceRegionStartCoordinates, pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, pRangeFlags, ref pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, ref uint pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, ref pResourceRegionStartCoordinates, pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, pRangeFlags, ref pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, uint* pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, ref pResourceRegionStartCoordinates, pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, ref pRangeFlags, pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, uint* pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, ref pResourceRegionStartCoordinates, pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, ref pRangeFlags, pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, ref uint pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, ref pResourceRegionStartCoordinates, pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, ref pRangeFlags, ref pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, ref uint pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, ref pResourceRegionStartCoordinates, pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, ref pRangeFlags, ref pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ComPtr<TI0> pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, uint* pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, ref pResourceRegionStartCoordinates, pResourceRegionSizes, ref pHeap, NumRanges, pRangeFlags, pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ComPtr<TI0> pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, uint* pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, ref pResourceRegionStartCoordinates, pResourceRegionSizes, ref pHeap, NumRanges, pRangeFlags, pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ComPtr<TI0> pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, ref uint pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, ref pResourceRegionStartCoordinates, pResourceRegionSizes, ref pHeap, NumRanges, pRangeFlags, ref pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ComPtr<TI0> pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, ref uint pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, ref pResourceRegionStartCoordinates, pResourceRegionSizes, ref pHeap, NumRanges, pRangeFlags, ref pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ComPtr<TI0> pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, uint* pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, ref pResourceRegionStartCoordinates, pResourceRegionSizes, ref pHeap, NumRanges, ref pRangeFlags, pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ComPtr<TI0> pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, uint* pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, ref pResourceRegionStartCoordinates, pResourceRegionSizes, ref pHeap, NumRanges, ref pRangeFlags, pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ComPtr<TI0> pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, ref uint pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, ref pResourceRegionStartCoordinates, pResourceRegionSizes, ref pHeap, NumRanges, ref pRangeFlags, ref pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ComPtr<TI0> pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, ref uint pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, ref pResourceRegionStartCoordinates, pResourceRegionSizes, ref pHeap, NumRanges, ref pRangeFlags, ref pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, uint* pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, ref pResourceRegionStartCoordinates, ref pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, pRangeFlags, pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, uint* pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, ref pResourceRegionStartCoordinates, ref pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, pRangeFlags, pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, ref uint pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, ref pResourceRegionStartCoordinates, ref pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, pRangeFlags, ref pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, ref uint pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, ref pResourceRegionStartCoordinates, ref pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, pRangeFlags, ref pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, uint* pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, ref pResourceRegionStartCoordinates, ref pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, ref pRangeFlags, pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, uint* pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, ref pResourceRegionStartCoordinates, ref pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, ref pRangeFlags, pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, ref uint pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, ref pResourceRegionStartCoordinates, ref pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, ref pRangeFlags, ref pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void UpdateTileMappings<TI0, TI1>(ComPtr<TI0> pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ComPtr<TI1> pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, ref uint pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, ref pResourceRegionStartCoordinates, ref pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, ref pRangeFlags, ref pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ComPtr<TI0> pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, uint* pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, ref pResourceRegionStartCoordinates, ref pResourceRegionSizes, ref pHeap, NumRanges, pRangeFlags, pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ComPtr<TI0> pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, uint* pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, ref pResourceRegionStartCoordinates, ref pResourceRegionSizes, ref pHeap, NumRanges, pRangeFlags, pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ComPtr<TI0> pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, ref uint pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, ref pResourceRegionStartCoordinates, ref pResourceRegionSizes, ref pHeap, NumRanges, pRangeFlags, ref pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ComPtr<TI0> pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, ref uint pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, ref pResourceRegionStartCoordinates, ref pResourceRegionSizes, ref pHeap, NumRanges, pRangeFlags, ref pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ComPtr<TI0> pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, uint* pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, ref pResourceRegionStartCoordinates, ref pResourceRegionSizes, ref pHeap, NumRanges, ref pRangeFlags, pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ComPtr<TI0> pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, uint* pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, ref pResourceRegionStartCoordinates, ref pResourceRegionSizes, ref pHeap, NumRanges, ref pRangeFlags, pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ComPtr<TI0> pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, ref uint pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, ref pResourceRegionStartCoordinates, ref pResourceRegionSizes, ref pHeap, NumRanges, ref pRangeFlags, ref pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void UpdateTileMappings<TI0>(ComPtr<TI0> pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ref ID3D12Heap pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, ref uint pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings((ID3D12Resource*) pResource.Handle, NumResourceRegions, ref pResourceRegionStartCoordinates, ref pResourceRegionSizes, ref pHeap, NumRanges, ref pRangeFlags, ref pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ref ID3D12Resource pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, uint* pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings(ref pResource, NumResourceRegions, pResourceRegionStartCoordinates, pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, pRangeFlags, pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ref ID3D12Resource pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, uint* pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings(ref pResource, NumResourceRegions, pResourceRegionStartCoordinates, pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, pRangeFlags, pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ref ID3D12Resource pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, ref uint pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings(ref pResource, NumResourceRegions, pResourceRegionStartCoordinates, pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, pRangeFlags, ref pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ref ID3D12Resource pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, ref uint pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings(ref pResource, NumResourceRegions, pResourceRegionStartCoordinates, pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, pRangeFlags, ref pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ref ID3D12Resource pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, uint* pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings(ref pResource, NumResourceRegions, pResourceRegionStartCoordinates, pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, ref pRangeFlags, pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ref ID3D12Resource pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, uint* pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings(ref pResource, NumResourceRegions, pResourceRegionStartCoordinates, pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, ref pRangeFlags, pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ref ID3D12Resource pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, ref uint pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings(ref pResource, NumResourceRegions, pResourceRegionStartCoordinates, pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, ref pRangeFlags, ref pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ref ID3D12Resource pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, ref uint pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings(ref pResource, NumResourceRegions, pResourceRegionStartCoordinates, pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, ref pRangeFlags, ref pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ref ID3D12Resource pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, uint* pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings(ref pResource, NumResourceRegions, pResourceRegionStartCoordinates, ref pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, pRangeFlags, pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ref ID3D12Resource pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, uint* pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings(ref pResource, NumResourceRegions, pResourceRegionStartCoordinates, ref pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, pRangeFlags, pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ref ID3D12Resource pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, ref uint pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings(ref pResource, NumResourceRegions, pResourceRegionStartCoordinates, ref pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, pRangeFlags, ref pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ref ID3D12Resource pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, ref uint pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings(ref pResource, NumResourceRegions, pResourceRegionStartCoordinates, ref pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, pRangeFlags, ref pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ref ID3D12Resource pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, uint* pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings(ref pResource, NumResourceRegions, pResourceRegionStartCoordinates, ref pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, ref pRangeFlags, pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ref ID3D12Resource pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, uint* pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings(ref pResource, NumResourceRegions, pResourceRegionStartCoordinates, ref pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, ref pRangeFlags, pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ref ID3D12Resource pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, ref uint pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings(ref pResource, NumResourceRegions, pResourceRegionStartCoordinates, ref pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, ref pRangeFlags, ref pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ref ID3D12Resource pResource, uint NumResourceRegions, TiledResourceCoordinate* pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, ref uint pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings(ref pResource, NumResourceRegions, pResourceRegionStartCoordinates, ref pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, ref pRangeFlags, ref pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ref ID3D12Resource pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, uint* pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings(ref pResource, NumResourceRegions, ref pResourceRegionStartCoordinates, pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, pRangeFlags, pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ref ID3D12Resource pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, uint* pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings(ref pResource, NumResourceRegions, ref pResourceRegionStartCoordinates, pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, pRangeFlags, pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ref ID3D12Resource pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, ref uint pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings(ref pResource, NumResourceRegions, ref pResourceRegionStartCoordinates, pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, pRangeFlags, ref pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ref ID3D12Resource pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, ref uint pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings(ref pResource, NumResourceRegions, ref pResourceRegionStartCoordinates, pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, pRangeFlags, ref pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ref ID3D12Resource pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, uint* pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings(ref pResource, NumResourceRegions, ref pResourceRegionStartCoordinates, pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, ref pRangeFlags, pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ref ID3D12Resource pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, uint* pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings(ref pResource, NumResourceRegions, ref pResourceRegionStartCoordinates, pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, ref pRangeFlags, pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ref ID3D12Resource pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, ref uint pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings(ref pResource, NumResourceRegions, ref pResourceRegionStartCoordinates, pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, ref pRangeFlags, ref pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ref ID3D12Resource pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, TileRegionSize* pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, ref uint pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings(ref pResource, NumResourceRegions, ref pResourceRegionStartCoordinates, pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, ref pRangeFlags, ref pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ref ID3D12Resource pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, uint* pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings(ref pResource, NumResourceRegions, ref pResourceRegionStartCoordinates, ref pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, pRangeFlags, pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ref ID3D12Resource pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, uint* pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings(ref pResource, NumResourceRegions, ref pResourceRegionStartCoordinates, ref pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, pRangeFlags, pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ref ID3D12Resource pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, ref uint pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings(ref pResource, NumResourceRegions, ref pResourceRegionStartCoordinates, ref pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, pRangeFlags, ref pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ref ID3D12Resource pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, TileRangeFlags* pRangeFlags, ref uint pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings(ref pResource, NumResourceRegions, ref pResourceRegionStartCoordinates, ref pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, pRangeFlags, ref pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ref ID3D12Resource pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, uint* pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings(ref pResource, NumResourceRegions, ref pResourceRegionStartCoordinates, ref pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, ref pRangeFlags, pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ref ID3D12Resource pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, uint* pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings(ref pResource, NumResourceRegions, ref pResourceRegionStartCoordinates, ref pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, ref pRangeFlags, pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateTileMappings<TI0>(ref ID3D12Resource pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, ref uint pHeapRangeStartOffsets, uint* pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings(ref pResource, NumResourceRegions, ref pResourceRegionStartCoordinates, ref pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, ref pRangeFlags, ref pHeapRangeStartOffsets, pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void UpdateTileMappings<TI0>(ref ID3D12Resource pResource, uint NumResourceRegions, ref TiledResourceCoordinate pResourceRegionStartCoordinates, ref TileRegionSize pResourceRegionSizes, ComPtr<TI0> pHeap, uint NumRanges, ref TileRangeFlags pRangeFlags, ref uint pHeapRangeStartOffsets, ref uint pRangeTileCounts, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateTileMappings(ref pResource, NumResourceRegions, ref pResourceRegionStartCoordinates, ref pResourceRegionSizes, (ID3D12Heap*) pHeap.Handle, NumRanges, ref pRangeFlags, ref pHeapRangeStartOffsets, ref pRangeTileCounts, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopyTileMappings<TI0, TI1>(ComPtr<TI0> pDstResource, TiledResourceCoordinate* pDstRegionStartCoordinate, ComPtr<TI1> pSrcResource, TiledResourceCoordinate* pSrcRegionStartCoordinate, TileRegionSize* pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTileMappings((ID3D12Resource*) pDstResource.Handle, pDstRegionStartCoordinate, (ID3D12Resource*) pSrcResource.Handle, pSrcRegionStartCoordinate, pRegionSize, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopyTileMappings<TI0, TI1>(ComPtr<TI0> pDstResource, TiledResourceCoordinate* pDstRegionStartCoordinate, ComPtr<TI1> pSrcResource, TiledResourceCoordinate* pSrcRegionStartCoordinate, ref TileRegionSize pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTileMappings((ID3D12Resource*) pDstResource.Handle, pDstRegionStartCoordinate, (ID3D12Resource*) pSrcResource.Handle, pSrcRegionStartCoordinate, ref pRegionSize, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopyTileMappings<TI0, TI1>(ComPtr<TI0> pDstResource, TiledResourceCoordinate* pDstRegionStartCoordinate, ComPtr<TI1> pSrcResource, ref TiledResourceCoordinate pSrcRegionStartCoordinate, TileRegionSize* pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTileMappings((ID3D12Resource*) pDstResource.Handle, pDstRegionStartCoordinate, (ID3D12Resource*) pSrcResource.Handle, ref pSrcRegionStartCoordinate, pRegionSize, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopyTileMappings<TI0, TI1>(ComPtr<TI0> pDstResource, TiledResourceCoordinate* pDstRegionStartCoordinate, ComPtr<TI1> pSrcResource, ref TiledResourceCoordinate pSrcRegionStartCoordinate, ref TileRegionSize pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTileMappings((ID3D12Resource*) pDstResource.Handle, pDstRegionStartCoordinate, (ID3D12Resource*) pSrcResource.Handle, ref pSrcRegionStartCoordinate, ref pRegionSize, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopyTileMappings<TI0>(ComPtr<TI0> pDstResource, TiledResourceCoordinate* pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, TiledResourceCoordinate* pSrcRegionStartCoordinate, TileRegionSize* pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTileMappings((ID3D12Resource*) pDstResource.Handle, pDstRegionStartCoordinate, ref pSrcResource, pSrcRegionStartCoordinate, pRegionSize, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopyTileMappings<TI0>(ComPtr<TI0> pDstResource, TiledResourceCoordinate* pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, TiledResourceCoordinate* pSrcRegionStartCoordinate, ref TileRegionSize pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTileMappings((ID3D12Resource*) pDstResource.Handle, pDstRegionStartCoordinate, ref pSrcResource, pSrcRegionStartCoordinate, ref pRegionSize, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopyTileMappings<TI0>(ComPtr<TI0> pDstResource, TiledResourceCoordinate* pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, ref TiledResourceCoordinate pSrcRegionStartCoordinate, TileRegionSize* pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTileMappings((ID3D12Resource*) pDstResource.Handle, pDstRegionStartCoordinate, ref pSrcResource, ref pSrcRegionStartCoordinate, pRegionSize, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopyTileMappings<TI0>(ComPtr<TI0> pDstResource, TiledResourceCoordinate* pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, ref TiledResourceCoordinate pSrcRegionStartCoordinate, ref TileRegionSize pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTileMappings((ID3D12Resource*) pDstResource.Handle, pDstRegionStartCoordinate, ref pSrcResource, ref pSrcRegionStartCoordinate, ref pRegionSize, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopyTileMappings<TI0, TI1>(ComPtr<TI0> pDstResource, ref TiledResourceCoordinate pDstRegionStartCoordinate, ComPtr<TI1> pSrcResource, TiledResourceCoordinate* pSrcRegionStartCoordinate, TileRegionSize* pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTileMappings((ID3D12Resource*) pDstResource.Handle, ref pDstRegionStartCoordinate, (ID3D12Resource*) pSrcResource.Handle, pSrcRegionStartCoordinate, pRegionSize, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopyTileMappings<TI0, TI1>(ComPtr<TI0> pDstResource, ref TiledResourceCoordinate pDstRegionStartCoordinate, ComPtr<TI1> pSrcResource, TiledResourceCoordinate* pSrcRegionStartCoordinate, ref TileRegionSize pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTileMappings((ID3D12Resource*) pDstResource.Handle, ref pDstRegionStartCoordinate, (ID3D12Resource*) pSrcResource.Handle, pSrcRegionStartCoordinate, ref pRegionSize, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopyTileMappings<TI0, TI1>(ComPtr<TI0> pDstResource, ref TiledResourceCoordinate pDstRegionStartCoordinate, ComPtr<TI1> pSrcResource, ref TiledResourceCoordinate pSrcRegionStartCoordinate, TileRegionSize* pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTileMappings((ID3D12Resource*) pDstResource.Handle, ref pDstRegionStartCoordinate, (ID3D12Resource*) pSrcResource.Handle, ref pSrcRegionStartCoordinate, pRegionSize, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void CopyTileMappings<TI0, TI1>(ComPtr<TI0> pDstResource, ref TiledResourceCoordinate pDstRegionStartCoordinate, ComPtr<TI1> pSrcResource, ref TiledResourceCoordinate pSrcRegionStartCoordinate, ref TileRegionSize pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTileMappings((ID3D12Resource*) pDstResource.Handle, ref pDstRegionStartCoordinate, (ID3D12Resource*) pSrcResource.Handle, ref pSrcRegionStartCoordinate, ref pRegionSize, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopyTileMappings<TI0>(ComPtr<TI0> pDstResource, ref TiledResourceCoordinate pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, TiledResourceCoordinate* pSrcRegionStartCoordinate, TileRegionSize* pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTileMappings((ID3D12Resource*) pDstResource.Handle, ref pDstRegionStartCoordinate, ref pSrcResource, pSrcRegionStartCoordinate, pRegionSize, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopyTileMappings<TI0>(ComPtr<TI0> pDstResource, ref TiledResourceCoordinate pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, TiledResourceCoordinate* pSrcRegionStartCoordinate, ref TileRegionSize pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTileMappings((ID3D12Resource*) pDstResource.Handle, ref pDstRegionStartCoordinate, ref pSrcResource, pSrcRegionStartCoordinate, ref pRegionSize, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopyTileMappings<TI0>(ComPtr<TI0> pDstResource, ref TiledResourceCoordinate pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, ref TiledResourceCoordinate pSrcRegionStartCoordinate, TileRegionSize* pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTileMappings((ID3D12Resource*) pDstResource.Handle, ref pDstRegionStartCoordinate, ref pSrcResource, ref pSrcRegionStartCoordinate, pRegionSize, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void CopyTileMappings<TI0>(ComPtr<TI0> pDstResource, ref TiledResourceCoordinate pDstRegionStartCoordinate, ref ID3D12Resource pSrcResource, ref TiledResourceCoordinate pSrcRegionStartCoordinate, ref TileRegionSize pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTileMappings((ID3D12Resource*) pDstResource.Handle, ref pDstRegionStartCoordinate, ref pSrcResource, ref pSrcRegionStartCoordinate, ref pRegionSize, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopyTileMappings<TI0>(ref ID3D12Resource pDstResource, TiledResourceCoordinate* pDstRegionStartCoordinate, ComPtr<TI0> pSrcResource, TiledResourceCoordinate* pSrcRegionStartCoordinate, TileRegionSize* pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTileMappings(ref pDstResource, pDstRegionStartCoordinate, (ID3D12Resource*) pSrcResource.Handle, pSrcRegionStartCoordinate, pRegionSize, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopyTileMappings<TI0>(ref ID3D12Resource pDstResource, TiledResourceCoordinate* pDstRegionStartCoordinate, ComPtr<TI0> pSrcResource, TiledResourceCoordinate* pSrcRegionStartCoordinate, ref TileRegionSize pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTileMappings(ref pDstResource, pDstRegionStartCoordinate, (ID3D12Resource*) pSrcResource.Handle, pSrcRegionStartCoordinate, ref pRegionSize, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopyTileMappings<TI0>(ref ID3D12Resource pDstResource, TiledResourceCoordinate* pDstRegionStartCoordinate, ComPtr<TI0> pSrcResource, ref TiledResourceCoordinate pSrcRegionStartCoordinate, TileRegionSize* pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTileMappings(ref pDstResource, pDstRegionStartCoordinate, (ID3D12Resource*) pSrcResource.Handle, ref pSrcRegionStartCoordinate, pRegionSize, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopyTileMappings<TI0>(ref ID3D12Resource pDstResource, TiledResourceCoordinate* pDstRegionStartCoordinate, ComPtr<TI0> pSrcResource, ref TiledResourceCoordinate pSrcRegionStartCoordinate, ref TileRegionSize pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTileMappings(ref pDstResource, pDstRegionStartCoordinate, (ID3D12Resource*) pSrcResource.Handle, ref pSrcRegionStartCoordinate, ref pRegionSize, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopyTileMappings<TI0>(ref ID3D12Resource pDstResource, ref TiledResourceCoordinate pDstRegionStartCoordinate, ComPtr<TI0> pSrcResource, TiledResourceCoordinate* pSrcRegionStartCoordinate, TileRegionSize* pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTileMappings(ref pDstResource, ref pDstRegionStartCoordinate, (ID3D12Resource*) pSrcResource.Handle, pSrcRegionStartCoordinate, pRegionSize, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopyTileMappings<TI0>(ref ID3D12Resource pDstResource, ref TiledResourceCoordinate pDstRegionStartCoordinate, ComPtr<TI0> pSrcResource, TiledResourceCoordinate* pSrcRegionStartCoordinate, ref TileRegionSize pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTileMappings(ref pDstResource, ref pDstRegionStartCoordinate, (ID3D12Resource*) pSrcResource.Handle, pSrcRegionStartCoordinate, ref pRegionSize, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopyTileMappings<TI0>(ref ID3D12Resource pDstResource, ref TiledResourceCoordinate pDstRegionStartCoordinate, ComPtr<TI0> pSrcResource, ref TiledResourceCoordinate pSrcRegionStartCoordinate, TileRegionSize* pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTileMappings(ref pDstResource, ref pDstRegionStartCoordinate, (ID3D12Resource*) pSrcResource.Handle, ref pSrcRegionStartCoordinate, pRegionSize, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void CopyTileMappings<TI0>(ref ID3D12Resource pDstResource, ref TiledResourceCoordinate pDstRegionStartCoordinate, ComPtr<TI0> pSrcResource, ref TiledResourceCoordinate pSrcRegionStartCoordinate, ref TileRegionSize pRegionSize, TileMappingFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTileMappings(ref pDstResource, ref pDstRegionStartCoordinate, (ID3D12Resource*) pSrcResource.Handle, ref pSrcRegionStartCoordinate, ref pRegionSize, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly void ExecuteCommandLists<TI0>(uint NumCommandLists, ref ComPtr<TI0> ppCommandLists) where TI0 : unmanaged, IComVtbl<ID3D12CommandList>, IComVtbl<TI0>
         {
             var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             @this->ExecuteCommandLists(NumCommandLists, (ID3D12CommandList**) ppCommandLists.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int Signal<TI0>(ComPtr<TI0> pFence, ulong Value) where TI0 : unmanaged, IComVtbl<ID3D12Fence>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Signal((ID3D12Fence*) pFence.Handle, Value);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int Wait<TI0>(ComPtr<TI0> pFence, ulong Value) where TI0 : unmanaged, IComVtbl<ID3D12Fence>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Wait((ID3D12Fence*) pFence.Handle, Value);
         }
 
         /// <summary>To be documented.</summary>

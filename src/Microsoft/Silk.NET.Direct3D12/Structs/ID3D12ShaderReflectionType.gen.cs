@@ -221,5 +221,29 @@ namespace Silk.NET.Direct3D12
             return ret;
         }
 
+        /// <summary>To be documented.</summary>
+        public readonly int IsEqual<TI0>(ComPtr<TI0> pType) where TI0 : unmanaged, IComVtbl<ID3D12ShaderReflectionType>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12ShaderReflectionType*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->IsEqual((ID3D12ShaderReflectionType*) pType.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int IsOfType<TI0>(ComPtr<TI0> pType) where TI0 : unmanaged, IComVtbl<ID3D12ShaderReflectionType>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12ShaderReflectionType*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->IsOfType((ID3D12ShaderReflectionType*) pType.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int ImplementsInterface<TI0>(ComPtr<TI0> pBase) where TI0 : unmanaged, IComVtbl<ID3D12ShaderReflectionType>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12ShaderReflectionType*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->ImplementsInterface((ID3D12ShaderReflectionType*) pBase.Handle);
+        }
+
     }
 }

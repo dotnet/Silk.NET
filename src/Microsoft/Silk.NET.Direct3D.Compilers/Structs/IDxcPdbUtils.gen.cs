@@ -650,6 +650,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly int Load<TI0>(ComPtr<TI0> pPdbOrDxil) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcPdbUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Load((IDxcBlob*) pPdbOrDxil.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly int GetSource<TI0>(uint uIndex, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
         {
             var @this = (IDxcPdbUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -814,6 +822,14 @@ namespace Silk.NET.Direct3D.Compilers
             var @this = (IDxcPdbUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             return @this->GetVersionInfo((IDxcVersionInfo**) ppVersionInfo.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetCompiler<TI0>(ComPtr<TI0> pCompiler) where TI0 : unmanaged, IComVtbl<IDxcCompiler3>, IComVtbl<TI0>
+        {
+            var @this = (IDxcPdbUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetCompiler((IDxcCompiler3*) pCompiler.Handle);
         }
 
         /// <summary>To be documented.</summary>

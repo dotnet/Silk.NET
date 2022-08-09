@@ -20500,11 +20500,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -20520,6 +20520,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -20532,11 +20540,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -20552,6 +20560,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -20564,11 +20580,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -20584,6 +20600,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -20596,11 +20620,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -20616,35 +20640,75 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -20660,11 +20724,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -20680,6 +20744,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -20692,11 +20764,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -20712,6 +20784,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -20724,11 +20804,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -20744,6 +20824,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -20756,11 +20844,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -20776,35 +20864,75 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -20820,11 +20948,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -20840,6 +20968,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -20852,11 +20988,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -20872,6 +21008,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -20884,11 +21028,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -20904,6 +21048,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -20916,11 +21068,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -20936,35 +21088,75 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -20980,11 +21172,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -21000,6 +21192,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -21012,11 +21212,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -21032,6 +21232,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -21044,11 +21252,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -21064,6 +21272,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -21076,11 +21292,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -21096,35 +21312,75 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -21140,11 +21396,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -21160,6 +21416,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -21172,11 +21436,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -21192,6 +21456,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -21204,11 +21476,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -21224,6 +21496,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -21236,11 +21516,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -21256,35 +21536,75 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -21300,11 +21620,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -21320,6 +21640,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -21332,11 +21660,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -21352,6 +21680,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -21364,11 +21700,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -21384,6 +21720,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -21396,11 +21740,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -21416,35 +21760,75 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -21460,11 +21844,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -21480,6 +21864,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -21492,11 +21884,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -21512,6 +21904,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -21524,11 +21924,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -21544,6 +21944,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -21556,11 +21964,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -21576,35 +21984,75 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -21620,11 +22068,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -21640,6 +22088,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -21652,11 +22108,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -21672,6 +22128,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -21684,11 +22148,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -21704,6 +22168,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -21716,11 +22188,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -21736,35 +22208,75 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -21780,11 +22292,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -21800,6 +22312,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -21812,11 +22332,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -21832,6 +22352,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -21844,11 +22372,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -21864,6 +22392,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -21876,11 +22412,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -21896,35 +22432,75 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -21940,11 +22516,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -21960,6 +22536,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -21972,11 +22556,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -21992,6 +22576,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -22004,11 +22596,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -22024,6 +22616,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -22036,11 +22636,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -22056,35 +22656,75 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -22100,11 +22740,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -22120,6 +22760,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -22132,11 +22780,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -22152,6 +22800,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -22164,11 +22820,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -22184,6 +22840,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -22196,11 +22860,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -22216,35 +22880,75 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -22260,11 +22964,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -22280,6 +22984,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -22292,11 +23004,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -22312,6 +23024,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -22324,11 +23044,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -22344,6 +23064,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -22356,11 +23084,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -22376,35 +23104,75 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -22420,11 +23188,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -22440,6 +23208,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -22452,11 +23228,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -22472,6 +23248,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -22484,11 +23268,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -22504,6 +23288,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -22516,11 +23308,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -22536,35 +23328,75 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -22580,11 +23412,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -22600,6 +23432,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -22612,11 +23452,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -22632,6 +23472,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -22644,11 +23492,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -22664,6 +23512,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -22676,11 +23532,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -22696,35 +23552,75 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -22740,11 +23636,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -22760,6 +23656,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -22772,11 +23676,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -22792,6 +23696,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -22804,11 +23716,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -22824,6 +23736,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -22836,11 +23756,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -22856,35 +23776,75 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -22900,11 +23860,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -22920,6 +23880,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -22932,11 +23900,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -22952,6 +23920,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -22964,11 +23940,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -22984,6 +23960,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -22996,11 +23980,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -23016,35 +24000,75 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -23060,11 +24084,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -23080,6 +24104,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -23092,11 +24124,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -23112,6 +24144,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -23124,11 +24164,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -23144,6 +24184,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -23156,11 +24204,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -23176,35 +24224,75 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -23220,11 +24308,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -23240,6 +24328,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -23252,11 +24348,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -23272,6 +24368,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -23284,11 +24388,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -23304,6 +24408,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -23316,11 +24428,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -23336,35 +24448,75 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -23380,11 +24532,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -23400,6 +24552,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -23412,11 +24572,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -23432,6 +24592,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -23444,11 +24612,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -23464,6 +24632,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -23476,11 +24652,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -23496,35 +24672,75 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -23540,11 +24756,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -23560,6 +24776,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -23572,11 +24796,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -23592,6 +24816,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -23604,11 +24836,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -23624,6 +24856,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -23636,11 +24876,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -23656,35 +24896,75 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -23700,11 +24980,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -23720,6 +25000,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -23732,11 +25020,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -23752,6 +25040,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -23764,11 +25060,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -23784,6 +25080,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -23796,11 +25100,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -23816,35 +25120,75 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -23860,11 +25204,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -23880,6 +25224,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -23892,11 +25244,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -23912,6 +25264,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -23924,11 +25284,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -23944,6 +25304,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -23956,11 +25324,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -23976,35 +25344,75 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -24020,11 +25428,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -24040,6 +25448,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -24052,11 +25468,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -24072,6 +25488,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -24084,11 +25508,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -24104,6 +25528,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -24116,11 +25548,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -24136,35 +25568,75 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -24180,11 +25652,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -24200,6 +25672,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -24212,11 +25692,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -24232,6 +25712,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -24244,11 +25732,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -24264,6 +25752,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -24276,11 +25772,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -24296,35 +25792,75 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -24340,11 +25876,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -24360,6 +25896,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -24372,11 +25916,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -24392,6 +25936,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -24404,11 +25956,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -24424,6 +25976,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -24436,11 +25996,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -24456,35 +26016,75 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -24500,11 +26100,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -24520,6 +26120,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -24532,11 +26140,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -24552,6 +26160,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -24564,11 +26180,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -24584,6 +26200,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -24596,11 +26220,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -24616,35 +26240,75 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -24660,11 +26324,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -24680,6 +26344,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -24692,11 +26364,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -24712,6 +26384,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -24724,11 +26404,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -24744,6 +26424,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -24756,11 +26444,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -24776,35 +26464,75 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1, TI2>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile((IDxcBlob*) pSource.Handle, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -24820,11 +26548,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -24837,6 +26565,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -24884,11 +26620,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -24901,6 +26637,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -24936,11 +26680,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -24952,11 +26704,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -24980,11 +26740,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -24997,6 +26757,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -25044,11 +26812,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -25061,6 +26829,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -25096,11 +26872,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -25112,11 +26896,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -25140,11 +26932,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -25157,6 +26949,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -25204,11 +27004,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -25221,6 +27021,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -25256,11 +27064,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -25272,11 +27088,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -25300,11 +27124,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -25317,6 +27141,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -25364,11 +27196,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -25381,6 +27213,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -25416,11 +27256,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -25432,11 +27280,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -25460,11 +27316,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -25477,6 +27333,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -25524,11 +27388,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -25541,6 +27405,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -25576,11 +27448,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -25592,11 +27472,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -25620,11 +27508,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -25637,6 +27525,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -25684,11 +27580,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -25701,6 +27597,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -25736,11 +27640,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -25752,11 +27664,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -25780,11 +27700,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -25797,6 +27717,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -25844,11 +27772,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -25861,6 +27789,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -25896,11 +27832,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -25912,11 +27856,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -25940,11 +27892,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -25957,6 +27909,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -26004,11 +27964,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -26021,6 +27981,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -26056,11 +28024,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -26072,11 +28048,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -26100,11 +28084,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -26117,6 +28101,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -26164,11 +28156,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -26181,6 +28173,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -26216,11 +28216,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -26232,11 +28240,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -26260,11 +28276,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -26277,6 +28293,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -26324,11 +28348,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -26341,6 +28365,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -26376,11 +28408,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -26392,11 +28432,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -26420,11 +28468,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -26437,6 +28485,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -26484,11 +28540,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -26501,6 +28557,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -26536,11 +28600,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -26552,11 +28624,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -26580,11 +28660,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -26597,6 +28677,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -26644,11 +28732,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -26661,6 +28749,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -26696,11 +28792,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -26712,11 +28816,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -26740,11 +28852,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -26757,6 +28869,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -26804,11 +28924,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -26821,6 +28941,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -26856,11 +28984,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, ref pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, ref pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, ref pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -26872,11 +29008,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, ref pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, ref pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, ref pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -26900,11 +29044,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, ref pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, ref pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -26917,6 +29061,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, ref pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -26964,11 +29116,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, ref pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, ref pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -26981,6 +29133,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, ref pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -27016,11 +29176,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, ref pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, ref pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, ref pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -27032,11 +29200,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, ref pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, ref pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, ref pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -27060,11 +29236,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -27077,6 +29253,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -27124,11 +29308,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -27141,6 +29325,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -27176,11 +29368,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, ref pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, ref pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, ref pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -27192,11 +29392,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, ref pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, ref pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, ref pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -27220,11 +29428,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -27237,6 +29445,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -27284,11 +29500,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -27301,6 +29517,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -27336,11 +29560,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -27352,11 +29584,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -27380,11 +29620,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -27397,6 +29637,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -27444,11 +29692,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -27461,6 +29709,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -27496,11 +29752,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -27512,11 +29776,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -27540,11 +29812,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -27557,6 +29829,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -27604,11 +29884,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -27621,6 +29901,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -27656,11 +29944,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -27672,11 +29968,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -27700,11 +30004,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -27717,6 +30021,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -27764,11 +30076,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -27781,6 +30093,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -27816,11 +30136,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -27832,11 +30160,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -27860,11 +30196,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -27877,6 +30213,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -27924,11 +30268,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -27941,6 +30285,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -27976,11 +30328,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -27992,11 +30352,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -28020,11 +30388,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -28037,6 +30405,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -28084,11 +30460,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -28101,6 +30477,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -28136,11 +30520,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -28152,11 +30544,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -28180,11 +30580,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -28197,6 +30597,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -28244,11 +30652,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -28261,6 +30669,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -28296,11 +30712,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -28312,11 +30736,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -28340,11 +30772,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -28357,6 +30789,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -28404,11 +30844,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -28421,6 +30861,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -28456,11 +30904,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -28472,11 +30928,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -28500,11 +30964,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -28517,6 +30981,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -28564,11 +31036,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -28581,6 +31053,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -28616,11 +31096,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -28632,11 +31120,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -28660,11 +31156,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -28677,6 +31173,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -28724,11 +31228,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -28741,6 +31245,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -28776,11 +31288,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -28792,11 +31312,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -28820,11 +31348,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -28837,6 +31365,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -28884,11 +31420,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -28901,6 +31437,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -28936,11 +31480,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -28952,11 +31504,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -28980,11 +31540,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -28997,6 +31557,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -29044,11 +31612,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -29061,6 +31629,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -29096,11 +31672,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -29112,11 +31696,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0, TI1>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Compile(ref pSource, pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -29140,11 +31732,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess<TI0>(IDxcBlob* pSource, char* pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Preprocess<TI0, TI1, TI2>(ComPtr<TI0> pSource, char* pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Preprocess(pSource, pSourceName, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, pSourceName, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -29160,6 +31752,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Preprocess<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, pSourceName, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Preprocess(IDxcBlob* pSource, char* pSourceName, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -29172,11 +31772,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess<TI0>(IDxcBlob* pSource, char* pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Preprocess<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Preprocess(pSource, pSourceName, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, pSourceName, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -29192,6 +31792,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Preprocess<TI0>(ComPtr<TI0> pSource, char* pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, pSourceName, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Preprocess(IDxcBlob* pSource, char* pSourceName, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -29204,11 +31812,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess<TI0>(IDxcBlob* pSource, char* pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Preprocess<TI0, TI1, TI2>(ComPtr<TI0> pSource, char* pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Preprocess(pSource, pSourceName, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, pSourceName, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -29224,6 +31832,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Preprocess<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, pSourceName, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Preprocess(IDxcBlob* pSource, char* pSourceName, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -29236,11 +31852,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess<TI0>(IDxcBlob* pSource, char* pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Preprocess<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Preprocess(pSource, pSourceName, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, pSourceName, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -29256,35 +31872,75 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess<TI0>(IDxcBlob* pSource, char* pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Preprocess<TI0>(ComPtr<TI0> pSource, char* pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Preprocess(pSource, pSourceName, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, pSourceName, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess<TI0>(IDxcBlob* pSource, char* pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Preprocess<TI0, TI1, TI2>(ComPtr<TI0> pSource, char* pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Preprocess(pSource, pSourceName, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, pSourceName, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess<TI0>(IDxcBlob* pSource, char* pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Preprocess<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Preprocess(pSource, pSourceName, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, pSourceName, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess<TI0>(IDxcBlob* pSource, char* pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Preprocess<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Preprocess(pSource, pSourceName, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, pSourceName, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Preprocess<TI0>(ComPtr<TI0> pSource, char* pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, pSourceName, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Preprocess<TI0, TI1, TI2>(ComPtr<TI0> pSource, char* pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, pSourceName, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Preprocess<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, pSourceName, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Preprocess<TI0, TI1>(ComPtr<TI0> pSource, char* pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, pSourceName, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Preprocess<TI0>(ComPtr<TI0> pSource, char* pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, pSourceName, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -29300,11 +31956,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess<TI0>(IDxcBlob* pSource, ref char pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Preprocess<TI0, TI1, TI2>(ComPtr<TI0> pSource, ref char pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Preprocess(pSource, ref pSourceName, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, ref pSourceName, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -29320,6 +31976,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Preprocess<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, ref pSourceName, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Preprocess(IDxcBlob* pSource, ref char pSourceName, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -29332,11 +31996,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess<TI0>(IDxcBlob* pSource, ref char pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Preprocess<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Preprocess(pSource, ref pSourceName, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, ref pSourceName, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -29352,6 +32016,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Preprocess<TI0>(ComPtr<TI0> pSource, ref char pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, ref pSourceName, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Preprocess(IDxcBlob* pSource, ref char pSourceName, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -29364,11 +32036,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess<TI0>(IDxcBlob* pSource, ref char pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Preprocess<TI0, TI1, TI2>(ComPtr<TI0> pSource, ref char pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Preprocess(pSource, ref pSourceName, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, ref pSourceName, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -29384,6 +32056,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Preprocess<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, ref pSourceName, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Preprocess(IDxcBlob* pSource, ref char pSourceName, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -29396,11 +32076,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess<TI0>(IDxcBlob* pSource, ref char pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Preprocess<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Preprocess(pSource, ref pSourceName, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, ref pSourceName, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -29416,35 +32096,75 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess<TI0>(IDxcBlob* pSource, ref char pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Preprocess<TI0>(ComPtr<TI0> pSource, ref char pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Preprocess(pSource, ref pSourceName, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, ref pSourceName, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess<TI0>(IDxcBlob* pSource, ref char pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Preprocess<TI0, TI1, TI2>(ComPtr<TI0> pSource, ref char pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Preprocess(pSource, ref pSourceName, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, ref pSourceName, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess<TI0>(IDxcBlob* pSource, ref char pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Preprocess<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Preprocess(pSource, ref pSourceName, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, ref pSourceName, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess<TI0>(IDxcBlob* pSource, ref char pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Preprocess<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Preprocess(pSource, ref pSourceName, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, ref pSourceName, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Preprocess<TI0>(ComPtr<TI0> pSource, ref char pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, ref pSourceName, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Preprocess<TI0, TI1, TI2>(ComPtr<TI0> pSource, ref char pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, ref pSourceName, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Preprocess<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, ref pSourceName, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Preprocess<TI0, TI1>(ComPtr<TI0> pSource, ref char pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, ref pSourceName, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Preprocess<TI0>(ComPtr<TI0> pSource, ref char pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, ref pSourceName, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -29460,11 +32180,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Preprocess<TI0, TI1, TI2>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Preprocess(pSource, pSourceName, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, pSourceName, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -29480,6 +32200,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Preprocess<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, pSourceName, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Preprocess(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -29492,11 +32220,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Preprocess<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Preprocess(pSource, pSourceName, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, pSourceName, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -29512,6 +32240,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Preprocess<TI0>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, pSourceName, pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Preprocess(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -29524,11 +32260,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Preprocess<TI0, TI1, TI2>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Preprocess(pSource, pSourceName, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, pSourceName, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -29544,6 +32280,14 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Preprocess<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, pSourceName, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Preprocess(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -29556,11 +32300,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Preprocess<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Preprocess(pSource, pSourceName, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, pSourceName, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -29576,35 +32320,75 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Preprocess<TI0>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Preprocess(pSource, pSourceName, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, pSourceName, pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Preprocess<TI0, TI1, TI2>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Preprocess(pSource, pSourceName, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, pSourceName, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Preprocess<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Preprocess(pSource, pSourceName, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, pSourceName, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess<TI0>(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Preprocess<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Preprocess(pSource, pSourceName, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, pSourceName, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Preprocess<TI0>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, pSourceName, ref pArguments, argCount, pDefines, defineCount, ref pIncludeHandler, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Preprocess<TI0, TI1, TI2>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref ComPtr<TI2> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI2>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, pSourceName, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Preprocess<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI1> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, pSourceName, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Preprocess<TI0, TI1>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, pSourceName, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Preprocess<TI0>(ComPtr<TI0> pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Preprocess((IDxcBlob*) pSource.Handle, pSourceName, ref pArguments, argCount, in pDefines, defineCount, ref pIncludeHandler, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -29620,11 +32404,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess<TI0>(ref IDxcBlob pSource, char* pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Preprocess<TI0, TI1>(ref IDxcBlob pSource, char* pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Preprocess(ref pSource, pSourceName, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Preprocess(ref pSource, pSourceName, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -29637,6 +32421,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Preprocess<TI0>(ref IDxcBlob pSource, char* pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Preprocess(ref pSource, pSourceName, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -29684,11 +32476,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess<TI0>(ref IDxcBlob pSource, char* pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Preprocess<TI0, TI1>(ref IDxcBlob pSource, char* pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Preprocess(ref pSource, pSourceName, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Preprocess(ref pSource, pSourceName, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -29701,6 +32493,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Preprocess<TI0>(ref IDxcBlob pSource, char* pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Preprocess(ref pSource, pSourceName, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -29736,11 +32536,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess<TI0>(ref IDxcBlob pSource, char* pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Preprocess<TI0, TI1>(ref IDxcBlob pSource, char* pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Preprocess(ref pSource, pSourceName, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Preprocess(ref pSource, pSourceName, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Preprocess<TI0>(ref IDxcBlob pSource, char* pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Preprocess(ref pSource, pSourceName, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -29752,11 +32560,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess<TI0>(ref IDxcBlob pSource, char* pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Preprocess<TI0, TI1>(ref IDxcBlob pSource, char* pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Preprocess(ref pSource, pSourceName, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Preprocess(ref pSource, pSourceName, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Preprocess<TI0>(ref IDxcBlob pSource, char* pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Preprocess(ref pSource, pSourceName, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -29780,11 +32596,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess<TI0>(ref IDxcBlob pSource, ref char pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Preprocess<TI0, TI1>(ref IDxcBlob pSource, ref char pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Preprocess(ref pSource, ref pSourceName, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Preprocess(ref pSource, ref pSourceName, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -29797,6 +32613,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Preprocess<TI0>(ref IDxcBlob pSource, ref char pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Preprocess(ref pSource, ref pSourceName, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -29844,11 +32668,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess<TI0>(ref IDxcBlob pSource, ref char pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Preprocess<TI0, TI1>(ref IDxcBlob pSource, ref char pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Preprocess(ref pSource, ref pSourceName, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Preprocess(ref pSource, ref pSourceName, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -29861,6 +32685,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Preprocess<TI0>(ref IDxcBlob pSource, ref char pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Preprocess(ref pSource, ref pSourceName, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -29896,11 +32728,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess<TI0>(ref IDxcBlob pSource, ref char pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Preprocess<TI0, TI1>(ref IDxcBlob pSource, ref char pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Preprocess(ref pSource, ref pSourceName, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Preprocess(ref pSource, ref pSourceName, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Preprocess<TI0>(ref IDxcBlob pSource, ref char pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Preprocess(ref pSource, ref pSourceName, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -29912,11 +32752,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess<TI0>(ref IDxcBlob pSource, ref char pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Preprocess<TI0, TI1>(ref IDxcBlob pSource, ref char pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Preprocess(ref pSource, ref pSourceName, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Preprocess(ref pSource, ref pSourceName, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Preprocess<TI0>(ref IDxcBlob pSource, ref char pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Preprocess(ref pSource, ref pSourceName, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -29940,11 +32788,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Preprocess<TI0, TI1>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Preprocess(ref pSource, pSourceName, pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Preprocess(ref pSource, pSourceName, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -29957,6 +32805,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Preprocess<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Preprocess(ref pSource, pSourceName, pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -30004,11 +32860,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Preprocess<TI0, TI1>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Preprocess(ref pSource, pSourceName, pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Preprocess(ref pSource, pSourceName, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -30021,6 +32877,14 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Preprocess<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Preprocess(ref pSource, pSourceName, pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -30056,11 +32920,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Preprocess<TI0, TI1>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Preprocess(ref pSource, pSourceName, ref pArguments, argCount, pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Preprocess(ref pSource, pSourceName, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Preprocess<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Preprocess(ref pSource, pSourceName, ref pArguments, argCount, pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -30072,11 +32944,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+        public readonly unsafe int Preprocess<TI0, TI1>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Preprocess(ref pSource, pSourceName, ref pArguments, argCount, in pDefines, defineCount, pIncludeHandler, (IDxcOperationResult**) ppResult.GetAddressOf());
+            return @this->Preprocess(ref pSource, pSourceName, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Preprocess<TI0>(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ComPtr<TI0> pIncludeHandler, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Preprocess(ref pSource, pSourceName, ref pArguments, argCount, in pDefines, defineCount, (IDxcIncludeHandler*) pIncludeHandler.Handle, ref ppResult);
         }
 
         /// <summary>To be documented.</summary>
@@ -30088,11 +32968,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Disassemble<TI0>(IDxcBlob* pSource, ref ComPtr<TI0> ppDisassembly) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
+        public readonly int Disassemble<TI0, TI1>(ComPtr<TI0> pSource, ref ComPtr<TI1> ppDisassembly) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Disassemble(pSource, (IDxcBlobEncoding**) ppDisassembly.GetAddressOf());
+            return @this->Disassemble((IDxcBlob*) pSource.Handle, (IDxcBlobEncoding**) ppDisassembly.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Disassemble<TI0>(ComPtr<TI0> pSource, ref IDxcBlobEncoding* ppDisassembly) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Disassemble((IDxcBlob*) pSource.Handle, ref ppDisassembly);
         }
 
         /// <summary>To be documented.</summary>

@@ -159,6 +159,14 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
+        public readonly int AssertResourceState<TI0>(ComPtr<TI0> pResource, uint Subresource, uint State) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12DebugCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->AssertResourceState((ID3D12Resource*) pResource.Handle, Subresource, State);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12DebugCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

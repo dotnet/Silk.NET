@@ -975,12 +975,204 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int SetPrivateDataInterface<TI0>(Guid* guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoDecodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetPrivateDataInterface(guid, (Silk.NET.Core.Native.IUnknown*) pData.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetPrivateDataInterface<TI0>(ref Guid guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoDecodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetPrivateDataInterface(ref guid, (Silk.NET.Core.Native.IUnknown*) pData.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly int GetDevice<TI0>(out ComPtr<TI0> ppvDevice) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12VideoDecodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             ppvDevice = default;
             return @this->GetDevice(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvDevice.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int Reset<TI0>(ComPtr<TI0> pAllocator) where TI0 : unmanaged, IComVtbl<ID3D12CommandAllocator>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoDecodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Reset((ID3D12CommandAllocator*) pAllocator.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DiscardResource<TI0>(ComPtr<TI0> pResource, DiscardRegion* pRegion) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoDecodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DiscardResource((ID3D12Resource*) pResource.Handle, pRegion);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void DiscardResource<TI0>(ComPtr<TI0> pResource, ref DiscardRegion pRegion) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoDecodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DiscardResource((ID3D12Resource*) pResource.Handle, ref pRegion);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void BeginQuery<TI0>(ComPtr<TI0> pQueryHeap, QueryType Type, uint Index) where TI0 : unmanaged, IComVtbl<ID3D12QueryHeap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoDecodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->BeginQuery((ID3D12QueryHeap*) pQueryHeap.Handle, Type, Index);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void EndQuery<TI0>(ComPtr<TI0> pQueryHeap, QueryType Type, uint Index) where TI0 : unmanaged, IComVtbl<ID3D12QueryHeap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoDecodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->EndQuery((ID3D12QueryHeap*) pQueryHeap.Handle, Type, Index);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ResolveQueryData<TI0, TI1>(ComPtr<TI0> pQueryHeap, QueryType Type, uint StartIndex, uint NumQueries, ComPtr<TI1> pDestinationBuffer, ulong AlignedDestinationBufferOffset) where TI0 : unmanaged, IComVtbl<ID3D12QueryHeap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12VideoDecodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ResolveQueryData((ID3D12QueryHeap*) pQueryHeap.Handle, Type, StartIndex, NumQueries, (ID3D12Resource*) pDestinationBuffer.Handle, AlignedDestinationBufferOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ResolveQueryData<TI0>(ComPtr<TI0> pQueryHeap, QueryType Type, uint StartIndex, uint NumQueries, ref ID3D12Resource pDestinationBuffer, ulong AlignedDestinationBufferOffset) where TI0 : unmanaged, IComVtbl<ID3D12QueryHeap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoDecodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ResolveQueryData((ID3D12QueryHeap*) pQueryHeap.Handle, Type, StartIndex, NumQueries, ref pDestinationBuffer, AlignedDestinationBufferOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ResolveQueryData<TI0>(ref ID3D12QueryHeap pQueryHeap, QueryType Type, uint StartIndex, uint NumQueries, ComPtr<TI0> pDestinationBuffer, ulong AlignedDestinationBufferOffset) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoDecodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ResolveQueryData(ref pQueryHeap, Type, StartIndex, NumQueries, (ID3D12Resource*) pDestinationBuffer.Handle, AlignedDestinationBufferOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void SetPredication<TI0>(ComPtr<TI0> pBuffer, ulong AlignedBufferOffset, PredicationOp Operation) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoDecodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->SetPredication((ID3D12Resource*) pBuffer.Handle, AlignedBufferOffset, Operation);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecodeFrame<TI0>(ComPtr<TI0> pDecoder, VideoDecodeOutputStreamArguments* pOutputArguments, VideoDecodeInputStreamArguments* pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoDecoder>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoDecodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecodeFrame((ID3D12VideoDecoder*) pDecoder.Handle, pOutputArguments, pInputArguments);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecodeFrame<TI0>(ComPtr<TI0> pDecoder, VideoDecodeOutputStreamArguments* pOutputArguments, ref VideoDecodeInputStreamArguments pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoDecoder>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoDecodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecodeFrame((ID3D12VideoDecoder*) pDecoder.Handle, pOutputArguments, ref pInputArguments);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecodeFrame<TI0>(ComPtr<TI0> pDecoder, ref VideoDecodeOutputStreamArguments pOutputArguments, VideoDecodeInputStreamArguments* pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoDecoder>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoDecodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecodeFrame((ID3D12VideoDecoder*) pDecoder.Handle, ref pOutputArguments, pInputArguments);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void DecodeFrame<TI0>(ComPtr<TI0> pDecoder, ref VideoDecodeOutputStreamArguments pOutputArguments, ref VideoDecodeInputStreamArguments pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoDecoder>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoDecodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecodeFrame((ID3D12VideoDecoder*) pDecoder.Handle, ref pOutputArguments, ref pInputArguments);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecodeFrame1<TI0>(ComPtr<TI0> pDecoder, VideoDecodeOutputStreamArguments1* pOutputArguments, VideoDecodeInputStreamArguments* pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoDecoder>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoDecodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecodeFrame1((ID3D12VideoDecoder*) pDecoder.Handle, pOutputArguments, pInputArguments);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecodeFrame1<TI0>(ComPtr<TI0> pDecoder, VideoDecodeOutputStreamArguments1* pOutputArguments, ref VideoDecodeInputStreamArguments pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoDecoder>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoDecodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecodeFrame1((ID3D12VideoDecoder*) pDecoder.Handle, pOutputArguments, ref pInputArguments);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecodeFrame1<TI0>(ComPtr<TI0> pDecoder, ref VideoDecodeOutputStreamArguments1 pOutputArguments, VideoDecodeInputStreamArguments* pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoDecoder>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoDecodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecodeFrame1((ID3D12VideoDecoder*) pDecoder.Handle, ref pOutputArguments, pInputArguments);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void DecodeFrame1<TI0>(ComPtr<TI0> pDecoder, ref VideoDecodeOutputStreamArguments1 pOutputArguments, ref VideoDecodeInputStreamArguments pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoDecoder>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoDecodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecodeFrame1((ID3D12VideoDecoder*) pDecoder.Handle, ref pOutputArguments, ref pInputArguments);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void SetProtectedResourceSession<TI0>(ComPtr<TI0> pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoDecodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->SetProtectedResourceSession((ID3D12ProtectedResourceSession*) pProtectedResourceSession.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void InitializeExtensionCommand<TI0>(ComPtr<TI0> pExtensionCommand, void* pInitializationParameters, nuint InitializationParametersSizeInBytes) where TI0 : unmanaged, IComVtbl<ID3D12VideoExtensionCommand>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoDecodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->InitializeExtensionCommand((ID3D12VideoExtensionCommand*) pExtensionCommand.Handle, pInitializationParameters, InitializationParametersSizeInBytes);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void InitializeExtensionCommand<T0, TI0>(ComPtr<TI0> pExtensionCommand, ref T0 pInitializationParameters, nuint InitializationParametersSizeInBytes) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12VideoExtensionCommand>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoDecodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->InitializeExtensionCommand((ID3D12VideoExtensionCommand*) pExtensionCommand.Handle, ref pInitializationParameters, InitializationParametersSizeInBytes);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ExecuteExtensionCommand<TI0>(ComPtr<TI0> pExtensionCommand, void* pExecutionParameters, nuint ExecutionParametersSizeInBytes) where TI0 : unmanaged, IComVtbl<ID3D12VideoExtensionCommand>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoDecodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ExecuteExtensionCommand((ID3D12VideoExtensionCommand*) pExtensionCommand.Handle, pExecutionParameters, ExecutionParametersSizeInBytes);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ExecuteExtensionCommand<T0, TI0>(ComPtr<TI0> pExtensionCommand, ref T0 pExecutionParameters, nuint ExecutionParametersSizeInBytes) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12VideoExtensionCommand>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoDecodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ExecuteExtensionCommand((ID3D12VideoExtensionCommand*) pExtensionCommand.Handle, ref pExecutionParameters, ExecutionParametersSizeInBytes);
         }
 
         /// <summary>To be documented.</summary>

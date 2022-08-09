@@ -233,6 +233,14 @@ public unsafe static class DStorageQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static void EnqueueStatus<TI0>(this ComPtr<IDStorageQueue> thisVtbl, ComPtr<TI0> statusArray, uint index) where TI0 : unmanaged, IComVtbl<IDStorageStatusArray>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->EnqueueStatus((IDStorageStatusArray*) statusArray.Handle, index);
+    }
+
+    /// <summary>To be documented.</summary>
     public static void EnqueueStatus(this ComPtr<IDStorageQueue> thisVtbl, Span<IDStorageStatusArray> statusArray, uint index)
     {
         var @this = thisVtbl.Handle;

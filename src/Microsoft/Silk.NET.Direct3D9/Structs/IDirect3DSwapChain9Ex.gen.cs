@@ -447,6 +447,14 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
+        public readonly int GetFrontBufferData<TI0>(ComPtr<TI0> pDestSurface) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DSwapChain9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetFrontBufferData((IDirect3DSurface9*) pDestSurface.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly int GetBackBuffer<TI0>(uint iBackBuffer, BackbufferType Type, ref ComPtr<TI0> ppBackBuffer) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
         {
             var @this = (IDirect3DSwapChain9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

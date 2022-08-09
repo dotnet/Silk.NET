@@ -150,6 +150,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
+        public readonly int SetShaderTrackingOptions<TI0>(ComPtr<TI0> pShader, uint Options) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11TracingDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetShaderTrackingOptions((Silk.NET.Core.Native.IUnknown*) pShader.Handle, Options);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D11TracingDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

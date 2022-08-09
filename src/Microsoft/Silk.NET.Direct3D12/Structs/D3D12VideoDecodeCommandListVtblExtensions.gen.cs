@@ -841,6 +841,14 @@ public unsafe static class D3D12VideoDecodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateDataInterface<TI0>(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, Guid* guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->SetPrivateDataInterface(guid, (Silk.NET.Core.Native.IUnknown*) pData.Handle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, Guid* guid, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData)
     {
         var @this = thisVtbl.Handle;
@@ -854,6 +862,14 @@ public unsafe static class D3D12VideoDecodeCommandListVtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->SetPrivateDataInterface(ref guid.GetPinnableReference(), pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPrivateDataInterface<TI0>(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ref Guid guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->SetPrivateDataInterface(ref guid, (Silk.NET.Core.Native.IUnknown*) pData.Handle);
     }
 
     /// <summary>To be documented.</summary>
@@ -898,6 +914,14 @@ public unsafe static class D3D12VideoDecodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int Reset<TI0>(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ComPtr<TI0> pAllocator) where TI0 : unmanaged, IComVtbl<ID3D12CommandAllocator>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->Reset((ID3D12CommandAllocator*) pAllocator.Handle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static int Reset(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, Span<ID3D12CommandAllocator> pAllocator)
     {
         var @this = thisVtbl.Handle;
@@ -914,11 +938,27 @@ public unsafe static class D3D12VideoDecodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void DiscardResource<TI0>(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ComPtr<TI0> pResource, DiscardRegion* pRegion) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->DiscardResource((ID3D12Resource*) pResource.Handle, pRegion);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void DiscardResource(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ID3D12Resource* pResource, Span<DiscardRegion> pRegion)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->DiscardResource(pResource, ref pRegion.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void DiscardResource<TI0>(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ComPtr<TI0> pResource, ref DiscardRegion pRegion) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->DiscardResource((ID3D12Resource*) pResource.Handle, ref pRegion);
     }
 
     /// <summary>To be documented.</summary>
@@ -938,11 +978,27 @@ public unsafe static class D3D12VideoDecodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static void BeginQuery<TI0>(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ComPtr<TI0> pQueryHeap, QueryType Type, uint Index) where TI0 : unmanaged, IComVtbl<ID3D12QueryHeap>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->BeginQuery((ID3D12QueryHeap*) pQueryHeap.Handle, Type, Index);
+    }
+
+    /// <summary>To be documented.</summary>
     public static void BeginQuery(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, Span<ID3D12QueryHeap> pQueryHeap, QueryType Type, uint Index)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->BeginQuery(ref pQueryHeap.GetPinnableReference(), Type, Index);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void EndQuery<TI0>(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ComPtr<TI0> pQueryHeap, QueryType Type, uint Index) where TI0 : unmanaged, IComVtbl<ID3D12QueryHeap>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->EndQuery((ID3D12QueryHeap*) pQueryHeap.Handle, Type, Index);
     }
 
     /// <summary>To be documented.</summary>
@@ -954,11 +1010,27 @@ public unsafe static class D3D12VideoDecodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static void ResolveQueryData<TI0, TI1>(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ComPtr<TI0> pQueryHeap, QueryType Type, uint StartIndex, uint NumQueries, ComPtr<TI1> pDestinationBuffer, ulong AlignedDestinationBufferOffset) where TI0 : unmanaged, IComVtbl<ID3D12QueryHeap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->ResolveQueryData((ID3D12QueryHeap*) pQueryHeap.Handle, Type, StartIndex, NumQueries, (ID3D12Resource*) pDestinationBuffer.Handle, AlignedDestinationBufferOffset);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void ResolveQueryData(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ID3D12QueryHeap* pQueryHeap, QueryType Type, uint StartIndex, uint NumQueries, Span<ID3D12Resource> pDestinationBuffer, ulong AlignedDestinationBufferOffset)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->ResolveQueryData(pQueryHeap, Type, StartIndex, NumQueries, ref pDestinationBuffer.GetPinnableReference(), AlignedDestinationBufferOffset);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void ResolveQueryData<TI0>(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ComPtr<TI0> pQueryHeap, QueryType Type, uint StartIndex, uint NumQueries, ref ID3D12Resource pDestinationBuffer, ulong AlignedDestinationBufferOffset) where TI0 : unmanaged, IComVtbl<ID3D12QueryHeap>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->ResolveQueryData((ID3D12QueryHeap*) pQueryHeap.Handle, Type, StartIndex, NumQueries, ref pDestinationBuffer, AlignedDestinationBufferOffset);
     }
 
     /// <summary>To be documented.</summary>
@@ -970,11 +1042,27 @@ public unsafe static class D3D12VideoDecodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static void ResolveQueryData<TI0>(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ref ID3D12QueryHeap pQueryHeap, QueryType Type, uint StartIndex, uint NumQueries, ComPtr<TI0> pDestinationBuffer, ulong AlignedDestinationBufferOffset) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->ResolveQueryData(ref pQueryHeap, Type, StartIndex, NumQueries, (ID3D12Resource*) pDestinationBuffer.Handle, AlignedDestinationBufferOffset);
+    }
+
+    /// <summary>To be documented.</summary>
     public static void ResolveQueryData(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, Span<ID3D12QueryHeap> pQueryHeap, QueryType Type, uint StartIndex, uint NumQueries, Span<ID3D12Resource> pDestinationBuffer, ulong AlignedDestinationBufferOffset)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->ResolveQueryData(ref pQueryHeap.GetPinnableReference(), Type, StartIndex, NumQueries, ref pDestinationBuffer.GetPinnableReference(), AlignedDestinationBufferOffset);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void SetPredication<TI0>(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ComPtr<TI0> pBuffer, ulong AlignedBufferOffset, PredicationOp Operation) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->SetPredication((ID3D12Resource*) pBuffer.Handle, AlignedBufferOffset, Operation);
     }
 
     /// <summary>To be documented.</summary>
@@ -1002,11 +1090,27 @@ public unsafe static class D3D12VideoDecodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void DecodeFrame<TI0>(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ComPtr<TI0> pDecoder, VideoDecodeOutputStreamArguments* pOutputArguments, VideoDecodeInputStreamArguments* pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoDecoder>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->DecodeFrame((ID3D12VideoDecoder*) pDecoder.Handle, pOutputArguments, pInputArguments);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void DecodeFrame(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ID3D12VideoDecoder* pDecoder, VideoDecodeOutputStreamArguments* pOutputArguments, Span<VideoDecodeInputStreamArguments> pInputArguments)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->DecodeFrame(pDecoder, pOutputArguments, ref pInputArguments.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void DecodeFrame<TI0>(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ComPtr<TI0> pDecoder, VideoDecodeOutputStreamArguments* pOutputArguments, ref VideoDecodeInputStreamArguments pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoDecoder>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->DecodeFrame((ID3D12VideoDecoder*) pDecoder.Handle, pOutputArguments, ref pInputArguments);
     }
 
     /// <summary>To be documented.</summary>
@@ -1018,11 +1122,27 @@ public unsafe static class D3D12VideoDecodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void DecodeFrame<TI0>(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ComPtr<TI0> pDecoder, ref VideoDecodeOutputStreamArguments pOutputArguments, VideoDecodeInputStreamArguments* pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoDecoder>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->DecodeFrame((ID3D12VideoDecoder*) pDecoder.Handle, ref pOutputArguments, pInputArguments);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void DecodeFrame(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ID3D12VideoDecoder* pDecoder, Span<VideoDecodeOutputStreamArguments> pOutputArguments, Span<VideoDecodeInputStreamArguments> pInputArguments)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->DecodeFrame(pDecoder, ref pOutputArguments.GetPinnableReference(), ref pInputArguments.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void DecodeFrame<TI0>(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ComPtr<TI0> pDecoder, ref VideoDecodeOutputStreamArguments pOutputArguments, ref VideoDecodeInputStreamArguments pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoDecoder>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->DecodeFrame((ID3D12VideoDecoder*) pDecoder.Handle, ref pOutputArguments, ref pInputArguments);
     }
 
     /// <summary>To be documented.</summary>

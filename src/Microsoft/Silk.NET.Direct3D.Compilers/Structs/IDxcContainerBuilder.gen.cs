@@ -192,6 +192,22 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly int Load<TI0>(ComPtr<TI0> pDxilContainerHeader) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcContainerBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Load((IDxcBlob*) pDxilContainerHeader.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int AddPart<TI0>(uint fourCC, ComPtr<TI0> pSource) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcContainerBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->AddPart(fourCC, (IDxcBlob*) pSource.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly int SerializeContainer<TI0>(ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
         {
             var @this = (IDxcContainerBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

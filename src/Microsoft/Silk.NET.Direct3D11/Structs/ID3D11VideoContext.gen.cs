@@ -7409,6 +7409,2350 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int SetPrivateDataInterface<TI0>(Guid* guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetPrivateDataInterface(guid, (Silk.NET.Core.Native.IUnknown*) pData.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetPrivateDataInterface<TI0>(ref Guid guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetPrivateDataInterface(ref guid, (Silk.NET.Core.Native.IUnknown*) pData.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetDecoderBuffer<TI0>(ComPtr<TI0> pDecoder, VideoDecoderBufferType Type, uint* pBufferSize, void** ppBuffer) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetDecoderBuffer((ID3D11VideoDecoder*) pDecoder.Handle, Type, pBufferSize, ppBuffer);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetDecoderBuffer<TI0>(ComPtr<TI0> pDecoder, VideoDecoderBufferType Type, uint* pBufferSize, ref void* ppBuffer) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetDecoderBuffer((ID3D11VideoDecoder*) pDecoder.Handle, Type, pBufferSize, ref ppBuffer);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetDecoderBuffer<TI0>(ComPtr<TI0> pDecoder, VideoDecoderBufferType Type, ref uint pBufferSize, void** ppBuffer) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetDecoderBuffer((ID3D11VideoDecoder*) pDecoder.Handle, Type, ref pBufferSize, ppBuffer);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetDecoderBuffer<TI0>(ComPtr<TI0> pDecoder, VideoDecoderBufferType Type, ref uint pBufferSize, ref void* ppBuffer) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetDecoderBuffer((ID3D11VideoDecoder*) pDecoder.Handle, Type, ref pBufferSize, ref ppBuffer);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int ReleaseDecoderBuffer<TI0>(ComPtr<TI0> pDecoder, VideoDecoderBufferType Type) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->ReleaseDecoderBuffer((ID3D11VideoDecoder*) pDecoder.Handle, Type);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame<TI0, TI1>(ComPtr<TI0> pDecoder, ComPtr<TI1> pView, uint ContentKeySize, void* pContentKey) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoDecoderOutputView>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecoderBeginFrame((ID3D11VideoDecoder*) pDecoder.Handle, (ID3D11VideoDecoderOutputView*) pView.Handle, ContentKeySize, pContentKey);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int DecoderBeginFrame<T0, TI0, TI1>(ComPtr<TI0> pDecoder, ComPtr<TI1> pView, uint ContentKeySize, ref T0 pContentKey) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoDecoderOutputView>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecoderBeginFrame((ID3D11VideoDecoder*) pDecoder.Handle, (ID3D11VideoDecoderOutputView*) pView.Handle, ContentKeySize, ref pContentKey);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame<TI0>(ComPtr<TI0> pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, void* pContentKey) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecoderBeginFrame((ID3D11VideoDecoder*) pDecoder.Handle, ref pView, ContentKeySize, pContentKey);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int DecoderBeginFrame<T0, TI0>(ComPtr<TI0> pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, ref T0 pContentKey) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecoderBeginFrame((ID3D11VideoDecoder*) pDecoder.Handle, ref pView, ContentKeySize, ref pContentKey);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame<TI0>(ref ID3D11VideoDecoder pDecoder, ComPtr<TI0> pView, uint ContentKeySize, void* pContentKey) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoderOutputView>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecoderBeginFrame(ref pDecoder, (ID3D11VideoDecoderOutputView*) pView.Handle, ContentKeySize, pContentKey);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int DecoderBeginFrame<T0, TI0>(ref ID3D11VideoDecoder pDecoder, ComPtr<TI0> pView, uint ContentKeySize, ref T0 pContentKey) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoderOutputView>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecoderBeginFrame(ref pDecoder, (ID3D11VideoDecoderOutputView*) pView.Handle, ContentKeySize, ref pContentKey);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int DecoderEndFrame<TI0>(ComPtr<TI0> pDecoder) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecoderEndFrame((ID3D11VideoDecoder*) pDecoder.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SubmitDecoderBuffers<TI0>(ComPtr<TI0> pDecoder, uint NumBuffers, VideoDecoderBufferDesc* pBufferDesc) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SubmitDecoderBuffers((ID3D11VideoDecoder*) pDecoder.Handle, NumBuffers, pBufferDesc);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SubmitDecoderBuffers<TI0>(ComPtr<TI0> pDecoder, uint NumBuffers, ref VideoDecoderBufferDesc pBufferDesc) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SubmitDecoderBuffers((ID3D11VideoDecoder*) pDecoder.Handle, NumBuffers, ref pBufferDesc);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderExtension<TI0>(ComPtr<TI0> pDecoder, VideoDecoderExtension* pExtensionData) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecoderExtension((ID3D11VideoDecoder*) pDecoder.Handle, pExtensionData);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int DecoderExtension<TI0>(ComPtr<TI0> pDecoder, ref VideoDecoderExtension pExtensionData) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecoderExtension((ID3D11VideoDecoder*) pDecoder.Handle, ref pExtensionData);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorSetOutputTargetRect<TI0>(ComPtr<TI0> pVideoProcessor, int Enable, Silk.NET.Maths.Rectangle<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorSetOutputTargetRect((ID3D11VideoProcessor*) pVideoProcessor.Handle, Enable, pRect);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorSetOutputTargetRect<TI0>(ComPtr<TI0> pVideoProcessor, int Enable, ref Silk.NET.Maths.Rectangle<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorSetOutputTargetRect((ID3D11VideoProcessor*) pVideoProcessor.Handle, Enable, ref pRect);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorSetOutputBackgroundColor<TI0>(ComPtr<TI0> pVideoProcessor, int YCbCr, VideoColor* pColor) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorSetOutputBackgroundColor((ID3D11VideoProcessor*) pVideoProcessor.Handle, YCbCr, pColor);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorSetOutputBackgroundColor<TI0>(ComPtr<TI0> pVideoProcessor, int YCbCr, ref VideoColor pColor) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorSetOutputBackgroundColor((ID3D11VideoProcessor*) pVideoProcessor.Handle, YCbCr, ref pColor);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorSetOutputColorSpace<TI0>(ComPtr<TI0> pVideoProcessor, VideoProcessorColorSpace* pColorSpace) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorSetOutputColorSpace((ID3D11VideoProcessor*) pVideoProcessor.Handle, pColorSpace);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorSetOutputColorSpace<TI0>(ComPtr<TI0> pVideoProcessor, ref VideoProcessorColorSpace pColorSpace) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorSetOutputColorSpace((ID3D11VideoProcessor*) pVideoProcessor.Handle, ref pColorSpace);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorSetOutputAlphaFillMode<TI0>(ComPtr<TI0> pVideoProcessor, VideoProcessorAlphaFillMode AlphaFillMode, uint StreamIndex) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorSetOutputAlphaFillMode((ID3D11VideoProcessor*) pVideoProcessor.Handle, AlphaFillMode, StreamIndex);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorSetOutputConstriction<TI0>(ComPtr<TI0> pVideoProcessor, int Enable, Silk.NET.Maths.Vector2D<int> Size) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorSetOutputConstriction((ID3D11VideoProcessor*) pVideoProcessor.Handle, Enable, Size);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorSetOutputStereoMode<TI0>(ComPtr<TI0> pVideoProcessor, int Enable) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorSetOutputStereoMode((ID3D11VideoProcessor*) pVideoProcessor.Handle, Enable);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int VideoProcessorSetOutputExtension<TI0>(ComPtr<TI0> pVideoProcessor, Guid* pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->VideoProcessorSetOutputExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, pExtensionGuid, DataSize, pData);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int VideoProcessorSetOutputExtension<T0, TI0>(ComPtr<TI0> pVideoProcessor, Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->VideoProcessorSetOutputExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, pExtensionGuid, DataSize, ref pData);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int VideoProcessorSetOutputExtension<TI0>(ComPtr<TI0> pVideoProcessor, ref Guid pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->VideoProcessorSetOutputExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, ref pExtensionGuid, DataSize, pData);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int VideoProcessorSetOutputExtension<T0, TI0>(ComPtr<TI0> pVideoProcessor, ref Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->VideoProcessorSetOutputExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, ref pExtensionGuid, DataSize, ref pData);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetOutputTargetRect<TI0>(ComPtr<TI0> pVideoProcessor, int* Enabled, Silk.NET.Maths.Rectangle<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetOutputTargetRect((ID3D11VideoProcessor*) pVideoProcessor.Handle, Enabled, pRect);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetOutputTargetRect<TI0>(ComPtr<TI0> pVideoProcessor, int* Enabled, ref Silk.NET.Maths.Rectangle<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetOutputTargetRect((ID3D11VideoProcessor*) pVideoProcessor.Handle, Enabled, ref pRect);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetOutputTargetRect<TI0>(ComPtr<TI0> pVideoProcessor, ref int Enabled, Silk.NET.Maths.Rectangle<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetOutputTargetRect((ID3D11VideoProcessor*) pVideoProcessor.Handle, ref Enabled, pRect);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorGetOutputTargetRect<TI0>(ComPtr<TI0> pVideoProcessor, ref int Enabled, ref Silk.NET.Maths.Rectangle<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetOutputTargetRect((ID3D11VideoProcessor*) pVideoProcessor.Handle, ref Enabled, ref pRect);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetOutputBackgroundColor<TI0>(ComPtr<TI0> pVideoProcessor, int* pYCbCr, VideoColor* pColor) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetOutputBackgroundColor((ID3D11VideoProcessor*) pVideoProcessor.Handle, pYCbCr, pColor);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetOutputBackgroundColor<TI0>(ComPtr<TI0> pVideoProcessor, int* pYCbCr, ref VideoColor pColor) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetOutputBackgroundColor((ID3D11VideoProcessor*) pVideoProcessor.Handle, pYCbCr, ref pColor);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetOutputBackgroundColor<TI0>(ComPtr<TI0> pVideoProcessor, ref int pYCbCr, VideoColor* pColor) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetOutputBackgroundColor((ID3D11VideoProcessor*) pVideoProcessor.Handle, ref pYCbCr, pColor);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorGetOutputBackgroundColor<TI0>(ComPtr<TI0> pVideoProcessor, ref int pYCbCr, ref VideoColor pColor) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetOutputBackgroundColor((ID3D11VideoProcessor*) pVideoProcessor.Handle, ref pYCbCr, ref pColor);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetOutputColorSpace<TI0>(ComPtr<TI0> pVideoProcessor, VideoProcessorColorSpace* pColorSpace) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetOutputColorSpace((ID3D11VideoProcessor*) pVideoProcessor.Handle, pColorSpace);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorGetOutputColorSpace<TI0>(ComPtr<TI0> pVideoProcessor, ref VideoProcessorColorSpace pColorSpace) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetOutputColorSpace((ID3D11VideoProcessor*) pVideoProcessor.Handle, ref pColorSpace);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetOutputAlphaFillMode<TI0>(ComPtr<TI0> pVideoProcessor, VideoProcessorAlphaFillMode* pAlphaFillMode, uint* pStreamIndex) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetOutputAlphaFillMode((ID3D11VideoProcessor*) pVideoProcessor.Handle, pAlphaFillMode, pStreamIndex);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetOutputAlphaFillMode<TI0>(ComPtr<TI0> pVideoProcessor, VideoProcessorAlphaFillMode* pAlphaFillMode, ref uint pStreamIndex) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetOutputAlphaFillMode((ID3D11VideoProcessor*) pVideoProcessor.Handle, pAlphaFillMode, ref pStreamIndex);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetOutputAlphaFillMode<TI0>(ComPtr<TI0> pVideoProcessor, ref VideoProcessorAlphaFillMode pAlphaFillMode, uint* pStreamIndex) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetOutputAlphaFillMode((ID3D11VideoProcessor*) pVideoProcessor.Handle, ref pAlphaFillMode, pStreamIndex);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorGetOutputAlphaFillMode<TI0>(ComPtr<TI0> pVideoProcessor, ref VideoProcessorAlphaFillMode pAlphaFillMode, ref uint pStreamIndex) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetOutputAlphaFillMode((ID3D11VideoProcessor*) pVideoProcessor.Handle, ref pAlphaFillMode, ref pStreamIndex);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetOutputConstriction<TI0>(ComPtr<TI0> pVideoProcessor, int* pEnabled, Silk.NET.Maths.Vector2D<int>* pSize) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetOutputConstriction((ID3D11VideoProcessor*) pVideoProcessor.Handle, pEnabled, pSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetOutputConstriction<TI0>(ComPtr<TI0> pVideoProcessor, int* pEnabled, ref Silk.NET.Maths.Vector2D<int> pSize) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetOutputConstriction((ID3D11VideoProcessor*) pVideoProcessor.Handle, pEnabled, ref pSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetOutputConstriction<TI0>(ComPtr<TI0> pVideoProcessor, ref int pEnabled, Silk.NET.Maths.Vector2D<int>* pSize) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetOutputConstriction((ID3D11VideoProcessor*) pVideoProcessor.Handle, ref pEnabled, pSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorGetOutputConstriction<TI0>(ComPtr<TI0> pVideoProcessor, ref int pEnabled, ref Silk.NET.Maths.Vector2D<int> pSize) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetOutputConstriction((ID3D11VideoProcessor*) pVideoProcessor.Handle, ref pEnabled, ref pSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetOutputStereoMode<TI0>(ComPtr<TI0> pVideoProcessor, int* pEnabled) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetOutputStereoMode((ID3D11VideoProcessor*) pVideoProcessor.Handle, pEnabled);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorGetOutputStereoMode<TI0>(ComPtr<TI0> pVideoProcessor, ref int pEnabled) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetOutputStereoMode((ID3D11VideoProcessor*) pVideoProcessor.Handle, ref pEnabled);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int VideoProcessorGetOutputExtension<TI0>(ComPtr<TI0> pVideoProcessor, Guid* pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->VideoProcessorGetOutputExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, pExtensionGuid, DataSize, pData);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int VideoProcessorGetOutputExtension<T0, TI0>(ComPtr<TI0> pVideoProcessor, Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->VideoProcessorGetOutputExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, pExtensionGuid, DataSize, ref pData);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int VideoProcessorGetOutputExtension<TI0>(ComPtr<TI0> pVideoProcessor, ref Guid pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->VideoProcessorGetOutputExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, ref pExtensionGuid, DataSize, pData);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int VideoProcessorGetOutputExtension<T0, TI0>(ComPtr<TI0> pVideoProcessor, ref Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->VideoProcessorGetOutputExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, ref pExtensionGuid, DataSize, ref pData);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorSetStreamFrameFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, VideoFrameFormat FrameFormat) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorSetStreamFrameFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, FrameFormat);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorSetStreamColorSpace<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, VideoProcessorColorSpace* pColorSpace) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorSetStreamColorSpace((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pColorSpace);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorSetStreamColorSpace<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref VideoProcessorColorSpace pColorSpace) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorSetStreamColorSpace((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pColorSpace);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorSetStreamOutputRate<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, int RepeatFrame, Silk.NET.DXGI.Rational* pCustomRate) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorSetStreamOutputRate((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, OutputRate, RepeatFrame, pCustomRate);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorSetStreamOutputRate<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, int RepeatFrame, ref Silk.NET.DXGI.Rational pCustomRate) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorSetStreamOutputRate((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, OutputRate, RepeatFrame, ref pCustomRate);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorSetStreamSourceRect<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Rectangle<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorSetStreamSourceRect((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Enable, pRect);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorSetStreamSourceRect<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Maths.Rectangle<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorSetStreamSourceRect((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Enable, ref pRect);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorSetStreamDestRect<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Rectangle<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorSetStreamDestRect((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Enable, pRect);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorSetStreamDestRect<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Maths.Rectangle<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorSetStreamDestRect((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Enable, ref pRect);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorSetStreamAlpha<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, float Alpha) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorSetStreamAlpha((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Enable, Alpha);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorSetStreamPalette<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, uint Count, uint* pEntries) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorSetStreamPalette((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Count, pEntries);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorSetStreamPalette<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, uint Count, ref uint pEntries) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorSetStreamPalette((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Count, ref pEntries);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorSetStreamPixelAspectRatio<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.DXGI.Rational* pSourceAspectRatio, Silk.NET.DXGI.Rational* pDestinationAspectRatio) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorSetStreamPixelAspectRatio((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Enable, pSourceAspectRatio, pDestinationAspectRatio);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorSetStreamPixelAspectRatio<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.DXGI.Rational* pSourceAspectRatio, ref Silk.NET.DXGI.Rational pDestinationAspectRatio) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorSetStreamPixelAspectRatio((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Enable, pSourceAspectRatio, ref pDestinationAspectRatio);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorSetStreamPixelAspectRatio<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.DXGI.Rational pSourceAspectRatio, Silk.NET.DXGI.Rational* pDestinationAspectRatio) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorSetStreamPixelAspectRatio((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Enable, ref pSourceAspectRatio, pDestinationAspectRatio);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorSetStreamPixelAspectRatio<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.DXGI.Rational pSourceAspectRatio, ref Silk.NET.DXGI.Rational pDestinationAspectRatio) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorSetStreamPixelAspectRatio((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Enable, ref pSourceAspectRatio, ref pDestinationAspectRatio);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorSetStreamLumaKey<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, float Lower, float Upper) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorSetStreamLumaKey((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Enable, Lower, Upper);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorSetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, VideoProcessorStereoFormat Format, int LeftViewFrame0, int BaseViewFrame0, VideoProcessorStereoFlipMode FlipMode, int MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorSetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Enable, Format, LeftViewFrame0, BaseViewFrame0, FlipMode, MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorSetStreamAutoProcessingMode<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorSetStreamAutoProcessingMode((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Enable);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorSetStreamFilter<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, VideoProcessorFilter Filter, int Enable, int Level) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorSetStreamFilter((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Filter, Enable, Level);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int VideoProcessorSetStreamExtension<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, Guid* pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->VideoProcessorSetStreamExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pExtensionGuid, DataSize, pData);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int VideoProcessorSetStreamExtension<T0, TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->VideoProcessorSetStreamExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pExtensionGuid, DataSize, ref pData);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int VideoProcessorSetStreamExtension<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref Guid pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->VideoProcessorSetStreamExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pExtensionGuid, DataSize, pData);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int VideoProcessorSetStreamExtension<T0, TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->VideoProcessorSetStreamExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pExtensionGuid, DataSize, ref pData);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamFrameFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, VideoFrameFormat* pFrameFormat) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamFrameFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pFrameFormat);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorGetStreamFrameFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref VideoFrameFormat pFrameFormat) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamFrameFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pFrameFormat);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamColorSpace<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, VideoProcessorColorSpace* pColorSpace) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamColorSpace((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pColorSpace);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorGetStreamColorSpace<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref VideoProcessorColorSpace pColorSpace) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamColorSpace((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pColorSpace);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamOutputRate<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate* pOutputRate, int* pRepeatFrame, Silk.NET.DXGI.Rational* pCustomRate) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamOutputRate((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pOutputRate, pRepeatFrame, pCustomRate);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamOutputRate<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate* pOutputRate, int* pRepeatFrame, ref Silk.NET.DXGI.Rational pCustomRate) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamOutputRate((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pOutputRate, pRepeatFrame, ref pCustomRate);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamOutputRate<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate* pOutputRate, ref int pRepeatFrame, Silk.NET.DXGI.Rational* pCustomRate) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamOutputRate((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pOutputRate, ref pRepeatFrame, pCustomRate);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamOutputRate<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate* pOutputRate, ref int pRepeatFrame, ref Silk.NET.DXGI.Rational pCustomRate) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamOutputRate((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pOutputRate, ref pRepeatFrame, ref pCustomRate);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamOutputRate<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref VideoProcessorOutputRate pOutputRate, int* pRepeatFrame, Silk.NET.DXGI.Rational* pCustomRate) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamOutputRate((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pOutputRate, pRepeatFrame, pCustomRate);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamOutputRate<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref VideoProcessorOutputRate pOutputRate, int* pRepeatFrame, ref Silk.NET.DXGI.Rational pCustomRate) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamOutputRate((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pOutputRate, pRepeatFrame, ref pCustomRate);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamOutputRate<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref VideoProcessorOutputRate pOutputRate, ref int pRepeatFrame, Silk.NET.DXGI.Rational* pCustomRate) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamOutputRate((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pOutputRate, ref pRepeatFrame, pCustomRate);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorGetStreamOutputRate<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref VideoProcessorOutputRate pOutputRate, ref int pRepeatFrame, ref Silk.NET.DXGI.Rational pCustomRate) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamOutputRate((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pOutputRate, ref pRepeatFrame, ref pCustomRate);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamSourceRect<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnabled, Silk.NET.Maths.Rectangle<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamSourceRect((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnabled, pRect);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamSourceRect<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnabled, ref Silk.NET.Maths.Rectangle<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamSourceRect((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnabled, ref pRect);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamSourceRect<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnabled, Silk.NET.Maths.Rectangle<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamSourceRect((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnabled, pRect);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorGetStreamSourceRect<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnabled, ref Silk.NET.Maths.Rectangle<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamSourceRect((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnabled, ref pRect);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamDestRect<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnabled, Silk.NET.Maths.Rectangle<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamDestRect((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnabled, pRect);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamDestRect<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnabled, ref Silk.NET.Maths.Rectangle<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamDestRect((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnabled, ref pRect);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamDestRect<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnabled, Silk.NET.Maths.Rectangle<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamDestRect((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnabled, pRect);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorGetStreamDestRect<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnabled, ref Silk.NET.Maths.Rectangle<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamDestRect((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnabled, ref pRect);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamAlpha<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnabled, float* pAlpha) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamAlpha((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnabled, pAlpha);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamAlpha<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnabled, ref float pAlpha) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamAlpha((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnabled, ref pAlpha);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamAlpha<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnabled, float* pAlpha) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamAlpha((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnabled, pAlpha);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorGetStreamAlpha<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnabled, ref float pAlpha) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamAlpha((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnabled, ref pAlpha);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamPalette<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, uint Count, uint* pEntries) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamPalette((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Count, pEntries);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorGetStreamPalette<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, uint Count, ref uint pEntries) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamPalette((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Count, ref pEntries);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamPixelAspectRatio<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnabled, Silk.NET.DXGI.Rational* pSourceAspectRatio, Silk.NET.DXGI.Rational* pDestinationAspectRatio) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamPixelAspectRatio((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnabled, pSourceAspectRatio, pDestinationAspectRatio);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamPixelAspectRatio<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnabled, Silk.NET.DXGI.Rational* pSourceAspectRatio, ref Silk.NET.DXGI.Rational pDestinationAspectRatio) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamPixelAspectRatio((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnabled, pSourceAspectRatio, ref pDestinationAspectRatio);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamPixelAspectRatio<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnabled, ref Silk.NET.DXGI.Rational pSourceAspectRatio, Silk.NET.DXGI.Rational* pDestinationAspectRatio) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamPixelAspectRatio((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnabled, ref pSourceAspectRatio, pDestinationAspectRatio);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamPixelAspectRatio<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnabled, ref Silk.NET.DXGI.Rational pSourceAspectRatio, ref Silk.NET.DXGI.Rational pDestinationAspectRatio) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamPixelAspectRatio((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnabled, ref pSourceAspectRatio, ref pDestinationAspectRatio);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamPixelAspectRatio<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnabled, Silk.NET.DXGI.Rational* pSourceAspectRatio, Silk.NET.DXGI.Rational* pDestinationAspectRatio) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamPixelAspectRatio((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnabled, pSourceAspectRatio, pDestinationAspectRatio);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamPixelAspectRatio<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnabled, Silk.NET.DXGI.Rational* pSourceAspectRatio, ref Silk.NET.DXGI.Rational pDestinationAspectRatio) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamPixelAspectRatio((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnabled, pSourceAspectRatio, ref pDestinationAspectRatio);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamPixelAspectRatio<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnabled, ref Silk.NET.DXGI.Rational pSourceAspectRatio, Silk.NET.DXGI.Rational* pDestinationAspectRatio) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamPixelAspectRatio((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnabled, ref pSourceAspectRatio, pDestinationAspectRatio);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorGetStreamPixelAspectRatio<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnabled, ref Silk.NET.DXGI.Rational pSourceAspectRatio, ref Silk.NET.DXGI.Rational pDestinationAspectRatio) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamPixelAspectRatio((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnabled, ref pSourceAspectRatio, ref pDestinationAspectRatio);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamLumaKey<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnabled, float* pLower, float* pUpper) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamLumaKey((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnabled, pLower, pUpper);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamLumaKey<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnabled, float* pLower, ref float pUpper) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamLumaKey((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnabled, pLower, ref pUpper);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamLumaKey<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnabled, ref float pLower, float* pUpper) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamLumaKey((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnabled, ref pLower, pUpper);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamLumaKey<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnabled, ref float pLower, ref float pUpper) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamLumaKey((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnabled, ref pLower, ref pUpper);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamLumaKey<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnabled, float* pLower, float* pUpper) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamLumaKey((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnabled, pLower, pUpper);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamLumaKey<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnabled, float* pLower, ref float pUpper) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamLumaKey((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnabled, pLower, ref pUpper);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamLumaKey<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnabled, ref float pLower, float* pUpper) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamLumaKey((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnabled, ref pLower, pUpper);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorGetStreamLumaKey<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnabled, ref float pLower, ref float pUpper) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamLumaKey((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnabled, ref pLower, ref pUpper);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnable, VideoProcessorStereoFormat* pFormat, int* pLeftViewFrame0, int* pBaseViewFrame0, VideoProcessorStereoFlipMode* pFlipMode, int* MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnable, VideoProcessorStereoFormat* pFormat, int* pLeftViewFrame0, int* pBaseViewFrame0, VideoProcessorStereoFlipMode* pFlipMode, ref int MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, ref MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnable, VideoProcessorStereoFormat* pFormat, int* pLeftViewFrame0, int* pBaseViewFrame0, ref VideoProcessorStereoFlipMode pFlipMode, int* MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0, ref pFlipMode, MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnable, VideoProcessorStereoFormat* pFormat, int* pLeftViewFrame0, int* pBaseViewFrame0, ref VideoProcessorStereoFlipMode pFlipMode, ref int MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0, ref pFlipMode, ref MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnable, VideoProcessorStereoFormat* pFormat, int* pLeftViewFrame0, ref int pBaseViewFrame0, VideoProcessorStereoFlipMode* pFlipMode, int* MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnable, pFormat, pLeftViewFrame0, ref pBaseViewFrame0, pFlipMode, MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnable, VideoProcessorStereoFormat* pFormat, int* pLeftViewFrame0, ref int pBaseViewFrame0, VideoProcessorStereoFlipMode* pFlipMode, ref int MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnable, pFormat, pLeftViewFrame0, ref pBaseViewFrame0, pFlipMode, ref MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnable, VideoProcessorStereoFormat* pFormat, int* pLeftViewFrame0, ref int pBaseViewFrame0, ref VideoProcessorStereoFlipMode pFlipMode, int* MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnable, pFormat, pLeftViewFrame0, ref pBaseViewFrame0, ref pFlipMode, MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnable, VideoProcessorStereoFormat* pFormat, int* pLeftViewFrame0, ref int pBaseViewFrame0, ref VideoProcessorStereoFlipMode pFlipMode, ref int MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnable, pFormat, pLeftViewFrame0, ref pBaseViewFrame0, ref pFlipMode, ref MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnable, VideoProcessorStereoFormat* pFormat, ref int pLeftViewFrame0, int* pBaseViewFrame0, VideoProcessorStereoFlipMode* pFlipMode, int* MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnable, pFormat, ref pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnable, VideoProcessorStereoFormat* pFormat, ref int pLeftViewFrame0, int* pBaseViewFrame0, VideoProcessorStereoFlipMode* pFlipMode, ref int MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnable, pFormat, ref pLeftViewFrame0, pBaseViewFrame0, pFlipMode, ref MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnable, VideoProcessorStereoFormat* pFormat, ref int pLeftViewFrame0, int* pBaseViewFrame0, ref VideoProcessorStereoFlipMode pFlipMode, int* MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnable, pFormat, ref pLeftViewFrame0, pBaseViewFrame0, ref pFlipMode, MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnable, VideoProcessorStereoFormat* pFormat, ref int pLeftViewFrame0, int* pBaseViewFrame0, ref VideoProcessorStereoFlipMode pFlipMode, ref int MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnable, pFormat, ref pLeftViewFrame0, pBaseViewFrame0, ref pFlipMode, ref MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnable, VideoProcessorStereoFormat* pFormat, ref int pLeftViewFrame0, ref int pBaseViewFrame0, VideoProcessorStereoFlipMode* pFlipMode, int* MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnable, pFormat, ref pLeftViewFrame0, ref pBaseViewFrame0, pFlipMode, MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnable, VideoProcessorStereoFormat* pFormat, ref int pLeftViewFrame0, ref int pBaseViewFrame0, VideoProcessorStereoFlipMode* pFlipMode, ref int MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnable, pFormat, ref pLeftViewFrame0, ref pBaseViewFrame0, pFlipMode, ref MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnable, VideoProcessorStereoFormat* pFormat, ref int pLeftViewFrame0, ref int pBaseViewFrame0, ref VideoProcessorStereoFlipMode pFlipMode, int* MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnable, pFormat, ref pLeftViewFrame0, ref pBaseViewFrame0, ref pFlipMode, MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnable, VideoProcessorStereoFormat* pFormat, ref int pLeftViewFrame0, ref int pBaseViewFrame0, ref VideoProcessorStereoFlipMode pFlipMode, ref int MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnable, pFormat, ref pLeftViewFrame0, ref pBaseViewFrame0, ref pFlipMode, ref MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnable, ref VideoProcessorStereoFormat pFormat, int* pLeftViewFrame0, int* pBaseViewFrame0, VideoProcessorStereoFlipMode* pFlipMode, int* MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnable, ref pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnable, ref VideoProcessorStereoFormat pFormat, int* pLeftViewFrame0, int* pBaseViewFrame0, VideoProcessorStereoFlipMode* pFlipMode, ref int MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnable, ref pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, ref MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnable, ref VideoProcessorStereoFormat pFormat, int* pLeftViewFrame0, int* pBaseViewFrame0, ref VideoProcessorStereoFlipMode pFlipMode, int* MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnable, ref pFormat, pLeftViewFrame0, pBaseViewFrame0, ref pFlipMode, MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnable, ref VideoProcessorStereoFormat pFormat, int* pLeftViewFrame0, int* pBaseViewFrame0, ref VideoProcessorStereoFlipMode pFlipMode, ref int MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnable, ref pFormat, pLeftViewFrame0, pBaseViewFrame0, ref pFlipMode, ref MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnable, ref VideoProcessorStereoFormat pFormat, int* pLeftViewFrame0, ref int pBaseViewFrame0, VideoProcessorStereoFlipMode* pFlipMode, int* MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnable, ref pFormat, pLeftViewFrame0, ref pBaseViewFrame0, pFlipMode, MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnable, ref VideoProcessorStereoFormat pFormat, int* pLeftViewFrame0, ref int pBaseViewFrame0, VideoProcessorStereoFlipMode* pFlipMode, ref int MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnable, ref pFormat, pLeftViewFrame0, ref pBaseViewFrame0, pFlipMode, ref MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnable, ref VideoProcessorStereoFormat pFormat, int* pLeftViewFrame0, ref int pBaseViewFrame0, ref VideoProcessorStereoFlipMode pFlipMode, int* MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnable, ref pFormat, pLeftViewFrame0, ref pBaseViewFrame0, ref pFlipMode, MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnable, ref VideoProcessorStereoFormat pFormat, int* pLeftViewFrame0, ref int pBaseViewFrame0, ref VideoProcessorStereoFlipMode pFlipMode, ref int MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnable, ref pFormat, pLeftViewFrame0, ref pBaseViewFrame0, ref pFlipMode, ref MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnable, ref VideoProcessorStereoFormat pFormat, ref int pLeftViewFrame0, int* pBaseViewFrame0, VideoProcessorStereoFlipMode* pFlipMode, int* MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnable, ref pFormat, ref pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnable, ref VideoProcessorStereoFormat pFormat, ref int pLeftViewFrame0, int* pBaseViewFrame0, VideoProcessorStereoFlipMode* pFlipMode, ref int MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnable, ref pFormat, ref pLeftViewFrame0, pBaseViewFrame0, pFlipMode, ref MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnable, ref VideoProcessorStereoFormat pFormat, ref int pLeftViewFrame0, int* pBaseViewFrame0, ref VideoProcessorStereoFlipMode pFlipMode, int* MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnable, ref pFormat, ref pLeftViewFrame0, pBaseViewFrame0, ref pFlipMode, MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnable, ref VideoProcessorStereoFormat pFormat, ref int pLeftViewFrame0, int* pBaseViewFrame0, ref VideoProcessorStereoFlipMode pFlipMode, ref int MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnable, ref pFormat, ref pLeftViewFrame0, pBaseViewFrame0, ref pFlipMode, ref MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnable, ref VideoProcessorStereoFormat pFormat, ref int pLeftViewFrame0, ref int pBaseViewFrame0, VideoProcessorStereoFlipMode* pFlipMode, int* MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnable, ref pFormat, ref pLeftViewFrame0, ref pBaseViewFrame0, pFlipMode, MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnable, ref VideoProcessorStereoFormat pFormat, ref int pLeftViewFrame0, ref int pBaseViewFrame0, VideoProcessorStereoFlipMode* pFlipMode, ref int MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnable, ref pFormat, ref pLeftViewFrame0, ref pBaseViewFrame0, pFlipMode, ref MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnable, ref VideoProcessorStereoFormat pFormat, ref int pLeftViewFrame0, ref int pBaseViewFrame0, ref VideoProcessorStereoFlipMode pFlipMode, int* MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnable, ref pFormat, ref pLeftViewFrame0, ref pBaseViewFrame0, ref pFlipMode, MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnable, ref VideoProcessorStereoFormat pFormat, ref int pLeftViewFrame0, ref int pBaseViewFrame0, ref VideoProcessorStereoFlipMode pFlipMode, ref int MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnable, ref pFormat, ref pLeftViewFrame0, ref pBaseViewFrame0, ref pFlipMode, ref MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnable, VideoProcessorStereoFormat* pFormat, int* pLeftViewFrame0, int* pBaseViewFrame0, VideoProcessorStereoFlipMode* pFlipMode, int* MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnable, VideoProcessorStereoFormat* pFormat, int* pLeftViewFrame0, int* pBaseViewFrame0, VideoProcessorStereoFlipMode* pFlipMode, ref int MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, ref MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnable, VideoProcessorStereoFormat* pFormat, int* pLeftViewFrame0, int* pBaseViewFrame0, ref VideoProcessorStereoFlipMode pFlipMode, int* MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0, ref pFlipMode, MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnable, VideoProcessorStereoFormat* pFormat, int* pLeftViewFrame0, int* pBaseViewFrame0, ref VideoProcessorStereoFlipMode pFlipMode, ref int MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0, ref pFlipMode, ref MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnable, VideoProcessorStereoFormat* pFormat, int* pLeftViewFrame0, ref int pBaseViewFrame0, VideoProcessorStereoFlipMode* pFlipMode, int* MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnable, pFormat, pLeftViewFrame0, ref pBaseViewFrame0, pFlipMode, MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnable, VideoProcessorStereoFormat* pFormat, int* pLeftViewFrame0, ref int pBaseViewFrame0, VideoProcessorStereoFlipMode* pFlipMode, ref int MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnable, pFormat, pLeftViewFrame0, ref pBaseViewFrame0, pFlipMode, ref MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnable, VideoProcessorStereoFormat* pFormat, int* pLeftViewFrame0, ref int pBaseViewFrame0, ref VideoProcessorStereoFlipMode pFlipMode, int* MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnable, pFormat, pLeftViewFrame0, ref pBaseViewFrame0, ref pFlipMode, MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnable, VideoProcessorStereoFormat* pFormat, int* pLeftViewFrame0, ref int pBaseViewFrame0, ref VideoProcessorStereoFlipMode pFlipMode, ref int MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnable, pFormat, pLeftViewFrame0, ref pBaseViewFrame0, ref pFlipMode, ref MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnable, VideoProcessorStereoFormat* pFormat, ref int pLeftViewFrame0, int* pBaseViewFrame0, VideoProcessorStereoFlipMode* pFlipMode, int* MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnable, pFormat, ref pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnable, VideoProcessorStereoFormat* pFormat, ref int pLeftViewFrame0, int* pBaseViewFrame0, VideoProcessorStereoFlipMode* pFlipMode, ref int MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnable, pFormat, ref pLeftViewFrame0, pBaseViewFrame0, pFlipMode, ref MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnable, VideoProcessorStereoFormat* pFormat, ref int pLeftViewFrame0, int* pBaseViewFrame0, ref VideoProcessorStereoFlipMode pFlipMode, int* MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnable, pFormat, ref pLeftViewFrame0, pBaseViewFrame0, ref pFlipMode, MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnable, VideoProcessorStereoFormat* pFormat, ref int pLeftViewFrame0, int* pBaseViewFrame0, ref VideoProcessorStereoFlipMode pFlipMode, ref int MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnable, pFormat, ref pLeftViewFrame0, pBaseViewFrame0, ref pFlipMode, ref MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnable, VideoProcessorStereoFormat* pFormat, ref int pLeftViewFrame0, ref int pBaseViewFrame0, VideoProcessorStereoFlipMode* pFlipMode, int* MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnable, pFormat, ref pLeftViewFrame0, ref pBaseViewFrame0, pFlipMode, MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnable, VideoProcessorStereoFormat* pFormat, ref int pLeftViewFrame0, ref int pBaseViewFrame0, VideoProcessorStereoFlipMode* pFlipMode, ref int MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnable, pFormat, ref pLeftViewFrame0, ref pBaseViewFrame0, pFlipMode, ref MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnable, VideoProcessorStereoFormat* pFormat, ref int pLeftViewFrame0, ref int pBaseViewFrame0, ref VideoProcessorStereoFlipMode pFlipMode, int* MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnable, pFormat, ref pLeftViewFrame0, ref pBaseViewFrame0, ref pFlipMode, MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnable, VideoProcessorStereoFormat* pFormat, ref int pLeftViewFrame0, ref int pBaseViewFrame0, ref VideoProcessorStereoFlipMode pFlipMode, ref int MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnable, pFormat, ref pLeftViewFrame0, ref pBaseViewFrame0, ref pFlipMode, ref MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnable, ref VideoProcessorStereoFormat pFormat, int* pLeftViewFrame0, int* pBaseViewFrame0, VideoProcessorStereoFlipMode* pFlipMode, int* MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnable, ref pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnable, ref VideoProcessorStereoFormat pFormat, int* pLeftViewFrame0, int* pBaseViewFrame0, VideoProcessorStereoFlipMode* pFlipMode, ref int MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnable, ref pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, ref MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnable, ref VideoProcessorStereoFormat pFormat, int* pLeftViewFrame0, int* pBaseViewFrame0, ref VideoProcessorStereoFlipMode pFlipMode, int* MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnable, ref pFormat, pLeftViewFrame0, pBaseViewFrame0, ref pFlipMode, MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnable, ref VideoProcessorStereoFormat pFormat, int* pLeftViewFrame0, int* pBaseViewFrame0, ref VideoProcessorStereoFlipMode pFlipMode, ref int MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnable, ref pFormat, pLeftViewFrame0, pBaseViewFrame0, ref pFlipMode, ref MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnable, ref VideoProcessorStereoFormat pFormat, int* pLeftViewFrame0, ref int pBaseViewFrame0, VideoProcessorStereoFlipMode* pFlipMode, int* MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnable, ref pFormat, pLeftViewFrame0, ref pBaseViewFrame0, pFlipMode, MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnable, ref VideoProcessorStereoFormat pFormat, int* pLeftViewFrame0, ref int pBaseViewFrame0, VideoProcessorStereoFlipMode* pFlipMode, ref int MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnable, ref pFormat, pLeftViewFrame0, ref pBaseViewFrame0, pFlipMode, ref MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnable, ref VideoProcessorStereoFormat pFormat, int* pLeftViewFrame0, ref int pBaseViewFrame0, ref VideoProcessorStereoFlipMode pFlipMode, int* MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnable, ref pFormat, pLeftViewFrame0, ref pBaseViewFrame0, ref pFlipMode, MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnable, ref VideoProcessorStereoFormat pFormat, int* pLeftViewFrame0, ref int pBaseViewFrame0, ref VideoProcessorStereoFlipMode pFlipMode, ref int MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnable, ref pFormat, pLeftViewFrame0, ref pBaseViewFrame0, ref pFlipMode, ref MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnable, ref VideoProcessorStereoFormat pFormat, ref int pLeftViewFrame0, int* pBaseViewFrame0, VideoProcessorStereoFlipMode* pFlipMode, int* MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnable, ref pFormat, ref pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnable, ref VideoProcessorStereoFormat pFormat, ref int pLeftViewFrame0, int* pBaseViewFrame0, VideoProcessorStereoFlipMode* pFlipMode, ref int MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnable, ref pFormat, ref pLeftViewFrame0, pBaseViewFrame0, pFlipMode, ref MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnable, ref VideoProcessorStereoFormat pFormat, ref int pLeftViewFrame0, int* pBaseViewFrame0, ref VideoProcessorStereoFlipMode pFlipMode, int* MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnable, ref pFormat, ref pLeftViewFrame0, pBaseViewFrame0, ref pFlipMode, MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnable, ref VideoProcessorStereoFormat pFormat, ref int pLeftViewFrame0, int* pBaseViewFrame0, ref VideoProcessorStereoFlipMode pFlipMode, ref int MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnable, ref pFormat, ref pLeftViewFrame0, pBaseViewFrame0, ref pFlipMode, ref MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnable, ref VideoProcessorStereoFormat pFormat, ref int pLeftViewFrame0, ref int pBaseViewFrame0, VideoProcessorStereoFlipMode* pFlipMode, int* MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnable, ref pFormat, ref pLeftViewFrame0, ref pBaseViewFrame0, pFlipMode, MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnable, ref VideoProcessorStereoFormat pFormat, ref int pLeftViewFrame0, ref int pBaseViewFrame0, VideoProcessorStereoFlipMode* pFlipMode, ref int MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnable, ref pFormat, ref pLeftViewFrame0, ref pBaseViewFrame0, pFlipMode, ref MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnable, ref VideoProcessorStereoFormat pFormat, ref int pLeftViewFrame0, ref int pBaseViewFrame0, ref VideoProcessorStereoFlipMode pFlipMode, int* MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnable, ref pFormat, ref pLeftViewFrame0, ref pBaseViewFrame0, ref pFlipMode, MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorGetStreamStereoFormat<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnable, ref VideoProcessorStereoFormat pFormat, ref int pLeftViewFrame0, ref int pBaseViewFrame0, ref VideoProcessorStereoFlipMode pFlipMode, ref int MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamStereoFormat((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnable, ref pFormat, ref pLeftViewFrame0, ref pBaseViewFrame0, ref pFlipMode, ref MonoOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamAutoProcessingMode<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnabled) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamAutoProcessingMode((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnabled);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorGetStreamAutoProcessingMode<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnabled) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamAutoProcessingMode((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnabled);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamFilter<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, VideoProcessorFilter Filter, int* pEnabled, int* pLevel) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamFilter((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Filter, pEnabled, pLevel);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamFilter<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, VideoProcessorFilter Filter, int* pEnabled, ref int pLevel) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamFilter((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Filter, pEnabled, ref pLevel);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamFilter<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, VideoProcessorFilter Filter, ref int pEnabled, int* pLevel) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamFilter((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Filter, ref pEnabled, pLevel);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorGetStreamFilter<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, VideoProcessorFilter Filter, ref int pEnabled, ref int pLevel) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamFilter((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Filter, ref pEnabled, ref pLevel);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int VideoProcessorGetStreamExtension<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, Guid* pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->VideoProcessorGetStreamExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pExtensionGuid, DataSize, pData);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int VideoProcessorGetStreamExtension<T0, TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->VideoProcessorGetStreamExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pExtensionGuid, DataSize, ref pData);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int VideoProcessorGetStreamExtension<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref Guid pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->VideoProcessorGetStreamExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pExtensionGuid, DataSize, pData);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int VideoProcessorGetStreamExtension<T0, TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->VideoProcessorGetStreamExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pExtensionGuid, DataSize, ref pData);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int VideoProcessorBlt<TI0, TI1>(ComPtr<TI0> pVideoProcessor, ComPtr<TI1> pView, uint OutputFrame, uint StreamCount, VideoProcessorStream* pStreams) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessorOutputView>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->VideoProcessorBlt((ID3D11VideoProcessor*) pVideoProcessor.Handle, (ID3D11VideoProcessorOutputView*) pView.Handle, OutputFrame, StreamCount, pStreams);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int VideoProcessorBlt<TI0, TI1>(ComPtr<TI0> pVideoProcessor, ComPtr<TI1> pView, uint OutputFrame, uint StreamCount, ref VideoProcessorStream pStreams) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessorOutputView>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->VideoProcessorBlt((ID3D11VideoProcessor*) pVideoProcessor.Handle, (ID3D11VideoProcessorOutputView*) pView.Handle, OutputFrame, StreamCount, ref pStreams);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int VideoProcessorBlt<TI0>(ComPtr<TI0> pVideoProcessor, ref ID3D11VideoProcessorOutputView pView, uint OutputFrame, uint StreamCount, VideoProcessorStream* pStreams) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->VideoProcessorBlt((ID3D11VideoProcessor*) pVideoProcessor.Handle, ref pView, OutputFrame, StreamCount, pStreams);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int VideoProcessorBlt<TI0>(ComPtr<TI0> pVideoProcessor, ref ID3D11VideoProcessorOutputView pView, uint OutputFrame, uint StreamCount, ref VideoProcessorStream pStreams) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->VideoProcessorBlt((ID3D11VideoProcessor*) pVideoProcessor.Handle, ref pView, OutputFrame, StreamCount, ref pStreams);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int VideoProcessorBlt<TI0>(ref ID3D11VideoProcessor pVideoProcessor, ComPtr<TI0> pView, uint OutputFrame, uint StreamCount, VideoProcessorStream* pStreams) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessorOutputView>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->VideoProcessorBlt(ref pVideoProcessor, (ID3D11VideoProcessorOutputView*) pView.Handle, OutputFrame, StreamCount, pStreams);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int VideoProcessorBlt<TI0>(ref ID3D11VideoProcessor pVideoProcessor, ComPtr<TI0> pView, uint OutputFrame, uint StreamCount, ref VideoProcessorStream pStreams) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessorOutputView>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->VideoProcessorBlt(ref pVideoProcessor, (ID3D11VideoProcessorOutputView*) pView.Handle, OutputFrame, StreamCount, ref pStreams);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int NegotiateCryptoSessionKeyExchange<TI0>(ComPtr<TI0> pCryptoSession, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->NegotiateCryptoSessionKeyExchange((ID3D11CryptoSession*) pCryptoSession.Handle, DataSize, pData);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int NegotiateCryptoSessionKeyExchange<T0, TI0>(ComPtr<TI0> pCryptoSession, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->NegotiateCryptoSessionKeyExchange((ID3D11CryptoSession*) pCryptoSession.Handle, DataSize, ref pData);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void EncryptionBlt<TI0, TI1, TI2>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->EncryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, IVSize, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void EncryptionBlt<T0, TI0, TI1, TI2>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->EncryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, IVSize, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void EncryptionBlt<TI0, TI1>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->EncryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, IVSize, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void EncryptionBlt<T0, TI0, TI1>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->EncryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, IVSize, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void EncryptionBlt<TI0, TI1>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->EncryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, IVSize, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void EncryptionBlt<T0, TI0, TI1>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->EncryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, IVSize, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void EncryptionBlt<TI0>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->EncryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, ref pDstSurface, IVSize, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void EncryptionBlt<T0, TI0>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->EncryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, ref pDstSurface, IVSize, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void EncryptionBlt<TI0, TI1>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->EncryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, IVSize, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void EncryptionBlt<T0, TI0, TI1>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->EncryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, IVSize, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void EncryptionBlt<TI0>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->EncryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, IVSize, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void EncryptionBlt<T0, TI0>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->EncryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, IVSize, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void EncryptionBlt<TI0>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->EncryptionBlt(ref pCryptoSession, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, IVSize, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void EncryptionBlt<T0, TI0>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->EncryptionBlt(ref pCryptoSession, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, IVSize, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<TI0, TI1, TI2>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<T0, TI0, TI1, TI2>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<T0, TI0, TI1, TI2>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<T0, T1, TI0, TI1, TI2>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<TI0, TI1, TI2>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<T0, TI0, TI1, TI2>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<T0, TI0, TI1, TI2>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void DecryptionBlt<T0, T1, TI0, TI1, TI2>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<TI0, TI1>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<T0, TI0, TI1>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<T0, TI0, TI1>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<T0, T1, TI0, TI1>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<TI0, TI1>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, ref pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<T0, TI0, TI1>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, ref pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<T0, TI0, TI1>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, ref pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void DecryptionBlt<T0, T1, TI0, TI1>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, ref pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<TI0, TI1>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<T0, TI0, TI1>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<T0, TI0, TI1>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<T0, T1, TI0, TI1>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<TI0, TI1>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<T0, TI0, TI1>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<T0, TI0, TI1>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void DecryptionBlt<T0, T1, TI0, TI1>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<TI0>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, ref pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<T0, TI0>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, ref pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<T0, TI0>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, ref pDstSurface, pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<T0, T1, TI0>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, ref pDstSurface, pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<TI0>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, ref pDstSurface, ref pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<T0, TI0>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, ref pDstSurface, ref pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<T0, TI0>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, ref pDstSurface, ref pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void DecryptionBlt<T0, T1, TI0>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, ref pDstSurface, ref pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<TI0, TI1>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<T0, TI0, TI1>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<T0, TI0, TI1>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<T0, T1, TI0, TI1>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<TI0, TI1>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<T0, TI0, TI1>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<T0, TI0, TI1>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void DecryptionBlt<T0, T1, TI0, TI1>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<TI0>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<T0, TI0>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<T0, TI0>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<T0, T1, TI0>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<TI0>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, ref pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<T0, TI0>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, ref pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<T0, TI0>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, ref pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void DecryptionBlt<T0, T1, TI0>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, ref pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<TI0>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt(ref pCryptoSession, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<T0, TI0>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt(ref pCryptoSession, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<T0, TI0>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt(ref pCryptoSession, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<T0, T1, TI0>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt(ref pCryptoSession, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<TI0>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt(ref pCryptoSession, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<T0, TI0>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt(ref pCryptoSession, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DecryptionBlt<T0, TI0>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt(ref pCryptoSession, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void DecryptionBlt<T0, T1, TI0>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DecryptionBlt(ref pCryptoSession, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void StartSessionKeyRefresh<TI0>(ComPtr<TI0> pCryptoSession, uint RandomNumberSize, void* pRandomNumber) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->StartSessionKeyRefresh((ID3D11CryptoSession*) pCryptoSession.Handle, RandomNumberSize, pRandomNumber);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void StartSessionKeyRefresh<T0, TI0>(ComPtr<TI0> pCryptoSession, uint RandomNumberSize, ref T0 pRandomNumber) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->StartSessionKeyRefresh((ID3D11CryptoSession*) pCryptoSession.Handle, RandomNumberSize, ref pRandomNumber);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void FinishSessionKeyRefresh<TI0>(ComPtr<TI0> pCryptoSession) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->FinishSessionKeyRefresh((ID3D11CryptoSession*) pCryptoSession.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetEncryptionBltKey<TI0>(ComPtr<TI0> pCryptoSession, uint KeySize, void* pReadbackKey) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetEncryptionBltKey((ID3D11CryptoSession*) pCryptoSession.Handle, KeySize, pReadbackKey);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetEncryptionBltKey<T0, TI0>(ComPtr<TI0> pCryptoSession, uint KeySize, ref T0 pReadbackKey) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetEncryptionBltKey((ID3D11CryptoSession*) pCryptoSession.Handle, KeySize, ref pReadbackKey);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int NegotiateAuthenticatedChannelKeyExchange<TI0>(ComPtr<TI0> pChannel, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->NegotiateAuthenticatedChannelKeyExchange((ID3D11AuthenticatedChannel*) pChannel.Handle, DataSize, pData);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int NegotiateAuthenticatedChannelKeyExchange<T0, TI0>(ComPtr<TI0> pChannel, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->NegotiateAuthenticatedChannelKeyExchange((ID3D11AuthenticatedChannel*) pChannel.Handle, DataSize, ref pData);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryAuthenticatedChannel<TI0>(ComPtr<TI0> pChannel, uint InputSize, void* pInput, uint OutputSize, void* pOutput) where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->QueryAuthenticatedChannel((ID3D11AuthenticatedChannel*) pChannel.Handle, InputSize, pInput, OutputSize, pOutput);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryAuthenticatedChannel<T0, TI0>(ComPtr<TI0> pChannel, uint InputSize, void* pInput, uint OutputSize, ref T0 pOutput) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->QueryAuthenticatedChannel((ID3D11AuthenticatedChannel*) pChannel.Handle, InputSize, pInput, OutputSize, ref pOutput);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryAuthenticatedChannel<T0, TI0>(ComPtr<TI0> pChannel, uint InputSize, ref T0 pInput, uint OutputSize, void* pOutput) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->QueryAuthenticatedChannel((ID3D11AuthenticatedChannel*) pChannel.Handle, InputSize, ref pInput, OutputSize, pOutput);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryAuthenticatedChannel<T0, T1, TI0>(ComPtr<TI0> pChannel, uint InputSize, ref T0 pInput, uint OutputSize, ref T1 pOutput) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->QueryAuthenticatedChannel((ID3D11AuthenticatedChannel*) pChannel.Handle, InputSize, ref pInput, OutputSize, ref pOutput);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int ConfigureAuthenticatedChannel<TI0>(ComPtr<TI0> pChannel, uint InputSize, void* pInput, AuthenticatedConfigureOutput* pOutput) where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->ConfigureAuthenticatedChannel((ID3D11AuthenticatedChannel*) pChannel.Handle, InputSize, pInput, pOutput);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int ConfigureAuthenticatedChannel<TI0>(ComPtr<TI0> pChannel, uint InputSize, void* pInput, ref AuthenticatedConfigureOutput pOutput) where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->ConfigureAuthenticatedChannel((ID3D11AuthenticatedChannel*) pChannel.Handle, InputSize, pInput, ref pOutput);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int ConfigureAuthenticatedChannel<T0, TI0>(ComPtr<TI0> pChannel, uint InputSize, ref T0 pInput, AuthenticatedConfigureOutput* pOutput) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->ConfigureAuthenticatedChannel((ID3D11AuthenticatedChannel*) pChannel.Handle, InputSize, ref pInput, pOutput);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int ConfigureAuthenticatedChannel<T0, TI0>(ComPtr<TI0> pChannel, uint InputSize, ref T0 pInput, ref AuthenticatedConfigureOutput pOutput) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->ConfigureAuthenticatedChannel((ID3D11AuthenticatedChannel*) pChannel.Handle, InputSize, ref pInput, ref pOutput);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorSetStreamRotation<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, VideoProcessorRotation Rotation) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorSetStreamRotation((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Enable, Rotation);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamRotation<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnable, VideoProcessorRotation* pRotation) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamRotation((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnable, pRotation);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamRotation<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnable, ref VideoProcessorRotation pRotation) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamRotation((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, pEnable, ref pRotation);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamRotation<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnable, VideoProcessorRotation* pRotation) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamRotation((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnable, pRotation);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorGetStreamRotation<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnable, ref VideoProcessorRotation pRotation) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->VideoProcessorGetStreamRotation((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pEnable, ref pRotation);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

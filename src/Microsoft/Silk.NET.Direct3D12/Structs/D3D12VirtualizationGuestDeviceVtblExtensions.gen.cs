@@ -206,6 +206,22 @@ public unsafe static class D3D12VirtualizationGuestDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int ShareWithHost<TI0>(this ComPtr<ID3D12VirtualizationGuestDevice> thisVtbl, ComPtr<TI0> pObject, void** pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->ShareWithHost((ID3D12DeviceChild*) pObject.Handle, pHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int ShareWithHost<TI0>(this ComPtr<ID3D12VirtualizationGuestDevice> thisVtbl, ComPtr<TI0> pObject, ref void* pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->ShareWithHost((ID3D12DeviceChild*) pObject.Handle, ref pHandle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int ShareWithHost(this ComPtr<ID3D12VirtualizationGuestDevice> thisVtbl, Span<ID3D12DeviceChild> pObject, void** pHandle)
     {
         var @this = thisVtbl.Handle;
@@ -222,11 +238,27 @@ public unsafe static class D3D12VirtualizationGuestDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateFenceFd<TI0>(this ComPtr<ID3D12VirtualizationGuestDevice> thisVtbl, ComPtr<TI0> pFence, ulong FenceValue, int* pFenceFd) where TI0 : unmanaged, IComVtbl<ID3D12Fence>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateFenceFd((ID3D12Fence*) pFence.Handle, FenceValue, pFenceFd);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateFenceFd(this ComPtr<ID3D12VirtualizationGuestDevice> thisVtbl, ID3D12Fence* pFence, ulong FenceValue, Span<int> pFenceFd)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateFenceFd(pFence, FenceValue, ref pFenceFd.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateFenceFd<TI0>(this ComPtr<ID3D12VirtualizationGuestDevice> thisVtbl, ComPtr<TI0> pFence, ulong FenceValue, ref int pFenceFd) where TI0 : unmanaged, IComVtbl<ID3D12Fence>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateFenceFd((ID3D12Fence*) pFence.Handle, FenceValue, ref pFenceFd);
     }
 
     /// <summary>To be documented.</summary>

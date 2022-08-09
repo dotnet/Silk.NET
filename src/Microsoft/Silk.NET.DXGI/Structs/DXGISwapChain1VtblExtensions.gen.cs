@@ -908,6 +908,14 @@ public unsafe static class DXGISwapChain1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateDataInterface<TI0>(this ComPtr<IDXGISwapChain1> thisVtbl, Guid* Name, [Flow(FlowDirection.In)] ComPtr<TI0> pUnknown) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->SetPrivateDataInterface(Name, (Silk.NET.Core.Native.IUnknown*) pUnknown.Handle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int SetPrivateDataInterface(this ComPtr<IDXGISwapChain1> thisVtbl, Guid* Name, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pUnknown)
     {
         var @this = thisVtbl.Handle;
@@ -921,6 +929,14 @@ public unsafe static class DXGISwapChain1VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->SetPrivateDataInterface(ref Name.GetPinnableReference(), pUnknown);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPrivateDataInterface<TI0>(this ComPtr<IDXGISwapChain1> thisVtbl, ref Guid Name, [Flow(FlowDirection.In)] ComPtr<TI0> pUnknown) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->SetPrivateDataInterface(ref Name, (Silk.NET.Core.Native.IUnknown*) pUnknown.Handle);
     }
 
     /// <summary>To be documented.</summary>
@@ -1060,6 +1076,14 @@ public unsafe static class DXGISwapChain1VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetBuffer(Buffer, ref riid.GetPinnableReference(), ref ppSurface);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetFullscreenState<TI0>(this ComPtr<IDXGISwapChain1> thisVtbl, int Fullscreen, ComPtr<TI0> pTarget) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->SetFullscreenState(Fullscreen, (IDXGIOutput*) pTarget.Handle);
     }
 
     /// <summary>To be documented.</summary>

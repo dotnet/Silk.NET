@@ -45796,11 +45796,19 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateShaderResourceView<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ID3D11Resource* pResource, ShaderResourceViewDesc* pDesc, ref ComPtr<TI0> ppSRView) where TI0 : unmanaged, IComVtbl<ID3D11ShaderResourceView>, IComVtbl<TI0>
+    public static unsafe int CreateShaderResourceView<TI0, TI1>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pResource, ShaderResourceViewDesc* pDesc, ref ComPtr<TI1> ppSRView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11ShaderResourceView>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateShaderResourceView(pResource, pDesc, (ID3D11ShaderResourceView**) ppSRView.GetAddressOf());
+        return @this->CreateShaderResourceView((ID3D11Resource*) pResource.Handle, pDesc, (ID3D11ShaderResourceView**) ppSRView.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateShaderResourceView<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pResource, ShaderResourceViewDesc* pDesc, ref ID3D11ShaderResourceView* ppSRView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateShaderResourceView((ID3D11Resource*) pResource.Handle, pDesc, ref ppSRView);
     }
 
     /// <summary>To be documented.</summary>
@@ -45812,11 +45820,11 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateShaderResourceView<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ID3D11Resource* pResource, ref ShaderResourceViewDesc pDesc, ref ComPtr<TI0> ppSRView) where TI0 : unmanaged, IComVtbl<ID3D11ShaderResourceView>, IComVtbl<TI0>
+    public static int CreateShaderResourceView<TI0, TI1>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pResource, ref ShaderResourceViewDesc pDesc, ref ComPtr<TI1> ppSRView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11ShaderResourceView>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateShaderResourceView(pResource, ref pDesc, (ID3D11ShaderResourceView**) ppSRView.GetAddressOf());
+        return @this->CreateShaderResourceView((ID3D11Resource*) pResource.Handle, ref pDesc, (ID3D11ShaderResourceView**) ppSRView.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -45825,6 +45833,14 @@ public unsafe static class D3D11Device4VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateShaderResourceView(pResource, ref pDesc.GetPinnableReference(), ref ppSRView);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateShaderResourceView<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pResource, ref ShaderResourceViewDesc pDesc, ref ID3D11ShaderResourceView* ppSRView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateShaderResourceView((ID3D11Resource*) pResource.Handle, ref pDesc, ref ppSRView);
     }
 
     /// <summary>To be documented.</summary>
@@ -45876,11 +45892,19 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateUnorderedAccessView<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ID3D11Resource* pResource, UnorderedAccessViewDesc* pDesc, ref ComPtr<TI0> ppUAView) where TI0 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI0>
+    public static unsafe int CreateUnorderedAccessView<TI0, TI1>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pResource, UnorderedAccessViewDesc* pDesc, ref ComPtr<TI1> ppUAView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateUnorderedAccessView(pResource, pDesc, (ID3D11UnorderedAccessView**) ppUAView.GetAddressOf());
+        return @this->CreateUnorderedAccessView((ID3D11Resource*) pResource.Handle, pDesc, (ID3D11UnorderedAccessView**) ppUAView.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateUnorderedAccessView<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pResource, UnorderedAccessViewDesc* pDesc, ref ID3D11UnorderedAccessView* ppUAView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateUnorderedAccessView((ID3D11Resource*) pResource.Handle, pDesc, ref ppUAView);
     }
 
     /// <summary>To be documented.</summary>
@@ -45892,11 +45916,11 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateUnorderedAccessView<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ID3D11Resource* pResource, ref UnorderedAccessViewDesc pDesc, ref ComPtr<TI0> ppUAView) where TI0 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI0>
+    public static int CreateUnorderedAccessView<TI0, TI1>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pResource, ref UnorderedAccessViewDesc pDesc, ref ComPtr<TI1> ppUAView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateUnorderedAccessView(pResource, ref pDesc, (ID3D11UnorderedAccessView**) ppUAView.GetAddressOf());
+        return @this->CreateUnorderedAccessView((ID3D11Resource*) pResource.Handle, ref pDesc, (ID3D11UnorderedAccessView**) ppUAView.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -45905,6 +45929,14 @@ public unsafe static class D3D11Device4VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateUnorderedAccessView(pResource, ref pDesc.GetPinnableReference(), ref ppUAView);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateUnorderedAccessView<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pResource, ref UnorderedAccessViewDesc pDesc, ref ID3D11UnorderedAccessView* ppUAView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateUnorderedAccessView((ID3D11Resource*) pResource.Handle, ref pDesc, ref ppUAView);
     }
 
     /// <summary>To be documented.</summary>
@@ -45956,11 +45988,19 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRenderTargetView<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ID3D11Resource* pResource, RenderTargetViewDesc* pDesc, ref ComPtr<TI0> ppRTView) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0>
+    public static unsafe int CreateRenderTargetView<TI0, TI1>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pResource, RenderTargetViewDesc* pDesc, ref ComPtr<TI1> ppRTView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateRenderTargetView(pResource, pDesc, (ID3D11RenderTargetView**) ppRTView.GetAddressOf());
+        return @this->CreateRenderTargetView((ID3D11Resource*) pResource.Handle, pDesc, (ID3D11RenderTargetView**) ppRTView.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateRenderTargetView<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pResource, RenderTargetViewDesc* pDesc, ref ID3D11RenderTargetView* ppRTView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateRenderTargetView((ID3D11Resource*) pResource.Handle, pDesc, ref ppRTView);
     }
 
     /// <summary>To be documented.</summary>
@@ -45972,11 +46012,11 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRenderTargetView<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ID3D11Resource* pResource, ref RenderTargetViewDesc pDesc, ref ComPtr<TI0> ppRTView) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0>
+    public static int CreateRenderTargetView<TI0, TI1>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pResource, ref RenderTargetViewDesc pDesc, ref ComPtr<TI1> ppRTView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateRenderTargetView(pResource, ref pDesc, (ID3D11RenderTargetView**) ppRTView.GetAddressOf());
+        return @this->CreateRenderTargetView((ID3D11Resource*) pResource.Handle, ref pDesc, (ID3D11RenderTargetView**) ppRTView.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -45985,6 +46025,14 @@ public unsafe static class D3D11Device4VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateRenderTargetView(pResource, ref pDesc.GetPinnableReference(), ref ppRTView);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateRenderTargetView<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pResource, ref RenderTargetViewDesc pDesc, ref ID3D11RenderTargetView* ppRTView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateRenderTargetView((ID3D11Resource*) pResource.Handle, ref pDesc, ref ppRTView);
     }
 
     /// <summary>To be documented.</summary>
@@ -46036,11 +46084,19 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDepthStencilView<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ID3D11Resource* pResource, DepthStencilViewDesc* pDesc, ref ComPtr<TI0> ppDepthStencilView) where TI0 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI0>
+    public static unsafe int CreateDepthStencilView<TI0, TI1>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pResource, DepthStencilViewDesc* pDesc, ref ComPtr<TI1> ppDepthStencilView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateDepthStencilView(pResource, pDesc, (ID3D11DepthStencilView**) ppDepthStencilView.GetAddressOf());
+        return @this->CreateDepthStencilView((ID3D11Resource*) pResource.Handle, pDesc, (ID3D11DepthStencilView**) ppDepthStencilView.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDepthStencilView<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pResource, DepthStencilViewDesc* pDesc, ref ID3D11DepthStencilView* ppDepthStencilView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateDepthStencilView((ID3D11Resource*) pResource.Handle, pDesc, ref ppDepthStencilView);
     }
 
     /// <summary>To be documented.</summary>
@@ -46052,11 +46108,11 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDepthStencilView<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ID3D11Resource* pResource, ref DepthStencilViewDesc pDesc, ref ComPtr<TI0> ppDepthStencilView) where TI0 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI0>
+    public static int CreateDepthStencilView<TI0, TI1>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pResource, ref DepthStencilViewDesc pDesc, ref ComPtr<TI1> ppDepthStencilView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateDepthStencilView(pResource, ref pDesc, (ID3D11DepthStencilView**) ppDepthStencilView.GetAddressOf());
+        return @this->CreateDepthStencilView((ID3D11Resource*) pResource.Handle, ref pDesc, (ID3D11DepthStencilView**) ppDepthStencilView.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -46065,6 +46121,14 @@ public unsafe static class D3D11Device4VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateDepthStencilView(pResource, ref pDesc.GetPinnableReference(), ref ppDepthStencilView);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDepthStencilView<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pResource, ref DepthStencilViewDesc pDesc, ref ID3D11DepthStencilView* ppDepthStencilView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateDepthStencilView((ID3D11Resource*) pResource.Handle, ref pDesc, ref ppDepthStencilView);
     }
 
     /// <summary>To be documented.</summary>
@@ -46196,11 +46260,19 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexShader<TI0>(this ComPtr<ID3D11Device4> thisVtbl, void* pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ComPtr<TI0> ppVertexShader) where TI0 : unmanaged, IComVtbl<ID3D11VertexShader>, IComVtbl<TI0>
+    public static unsafe int CreateVertexShader<TI0, TI1>(this ComPtr<ID3D11Device4> thisVtbl, void* pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ComPtr<TI1> ppVertexShader) where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VertexShader>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateVertexShader(pShaderBytecode, BytecodeLength, pClassLinkage, (ID3D11VertexShader**) ppVertexShader.GetAddressOf());
+        return @this->CreateVertexShader(pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, (ID3D11VertexShader**) ppVertexShader.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVertexShader<TI0>(this ComPtr<ID3D11Device4> thisVtbl, void* pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ID3D11VertexShader* ppVertexShader) where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateVertexShader(pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, ref ppVertexShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -46236,11 +46308,11 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexShader<T0, TI0>(this ComPtr<ID3D11Device4> thisVtbl, ref T0 pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ComPtr<TI0> ppVertexShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VertexShader>, IComVtbl<TI0>
+    public static int CreateVertexShader<T0, TI0, TI1>(this ComPtr<ID3D11Device4> thisVtbl, ref T0 pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ComPtr<TI1> ppVertexShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VertexShader>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateVertexShader(ref pShaderBytecode, BytecodeLength, pClassLinkage, (ID3D11VertexShader**) ppVertexShader.GetAddressOf());
+        return @this->CreateVertexShader(ref pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, (ID3D11VertexShader**) ppVertexShader.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -46249,6 +46321,14 @@ public unsafe static class D3D11Device4VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVertexShader(ref pShaderBytecode.GetPinnableReference(), BytecodeLength, pClassLinkage, ref ppVertexShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVertexShader<T0, TI0>(this ComPtr<ID3D11Device4> thisVtbl, ref T0 pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ID3D11VertexShader* ppVertexShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateVertexShader(ref pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, ref ppVertexShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -46276,11 +46356,19 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGeometryShader<TI0>(this ComPtr<ID3D11Device4> thisVtbl, void* pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ComPtr<TI0> ppGeometryShader) where TI0 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI0>
+    public static unsafe int CreateGeometryShader<TI0, TI1>(this ComPtr<ID3D11Device4> thisVtbl, void* pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ComPtr<TI1> ppGeometryShader) where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateGeometryShader(pShaderBytecode, BytecodeLength, pClassLinkage, (ID3D11GeometryShader**) ppGeometryShader.GetAddressOf());
+        return @this->CreateGeometryShader(pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, (ID3D11GeometryShader**) ppGeometryShader.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShader<TI0>(this ComPtr<ID3D11Device4> thisVtbl, void* pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateGeometryShader(pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, ref ppGeometryShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -46316,11 +46404,11 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGeometryShader<T0, TI0>(this ComPtr<ID3D11Device4> thisVtbl, ref T0 pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ComPtr<TI0> ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI0>
+    public static int CreateGeometryShader<T0, TI0, TI1>(this ComPtr<ID3D11Device4> thisVtbl, ref T0 pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ComPtr<TI1> ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateGeometryShader(ref pShaderBytecode, BytecodeLength, pClassLinkage, (ID3D11GeometryShader**) ppGeometryShader.GetAddressOf());
+        return @this->CreateGeometryShader(ref pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, (ID3D11GeometryShader**) ppGeometryShader.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -46329,6 +46417,14 @@ public unsafe static class D3D11Device4VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateGeometryShader(ref pShaderBytecode.GetPinnableReference(), BytecodeLength, pClassLinkage, ref ppGeometryShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShader<T0, TI0>(this ComPtr<ID3D11Device4> thisVtbl, ref T0 pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateGeometryShader(ref pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, ref ppGeometryShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -46356,11 +46452,19 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGeometryShaderWithStreamOutput<TI0>(this ComPtr<ID3D11Device4> thisVtbl, void* pShaderBytecode, nuint BytecodeLength, SODeclarationEntry* pSODeclaration, uint NumEntries, uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ref ComPtr<TI0> ppGeometryShader) where TI0 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI0>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<TI0, TI1>(this ComPtr<ID3D11Device4> thisVtbl, void* pShaderBytecode, nuint BytecodeLength, SODeclarationEntry* pSODeclaration, uint NumEntries, uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ComPtr<TI0> pClassLinkage, ref ComPtr<TI1> ppGeometryShader) where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, (ID3D11GeometryShader**) ppGeometryShader.GetAddressOf());
+        return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, (ID3D11ClassLinkage*) pClassLinkage.Handle, (ID3D11GeometryShader**) ppGeometryShader.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<TI0>(this ComPtr<ID3D11Device4> thisVtbl, void* pShaderBytecode, nuint BytecodeLength, SODeclarationEntry* pSODeclaration, uint NumEntries, uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ComPtr<TI0> pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, (ID3D11ClassLinkage*) pClassLinkage.Handle, ref ppGeometryShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -46396,11 +46500,11 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGeometryShaderWithStreamOutput<TI0>(this ComPtr<ID3D11Device4> thisVtbl, void* pShaderBytecode, nuint BytecodeLength, SODeclarationEntry* pSODeclaration, uint NumEntries, ref uint pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ref ComPtr<TI0> ppGeometryShader) where TI0 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI0>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<TI0, TI1>(this ComPtr<ID3D11Device4> thisVtbl, void* pShaderBytecode, nuint BytecodeLength, SODeclarationEntry* pSODeclaration, uint NumEntries, ref uint pBufferStrides, uint NumStrides, uint RasterizedStream, ComPtr<TI0> pClassLinkage, ref ComPtr<TI1> ppGeometryShader) where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, ref pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, (ID3D11GeometryShader**) ppGeometryShader.GetAddressOf());
+        return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, ref pBufferStrides, NumStrides, RasterizedStream, (ID3D11ClassLinkage*) pClassLinkage.Handle, (ID3D11GeometryShader**) ppGeometryShader.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -46409,6 +46513,14 @@ public unsafe static class D3D11Device4VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, ref pBufferStrides.GetPinnableReference(), NumStrides, RasterizedStream, pClassLinkage, ref ppGeometryShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<TI0>(this ComPtr<ID3D11Device4> thisVtbl, void* pShaderBytecode, nuint BytecodeLength, SODeclarationEntry* pSODeclaration, uint NumEntries, ref uint pBufferStrides, uint NumStrides, uint RasterizedStream, ComPtr<TI0> pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, ref pBufferStrides, NumStrides, RasterizedStream, (ID3D11ClassLinkage*) pClassLinkage.Handle, ref ppGeometryShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -46444,11 +46556,11 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGeometryShaderWithStreamOutput<TI0>(this ComPtr<ID3D11Device4> thisVtbl, void* pShaderBytecode, nuint BytecodeLength, ref SODeclarationEntry pSODeclaration, uint NumEntries, uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ref ComPtr<TI0> ppGeometryShader) where TI0 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI0>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<TI0, TI1>(this ComPtr<ID3D11Device4> thisVtbl, void* pShaderBytecode, nuint BytecodeLength, ref SODeclarationEntry pSODeclaration, uint NumEntries, uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ComPtr<TI0> pClassLinkage, ref ComPtr<TI1> ppGeometryShader) where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecode, BytecodeLength, ref pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, (ID3D11GeometryShader**) ppGeometryShader.GetAddressOf());
+        return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecode, BytecodeLength, ref pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, (ID3D11ClassLinkage*) pClassLinkage.Handle, (ID3D11GeometryShader**) ppGeometryShader.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -46457,6 +46569,14 @@ public unsafe static class D3D11Device4VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecode, BytecodeLength, ref pSODeclaration.GetPinnableReference(), NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, ref ppGeometryShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<TI0>(this ComPtr<ID3D11Device4> thisVtbl, void* pShaderBytecode, nuint BytecodeLength, ref SODeclarationEntry pSODeclaration, uint NumEntries, uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ComPtr<TI0> pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecode, BytecodeLength, ref pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, (ID3D11ClassLinkage*) pClassLinkage.Handle, ref ppGeometryShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -46492,11 +46612,11 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGeometryShaderWithStreamOutput<TI0>(this ComPtr<ID3D11Device4> thisVtbl, void* pShaderBytecode, nuint BytecodeLength, ref SODeclarationEntry pSODeclaration, uint NumEntries, ref uint pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ref ComPtr<TI0> ppGeometryShader) where TI0 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI0>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<TI0, TI1>(this ComPtr<ID3D11Device4> thisVtbl, void* pShaderBytecode, nuint BytecodeLength, ref SODeclarationEntry pSODeclaration, uint NumEntries, ref uint pBufferStrides, uint NumStrides, uint RasterizedStream, ComPtr<TI0> pClassLinkage, ref ComPtr<TI1> ppGeometryShader) where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecode, BytecodeLength, ref pSODeclaration, NumEntries, ref pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, (ID3D11GeometryShader**) ppGeometryShader.GetAddressOf());
+        return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecode, BytecodeLength, ref pSODeclaration, NumEntries, ref pBufferStrides, NumStrides, RasterizedStream, (ID3D11ClassLinkage*) pClassLinkage.Handle, (ID3D11GeometryShader**) ppGeometryShader.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -46505,6 +46625,14 @@ public unsafe static class D3D11Device4VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecode, BytecodeLength, ref pSODeclaration.GetPinnableReference(), NumEntries, ref pBufferStrides.GetPinnableReference(), NumStrides, RasterizedStream, pClassLinkage, ref ppGeometryShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<TI0>(this ComPtr<ID3D11Device4> thisVtbl, void* pShaderBytecode, nuint BytecodeLength, ref SODeclarationEntry pSODeclaration, uint NumEntries, ref uint pBufferStrides, uint NumStrides, uint RasterizedStream, ComPtr<TI0> pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecode, BytecodeLength, ref pSODeclaration, NumEntries, ref pBufferStrides, NumStrides, RasterizedStream, (ID3D11ClassLinkage*) pClassLinkage.Handle, ref ppGeometryShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -46540,11 +46668,11 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGeometryShaderWithStreamOutput<T0, TI0>(this ComPtr<ID3D11Device4> thisVtbl, ref T0 pShaderBytecode, nuint BytecodeLength, SODeclarationEntry* pSODeclaration, uint NumEntries, uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ref ComPtr<TI0> ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI0>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0, TI0, TI1>(this ComPtr<ID3D11Device4> thisVtbl, ref T0 pShaderBytecode, nuint BytecodeLength, SODeclarationEntry* pSODeclaration, uint NumEntries, uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ComPtr<TI0> pClassLinkage, ref ComPtr<TI1> ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateGeometryShaderWithStreamOutput(ref pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, (ID3D11GeometryShader**) ppGeometryShader.GetAddressOf());
+        return @this->CreateGeometryShaderWithStreamOutput(ref pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, (ID3D11ClassLinkage*) pClassLinkage.Handle, (ID3D11GeometryShader**) ppGeometryShader.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -46553,6 +46681,14 @@ public unsafe static class D3D11Device4VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateGeometryShaderWithStreamOutput(ref pShaderBytecode.GetPinnableReference(), BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, ref ppGeometryShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0, TI0>(this ComPtr<ID3D11Device4> thisVtbl, ref T0 pShaderBytecode, nuint BytecodeLength, SODeclarationEntry* pSODeclaration, uint NumEntries, uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ComPtr<TI0> pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateGeometryShaderWithStreamOutput(ref pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, (ID3D11ClassLinkage*) pClassLinkage.Handle, ref ppGeometryShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -46588,11 +46724,11 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGeometryShaderWithStreamOutput<T0, TI0>(this ComPtr<ID3D11Device4> thisVtbl, ref T0 pShaderBytecode, nuint BytecodeLength, SODeclarationEntry* pSODeclaration, uint NumEntries, ref uint pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ref ComPtr<TI0> ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI0>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0, TI0, TI1>(this ComPtr<ID3D11Device4> thisVtbl, ref T0 pShaderBytecode, nuint BytecodeLength, SODeclarationEntry* pSODeclaration, uint NumEntries, ref uint pBufferStrides, uint NumStrides, uint RasterizedStream, ComPtr<TI0> pClassLinkage, ref ComPtr<TI1> ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateGeometryShaderWithStreamOutput(ref pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, ref pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, (ID3D11GeometryShader**) ppGeometryShader.GetAddressOf());
+        return @this->CreateGeometryShaderWithStreamOutput(ref pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, ref pBufferStrides, NumStrides, RasterizedStream, (ID3D11ClassLinkage*) pClassLinkage.Handle, (ID3D11GeometryShader**) ppGeometryShader.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -46601,6 +46737,14 @@ public unsafe static class D3D11Device4VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateGeometryShaderWithStreamOutput(ref pShaderBytecode.GetPinnableReference(), BytecodeLength, pSODeclaration, NumEntries, ref pBufferStrides.GetPinnableReference(), NumStrides, RasterizedStream, pClassLinkage, ref ppGeometryShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0, TI0>(this ComPtr<ID3D11Device4> thisVtbl, ref T0 pShaderBytecode, nuint BytecodeLength, SODeclarationEntry* pSODeclaration, uint NumEntries, ref uint pBufferStrides, uint NumStrides, uint RasterizedStream, ComPtr<TI0> pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateGeometryShaderWithStreamOutput(ref pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, ref pBufferStrides, NumStrides, RasterizedStream, (ID3D11ClassLinkage*) pClassLinkage.Handle, ref ppGeometryShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -46636,11 +46780,11 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGeometryShaderWithStreamOutput<T0, TI0>(this ComPtr<ID3D11Device4> thisVtbl, ref T0 pShaderBytecode, nuint BytecodeLength, ref SODeclarationEntry pSODeclaration, uint NumEntries, uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ref ComPtr<TI0> ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI0>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0, TI0, TI1>(this ComPtr<ID3D11Device4> thisVtbl, ref T0 pShaderBytecode, nuint BytecodeLength, ref SODeclarationEntry pSODeclaration, uint NumEntries, uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ComPtr<TI0> pClassLinkage, ref ComPtr<TI1> ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateGeometryShaderWithStreamOutput(ref pShaderBytecode, BytecodeLength, ref pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, (ID3D11GeometryShader**) ppGeometryShader.GetAddressOf());
+        return @this->CreateGeometryShaderWithStreamOutput(ref pShaderBytecode, BytecodeLength, ref pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, (ID3D11ClassLinkage*) pClassLinkage.Handle, (ID3D11GeometryShader**) ppGeometryShader.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -46649,6 +46793,14 @@ public unsafe static class D3D11Device4VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateGeometryShaderWithStreamOutput(ref pShaderBytecode.GetPinnableReference(), BytecodeLength, ref pSODeclaration.GetPinnableReference(), NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, ref ppGeometryShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0, TI0>(this ComPtr<ID3D11Device4> thisVtbl, ref T0 pShaderBytecode, nuint BytecodeLength, ref SODeclarationEntry pSODeclaration, uint NumEntries, uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ComPtr<TI0> pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateGeometryShaderWithStreamOutput(ref pShaderBytecode, BytecodeLength, ref pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, (ID3D11ClassLinkage*) pClassLinkage.Handle, ref ppGeometryShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -46684,11 +46836,11 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGeometryShaderWithStreamOutput<T0, TI0>(this ComPtr<ID3D11Device4> thisVtbl, ref T0 pShaderBytecode, nuint BytecodeLength, ref SODeclarationEntry pSODeclaration, uint NumEntries, ref uint pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ref ComPtr<TI0> ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI0>
+    public static int CreateGeometryShaderWithStreamOutput<T0, TI0, TI1>(this ComPtr<ID3D11Device4> thisVtbl, ref T0 pShaderBytecode, nuint BytecodeLength, ref SODeclarationEntry pSODeclaration, uint NumEntries, ref uint pBufferStrides, uint NumStrides, uint RasterizedStream, ComPtr<TI0> pClassLinkage, ref ComPtr<TI1> ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateGeometryShaderWithStreamOutput(ref pShaderBytecode, BytecodeLength, ref pSODeclaration, NumEntries, ref pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, (ID3D11GeometryShader**) ppGeometryShader.GetAddressOf());
+        return @this->CreateGeometryShaderWithStreamOutput(ref pShaderBytecode, BytecodeLength, ref pSODeclaration, NumEntries, ref pBufferStrides, NumStrides, RasterizedStream, (ID3D11ClassLinkage*) pClassLinkage.Handle, (ID3D11GeometryShader**) ppGeometryShader.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -46697,6 +46849,14 @@ public unsafe static class D3D11Device4VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateGeometryShaderWithStreamOutput(ref pShaderBytecode.GetPinnableReference(), BytecodeLength, ref pSODeclaration.GetPinnableReference(), NumEntries, ref pBufferStrides.GetPinnableReference(), NumStrides, RasterizedStream, pClassLinkage, ref ppGeometryShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0, TI0>(this ComPtr<ID3D11Device4> thisVtbl, ref T0 pShaderBytecode, nuint BytecodeLength, ref SODeclarationEntry pSODeclaration, uint NumEntries, ref uint pBufferStrides, uint NumStrides, uint RasterizedStream, ComPtr<TI0> pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateGeometryShaderWithStreamOutput(ref pShaderBytecode, BytecodeLength, ref pSODeclaration, NumEntries, ref pBufferStrides, NumStrides, RasterizedStream, (ID3D11ClassLinkage*) pClassLinkage.Handle, ref ppGeometryShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -46724,11 +46884,19 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePixelShader<TI0>(this ComPtr<ID3D11Device4> thisVtbl, void* pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ComPtr<TI0> ppPixelShader) where TI0 : unmanaged, IComVtbl<ID3D11PixelShader>, IComVtbl<TI0>
+    public static unsafe int CreatePixelShader<TI0, TI1>(this ComPtr<ID3D11Device4> thisVtbl, void* pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ComPtr<TI1> ppPixelShader) where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11PixelShader>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreatePixelShader(pShaderBytecode, BytecodeLength, pClassLinkage, (ID3D11PixelShader**) ppPixelShader.GetAddressOf());
+        return @this->CreatePixelShader(pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, (ID3D11PixelShader**) ppPixelShader.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePixelShader<TI0>(this ComPtr<ID3D11Device4> thisVtbl, void* pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ID3D11PixelShader* ppPixelShader) where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreatePixelShader(pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, ref ppPixelShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -46764,11 +46932,11 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePixelShader<T0, TI0>(this ComPtr<ID3D11Device4> thisVtbl, ref T0 pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ComPtr<TI0> ppPixelShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11PixelShader>, IComVtbl<TI0>
+    public static int CreatePixelShader<T0, TI0, TI1>(this ComPtr<ID3D11Device4> thisVtbl, ref T0 pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ComPtr<TI1> ppPixelShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11PixelShader>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreatePixelShader(ref pShaderBytecode, BytecodeLength, pClassLinkage, (ID3D11PixelShader**) ppPixelShader.GetAddressOf());
+        return @this->CreatePixelShader(ref pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, (ID3D11PixelShader**) ppPixelShader.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -46777,6 +46945,14 @@ public unsafe static class D3D11Device4VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreatePixelShader(ref pShaderBytecode.GetPinnableReference(), BytecodeLength, pClassLinkage, ref ppPixelShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePixelShader<T0, TI0>(this ComPtr<ID3D11Device4> thisVtbl, ref T0 pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ID3D11PixelShader* ppPixelShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreatePixelShader(ref pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, ref ppPixelShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -46804,11 +46980,19 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHullShader<TI0>(this ComPtr<ID3D11Device4> thisVtbl, void* pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ComPtr<TI0> ppHullShader) where TI0 : unmanaged, IComVtbl<ID3D11HullShader>, IComVtbl<TI0>
+    public static unsafe int CreateHullShader<TI0, TI1>(this ComPtr<ID3D11Device4> thisVtbl, void* pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ComPtr<TI1> ppHullShader) where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11HullShader>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateHullShader(pShaderBytecode, BytecodeLength, pClassLinkage, (ID3D11HullShader**) ppHullShader.GetAddressOf());
+        return @this->CreateHullShader(pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, (ID3D11HullShader**) ppHullShader.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateHullShader<TI0>(this ComPtr<ID3D11Device4> thisVtbl, void* pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ID3D11HullShader* ppHullShader) where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateHullShader(pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, ref ppHullShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -46844,11 +47028,11 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHullShader<T0, TI0>(this ComPtr<ID3D11Device4> thisVtbl, ref T0 pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ComPtr<TI0> ppHullShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11HullShader>, IComVtbl<TI0>
+    public static int CreateHullShader<T0, TI0, TI1>(this ComPtr<ID3D11Device4> thisVtbl, ref T0 pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ComPtr<TI1> ppHullShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11HullShader>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateHullShader(ref pShaderBytecode, BytecodeLength, pClassLinkage, (ID3D11HullShader**) ppHullShader.GetAddressOf());
+        return @this->CreateHullShader(ref pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, (ID3D11HullShader**) ppHullShader.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -46857,6 +47041,14 @@ public unsafe static class D3D11Device4VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateHullShader(ref pShaderBytecode.GetPinnableReference(), BytecodeLength, pClassLinkage, ref ppHullShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateHullShader<T0, TI0>(this ComPtr<ID3D11Device4> thisVtbl, ref T0 pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ID3D11HullShader* ppHullShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateHullShader(ref pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, ref ppHullShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -46884,11 +47076,19 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDomainShader<TI0>(this ComPtr<ID3D11Device4> thisVtbl, void* pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ComPtr<TI0> ppDomainShader) where TI0 : unmanaged, IComVtbl<ID3D11DomainShader>, IComVtbl<TI0>
+    public static unsafe int CreateDomainShader<TI0, TI1>(this ComPtr<ID3D11Device4> thisVtbl, void* pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ComPtr<TI1> ppDomainShader) where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DomainShader>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateDomainShader(pShaderBytecode, BytecodeLength, pClassLinkage, (ID3D11DomainShader**) ppDomainShader.GetAddressOf());
+        return @this->CreateDomainShader(pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, (ID3D11DomainShader**) ppDomainShader.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDomainShader<TI0>(this ComPtr<ID3D11Device4> thisVtbl, void* pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ID3D11DomainShader* ppDomainShader) where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateDomainShader(pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, ref ppDomainShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -46924,11 +47124,11 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDomainShader<T0, TI0>(this ComPtr<ID3D11Device4> thisVtbl, ref T0 pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ComPtr<TI0> ppDomainShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11DomainShader>, IComVtbl<TI0>
+    public static int CreateDomainShader<T0, TI0, TI1>(this ComPtr<ID3D11Device4> thisVtbl, ref T0 pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ComPtr<TI1> ppDomainShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DomainShader>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateDomainShader(ref pShaderBytecode, BytecodeLength, pClassLinkage, (ID3D11DomainShader**) ppDomainShader.GetAddressOf());
+        return @this->CreateDomainShader(ref pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, (ID3D11DomainShader**) ppDomainShader.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -46937,6 +47137,14 @@ public unsafe static class D3D11Device4VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateDomainShader(ref pShaderBytecode.GetPinnableReference(), BytecodeLength, pClassLinkage, ref ppDomainShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDomainShader<T0, TI0>(this ComPtr<ID3D11Device4> thisVtbl, ref T0 pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ID3D11DomainShader* ppDomainShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateDomainShader(ref pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, ref ppDomainShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -46964,11 +47172,19 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateComputeShader<TI0>(this ComPtr<ID3D11Device4> thisVtbl, void* pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ComPtr<TI0> ppComputeShader) where TI0 : unmanaged, IComVtbl<ID3D11ComputeShader>, IComVtbl<TI0>
+    public static unsafe int CreateComputeShader<TI0, TI1>(this ComPtr<ID3D11Device4> thisVtbl, void* pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ComPtr<TI1> ppComputeShader) where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11ComputeShader>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateComputeShader(pShaderBytecode, BytecodeLength, pClassLinkage, (ID3D11ComputeShader**) ppComputeShader.GetAddressOf());
+        return @this->CreateComputeShader(pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, (ID3D11ComputeShader**) ppComputeShader.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateComputeShader<TI0>(this ComPtr<ID3D11Device4> thisVtbl, void* pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ID3D11ComputeShader* ppComputeShader) where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateComputeShader(pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, ref ppComputeShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -47004,11 +47220,11 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateComputeShader<T0, TI0>(this ComPtr<ID3D11Device4> thisVtbl, ref T0 pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ComPtr<TI0> ppComputeShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ComputeShader>, IComVtbl<TI0>
+    public static int CreateComputeShader<T0, TI0, TI1>(this ComPtr<ID3D11Device4> thisVtbl, ref T0 pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ComPtr<TI1> ppComputeShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11ComputeShader>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateComputeShader(ref pShaderBytecode, BytecodeLength, pClassLinkage, (ID3D11ComputeShader**) ppComputeShader.GetAddressOf());
+        return @this->CreateComputeShader(ref pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, (ID3D11ComputeShader**) ppComputeShader.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -47017,6 +47233,14 @@ public unsafe static class D3D11Device4VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateComputeShader(ref pShaderBytecode.GetPinnableReference(), BytecodeLength, pClassLinkage, ref ppComputeShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateComputeShader<T0, TI0>(this ComPtr<ID3D11Device4> thisVtbl, ref T0 pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ID3D11ComputeShader* ppComputeShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateComputeShader(ref pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, ref ppComputeShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -61222,6 +61446,14 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateDataInterface<TI0>(this ComPtr<ID3D11Device4> thisVtbl, Guid* guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->SetPrivateDataInterface(guid, (Silk.NET.Core.Native.IUnknown*) pData.Handle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D11Device4> thisVtbl, Guid* guid, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData)
     {
         var @this = thisVtbl.Handle;
@@ -61235,6 +61467,14 @@ public unsafe static class D3D11Device4VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->SetPrivateDataInterface(ref guid.GetPinnableReference(), pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPrivateDataInterface<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ref Guid guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->SetPrivateDataInterface(ref guid, (Silk.NET.Core.Native.IUnknown*) pData.Handle);
     }
 
     /// <summary>To be documented.</summary>
@@ -61683,11 +61923,27 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pTiledResource, uint* pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->GetResourceTiling((ID3D11Resource*) pTiledResource.Handle, pNumTilesForEntireResource, pPackedMipDesc, pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void GetResourceTiling(this ComPtr<ID3D11Device4> thisVtbl, ID3D11Resource* pTiledResource, uint* pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->GetResourceTiling(pTiledResource, pNumTilesForEntireResource, pPackedMipDesc, pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pTiledResource, uint* pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->GetResourceTiling((ID3D11Resource*) pTiledResource.Handle, pNumTilesForEntireResource, pPackedMipDesc, pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips);
     }
 
     /// <summary>To be documented.</summary>
@@ -61699,11 +61955,27 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pTiledResource, uint* pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->GetResourceTiling((ID3D11Resource*) pTiledResource.Handle, pNumTilesForEntireResource, pPackedMipDesc, pStandardTileShapeForNonPackedMips, ref pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void GetResourceTiling(this ComPtr<ID3D11Device4> thisVtbl, ID3D11Resource* pTiledResource, uint* pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, Span<uint> pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->GetResourceTiling(pTiledResource, pNumTilesForEntireResource, pPackedMipDesc, pStandardTileShapeForNonPackedMips, ref pNumSubresourceTilings.GetPinnableReference(), FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pTiledResource, uint* pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->GetResourceTiling((ID3D11Resource*) pTiledResource.Handle, pNumTilesForEntireResource, pPackedMipDesc, pStandardTileShapeForNonPackedMips, ref pNumSubresourceTilings, FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips);
     }
 
     /// <summary>To be documented.</summary>
@@ -61715,11 +61987,27 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pTiledResource, uint* pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->GetResourceTiling((ID3D11Resource*) pTiledResource.Handle, pNumTilesForEntireResource, pPackedMipDesc, ref pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void GetResourceTiling(this ComPtr<ID3D11Device4> thisVtbl, ID3D11Resource* pTiledResource, uint* pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, Span<TileShape> pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->GetResourceTiling(pTiledResource, pNumTilesForEntireResource, pPackedMipDesc, ref pStandardTileShapeForNonPackedMips.GetPinnableReference(), pNumSubresourceTilings, FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pTiledResource, uint* pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->GetResourceTiling((ID3D11Resource*) pTiledResource.Handle, pNumTilesForEntireResource, pPackedMipDesc, ref pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips);
     }
 
     /// <summary>To be documented.</summary>
@@ -61731,11 +62019,27 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pTiledResource, uint* pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->GetResourceTiling((ID3D11Resource*) pTiledResource.Handle, pNumTilesForEntireResource, pPackedMipDesc, ref pStandardTileShapeForNonPackedMips, ref pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void GetResourceTiling(this ComPtr<ID3D11Device4> thisVtbl, ID3D11Resource* pTiledResource, uint* pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, Span<TileShape> pStandardTileShapeForNonPackedMips, Span<uint> pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->GetResourceTiling(pTiledResource, pNumTilesForEntireResource, pPackedMipDesc, ref pStandardTileShapeForNonPackedMips.GetPinnableReference(), ref pNumSubresourceTilings.GetPinnableReference(), FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pTiledResource, uint* pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->GetResourceTiling((ID3D11Resource*) pTiledResource.Handle, pNumTilesForEntireResource, pPackedMipDesc, ref pStandardTileShapeForNonPackedMips, ref pNumSubresourceTilings, FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips);
     }
 
     /// <summary>To be documented.</summary>
@@ -61747,11 +62051,27 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pTiledResource, uint* pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->GetResourceTiling((ID3D11Resource*) pTiledResource.Handle, pNumTilesForEntireResource, ref pPackedMipDesc, pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void GetResourceTiling(this ComPtr<ID3D11Device4> thisVtbl, ID3D11Resource* pTiledResource, uint* pNumTilesForEntireResource, Span<PackedMipDesc> pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->GetResourceTiling(pTiledResource, pNumTilesForEntireResource, ref pPackedMipDesc.GetPinnableReference(), pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pTiledResource, uint* pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->GetResourceTiling((ID3D11Resource*) pTiledResource.Handle, pNumTilesForEntireResource, ref pPackedMipDesc, pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips);
     }
 
     /// <summary>To be documented.</summary>
@@ -61763,11 +62083,27 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pTiledResource, uint* pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->GetResourceTiling((ID3D11Resource*) pTiledResource.Handle, pNumTilesForEntireResource, ref pPackedMipDesc, pStandardTileShapeForNonPackedMips, ref pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void GetResourceTiling(this ComPtr<ID3D11Device4> thisVtbl, ID3D11Resource* pTiledResource, uint* pNumTilesForEntireResource, Span<PackedMipDesc> pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, Span<uint> pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->GetResourceTiling(pTiledResource, pNumTilesForEntireResource, ref pPackedMipDesc.GetPinnableReference(), pStandardTileShapeForNonPackedMips, ref pNumSubresourceTilings.GetPinnableReference(), FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pTiledResource, uint* pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->GetResourceTiling((ID3D11Resource*) pTiledResource.Handle, pNumTilesForEntireResource, ref pPackedMipDesc, pStandardTileShapeForNonPackedMips, ref pNumSubresourceTilings, FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips);
     }
 
     /// <summary>To be documented.</summary>
@@ -61779,11 +62115,27 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pTiledResource, uint* pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->GetResourceTiling((ID3D11Resource*) pTiledResource.Handle, pNumTilesForEntireResource, ref pPackedMipDesc, ref pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void GetResourceTiling(this ComPtr<ID3D11Device4> thisVtbl, ID3D11Resource* pTiledResource, uint* pNumTilesForEntireResource, Span<PackedMipDesc> pPackedMipDesc, Span<TileShape> pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->GetResourceTiling(pTiledResource, pNumTilesForEntireResource, ref pPackedMipDesc.GetPinnableReference(), ref pStandardTileShapeForNonPackedMips.GetPinnableReference(), pNumSubresourceTilings, FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pTiledResource, uint* pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->GetResourceTiling((ID3D11Resource*) pTiledResource.Handle, pNumTilesForEntireResource, ref pPackedMipDesc, ref pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips);
     }
 
     /// <summary>To be documented.</summary>
@@ -61795,11 +62147,27 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pTiledResource, uint* pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->GetResourceTiling((ID3D11Resource*) pTiledResource.Handle, pNumTilesForEntireResource, ref pPackedMipDesc, ref pStandardTileShapeForNonPackedMips, ref pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void GetResourceTiling(this ComPtr<ID3D11Device4> thisVtbl, ID3D11Resource* pTiledResource, uint* pNumTilesForEntireResource, Span<PackedMipDesc> pPackedMipDesc, Span<TileShape> pStandardTileShapeForNonPackedMips, Span<uint> pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->GetResourceTiling(pTiledResource, pNumTilesForEntireResource, ref pPackedMipDesc.GetPinnableReference(), ref pStandardTileShapeForNonPackedMips.GetPinnableReference(), ref pNumSubresourceTilings.GetPinnableReference(), FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pTiledResource, uint* pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->GetResourceTiling((ID3D11Resource*) pTiledResource.Handle, pNumTilesForEntireResource, ref pPackedMipDesc, ref pStandardTileShapeForNonPackedMips, ref pNumSubresourceTilings, FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips);
     }
 
     /// <summary>To be documented.</summary>
@@ -61811,11 +62179,27 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pTiledResource, ref uint pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->GetResourceTiling((ID3D11Resource*) pTiledResource.Handle, ref pNumTilesForEntireResource, pPackedMipDesc, pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void GetResourceTiling(this ComPtr<ID3D11Device4> thisVtbl, ID3D11Resource* pTiledResource, Span<uint> pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->GetResourceTiling(pTiledResource, ref pNumTilesForEntireResource.GetPinnableReference(), pPackedMipDesc, pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pTiledResource, ref uint pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->GetResourceTiling((ID3D11Resource*) pTiledResource.Handle, ref pNumTilesForEntireResource, pPackedMipDesc, pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips);
     }
 
     /// <summary>To be documented.</summary>
@@ -61827,11 +62211,27 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pTiledResource, ref uint pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->GetResourceTiling((ID3D11Resource*) pTiledResource.Handle, ref pNumTilesForEntireResource, pPackedMipDesc, pStandardTileShapeForNonPackedMips, ref pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void GetResourceTiling(this ComPtr<ID3D11Device4> thisVtbl, ID3D11Resource* pTiledResource, Span<uint> pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, Span<uint> pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->GetResourceTiling(pTiledResource, ref pNumTilesForEntireResource.GetPinnableReference(), pPackedMipDesc, pStandardTileShapeForNonPackedMips, ref pNumSubresourceTilings.GetPinnableReference(), FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pTiledResource, ref uint pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->GetResourceTiling((ID3D11Resource*) pTiledResource.Handle, ref pNumTilesForEntireResource, pPackedMipDesc, pStandardTileShapeForNonPackedMips, ref pNumSubresourceTilings, FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips);
     }
 
     /// <summary>To be documented.</summary>
@@ -61843,11 +62243,27 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pTiledResource, ref uint pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->GetResourceTiling((ID3D11Resource*) pTiledResource.Handle, ref pNumTilesForEntireResource, pPackedMipDesc, ref pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void GetResourceTiling(this ComPtr<ID3D11Device4> thisVtbl, ID3D11Resource* pTiledResource, Span<uint> pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, Span<TileShape> pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->GetResourceTiling(pTiledResource, ref pNumTilesForEntireResource.GetPinnableReference(), pPackedMipDesc, ref pStandardTileShapeForNonPackedMips.GetPinnableReference(), pNumSubresourceTilings, FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pTiledResource, ref uint pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->GetResourceTiling((ID3D11Resource*) pTiledResource.Handle, ref pNumTilesForEntireResource, pPackedMipDesc, ref pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips);
     }
 
     /// <summary>To be documented.</summary>
@@ -61859,11 +62275,27 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pTiledResource, ref uint pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->GetResourceTiling((ID3D11Resource*) pTiledResource.Handle, ref pNumTilesForEntireResource, pPackedMipDesc, ref pStandardTileShapeForNonPackedMips, ref pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void GetResourceTiling(this ComPtr<ID3D11Device4> thisVtbl, ID3D11Resource* pTiledResource, Span<uint> pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, Span<TileShape> pStandardTileShapeForNonPackedMips, Span<uint> pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->GetResourceTiling(pTiledResource, ref pNumTilesForEntireResource.GetPinnableReference(), pPackedMipDesc, ref pStandardTileShapeForNonPackedMips.GetPinnableReference(), ref pNumSubresourceTilings.GetPinnableReference(), FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pTiledResource, ref uint pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->GetResourceTiling((ID3D11Resource*) pTiledResource.Handle, ref pNumTilesForEntireResource, pPackedMipDesc, ref pStandardTileShapeForNonPackedMips, ref pNumSubresourceTilings, FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips);
     }
 
     /// <summary>To be documented.</summary>
@@ -61875,11 +62307,27 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pTiledResource, ref uint pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->GetResourceTiling((ID3D11Resource*) pTiledResource.Handle, ref pNumTilesForEntireResource, ref pPackedMipDesc, pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void GetResourceTiling(this ComPtr<ID3D11Device4> thisVtbl, ID3D11Resource* pTiledResource, Span<uint> pNumTilesForEntireResource, Span<PackedMipDesc> pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->GetResourceTiling(pTiledResource, ref pNumTilesForEntireResource.GetPinnableReference(), ref pPackedMipDesc.GetPinnableReference(), pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pTiledResource, ref uint pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->GetResourceTiling((ID3D11Resource*) pTiledResource.Handle, ref pNumTilesForEntireResource, ref pPackedMipDesc, pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips);
     }
 
     /// <summary>To be documented.</summary>
@@ -61891,11 +62339,27 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pTiledResource, ref uint pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->GetResourceTiling((ID3D11Resource*) pTiledResource.Handle, ref pNumTilesForEntireResource, ref pPackedMipDesc, pStandardTileShapeForNonPackedMips, ref pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void GetResourceTiling(this ComPtr<ID3D11Device4> thisVtbl, ID3D11Resource* pTiledResource, Span<uint> pNumTilesForEntireResource, Span<PackedMipDesc> pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, Span<uint> pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->GetResourceTiling(pTiledResource, ref pNumTilesForEntireResource.GetPinnableReference(), ref pPackedMipDesc.GetPinnableReference(), pStandardTileShapeForNonPackedMips, ref pNumSubresourceTilings.GetPinnableReference(), FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pTiledResource, ref uint pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->GetResourceTiling((ID3D11Resource*) pTiledResource.Handle, ref pNumTilesForEntireResource, ref pPackedMipDesc, pStandardTileShapeForNonPackedMips, ref pNumSubresourceTilings, FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips);
     }
 
     /// <summary>To be documented.</summary>
@@ -61907,11 +62371,27 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pTiledResource, ref uint pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->GetResourceTiling((ID3D11Resource*) pTiledResource.Handle, ref pNumTilesForEntireResource, ref pPackedMipDesc, ref pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void GetResourceTiling(this ComPtr<ID3D11Device4> thisVtbl, ID3D11Resource* pTiledResource, Span<uint> pNumTilesForEntireResource, Span<PackedMipDesc> pPackedMipDesc, Span<TileShape> pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->GetResourceTiling(pTiledResource, ref pNumTilesForEntireResource.GetPinnableReference(), ref pPackedMipDesc.GetPinnableReference(), ref pStandardTileShapeForNonPackedMips.GetPinnableReference(), pNumSubresourceTilings, FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pTiledResource, ref uint pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->GetResourceTiling((ID3D11Resource*) pTiledResource.Handle, ref pNumTilesForEntireResource, ref pPackedMipDesc, ref pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips);
     }
 
     /// <summary>To be documented.</summary>
@@ -61923,11 +62403,27 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pTiledResource, ref uint pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->GetResourceTiling((ID3D11Resource*) pTiledResource.Handle, ref pNumTilesForEntireResource, ref pPackedMipDesc, ref pStandardTileShapeForNonPackedMips, ref pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void GetResourceTiling(this ComPtr<ID3D11Device4> thisVtbl, ID3D11Resource* pTiledResource, Span<uint> pNumTilesForEntireResource, Span<PackedMipDesc> pPackedMipDesc, Span<TileShape> pStandardTileShapeForNonPackedMips, Span<uint> pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->GetResourceTiling(pTiledResource, ref pNumTilesForEntireResource.GetPinnableReference(), ref pPackedMipDesc.GetPinnableReference(), ref pStandardTileShapeForNonPackedMips.GetPinnableReference(), ref pNumSubresourceTilings.GetPinnableReference(), FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void GetResourceTiling<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pTiledResource, ref uint pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->GetResourceTiling((ID3D11Resource*) pTiledResource.Handle, ref pNumTilesForEntireResource, ref pPackedMipDesc, ref pStandardTileShapeForNonPackedMips, ref pNumSubresourceTilings, FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips);
     }
 
     /// <summary>To be documented.</summary>
@@ -62387,11 +62883,19 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateShaderResourceView1<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ID3D11Resource* pResource, ShaderResourceViewDesc1* pDesc1, ref ComPtr<TI0> ppSRView1) where TI0 : unmanaged, IComVtbl<ID3D11ShaderResourceView1>, IComVtbl<TI0>
+    public static unsafe int CreateShaderResourceView1<TI0, TI1>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pResource, ShaderResourceViewDesc1* pDesc1, ref ComPtr<TI1> ppSRView1) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11ShaderResourceView1>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateShaderResourceView1(pResource, pDesc1, (ID3D11ShaderResourceView1**) ppSRView1.GetAddressOf());
+        return @this->CreateShaderResourceView1((ID3D11Resource*) pResource.Handle, pDesc1, (ID3D11ShaderResourceView1**) ppSRView1.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateShaderResourceView1<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pResource, ShaderResourceViewDesc1* pDesc1, ref ID3D11ShaderResourceView1* ppSRView1) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateShaderResourceView1((ID3D11Resource*) pResource.Handle, pDesc1, ref ppSRView1);
     }
 
     /// <summary>To be documented.</summary>
@@ -62403,11 +62907,11 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateShaderResourceView1<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ID3D11Resource* pResource, ref ShaderResourceViewDesc1 pDesc1, ref ComPtr<TI0> ppSRView1) where TI0 : unmanaged, IComVtbl<ID3D11ShaderResourceView1>, IComVtbl<TI0>
+    public static int CreateShaderResourceView1<TI0, TI1>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pResource, ref ShaderResourceViewDesc1 pDesc1, ref ComPtr<TI1> ppSRView1) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11ShaderResourceView1>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateShaderResourceView1(pResource, ref pDesc1, (ID3D11ShaderResourceView1**) ppSRView1.GetAddressOf());
+        return @this->CreateShaderResourceView1((ID3D11Resource*) pResource.Handle, ref pDesc1, (ID3D11ShaderResourceView1**) ppSRView1.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -62416,6 +62920,14 @@ public unsafe static class D3D11Device4VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateShaderResourceView1(pResource, ref pDesc1.GetPinnableReference(), ref ppSRView1);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateShaderResourceView1<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pResource, ref ShaderResourceViewDesc1 pDesc1, ref ID3D11ShaderResourceView1* ppSRView1) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateShaderResourceView1((ID3D11Resource*) pResource.Handle, ref pDesc1, ref ppSRView1);
     }
 
     /// <summary>To be documented.</summary>
@@ -62467,11 +62979,19 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateUnorderedAccessView1<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ID3D11Resource* pResource, UnorderedAccessViewDesc1* pDesc1, ref ComPtr<TI0> ppUAView1) where TI0 : unmanaged, IComVtbl<ID3D11UnorderedAccessView1>, IComVtbl<TI0>
+    public static unsafe int CreateUnorderedAccessView1<TI0, TI1>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pResource, UnorderedAccessViewDesc1* pDesc1, ref ComPtr<TI1> ppUAView1) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11UnorderedAccessView1>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateUnorderedAccessView1(pResource, pDesc1, (ID3D11UnorderedAccessView1**) ppUAView1.GetAddressOf());
+        return @this->CreateUnorderedAccessView1((ID3D11Resource*) pResource.Handle, pDesc1, (ID3D11UnorderedAccessView1**) ppUAView1.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateUnorderedAccessView1<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pResource, UnorderedAccessViewDesc1* pDesc1, ref ID3D11UnorderedAccessView1* ppUAView1) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateUnorderedAccessView1((ID3D11Resource*) pResource.Handle, pDesc1, ref ppUAView1);
     }
 
     /// <summary>To be documented.</summary>
@@ -62483,11 +63003,11 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateUnorderedAccessView1<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ID3D11Resource* pResource, ref UnorderedAccessViewDesc1 pDesc1, ref ComPtr<TI0> ppUAView1) where TI0 : unmanaged, IComVtbl<ID3D11UnorderedAccessView1>, IComVtbl<TI0>
+    public static int CreateUnorderedAccessView1<TI0, TI1>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pResource, ref UnorderedAccessViewDesc1 pDesc1, ref ComPtr<TI1> ppUAView1) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11UnorderedAccessView1>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateUnorderedAccessView1(pResource, ref pDesc1, (ID3D11UnorderedAccessView1**) ppUAView1.GetAddressOf());
+        return @this->CreateUnorderedAccessView1((ID3D11Resource*) pResource.Handle, ref pDesc1, (ID3D11UnorderedAccessView1**) ppUAView1.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -62496,6 +63016,14 @@ public unsafe static class D3D11Device4VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateUnorderedAccessView1(pResource, ref pDesc1.GetPinnableReference(), ref ppUAView1);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateUnorderedAccessView1<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pResource, ref UnorderedAccessViewDesc1 pDesc1, ref ID3D11UnorderedAccessView1* ppUAView1) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateUnorderedAccessView1((ID3D11Resource*) pResource.Handle, ref pDesc1, ref ppUAView1);
     }
 
     /// <summary>To be documented.</summary>
@@ -62547,11 +63075,19 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRenderTargetView1<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ID3D11Resource* pResource, RenderTargetViewDesc1* pDesc1, ref ComPtr<TI0> ppRTView1) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView1>, IComVtbl<TI0>
+    public static unsafe int CreateRenderTargetView1<TI0, TI1>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pResource, RenderTargetViewDesc1* pDesc1, ref ComPtr<TI1> ppRTView1) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11RenderTargetView1>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateRenderTargetView1(pResource, pDesc1, (ID3D11RenderTargetView1**) ppRTView1.GetAddressOf());
+        return @this->CreateRenderTargetView1((ID3D11Resource*) pResource.Handle, pDesc1, (ID3D11RenderTargetView1**) ppRTView1.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateRenderTargetView1<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pResource, RenderTargetViewDesc1* pDesc1, ref ID3D11RenderTargetView1* ppRTView1) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateRenderTargetView1((ID3D11Resource*) pResource.Handle, pDesc1, ref ppRTView1);
     }
 
     /// <summary>To be documented.</summary>
@@ -62563,11 +63099,11 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRenderTargetView1<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ID3D11Resource* pResource, ref RenderTargetViewDesc1 pDesc1, ref ComPtr<TI0> ppRTView1) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView1>, IComVtbl<TI0>
+    public static int CreateRenderTargetView1<TI0, TI1>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pResource, ref RenderTargetViewDesc1 pDesc1, ref ComPtr<TI1> ppRTView1) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11RenderTargetView1>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateRenderTargetView1(pResource, ref pDesc1, (ID3D11RenderTargetView1**) ppRTView1.GetAddressOf());
+        return @this->CreateRenderTargetView1((ID3D11Resource*) pResource.Handle, ref pDesc1, (ID3D11RenderTargetView1**) ppRTView1.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -62576,6 +63112,14 @@ public unsafe static class D3D11Device4VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateRenderTargetView1(pResource, ref pDesc1.GetPinnableReference(), ref ppRTView1);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateRenderTargetView1<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pResource, ref RenderTargetViewDesc1 pDesc1, ref ID3D11RenderTargetView1* ppRTView1) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateRenderTargetView1((ID3D11Resource*) pResource.Handle, ref pDesc1, ref ppRTView1);
     }
 
     /// <summary>To be documented.</summary>
@@ -62675,11 +63219,27 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void WriteToSubresource<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, Box* pDstBox, void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->WriteToSubresource((ID3D11Resource*) pDstResource.Handle, DstSubresource, pDstBox, pSrcData, SrcRowPitch, SrcDepthPitch);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void WriteToSubresource<T0>(this ComPtr<ID3D11Device4> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, Box* pDstBox, Span<T0> pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->WriteToSubresource(pDstResource, DstSubresource, pDstBox, ref pSrcData.GetPinnableReference(), SrcRowPitch, SrcDepthPitch);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void WriteToSubresource<T0, TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, Box* pDstBox, ref T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->WriteToSubresource((ID3D11Resource*) pDstResource.Handle, DstSubresource, pDstBox, ref pSrcData, SrcRowPitch, SrcDepthPitch);
     }
 
     /// <summary>To be documented.</summary>
@@ -62691,11 +63251,27 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void WriteToSubresource<TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, ref Box pDstBox, void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->WriteToSubresource((ID3D11Resource*) pDstResource.Handle, DstSubresource, ref pDstBox, pSrcData, SrcRowPitch, SrcDepthPitch);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void WriteToSubresource<T0>(this ComPtr<ID3D11Device4> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, Span<Box> pDstBox, Span<T0> pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->WriteToSubresource(pDstResource, DstSubresource, ref pDstBox.GetPinnableReference(), ref pSrcData.GetPinnableReference(), SrcRowPitch, SrcDepthPitch);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void WriteToSubresource<T0, TI0>(this ComPtr<ID3D11Device4> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, ref Box pDstBox, ref T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->WriteToSubresource((ID3D11Resource*) pDstResource.Handle, DstSubresource, ref pDstBox, ref pSrcData, SrcRowPitch, SrcDepthPitch);
     }
 
     /// <summary>To be documented.</summary>
@@ -62731,11 +63307,27 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void ReadFromSubresource<TI0>(this ComPtr<ID3D11Device4> thisVtbl, void* pDstData, uint DstRowPitch, uint DstDepthPitch, ComPtr<TI0> pSrcResource, uint SrcSubresource, Box* pSrcBox) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->ReadFromSubresource(pDstData, DstRowPitch, DstDepthPitch, (ID3D11Resource*) pSrcResource.Handle, SrcSubresource, pSrcBox);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void ReadFromSubresource(this ComPtr<ID3D11Device4> thisVtbl, void* pDstData, uint DstRowPitch, uint DstDepthPitch, ID3D11Resource* pSrcResource, uint SrcSubresource, Span<Box> pSrcBox)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->ReadFromSubresource(pDstData, DstRowPitch, DstDepthPitch, pSrcResource, SrcSubresource, ref pSrcBox.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void ReadFromSubresource<TI0>(this ComPtr<ID3D11Device4> thisVtbl, void* pDstData, uint DstRowPitch, uint DstDepthPitch, ComPtr<TI0> pSrcResource, uint SrcSubresource, ref Box pSrcBox) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->ReadFromSubresource(pDstData, DstRowPitch, DstDepthPitch, (ID3D11Resource*) pSrcResource.Handle, SrcSubresource, ref pSrcBox);
     }
 
     /// <summary>To be documented.</summary>
@@ -62763,11 +63355,27 @@ public unsafe static class D3D11Device4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void ReadFromSubresource<T0, TI0>(this ComPtr<ID3D11Device4> thisVtbl, ref T0 pDstData, uint DstRowPitch, uint DstDepthPitch, ComPtr<TI0> pSrcResource, uint SrcSubresource, Box* pSrcBox) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->ReadFromSubresource(ref pDstData, DstRowPitch, DstDepthPitch, (ID3D11Resource*) pSrcResource.Handle, SrcSubresource, pSrcBox);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void ReadFromSubresource<T0>(this ComPtr<ID3D11Device4> thisVtbl, Span<T0> pDstData, uint DstRowPitch, uint DstDepthPitch, ID3D11Resource* pSrcResource, uint SrcSubresource, Span<Box> pSrcBox) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->ReadFromSubresource(ref pDstData.GetPinnableReference(), DstRowPitch, DstDepthPitch, pSrcResource, SrcSubresource, ref pSrcBox.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void ReadFromSubresource<T0, TI0>(this ComPtr<ID3D11Device4> thisVtbl, ref T0 pDstData, uint DstRowPitch, uint DstDepthPitch, ComPtr<TI0> pSrcResource, uint SrcSubresource, ref Box pSrcBox) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->ReadFromSubresource(ref pDstData, DstRowPitch, DstDepthPitch, (ID3D11Resource*) pSrcResource.Handle, SrcSubresource, ref pSrcBox);
     }
 
     /// <summary>To be documented.</summary>

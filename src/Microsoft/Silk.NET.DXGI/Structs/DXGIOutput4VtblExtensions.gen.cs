@@ -1056,6 +1056,14 @@ public unsafe static class DXGIOutput4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateDataInterface<TI0>(this ComPtr<IDXGIOutput4> thisVtbl, Guid* Name, [Flow(FlowDirection.In)] ComPtr<TI0> pUnknown) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->SetPrivateDataInterface(Name, (Silk.NET.Core.Native.IUnknown*) pUnknown.Handle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int SetPrivateDataInterface(this ComPtr<IDXGIOutput4> thisVtbl, Guid* Name, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pUnknown)
     {
         var @this = thisVtbl.Handle;
@@ -1069,6 +1077,14 @@ public unsafe static class DXGIOutput4VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->SetPrivateDataInterface(ref Name.GetPinnableReference(), pUnknown);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPrivateDataInterface<TI0>(this ComPtr<IDXGIOutput4> thisVtbl, ref Guid Name, [Flow(FlowDirection.In)] ComPtr<TI0> pUnknown) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->SetPrivateDataInterface(ref Name, (Silk.NET.Core.Native.IUnknown*) pUnknown.Handle);
     }
 
     /// <summary>To be documented.</summary>
@@ -1193,6 +1209,14 @@ public unsafe static class DXGIOutput4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int FindClosestMatchingMode<TI0>(this ComPtr<IDXGIOutput4> thisVtbl, ModeDesc* pModeToMatch, ModeDesc* pClosestMatch, ComPtr<TI0> pConcernedDevice) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->FindClosestMatchingMode(pModeToMatch, pClosestMatch, (Silk.NET.Core.Native.IUnknown*) pConcernedDevice.Handle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int FindClosestMatchingMode(this ComPtr<IDXGIOutput4> thisVtbl, ModeDesc* pModeToMatch, ModeDesc* pClosestMatch, Span<Silk.NET.Core.Native.IUnknown> pConcernedDevice)
     {
         var @this = thisVtbl.Handle;
@@ -1206,6 +1230,14 @@ public unsafe static class DXGIOutput4VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->FindClosestMatchingMode(pModeToMatch, ref pClosestMatch.GetPinnableReference(), pConcernedDevice);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int FindClosestMatchingMode<TI0>(this ComPtr<IDXGIOutput4> thisVtbl, ModeDesc* pModeToMatch, ref ModeDesc pClosestMatch, ComPtr<TI0> pConcernedDevice) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->FindClosestMatchingMode(pModeToMatch, ref pClosestMatch, (Silk.NET.Core.Native.IUnknown*) pConcernedDevice.Handle);
     }
 
     /// <summary>To be documented.</summary>
@@ -1225,6 +1257,14 @@ public unsafe static class DXGIOutput4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int FindClosestMatchingMode<TI0>(this ComPtr<IDXGIOutput4> thisVtbl, ref ModeDesc pModeToMatch, ModeDesc* pClosestMatch, ComPtr<TI0> pConcernedDevice) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->FindClosestMatchingMode(ref pModeToMatch, pClosestMatch, (Silk.NET.Core.Native.IUnknown*) pConcernedDevice.Handle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int FindClosestMatchingMode(this ComPtr<IDXGIOutput4> thisVtbl, Span<ModeDesc> pModeToMatch, ModeDesc* pClosestMatch, Span<Silk.NET.Core.Native.IUnknown> pConcernedDevice)
     {
         var @this = thisVtbl.Handle;
@@ -1241,11 +1281,27 @@ public unsafe static class DXGIOutput4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int FindClosestMatchingMode<TI0>(this ComPtr<IDXGIOutput4> thisVtbl, ref ModeDesc pModeToMatch, ref ModeDesc pClosestMatch, ComPtr<TI0> pConcernedDevice) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->FindClosestMatchingMode(ref pModeToMatch, ref pClosestMatch, (Silk.NET.Core.Native.IUnknown*) pConcernedDevice.Handle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static int FindClosestMatchingMode(this ComPtr<IDXGIOutput4> thisVtbl, Span<ModeDesc> pModeToMatch, Span<ModeDesc> pClosestMatch, Span<Silk.NET.Core.Native.IUnknown> pConcernedDevice)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->FindClosestMatchingMode(ref pModeToMatch.GetPinnableReference(), ref pClosestMatch.GetPinnableReference(), ref pConcernedDevice.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int TakeOwnership<TI0>(this ComPtr<IDXGIOutput4> thisVtbl, ComPtr<TI0> pDevice, int Exclusive) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->TakeOwnership((Silk.NET.Core.Native.IUnknown*) pDevice.Handle, Exclusive);
     }
 
     /// <summary>To be documented.</summary>
@@ -1281,11 +1337,27 @@ public unsafe static class DXGIOutput4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int SetDisplaySurface<TI0>(this ComPtr<IDXGIOutput4> thisVtbl, ComPtr<TI0> pScanoutSurface) where TI0 : unmanaged, IComVtbl<IDXGISurface>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->SetDisplaySurface((IDXGISurface*) pScanoutSurface.Handle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static int SetDisplaySurface(this ComPtr<IDXGIOutput4> thisVtbl, Span<IDXGISurface> pScanoutSurface)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->SetDisplaySurface(ref pScanoutSurface.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetDisplaySurfaceData<TI0>(this ComPtr<IDXGIOutput4> thisVtbl, ComPtr<TI0> pDestination) where TI0 : unmanaged, IComVtbl<IDXGISurface>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->GetDisplaySurfaceData((IDXGISurface*) pDestination.Handle);
     }
 
     /// <summary>To be documented.</summary>
@@ -1329,6 +1401,14 @@ public unsafe static class DXGIOutput4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int FindClosestMatchingMode1<TI0>(this ComPtr<IDXGIOutput4> thisVtbl, ModeDesc1* pModeToMatch, ModeDesc1* pClosestMatch, ComPtr<TI0> pConcernedDevice) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->FindClosestMatchingMode1(pModeToMatch, pClosestMatch, (Silk.NET.Core.Native.IUnknown*) pConcernedDevice.Handle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int FindClosestMatchingMode1(this ComPtr<IDXGIOutput4> thisVtbl, ModeDesc1* pModeToMatch, ModeDesc1* pClosestMatch, Span<Silk.NET.Core.Native.IUnknown> pConcernedDevice)
     {
         var @this = thisVtbl.Handle;
@@ -1342,6 +1422,14 @@ public unsafe static class DXGIOutput4VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->FindClosestMatchingMode1(pModeToMatch, ref pClosestMatch.GetPinnableReference(), pConcernedDevice);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int FindClosestMatchingMode1<TI0>(this ComPtr<IDXGIOutput4> thisVtbl, ModeDesc1* pModeToMatch, ref ModeDesc1 pClosestMatch, ComPtr<TI0> pConcernedDevice) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->FindClosestMatchingMode1(pModeToMatch, ref pClosestMatch, (Silk.NET.Core.Native.IUnknown*) pConcernedDevice.Handle);
     }
 
     /// <summary>To be documented.</summary>
@@ -1361,6 +1449,14 @@ public unsafe static class DXGIOutput4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int FindClosestMatchingMode1<TI0>(this ComPtr<IDXGIOutput4> thisVtbl, ref ModeDesc1 pModeToMatch, ModeDesc1* pClosestMatch, ComPtr<TI0> pConcernedDevice) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->FindClosestMatchingMode1(ref pModeToMatch, pClosestMatch, (Silk.NET.Core.Native.IUnknown*) pConcernedDevice.Handle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int FindClosestMatchingMode1(this ComPtr<IDXGIOutput4> thisVtbl, Span<ModeDesc1> pModeToMatch, ModeDesc1* pClosestMatch, Span<Silk.NET.Core.Native.IUnknown> pConcernedDevice)
     {
         var @this = thisVtbl.Handle;
@@ -1377,11 +1473,27 @@ public unsafe static class DXGIOutput4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int FindClosestMatchingMode1<TI0>(this ComPtr<IDXGIOutput4> thisVtbl, ref ModeDesc1 pModeToMatch, ref ModeDesc1 pClosestMatch, ComPtr<TI0> pConcernedDevice) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->FindClosestMatchingMode1(ref pModeToMatch, ref pClosestMatch, (Silk.NET.Core.Native.IUnknown*) pConcernedDevice.Handle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static int FindClosestMatchingMode1(this ComPtr<IDXGIOutput4> thisVtbl, Span<ModeDesc1> pModeToMatch, Span<ModeDesc1> pClosestMatch, Span<Silk.NET.Core.Native.IUnknown> pConcernedDevice)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->FindClosestMatchingMode1(ref pModeToMatch.GetPinnableReference(), ref pClosestMatch.GetPinnableReference(), ref pConcernedDevice.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetDisplaySurfaceData1<TI0>(this ComPtr<IDXGIOutput4> thisVtbl, ComPtr<TI0> pDestination) where TI0 : unmanaged, IComVtbl<IDXGIResource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->GetDisplaySurfaceData1((IDXGIResource*) pDestination.Handle);
     }
 
     /// <summary>To be documented.</summary>
@@ -1393,11 +1505,19 @@ public unsafe static class DXGIOutput4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DuplicateOutput<TI0>(this ComPtr<IDXGIOutput4> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, ref ComPtr<TI0> ppOutputDuplication) where TI0 : unmanaged, IComVtbl<IDXGIOutputDuplication>, IComVtbl<TI0>
+    public static int DuplicateOutput<TI0, TI1>(this ComPtr<IDXGIOutput4> thisVtbl, ComPtr<TI0> pDevice, ref ComPtr<TI1> ppOutputDuplication) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGIOutputDuplication>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->DuplicateOutput(pDevice, (IDXGIOutputDuplication**) ppOutputDuplication.GetAddressOf());
+        return @this->DuplicateOutput((Silk.NET.Core.Native.IUnknown*) pDevice.Handle, (IDXGIOutputDuplication**) ppOutputDuplication.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int DuplicateOutput<TI0>(this ComPtr<IDXGIOutput4> thisVtbl, ComPtr<TI0> pDevice, ref IDXGIOutputDuplication* ppOutputDuplication) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->DuplicateOutput((Silk.NET.Core.Native.IUnknown*) pDevice.Handle, ref ppOutputDuplication);
     }
 
     /// <summary>To be documented.</summary>
@@ -1425,11 +1545,27 @@ public unsafe static class DXGIOutput4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CheckOverlaySupport<TI0>(this ComPtr<IDXGIOutput4> thisVtbl, Silk.NET.DXGI.Format EnumFormat, ComPtr<TI0> pConcernedDevice, uint* pFlags) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CheckOverlaySupport(EnumFormat, (Silk.NET.Core.Native.IUnknown*) pConcernedDevice.Handle, pFlags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CheckOverlaySupport(this ComPtr<IDXGIOutput4> thisVtbl, Silk.NET.DXGI.Format EnumFormat, Silk.NET.Core.Native.IUnknown* pConcernedDevice, Span<uint> pFlags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CheckOverlaySupport(EnumFormat, pConcernedDevice, ref pFlags.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CheckOverlaySupport<TI0>(this ComPtr<IDXGIOutput4> thisVtbl, Silk.NET.DXGI.Format EnumFormat, ComPtr<TI0> pConcernedDevice, ref uint pFlags) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CheckOverlaySupport(EnumFormat, (Silk.NET.Core.Native.IUnknown*) pConcernedDevice.Handle, ref pFlags);
     }
 
     /// <summary>To be documented.</summary>
@@ -1449,11 +1585,27 @@ public unsafe static class DXGIOutput4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CheckOverlayColorSpaceSupport<TI0>(this ComPtr<IDXGIOutput4> thisVtbl, Silk.NET.DXGI.Format Format, ColorSpaceType ColorSpace, ComPtr<TI0> pConcernedDevice, uint* pFlags) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CheckOverlayColorSpaceSupport(Format, ColorSpace, (Silk.NET.Core.Native.IUnknown*) pConcernedDevice.Handle, pFlags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CheckOverlayColorSpaceSupport(this ComPtr<IDXGIOutput4> thisVtbl, Silk.NET.DXGI.Format Format, ColorSpaceType ColorSpace, Silk.NET.Core.Native.IUnknown* pConcernedDevice, Span<uint> pFlags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CheckOverlayColorSpaceSupport(Format, ColorSpace, pConcernedDevice, ref pFlags.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CheckOverlayColorSpaceSupport<TI0>(this ComPtr<IDXGIOutput4> thisVtbl, Silk.NET.DXGI.Format Format, ColorSpaceType ColorSpace, ComPtr<TI0> pConcernedDevice, ref uint pFlags) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CheckOverlayColorSpaceSupport(Format, ColorSpace, (Silk.NET.Core.Native.IUnknown*) pConcernedDevice.Handle, ref pFlags);
     }
 
     /// <summary>To be documented.</summary>

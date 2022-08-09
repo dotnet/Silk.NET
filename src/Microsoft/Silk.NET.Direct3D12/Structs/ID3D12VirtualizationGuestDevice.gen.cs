@@ -216,6 +216,38 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int ShareWithHost<TI0>(ComPtr<TI0> pObject, void** pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VirtualizationGuestDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->ShareWithHost((ID3D12DeviceChild*) pObject.Handle, pHandle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int ShareWithHost<TI0>(ComPtr<TI0> pObject, ref void* pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VirtualizationGuestDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->ShareWithHost((ID3D12DeviceChild*) pObject.Handle, ref pHandle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateFenceFd<TI0>(ComPtr<TI0> pFence, ulong FenceValue, int* pFenceFd) where TI0 : unmanaged, IComVtbl<ID3D12Fence>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VirtualizationGuestDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateFenceFd((ID3D12Fence*) pFence.Handle, FenceValue, pFenceFd);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateFenceFd<TI0>(ComPtr<TI0> pFence, ulong FenceValue, ref int pFenceFd) where TI0 : unmanaged, IComVtbl<ID3D12Fence>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VirtualizationGuestDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateFenceFd((ID3D12Fence*) pFence.Handle, FenceValue, ref pFenceFd);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12VirtualizationGuestDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

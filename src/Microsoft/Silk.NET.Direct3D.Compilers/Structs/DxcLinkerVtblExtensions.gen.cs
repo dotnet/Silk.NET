@@ -1395,6 +1395,14 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int RegisterLibrary<TI0>(this ComPtr<IDxcLinker> thisVtbl, char* pLibName, ComPtr<TI0> pLib) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->RegisterLibrary(pLibName, (IDxcBlob*) pLib.Handle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int RegisterLibrary(this ComPtr<IDxcLinker> thisVtbl, char* pLibName, Span<IDxcBlob> pLib)
     {
         var @this = thisVtbl.Handle;
@@ -1411,11 +1419,27 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int RegisterLibrary<TI0>(this ComPtr<IDxcLinker> thisVtbl, ref char pLibName, ComPtr<TI0> pLib) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->RegisterLibrary(ref pLibName, (IDxcBlob*) pLib.Handle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static int RegisterLibrary(this ComPtr<IDxcLinker> thisVtbl, Span<char> pLibName, Span<IDxcBlob> pLib)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->RegisterLibrary(ref pLibName.GetPinnableReference(), ref pLib.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int RegisterLibrary<TI0>(this ComPtr<IDxcLinker> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pLibName, ComPtr<TI0> pLib) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->RegisterLibrary(pLibName, (IDxcBlob*) pLib.Handle);
     }
 
     /// <summary>To be documented.</summary>

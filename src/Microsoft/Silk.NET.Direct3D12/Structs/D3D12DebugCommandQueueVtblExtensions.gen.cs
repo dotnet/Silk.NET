@@ -131,6 +131,14 @@ public unsafe static class D3D12DebugCommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int AssertResourceState<TI0>(this ComPtr<ID3D12DebugCommandQueue> thisVtbl, ComPtr<TI0> pResource, uint Subresource, uint State) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->AssertResourceState((ID3D12Resource*) pResource.Handle, Subresource, State);
+    }
+
+    /// <summary>To be documented.</summary>
     public static int AssertResourceState(this ComPtr<ID3D12DebugCommandQueue> thisVtbl, Span<ID3D12Resource> pResource, uint Subresource, uint State)
     {
         var @this = thisVtbl.Handle;

@@ -239,6 +239,14 @@ public unsafe static class D3D11DebugVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int SetSwapChain<TI0>(this ComPtr<ID3D11Debug> thisVtbl, ComPtr<TI0> pSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->SetSwapChain((Silk.NET.DXGI.IDXGISwapChain*) pSwapChain.Handle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static int SetSwapChain(this ComPtr<ID3D11Debug> thisVtbl, Span<Silk.NET.DXGI.IDXGISwapChain> pSwapChain)
     {
         var @this = thisVtbl.Handle;
@@ -247,11 +255,35 @@ public unsafe static class D3D11DebugVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int GetSwapChain<TI0>(this ComPtr<ID3D11Debug> thisVtbl, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->GetSwapChain((Silk.NET.DXGI.IDXGISwapChain**) ppSwapChain.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int ValidateContext<TI0>(this ComPtr<ID3D11Debug> thisVtbl, ComPtr<TI0> pContext) where TI0 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->ValidateContext((ID3D11DeviceContext*) pContext.Handle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static int ValidateContext(this ComPtr<ID3D11Debug> thisVtbl, Span<ID3D11DeviceContext> pContext)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->ValidateContext(ref pContext.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int ValidateContextForDispatch<TI0>(this ComPtr<ID3D11Debug> thisVtbl, ComPtr<TI0> pContext) where TI0 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->ValidateContextForDispatch((ID3D11DeviceContext*) pContext.Handle);
     }
 
     /// <summary>To be documented.</summary>

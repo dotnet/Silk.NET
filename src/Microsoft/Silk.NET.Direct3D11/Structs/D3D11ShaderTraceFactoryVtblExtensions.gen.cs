@@ -218,11 +218,19 @@ public unsafe static class D3D11ShaderTraceFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateShaderTrace<TI0>(this ComPtr<ID3D11ShaderTraceFactory> thisVtbl, Silk.NET.Core.Native.IUnknown* pShader, ShaderTraceDesc* pTraceDesc, ref ComPtr<TI0> ppShaderTrace) where TI0 : unmanaged, IComVtbl<ID3D11ShaderTrace>, IComVtbl<TI0>
+    public static unsafe int CreateShaderTrace<TI0, TI1>(this ComPtr<ID3D11ShaderTraceFactory> thisVtbl, ComPtr<TI0> pShader, ShaderTraceDesc* pTraceDesc, ref ComPtr<TI1> ppShaderTrace) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11ShaderTrace>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateShaderTrace(pShader, pTraceDesc, (ID3D11ShaderTrace**) ppShaderTrace.GetAddressOf());
+        return @this->CreateShaderTrace((Silk.NET.Core.Native.IUnknown*) pShader.Handle, pTraceDesc, (ID3D11ShaderTrace**) ppShaderTrace.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateShaderTrace<TI0>(this ComPtr<ID3D11ShaderTraceFactory> thisVtbl, ComPtr<TI0> pShader, ShaderTraceDesc* pTraceDesc, ref ID3D11ShaderTrace* ppShaderTrace) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateShaderTrace((Silk.NET.Core.Native.IUnknown*) pShader.Handle, pTraceDesc, ref ppShaderTrace);
     }
 
     /// <summary>To be documented.</summary>
@@ -234,11 +242,11 @@ public unsafe static class D3D11ShaderTraceFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateShaderTrace<TI0>(this ComPtr<ID3D11ShaderTraceFactory> thisVtbl, Silk.NET.Core.Native.IUnknown* pShader, ref ShaderTraceDesc pTraceDesc, ref ComPtr<TI0> ppShaderTrace) where TI0 : unmanaged, IComVtbl<ID3D11ShaderTrace>, IComVtbl<TI0>
+    public static int CreateShaderTrace<TI0, TI1>(this ComPtr<ID3D11ShaderTraceFactory> thisVtbl, ComPtr<TI0> pShader, ref ShaderTraceDesc pTraceDesc, ref ComPtr<TI1> ppShaderTrace) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11ShaderTrace>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateShaderTrace(pShader, ref pTraceDesc, (ID3D11ShaderTrace**) ppShaderTrace.GetAddressOf());
+        return @this->CreateShaderTrace((Silk.NET.Core.Native.IUnknown*) pShader.Handle, ref pTraceDesc, (ID3D11ShaderTrace**) ppShaderTrace.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -247,6 +255,14 @@ public unsafe static class D3D11ShaderTraceFactoryVtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateShaderTrace(pShader, ref pTraceDesc.GetPinnableReference(), ref ppShaderTrace);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateShaderTrace<TI0>(this ComPtr<ID3D11ShaderTraceFactory> thisVtbl, ComPtr<TI0> pShader, ref ShaderTraceDesc pTraceDesc, ref ID3D11ShaderTrace* ppShaderTrace) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateShaderTrace((Silk.NET.Core.Native.IUnknown*) pShader.Handle, ref pTraceDesc, ref ppShaderTrace);
     }
 
     /// <summary>To be documented.</summary>

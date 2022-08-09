@@ -1448,11 +1448,11 @@ public unsafe static class D3D11FunctionLinkingGraphVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateModuleInstance<TI0>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ref ComPtr<TI0> ppModuleInstance, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TI0 : unmanaged, IComVtbl<ID3D11ModuleInstance>, IComVtbl<TI0>
+    public static int CreateModuleInstance<TI0, TI1>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ref ComPtr<TI0> ppModuleInstance, ref ComPtr<TI1> ppErrorBuffer) where TI0 : unmanaged, IComVtbl<ID3D11ModuleInstance>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateModuleInstance((ID3D11ModuleInstance**) ppModuleInstance.GetAddressOf(), ppErrorBuffer);
+        return @this->CreateModuleInstance((ID3D11ModuleInstance**) ppModuleInstance.GetAddressOf(), (Silk.NET.Core.Native.ID3D10Blob**) ppErrorBuffer.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -1461,6 +1461,14 @@ public unsafe static class D3D11FunctionLinkingGraphVtblExtensions
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->CreateModuleInstance((ID3D11ModuleInstance**) ppModuleInstance.GetAddressOf(), ref ppErrorBuffer);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateModuleInstance<TI0>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ref ID3D11ModuleInstance* ppModuleInstance, ref ComPtr<TI0> ppErrorBuffer) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateModuleInstance(ref ppModuleInstance, (Silk.NET.Core.Native.ID3D10Blob**) ppErrorBuffer.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -1528,11 +1536,19 @@ public unsafe static class D3D11FunctionLinkingGraphVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CallFunction<TI0>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, byte* pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, byte* pFunctionName, ref ComPtr<TI0> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+    public static unsafe int CallFunction<TI0, TI1>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, byte* pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, byte* pFunctionName, ref ComPtr<TI1> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CallFunction(pModuleInstanceNamespace, pModuleWithFunctionPrototype, pFunctionName, (ID3D11LinkingNode**) ppCallNode.GetAddressOf());
+        return @this->CallFunction(pModuleInstanceNamespace, (ID3D11Module*) pModuleWithFunctionPrototype.Handle, pFunctionName, (ID3D11LinkingNode**) ppCallNode.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CallFunction<TI0>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, byte* pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, byte* pFunctionName, ref ID3D11LinkingNode* ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CallFunction(pModuleInstanceNamespace, (ID3D11Module*) pModuleWithFunctionPrototype.Handle, pFunctionName, ref ppCallNode);
     }
 
     /// <summary>To be documented.</summary>
@@ -1544,11 +1560,11 @@ public unsafe static class D3D11FunctionLinkingGraphVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CallFunction<TI0>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, byte* pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, ref byte pFunctionName, ref ComPtr<TI0> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+    public static unsafe int CallFunction<TI0, TI1>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, byte* pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, ref byte pFunctionName, ref ComPtr<TI1> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CallFunction(pModuleInstanceNamespace, pModuleWithFunctionPrototype, ref pFunctionName, (ID3D11LinkingNode**) ppCallNode.GetAddressOf());
+        return @this->CallFunction(pModuleInstanceNamespace, (ID3D11Module*) pModuleWithFunctionPrototype.Handle, ref pFunctionName, (ID3D11LinkingNode**) ppCallNode.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -1560,11 +1576,27 @@ public unsafe static class D3D11FunctionLinkingGraphVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CallFunction<TI0>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, byte* pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ComPtr<TI0> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+    public static unsafe int CallFunction<TI0>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, byte* pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, ref byte pFunctionName, ref ID3D11LinkingNode* ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CallFunction(pModuleInstanceNamespace, pModuleWithFunctionPrototype, pFunctionName, (ID3D11LinkingNode**) ppCallNode.GetAddressOf());
+        return @this->CallFunction(pModuleInstanceNamespace, (ID3D11Module*) pModuleWithFunctionPrototype.Handle, ref pFunctionName, ref ppCallNode);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CallFunction<TI0, TI1>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, byte* pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ComPtr<TI1> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CallFunction(pModuleInstanceNamespace, (ID3D11Module*) pModuleWithFunctionPrototype.Handle, pFunctionName, (ID3D11LinkingNode**) ppCallNode.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CallFunction<TI0>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, byte* pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ID3D11LinkingNode* ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CallFunction(pModuleInstanceNamespace, (ID3D11Module*) pModuleWithFunctionPrototype.Handle, pFunctionName, ref ppCallNode);
     }
 
     /// <summary>To be documented.</summary>
@@ -1648,11 +1680,11 @@ public unsafe static class D3D11FunctionLinkingGraphVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CallFunction<TI0>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ref byte pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, byte* pFunctionName, ref ComPtr<TI0> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+    public static unsafe int CallFunction<TI0, TI1>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ref byte pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, byte* pFunctionName, ref ComPtr<TI1> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CallFunction(ref pModuleInstanceNamespace, pModuleWithFunctionPrototype, pFunctionName, (ID3D11LinkingNode**) ppCallNode.GetAddressOf());
+        return @this->CallFunction(ref pModuleInstanceNamespace, (ID3D11Module*) pModuleWithFunctionPrototype.Handle, pFunctionName, (ID3D11LinkingNode**) ppCallNode.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -1664,6 +1696,14 @@ public unsafe static class D3D11FunctionLinkingGraphVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CallFunction<TI0>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ref byte pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, byte* pFunctionName, ref ID3D11LinkingNode* ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CallFunction(ref pModuleInstanceNamespace, (ID3D11Module*) pModuleWithFunctionPrototype.Handle, pFunctionName, ref ppCallNode);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CallFunction(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, Span<byte> pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, Span<byte> pFunctionName, ID3D11LinkingNode** ppCallNode)
     {
         var @this = thisVtbl.Handle;
@@ -1672,11 +1712,11 @@ public unsafe static class D3D11FunctionLinkingGraphVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CallFunction<TI0>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ref byte pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, ref byte pFunctionName, ref ComPtr<TI0> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+    public static int CallFunction<TI0, TI1>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ref byte pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, ref byte pFunctionName, ref ComPtr<TI1> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CallFunction(ref pModuleInstanceNamespace, pModuleWithFunctionPrototype, ref pFunctionName, (ID3D11LinkingNode**) ppCallNode.GetAddressOf());
+        return @this->CallFunction(ref pModuleInstanceNamespace, (ID3D11Module*) pModuleWithFunctionPrototype.Handle, ref pFunctionName, (ID3D11LinkingNode**) ppCallNode.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -1688,6 +1728,14 @@ public unsafe static class D3D11FunctionLinkingGraphVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CallFunction<TI0>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ref byte pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, ref byte pFunctionName, ref ID3D11LinkingNode* ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CallFunction(ref pModuleInstanceNamespace, (ID3D11Module*) pModuleWithFunctionPrototype.Handle, ref pFunctionName, ref ppCallNode);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CallFunction(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, Span<byte> pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ID3D11LinkingNode** ppCallNode)
     {
         var @this = thisVtbl.Handle;
@@ -1696,11 +1744,11 @@ public unsafe static class D3D11FunctionLinkingGraphVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CallFunction<TI0>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ref byte pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ComPtr<TI0> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+    public static int CallFunction<TI0, TI1>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ref byte pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ComPtr<TI1> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CallFunction(ref pModuleInstanceNamespace, pModuleWithFunctionPrototype, pFunctionName, (ID3D11LinkingNode**) ppCallNode.GetAddressOf());
+        return @this->CallFunction(ref pModuleInstanceNamespace, (ID3D11Module*) pModuleWithFunctionPrototype.Handle, pFunctionName, (ID3D11LinkingNode**) ppCallNode.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -1709,6 +1757,14 @@ public unsafe static class D3D11FunctionLinkingGraphVtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CallFunction(ref pModuleInstanceNamespace.GetPinnableReference(), pModuleWithFunctionPrototype, pFunctionName, ref ppCallNode);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CallFunction<TI0>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ref byte pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ID3D11LinkingNode* ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CallFunction(ref pModuleInstanceNamespace, (ID3D11Module*) pModuleWithFunctionPrototype.Handle, pFunctionName, ref ppCallNode);
     }
 
     /// <summary>To be documented.</summary>
@@ -1784,11 +1840,19 @@ public unsafe static class D3D11FunctionLinkingGraphVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CallFunction<TI0>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, byte* pFunctionName, ref ComPtr<TI0> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+    public static unsafe int CallFunction<TI0, TI1>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, byte* pFunctionName, ref ComPtr<TI1> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CallFunction(pModuleInstanceNamespace, pModuleWithFunctionPrototype, pFunctionName, (ID3D11LinkingNode**) ppCallNode.GetAddressOf());
+        return @this->CallFunction(pModuleInstanceNamespace, (ID3D11Module*) pModuleWithFunctionPrototype.Handle, pFunctionName, (ID3D11LinkingNode**) ppCallNode.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CallFunction<TI0>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, byte* pFunctionName, ref ID3D11LinkingNode* ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CallFunction(pModuleInstanceNamespace, (ID3D11Module*) pModuleWithFunctionPrototype.Handle, pFunctionName, ref ppCallNode);
     }
 
     /// <summary>To be documented.</summary>
@@ -1800,11 +1864,11 @@ public unsafe static class D3D11FunctionLinkingGraphVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CallFunction<TI0>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, ref byte pFunctionName, ref ComPtr<TI0> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+    public static int CallFunction<TI0, TI1>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, ref byte pFunctionName, ref ComPtr<TI1> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CallFunction(pModuleInstanceNamespace, pModuleWithFunctionPrototype, ref pFunctionName, (ID3D11LinkingNode**) ppCallNode.GetAddressOf());
+        return @this->CallFunction(pModuleInstanceNamespace, (ID3D11Module*) pModuleWithFunctionPrototype.Handle, ref pFunctionName, (ID3D11LinkingNode**) ppCallNode.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -1816,11 +1880,27 @@ public unsafe static class D3D11FunctionLinkingGraphVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CallFunction<TI0>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ComPtr<TI0> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+    public static unsafe int CallFunction<TI0>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, ref byte pFunctionName, ref ID3D11LinkingNode* ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CallFunction(pModuleInstanceNamespace, pModuleWithFunctionPrototype, pFunctionName, (ID3D11LinkingNode**) ppCallNode.GetAddressOf());
+        return @this->CallFunction(pModuleInstanceNamespace, (ID3D11Module*) pModuleWithFunctionPrototype.Handle, ref pFunctionName, ref ppCallNode);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CallFunction<TI0, TI1>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ComPtr<TI1> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CallFunction(pModuleInstanceNamespace, (ID3D11Module*) pModuleWithFunctionPrototype.Handle, pFunctionName, (ID3D11LinkingNode**) ppCallNode.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CallFunction<TI0>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ID3D11LinkingNode* ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CallFunction(pModuleInstanceNamespace, (ID3D11Module*) pModuleWithFunctionPrototype.Handle, pFunctionName, ref ppCallNode);
     }
 
     /// <summary>To be documented.</summary>
@@ -1896,11 +1976,27 @@ public unsafe static class D3D11FunctionLinkingGraphVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int PassValue<TI0, TI1>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ComPtr<TI0> pSrcNode, int SrcParameterIndex, ComPtr<TI1> pDstNode, int DstParameterIndex) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->PassValue((ID3D11LinkingNode*) pSrcNode.Handle, SrcParameterIndex, (ID3D11LinkingNode*) pDstNode.Handle, DstParameterIndex);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int PassValue(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, Span<ID3D11LinkingNode> pDstNode, int DstParameterIndex)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->PassValue(pSrcNode, SrcParameterIndex, ref pDstNode.GetPinnableReference(), DstParameterIndex);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int PassValue<TI0>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ComPtr<TI0> pSrcNode, int SrcParameterIndex, ref ID3D11LinkingNode pDstNode, int DstParameterIndex) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->PassValue((ID3D11LinkingNode*) pSrcNode.Handle, SrcParameterIndex, ref pDstNode, DstParameterIndex);
     }
 
     /// <summary>To be documented.</summary>
@@ -1912,11 +2008,27 @@ public unsafe static class D3D11FunctionLinkingGraphVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int PassValue<TI0>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, ComPtr<TI0> pDstNode, int DstParameterIndex) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->PassValue(ref pSrcNode, SrcParameterIndex, (ID3D11LinkingNode*) pDstNode.Handle, DstParameterIndex);
+    }
+
+    /// <summary>To be documented.</summary>
     public static int PassValue(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, Span<ID3D11LinkingNode> pSrcNode, int SrcParameterIndex, Span<ID3D11LinkingNode> pDstNode, int DstParameterIndex)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->PassValue(ref pSrcNode.GetPinnableReference(), SrcParameterIndex, ref pDstNode.GetPinnableReference(), DstParameterIndex);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int PassValueWithSwizzle<TI0, TI1>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ComPtr<TI0> pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, ComPtr<TI1> pDstNode, int DstParameterIndex, byte* pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->PassValueWithSwizzle((ID3D11LinkingNode*) pSrcNode.Handle, SrcParameterIndex, pSrcSwizzle, (ID3D11LinkingNode*) pDstNode.Handle, DstParameterIndex, pDstSwizzle);
     }
 
     /// <summary>To be documented.</summary>
@@ -1928,11 +2040,35 @@ public unsafe static class D3D11FunctionLinkingGraphVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int PassValueWithSwizzle<TI0, TI1>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ComPtr<TI0> pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, ComPtr<TI1> pDstNode, int DstParameterIndex, ref byte pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->PassValueWithSwizzle((ID3D11LinkingNode*) pSrcNode.Handle, SrcParameterIndex, pSrcSwizzle, (ID3D11LinkingNode*) pDstNode.Handle, DstParameterIndex, ref pDstSwizzle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int PassValueWithSwizzle<TI0, TI1>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ComPtr<TI0> pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, ComPtr<TI1> pDstNode, int DstParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->PassValueWithSwizzle((ID3D11LinkingNode*) pSrcNode.Handle, SrcParameterIndex, pSrcSwizzle, (ID3D11LinkingNode*) pDstNode.Handle, DstParameterIndex, pDstSwizzle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int PassValueWithSwizzle(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, Span<ID3D11LinkingNode> pDstNode, int DstParameterIndex, byte* pDstSwizzle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->PassValueWithSwizzle(pSrcNode, SrcParameterIndex, pSrcSwizzle, ref pDstNode.GetPinnableReference(), DstParameterIndex, pDstSwizzle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int PassValueWithSwizzle<TI0>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ComPtr<TI0> pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, byte* pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->PassValueWithSwizzle((ID3D11LinkingNode*) pSrcNode.Handle, SrcParameterIndex, pSrcSwizzle, ref pDstNode, DstParameterIndex, pDstSwizzle);
     }
 
     /// <summary>To be documented.</summary>
@@ -1944,11 +2080,27 @@ public unsafe static class D3D11FunctionLinkingGraphVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int PassValueWithSwizzle<TI0>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ComPtr<TI0> pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, ref byte pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->PassValueWithSwizzle((ID3D11LinkingNode*) pSrcNode.Handle, SrcParameterIndex, pSrcSwizzle, ref pDstNode, DstParameterIndex, ref pDstSwizzle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int PassValueWithSwizzle(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, Span<ID3D11LinkingNode> pDstNode, int DstParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->PassValueWithSwizzle(pSrcNode, SrcParameterIndex, pSrcSwizzle, ref pDstNode.GetPinnableReference(), DstParameterIndex, pDstSwizzle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int PassValueWithSwizzle<TI0>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ComPtr<TI0> pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->PassValueWithSwizzle((ID3D11LinkingNode*) pSrcNode.Handle, SrcParameterIndex, pSrcSwizzle, ref pDstNode, DstParameterIndex, pDstSwizzle);
     }
 
     /// <summary>To be documented.</summary>
@@ -1960,11 +2112,27 @@ public unsafe static class D3D11FunctionLinkingGraphVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int PassValueWithSwizzle<TI0, TI1>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ComPtr<TI0> pSrcNode, int SrcParameterIndex, ref byte pSrcSwizzle, ComPtr<TI1> pDstNode, int DstParameterIndex, byte* pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->PassValueWithSwizzle((ID3D11LinkingNode*) pSrcNode.Handle, SrcParameterIndex, ref pSrcSwizzle, (ID3D11LinkingNode*) pDstNode.Handle, DstParameterIndex, pDstSwizzle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int PassValueWithSwizzle(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, Span<byte> pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, Span<byte> pDstSwizzle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->PassValueWithSwizzle(pSrcNode, SrcParameterIndex, ref pSrcSwizzle.GetPinnableReference(), pDstNode, DstParameterIndex, ref pDstSwizzle.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int PassValueWithSwizzle<TI0, TI1>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ComPtr<TI0> pSrcNode, int SrcParameterIndex, ref byte pSrcSwizzle, ComPtr<TI1> pDstNode, int DstParameterIndex, ref byte pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->PassValueWithSwizzle((ID3D11LinkingNode*) pSrcNode.Handle, SrcParameterIndex, ref pSrcSwizzle, (ID3D11LinkingNode*) pDstNode.Handle, DstParameterIndex, ref pDstSwizzle);
     }
 
     /// <summary>To be documented.</summary>
@@ -1976,11 +2144,27 @@ public unsafe static class D3D11FunctionLinkingGraphVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int PassValueWithSwizzle<TI0, TI1>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ComPtr<TI0> pSrcNode, int SrcParameterIndex, ref byte pSrcSwizzle, ComPtr<TI1> pDstNode, int DstParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->PassValueWithSwizzle((ID3D11LinkingNode*) pSrcNode.Handle, SrcParameterIndex, ref pSrcSwizzle, (ID3D11LinkingNode*) pDstNode.Handle, DstParameterIndex, pDstSwizzle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int PassValueWithSwizzle(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, Span<byte> pSrcSwizzle, Span<ID3D11LinkingNode> pDstNode, int DstParameterIndex, byte* pDstSwizzle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->PassValueWithSwizzle(pSrcNode, SrcParameterIndex, ref pSrcSwizzle.GetPinnableReference(), ref pDstNode.GetPinnableReference(), DstParameterIndex, pDstSwizzle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int PassValueWithSwizzle<TI0>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ComPtr<TI0> pSrcNode, int SrcParameterIndex, ref byte pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, byte* pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->PassValueWithSwizzle((ID3D11LinkingNode*) pSrcNode.Handle, SrcParameterIndex, ref pSrcSwizzle, ref pDstNode, DstParameterIndex, pDstSwizzle);
     }
 
     /// <summary>To be documented.</summary>
@@ -1992,11 +2176,35 @@ public unsafe static class D3D11FunctionLinkingGraphVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int PassValueWithSwizzle<TI0>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ComPtr<TI0> pSrcNode, int SrcParameterIndex, ref byte pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, ref byte pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->PassValueWithSwizzle((ID3D11LinkingNode*) pSrcNode.Handle, SrcParameterIndex, ref pSrcSwizzle, ref pDstNode, DstParameterIndex, ref pDstSwizzle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int PassValueWithSwizzle(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, Span<byte> pSrcSwizzle, Span<ID3D11LinkingNode> pDstNode, int DstParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->PassValueWithSwizzle(pSrcNode, SrcParameterIndex, ref pSrcSwizzle.GetPinnableReference(), ref pDstNode.GetPinnableReference(), DstParameterIndex, pDstSwizzle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int PassValueWithSwizzle<TI0>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ComPtr<TI0> pSrcNode, int SrcParameterIndex, ref byte pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->PassValueWithSwizzle((ID3D11LinkingNode*) pSrcNode.Handle, SrcParameterIndex, ref pSrcSwizzle, ref pDstNode, DstParameterIndex, pDstSwizzle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int PassValueWithSwizzle<TI0, TI1>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ComPtr<TI0> pSrcNode, int SrcParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ComPtr<TI1> pDstNode, int DstParameterIndex, byte* pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->PassValueWithSwizzle((ID3D11LinkingNode*) pSrcNode.Handle, SrcParameterIndex, pSrcSwizzle, (ID3D11LinkingNode*) pDstNode.Handle, DstParameterIndex, pDstSwizzle);
     }
 
     /// <summary>To be documented.</summary>
@@ -2008,11 +2216,35 @@ public unsafe static class D3D11FunctionLinkingGraphVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int PassValueWithSwizzle<TI0, TI1>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ComPtr<TI0> pSrcNode, int SrcParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ComPtr<TI1> pDstNode, int DstParameterIndex, ref byte pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->PassValueWithSwizzle((ID3D11LinkingNode*) pSrcNode.Handle, SrcParameterIndex, pSrcSwizzle, (ID3D11LinkingNode*) pDstNode.Handle, DstParameterIndex, ref pDstSwizzle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int PassValueWithSwizzle<TI0, TI1>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ComPtr<TI0> pSrcNode, int SrcParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ComPtr<TI1> pDstNode, int DstParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->PassValueWithSwizzle((ID3D11LinkingNode*) pSrcNode.Handle, SrcParameterIndex, pSrcSwizzle, (ID3D11LinkingNode*) pDstNode.Handle, DstParameterIndex, pDstSwizzle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int PassValueWithSwizzle(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, Span<ID3D11LinkingNode> pDstNode, int DstParameterIndex, byte* pDstSwizzle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->PassValueWithSwizzle(pSrcNode, SrcParameterIndex, pSrcSwizzle, ref pDstNode.GetPinnableReference(), DstParameterIndex, pDstSwizzle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int PassValueWithSwizzle<TI0>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ComPtr<TI0> pSrcNode, int SrcParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, byte* pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->PassValueWithSwizzle((ID3D11LinkingNode*) pSrcNode.Handle, SrcParameterIndex, pSrcSwizzle, ref pDstNode, DstParameterIndex, pDstSwizzle);
     }
 
     /// <summary>To be documented.</summary>
@@ -2024,11 +2256,27 @@ public unsafe static class D3D11FunctionLinkingGraphVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int PassValueWithSwizzle<TI0>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ComPtr<TI0> pSrcNode, int SrcParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, ref byte pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->PassValueWithSwizzle((ID3D11LinkingNode*) pSrcNode.Handle, SrcParameterIndex, pSrcSwizzle, ref pDstNode, DstParameterIndex, ref pDstSwizzle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int PassValueWithSwizzle(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, Span<ID3D11LinkingNode> pDstNode, int DstParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->PassValueWithSwizzle(pSrcNode, SrcParameterIndex, pSrcSwizzle, ref pDstNode.GetPinnableReference(), DstParameterIndex, pDstSwizzle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int PassValueWithSwizzle<TI0>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ComPtr<TI0> pSrcNode, int SrcParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->PassValueWithSwizzle((ID3D11LinkingNode*) pSrcNode.Handle, SrcParameterIndex, pSrcSwizzle, ref pDstNode, DstParameterIndex, pDstSwizzle);
     }
 
     /// <summary>To be documented.</summary>
@@ -2040,6 +2288,14 @@ public unsafe static class D3D11FunctionLinkingGraphVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int PassValueWithSwizzle<TI0>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, ComPtr<TI0> pDstNode, int DstParameterIndex, byte* pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->PassValueWithSwizzle(ref pSrcNode, SrcParameterIndex, pSrcSwizzle, (ID3D11LinkingNode*) pDstNode.Handle, DstParameterIndex, pDstSwizzle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int PassValueWithSwizzle(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, Span<ID3D11LinkingNode> pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, Span<byte> pDstSwizzle)
     {
         var @this = thisVtbl.Handle;
@@ -2048,11 +2304,27 @@ public unsafe static class D3D11FunctionLinkingGraphVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int PassValueWithSwizzle<TI0>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, ComPtr<TI0> pDstNode, int DstParameterIndex, ref byte pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->PassValueWithSwizzle(ref pSrcNode, SrcParameterIndex, pSrcSwizzle, (ID3D11LinkingNode*) pDstNode.Handle, DstParameterIndex, ref pDstSwizzle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int PassValueWithSwizzle(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, Span<ID3D11LinkingNode> pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->PassValueWithSwizzle(ref pSrcNode.GetPinnableReference(), SrcParameterIndex, pSrcSwizzle, pDstNode, DstParameterIndex, pDstSwizzle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int PassValueWithSwizzle<TI0>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, ComPtr<TI0> pDstNode, int DstParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->PassValueWithSwizzle(ref pSrcNode, SrcParameterIndex, pSrcSwizzle, (ID3D11LinkingNode*) pDstNode.Handle, DstParameterIndex, pDstSwizzle);
     }
 
     /// <summary>To be documented.</summary>
@@ -2088,6 +2360,14 @@ public unsafe static class D3D11FunctionLinkingGraphVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int PassValueWithSwizzle<TI0>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, ref byte pSrcSwizzle, ComPtr<TI0> pDstNode, int DstParameterIndex, byte* pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->PassValueWithSwizzle(ref pSrcNode, SrcParameterIndex, ref pSrcSwizzle, (ID3D11LinkingNode*) pDstNode.Handle, DstParameterIndex, pDstSwizzle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int PassValueWithSwizzle(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, Span<ID3D11LinkingNode> pSrcNode, int SrcParameterIndex, Span<byte> pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, Span<byte> pDstSwizzle)
     {
         var @this = thisVtbl.Handle;
@@ -2096,11 +2376,27 @@ public unsafe static class D3D11FunctionLinkingGraphVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int PassValueWithSwizzle<TI0>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, ref byte pSrcSwizzle, ComPtr<TI0> pDstNode, int DstParameterIndex, ref byte pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->PassValueWithSwizzle(ref pSrcNode, SrcParameterIndex, ref pSrcSwizzle, (ID3D11LinkingNode*) pDstNode.Handle, DstParameterIndex, ref pDstSwizzle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int PassValueWithSwizzle(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, Span<ID3D11LinkingNode> pSrcNode, int SrcParameterIndex, Span<byte> pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->PassValueWithSwizzle(ref pSrcNode.GetPinnableReference(), SrcParameterIndex, ref pSrcSwizzle.GetPinnableReference(), pDstNode, DstParameterIndex, pDstSwizzle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int PassValueWithSwizzle<TI0>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, ref byte pSrcSwizzle, ComPtr<TI0> pDstNode, int DstParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->PassValueWithSwizzle(ref pSrcNode, SrcParameterIndex, ref pSrcSwizzle, (ID3D11LinkingNode*) pDstNode.Handle, DstParameterIndex, pDstSwizzle);
     }
 
     /// <summary>To be documented.</summary>
@@ -2136,6 +2432,14 @@ public unsafe static class D3D11FunctionLinkingGraphVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int PassValueWithSwizzle<TI0>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ComPtr<TI0> pDstNode, int DstParameterIndex, byte* pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->PassValueWithSwizzle(ref pSrcNode, SrcParameterIndex, pSrcSwizzle, (ID3D11LinkingNode*) pDstNode.Handle, DstParameterIndex, pDstSwizzle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int PassValueWithSwizzle(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, Span<ID3D11LinkingNode> pSrcNode, int SrcParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, Span<byte> pDstSwizzle)
     {
         var @this = thisVtbl.Handle;
@@ -2144,11 +2448,27 @@ public unsafe static class D3D11FunctionLinkingGraphVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int PassValueWithSwizzle<TI0>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ComPtr<TI0> pDstNode, int DstParameterIndex, ref byte pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->PassValueWithSwizzle(ref pSrcNode, SrcParameterIndex, pSrcSwizzle, (ID3D11LinkingNode*) pDstNode.Handle, DstParameterIndex, ref pDstSwizzle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int PassValueWithSwizzle(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, Span<ID3D11LinkingNode> pSrcNode, int SrcParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->PassValueWithSwizzle(ref pSrcNode.GetPinnableReference(), SrcParameterIndex, pSrcSwizzle, pDstNode, DstParameterIndex, pDstSwizzle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int PassValueWithSwizzle<TI0>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ComPtr<TI0> pDstNode, int DstParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->PassValueWithSwizzle(ref pSrcNode, SrcParameterIndex, pSrcSwizzle, (ID3D11LinkingNode*) pDstNode.Handle, DstParameterIndex, pDstSwizzle);
     }
 
     /// <summary>To be documented.</summary>
@@ -2173,6 +2493,22 @@ public unsafe static class D3D11FunctionLinkingGraphVtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->PassValueWithSwizzle(ref pSrcNode.GetPinnableReference(), SrcParameterIndex, pSrcSwizzle, ref pDstNode.GetPinnableReference(), DstParameterIndex, pDstSwizzle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetLastError<TI0>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, ref ComPtr<TI0> ppErrorBuffer) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->GetLastError((Silk.NET.Core.Native.ID3D10Blob**) ppErrorBuffer.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GenerateHlsl<TI0>(this ComPtr<ID3D11FunctionLinkingGraph> thisVtbl, uint uFlags, ref ComPtr<TI0> ppBuffer) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->GenerateHlsl(uFlags, (Silk.NET.Core.Native.ID3D10Blob**) ppBuffer.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>

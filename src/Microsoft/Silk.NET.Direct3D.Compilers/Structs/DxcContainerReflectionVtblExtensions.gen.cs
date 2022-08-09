@@ -263,6 +263,14 @@ public unsafe static class DxcContainerReflectionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int Load<TI0>(this ComPtr<IDxcContainerReflection> thisVtbl, ComPtr<TI0> pContainer) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->Load((IDxcBlob*) pContainer.Handle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static int Load(this ComPtr<IDxcContainerReflection> thisVtbl, Span<IDxcBlob> pContainer)
     {
         var @this = thisVtbl.Handle;

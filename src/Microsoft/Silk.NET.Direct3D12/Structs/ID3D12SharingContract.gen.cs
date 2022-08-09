@@ -188,6 +188,22 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
+        public readonly void Present<TI0>(ComPtr<TI0> pResource, uint Subresource, nint window) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12SharingContract*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->Present((ID3D12Resource*) pResource.Handle, Subresource, window);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void SharedFenceSignal<TI0>(ComPtr<TI0> pFence, ulong FenceValue) where TI0 : unmanaged, IComVtbl<ID3D12Fence>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12SharingContract*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->SharedFenceSignal((ID3D12Fence*) pFence.Handle, FenceValue);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12SharingContract*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

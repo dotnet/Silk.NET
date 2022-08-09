@@ -640,6 +640,14 @@ public unsafe static class DxcPdbUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int Load<TI0>(this ComPtr<IDxcPdbUtils> thisVtbl, ComPtr<TI0> pPdbOrDxil) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->Load((IDxcBlob*) pPdbOrDxil.Handle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static int Load(this ComPtr<IDxcPdbUtils> thisVtbl, Span<IDxcBlob> pPdbOrDxil)
     {
         var @this = thisVtbl.Handle;
@@ -852,6 +860,14 @@ public unsafe static class DxcPdbUtilsVtblExtensions
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->GetVersionInfo((IDxcVersionInfo**) ppVersionInfo.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetCompiler<TI0>(this ComPtr<IDxcPdbUtils> thisVtbl, ComPtr<TI0> pCompiler) where TI0 : unmanaged, IComVtbl<IDxcCompiler3>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->SetCompiler((IDxcCompiler3*) pCompiler.Handle);
     }
 
     /// <summary>To be documented.</summary>

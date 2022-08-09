@@ -235,6 +235,14 @@ namespace Silk.NET.DirectStorage
         }
 
         /// <summary>To be documented.</summary>
+        public readonly void EnqueueStatus<TI0>(ComPtr<TI0> statusArray, uint index) where TI0 : unmanaged, IComVtbl<IDStorageStatusArray>, IComVtbl<TI0>
+        {
+            var @this = (IDStorageQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->EnqueueStatus((IDStorageStatusArray*) statusArray.Handle, index);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IDStorageQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

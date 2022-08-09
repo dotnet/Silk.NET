@@ -140,6 +140,14 @@ public unsafe static class D3D11TracingDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int SetShaderTrackingOptions<TI0>(this ComPtr<ID3D11TracingDevice> thisVtbl, ComPtr<TI0> pShader, uint Options) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->SetShaderTrackingOptions((Silk.NET.Core.Native.IUnknown*) pShader.Handle, Options);
+    }
+
+    /// <summary>To be documented.</summary>
     public static int SetShaderTrackingOptions(this ComPtr<ID3D11TracingDevice> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pShader, uint Options)
     {
         var @this = thisVtbl.Handle;

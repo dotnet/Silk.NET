@@ -8972,6 +8972,14 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateDataInterface<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, Guid* guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->SetPrivateDataInterface(guid, (Silk.NET.Core.Native.IUnknown*) pData.Handle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D11DeviceContext3> thisVtbl, Guid* guid, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData)
     {
         var @this = thisVtbl.Handle;
@@ -8985,6 +8993,14 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->SetPrivateDataInterface(ref guid.GetPinnableReference(), pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPrivateDataInterface<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref Guid guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->SetPrivateDataInterface(ref guid, (Silk.NET.Core.Native.IUnknown*) pData.Handle);
     }
 
     /// <summary>To be documented.</summary>
@@ -9012,11 +9028,19 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void PSSetShader<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11PixelShader* pPixelShader, ref ComPtr<TI0> ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0>
+    public static void PSSetShader<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pPixelShader, ref ComPtr<TI1> ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11PixelShader>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->PSSetShader(pPixelShader, (ID3D11ClassInstance**) ppClassInstances.GetAddressOf(), NumClassInstances);
+        @this->PSSetShader((ID3D11PixelShader*) pPixelShader.Handle, (ID3D11ClassInstance**) ppClassInstances.GetAddressOf(), NumClassInstances);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void PSSetShader<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pPixelShader, ref ID3D11ClassInstance* ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11PixelShader>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->PSSetShader((ID3D11PixelShader*) pPixelShader.Handle, ref ppClassInstances, NumClassInstances);
     }
 
     /// <summary>To be documented.</summary>
@@ -9052,11 +9076,19 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VSSetShader<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11VertexShader* pVertexShader, ref ComPtr<TI0> ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0>
+    public static void VSSetShader<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pVertexShader, ref ComPtr<TI1> ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11VertexShader>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->VSSetShader(pVertexShader, (ID3D11ClassInstance**) ppClassInstances.GetAddressOf(), NumClassInstances);
+        @this->VSSetShader((ID3D11VertexShader*) pVertexShader.Handle, (ID3D11ClassInstance**) ppClassInstances.GetAddressOf(), NumClassInstances);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void VSSetShader<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pVertexShader, ref ID3D11ClassInstance* ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11VertexShader>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->VSSetShader((ID3D11VertexShader*) pVertexShader.Handle, ref ppClassInstances, NumClassInstances);
     }
 
     /// <summary>To be documented.</summary>
@@ -9084,11 +9116,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int Map<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pResource, uint Subresource, Map MapType, uint MapFlags, MappedSubresource* pMappedResource) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->Map((ID3D11Resource*) pResource.Handle, Subresource, MapType, MapFlags, pMappedResource);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int Map(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pResource, uint Subresource, Map MapType, uint MapFlags, Span<MappedSubresource> pMappedResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Map(pResource, Subresource, MapType, MapFlags, ref pMappedResource.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int Map<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pResource, uint Subresource, Map MapType, uint MapFlags, ref MappedSubresource pMappedResource) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->Map((ID3D11Resource*) pResource.Handle, Subresource, MapType, MapFlags, ref pMappedResource);
     }
 
     /// <summary>To be documented.</summary>
@@ -9108,6 +9156,14 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static void Unmap<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pResource, uint Subresource) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->Unmap((ID3D11Resource*) pResource.Handle, Subresource);
+    }
+
+    /// <summary>To be documented.</summary>
     public static void Unmap(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pResource, uint Subresource)
     {
         var @this = thisVtbl.Handle;
@@ -9121,6 +9177,14 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
         @this->PSSetConstantBuffers(StartSlot, NumBuffers, (ID3D11Buffer**) ppConstantBuffers.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void IASetInputLayout<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pInputLayout) where TI0 : unmanaged, IComVtbl<ID3D11InputLayout>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->IASetInputLayout((ID3D11InputLayout*) pInputLayout.Handle);
     }
 
     /// <summary>To be documented.</summary>
@@ -9212,6 +9276,14 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static void IASetIndexBuffer<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pIndexBuffer, Silk.NET.DXGI.Format Format, uint Offset) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->IASetIndexBuffer((ID3D11Buffer*) pIndexBuffer.Handle, Format, Offset);
+    }
+
+    /// <summary>To be documented.</summary>
     public static void IASetIndexBuffer(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Buffer> pIndexBuffer, Silk.NET.DXGI.Format Format, uint Offset)
     {
         var @this = thisVtbl.Handle;
@@ -9228,11 +9300,19 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GSSetShader<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11GeometryShader* pShader, ref ComPtr<TI0> ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0>
+    public static void GSSetShader<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pShader, ref ComPtr<TI1> ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->GSSetShader(pShader, (ID3D11ClassInstance**) ppClassInstances.GetAddressOf(), NumClassInstances);
+        @this->GSSetShader((ID3D11GeometryShader*) pShader.Handle, (ID3D11ClassInstance**) ppClassInstances.GetAddressOf(), NumClassInstances);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GSSetShader<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pShader, ref ID3D11ClassInstance* ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->GSSetShader((ID3D11GeometryShader*) pShader.Handle, ref ppClassInstances, NumClassInstances);
     }
 
     /// <summary>To be documented.</summary>
@@ -9276,11 +9356,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static void Begin<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pAsync) where TI0 : unmanaged, IComVtbl<ID3D11Asynchronous>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->Begin((ID3D11Asynchronous*) pAsync.Handle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static void Begin(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Asynchronous> pAsync)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->Begin(ref pAsync.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void End<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pAsync) where TI0 : unmanaged, IComVtbl<ID3D11Asynchronous>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->End((ID3D11Asynchronous*) pAsync.Handle);
     }
 
     /// <summary>To be documented.</summary>
@@ -9292,11 +9388,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int GetData<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pAsync, void* pData, uint DataSize, uint GetDataFlags) where TI0 : unmanaged, IComVtbl<ID3D11Asynchronous>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->GetData((ID3D11Asynchronous*) pAsync.Handle, pData, DataSize, GetDataFlags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int GetData<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Asynchronous* pAsync, Span<T0> pData, uint DataSize, uint GetDataFlags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetData(pAsync, ref pData.GetPinnableReference(), DataSize, GetDataFlags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetData<T0, TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pAsync, ref T0 pData, uint DataSize, uint GetDataFlags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Asynchronous>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->GetData((ID3D11Asynchronous*) pAsync.Handle, ref pData, DataSize, GetDataFlags);
     }
 
     /// <summary>To be documented.</summary>
@@ -9313,6 +9425,14 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetData(ref pAsync.GetPinnableReference(), ref pData.GetPinnableReference(), DataSize, GetDataFlags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void SetPredication<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pPredicate, int PredicateValue) where TI0 : unmanaged, IComVtbl<ID3D11Predicate>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->SetPredication((ID3D11Predicate*) pPredicate.Handle, PredicateValue);
     }
 
     /// <summary>To be documented.</summary>
@@ -9340,11 +9460,11 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargets<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, uint NumViews, ref ComPtr<TI0> ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0>
+    public static void OMSetRenderTargets<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, uint NumViews, ref ComPtr<TI0> ppRenderTargetViews, ComPtr<TI1> pDepthStencilView) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->OMSetRenderTargets(NumViews, (ID3D11RenderTargetView**) ppRenderTargetViews.GetAddressOf(), pDepthStencilView);
+        @this->OMSetRenderTargets(NumViews, (ID3D11RenderTargetView**) ppRenderTargetViews.GetAddressOf(), (ID3D11DepthStencilView*) pDepthStencilView.Handle);
     }
 
     /// <summary>To be documented.</summary>
@@ -9364,6 +9484,14 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void OMSetRenderTargets<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, uint NumViews, ref ID3D11RenderTargetView* ppRenderTargetViews, ComPtr<TI0> pDepthStencilView) where TI0 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->OMSetRenderTargets(NumViews, ref ppRenderTargetViews, (ID3D11DepthStencilView*) pDepthStencilView.Handle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void OMSetRenderTargets(this ComPtr<ID3D11DeviceContext3> thisVtbl, uint NumViews, ref ID3D11RenderTargetView* ppRenderTargetViews, Span<ID3D11DepthStencilView> pDepthStencilView)
     {
         var @this = thisVtbl.Handle;
@@ -9372,11 +9500,11 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, uint NumRTVs, ref ComPtr<TI0> ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, ref ComPtr<TI1> ppUnorderedAccessViews, uint* pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI1>
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0, TI1, TI2>(this ComPtr<ID3D11DeviceContext3> thisVtbl, uint NumRTVs, ref ComPtr<TI0> ppRenderTargetViews, ComPtr<TI1> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, ref ComPtr<TI2> ppUnorderedAccessViews, uint* pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI2>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->OMSetRenderTargetsAndUnorderedAccessViews(NumRTVs, (ID3D11RenderTargetView**) ppRenderTargetViews.GetAddressOf(), pDepthStencilView, UAVStartSlot, NumUAVs, (ID3D11UnorderedAccessView**) ppUnorderedAccessViews.GetAddressOf(), pUAVInitialCounts);
+        @this->OMSetRenderTargetsAndUnorderedAccessViews(NumRTVs, (ID3D11RenderTargetView**) ppRenderTargetViews.GetAddressOf(), (ID3D11DepthStencilView*) pDepthStencilView.Handle, UAVStartSlot, NumUAVs, (ID3D11UnorderedAccessView**) ppUnorderedAccessViews.GetAddressOf(), pUAVInitialCounts);
     }
 
     /// <summary>To be documented.</summary>
@@ -9388,19 +9516,19 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, uint NumRTVs, ref ComPtr<TI0> ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, ref ComPtr<TI1> ppUnorderedAccessViews, ref uint pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI1>
+    public static void OMSetRenderTargetsAndUnorderedAccessViews<TI0, TI1, TI2>(this ComPtr<ID3D11DeviceContext3> thisVtbl, uint NumRTVs, ref ComPtr<TI0> ppRenderTargetViews, ComPtr<TI1> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, ref ComPtr<TI2> ppUnorderedAccessViews, ref uint pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI2>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->OMSetRenderTargetsAndUnorderedAccessViews(NumRTVs, (ID3D11RenderTargetView**) ppRenderTargetViews.GetAddressOf(), pDepthStencilView, UAVStartSlot, NumUAVs, (ID3D11UnorderedAccessView**) ppUnorderedAccessViews.GetAddressOf(), ref pUAVInitialCounts);
+        @this->OMSetRenderTargetsAndUnorderedAccessViews(NumRTVs, (ID3D11RenderTargetView**) ppRenderTargetViews.GetAddressOf(), (ID3D11DepthStencilView*) pDepthStencilView.Handle, UAVStartSlot, NumUAVs, (ID3D11UnorderedAccessView**) ppUnorderedAccessViews.GetAddressOf(), ref pUAVInitialCounts);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, uint NumRTVs, ref ComPtr<TI0> ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, ref ID3D11UnorderedAccessView* ppUnorderedAccessViews, uint* pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0>
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, uint NumRTVs, ref ComPtr<TI0> ppRenderTargetViews, ComPtr<TI1> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, ref ID3D11UnorderedAccessView* ppUnorderedAccessViews, uint* pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->OMSetRenderTargetsAndUnorderedAccessViews(NumRTVs, (ID3D11RenderTargetView**) ppRenderTargetViews.GetAddressOf(), pDepthStencilView, UAVStartSlot, NumUAVs, ref ppUnorderedAccessViews, pUAVInitialCounts);
+        @this->OMSetRenderTargetsAndUnorderedAccessViews(NumRTVs, (ID3D11RenderTargetView**) ppRenderTargetViews.GetAddressOf(), (ID3D11DepthStencilView*) pDepthStencilView.Handle, UAVStartSlot, NumUAVs, ref ppUnorderedAccessViews, pUAVInitialCounts);
     }
 
     /// <summary>To be documented.</summary>
@@ -9412,11 +9540,11 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, uint NumRTVs, ref ComPtr<TI0> ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, ref ID3D11UnorderedAccessView* ppUnorderedAccessViews, ref uint pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0>
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, uint NumRTVs, ref ComPtr<TI0> ppRenderTargetViews, ComPtr<TI1> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, ref ID3D11UnorderedAccessView* ppUnorderedAccessViews, ref uint pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->OMSetRenderTargetsAndUnorderedAccessViews(NumRTVs, (ID3D11RenderTargetView**) ppRenderTargetViews.GetAddressOf(), pDepthStencilView, UAVStartSlot, NumUAVs, ref ppUnorderedAccessViews, ref pUAVInitialCounts);
+        @this->OMSetRenderTargetsAndUnorderedAccessViews(NumRTVs, (ID3D11RenderTargetView**) ppRenderTargetViews.GetAddressOf(), (ID3D11DepthStencilView*) pDepthStencilView.Handle, UAVStartSlot, NumUAVs, ref ppUnorderedAccessViews, ref pUAVInitialCounts);
     }
 
     /// <summary>To be documented.</summary>
@@ -9484,11 +9612,11 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, uint NumRTVs, ref ID3D11RenderTargetView* ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, ref ComPtr<TI0> ppUnorderedAccessViews, uint* pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI0>
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, uint NumRTVs, ref ID3D11RenderTargetView* ppRenderTargetViews, ComPtr<TI0> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, ref ComPtr<TI1> ppUnorderedAccessViews, uint* pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->OMSetRenderTargetsAndUnorderedAccessViews(NumRTVs, ref ppRenderTargetViews, pDepthStencilView, UAVStartSlot, NumUAVs, (ID3D11UnorderedAccessView**) ppUnorderedAccessViews.GetAddressOf(), pUAVInitialCounts);
+        @this->OMSetRenderTargetsAndUnorderedAccessViews(NumRTVs, ref ppRenderTargetViews, (ID3D11DepthStencilView*) pDepthStencilView.Handle, UAVStartSlot, NumUAVs, (ID3D11UnorderedAccessView**) ppUnorderedAccessViews.GetAddressOf(), pUAVInitialCounts);
     }
 
     /// <summary>To be documented.</summary>
@@ -9500,11 +9628,19 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, uint NumRTVs, ref ID3D11RenderTargetView* ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, ref ComPtr<TI0> ppUnorderedAccessViews, ref uint pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI0>
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, uint NumRTVs, ref ID3D11RenderTargetView* ppRenderTargetViews, ComPtr<TI0> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, ref ComPtr<TI1> ppUnorderedAccessViews, ref uint pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->OMSetRenderTargetsAndUnorderedAccessViews(NumRTVs, ref ppRenderTargetViews, pDepthStencilView, UAVStartSlot, NumUAVs, (ID3D11UnorderedAccessView**) ppUnorderedAccessViews.GetAddressOf(), ref pUAVInitialCounts);
+        @this->OMSetRenderTargetsAndUnorderedAccessViews(NumRTVs, ref ppRenderTargetViews, (ID3D11DepthStencilView*) pDepthStencilView.Handle, UAVStartSlot, NumUAVs, (ID3D11UnorderedAccessView**) ppUnorderedAccessViews.GetAddressOf(), ref pUAVInitialCounts);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, uint NumRTVs, ref ID3D11RenderTargetView* ppRenderTargetViews, ComPtr<TI0> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, ref ID3D11UnorderedAccessView* ppUnorderedAccessViews, uint* pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->OMSetRenderTargetsAndUnorderedAccessViews(NumRTVs, ref ppRenderTargetViews, (ID3D11DepthStencilView*) pDepthStencilView.Handle, UAVStartSlot, NumUAVs, ref ppUnorderedAccessViews, pUAVInitialCounts);
     }
 
     /// <summary>To be documented.</summary>
@@ -9513,6 +9649,14 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->OMSetRenderTargetsAndUnorderedAccessViews(NumRTVs, ref ppRenderTargetViews, pDepthStencilView, UAVStartSlot, NumUAVs, ref ppUnorderedAccessViews, ref pUAVInitialCounts.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, uint NumRTVs, ref ID3D11RenderTargetView* ppRenderTargetViews, ComPtr<TI0> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, ref ID3D11UnorderedAccessView* ppUnorderedAccessViews, ref uint pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->OMSetRenderTargetsAndUnorderedAccessViews(NumRTVs, ref ppRenderTargetViews, (ID3D11DepthStencilView*) pDepthStencilView.Handle, UAVStartSlot, NumUAVs, ref ppUnorderedAccessViews, ref pUAVInitialCounts);
     }
 
     /// <summary>To be documented.</summary>
@@ -9564,11 +9708,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void OMSetBlendState<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pBlendState, [Count(Count = 4)] float* BlendFactor, uint SampleMask) where TI0 : unmanaged, IComVtbl<ID3D11BlendState>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->OMSetBlendState((ID3D11BlendState*) pBlendState.Handle, BlendFactor, SampleMask);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void OMSetBlendState(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11BlendState* pBlendState, [Count(Count = 4)] Span<float> BlendFactor, uint SampleMask)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->OMSetBlendState(pBlendState, ref BlendFactor.GetPinnableReference(), SampleMask);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void OMSetBlendState<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pBlendState, [Count(Count = 4)] ref float BlendFactor, uint SampleMask) where TI0 : unmanaged, IComVtbl<ID3D11BlendState>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->OMSetBlendState((ID3D11BlendState*) pBlendState.Handle, ref BlendFactor, SampleMask);
     }
 
     /// <summary>To be documented.</summary>
@@ -9585,6 +9745,14 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->OMSetBlendState(ref pBlendState.GetPinnableReference(), ref BlendFactor.GetPinnableReference(), SampleMask);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void OMSetDepthStencilState<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDepthStencilState, uint StencilRef) where TI0 : unmanaged, IComVtbl<ID3D11DepthStencilState>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->OMSetDepthStencilState((ID3D11DepthStencilState*) pDepthStencilState.Handle, StencilRef);
     }
 
     /// <summary>To be documented.</summary>
@@ -9628,11 +9796,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static void DrawIndexedInstancedIndirect<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pBufferForArgs, uint AlignedByteOffsetForArgs) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->DrawIndexedInstancedIndirect((ID3D11Buffer*) pBufferForArgs.Handle, AlignedByteOffsetForArgs);
+    }
+
+    /// <summary>To be documented.</summary>
     public static void DrawIndexedInstancedIndirect(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Buffer> pBufferForArgs, uint AlignedByteOffsetForArgs)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->DrawIndexedInstancedIndirect(ref pBufferForArgs.GetPinnableReference(), AlignedByteOffsetForArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void DrawInstancedIndirect<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pBufferForArgs, uint AlignedByteOffsetForArgs) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->DrawInstancedIndirect((ID3D11Buffer*) pBufferForArgs.Handle, AlignedByteOffsetForArgs);
     }
 
     /// <summary>To be documented.</summary>
@@ -9644,11 +9828,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static void DispatchIndirect<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pBufferForArgs, uint AlignedByteOffsetForArgs) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->DispatchIndirect((ID3D11Buffer*) pBufferForArgs.Handle, AlignedByteOffsetForArgs);
+    }
+
+    /// <summary>To be documented.</summary>
     public static void DispatchIndirect(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Buffer> pBufferForArgs, uint AlignedByteOffsetForArgs)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->DispatchIndirect(ref pBufferForArgs.GetPinnableReference(), AlignedByteOffsetForArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void RSSetState<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pRasterizerState) where TI0 : unmanaged, IComVtbl<ID3D11RasterizerState>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->RSSetState((ID3D11RasterizerState*) pRasterizerState.Handle);
     }
 
     /// <summary>To be documented.</summary>
@@ -9676,11 +9876,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void CopySubresourceRegion<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ComPtr<TI1> pSrcResource, uint SrcSubresource, Box* pSrcBox) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->CopySubresourceRegion((ID3D11Resource*) pDstResource.Handle, DstSubresource, DstX, DstY, DstZ, (ID3D11Resource*) pSrcResource.Handle, SrcSubresource, pSrcBox);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void CopySubresourceRegion(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D11Resource* pSrcResource, uint SrcSubresource, Span<Box> pSrcBox)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->CopySubresourceRegion(pDstResource, DstSubresource, DstX, DstY, DstZ, pSrcResource, SrcSubresource, ref pSrcBox.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void CopySubresourceRegion<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ComPtr<TI1> pSrcResource, uint SrcSubresource, ref Box pSrcBox) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->CopySubresourceRegion((ID3D11Resource*) pDstResource.Handle, DstSubresource, DstX, DstY, DstZ, (ID3D11Resource*) pSrcResource.Handle, SrcSubresource, ref pSrcBox);
     }
 
     /// <summary>To be documented.</summary>
@@ -9692,11 +9908,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void CopySubresourceRegion<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, Box* pSrcBox) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->CopySubresourceRegion((ID3D11Resource*) pDstResource.Handle, DstSubresource, DstX, DstY, DstZ, ref pSrcResource, SrcSubresource, pSrcBox);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void CopySubresourceRegion(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, Span<ID3D11Resource> pSrcResource, uint SrcSubresource, Span<Box> pSrcBox)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->CopySubresourceRegion(pDstResource, DstSubresource, DstX, DstY, DstZ, ref pSrcResource.GetPinnableReference(), SrcSubresource, ref pSrcBox.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void CopySubresourceRegion<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, ref Box pSrcBox) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->CopySubresourceRegion((ID3D11Resource*) pDstResource.Handle, DstSubresource, DstX, DstY, DstZ, ref pSrcResource, SrcSubresource, ref pSrcBox);
     }
 
     /// <summary>To be documented.</summary>
@@ -9708,11 +9940,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void CopySubresourceRegion<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ComPtr<TI0> pSrcResource, uint SrcSubresource, Box* pSrcBox) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->CopySubresourceRegion(ref pDstResource, DstSubresource, DstX, DstY, DstZ, (ID3D11Resource*) pSrcResource.Handle, SrcSubresource, pSrcBox);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void CopySubresourceRegion(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D11Resource* pSrcResource, uint SrcSubresource, Span<Box> pSrcBox)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->CopySubresourceRegion(ref pDstResource.GetPinnableReference(), DstSubresource, DstX, DstY, DstZ, pSrcResource, SrcSubresource, ref pSrcBox.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void CopySubresourceRegion<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ComPtr<TI0> pSrcResource, uint SrcSubresource, ref Box pSrcBox) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->CopySubresourceRegion(ref pDstResource, DstSubresource, DstX, DstY, DstZ, (ID3D11Resource*) pSrcResource.Handle, SrcSubresource, ref pSrcBox);
     }
 
     /// <summary>To be documented.</summary>
@@ -9732,11 +9980,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static void CopyResource<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDstResource, ComPtr<TI1> pSrcResource) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->CopyResource((ID3D11Resource*) pDstResource.Handle, (ID3D11Resource*) pSrcResource.Handle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void CopyResource(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDstResource, Span<ID3D11Resource> pSrcResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->CopyResource(pDstResource, ref pSrcResource.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void CopyResource<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDstResource, ref ID3D11Resource pSrcResource) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->CopyResource((ID3D11Resource*) pDstResource.Handle, ref pSrcResource);
     }
 
     /// <summary>To be documented.</summary>
@@ -9748,11 +10012,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static void CopyResource<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pDstResource, ComPtr<TI0> pSrcResource) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->CopyResource(ref pDstResource, (ID3D11Resource*) pSrcResource.Handle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static void CopyResource(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pDstResource, Span<ID3D11Resource> pSrcResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->CopyResource(ref pDstResource.GetPinnableReference(), ref pSrcResource.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void UpdateSubresource<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, Box* pDstBox, void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->UpdateSubresource((ID3D11Resource*) pDstResource.Handle, DstSubresource, pDstBox, pSrcData, SrcRowPitch, SrcDepthPitch);
     }
 
     /// <summary>To be documented.</summary>
@@ -9764,6 +10044,14 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void UpdateSubresource<T0, TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, Box* pDstBox, ref T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->UpdateSubresource((ID3D11Resource*) pDstResource.Handle, DstSubresource, pDstBox, ref pSrcData, SrcRowPitch, SrcDepthPitch);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void UpdateSubresource(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, Span<Box> pDstBox, void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
     {
         var @this = thisVtbl.Handle;
@@ -9772,11 +10060,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void UpdateSubresource<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, ref Box pDstBox, void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->UpdateSubresource((ID3D11Resource*) pDstResource.Handle, DstSubresource, ref pDstBox, pSrcData, SrcRowPitch, SrcDepthPitch);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void UpdateSubresource<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, Span<Box> pDstBox, Span<T0> pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->UpdateSubresource(pDstResource, DstSubresource, ref pDstBox.GetPinnableReference(), ref pSrcData.GetPinnableReference(), SrcRowPitch, SrcDepthPitch);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void UpdateSubresource<T0, TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, ref Box pDstBox, ref T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->UpdateSubresource((ID3D11Resource*) pDstResource.Handle, DstSubresource, ref pDstBox, ref pSrcData, SrcRowPitch, SrcDepthPitch);
     }
 
     /// <summary>To be documented.</summary>
@@ -9812,11 +10116,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static void CopyStructureCount<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDstBuffer, uint DstAlignedByteOffset, ComPtr<TI1> pSrcView) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->CopyStructureCount((ID3D11Buffer*) pDstBuffer.Handle, DstAlignedByteOffset, (ID3D11UnorderedAccessView*) pSrcView.Handle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void CopyStructureCount(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Buffer* pDstBuffer, uint DstAlignedByteOffset, Span<ID3D11UnorderedAccessView> pSrcView)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->CopyStructureCount(pDstBuffer, DstAlignedByteOffset, ref pSrcView.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void CopyStructureCount<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDstBuffer, uint DstAlignedByteOffset, ref ID3D11UnorderedAccessView pSrcView) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->CopyStructureCount((ID3D11Buffer*) pDstBuffer.Handle, DstAlignedByteOffset, ref pSrcView);
     }
 
     /// <summary>To be documented.</summary>
@@ -9828,6 +10148,14 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static void CopyStructureCount<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Buffer pDstBuffer, uint DstAlignedByteOffset, ComPtr<TI0> pSrcView) where TI0 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->CopyStructureCount(ref pDstBuffer, DstAlignedByteOffset, (ID3D11UnorderedAccessView*) pSrcView.Handle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static void CopyStructureCount(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Buffer> pDstBuffer, uint DstAlignedByteOffset, Span<ID3D11UnorderedAccessView> pSrcView)
     {
         var @this = thisVtbl.Handle;
@@ -9836,11 +10164,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void ClearRenderTargetView<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pRenderTargetView, [Count(Count = 4)] float* ColorRGBA) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->ClearRenderTargetView((ID3D11RenderTargetView*) pRenderTargetView.Handle, ColorRGBA);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void ClearRenderTargetView(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11RenderTargetView* pRenderTargetView, [Count(Count = 4)] Span<float> ColorRGBA)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->ClearRenderTargetView(pRenderTargetView, ref ColorRGBA.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void ClearRenderTargetView<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pRenderTargetView, [Count(Count = 4)] ref float ColorRGBA) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->ClearRenderTargetView((ID3D11RenderTargetView*) pRenderTargetView.Handle, ref ColorRGBA);
     }
 
     /// <summary>To be documented.</summary>
@@ -9860,11 +10204,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void ClearUnorderedAccessViewUint<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pUnorderedAccessView, [Count(Count = 4)] uint* Values) where TI0 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->ClearUnorderedAccessViewUint((ID3D11UnorderedAccessView*) pUnorderedAccessView.Handle, Values);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void ClearUnorderedAccessViewUint(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11UnorderedAccessView* pUnorderedAccessView, [Count(Count = 4)] Span<uint> Values)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->ClearUnorderedAccessViewUint(pUnorderedAccessView, ref Values.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void ClearUnorderedAccessViewUint<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pUnorderedAccessView, [Count(Count = 4)] ref uint Values) where TI0 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->ClearUnorderedAccessViewUint((ID3D11UnorderedAccessView*) pUnorderedAccessView.Handle, ref Values);
     }
 
     /// <summary>To be documented.</summary>
@@ -9884,11 +10244,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void ClearUnorderedAccessViewFloat<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pUnorderedAccessView, [Count(Count = 4)] float* Values) where TI0 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->ClearUnorderedAccessViewFloat((ID3D11UnorderedAccessView*) pUnorderedAccessView.Handle, Values);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void ClearUnorderedAccessViewFloat(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11UnorderedAccessView* pUnorderedAccessView, [Count(Count = 4)] Span<float> Values)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->ClearUnorderedAccessViewFloat(pUnorderedAccessView, ref Values.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void ClearUnorderedAccessViewFloat<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pUnorderedAccessView, [Count(Count = 4)] ref float Values) where TI0 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->ClearUnorderedAccessViewFloat((ID3D11UnorderedAccessView*) pUnorderedAccessView.Handle, ref Values);
     }
 
     /// <summary>To be documented.</summary>
@@ -9908,11 +10284,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static void ClearDepthStencilView<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDepthStencilView, uint ClearFlags, float Depth, byte Stencil) where TI0 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->ClearDepthStencilView((ID3D11DepthStencilView*) pDepthStencilView.Handle, ClearFlags, Depth, Stencil);
+    }
+
+    /// <summary>To be documented.</summary>
     public static void ClearDepthStencilView(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11DepthStencilView> pDepthStencilView, uint ClearFlags, float Depth, byte Stencil)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->ClearDepthStencilView(ref pDepthStencilView.GetPinnableReference(), ClearFlags, Depth, Stencil);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void GenerateMips<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pShaderResourceView) where TI0 : unmanaged, IComVtbl<ID3D11ShaderResourceView>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->GenerateMips((ID3D11ShaderResourceView*) pShaderResourceView.Handle);
     }
 
     /// <summary>To be documented.</summary>
@@ -9924,11 +10316,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static void SetResourceMinLOD<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pResource, float MinLOD) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->SetResourceMinLOD((ID3D11Resource*) pResource.Handle, MinLOD);
+    }
+
+    /// <summary>To be documented.</summary>
     public static void SetResourceMinLOD(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pResource, float MinLOD)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->SetResourceMinLOD(ref pResource.GetPinnableReference(), MinLOD);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static float GetResourceMinLOD<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pResource) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->GetResourceMinLOD((ID3D11Resource*) pResource.Handle);
     }
 
     /// <summary>To be documented.</summary>
@@ -9940,11 +10348,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static void ResolveSubresource<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, ComPtr<TI1> pSrcResource, uint SrcSubresource, Silk.NET.DXGI.Format Format) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->ResolveSubresource((ID3D11Resource*) pDstResource.Handle, DstSubresource, (ID3D11Resource*) pSrcResource.Handle, SrcSubresource, Format);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void ResolveSubresource(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, Span<ID3D11Resource> pSrcResource, uint SrcSubresource, Silk.NET.DXGI.Format Format)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->ResolveSubresource(pDstResource, DstSubresource, ref pSrcResource.GetPinnableReference(), SrcSubresource, Format);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void ResolveSubresource<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, ref ID3D11Resource pSrcResource, uint SrcSubresource, Silk.NET.DXGI.Format Format) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->ResolveSubresource((ID3D11Resource*) pDstResource.Handle, DstSubresource, ref pSrcResource, SrcSubresource, Format);
     }
 
     /// <summary>To be documented.</summary>
@@ -9956,11 +10380,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static void ResolveSubresource<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pDstResource, uint DstSubresource, ComPtr<TI0> pSrcResource, uint SrcSubresource, Silk.NET.DXGI.Format Format) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->ResolveSubresource(ref pDstResource, DstSubresource, (ID3D11Resource*) pSrcResource.Handle, SrcSubresource, Format);
+    }
+
+    /// <summary>To be documented.</summary>
     public static void ResolveSubresource(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pDstResource, uint DstSubresource, Span<ID3D11Resource> pSrcResource, uint SrcSubresource, Silk.NET.DXGI.Format Format)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->ResolveSubresource(ref pDstResource.GetPinnableReference(), DstSubresource, ref pSrcResource.GetPinnableReference(), SrcSubresource, Format);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void ExecuteCommandList<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pCommandList, int RestoreContextState) where TI0 : unmanaged, IComVtbl<ID3D11CommandList>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->ExecuteCommandList((ID3D11CommandList*) pCommandList.Handle, RestoreContextState);
     }
 
     /// <summary>To be documented.</summary>
@@ -9980,11 +10420,19 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void HSSetShader<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11HullShader* pHullShader, ref ComPtr<TI0> ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0>
+    public static void HSSetShader<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pHullShader, ref ComPtr<TI1> ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11HullShader>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->HSSetShader(pHullShader, (ID3D11ClassInstance**) ppClassInstances.GetAddressOf(), NumClassInstances);
+        @this->HSSetShader((ID3D11HullShader*) pHullShader.Handle, (ID3D11ClassInstance**) ppClassInstances.GetAddressOf(), NumClassInstances);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void HSSetShader<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pHullShader, ref ID3D11ClassInstance* ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11HullShader>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->HSSetShader((ID3D11HullShader*) pHullShader.Handle, ref ppClassInstances, NumClassInstances);
     }
 
     /// <summary>To be documented.</summary>
@@ -10036,11 +10484,19 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DSSetShader<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11DomainShader* pDomainShader, ref ComPtr<TI0> ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0>
+    public static void DSSetShader<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDomainShader, ref ComPtr<TI1> ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11DomainShader>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DSSetShader(pDomainShader, (ID3D11ClassInstance**) ppClassInstances.GetAddressOf(), NumClassInstances);
+        @this->DSSetShader((ID3D11DomainShader*) pDomainShader.Handle, (ID3D11ClassInstance**) ppClassInstances.GetAddressOf(), NumClassInstances);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void DSSetShader<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDomainShader, ref ID3D11ClassInstance* ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11DomainShader>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->DSSetShader((ID3D11DomainShader*) pDomainShader.Handle, ref ppClassInstances, NumClassInstances);
     }
 
     /// <summary>To be documented.</summary>
@@ -10124,11 +10580,19 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CSSetShader<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11ComputeShader* pComputeShader, ref ComPtr<TI0> ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0>
+    public static void CSSetShader<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pComputeShader, ref ComPtr<TI1> ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11ComputeShader>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->CSSetShader(pComputeShader, (ID3D11ClassInstance**) ppClassInstances.GetAddressOf(), NumClassInstances);
+        @this->CSSetShader((ID3D11ComputeShader*) pComputeShader.Handle, (ID3D11ClassInstance**) ppClassInstances.GetAddressOf(), NumClassInstances);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CSSetShader<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pComputeShader, ref ID3D11ClassInstance* ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11ComputeShader>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->CSSetShader((ID3D11ComputeShader*) pComputeShader.Handle, ref ppClassInstances, NumClassInstances);
     }
 
     /// <summary>To be documented.</summary>
@@ -11276,11 +11740,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void CopySubresourceRegion1<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ComPtr<TI1> pSrcResource, uint SrcSubresource, Box* pSrcBox, uint CopyFlags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->CopySubresourceRegion1((ID3D11Resource*) pDstResource.Handle, DstSubresource, DstX, DstY, DstZ, (ID3D11Resource*) pSrcResource.Handle, SrcSubresource, pSrcBox, CopyFlags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void CopySubresourceRegion1(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D11Resource* pSrcResource, uint SrcSubresource, Span<Box> pSrcBox, uint CopyFlags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->CopySubresourceRegion1(pDstResource, DstSubresource, DstX, DstY, DstZ, pSrcResource, SrcSubresource, ref pSrcBox.GetPinnableReference(), CopyFlags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void CopySubresourceRegion1<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ComPtr<TI1> pSrcResource, uint SrcSubresource, ref Box pSrcBox, uint CopyFlags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->CopySubresourceRegion1((ID3D11Resource*) pDstResource.Handle, DstSubresource, DstX, DstY, DstZ, (ID3D11Resource*) pSrcResource.Handle, SrcSubresource, ref pSrcBox, CopyFlags);
     }
 
     /// <summary>To be documented.</summary>
@@ -11292,11 +11772,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void CopySubresourceRegion1<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, Box* pSrcBox, uint CopyFlags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->CopySubresourceRegion1((ID3D11Resource*) pDstResource.Handle, DstSubresource, DstX, DstY, DstZ, ref pSrcResource, SrcSubresource, pSrcBox, CopyFlags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void CopySubresourceRegion1(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, Span<ID3D11Resource> pSrcResource, uint SrcSubresource, Span<Box> pSrcBox, uint CopyFlags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->CopySubresourceRegion1(pDstResource, DstSubresource, DstX, DstY, DstZ, ref pSrcResource.GetPinnableReference(), SrcSubresource, ref pSrcBox.GetPinnableReference(), CopyFlags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void CopySubresourceRegion1<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, ref Box pSrcBox, uint CopyFlags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->CopySubresourceRegion1((ID3D11Resource*) pDstResource.Handle, DstSubresource, DstX, DstY, DstZ, ref pSrcResource, SrcSubresource, ref pSrcBox, CopyFlags);
     }
 
     /// <summary>To be documented.</summary>
@@ -11308,11 +11804,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void CopySubresourceRegion1<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ComPtr<TI0> pSrcResource, uint SrcSubresource, Box* pSrcBox, uint CopyFlags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->CopySubresourceRegion1(ref pDstResource, DstSubresource, DstX, DstY, DstZ, (ID3D11Resource*) pSrcResource.Handle, SrcSubresource, pSrcBox, CopyFlags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void CopySubresourceRegion1(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D11Resource* pSrcResource, uint SrcSubresource, Span<Box> pSrcBox, uint CopyFlags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->CopySubresourceRegion1(ref pDstResource.GetPinnableReference(), DstSubresource, DstX, DstY, DstZ, pSrcResource, SrcSubresource, ref pSrcBox.GetPinnableReference(), CopyFlags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void CopySubresourceRegion1<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ComPtr<TI0> pSrcResource, uint SrcSubresource, ref Box pSrcBox, uint CopyFlags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->CopySubresourceRegion1(ref pDstResource, DstSubresource, DstX, DstY, DstZ, (ID3D11Resource*) pSrcResource.Handle, SrcSubresource, ref pSrcBox, CopyFlags);
     }
 
     /// <summary>To be documented.</summary>
@@ -11332,11 +11844,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void UpdateSubresource1<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, Box* pDstBox, void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->UpdateSubresource1((ID3D11Resource*) pDstResource.Handle, DstSubresource, pDstBox, pSrcData, SrcRowPitch, SrcDepthPitch, CopyFlags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void UpdateSubresource1<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, Box* pDstBox, Span<T0> pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->UpdateSubresource1(pDstResource, DstSubresource, pDstBox, ref pSrcData.GetPinnableReference(), SrcRowPitch, SrcDepthPitch, CopyFlags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void UpdateSubresource1<T0, TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, Box* pDstBox, ref T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->UpdateSubresource1((ID3D11Resource*) pDstResource.Handle, DstSubresource, pDstBox, ref pSrcData, SrcRowPitch, SrcDepthPitch, CopyFlags);
     }
 
     /// <summary>To be documented.</summary>
@@ -11348,11 +11876,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void UpdateSubresource1<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, ref Box pDstBox, void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->UpdateSubresource1((ID3D11Resource*) pDstResource.Handle, DstSubresource, ref pDstBox, pSrcData, SrcRowPitch, SrcDepthPitch, CopyFlags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void UpdateSubresource1<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, Span<Box> pDstBox, Span<T0> pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->UpdateSubresource1(pDstResource, DstSubresource, ref pDstBox.GetPinnableReference(), ref pSrcData.GetPinnableReference(), SrcRowPitch, SrcDepthPitch, CopyFlags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void UpdateSubresource1<T0, TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, ref Box pDstBox, ref T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->UpdateSubresource1((ID3D11Resource*) pDstResource.Handle, DstSubresource, ref pDstBox, ref pSrcData, SrcRowPitch, SrcDepthPitch, CopyFlags);
     }
 
     /// <summary>To be documented.</summary>
@@ -11388,11 +11932,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static void DiscardResource<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pResource) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->DiscardResource((ID3D11Resource*) pResource.Handle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static void DiscardResource(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->DiscardResource(ref pResource.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void DiscardView<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pResourceView) where TI0 : unmanaged, IComVtbl<ID3D11View>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->DiscardView((ID3D11View*) pResourceView.Handle);
     }
 
     /// <summary>To be documented.</summary>
@@ -12364,11 +12924,19 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SwapDeviceContextState<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3DDeviceContextState* pState, ref ComPtr<TI0> ppPreviousState) where TI0 : unmanaged, IComVtbl<ID3DDeviceContextState>, IComVtbl<TI0>
+    public static void SwapDeviceContextState<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pState, ref ComPtr<TI1> ppPreviousState) where TI0 : unmanaged, IComVtbl<ID3DDeviceContextState>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3DDeviceContextState>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->SwapDeviceContextState(pState, (ID3DDeviceContextState**) ppPreviousState.GetAddressOf());
+        @this->SwapDeviceContextState((ID3DDeviceContextState*) pState.Handle, (ID3DDeviceContextState**) ppPreviousState.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void SwapDeviceContextState<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pState, ref ID3DDeviceContextState* ppPreviousState) where TI0 : unmanaged, IComVtbl<ID3DDeviceContextState>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->SwapDeviceContextState((ID3DDeviceContextState*) pState.Handle, ref ppPreviousState);
     }
 
     /// <summary>To be documented.</summary>
@@ -12396,11 +12964,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void ClearView<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pView, [Count(Count = 4)] float* Color, Silk.NET.Maths.Rectangle<int>* pRect, uint NumRects) where TI0 : unmanaged, IComVtbl<ID3D11View>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->ClearView((ID3D11View*) pView.Handle, Color, pRect, NumRects);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void ClearView(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11View* pView, [Count(Count = 4)] float* Color, Span<Silk.NET.Maths.Rectangle<int>> pRect, uint NumRects)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->ClearView(pView, Color, ref pRect.GetPinnableReference(), NumRects);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void ClearView<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pView, [Count(Count = 4)] float* Color, ref Silk.NET.Maths.Rectangle<int> pRect, uint NumRects) where TI0 : unmanaged, IComVtbl<ID3D11View>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->ClearView((ID3D11View*) pView.Handle, Color, ref pRect, NumRects);
     }
 
     /// <summary>To be documented.</summary>
@@ -12412,11 +12996,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void ClearView<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pView, [Count(Count = 4)] ref float Color, Silk.NET.Maths.Rectangle<int>* pRect, uint NumRects) where TI0 : unmanaged, IComVtbl<ID3D11View>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->ClearView((ID3D11View*) pView.Handle, ref Color, pRect, NumRects);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void ClearView(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11View* pView, [Count(Count = 4)] Span<float> Color, Span<Silk.NET.Maths.Rectangle<int>> pRect, uint NumRects)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->ClearView(pView, ref Color.GetPinnableReference(), ref pRect.GetPinnableReference(), NumRects);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void ClearView<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pView, [Count(Count = 4)] ref float Color, ref Silk.NET.Maths.Rectangle<int> pRect, uint NumRects) where TI0 : unmanaged, IComVtbl<ID3D11View>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->ClearView((ID3D11View*) pView.Handle, ref Color, ref pRect, NumRects);
     }
 
     /// <summary>To be documented.</summary>
@@ -12452,11 +13052,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void DiscardView1<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pResourceView, Silk.NET.Maths.Rectangle<int>* pRects, uint NumRects) where TI0 : unmanaged, IComVtbl<ID3D11View>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->DiscardView1((ID3D11View*) pResourceView.Handle, pRects, NumRects);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void DiscardView1(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11View* pResourceView, Span<Silk.NET.Maths.Rectangle<int>> pRects, uint NumRects)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->DiscardView1(pResourceView, ref pRects.GetPinnableReference(), NumRects);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void DiscardView1<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pResourceView, ref Silk.NET.Maths.Rectangle<int> pRects, uint NumRects) where TI0 : unmanaged, IComVtbl<ID3D11View>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->DiscardView1((ID3D11View*) pResourceView.Handle, ref pRects, NumRects);
     }
 
     /// <summary>To be documented.</summary>
@@ -12476,11 +13092,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, pRangeFlags, pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(pTiledResource, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, pTilePool, NumRanges, pRangeFlags, pTilePoolStartOffsets, ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, pRangeFlags, pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -12492,11 +13124,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, pRangeFlags, ref pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, Span<uint> pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(pTiledResource, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, pTilePool, NumRanges, pRangeFlags, ref pTilePoolStartOffsets.GetPinnableReference(), ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, pRangeFlags, ref pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -12508,11 +13156,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, ref pRangeFlags, pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, Span<uint> pRangeFlags, uint* pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(pTiledResource, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, pTilePool, NumRanges, ref pRangeFlags.GetPinnableReference(), pTilePoolStartOffsets, ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, ref pRangeFlags, pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -12524,11 +13188,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, ref pRangeFlags, ref pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, Span<uint> pRangeFlags, Span<uint> pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(pTiledResource, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, pTilePool, NumRanges, ref pRangeFlags.GetPinnableReference(), ref pTilePoolStartOffsets.GetPinnableReference(), ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, ref pRangeFlags, ref pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -12540,11 +13220,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, ref pTilePool, NumRanges, pRangeFlags, pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, Span<ID3D11Buffer> pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(pTiledResource, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, ref pTilePool.GetPinnableReference(), NumRanges, pRangeFlags, pTilePoolStartOffsets, ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, ref pTilePool, NumRanges, pRangeFlags, pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -12556,11 +13252,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, ref pTilePool, NumRanges, pRangeFlags, ref pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, Span<ID3D11Buffer> pTilePool, uint NumRanges, uint* pRangeFlags, Span<uint> pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(pTiledResource, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, ref pTilePool.GetPinnableReference(), NumRanges, pRangeFlags, ref pTilePoolStartOffsets.GetPinnableReference(), ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, ref pTilePool, NumRanges, pRangeFlags, ref pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -12572,11 +13284,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, ref pTilePool, NumRanges, ref pRangeFlags, pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, Span<ID3D11Buffer> pTilePool, uint NumRanges, Span<uint> pRangeFlags, uint* pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(pTiledResource, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, ref pTilePool.GetPinnableReference(), NumRanges, ref pRangeFlags.GetPinnableReference(), pTilePoolStartOffsets, ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, ref pTilePool, NumRanges, ref pRangeFlags, pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -12588,11 +13316,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, ref pTilePool, NumRanges, ref pRangeFlags, ref pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, Span<ID3D11Buffer> pTilePool, uint NumRanges, Span<uint> pRangeFlags, Span<uint> pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(pTiledResource, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, ref pTilePool.GetPinnableReference(), NumRanges, ref pRangeFlags.GetPinnableReference(), ref pTilePoolStartOffsets.GetPinnableReference(), ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, ref pTilePool, NumRanges, ref pRangeFlags, ref pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -12604,11 +13348,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, pRangeFlags, pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, Span<TileRegionSize> pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(pTiledResource, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes.GetPinnableReference(), pTilePool, NumRanges, pRangeFlags, pTilePoolStartOffsets, ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, pRangeFlags, pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -12620,11 +13380,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, pRangeFlags, ref pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, Span<TileRegionSize> pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, Span<uint> pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(pTiledResource, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes.GetPinnableReference(), pTilePool, NumRanges, pRangeFlags, ref pTilePoolStartOffsets.GetPinnableReference(), ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, pRangeFlags, ref pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -12636,11 +13412,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, ref pRangeFlags, pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, Span<TileRegionSize> pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, Span<uint> pRangeFlags, uint* pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(pTiledResource, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes.GetPinnableReference(), pTilePool, NumRanges, ref pRangeFlags.GetPinnableReference(), pTilePoolStartOffsets, ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, ref pRangeFlags, pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -12652,11 +13444,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, ref pRangeFlags, ref pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, Span<TileRegionSize> pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, Span<uint> pRangeFlags, Span<uint> pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(pTiledResource, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes.GetPinnableReference(), pTilePool, NumRanges, ref pRangeFlags.GetPinnableReference(), ref pTilePoolStartOffsets.GetPinnableReference(), ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, ref pRangeFlags, ref pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -12668,11 +13476,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, ref pTilePool, NumRanges, pRangeFlags, pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, Span<TileRegionSize> pTiledResourceRegionSizes, Span<ID3D11Buffer> pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(pTiledResource, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes.GetPinnableReference(), ref pTilePool.GetPinnableReference(), NumRanges, pRangeFlags, pTilePoolStartOffsets, ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, ref pTilePool, NumRanges, pRangeFlags, pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -12684,11 +13508,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, ref pTilePool, NumRanges, pRangeFlags, ref pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, Span<TileRegionSize> pTiledResourceRegionSizes, Span<ID3D11Buffer> pTilePool, uint NumRanges, uint* pRangeFlags, Span<uint> pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(pTiledResource, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes.GetPinnableReference(), ref pTilePool.GetPinnableReference(), NumRanges, pRangeFlags, ref pTilePoolStartOffsets.GetPinnableReference(), ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, ref pTilePool, NumRanges, pRangeFlags, ref pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -12700,11 +13540,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, ref pTilePool, NumRanges, ref pRangeFlags, pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, Span<TileRegionSize> pTiledResourceRegionSizes, Span<ID3D11Buffer> pTilePool, uint NumRanges, Span<uint> pRangeFlags, uint* pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(pTiledResource, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes.GetPinnableReference(), ref pTilePool.GetPinnableReference(), NumRanges, ref pRangeFlags.GetPinnableReference(), pTilePoolStartOffsets, ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, ref pTilePool, NumRanges, ref pRangeFlags, pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -12716,11 +13572,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, ref pTilePool, NumRanges, ref pRangeFlags, ref pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, Span<TileRegionSize> pTiledResourceRegionSizes, Span<ID3D11Buffer> pTilePool, uint NumRanges, Span<uint> pRangeFlags, Span<uint> pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(pTiledResource, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes.GetPinnableReference(), ref pTilePool.GetPinnableReference(), NumRanges, ref pRangeFlags.GetPinnableReference(), ref pTilePoolStartOffsets.GetPinnableReference(), ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, ref pTilePool, NumRanges, ref pRangeFlags, ref pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -12732,11 +13604,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, pRangeFlags, pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, Span<TiledResourceCoordinate> pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(pTiledResource, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates.GetPinnableReference(), pTiledResourceRegionSizes, pTilePool, NumRanges, pRangeFlags, pTilePoolStartOffsets, ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, pRangeFlags, pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -12748,11 +13636,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, pRangeFlags, ref pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, Span<TiledResourceCoordinate> pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, Span<uint> pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(pTiledResource, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates.GetPinnableReference(), pTiledResourceRegionSizes, pTilePool, NumRanges, pRangeFlags, ref pTilePoolStartOffsets.GetPinnableReference(), ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, pRangeFlags, ref pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -12764,11 +13668,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, ref pRangeFlags, pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, Span<TiledResourceCoordinate> pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, Span<uint> pRangeFlags, uint* pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(pTiledResource, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates.GetPinnableReference(), pTiledResourceRegionSizes, pTilePool, NumRanges, ref pRangeFlags.GetPinnableReference(), pTilePoolStartOffsets, ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, ref pRangeFlags, pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -12780,11 +13700,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, ref pRangeFlags, ref pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, Span<TiledResourceCoordinate> pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, Span<uint> pRangeFlags, Span<uint> pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(pTiledResource, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates.GetPinnableReference(), pTiledResourceRegionSizes, pTilePool, NumRanges, ref pRangeFlags.GetPinnableReference(), ref pTilePoolStartOffsets.GetPinnableReference(), ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, ref pRangeFlags, ref pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -12796,11 +13732,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, ref pTilePool, NumRanges, pRangeFlags, pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, Span<TiledResourceCoordinate> pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, Span<ID3D11Buffer> pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(pTiledResource, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates.GetPinnableReference(), pTiledResourceRegionSizes, ref pTilePool.GetPinnableReference(), NumRanges, pRangeFlags, pTilePoolStartOffsets, ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, ref pTilePool, NumRanges, pRangeFlags, pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -12812,11 +13764,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, ref pTilePool, NumRanges, pRangeFlags, ref pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, Span<TiledResourceCoordinate> pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, Span<ID3D11Buffer> pTilePool, uint NumRanges, uint* pRangeFlags, Span<uint> pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(pTiledResource, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates.GetPinnableReference(), pTiledResourceRegionSizes, ref pTilePool.GetPinnableReference(), NumRanges, pRangeFlags, ref pTilePoolStartOffsets.GetPinnableReference(), ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, ref pTilePool, NumRanges, pRangeFlags, ref pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -12828,11 +13796,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, ref pTilePool, NumRanges, ref pRangeFlags, pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, Span<TiledResourceCoordinate> pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, Span<ID3D11Buffer> pTilePool, uint NumRanges, Span<uint> pRangeFlags, uint* pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(pTiledResource, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates.GetPinnableReference(), pTiledResourceRegionSizes, ref pTilePool.GetPinnableReference(), NumRanges, ref pRangeFlags.GetPinnableReference(), pTilePoolStartOffsets, ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, ref pTilePool, NumRanges, ref pRangeFlags, pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -12844,11 +13828,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, ref pTilePool, NumRanges, ref pRangeFlags, ref pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, Span<TiledResourceCoordinate> pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, Span<ID3D11Buffer> pTilePool, uint NumRanges, Span<uint> pRangeFlags, Span<uint> pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(pTiledResource, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates.GetPinnableReference(), pTiledResourceRegionSizes, ref pTilePool.GetPinnableReference(), NumRanges, ref pRangeFlags.GetPinnableReference(), ref pTilePoolStartOffsets.GetPinnableReference(), ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, ref pTilePool, NumRanges, ref pRangeFlags, ref pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -12860,11 +13860,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, pRangeFlags, pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, Span<TiledResourceCoordinate> pTiledResourceRegionStartCoordinates, Span<TileRegionSize> pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(pTiledResource, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates.GetPinnableReference(), ref pTiledResourceRegionSizes.GetPinnableReference(), pTilePool, NumRanges, pRangeFlags, pTilePoolStartOffsets, ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, pRangeFlags, pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -12876,11 +13892,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, pRangeFlags, ref pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, Span<TiledResourceCoordinate> pTiledResourceRegionStartCoordinates, Span<TileRegionSize> pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, Span<uint> pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(pTiledResource, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates.GetPinnableReference(), ref pTiledResourceRegionSizes.GetPinnableReference(), pTilePool, NumRanges, pRangeFlags, ref pTilePoolStartOffsets.GetPinnableReference(), ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, pRangeFlags, ref pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -12892,11 +13924,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, ref pRangeFlags, pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, Span<TiledResourceCoordinate> pTiledResourceRegionStartCoordinates, Span<TileRegionSize> pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, Span<uint> pRangeFlags, uint* pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(pTiledResource, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates.GetPinnableReference(), ref pTiledResourceRegionSizes.GetPinnableReference(), pTilePool, NumRanges, ref pRangeFlags.GetPinnableReference(), pTilePoolStartOffsets, ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, ref pRangeFlags, pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -12908,11 +13956,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, ref pRangeFlags, ref pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, Span<TiledResourceCoordinate> pTiledResourceRegionStartCoordinates, Span<TileRegionSize> pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, Span<uint> pRangeFlags, Span<uint> pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(pTiledResource, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates.GetPinnableReference(), ref pTiledResourceRegionSizes.GetPinnableReference(), pTilePool, NumRanges, ref pRangeFlags.GetPinnableReference(), ref pTilePoolStartOffsets.GetPinnableReference(), ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, ref pRangeFlags, ref pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -12924,11 +13988,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, ref pTilePool, NumRanges, pRangeFlags, pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, Span<TiledResourceCoordinate> pTiledResourceRegionStartCoordinates, Span<TileRegionSize> pTiledResourceRegionSizes, Span<ID3D11Buffer> pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(pTiledResource, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates.GetPinnableReference(), ref pTiledResourceRegionSizes.GetPinnableReference(), ref pTilePool.GetPinnableReference(), NumRanges, pRangeFlags, pTilePoolStartOffsets, ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, ref pTilePool, NumRanges, pRangeFlags, pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -12940,11 +14020,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, ref pTilePool, NumRanges, pRangeFlags, ref pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, Span<TiledResourceCoordinate> pTiledResourceRegionStartCoordinates, Span<TileRegionSize> pTiledResourceRegionSizes, Span<ID3D11Buffer> pTilePool, uint NumRanges, uint* pRangeFlags, Span<uint> pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(pTiledResource, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates.GetPinnableReference(), ref pTiledResourceRegionSizes.GetPinnableReference(), ref pTilePool.GetPinnableReference(), NumRanges, pRangeFlags, ref pTilePoolStartOffsets.GetPinnableReference(), ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, ref pTilePool, NumRanges, pRangeFlags, ref pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -12956,11 +14052,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, ref pTilePool, NumRanges, ref pRangeFlags, pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, Span<TiledResourceCoordinate> pTiledResourceRegionStartCoordinates, Span<TileRegionSize> pTiledResourceRegionSizes, Span<ID3D11Buffer> pTilePool, uint NumRanges, Span<uint> pRangeFlags, uint* pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(pTiledResource, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates.GetPinnableReference(), ref pTiledResourceRegionSizes.GetPinnableReference(), ref pTilePool.GetPinnableReference(), NumRanges, ref pRangeFlags.GetPinnableReference(), pTilePoolStartOffsets, ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, ref pTilePool, NumRanges, ref pRangeFlags, pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -12972,11 +14084,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, ref pTilePool, NumRanges, ref pRangeFlags, ref pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, Span<TiledResourceCoordinate> pTiledResourceRegionStartCoordinates, Span<TileRegionSize> pTiledResourceRegionSizes, Span<ID3D11Buffer> pTilePool, uint NumRanges, Span<uint> pRangeFlags, Span<uint> pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(pTiledResource, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates.GetPinnableReference(), ref pTiledResourceRegionSizes.GetPinnableReference(), ref pTilePool.GetPinnableReference(), NumRanges, ref pRangeFlags.GetPinnableReference(), ref pTilePoolStartOffsets.GetPinnableReference(), ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings((ID3D11Resource*) pTiledResource.Handle, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, ref pTilePool, NumRanges, ref pRangeFlags, ref pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -12988,11 +14116,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings(ref pTiledResource, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, pRangeFlags, pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(ref pTiledResource.GetPinnableReference(), NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, pTilePool, NumRanges, pRangeFlags, pTilePoolStartOffsets, ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings(ref pTiledResource, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, pRangeFlags, pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -13004,11 +14148,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings(ref pTiledResource, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, pRangeFlags, ref pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, Span<uint> pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(ref pTiledResource.GetPinnableReference(), NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, pTilePool, NumRanges, pRangeFlags, ref pTilePoolStartOffsets.GetPinnableReference(), ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings(ref pTiledResource, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, pRangeFlags, ref pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -13020,11 +14180,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings(ref pTiledResource, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, ref pRangeFlags, pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, Span<uint> pRangeFlags, uint* pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(ref pTiledResource.GetPinnableReference(), NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, pTilePool, NumRanges, ref pRangeFlags.GetPinnableReference(), pTilePoolStartOffsets, ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings(ref pTiledResource, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, ref pRangeFlags, pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -13036,11 +14212,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings(ref pTiledResource, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, ref pRangeFlags, ref pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, Span<uint> pRangeFlags, Span<uint> pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(ref pTiledResource.GetPinnableReference(), NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, pTilePool, NumRanges, ref pRangeFlags.GetPinnableReference(), ref pTilePoolStartOffsets.GetPinnableReference(), ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings(ref pTiledResource, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, ref pRangeFlags, ref pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -13116,11 +14308,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings(ref pTiledResource, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, pRangeFlags, pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, Span<TileRegionSize> pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(ref pTiledResource.GetPinnableReference(), NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes.GetPinnableReference(), pTilePool, NumRanges, pRangeFlags, pTilePoolStartOffsets, ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings(ref pTiledResource, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, pRangeFlags, pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -13132,11 +14340,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings(ref pTiledResource, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, pRangeFlags, ref pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, Span<TileRegionSize> pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, Span<uint> pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(ref pTiledResource.GetPinnableReference(), NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes.GetPinnableReference(), pTilePool, NumRanges, pRangeFlags, ref pTilePoolStartOffsets.GetPinnableReference(), ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings(ref pTiledResource, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, pRangeFlags, ref pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -13148,11 +14372,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings(ref pTiledResource, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, ref pRangeFlags, pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, Span<TileRegionSize> pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, Span<uint> pRangeFlags, uint* pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(ref pTiledResource.GetPinnableReference(), NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes.GetPinnableReference(), pTilePool, NumRanges, ref pRangeFlags.GetPinnableReference(), pTilePoolStartOffsets, ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings(ref pTiledResource, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, ref pRangeFlags, pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -13164,11 +14404,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings(ref pTiledResource, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, ref pRangeFlags, ref pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, Span<TileRegionSize> pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, Span<uint> pRangeFlags, Span<uint> pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(ref pTiledResource.GetPinnableReference(), NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes.GetPinnableReference(), pTilePool, NumRanges, ref pRangeFlags.GetPinnableReference(), ref pTilePoolStartOffsets.GetPinnableReference(), ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings(ref pTiledResource, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, ref pRangeFlags, ref pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -13244,11 +14500,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings(ref pTiledResource, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, pRangeFlags, pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pTiledResource, uint NumTiledResourceRegions, Span<TiledResourceCoordinate> pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(ref pTiledResource.GetPinnableReference(), NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates.GetPinnableReference(), pTiledResourceRegionSizes, pTilePool, NumRanges, pRangeFlags, pTilePoolStartOffsets, ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings(ref pTiledResource, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, pRangeFlags, pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -13260,11 +14532,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings(ref pTiledResource, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, pRangeFlags, ref pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pTiledResource, uint NumTiledResourceRegions, Span<TiledResourceCoordinate> pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, Span<uint> pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(ref pTiledResource.GetPinnableReference(), NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates.GetPinnableReference(), pTiledResourceRegionSizes, pTilePool, NumRanges, pRangeFlags, ref pTilePoolStartOffsets.GetPinnableReference(), ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings(ref pTiledResource, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, pRangeFlags, ref pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -13276,11 +14564,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings(ref pTiledResource, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, ref pRangeFlags, pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pTiledResource, uint NumTiledResourceRegions, Span<TiledResourceCoordinate> pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, Span<uint> pRangeFlags, uint* pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(ref pTiledResource.GetPinnableReference(), NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates.GetPinnableReference(), pTiledResourceRegionSizes, pTilePool, NumRanges, ref pRangeFlags.GetPinnableReference(), pTilePoolStartOffsets, ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings(ref pTiledResource, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, ref pRangeFlags, pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -13292,11 +14596,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings(ref pTiledResource, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, ref pRangeFlags, ref pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pTiledResource, uint NumTiledResourceRegions, Span<TiledResourceCoordinate> pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, Span<uint> pRangeFlags, Span<uint> pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(ref pTiledResource.GetPinnableReference(), NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates.GetPinnableReference(), pTiledResourceRegionSizes, pTilePool, NumRanges, ref pRangeFlags.GetPinnableReference(), ref pTilePoolStartOffsets.GetPinnableReference(), ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings(ref pTiledResource, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, ref pRangeFlags, ref pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -13372,11 +14692,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings(ref pTiledResource, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, pRangeFlags, pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pTiledResource, uint NumTiledResourceRegions, Span<TiledResourceCoordinate> pTiledResourceRegionStartCoordinates, Span<TileRegionSize> pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(ref pTiledResource.GetPinnableReference(), NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates.GetPinnableReference(), ref pTiledResourceRegionSizes.GetPinnableReference(), pTilePool, NumRanges, pRangeFlags, pTilePoolStartOffsets, ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings(ref pTiledResource, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, pRangeFlags, pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -13388,11 +14724,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings(ref pTiledResource, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, pRangeFlags, ref pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pTiledResource, uint NumTiledResourceRegions, Span<TiledResourceCoordinate> pTiledResourceRegionStartCoordinates, Span<TileRegionSize> pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, Span<uint> pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(ref pTiledResource.GetPinnableReference(), NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates.GetPinnableReference(), ref pTiledResourceRegionSizes.GetPinnableReference(), pTilePool, NumRanges, pRangeFlags, ref pTilePoolStartOffsets.GetPinnableReference(), ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings(ref pTiledResource, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, pRangeFlags, ref pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -13404,11 +14756,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings(ref pTiledResource, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, ref pRangeFlags, pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pTiledResource, uint NumTiledResourceRegions, Span<TiledResourceCoordinate> pTiledResourceRegionStartCoordinates, Span<TileRegionSize> pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, Span<uint> pRangeFlags, uint* pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(ref pTiledResource.GetPinnableReference(), NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates.GetPinnableReference(), ref pTiledResourceRegionSizes.GetPinnableReference(), pTilePool, NumRanges, ref pRangeFlags.GetPinnableReference(), pTilePoolStartOffsets, ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings(ref pTiledResource, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, ref pRangeFlags, pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -13420,11 +14788,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings(ref pTiledResource, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, ref pRangeFlags, ref pTilePoolStartOffsets, pRangeTileCounts, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pTiledResource, uint NumTiledResourceRegions, Span<TiledResourceCoordinate> pTiledResourceRegionStartCoordinates, Span<TileRegionSize> pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, Span<uint> pRangeFlags, Span<uint> pTilePoolStartOffsets, Span<uint> pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UpdateTileMappings(ref pTiledResource.GetPinnableReference(), NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates.GetPinnableReference(), ref pTiledResourceRegionSizes.GetPinnableReference(), pTilePool, NumRanges, ref pRangeFlags.GetPinnableReference(), ref pTilePoolStartOffsets.GetPinnableReference(), ref pRangeTileCounts.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->UpdateTileMappings(ref pTiledResource, NumTiledResourceRegions, ref pTiledResourceRegionStartCoordinates, ref pTiledResourceRegionSizes, (ID3D11Buffer*) pTilePool.Handle, NumRanges, ref pRangeFlags, ref pTilePoolStartOffsets, ref pRangeTileCounts, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -13492,11 +14876,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CopyTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDestTiledResource, TiledResourceCoordinate* pDestRegionStartCoordinate, ComPtr<TI1> pSourceTiledResource, TiledResourceCoordinate* pSourceRegionStartCoordinate, TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CopyTileMappings((ID3D11Resource*) pDestTiledResource.Handle, pDestRegionStartCoordinate, (ID3D11Resource*) pSourceTiledResource.Handle, pSourceRegionStartCoordinate, pTileRegionSize, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDestTiledResource, TiledResourceCoordinate* pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, TiledResourceCoordinate* pSourceRegionStartCoordinate, Span<TileRegionSize> pTileRegionSize, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CopyTileMappings(pDestTiledResource, pDestRegionStartCoordinate, pSourceTiledResource, pSourceRegionStartCoordinate, ref pTileRegionSize.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CopyTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDestTiledResource, TiledResourceCoordinate* pDestRegionStartCoordinate, ComPtr<TI1> pSourceTiledResource, TiledResourceCoordinate* pSourceRegionStartCoordinate, ref TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CopyTileMappings((ID3D11Resource*) pDestTiledResource.Handle, pDestRegionStartCoordinate, (ID3D11Resource*) pSourceTiledResource.Handle, pSourceRegionStartCoordinate, ref pTileRegionSize, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -13508,11 +14908,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CopyTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDestTiledResource, TiledResourceCoordinate* pDestRegionStartCoordinate, ComPtr<TI1> pSourceTiledResource, ref TiledResourceCoordinate pSourceRegionStartCoordinate, TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CopyTileMappings((ID3D11Resource*) pDestTiledResource.Handle, pDestRegionStartCoordinate, (ID3D11Resource*) pSourceTiledResource.Handle, ref pSourceRegionStartCoordinate, pTileRegionSize, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDestTiledResource, TiledResourceCoordinate* pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, Span<TiledResourceCoordinate> pSourceRegionStartCoordinate, Span<TileRegionSize> pTileRegionSize, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CopyTileMappings(pDestTiledResource, pDestRegionStartCoordinate, pSourceTiledResource, ref pSourceRegionStartCoordinate.GetPinnableReference(), ref pTileRegionSize.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CopyTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDestTiledResource, TiledResourceCoordinate* pDestRegionStartCoordinate, ComPtr<TI1> pSourceTiledResource, ref TiledResourceCoordinate pSourceRegionStartCoordinate, ref TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CopyTileMappings((ID3D11Resource*) pDestTiledResource.Handle, pDestRegionStartCoordinate, (ID3D11Resource*) pSourceTiledResource.Handle, ref pSourceRegionStartCoordinate, ref pTileRegionSize, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -13524,11 +14940,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CopyTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDestTiledResource, TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, TiledResourceCoordinate* pSourceRegionStartCoordinate, TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CopyTileMappings((ID3D11Resource*) pDestTiledResource.Handle, pDestRegionStartCoordinate, ref pSourceTiledResource, pSourceRegionStartCoordinate, pTileRegionSize, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDestTiledResource, TiledResourceCoordinate* pDestRegionStartCoordinate, Span<ID3D11Resource> pSourceTiledResource, TiledResourceCoordinate* pSourceRegionStartCoordinate, Span<TileRegionSize> pTileRegionSize, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CopyTileMappings(pDestTiledResource, pDestRegionStartCoordinate, ref pSourceTiledResource.GetPinnableReference(), pSourceRegionStartCoordinate, ref pTileRegionSize.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CopyTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDestTiledResource, TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, TiledResourceCoordinate* pSourceRegionStartCoordinate, ref TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CopyTileMappings((ID3D11Resource*) pDestTiledResource.Handle, pDestRegionStartCoordinate, ref pSourceTiledResource, pSourceRegionStartCoordinate, ref pTileRegionSize, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -13540,11 +14972,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CopyTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDestTiledResource, TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, ref TiledResourceCoordinate pSourceRegionStartCoordinate, TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CopyTileMappings((ID3D11Resource*) pDestTiledResource.Handle, pDestRegionStartCoordinate, ref pSourceTiledResource, ref pSourceRegionStartCoordinate, pTileRegionSize, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDestTiledResource, TiledResourceCoordinate* pDestRegionStartCoordinate, Span<ID3D11Resource> pSourceTiledResource, Span<TiledResourceCoordinate> pSourceRegionStartCoordinate, Span<TileRegionSize> pTileRegionSize, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CopyTileMappings(pDestTiledResource, pDestRegionStartCoordinate, ref pSourceTiledResource.GetPinnableReference(), ref pSourceRegionStartCoordinate.GetPinnableReference(), ref pTileRegionSize.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CopyTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDestTiledResource, TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, ref TiledResourceCoordinate pSourceRegionStartCoordinate, ref TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CopyTileMappings((ID3D11Resource*) pDestTiledResource.Handle, pDestRegionStartCoordinate, ref pSourceTiledResource, ref pSourceRegionStartCoordinate, ref pTileRegionSize, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -13556,11 +15004,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CopyTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDestTiledResource, ref TiledResourceCoordinate pDestRegionStartCoordinate, ComPtr<TI1> pSourceTiledResource, TiledResourceCoordinate* pSourceRegionStartCoordinate, TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CopyTileMappings((ID3D11Resource*) pDestTiledResource.Handle, ref pDestRegionStartCoordinate, (ID3D11Resource*) pSourceTiledResource.Handle, pSourceRegionStartCoordinate, pTileRegionSize, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDestTiledResource, Span<TiledResourceCoordinate> pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, TiledResourceCoordinate* pSourceRegionStartCoordinate, Span<TileRegionSize> pTileRegionSize, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CopyTileMappings(pDestTiledResource, ref pDestRegionStartCoordinate.GetPinnableReference(), pSourceTiledResource, pSourceRegionStartCoordinate, ref pTileRegionSize.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CopyTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDestTiledResource, ref TiledResourceCoordinate pDestRegionStartCoordinate, ComPtr<TI1> pSourceTiledResource, TiledResourceCoordinate* pSourceRegionStartCoordinate, ref TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CopyTileMappings((ID3D11Resource*) pDestTiledResource.Handle, ref pDestRegionStartCoordinate, (ID3D11Resource*) pSourceTiledResource.Handle, pSourceRegionStartCoordinate, ref pTileRegionSize, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -13572,11 +15036,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CopyTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDestTiledResource, ref TiledResourceCoordinate pDestRegionStartCoordinate, ComPtr<TI1> pSourceTiledResource, ref TiledResourceCoordinate pSourceRegionStartCoordinate, TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CopyTileMappings((ID3D11Resource*) pDestTiledResource.Handle, ref pDestRegionStartCoordinate, (ID3D11Resource*) pSourceTiledResource.Handle, ref pSourceRegionStartCoordinate, pTileRegionSize, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDestTiledResource, Span<TiledResourceCoordinate> pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, Span<TiledResourceCoordinate> pSourceRegionStartCoordinate, Span<TileRegionSize> pTileRegionSize, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CopyTileMappings(pDestTiledResource, ref pDestRegionStartCoordinate.GetPinnableReference(), pSourceTiledResource, ref pSourceRegionStartCoordinate.GetPinnableReference(), ref pTileRegionSize.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CopyTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDestTiledResource, ref TiledResourceCoordinate pDestRegionStartCoordinate, ComPtr<TI1> pSourceTiledResource, ref TiledResourceCoordinate pSourceRegionStartCoordinate, ref TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CopyTileMappings((ID3D11Resource*) pDestTiledResource.Handle, ref pDestRegionStartCoordinate, (ID3D11Resource*) pSourceTiledResource.Handle, ref pSourceRegionStartCoordinate, ref pTileRegionSize, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -13588,11 +15068,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CopyTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDestTiledResource, ref TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, TiledResourceCoordinate* pSourceRegionStartCoordinate, TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CopyTileMappings((ID3D11Resource*) pDestTiledResource.Handle, ref pDestRegionStartCoordinate, ref pSourceTiledResource, pSourceRegionStartCoordinate, pTileRegionSize, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDestTiledResource, Span<TiledResourceCoordinate> pDestRegionStartCoordinate, Span<ID3D11Resource> pSourceTiledResource, TiledResourceCoordinate* pSourceRegionStartCoordinate, Span<TileRegionSize> pTileRegionSize, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CopyTileMappings(pDestTiledResource, ref pDestRegionStartCoordinate.GetPinnableReference(), ref pSourceTiledResource.GetPinnableReference(), pSourceRegionStartCoordinate, ref pTileRegionSize.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CopyTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDestTiledResource, ref TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, TiledResourceCoordinate* pSourceRegionStartCoordinate, ref TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CopyTileMappings((ID3D11Resource*) pDestTiledResource.Handle, ref pDestRegionStartCoordinate, ref pSourceTiledResource, pSourceRegionStartCoordinate, ref pTileRegionSize, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -13604,11 +15100,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CopyTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDestTiledResource, ref TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, ref TiledResourceCoordinate pSourceRegionStartCoordinate, TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CopyTileMappings((ID3D11Resource*) pDestTiledResource.Handle, ref pDestRegionStartCoordinate, ref pSourceTiledResource, ref pSourceRegionStartCoordinate, pTileRegionSize, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDestTiledResource, Span<TiledResourceCoordinate> pDestRegionStartCoordinate, Span<ID3D11Resource> pSourceTiledResource, Span<TiledResourceCoordinate> pSourceRegionStartCoordinate, Span<TileRegionSize> pTileRegionSize, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CopyTileMappings(pDestTiledResource, ref pDestRegionStartCoordinate.GetPinnableReference(), ref pSourceTiledResource.GetPinnableReference(), ref pSourceRegionStartCoordinate.GetPinnableReference(), ref pTileRegionSize.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CopyTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDestTiledResource, ref TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, ref TiledResourceCoordinate pSourceRegionStartCoordinate, ref TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CopyTileMappings((ID3D11Resource*) pDestTiledResource.Handle, ref pDestRegionStartCoordinate, ref pSourceTiledResource, ref pSourceRegionStartCoordinate, ref pTileRegionSize, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -13620,11 +15132,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CopyTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pDestTiledResource, TiledResourceCoordinate* pDestRegionStartCoordinate, ComPtr<TI0> pSourceTiledResource, TiledResourceCoordinate* pSourceRegionStartCoordinate, TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CopyTileMappings(ref pDestTiledResource, pDestRegionStartCoordinate, (ID3D11Resource*) pSourceTiledResource.Handle, pSourceRegionStartCoordinate, pTileRegionSize, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pDestTiledResource, TiledResourceCoordinate* pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, TiledResourceCoordinate* pSourceRegionStartCoordinate, Span<TileRegionSize> pTileRegionSize, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CopyTileMappings(ref pDestTiledResource.GetPinnableReference(), pDestRegionStartCoordinate, pSourceTiledResource, pSourceRegionStartCoordinate, ref pTileRegionSize.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CopyTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pDestTiledResource, TiledResourceCoordinate* pDestRegionStartCoordinate, ComPtr<TI0> pSourceTiledResource, TiledResourceCoordinate* pSourceRegionStartCoordinate, ref TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CopyTileMappings(ref pDestTiledResource, pDestRegionStartCoordinate, (ID3D11Resource*) pSourceTiledResource.Handle, pSourceRegionStartCoordinate, ref pTileRegionSize, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -13636,11 +15164,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CopyTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pDestTiledResource, TiledResourceCoordinate* pDestRegionStartCoordinate, ComPtr<TI0> pSourceTiledResource, ref TiledResourceCoordinate pSourceRegionStartCoordinate, TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CopyTileMappings(ref pDestTiledResource, pDestRegionStartCoordinate, (ID3D11Resource*) pSourceTiledResource.Handle, ref pSourceRegionStartCoordinate, pTileRegionSize, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pDestTiledResource, TiledResourceCoordinate* pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, Span<TiledResourceCoordinate> pSourceRegionStartCoordinate, Span<TileRegionSize> pTileRegionSize, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CopyTileMappings(ref pDestTiledResource.GetPinnableReference(), pDestRegionStartCoordinate, pSourceTiledResource, ref pSourceRegionStartCoordinate.GetPinnableReference(), ref pTileRegionSize.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CopyTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pDestTiledResource, TiledResourceCoordinate* pDestRegionStartCoordinate, ComPtr<TI0> pSourceTiledResource, ref TiledResourceCoordinate pSourceRegionStartCoordinate, ref TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CopyTileMappings(ref pDestTiledResource, pDestRegionStartCoordinate, (ID3D11Resource*) pSourceTiledResource.Handle, ref pSourceRegionStartCoordinate, ref pTileRegionSize, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -13684,11 +15228,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CopyTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pDestTiledResource, ref TiledResourceCoordinate pDestRegionStartCoordinate, ComPtr<TI0> pSourceTiledResource, TiledResourceCoordinate* pSourceRegionStartCoordinate, TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CopyTileMappings(ref pDestTiledResource, ref pDestRegionStartCoordinate, (ID3D11Resource*) pSourceTiledResource.Handle, pSourceRegionStartCoordinate, pTileRegionSize, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pDestTiledResource, Span<TiledResourceCoordinate> pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, TiledResourceCoordinate* pSourceRegionStartCoordinate, Span<TileRegionSize> pTileRegionSize, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CopyTileMappings(ref pDestTiledResource.GetPinnableReference(), ref pDestRegionStartCoordinate.GetPinnableReference(), pSourceTiledResource, pSourceRegionStartCoordinate, ref pTileRegionSize.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CopyTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pDestTiledResource, ref TiledResourceCoordinate pDestRegionStartCoordinate, ComPtr<TI0> pSourceTiledResource, TiledResourceCoordinate* pSourceRegionStartCoordinate, ref TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CopyTileMappings(ref pDestTiledResource, ref pDestRegionStartCoordinate, (ID3D11Resource*) pSourceTiledResource.Handle, pSourceRegionStartCoordinate, ref pTileRegionSize, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -13700,11 +15260,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CopyTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pDestTiledResource, ref TiledResourceCoordinate pDestRegionStartCoordinate, ComPtr<TI0> pSourceTiledResource, ref TiledResourceCoordinate pSourceRegionStartCoordinate, TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CopyTileMappings(ref pDestTiledResource, ref pDestRegionStartCoordinate, (ID3D11Resource*) pSourceTiledResource.Handle, ref pSourceRegionStartCoordinate, pTileRegionSize, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pDestTiledResource, Span<TiledResourceCoordinate> pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, Span<TiledResourceCoordinate> pSourceRegionStartCoordinate, Span<TileRegionSize> pTileRegionSize, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CopyTileMappings(ref pDestTiledResource.GetPinnableReference(), ref pDestRegionStartCoordinate.GetPinnableReference(), pSourceTiledResource, ref pSourceRegionStartCoordinate.GetPinnableReference(), ref pTileRegionSize.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CopyTileMappings<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pDestTiledResource, ref TiledResourceCoordinate pDestRegionStartCoordinate, ComPtr<TI0> pSourceTiledResource, ref TiledResourceCoordinate pSourceRegionStartCoordinate, ref TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CopyTileMappings(ref pDestTiledResource, ref pDestRegionStartCoordinate, (ID3D11Resource*) pSourceTiledResource.Handle, ref pSourceRegionStartCoordinate, ref pTileRegionSize, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -13740,11 +15316,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void CopyTiles<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->CopyTiles((ID3D11Resource*) pTiledResource.Handle, pTileRegionStartCoordinate, pTileRegionSize, (ID3D11Buffer*) pBuffer.Handle, BufferStartOffsetInBytes, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void CopyTiles(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, Span<ID3D11Buffer> pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->CopyTiles(pTiledResource, pTileRegionStartCoordinate, pTileRegionSize, ref pBuffer.GetPinnableReference(), BufferStartOffsetInBytes, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CopyTiles<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->CopyTiles((ID3D11Resource*) pTiledResource.Handle, pTileRegionStartCoordinate, pTileRegionSize, ref pBuffer, BufferStartOffsetInBytes, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -13756,11 +15348,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void CopyTiles<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, ref TileRegionSize pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->CopyTiles((ID3D11Resource*) pTiledResource.Handle, pTileRegionStartCoordinate, ref pTileRegionSize, (ID3D11Buffer*) pBuffer.Handle, BufferStartOffsetInBytes, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void CopyTiles(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, Span<TileRegionSize> pTileRegionSize, Span<ID3D11Buffer> pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->CopyTiles(pTiledResource, pTileRegionStartCoordinate, ref pTileRegionSize.GetPinnableReference(), ref pBuffer.GetPinnableReference(), BufferStartOffsetInBytes, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CopyTiles<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, ref TileRegionSize pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->CopyTiles((ID3D11Resource*) pTiledResource.Handle, pTileRegionStartCoordinate, ref pTileRegionSize, ref pBuffer, BufferStartOffsetInBytes, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -13772,11 +15380,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void CopyTiles<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, ref TiledResourceCoordinate pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->CopyTiles((ID3D11Resource*) pTiledResource.Handle, ref pTileRegionStartCoordinate, pTileRegionSize, (ID3D11Buffer*) pBuffer.Handle, BufferStartOffsetInBytes, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void CopyTiles(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pTiledResource, Span<TiledResourceCoordinate> pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, Span<ID3D11Buffer> pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->CopyTiles(pTiledResource, ref pTileRegionStartCoordinate.GetPinnableReference(), pTileRegionSize, ref pBuffer.GetPinnableReference(), BufferStartOffsetInBytes, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CopyTiles<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, ref TiledResourceCoordinate pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->CopyTiles((ID3D11Resource*) pTiledResource.Handle, ref pTileRegionStartCoordinate, pTileRegionSize, ref pBuffer, BufferStartOffsetInBytes, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -13788,6 +15412,14 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static void CopyTiles<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, ref TiledResourceCoordinate pTileRegionStartCoordinate, ref TileRegionSize pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->CopyTiles((ID3D11Resource*) pTiledResource.Handle, ref pTileRegionStartCoordinate, ref pTileRegionSize, (ID3D11Buffer*) pBuffer.Handle, BufferStartOffsetInBytes, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void CopyTiles(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pTiledResource, Span<TiledResourceCoordinate> pTileRegionStartCoordinate, Span<TileRegionSize> pTileRegionSize, Span<ID3D11Buffer> pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
     {
         var @this = thisVtbl.Handle;
@@ -13796,11 +15428,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static void CopyTiles<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResource, ref TiledResourceCoordinate pTileRegionStartCoordinate, ref TileRegionSize pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->CopyTiles((ID3D11Resource*) pTiledResource.Handle, ref pTileRegionStartCoordinate, ref pTileRegionSize, ref pBuffer, BufferStartOffsetInBytes, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void CopyTiles(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, ID3D11Buffer* pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->CopyTiles(ref pTiledResource.GetPinnableReference(), pTileRegionStartCoordinate, pTileRegionSize, pBuffer, BufferStartOffsetInBytes, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CopyTiles<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->CopyTiles(ref pTiledResource, pTileRegionStartCoordinate, pTileRegionSize, (ID3D11Buffer*) pBuffer.Handle, BufferStartOffsetInBytes, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -13820,6 +15468,14 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void CopyTiles<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, ref TileRegionSize pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->CopyTiles(ref pTiledResource, pTileRegionStartCoordinate, ref pTileRegionSize, (ID3D11Buffer*) pBuffer.Handle, BufferStartOffsetInBytes, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void CopyTiles(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, Span<TileRegionSize> pTileRegionSize, Span<ID3D11Buffer> pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
     {
         var @this = thisVtbl.Handle;
@@ -13833,6 +15489,14 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->CopyTiles(ref pTiledResource.GetPinnableReference(), ref pTileRegionStartCoordinate.GetPinnableReference(), pTileRegionSize, pBuffer, BufferStartOffsetInBytes, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CopyTiles<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pTiledResource, ref TiledResourceCoordinate pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->CopyTiles(ref pTiledResource, ref pTileRegionStartCoordinate, pTileRegionSize, (ID3D11Buffer*) pBuffer.Handle, BufferStartOffsetInBytes, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -13852,11 +15516,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static void CopyTiles<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pTiledResource, ref TiledResourceCoordinate pTileRegionStartCoordinate, ref TileRegionSize pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->CopyTiles(ref pTiledResource, ref pTileRegionStartCoordinate, ref pTileRegionSize, (ID3D11Buffer*) pBuffer.Handle, BufferStartOffsetInBytes, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static void CopyTiles(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pTiledResource, Span<TiledResourceCoordinate> pTileRegionStartCoordinate, Span<TileRegionSize> pTileRegionSize, Span<ID3D11Buffer> pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->CopyTiles(ref pTiledResource.GetPinnableReference(), ref pTileRegionStartCoordinate.GetPinnableReference(), ref pTileRegionSize.GetPinnableReference(), ref pBuffer.GetPinnableReference(), BufferStartOffsetInBytes, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void UpdateTiles<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDestTiledResource, TiledResourceCoordinate* pDestTileRegionStartCoordinate, TileRegionSize* pDestTileRegionSize, void* pSourceTileData, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->UpdateTiles((ID3D11Resource*) pDestTiledResource.Handle, pDestTileRegionStartCoordinate, pDestTileRegionSize, pSourceTileData, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -13868,11 +15548,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void UpdateTiles<T0, TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDestTiledResource, TiledResourceCoordinate* pDestTileRegionStartCoordinate, TileRegionSize* pDestTileRegionSize, ref T0 pSourceTileData, uint Flags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->UpdateTiles((ID3D11Resource*) pDestTiledResource.Handle, pDestTileRegionStartCoordinate, pDestTileRegionSize, ref pSourceTileData, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void UpdateTiles(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDestTiledResource, TiledResourceCoordinate* pDestTileRegionStartCoordinate, Span<TileRegionSize> pDestTileRegionSize, void* pSourceTileData, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->UpdateTiles(pDestTiledResource, pDestTileRegionStartCoordinate, ref pDestTileRegionSize.GetPinnableReference(), pSourceTileData, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void UpdateTiles<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDestTiledResource, TiledResourceCoordinate* pDestTileRegionStartCoordinate, ref TileRegionSize pDestTileRegionSize, void* pSourceTileData, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->UpdateTiles((ID3D11Resource*) pDestTiledResource.Handle, pDestTileRegionStartCoordinate, ref pDestTileRegionSize, pSourceTileData, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -13884,11 +15580,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void UpdateTiles<T0, TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDestTiledResource, TiledResourceCoordinate* pDestTileRegionStartCoordinate, ref TileRegionSize pDestTileRegionSize, ref T0 pSourceTileData, uint Flags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->UpdateTiles((ID3D11Resource*) pDestTiledResource.Handle, pDestTileRegionStartCoordinate, ref pDestTileRegionSize, ref pSourceTileData, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void UpdateTiles(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDestTiledResource, Span<TiledResourceCoordinate> pDestTileRegionStartCoordinate, TileRegionSize* pDestTileRegionSize, void* pSourceTileData, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->UpdateTiles(pDestTiledResource, ref pDestTileRegionStartCoordinate.GetPinnableReference(), pDestTileRegionSize, pSourceTileData, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void UpdateTiles<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDestTiledResource, ref TiledResourceCoordinate pDestTileRegionStartCoordinate, TileRegionSize* pDestTileRegionSize, void* pSourceTileData, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->UpdateTiles((ID3D11Resource*) pDestTiledResource.Handle, ref pDestTileRegionStartCoordinate, pDestTileRegionSize, pSourceTileData, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -13900,6 +15612,14 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void UpdateTiles<T0, TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDestTiledResource, ref TiledResourceCoordinate pDestTileRegionStartCoordinate, TileRegionSize* pDestTileRegionSize, ref T0 pSourceTileData, uint Flags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->UpdateTiles((ID3D11Resource*) pDestTiledResource.Handle, ref pDestTileRegionStartCoordinate, pDestTileRegionSize, ref pSourceTileData, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void UpdateTiles(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDestTiledResource, Span<TiledResourceCoordinate> pDestTileRegionStartCoordinate, Span<TileRegionSize> pDestTileRegionSize, void* pSourceTileData, uint Flags)
     {
         var @this = thisVtbl.Handle;
@@ -13908,11 +15628,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void UpdateTiles<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDestTiledResource, ref TiledResourceCoordinate pDestTileRegionStartCoordinate, ref TileRegionSize pDestTileRegionSize, void* pSourceTileData, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->UpdateTiles((ID3D11Resource*) pDestTiledResource.Handle, ref pDestTileRegionStartCoordinate, ref pDestTileRegionSize, pSourceTileData, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void UpdateTiles<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDestTiledResource, Span<TiledResourceCoordinate> pDestTileRegionStartCoordinate, Span<TileRegionSize> pDestTileRegionSize, Span<T0> pSourceTileData, uint Flags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->UpdateTiles(pDestTiledResource, ref pDestTileRegionStartCoordinate.GetPinnableReference(), ref pDestTileRegionSize.GetPinnableReference(), ref pSourceTileData.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void UpdateTiles<T0, TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDestTiledResource, ref TiledResourceCoordinate pDestTileRegionStartCoordinate, ref TileRegionSize pDestTileRegionSize, ref T0 pSourceTileData, uint Flags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->UpdateTiles((ID3D11Resource*) pDestTiledResource.Handle, ref pDestTileRegionStartCoordinate, ref pDestTileRegionSize, ref pSourceTileData, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -13980,11 +15716,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int ResizeTilePool<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTilePool, ulong NewSizeInBytes) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->ResizeTilePool((ID3D11Buffer*) pTilePool.Handle, NewSizeInBytes);
+    }
+
+    /// <summary>To be documented.</summary>
     public static int ResizeTilePool(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Buffer> pTilePool, ulong NewSizeInBytes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->ResizeTilePool(ref pTilePool.GetPinnableReference(), NewSizeInBytes);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void TiledResourceBarrier<TI0, TI1>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResourceOrViewAccessBeforeBarrier, ComPtr<TI1> pTiledResourceOrViewAccessAfterBarrier) where TI0 : unmanaged, IComVtbl<ID3D11DeviceChild>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DeviceChild>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->TiledResourceBarrier((ID3D11DeviceChild*) pTiledResourceOrViewAccessBeforeBarrier.Handle, (ID3D11DeviceChild*) pTiledResourceOrViewAccessAfterBarrier.Handle);
     }
 
     /// <summary>To be documented.</summary>
@@ -13996,11 +15748,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static void TiledResourceBarrier<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pTiledResourceOrViewAccessBeforeBarrier, ref ID3D11DeviceChild pTiledResourceOrViewAccessAfterBarrier) where TI0 : unmanaged, IComVtbl<ID3D11DeviceChild>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->TiledResourceBarrier((ID3D11DeviceChild*) pTiledResourceOrViewAccessBeforeBarrier.Handle, ref pTiledResourceOrViewAccessAfterBarrier);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void TiledResourceBarrier(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11DeviceChild> pTiledResourceOrViewAccessBeforeBarrier, ID3D11DeviceChild* pTiledResourceOrViewAccessAfterBarrier)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->TiledResourceBarrier(ref pTiledResourceOrViewAccessBeforeBarrier.GetPinnableReference(), pTiledResourceOrViewAccessAfterBarrier);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void TiledResourceBarrier<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11DeviceChild pTiledResourceOrViewAccessBeforeBarrier, ComPtr<TI0> pTiledResourceOrViewAccessAfterBarrier) where TI0 : unmanaged, IComVtbl<ID3D11DeviceChild>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->TiledResourceBarrier(ref pTiledResourceOrViewAccessBeforeBarrier, (ID3D11DeviceChild*) pTiledResourceOrViewAccessAfterBarrier.Handle);
     }
 
     /// <summary>To be documented.</summary>

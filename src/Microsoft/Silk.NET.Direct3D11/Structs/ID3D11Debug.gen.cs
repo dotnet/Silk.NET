@@ -249,6 +249,38 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
+        public readonly int SetSwapChain<TI0>(ComPtr<TI0> pSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11Debug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetSwapChain((Silk.NET.DXGI.IDXGISwapChain*) pSwapChain.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetSwapChain<TI0>(ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11Debug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetSwapChain((Silk.NET.DXGI.IDXGISwapChain**) ppSwapChain.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int ValidateContext<TI0>(ComPtr<TI0> pContext) where TI0 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11Debug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->ValidateContext((ID3D11DeviceContext*) pContext.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int ValidateContextForDispatch<TI0>(ComPtr<TI0> pContext) where TI0 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11Debug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->ValidateContextForDispatch((ID3D11DeviceContext*) pContext.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D11Debug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

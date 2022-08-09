@@ -158,11 +158,19 @@ public unsafe static class DxcAssemblerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AssembleToContainer<TI0>(this ComPtr<IDxcAssembler> thisVtbl, IDxcBlob* pShader, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+    public static int AssembleToContainer<TI0, TI1>(this ComPtr<IDxcAssembler> thisVtbl, ComPtr<TI0> pShader, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->AssembleToContainer(pShader, (IDxcOperationResult**) ppResult.GetAddressOf());
+        return @this->AssembleToContainer((IDxcBlob*) pShader.Handle, (IDxcOperationResult**) ppResult.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int AssembleToContainer<TI0>(this ComPtr<IDxcAssembler> thisVtbl, ComPtr<TI0> pShader, ref IDxcOperationResult* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->AssembleToContainer((IDxcBlob*) pShader.Handle, ref ppResult);
     }
 
     /// <summary>To be documented.</summary>

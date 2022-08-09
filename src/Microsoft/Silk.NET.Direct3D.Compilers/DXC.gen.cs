@@ -256,20 +256,68 @@ namespace Silk.NET.Direct3D.Compilers
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
-        public unsafe int CreateInstance2<TI0>(IMalloc* pMalloc, Guid* rclsid, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
+        public unsafe int CreateInstance2<TI0, TI1>(ComPtr<TI0> pMalloc, Guid* rclsid, out ComPtr<TI1> ppv) where TI0 : unmanaged, IComVtbl<IMalloc>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             // ComPtrOverloader
             ppv = default;
-            return CreateInstance2(pMalloc, rclsid, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppv.GetAddressOf());
+            return CreateInstance2((IMalloc*) pMalloc.Handle, rclsid, SilkMarshal.GuidPtrOf<TI1>(), (void**) ppv.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
-        public unsafe int CreateInstance2<TI0>(IMalloc* pMalloc, ref Guid rclsid, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
+        public unsafe int CreateInstance2<TI0>(ComPtr<TI0> pMalloc, Guid* rclsid, Guid* riid, ref void* ppv) where TI0 : unmanaged, IComVtbl<IMalloc>, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            return CreateInstance2((IMalloc*) pMalloc.Handle, rclsid, riid, ref ppv);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
+        public unsafe int CreateInstance2<TI0>(ComPtr<TI0> pMalloc, Guid* rclsid, ref Guid riid, void** ppv) where TI0 : unmanaged, IComVtbl<IMalloc>, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            return CreateInstance2((IMalloc*) pMalloc.Handle, rclsid, ref riid, ppv);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
+        public unsafe int CreateInstance2<TI0>(ComPtr<TI0> pMalloc, Guid* rclsid, ref Guid riid, ref void* ppv) where TI0 : unmanaged, IComVtbl<IMalloc>, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            return CreateInstance2((IMalloc*) pMalloc.Handle, rclsid, ref riid, ref ppv);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
+        public unsafe int CreateInstance2<TI0, TI1>(ComPtr<TI0> pMalloc, ref Guid rclsid, out ComPtr<TI1> ppv) where TI0 : unmanaged, IComVtbl<IMalloc>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             // ComPtrOverloader
             ppv = default;
-            return CreateInstance2(pMalloc, ref rclsid, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppv.GetAddressOf());
+            return CreateInstance2((IMalloc*) pMalloc.Handle, ref rclsid, SilkMarshal.GuidPtrOf<TI1>(), (void**) ppv.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
+        public unsafe int CreateInstance2<TI0>(ComPtr<TI0> pMalloc, ref Guid rclsid, Guid* riid, ref void* ppv) where TI0 : unmanaged, IComVtbl<IMalloc>, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            return CreateInstance2((IMalloc*) pMalloc.Handle, ref rclsid, riid, ref ppv);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
+        public unsafe int CreateInstance2<TI0>(ComPtr<TI0> pMalloc, ref Guid rclsid, ref Guid riid, void** ppv) where TI0 : unmanaged, IComVtbl<IMalloc>, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            return CreateInstance2((IMalloc*) pMalloc.Handle, ref rclsid, ref riid, ppv);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
+        public unsafe int CreateInstance2<TI0>(ComPtr<TI0> pMalloc, ref Guid rclsid, ref Guid riid, ref void* ppv) where TI0 : unmanaged, IComVtbl<IMalloc>, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            return CreateInstance2((IMalloc*) pMalloc.Handle, ref rclsid, ref riid, ref ppv);
         }
 
         /// <summary>To be documented.</summary>
@@ -310,19 +358,19 @@ namespace Silk.NET.Direct3D.Compilers
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
-        public unsafe ComPtr<TI0> CreateInstance2<TI0>(IMalloc* pMalloc, Guid* rclsid) where TI0 : unmanaged, IComVtbl<TI0>
+        public unsafe ComPtr<TI1> CreateInstance2<TI0, TI1>(ComPtr<TI0> pMalloc, Guid* rclsid) where TI0 : unmanaged, IComVtbl<IMalloc>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(CreateInstance2(pMalloc, rclsid, out ComPtr<TI0> silkRet));
+            SilkMarshal.ThrowHResult(CreateInstance2(pMalloc, rclsid, out ComPtr<TI1> silkRet));
             return silkRet;
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
-        public unsafe ComPtr<TI0> CreateInstance2<TI0>(IMalloc* pMalloc, ref Guid rclsid) where TI0 : unmanaged, IComVtbl<TI0>
+        public unsafe ComPtr<TI1> CreateInstance2<TI0, TI1>(ComPtr<TI0> pMalloc, ref Guid rclsid) where TI0 : unmanaged, IComVtbl<IMalloc>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(CreateInstance2(pMalloc, ref rclsid, out ComPtr<TI0> silkRet));
+            SilkMarshal.ThrowHResult(CreateInstance2(pMalloc, ref rclsid, out ComPtr<TI1> silkRet));
             return silkRet;
         }
 

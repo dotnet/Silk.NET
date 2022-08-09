@@ -1405,6 +1405,30 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int RegisterLibrary<TI0>(char* pLibName, ComPtr<TI0> pLib) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->RegisterLibrary(pLibName, (IDxcBlob*) pLib.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int RegisterLibrary<TI0>(ref char pLibName, ComPtr<TI0> pLib) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->RegisterLibrary(ref pLibName, (IDxcBlob*) pLib.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int RegisterLibrary<TI0>([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pLibName, ComPtr<TI0> pLib) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->RegisterLibrary(pLibName, (IDxcBlob*) pLib.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Link(char* pEntryName, char* pTargetProfile, string[] pLibNamesSa, uint libCount, string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

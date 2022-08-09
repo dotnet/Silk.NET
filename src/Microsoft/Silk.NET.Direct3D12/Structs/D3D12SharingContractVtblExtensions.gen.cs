@@ -178,11 +178,27 @@ public unsafe static class D3D12SharingContractVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static void Present<TI0>(this ComPtr<ID3D12SharingContract> thisVtbl, ComPtr<TI0> pResource, uint Subresource, nint window) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->Present((ID3D12Resource*) pResource.Handle, Subresource, window);
+    }
+
+    /// <summary>To be documented.</summary>
     public static void Present(this ComPtr<ID3D12SharingContract> thisVtbl, Span<ID3D12Resource> pResource, uint Subresource, nint window)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->Present(ref pResource.GetPinnableReference(), Subresource, window);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void SharedFenceSignal<TI0>(this ComPtr<ID3D12SharingContract> thisVtbl, ComPtr<TI0> pFence, ulong FenceValue) where TI0 : unmanaged, IComVtbl<ID3D12Fence>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->SharedFenceSignal((ID3D12Fence*) pFence.Handle, FenceValue);
     }
 
     /// <summary>To be documented.</summary>

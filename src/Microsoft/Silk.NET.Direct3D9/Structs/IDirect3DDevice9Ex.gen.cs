@@ -4129,6 +4129,14 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
+        public readonly int SetCursorProperties<TI0>(uint XHotSpot, uint YHotSpot, ComPtr<TI0> pCursorBitmap) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetCursorProperties(XHotSpot, YHotSpot, (IDirect3DSurface9*) pCursorBitmap.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateAdditionalSwapChain<TI0>(PresentParameters* pPresentationParameters, ref ComPtr<TI0> pSwapChain) where TI0 : unmanaged, IComVtbl<IDirect3DSwapChain9>, IComVtbl<TI0>
         {
             var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4273,6 +4281,270 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int UpdateSurface<TI0, TI1>(ComPtr<TI0> pSourceSurface, Silk.NET.Maths.Rectangle<int>* pSourceRect, ComPtr<TI1> pDestinationSurface, Silk.NET.Maths.Vector2D<int>* pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->UpdateSurface((IDirect3DSurface9*) pSourceSurface.Handle, pSourceRect, (IDirect3DSurface9*) pDestinationSurface.Handle, pDestPoint);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int UpdateSurface<TI0, TI1>(ComPtr<TI0> pSourceSurface, Silk.NET.Maths.Rectangle<int>* pSourceRect, ComPtr<TI1> pDestinationSurface, ref Silk.NET.Maths.Vector2D<int> pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->UpdateSurface((IDirect3DSurface9*) pSourceSurface.Handle, pSourceRect, (IDirect3DSurface9*) pDestinationSurface.Handle, ref pDestPoint);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int UpdateSurface<TI0>(ComPtr<TI0> pSourceSurface, Silk.NET.Maths.Rectangle<int>* pSourceRect, ref IDirect3DSurface9 pDestinationSurface, Silk.NET.Maths.Vector2D<int>* pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->UpdateSurface((IDirect3DSurface9*) pSourceSurface.Handle, pSourceRect, ref pDestinationSurface, pDestPoint);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int UpdateSurface<TI0>(ComPtr<TI0> pSourceSurface, Silk.NET.Maths.Rectangle<int>* pSourceRect, ref IDirect3DSurface9 pDestinationSurface, ref Silk.NET.Maths.Vector2D<int> pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->UpdateSurface((IDirect3DSurface9*) pSourceSurface.Handle, pSourceRect, ref pDestinationSurface, ref pDestPoint);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int UpdateSurface<TI0, TI1>(ComPtr<TI0> pSourceSurface, ref Silk.NET.Maths.Rectangle<int> pSourceRect, ComPtr<TI1> pDestinationSurface, Silk.NET.Maths.Vector2D<int>* pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->UpdateSurface((IDirect3DSurface9*) pSourceSurface.Handle, ref pSourceRect, (IDirect3DSurface9*) pDestinationSurface.Handle, pDestPoint);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int UpdateSurface<TI0, TI1>(ComPtr<TI0> pSourceSurface, ref Silk.NET.Maths.Rectangle<int> pSourceRect, ComPtr<TI1> pDestinationSurface, ref Silk.NET.Maths.Vector2D<int> pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->UpdateSurface((IDirect3DSurface9*) pSourceSurface.Handle, ref pSourceRect, (IDirect3DSurface9*) pDestinationSurface.Handle, ref pDestPoint);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int UpdateSurface<TI0>(ComPtr<TI0> pSourceSurface, ref Silk.NET.Maths.Rectangle<int> pSourceRect, ref IDirect3DSurface9 pDestinationSurface, Silk.NET.Maths.Vector2D<int>* pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->UpdateSurface((IDirect3DSurface9*) pSourceSurface.Handle, ref pSourceRect, ref pDestinationSurface, pDestPoint);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int UpdateSurface<TI0>(ComPtr<TI0> pSourceSurface, ref Silk.NET.Maths.Rectangle<int> pSourceRect, ref IDirect3DSurface9 pDestinationSurface, ref Silk.NET.Maths.Vector2D<int> pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->UpdateSurface((IDirect3DSurface9*) pSourceSurface.Handle, ref pSourceRect, ref pDestinationSurface, ref pDestPoint);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int UpdateSurface<TI0>(ref IDirect3DSurface9 pSourceSurface, Silk.NET.Maths.Rectangle<int>* pSourceRect, ComPtr<TI0> pDestinationSurface, Silk.NET.Maths.Vector2D<int>* pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->UpdateSurface(ref pSourceSurface, pSourceRect, (IDirect3DSurface9*) pDestinationSurface.Handle, pDestPoint);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int UpdateSurface<TI0>(ref IDirect3DSurface9 pSourceSurface, Silk.NET.Maths.Rectangle<int>* pSourceRect, ComPtr<TI0> pDestinationSurface, ref Silk.NET.Maths.Vector2D<int> pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->UpdateSurface(ref pSourceSurface, pSourceRect, (IDirect3DSurface9*) pDestinationSurface.Handle, ref pDestPoint);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int UpdateSurface<TI0>(ref IDirect3DSurface9 pSourceSurface, ref Silk.NET.Maths.Rectangle<int> pSourceRect, ComPtr<TI0> pDestinationSurface, Silk.NET.Maths.Vector2D<int>* pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->UpdateSurface(ref pSourceSurface, ref pSourceRect, (IDirect3DSurface9*) pDestinationSurface.Handle, pDestPoint);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int UpdateSurface<TI0>(ref IDirect3DSurface9 pSourceSurface, ref Silk.NET.Maths.Rectangle<int> pSourceRect, ComPtr<TI0> pDestinationSurface, ref Silk.NET.Maths.Vector2D<int> pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->UpdateSurface(ref pSourceSurface, ref pSourceRect, (IDirect3DSurface9*) pDestinationSurface.Handle, ref pDestPoint);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int UpdateTexture<TI0, TI1>(ComPtr<TI0> pSourceTexture, ComPtr<TI1> pDestinationTexture) where TI0 : unmanaged, IComVtbl<IDirect3DBaseTexture9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DBaseTexture9>, IComVtbl<TI1>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->UpdateTexture((IDirect3DBaseTexture9*) pSourceTexture.Handle, (IDirect3DBaseTexture9*) pDestinationTexture.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int UpdateTexture<TI0>(ComPtr<TI0> pSourceTexture, ref IDirect3DBaseTexture9 pDestinationTexture) where TI0 : unmanaged, IComVtbl<IDirect3DBaseTexture9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->UpdateTexture((IDirect3DBaseTexture9*) pSourceTexture.Handle, ref pDestinationTexture);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int UpdateTexture<TI0>(ref IDirect3DBaseTexture9 pSourceTexture, ComPtr<TI0> pDestinationTexture) where TI0 : unmanaged, IComVtbl<IDirect3DBaseTexture9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->UpdateTexture(ref pSourceTexture, (IDirect3DBaseTexture9*) pDestinationTexture.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetRenderTargetData<TI0, TI1>(ComPtr<TI0> pRenderTarget, ComPtr<TI1> pDestSurface) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetRenderTargetData((IDirect3DSurface9*) pRenderTarget.Handle, (IDirect3DSurface9*) pDestSurface.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetRenderTargetData<TI0>(ComPtr<TI0> pRenderTarget, ref IDirect3DSurface9 pDestSurface) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetRenderTargetData((IDirect3DSurface9*) pRenderTarget.Handle, ref pDestSurface);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetRenderTargetData<TI0>(ref IDirect3DSurface9 pRenderTarget, ComPtr<TI0> pDestSurface) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetRenderTargetData(ref pRenderTarget, (IDirect3DSurface9*) pDestSurface.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetFrontBufferData<TI0>(uint iSwapChain, ComPtr<TI0> pDestSurface) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetFrontBufferData(iSwapChain, (IDirect3DSurface9*) pDestSurface.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int StretchRect<TI0, TI1>(ComPtr<TI0> pSourceSurface, Silk.NET.Maths.Rectangle<int>* pSourceRect, ComPtr<TI1> pDestSurface, Silk.NET.Maths.Rectangle<int>* pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->StretchRect((IDirect3DSurface9*) pSourceSurface.Handle, pSourceRect, (IDirect3DSurface9*) pDestSurface.Handle, pDestRect, Filter);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int StretchRect<TI0, TI1>(ComPtr<TI0> pSourceSurface, Silk.NET.Maths.Rectangle<int>* pSourceRect, ComPtr<TI1> pDestSurface, ref Silk.NET.Maths.Rectangle<int> pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->StretchRect((IDirect3DSurface9*) pSourceSurface.Handle, pSourceRect, (IDirect3DSurface9*) pDestSurface.Handle, ref pDestRect, Filter);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int StretchRect<TI0>(ComPtr<TI0> pSourceSurface, Silk.NET.Maths.Rectangle<int>* pSourceRect, ref IDirect3DSurface9 pDestSurface, Silk.NET.Maths.Rectangle<int>* pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->StretchRect((IDirect3DSurface9*) pSourceSurface.Handle, pSourceRect, ref pDestSurface, pDestRect, Filter);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int StretchRect<TI0>(ComPtr<TI0> pSourceSurface, Silk.NET.Maths.Rectangle<int>* pSourceRect, ref IDirect3DSurface9 pDestSurface, ref Silk.NET.Maths.Rectangle<int> pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->StretchRect((IDirect3DSurface9*) pSourceSurface.Handle, pSourceRect, ref pDestSurface, ref pDestRect, Filter);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int StretchRect<TI0, TI1>(ComPtr<TI0> pSourceSurface, ref Silk.NET.Maths.Rectangle<int> pSourceRect, ComPtr<TI1> pDestSurface, Silk.NET.Maths.Rectangle<int>* pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->StretchRect((IDirect3DSurface9*) pSourceSurface.Handle, ref pSourceRect, (IDirect3DSurface9*) pDestSurface.Handle, pDestRect, Filter);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int StretchRect<TI0, TI1>(ComPtr<TI0> pSourceSurface, ref Silk.NET.Maths.Rectangle<int> pSourceRect, ComPtr<TI1> pDestSurface, ref Silk.NET.Maths.Rectangle<int> pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->StretchRect((IDirect3DSurface9*) pSourceSurface.Handle, ref pSourceRect, (IDirect3DSurface9*) pDestSurface.Handle, ref pDestRect, Filter);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int StretchRect<TI0>(ComPtr<TI0> pSourceSurface, ref Silk.NET.Maths.Rectangle<int> pSourceRect, ref IDirect3DSurface9 pDestSurface, Silk.NET.Maths.Rectangle<int>* pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->StretchRect((IDirect3DSurface9*) pSourceSurface.Handle, ref pSourceRect, ref pDestSurface, pDestRect, Filter);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int StretchRect<TI0>(ComPtr<TI0> pSourceSurface, ref Silk.NET.Maths.Rectangle<int> pSourceRect, ref IDirect3DSurface9 pDestSurface, ref Silk.NET.Maths.Rectangle<int> pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->StretchRect((IDirect3DSurface9*) pSourceSurface.Handle, ref pSourceRect, ref pDestSurface, ref pDestRect, Filter);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int StretchRect<TI0>(ref IDirect3DSurface9 pSourceSurface, Silk.NET.Maths.Rectangle<int>* pSourceRect, ComPtr<TI0> pDestSurface, Silk.NET.Maths.Rectangle<int>* pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->StretchRect(ref pSourceSurface, pSourceRect, (IDirect3DSurface9*) pDestSurface.Handle, pDestRect, Filter);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int StretchRect<TI0>(ref IDirect3DSurface9 pSourceSurface, Silk.NET.Maths.Rectangle<int>* pSourceRect, ComPtr<TI0> pDestSurface, ref Silk.NET.Maths.Rectangle<int> pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->StretchRect(ref pSourceSurface, pSourceRect, (IDirect3DSurface9*) pDestSurface.Handle, ref pDestRect, Filter);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int StretchRect<TI0>(ref IDirect3DSurface9 pSourceSurface, ref Silk.NET.Maths.Rectangle<int> pSourceRect, ComPtr<TI0> pDestSurface, Silk.NET.Maths.Rectangle<int>* pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->StretchRect(ref pSourceSurface, ref pSourceRect, (IDirect3DSurface9*) pDestSurface.Handle, pDestRect, Filter);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int StretchRect<TI0>(ref IDirect3DSurface9 pSourceSurface, ref Silk.NET.Maths.Rectangle<int> pSourceRect, ComPtr<TI0> pDestSurface, ref Silk.NET.Maths.Rectangle<int> pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->StretchRect(ref pSourceSurface, ref pSourceRect, (IDirect3DSurface9*) pDestSurface.Handle, ref pDestRect, Filter);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int ColorFill<TI0>(ComPtr<TI0> pSurface, Silk.NET.Maths.Rectangle<int>* pRect, uint color) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->ColorFill((IDirect3DSurface9*) pSurface.Handle, pRect, color);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int ColorFill<TI0>(ComPtr<TI0> pSurface, ref Silk.NET.Maths.Rectangle<int> pRect, uint color) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->ColorFill((IDirect3DSurface9*) pSurface.Handle, ref pRect, color);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateOffscreenPlainSurface<TI0>(uint Width, uint Height, Format Format, Pool Pool, ref ComPtr<TI0> ppSurface, void** pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
         {
             var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4289,11 +4561,27 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
+        public readonly int SetRenderTarget<TI0>(uint RenderTargetIndex, ComPtr<TI0> pRenderTarget) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetRenderTarget(RenderTargetIndex, (IDirect3DSurface9*) pRenderTarget.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly int GetRenderTarget<TI0>(uint RenderTargetIndex, ref ComPtr<TI0> ppRenderTarget) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
         {
             var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             return @this->GetRenderTarget(RenderTargetIndex, (IDirect3DSurface9**) ppRenderTarget.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetDepthStencilSurface<TI0>(ComPtr<TI0> pNewZStencil) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetDepthStencilSurface((IDirect3DSurface9*) pNewZStencil.Handle);
         }
 
         /// <summary>To be documented.</summary>
@@ -4329,6 +4617,38 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
+        public readonly int SetTexture<TI0>(uint Stage, ComPtr<TI0> pTexture) where TI0 : unmanaged, IComVtbl<IDirect3DBaseTexture9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetTexture(Stage, (IDirect3DBaseTexture9*) pTexture.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int ProcessVertices<TI0, TI1>(uint SrcStartIndex, uint DestIndex, uint VertexCount, ComPtr<TI0> pDestBuffer, ComPtr<TI1> pVertexDecl, uint Flags) where TI0 : unmanaged, IComVtbl<IDirect3DVertexBuffer9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DVertexDeclaration9>, IComVtbl<TI1>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->ProcessVertices(SrcStartIndex, DestIndex, VertexCount, (IDirect3DVertexBuffer9*) pDestBuffer.Handle, (IDirect3DVertexDeclaration9*) pVertexDecl.Handle, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int ProcessVertices<TI0>(uint SrcStartIndex, uint DestIndex, uint VertexCount, ComPtr<TI0> pDestBuffer, ref IDirect3DVertexDeclaration9 pVertexDecl, uint Flags) where TI0 : unmanaged, IComVtbl<IDirect3DVertexBuffer9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->ProcessVertices(SrcStartIndex, DestIndex, VertexCount, (IDirect3DVertexBuffer9*) pDestBuffer.Handle, ref pVertexDecl, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int ProcessVertices<TI0>(uint SrcStartIndex, uint DestIndex, uint VertexCount, ref IDirect3DVertexBuffer9 pDestBuffer, ComPtr<TI0> pVertexDecl, uint Flags) where TI0 : unmanaged, IComVtbl<IDirect3DVertexDeclaration9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->ProcessVertices(SrcStartIndex, DestIndex, VertexCount, ref pDestBuffer, (IDirect3DVertexDeclaration9*) pVertexDecl.Handle, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateVertexDeclaration<TI0>(Vertexelement9* pVertexElements, ref ComPtr<TI0> ppDecl) where TI0 : unmanaged, IComVtbl<IDirect3DVertexDeclaration9>, IComVtbl<TI0>
         {
             var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4342,6 +4662,14 @@ namespace Silk.NET.Direct3D9
             var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             return @this->CreateVertexDeclaration(ref pVertexElements, (IDirect3DVertexDeclaration9**) ppDecl.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetVertexDeclaration<TI0>(ComPtr<TI0> pDecl) where TI0 : unmanaged, IComVtbl<IDirect3DVertexDeclaration9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetVertexDeclaration((IDirect3DVertexDeclaration9*) pDecl.Handle);
         }
 
         /// <summary>To be documented.</summary>
@@ -4369,11 +4697,27 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
+        public readonly int SetVertexShader<TI0>(ComPtr<TI0> pShader) where TI0 : unmanaged, IComVtbl<IDirect3DVertexShader9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetVertexShader((IDirect3DVertexShader9*) pShader.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly int GetVertexShader<TI0>(ref ComPtr<TI0> ppShader) where TI0 : unmanaged, IComVtbl<IDirect3DVertexShader9>, IComVtbl<TI0>
         {
             var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             return @this->GetVertexShader((IDirect3DVertexShader9**) ppShader.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetStreamSource<TI0>(uint StreamNumber, ComPtr<TI0> pStreamData, uint OffsetInBytes, uint Stride) where TI0 : unmanaged, IComVtbl<IDirect3DVertexBuffer9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetStreamSource(StreamNumber, (IDirect3DVertexBuffer9*) pStreamData.Handle, OffsetInBytes, Stride);
         }
 
         /// <summary>To be documented.</summary>
@@ -4409,6 +4753,14 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
+        public readonly int SetIndices<TI0>(ComPtr<TI0> pIndexData) where TI0 : unmanaged, IComVtbl<IDirect3DIndexBuffer9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetIndices((IDirect3DIndexBuffer9*) pIndexData.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly int GetIndices<TI0>(ref ComPtr<TI0> ppIndexData) where TI0 : unmanaged, IComVtbl<IDirect3DIndexBuffer9>, IComVtbl<TI0>
         {
             var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4433,6 +4785,14 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
+        public readonly int SetPixelShader<TI0>(ComPtr<TI0> pShader) where TI0 : unmanaged, IComVtbl<IDirect3DPixelShader9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetPixelShader((IDirect3DPixelShader9*) pShader.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly int GetPixelShader<TI0>(ref ComPtr<TI0> ppShader) where TI0 : unmanaged, IComVtbl<IDirect3DPixelShader9>, IComVtbl<TI0>
         {
             var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4446,6 +4806,126 @@ namespace Silk.NET.Direct3D9
             var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             return @this->CreateQuery(Type, (IDirect3DQuery9**) ppQuery.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int ComposeRects<TI0, TI1, TI2, TI3>(ComPtr<TI0> pSrc, ComPtr<TI1> pDst, ComPtr<TI2> pSrcRectDescs, uint NumRects, ComPtr<TI3> pDstRectDescs, Composerectsop Operation, int Xoffset, int Yoffset) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDirect3DVertexBuffer9>, IComVtbl<TI2> where TI3 : unmanaged, IComVtbl<IDirect3DVertexBuffer9>, IComVtbl<TI3>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->ComposeRects((IDirect3DSurface9*) pSrc.Handle, (IDirect3DSurface9*) pDst.Handle, (IDirect3DVertexBuffer9*) pSrcRectDescs.Handle, NumRects, (IDirect3DVertexBuffer9*) pDstRectDescs.Handle, Operation, Xoffset, Yoffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int ComposeRects<TI0, TI1, TI2>(ComPtr<TI0> pSrc, ComPtr<TI1> pDst, ComPtr<TI2> pSrcRectDescs, uint NumRects, ref IDirect3DVertexBuffer9 pDstRectDescs, Composerectsop Operation, int Xoffset, int Yoffset) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDirect3DVertexBuffer9>, IComVtbl<TI2>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->ComposeRects((IDirect3DSurface9*) pSrc.Handle, (IDirect3DSurface9*) pDst.Handle, (IDirect3DVertexBuffer9*) pSrcRectDescs.Handle, NumRects, ref pDstRectDescs, Operation, Xoffset, Yoffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int ComposeRects<TI0, TI1, TI2>(ComPtr<TI0> pSrc, ComPtr<TI1> pDst, ref IDirect3DVertexBuffer9 pSrcRectDescs, uint NumRects, ComPtr<TI2> pDstRectDescs, Composerectsop Operation, int Xoffset, int Yoffset) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDirect3DVertexBuffer9>, IComVtbl<TI2>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->ComposeRects((IDirect3DSurface9*) pSrc.Handle, (IDirect3DSurface9*) pDst.Handle, ref pSrcRectDescs, NumRects, (IDirect3DVertexBuffer9*) pDstRectDescs.Handle, Operation, Xoffset, Yoffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int ComposeRects<TI0, TI1>(ComPtr<TI0> pSrc, ComPtr<TI1> pDst, ref IDirect3DVertexBuffer9 pSrcRectDescs, uint NumRects, ref IDirect3DVertexBuffer9 pDstRectDescs, Composerectsop Operation, int Xoffset, int Yoffset) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->ComposeRects((IDirect3DSurface9*) pSrc.Handle, (IDirect3DSurface9*) pDst.Handle, ref pSrcRectDescs, NumRects, ref pDstRectDescs, Operation, Xoffset, Yoffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int ComposeRects<TI0, TI1, TI2>(ComPtr<TI0> pSrc, ref IDirect3DSurface9 pDst, ComPtr<TI1> pSrcRectDescs, uint NumRects, ComPtr<TI2> pDstRectDescs, Composerectsop Operation, int Xoffset, int Yoffset) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DVertexBuffer9>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDirect3DVertexBuffer9>, IComVtbl<TI2>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->ComposeRects((IDirect3DSurface9*) pSrc.Handle, ref pDst, (IDirect3DVertexBuffer9*) pSrcRectDescs.Handle, NumRects, (IDirect3DVertexBuffer9*) pDstRectDescs.Handle, Operation, Xoffset, Yoffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int ComposeRects<TI0, TI1>(ComPtr<TI0> pSrc, ref IDirect3DSurface9 pDst, ComPtr<TI1> pSrcRectDescs, uint NumRects, ref IDirect3DVertexBuffer9 pDstRectDescs, Composerectsop Operation, int Xoffset, int Yoffset) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DVertexBuffer9>, IComVtbl<TI1>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->ComposeRects((IDirect3DSurface9*) pSrc.Handle, ref pDst, (IDirect3DVertexBuffer9*) pSrcRectDescs.Handle, NumRects, ref pDstRectDescs, Operation, Xoffset, Yoffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int ComposeRects<TI0, TI1>(ComPtr<TI0> pSrc, ref IDirect3DSurface9 pDst, ref IDirect3DVertexBuffer9 pSrcRectDescs, uint NumRects, ComPtr<TI1> pDstRectDescs, Composerectsop Operation, int Xoffset, int Yoffset) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DVertexBuffer9>, IComVtbl<TI1>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->ComposeRects((IDirect3DSurface9*) pSrc.Handle, ref pDst, ref pSrcRectDescs, NumRects, (IDirect3DVertexBuffer9*) pDstRectDescs.Handle, Operation, Xoffset, Yoffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int ComposeRects<TI0>(ComPtr<TI0> pSrc, ref IDirect3DSurface9 pDst, ref IDirect3DVertexBuffer9 pSrcRectDescs, uint NumRects, ref IDirect3DVertexBuffer9 pDstRectDescs, Composerectsop Operation, int Xoffset, int Yoffset) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->ComposeRects((IDirect3DSurface9*) pSrc.Handle, ref pDst, ref pSrcRectDescs, NumRects, ref pDstRectDescs, Operation, Xoffset, Yoffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int ComposeRects<TI0, TI1, TI2>(ref IDirect3DSurface9 pSrc, ComPtr<TI0> pDst, ComPtr<TI1> pSrcRectDescs, uint NumRects, ComPtr<TI2> pDstRectDescs, Composerectsop Operation, int Xoffset, int Yoffset) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DVertexBuffer9>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDirect3DVertexBuffer9>, IComVtbl<TI2>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->ComposeRects(ref pSrc, (IDirect3DSurface9*) pDst.Handle, (IDirect3DVertexBuffer9*) pSrcRectDescs.Handle, NumRects, (IDirect3DVertexBuffer9*) pDstRectDescs.Handle, Operation, Xoffset, Yoffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int ComposeRects<TI0, TI1>(ref IDirect3DSurface9 pSrc, ComPtr<TI0> pDst, ComPtr<TI1> pSrcRectDescs, uint NumRects, ref IDirect3DVertexBuffer9 pDstRectDescs, Composerectsop Operation, int Xoffset, int Yoffset) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DVertexBuffer9>, IComVtbl<TI1>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->ComposeRects(ref pSrc, (IDirect3DSurface9*) pDst.Handle, (IDirect3DVertexBuffer9*) pSrcRectDescs.Handle, NumRects, ref pDstRectDescs, Operation, Xoffset, Yoffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int ComposeRects<TI0, TI1>(ref IDirect3DSurface9 pSrc, ComPtr<TI0> pDst, ref IDirect3DVertexBuffer9 pSrcRectDescs, uint NumRects, ComPtr<TI1> pDstRectDescs, Composerectsop Operation, int Xoffset, int Yoffset) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DVertexBuffer9>, IComVtbl<TI1>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->ComposeRects(ref pSrc, (IDirect3DSurface9*) pDst.Handle, ref pSrcRectDescs, NumRects, (IDirect3DVertexBuffer9*) pDstRectDescs.Handle, Operation, Xoffset, Yoffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int ComposeRects<TI0>(ref IDirect3DSurface9 pSrc, ComPtr<TI0> pDst, ref IDirect3DVertexBuffer9 pSrcRectDescs, uint NumRects, ref IDirect3DVertexBuffer9 pDstRectDescs, Composerectsop Operation, int Xoffset, int Yoffset) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->ComposeRects(ref pSrc, (IDirect3DSurface9*) pDst.Handle, ref pSrcRectDescs, NumRects, ref pDstRectDescs, Operation, Xoffset, Yoffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int ComposeRects<TI0, TI1>(ref IDirect3DSurface9 pSrc, ref IDirect3DSurface9 pDst, ComPtr<TI0> pSrcRectDescs, uint NumRects, ComPtr<TI1> pDstRectDescs, Composerectsop Operation, int Xoffset, int Yoffset) where TI0 : unmanaged, IComVtbl<IDirect3DVertexBuffer9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DVertexBuffer9>, IComVtbl<TI1>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->ComposeRects(ref pSrc, ref pDst, (IDirect3DVertexBuffer9*) pSrcRectDescs.Handle, NumRects, (IDirect3DVertexBuffer9*) pDstRectDescs.Handle, Operation, Xoffset, Yoffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int ComposeRects<TI0>(ref IDirect3DSurface9 pSrc, ref IDirect3DSurface9 pDst, ComPtr<TI0> pSrcRectDescs, uint NumRects, ref IDirect3DVertexBuffer9 pDstRectDescs, Composerectsop Operation, int Xoffset, int Yoffset) where TI0 : unmanaged, IComVtbl<IDirect3DVertexBuffer9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->ComposeRects(ref pSrc, ref pDst, (IDirect3DVertexBuffer9*) pSrcRectDescs.Handle, NumRects, ref pDstRectDescs, Operation, Xoffset, Yoffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int ComposeRects<TI0>(ref IDirect3DSurface9 pSrc, ref IDirect3DSurface9 pDst, ref IDirect3DVertexBuffer9 pSrcRectDescs, uint NumRects, ComPtr<TI0> pDstRectDescs, Composerectsop Operation, int Xoffset, int Yoffset) where TI0 : unmanaged, IComVtbl<IDirect3DVertexBuffer9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->ComposeRects(ref pSrc, ref pDst, ref pSrcRectDescs, NumRects, (IDirect3DVertexBuffer9*) pDstRectDescs.Handle, Operation, Xoffset, Yoffset);
         }
 
         /// <summary>To be documented.</summary>
