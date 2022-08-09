@@ -168,6 +168,19 @@ public sealed class CSharpEmitter
             return namespaceSymbol;
         }
 
+        protected override InternalTypeReference VisitInternalTypeReference(InternalTypeReference typeReference)
+        {
+            if (!TypeStore.TryResolve(typeReference.ReferencedTypeId, out var type))
+            {
+                throw new NotImplementedException("Cannot handle unresolvable type ID");
+            }
+
+            // TODO: Fully resolve types
+            VisitIdentifier(type!.Identifier);
+
+            return typeReference;
+        }
+
         protected override ExternalTypeReference VisitExternalTypeReference(ExternalTypeReference typeReference)
         {
             AssertClearState();
