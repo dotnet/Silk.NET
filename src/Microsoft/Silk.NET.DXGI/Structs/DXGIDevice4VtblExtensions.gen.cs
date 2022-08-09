@@ -19,18 +19,18 @@ namespace Silk.NET.DXGI;
 public unsafe static class DXGIDevice4VtblExtensions
 {
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Guid* riid, void** ppvObject) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int QueryInterface(this ComPtr<IDXGIDevice4> thisVtbl, Guid* riid, void** ppvObject)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice4*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Guid* riid, ref void* ppvObject) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int QueryInterface(this ComPtr<IDXGIDevice4> thisVtbl, Guid* riid, ref void* ppvObject)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppvObjectPtr = &ppvObject)
         {
@@ -40,9 +40,9 @@ public unsafe static class DXGIDevice4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, ref Guid riid, void** ppvObject) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int QueryInterface(this ComPtr<IDXGIDevice4> thisVtbl, ref Guid riid, void** ppvObject)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -52,9 +52,9 @@ public unsafe static class DXGIDevice4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, ref Guid riid, ref void* ppvObject) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int QueryInterface(this ComPtr<IDXGIDevice4> thisVtbl, ref Guid riid, ref void* ppvObject)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -67,36 +67,36 @@ public unsafe static class DXGIDevice4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static uint AddRef<TThis>(this TThis thisVtbl) where TThis : IComVtbl<IDXGIDevice4>
+    public static uint AddRef(this ComPtr<IDXGIDevice4> thisVtbl)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice4*, uint>)@this->LpVtbl[1])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static uint Release<TThis>(this TThis thisVtbl) where TThis : IComVtbl<IDXGIDevice4>
+    public static uint Release(this ComPtr<IDXGIDevice4> thisVtbl)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice4*, uint>)@this->LpVtbl[2])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<TThis>(this TThis thisVtbl, Guid* Name, uint DataSize, void* pData) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int SetPrivateData(this ComPtr<IDXGIDevice4> thisVtbl, Guid* Name, uint DataSize, void* pData)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice4*, Guid*, uint, void*, int>)@this->LpVtbl[3])(@this, Name, DataSize, pData);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* Name, uint DataSize, ref T0 pData) where T0 : unmanaged where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int SetPrivateData<T0>(this ComPtr<IDXGIDevice4> thisVtbl, Guid* Name, uint DataSize, ref T0 pData) where T0 : unmanaged
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void* pDataPtr = &pData)
         {
@@ -106,9 +106,9 @@ public unsafe static class DXGIDevice4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<TThis>(this TThis thisVtbl, ref Guid Name, uint DataSize, void* pData) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int SetPrivateData(this ComPtr<IDXGIDevice4> thisVtbl, ref Guid Name, uint DataSize, void* pData)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* NamePtr = &Name)
         {
@@ -118,9 +118,9 @@ public unsafe static class DXGIDevice4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0, TThis>(this TThis thisVtbl, ref Guid Name, uint DataSize, ref T0 pData) where T0 : unmanaged where TThis : IComVtbl<IDXGIDevice4>
+    public static int SetPrivateData<T0>(this ComPtr<IDXGIDevice4> thisVtbl, ref Guid Name, uint DataSize, ref T0 pData) where T0 : unmanaged
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* NamePtr = &Name)
         {
@@ -133,18 +133,18 @@ public unsafe static class DXGIDevice4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Guid* Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int SetPrivateDataInterface(this ComPtr<IDXGIDevice4> thisVtbl, Guid* Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice4*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[4])(@this, Name, pUnknown);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Guid* Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pUnknown) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int SetPrivateDataInterface(this ComPtr<IDXGIDevice4> thisVtbl, Guid* Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pUnknown)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Core.Native.IUnknown* pUnknownPtr = &pUnknown)
         {
@@ -154,9 +154,9 @@ public unsafe static class DXGIDevice4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface<TThis>(this TThis thisVtbl, ref Guid Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int SetPrivateDataInterface(this ComPtr<IDXGIDevice4> thisVtbl, ref Guid Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* NamePtr = &Name)
         {
@@ -166,9 +166,9 @@ public unsafe static class DXGIDevice4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateDataInterface<TThis>(this TThis thisVtbl, ref Guid Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pUnknown) where TThis : IComVtbl<IDXGIDevice4>
+    public static int SetPrivateDataInterface(this ComPtr<IDXGIDevice4> thisVtbl, ref Guid Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pUnknown)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* NamePtr = &Name)
         {
@@ -181,18 +181,18 @@ public unsafe static class DXGIDevice4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Guid* Name, uint* pDataSize, void* pData) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int GetPrivateData(this ComPtr<IDXGIDevice4> thisVtbl, Guid* Name, uint* pDataSize, void* pData)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice4*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, Name, pDataSize, pData);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* Name, uint* pDataSize, ref T0 pData) where T0 : unmanaged where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<IDXGIDevice4> thisVtbl, Guid* Name, uint* pDataSize, ref T0 pData) where T0 : unmanaged
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void* pDataPtr = &pData)
         {
@@ -202,9 +202,9 @@ public unsafe static class DXGIDevice4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Guid* Name, ref uint pDataSize, void* pData) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int GetPrivateData(this ComPtr<IDXGIDevice4> thisVtbl, Guid* Name, ref uint pDataSize, void* pData)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pDataSizePtr = &pDataSize)
         {
@@ -214,9 +214,9 @@ public unsafe static class DXGIDevice4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* Name, ref uint pDataSize, ref T0 pData) where T0 : unmanaged where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<IDXGIDevice4> thisVtbl, Guid* Name, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pDataSizePtr = &pDataSize)
         {
@@ -229,9 +229,9 @@ public unsafe static class DXGIDevice4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, ref Guid Name, uint* pDataSize, void* pData) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int GetPrivateData(this ComPtr<IDXGIDevice4> thisVtbl, ref Guid Name, uint* pDataSize, void* pData)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* NamePtr = &Name)
         {
@@ -241,9 +241,9 @@ public unsafe static class DXGIDevice4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, ref Guid Name, uint* pDataSize, ref T0 pData) where T0 : unmanaged where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<IDXGIDevice4> thisVtbl, ref Guid Name, uint* pDataSize, ref T0 pData) where T0 : unmanaged
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* NamePtr = &Name)
         {
@@ -256,9 +256,9 @@ public unsafe static class DXGIDevice4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, ref Guid Name, ref uint pDataSize, void* pData) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int GetPrivateData(this ComPtr<IDXGIDevice4> thisVtbl, ref Guid Name, ref uint pDataSize, void* pData)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* NamePtr = &Name)
         {
@@ -271,9 +271,9 @@ public unsafe static class DXGIDevice4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetPrivateData<T0, TThis>(this TThis thisVtbl, ref Guid Name, ref uint pDataSize, ref T0 pData) where T0 : unmanaged where TThis : IComVtbl<IDXGIDevice4>
+    public static int GetPrivateData<T0>(this ComPtr<IDXGIDevice4> thisVtbl, ref Guid Name, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* NamePtr = &Name)
         {
@@ -289,18 +289,18 @@ public unsafe static class DXGIDevice4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetParent<TThis>(this TThis thisVtbl, Guid* riid, void** ppParent) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int GetParent(this ComPtr<IDXGIDevice4> thisVtbl, Guid* riid, void** ppParent)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice4*, Guid*, void**, int>)@this->LpVtbl[6])(@this, riid, ppParent);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetParent<TThis>(this TThis thisVtbl, Guid* riid, ref void* ppParent) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int GetParent(this ComPtr<IDXGIDevice4> thisVtbl, Guid* riid, ref void* ppParent)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppParentPtr = &ppParent)
         {
@@ -310,9 +310,9 @@ public unsafe static class DXGIDevice4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetParent<TThis>(this TThis thisVtbl, ref Guid riid, void** ppParent) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int GetParent(this ComPtr<IDXGIDevice4> thisVtbl, ref Guid riid, void** ppParent)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -322,9 +322,9 @@ public unsafe static class DXGIDevice4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetParent<TThis>(this TThis thisVtbl, ref Guid riid, ref void* ppParent) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int GetParent(this ComPtr<IDXGIDevice4> thisVtbl, ref Guid riid, ref void* ppParent)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -337,18 +337,18 @@ public unsafe static class DXGIDevice4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetAdapter<TThis>(this TThis thisVtbl, Silk.NET.DXGI.IDXGIAdapter** pAdapter) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int GetAdapter(this ComPtr<IDXGIDevice4> thisVtbl, Silk.NET.DXGI.IDXGIAdapter** pAdapter)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice4*, Silk.NET.DXGI.IDXGIAdapter**, int>)@this->LpVtbl[7])(@this, pAdapter);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetAdapter<TThis>(this TThis thisVtbl, ref Silk.NET.DXGI.IDXGIAdapter* pAdapter) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int GetAdapter(this ComPtr<IDXGIDevice4> thisVtbl, ref Silk.NET.DXGI.IDXGIAdapter* pAdapter)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.DXGI.IDXGIAdapter** pAdapterPtr = &pAdapter)
         {
@@ -358,18 +358,18 @@ public unsafe static class DXGIDevice4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSurface<TThis>(this TThis thisVtbl, SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, SharedResource* pSharedResource, IDXGISurface** ppSurface) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int CreateSurface(this ComPtr<IDXGIDevice4> thisVtbl, SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, SharedResource* pSharedResource, IDXGISurface** ppSurface)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice4*, SurfaceDesc*, uint, uint, SharedResource*, IDXGISurface**, int>)@this->LpVtbl[8])(@this, pDesc, NumSurfaces, Usage, pSharedResource, ppSurface);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSurface<TThis>(this TThis thisVtbl, SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, SharedResource* pSharedResource, ref IDXGISurface* ppSurface) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int CreateSurface(this ComPtr<IDXGIDevice4> thisVtbl, SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, SharedResource* pSharedResource, ref IDXGISurface* ppSurface)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDXGISurface** ppSurfacePtr = &ppSurface)
         {
@@ -379,9 +379,9 @@ public unsafe static class DXGIDevice4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSurface<TThis>(this TThis thisVtbl, SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, ref SharedResource pSharedResource, IDXGISurface** ppSurface) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int CreateSurface(this ComPtr<IDXGIDevice4> thisVtbl, SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, ref SharedResource pSharedResource, IDXGISurface** ppSurface)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (SharedResource* pSharedResourcePtr = &pSharedResource)
         {
@@ -391,9 +391,9 @@ public unsafe static class DXGIDevice4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSurface<TThis>(this TThis thisVtbl, SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, ref SharedResource pSharedResource, ref IDXGISurface* ppSurface) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int CreateSurface(this ComPtr<IDXGIDevice4> thisVtbl, SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, ref SharedResource pSharedResource, ref IDXGISurface* ppSurface)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (SharedResource* pSharedResourcePtr = &pSharedResource)
         {
@@ -406,9 +406,9 @@ public unsafe static class DXGIDevice4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSurface<TThis>(this TThis thisVtbl, ref SurfaceDesc pDesc, uint NumSurfaces, uint Usage, SharedResource* pSharedResource, IDXGISurface** ppSurface) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int CreateSurface(this ComPtr<IDXGIDevice4> thisVtbl, ref SurfaceDesc pDesc, uint NumSurfaces, uint Usage, SharedResource* pSharedResource, IDXGISurface** ppSurface)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (SurfaceDesc* pDescPtr = &pDesc)
         {
@@ -418,9 +418,9 @@ public unsafe static class DXGIDevice4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSurface<TThis>(this TThis thisVtbl, ref SurfaceDesc pDesc, uint NumSurfaces, uint Usage, SharedResource* pSharedResource, ref IDXGISurface* ppSurface) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int CreateSurface(this ComPtr<IDXGIDevice4> thisVtbl, ref SurfaceDesc pDesc, uint NumSurfaces, uint Usage, SharedResource* pSharedResource, ref IDXGISurface* ppSurface)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (SurfaceDesc* pDescPtr = &pDesc)
         {
@@ -433,9 +433,9 @@ public unsafe static class DXGIDevice4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSurface<TThis>(this TThis thisVtbl, ref SurfaceDesc pDesc, uint NumSurfaces, uint Usage, ref SharedResource pSharedResource, IDXGISurface** ppSurface) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int CreateSurface(this ComPtr<IDXGIDevice4> thisVtbl, ref SurfaceDesc pDesc, uint NumSurfaces, uint Usage, ref SharedResource pSharedResource, IDXGISurface** ppSurface)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (SurfaceDesc* pDescPtr = &pDesc)
         {
@@ -448,9 +448,9 @@ public unsafe static class DXGIDevice4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSurface<TThis>(this TThis thisVtbl, ref SurfaceDesc pDesc, uint NumSurfaces, uint Usage, ref SharedResource pSharedResource, ref IDXGISurface* ppSurface) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int CreateSurface(this ComPtr<IDXGIDevice4> thisVtbl, ref SurfaceDesc pDesc, uint NumSurfaces, uint Usage, ref SharedResource pSharedResource, ref IDXGISurface* ppSurface)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (SurfaceDesc* pDescPtr = &pDesc)
         {
@@ -466,18 +466,18 @@ public unsafe static class DXGIDevice4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryResourceResidency<TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown** ppResources, Residency* pResidencyStatus, uint NumResources) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int QueryResourceResidency(this ComPtr<IDXGIDevice4> thisVtbl, Silk.NET.Core.Native.IUnknown** ppResources, Residency* pResidencyStatus, uint NumResources)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice4*, Silk.NET.Core.Native.IUnknown**, Residency*, uint, int>)@this->LpVtbl[9])(@this, ppResources, pResidencyStatus, NumResources);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryResourceResidency<TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown** ppResources, ref Residency pResidencyStatus, uint NumResources) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int QueryResourceResidency(this ComPtr<IDXGIDevice4> thisVtbl, Silk.NET.Core.Native.IUnknown** ppResources, ref Residency pResidencyStatus, uint NumResources)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Residency* pResidencyStatusPtr = &pResidencyStatus)
         {
@@ -487,9 +487,9 @@ public unsafe static class DXGIDevice4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryResourceResidency<TThis>(this TThis thisVtbl, ref Silk.NET.Core.Native.IUnknown* ppResources, Residency* pResidencyStatus, uint NumResources) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int QueryResourceResidency(this ComPtr<IDXGIDevice4> thisVtbl, ref Silk.NET.Core.Native.IUnknown* ppResources, Residency* pResidencyStatus, uint NumResources)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Core.Native.IUnknown** ppResourcesPtr = &ppResources)
         {
@@ -499,9 +499,9 @@ public unsafe static class DXGIDevice4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryResourceResidency<TThis>(this TThis thisVtbl, ref Silk.NET.Core.Native.IUnknown* ppResources, ref Residency pResidencyStatus, uint NumResources) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int QueryResourceResidency(this ComPtr<IDXGIDevice4> thisVtbl, ref Silk.NET.Core.Native.IUnknown* ppResources, ref Residency pResidencyStatus, uint NumResources)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Core.Native.IUnknown** ppResourcesPtr = &ppResources)
         {
@@ -514,27 +514,27 @@ public unsafe static class DXGIDevice4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetGPUThreadPriority<TThis>(this TThis thisVtbl, int Priority) where TThis : IComVtbl<IDXGIDevice4>
+    public static int SetGPUThreadPriority(this ComPtr<IDXGIDevice4> thisVtbl, int Priority)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice4*, int, int>)@this->LpVtbl[10])(@this, Priority);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetGPUThreadPriority<TThis>(this TThis thisVtbl, int* pPriority) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int GetGPUThreadPriority(this ComPtr<IDXGIDevice4> thisVtbl, int* pPriority)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice4*, int*, int>)@this->LpVtbl[11])(@this, pPriority);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetGPUThreadPriority<TThis>(this TThis thisVtbl, ref int pPriority) where TThis : IComVtbl<IDXGIDevice4>
+    public static int GetGPUThreadPriority(this ComPtr<IDXGIDevice4> thisVtbl, ref int pPriority)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (int* pPriorityPtr = &pPriority)
         {
@@ -544,27 +544,27 @@ public unsafe static class DXGIDevice4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetMaximumFrameLatency<TThis>(this TThis thisVtbl, uint MaxLatency) where TThis : IComVtbl<IDXGIDevice4>
+    public static int SetMaximumFrameLatency(this ComPtr<IDXGIDevice4> thisVtbl, uint MaxLatency)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice4*, uint, int>)@this->LpVtbl[12])(@this, MaxLatency);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetMaximumFrameLatency<TThis>(this TThis thisVtbl, uint* pMaxLatency) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int GetMaximumFrameLatency(this ComPtr<IDXGIDevice4> thisVtbl, uint* pMaxLatency)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice4*, uint*, int>)@this->LpVtbl[13])(@this, pMaxLatency);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetMaximumFrameLatency<TThis>(this TThis thisVtbl, ref uint pMaxLatency) where TThis : IComVtbl<IDXGIDevice4>
+    public static int GetMaximumFrameLatency(this ComPtr<IDXGIDevice4> thisVtbl, ref uint pMaxLatency)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pMaxLatencyPtr = &pMaxLatency)
         {
@@ -574,18 +574,18 @@ public unsafe static class DXGIDevice4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OfferResources<TThis>(this TThis thisVtbl, uint NumResources, IDXGIResource** ppResources, OfferResourcePriority Priority) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int OfferResources(this ComPtr<IDXGIDevice4> thisVtbl, uint NumResources, IDXGIResource** ppResources, OfferResourcePriority Priority)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice4*, uint, IDXGIResource**, OfferResourcePriority, int>)@this->LpVtbl[14])(@this, NumResources, ppResources, Priority);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OfferResources<TThis>(this TThis thisVtbl, uint NumResources, ref IDXGIResource* ppResources, OfferResourcePriority Priority) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int OfferResources(this ComPtr<IDXGIDevice4> thisVtbl, uint NumResources, ref IDXGIResource* ppResources, OfferResourcePriority Priority)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDXGIResource** ppResourcesPtr = &ppResources)
         {
@@ -595,18 +595,18 @@ public unsafe static class DXGIDevice4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ReclaimResources<TThis>(this TThis thisVtbl, uint NumResources, IDXGIResource** ppResources, int* pDiscarded) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int ReclaimResources(this ComPtr<IDXGIDevice4> thisVtbl, uint NumResources, IDXGIResource** ppResources, int* pDiscarded)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice4*, uint, IDXGIResource**, int*, int>)@this->LpVtbl[15])(@this, NumResources, ppResources, pDiscarded);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ReclaimResources<TThis>(this TThis thisVtbl, uint NumResources, IDXGIResource** ppResources, ref int pDiscarded) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int ReclaimResources(this ComPtr<IDXGIDevice4> thisVtbl, uint NumResources, IDXGIResource** ppResources, ref int pDiscarded)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (int* pDiscardedPtr = &pDiscarded)
         {
@@ -616,9 +616,9 @@ public unsafe static class DXGIDevice4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ReclaimResources<TThis>(this TThis thisVtbl, uint NumResources, ref IDXGIResource* ppResources, int* pDiscarded) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int ReclaimResources(this ComPtr<IDXGIDevice4> thisVtbl, uint NumResources, ref IDXGIResource* ppResources, int* pDiscarded)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDXGIResource** ppResourcesPtr = &ppResources)
         {
@@ -628,9 +628,9 @@ public unsafe static class DXGIDevice4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ReclaimResources<TThis>(this TThis thisVtbl, uint NumResources, ref IDXGIResource* ppResources, ref int pDiscarded) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int ReclaimResources(this ComPtr<IDXGIDevice4> thisVtbl, uint NumResources, ref IDXGIResource* ppResources, ref int pDiscarded)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDXGIResource** ppResourcesPtr = &ppResources)
         {
@@ -643,18 +643,18 @@ public unsafe static class DXGIDevice4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int EnqueueSetEvent<TThis>(this TThis thisVtbl, void* hEvent) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int EnqueueSetEvent(this ComPtr<IDXGIDevice4> thisVtbl, void* hEvent)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice4*, void*, int>)@this->LpVtbl[16])(@this, hEvent);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int EnqueueSetEvent<T0, TThis>(this TThis thisVtbl, ref T0 hEvent) where T0 : unmanaged where TThis : IComVtbl<IDXGIDevice4>
+    public static int EnqueueSetEvent<T0>(this ComPtr<IDXGIDevice4> thisVtbl, ref T0 hEvent) where T0 : unmanaged
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void* hEventPtr = &hEvent)
         {
@@ -664,25 +664,25 @@ public unsafe static class DXGIDevice4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void Trim<TThis>(this TThis thisVtbl) where TThis : IComVtbl<IDXGIDevice4>
+    public static void Trim(this ComPtr<IDXGIDevice4> thisVtbl)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<IDXGIDevice4*, void>)@this->LpVtbl[17])(@this);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OfferResources1<TThis>(this TThis thisVtbl, uint NumResources, IDXGIResource** ppResources, OfferResourcePriority Priority, uint Flags) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int OfferResources1(this ComPtr<IDXGIDevice4> thisVtbl, uint NumResources, IDXGIResource** ppResources, OfferResourcePriority Priority, uint Flags)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice4*, uint, IDXGIResource**, OfferResourcePriority, uint, int>)@this->LpVtbl[18])(@this, NumResources, ppResources, Priority, Flags);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OfferResources1<TThis>(this TThis thisVtbl, uint NumResources, ref IDXGIResource* ppResources, OfferResourcePriority Priority, uint Flags) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int OfferResources1(this ComPtr<IDXGIDevice4> thisVtbl, uint NumResources, ref IDXGIResource* ppResources, OfferResourcePriority Priority, uint Flags)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDXGIResource** ppResourcesPtr = &ppResources)
         {
@@ -692,18 +692,18 @@ public unsafe static class DXGIDevice4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ReclaimResources1<TThis>(this TThis thisVtbl, uint NumResources, IDXGIResource** ppResources, ReclaimResourceResults* pResults) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int ReclaimResources1(this ComPtr<IDXGIDevice4> thisVtbl, uint NumResources, IDXGIResource** ppResources, ReclaimResourceResults* pResults)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice4*, uint, IDXGIResource**, ReclaimResourceResults*, int>)@this->LpVtbl[19])(@this, NumResources, ppResources, pResults);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ReclaimResources1<TThis>(this TThis thisVtbl, uint NumResources, IDXGIResource** ppResources, ref ReclaimResourceResults pResults) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int ReclaimResources1(this ComPtr<IDXGIDevice4> thisVtbl, uint NumResources, IDXGIResource** ppResources, ref ReclaimResourceResults pResults)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ReclaimResourceResults* pResultsPtr = &pResults)
         {
@@ -713,9 +713,9 @@ public unsafe static class DXGIDevice4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ReclaimResources1<TThis>(this TThis thisVtbl, uint NumResources, ref IDXGIResource* ppResources, ReclaimResourceResults* pResults) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int ReclaimResources1(this ComPtr<IDXGIDevice4> thisVtbl, uint NumResources, ref IDXGIResource* ppResources, ReclaimResourceResults* pResults)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDXGIResource** ppResourcesPtr = &ppResources)
         {
@@ -725,9 +725,9 @@ public unsafe static class DXGIDevice4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ReclaimResources1<TThis>(this TThis thisVtbl, uint NumResources, ref IDXGIResource* ppResources, ref ReclaimResourceResults pResults) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int ReclaimResources1(this ComPtr<IDXGIDevice4> thisVtbl, uint NumResources, ref IDXGIResource* ppResources, ref ReclaimResourceResults pResults)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDXGIResource** ppResourcesPtr = &ppResources)
         {
@@ -740,372 +740,372 @@ public unsafe static class DXGIDevice4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXGIDevice4>
+    public static int QueryInterface<TI0>(this ComPtr<IDXGIDevice4> thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppvObject = default;
         return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int QueryInterface(this ComPtr<IDXGIDevice4> thisVtbl, Span<Guid> riid, void** ppvObject)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int QueryInterface(this ComPtr<IDXGIDevice4> thisVtbl, Span<Guid> riid, ref void* ppvObject)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* Name, uint DataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int SetPrivateData<T0>(this ComPtr<IDXGIDevice4> thisVtbl, Guid* Name, uint DataSize, Span<T0> pData) where T0 : unmanaged
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->SetPrivateData(Name, DataSize, ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> Name, uint DataSize, void* pData) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int SetPrivateData(this ComPtr<IDXGIDevice4> thisVtbl, Span<Guid> Name, uint DataSize, void* pData)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->SetPrivateData(ref Name.GetPinnableReference(), DataSize, pData);
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> Name, uint DataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<IDXGIDevice4>
+    public static int SetPrivateData<T0>(this ComPtr<IDXGIDevice4> thisVtbl, Span<Guid> Name, uint DataSize, Span<T0> pData) where T0 : unmanaged
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->SetPrivateData(ref Name.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Guid* Name, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pUnknown) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int SetPrivateDataInterface(this ComPtr<IDXGIDevice4> thisVtbl, Guid* Name, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pUnknown)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->SetPrivateDataInterface(Name, in pUnknown.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Span<Guid> Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int SetPrivateDataInterface(this ComPtr<IDXGIDevice4> thisVtbl, Span<Guid> Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->SetPrivateDataInterface(ref Name.GetPinnableReference(), pUnknown);
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Span<Guid> Name, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pUnknown) where TThis : IComVtbl<IDXGIDevice4>
+    public static int SetPrivateDataInterface(this ComPtr<IDXGIDevice4> thisVtbl, Span<Guid> Name, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pUnknown)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->SetPrivateDataInterface(ref Name.GetPinnableReference(), in pUnknown.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* Name, uint* pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<IDXGIDevice4> thisVtbl, Guid* Name, uint* pDataSize, Span<T0> pData) where T0 : unmanaged
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetPrivateData(Name, pDataSize, ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Guid* Name, Span<uint> pDataSize, void* pData) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int GetPrivateData(this ComPtr<IDXGIDevice4> thisVtbl, Guid* Name, Span<uint> pDataSize, void* pData)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetPrivateData(Name, ref pDataSize.GetPinnableReference(), pData);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* Name, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<IDXGIDevice4> thisVtbl, Guid* Name, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetPrivateData(Name, ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> Name, uint* pDataSize, void* pData) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int GetPrivateData(this ComPtr<IDXGIDevice4> thisVtbl, Span<Guid> Name, uint* pDataSize, void* pData)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetPrivateData(ref Name.GetPinnableReference(), pDataSize, pData);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> Name, uint* pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<IDXGIDevice4> thisVtbl, Span<Guid> Name, uint* pDataSize, Span<T0> pData) where T0 : unmanaged
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetPrivateData(ref Name.GetPinnableReference(), pDataSize, ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> Name, Span<uint> pDataSize, void* pData) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int GetPrivateData(this ComPtr<IDXGIDevice4> thisVtbl, Span<Guid> Name, Span<uint> pDataSize, void* pData)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetPrivateData(ref Name.GetPinnableReference(), ref pDataSize.GetPinnableReference(), pData);
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> Name, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<IDXGIDevice4>
+    public static int GetPrivateData<T0>(this ComPtr<IDXGIDevice4> thisVtbl, Span<Guid> Name, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetPrivateData(ref Name.GetPinnableReference(), ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetParent<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppParent) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXGIDevice4>
+    public static int GetParent<TI0>(this ComPtr<IDXGIDevice4> thisVtbl, out ComPtr<TI0> ppParent) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppParent = default;
         return @this->GetParent(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppParent.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetParent<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppParent) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int GetParent(this ComPtr<IDXGIDevice4> thisVtbl, Span<Guid> riid, void** ppParent)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetParent(ref riid.GetPinnableReference(), ppParent);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetParent<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppParent) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int GetParent(this ComPtr<IDXGIDevice4> thisVtbl, Span<Guid> riid, ref void* ppParent)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetParent(ref riid.GetPinnableReference(), ref ppParent);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSurface<TI0, TThis>(this TThis thisVtbl, SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, SharedResource* pSharedResource, ref ComPtr<TI0> ppSurface) where TI0 : unmanaged, IComVtbl<IDXGISurface>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int CreateSurface<TI0>(this ComPtr<IDXGIDevice4> thisVtbl, SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, SharedResource* pSharedResource, ref ComPtr<TI0> ppSurface) where TI0 : unmanaged, IComVtbl<IDXGISurface>, IComVtbl<TI0>
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->CreateSurface(pDesc, NumSurfaces, Usage, pSharedResource, (IDXGISurface**) ppSurface.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSurface<TThis>(this TThis thisVtbl, SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, Span<SharedResource> pSharedResource, IDXGISurface** ppSurface) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int CreateSurface(this ComPtr<IDXGIDevice4> thisVtbl, SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, Span<SharedResource> pSharedResource, IDXGISurface** ppSurface)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateSurface(pDesc, NumSurfaces, Usage, ref pSharedResource.GetPinnableReference(), ppSurface);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSurface<TI0, TThis>(this TThis thisVtbl, SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, ref SharedResource pSharedResource, ref ComPtr<TI0> ppSurface) where TI0 : unmanaged, IComVtbl<IDXGISurface>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int CreateSurface<TI0>(this ComPtr<IDXGIDevice4> thisVtbl, SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, ref SharedResource pSharedResource, ref ComPtr<TI0> ppSurface) where TI0 : unmanaged, IComVtbl<IDXGISurface>, IComVtbl<TI0>
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->CreateSurface(pDesc, NumSurfaces, Usage, ref pSharedResource, (IDXGISurface**) ppSurface.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSurface<TThis>(this TThis thisVtbl, SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, Span<SharedResource> pSharedResource, ref IDXGISurface* ppSurface) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int CreateSurface(this ComPtr<IDXGIDevice4> thisVtbl, SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, Span<SharedResource> pSharedResource, ref IDXGISurface* ppSurface)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateSurface(pDesc, NumSurfaces, Usage, ref pSharedResource.GetPinnableReference(), ref ppSurface);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSurface<TThis>(this TThis thisVtbl, Span<SurfaceDesc> pDesc, uint NumSurfaces, uint Usage, SharedResource* pSharedResource, IDXGISurface** ppSurface) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int CreateSurface(this ComPtr<IDXGIDevice4> thisVtbl, Span<SurfaceDesc> pDesc, uint NumSurfaces, uint Usage, SharedResource* pSharedResource, IDXGISurface** ppSurface)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateSurface(ref pDesc.GetPinnableReference(), NumSurfaces, Usage, pSharedResource, ppSurface);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSurface<TI0, TThis>(this TThis thisVtbl, ref SurfaceDesc pDesc, uint NumSurfaces, uint Usage, SharedResource* pSharedResource, ref ComPtr<TI0> ppSurface) where TI0 : unmanaged, IComVtbl<IDXGISurface>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int CreateSurface<TI0>(this ComPtr<IDXGIDevice4> thisVtbl, ref SurfaceDesc pDesc, uint NumSurfaces, uint Usage, SharedResource* pSharedResource, ref ComPtr<TI0> ppSurface) where TI0 : unmanaged, IComVtbl<IDXGISurface>, IComVtbl<TI0>
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->CreateSurface(ref pDesc, NumSurfaces, Usage, pSharedResource, (IDXGISurface**) ppSurface.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSurface<TThis>(this TThis thisVtbl, Span<SurfaceDesc> pDesc, uint NumSurfaces, uint Usage, SharedResource* pSharedResource, ref IDXGISurface* ppSurface) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int CreateSurface(this ComPtr<IDXGIDevice4> thisVtbl, Span<SurfaceDesc> pDesc, uint NumSurfaces, uint Usage, SharedResource* pSharedResource, ref IDXGISurface* ppSurface)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateSurface(ref pDesc.GetPinnableReference(), NumSurfaces, Usage, pSharedResource, ref ppSurface);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSurface<TThis>(this TThis thisVtbl, Span<SurfaceDesc> pDesc, uint NumSurfaces, uint Usage, Span<SharedResource> pSharedResource, IDXGISurface** ppSurface) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int CreateSurface(this ComPtr<IDXGIDevice4> thisVtbl, Span<SurfaceDesc> pDesc, uint NumSurfaces, uint Usage, Span<SharedResource> pSharedResource, IDXGISurface** ppSurface)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateSurface(ref pDesc.GetPinnableReference(), NumSurfaces, Usage, ref pSharedResource.GetPinnableReference(), ppSurface);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateSurface<TI0, TThis>(this TThis thisVtbl, ref SurfaceDesc pDesc, uint NumSurfaces, uint Usage, ref SharedResource pSharedResource, ref ComPtr<TI0> ppSurface) where TI0 : unmanaged, IComVtbl<IDXGISurface>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIDevice4>
+    public static int CreateSurface<TI0>(this ComPtr<IDXGIDevice4> thisVtbl, ref SurfaceDesc pDesc, uint NumSurfaces, uint Usage, ref SharedResource pSharedResource, ref ComPtr<TI0> ppSurface) where TI0 : unmanaged, IComVtbl<IDXGISurface>, IComVtbl<TI0>
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->CreateSurface(ref pDesc, NumSurfaces, Usage, ref pSharedResource, (IDXGISurface**) ppSurface.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSurface<TThis>(this TThis thisVtbl, Span<SurfaceDesc> pDesc, uint NumSurfaces, uint Usage, Span<SharedResource> pSharedResource, ref IDXGISurface* ppSurface) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int CreateSurface(this ComPtr<IDXGIDevice4> thisVtbl, Span<SurfaceDesc> pDesc, uint NumSurfaces, uint Usage, Span<SharedResource> pSharedResource, ref IDXGISurface* ppSurface)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateSurface(ref pDesc.GetPinnableReference(), NumSurfaces, Usage, ref pSharedResource.GetPinnableReference(), ref ppSurface);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryResourceResidency<TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown** ppResources, Span<Residency> pResidencyStatus, uint NumResources) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int QueryResourceResidency(this ComPtr<IDXGIDevice4> thisVtbl, Silk.NET.Core.Native.IUnknown** ppResources, Span<Residency> pResidencyStatus, uint NumResources)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryResourceResidency(ppResources, ref pResidencyStatus.GetPinnableReference(), NumResources);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryResourceResidency<TThis>(this TThis thisVtbl, ref Silk.NET.Core.Native.IUnknown* ppResources, Span<Residency> pResidencyStatus, uint NumResources) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int QueryResourceResidency(this ComPtr<IDXGIDevice4> thisVtbl, ref Silk.NET.Core.Native.IUnknown* ppResources, Span<Residency> pResidencyStatus, uint NumResources)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryResourceResidency(ref ppResources, ref pResidencyStatus.GetPinnableReference(), NumResources);
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetGPUThreadPriority<TThis>(this TThis thisVtbl, Span<int> pPriority) where TThis : IComVtbl<IDXGIDevice4>
+    public static int GetGPUThreadPriority(this ComPtr<IDXGIDevice4> thisVtbl, Span<int> pPriority)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetGPUThreadPriority(ref pPriority.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetMaximumFrameLatency<TThis>(this TThis thisVtbl, Span<uint> pMaxLatency) where TThis : IComVtbl<IDXGIDevice4>
+    public static int GetMaximumFrameLatency(this ComPtr<IDXGIDevice4> thisVtbl, Span<uint> pMaxLatency)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetMaximumFrameLatency(ref pMaxLatency.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int OfferResources<TI0, TThis>(this TThis thisVtbl, uint NumResources, ref ComPtr<TI0> ppResources, OfferResourcePriority Priority) where TI0 : unmanaged, IComVtbl<IDXGIResource>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIDevice4>
+    public static int OfferResources<TI0>(this ComPtr<IDXGIDevice4> thisVtbl, uint NumResources, ref ComPtr<TI0> ppResources, OfferResourcePriority Priority) where TI0 : unmanaged, IComVtbl<IDXGIResource>, IComVtbl<TI0>
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->OfferResources(NumResources, (IDXGIResource**) ppResources.GetAddressOf(), Priority);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ReclaimResources<TI0, TThis>(this TThis thisVtbl, uint NumResources, ref ComPtr<TI0> ppResources, int* pDiscarded) where TI0 : unmanaged, IComVtbl<IDXGIResource>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int ReclaimResources<TI0>(this ComPtr<IDXGIDevice4> thisVtbl, uint NumResources, ref ComPtr<TI0> ppResources, int* pDiscarded) where TI0 : unmanaged, IComVtbl<IDXGIResource>, IComVtbl<TI0>
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->ReclaimResources(NumResources, (IDXGIResource**) ppResources.GetAddressOf(), pDiscarded);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ReclaimResources<TThis>(this TThis thisVtbl, uint NumResources, IDXGIResource** ppResources, Span<int> pDiscarded) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int ReclaimResources(this ComPtr<IDXGIDevice4> thisVtbl, uint NumResources, IDXGIResource** ppResources, Span<int> pDiscarded)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->ReclaimResources(NumResources, ppResources, ref pDiscarded.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int ReclaimResources<TI0, TThis>(this TThis thisVtbl, uint NumResources, ref ComPtr<TI0> ppResources, ref int pDiscarded) where TI0 : unmanaged, IComVtbl<IDXGIResource>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIDevice4>
+    public static int ReclaimResources<TI0>(this ComPtr<IDXGIDevice4> thisVtbl, uint NumResources, ref ComPtr<TI0> ppResources, ref int pDiscarded) where TI0 : unmanaged, IComVtbl<IDXGIResource>, IComVtbl<TI0>
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->ReclaimResources(NumResources, (IDXGIResource**) ppResources.GetAddressOf(), ref pDiscarded);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ReclaimResources<TThis>(this TThis thisVtbl, uint NumResources, ref IDXGIResource* ppResources, Span<int> pDiscarded) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int ReclaimResources(this ComPtr<IDXGIDevice4> thisVtbl, uint NumResources, ref IDXGIResource* ppResources, Span<int> pDiscarded)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->ReclaimResources(NumResources, ref ppResources, ref pDiscarded.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int EnqueueSetEvent<T0, TThis>(this TThis thisVtbl, Span<T0> hEvent) where T0 : unmanaged where TThis : IComVtbl<IDXGIDevice4>
+    public static int EnqueueSetEvent<T0>(this ComPtr<IDXGIDevice4> thisVtbl, Span<T0> hEvent) where T0 : unmanaged
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->EnqueueSetEvent(ref hEvent.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int OfferResources1<TI0, TThis>(this TThis thisVtbl, uint NumResources, ref ComPtr<TI0> ppResources, OfferResourcePriority Priority, uint Flags) where TI0 : unmanaged, IComVtbl<IDXGIResource>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIDevice4>
+    public static int OfferResources1<TI0>(this ComPtr<IDXGIDevice4> thisVtbl, uint NumResources, ref ComPtr<TI0> ppResources, OfferResourcePriority Priority, uint Flags) where TI0 : unmanaged, IComVtbl<IDXGIResource>, IComVtbl<TI0>
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->OfferResources1(NumResources, (IDXGIResource**) ppResources.GetAddressOf(), Priority, Flags);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ReclaimResources1<TI0, TThis>(this TThis thisVtbl, uint NumResources, ref ComPtr<TI0> ppResources, ReclaimResourceResults* pResults) where TI0 : unmanaged, IComVtbl<IDXGIResource>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int ReclaimResources1<TI0>(this ComPtr<IDXGIDevice4> thisVtbl, uint NumResources, ref ComPtr<TI0> ppResources, ReclaimResourceResults* pResults) where TI0 : unmanaged, IComVtbl<IDXGIResource>, IComVtbl<TI0>
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->ReclaimResources1(NumResources, (IDXGIResource**) ppResources.GetAddressOf(), pResults);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ReclaimResources1<TThis>(this TThis thisVtbl, uint NumResources, IDXGIResource** ppResources, Span<ReclaimResourceResults> pResults) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int ReclaimResources1(this ComPtr<IDXGIDevice4> thisVtbl, uint NumResources, IDXGIResource** ppResources, Span<ReclaimResourceResults> pResults)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->ReclaimResources1(NumResources, ppResources, ref pResults.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int ReclaimResources1<TI0, TThis>(this TThis thisVtbl, uint NumResources, ref ComPtr<TI0> ppResources, ref ReclaimResourceResults pResults) where TI0 : unmanaged, IComVtbl<IDXGIResource>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIDevice4>
+    public static int ReclaimResources1<TI0>(this ComPtr<IDXGIDevice4> thisVtbl, uint NumResources, ref ComPtr<TI0> ppResources, ref ReclaimResourceResults pResults) where TI0 : unmanaged, IComVtbl<IDXGIResource>, IComVtbl<TI0>
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->ReclaimResources1(NumResources, (IDXGIResource**) ppResources.GetAddressOf(), ref pResults);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ReclaimResources1<TThis>(this TThis thisVtbl, uint NumResources, ref IDXGIResource* ppResources, Span<ReclaimResourceResults> pResults) where TThis : IComVtbl<IDXGIDevice4>
+    public static unsafe int ReclaimResources1(this ComPtr<IDXGIDevice4> thisVtbl, uint NumResources, ref IDXGIResource* ppResources, Span<ReclaimResourceResults> pResults)
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->ReclaimResources1(NumResources, ref ppResources, ref pResults.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXGIDevice4>
+    public static ComPtr<TI0> QueryInterface<TI0>(this ComPtr<IDXGIDevice4> thisVtbl) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> GetParent<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXGIDevice4>
+    public static ComPtr<TI0> GetParent<TI0>(this ComPtr<IDXGIDevice4> thisVtbl) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (IDXGIDevice4*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->GetParent(out ComPtr<TI0> silkRet));
         return silkRet;

@@ -616,15 +616,18 @@ namespace Silk.NET.BuildTools.Bind
 
                     // This is the important bit! Turn our signature into an extension method signature!
                     var sig = new FunctionSignatureBuilder(helper.Signature)
-                        .WithGenericTypeParameters
-                        (
-                            helper.Signature.GenericTypeParameters.Concat
-                                (
-                                    Enumerable.Repeat
-                                        (new GenericTypeParameter("TThis", new[] { $"IComVtbl<{@struct.Name}>" }), 1)
-                                )
-                                .ToList()
-                        )
+                        // TODO ideally we'd use IComVtbl, but we need to use generics for it to be zero cost which
+                        // TODO isn't easy to use extension methods for today. we could use the interface directly, but
+                        // TODO that doesn't get specialized and thus incurs a virtual call (not zero cost!)
+                        // .WithGenericTypeParameters
+                        // (
+                        //     helper.Signature.GenericTypeParameters.Concat
+                        //         (
+                        //             Enumerable.Repeat
+                        //                 (new GenericTypeParameter("TThis", new[] { $"IComVtbl<{@struct.Name}>" }), 1)
+                        //         )
+                        //         .ToList()
+                        // )
                         .WithParameters
                         (
                             Enumerable.Repeat
@@ -634,8 +637,10 @@ namespace Silk.NET.BuildTools.Bind
                                         Type = new Type
                                         {
                                             IsThis = true,
-                                            Name = "TThis",
-                                            IsGenericTypeParameterReference = true
+                                            // Name = "TThis",
+                                            // IsGenericTypeParameterReference = true
+                                            Name = "ComPtr",
+                                            GenericTypes = new List<Type> { new() { Name = @struct.Name } }
                                         },
                                         Name = "thisVtbl"
                                     }, 1
@@ -657,7 +662,8 @@ namespace Silk.NET.BuildTools.Bind
                     }
 
                     vt.WriteLine("    {");
-                    vt.WriteLine($"        var @this = ({@struct.Name}*) thisVtbl.AsVtblPtr();");
+                    // vt.WriteLine($"        var @this = ({@struct.Name}*) thisVtbl.AsVtblPtr();");
+                    vt.WriteLine("        var @this = thisVtbl.Handle;");
                     
                     foreach (var line in helper.Body)
                     {

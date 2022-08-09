@@ -19,18 +19,18 @@ namespace Silk.NET.Direct3D11;
 public unsafe static class D3D11ShaderReflectionVariableVtblExtensions
 {
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDesc<TThis>(this TThis thisVtbl, ShaderVariableDesc* pDesc) where TThis : IComVtbl<ID3D11ShaderReflectionVariable>
+    public static unsafe int GetDesc(this ComPtr<ID3D11ShaderReflectionVariable> thisVtbl, ShaderVariableDesc* pDesc)
     {
-        var @this = (ID3D11ShaderReflectionVariable*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderReflectionVariable*, ShaderVariableDesc*, int>)@this->LpVtbl[0])(@this, pDesc);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetDesc<TThis>(this TThis thisVtbl, ref ShaderVariableDesc pDesc) where TThis : IComVtbl<ID3D11ShaderReflectionVariable>
+    public static int GetDesc(this ComPtr<ID3D11ShaderReflectionVariable> thisVtbl, ref ShaderVariableDesc pDesc)
     {
-        var @this = (ID3D11ShaderReflectionVariable*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ShaderVariableDesc* pDescPtr = &pDesc)
         {
@@ -40,36 +40,36 @@ public unsafe static class D3D11ShaderReflectionVariableVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ID3D11ShaderReflectionType* GetType<TThis>(this TThis thisVtbl) where TThis : IComVtbl<ID3D11ShaderReflectionVariable>
+    public static unsafe ID3D11ShaderReflectionType* GetType(this ComPtr<ID3D11ShaderReflectionVariable> thisVtbl)
     {
-        var @this = (ID3D11ShaderReflectionVariable*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ID3D11ShaderReflectionType* ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderReflectionVariable*, ID3D11ShaderReflectionType*>)@this->LpVtbl[1])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ID3D11ShaderReflectionConstantBuffer* GetBuffer<TThis>(this TThis thisVtbl) where TThis : IComVtbl<ID3D11ShaderReflectionVariable>
+    public static unsafe ID3D11ShaderReflectionConstantBuffer* GetBuffer(this ComPtr<ID3D11ShaderReflectionVariable> thisVtbl)
     {
-        var @this = (ID3D11ShaderReflectionVariable*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ID3D11ShaderReflectionConstantBuffer* ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderReflectionVariable*, ID3D11ShaderReflectionConstantBuffer*>)@this->LpVtbl[2])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static uint GetInterfaceSlot<TThis>(this TThis thisVtbl, uint uArrayIndex) where TThis : IComVtbl<ID3D11ShaderReflectionVariable>
+    public static uint GetInterfaceSlot(this ComPtr<ID3D11ShaderReflectionVariable> thisVtbl, uint uArrayIndex)
     {
-        var @this = (ID3D11ShaderReflectionVariable*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderReflectionVariable*, uint, uint>)@this->LpVtbl[3])(@this, uArrayIndex);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetDesc<TThis>(this TThis thisVtbl, Span<ShaderVariableDesc> pDesc) where TThis : IComVtbl<ID3D11ShaderReflectionVariable>
+    public static int GetDesc(this ComPtr<ID3D11ShaderReflectionVariable> thisVtbl, Span<ShaderVariableDesc> pDesc)
     {
-        var @this = (ID3D11ShaderReflectionVariable*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDesc(ref pDesc.GetPinnableReference());
     }

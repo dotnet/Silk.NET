@@ -19,18 +19,18 @@ namespace Silk.NET.Direct3D11;
 public unsafe static class D3D11DebugVtblExtensions
 {
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Guid* riid, void** ppvObject) where TThis : IComVtbl<ID3D11Debug>
+    public static unsafe int QueryInterface(this ComPtr<ID3D11Debug> thisVtbl, Guid* riid, void** ppvObject)
     {
-        var @this = (ID3D11Debug*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Guid* riid, ref void* ppvObject) where TThis : IComVtbl<ID3D11Debug>
+    public static unsafe int QueryInterface(this ComPtr<ID3D11Debug> thisVtbl, Guid* riid, ref void* ppvObject)
     {
-        var @this = (ID3D11Debug*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppvObjectPtr = &ppvObject)
         {
@@ -40,9 +40,9 @@ public unsafe static class D3D11DebugVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, ref Guid riid, void** ppvObject) where TThis : IComVtbl<ID3D11Debug>
+    public static unsafe int QueryInterface(this ComPtr<ID3D11Debug> thisVtbl, ref Guid riid, void** ppvObject)
     {
-        var @this = (ID3D11Debug*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -52,9 +52,9 @@ public unsafe static class D3D11DebugVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, ref Guid riid, ref void* ppvObject) where TThis : IComVtbl<ID3D11Debug>
+    public static unsafe int QueryInterface(this ComPtr<ID3D11Debug> thisVtbl, ref Guid riid, ref void* ppvObject)
     {
-        var @this = (ID3D11Debug*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -67,72 +67,72 @@ public unsafe static class D3D11DebugVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static uint AddRef<TThis>(this TThis thisVtbl) where TThis : IComVtbl<ID3D11Debug>
+    public static uint AddRef(this ComPtr<ID3D11Debug> thisVtbl)
     {
-        var @this = (ID3D11Debug*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, uint>)@this->LpVtbl[1])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static uint Release<TThis>(this TThis thisVtbl) where TThis : IComVtbl<ID3D11Debug>
+    public static uint Release(this ComPtr<ID3D11Debug> thisVtbl)
     {
-        var @this = (ID3D11Debug*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, uint>)@this->LpVtbl[2])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetFeatureMask<TThis>(this TThis thisVtbl, uint Mask) where TThis : IComVtbl<ID3D11Debug>
+    public static int SetFeatureMask(this ComPtr<ID3D11Debug> thisVtbl, uint Mask)
     {
-        var @this = (ID3D11Debug*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, uint, int>)@this->LpVtbl[3])(@this, Mask);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static uint GetFeatureMask<TThis>(this TThis thisVtbl) where TThis : IComVtbl<ID3D11Debug>
+    public static uint GetFeatureMask(this ComPtr<ID3D11Debug> thisVtbl)
     {
-        var @this = (ID3D11Debug*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, uint>)@this->LpVtbl[4])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPresentPerRenderOpDelay<TThis>(this TThis thisVtbl, uint Milliseconds) where TThis : IComVtbl<ID3D11Debug>
+    public static int SetPresentPerRenderOpDelay(this ComPtr<ID3D11Debug> thisVtbl, uint Milliseconds)
     {
-        var @this = (ID3D11Debug*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, uint, int>)@this->LpVtbl[5])(@this, Milliseconds);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static uint GetPresentPerRenderOpDelay<TThis>(this TThis thisVtbl) where TThis : IComVtbl<ID3D11Debug>
+    public static uint GetPresentPerRenderOpDelay(this ComPtr<ID3D11Debug> thisVtbl)
     {
-        var @this = (ID3D11Debug*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, uint>)@this->LpVtbl[6])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetSwapChain<TThis>(this TThis thisVtbl, Silk.NET.DXGI.IDXGISwapChain* pSwapChain) where TThis : IComVtbl<ID3D11Debug>
+    public static unsafe int SetSwapChain(this ComPtr<ID3D11Debug> thisVtbl, Silk.NET.DXGI.IDXGISwapChain* pSwapChain)
     {
-        var @this = (ID3D11Debug*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, Silk.NET.DXGI.IDXGISwapChain*, int>)@this->LpVtbl[7])(@this, pSwapChain);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetSwapChain<TThis>(this TThis thisVtbl, ref Silk.NET.DXGI.IDXGISwapChain pSwapChain) where TThis : IComVtbl<ID3D11Debug>
+    public static int SetSwapChain(this ComPtr<ID3D11Debug> thisVtbl, ref Silk.NET.DXGI.IDXGISwapChain pSwapChain)
     {
-        var @this = (ID3D11Debug*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.DXGI.IDXGISwapChain* pSwapChainPtr = &pSwapChain)
         {
@@ -142,18 +142,18 @@ public unsafe static class D3D11DebugVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetSwapChain<TThis>(this TThis thisVtbl, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain) where TThis : IComVtbl<ID3D11Debug>
+    public static unsafe int GetSwapChain(this ComPtr<ID3D11Debug> thisVtbl, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain)
     {
-        var @this = (ID3D11Debug*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, Silk.NET.DXGI.IDXGISwapChain**, int>)@this->LpVtbl[8])(@this, ppSwapChain);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetSwapChain<TThis>(this TThis thisVtbl, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain) where TThis : IComVtbl<ID3D11Debug>
+    public static unsafe int GetSwapChain(this ComPtr<ID3D11Debug> thisVtbl, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain)
     {
-        var @this = (ID3D11Debug*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.DXGI.IDXGISwapChain** ppSwapChainPtr = &ppSwapChain)
         {
@@ -163,18 +163,18 @@ public unsafe static class D3D11DebugVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ValidateContext<TThis>(this TThis thisVtbl, ID3D11DeviceContext* pContext) where TThis : IComVtbl<ID3D11Debug>
+    public static unsafe int ValidateContext(this ComPtr<ID3D11Debug> thisVtbl, ID3D11DeviceContext* pContext)
     {
-        var @this = (ID3D11Debug*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, ID3D11DeviceContext*, int>)@this->LpVtbl[9])(@this, pContext);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int ValidateContext<TThis>(this TThis thisVtbl, ref ID3D11DeviceContext pContext) where TThis : IComVtbl<ID3D11Debug>
+    public static int ValidateContext(this ComPtr<ID3D11Debug> thisVtbl, ref ID3D11DeviceContext pContext)
     {
-        var @this = (ID3D11Debug*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D11DeviceContext* pContextPtr = &pContext)
         {
@@ -184,27 +184,27 @@ public unsafe static class D3D11DebugVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ReportLiveDeviceObjects<TThis>(this TThis thisVtbl, RldoFlags Flags) where TThis : IComVtbl<ID3D11Debug>
+    public static int ReportLiveDeviceObjects(this ComPtr<ID3D11Debug> thisVtbl, RldoFlags Flags)
     {
-        var @this = (ID3D11Debug*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, RldoFlags, int>)@this->LpVtbl[10])(@this, Flags);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ValidateContextForDispatch<TThis>(this TThis thisVtbl, ID3D11DeviceContext* pContext) where TThis : IComVtbl<ID3D11Debug>
+    public static unsafe int ValidateContextForDispatch(this ComPtr<ID3D11Debug> thisVtbl, ID3D11DeviceContext* pContext)
     {
-        var @this = (ID3D11Debug*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, ID3D11DeviceContext*, int>)@this->LpVtbl[11])(@this, pContext);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int ValidateContextForDispatch<TThis>(this TThis thisVtbl, ref ID3D11DeviceContext pContext) where TThis : IComVtbl<ID3D11Debug>
+    public static int ValidateContextForDispatch(this ComPtr<ID3D11Debug> thisVtbl, ref ID3D11DeviceContext pContext)
     {
-        var @this = (ID3D11Debug*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D11DeviceContext* pContextPtr = &pContext)
         {
@@ -214,58 +214,58 @@ public unsafe static class D3D11DebugVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D11Debug>
+    public static int QueryInterface<TI0>(this ComPtr<ID3D11Debug> thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D11Debug*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppvObject = default;
         return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<ID3D11Debug>
+    public static unsafe int QueryInterface(this ComPtr<ID3D11Debug> thisVtbl, Span<Guid> riid, void** ppvObject)
     {
-        var @this = (ID3D11Debug*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<ID3D11Debug>
+    public static unsafe int QueryInterface(this ComPtr<ID3D11Debug> thisVtbl, Span<Guid> riid, ref void* ppvObject)
     {
-        var @this = (ID3D11Debug*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetSwapChain<TThis>(this TThis thisVtbl, Span<Silk.NET.DXGI.IDXGISwapChain> pSwapChain) where TThis : IComVtbl<ID3D11Debug>
+    public static int SetSwapChain(this ComPtr<ID3D11Debug> thisVtbl, Span<Silk.NET.DXGI.IDXGISwapChain> pSwapChain)
     {
-        var @this = (ID3D11Debug*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->SetSwapChain(ref pSwapChain.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int ValidateContext<TThis>(this TThis thisVtbl, Span<ID3D11DeviceContext> pContext) where TThis : IComVtbl<ID3D11Debug>
+    public static int ValidateContext(this ComPtr<ID3D11Debug> thisVtbl, Span<ID3D11DeviceContext> pContext)
     {
-        var @this = (ID3D11Debug*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->ValidateContext(ref pContext.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int ValidateContextForDispatch<TThis>(this TThis thisVtbl, Span<ID3D11DeviceContext> pContext) where TThis : IComVtbl<ID3D11Debug>
+    public static int ValidateContextForDispatch(this ComPtr<ID3D11Debug> thisVtbl, Span<ID3D11DeviceContext> pContext)
     {
-        var @this = (ID3D11Debug*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->ValidateContextForDispatch(ref pContext.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D11Debug>
+    public static ComPtr<TI0> QueryInterface<TI0>(this ComPtr<ID3D11Debug> thisVtbl) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D11Debug*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
         return silkRet;

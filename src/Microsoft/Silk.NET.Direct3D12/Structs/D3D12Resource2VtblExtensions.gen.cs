@@ -19,18 +19,18 @@ namespace Silk.NET.Direct3D12;
 public unsafe static class D3D12Resource2VtblExtensions
 {
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Guid* riid, void** ppvObject) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int QueryInterface(this ComPtr<ID3D12Resource2> thisVtbl, Guid* riid, void** ppvObject)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12Resource2*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Guid* riid, ref void* ppvObject) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int QueryInterface(this ComPtr<ID3D12Resource2> thisVtbl, Guid* riid, ref void* ppvObject)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppvObjectPtr = &ppvObject)
         {
@@ -40,9 +40,9 @@ public unsafe static class D3D12Resource2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, ref Guid riid, void** ppvObject) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int QueryInterface(this ComPtr<ID3D12Resource2> thisVtbl, ref Guid riid, void** ppvObject)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -52,9 +52,9 @@ public unsafe static class D3D12Resource2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, ref Guid riid, ref void* ppvObject) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int QueryInterface(this ComPtr<ID3D12Resource2> thisVtbl, ref Guid riid, ref void* ppvObject)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -67,36 +67,36 @@ public unsafe static class D3D12Resource2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static uint AddRef<TThis>(this TThis thisVtbl) where TThis : IComVtbl<ID3D12Resource2>
+    public static uint AddRef(this ComPtr<ID3D12Resource2> thisVtbl)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12Resource2*, uint>)@this->LpVtbl[1])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static uint Release<TThis>(this TThis thisVtbl) where TThis : IComVtbl<ID3D12Resource2>
+    public static uint Release(this ComPtr<ID3D12Resource2> thisVtbl)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12Resource2*, uint>)@this->LpVtbl[2])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Guid* guid, uint* pDataSize, void* pData) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int GetPrivateData(this ComPtr<ID3D12Resource2> thisVtbl, Guid* guid, uint* pDataSize, void* pData)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12Resource2*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guid, pDataSize, pData);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D12Resource2> thisVtbl, Guid* guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void* pDataPtr = &pData)
         {
@@ -106,9 +106,9 @@ public unsafe static class D3D12Resource2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Guid* guid, ref uint pDataSize, void* pData) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int GetPrivateData(this ComPtr<ID3D12Resource2> thisVtbl, Guid* guid, ref uint pDataSize, void* pData)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pDataSizePtr = &pDataSize)
         {
@@ -118,9 +118,9 @@ public unsafe static class D3D12Resource2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D12Resource2> thisVtbl, Guid* guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pDataSizePtr = &pDataSize)
         {
@@ -133,9 +133,9 @@ public unsafe static class D3D12Resource2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, ref Guid guid, uint* pDataSize, void* pData) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int GetPrivateData(this ComPtr<ID3D12Resource2> thisVtbl, ref Guid guid, uint* pDataSize, void* pData)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* guidPtr = &guid)
         {
@@ -145,9 +145,9 @@ public unsafe static class D3D12Resource2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, ref Guid guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D12Resource2> thisVtbl, ref Guid guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* guidPtr = &guid)
         {
@@ -160,9 +160,9 @@ public unsafe static class D3D12Resource2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, ref Guid guid, ref uint pDataSize, void* pData) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int GetPrivateData(this ComPtr<ID3D12Resource2> thisVtbl, ref Guid guid, ref uint pDataSize, void* pData)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* guidPtr = &guid)
         {
@@ -175,9 +175,9 @@ public unsafe static class D3D12Resource2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetPrivateData<T0, TThis>(this TThis thisVtbl, ref Guid guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged where TThis : IComVtbl<ID3D12Resource2>
+    public static int GetPrivateData<T0>(this ComPtr<ID3D12Resource2> thisVtbl, ref Guid guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* guidPtr = &guid)
         {
@@ -193,18 +193,18 @@ public unsafe static class D3D12Resource2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<TThis>(this TThis thisVtbl, Guid* guid, uint DataSize, void* pData) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int SetPrivateData(this ComPtr<ID3D12Resource2> thisVtbl, Guid* guid, uint DataSize, void* pData)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12Resource2*, Guid*, uint, void*, int>)@this->LpVtbl[4])(@this, guid, DataSize, pData);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* guid, uint DataSize, ref T0 pData) where T0 : unmanaged where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12Resource2> thisVtbl, Guid* guid, uint DataSize, ref T0 pData) where T0 : unmanaged
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void* pDataPtr = &pData)
         {
@@ -214,9 +214,9 @@ public unsafe static class D3D12Resource2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<TThis>(this TThis thisVtbl, ref Guid guid, uint DataSize, void* pData) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int SetPrivateData(this ComPtr<ID3D12Resource2> thisVtbl, ref Guid guid, uint DataSize, void* pData)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* guidPtr = &guid)
         {
@@ -226,9 +226,9 @@ public unsafe static class D3D12Resource2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0, TThis>(this TThis thisVtbl, ref Guid guid, uint DataSize, ref T0 pData) where T0 : unmanaged where TThis : IComVtbl<ID3D12Resource2>
+    public static int SetPrivateData<T0>(this ComPtr<ID3D12Resource2> thisVtbl, ref Guid guid, uint DataSize, ref T0 pData) where T0 : unmanaged
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* guidPtr = &guid)
         {
@@ -241,18 +241,18 @@ public unsafe static class D3D12Resource2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Guid* guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12Resource2> thisVtbl, Guid* guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12Resource2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[5])(@this, guid, pData);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Guid* guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12Resource2> thisVtbl, Guid* guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
         {
@@ -262,9 +262,9 @@ public unsafe static class D3D12Resource2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface<TThis>(this TThis thisVtbl, ref Guid guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12Resource2> thisVtbl, ref Guid guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* guidPtr = &guid)
         {
@@ -274,9 +274,9 @@ public unsafe static class D3D12Resource2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateDataInterface<TThis>(this TThis thisVtbl, ref Guid guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData) where TThis : IComVtbl<ID3D12Resource2>
+    public static int SetPrivateDataInterface(this ComPtr<ID3D12Resource2> thisVtbl, ref Guid guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* guidPtr = &guid)
         {
@@ -289,18 +289,18 @@ public unsafe static class D3D12Resource2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetName<TThis>(this TThis thisVtbl, char* Name) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int SetName(this ComPtr<ID3D12Resource2> thisVtbl, char* Name)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12Resource2*, char*, int>)@this->LpVtbl[6])(@this, Name);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName<TThis>(this TThis thisVtbl, ref char Name) where TThis : IComVtbl<ID3D12Resource2>
+    public static int SetName(this ComPtr<ID3D12Resource2> thisVtbl, ref char Name)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (char* NamePtr = &Name)
         {
@@ -310,9 +310,9 @@ public unsafe static class D3D12Resource2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name) where TThis : IComVtbl<ID3D12Resource2>
+    public static int SetName(this ComPtr<ID3D12Resource2> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         var NamePtr = (byte*) SilkMarshal.StringToPtr(Name, NativeStringEncoding.LPWStr);
         ret = ((delegate* unmanaged[Stdcall]<ID3D12Resource2*, byte*, int>)@this->LpVtbl[6])(@this, NamePtr);
@@ -321,18 +321,18 @@ public unsafe static class D3D12Resource2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDevice<TThis>(this TThis thisVtbl, Guid* riid, void** ppvDevice) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int GetDevice(this ComPtr<ID3D12Resource2> thisVtbl, Guid* riid, void** ppvDevice)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12Resource2*, Guid*, void**, int>)@this->LpVtbl[7])(@this, riid, ppvDevice);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDevice<TThis>(this TThis thisVtbl, Guid* riid, ref void* ppvDevice) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int GetDevice(this ComPtr<ID3D12Resource2> thisVtbl, Guid* riid, ref void* ppvDevice)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppvDevicePtr = &ppvDevice)
         {
@@ -342,9 +342,9 @@ public unsafe static class D3D12Resource2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDevice<TThis>(this TThis thisVtbl, ref Guid riid, void** ppvDevice) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int GetDevice(this ComPtr<ID3D12Resource2> thisVtbl, ref Guid riid, void** ppvDevice)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -354,9 +354,9 @@ public unsafe static class D3D12Resource2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDevice<TThis>(this TThis thisVtbl, ref Guid riid, ref void* ppvDevice) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int GetDevice(this ComPtr<ID3D12Resource2> thisVtbl, ref Guid riid, ref void* ppvDevice)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -369,18 +369,18 @@ public unsafe static class D3D12Resource2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Map<TThis>(this TThis thisVtbl, uint Subresource, Range* pReadRange, void** ppData) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int Map(this ComPtr<ID3D12Resource2> thisVtbl, uint Subresource, Range* pReadRange, void** ppData)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12Resource2*, uint, Range*, void**, int>)@this->LpVtbl[8])(@this, Subresource, pReadRange, ppData);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Map<TThis>(this TThis thisVtbl, uint Subresource, Range* pReadRange, ref void* ppData) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int Map(this ComPtr<ID3D12Resource2> thisVtbl, uint Subresource, Range* pReadRange, ref void* ppData)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppDataPtr = &ppData)
         {
@@ -390,9 +390,9 @@ public unsafe static class D3D12Resource2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Map<TThis>(this TThis thisVtbl, uint Subresource, ref Range pReadRange, void** ppData) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int Map(this ComPtr<ID3D12Resource2> thisVtbl, uint Subresource, ref Range pReadRange, void** ppData)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Range* pReadRangePtr = &pReadRange)
         {
@@ -402,9 +402,9 @@ public unsafe static class D3D12Resource2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Map<TThis>(this TThis thisVtbl, uint Subresource, ref Range pReadRange, ref void* ppData) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int Map(this ComPtr<ID3D12Resource2> thisVtbl, uint Subresource, ref Range pReadRange, ref void* ppData)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Range* pReadRangePtr = &pReadRange)
         {
@@ -417,16 +417,16 @@ public unsafe static class D3D12Resource2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void Unmap<TThis>(this TThis thisVtbl, uint Subresource, Range* pWrittenRange) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe void Unmap(this ComPtr<ID3D12Resource2> thisVtbl, uint Subresource, Range* pWrittenRange)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12Resource2*, uint, Range*, void>)@this->LpVtbl[9])(@this, Subresource, pWrittenRange);
     }
 
     /// <summary>To be documented.</summary>
-    public static void Unmap<TThis>(this TThis thisVtbl, uint Subresource, ref Range pWrittenRange) where TThis : IComVtbl<ID3D12Resource2>
+    public static void Unmap(this ComPtr<ID3D12Resource2> thisVtbl, uint Subresource, ref Range pWrittenRange)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         fixed (Range* pWrittenRangePtr = &pWrittenRange)
         {
             ((delegate* unmanaged[Stdcall]<ID3D12Resource2*, uint, Range*, void>)@this->LpVtbl[9])(@this, Subresource, pWrittenRangePtr);
@@ -434,36 +434,36 @@ public unsafe static class D3D12Resource2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ResourceDesc GetDesc<TThis>(this TThis thisVtbl) where TThis : IComVtbl<ID3D12Resource2>
+    public static ResourceDesc GetDesc(this ComPtr<ID3D12Resource2> thisVtbl)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ResourceDesc ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12Resource2*, ResourceDesc>)@this->LpVtbl[10])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static ulong GetGPUVirtualAddress<TThis>(this TThis thisVtbl) where TThis : IComVtbl<ID3D12Resource2>
+    public static ulong GetGPUVirtualAddress(this ComPtr<ID3D12Resource2> thisVtbl)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ulong ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12Resource2*, ulong>)@this->LpVtbl[11])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteToSubresource<TThis>(this TThis thisVtbl, uint DstSubresource, Box* pDstBox, void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int WriteToSubresource(this ComPtr<ID3D12Resource2> thisVtbl, uint DstSubresource, Box* pDstBox, void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12Resource2*, uint, Box*, void*, uint, uint, int>)@this->LpVtbl[12])(@this, DstSubresource, pDstBox, pSrcData, SrcRowPitch, SrcDepthPitch);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteToSubresource<T0, TThis>(this TThis thisVtbl, uint DstSubresource, Box* pDstBox, ref T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int WriteToSubresource<T0>(this ComPtr<ID3D12Resource2> thisVtbl, uint DstSubresource, Box* pDstBox, ref T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void* pSrcDataPtr = &pSrcData)
         {
@@ -473,9 +473,9 @@ public unsafe static class D3D12Resource2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteToSubresource<TThis>(this TThis thisVtbl, uint DstSubresource, ref Box pDstBox, void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int WriteToSubresource(this ComPtr<ID3D12Resource2> thisVtbl, uint DstSubresource, ref Box pDstBox, void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Box* pDstBoxPtr = &pDstBox)
         {
@@ -485,9 +485,9 @@ public unsafe static class D3D12Resource2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int WriteToSubresource<T0, TThis>(this TThis thisVtbl, uint DstSubresource, ref Box pDstBox, ref T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged where TThis : IComVtbl<ID3D12Resource2>
+    public static int WriteToSubresource<T0>(this ComPtr<ID3D12Resource2> thisVtbl, uint DstSubresource, ref Box pDstBox, ref T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Box* pDstBoxPtr = &pDstBox)
         {
@@ -500,18 +500,18 @@ public unsafe static class D3D12Resource2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ReadFromSubresource<TThis>(this TThis thisVtbl, void* pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, Box* pSrcBox) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int ReadFromSubresource(this ComPtr<ID3D12Resource2> thisVtbl, void* pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, Box* pSrcBox)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12Resource2*, void*, uint, uint, uint, Box*, int>)@this->LpVtbl[13])(@this, pDstData, DstRowPitch, DstDepthPitch, SrcSubresource, pSrcBox);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ReadFromSubresource<TThis>(this TThis thisVtbl, void* pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, ref Box pSrcBox) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int ReadFromSubresource(this ComPtr<ID3D12Resource2> thisVtbl, void* pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, ref Box pSrcBox)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Box* pSrcBoxPtr = &pSrcBox)
         {
@@ -521,9 +521,9 @@ public unsafe static class D3D12Resource2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ReadFromSubresource<T0, TThis>(this TThis thisVtbl, ref T0 pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, Box* pSrcBox) where T0 : unmanaged where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int ReadFromSubresource<T0>(this ComPtr<ID3D12Resource2> thisVtbl, ref T0 pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, Box* pSrcBox) where T0 : unmanaged
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void* pDstDataPtr = &pDstData)
         {
@@ -533,9 +533,9 @@ public unsafe static class D3D12Resource2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ReadFromSubresource<T0, TThis>(this TThis thisVtbl, ref T0 pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, ref Box pSrcBox) where T0 : unmanaged where TThis : IComVtbl<ID3D12Resource2>
+    public static int ReadFromSubresource<T0>(this ComPtr<ID3D12Resource2> thisVtbl, ref T0 pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, ref Box pSrcBox) where T0 : unmanaged
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void* pDstDataPtr = &pDstData)
         {
@@ -548,18 +548,18 @@ public unsafe static class D3D12Resource2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetHeapProperties<TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags* pHeapFlags) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int GetHeapProperties(this ComPtr<ID3D12Resource2> thisVtbl, HeapProperties* pHeapProperties, HeapFlags* pHeapFlags)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12Resource2*, HeapProperties*, HeapFlags*, int>)@this->LpVtbl[14])(@this, pHeapProperties, pHeapFlags);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetHeapProperties<TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, ref HeapFlags pHeapFlags) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int GetHeapProperties(this ComPtr<ID3D12Resource2> thisVtbl, HeapProperties* pHeapProperties, ref HeapFlags pHeapFlags)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (HeapFlags* pHeapFlagsPtr = &pHeapFlags)
         {
@@ -569,9 +569,9 @@ public unsafe static class D3D12Resource2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetHeapProperties<TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags* pHeapFlags) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int GetHeapProperties(this ComPtr<ID3D12Resource2> thisVtbl, ref HeapProperties pHeapProperties, HeapFlags* pHeapFlags)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
         {
@@ -581,9 +581,9 @@ public unsafe static class D3D12Resource2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetHeapProperties<TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, ref HeapFlags pHeapFlags) where TThis : IComVtbl<ID3D12Resource2>
+    public static int GetHeapProperties(this ComPtr<ID3D12Resource2> thisVtbl, ref HeapProperties pHeapProperties, ref HeapFlags pHeapFlags)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
         {
@@ -596,18 +596,18 @@ public unsafe static class D3D12Resource2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetProtectedResourceSession<TThis>(this TThis thisVtbl, Guid* riid, void** ppProtectedSession) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int GetProtectedResourceSession(this ComPtr<ID3D12Resource2> thisVtbl, Guid* riid, void** ppProtectedSession)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12Resource2*, Guid*, void**, int>)@this->LpVtbl[15])(@this, riid, ppProtectedSession);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetProtectedResourceSession<TThis>(this TThis thisVtbl, Guid* riid, ref void* ppProtectedSession) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int GetProtectedResourceSession(this ComPtr<ID3D12Resource2> thisVtbl, Guid* riid, ref void* ppProtectedSession)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppProtectedSessionPtr = &ppProtectedSession)
         {
@@ -617,9 +617,9 @@ public unsafe static class D3D12Resource2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetProtectedResourceSession<TThis>(this TThis thisVtbl, ref Guid riid, void** ppProtectedSession) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int GetProtectedResourceSession(this ComPtr<ID3D12Resource2> thisVtbl, ref Guid riid, void** ppProtectedSession)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -629,9 +629,9 @@ public unsafe static class D3D12Resource2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetProtectedResourceSession<TThis>(this TThis thisVtbl, ref Guid riid, ref void* ppProtectedSession) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int GetProtectedResourceSession(this ComPtr<ID3D12Resource2> thisVtbl, ref Guid riid, ref void* ppProtectedSession)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -644,319 +644,319 @@ public unsafe static class D3D12Resource2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ResourceDesc1 GetDesc1<TThis>(this TThis thisVtbl) where TThis : IComVtbl<ID3D12Resource2>
+    public static ResourceDesc1 GetDesc1(this ComPtr<ID3D12Resource2> thisVtbl)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ResourceDesc1 ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12Resource2*, ResourceDesc1>)@this->LpVtbl[16])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Resource2>
+    public static int QueryInterface<TI0>(this ComPtr<ID3D12Resource2> thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppvObject = default;
         return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int QueryInterface(this ComPtr<ID3D12Resource2> thisVtbl, Span<Guid> riid, void** ppvObject)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int QueryInterface(this ComPtr<ID3D12Resource2> thisVtbl, Span<Guid> riid, ref void* ppvObject)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* guid, uint* pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D12Resource2> thisVtbl, Guid* guid, uint* pDataSize, Span<T0> pData) where T0 : unmanaged
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetPrivateData(guid, pDataSize, ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Guid* guid, Span<uint> pDataSize, void* pData) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int GetPrivateData(this ComPtr<ID3D12Resource2> thisVtbl, Guid* guid, Span<uint> pDataSize, void* pData)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetPrivateData(guid, ref pDataSize.GetPinnableReference(), pData);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* guid, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D12Resource2> thisVtbl, Guid* guid, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetPrivateData(guid, ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> guid, uint* pDataSize, void* pData) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int GetPrivateData(this ComPtr<ID3D12Resource2> thisVtbl, Span<Guid> guid, uint* pDataSize, void* pData)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetPrivateData(ref guid.GetPinnableReference(), pDataSize, pData);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> guid, uint* pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D12Resource2> thisVtbl, Span<Guid> guid, uint* pDataSize, Span<T0> pData) where T0 : unmanaged
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetPrivateData(ref guid.GetPinnableReference(), pDataSize, ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> guid, Span<uint> pDataSize, void* pData) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int GetPrivateData(this ComPtr<ID3D12Resource2> thisVtbl, Span<Guid> guid, Span<uint> pDataSize, void* pData)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetPrivateData(ref guid.GetPinnableReference(), ref pDataSize.GetPinnableReference(), pData);
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> guid, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D12Resource2>
+    public static int GetPrivateData<T0>(this ComPtr<ID3D12Resource2> thisVtbl, Span<Guid> guid, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetPrivateData(ref guid.GetPinnableReference(), ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* guid, uint DataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12Resource2> thisVtbl, Guid* guid, uint DataSize, Span<T0> pData) where T0 : unmanaged
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->SetPrivateData(guid, DataSize, ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> guid, uint DataSize, void* pData) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int SetPrivateData(this ComPtr<ID3D12Resource2> thisVtbl, Span<Guid> guid, uint DataSize, void* pData)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, pData);
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> guid, uint DataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D12Resource2>
+    public static int SetPrivateData<T0>(this ComPtr<ID3D12Resource2> thisVtbl, Span<Guid> guid, uint DataSize, Span<T0> pData) where T0 : unmanaged
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Guid* guid, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12Resource2> thisVtbl, Guid* guid, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->SetPrivateDataInterface(guid, in pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Span<Guid> guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12Resource2> thisVtbl, Span<Guid> guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->SetPrivateDataInterface(ref guid.GetPinnableReference(), pData);
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Span<Guid> guid, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData) where TThis : IComVtbl<ID3D12Resource2>
+    public static int SetPrivateDataInterface(this ComPtr<ID3D12Resource2> thisVtbl, Span<Guid> guid, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->SetPrivateDataInterface(ref guid.GetPinnableReference(), in pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName<TThis>(this TThis thisVtbl, Span<char> Name) where TThis : IComVtbl<ID3D12Resource2>
+    public static int SetName(this ComPtr<ID3D12Resource2> thisVtbl, Span<char> Name)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->SetName(ref Name.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetDevice<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvDevice) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Resource2>
+    public static int GetDevice<TI0>(this ComPtr<ID3D12Resource2> thisVtbl, out ComPtr<TI0> ppvDevice) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppvDevice = default;
         return @this->GetDevice(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvDevice.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDevice<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvDevice) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int GetDevice(this ComPtr<ID3D12Resource2> thisVtbl, Span<Guid> riid, void** ppvDevice)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDevice(ref riid.GetPinnableReference(), ppvDevice);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDevice<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvDevice) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int GetDevice(this ComPtr<ID3D12Resource2> thisVtbl, Span<Guid> riid, ref void* ppvDevice)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDevice(ref riid.GetPinnableReference(), ref ppvDevice);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Map<TThis>(this TThis thisVtbl, uint Subresource, Span<Range> pReadRange, void** ppData) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int Map(this ComPtr<ID3D12Resource2> thisVtbl, uint Subresource, Span<Range> pReadRange, void** ppData)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Map(Subresource, ref pReadRange.GetPinnableReference(), ppData);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Map<TThis>(this TThis thisVtbl, uint Subresource, Span<Range> pReadRange, ref void* ppData) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int Map(this ComPtr<ID3D12Resource2> thisVtbl, uint Subresource, Span<Range> pReadRange, ref void* ppData)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Map(Subresource, ref pReadRange.GetPinnableReference(), ref ppData);
     }
 
     /// <summary>To be documented.</summary>
-    public static void Unmap<TThis>(this TThis thisVtbl, uint Subresource, Span<Range> pWrittenRange) where TThis : IComVtbl<ID3D12Resource2>
+    public static void Unmap(this ComPtr<ID3D12Resource2> thisVtbl, uint Subresource, Span<Range> pWrittenRange)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->Unmap(Subresource, ref pWrittenRange.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteToSubresource<T0, TThis>(this TThis thisVtbl, uint DstSubresource, Box* pDstBox, Span<T0> pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int WriteToSubresource<T0>(this ComPtr<ID3D12Resource2> thisVtbl, uint DstSubresource, Box* pDstBox, Span<T0> pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->WriteToSubresource(DstSubresource, pDstBox, ref pSrcData.GetPinnableReference(), SrcRowPitch, SrcDepthPitch);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteToSubresource<TThis>(this TThis thisVtbl, uint DstSubresource, Span<Box> pDstBox, void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int WriteToSubresource(this ComPtr<ID3D12Resource2> thisVtbl, uint DstSubresource, Span<Box> pDstBox, void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->WriteToSubresource(DstSubresource, ref pDstBox.GetPinnableReference(), pSrcData, SrcRowPitch, SrcDepthPitch);
     }
 
     /// <summary>To be documented.</summary>
-    public static int WriteToSubresource<T0, TThis>(this TThis thisVtbl, uint DstSubresource, Span<Box> pDstBox, Span<T0> pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged where TThis : IComVtbl<ID3D12Resource2>
+    public static int WriteToSubresource<T0>(this ComPtr<ID3D12Resource2> thisVtbl, uint DstSubresource, Span<Box> pDstBox, Span<T0> pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->WriteToSubresource(DstSubresource, ref pDstBox.GetPinnableReference(), ref pSrcData.GetPinnableReference(), SrcRowPitch, SrcDepthPitch);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ReadFromSubresource<TThis>(this TThis thisVtbl, void* pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, Span<Box> pSrcBox) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int ReadFromSubresource(this ComPtr<ID3D12Resource2> thisVtbl, void* pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, Span<Box> pSrcBox)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->ReadFromSubresource(pDstData, DstRowPitch, DstDepthPitch, SrcSubresource, ref pSrcBox.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ReadFromSubresource<T0, TThis>(this TThis thisVtbl, Span<T0> pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, Box* pSrcBox) where T0 : unmanaged where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int ReadFromSubresource<T0>(this ComPtr<ID3D12Resource2> thisVtbl, Span<T0> pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, Box* pSrcBox) where T0 : unmanaged
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->ReadFromSubresource(ref pDstData.GetPinnableReference(), DstRowPitch, DstDepthPitch, SrcSubresource, pSrcBox);
     }
 
     /// <summary>To be documented.</summary>
-    public static int ReadFromSubresource<T0, TThis>(this TThis thisVtbl, Span<T0> pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, Span<Box> pSrcBox) where T0 : unmanaged where TThis : IComVtbl<ID3D12Resource2>
+    public static int ReadFromSubresource<T0>(this ComPtr<ID3D12Resource2> thisVtbl, Span<T0> pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, Span<Box> pSrcBox) where T0 : unmanaged
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->ReadFromSubresource(ref pDstData.GetPinnableReference(), DstRowPitch, DstDepthPitch, SrcSubresource, ref pSrcBox.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetHeapProperties<TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, Span<HeapFlags> pHeapFlags) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int GetHeapProperties(this ComPtr<ID3D12Resource2> thisVtbl, HeapProperties* pHeapProperties, Span<HeapFlags> pHeapFlags)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetHeapProperties(pHeapProperties, ref pHeapFlags.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetHeapProperties<TThis>(this TThis thisVtbl, Span<HeapProperties> pHeapProperties, HeapFlags* pHeapFlags) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int GetHeapProperties(this ComPtr<ID3D12Resource2> thisVtbl, Span<HeapProperties> pHeapProperties, HeapFlags* pHeapFlags)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetHeapProperties(ref pHeapProperties.GetPinnableReference(), pHeapFlags);
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetHeapProperties<TThis>(this TThis thisVtbl, Span<HeapProperties> pHeapProperties, Span<HeapFlags> pHeapFlags) where TThis : IComVtbl<ID3D12Resource2>
+    public static int GetHeapProperties(this ComPtr<ID3D12Resource2> thisVtbl, Span<HeapProperties> pHeapProperties, Span<HeapFlags> pHeapFlags)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetHeapProperties(ref pHeapProperties.GetPinnableReference(), ref pHeapFlags.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetProtectedResourceSession<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Resource2>
+    public static int GetProtectedResourceSession<TI0>(this ComPtr<ID3D12Resource2> thisVtbl, out ComPtr<TI0> ppProtectedSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppProtectedSession = default;
         return @this->GetProtectedResourceSession(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppProtectedSession.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetProtectedResourceSession<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppProtectedSession) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int GetProtectedResourceSession(this ComPtr<ID3D12Resource2> thisVtbl, Span<Guid> riid, void** ppProtectedSession)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetProtectedResourceSession(ref riid.GetPinnableReference(), ppProtectedSession);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetProtectedResourceSession<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppProtectedSession) where TThis : IComVtbl<ID3D12Resource2>
+    public static unsafe int GetProtectedResourceSession(this ComPtr<ID3D12Resource2> thisVtbl, Span<Guid> riid, ref void* ppProtectedSession)
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetProtectedResourceSession(ref riid.GetPinnableReference(), ref ppProtectedSession);
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Resource2>
+    public static ComPtr<TI0> QueryInterface<TI0>(this ComPtr<ID3D12Resource2> thisVtbl) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> GetDevice<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Resource2>
+    public static ComPtr<TI0> GetDevice<TI0>(this ComPtr<ID3D12Resource2> thisVtbl) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->GetDevice(out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> GetProtectedResourceSession<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Resource2>
+    public static ComPtr<TI0> GetProtectedResourceSession<TI0>(this ComPtr<ID3D12Resource2> thisVtbl) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12Resource2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->GetProtectedResourceSession(out ComPtr<TI0> silkRet));
         return silkRet;

@@ -19,18 +19,18 @@ namespace Silk.NET.DXVA;
 public unsafe static class DirectXVideoDecoderServiceVtblExtensions
 {
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Guid* riid, void** ppvObject) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int QueryInterface(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* riid, void** ppvObject)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Guid* riid, ref void* ppvObject) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int QueryInterface(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* riid, ref void* ppvObject)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppvObjectPtr = &ppvObject)
         {
@@ -40,9 +40,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, ref Guid riid, void** ppvObject) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int QueryInterface(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid riid, void** ppvObject)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -52,9 +52,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, ref Guid riid, ref void* ppvObject) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int QueryInterface(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid riid, ref void* ppvObject)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -67,36 +67,36 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static uint AddRef<TThis>(this TThis thisVtbl) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static uint AddRef(this ComPtr<IDirectXVideoDecoderService> thisVtbl)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, uint>)@this->LpVtbl[1])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static uint Release<TThis>(this TThis thisVtbl) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static uint Release(this ComPtr<IDirectXVideoDecoderService> thisVtbl)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, uint>)@this->LpVtbl[2])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSurface<TThis>(this TThis thisVtbl, uint Width, uint Height, uint BackBuffers, Silk.NET.Direct3D9.Format Format, Silk.NET.Direct3D9.Pool Pool, uint Usage, uint DxvaType, Silk.NET.Direct3D9.IDirect3DSurface9** ppSurface, void** pSharedHandle) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateSurface(this ComPtr<IDirectXVideoDecoderService> thisVtbl, uint Width, uint Height, uint BackBuffers, Silk.NET.Direct3D9.Format Format, Silk.NET.Direct3D9.Pool Pool, uint Usage, uint DxvaType, Silk.NET.Direct3D9.IDirect3DSurface9** ppSurface, void** pSharedHandle)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, uint, uint, uint, Silk.NET.Direct3D9.Format, Silk.NET.Direct3D9.Pool, uint, uint, Silk.NET.Direct3D9.IDirect3DSurface9**, void**, int>)@this->LpVtbl[3])(@this, Width, Height, BackBuffers, Format, Pool, Usage, DxvaType, ppSurface, pSharedHandle);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSurface<TThis>(this TThis thisVtbl, uint Width, uint Height, uint BackBuffers, Silk.NET.Direct3D9.Format Format, Silk.NET.Direct3D9.Pool Pool, uint Usage, uint DxvaType, Silk.NET.Direct3D9.IDirect3DSurface9** ppSurface, ref void* pSharedHandle) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateSurface(this ComPtr<IDirectXVideoDecoderService> thisVtbl, uint Width, uint Height, uint BackBuffers, Silk.NET.Direct3D9.Format Format, Silk.NET.Direct3D9.Pool Pool, uint Usage, uint DxvaType, Silk.NET.Direct3D9.IDirect3DSurface9** ppSurface, ref void* pSharedHandle)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** pSharedHandlePtr = &pSharedHandle)
         {
@@ -106,9 +106,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSurface<TThis>(this TThis thisVtbl, uint Width, uint Height, uint BackBuffers, Silk.NET.Direct3D9.Format Format, Silk.NET.Direct3D9.Pool Pool, uint Usage, uint DxvaType, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppSurface, void** pSharedHandle) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateSurface(this ComPtr<IDirectXVideoDecoderService> thisVtbl, uint Width, uint Height, uint BackBuffers, Silk.NET.Direct3D9.Format Format, Silk.NET.Direct3D9.Pool Pool, uint Usage, uint DxvaType, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppSurface, void** pSharedHandle)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Direct3D9.IDirect3DSurface9** ppSurfacePtr = &ppSurface)
         {
@@ -118,9 +118,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSurface<TThis>(this TThis thisVtbl, uint Width, uint Height, uint BackBuffers, Silk.NET.Direct3D9.Format Format, Silk.NET.Direct3D9.Pool Pool, uint Usage, uint DxvaType, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppSurface, ref void* pSharedHandle) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateSurface(this ComPtr<IDirectXVideoDecoderService> thisVtbl, uint Width, uint Height, uint BackBuffers, Silk.NET.Direct3D9.Format Format, Silk.NET.Direct3D9.Pool Pool, uint Usage, uint DxvaType, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppSurface, ref void* pSharedHandle)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Direct3D9.IDirect3DSurface9** ppSurfacePtr = &ppSurface)
         {
@@ -133,18 +133,18 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderDeviceGuids<TThis>(this TThis thisVtbl, uint* pCount, Guid** pGuids) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderDeviceGuids(this ComPtr<IDirectXVideoDecoderService> thisVtbl, uint* pCount, Guid** pGuids)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, uint*, Guid**, int>)@this->LpVtbl[4])(@this, pCount, pGuids);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderDeviceGuids<TThis>(this TThis thisVtbl, uint* pCount, ref Guid* pGuids) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderDeviceGuids(this ComPtr<IDirectXVideoDecoderService> thisVtbl, uint* pCount, ref Guid* pGuids)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid** pGuidsPtr = &pGuids)
         {
@@ -154,9 +154,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderDeviceGuids<TThis>(this TThis thisVtbl, ref uint pCount, Guid** pGuids) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderDeviceGuids(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref uint pCount, Guid** pGuids)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pCountPtr = &pCount)
         {
@@ -166,9 +166,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderDeviceGuids<TThis>(this TThis thisVtbl, ref uint pCount, ref Guid* pGuids) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderDeviceGuids(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref uint pCount, ref Guid* pGuids)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pCountPtr = &pCount)
         {
@@ -181,18 +181,18 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderRenderTargets<TThis>(this TThis thisVtbl, Guid* Guid, uint* pCount, Silk.NET.Direct3D9.Format** pFormats) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderRenderTargets(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, uint* pCount, Silk.NET.Direct3D9.Format** pFormats)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, uint*, Silk.NET.Direct3D9.Format**, int>)@this->LpVtbl[5])(@this, Guid, pCount, pFormats);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderRenderTargets<TThis>(this TThis thisVtbl, Guid* Guid, uint* pCount, ref Silk.NET.Direct3D9.Format* pFormats) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderRenderTargets(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, uint* pCount, ref Silk.NET.Direct3D9.Format* pFormats)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Direct3D9.Format** pFormatsPtr = &pFormats)
         {
@@ -202,9 +202,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderRenderTargets<TThis>(this TThis thisVtbl, Guid* Guid, ref uint pCount, Silk.NET.Direct3D9.Format** pFormats) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderRenderTargets(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, ref uint pCount, Silk.NET.Direct3D9.Format** pFormats)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pCountPtr = &pCount)
         {
@@ -214,9 +214,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderRenderTargets<TThis>(this TThis thisVtbl, Guid* Guid, ref uint pCount, ref Silk.NET.Direct3D9.Format* pFormats) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderRenderTargets(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, ref uint pCount, ref Silk.NET.Direct3D9.Format* pFormats)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pCountPtr = &pCount)
         {
@@ -229,9 +229,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderRenderTargets<TThis>(this TThis thisVtbl, ref Guid Guid, uint* pCount, Silk.NET.Direct3D9.Format** pFormats) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderRenderTargets(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, uint* pCount, Silk.NET.Direct3D9.Format** pFormats)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* GuidPtr = &Guid)
         {
@@ -241,9 +241,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderRenderTargets<TThis>(this TThis thisVtbl, ref Guid Guid, uint* pCount, ref Silk.NET.Direct3D9.Format* pFormats) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderRenderTargets(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, uint* pCount, ref Silk.NET.Direct3D9.Format* pFormats)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* GuidPtr = &Guid)
         {
@@ -256,9 +256,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderRenderTargets<TThis>(this TThis thisVtbl, ref Guid Guid, ref uint pCount, Silk.NET.Direct3D9.Format** pFormats) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderRenderTargets(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, ref uint pCount, Silk.NET.Direct3D9.Format** pFormats)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* GuidPtr = &Guid)
         {
@@ -271,9 +271,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderRenderTargets<TThis>(this TThis thisVtbl, ref Guid Guid, ref uint pCount, ref Silk.NET.Direct3D9.Format* pFormats) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderRenderTargets(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, ref uint pCount, ref Silk.NET.Direct3D9.Format* pFormats)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* GuidPtr = &Guid)
         {
@@ -289,18 +289,18 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<TThis>(this TThis thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, void* pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, void* pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, Guid, pVideoDesc, pReserved, pCount, ppConfigs);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<TThis>(this TThis thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, void* pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, void* pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (DXVA2ConfigPictureDecode** ppConfigsPtr = &ppConfigs)
         {
@@ -310,9 +310,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<TThis>(this TThis thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, void* pReserved, ref uint pCount, DXVA2ConfigPictureDecode** ppConfigs) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, void* pReserved, ref uint pCount, DXVA2ConfigPictureDecode** ppConfigs)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pCountPtr = &pCount)
         {
@@ -322,9 +322,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<TThis>(this TThis thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, void* pReserved, ref uint pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, void* pReserved, ref uint pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pCountPtr = &pCount)
         {
@@ -337,9 +337,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0, TThis>(this TThis thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, ref T0 pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, ref T0 pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void* pReservedPtr = &pReserved)
         {
@@ -349,9 +349,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0, TThis>(this TThis thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, ref T0 pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, ref T0 pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void* pReservedPtr = &pReserved)
         {
@@ -364,9 +364,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0, TThis>(this TThis thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, ref T0 pReserved, ref uint pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, ref T0 pReserved, ref uint pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void* pReservedPtr = &pReserved)
         {
@@ -379,9 +379,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0, TThis>(this TThis thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, ref T0 pReserved, ref uint pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, ref T0 pReserved, ref uint pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void* pReservedPtr = &pReserved)
         {
@@ -397,9 +397,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<TThis>(this TThis thisVtbl, Guid* Guid, ref DXVA2VideoDesc pVideoDesc, void* pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, ref DXVA2VideoDesc pVideoDesc, void* pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (DXVA2VideoDesc* pVideoDescPtr = &pVideoDesc)
         {
@@ -409,9 +409,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<TThis>(this TThis thisVtbl, Guid* Guid, ref DXVA2VideoDesc pVideoDesc, void* pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, ref DXVA2VideoDesc pVideoDesc, void* pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (DXVA2VideoDesc* pVideoDescPtr = &pVideoDesc)
         {
@@ -424,9 +424,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<TThis>(this TThis thisVtbl, Guid* Guid, ref DXVA2VideoDesc pVideoDesc, void* pReserved, ref uint pCount, DXVA2ConfigPictureDecode** ppConfigs) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, ref DXVA2VideoDesc pVideoDesc, void* pReserved, ref uint pCount, DXVA2ConfigPictureDecode** ppConfigs)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (DXVA2VideoDesc* pVideoDescPtr = &pVideoDesc)
         {
@@ -439,9 +439,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<TThis>(this TThis thisVtbl, Guid* Guid, ref DXVA2VideoDesc pVideoDesc, void* pReserved, ref uint pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, ref DXVA2VideoDesc pVideoDesc, void* pReserved, ref uint pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (DXVA2VideoDesc* pVideoDescPtr = &pVideoDesc)
         {
@@ -457,9 +457,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0, TThis>(this TThis thisVtbl, Guid* Guid, ref DXVA2VideoDesc pVideoDesc, ref T0 pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, ref DXVA2VideoDesc pVideoDesc, ref T0 pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (DXVA2VideoDesc* pVideoDescPtr = &pVideoDesc)
         {
@@ -472,9 +472,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0, TThis>(this TThis thisVtbl, Guid* Guid, ref DXVA2VideoDesc pVideoDesc, ref T0 pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, ref DXVA2VideoDesc pVideoDesc, ref T0 pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (DXVA2VideoDesc* pVideoDescPtr = &pVideoDesc)
         {
@@ -490,9 +490,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0, TThis>(this TThis thisVtbl, Guid* Guid, ref DXVA2VideoDesc pVideoDesc, ref T0 pReserved, ref uint pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, ref DXVA2VideoDesc pVideoDesc, ref T0 pReserved, ref uint pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (DXVA2VideoDesc* pVideoDescPtr = &pVideoDesc)
         {
@@ -508,9 +508,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0, TThis>(this TThis thisVtbl, Guid* Guid, ref DXVA2VideoDesc pVideoDesc, ref T0 pReserved, ref uint pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, ref DXVA2VideoDesc pVideoDesc, ref T0 pReserved, ref uint pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (DXVA2VideoDesc* pVideoDescPtr = &pVideoDesc)
         {
@@ -529,9 +529,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<TThis>(this TThis thisVtbl, ref Guid Guid, DXVA2VideoDesc* pVideoDesc, void* pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, DXVA2VideoDesc* pVideoDesc, void* pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* GuidPtr = &Guid)
         {
@@ -541,9 +541,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<TThis>(this TThis thisVtbl, ref Guid Guid, DXVA2VideoDesc* pVideoDesc, void* pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, DXVA2VideoDesc* pVideoDesc, void* pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* GuidPtr = &Guid)
         {
@@ -556,9 +556,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<TThis>(this TThis thisVtbl, ref Guid Guid, DXVA2VideoDesc* pVideoDesc, void* pReserved, ref uint pCount, DXVA2ConfigPictureDecode** ppConfigs) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, DXVA2VideoDesc* pVideoDesc, void* pReserved, ref uint pCount, DXVA2ConfigPictureDecode** ppConfigs)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* GuidPtr = &Guid)
         {
@@ -571,9 +571,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<TThis>(this TThis thisVtbl, ref Guid Guid, DXVA2VideoDesc* pVideoDesc, void* pReserved, ref uint pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, DXVA2VideoDesc* pVideoDesc, void* pReserved, ref uint pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* GuidPtr = &Guid)
         {
@@ -589,9 +589,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0, TThis>(this TThis thisVtbl, ref Guid Guid, DXVA2VideoDesc* pVideoDesc, ref T0 pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, DXVA2VideoDesc* pVideoDesc, ref T0 pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* GuidPtr = &Guid)
         {
@@ -604,9 +604,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0, TThis>(this TThis thisVtbl, ref Guid Guid, DXVA2VideoDesc* pVideoDesc, ref T0 pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, DXVA2VideoDesc* pVideoDesc, ref T0 pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* GuidPtr = &Guid)
         {
@@ -622,9 +622,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0, TThis>(this TThis thisVtbl, ref Guid Guid, DXVA2VideoDesc* pVideoDesc, ref T0 pReserved, ref uint pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, DXVA2VideoDesc* pVideoDesc, ref T0 pReserved, ref uint pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* GuidPtr = &Guid)
         {
@@ -640,9 +640,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0, TThis>(this TThis thisVtbl, ref Guid Guid, DXVA2VideoDesc* pVideoDesc, ref T0 pReserved, ref uint pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, DXVA2VideoDesc* pVideoDesc, ref T0 pReserved, ref uint pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* GuidPtr = &Guid)
         {
@@ -661,9 +661,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<TThis>(this TThis thisVtbl, ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, void* pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, void* pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* GuidPtr = &Guid)
         {
@@ -676,9 +676,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<TThis>(this TThis thisVtbl, ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, void* pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, void* pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* GuidPtr = &Guid)
         {
@@ -694,9 +694,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<TThis>(this TThis thisVtbl, ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, void* pReserved, ref uint pCount, DXVA2ConfigPictureDecode** ppConfigs) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, void* pReserved, ref uint pCount, DXVA2ConfigPictureDecode** ppConfigs)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* GuidPtr = &Guid)
         {
@@ -712,9 +712,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<TThis>(this TThis thisVtbl, ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, void* pReserved, ref uint pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, void* pReserved, ref uint pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* GuidPtr = &Guid)
         {
@@ -733,9 +733,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0, TThis>(this TThis thisVtbl, ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, ref T0 pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, ref T0 pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* GuidPtr = &Guid)
         {
@@ -751,9 +751,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0, TThis>(this TThis thisVtbl, ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, ref T0 pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, ref T0 pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* GuidPtr = &Guid)
         {
@@ -772,9 +772,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0, TThis>(this TThis thisVtbl, ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, ref T0 pReserved, ref uint pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, ref T0 pReserved, ref uint pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* GuidPtr = &Guid)
         {
@@ -793,9 +793,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0, TThis>(this TThis thisVtbl, ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, ref T0 pReserved, ref uint pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, ref T0 pReserved, ref uint pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* GuidPtr = &Guid)
         {
@@ -817,18 +817,18 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)@this->LpVtbl[7])(@this, Guid, pVideoDesc, pConfig, ppDecoderRenderTargets, NumRenderTargets, ppDecode);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDirectXVideoDecoder** ppDecodePtr = &ppDecode)
         {
@@ -838,9 +838,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargetsPtr = &ppDecoderRenderTargets)
         {
@@ -850,9 +850,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargetsPtr = &ppDecoderRenderTargets)
         {
@@ -865,9 +865,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (DXVA2ConfigPictureDecode* pConfigPtr = &pConfig)
         {
@@ -877,9 +877,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (DXVA2ConfigPictureDecode* pConfigPtr = &pConfig)
         {
@@ -892,9 +892,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (DXVA2ConfigPictureDecode* pConfigPtr = &pConfig)
         {
@@ -907,9 +907,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (DXVA2ConfigPictureDecode* pConfigPtr = &pConfig)
         {
@@ -925,9 +925,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Guid* Guid, ref DXVA2VideoDesc pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, ref DXVA2VideoDesc pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (DXVA2VideoDesc* pVideoDescPtr = &pVideoDesc)
         {
@@ -937,9 +937,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Guid* Guid, ref DXVA2VideoDesc pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, ref DXVA2VideoDesc pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (DXVA2VideoDesc* pVideoDescPtr = &pVideoDesc)
         {
@@ -952,9 +952,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Guid* Guid, ref DXVA2VideoDesc pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, ref DXVA2VideoDesc pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (DXVA2VideoDesc* pVideoDescPtr = &pVideoDesc)
         {
@@ -967,9 +967,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Guid* Guid, ref DXVA2VideoDesc pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, ref DXVA2VideoDesc pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (DXVA2VideoDesc* pVideoDescPtr = &pVideoDesc)
         {
@@ -985,9 +985,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Guid* Guid, ref DXVA2VideoDesc pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, ref DXVA2VideoDesc pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (DXVA2VideoDesc* pVideoDescPtr = &pVideoDesc)
         {
@@ -1000,9 +1000,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Guid* Guid, ref DXVA2VideoDesc pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, ref DXVA2VideoDesc pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (DXVA2VideoDesc* pVideoDescPtr = &pVideoDesc)
         {
@@ -1018,9 +1018,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Guid* Guid, ref DXVA2VideoDesc pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, ref DXVA2VideoDesc pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (DXVA2VideoDesc* pVideoDescPtr = &pVideoDesc)
         {
@@ -1036,9 +1036,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Guid* Guid, ref DXVA2VideoDesc pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, ref DXVA2VideoDesc pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (DXVA2VideoDesc* pVideoDescPtr = &pVideoDesc)
         {
@@ -1057,9 +1057,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, ref Guid Guid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* GuidPtr = &Guid)
         {
@@ -1069,9 +1069,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, ref Guid Guid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* GuidPtr = &Guid)
         {
@@ -1084,9 +1084,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, ref Guid Guid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* GuidPtr = &Guid)
         {
@@ -1099,9 +1099,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, ref Guid Guid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* GuidPtr = &Guid)
         {
@@ -1117,9 +1117,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, ref Guid Guid, DXVA2VideoDesc* pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, DXVA2VideoDesc* pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* GuidPtr = &Guid)
         {
@@ -1132,9 +1132,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, ref Guid Guid, DXVA2VideoDesc* pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, DXVA2VideoDesc* pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* GuidPtr = &Guid)
         {
@@ -1150,9 +1150,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, ref Guid Guid, DXVA2VideoDesc* pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, DXVA2VideoDesc* pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* GuidPtr = &Guid)
         {
@@ -1168,9 +1168,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, ref Guid Guid, DXVA2VideoDesc* pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, DXVA2VideoDesc* pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* GuidPtr = &Guid)
         {
@@ -1189,9 +1189,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* GuidPtr = &Guid)
         {
@@ -1204,9 +1204,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* GuidPtr = &Guid)
         {
@@ -1222,9 +1222,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* GuidPtr = &Guid)
         {
@@ -1240,9 +1240,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* GuidPtr = &Guid)
         {
@@ -1261,9 +1261,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* GuidPtr = &Guid)
         {
@@ -1279,9 +1279,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* GuidPtr = &Guid)
         {
@@ -1300,9 +1300,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* GuidPtr = &Guid)
         {
@@ -1321,9 +1321,9 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* GuidPtr = &Guid)
         {
@@ -1345,690 +1345,690 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static int QueryInterface<TI0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppvObject = default;
         return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int QueryInterface(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> riid, void** ppvObject)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int QueryInterface(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> riid, ref void* ppvObject)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderDeviceGuids<TThis>(this TThis thisVtbl, Span<uint> pCount, Guid** pGuids) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderDeviceGuids(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<uint> pCount, Guid** pGuids)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDecoderDeviceGuids(ref pCount.GetPinnableReference(), pGuids);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderDeviceGuids<TThis>(this TThis thisVtbl, Span<uint> pCount, ref Guid* pGuids) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderDeviceGuids(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<uint> pCount, ref Guid* pGuids)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDecoderDeviceGuids(ref pCount.GetPinnableReference(), ref pGuids);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderRenderTargets<TThis>(this TThis thisVtbl, Guid* Guid, Span<uint> pCount, Silk.NET.Direct3D9.Format** pFormats) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderRenderTargets(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, Span<uint> pCount, Silk.NET.Direct3D9.Format** pFormats)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDecoderRenderTargets(Guid, ref pCount.GetPinnableReference(), pFormats);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderRenderTargets<TThis>(this TThis thisVtbl, Guid* Guid, Span<uint> pCount, ref Silk.NET.Direct3D9.Format* pFormats) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderRenderTargets(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, Span<uint> pCount, ref Silk.NET.Direct3D9.Format* pFormats)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDecoderRenderTargets(Guid, ref pCount.GetPinnableReference(), ref pFormats);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderRenderTargets<TThis>(this TThis thisVtbl, Span<Guid> Guid, uint* pCount, Silk.NET.Direct3D9.Format** pFormats) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderRenderTargets(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, uint* pCount, Silk.NET.Direct3D9.Format** pFormats)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDecoderRenderTargets(ref Guid.GetPinnableReference(), pCount, pFormats);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderRenderTargets<TThis>(this TThis thisVtbl, Span<Guid> Guid, uint* pCount, ref Silk.NET.Direct3D9.Format* pFormats) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderRenderTargets(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, uint* pCount, ref Silk.NET.Direct3D9.Format* pFormats)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDecoderRenderTargets(ref Guid.GetPinnableReference(), pCount, ref pFormats);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderRenderTargets<TThis>(this TThis thisVtbl, Span<Guid> Guid, Span<uint> pCount, Silk.NET.Direct3D9.Format** pFormats) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderRenderTargets(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, Span<uint> pCount, Silk.NET.Direct3D9.Format** pFormats)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDecoderRenderTargets(ref Guid.GetPinnableReference(), ref pCount.GetPinnableReference(), pFormats);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderRenderTargets<TThis>(this TThis thisVtbl, Span<Guid> Guid, Span<uint> pCount, ref Silk.NET.Direct3D9.Format* pFormats) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderRenderTargets(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, Span<uint> pCount, ref Silk.NET.Direct3D9.Format* pFormats)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDecoderRenderTargets(ref Guid.GetPinnableReference(), ref pCount.GetPinnableReference(), ref pFormats);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<TThis>(this TThis thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, void* pReserved, Span<uint> pCount, DXVA2ConfigPictureDecode** ppConfigs) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, void* pReserved, Span<uint> pCount, DXVA2ConfigPictureDecode** ppConfigs)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDecoderConfigurations(Guid, pVideoDesc, pReserved, ref pCount.GetPinnableReference(), ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<TThis>(this TThis thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, void* pReserved, Span<uint> pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, void* pReserved, Span<uint> pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDecoderConfigurations(Guid, pVideoDesc, pReserved, ref pCount.GetPinnableReference(), ref ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0, TThis>(this TThis thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, Span<T0> pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, Span<T0> pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDecoderConfigurations(Guid, pVideoDesc, ref pReserved.GetPinnableReference(), pCount, ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0, TThis>(this TThis thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, Span<T0> pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, Span<T0> pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDecoderConfigurations(Guid, pVideoDesc, ref pReserved.GetPinnableReference(), pCount, ref ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0, TThis>(this TThis thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, Span<T0> pReserved, Span<uint> pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, Span<T0> pReserved, Span<uint> pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDecoderConfigurations(Guid, pVideoDesc, ref pReserved.GetPinnableReference(), ref pCount.GetPinnableReference(), ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0, TThis>(this TThis thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, Span<T0> pReserved, Span<uint> pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, Span<T0> pReserved, Span<uint> pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDecoderConfigurations(Guid, pVideoDesc, ref pReserved.GetPinnableReference(), ref pCount.GetPinnableReference(), ref ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<TThis>(this TThis thisVtbl, Guid* Guid, Span<DXVA2VideoDesc> pVideoDesc, void* pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, Span<DXVA2VideoDesc> pVideoDesc, void* pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDecoderConfigurations(Guid, ref pVideoDesc.GetPinnableReference(), pReserved, pCount, ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<TThis>(this TThis thisVtbl, Guid* Guid, Span<DXVA2VideoDesc> pVideoDesc, void* pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, Span<DXVA2VideoDesc> pVideoDesc, void* pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDecoderConfigurations(Guid, ref pVideoDesc.GetPinnableReference(), pReserved, pCount, ref ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<TThis>(this TThis thisVtbl, Guid* Guid, Span<DXVA2VideoDesc> pVideoDesc, void* pReserved, Span<uint> pCount, DXVA2ConfigPictureDecode** ppConfigs) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, Span<DXVA2VideoDesc> pVideoDesc, void* pReserved, Span<uint> pCount, DXVA2ConfigPictureDecode** ppConfigs)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDecoderConfigurations(Guid, ref pVideoDesc.GetPinnableReference(), pReserved, ref pCount.GetPinnableReference(), ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<TThis>(this TThis thisVtbl, Guid* Guid, Span<DXVA2VideoDesc> pVideoDesc, void* pReserved, Span<uint> pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, Span<DXVA2VideoDesc> pVideoDesc, void* pReserved, Span<uint> pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDecoderConfigurations(Guid, ref pVideoDesc.GetPinnableReference(), pReserved, ref pCount.GetPinnableReference(), ref ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0, TThis>(this TThis thisVtbl, Guid* Guid, Span<DXVA2VideoDesc> pVideoDesc, Span<T0> pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, Span<DXVA2VideoDesc> pVideoDesc, Span<T0> pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDecoderConfigurations(Guid, ref pVideoDesc.GetPinnableReference(), ref pReserved.GetPinnableReference(), pCount, ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0, TThis>(this TThis thisVtbl, Guid* Guid, Span<DXVA2VideoDesc> pVideoDesc, Span<T0> pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, Span<DXVA2VideoDesc> pVideoDesc, Span<T0> pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDecoderConfigurations(Guid, ref pVideoDesc.GetPinnableReference(), ref pReserved.GetPinnableReference(), pCount, ref ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0, TThis>(this TThis thisVtbl, Guid* Guid, Span<DXVA2VideoDesc> pVideoDesc, Span<T0> pReserved, Span<uint> pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, Span<DXVA2VideoDesc> pVideoDesc, Span<T0> pReserved, Span<uint> pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDecoderConfigurations(Guid, ref pVideoDesc.GetPinnableReference(), ref pReserved.GetPinnableReference(), ref pCount.GetPinnableReference(), ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0, TThis>(this TThis thisVtbl, Guid* Guid, Span<DXVA2VideoDesc> pVideoDesc, Span<T0> pReserved, Span<uint> pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, Span<DXVA2VideoDesc> pVideoDesc, Span<T0> pReserved, Span<uint> pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDecoderConfigurations(Guid, ref pVideoDesc.GetPinnableReference(), ref pReserved.GetPinnableReference(), ref pCount.GetPinnableReference(), ref ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<TThis>(this TThis thisVtbl, Span<Guid> Guid, DXVA2VideoDesc* pVideoDesc, void* pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, DXVA2VideoDesc* pVideoDesc, void* pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), pVideoDesc, pReserved, pCount, ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<TThis>(this TThis thisVtbl, Span<Guid> Guid, DXVA2VideoDesc* pVideoDesc, void* pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, DXVA2VideoDesc* pVideoDesc, void* pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), pVideoDesc, pReserved, pCount, ref ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<TThis>(this TThis thisVtbl, Span<Guid> Guid, DXVA2VideoDesc* pVideoDesc, void* pReserved, Span<uint> pCount, DXVA2ConfigPictureDecode** ppConfigs) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, DXVA2VideoDesc* pVideoDesc, void* pReserved, Span<uint> pCount, DXVA2ConfigPictureDecode** ppConfigs)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), pVideoDesc, pReserved, ref pCount.GetPinnableReference(), ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<TThis>(this TThis thisVtbl, Span<Guid> Guid, DXVA2VideoDesc* pVideoDesc, void* pReserved, Span<uint> pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, DXVA2VideoDesc* pVideoDesc, void* pReserved, Span<uint> pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), pVideoDesc, pReserved, ref pCount.GetPinnableReference(), ref ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0, TThis>(this TThis thisVtbl, Span<Guid> Guid, DXVA2VideoDesc* pVideoDesc, Span<T0> pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, DXVA2VideoDesc* pVideoDesc, Span<T0> pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), pVideoDesc, ref pReserved.GetPinnableReference(), pCount, ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0, TThis>(this TThis thisVtbl, Span<Guid> Guid, DXVA2VideoDesc* pVideoDesc, Span<T0> pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, DXVA2VideoDesc* pVideoDesc, Span<T0> pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), pVideoDesc, ref pReserved.GetPinnableReference(), pCount, ref ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0, TThis>(this TThis thisVtbl, Span<Guid> Guid, DXVA2VideoDesc* pVideoDesc, Span<T0> pReserved, Span<uint> pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, DXVA2VideoDesc* pVideoDesc, Span<T0> pReserved, Span<uint> pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), pVideoDesc, ref pReserved.GetPinnableReference(), ref pCount.GetPinnableReference(), ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0, TThis>(this TThis thisVtbl, Span<Guid> Guid, DXVA2VideoDesc* pVideoDesc, Span<T0> pReserved, Span<uint> pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, DXVA2VideoDesc* pVideoDesc, Span<T0> pReserved, Span<uint> pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), pVideoDesc, ref pReserved.GetPinnableReference(), ref pCount.GetPinnableReference(), ref ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<TThis>(this TThis thisVtbl, Span<Guid> Guid, Span<DXVA2VideoDesc> pVideoDesc, void* pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, Span<DXVA2VideoDesc> pVideoDesc, void* pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), ref pVideoDesc.GetPinnableReference(), pReserved, pCount, ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<TThis>(this TThis thisVtbl, Span<Guid> Guid, Span<DXVA2VideoDesc> pVideoDesc, void* pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, Span<DXVA2VideoDesc> pVideoDesc, void* pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), ref pVideoDesc.GetPinnableReference(), pReserved, pCount, ref ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<TThis>(this TThis thisVtbl, Span<Guid> Guid, Span<DXVA2VideoDesc> pVideoDesc, void* pReserved, Span<uint> pCount, DXVA2ConfigPictureDecode** ppConfigs) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, Span<DXVA2VideoDesc> pVideoDesc, void* pReserved, Span<uint> pCount, DXVA2ConfigPictureDecode** ppConfigs)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), ref pVideoDesc.GetPinnableReference(), pReserved, ref pCount.GetPinnableReference(), ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<TThis>(this TThis thisVtbl, Span<Guid> Guid, Span<DXVA2VideoDesc> pVideoDesc, void* pReserved, Span<uint> pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, Span<DXVA2VideoDesc> pVideoDesc, void* pReserved, Span<uint> pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), ref pVideoDesc.GetPinnableReference(), pReserved, ref pCount.GetPinnableReference(), ref ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0, TThis>(this TThis thisVtbl, Span<Guid> Guid, Span<DXVA2VideoDesc> pVideoDesc, Span<T0> pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, Span<DXVA2VideoDesc> pVideoDesc, Span<T0> pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), ref pVideoDesc.GetPinnableReference(), ref pReserved.GetPinnableReference(), pCount, ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0, TThis>(this TThis thisVtbl, Span<Guid> Guid, Span<DXVA2VideoDesc> pVideoDesc, Span<T0> pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, Span<DXVA2VideoDesc> pVideoDesc, Span<T0> pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), ref pVideoDesc.GetPinnableReference(), ref pReserved.GetPinnableReference(), pCount, ref ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0, TThis>(this TThis thisVtbl, Span<Guid> Guid, Span<DXVA2VideoDesc> pVideoDesc, Span<T0> pReserved, Span<uint> pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, Span<DXVA2VideoDesc> pVideoDesc, Span<T0> pReserved, Span<uint> pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), ref pVideoDesc.GetPinnableReference(), ref pReserved.GetPinnableReference(), ref pCount.GetPinnableReference(), ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0, TThis>(this TThis thisVtbl, Span<Guid> Guid, Span<DXVA2VideoDesc> pVideoDesc, Span<T0> pReserved, Span<uint> pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, Span<DXVA2VideoDesc> pVideoDesc, Span<T0> pReserved, Span<uint> pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), ref pVideoDesc.GetPinnableReference(), ref pReserved.GetPinnableReference(), ref pCount.GetPinnableReference(), ref ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TI0, TThis>(this TThis thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0> where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder<TI0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->CreateVideoDecoder(Guid, pVideoDesc, pConfig, ppDecoderRenderTargets, NumRenderTargets, (IDirectXVideoDecoder**) ppDecode.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TI0, TThis>(this TThis thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0> where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder<TI0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->CreateVideoDecoder(Guid, pVideoDesc, pConfig, ref ppDecoderRenderTargets, NumRenderTargets, (IDirectXVideoDecoder**) ppDecode.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder(Guid, pVideoDesc, ref pConfig.GetPinnableReference(), ppDecoderRenderTargets, NumRenderTargets, ppDecode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TI0, TThis>(this TThis thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0> where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder<TI0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->CreateVideoDecoder(Guid, pVideoDesc, ref pConfig, ppDecoderRenderTargets, NumRenderTargets, (IDirectXVideoDecoder**) ppDecode.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder(Guid, pVideoDesc, ref pConfig.GetPinnableReference(), ppDecoderRenderTargets, NumRenderTargets, ref ppDecode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder(Guid, pVideoDesc, ref pConfig.GetPinnableReference(), ref ppDecoderRenderTargets, NumRenderTargets, ppDecode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TI0, TThis>(this TThis thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0> where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder<TI0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->CreateVideoDecoder(Guid, pVideoDesc, ref pConfig, ref ppDecoderRenderTargets, NumRenderTargets, (IDirectXVideoDecoder**) ppDecode.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, DXVA2VideoDesc* pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder(Guid, pVideoDesc, ref pConfig.GetPinnableReference(), ref ppDecoderRenderTargets, NumRenderTargets, ref ppDecode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Guid* Guid, Span<DXVA2VideoDesc> pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, Span<DXVA2VideoDesc> pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder(Guid, ref pVideoDesc.GetPinnableReference(), pConfig, ppDecoderRenderTargets, NumRenderTargets, ppDecode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TI0, TThis>(this TThis thisVtbl, Guid* Guid, ref DXVA2VideoDesc pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0> where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder<TI0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, ref DXVA2VideoDesc pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->CreateVideoDecoder(Guid, ref pVideoDesc, pConfig, ppDecoderRenderTargets, NumRenderTargets, (IDirectXVideoDecoder**) ppDecode.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Guid* Guid, Span<DXVA2VideoDesc> pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, Span<DXVA2VideoDesc> pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder(Guid, ref pVideoDesc.GetPinnableReference(), pConfig, ppDecoderRenderTargets, NumRenderTargets, ref ppDecode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Guid* Guid, Span<DXVA2VideoDesc> pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, Span<DXVA2VideoDesc> pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder(Guid, ref pVideoDesc.GetPinnableReference(), pConfig, ref ppDecoderRenderTargets, NumRenderTargets, ppDecode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TI0, TThis>(this TThis thisVtbl, Guid* Guid, ref DXVA2VideoDesc pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0> where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder<TI0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, ref DXVA2VideoDesc pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->CreateVideoDecoder(Guid, ref pVideoDesc, pConfig, ref ppDecoderRenderTargets, NumRenderTargets, (IDirectXVideoDecoder**) ppDecode.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Guid* Guid, Span<DXVA2VideoDesc> pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, Span<DXVA2VideoDesc> pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder(Guid, ref pVideoDesc.GetPinnableReference(), pConfig, ref ppDecoderRenderTargets, NumRenderTargets, ref ppDecode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Guid* Guid, Span<DXVA2VideoDesc> pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, Span<DXVA2VideoDesc> pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder(Guid, ref pVideoDesc.GetPinnableReference(), ref pConfig.GetPinnableReference(), ppDecoderRenderTargets, NumRenderTargets, ppDecode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TI0, TThis>(this TThis thisVtbl, Guid* Guid, ref DXVA2VideoDesc pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0> where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder<TI0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, ref DXVA2VideoDesc pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->CreateVideoDecoder(Guid, ref pVideoDesc, ref pConfig, ppDecoderRenderTargets, NumRenderTargets, (IDirectXVideoDecoder**) ppDecode.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Guid* Guid, Span<DXVA2VideoDesc> pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, Span<DXVA2VideoDesc> pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder(Guid, ref pVideoDesc.GetPinnableReference(), ref pConfig.GetPinnableReference(), ppDecoderRenderTargets, NumRenderTargets, ref ppDecode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Guid* Guid, Span<DXVA2VideoDesc> pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, Span<DXVA2VideoDesc> pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder(Guid, ref pVideoDesc.GetPinnableReference(), ref pConfig.GetPinnableReference(), ref ppDecoderRenderTargets, NumRenderTargets, ppDecode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TI0, TThis>(this TThis thisVtbl, Guid* Guid, ref DXVA2VideoDesc pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0> where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder<TI0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, ref DXVA2VideoDesc pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->CreateVideoDecoder(Guid, ref pVideoDesc, ref pConfig, ref ppDecoderRenderTargets, NumRenderTargets, (IDirectXVideoDecoder**) ppDecode.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Guid* Guid, Span<DXVA2VideoDesc> pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, Span<DXVA2VideoDesc> pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder(Guid, ref pVideoDesc.GetPinnableReference(), ref pConfig.GetPinnableReference(), ref ppDecoderRenderTargets, NumRenderTargets, ref ppDecode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Span<Guid> Guid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder(ref Guid.GetPinnableReference(), pVideoDesc, pConfig, ppDecoderRenderTargets, NumRenderTargets, ppDecode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TI0, TThis>(this TThis thisVtbl, ref Guid Guid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0> where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder<TI0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->CreateVideoDecoder(ref Guid, pVideoDesc, pConfig, ppDecoderRenderTargets, NumRenderTargets, (IDirectXVideoDecoder**) ppDecode.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Span<Guid> Guid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder(ref Guid.GetPinnableReference(), pVideoDesc, pConfig, ppDecoderRenderTargets, NumRenderTargets, ref ppDecode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Span<Guid> Guid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder(ref Guid.GetPinnableReference(), pVideoDesc, pConfig, ref ppDecoderRenderTargets, NumRenderTargets, ppDecode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TI0, TThis>(this TThis thisVtbl, ref Guid Guid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0> where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder<TI0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->CreateVideoDecoder(ref Guid, pVideoDesc, pConfig, ref ppDecoderRenderTargets, NumRenderTargets, (IDirectXVideoDecoder**) ppDecode.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Span<Guid> Guid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder(ref Guid.GetPinnableReference(), pVideoDesc, pConfig, ref ppDecoderRenderTargets, NumRenderTargets, ref ppDecode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Span<Guid> Guid, DXVA2VideoDesc* pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, DXVA2VideoDesc* pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder(ref Guid.GetPinnableReference(), pVideoDesc, ref pConfig.GetPinnableReference(), ppDecoderRenderTargets, NumRenderTargets, ppDecode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TI0, TThis>(this TThis thisVtbl, ref Guid Guid, DXVA2VideoDesc* pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0> where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder<TI0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, DXVA2VideoDesc* pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->CreateVideoDecoder(ref Guid, pVideoDesc, ref pConfig, ppDecoderRenderTargets, NumRenderTargets, (IDirectXVideoDecoder**) ppDecode.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Span<Guid> Guid, DXVA2VideoDesc* pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, DXVA2VideoDesc* pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder(ref Guid.GetPinnableReference(), pVideoDesc, ref pConfig.GetPinnableReference(), ppDecoderRenderTargets, NumRenderTargets, ref ppDecode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Span<Guid> Guid, DXVA2VideoDesc* pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, DXVA2VideoDesc* pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder(ref Guid.GetPinnableReference(), pVideoDesc, ref pConfig.GetPinnableReference(), ref ppDecoderRenderTargets, NumRenderTargets, ppDecode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TI0, TThis>(this TThis thisVtbl, ref Guid Guid, DXVA2VideoDesc* pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0> where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder<TI0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, DXVA2VideoDesc* pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->CreateVideoDecoder(ref Guid, pVideoDesc, ref pConfig, ref ppDecoderRenderTargets, NumRenderTargets, (IDirectXVideoDecoder**) ppDecode.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Span<Guid> Guid, DXVA2VideoDesc* pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, DXVA2VideoDesc* pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder(ref Guid.GetPinnableReference(), pVideoDesc, ref pConfig.GetPinnableReference(), ref ppDecoderRenderTargets, NumRenderTargets, ref ppDecode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Span<Guid> Guid, Span<DXVA2VideoDesc> pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, Span<DXVA2VideoDesc> pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder(ref Guid.GetPinnableReference(), ref pVideoDesc.GetPinnableReference(), pConfig, ppDecoderRenderTargets, NumRenderTargets, ppDecode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TI0, TThis>(this TThis thisVtbl, ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0> where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder<TI0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->CreateVideoDecoder(ref Guid, ref pVideoDesc, pConfig, ppDecoderRenderTargets, NumRenderTargets, (IDirectXVideoDecoder**) ppDecode.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Span<Guid> Guid, Span<DXVA2VideoDesc> pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, Span<DXVA2VideoDesc> pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder(ref Guid.GetPinnableReference(), ref pVideoDesc.GetPinnableReference(), pConfig, ppDecoderRenderTargets, NumRenderTargets, ref ppDecode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Span<Guid> Guid, Span<DXVA2VideoDesc> pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, Span<DXVA2VideoDesc> pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder(ref Guid.GetPinnableReference(), ref pVideoDesc.GetPinnableReference(), pConfig, ref ppDecoderRenderTargets, NumRenderTargets, ppDecode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TI0, TThis>(this TThis thisVtbl, ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0> where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder<TI0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->CreateVideoDecoder(ref Guid, ref pVideoDesc, pConfig, ref ppDecoderRenderTargets, NumRenderTargets, (IDirectXVideoDecoder**) ppDecode.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Span<Guid> Guid, Span<DXVA2VideoDesc> pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, Span<DXVA2VideoDesc> pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder(ref Guid.GetPinnableReference(), ref pVideoDesc.GetPinnableReference(), pConfig, ref ppDecoderRenderTargets, NumRenderTargets, ref ppDecode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Span<Guid> Guid, Span<DXVA2VideoDesc> pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, Span<DXVA2VideoDesc> pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder(ref Guid.GetPinnableReference(), ref pVideoDesc.GetPinnableReference(), ref pConfig.GetPinnableReference(), ppDecoderRenderTargets, NumRenderTargets, ppDecode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TI0, TThis>(this TThis thisVtbl, ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0> where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder<TI0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->CreateVideoDecoder(ref Guid, ref pVideoDesc, ref pConfig, ppDecoderRenderTargets, NumRenderTargets, (IDirectXVideoDecoder**) ppDecode.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Span<Guid> Guid, Span<DXVA2VideoDesc> pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, Span<DXVA2VideoDesc> pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder(ref Guid.GetPinnableReference(), ref pVideoDesc.GetPinnableReference(), ref pConfig.GetPinnableReference(), ppDecoderRenderTargets, NumRenderTargets, ref ppDecode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Span<Guid> Guid, Span<DXVA2VideoDesc> pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, Span<DXVA2VideoDesc> pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder(ref Guid.GetPinnableReference(), ref pVideoDesc.GetPinnableReference(), ref pConfig.GetPinnableReference(), ref ppDecoderRenderTargets, NumRenderTargets, ppDecode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TI0, TThis>(this TThis thisVtbl, ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0> where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder<TI0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->CreateVideoDecoder(ref Guid, ref pVideoDesc, ref pConfig, ref ppDecoderRenderTargets, NumRenderTargets, (IDirectXVideoDecoder**) ppDecode.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Span<Guid> Guid, Span<DXVA2VideoDesc> pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode) where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static unsafe int CreateVideoDecoder(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, Span<DXVA2VideoDesc> pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder(ref Guid.GetPinnableReference(), ref pVideoDesc.GetPinnableReference(), ref pConfig.GetPinnableReference(), ref ppDecoderRenderTargets, NumRenderTargets, ref ppDecode);
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDirectXVideoDecoderService>
+    public static ComPtr<TI0> QueryInterface<TI0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
         return silkRet;

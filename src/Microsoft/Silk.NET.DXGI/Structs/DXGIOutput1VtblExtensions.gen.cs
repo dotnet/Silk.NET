@@ -19,18 +19,18 @@ namespace Silk.NET.DXGI;
 public unsafe static class DXGIOutput1VtblExtensions
 {
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Guid* riid, void** ppvObject) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int QueryInterface(this ComPtr<IDXGIOutput1> thisVtbl, Guid* riid, void** ppvObject)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput1*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Guid* riid, ref void* ppvObject) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int QueryInterface(this ComPtr<IDXGIOutput1> thisVtbl, Guid* riid, ref void* ppvObject)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppvObjectPtr = &ppvObject)
         {
@@ -40,9 +40,9 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, ref Guid riid, void** ppvObject) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int QueryInterface(this ComPtr<IDXGIOutput1> thisVtbl, ref Guid riid, void** ppvObject)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -52,9 +52,9 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, ref Guid riid, ref void* ppvObject) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int QueryInterface(this ComPtr<IDXGIOutput1> thisVtbl, ref Guid riid, ref void* ppvObject)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -67,36 +67,36 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static uint AddRef<TThis>(this TThis thisVtbl) where TThis : IComVtbl<IDXGIOutput1>
+    public static uint AddRef(this ComPtr<IDXGIOutput1> thisVtbl)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput1*, uint>)@this->LpVtbl[1])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static uint Release<TThis>(this TThis thisVtbl) where TThis : IComVtbl<IDXGIOutput1>
+    public static uint Release(this ComPtr<IDXGIOutput1> thisVtbl)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput1*, uint>)@this->LpVtbl[2])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<TThis>(this TThis thisVtbl, Guid* Name, uint DataSize, void* pData) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int SetPrivateData(this ComPtr<IDXGIOutput1> thisVtbl, Guid* Name, uint DataSize, void* pData)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput1*, Guid*, uint, void*, int>)@this->LpVtbl[3])(@this, Name, DataSize, pData);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* Name, uint DataSize, ref T0 pData) where T0 : unmanaged where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int SetPrivateData<T0>(this ComPtr<IDXGIOutput1> thisVtbl, Guid* Name, uint DataSize, ref T0 pData) where T0 : unmanaged
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void* pDataPtr = &pData)
         {
@@ -106,9 +106,9 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<TThis>(this TThis thisVtbl, ref Guid Name, uint DataSize, void* pData) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int SetPrivateData(this ComPtr<IDXGIOutput1> thisVtbl, ref Guid Name, uint DataSize, void* pData)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* NamePtr = &Name)
         {
@@ -118,9 +118,9 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0, TThis>(this TThis thisVtbl, ref Guid Name, uint DataSize, ref T0 pData) where T0 : unmanaged where TThis : IComVtbl<IDXGIOutput1>
+    public static int SetPrivateData<T0>(this ComPtr<IDXGIOutput1> thisVtbl, ref Guid Name, uint DataSize, ref T0 pData) where T0 : unmanaged
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* NamePtr = &Name)
         {
@@ -133,18 +133,18 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Guid* Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int SetPrivateDataInterface(this ComPtr<IDXGIOutput1> thisVtbl, Guid* Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[4])(@this, Name, pUnknown);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Guid* Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pUnknown) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int SetPrivateDataInterface(this ComPtr<IDXGIOutput1> thisVtbl, Guid* Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pUnknown)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Core.Native.IUnknown* pUnknownPtr = &pUnknown)
         {
@@ -154,9 +154,9 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface<TThis>(this TThis thisVtbl, ref Guid Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int SetPrivateDataInterface(this ComPtr<IDXGIOutput1> thisVtbl, ref Guid Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* NamePtr = &Name)
         {
@@ -166,9 +166,9 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateDataInterface<TThis>(this TThis thisVtbl, ref Guid Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pUnknown) where TThis : IComVtbl<IDXGIOutput1>
+    public static int SetPrivateDataInterface(this ComPtr<IDXGIOutput1> thisVtbl, ref Guid Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pUnknown)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* NamePtr = &Name)
         {
@@ -181,18 +181,18 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Guid* Name, uint* pDataSize, void* pData) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int GetPrivateData(this ComPtr<IDXGIOutput1> thisVtbl, Guid* Name, uint* pDataSize, void* pData)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput1*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, Name, pDataSize, pData);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* Name, uint* pDataSize, ref T0 pData) where T0 : unmanaged where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<IDXGIOutput1> thisVtbl, Guid* Name, uint* pDataSize, ref T0 pData) where T0 : unmanaged
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void* pDataPtr = &pData)
         {
@@ -202,9 +202,9 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Guid* Name, ref uint pDataSize, void* pData) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int GetPrivateData(this ComPtr<IDXGIOutput1> thisVtbl, Guid* Name, ref uint pDataSize, void* pData)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pDataSizePtr = &pDataSize)
         {
@@ -214,9 +214,9 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* Name, ref uint pDataSize, ref T0 pData) where T0 : unmanaged where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<IDXGIOutput1> thisVtbl, Guid* Name, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pDataSizePtr = &pDataSize)
         {
@@ -229,9 +229,9 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, ref Guid Name, uint* pDataSize, void* pData) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int GetPrivateData(this ComPtr<IDXGIOutput1> thisVtbl, ref Guid Name, uint* pDataSize, void* pData)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* NamePtr = &Name)
         {
@@ -241,9 +241,9 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, ref Guid Name, uint* pDataSize, ref T0 pData) where T0 : unmanaged where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<IDXGIOutput1> thisVtbl, ref Guid Name, uint* pDataSize, ref T0 pData) where T0 : unmanaged
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* NamePtr = &Name)
         {
@@ -256,9 +256,9 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, ref Guid Name, ref uint pDataSize, void* pData) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int GetPrivateData(this ComPtr<IDXGIOutput1> thisVtbl, ref Guid Name, ref uint pDataSize, void* pData)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* NamePtr = &Name)
         {
@@ -271,9 +271,9 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetPrivateData<T0, TThis>(this TThis thisVtbl, ref Guid Name, ref uint pDataSize, ref T0 pData) where T0 : unmanaged where TThis : IComVtbl<IDXGIOutput1>
+    public static int GetPrivateData<T0>(this ComPtr<IDXGIOutput1> thisVtbl, ref Guid Name, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* NamePtr = &Name)
         {
@@ -289,18 +289,18 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetParent<TThis>(this TThis thisVtbl, Guid* riid, void** ppParent) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int GetParent(this ComPtr<IDXGIOutput1> thisVtbl, Guid* riid, void** ppParent)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput1*, Guid*, void**, int>)@this->LpVtbl[6])(@this, riid, ppParent);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetParent<TThis>(this TThis thisVtbl, Guid* riid, ref void* ppParent) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int GetParent(this ComPtr<IDXGIOutput1> thisVtbl, Guid* riid, ref void* ppParent)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppParentPtr = &ppParent)
         {
@@ -310,9 +310,9 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetParent<TThis>(this TThis thisVtbl, ref Guid riid, void** ppParent) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int GetParent(this ComPtr<IDXGIOutput1> thisVtbl, ref Guid riid, void** ppParent)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -322,9 +322,9 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetParent<TThis>(this TThis thisVtbl, ref Guid riid, ref void* ppParent) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int GetParent(this ComPtr<IDXGIOutput1> thisVtbl, ref Guid riid, ref void* ppParent)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -337,18 +337,18 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDesc<TThis>(this TThis thisVtbl, OutputDesc* pDesc) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int GetDesc(this ComPtr<IDXGIOutput1> thisVtbl, OutputDesc* pDesc)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput1*, OutputDesc*, int>)@this->LpVtbl[7])(@this, pDesc);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetDesc<TThis>(this TThis thisVtbl, ref OutputDesc pDesc) where TThis : IComVtbl<IDXGIOutput1>
+    public static int GetDesc(this ComPtr<IDXGIOutput1> thisVtbl, ref OutputDesc pDesc)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (OutputDesc* pDescPtr = &pDesc)
         {
@@ -358,18 +358,18 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDisplayModeList<TThis>(this TThis thisVtbl, Silk.NET.DXGI.Format EnumFormat, uint Flags, uint* pNumModes, ModeDesc* pDesc) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int GetDisplayModeList(this ComPtr<IDXGIOutput1> thisVtbl, Silk.NET.DXGI.Format EnumFormat, uint Flags, uint* pNumModes, ModeDesc* pDesc)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput1*, Silk.NET.DXGI.Format, uint, uint*, ModeDesc*, int>)@this->LpVtbl[8])(@this, EnumFormat, Flags, pNumModes, pDesc);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDisplayModeList<TThis>(this TThis thisVtbl, Silk.NET.DXGI.Format EnumFormat, uint Flags, uint* pNumModes, ref ModeDesc pDesc) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int GetDisplayModeList(this ComPtr<IDXGIOutput1> thisVtbl, Silk.NET.DXGI.Format EnumFormat, uint Flags, uint* pNumModes, ref ModeDesc pDesc)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ModeDesc* pDescPtr = &pDesc)
         {
@@ -379,9 +379,9 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDisplayModeList<TThis>(this TThis thisVtbl, Silk.NET.DXGI.Format EnumFormat, uint Flags, ref uint pNumModes, ModeDesc* pDesc) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int GetDisplayModeList(this ComPtr<IDXGIOutput1> thisVtbl, Silk.NET.DXGI.Format EnumFormat, uint Flags, ref uint pNumModes, ModeDesc* pDesc)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pNumModesPtr = &pNumModes)
         {
@@ -391,9 +391,9 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetDisplayModeList<TThis>(this TThis thisVtbl, Silk.NET.DXGI.Format EnumFormat, uint Flags, ref uint pNumModes, ref ModeDesc pDesc) where TThis : IComVtbl<IDXGIOutput1>
+    public static int GetDisplayModeList(this ComPtr<IDXGIOutput1> thisVtbl, Silk.NET.DXGI.Format EnumFormat, uint Flags, ref uint pNumModes, ref ModeDesc pDesc)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pNumModesPtr = &pNumModes)
         {
@@ -406,18 +406,18 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindClosestMatchingMode<TThis>(this TThis thisVtbl, ModeDesc* pModeToMatch, ModeDesc* pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int FindClosestMatchingMode(this ComPtr<IDXGIOutput1> thisVtbl, ModeDesc* pModeToMatch, ModeDesc* pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput1*, ModeDesc*, ModeDesc*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[9])(@this, pModeToMatch, pClosestMatch, pConcernedDevice);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindClosestMatchingMode<TThis>(this TThis thisVtbl, ModeDesc* pModeToMatch, ModeDesc* pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int FindClosestMatchingMode(this ComPtr<IDXGIOutput1> thisVtbl, ModeDesc* pModeToMatch, ModeDesc* pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Core.Native.IUnknown* pConcernedDevicePtr = &pConcernedDevice)
         {
@@ -427,9 +427,9 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindClosestMatchingMode<TThis>(this TThis thisVtbl, ModeDesc* pModeToMatch, ref ModeDesc pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int FindClosestMatchingMode(this ComPtr<IDXGIOutput1> thisVtbl, ModeDesc* pModeToMatch, ref ModeDesc pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ModeDesc* pClosestMatchPtr = &pClosestMatch)
         {
@@ -439,9 +439,9 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindClosestMatchingMode<TThis>(this TThis thisVtbl, ModeDesc* pModeToMatch, ref ModeDesc pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int FindClosestMatchingMode(this ComPtr<IDXGIOutput1> thisVtbl, ModeDesc* pModeToMatch, ref ModeDesc pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ModeDesc* pClosestMatchPtr = &pClosestMatch)
         {
@@ -454,9 +454,9 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindClosestMatchingMode<TThis>(this TThis thisVtbl, ref ModeDesc pModeToMatch, ModeDesc* pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int FindClosestMatchingMode(this ComPtr<IDXGIOutput1> thisVtbl, ref ModeDesc pModeToMatch, ModeDesc* pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ModeDesc* pModeToMatchPtr = &pModeToMatch)
         {
@@ -466,9 +466,9 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindClosestMatchingMode<TThis>(this TThis thisVtbl, ref ModeDesc pModeToMatch, ModeDesc* pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int FindClosestMatchingMode(this ComPtr<IDXGIOutput1> thisVtbl, ref ModeDesc pModeToMatch, ModeDesc* pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ModeDesc* pModeToMatchPtr = &pModeToMatch)
         {
@@ -481,9 +481,9 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindClosestMatchingMode<TThis>(this TThis thisVtbl, ref ModeDesc pModeToMatch, ref ModeDesc pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int FindClosestMatchingMode(this ComPtr<IDXGIOutput1> thisVtbl, ref ModeDesc pModeToMatch, ref ModeDesc pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ModeDesc* pModeToMatchPtr = &pModeToMatch)
         {
@@ -496,9 +496,9 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int FindClosestMatchingMode<TThis>(this TThis thisVtbl, ref ModeDesc pModeToMatch, ref ModeDesc pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice) where TThis : IComVtbl<IDXGIOutput1>
+    public static int FindClosestMatchingMode(this ComPtr<IDXGIOutput1> thisVtbl, ref ModeDesc pModeToMatch, ref ModeDesc pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ModeDesc* pModeToMatchPtr = &pModeToMatch)
         {
@@ -514,27 +514,27 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int WaitForVBlank<TThis>(this TThis thisVtbl) where TThis : IComVtbl<IDXGIOutput1>
+    public static int WaitForVBlank(this ComPtr<IDXGIOutput1> thisVtbl)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput1*, int>)@this->LpVtbl[10])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int TakeOwnership<TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, int Exclusive) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int TakeOwnership(this ComPtr<IDXGIOutput1> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, int Exclusive)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput1*, Silk.NET.Core.Native.IUnknown*, int, int>)@this->LpVtbl[11])(@this, pDevice, Exclusive);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int TakeOwnership<TThis>(this TThis thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, int Exclusive) where TThis : IComVtbl<IDXGIOutput1>
+    public static int TakeOwnership(this ComPtr<IDXGIOutput1> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, int Exclusive)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
         {
@@ -544,25 +544,25 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void ReleaseOwnership<TThis>(this TThis thisVtbl) where TThis : IComVtbl<IDXGIOutput1>
+    public static void ReleaseOwnership(this ComPtr<IDXGIOutput1> thisVtbl)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<IDXGIOutput1*, void>)@this->LpVtbl[12])(@this);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetGammaControlCapabilities<TThis>(this TThis thisVtbl, GammaControlCapabilities* pGammaCaps) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int GetGammaControlCapabilities(this ComPtr<IDXGIOutput1> thisVtbl, GammaControlCapabilities* pGammaCaps)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput1*, GammaControlCapabilities*, int>)@this->LpVtbl[13])(@this, pGammaCaps);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetGammaControlCapabilities<TThis>(this TThis thisVtbl, ref GammaControlCapabilities pGammaCaps) where TThis : IComVtbl<IDXGIOutput1>
+    public static int GetGammaControlCapabilities(this ComPtr<IDXGIOutput1> thisVtbl, ref GammaControlCapabilities pGammaCaps)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (GammaControlCapabilities* pGammaCapsPtr = &pGammaCaps)
         {
@@ -572,18 +572,18 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetGammaControl<TThis>(this TThis thisVtbl, GammaControl* pArray) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int SetGammaControl(this ComPtr<IDXGIOutput1> thisVtbl, GammaControl* pArray)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput1*, GammaControl*, int>)@this->LpVtbl[14])(@this, pArray);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetGammaControl<TThis>(this TThis thisVtbl, ref GammaControl pArray) where TThis : IComVtbl<IDXGIOutput1>
+    public static int SetGammaControl(this ComPtr<IDXGIOutput1> thisVtbl, ref GammaControl pArray)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (GammaControl* pArrayPtr = &pArray)
         {
@@ -593,18 +593,18 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetGammaControl<TThis>(this TThis thisVtbl, GammaControl* pArray) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int GetGammaControl(this ComPtr<IDXGIOutput1> thisVtbl, GammaControl* pArray)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput1*, GammaControl*, int>)@this->LpVtbl[15])(@this, pArray);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetGammaControl<TThis>(this TThis thisVtbl, ref GammaControl pArray) where TThis : IComVtbl<IDXGIOutput1>
+    public static int GetGammaControl(this ComPtr<IDXGIOutput1> thisVtbl, ref GammaControl pArray)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (GammaControl* pArrayPtr = &pArray)
         {
@@ -614,18 +614,18 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetDisplaySurface<TThis>(this TThis thisVtbl, IDXGISurface* pScanoutSurface) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int SetDisplaySurface(this ComPtr<IDXGIOutput1> thisVtbl, IDXGISurface* pScanoutSurface)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput1*, IDXGISurface*, int>)@this->LpVtbl[16])(@this, pScanoutSurface);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetDisplaySurface<TThis>(this TThis thisVtbl, ref IDXGISurface pScanoutSurface) where TThis : IComVtbl<IDXGIOutput1>
+    public static int SetDisplaySurface(this ComPtr<IDXGIOutput1> thisVtbl, ref IDXGISurface pScanoutSurface)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDXGISurface* pScanoutSurfacePtr = &pScanoutSurface)
         {
@@ -635,18 +635,18 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDisplaySurfaceData<TThis>(this TThis thisVtbl, IDXGISurface* pDestination) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int GetDisplaySurfaceData(this ComPtr<IDXGIOutput1> thisVtbl, IDXGISurface* pDestination)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput1*, IDXGISurface*, int>)@this->LpVtbl[17])(@this, pDestination);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetDisplaySurfaceData<TThis>(this TThis thisVtbl, ref IDXGISurface pDestination) where TThis : IComVtbl<IDXGIOutput1>
+    public static int GetDisplaySurfaceData(this ComPtr<IDXGIOutput1> thisVtbl, ref IDXGISurface pDestination)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDXGISurface* pDestinationPtr = &pDestination)
         {
@@ -656,18 +656,18 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetFrameStatistics<TThis>(this TThis thisVtbl, FrameStatistics* pStats) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int GetFrameStatistics(this ComPtr<IDXGIOutput1> thisVtbl, FrameStatistics* pStats)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput1*, FrameStatistics*, int>)@this->LpVtbl[18])(@this, pStats);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetFrameStatistics<TThis>(this TThis thisVtbl, ref FrameStatistics pStats) where TThis : IComVtbl<IDXGIOutput1>
+    public static int GetFrameStatistics(this ComPtr<IDXGIOutput1> thisVtbl, ref FrameStatistics pStats)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (FrameStatistics* pStatsPtr = &pStats)
         {
@@ -677,18 +677,18 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDisplayModeList1<TThis>(this TThis thisVtbl, Silk.NET.DXGI.Format EnumFormat, uint Flags, uint* pNumModes, ModeDesc1* pDesc) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int GetDisplayModeList1(this ComPtr<IDXGIOutput1> thisVtbl, Silk.NET.DXGI.Format EnumFormat, uint Flags, uint* pNumModes, ModeDesc1* pDesc)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput1*, Silk.NET.DXGI.Format, uint, uint*, ModeDesc1*, int>)@this->LpVtbl[19])(@this, EnumFormat, Flags, pNumModes, pDesc);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDisplayModeList1<TThis>(this TThis thisVtbl, Silk.NET.DXGI.Format EnumFormat, uint Flags, uint* pNumModes, ref ModeDesc1 pDesc) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int GetDisplayModeList1(this ComPtr<IDXGIOutput1> thisVtbl, Silk.NET.DXGI.Format EnumFormat, uint Flags, uint* pNumModes, ref ModeDesc1 pDesc)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ModeDesc1* pDescPtr = &pDesc)
         {
@@ -698,9 +698,9 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDisplayModeList1<TThis>(this TThis thisVtbl, Silk.NET.DXGI.Format EnumFormat, uint Flags, ref uint pNumModes, ModeDesc1* pDesc) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int GetDisplayModeList1(this ComPtr<IDXGIOutput1> thisVtbl, Silk.NET.DXGI.Format EnumFormat, uint Flags, ref uint pNumModes, ModeDesc1* pDesc)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pNumModesPtr = &pNumModes)
         {
@@ -710,9 +710,9 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetDisplayModeList1<TThis>(this TThis thisVtbl, Silk.NET.DXGI.Format EnumFormat, uint Flags, ref uint pNumModes, ref ModeDesc1 pDesc) where TThis : IComVtbl<IDXGIOutput1>
+    public static int GetDisplayModeList1(this ComPtr<IDXGIOutput1> thisVtbl, Silk.NET.DXGI.Format EnumFormat, uint Flags, ref uint pNumModes, ref ModeDesc1 pDesc)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pNumModesPtr = &pNumModes)
         {
@@ -725,18 +725,18 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindClosestMatchingMode1<TThis>(this TThis thisVtbl, ModeDesc1* pModeToMatch, ModeDesc1* pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int FindClosestMatchingMode1(this ComPtr<IDXGIOutput1> thisVtbl, ModeDesc1* pModeToMatch, ModeDesc1* pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput1*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[20])(@this, pModeToMatch, pClosestMatch, pConcernedDevice);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindClosestMatchingMode1<TThis>(this TThis thisVtbl, ModeDesc1* pModeToMatch, ModeDesc1* pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int FindClosestMatchingMode1(this ComPtr<IDXGIOutput1> thisVtbl, ModeDesc1* pModeToMatch, ModeDesc1* pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Core.Native.IUnknown* pConcernedDevicePtr = &pConcernedDevice)
         {
@@ -746,9 +746,9 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindClosestMatchingMode1<TThis>(this TThis thisVtbl, ModeDesc1* pModeToMatch, ref ModeDesc1 pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int FindClosestMatchingMode1(this ComPtr<IDXGIOutput1> thisVtbl, ModeDesc1* pModeToMatch, ref ModeDesc1 pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ModeDesc1* pClosestMatchPtr = &pClosestMatch)
         {
@@ -758,9 +758,9 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindClosestMatchingMode1<TThis>(this TThis thisVtbl, ModeDesc1* pModeToMatch, ref ModeDesc1 pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int FindClosestMatchingMode1(this ComPtr<IDXGIOutput1> thisVtbl, ModeDesc1* pModeToMatch, ref ModeDesc1 pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ModeDesc1* pClosestMatchPtr = &pClosestMatch)
         {
@@ -773,9 +773,9 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindClosestMatchingMode1<TThis>(this TThis thisVtbl, ref ModeDesc1 pModeToMatch, ModeDesc1* pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int FindClosestMatchingMode1(this ComPtr<IDXGIOutput1> thisVtbl, ref ModeDesc1 pModeToMatch, ModeDesc1* pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ModeDesc1* pModeToMatchPtr = &pModeToMatch)
         {
@@ -785,9 +785,9 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindClosestMatchingMode1<TThis>(this TThis thisVtbl, ref ModeDesc1 pModeToMatch, ModeDesc1* pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int FindClosestMatchingMode1(this ComPtr<IDXGIOutput1> thisVtbl, ref ModeDesc1 pModeToMatch, ModeDesc1* pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ModeDesc1* pModeToMatchPtr = &pModeToMatch)
         {
@@ -800,9 +800,9 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindClosestMatchingMode1<TThis>(this TThis thisVtbl, ref ModeDesc1 pModeToMatch, ref ModeDesc1 pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int FindClosestMatchingMode1(this ComPtr<IDXGIOutput1> thisVtbl, ref ModeDesc1 pModeToMatch, ref ModeDesc1 pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ModeDesc1* pModeToMatchPtr = &pModeToMatch)
         {
@@ -815,9 +815,9 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int FindClosestMatchingMode1<TThis>(this TThis thisVtbl, ref ModeDesc1 pModeToMatch, ref ModeDesc1 pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice) where TThis : IComVtbl<IDXGIOutput1>
+    public static int FindClosestMatchingMode1(this ComPtr<IDXGIOutput1> thisVtbl, ref ModeDesc1 pModeToMatch, ref ModeDesc1 pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ModeDesc1* pModeToMatchPtr = &pModeToMatch)
         {
@@ -833,18 +833,18 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDisplaySurfaceData1<TThis>(this TThis thisVtbl, IDXGIResource* pDestination) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int GetDisplaySurfaceData1(this ComPtr<IDXGIOutput1> thisVtbl, IDXGIResource* pDestination)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput1*, IDXGIResource*, int>)@this->LpVtbl[21])(@this, pDestination);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetDisplaySurfaceData1<TThis>(this TThis thisVtbl, ref IDXGIResource pDestination) where TThis : IComVtbl<IDXGIOutput1>
+    public static int GetDisplaySurfaceData1(this ComPtr<IDXGIOutput1> thisVtbl, ref IDXGIResource pDestination)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDXGIResource* pDestinationPtr = &pDestination)
         {
@@ -854,18 +854,18 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DuplicateOutput<TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, IDXGIOutputDuplication** ppOutputDuplication) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int DuplicateOutput(this ComPtr<IDXGIOutput1> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, IDXGIOutputDuplication** ppOutputDuplication)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput1*, Silk.NET.Core.Native.IUnknown*, IDXGIOutputDuplication**, int>)@this->LpVtbl[22])(@this, pDevice, ppOutputDuplication);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DuplicateOutput<TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, ref IDXGIOutputDuplication* ppOutputDuplication) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int DuplicateOutput(this ComPtr<IDXGIOutput1> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, ref IDXGIOutputDuplication* ppOutputDuplication)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDXGIOutputDuplication** ppOutputDuplicationPtr = &ppOutputDuplication)
         {
@@ -875,9 +875,9 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DuplicateOutput<TThis>(this TThis thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, IDXGIOutputDuplication** ppOutputDuplication) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int DuplicateOutput(this ComPtr<IDXGIOutput1> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, IDXGIOutputDuplication** ppOutputDuplication)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
         {
@@ -887,9 +887,9 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DuplicateOutput<TThis>(this TThis thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref IDXGIOutputDuplication* ppOutputDuplication) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int DuplicateOutput(this ComPtr<IDXGIOutput1> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref IDXGIOutputDuplication* ppOutputDuplication)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
         {
@@ -902,436 +902,436 @@ public unsafe static class DXGIOutput1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXGIOutput1>
+    public static int QueryInterface<TI0>(this ComPtr<IDXGIOutput1> thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppvObject = default;
         return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int QueryInterface(this ComPtr<IDXGIOutput1> thisVtbl, Span<Guid> riid, void** ppvObject)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int QueryInterface(this ComPtr<IDXGIOutput1> thisVtbl, Span<Guid> riid, ref void* ppvObject)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* Name, uint DataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int SetPrivateData<T0>(this ComPtr<IDXGIOutput1> thisVtbl, Guid* Name, uint DataSize, Span<T0> pData) where T0 : unmanaged
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->SetPrivateData(Name, DataSize, ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> Name, uint DataSize, void* pData) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int SetPrivateData(this ComPtr<IDXGIOutput1> thisVtbl, Span<Guid> Name, uint DataSize, void* pData)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->SetPrivateData(ref Name.GetPinnableReference(), DataSize, pData);
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> Name, uint DataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<IDXGIOutput1>
+    public static int SetPrivateData<T0>(this ComPtr<IDXGIOutput1> thisVtbl, Span<Guid> Name, uint DataSize, Span<T0> pData) where T0 : unmanaged
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->SetPrivateData(ref Name.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Guid* Name, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pUnknown) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int SetPrivateDataInterface(this ComPtr<IDXGIOutput1> thisVtbl, Guid* Name, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pUnknown)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->SetPrivateDataInterface(Name, in pUnknown.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Span<Guid> Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int SetPrivateDataInterface(this ComPtr<IDXGIOutput1> thisVtbl, Span<Guid> Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->SetPrivateDataInterface(ref Name.GetPinnableReference(), pUnknown);
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Span<Guid> Name, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pUnknown) where TThis : IComVtbl<IDXGIOutput1>
+    public static int SetPrivateDataInterface(this ComPtr<IDXGIOutput1> thisVtbl, Span<Guid> Name, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pUnknown)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->SetPrivateDataInterface(ref Name.GetPinnableReference(), in pUnknown.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* Name, uint* pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<IDXGIOutput1> thisVtbl, Guid* Name, uint* pDataSize, Span<T0> pData) where T0 : unmanaged
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetPrivateData(Name, pDataSize, ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Guid* Name, Span<uint> pDataSize, void* pData) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int GetPrivateData(this ComPtr<IDXGIOutput1> thisVtbl, Guid* Name, Span<uint> pDataSize, void* pData)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetPrivateData(Name, ref pDataSize.GetPinnableReference(), pData);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* Name, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<IDXGIOutput1> thisVtbl, Guid* Name, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetPrivateData(Name, ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> Name, uint* pDataSize, void* pData) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int GetPrivateData(this ComPtr<IDXGIOutput1> thisVtbl, Span<Guid> Name, uint* pDataSize, void* pData)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetPrivateData(ref Name.GetPinnableReference(), pDataSize, pData);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> Name, uint* pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<IDXGIOutput1> thisVtbl, Span<Guid> Name, uint* pDataSize, Span<T0> pData) where T0 : unmanaged
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetPrivateData(ref Name.GetPinnableReference(), pDataSize, ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> Name, Span<uint> pDataSize, void* pData) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int GetPrivateData(this ComPtr<IDXGIOutput1> thisVtbl, Span<Guid> Name, Span<uint> pDataSize, void* pData)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetPrivateData(ref Name.GetPinnableReference(), ref pDataSize.GetPinnableReference(), pData);
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> Name, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<IDXGIOutput1>
+    public static int GetPrivateData<T0>(this ComPtr<IDXGIOutput1> thisVtbl, Span<Guid> Name, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetPrivateData(ref Name.GetPinnableReference(), ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetParent<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppParent) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXGIOutput1>
+    public static int GetParent<TI0>(this ComPtr<IDXGIOutput1> thisVtbl, out ComPtr<TI0> ppParent) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppParent = default;
         return @this->GetParent(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppParent.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetParent<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppParent) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int GetParent(this ComPtr<IDXGIOutput1> thisVtbl, Span<Guid> riid, void** ppParent)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetParent(ref riid.GetPinnableReference(), ppParent);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetParent<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppParent) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int GetParent(this ComPtr<IDXGIOutput1> thisVtbl, Span<Guid> riid, ref void* ppParent)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetParent(ref riid.GetPinnableReference(), ref ppParent);
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetDesc<TThis>(this TThis thisVtbl, Span<OutputDesc> pDesc) where TThis : IComVtbl<IDXGIOutput1>
+    public static int GetDesc(this ComPtr<IDXGIOutput1> thisVtbl, Span<OutputDesc> pDesc)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDesc(ref pDesc.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDisplayModeList<TThis>(this TThis thisVtbl, Silk.NET.DXGI.Format EnumFormat, uint Flags, uint* pNumModes, Span<ModeDesc> pDesc) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int GetDisplayModeList(this ComPtr<IDXGIOutput1> thisVtbl, Silk.NET.DXGI.Format EnumFormat, uint Flags, uint* pNumModes, Span<ModeDesc> pDesc)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDisplayModeList(EnumFormat, Flags, pNumModes, ref pDesc.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDisplayModeList<TThis>(this TThis thisVtbl, Silk.NET.DXGI.Format EnumFormat, uint Flags, Span<uint> pNumModes, ModeDesc* pDesc) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int GetDisplayModeList(this ComPtr<IDXGIOutput1> thisVtbl, Silk.NET.DXGI.Format EnumFormat, uint Flags, Span<uint> pNumModes, ModeDesc* pDesc)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDisplayModeList(EnumFormat, Flags, ref pNumModes.GetPinnableReference(), pDesc);
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetDisplayModeList<TThis>(this TThis thisVtbl, Silk.NET.DXGI.Format EnumFormat, uint Flags, Span<uint> pNumModes, Span<ModeDesc> pDesc) where TThis : IComVtbl<IDXGIOutput1>
+    public static int GetDisplayModeList(this ComPtr<IDXGIOutput1> thisVtbl, Silk.NET.DXGI.Format EnumFormat, uint Flags, Span<uint> pNumModes, Span<ModeDesc> pDesc)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDisplayModeList(EnumFormat, Flags, ref pNumModes.GetPinnableReference(), ref pDesc.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindClosestMatchingMode<TThis>(this TThis thisVtbl, ModeDesc* pModeToMatch, ModeDesc* pClosestMatch, Span<Silk.NET.Core.Native.IUnknown> pConcernedDevice) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int FindClosestMatchingMode(this ComPtr<IDXGIOutput1> thisVtbl, ModeDesc* pModeToMatch, ModeDesc* pClosestMatch, Span<Silk.NET.Core.Native.IUnknown> pConcernedDevice)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->FindClosestMatchingMode(pModeToMatch, pClosestMatch, ref pConcernedDevice.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindClosestMatchingMode<TThis>(this TThis thisVtbl, ModeDesc* pModeToMatch, Span<ModeDesc> pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int FindClosestMatchingMode(this ComPtr<IDXGIOutput1> thisVtbl, ModeDesc* pModeToMatch, Span<ModeDesc> pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->FindClosestMatchingMode(pModeToMatch, ref pClosestMatch.GetPinnableReference(), pConcernedDevice);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindClosestMatchingMode<TThis>(this TThis thisVtbl, ModeDesc* pModeToMatch, Span<ModeDesc> pClosestMatch, Span<Silk.NET.Core.Native.IUnknown> pConcernedDevice) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int FindClosestMatchingMode(this ComPtr<IDXGIOutput1> thisVtbl, ModeDesc* pModeToMatch, Span<ModeDesc> pClosestMatch, Span<Silk.NET.Core.Native.IUnknown> pConcernedDevice)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->FindClosestMatchingMode(pModeToMatch, ref pClosestMatch.GetPinnableReference(), ref pConcernedDevice.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindClosestMatchingMode<TThis>(this TThis thisVtbl, Span<ModeDesc> pModeToMatch, ModeDesc* pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int FindClosestMatchingMode(this ComPtr<IDXGIOutput1> thisVtbl, Span<ModeDesc> pModeToMatch, ModeDesc* pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->FindClosestMatchingMode(ref pModeToMatch.GetPinnableReference(), pClosestMatch, pConcernedDevice);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindClosestMatchingMode<TThis>(this TThis thisVtbl, Span<ModeDesc> pModeToMatch, ModeDesc* pClosestMatch, Span<Silk.NET.Core.Native.IUnknown> pConcernedDevice) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int FindClosestMatchingMode(this ComPtr<IDXGIOutput1> thisVtbl, Span<ModeDesc> pModeToMatch, ModeDesc* pClosestMatch, Span<Silk.NET.Core.Native.IUnknown> pConcernedDevice)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->FindClosestMatchingMode(ref pModeToMatch.GetPinnableReference(), pClosestMatch, ref pConcernedDevice.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindClosestMatchingMode<TThis>(this TThis thisVtbl, Span<ModeDesc> pModeToMatch, Span<ModeDesc> pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int FindClosestMatchingMode(this ComPtr<IDXGIOutput1> thisVtbl, Span<ModeDesc> pModeToMatch, Span<ModeDesc> pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->FindClosestMatchingMode(ref pModeToMatch.GetPinnableReference(), ref pClosestMatch.GetPinnableReference(), pConcernedDevice);
     }
 
     /// <summary>To be documented.</summary>
-    public static int FindClosestMatchingMode<TThis>(this TThis thisVtbl, Span<ModeDesc> pModeToMatch, Span<ModeDesc> pClosestMatch, Span<Silk.NET.Core.Native.IUnknown> pConcernedDevice) where TThis : IComVtbl<IDXGIOutput1>
+    public static int FindClosestMatchingMode(this ComPtr<IDXGIOutput1> thisVtbl, Span<ModeDesc> pModeToMatch, Span<ModeDesc> pClosestMatch, Span<Silk.NET.Core.Native.IUnknown> pConcernedDevice)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->FindClosestMatchingMode(ref pModeToMatch.GetPinnableReference(), ref pClosestMatch.GetPinnableReference(), ref pConcernedDevice.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int TakeOwnership<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, int Exclusive) where TThis : IComVtbl<IDXGIOutput1>
+    public static int TakeOwnership(this ComPtr<IDXGIOutput1> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, int Exclusive)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->TakeOwnership(ref pDevice.GetPinnableReference(), Exclusive);
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetGammaControlCapabilities<TThis>(this TThis thisVtbl, Span<GammaControlCapabilities> pGammaCaps) where TThis : IComVtbl<IDXGIOutput1>
+    public static int GetGammaControlCapabilities(this ComPtr<IDXGIOutput1> thisVtbl, Span<GammaControlCapabilities> pGammaCaps)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetGammaControlCapabilities(ref pGammaCaps.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetGammaControl<TThis>(this TThis thisVtbl, Span<GammaControl> pArray) where TThis : IComVtbl<IDXGIOutput1>
+    public static int SetGammaControl(this ComPtr<IDXGIOutput1> thisVtbl, Span<GammaControl> pArray)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->SetGammaControl(ref pArray.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetGammaControl<TThis>(this TThis thisVtbl, Span<GammaControl> pArray) where TThis : IComVtbl<IDXGIOutput1>
+    public static int GetGammaControl(this ComPtr<IDXGIOutput1> thisVtbl, Span<GammaControl> pArray)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetGammaControl(ref pArray.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetDisplaySurface<TThis>(this TThis thisVtbl, Span<IDXGISurface> pScanoutSurface) where TThis : IComVtbl<IDXGIOutput1>
+    public static int SetDisplaySurface(this ComPtr<IDXGIOutput1> thisVtbl, Span<IDXGISurface> pScanoutSurface)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->SetDisplaySurface(ref pScanoutSurface.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetDisplaySurfaceData<TThis>(this TThis thisVtbl, Span<IDXGISurface> pDestination) where TThis : IComVtbl<IDXGIOutput1>
+    public static int GetDisplaySurfaceData(this ComPtr<IDXGIOutput1> thisVtbl, Span<IDXGISurface> pDestination)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDisplaySurfaceData(ref pDestination.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetFrameStatistics<TThis>(this TThis thisVtbl, Span<FrameStatistics> pStats) where TThis : IComVtbl<IDXGIOutput1>
+    public static int GetFrameStatistics(this ComPtr<IDXGIOutput1> thisVtbl, Span<FrameStatistics> pStats)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetFrameStatistics(ref pStats.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDisplayModeList1<TThis>(this TThis thisVtbl, Silk.NET.DXGI.Format EnumFormat, uint Flags, uint* pNumModes, Span<ModeDesc1> pDesc) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int GetDisplayModeList1(this ComPtr<IDXGIOutput1> thisVtbl, Silk.NET.DXGI.Format EnumFormat, uint Flags, uint* pNumModes, Span<ModeDesc1> pDesc)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDisplayModeList1(EnumFormat, Flags, pNumModes, ref pDesc.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDisplayModeList1<TThis>(this TThis thisVtbl, Silk.NET.DXGI.Format EnumFormat, uint Flags, Span<uint> pNumModes, ModeDesc1* pDesc) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int GetDisplayModeList1(this ComPtr<IDXGIOutput1> thisVtbl, Silk.NET.DXGI.Format EnumFormat, uint Flags, Span<uint> pNumModes, ModeDesc1* pDesc)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDisplayModeList1(EnumFormat, Flags, ref pNumModes.GetPinnableReference(), pDesc);
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetDisplayModeList1<TThis>(this TThis thisVtbl, Silk.NET.DXGI.Format EnumFormat, uint Flags, Span<uint> pNumModes, Span<ModeDesc1> pDesc) where TThis : IComVtbl<IDXGIOutput1>
+    public static int GetDisplayModeList1(this ComPtr<IDXGIOutput1> thisVtbl, Silk.NET.DXGI.Format EnumFormat, uint Flags, Span<uint> pNumModes, Span<ModeDesc1> pDesc)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDisplayModeList1(EnumFormat, Flags, ref pNumModes.GetPinnableReference(), ref pDesc.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindClosestMatchingMode1<TThis>(this TThis thisVtbl, ModeDesc1* pModeToMatch, ModeDesc1* pClosestMatch, Span<Silk.NET.Core.Native.IUnknown> pConcernedDevice) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int FindClosestMatchingMode1(this ComPtr<IDXGIOutput1> thisVtbl, ModeDesc1* pModeToMatch, ModeDesc1* pClosestMatch, Span<Silk.NET.Core.Native.IUnknown> pConcernedDevice)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->FindClosestMatchingMode1(pModeToMatch, pClosestMatch, ref pConcernedDevice.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindClosestMatchingMode1<TThis>(this TThis thisVtbl, ModeDesc1* pModeToMatch, Span<ModeDesc1> pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int FindClosestMatchingMode1(this ComPtr<IDXGIOutput1> thisVtbl, ModeDesc1* pModeToMatch, Span<ModeDesc1> pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->FindClosestMatchingMode1(pModeToMatch, ref pClosestMatch.GetPinnableReference(), pConcernedDevice);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindClosestMatchingMode1<TThis>(this TThis thisVtbl, ModeDesc1* pModeToMatch, Span<ModeDesc1> pClosestMatch, Span<Silk.NET.Core.Native.IUnknown> pConcernedDevice) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int FindClosestMatchingMode1(this ComPtr<IDXGIOutput1> thisVtbl, ModeDesc1* pModeToMatch, Span<ModeDesc1> pClosestMatch, Span<Silk.NET.Core.Native.IUnknown> pConcernedDevice)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->FindClosestMatchingMode1(pModeToMatch, ref pClosestMatch.GetPinnableReference(), ref pConcernedDevice.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindClosestMatchingMode1<TThis>(this TThis thisVtbl, Span<ModeDesc1> pModeToMatch, ModeDesc1* pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int FindClosestMatchingMode1(this ComPtr<IDXGIOutput1> thisVtbl, Span<ModeDesc1> pModeToMatch, ModeDesc1* pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->FindClosestMatchingMode1(ref pModeToMatch.GetPinnableReference(), pClosestMatch, pConcernedDevice);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindClosestMatchingMode1<TThis>(this TThis thisVtbl, Span<ModeDesc1> pModeToMatch, ModeDesc1* pClosestMatch, Span<Silk.NET.Core.Native.IUnknown> pConcernedDevice) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int FindClosestMatchingMode1(this ComPtr<IDXGIOutput1> thisVtbl, Span<ModeDesc1> pModeToMatch, ModeDesc1* pClosestMatch, Span<Silk.NET.Core.Native.IUnknown> pConcernedDevice)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->FindClosestMatchingMode1(ref pModeToMatch.GetPinnableReference(), pClosestMatch, ref pConcernedDevice.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindClosestMatchingMode1<TThis>(this TThis thisVtbl, Span<ModeDesc1> pModeToMatch, Span<ModeDesc1> pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int FindClosestMatchingMode1(this ComPtr<IDXGIOutput1> thisVtbl, Span<ModeDesc1> pModeToMatch, Span<ModeDesc1> pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->FindClosestMatchingMode1(ref pModeToMatch.GetPinnableReference(), ref pClosestMatch.GetPinnableReference(), pConcernedDevice);
     }
 
     /// <summary>To be documented.</summary>
-    public static int FindClosestMatchingMode1<TThis>(this TThis thisVtbl, Span<ModeDesc1> pModeToMatch, Span<ModeDesc1> pClosestMatch, Span<Silk.NET.Core.Native.IUnknown> pConcernedDevice) where TThis : IComVtbl<IDXGIOutput1>
+    public static int FindClosestMatchingMode1(this ComPtr<IDXGIOutput1> thisVtbl, Span<ModeDesc1> pModeToMatch, Span<ModeDesc1> pClosestMatch, Span<Silk.NET.Core.Native.IUnknown> pConcernedDevice)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->FindClosestMatchingMode1(ref pModeToMatch.GetPinnableReference(), ref pClosestMatch.GetPinnableReference(), ref pConcernedDevice.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetDisplaySurfaceData1<TThis>(this TThis thisVtbl, Span<IDXGIResource> pDestination) where TThis : IComVtbl<IDXGIOutput1>
+    public static int GetDisplaySurfaceData1(this ComPtr<IDXGIOutput1> thisVtbl, Span<IDXGIResource> pDestination)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDisplaySurfaceData1(ref pDestination.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DuplicateOutput<TI0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, ref ComPtr<TI0> ppOutputDuplication) where TI0 : unmanaged, IComVtbl<IDXGIOutputDuplication>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int DuplicateOutput<TI0>(this ComPtr<IDXGIOutput1> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, ref ComPtr<TI0> ppOutputDuplication) where TI0 : unmanaged, IComVtbl<IDXGIOutputDuplication>, IComVtbl<TI0>
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->DuplicateOutput(pDevice, (IDXGIOutputDuplication**) ppOutputDuplication.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DuplicateOutput<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, IDXGIOutputDuplication** ppOutputDuplication) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int DuplicateOutput(this ComPtr<IDXGIOutput1> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, IDXGIOutputDuplication** ppOutputDuplication)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->DuplicateOutput(ref pDevice.GetPinnableReference(), ppOutputDuplication);
     }
 
     /// <summary>To be documented.</summary>
-    public static int DuplicateOutput<TI0, TThis>(this TThis thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref ComPtr<TI0> ppOutputDuplication) where TI0 : unmanaged, IComVtbl<IDXGIOutputDuplication>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIOutput1>
+    public static int DuplicateOutput<TI0>(this ComPtr<IDXGIOutput1> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref ComPtr<TI0> ppOutputDuplication) where TI0 : unmanaged, IComVtbl<IDXGIOutputDuplication>, IComVtbl<TI0>
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->DuplicateOutput(ref pDevice, (IDXGIOutputDuplication**) ppOutputDuplication.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DuplicateOutput<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, ref IDXGIOutputDuplication* ppOutputDuplication) where TThis : IComVtbl<IDXGIOutput1>
+    public static unsafe int DuplicateOutput(this ComPtr<IDXGIOutput1> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, ref IDXGIOutputDuplication* ppOutputDuplication)
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->DuplicateOutput(ref pDevice.GetPinnableReference(), ref ppOutputDuplication);
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXGIOutput1>
+    public static ComPtr<TI0> QueryInterface<TI0>(this ComPtr<IDXGIOutput1> thisVtbl) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> GetParent<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXGIOutput1>
+    public static ComPtr<TI0> GetParent<TI0>(this ComPtr<IDXGIOutput1> thisVtbl) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (IDXGIOutput1*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->GetParent(out ComPtr<TI0> silkRet));
         return silkRet;

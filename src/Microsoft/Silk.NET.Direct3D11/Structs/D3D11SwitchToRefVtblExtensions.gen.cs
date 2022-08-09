@@ -19,18 +19,18 @@ namespace Silk.NET.Direct3D11;
 public unsafe static class D3D11SwitchToRefVtblExtensions
 {
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Guid* riid, void** ppvObject) where TThis : IComVtbl<ID3D11SwitchToRef>
+    public static unsafe int QueryInterface(this ComPtr<ID3D11SwitchToRef> thisVtbl, Guid* riid, void** ppvObject)
     {
-        var @this = (ID3D11SwitchToRef*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11SwitchToRef*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Guid* riid, ref void* ppvObject) where TThis : IComVtbl<ID3D11SwitchToRef>
+    public static unsafe int QueryInterface(this ComPtr<ID3D11SwitchToRef> thisVtbl, Guid* riid, ref void* ppvObject)
     {
-        var @this = (ID3D11SwitchToRef*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppvObjectPtr = &ppvObject)
         {
@@ -40,9 +40,9 @@ public unsafe static class D3D11SwitchToRefVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, ref Guid riid, void** ppvObject) where TThis : IComVtbl<ID3D11SwitchToRef>
+    public static unsafe int QueryInterface(this ComPtr<ID3D11SwitchToRef> thisVtbl, ref Guid riid, void** ppvObject)
     {
-        var @this = (ID3D11SwitchToRef*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -52,9 +52,9 @@ public unsafe static class D3D11SwitchToRefVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, ref Guid riid, ref void* ppvObject) where TThis : IComVtbl<ID3D11SwitchToRef>
+    public static unsafe int QueryInterface(this ComPtr<ID3D11SwitchToRef> thisVtbl, ref Guid riid, ref void* ppvObject)
     {
-        var @this = (ID3D11SwitchToRef*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -67,70 +67,70 @@ public unsafe static class D3D11SwitchToRefVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static uint AddRef<TThis>(this TThis thisVtbl) where TThis : IComVtbl<ID3D11SwitchToRef>
+    public static uint AddRef(this ComPtr<ID3D11SwitchToRef> thisVtbl)
     {
-        var @this = (ID3D11SwitchToRef*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11SwitchToRef*, uint>)@this->LpVtbl[1])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static uint Release<TThis>(this TThis thisVtbl) where TThis : IComVtbl<ID3D11SwitchToRef>
+    public static uint Release(this ComPtr<ID3D11SwitchToRef> thisVtbl)
     {
-        var @this = (ID3D11SwitchToRef*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11SwitchToRef*, uint>)@this->LpVtbl[2])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetUseRef<TThis>(this TThis thisVtbl, int UseRef) where TThis : IComVtbl<ID3D11SwitchToRef>
+    public static int SetUseRef(this ComPtr<ID3D11SwitchToRef> thisVtbl, int UseRef)
     {
-        var @this = (ID3D11SwitchToRef*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11SwitchToRef*, int, int>)@this->LpVtbl[3])(@this, UseRef);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetUseRef<TThis>(this TThis thisVtbl) where TThis : IComVtbl<ID3D11SwitchToRef>
+    public static int GetUseRef(this ComPtr<ID3D11SwitchToRef> thisVtbl)
     {
-        var @this = (ID3D11SwitchToRef*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11SwitchToRef*, int>)@this->LpVtbl[4])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D11SwitchToRef>
+    public static int QueryInterface<TI0>(this ComPtr<ID3D11SwitchToRef> thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D11SwitchToRef*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppvObject = default;
         return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<ID3D11SwitchToRef>
+    public static unsafe int QueryInterface(this ComPtr<ID3D11SwitchToRef> thisVtbl, Span<Guid> riid, void** ppvObject)
     {
-        var @this = (ID3D11SwitchToRef*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<ID3D11SwitchToRef>
+    public static unsafe int QueryInterface(this ComPtr<ID3D11SwitchToRef> thisVtbl, Span<Guid> riid, ref void* ppvObject)
     {
-        var @this = (ID3D11SwitchToRef*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D11SwitchToRef>
+    public static ComPtr<TI0> QueryInterface<TI0>(this ComPtr<ID3D11SwitchToRef> thisVtbl) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D11SwitchToRef*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
         return silkRet;

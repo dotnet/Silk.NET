@@ -19,18 +19,18 @@ namespace Silk.NET.Direct3D9;
 public unsafe static class Direct3D9ExOverlayExtensionVtblExtensions
 {
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Guid* riid, void** ppvObject) where TThis : IComVtbl<IDirect3D9ExOverlayExtension>
+    public static unsafe int QueryInterface(this ComPtr<IDirect3D9ExOverlayExtension> thisVtbl, Guid* riid, void** ppvObject)
     {
-        var @this = (IDirect3D9ExOverlayExtension*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Cdecl]<IDirect3D9ExOverlayExtension*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Guid* riid, ref void* ppvObject) where TThis : IComVtbl<IDirect3D9ExOverlayExtension>
+    public static unsafe int QueryInterface(this ComPtr<IDirect3D9ExOverlayExtension> thisVtbl, Guid* riid, ref void* ppvObject)
     {
-        var @this = (IDirect3D9ExOverlayExtension*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppvObjectPtr = &ppvObject)
         {
@@ -40,9 +40,9 @@ public unsafe static class Direct3D9ExOverlayExtensionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, ref Guid riid, void** ppvObject) where TThis : IComVtbl<IDirect3D9ExOverlayExtension>
+    public static unsafe int QueryInterface(this ComPtr<IDirect3D9ExOverlayExtension> thisVtbl, ref Guid riid, void** ppvObject)
     {
-        var @this = (IDirect3D9ExOverlayExtension*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -52,9 +52,9 @@ public unsafe static class Direct3D9ExOverlayExtensionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, ref Guid riid, ref void* ppvObject) where TThis : IComVtbl<IDirect3D9ExOverlayExtension>
+    public static unsafe int QueryInterface(this ComPtr<IDirect3D9ExOverlayExtension> thisVtbl, ref Guid riid, ref void* ppvObject)
     {
-        var @this = (IDirect3D9ExOverlayExtension*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -67,36 +67,36 @@ public unsafe static class Direct3D9ExOverlayExtensionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static uint AddRef<TThis>(this TThis thisVtbl) where TThis : IComVtbl<IDirect3D9ExOverlayExtension>
+    public static uint AddRef(this ComPtr<IDirect3D9ExOverlayExtension> thisVtbl)
     {
-        var @this = (IDirect3D9ExOverlayExtension*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Cdecl]<IDirect3D9ExOverlayExtension*, uint>)@this->LpVtbl[1])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static uint Release<TThis>(this TThis thisVtbl) where TThis : IComVtbl<IDirect3D9ExOverlayExtension>
+    public static uint Release(this ComPtr<IDirect3D9ExOverlayExtension> thisVtbl)
     {
-        var @this = (IDirect3D9ExOverlayExtension*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Cdecl]<IDirect3D9ExOverlayExtension*, uint>)@this->LpVtbl[2])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CheckDeviceOverlayType<TThis>(this TThis thisVtbl, uint Adapter, Devtype DevType, uint OverlayWidth, uint OverlayHeight, Format OverlayFormat, Displaymodeex* pDisplayMode, Displayrotation DisplayRotation, Overlaycaps* pOverlayCaps) where TThis : IComVtbl<IDirect3D9ExOverlayExtension>
+    public static unsafe int CheckDeviceOverlayType(this ComPtr<IDirect3D9ExOverlayExtension> thisVtbl, uint Adapter, Devtype DevType, uint OverlayWidth, uint OverlayHeight, Format OverlayFormat, Displaymodeex* pDisplayMode, Displayrotation DisplayRotation, Overlaycaps* pOverlayCaps)
     {
-        var @this = (IDirect3D9ExOverlayExtension*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Cdecl]<IDirect3D9ExOverlayExtension*, uint, Devtype, uint, uint, Format, Displaymodeex*, Displayrotation, Overlaycaps*, int>)@this->LpVtbl[3])(@this, Adapter, DevType, OverlayWidth, OverlayHeight, OverlayFormat, pDisplayMode, DisplayRotation, pOverlayCaps);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CheckDeviceOverlayType<TThis>(this TThis thisVtbl, uint Adapter, Devtype DevType, uint OverlayWidth, uint OverlayHeight, Format OverlayFormat, Displaymodeex* pDisplayMode, Displayrotation DisplayRotation, ref Overlaycaps pOverlayCaps) where TThis : IComVtbl<IDirect3D9ExOverlayExtension>
+    public static unsafe int CheckDeviceOverlayType(this ComPtr<IDirect3D9ExOverlayExtension> thisVtbl, uint Adapter, Devtype DevType, uint OverlayWidth, uint OverlayHeight, Format OverlayFormat, Displaymodeex* pDisplayMode, Displayrotation DisplayRotation, ref Overlaycaps pOverlayCaps)
     {
-        var @this = (IDirect3D9ExOverlayExtension*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Overlaycaps* pOverlayCapsPtr = &pOverlayCaps)
         {
@@ -106,9 +106,9 @@ public unsafe static class Direct3D9ExOverlayExtensionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CheckDeviceOverlayType<TThis>(this TThis thisVtbl, uint Adapter, Devtype DevType, uint OverlayWidth, uint OverlayHeight, Format OverlayFormat, ref Displaymodeex pDisplayMode, Displayrotation DisplayRotation, Overlaycaps* pOverlayCaps) where TThis : IComVtbl<IDirect3D9ExOverlayExtension>
+    public static unsafe int CheckDeviceOverlayType(this ComPtr<IDirect3D9ExOverlayExtension> thisVtbl, uint Adapter, Devtype DevType, uint OverlayWidth, uint OverlayHeight, Format OverlayFormat, ref Displaymodeex pDisplayMode, Displayrotation DisplayRotation, Overlaycaps* pOverlayCaps)
     {
-        var @this = (IDirect3D9ExOverlayExtension*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Displaymodeex* pDisplayModePtr = &pDisplayMode)
         {
@@ -118,9 +118,9 @@ public unsafe static class Direct3D9ExOverlayExtensionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CheckDeviceOverlayType<TThis>(this TThis thisVtbl, uint Adapter, Devtype DevType, uint OverlayWidth, uint OverlayHeight, Format OverlayFormat, ref Displaymodeex pDisplayMode, Displayrotation DisplayRotation, ref Overlaycaps pOverlayCaps) where TThis : IComVtbl<IDirect3D9ExOverlayExtension>
+    public static int CheckDeviceOverlayType(this ComPtr<IDirect3D9ExOverlayExtension> thisVtbl, uint Adapter, Devtype DevType, uint OverlayWidth, uint OverlayHeight, Format OverlayFormat, ref Displaymodeex pDisplayMode, Displayrotation DisplayRotation, ref Overlaycaps pOverlayCaps)
     {
-        var @this = (IDirect3D9ExOverlayExtension*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Displaymodeex* pDisplayModePtr = &pDisplayMode)
         {
@@ -133,58 +133,58 @@ public unsafe static class Direct3D9ExOverlayExtensionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDirect3D9ExOverlayExtension>
+    public static int QueryInterface<TI0>(this ComPtr<IDirect3D9ExOverlayExtension> thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (IDirect3D9ExOverlayExtension*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppvObject = default;
         return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDirect3D9ExOverlayExtension>
+    public static unsafe int QueryInterface(this ComPtr<IDirect3D9ExOverlayExtension> thisVtbl, Span<Guid> riid, void** ppvObject)
     {
-        var @this = (IDirect3D9ExOverlayExtension*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDirect3D9ExOverlayExtension>
+    public static unsafe int QueryInterface(this ComPtr<IDirect3D9ExOverlayExtension> thisVtbl, Span<Guid> riid, ref void* ppvObject)
     {
-        var @this = (IDirect3D9ExOverlayExtension*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CheckDeviceOverlayType<TThis>(this TThis thisVtbl, uint Adapter, Devtype DevType, uint OverlayWidth, uint OverlayHeight, Format OverlayFormat, Displaymodeex* pDisplayMode, Displayrotation DisplayRotation, Span<Overlaycaps> pOverlayCaps) where TThis : IComVtbl<IDirect3D9ExOverlayExtension>
+    public static unsafe int CheckDeviceOverlayType(this ComPtr<IDirect3D9ExOverlayExtension> thisVtbl, uint Adapter, Devtype DevType, uint OverlayWidth, uint OverlayHeight, Format OverlayFormat, Displaymodeex* pDisplayMode, Displayrotation DisplayRotation, Span<Overlaycaps> pOverlayCaps)
     {
-        var @this = (IDirect3D9ExOverlayExtension*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CheckDeviceOverlayType(Adapter, DevType, OverlayWidth, OverlayHeight, OverlayFormat, pDisplayMode, DisplayRotation, ref pOverlayCaps.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CheckDeviceOverlayType<TThis>(this TThis thisVtbl, uint Adapter, Devtype DevType, uint OverlayWidth, uint OverlayHeight, Format OverlayFormat, Span<Displaymodeex> pDisplayMode, Displayrotation DisplayRotation, Overlaycaps* pOverlayCaps) where TThis : IComVtbl<IDirect3D9ExOverlayExtension>
+    public static unsafe int CheckDeviceOverlayType(this ComPtr<IDirect3D9ExOverlayExtension> thisVtbl, uint Adapter, Devtype DevType, uint OverlayWidth, uint OverlayHeight, Format OverlayFormat, Span<Displaymodeex> pDisplayMode, Displayrotation DisplayRotation, Overlaycaps* pOverlayCaps)
     {
-        var @this = (IDirect3D9ExOverlayExtension*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CheckDeviceOverlayType(Adapter, DevType, OverlayWidth, OverlayHeight, OverlayFormat, ref pDisplayMode.GetPinnableReference(), DisplayRotation, pOverlayCaps);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CheckDeviceOverlayType<TThis>(this TThis thisVtbl, uint Adapter, Devtype DevType, uint OverlayWidth, uint OverlayHeight, Format OverlayFormat, Span<Displaymodeex> pDisplayMode, Displayrotation DisplayRotation, Span<Overlaycaps> pOverlayCaps) where TThis : IComVtbl<IDirect3D9ExOverlayExtension>
+    public static int CheckDeviceOverlayType(this ComPtr<IDirect3D9ExOverlayExtension> thisVtbl, uint Adapter, Devtype DevType, uint OverlayWidth, uint OverlayHeight, Format OverlayFormat, Span<Displaymodeex> pDisplayMode, Displayrotation DisplayRotation, Span<Overlaycaps> pOverlayCaps)
     {
-        var @this = (IDirect3D9ExOverlayExtension*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CheckDeviceOverlayType(Adapter, DevType, OverlayWidth, OverlayHeight, OverlayFormat, ref pDisplayMode.GetPinnableReference(), DisplayRotation, ref pOverlayCaps.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDirect3D9ExOverlayExtension>
+    public static ComPtr<TI0> QueryInterface<TI0>(this ComPtr<IDirect3D9ExOverlayExtension> thisVtbl) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (IDirect3D9ExOverlayExtension*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
         return silkRet;

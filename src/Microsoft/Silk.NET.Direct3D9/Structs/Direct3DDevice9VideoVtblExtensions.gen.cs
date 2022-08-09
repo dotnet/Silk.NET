@@ -19,18 +19,18 @@ namespace Silk.NET.Direct3D9;
 public unsafe static class Direct3DDevice9VideoVtblExtensions
 {
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Guid* riid, void** ppvObject) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int QueryInterface(this ComPtr<IDirect3DDevice9Video> thisVtbl, Guid* riid, void** ppvObject)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Guid* riid, ref void* ppvObject) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int QueryInterface(this ComPtr<IDirect3DDevice9Video> thisVtbl, Guid* riid, ref void* ppvObject)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppvObjectPtr = &ppvObject)
         {
@@ -40,9 +40,9 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, ref Guid riid, void** ppvObject) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int QueryInterface(this ComPtr<IDirect3DDevice9Video> thisVtbl, ref Guid riid, void** ppvObject)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -52,9 +52,9 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, ref Guid riid, ref void* ppvObject) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int QueryInterface(this ComPtr<IDirect3DDevice9Video> thisVtbl, ref Guid riid, ref void* ppvObject)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -67,36 +67,36 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static uint AddRef<TThis>(this TThis thisVtbl) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static uint AddRef(this ComPtr<IDirect3DDevice9Video> thisVtbl)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, uint>)@this->LpVtbl[1])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static uint Release<TThis>(this TThis thisVtbl) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static uint Release(this ComPtr<IDirect3DDevice9Video> thisVtbl)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, uint>)@this->LpVtbl[2])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetContentProtectionCaps<TThis>(this TThis thisVtbl, Guid* pCryptoType, Guid* pDecodeProfile, Contentprotectioncaps* pCaps) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int GetContentProtectionCaps(this ComPtr<IDirect3DDevice9Video> thisVtbl, Guid* pCryptoType, Guid* pDecodeProfile, Contentprotectioncaps* pCaps)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, Contentprotectioncaps*, int>)@this->LpVtbl[3])(@this, pCryptoType, pDecodeProfile, pCaps);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetContentProtectionCaps<TThis>(this TThis thisVtbl, Guid* pCryptoType, Guid* pDecodeProfile, ref Contentprotectioncaps pCaps) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int GetContentProtectionCaps(this ComPtr<IDirect3DDevice9Video> thisVtbl, Guid* pCryptoType, Guid* pDecodeProfile, ref Contentprotectioncaps pCaps)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Contentprotectioncaps* pCapsPtr = &pCaps)
         {
@@ -106,9 +106,9 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetContentProtectionCaps<TThis>(this TThis thisVtbl, Guid* pCryptoType, ref Guid pDecodeProfile, Contentprotectioncaps* pCaps) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int GetContentProtectionCaps(this ComPtr<IDirect3DDevice9Video> thisVtbl, Guid* pCryptoType, ref Guid pDecodeProfile, Contentprotectioncaps* pCaps)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* pDecodeProfilePtr = &pDecodeProfile)
         {
@@ -118,9 +118,9 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetContentProtectionCaps<TThis>(this TThis thisVtbl, Guid* pCryptoType, ref Guid pDecodeProfile, ref Contentprotectioncaps pCaps) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int GetContentProtectionCaps(this ComPtr<IDirect3DDevice9Video> thisVtbl, Guid* pCryptoType, ref Guid pDecodeProfile, ref Contentprotectioncaps pCaps)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* pDecodeProfilePtr = &pDecodeProfile)
         {
@@ -133,9 +133,9 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetContentProtectionCaps<TThis>(this TThis thisVtbl, ref Guid pCryptoType, Guid* pDecodeProfile, Contentprotectioncaps* pCaps) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int GetContentProtectionCaps(this ComPtr<IDirect3DDevice9Video> thisVtbl, ref Guid pCryptoType, Guid* pDecodeProfile, Contentprotectioncaps* pCaps)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* pCryptoTypePtr = &pCryptoType)
         {
@@ -145,9 +145,9 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetContentProtectionCaps<TThis>(this TThis thisVtbl, ref Guid pCryptoType, Guid* pDecodeProfile, ref Contentprotectioncaps pCaps) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int GetContentProtectionCaps(this ComPtr<IDirect3DDevice9Video> thisVtbl, ref Guid pCryptoType, Guid* pDecodeProfile, ref Contentprotectioncaps pCaps)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* pCryptoTypePtr = &pCryptoType)
         {
@@ -160,9 +160,9 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetContentProtectionCaps<TThis>(this TThis thisVtbl, ref Guid pCryptoType, ref Guid pDecodeProfile, Contentprotectioncaps* pCaps) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int GetContentProtectionCaps(this ComPtr<IDirect3DDevice9Video> thisVtbl, ref Guid pCryptoType, ref Guid pDecodeProfile, Contentprotectioncaps* pCaps)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* pCryptoTypePtr = &pCryptoType)
         {
@@ -175,9 +175,9 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetContentProtectionCaps<TThis>(this TThis thisVtbl, ref Guid pCryptoType, ref Guid pDecodeProfile, ref Contentprotectioncaps pCaps) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static int GetContentProtectionCaps(this ComPtr<IDirect3DDevice9Video> thisVtbl, ref Guid pCryptoType, ref Guid pDecodeProfile, ref Contentprotectioncaps pCaps)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* pCryptoTypePtr = &pCryptoType)
         {
@@ -193,18 +193,18 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateAuthenticatedChannel<TThis>(this TThis thisVtbl, Authenticatedchanneltype ChannelType, IDirect3DAuthenticatedChannel9** ppAuthenticatedChannel, void** pChannelHandle) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int CreateAuthenticatedChannel(this ComPtr<IDirect3DDevice9Video> thisVtbl, Authenticatedchanneltype ChannelType, IDirect3DAuthenticatedChannel9** ppAuthenticatedChannel, void** pChannelHandle)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Authenticatedchanneltype, IDirect3DAuthenticatedChannel9**, void**, int>)@this->LpVtbl[4])(@this, ChannelType, ppAuthenticatedChannel, pChannelHandle);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateAuthenticatedChannel<TThis>(this TThis thisVtbl, Authenticatedchanneltype ChannelType, IDirect3DAuthenticatedChannel9** ppAuthenticatedChannel, ref void* pChannelHandle) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int CreateAuthenticatedChannel(this ComPtr<IDirect3DDevice9Video> thisVtbl, Authenticatedchanneltype ChannelType, IDirect3DAuthenticatedChannel9** ppAuthenticatedChannel, ref void* pChannelHandle)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** pChannelHandlePtr = &pChannelHandle)
         {
@@ -214,9 +214,9 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateAuthenticatedChannel<TThis>(this TThis thisVtbl, Authenticatedchanneltype ChannelType, ref IDirect3DAuthenticatedChannel9* ppAuthenticatedChannel, void** pChannelHandle) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int CreateAuthenticatedChannel(this ComPtr<IDirect3DDevice9Video> thisVtbl, Authenticatedchanneltype ChannelType, ref IDirect3DAuthenticatedChannel9* ppAuthenticatedChannel, void** pChannelHandle)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDirect3DAuthenticatedChannel9** ppAuthenticatedChannelPtr = &ppAuthenticatedChannel)
         {
@@ -226,9 +226,9 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateAuthenticatedChannel<TThis>(this TThis thisVtbl, Authenticatedchanneltype ChannelType, ref IDirect3DAuthenticatedChannel9* ppAuthenticatedChannel, ref void* pChannelHandle) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int CreateAuthenticatedChannel(this ComPtr<IDirect3DDevice9Video> thisVtbl, Authenticatedchanneltype ChannelType, ref IDirect3DAuthenticatedChannel9* ppAuthenticatedChannel, ref void* pChannelHandle)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDirect3DAuthenticatedChannel9** ppAuthenticatedChannelPtr = &ppAuthenticatedChannel)
         {
@@ -241,18 +241,18 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TThis>(this TThis thisVtbl, Guid* pCryptoType, Guid* pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, void** pCryptoHandle) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, Guid* pCryptoType, Guid* pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, void** pCryptoHandle)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, IDirect3DCryptoSession9**, void**, int>)@this->LpVtbl[5])(@this, pCryptoType, pDecodeProfile, ppCryptoSession, pCryptoHandle);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TThis>(this TThis thisVtbl, Guid* pCryptoType, Guid* pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, ref void* pCryptoHandle) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, Guid* pCryptoType, Guid* pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, ref void* pCryptoHandle)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** pCryptoHandlePtr = &pCryptoHandle)
         {
@@ -262,9 +262,9 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TThis>(this TThis thisVtbl, Guid* pCryptoType, Guid* pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, void** pCryptoHandle) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, Guid* pCryptoType, Guid* pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, void** pCryptoHandle)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDirect3DCryptoSession9** ppCryptoSessionPtr = &ppCryptoSession)
         {
@@ -274,9 +274,9 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TThis>(this TThis thisVtbl, Guid* pCryptoType, Guid* pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, ref void* pCryptoHandle) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, Guid* pCryptoType, Guid* pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, ref void* pCryptoHandle)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDirect3DCryptoSession9** ppCryptoSessionPtr = &ppCryptoSession)
         {
@@ -289,9 +289,9 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TThis>(this TThis thisVtbl, Guid* pCryptoType, ref Guid pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, void** pCryptoHandle) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, Guid* pCryptoType, ref Guid pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, void** pCryptoHandle)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* pDecodeProfilePtr = &pDecodeProfile)
         {
@@ -301,9 +301,9 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TThis>(this TThis thisVtbl, Guid* pCryptoType, ref Guid pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, ref void* pCryptoHandle) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, Guid* pCryptoType, ref Guid pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, ref void* pCryptoHandle)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* pDecodeProfilePtr = &pDecodeProfile)
         {
@@ -316,9 +316,9 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TThis>(this TThis thisVtbl, Guid* pCryptoType, ref Guid pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, void** pCryptoHandle) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, Guid* pCryptoType, ref Guid pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, void** pCryptoHandle)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* pDecodeProfilePtr = &pDecodeProfile)
         {
@@ -331,9 +331,9 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TThis>(this TThis thisVtbl, Guid* pCryptoType, ref Guid pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, ref void* pCryptoHandle) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, Guid* pCryptoType, ref Guid pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, ref void* pCryptoHandle)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* pDecodeProfilePtr = &pDecodeProfile)
         {
@@ -349,9 +349,9 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TThis>(this TThis thisVtbl, ref Guid pCryptoType, Guid* pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, void** pCryptoHandle) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, ref Guid pCryptoType, Guid* pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, void** pCryptoHandle)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* pCryptoTypePtr = &pCryptoType)
         {
@@ -361,9 +361,9 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TThis>(this TThis thisVtbl, ref Guid pCryptoType, Guid* pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, ref void* pCryptoHandle) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, ref Guid pCryptoType, Guid* pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, ref void* pCryptoHandle)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* pCryptoTypePtr = &pCryptoType)
         {
@@ -376,9 +376,9 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TThis>(this TThis thisVtbl, ref Guid pCryptoType, Guid* pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, void** pCryptoHandle) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, ref Guid pCryptoType, Guid* pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, void** pCryptoHandle)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* pCryptoTypePtr = &pCryptoType)
         {
@@ -391,9 +391,9 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TThis>(this TThis thisVtbl, ref Guid pCryptoType, Guid* pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, ref void* pCryptoHandle) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, ref Guid pCryptoType, Guid* pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, ref void* pCryptoHandle)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* pCryptoTypePtr = &pCryptoType)
         {
@@ -409,9 +409,9 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TThis>(this TThis thisVtbl, ref Guid pCryptoType, ref Guid pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, void** pCryptoHandle) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, ref Guid pCryptoType, ref Guid pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, void** pCryptoHandle)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* pCryptoTypePtr = &pCryptoType)
         {
@@ -424,9 +424,9 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TThis>(this TThis thisVtbl, ref Guid pCryptoType, ref Guid pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, ref void* pCryptoHandle) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, ref Guid pCryptoType, ref Guid pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, ref void* pCryptoHandle)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* pCryptoTypePtr = &pCryptoType)
         {
@@ -442,9 +442,9 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TThis>(this TThis thisVtbl, ref Guid pCryptoType, ref Guid pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, void** pCryptoHandle) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, ref Guid pCryptoType, ref Guid pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, void** pCryptoHandle)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* pCryptoTypePtr = &pCryptoType)
         {
@@ -460,9 +460,9 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TThis>(this TThis thisVtbl, ref Guid pCryptoType, ref Guid pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, ref void* pCryptoHandle) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, ref Guid pCryptoType, ref Guid pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, ref void* pCryptoHandle)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* pCryptoTypePtr = &pCryptoType)
         {
@@ -481,266 +481,266 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static int QueryInterface<TI0>(this ComPtr<IDirect3DDevice9Video> thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppvObject = default;
         return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int QueryInterface(this ComPtr<IDirect3DDevice9Video> thisVtbl, Span<Guid> riid, void** ppvObject)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int QueryInterface(this ComPtr<IDirect3DDevice9Video> thisVtbl, Span<Guid> riid, ref void* ppvObject)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetContentProtectionCaps<TThis>(this TThis thisVtbl, Guid* pCryptoType, Guid* pDecodeProfile, Span<Contentprotectioncaps> pCaps) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int GetContentProtectionCaps(this ComPtr<IDirect3DDevice9Video> thisVtbl, Guid* pCryptoType, Guid* pDecodeProfile, Span<Contentprotectioncaps> pCaps)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetContentProtectionCaps(pCryptoType, pDecodeProfile, ref pCaps.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetContentProtectionCaps<TThis>(this TThis thisVtbl, Guid* pCryptoType, Span<Guid> pDecodeProfile, Contentprotectioncaps* pCaps) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int GetContentProtectionCaps(this ComPtr<IDirect3DDevice9Video> thisVtbl, Guid* pCryptoType, Span<Guid> pDecodeProfile, Contentprotectioncaps* pCaps)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetContentProtectionCaps(pCryptoType, ref pDecodeProfile.GetPinnableReference(), pCaps);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetContentProtectionCaps<TThis>(this TThis thisVtbl, Guid* pCryptoType, Span<Guid> pDecodeProfile, Span<Contentprotectioncaps> pCaps) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int GetContentProtectionCaps(this ComPtr<IDirect3DDevice9Video> thisVtbl, Guid* pCryptoType, Span<Guid> pDecodeProfile, Span<Contentprotectioncaps> pCaps)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetContentProtectionCaps(pCryptoType, ref pDecodeProfile.GetPinnableReference(), ref pCaps.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetContentProtectionCaps<TThis>(this TThis thisVtbl, Span<Guid> pCryptoType, Guid* pDecodeProfile, Contentprotectioncaps* pCaps) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int GetContentProtectionCaps(this ComPtr<IDirect3DDevice9Video> thisVtbl, Span<Guid> pCryptoType, Guid* pDecodeProfile, Contentprotectioncaps* pCaps)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetContentProtectionCaps(ref pCryptoType.GetPinnableReference(), pDecodeProfile, pCaps);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetContentProtectionCaps<TThis>(this TThis thisVtbl, Span<Guid> pCryptoType, Guid* pDecodeProfile, Span<Contentprotectioncaps> pCaps) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int GetContentProtectionCaps(this ComPtr<IDirect3DDevice9Video> thisVtbl, Span<Guid> pCryptoType, Guid* pDecodeProfile, Span<Contentprotectioncaps> pCaps)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetContentProtectionCaps(ref pCryptoType.GetPinnableReference(), pDecodeProfile, ref pCaps.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetContentProtectionCaps<TThis>(this TThis thisVtbl, Span<Guid> pCryptoType, Span<Guid> pDecodeProfile, Contentprotectioncaps* pCaps) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int GetContentProtectionCaps(this ComPtr<IDirect3DDevice9Video> thisVtbl, Span<Guid> pCryptoType, Span<Guid> pDecodeProfile, Contentprotectioncaps* pCaps)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetContentProtectionCaps(ref pCryptoType.GetPinnableReference(), ref pDecodeProfile.GetPinnableReference(), pCaps);
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetContentProtectionCaps<TThis>(this TThis thisVtbl, Span<Guid> pCryptoType, Span<Guid> pDecodeProfile, Span<Contentprotectioncaps> pCaps) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static int GetContentProtectionCaps(this ComPtr<IDirect3DDevice9Video> thisVtbl, Span<Guid> pCryptoType, Span<Guid> pDecodeProfile, Span<Contentprotectioncaps> pCaps)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetContentProtectionCaps(ref pCryptoType.GetPinnableReference(), ref pDecodeProfile.GetPinnableReference(), ref pCaps.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateAuthenticatedChannel<TI0, TThis>(this TThis thisVtbl, Authenticatedchanneltype ChannelType, ref ComPtr<TI0> ppAuthenticatedChannel, void** pChannelHandle) where TI0 : unmanaged, IComVtbl<IDirect3DAuthenticatedChannel9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int CreateAuthenticatedChannel<TI0>(this ComPtr<IDirect3DDevice9Video> thisVtbl, Authenticatedchanneltype ChannelType, ref ComPtr<TI0> ppAuthenticatedChannel, void** pChannelHandle) where TI0 : unmanaged, IComVtbl<IDirect3DAuthenticatedChannel9>, IComVtbl<TI0>
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->CreateAuthenticatedChannel(ChannelType, (IDirect3DAuthenticatedChannel9**) ppAuthenticatedChannel.GetAddressOf(), pChannelHandle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateAuthenticatedChannel<TI0, TThis>(this TThis thisVtbl, Authenticatedchanneltype ChannelType, ref ComPtr<TI0> ppAuthenticatedChannel, ref void* pChannelHandle) where TI0 : unmanaged, IComVtbl<IDirect3DAuthenticatedChannel9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int CreateAuthenticatedChannel<TI0>(this ComPtr<IDirect3DDevice9Video> thisVtbl, Authenticatedchanneltype ChannelType, ref ComPtr<TI0> ppAuthenticatedChannel, ref void* pChannelHandle) where TI0 : unmanaged, IComVtbl<IDirect3DAuthenticatedChannel9>, IComVtbl<TI0>
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->CreateAuthenticatedChannel(ChannelType, (IDirect3DAuthenticatedChannel9**) ppAuthenticatedChannel.GetAddressOf(), ref pChannelHandle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TI0, TThis>(this TThis thisVtbl, Guid* pCryptoType, ref ComPtr<TI0> ppCryptoSession, void** pCryptoHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCryptoSession9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int CreateCryptoSession<TI0>(this ComPtr<IDirect3DDevice9Video> thisVtbl, Guid* pCryptoType, ref ComPtr<TI0> ppCryptoSession, void** pCryptoHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCryptoSession9>, IComVtbl<TI0>
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->CreateCryptoSession(pCryptoType, SilkMarshal.GuidPtrOf<TI0>(), (IDirect3DCryptoSession9**) ppCryptoSession.GetAddressOf(), pCryptoHandle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TI0, TThis>(this TThis thisVtbl, Guid* pCryptoType, ref ComPtr<TI0> ppCryptoSession, ref void* pCryptoHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCryptoSession9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int CreateCryptoSession<TI0>(this ComPtr<IDirect3DDevice9Video> thisVtbl, Guid* pCryptoType, ref ComPtr<TI0> ppCryptoSession, ref void* pCryptoHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCryptoSession9>, IComVtbl<TI0>
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->CreateCryptoSession(pCryptoType, SilkMarshal.GuidPtrOf<TI0>(), (IDirect3DCryptoSession9**) ppCryptoSession.GetAddressOf(), ref pCryptoHandle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TThis>(this TThis thisVtbl, Guid* pCryptoType, Span<Guid> pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, void** pCryptoHandle) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, Guid* pCryptoType, Span<Guid> pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, void** pCryptoHandle)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateCryptoSession(pCryptoType, ref pDecodeProfile.GetPinnableReference(), ppCryptoSession, pCryptoHandle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TI0, TThis>(this TThis thisVtbl, Guid* pCryptoType, ref Guid pDecodeProfile, ref ComPtr<TI0> ppCryptoSession, void** pCryptoHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCryptoSession9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int CreateCryptoSession<TI0>(this ComPtr<IDirect3DDevice9Video> thisVtbl, Guid* pCryptoType, ref Guid pDecodeProfile, ref ComPtr<TI0> ppCryptoSession, void** pCryptoHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCryptoSession9>, IComVtbl<TI0>
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->CreateCryptoSession(pCryptoType, ref pDecodeProfile, (IDirect3DCryptoSession9**) ppCryptoSession.GetAddressOf(), pCryptoHandle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TThis>(this TThis thisVtbl, Guid* pCryptoType, Span<Guid> pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, ref void* pCryptoHandle) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, Guid* pCryptoType, Span<Guid> pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, ref void* pCryptoHandle)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateCryptoSession(pCryptoType, ref pDecodeProfile.GetPinnableReference(), ppCryptoSession, ref pCryptoHandle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TI0, TThis>(this TThis thisVtbl, Guid* pCryptoType, ref Guid pDecodeProfile, ref ComPtr<TI0> ppCryptoSession, ref void* pCryptoHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCryptoSession9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int CreateCryptoSession<TI0>(this ComPtr<IDirect3DDevice9Video> thisVtbl, Guid* pCryptoType, ref Guid pDecodeProfile, ref ComPtr<TI0> ppCryptoSession, ref void* pCryptoHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCryptoSession9>, IComVtbl<TI0>
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->CreateCryptoSession(pCryptoType, ref pDecodeProfile, (IDirect3DCryptoSession9**) ppCryptoSession.GetAddressOf(), ref pCryptoHandle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TThis>(this TThis thisVtbl, Guid* pCryptoType, Span<Guid> pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, void** pCryptoHandle) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, Guid* pCryptoType, Span<Guid> pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, void** pCryptoHandle)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateCryptoSession(pCryptoType, ref pDecodeProfile.GetPinnableReference(), ref ppCryptoSession, pCryptoHandle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TThis>(this TThis thisVtbl, Guid* pCryptoType, Span<Guid> pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, ref void* pCryptoHandle) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, Guid* pCryptoType, Span<Guid> pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, ref void* pCryptoHandle)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateCryptoSession(pCryptoType, ref pDecodeProfile.GetPinnableReference(), ref ppCryptoSession, ref pCryptoHandle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TThis>(this TThis thisVtbl, Span<Guid> pCryptoType, Guid* pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, void** pCryptoHandle) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, Span<Guid> pCryptoType, Guid* pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, void** pCryptoHandle)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateCryptoSession(ref pCryptoType.GetPinnableReference(), pDecodeProfile, ppCryptoSession, pCryptoHandle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TI0, TThis>(this TThis thisVtbl, ref Guid pCryptoType, ref ComPtr<TI0> ppCryptoSession, void** pCryptoHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCryptoSession9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int CreateCryptoSession<TI0>(this ComPtr<IDirect3DDevice9Video> thisVtbl, ref Guid pCryptoType, ref ComPtr<TI0> ppCryptoSession, void** pCryptoHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCryptoSession9>, IComVtbl<TI0>
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->CreateCryptoSession(ref pCryptoType, SilkMarshal.GuidPtrOf<TI0>(), (IDirect3DCryptoSession9**) ppCryptoSession.GetAddressOf(), pCryptoHandle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TThis>(this TThis thisVtbl, Span<Guid> pCryptoType, Guid* pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, ref void* pCryptoHandle) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, Span<Guid> pCryptoType, Guid* pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, ref void* pCryptoHandle)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateCryptoSession(ref pCryptoType.GetPinnableReference(), pDecodeProfile, ppCryptoSession, ref pCryptoHandle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TI0, TThis>(this TThis thisVtbl, ref Guid pCryptoType, ref ComPtr<TI0> ppCryptoSession, ref void* pCryptoHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCryptoSession9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int CreateCryptoSession<TI0>(this ComPtr<IDirect3DDevice9Video> thisVtbl, ref Guid pCryptoType, ref ComPtr<TI0> ppCryptoSession, ref void* pCryptoHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCryptoSession9>, IComVtbl<TI0>
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->CreateCryptoSession(ref pCryptoType, SilkMarshal.GuidPtrOf<TI0>(), (IDirect3DCryptoSession9**) ppCryptoSession.GetAddressOf(), ref pCryptoHandle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TThis>(this TThis thisVtbl, Span<Guid> pCryptoType, Guid* pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, void** pCryptoHandle) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, Span<Guid> pCryptoType, Guid* pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, void** pCryptoHandle)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateCryptoSession(ref pCryptoType.GetPinnableReference(), pDecodeProfile, ref ppCryptoSession, pCryptoHandle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TThis>(this TThis thisVtbl, Span<Guid> pCryptoType, Guid* pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, ref void* pCryptoHandle) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, Span<Guid> pCryptoType, Guid* pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, ref void* pCryptoHandle)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateCryptoSession(ref pCryptoType.GetPinnableReference(), pDecodeProfile, ref ppCryptoSession, ref pCryptoHandle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TThis>(this TThis thisVtbl, Span<Guid> pCryptoType, Span<Guid> pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, void** pCryptoHandle) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, Span<Guid> pCryptoType, Span<Guid> pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, void** pCryptoHandle)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateCryptoSession(ref pCryptoType.GetPinnableReference(), ref pDecodeProfile.GetPinnableReference(), ppCryptoSession, pCryptoHandle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TI0, TThis>(this TThis thisVtbl, ref Guid pCryptoType, ref Guid pDecodeProfile, ref ComPtr<TI0> ppCryptoSession, void** pCryptoHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCryptoSession9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int CreateCryptoSession<TI0>(this ComPtr<IDirect3DDevice9Video> thisVtbl, ref Guid pCryptoType, ref Guid pDecodeProfile, ref ComPtr<TI0> ppCryptoSession, void** pCryptoHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCryptoSession9>, IComVtbl<TI0>
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->CreateCryptoSession(ref pCryptoType, ref pDecodeProfile, (IDirect3DCryptoSession9**) ppCryptoSession.GetAddressOf(), pCryptoHandle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TThis>(this TThis thisVtbl, Span<Guid> pCryptoType, Span<Guid> pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, ref void* pCryptoHandle) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, Span<Guid> pCryptoType, Span<Guid> pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, ref void* pCryptoHandle)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateCryptoSession(ref pCryptoType.GetPinnableReference(), ref pDecodeProfile.GetPinnableReference(), ppCryptoSession, ref pCryptoHandle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TI0, TThis>(this TThis thisVtbl, ref Guid pCryptoType, ref Guid pDecodeProfile, ref ComPtr<TI0> ppCryptoSession, ref void* pCryptoHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCryptoSession9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int CreateCryptoSession<TI0>(this ComPtr<IDirect3DDevice9Video> thisVtbl, ref Guid pCryptoType, ref Guid pDecodeProfile, ref ComPtr<TI0> ppCryptoSession, ref void* pCryptoHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCryptoSession9>, IComVtbl<TI0>
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->CreateCryptoSession(ref pCryptoType, ref pDecodeProfile, (IDirect3DCryptoSession9**) ppCryptoSession.GetAddressOf(), ref pCryptoHandle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TThis>(this TThis thisVtbl, Span<Guid> pCryptoType, Span<Guid> pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, void** pCryptoHandle) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, Span<Guid> pCryptoType, Span<Guid> pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, void** pCryptoHandle)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateCryptoSession(ref pCryptoType.GetPinnableReference(), ref pDecodeProfile.GetPinnableReference(), ref ppCryptoSession, pCryptoHandle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TThis>(this TThis thisVtbl, Span<Guid> pCryptoType, Span<Guid> pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, ref void* pCryptoHandle) where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, Span<Guid> pCryptoType, Span<Guid> pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, ref void* pCryptoHandle)
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateCryptoSession(ref pCryptoType.GetPinnableReference(), ref pDecodeProfile.GetPinnableReference(), ref ppCryptoSession, ref pCryptoHandle);
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Video>
+    public static ComPtr<TI0> QueryInterface<TI0>(this ComPtr<IDirect3DDevice9Video> thisVtbl) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
         return silkRet;

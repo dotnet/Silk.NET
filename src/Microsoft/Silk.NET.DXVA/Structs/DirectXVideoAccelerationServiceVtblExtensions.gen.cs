@@ -19,18 +19,18 @@ namespace Silk.NET.DXVA;
 public unsafe static class DirectXVideoAccelerationServiceVtblExtensions
 {
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Guid* riid, void** ppvObject) where TThis : IComVtbl<IDirectXVideoAccelerationService>
+    public static unsafe int QueryInterface(this ComPtr<IDirectXVideoAccelerationService> thisVtbl, Guid* riid, void** ppvObject)
     {
-        var @this = (IDirectXVideoAccelerationService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoAccelerationService*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Guid* riid, ref void* ppvObject) where TThis : IComVtbl<IDirectXVideoAccelerationService>
+    public static unsafe int QueryInterface(this ComPtr<IDirectXVideoAccelerationService> thisVtbl, Guid* riid, ref void* ppvObject)
     {
-        var @this = (IDirectXVideoAccelerationService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppvObjectPtr = &ppvObject)
         {
@@ -40,9 +40,9 @@ public unsafe static class DirectXVideoAccelerationServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, ref Guid riid, void** ppvObject) where TThis : IComVtbl<IDirectXVideoAccelerationService>
+    public static unsafe int QueryInterface(this ComPtr<IDirectXVideoAccelerationService> thisVtbl, ref Guid riid, void** ppvObject)
     {
-        var @this = (IDirectXVideoAccelerationService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -52,9 +52,9 @@ public unsafe static class DirectXVideoAccelerationServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, ref Guid riid, ref void* ppvObject) where TThis : IComVtbl<IDirectXVideoAccelerationService>
+    public static unsafe int QueryInterface(this ComPtr<IDirectXVideoAccelerationService> thisVtbl, ref Guid riid, ref void* ppvObject)
     {
-        var @this = (IDirectXVideoAccelerationService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -67,36 +67,36 @@ public unsafe static class DirectXVideoAccelerationServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static uint AddRef<TThis>(this TThis thisVtbl) where TThis : IComVtbl<IDirectXVideoAccelerationService>
+    public static uint AddRef(this ComPtr<IDirectXVideoAccelerationService> thisVtbl)
     {
-        var @this = (IDirectXVideoAccelerationService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoAccelerationService*, uint>)@this->LpVtbl[1])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static uint Release<TThis>(this TThis thisVtbl) where TThis : IComVtbl<IDirectXVideoAccelerationService>
+    public static uint Release(this ComPtr<IDirectXVideoAccelerationService> thisVtbl)
     {
-        var @this = (IDirectXVideoAccelerationService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoAccelerationService*, uint>)@this->LpVtbl[2])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSurface<TThis>(this TThis thisVtbl, uint Width, uint Height, uint BackBuffers, Silk.NET.Direct3D9.Format Format, Silk.NET.Direct3D9.Pool Pool, uint Usage, uint DxvaType, Silk.NET.Direct3D9.IDirect3DSurface9** ppSurface, void** pSharedHandle) where TThis : IComVtbl<IDirectXVideoAccelerationService>
+    public static unsafe int CreateSurface(this ComPtr<IDirectXVideoAccelerationService> thisVtbl, uint Width, uint Height, uint BackBuffers, Silk.NET.Direct3D9.Format Format, Silk.NET.Direct3D9.Pool Pool, uint Usage, uint DxvaType, Silk.NET.Direct3D9.IDirect3DSurface9** ppSurface, void** pSharedHandle)
     {
-        var @this = (IDirectXVideoAccelerationService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoAccelerationService*, uint, uint, uint, Silk.NET.Direct3D9.Format, Silk.NET.Direct3D9.Pool, uint, uint, Silk.NET.Direct3D9.IDirect3DSurface9**, void**, int>)@this->LpVtbl[3])(@this, Width, Height, BackBuffers, Format, Pool, Usage, DxvaType, ppSurface, pSharedHandle);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSurface<TThis>(this TThis thisVtbl, uint Width, uint Height, uint BackBuffers, Silk.NET.Direct3D9.Format Format, Silk.NET.Direct3D9.Pool Pool, uint Usage, uint DxvaType, Silk.NET.Direct3D9.IDirect3DSurface9** ppSurface, ref void* pSharedHandle) where TThis : IComVtbl<IDirectXVideoAccelerationService>
+    public static unsafe int CreateSurface(this ComPtr<IDirectXVideoAccelerationService> thisVtbl, uint Width, uint Height, uint BackBuffers, Silk.NET.Direct3D9.Format Format, Silk.NET.Direct3D9.Pool Pool, uint Usage, uint DxvaType, Silk.NET.Direct3D9.IDirect3DSurface9** ppSurface, ref void* pSharedHandle)
     {
-        var @this = (IDirectXVideoAccelerationService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** pSharedHandlePtr = &pSharedHandle)
         {
@@ -106,9 +106,9 @@ public unsafe static class DirectXVideoAccelerationServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSurface<TThis>(this TThis thisVtbl, uint Width, uint Height, uint BackBuffers, Silk.NET.Direct3D9.Format Format, Silk.NET.Direct3D9.Pool Pool, uint Usage, uint DxvaType, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppSurface, void** pSharedHandle) where TThis : IComVtbl<IDirectXVideoAccelerationService>
+    public static unsafe int CreateSurface(this ComPtr<IDirectXVideoAccelerationService> thisVtbl, uint Width, uint Height, uint BackBuffers, Silk.NET.Direct3D9.Format Format, Silk.NET.Direct3D9.Pool Pool, uint Usage, uint DxvaType, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppSurface, void** pSharedHandle)
     {
-        var @this = (IDirectXVideoAccelerationService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Direct3D9.IDirect3DSurface9** ppSurfacePtr = &ppSurface)
         {
@@ -118,9 +118,9 @@ public unsafe static class DirectXVideoAccelerationServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSurface<TThis>(this TThis thisVtbl, uint Width, uint Height, uint BackBuffers, Silk.NET.Direct3D9.Format Format, Silk.NET.Direct3D9.Pool Pool, uint Usage, uint DxvaType, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppSurface, ref void* pSharedHandle) where TThis : IComVtbl<IDirectXVideoAccelerationService>
+    public static unsafe int CreateSurface(this ComPtr<IDirectXVideoAccelerationService> thisVtbl, uint Width, uint Height, uint BackBuffers, Silk.NET.Direct3D9.Format Format, Silk.NET.Direct3D9.Pool Pool, uint Usage, uint DxvaType, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppSurface, ref void* pSharedHandle)
     {
-        var @this = (IDirectXVideoAccelerationService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Direct3D9.IDirect3DSurface9** ppSurfacePtr = &ppSurface)
         {
@@ -133,34 +133,34 @@ public unsafe static class DirectXVideoAccelerationServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDirectXVideoAccelerationService>
+    public static int QueryInterface<TI0>(this ComPtr<IDirectXVideoAccelerationService> thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (IDirectXVideoAccelerationService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppvObject = default;
         return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDirectXVideoAccelerationService>
+    public static unsafe int QueryInterface(this ComPtr<IDirectXVideoAccelerationService> thisVtbl, Span<Guid> riid, void** ppvObject)
     {
-        var @this = (IDirectXVideoAccelerationService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDirectXVideoAccelerationService>
+    public static unsafe int QueryInterface(this ComPtr<IDirectXVideoAccelerationService> thisVtbl, Span<Guid> riid, ref void* ppvObject)
     {
-        var @this = (IDirectXVideoAccelerationService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDirectXVideoAccelerationService>
+    public static ComPtr<TI0> QueryInterface<TI0>(this ComPtr<IDirectXVideoAccelerationService> thisVtbl) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (IDirectXVideoAccelerationService*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
         return silkRet;

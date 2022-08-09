@@ -19,18 +19,18 @@ namespace Silk.NET.Direct3D11;
 public unsafe static class D3D11ShaderReflectionTypeVtblExtensions
 {
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDesc<TThis>(this TThis thisVtbl, ShaderTypeDesc* pDesc) where TThis : IComVtbl<ID3D11ShaderReflectionType>
+    public static unsafe int GetDesc(this ComPtr<ID3D11ShaderReflectionType> thisVtbl, ShaderTypeDesc* pDesc)
     {
-        var @this = (ID3D11ShaderReflectionType*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderReflectionType*, ShaderTypeDesc*, int>)@this->LpVtbl[0])(@this, pDesc);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetDesc<TThis>(this TThis thisVtbl, ref ShaderTypeDesc pDesc) where TThis : IComVtbl<ID3D11ShaderReflectionType>
+    public static int GetDesc(this ComPtr<ID3D11ShaderReflectionType> thisVtbl, ref ShaderTypeDesc pDesc)
     {
-        var @this = (ID3D11ShaderReflectionType*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ShaderTypeDesc* pDescPtr = &pDesc)
         {
@@ -40,27 +40,27 @@ public unsafe static class D3D11ShaderReflectionTypeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ID3D11ShaderReflectionType* GetMemberTypeByIndex<TThis>(this TThis thisVtbl, uint Index) where TThis : IComVtbl<ID3D11ShaderReflectionType>
+    public static unsafe ID3D11ShaderReflectionType* GetMemberTypeByIndex(this ComPtr<ID3D11ShaderReflectionType> thisVtbl, uint Index)
     {
-        var @this = (ID3D11ShaderReflectionType*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ID3D11ShaderReflectionType* ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderReflectionType*, uint, ID3D11ShaderReflectionType*>)@this->LpVtbl[1])(@this, Index);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ID3D11ShaderReflectionType* GetMemberTypeByName<TThis>(this TThis thisVtbl, byte* Name) where TThis : IComVtbl<ID3D11ShaderReflectionType>
+    public static unsafe ID3D11ShaderReflectionType* GetMemberTypeByName(this ComPtr<ID3D11ShaderReflectionType> thisVtbl, byte* Name)
     {
-        var @this = (ID3D11ShaderReflectionType*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ID3D11ShaderReflectionType* ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderReflectionType*, byte*, ID3D11ShaderReflectionType*>)@this->LpVtbl[2])(@this, Name);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ID3D11ShaderReflectionType* GetMemberTypeByName<TThis>(this TThis thisVtbl, ref byte Name) where TThis : IComVtbl<ID3D11ShaderReflectionType>
+    public static unsafe ID3D11ShaderReflectionType* GetMemberTypeByName(this ComPtr<ID3D11ShaderReflectionType> thisVtbl, ref byte Name)
     {
-        var @this = (ID3D11ShaderReflectionType*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ID3D11ShaderReflectionType* ret = default;
         fixed (byte* NamePtr = &Name)
         {
@@ -70,9 +70,9 @@ public unsafe static class D3D11ShaderReflectionTypeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ID3D11ShaderReflectionType* GetMemberTypeByName<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string Name) where TThis : IComVtbl<ID3D11ShaderReflectionType>
+    public static unsafe ID3D11ShaderReflectionType* GetMemberTypeByName(this ComPtr<ID3D11ShaderReflectionType> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string Name)
     {
-        var @this = (ID3D11ShaderReflectionType*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ID3D11ShaderReflectionType* ret = default;
         var NamePtr = (byte*) SilkMarshal.StringToPtr(Name, NativeStringEncoding.LPStr);
         ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderReflectionType*, byte*, ID3D11ShaderReflectionType*>)@this->LpVtbl[2])(@this, NamePtr);
@@ -81,9 +81,9 @@ public unsafe static class D3D11ShaderReflectionTypeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe byte* GetMemberTypeName<TThis>(this TThis thisVtbl, uint Index) where TThis : IComVtbl<ID3D11ShaderReflectionType>
+    public static unsafe byte* GetMemberTypeName(this ComPtr<ID3D11ShaderReflectionType> thisVtbl, uint Index)
     {
-        var @this = (ID3D11ShaderReflectionType*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         byte* ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderReflectionType*, uint, byte*>)@this->LpVtbl[3])(@this, Index);
         return ret;
@@ -91,27 +91,27 @@ public unsafe static class D3D11ShaderReflectionTypeVtblExtensions
 
     /// <summary>To be documented.</summary>
     [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)]
-    public static string GetMemberTypeNameS<TThis>(this TThis thisVtbl, uint Index) where TThis : IComVtbl<ID3D11ShaderReflectionType>
+    public static string GetMemberTypeNameS(this ComPtr<ID3D11ShaderReflectionType> thisVtbl, uint Index)
     {
-        var @this = (ID3D11ShaderReflectionType*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         string ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderReflectionType*, uint, string>)@this->LpVtbl[3])(@this, Index);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int IsEqual<TThis>(this TThis thisVtbl, ID3D11ShaderReflectionType* pType) where TThis : IComVtbl<ID3D11ShaderReflectionType>
+    public static unsafe int IsEqual(this ComPtr<ID3D11ShaderReflectionType> thisVtbl, ID3D11ShaderReflectionType* pType)
     {
-        var @this = (ID3D11ShaderReflectionType*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderReflectionType*, ID3D11ShaderReflectionType*, int>)@this->LpVtbl[4])(@this, pType);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsEqual<TThis>(this TThis thisVtbl, ref ID3D11ShaderReflectionType pType) where TThis : IComVtbl<ID3D11ShaderReflectionType>
+    public static int IsEqual(this ComPtr<ID3D11ShaderReflectionType> thisVtbl, ref ID3D11ShaderReflectionType pType)
     {
-        var @this = (ID3D11ShaderReflectionType*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D11ShaderReflectionType* pTypePtr = &pType)
         {
@@ -121,54 +121,54 @@ public unsafe static class D3D11ShaderReflectionTypeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ID3D11ShaderReflectionType* GetSubType<TThis>(this TThis thisVtbl) where TThis : IComVtbl<ID3D11ShaderReflectionType>
+    public static unsafe ID3D11ShaderReflectionType* GetSubType(this ComPtr<ID3D11ShaderReflectionType> thisVtbl)
     {
-        var @this = (ID3D11ShaderReflectionType*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ID3D11ShaderReflectionType* ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderReflectionType*, ID3D11ShaderReflectionType*>)@this->LpVtbl[5])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ID3D11ShaderReflectionType* GetBaseClass<TThis>(this TThis thisVtbl) where TThis : IComVtbl<ID3D11ShaderReflectionType>
+    public static unsafe ID3D11ShaderReflectionType* GetBaseClass(this ComPtr<ID3D11ShaderReflectionType> thisVtbl)
     {
-        var @this = (ID3D11ShaderReflectionType*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ID3D11ShaderReflectionType* ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderReflectionType*, ID3D11ShaderReflectionType*>)@this->LpVtbl[6])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static uint GetNumInterfaces<TThis>(this TThis thisVtbl) where TThis : IComVtbl<ID3D11ShaderReflectionType>
+    public static uint GetNumInterfaces(this ComPtr<ID3D11ShaderReflectionType> thisVtbl)
     {
-        var @this = (ID3D11ShaderReflectionType*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderReflectionType*, uint>)@this->LpVtbl[7])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ID3D11ShaderReflectionType* GetInterfaceByIndex<TThis>(this TThis thisVtbl, uint uIndex) where TThis : IComVtbl<ID3D11ShaderReflectionType>
+    public static unsafe ID3D11ShaderReflectionType* GetInterfaceByIndex(this ComPtr<ID3D11ShaderReflectionType> thisVtbl, uint uIndex)
     {
-        var @this = (ID3D11ShaderReflectionType*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ID3D11ShaderReflectionType* ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderReflectionType*, uint, ID3D11ShaderReflectionType*>)@this->LpVtbl[8])(@this, uIndex);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int IsOfType<TThis>(this TThis thisVtbl, ID3D11ShaderReflectionType* pType) where TThis : IComVtbl<ID3D11ShaderReflectionType>
+    public static unsafe int IsOfType(this ComPtr<ID3D11ShaderReflectionType> thisVtbl, ID3D11ShaderReflectionType* pType)
     {
-        var @this = (ID3D11ShaderReflectionType*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderReflectionType*, ID3D11ShaderReflectionType*, int>)@this->LpVtbl[9])(@this, pType);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsOfType<TThis>(this TThis thisVtbl, ref ID3D11ShaderReflectionType pType) where TThis : IComVtbl<ID3D11ShaderReflectionType>
+    public static int IsOfType(this ComPtr<ID3D11ShaderReflectionType> thisVtbl, ref ID3D11ShaderReflectionType pType)
     {
-        var @this = (ID3D11ShaderReflectionType*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D11ShaderReflectionType* pTypePtr = &pType)
         {
@@ -178,18 +178,18 @@ public unsafe static class D3D11ShaderReflectionTypeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ImplementsInterface<TThis>(this TThis thisVtbl, ID3D11ShaderReflectionType* pBase) where TThis : IComVtbl<ID3D11ShaderReflectionType>
+    public static unsafe int ImplementsInterface(this ComPtr<ID3D11ShaderReflectionType> thisVtbl, ID3D11ShaderReflectionType* pBase)
     {
-        var @this = (ID3D11ShaderReflectionType*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderReflectionType*, ID3D11ShaderReflectionType*, int>)@this->LpVtbl[10])(@this, pBase);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int ImplementsInterface<TThis>(this TThis thisVtbl, ref ID3D11ShaderReflectionType pBase) where TThis : IComVtbl<ID3D11ShaderReflectionType>
+    public static int ImplementsInterface(this ComPtr<ID3D11ShaderReflectionType> thisVtbl, ref ID3D11ShaderReflectionType pBase)
     {
-        var @this = (ID3D11ShaderReflectionType*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D11ShaderReflectionType* pBasePtr = &pBase)
         {
@@ -199,41 +199,41 @@ public unsafe static class D3D11ShaderReflectionTypeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetDesc<TThis>(this TThis thisVtbl, Span<ShaderTypeDesc> pDesc) where TThis : IComVtbl<ID3D11ShaderReflectionType>
+    public static int GetDesc(this ComPtr<ID3D11ShaderReflectionType> thisVtbl, Span<ShaderTypeDesc> pDesc)
     {
-        var @this = (ID3D11ShaderReflectionType*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDesc(ref pDesc.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ID3D11ShaderReflectionType* GetMemberTypeByName<TThis>(this TThis thisVtbl, Span<byte> Name) where TThis : IComVtbl<ID3D11ShaderReflectionType>
+    public static unsafe ID3D11ShaderReflectionType* GetMemberTypeByName(this ComPtr<ID3D11ShaderReflectionType> thisVtbl, Span<byte> Name)
     {
-        var @this = (ID3D11ShaderReflectionType*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetMemberTypeByName(ref Name.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsEqual<TThis>(this TThis thisVtbl, Span<ID3D11ShaderReflectionType> pType) where TThis : IComVtbl<ID3D11ShaderReflectionType>
+    public static int IsEqual(this ComPtr<ID3D11ShaderReflectionType> thisVtbl, Span<ID3D11ShaderReflectionType> pType)
     {
-        var @this = (ID3D11ShaderReflectionType*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->IsEqual(ref pType.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsOfType<TThis>(this TThis thisVtbl, Span<ID3D11ShaderReflectionType> pType) where TThis : IComVtbl<ID3D11ShaderReflectionType>
+    public static int IsOfType(this ComPtr<ID3D11ShaderReflectionType> thisVtbl, Span<ID3D11ShaderReflectionType> pType)
     {
-        var @this = (ID3D11ShaderReflectionType*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->IsOfType(ref pType.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int ImplementsInterface<TThis>(this TThis thisVtbl, Span<ID3D11ShaderReflectionType> pBase) where TThis : IComVtbl<ID3D11ShaderReflectionType>
+    public static int ImplementsInterface(this ComPtr<ID3D11ShaderReflectionType> thisVtbl, Span<ID3D11ShaderReflectionType> pBase)
     {
-        var @this = (ID3D11ShaderReflectionType*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->ImplementsInterface(ref pBase.GetPinnableReference());
     }

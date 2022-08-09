@@ -19,18 +19,18 @@ namespace Silk.NET.Direct3D12;
 public unsafe static class D3D12DebugCommandList2VtblExtensions
 {
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Guid* riid, void** ppvObject) where TThis : IComVtbl<ID3D12DebugCommandList2>
+    public static unsafe int QueryInterface(this ComPtr<ID3D12DebugCommandList2> thisVtbl, Guid* riid, void** ppvObject)
     {
-        var @this = (ID3D12DebugCommandList2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12DebugCommandList2*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Guid* riid, ref void* ppvObject) where TThis : IComVtbl<ID3D12DebugCommandList2>
+    public static unsafe int QueryInterface(this ComPtr<ID3D12DebugCommandList2> thisVtbl, Guid* riid, ref void* ppvObject)
     {
-        var @this = (ID3D12DebugCommandList2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppvObjectPtr = &ppvObject)
         {
@@ -40,9 +40,9 @@ public unsafe static class D3D12DebugCommandList2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, ref Guid riid, void** ppvObject) where TThis : IComVtbl<ID3D12DebugCommandList2>
+    public static unsafe int QueryInterface(this ComPtr<ID3D12DebugCommandList2> thisVtbl, ref Guid riid, void** ppvObject)
     {
-        var @this = (ID3D12DebugCommandList2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -52,9 +52,9 @@ public unsafe static class D3D12DebugCommandList2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, ref Guid riid, ref void* ppvObject) where TThis : IComVtbl<ID3D12DebugCommandList2>
+    public static unsafe int QueryInterface(this ComPtr<ID3D12DebugCommandList2> thisVtbl, ref Guid riid, ref void* ppvObject)
     {
-        var @this = (ID3D12DebugCommandList2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -67,36 +67,36 @@ public unsafe static class D3D12DebugCommandList2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static uint AddRef<TThis>(this TThis thisVtbl) where TThis : IComVtbl<ID3D12DebugCommandList2>
+    public static uint AddRef(this ComPtr<ID3D12DebugCommandList2> thisVtbl)
     {
-        var @this = (ID3D12DebugCommandList2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12DebugCommandList2*, uint>)@this->LpVtbl[1])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static uint Release<TThis>(this TThis thisVtbl) where TThis : IComVtbl<ID3D12DebugCommandList2>
+    public static uint Release(this ComPtr<ID3D12DebugCommandList2> thisVtbl)
     {
-        var @this = (ID3D12DebugCommandList2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12DebugCommandList2*, uint>)@this->LpVtbl[2])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AssertResourceState<TThis>(this TThis thisVtbl, ID3D12Resource* pResource, uint Subresource, uint State) where TThis : IComVtbl<ID3D12DebugCommandList2>
+    public static unsafe int AssertResourceState(this ComPtr<ID3D12DebugCommandList2> thisVtbl, ID3D12Resource* pResource, uint Subresource, uint State)
     {
-        var @this = (ID3D12DebugCommandList2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12DebugCommandList2*, ID3D12Resource*, uint, uint, int>)@this->LpVtbl[3])(@this, pResource, Subresource, State);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int AssertResourceState<TThis>(this TThis thisVtbl, ref ID3D12Resource pResource, uint Subresource, uint State) where TThis : IComVtbl<ID3D12DebugCommandList2>
+    public static int AssertResourceState(this ComPtr<ID3D12DebugCommandList2> thisVtbl, ref ID3D12Resource pResource, uint Subresource, uint State)
     {
-        var @this = (ID3D12DebugCommandList2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
         {
@@ -106,36 +106,36 @@ public unsafe static class D3D12DebugCommandList2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetFeatureMask<TThis>(this TThis thisVtbl, DebugFeature Mask) where TThis : IComVtbl<ID3D12DebugCommandList2>
+    public static int SetFeatureMask(this ComPtr<ID3D12DebugCommandList2> thisVtbl, DebugFeature Mask)
     {
-        var @this = (ID3D12DebugCommandList2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12DebugCommandList2*, DebugFeature, int>)@this->LpVtbl[4])(@this, Mask);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static DebugFeature GetFeatureMask<TThis>(this TThis thisVtbl) where TThis : IComVtbl<ID3D12DebugCommandList2>
+    public static DebugFeature GetFeatureMask(this ComPtr<ID3D12DebugCommandList2> thisVtbl)
     {
-        var @this = (ID3D12DebugCommandList2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         DebugFeature ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12DebugCommandList2*, DebugFeature>)@this->LpVtbl[5])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetDebugParameter<TThis>(this TThis thisVtbl, DebugCommandListParameterType Type, void* pData, uint DataSize) where TThis : IComVtbl<ID3D12DebugCommandList2>
+    public static unsafe int SetDebugParameter(this ComPtr<ID3D12DebugCommandList2> thisVtbl, DebugCommandListParameterType Type, void* pData, uint DataSize)
     {
-        var @this = (ID3D12DebugCommandList2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12DebugCommandList2*, DebugCommandListParameterType, void*, uint, int>)@this->LpVtbl[6])(@this, Type, pData, DataSize);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetDebugParameter<T0, TThis>(this TThis thisVtbl, DebugCommandListParameterType Type, ref T0 pData, uint DataSize) where T0 : unmanaged where TThis : IComVtbl<ID3D12DebugCommandList2>
+    public static int SetDebugParameter<T0>(this ComPtr<ID3D12DebugCommandList2> thisVtbl, DebugCommandListParameterType Type, ref T0 pData, uint DataSize) where T0 : unmanaged
     {
-        var @this = (ID3D12DebugCommandList2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void* pDataPtr = &pData)
         {
@@ -145,18 +145,18 @@ public unsafe static class D3D12DebugCommandList2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDebugParameter<TThis>(this TThis thisVtbl, DebugCommandListParameterType Type, void* pData, uint DataSize) where TThis : IComVtbl<ID3D12DebugCommandList2>
+    public static unsafe int GetDebugParameter(this ComPtr<ID3D12DebugCommandList2> thisVtbl, DebugCommandListParameterType Type, void* pData, uint DataSize)
     {
-        var @this = (ID3D12DebugCommandList2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12DebugCommandList2*, DebugCommandListParameterType, void*, uint, int>)@this->LpVtbl[7])(@this, Type, pData, DataSize);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetDebugParameter<T0, TThis>(this TThis thisVtbl, DebugCommandListParameterType Type, ref T0 pData, uint DataSize) where T0 : unmanaged where TThis : IComVtbl<ID3D12DebugCommandList2>
+    public static int GetDebugParameter<T0>(this ComPtr<ID3D12DebugCommandList2> thisVtbl, DebugCommandListParameterType Type, ref T0 pData, uint DataSize) where T0 : unmanaged
     {
-        var @this = (ID3D12DebugCommandList2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void* pDataPtr = &pData)
         {
@@ -166,58 +166,58 @@ public unsafe static class D3D12DebugCommandList2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12DebugCommandList2>
+    public static int QueryInterface<TI0>(this ComPtr<ID3D12DebugCommandList2> thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12DebugCommandList2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppvObject = default;
         return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<ID3D12DebugCommandList2>
+    public static unsafe int QueryInterface(this ComPtr<ID3D12DebugCommandList2> thisVtbl, Span<Guid> riid, void** ppvObject)
     {
-        var @this = (ID3D12DebugCommandList2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<ID3D12DebugCommandList2>
+    public static unsafe int QueryInterface(this ComPtr<ID3D12DebugCommandList2> thisVtbl, Span<Guid> riid, ref void* ppvObject)
     {
-        var @this = (ID3D12DebugCommandList2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
     }
 
     /// <summary>To be documented.</summary>
-    public static int AssertResourceState<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pResource, uint Subresource, uint State) where TThis : IComVtbl<ID3D12DebugCommandList2>
+    public static int AssertResourceState(this ComPtr<ID3D12DebugCommandList2> thisVtbl, Span<ID3D12Resource> pResource, uint Subresource, uint State)
     {
-        var @this = (ID3D12DebugCommandList2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->AssertResourceState(ref pResource.GetPinnableReference(), Subresource, State);
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetDebugParameter<T0, TThis>(this TThis thisVtbl, DebugCommandListParameterType Type, Span<T0> pData, uint DataSize) where T0 : unmanaged where TThis : IComVtbl<ID3D12DebugCommandList2>
+    public static int SetDebugParameter<T0>(this ComPtr<ID3D12DebugCommandList2> thisVtbl, DebugCommandListParameterType Type, Span<T0> pData, uint DataSize) where T0 : unmanaged
     {
-        var @this = (ID3D12DebugCommandList2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->SetDebugParameter(Type, ref pData.GetPinnableReference(), DataSize);
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetDebugParameter<T0, TThis>(this TThis thisVtbl, DebugCommandListParameterType Type, Span<T0> pData, uint DataSize) where T0 : unmanaged where TThis : IComVtbl<ID3D12DebugCommandList2>
+    public static int GetDebugParameter<T0>(this ComPtr<ID3D12DebugCommandList2> thisVtbl, DebugCommandListParameterType Type, Span<T0> pData, uint DataSize) where T0 : unmanaged
     {
-        var @this = (ID3D12DebugCommandList2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDebugParameter(Type, ref pData.GetPinnableReference(), DataSize);
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12DebugCommandList2>
+    public static ComPtr<TI0> QueryInterface<TI0>(this ComPtr<ID3D12DebugCommandList2> thisVtbl) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12DebugCommandList2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
         return silkRet;

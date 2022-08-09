@@ -19,18 +19,18 @@ namespace Silk.NET.Direct3D12;
 public unsafe static class D3D12VideoDevice2VtblExtensions
 {
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Guid* riid, void** ppvObject) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int QueryInterface(this ComPtr<ID3D12VideoDevice2> thisVtbl, Guid* riid, void** ppvObject)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Guid* riid, ref void* ppvObject) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int QueryInterface(this ComPtr<ID3D12VideoDevice2> thisVtbl, Guid* riid, ref void* ppvObject)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppvObjectPtr = &ppvObject)
         {
@@ -40,9 +40,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, ref Guid riid, void** ppvObject) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int QueryInterface(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref Guid riid, void** ppvObject)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -52,9 +52,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, ref Guid riid, ref void* ppvObject) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int QueryInterface(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref Guid riid, ref void* ppvObject)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -67,36 +67,36 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static uint AddRef<TThis>(this TThis thisVtbl) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static uint AddRef(this ComPtr<ID3D12VideoDevice2> thisVtbl)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, uint>)@this->LpVtbl[1])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static uint Release<TThis>(this TThis thisVtbl) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static uint Release(this ComPtr<ID3D12VideoDevice2> thisVtbl)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, uint>)@this->LpVtbl[2])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CheckFeatureSupport<TThis>(this TThis thisVtbl, FeatureVideo FeatureVideo, void* pFeatureSupportData, uint FeatureSupportDataSize) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CheckFeatureSupport(this ComPtr<ID3D12VideoDevice2> thisVtbl, FeatureVideo FeatureVideo, void* pFeatureSupportData, uint FeatureSupportDataSize)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, FeatureVideo, void*, uint, int>)@this->LpVtbl[3])(@this, FeatureVideo, pFeatureSupportData, FeatureSupportDataSize);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int CheckFeatureSupport<T0, TThis>(this TThis thisVtbl, FeatureVideo FeatureVideo, ref T0 pFeatureSupportData, uint FeatureSupportDataSize) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static int CheckFeatureSupport<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, FeatureVideo FeatureVideo, ref T0 pFeatureSupportData, uint FeatureSupportDataSize) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void* pFeatureSupportDataPtr = &pFeatureSupportData)
         {
@@ -106,18 +106,18 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, VideoDecoderDesc* pDesc, Guid* riid, void** ppVideoDecoder) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderDesc* pDesc, Guid* riid, void** ppVideoDecoder)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, VideoDecoderDesc*, Guid*, void**, int>)@this->LpVtbl[4])(@this, pDesc, riid, ppVideoDecoder);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, VideoDecoderDesc* pDesc, Guid* riid, ref void* ppVideoDecoder) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderDesc* pDesc, Guid* riid, ref void* ppVideoDecoder)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppVideoDecoderPtr = &ppVideoDecoder)
         {
@@ -127,9 +127,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, VideoDecoderDesc* pDesc, ref Guid riid, void** ppVideoDecoder) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderDesc* pDesc, ref Guid riid, void** ppVideoDecoder)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -139,9 +139,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, VideoDecoderDesc* pDesc, ref Guid riid, ref void* ppVideoDecoder) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderDesc* pDesc, ref Guid riid, ref void* ppVideoDecoder)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -154,9 +154,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, ref VideoDecoderDesc pDesc, Guid* riid, void** ppVideoDecoder) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoDecoderDesc pDesc, Guid* riid, void** ppVideoDecoder)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoDecoderDesc* pDescPtr = &pDesc)
         {
@@ -166,9 +166,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, ref VideoDecoderDesc pDesc, Guid* riid, ref void* ppVideoDecoder) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoDecoderDesc pDesc, Guid* riid, ref void* ppVideoDecoder)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoDecoderDesc* pDescPtr = &pDesc)
         {
@@ -181,9 +181,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, ref VideoDecoderDesc pDesc, ref Guid riid, void** ppVideoDecoder) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoDecoderDesc pDesc, ref Guid riid, void** ppVideoDecoder)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoDecoderDesc* pDescPtr = &pDesc)
         {
@@ -196,9 +196,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, ref VideoDecoderDesc pDesc, ref Guid riid, ref void* ppVideoDecoder) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoDecoderDesc pDesc, ref Guid riid, ref void* ppVideoDecoder)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoDecoderDesc* pDescPtr = &pDesc)
         {
@@ -214,18 +214,18 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap<TThis>(this TThis thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, Guid* riid, void** ppVideoDecoderHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, Guid* riid, void** ppVideoDecoderHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, VideoDecoderHeapDesc*, Guid*, void**, int>)@this->LpVtbl[5])(@this, pVideoDecoderHeapDesc, riid, ppVideoDecoderHeap);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap<TThis>(this TThis thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, Guid* riid, ref void* ppVideoDecoderHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, Guid* riid, ref void* ppVideoDecoderHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppVideoDecoderHeapPtr = &ppVideoDecoderHeap)
         {
@@ -235,9 +235,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap<TThis>(this TThis thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, ref Guid riid, void** ppVideoDecoderHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, ref Guid riid, void** ppVideoDecoderHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -247,9 +247,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap<TThis>(this TThis thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, ref Guid riid, ref void* ppVideoDecoderHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, ref Guid riid, ref void* ppVideoDecoderHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -262,9 +262,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap<TThis>(this TThis thisVtbl, ref VideoDecoderHeapDesc pVideoDecoderHeapDesc, Guid* riid, void** ppVideoDecoderHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoDecoderHeapDesc pVideoDecoderHeapDesc, Guid* riid, void** ppVideoDecoderHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoDecoderHeapDesc* pVideoDecoderHeapDescPtr = &pVideoDecoderHeapDesc)
         {
@@ -274,9 +274,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap<TThis>(this TThis thisVtbl, ref VideoDecoderHeapDesc pVideoDecoderHeapDesc, Guid* riid, ref void* ppVideoDecoderHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoDecoderHeapDesc pVideoDecoderHeapDesc, Guid* riid, ref void* ppVideoDecoderHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoDecoderHeapDesc* pVideoDecoderHeapDescPtr = &pVideoDecoderHeapDesc)
         {
@@ -289,9 +289,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap<TThis>(this TThis thisVtbl, ref VideoDecoderHeapDesc pVideoDecoderHeapDesc, ref Guid riid, void** ppVideoDecoderHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoDecoderHeapDesc pVideoDecoderHeapDesc, ref Guid riid, void** ppVideoDecoderHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoDecoderHeapDesc* pVideoDecoderHeapDescPtr = &pVideoDecoderHeapDesc)
         {
@@ -304,9 +304,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap<TThis>(this TThis thisVtbl, ref VideoDecoderHeapDesc pVideoDecoderHeapDesc, ref Guid riid, ref void* ppVideoDecoderHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoDecoderHeapDesc pVideoDecoderHeapDesc, ref Guid riid, ref void* ppVideoDecoderHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoDecoderHeapDesc* pVideoDecoderHeapDescPtr = &pVideoDecoderHeapDesc)
         {
@@ -322,18 +322,18 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor<TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, Guid* riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, Guid* riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, uint, VideoProcessOutputStreamDesc*, uint, VideoProcessInputStreamDesc*, Guid*, void**, int>)@this->LpVtbl[6])(@this, NodeMask, pOutputStreamDesc, NumInputStreamDescs, pInputStreamDescs, riid, ppVideoProcessor);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor<TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, Guid* riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, Guid* riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppVideoProcessorPtr = &ppVideoProcessor)
         {
@@ -343,9 +343,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor<TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ref Guid riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ref Guid riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -355,9 +355,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor<TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ref Guid riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ref Guid riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -370,9 +370,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor<TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, Guid* riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, Guid* riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoProcessInputStreamDesc* pInputStreamDescsPtr = &pInputStreamDescs)
         {
@@ -382,9 +382,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor<TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, Guid* riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, Guid* riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoProcessInputStreamDesc* pInputStreamDescsPtr = &pInputStreamDescs)
         {
@@ -397,9 +397,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor<TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ref Guid riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ref Guid riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoProcessInputStreamDesc* pInputStreamDescsPtr = &pInputStreamDescs)
         {
@@ -412,9 +412,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor<TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ref Guid riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ref Guid riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoProcessInputStreamDesc* pInputStreamDescsPtr = &pInputStreamDescs)
         {
@@ -430,9 +430,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor<TThis>(this TThis thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, Guid* riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, Guid* riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoProcessOutputStreamDesc* pOutputStreamDescPtr = &pOutputStreamDesc)
         {
@@ -442,9 +442,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor<TThis>(this TThis thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, Guid* riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, Guid* riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoProcessOutputStreamDesc* pOutputStreamDescPtr = &pOutputStreamDesc)
         {
@@ -457,9 +457,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor<TThis>(this TThis thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ref Guid riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ref Guid riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoProcessOutputStreamDesc* pOutputStreamDescPtr = &pOutputStreamDesc)
         {
@@ -472,9 +472,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor<TThis>(this TThis thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ref Guid riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ref Guid riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoProcessOutputStreamDesc* pOutputStreamDescPtr = &pOutputStreamDesc)
         {
@@ -490,9 +490,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor<TThis>(this TThis thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, Guid* riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, Guid* riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoProcessOutputStreamDesc* pOutputStreamDescPtr = &pOutputStreamDesc)
         {
@@ -505,9 +505,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor<TThis>(this TThis thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, Guid* riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, Guid* riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoProcessOutputStreamDesc* pOutputStreamDescPtr = &pOutputStreamDesc)
         {
@@ -523,9 +523,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor<TThis>(this TThis thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ref Guid riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ref Guid riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoProcessOutputStreamDesc* pOutputStreamDescPtr = &pOutputStreamDesc)
         {
@@ -541,9 +541,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor<TThis>(this TThis thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ref Guid riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ref Guid riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoProcessOutputStreamDesc* pOutputStreamDescPtr = &pOutputStreamDesc)
         {
@@ -562,18 +562,18 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionEstimator<TThis>(this TThis thisVtbl, VideoMotionEstimatorDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoMotionEstimator) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionEstimator(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoMotionEstimatorDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoMotionEstimator)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, VideoMotionEstimatorDesc*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)@this->LpVtbl[7])(@this, pDesc, pProtectedResourceSession, riid, ppVideoMotionEstimator);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionEstimator<TThis>(this TThis thisVtbl, VideoMotionEstimatorDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoMotionEstimator) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionEstimator(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoMotionEstimatorDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoMotionEstimator)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppVideoMotionEstimatorPtr = &ppVideoMotionEstimator)
         {
@@ -583,9 +583,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionEstimator<TThis>(this TThis thisVtbl, VideoMotionEstimatorDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, void** ppVideoMotionEstimator) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionEstimator(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoMotionEstimatorDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, void** ppVideoMotionEstimator)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -595,9 +595,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionEstimator<TThis>(this TThis thisVtbl, VideoMotionEstimatorDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, ref void* ppVideoMotionEstimator) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionEstimator(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoMotionEstimatorDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, ref void* ppVideoMotionEstimator)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -610,9 +610,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionEstimator<TThis>(this TThis thisVtbl, VideoMotionEstimatorDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, void** ppVideoMotionEstimator) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionEstimator(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoMotionEstimatorDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, void** ppVideoMotionEstimator)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
         {
@@ -622,9 +622,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionEstimator<TThis>(this TThis thisVtbl, VideoMotionEstimatorDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, ref void* ppVideoMotionEstimator) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionEstimator(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoMotionEstimatorDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, ref void* ppVideoMotionEstimator)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
         {
@@ -637,9 +637,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionEstimator<TThis>(this TThis thisVtbl, VideoMotionEstimatorDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, void** ppVideoMotionEstimator) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionEstimator(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoMotionEstimatorDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, void** ppVideoMotionEstimator)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
         {
@@ -652,9 +652,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionEstimator<TThis>(this TThis thisVtbl, VideoMotionEstimatorDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, ref void* ppVideoMotionEstimator) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionEstimator(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoMotionEstimatorDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, ref void* ppVideoMotionEstimator)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
         {
@@ -670,9 +670,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionEstimator<TThis>(this TThis thisVtbl, ref VideoMotionEstimatorDesc pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoMotionEstimator) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionEstimator(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoMotionEstimatorDesc pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoMotionEstimator)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoMotionEstimatorDesc* pDescPtr = &pDesc)
         {
@@ -682,9 +682,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionEstimator<TThis>(this TThis thisVtbl, ref VideoMotionEstimatorDesc pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoMotionEstimator) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionEstimator(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoMotionEstimatorDesc pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoMotionEstimator)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoMotionEstimatorDesc* pDescPtr = &pDesc)
         {
@@ -697,9 +697,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionEstimator<TThis>(this TThis thisVtbl, ref VideoMotionEstimatorDesc pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, void** ppVideoMotionEstimator) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionEstimator(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoMotionEstimatorDesc pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, void** ppVideoMotionEstimator)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoMotionEstimatorDesc* pDescPtr = &pDesc)
         {
@@ -712,9 +712,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionEstimator<TThis>(this TThis thisVtbl, ref VideoMotionEstimatorDesc pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, ref void* ppVideoMotionEstimator) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionEstimator(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoMotionEstimatorDesc pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, ref void* ppVideoMotionEstimator)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoMotionEstimatorDesc* pDescPtr = &pDesc)
         {
@@ -730,9 +730,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionEstimator<TThis>(this TThis thisVtbl, ref VideoMotionEstimatorDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, void** ppVideoMotionEstimator) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionEstimator(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoMotionEstimatorDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, void** ppVideoMotionEstimator)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoMotionEstimatorDesc* pDescPtr = &pDesc)
         {
@@ -745,9 +745,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionEstimator<TThis>(this TThis thisVtbl, ref VideoMotionEstimatorDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, ref void* ppVideoMotionEstimator) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionEstimator(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoMotionEstimatorDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, ref void* ppVideoMotionEstimator)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoMotionEstimatorDesc* pDescPtr = &pDesc)
         {
@@ -763,9 +763,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionEstimator<TThis>(this TThis thisVtbl, ref VideoMotionEstimatorDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, void** ppVideoMotionEstimator) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionEstimator(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoMotionEstimatorDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, void** ppVideoMotionEstimator)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoMotionEstimatorDesc* pDescPtr = &pDesc)
         {
@@ -781,9 +781,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionEstimator<TThis>(this TThis thisVtbl, ref VideoMotionEstimatorDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, ref void* ppVideoMotionEstimator) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionEstimator(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoMotionEstimatorDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, ref void* ppVideoMotionEstimator)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoMotionEstimatorDesc* pDescPtr = &pDesc)
         {
@@ -802,18 +802,18 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionVectorHeap<TThis>(this TThis thisVtbl, VideoMotionVectorHeapDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoMotionVectorHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionVectorHeap(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoMotionVectorHeapDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoMotionVectorHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, VideoMotionVectorHeapDesc*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)@this->LpVtbl[8])(@this, pDesc, pProtectedResourceSession, riid, ppVideoMotionVectorHeap);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionVectorHeap<TThis>(this TThis thisVtbl, VideoMotionVectorHeapDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoMotionVectorHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionVectorHeap(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoMotionVectorHeapDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoMotionVectorHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppVideoMotionVectorHeapPtr = &ppVideoMotionVectorHeap)
         {
@@ -823,9 +823,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionVectorHeap<TThis>(this TThis thisVtbl, VideoMotionVectorHeapDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, void** ppVideoMotionVectorHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionVectorHeap(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoMotionVectorHeapDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, void** ppVideoMotionVectorHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -835,9 +835,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionVectorHeap<TThis>(this TThis thisVtbl, VideoMotionVectorHeapDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, ref void* ppVideoMotionVectorHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionVectorHeap(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoMotionVectorHeapDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, ref void* ppVideoMotionVectorHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -850,9 +850,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionVectorHeap<TThis>(this TThis thisVtbl, VideoMotionVectorHeapDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, void** ppVideoMotionVectorHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionVectorHeap(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoMotionVectorHeapDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, void** ppVideoMotionVectorHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
         {
@@ -862,9 +862,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionVectorHeap<TThis>(this TThis thisVtbl, VideoMotionVectorHeapDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, ref void* ppVideoMotionVectorHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionVectorHeap(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoMotionVectorHeapDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, ref void* ppVideoMotionVectorHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
         {
@@ -877,9 +877,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionVectorHeap<TThis>(this TThis thisVtbl, VideoMotionVectorHeapDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, void** ppVideoMotionVectorHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionVectorHeap(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoMotionVectorHeapDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, void** ppVideoMotionVectorHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
         {
@@ -892,9 +892,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionVectorHeap<TThis>(this TThis thisVtbl, VideoMotionVectorHeapDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, ref void* ppVideoMotionVectorHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionVectorHeap(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoMotionVectorHeapDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, ref void* ppVideoMotionVectorHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
         {
@@ -910,9 +910,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionVectorHeap<TThis>(this TThis thisVtbl, ref VideoMotionVectorHeapDesc pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoMotionVectorHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionVectorHeap(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoMotionVectorHeapDesc pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoMotionVectorHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoMotionVectorHeapDesc* pDescPtr = &pDesc)
         {
@@ -922,9 +922,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionVectorHeap<TThis>(this TThis thisVtbl, ref VideoMotionVectorHeapDesc pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoMotionVectorHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionVectorHeap(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoMotionVectorHeapDesc pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoMotionVectorHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoMotionVectorHeapDesc* pDescPtr = &pDesc)
         {
@@ -937,9 +937,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionVectorHeap<TThis>(this TThis thisVtbl, ref VideoMotionVectorHeapDesc pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, void** ppVideoMotionVectorHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionVectorHeap(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoMotionVectorHeapDesc pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, void** ppVideoMotionVectorHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoMotionVectorHeapDesc* pDescPtr = &pDesc)
         {
@@ -952,9 +952,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionVectorHeap<TThis>(this TThis thisVtbl, ref VideoMotionVectorHeapDesc pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, ref void* ppVideoMotionVectorHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionVectorHeap(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoMotionVectorHeapDesc pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, ref void* ppVideoMotionVectorHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoMotionVectorHeapDesc* pDescPtr = &pDesc)
         {
@@ -970,9 +970,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionVectorHeap<TThis>(this TThis thisVtbl, ref VideoMotionVectorHeapDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, void** ppVideoMotionVectorHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionVectorHeap(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoMotionVectorHeapDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, void** ppVideoMotionVectorHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoMotionVectorHeapDesc* pDescPtr = &pDesc)
         {
@@ -985,9 +985,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionVectorHeap<TThis>(this TThis thisVtbl, ref VideoMotionVectorHeapDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, ref void* ppVideoMotionVectorHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionVectorHeap(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoMotionVectorHeapDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, ref void* ppVideoMotionVectorHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoMotionVectorHeapDesc* pDescPtr = &pDesc)
         {
@@ -1003,9 +1003,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionVectorHeap<TThis>(this TThis thisVtbl, ref VideoMotionVectorHeapDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, void** ppVideoMotionVectorHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionVectorHeap(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoMotionVectorHeapDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, void** ppVideoMotionVectorHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoMotionVectorHeapDesc* pDescPtr = &pDesc)
         {
@@ -1021,9 +1021,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionVectorHeap<TThis>(this TThis thisVtbl, ref VideoMotionVectorHeapDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, ref void* ppVideoMotionVectorHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionVectorHeap(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoMotionVectorHeapDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, ref void* ppVideoMotionVectorHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoMotionVectorHeapDesc* pDescPtr = &pDesc)
         {
@@ -1042,18 +1042,18 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder1<TThis>(this TThis thisVtbl, VideoDecoderDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoDecoder) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder1(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoDecoder)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, VideoDecoderDesc*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pDesc, pProtectedResourceSession, riid, ppVideoDecoder);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder1<TThis>(this TThis thisVtbl, VideoDecoderDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoDecoder) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder1(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoDecoder)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppVideoDecoderPtr = &ppVideoDecoder)
         {
@@ -1063,9 +1063,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder1<TThis>(this TThis thisVtbl, VideoDecoderDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, void** ppVideoDecoder) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder1(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, void** ppVideoDecoder)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -1075,9 +1075,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder1<TThis>(this TThis thisVtbl, VideoDecoderDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, ref void* ppVideoDecoder) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder1(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, ref void* ppVideoDecoder)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -1090,9 +1090,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder1<TThis>(this TThis thisVtbl, VideoDecoderDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, void** ppVideoDecoder) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder1(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, void** ppVideoDecoder)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
         {
@@ -1102,9 +1102,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder1<TThis>(this TThis thisVtbl, VideoDecoderDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, ref void* ppVideoDecoder) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder1(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, ref void* ppVideoDecoder)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
         {
@@ -1117,9 +1117,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder1<TThis>(this TThis thisVtbl, VideoDecoderDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, void** ppVideoDecoder) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder1(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, void** ppVideoDecoder)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
         {
@@ -1132,9 +1132,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder1<TThis>(this TThis thisVtbl, VideoDecoderDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, ref void* ppVideoDecoder) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder1(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, ref void* ppVideoDecoder)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
         {
@@ -1150,9 +1150,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder1<TThis>(this TThis thisVtbl, ref VideoDecoderDesc pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoDecoder) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder1(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoDecoderDesc pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoDecoder)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoDecoderDesc* pDescPtr = &pDesc)
         {
@@ -1162,9 +1162,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder1<TThis>(this TThis thisVtbl, ref VideoDecoderDesc pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoDecoder) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder1(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoDecoderDesc pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoDecoder)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoDecoderDesc* pDescPtr = &pDesc)
         {
@@ -1177,9 +1177,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder1<TThis>(this TThis thisVtbl, ref VideoDecoderDesc pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, void** ppVideoDecoder) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder1(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoDecoderDesc pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, void** ppVideoDecoder)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoDecoderDesc* pDescPtr = &pDesc)
         {
@@ -1192,9 +1192,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder1<TThis>(this TThis thisVtbl, ref VideoDecoderDesc pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, ref void* ppVideoDecoder) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder1(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoDecoderDesc pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, ref void* ppVideoDecoder)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoDecoderDesc* pDescPtr = &pDesc)
         {
@@ -1210,9 +1210,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder1<TThis>(this TThis thisVtbl, ref VideoDecoderDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, void** ppVideoDecoder) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder1(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoDecoderDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, void** ppVideoDecoder)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoDecoderDesc* pDescPtr = &pDesc)
         {
@@ -1225,9 +1225,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder1<TThis>(this TThis thisVtbl, ref VideoDecoderDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, ref void* ppVideoDecoder) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder1(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoDecoderDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, ref void* ppVideoDecoder)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoDecoderDesc* pDescPtr = &pDesc)
         {
@@ -1243,9 +1243,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder1<TThis>(this TThis thisVtbl, ref VideoDecoderDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, void** ppVideoDecoder) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder1(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoDecoderDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, void** ppVideoDecoder)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoDecoderDesc* pDescPtr = &pDesc)
         {
@@ -1261,9 +1261,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder1<TThis>(this TThis thisVtbl, ref VideoDecoderDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, ref void* ppVideoDecoder) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder1(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoDecoderDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, ref void* ppVideoDecoder)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoDecoderDesc* pDescPtr = &pDesc)
         {
@@ -1282,18 +1282,18 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap1<TThis>(this TThis thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoDecoderHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap1(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoDecoderHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, VideoDecoderHeapDesc*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pVideoDecoderHeapDesc, pProtectedResourceSession, riid, ppVideoDecoderHeap);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap1<TThis>(this TThis thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoDecoderHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap1(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoDecoderHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppVideoDecoderHeapPtr = &ppVideoDecoderHeap)
         {
@@ -1303,9 +1303,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap1<TThis>(this TThis thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, void** ppVideoDecoderHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap1(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, void** ppVideoDecoderHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -1315,9 +1315,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap1<TThis>(this TThis thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, ref void* ppVideoDecoderHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap1(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, ref void* ppVideoDecoderHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -1330,9 +1330,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap1<TThis>(this TThis thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, void** ppVideoDecoderHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap1(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, void** ppVideoDecoderHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
         {
@@ -1342,9 +1342,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap1<TThis>(this TThis thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, ref void* ppVideoDecoderHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap1(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, ref void* ppVideoDecoderHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
         {
@@ -1357,9 +1357,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap1<TThis>(this TThis thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, void** ppVideoDecoderHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap1(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, void** ppVideoDecoderHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
         {
@@ -1372,9 +1372,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap1<TThis>(this TThis thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, ref void* ppVideoDecoderHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap1(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, ref void* ppVideoDecoderHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
         {
@@ -1390,9 +1390,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap1<TThis>(this TThis thisVtbl, ref VideoDecoderHeapDesc pVideoDecoderHeapDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoDecoderHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap1(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoDecoderHeapDesc pVideoDecoderHeapDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoDecoderHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoDecoderHeapDesc* pVideoDecoderHeapDescPtr = &pVideoDecoderHeapDesc)
         {
@@ -1402,9 +1402,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap1<TThis>(this TThis thisVtbl, ref VideoDecoderHeapDesc pVideoDecoderHeapDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoDecoderHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap1(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoDecoderHeapDesc pVideoDecoderHeapDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoDecoderHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoDecoderHeapDesc* pVideoDecoderHeapDescPtr = &pVideoDecoderHeapDesc)
         {
@@ -1417,9 +1417,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap1<TThis>(this TThis thisVtbl, ref VideoDecoderHeapDesc pVideoDecoderHeapDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, void** ppVideoDecoderHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap1(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoDecoderHeapDesc pVideoDecoderHeapDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, void** ppVideoDecoderHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoDecoderHeapDesc* pVideoDecoderHeapDescPtr = &pVideoDecoderHeapDesc)
         {
@@ -1432,9 +1432,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap1<TThis>(this TThis thisVtbl, ref VideoDecoderHeapDesc pVideoDecoderHeapDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, ref void* ppVideoDecoderHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap1(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoDecoderHeapDesc pVideoDecoderHeapDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, ref void* ppVideoDecoderHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoDecoderHeapDesc* pVideoDecoderHeapDescPtr = &pVideoDecoderHeapDesc)
         {
@@ -1450,9 +1450,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap1<TThis>(this TThis thisVtbl, ref VideoDecoderHeapDesc pVideoDecoderHeapDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, void** ppVideoDecoderHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap1(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoDecoderHeapDesc pVideoDecoderHeapDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, void** ppVideoDecoderHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoDecoderHeapDesc* pVideoDecoderHeapDescPtr = &pVideoDecoderHeapDesc)
         {
@@ -1465,9 +1465,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap1<TThis>(this TThis thisVtbl, ref VideoDecoderHeapDesc pVideoDecoderHeapDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, ref void* ppVideoDecoderHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap1(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoDecoderHeapDesc pVideoDecoderHeapDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, ref void* ppVideoDecoderHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoDecoderHeapDesc* pVideoDecoderHeapDescPtr = &pVideoDecoderHeapDesc)
         {
@@ -1483,9 +1483,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap1<TThis>(this TThis thisVtbl, ref VideoDecoderHeapDesc pVideoDecoderHeapDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, void** ppVideoDecoderHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap1(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoDecoderHeapDesc pVideoDecoderHeapDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, void** ppVideoDecoderHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoDecoderHeapDesc* pVideoDecoderHeapDescPtr = &pVideoDecoderHeapDesc)
         {
@@ -1501,9 +1501,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap1<TThis>(this TThis thisVtbl, ref VideoDecoderHeapDesc pVideoDecoderHeapDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, ref void* ppVideoDecoderHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap1(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoDecoderHeapDesc pVideoDecoderHeapDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, ref void* ppVideoDecoderHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoDecoderHeapDesc* pVideoDecoderHeapDescPtr = &pVideoDecoderHeapDesc)
         {
@@ -1522,18 +1522,18 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, uint, VideoProcessOutputStreamDesc*, uint, VideoProcessInputStreamDesc*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)@this->LpVtbl[11])(@this, NodeMask, pOutputStreamDesc, NumInputStreamDescs, pInputStreamDescs, pProtectedResourceSession, riid, ppVideoProcessor);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppVideoProcessorPtr = &ppVideoProcessor)
         {
@@ -1543,9 +1543,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -1555,9 +1555,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -1570,9 +1570,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
         {
@@ -1582,9 +1582,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
         {
@@ -1597,9 +1597,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
         {
@@ -1612,9 +1612,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
         {
@@ -1630,9 +1630,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoProcessInputStreamDesc* pInputStreamDescsPtr = &pInputStreamDescs)
         {
@@ -1642,9 +1642,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoProcessInputStreamDesc* pInputStreamDescsPtr = &pInputStreamDescs)
         {
@@ -1657,9 +1657,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoProcessInputStreamDesc* pInputStreamDescsPtr = &pInputStreamDescs)
         {
@@ -1672,9 +1672,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoProcessInputStreamDesc* pInputStreamDescsPtr = &pInputStreamDescs)
         {
@@ -1690,9 +1690,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoProcessInputStreamDesc* pInputStreamDescsPtr = &pInputStreamDescs)
         {
@@ -1705,9 +1705,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoProcessInputStreamDesc* pInputStreamDescsPtr = &pInputStreamDescs)
         {
@@ -1723,9 +1723,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoProcessInputStreamDesc* pInputStreamDescsPtr = &pInputStreamDescs)
         {
@@ -1741,9 +1741,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoProcessInputStreamDesc* pInputStreamDescsPtr = &pInputStreamDescs)
         {
@@ -1762,9 +1762,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoProcessOutputStreamDesc* pOutputStreamDescPtr = &pOutputStreamDesc)
         {
@@ -1774,9 +1774,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoProcessOutputStreamDesc* pOutputStreamDescPtr = &pOutputStreamDesc)
         {
@@ -1789,9 +1789,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoProcessOutputStreamDesc* pOutputStreamDescPtr = &pOutputStreamDesc)
         {
@@ -1804,9 +1804,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoProcessOutputStreamDesc* pOutputStreamDescPtr = &pOutputStreamDesc)
         {
@@ -1822,9 +1822,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoProcessOutputStreamDesc* pOutputStreamDescPtr = &pOutputStreamDesc)
         {
@@ -1837,9 +1837,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoProcessOutputStreamDesc* pOutputStreamDescPtr = &pOutputStreamDesc)
         {
@@ -1855,9 +1855,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoProcessOutputStreamDesc* pOutputStreamDescPtr = &pOutputStreamDesc)
         {
@@ -1873,9 +1873,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoProcessOutputStreamDesc* pOutputStreamDescPtr = &pOutputStreamDesc)
         {
@@ -1894,9 +1894,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoProcessOutputStreamDesc* pOutputStreamDescPtr = &pOutputStreamDesc)
         {
@@ -1909,9 +1909,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoProcessOutputStreamDesc* pOutputStreamDescPtr = &pOutputStreamDesc)
         {
@@ -1927,9 +1927,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoProcessOutputStreamDesc* pOutputStreamDescPtr = &pOutputStreamDesc)
         {
@@ -1945,9 +1945,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoProcessOutputStreamDesc* pOutputStreamDescPtr = &pOutputStreamDesc)
         {
@@ -1966,9 +1966,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoProcessOutputStreamDesc* pOutputStreamDescPtr = &pOutputStreamDesc)
         {
@@ -1984,9 +1984,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoProcessOutputStreamDesc* pOutputStreamDescPtr = &pOutputStreamDesc)
         {
@@ -2005,9 +2005,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoProcessOutputStreamDesc* pOutputStreamDescPtr = &pOutputStreamDesc)
         {
@@ -2026,9 +2026,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoProcessOutputStreamDesc* pOutputStreamDescPtr = &pOutputStreamDesc)
         {
@@ -2050,18 +2050,18 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<TThis>(this TThis thisVtbl, VideoExtensionCommandDesc* pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoExtensionCommandDesc* pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pDesc, pCreationParameters, CreationParametersDataSizeInBytes, pProtectedResourceSession, riid, ppVideoExtensionCommand);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<TThis>(this TThis thisVtbl, VideoExtensionCommandDesc* pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoExtensionCommandDesc* pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppVideoExtensionCommandPtr = &ppVideoExtensionCommand)
         {
@@ -2071,9 +2071,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<TThis>(this TThis thisVtbl, VideoExtensionCommandDesc* pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, void** ppVideoExtensionCommand) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoExtensionCommandDesc* pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, void** ppVideoExtensionCommand)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -2083,9 +2083,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<TThis>(this TThis thisVtbl, VideoExtensionCommandDesc* pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, ref void* ppVideoExtensionCommand) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoExtensionCommandDesc* pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, ref void* ppVideoExtensionCommand)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -2098,9 +2098,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<TThis>(this TThis thisVtbl, VideoExtensionCommandDesc* pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoExtensionCommandDesc* pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
         {
@@ -2110,9 +2110,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<TThis>(this TThis thisVtbl, VideoExtensionCommandDesc* pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoExtensionCommandDesc* pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
         {
@@ -2125,9 +2125,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<TThis>(this TThis thisVtbl, VideoExtensionCommandDesc* pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, void** ppVideoExtensionCommand) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoExtensionCommandDesc* pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, void** ppVideoExtensionCommand)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
         {
@@ -2140,9 +2140,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<TThis>(this TThis thisVtbl, VideoExtensionCommandDesc* pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, ref void* ppVideoExtensionCommand) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoExtensionCommandDesc* pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, ref void* ppVideoExtensionCommand)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
         {
@@ -2158,9 +2158,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0, TThis>(this TThis thisVtbl, VideoExtensionCommandDesc* pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoExtensionCommandDesc* pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void* pCreationParametersPtr = &pCreationParameters)
         {
@@ -2170,9 +2170,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0, TThis>(this TThis thisVtbl, VideoExtensionCommandDesc* pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoExtensionCommandDesc* pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void* pCreationParametersPtr = &pCreationParameters)
         {
@@ -2185,9 +2185,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0, TThis>(this TThis thisVtbl, VideoExtensionCommandDesc* pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, void** ppVideoExtensionCommand) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoExtensionCommandDesc* pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, void** ppVideoExtensionCommand) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void* pCreationParametersPtr = &pCreationParameters)
         {
@@ -2200,9 +2200,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0, TThis>(this TThis thisVtbl, VideoExtensionCommandDesc* pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoExtensionCommandDesc* pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void* pCreationParametersPtr = &pCreationParameters)
         {
@@ -2218,9 +2218,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0, TThis>(this TThis thisVtbl, VideoExtensionCommandDesc* pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoExtensionCommandDesc* pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void* pCreationParametersPtr = &pCreationParameters)
         {
@@ -2233,9 +2233,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0, TThis>(this TThis thisVtbl, VideoExtensionCommandDesc* pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoExtensionCommandDesc* pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void* pCreationParametersPtr = &pCreationParameters)
         {
@@ -2251,9 +2251,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0, TThis>(this TThis thisVtbl, VideoExtensionCommandDesc* pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, void** ppVideoExtensionCommand) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoExtensionCommandDesc* pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, void** ppVideoExtensionCommand) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void* pCreationParametersPtr = &pCreationParameters)
         {
@@ -2269,9 +2269,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0, TThis>(this TThis thisVtbl, VideoExtensionCommandDesc* pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoExtensionCommandDesc* pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void* pCreationParametersPtr = &pCreationParameters)
         {
@@ -2290,9 +2290,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<TThis>(this TThis thisVtbl, ref VideoExtensionCommandDesc pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoExtensionCommandDesc pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoExtensionCommandDesc* pDescPtr = &pDesc)
         {
@@ -2302,9 +2302,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<TThis>(this TThis thisVtbl, ref VideoExtensionCommandDesc pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoExtensionCommandDesc pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoExtensionCommandDesc* pDescPtr = &pDesc)
         {
@@ -2317,9 +2317,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<TThis>(this TThis thisVtbl, ref VideoExtensionCommandDesc pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, void** ppVideoExtensionCommand) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoExtensionCommandDesc pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, void** ppVideoExtensionCommand)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoExtensionCommandDesc* pDescPtr = &pDesc)
         {
@@ -2332,9 +2332,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<TThis>(this TThis thisVtbl, ref VideoExtensionCommandDesc pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, ref void* ppVideoExtensionCommand) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoExtensionCommandDesc pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, ref void* ppVideoExtensionCommand)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoExtensionCommandDesc* pDescPtr = &pDesc)
         {
@@ -2350,9 +2350,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<TThis>(this TThis thisVtbl, ref VideoExtensionCommandDesc pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoExtensionCommandDesc pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoExtensionCommandDesc* pDescPtr = &pDesc)
         {
@@ -2365,9 +2365,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<TThis>(this TThis thisVtbl, ref VideoExtensionCommandDesc pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoExtensionCommandDesc pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoExtensionCommandDesc* pDescPtr = &pDesc)
         {
@@ -2383,9 +2383,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<TThis>(this TThis thisVtbl, ref VideoExtensionCommandDesc pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, void** ppVideoExtensionCommand) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoExtensionCommandDesc pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, void** ppVideoExtensionCommand)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoExtensionCommandDesc* pDescPtr = &pDesc)
         {
@@ -2401,9 +2401,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<TThis>(this TThis thisVtbl, ref VideoExtensionCommandDesc pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, ref void* ppVideoExtensionCommand) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoExtensionCommandDesc pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, ref void* ppVideoExtensionCommand)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoExtensionCommandDesc* pDescPtr = &pDesc)
         {
@@ -2422,9 +2422,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0, TThis>(this TThis thisVtbl, ref VideoExtensionCommandDesc pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoExtensionCommandDesc pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoExtensionCommandDesc* pDescPtr = &pDesc)
         {
@@ -2437,9 +2437,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0, TThis>(this TThis thisVtbl, ref VideoExtensionCommandDesc pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoExtensionCommandDesc pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoExtensionCommandDesc* pDescPtr = &pDesc)
         {
@@ -2455,9 +2455,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0, TThis>(this TThis thisVtbl, ref VideoExtensionCommandDesc pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, void** ppVideoExtensionCommand) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoExtensionCommandDesc pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, void** ppVideoExtensionCommand) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoExtensionCommandDesc* pDescPtr = &pDesc)
         {
@@ -2473,9 +2473,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0, TThis>(this TThis thisVtbl, ref VideoExtensionCommandDesc pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoExtensionCommandDesc pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoExtensionCommandDesc* pDescPtr = &pDesc)
         {
@@ -2494,9 +2494,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0, TThis>(this TThis thisVtbl, ref VideoExtensionCommandDesc pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoExtensionCommandDesc pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoExtensionCommandDesc* pDescPtr = &pDesc)
         {
@@ -2512,9 +2512,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0, TThis>(this TThis thisVtbl, ref VideoExtensionCommandDesc pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoExtensionCommandDesc pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoExtensionCommandDesc* pDescPtr = &pDesc)
         {
@@ -2533,9 +2533,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0, TThis>(this TThis thisVtbl, ref VideoExtensionCommandDesc pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, void** ppVideoExtensionCommand) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoExtensionCommandDesc pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, void** ppVideoExtensionCommand) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoExtensionCommandDesc* pDescPtr = &pDesc)
         {
@@ -2554,9 +2554,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0, TThis>(this TThis thisVtbl, ref VideoExtensionCommandDesc pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoExtensionCommandDesc pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (VideoExtensionCommandDesc* pDescPtr = &pDesc)
         {
@@ -2578,18 +2578,18 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExecuteExtensionCommand<TThis>(this TThis thisVtbl, ID3D12VideoExtensionCommand* pExtensionCommand, void* pExecutionParameters, nuint ExecutionParametersSizeInBytes, void* pOutputData, nuint OutputDataSizeInBytes) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int ExecuteExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, ID3D12VideoExtensionCommand* pExtensionCommand, void* pExecutionParameters, nuint ExecutionParametersSizeInBytes, void* pOutputData, nuint OutputDataSizeInBytes)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, ID3D12VideoExtensionCommand*, void*, nuint, void*, nuint, int>)@this->LpVtbl[13])(@this, pExtensionCommand, pExecutionParameters, ExecutionParametersSizeInBytes, pOutputData, OutputDataSizeInBytes);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExecuteExtensionCommand<T0, TThis>(this TThis thisVtbl, ID3D12VideoExtensionCommand* pExtensionCommand, void* pExecutionParameters, nuint ExecutionParametersSizeInBytes, ref T0 pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int ExecuteExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ID3D12VideoExtensionCommand* pExtensionCommand, void* pExecutionParameters, nuint ExecutionParametersSizeInBytes, ref T0 pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void* pOutputDataPtr = &pOutputData)
         {
@@ -2599,9 +2599,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExecuteExtensionCommand<T0, TThis>(this TThis thisVtbl, ID3D12VideoExtensionCommand* pExtensionCommand, ref T0 pExecutionParameters, nuint ExecutionParametersSizeInBytes, void* pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int ExecuteExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ID3D12VideoExtensionCommand* pExtensionCommand, ref T0 pExecutionParameters, nuint ExecutionParametersSizeInBytes, void* pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void* pExecutionParametersPtr = &pExecutionParameters)
         {
@@ -2611,9 +2611,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExecuteExtensionCommand<T0, T1, TThis>(this TThis thisVtbl, ID3D12VideoExtensionCommand* pExtensionCommand, ref T0 pExecutionParameters, nuint ExecutionParametersSizeInBytes, ref T1 pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged where T1 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int ExecuteExtensionCommand<T0, T1>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ID3D12VideoExtensionCommand* pExtensionCommand, ref T0 pExecutionParameters, nuint ExecutionParametersSizeInBytes, ref T1 pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged where T1 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void* pExecutionParametersPtr = &pExecutionParameters)
         {
@@ -2626,9 +2626,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExecuteExtensionCommand<TThis>(this TThis thisVtbl, ref ID3D12VideoExtensionCommand pExtensionCommand, void* pExecutionParameters, nuint ExecutionParametersSizeInBytes, void* pOutputData, nuint OutputDataSizeInBytes) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int ExecuteExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref ID3D12VideoExtensionCommand pExtensionCommand, void* pExecutionParameters, nuint ExecutionParametersSizeInBytes, void* pOutputData, nuint OutputDataSizeInBytes)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D12VideoExtensionCommand* pExtensionCommandPtr = &pExtensionCommand)
         {
@@ -2638,9 +2638,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExecuteExtensionCommand<T0, TThis>(this TThis thisVtbl, ref ID3D12VideoExtensionCommand pExtensionCommand, void* pExecutionParameters, nuint ExecutionParametersSizeInBytes, ref T0 pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int ExecuteExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref ID3D12VideoExtensionCommand pExtensionCommand, void* pExecutionParameters, nuint ExecutionParametersSizeInBytes, ref T0 pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D12VideoExtensionCommand* pExtensionCommandPtr = &pExtensionCommand)
         {
@@ -2653,9 +2653,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExecuteExtensionCommand<T0, TThis>(this TThis thisVtbl, ref ID3D12VideoExtensionCommand pExtensionCommand, ref T0 pExecutionParameters, nuint ExecutionParametersSizeInBytes, void* pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int ExecuteExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref ID3D12VideoExtensionCommand pExtensionCommand, ref T0 pExecutionParameters, nuint ExecutionParametersSizeInBytes, void* pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D12VideoExtensionCommand* pExtensionCommandPtr = &pExtensionCommand)
         {
@@ -2668,9 +2668,9 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ExecuteExtensionCommand<T0, T1, TThis>(this TThis thisVtbl, ref ID3D12VideoExtensionCommand pExtensionCommand, ref T0 pExecutionParameters, nuint ExecutionParametersSizeInBytes, ref T1 pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged where T1 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static int ExecuteExtensionCommand<T0, T1>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref ID3D12VideoExtensionCommand pExtensionCommand, ref T0 pExecutionParameters, nuint ExecutionParametersSizeInBytes, ref T1 pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged where T1 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D12VideoExtensionCommand* pExtensionCommandPtr = &pExtensionCommand)
         {
@@ -2686,1954 +2686,1954 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static int QueryInterface<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppvObject = default;
         return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int QueryInterface(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<Guid> riid, void** ppvObject)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int QueryInterface(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<Guid> riid, ref void* ppvObject)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CheckFeatureSupport<T0, TThis>(this TThis thisVtbl, FeatureVideo FeatureVideo, Span<T0> pFeatureSupportData, uint FeatureSupportDataSize) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static int CheckFeatureSupport<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, FeatureVideo FeatureVideo, Span<T0> pFeatureSupportData, uint FeatureSupportDataSize) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CheckFeatureSupport(FeatureVideo, ref pFeatureSupportData.GetPinnableReference(), FeatureSupportDataSize);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TI0, TThis>(this TThis thisVtbl, VideoDecoderDesc* pDesc, out ComPtr<TI0> ppVideoDecoder) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderDesc* pDesc, out ComPtr<TI0> ppVideoDecoder) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppVideoDecoder = default;
         return @this->CreateVideoDecoder(pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppVideoDecoder.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, VideoDecoderDesc* pDesc, Span<Guid> riid, void** ppVideoDecoder) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderDesc* pDesc, Span<Guid> riid, void** ppVideoDecoder)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder(pDesc, ref riid.GetPinnableReference(), ppVideoDecoder);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, VideoDecoderDesc* pDesc, Span<Guid> riid, ref void* ppVideoDecoder) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderDesc* pDesc, Span<Guid> riid, ref void* ppVideoDecoder)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder(pDesc, ref riid.GetPinnableReference(), ref ppVideoDecoder);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Span<VideoDecoderDesc> pDesc, Guid* riid, void** ppVideoDecoder) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoDecoderDesc> pDesc, Guid* riid, void** ppVideoDecoder)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder(ref pDesc.GetPinnableReference(), riid, ppVideoDecoder);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateVideoDecoder<TI0, TThis>(this TThis thisVtbl, ref VideoDecoderDesc pDesc, out ComPtr<TI0> ppVideoDecoder) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static int CreateVideoDecoder<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoDecoderDesc pDesc, out ComPtr<TI0> ppVideoDecoder) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppVideoDecoder = default;
         return @this->CreateVideoDecoder(ref pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppVideoDecoder.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Span<VideoDecoderDesc> pDesc, Guid* riid, ref void* ppVideoDecoder) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoDecoderDesc> pDesc, Guid* riid, ref void* ppVideoDecoder)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder(ref pDesc.GetPinnableReference(), riid, ref ppVideoDecoder);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Span<VideoDecoderDesc> pDesc, Span<Guid> riid, void** ppVideoDecoder) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoDecoderDesc> pDesc, Span<Guid> riid, void** ppVideoDecoder)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder(ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ppVideoDecoder);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Span<VideoDecoderDesc> pDesc, Span<Guid> riid, ref void* ppVideoDecoder) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoDecoderDesc> pDesc, Span<Guid> riid, ref void* ppVideoDecoder)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder(ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppVideoDecoder);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap<TI0, TThis>(this TThis thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, out ComPtr<TI0> ppVideoDecoderHeap) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, out ComPtr<TI0> ppVideoDecoderHeap) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppVideoDecoderHeap = default;
         return @this->CreateVideoDecoderHeap(pVideoDecoderHeapDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppVideoDecoderHeap.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap<TThis>(this TThis thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, Span<Guid> riid, void** ppVideoDecoderHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, Span<Guid> riid, void** ppVideoDecoderHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoderHeap(pVideoDecoderHeapDesc, ref riid.GetPinnableReference(), ppVideoDecoderHeap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap<TThis>(this TThis thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, Span<Guid> riid, ref void* ppVideoDecoderHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, Span<Guid> riid, ref void* ppVideoDecoderHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoderHeap(pVideoDecoderHeapDesc, ref riid.GetPinnableReference(), ref ppVideoDecoderHeap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap<TThis>(this TThis thisVtbl, Span<VideoDecoderHeapDesc> pVideoDecoderHeapDesc, Guid* riid, void** ppVideoDecoderHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoDecoderHeapDesc> pVideoDecoderHeapDesc, Guid* riid, void** ppVideoDecoderHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoderHeap(ref pVideoDecoderHeapDesc.GetPinnableReference(), riid, ppVideoDecoderHeap);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateVideoDecoderHeap<TI0, TThis>(this TThis thisVtbl, ref VideoDecoderHeapDesc pVideoDecoderHeapDesc, out ComPtr<TI0> ppVideoDecoderHeap) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static int CreateVideoDecoderHeap<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoDecoderHeapDesc pVideoDecoderHeapDesc, out ComPtr<TI0> ppVideoDecoderHeap) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppVideoDecoderHeap = default;
         return @this->CreateVideoDecoderHeap(ref pVideoDecoderHeapDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppVideoDecoderHeap.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap<TThis>(this TThis thisVtbl, Span<VideoDecoderHeapDesc> pVideoDecoderHeapDesc, Guid* riid, ref void* ppVideoDecoderHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoDecoderHeapDesc> pVideoDecoderHeapDesc, Guid* riid, ref void* ppVideoDecoderHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoderHeap(ref pVideoDecoderHeapDesc.GetPinnableReference(), riid, ref ppVideoDecoderHeap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap<TThis>(this TThis thisVtbl, Span<VideoDecoderHeapDesc> pVideoDecoderHeapDesc, Span<Guid> riid, void** ppVideoDecoderHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoDecoderHeapDesc> pVideoDecoderHeapDesc, Span<Guid> riid, void** ppVideoDecoderHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoderHeap(ref pVideoDecoderHeapDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ppVideoDecoderHeap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap<TThis>(this TThis thisVtbl, Span<VideoDecoderHeapDesc> pVideoDecoderHeapDesc, Span<Guid> riid, ref void* ppVideoDecoderHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoDecoderHeapDesc> pVideoDecoderHeapDesc, Span<Guid> riid, ref void* ppVideoDecoderHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoderHeap(ref pVideoDecoderHeapDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppVideoDecoderHeap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor<TI0, TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, out ComPtr<TI0> ppVideoProcessor) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, out ComPtr<TI0> ppVideoProcessor) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppVideoProcessor = default;
         return @this->CreateVideoProcessor(NodeMask, pOutputStreamDesc, NumInputStreamDescs, pInputStreamDescs, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppVideoProcessor.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor<TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, Span<Guid> riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, Span<Guid> riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoProcessor(NodeMask, pOutputStreamDesc, NumInputStreamDescs, pInputStreamDescs, ref riid.GetPinnableReference(), ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor<TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, Span<Guid> riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, Span<Guid> riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoProcessor(NodeMask, pOutputStreamDesc, NumInputStreamDescs, pInputStreamDescs, ref riid.GetPinnableReference(), ref ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor<TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, Guid* riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, Guid* riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoProcessor(NodeMask, pOutputStreamDesc, NumInputStreamDescs, ref pInputStreamDescs.GetPinnableReference(), riid, ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor<TI0, TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, out ComPtr<TI0> ppVideoProcessor) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, out ComPtr<TI0> ppVideoProcessor) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppVideoProcessor = default;
         return @this->CreateVideoProcessor(NodeMask, pOutputStreamDesc, NumInputStreamDescs, ref pInputStreamDescs, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppVideoProcessor.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor<TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, Guid* riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, Guid* riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoProcessor(NodeMask, pOutputStreamDesc, NumInputStreamDescs, ref pInputStreamDescs.GetPinnableReference(), riid, ref ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor<TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, Span<Guid> riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, Span<Guid> riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoProcessor(NodeMask, pOutputStreamDesc, NumInputStreamDescs, ref pInputStreamDescs.GetPinnableReference(), ref riid.GetPinnableReference(), ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor<TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, Span<Guid> riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, Span<Guid> riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoProcessor(NodeMask, pOutputStreamDesc, NumInputStreamDescs, ref pInputStreamDescs.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor<TThis>(this TThis thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, Guid* riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, Guid* riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoProcessor(NodeMask, ref pOutputStreamDesc.GetPinnableReference(), NumInputStreamDescs, pInputStreamDescs, riid, ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor<TI0, TThis>(this TThis thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, out ComPtr<TI0> ppVideoProcessor) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, out ComPtr<TI0> ppVideoProcessor) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppVideoProcessor = default;
         return @this->CreateVideoProcessor(NodeMask, ref pOutputStreamDesc, NumInputStreamDescs, pInputStreamDescs, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppVideoProcessor.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor<TThis>(this TThis thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, Guid* riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, Guid* riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoProcessor(NodeMask, ref pOutputStreamDesc.GetPinnableReference(), NumInputStreamDescs, pInputStreamDescs, riid, ref ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor<TThis>(this TThis thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, Span<Guid> riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, Span<Guid> riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoProcessor(NodeMask, ref pOutputStreamDesc.GetPinnableReference(), NumInputStreamDescs, pInputStreamDescs, ref riid.GetPinnableReference(), ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor<TThis>(this TThis thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, Span<Guid> riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, Span<Guid> riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoProcessor(NodeMask, ref pOutputStreamDesc.GetPinnableReference(), NumInputStreamDescs, pInputStreamDescs, ref riid.GetPinnableReference(), ref ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor<TThis>(this TThis thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, Guid* riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, Guid* riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoProcessor(NodeMask, ref pOutputStreamDesc.GetPinnableReference(), NumInputStreamDescs, ref pInputStreamDescs.GetPinnableReference(), riid, ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateVideoProcessor<TI0, TThis>(this TThis thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, out ComPtr<TI0> ppVideoProcessor) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static int CreateVideoProcessor<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, out ComPtr<TI0> ppVideoProcessor) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppVideoProcessor = default;
         return @this->CreateVideoProcessor(NodeMask, ref pOutputStreamDesc, NumInputStreamDescs, ref pInputStreamDescs, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppVideoProcessor.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor<TThis>(this TThis thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, Guid* riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, Guid* riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoProcessor(NodeMask, ref pOutputStreamDesc.GetPinnableReference(), NumInputStreamDescs, ref pInputStreamDescs.GetPinnableReference(), riid, ref ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor<TThis>(this TThis thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, Span<Guid> riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, Span<Guid> riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoProcessor(NodeMask, ref pOutputStreamDesc.GetPinnableReference(), NumInputStreamDescs, ref pInputStreamDescs.GetPinnableReference(), ref riid.GetPinnableReference(), ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor<TThis>(this TThis thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, Span<Guid> riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, Span<Guid> riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoProcessor(NodeMask, ref pOutputStreamDesc.GetPinnableReference(), NumInputStreamDescs, ref pInputStreamDescs.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionEstimator<TI0, TThis>(this TThis thisVtbl, VideoMotionEstimatorDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, out ComPtr<TI0> ppVideoMotionEstimator) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionEstimator<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoMotionEstimatorDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, out ComPtr<TI0> ppVideoMotionEstimator) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppVideoMotionEstimator = default;
         return @this->CreateVideoMotionEstimator(pDesc, pProtectedResourceSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppVideoMotionEstimator.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionEstimator<TThis>(this TThis thisVtbl, VideoMotionEstimatorDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, void** ppVideoMotionEstimator) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionEstimator(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoMotionEstimatorDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, void** ppVideoMotionEstimator)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoMotionEstimator(pDesc, pProtectedResourceSession, ref riid.GetPinnableReference(), ppVideoMotionEstimator);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionEstimator<TThis>(this TThis thisVtbl, VideoMotionEstimatorDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoMotionEstimator) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionEstimator(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoMotionEstimatorDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoMotionEstimator)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoMotionEstimator(pDesc, pProtectedResourceSession, ref riid.GetPinnableReference(), ref ppVideoMotionEstimator);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionEstimator<TThis>(this TThis thisVtbl, VideoMotionEstimatorDesc* pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, void** ppVideoMotionEstimator) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionEstimator(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoMotionEstimatorDesc* pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, void** ppVideoMotionEstimator)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoMotionEstimator(pDesc, ref pProtectedResourceSession.GetPinnableReference(), riid, ppVideoMotionEstimator);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionEstimator<TI0, TThis>(this TThis thisVtbl, VideoMotionEstimatorDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, out ComPtr<TI0> ppVideoMotionEstimator) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionEstimator<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoMotionEstimatorDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, out ComPtr<TI0> ppVideoMotionEstimator) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppVideoMotionEstimator = default;
         return @this->CreateVideoMotionEstimator(pDesc, ref pProtectedResourceSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppVideoMotionEstimator.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionEstimator<TThis>(this TThis thisVtbl, VideoMotionEstimatorDesc* pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, ref void* ppVideoMotionEstimator) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionEstimator(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoMotionEstimatorDesc* pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, ref void* ppVideoMotionEstimator)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoMotionEstimator(pDesc, ref pProtectedResourceSession.GetPinnableReference(), riid, ref ppVideoMotionEstimator);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionEstimator<TThis>(this TThis thisVtbl, VideoMotionEstimatorDesc* pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, void** ppVideoMotionEstimator) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionEstimator(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoMotionEstimatorDesc* pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, void** ppVideoMotionEstimator)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoMotionEstimator(pDesc, ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ppVideoMotionEstimator);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionEstimator<TThis>(this TThis thisVtbl, VideoMotionEstimatorDesc* pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoMotionEstimator) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionEstimator(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoMotionEstimatorDesc* pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoMotionEstimator)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoMotionEstimator(pDesc, ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppVideoMotionEstimator);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionEstimator<TThis>(this TThis thisVtbl, Span<VideoMotionEstimatorDesc> pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoMotionEstimator) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionEstimator(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoMotionEstimatorDesc> pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoMotionEstimator)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoMotionEstimator(ref pDesc.GetPinnableReference(), pProtectedResourceSession, riid, ppVideoMotionEstimator);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionEstimator<TI0, TThis>(this TThis thisVtbl, ref VideoMotionEstimatorDesc pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, out ComPtr<TI0> ppVideoMotionEstimator) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionEstimator<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoMotionEstimatorDesc pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, out ComPtr<TI0> ppVideoMotionEstimator) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppVideoMotionEstimator = default;
         return @this->CreateVideoMotionEstimator(ref pDesc, pProtectedResourceSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppVideoMotionEstimator.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionEstimator<TThis>(this TThis thisVtbl, Span<VideoMotionEstimatorDesc> pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoMotionEstimator) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionEstimator(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoMotionEstimatorDesc> pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoMotionEstimator)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoMotionEstimator(ref pDesc.GetPinnableReference(), pProtectedResourceSession, riid, ref ppVideoMotionEstimator);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionEstimator<TThis>(this TThis thisVtbl, Span<VideoMotionEstimatorDesc> pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, void** ppVideoMotionEstimator) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionEstimator(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoMotionEstimatorDesc> pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, void** ppVideoMotionEstimator)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoMotionEstimator(ref pDesc.GetPinnableReference(), pProtectedResourceSession, ref riid.GetPinnableReference(), ppVideoMotionEstimator);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionEstimator<TThis>(this TThis thisVtbl, Span<VideoMotionEstimatorDesc> pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoMotionEstimator) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionEstimator(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoMotionEstimatorDesc> pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoMotionEstimator)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoMotionEstimator(ref pDesc.GetPinnableReference(), pProtectedResourceSession, ref riid.GetPinnableReference(), ref ppVideoMotionEstimator);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionEstimator<TThis>(this TThis thisVtbl, Span<VideoMotionEstimatorDesc> pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, void** ppVideoMotionEstimator) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionEstimator(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoMotionEstimatorDesc> pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, void** ppVideoMotionEstimator)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoMotionEstimator(ref pDesc.GetPinnableReference(), ref pProtectedResourceSession.GetPinnableReference(), riid, ppVideoMotionEstimator);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateVideoMotionEstimator<TI0, TThis>(this TThis thisVtbl, ref VideoMotionEstimatorDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, out ComPtr<TI0> ppVideoMotionEstimator) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static int CreateVideoMotionEstimator<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoMotionEstimatorDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, out ComPtr<TI0> ppVideoMotionEstimator) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppVideoMotionEstimator = default;
         return @this->CreateVideoMotionEstimator(ref pDesc, ref pProtectedResourceSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppVideoMotionEstimator.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionEstimator<TThis>(this TThis thisVtbl, Span<VideoMotionEstimatorDesc> pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, ref void* ppVideoMotionEstimator) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionEstimator(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoMotionEstimatorDesc> pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, ref void* ppVideoMotionEstimator)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoMotionEstimator(ref pDesc.GetPinnableReference(), ref pProtectedResourceSession.GetPinnableReference(), riid, ref ppVideoMotionEstimator);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionEstimator<TThis>(this TThis thisVtbl, Span<VideoMotionEstimatorDesc> pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, void** ppVideoMotionEstimator) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionEstimator(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoMotionEstimatorDesc> pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, void** ppVideoMotionEstimator)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoMotionEstimator(ref pDesc.GetPinnableReference(), ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ppVideoMotionEstimator);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionEstimator<TThis>(this TThis thisVtbl, Span<VideoMotionEstimatorDesc> pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoMotionEstimator) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionEstimator(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoMotionEstimatorDesc> pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoMotionEstimator)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoMotionEstimator(ref pDesc.GetPinnableReference(), ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppVideoMotionEstimator);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionVectorHeap<TI0, TThis>(this TThis thisVtbl, VideoMotionVectorHeapDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, out ComPtr<TI0> ppVideoMotionVectorHeap) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionVectorHeap<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoMotionVectorHeapDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, out ComPtr<TI0> ppVideoMotionVectorHeap) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppVideoMotionVectorHeap = default;
         return @this->CreateVideoMotionVectorHeap(pDesc, pProtectedResourceSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppVideoMotionVectorHeap.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionVectorHeap<TThis>(this TThis thisVtbl, VideoMotionVectorHeapDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, void** ppVideoMotionVectorHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionVectorHeap(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoMotionVectorHeapDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, void** ppVideoMotionVectorHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoMotionVectorHeap(pDesc, pProtectedResourceSession, ref riid.GetPinnableReference(), ppVideoMotionVectorHeap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionVectorHeap<TThis>(this TThis thisVtbl, VideoMotionVectorHeapDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoMotionVectorHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionVectorHeap(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoMotionVectorHeapDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoMotionVectorHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoMotionVectorHeap(pDesc, pProtectedResourceSession, ref riid.GetPinnableReference(), ref ppVideoMotionVectorHeap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionVectorHeap<TThis>(this TThis thisVtbl, VideoMotionVectorHeapDesc* pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, void** ppVideoMotionVectorHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionVectorHeap(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoMotionVectorHeapDesc* pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, void** ppVideoMotionVectorHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoMotionVectorHeap(pDesc, ref pProtectedResourceSession.GetPinnableReference(), riid, ppVideoMotionVectorHeap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionVectorHeap<TI0, TThis>(this TThis thisVtbl, VideoMotionVectorHeapDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, out ComPtr<TI0> ppVideoMotionVectorHeap) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionVectorHeap<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoMotionVectorHeapDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, out ComPtr<TI0> ppVideoMotionVectorHeap) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppVideoMotionVectorHeap = default;
         return @this->CreateVideoMotionVectorHeap(pDesc, ref pProtectedResourceSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppVideoMotionVectorHeap.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionVectorHeap<TThis>(this TThis thisVtbl, VideoMotionVectorHeapDesc* pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, ref void* ppVideoMotionVectorHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionVectorHeap(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoMotionVectorHeapDesc* pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, ref void* ppVideoMotionVectorHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoMotionVectorHeap(pDesc, ref pProtectedResourceSession.GetPinnableReference(), riid, ref ppVideoMotionVectorHeap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionVectorHeap<TThis>(this TThis thisVtbl, VideoMotionVectorHeapDesc* pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, void** ppVideoMotionVectorHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionVectorHeap(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoMotionVectorHeapDesc* pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, void** ppVideoMotionVectorHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoMotionVectorHeap(pDesc, ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ppVideoMotionVectorHeap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionVectorHeap<TThis>(this TThis thisVtbl, VideoMotionVectorHeapDesc* pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoMotionVectorHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionVectorHeap(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoMotionVectorHeapDesc* pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoMotionVectorHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoMotionVectorHeap(pDesc, ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppVideoMotionVectorHeap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionVectorHeap<TThis>(this TThis thisVtbl, Span<VideoMotionVectorHeapDesc> pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoMotionVectorHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionVectorHeap(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoMotionVectorHeapDesc> pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoMotionVectorHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoMotionVectorHeap(ref pDesc.GetPinnableReference(), pProtectedResourceSession, riid, ppVideoMotionVectorHeap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionVectorHeap<TI0, TThis>(this TThis thisVtbl, ref VideoMotionVectorHeapDesc pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, out ComPtr<TI0> ppVideoMotionVectorHeap) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionVectorHeap<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoMotionVectorHeapDesc pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, out ComPtr<TI0> ppVideoMotionVectorHeap) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppVideoMotionVectorHeap = default;
         return @this->CreateVideoMotionVectorHeap(ref pDesc, pProtectedResourceSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppVideoMotionVectorHeap.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionVectorHeap<TThis>(this TThis thisVtbl, Span<VideoMotionVectorHeapDesc> pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoMotionVectorHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionVectorHeap(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoMotionVectorHeapDesc> pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoMotionVectorHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoMotionVectorHeap(ref pDesc.GetPinnableReference(), pProtectedResourceSession, riid, ref ppVideoMotionVectorHeap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionVectorHeap<TThis>(this TThis thisVtbl, Span<VideoMotionVectorHeapDesc> pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, void** ppVideoMotionVectorHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionVectorHeap(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoMotionVectorHeapDesc> pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, void** ppVideoMotionVectorHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoMotionVectorHeap(ref pDesc.GetPinnableReference(), pProtectedResourceSession, ref riid.GetPinnableReference(), ppVideoMotionVectorHeap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionVectorHeap<TThis>(this TThis thisVtbl, Span<VideoMotionVectorHeapDesc> pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoMotionVectorHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionVectorHeap(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoMotionVectorHeapDesc> pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoMotionVectorHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoMotionVectorHeap(ref pDesc.GetPinnableReference(), pProtectedResourceSession, ref riid.GetPinnableReference(), ref ppVideoMotionVectorHeap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionVectorHeap<TThis>(this TThis thisVtbl, Span<VideoMotionVectorHeapDesc> pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, void** ppVideoMotionVectorHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionVectorHeap(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoMotionVectorHeapDesc> pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, void** ppVideoMotionVectorHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoMotionVectorHeap(ref pDesc.GetPinnableReference(), ref pProtectedResourceSession.GetPinnableReference(), riid, ppVideoMotionVectorHeap);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateVideoMotionVectorHeap<TI0, TThis>(this TThis thisVtbl, ref VideoMotionVectorHeapDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, out ComPtr<TI0> ppVideoMotionVectorHeap) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static int CreateVideoMotionVectorHeap<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoMotionVectorHeapDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, out ComPtr<TI0> ppVideoMotionVectorHeap) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppVideoMotionVectorHeap = default;
         return @this->CreateVideoMotionVectorHeap(ref pDesc, ref pProtectedResourceSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppVideoMotionVectorHeap.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionVectorHeap<TThis>(this TThis thisVtbl, Span<VideoMotionVectorHeapDesc> pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, ref void* ppVideoMotionVectorHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionVectorHeap(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoMotionVectorHeapDesc> pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, ref void* ppVideoMotionVectorHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoMotionVectorHeap(ref pDesc.GetPinnableReference(), ref pProtectedResourceSession.GetPinnableReference(), riid, ref ppVideoMotionVectorHeap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionVectorHeap<TThis>(this TThis thisVtbl, Span<VideoMotionVectorHeapDesc> pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, void** ppVideoMotionVectorHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionVectorHeap(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoMotionVectorHeapDesc> pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, void** ppVideoMotionVectorHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoMotionVectorHeap(ref pDesc.GetPinnableReference(), ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ppVideoMotionVectorHeap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoMotionVectorHeap<TThis>(this TThis thisVtbl, Span<VideoMotionVectorHeapDesc> pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoMotionVectorHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoMotionVectorHeap(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoMotionVectorHeapDesc> pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoMotionVectorHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoMotionVectorHeap(ref pDesc.GetPinnableReference(), ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppVideoMotionVectorHeap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder1<TI0, TThis>(this TThis thisVtbl, VideoDecoderDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, out ComPtr<TI0> ppVideoDecoder) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder1<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, out ComPtr<TI0> ppVideoDecoder) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppVideoDecoder = default;
         return @this->CreateVideoDecoder1(pDesc, pProtectedResourceSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppVideoDecoder.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder1<TThis>(this TThis thisVtbl, VideoDecoderDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, void** ppVideoDecoder) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder1(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, void** ppVideoDecoder)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder1(pDesc, pProtectedResourceSession, ref riid.GetPinnableReference(), ppVideoDecoder);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder1<TThis>(this TThis thisVtbl, VideoDecoderDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoDecoder) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder1(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoDecoder)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder1(pDesc, pProtectedResourceSession, ref riid.GetPinnableReference(), ref ppVideoDecoder);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder1<TThis>(this TThis thisVtbl, VideoDecoderDesc* pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, void** ppVideoDecoder) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder1(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderDesc* pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, void** ppVideoDecoder)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder1(pDesc, ref pProtectedResourceSession.GetPinnableReference(), riid, ppVideoDecoder);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder1<TI0, TThis>(this TThis thisVtbl, VideoDecoderDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, out ComPtr<TI0> ppVideoDecoder) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder1<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, out ComPtr<TI0> ppVideoDecoder) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppVideoDecoder = default;
         return @this->CreateVideoDecoder1(pDesc, ref pProtectedResourceSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppVideoDecoder.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder1<TThis>(this TThis thisVtbl, VideoDecoderDesc* pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, ref void* ppVideoDecoder) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder1(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderDesc* pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, ref void* ppVideoDecoder)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder1(pDesc, ref pProtectedResourceSession.GetPinnableReference(), riid, ref ppVideoDecoder);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder1<TThis>(this TThis thisVtbl, VideoDecoderDesc* pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, void** ppVideoDecoder) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder1(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderDesc* pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, void** ppVideoDecoder)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder1(pDesc, ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ppVideoDecoder);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder1<TThis>(this TThis thisVtbl, VideoDecoderDesc* pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoDecoder) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder1(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderDesc* pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoDecoder)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder1(pDesc, ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppVideoDecoder);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder1<TThis>(this TThis thisVtbl, Span<VideoDecoderDesc> pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoDecoder) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder1(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoDecoderDesc> pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoDecoder)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder1(ref pDesc.GetPinnableReference(), pProtectedResourceSession, riid, ppVideoDecoder);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder1<TI0, TThis>(this TThis thisVtbl, ref VideoDecoderDesc pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, out ComPtr<TI0> ppVideoDecoder) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder1<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoDecoderDesc pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, out ComPtr<TI0> ppVideoDecoder) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppVideoDecoder = default;
         return @this->CreateVideoDecoder1(ref pDesc, pProtectedResourceSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppVideoDecoder.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder1<TThis>(this TThis thisVtbl, Span<VideoDecoderDesc> pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoDecoder) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder1(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoDecoderDesc> pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoDecoder)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder1(ref pDesc.GetPinnableReference(), pProtectedResourceSession, riid, ref ppVideoDecoder);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder1<TThis>(this TThis thisVtbl, Span<VideoDecoderDesc> pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, void** ppVideoDecoder) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder1(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoDecoderDesc> pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, void** ppVideoDecoder)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder1(ref pDesc.GetPinnableReference(), pProtectedResourceSession, ref riid.GetPinnableReference(), ppVideoDecoder);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder1<TThis>(this TThis thisVtbl, Span<VideoDecoderDesc> pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoDecoder) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder1(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoDecoderDesc> pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoDecoder)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder1(ref pDesc.GetPinnableReference(), pProtectedResourceSession, ref riid.GetPinnableReference(), ref ppVideoDecoder);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder1<TThis>(this TThis thisVtbl, Span<VideoDecoderDesc> pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, void** ppVideoDecoder) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder1(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoDecoderDesc> pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, void** ppVideoDecoder)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder1(ref pDesc.GetPinnableReference(), ref pProtectedResourceSession.GetPinnableReference(), riid, ppVideoDecoder);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateVideoDecoder1<TI0, TThis>(this TThis thisVtbl, ref VideoDecoderDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, out ComPtr<TI0> ppVideoDecoder) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static int CreateVideoDecoder1<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoDecoderDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, out ComPtr<TI0> ppVideoDecoder) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppVideoDecoder = default;
         return @this->CreateVideoDecoder1(ref pDesc, ref pProtectedResourceSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppVideoDecoder.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder1<TThis>(this TThis thisVtbl, Span<VideoDecoderDesc> pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, ref void* ppVideoDecoder) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder1(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoDecoderDesc> pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, ref void* ppVideoDecoder)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder1(ref pDesc.GetPinnableReference(), ref pProtectedResourceSession.GetPinnableReference(), riid, ref ppVideoDecoder);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder1<TThis>(this TThis thisVtbl, Span<VideoDecoderDesc> pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, void** ppVideoDecoder) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder1(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoDecoderDesc> pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, void** ppVideoDecoder)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder1(ref pDesc.GetPinnableReference(), ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ppVideoDecoder);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder1<TThis>(this TThis thisVtbl, Span<VideoDecoderDesc> pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoDecoder) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoder1(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoDecoderDesc> pDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoDecoder)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoder1(ref pDesc.GetPinnableReference(), ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppVideoDecoder);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap1<TI0, TThis>(this TThis thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, out ComPtr<TI0> ppVideoDecoderHeap) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap1<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, out ComPtr<TI0> ppVideoDecoderHeap) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppVideoDecoderHeap = default;
         return @this->CreateVideoDecoderHeap1(pVideoDecoderHeapDesc, pProtectedResourceSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppVideoDecoderHeap.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap1<TThis>(this TThis thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, void** ppVideoDecoderHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap1(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, void** ppVideoDecoderHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoderHeap1(pVideoDecoderHeapDesc, pProtectedResourceSession, ref riid.GetPinnableReference(), ppVideoDecoderHeap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap1<TThis>(this TThis thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoDecoderHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap1(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoDecoderHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoderHeap1(pVideoDecoderHeapDesc, pProtectedResourceSession, ref riid.GetPinnableReference(), ref ppVideoDecoderHeap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap1<TThis>(this TThis thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, void** ppVideoDecoderHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap1(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, void** ppVideoDecoderHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoderHeap1(pVideoDecoderHeapDesc, ref pProtectedResourceSession.GetPinnableReference(), riid, ppVideoDecoderHeap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap1<TI0, TThis>(this TThis thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, out ComPtr<TI0> ppVideoDecoderHeap) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap1<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, out ComPtr<TI0> ppVideoDecoderHeap) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppVideoDecoderHeap = default;
         return @this->CreateVideoDecoderHeap1(pVideoDecoderHeapDesc, ref pProtectedResourceSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppVideoDecoderHeap.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap1<TThis>(this TThis thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, ref void* ppVideoDecoderHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap1(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, ref void* ppVideoDecoderHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoderHeap1(pVideoDecoderHeapDesc, ref pProtectedResourceSession.GetPinnableReference(), riid, ref ppVideoDecoderHeap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap1<TThis>(this TThis thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, void** ppVideoDecoderHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap1(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, void** ppVideoDecoderHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoderHeap1(pVideoDecoderHeapDesc, ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ppVideoDecoderHeap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap1<TThis>(this TThis thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoDecoderHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap1(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoDecoderHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoderHeap1(pVideoDecoderHeapDesc, ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppVideoDecoderHeap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap1<TThis>(this TThis thisVtbl, Span<VideoDecoderHeapDesc> pVideoDecoderHeapDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoDecoderHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap1(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoDecoderHeapDesc> pVideoDecoderHeapDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoDecoderHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoderHeap1(ref pVideoDecoderHeapDesc.GetPinnableReference(), pProtectedResourceSession, riid, ppVideoDecoderHeap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap1<TI0, TThis>(this TThis thisVtbl, ref VideoDecoderHeapDesc pVideoDecoderHeapDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, out ComPtr<TI0> ppVideoDecoderHeap) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap1<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoDecoderHeapDesc pVideoDecoderHeapDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, out ComPtr<TI0> ppVideoDecoderHeap) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppVideoDecoderHeap = default;
         return @this->CreateVideoDecoderHeap1(ref pVideoDecoderHeapDesc, pProtectedResourceSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppVideoDecoderHeap.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap1<TThis>(this TThis thisVtbl, Span<VideoDecoderHeapDesc> pVideoDecoderHeapDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoDecoderHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap1(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoDecoderHeapDesc> pVideoDecoderHeapDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoDecoderHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoderHeap1(ref pVideoDecoderHeapDesc.GetPinnableReference(), pProtectedResourceSession, riid, ref ppVideoDecoderHeap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap1<TThis>(this TThis thisVtbl, Span<VideoDecoderHeapDesc> pVideoDecoderHeapDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, void** ppVideoDecoderHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap1(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoDecoderHeapDesc> pVideoDecoderHeapDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, void** ppVideoDecoderHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoderHeap1(ref pVideoDecoderHeapDesc.GetPinnableReference(), pProtectedResourceSession, ref riid.GetPinnableReference(), ppVideoDecoderHeap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap1<TThis>(this TThis thisVtbl, Span<VideoDecoderHeapDesc> pVideoDecoderHeapDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoDecoderHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap1(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoDecoderHeapDesc> pVideoDecoderHeapDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoDecoderHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoderHeap1(ref pVideoDecoderHeapDesc.GetPinnableReference(), pProtectedResourceSession, ref riid.GetPinnableReference(), ref ppVideoDecoderHeap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap1<TThis>(this TThis thisVtbl, Span<VideoDecoderHeapDesc> pVideoDecoderHeapDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, void** ppVideoDecoderHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap1(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoDecoderHeapDesc> pVideoDecoderHeapDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, void** ppVideoDecoderHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoderHeap1(ref pVideoDecoderHeapDesc.GetPinnableReference(), ref pProtectedResourceSession.GetPinnableReference(), riid, ppVideoDecoderHeap);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateVideoDecoderHeap1<TI0, TThis>(this TThis thisVtbl, ref VideoDecoderHeapDesc pVideoDecoderHeapDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, out ComPtr<TI0> ppVideoDecoderHeap) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static int CreateVideoDecoderHeap1<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoDecoderHeapDesc pVideoDecoderHeapDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession, out ComPtr<TI0> ppVideoDecoderHeap) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppVideoDecoderHeap = default;
         return @this->CreateVideoDecoderHeap1(ref pVideoDecoderHeapDesc, ref pProtectedResourceSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppVideoDecoderHeap.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap1<TThis>(this TThis thisVtbl, Span<VideoDecoderHeapDesc> pVideoDecoderHeapDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, ref void* ppVideoDecoderHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap1(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoDecoderHeapDesc> pVideoDecoderHeapDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, ref void* ppVideoDecoderHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoderHeap1(ref pVideoDecoderHeapDesc.GetPinnableReference(), ref pProtectedResourceSession.GetPinnableReference(), riid, ref ppVideoDecoderHeap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap1<TThis>(this TThis thisVtbl, Span<VideoDecoderHeapDesc> pVideoDecoderHeapDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, void** ppVideoDecoderHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap1(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoDecoderHeapDesc> pVideoDecoderHeapDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, void** ppVideoDecoderHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoderHeap1(ref pVideoDecoderHeapDesc.GetPinnableReference(), ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ppVideoDecoderHeap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap1<TThis>(this TThis thisVtbl, Span<VideoDecoderHeapDesc> pVideoDecoderHeapDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoDecoderHeap) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoDecoderHeap1(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoDecoderHeapDesc> pVideoDecoderHeapDesc, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoDecoderHeap)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoDecoderHeap1(ref pVideoDecoderHeapDesc.GetPinnableReference(), ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppVideoDecoderHeap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TI0, TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, out ComPtr<TI0> ppVideoProcessor) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, out ComPtr<TI0> ppVideoProcessor) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppVideoProcessor = default;
         return @this->CreateVideoProcessor1(NodeMask, pOutputStreamDesc, NumInputStreamDescs, pInputStreamDescs, pProtectedResourceSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppVideoProcessor.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoProcessor1(NodeMask, pOutputStreamDesc, NumInputStreamDescs, pInputStreamDescs, pProtectedResourceSession, ref riid.GetPinnableReference(), ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoProcessor1(NodeMask, pOutputStreamDesc, NumInputStreamDescs, pInputStreamDescs, pProtectedResourceSession, ref riid.GetPinnableReference(), ref ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoProcessor1(NodeMask, pOutputStreamDesc, NumInputStreamDescs, pInputStreamDescs, ref pProtectedResourceSession.GetPinnableReference(), riid, ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TI0, TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession, out ComPtr<TI0> ppVideoProcessor) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession, out ComPtr<TI0> ppVideoProcessor) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppVideoProcessor = default;
         return @this->CreateVideoProcessor1(NodeMask, pOutputStreamDesc, NumInputStreamDescs, pInputStreamDescs, ref pProtectedResourceSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppVideoProcessor.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoProcessor1(NodeMask, pOutputStreamDesc, NumInputStreamDescs, pInputStreamDescs, ref pProtectedResourceSession.GetPinnableReference(), riid, ref ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoProcessor1(NodeMask, pOutputStreamDesc, NumInputStreamDescs, pInputStreamDescs, ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoProcessor1(NodeMask, pOutputStreamDesc, NumInputStreamDescs, pInputStreamDescs, ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoProcessor1(NodeMask, pOutputStreamDesc, NumInputStreamDescs, ref pInputStreamDescs.GetPinnableReference(), pProtectedResourceSession, riid, ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TI0, TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, out ComPtr<TI0> ppVideoProcessor) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, out ComPtr<TI0> ppVideoProcessor) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppVideoProcessor = default;
         return @this->CreateVideoProcessor1(NodeMask, pOutputStreamDesc, NumInputStreamDescs, ref pInputStreamDescs, pProtectedResourceSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppVideoProcessor.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoProcessor1(NodeMask, pOutputStreamDesc, NumInputStreamDescs, ref pInputStreamDescs.GetPinnableReference(), pProtectedResourceSession, riid, ref ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoProcessor1(NodeMask, pOutputStreamDesc, NumInputStreamDescs, ref pInputStreamDescs.GetPinnableReference(), pProtectedResourceSession, ref riid.GetPinnableReference(), ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoProcessor1(NodeMask, pOutputStreamDesc, NumInputStreamDescs, ref pInputStreamDescs.GetPinnableReference(), pProtectedResourceSession, ref riid.GetPinnableReference(), ref ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoProcessor1(NodeMask, pOutputStreamDesc, NumInputStreamDescs, ref pInputStreamDescs.GetPinnableReference(), ref pProtectedResourceSession.GetPinnableReference(), riid, ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TI0, TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession, out ComPtr<TI0> ppVideoProcessor) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession, out ComPtr<TI0> ppVideoProcessor) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppVideoProcessor = default;
         return @this->CreateVideoProcessor1(NodeMask, pOutputStreamDesc, NumInputStreamDescs, ref pInputStreamDescs, ref pProtectedResourceSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppVideoProcessor.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoProcessor1(NodeMask, pOutputStreamDesc, NumInputStreamDescs, ref pInputStreamDescs.GetPinnableReference(), ref pProtectedResourceSession.GetPinnableReference(), riid, ref ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoProcessor1(NodeMask, pOutputStreamDesc, NumInputStreamDescs, ref pInputStreamDescs.GetPinnableReference(), ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoProcessor1(NodeMask, pOutputStreamDesc, NumInputStreamDescs, ref pInputStreamDescs.GetPinnableReference(), ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoProcessor1(NodeMask, ref pOutputStreamDesc.GetPinnableReference(), NumInputStreamDescs, pInputStreamDescs, pProtectedResourceSession, riid, ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TI0, TThis>(this TThis thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, out ComPtr<TI0> ppVideoProcessor) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, out ComPtr<TI0> ppVideoProcessor) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppVideoProcessor = default;
         return @this->CreateVideoProcessor1(NodeMask, ref pOutputStreamDesc, NumInputStreamDescs, pInputStreamDescs, pProtectedResourceSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppVideoProcessor.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoProcessor1(NodeMask, ref pOutputStreamDesc.GetPinnableReference(), NumInputStreamDescs, pInputStreamDescs, pProtectedResourceSession, riid, ref ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoProcessor1(NodeMask, ref pOutputStreamDesc.GetPinnableReference(), NumInputStreamDescs, pInputStreamDescs, pProtectedResourceSession, ref riid.GetPinnableReference(), ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoProcessor1(NodeMask, ref pOutputStreamDesc.GetPinnableReference(), NumInputStreamDescs, pInputStreamDescs, pProtectedResourceSession, ref riid.GetPinnableReference(), ref ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoProcessor1(NodeMask, ref pOutputStreamDesc.GetPinnableReference(), NumInputStreamDescs, pInputStreamDescs, ref pProtectedResourceSession.GetPinnableReference(), riid, ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TI0, TThis>(this TThis thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession, out ComPtr<TI0> ppVideoProcessor) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession, out ComPtr<TI0> ppVideoProcessor) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppVideoProcessor = default;
         return @this->CreateVideoProcessor1(NodeMask, ref pOutputStreamDesc, NumInputStreamDescs, pInputStreamDescs, ref pProtectedResourceSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppVideoProcessor.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoProcessor1(NodeMask, ref pOutputStreamDesc.GetPinnableReference(), NumInputStreamDescs, pInputStreamDescs, ref pProtectedResourceSession.GetPinnableReference(), riid, ref ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoProcessor1(NodeMask, ref pOutputStreamDesc.GetPinnableReference(), NumInputStreamDescs, pInputStreamDescs, ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoProcessor1(NodeMask, ref pOutputStreamDesc.GetPinnableReference(), NumInputStreamDescs, pInputStreamDescs, ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoProcessor1(NodeMask, ref pOutputStreamDesc.GetPinnableReference(), NumInputStreamDescs, ref pInputStreamDescs.GetPinnableReference(), pProtectedResourceSession, riid, ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TI0, TThis>(this TThis thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, out ComPtr<TI0> ppVideoProcessor) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, out ComPtr<TI0> ppVideoProcessor) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppVideoProcessor = default;
         return @this->CreateVideoProcessor1(NodeMask, ref pOutputStreamDesc, NumInputStreamDescs, ref pInputStreamDescs, pProtectedResourceSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppVideoProcessor.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoProcessor1(NodeMask, ref pOutputStreamDesc.GetPinnableReference(), NumInputStreamDescs, ref pInputStreamDescs.GetPinnableReference(), pProtectedResourceSession, riid, ref ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoProcessor1(NodeMask, ref pOutputStreamDesc.GetPinnableReference(), NumInputStreamDescs, ref pInputStreamDescs.GetPinnableReference(), pProtectedResourceSession, ref riid.GetPinnableReference(), ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoProcessor1(NodeMask, ref pOutputStreamDesc.GetPinnableReference(), NumInputStreamDescs, ref pInputStreamDescs.GetPinnableReference(), pProtectedResourceSession, ref riid.GetPinnableReference(), ref ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoProcessor1(NodeMask, ref pOutputStreamDesc.GetPinnableReference(), NumInputStreamDescs, ref pInputStreamDescs.GetPinnableReference(), ref pProtectedResourceSession.GetPinnableReference(), riid, ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateVideoProcessor1<TI0, TThis>(this TThis thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession, out ComPtr<TI0> ppVideoProcessor) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static int CreateVideoProcessor1<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession, out ComPtr<TI0> ppVideoProcessor) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppVideoProcessor = default;
         return @this->CreateVideoProcessor1(NodeMask, ref pOutputStreamDesc, NumInputStreamDescs, ref pInputStreamDescs, ref pProtectedResourceSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppVideoProcessor.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoProcessor1(NodeMask, ref pOutputStreamDesc.GetPinnableReference(), NumInputStreamDescs, ref pInputStreamDescs.GetPinnableReference(), ref pProtectedResourceSession.GetPinnableReference(), riid, ref ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, void** ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, void** ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoProcessor1(NodeMask, ref pOutputStreamDesc.GetPinnableReference(), NumInputStreamDescs, ref pInputStreamDescs.GetPinnableReference(), ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor1<TThis>(this TThis thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoProcessor) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoProcessor1(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, Span<VideoProcessOutputStreamDesc> pOutputStreamDesc, uint NumInputStreamDescs, Span<VideoProcessInputStreamDesc> pInputStreamDescs, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoProcessor)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoProcessor1(NodeMask, ref pOutputStreamDesc.GetPinnableReference(), NumInputStreamDescs, ref pInputStreamDescs.GetPinnableReference(), ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<TI0, TThis>(this TThis thisVtbl, VideoExtensionCommandDesc* pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, out ComPtr<TI0> ppVideoExtensionCommand) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoExtensionCommandDesc* pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, out ComPtr<TI0> ppVideoExtensionCommand) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppVideoExtensionCommand = default;
         return @this->CreateVideoExtensionCommand(pDesc, pCreationParameters, CreationParametersDataSizeInBytes, pProtectedResourceSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppVideoExtensionCommand.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<TThis>(this TThis thisVtbl, VideoExtensionCommandDesc* pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, void** ppVideoExtensionCommand) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoExtensionCommandDesc* pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, void** ppVideoExtensionCommand)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoExtensionCommand(pDesc, pCreationParameters, CreationParametersDataSizeInBytes, pProtectedResourceSession, ref riid.GetPinnableReference(), ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<TThis>(this TThis thisVtbl, VideoExtensionCommandDesc* pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoExtensionCommand) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoExtensionCommandDesc* pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoExtensionCommand)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoExtensionCommand(pDesc, pCreationParameters, CreationParametersDataSizeInBytes, pProtectedResourceSession, ref riid.GetPinnableReference(), ref ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<TThis>(this TThis thisVtbl, VideoExtensionCommandDesc* pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoExtensionCommandDesc* pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoExtensionCommand(pDesc, pCreationParameters, CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), riid, ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<TI0, TThis>(this TThis thisVtbl, VideoExtensionCommandDesc* pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, out ComPtr<TI0> ppVideoExtensionCommand) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoExtensionCommandDesc* pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, out ComPtr<TI0> ppVideoExtensionCommand) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppVideoExtensionCommand = default;
         return @this->CreateVideoExtensionCommand(pDesc, pCreationParameters, CreationParametersDataSizeInBytes, ref pProtectedResourceSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppVideoExtensionCommand.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<TThis>(this TThis thisVtbl, VideoExtensionCommandDesc* pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoExtensionCommandDesc* pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoExtensionCommand(pDesc, pCreationParameters, CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), riid, ref ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<TThis>(this TThis thisVtbl, VideoExtensionCommandDesc* pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, void** ppVideoExtensionCommand) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoExtensionCommandDesc* pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, void** ppVideoExtensionCommand)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoExtensionCommand(pDesc, pCreationParameters, CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<TThis>(this TThis thisVtbl, VideoExtensionCommandDesc* pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoExtensionCommand) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoExtensionCommandDesc* pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoExtensionCommand)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoExtensionCommand(pDesc, pCreationParameters, CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0, TThis>(this TThis thisVtbl, VideoExtensionCommandDesc* pDesc, Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoExtensionCommandDesc* pDesc, Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoExtensionCommand(pDesc, ref pCreationParameters.GetPinnableReference(), CreationParametersDataSizeInBytes, pProtectedResourceSession, riid, ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0, TI0, TThis>(this TThis thisVtbl, VideoExtensionCommandDesc* pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, out ComPtr<TI0> ppVideoExtensionCommand) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand<T0, TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoExtensionCommandDesc* pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, out ComPtr<TI0> ppVideoExtensionCommand) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppVideoExtensionCommand = default;
         return @this->CreateVideoExtensionCommand(pDesc, ref pCreationParameters, CreationParametersDataSizeInBytes, pProtectedResourceSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppVideoExtensionCommand.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0, TThis>(this TThis thisVtbl, VideoExtensionCommandDesc* pDesc, Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoExtensionCommandDesc* pDesc, Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoExtensionCommand(pDesc, ref pCreationParameters.GetPinnableReference(), CreationParametersDataSizeInBytes, pProtectedResourceSession, riid, ref ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0, TThis>(this TThis thisVtbl, VideoExtensionCommandDesc* pDesc, Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, void** ppVideoExtensionCommand) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoExtensionCommandDesc* pDesc, Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, void** ppVideoExtensionCommand) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoExtensionCommand(pDesc, ref pCreationParameters.GetPinnableReference(), CreationParametersDataSizeInBytes, pProtectedResourceSession, ref riid.GetPinnableReference(), ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0, TThis>(this TThis thisVtbl, VideoExtensionCommandDesc* pDesc, Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoExtensionCommandDesc* pDesc, Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoExtensionCommand(pDesc, ref pCreationParameters.GetPinnableReference(), CreationParametersDataSizeInBytes, pProtectedResourceSession, ref riid.GetPinnableReference(), ref ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0, TThis>(this TThis thisVtbl, VideoExtensionCommandDesc* pDesc, Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoExtensionCommandDesc* pDesc, Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoExtensionCommand(pDesc, ref pCreationParameters.GetPinnableReference(), CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), riid, ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0, TI0, TThis>(this TThis thisVtbl, VideoExtensionCommandDesc* pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, out ComPtr<TI0> ppVideoExtensionCommand) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand<T0, TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoExtensionCommandDesc* pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, out ComPtr<TI0> ppVideoExtensionCommand) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppVideoExtensionCommand = default;
         return @this->CreateVideoExtensionCommand(pDesc, ref pCreationParameters, CreationParametersDataSizeInBytes, ref pProtectedResourceSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppVideoExtensionCommand.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0, TThis>(this TThis thisVtbl, VideoExtensionCommandDesc* pDesc, Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoExtensionCommandDesc* pDesc, Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoExtensionCommand(pDesc, ref pCreationParameters.GetPinnableReference(), CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), riid, ref ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0, TThis>(this TThis thisVtbl, VideoExtensionCommandDesc* pDesc, Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, void** ppVideoExtensionCommand) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoExtensionCommandDesc* pDesc, Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, void** ppVideoExtensionCommand) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoExtensionCommand(pDesc, ref pCreationParameters.GetPinnableReference(), CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0, TThis>(this TThis thisVtbl, VideoExtensionCommandDesc* pDesc, Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoExtensionCommandDesc* pDesc, Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoExtensionCommand(pDesc, ref pCreationParameters.GetPinnableReference(), CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<TThis>(this TThis thisVtbl, Span<VideoExtensionCommandDesc> pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoExtensionCommandDesc> pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoExtensionCommand(ref pDesc.GetPinnableReference(), pCreationParameters, CreationParametersDataSizeInBytes, pProtectedResourceSession, riid, ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<TI0, TThis>(this TThis thisVtbl, ref VideoExtensionCommandDesc pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, out ComPtr<TI0> ppVideoExtensionCommand) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoExtensionCommandDesc pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, out ComPtr<TI0> ppVideoExtensionCommand) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppVideoExtensionCommand = default;
         return @this->CreateVideoExtensionCommand(ref pDesc, pCreationParameters, CreationParametersDataSizeInBytes, pProtectedResourceSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppVideoExtensionCommand.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<TThis>(this TThis thisVtbl, Span<VideoExtensionCommandDesc> pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoExtensionCommandDesc> pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoExtensionCommand(ref pDesc.GetPinnableReference(), pCreationParameters, CreationParametersDataSizeInBytes, pProtectedResourceSession, riid, ref ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<TThis>(this TThis thisVtbl, Span<VideoExtensionCommandDesc> pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, void** ppVideoExtensionCommand) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoExtensionCommandDesc> pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, void** ppVideoExtensionCommand)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoExtensionCommand(ref pDesc.GetPinnableReference(), pCreationParameters, CreationParametersDataSizeInBytes, pProtectedResourceSession, ref riid.GetPinnableReference(), ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<TThis>(this TThis thisVtbl, Span<VideoExtensionCommandDesc> pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoExtensionCommand) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoExtensionCommandDesc> pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoExtensionCommand)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoExtensionCommand(ref pDesc.GetPinnableReference(), pCreationParameters, CreationParametersDataSizeInBytes, pProtectedResourceSession, ref riid.GetPinnableReference(), ref ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<TThis>(this TThis thisVtbl, Span<VideoExtensionCommandDesc> pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoExtensionCommandDesc> pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoExtensionCommand(ref pDesc.GetPinnableReference(), pCreationParameters, CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), riid, ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<TI0, TThis>(this TThis thisVtbl, ref VideoExtensionCommandDesc pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, out ComPtr<TI0> ppVideoExtensionCommand) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoExtensionCommandDesc pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, out ComPtr<TI0> ppVideoExtensionCommand) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppVideoExtensionCommand = default;
         return @this->CreateVideoExtensionCommand(ref pDesc, pCreationParameters, CreationParametersDataSizeInBytes, ref pProtectedResourceSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppVideoExtensionCommand.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<TThis>(this TThis thisVtbl, Span<VideoExtensionCommandDesc> pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoExtensionCommandDesc> pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoExtensionCommand(ref pDesc.GetPinnableReference(), pCreationParameters, CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), riid, ref ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<TThis>(this TThis thisVtbl, Span<VideoExtensionCommandDesc> pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, void** ppVideoExtensionCommand) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoExtensionCommandDesc> pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, void** ppVideoExtensionCommand)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoExtensionCommand(ref pDesc.GetPinnableReference(), pCreationParameters, CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<TThis>(this TThis thisVtbl, Span<VideoExtensionCommandDesc> pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoExtensionCommand) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoExtensionCommandDesc> pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoExtensionCommand)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoExtensionCommand(ref pDesc.GetPinnableReference(), pCreationParameters, CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0, TThis>(this TThis thisVtbl, Span<VideoExtensionCommandDesc> pDesc, Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoExtensionCommandDesc> pDesc, Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoExtensionCommand(ref pDesc.GetPinnableReference(), ref pCreationParameters.GetPinnableReference(), CreationParametersDataSizeInBytes, pProtectedResourceSession, riid, ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0, TI0, TThis>(this TThis thisVtbl, ref VideoExtensionCommandDesc pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, out ComPtr<TI0> ppVideoExtensionCommand) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand<T0, TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoExtensionCommandDesc pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, out ComPtr<TI0> ppVideoExtensionCommand) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppVideoExtensionCommand = default;
         return @this->CreateVideoExtensionCommand(ref pDesc, ref pCreationParameters, CreationParametersDataSizeInBytes, pProtectedResourceSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppVideoExtensionCommand.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0, TThis>(this TThis thisVtbl, Span<VideoExtensionCommandDesc> pDesc, Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoExtensionCommandDesc> pDesc, Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoExtensionCommand(ref pDesc.GetPinnableReference(), ref pCreationParameters.GetPinnableReference(), CreationParametersDataSizeInBytes, pProtectedResourceSession, riid, ref ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0, TThis>(this TThis thisVtbl, Span<VideoExtensionCommandDesc> pDesc, Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, void** ppVideoExtensionCommand) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoExtensionCommandDesc> pDesc, Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, void** ppVideoExtensionCommand) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoExtensionCommand(ref pDesc.GetPinnableReference(), ref pCreationParameters.GetPinnableReference(), CreationParametersDataSizeInBytes, pProtectedResourceSession, ref riid.GetPinnableReference(), ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0, TThis>(this TThis thisVtbl, Span<VideoExtensionCommandDesc> pDesc, Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoExtensionCommandDesc> pDesc, Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoExtensionCommand(ref pDesc.GetPinnableReference(), ref pCreationParameters.GetPinnableReference(), CreationParametersDataSizeInBytes, pProtectedResourceSession, ref riid.GetPinnableReference(), ref ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0, TThis>(this TThis thisVtbl, Span<VideoExtensionCommandDesc> pDesc, Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoExtensionCommandDesc> pDesc, Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoExtensionCommand(ref pDesc.GetPinnableReference(), ref pCreationParameters.GetPinnableReference(), CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), riid, ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateVideoExtensionCommand<T0, TI0, TThis>(this TThis thisVtbl, ref VideoExtensionCommandDesc pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, out ComPtr<TI0> ppVideoExtensionCommand) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static int CreateVideoExtensionCommand<T0, TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoExtensionCommandDesc pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, out ComPtr<TI0> ppVideoExtensionCommand) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppVideoExtensionCommand = default;
         return @this->CreateVideoExtensionCommand(ref pDesc, ref pCreationParameters, CreationParametersDataSizeInBytes, ref pProtectedResourceSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppVideoExtensionCommand.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0, TThis>(this TThis thisVtbl, Span<VideoExtensionCommandDesc> pDesc, Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoExtensionCommandDesc> pDesc, Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoExtensionCommand(ref pDesc.GetPinnableReference(), ref pCreationParameters.GetPinnableReference(), CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), riid, ref ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0, TThis>(this TThis thisVtbl, Span<VideoExtensionCommandDesc> pDesc, Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, void** ppVideoExtensionCommand) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoExtensionCommandDesc> pDesc, Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, void** ppVideoExtensionCommand) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoExtensionCommand(ref pDesc.GetPinnableReference(), ref pCreationParameters.GetPinnableReference(), CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0, TThis>(this TThis thisVtbl, Span<VideoExtensionCommandDesc> pDesc, Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<VideoExtensionCommandDesc> pDesc, Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateVideoExtensionCommand(ref pDesc.GetPinnableReference(), ref pCreationParameters.GetPinnableReference(), CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExecuteExtensionCommand<T0, TThis>(this TThis thisVtbl, ID3D12VideoExtensionCommand* pExtensionCommand, void* pExecutionParameters, nuint ExecutionParametersSizeInBytes, Span<T0> pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int ExecuteExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ID3D12VideoExtensionCommand* pExtensionCommand, void* pExecutionParameters, nuint ExecutionParametersSizeInBytes, Span<T0> pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->ExecuteExtensionCommand(pExtensionCommand, pExecutionParameters, ExecutionParametersSizeInBytes, ref pOutputData.GetPinnableReference(), OutputDataSizeInBytes);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExecuteExtensionCommand<T0, TThis>(this TThis thisVtbl, ID3D12VideoExtensionCommand* pExtensionCommand, Span<T0> pExecutionParameters, nuint ExecutionParametersSizeInBytes, void* pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int ExecuteExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ID3D12VideoExtensionCommand* pExtensionCommand, Span<T0> pExecutionParameters, nuint ExecutionParametersSizeInBytes, void* pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->ExecuteExtensionCommand(pExtensionCommand, ref pExecutionParameters.GetPinnableReference(), ExecutionParametersSizeInBytes, pOutputData, OutputDataSizeInBytes);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExecuteExtensionCommand<T0, T1, TThis>(this TThis thisVtbl, ID3D12VideoExtensionCommand* pExtensionCommand, Span<T0> pExecutionParameters, nuint ExecutionParametersSizeInBytes, Span<T1> pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged where T1 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int ExecuteExtensionCommand<T0, T1>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ID3D12VideoExtensionCommand* pExtensionCommand, Span<T0> pExecutionParameters, nuint ExecutionParametersSizeInBytes, Span<T1> pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged where T1 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->ExecuteExtensionCommand(pExtensionCommand, ref pExecutionParameters.GetPinnableReference(), ExecutionParametersSizeInBytes, ref pOutputData.GetPinnableReference(), OutputDataSizeInBytes);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExecuteExtensionCommand<TThis>(this TThis thisVtbl, Span<ID3D12VideoExtensionCommand> pExtensionCommand, void* pExecutionParameters, nuint ExecutionParametersSizeInBytes, void* pOutputData, nuint OutputDataSizeInBytes) where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int ExecuteExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<ID3D12VideoExtensionCommand> pExtensionCommand, void* pExecutionParameters, nuint ExecutionParametersSizeInBytes, void* pOutputData, nuint OutputDataSizeInBytes)
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->ExecuteExtensionCommand(ref pExtensionCommand.GetPinnableReference(), pExecutionParameters, ExecutionParametersSizeInBytes, pOutputData, OutputDataSizeInBytes);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExecuteExtensionCommand<T0, TThis>(this TThis thisVtbl, Span<ID3D12VideoExtensionCommand> pExtensionCommand, void* pExecutionParameters, nuint ExecutionParametersSizeInBytes, Span<T0> pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int ExecuteExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<ID3D12VideoExtensionCommand> pExtensionCommand, void* pExecutionParameters, nuint ExecutionParametersSizeInBytes, Span<T0> pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->ExecuteExtensionCommand(ref pExtensionCommand.GetPinnableReference(), pExecutionParameters, ExecutionParametersSizeInBytes, ref pOutputData.GetPinnableReference(), OutputDataSizeInBytes);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExecuteExtensionCommand<T0, TThis>(this TThis thisVtbl, Span<ID3D12VideoExtensionCommand> pExtensionCommand, Span<T0> pExecutionParameters, nuint ExecutionParametersSizeInBytes, void* pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe int ExecuteExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<ID3D12VideoExtensionCommand> pExtensionCommand, Span<T0> pExecutionParameters, nuint ExecutionParametersSizeInBytes, void* pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->ExecuteExtensionCommand(ref pExtensionCommand.GetPinnableReference(), ref pExecutionParameters.GetPinnableReference(), ExecutionParametersSizeInBytes, pOutputData, OutputDataSizeInBytes);
     }
 
     /// <summary>To be documented.</summary>
-    public static int ExecuteExtensionCommand<T0, T1, TThis>(this TThis thisVtbl, Span<ID3D12VideoExtensionCommand> pExtensionCommand, Span<T0> pExecutionParameters, nuint ExecutionParametersSizeInBytes, Span<T1> pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged where T1 : unmanaged where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static int ExecuteExtensionCommand<T0, T1>(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<ID3D12VideoExtensionCommand> pExtensionCommand, Span<T0> pExecutionParameters, nuint ExecutionParametersSizeInBytes, Span<T1> pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged where T1 : unmanaged
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->ExecuteExtensionCommand(ref pExtensionCommand.GetPinnableReference(), ref pExecutionParameters.GetPinnableReference(), ExecutionParametersSizeInBytes, ref pOutputData.GetPinnableReference(), OutputDataSizeInBytes);
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static ComPtr<TI0> QueryInterface<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateVideoDecoder<TI0, TThis>(this TThis thisVtbl, VideoDecoderDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe ComPtr<TI0> CreateVideoDecoder<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->CreateVideoDecoder(pDesc, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> CreateVideoDecoder<TI0, TThis>(this TThis thisVtbl, ref VideoDecoderDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static ComPtr<TI0> CreateVideoDecoder<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoDecoderDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->CreateVideoDecoder(ref pDesc, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateVideoDecoderHeap<TI0, TThis>(this TThis thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe ComPtr<TI0> CreateVideoDecoderHeap<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->CreateVideoDecoderHeap(pVideoDecoderHeapDesc, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> CreateVideoDecoderHeap<TI0, TThis>(this TThis thisVtbl, ref VideoDecoderHeapDesc pVideoDecoderHeapDesc) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static ComPtr<TI0> CreateVideoDecoderHeap<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoDecoderHeapDesc pVideoDecoderHeapDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->CreateVideoDecoderHeap(ref pVideoDecoderHeapDesc, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateVideoProcessor<TI0, TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe ComPtr<TI0> CreateVideoProcessor<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->CreateVideoProcessor(NodeMask, pOutputStreamDesc, NumInputStreamDescs, pInputStreamDescs, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateVideoProcessor<TI0, TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe ComPtr<TI0> CreateVideoProcessor<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->CreateVideoProcessor(NodeMask, pOutputStreamDesc, NumInputStreamDescs, ref pInputStreamDescs, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateVideoProcessor<TI0, TThis>(this TThis thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe ComPtr<TI0> CreateVideoProcessor<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->CreateVideoProcessor(NodeMask, ref pOutputStreamDesc, NumInputStreamDescs, pInputStreamDescs, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> CreateVideoProcessor<TI0, TThis>(this TThis thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static ComPtr<TI0> CreateVideoProcessor<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->CreateVideoProcessor(NodeMask, ref pOutputStreamDesc, NumInputStreamDescs, ref pInputStreamDescs, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateVideoMotionEstimator<TI0, TThis>(this TThis thisVtbl, VideoMotionEstimatorDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe ComPtr<TI0> CreateVideoMotionEstimator<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoMotionEstimatorDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->CreateVideoMotionEstimator(pDesc, pProtectedResourceSession, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateVideoMotionEstimator<TI0, TThis>(this TThis thisVtbl, VideoMotionEstimatorDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe ComPtr<TI0> CreateVideoMotionEstimator<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoMotionEstimatorDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->CreateVideoMotionEstimator(pDesc, ref pProtectedResourceSession, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateVideoMotionEstimator<TI0, TThis>(this TThis thisVtbl, ref VideoMotionEstimatorDesc pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe ComPtr<TI0> CreateVideoMotionEstimator<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoMotionEstimatorDesc pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->CreateVideoMotionEstimator(ref pDesc, pProtectedResourceSession, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> CreateVideoMotionEstimator<TI0, TThis>(this TThis thisVtbl, ref VideoMotionEstimatorDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static ComPtr<TI0> CreateVideoMotionEstimator<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoMotionEstimatorDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->CreateVideoMotionEstimator(ref pDesc, ref pProtectedResourceSession, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateVideoMotionVectorHeap<TI0, TThis>(this TThis thisVtbl, VideoMotionVectorHeapDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe ComPtr<TI0> CreateVideoMotionVectorHeap<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoMotionVectorHeapDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->CreateVideoMotionVectorHeap(pDesc, pProtectedResourceSession, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateVideoMotionVectorHeap<TI0, TThis>(this TThis thisVtbl, VideoMotionVectorHeapDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe ComPtr<TI0> CreateVideoMotionVectorHeap<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoMotionVectorHeapDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->CreateVideoMotionVectorHeap(pDesc, ref pProtectedResourceSession, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateVideoMotionVectorHeap<TI0, TThis>(this TThis thisVtbl, ref VideoMotionVectorHeapDesc pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe ComPtr<TI0> CreateVideoMotionVectorHeap<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoMotionVectorHeapDesc pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->CreateVideoMotionVectorHeap(ref pDesc, pProtectedResourceSession, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> CreateVideoMotionVectorHeap<TI0, TThis>(this TThis thisVtbl, ref VideoMotionVectorHeapDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static ComPtr<TI0> CreateVideoMotionVectorHeap<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoMotionVectorHeapDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->CreateVideoMotionVectorHeap(ref pDesc, ref pProtectedResourceSession, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateVideoDecoder1<TI0, TThis>(this TThis thisVtbl, VideoDecoderDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe ComPtr<TI0> CreateVideoDecoder1<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->CreateVideoDecoder1(pDesc, pProtectedResourceSession, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateVideoDecoder1<TI0, TThis>(this TThis thisVtbl, VideoDecoderDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe ComPtr<TI0> CreateVideoDecoder1<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->CreateVideoDecoder1(pDesc, ref pProtectedResourceSession, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateVideoDecoder1<TI0, TThis>(this TThis thisVtbl, ref VideoDecoderDesc pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe ComPtr<TI0> CreateVideoDecoder1<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoDecoderDesc pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->CreateVideoDecoder1(ref pDesc, pProtectedResourceSession, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> CreateVideoDecoder1<TI0, TThis>(this TThis thisVtbl, ref VideoDecoderDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static ComPtr<TI0> CreateVideoDecoder1<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoDecoderDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->CreateVideoDecoder1(ref pDesc, ref pProtectedResourceSession, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateVideoDecoderHeap1<TI0, TThis>(this TThis thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe ComPtr<TI0> CreateVideoDecoderHeap1<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->CreateVideoDecoderHeap1(pVideoDecoderHeapDesc, pProtectedResourceSession, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateVideoDecoderHeap1<TI0, TThis>(this TThis thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe ComPtr<TI0> CreateVideoDecoderHeap1<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->CreateVideoDecoderHeap1(pVideoDecoderHeapDesc, ref pProtectedResourceSession, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateVideoDecoderHeap1<TI0, TThis>(this TThis thisVtbl, ref VideoDecoderHeapDesc pVideoDecoderHeapDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe ComPtr<TI0> CreateVideoDecoderHeap1<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoDecoderHeapDesc pVideoDecoderHeapDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->CreateVideoDecoderHeap1(ref pVideoDecoderHeapDesc, pProtectedResourceSession, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> CreateVideoDecoderHeap1<TI0, TThis>(this TThis thisVtbl, ref VideoDecoderHeapDesc pVideoDecoderHeapDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static ComPtr<TI0> CreateVideoDecoderHeap1<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoDecoderHeapDesc pVideoDecoderHeapDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->CreateVideoDecoderHeap1(ref pVideoDecoderHeapDesc, ref pProtectedResourceSession, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateVideoProcessor1<TI0, TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe ComPtr<TI0> CreateVideoProcessor1<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->CreateVideoProcessor1(NodeMask, pOutputStreamDesc, NumInputStreamDescs, pInputStreamDescs, pProtectedResourceSession, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateVideoProcessor1<TI0, TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe ComPtr<TI0> CreateVideoProcessor1<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->CreateVideoProcessor1(NodeMask, pOutputStreamDesc, NumInputStreamDescs, pInputStreamDescs, ref pProtectedResourceSession, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateVideoProcessor1<TI0, TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe ComPtr<TI0> CreateVideoProcessor1<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->CreateVideoProcessor1(NodeMask, pOutputStreamDesc, NumInputStreamDescs, ref pInputStreamDescs, pProtectedResourceSession, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateVideoProcessor1<TI0, TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe ComPtr<TI0> CreateVideoProcessor1<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->CreateVideoProcessor1(NodeMask, pOutputStreamDesc, NumInputStreamDescs, ref pInputStreamDescs, ref pProtectedResourceSession, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateVideoProcessor1<TI0, TThis>(this TThis thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe ComPtr<TI0> CreateVideoProcessor1<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->CreateVideoProcessor1(NodeMask, ref pOutputStreamDesc, NumInputStreamDescs, pInputStreamDescs, pProtectedResourceSession, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateVideoProcessor1<TI0, TThis>(this TThis thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe ComPtr<TI0> CreateVideoProcessor1<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->CreateVideoProcessor1(NodeMask, ref pOutputStreamDesc, NumInputStreamDescs, pInputStreamDescs, ref pProtectedResourceSession, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateVideoProcessor1<TI0, TThis>(this TThis thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe ComPtr<TI0> CreateVideoProcessor1<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->CreateVideoProcessor1(NodeMask, ref pOutputStreamDesc, NumInputStreamDescs, ref pInputStreamDescs, pProtectedResourceSession, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> CreateVideoProcessor1<TI0, TThis>(this TThis thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static ComPtr<TI0> CreateVideoProcessor1<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs, ref ID3D12ProtectedResourceSession pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->CreateVideoProcessor1(NodeMask, ref pOutputStreamDesc, NumInputStreamDescs, ref pInputStreamDescs, ref pProtectedResourceSession, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateVideoExtensionCommand<TI0, TThis>(this TThis thisVtbl, VideoExtensionCommandDesc* pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe ComPtr<TI0> CreateVideoExtensionCommand<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoExtensionCommandDesc* pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->CreateVideoExtensionCommand(pDesc, pCreationParameters, CreationParametersDataSizeInBytes, pProtectedResourceSession, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateVideoExtensionCommand<TI0, TThis>(this TThis thisVtbl, VideoExtensionCommandDesc* pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe ComPtr<TI0> CreateVideoExtensionCommand<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoExtensionCommandDesc* pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->CreateVideoExtensionCommand(pDesc, pCreationParameters, CreationParametersDataSizeInBytes, ref pProtectedResourceSession, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateVideoExtensionCommand<T0, TI0, TThis>(this TThis thisVtbl, VideoExtensionCommandDesc* pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe ComPtr<TI0> CreateVideoExtensionCommand<T0, TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoExtensionCommandDesc* pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->CreateVideoExtensionCommand(pDesc, ref pCreationParameters, CreationParametersDataSizeInBytes, pProtectedResourceSession, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateVideoExtensionCommand<T0, TI0, TThis>(this TThis thisVtbl, VideoExtensionCommandDesc* pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe ComPtr<TI0> CreateVideoExtensionCommand<T0, TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, VideoExtensionCommandDesc* pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->CreateVideoExtensionCommand(pDesc, ref pCreationParameters, CreationParametersDataSizeInBytes, ref pProtectedResourceSession, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateVideoExtensionCommand<TI0, TThis>(this TThis thisVtbl, ref VideoExtensionCommandDesc pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe ComPtr<TI0> CreateVideoExtensionCommand<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoExtensionCommandDesc pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->CreateVideoExtensionCommand(ref pDesc, pCreationParameters, CreationParametersDataSizeInBytes, pProtectedResourceSession, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateVideoExtensionCommand<TI0, TThis>(this TThis thisVtbl, ref VideoExtensionCommandDesc pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe ComPtr<TI0> CreateVideoExtensionCommand<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoExtensionCommandDesc pDesc, void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->CreateVideoExtensionCommand(ref pDesc, pCreationParameters, CreationParametersDataSizeInBytes, ref pProtectedResourceSession, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateVideoExtensionCommand<T0, TI0, TThis>(this TThis thisVtbl, ref VideoExtensionCommandDesc pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static unsafe ComPtr<TI0> CreateVideoExtensionCommand<T0, TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoExtensionCommandDesc pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->CreateVideoExtensionCommand(ref pDesc, ref pCreationParameters, CreationParametersDataSizeInBytes, pProtectedResourceSession, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> CreateVideoExtensionCommand<T0, TI0, TThis>(this TThis thisVtbl, ref VideoExtensionCommandDesc pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice2>
+    public static ComPtr<TI0> CreateVideoExtensionCommand<T0, TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref VideoExtensionCommandDesc pDesc, ref T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoDevice2*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->CreateVideoExtensionCommand(ref pDesc, ref pCreationParameters, CreationParametersDataSizeInBytes, ref pProtectedResourceSession, out ComPtr<TI0> silkRet));
         return silkRet;

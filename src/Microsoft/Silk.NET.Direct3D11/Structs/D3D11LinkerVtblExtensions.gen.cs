@@ -19,18 +19,18 @@ namespace Silk.NET.Direct3D11;
 public unsafe static class D3D11LinkerVtblExtensions
 {
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Guid* riid, void** ppvObject) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int QueryInterface(this ComPtr<ID3D11Linker> thisVtbl, Guid* riid, void** ppvObject)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Guid* riid, ref void* ppvObject) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int QueryInterface(this ComPtr<ID3D11Linker> thisVtbl, Guid* riid, ref void* ppvObject)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppvObjectPtr = &ppvObject)
         {
@@ -40,9 +40,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, ref Guid riid, void** ppvObject) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int QueryInterface(this ComPtr<ID3D11Linker> thisVtbl, ref Guid riid, void** ppvObject)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -52,9 +52,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, ref Guid riid, ref void* ppvObject) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int QueryInterface(this ComPtr<ID3D11Linker> thisVtbl, ref Guid riid, ref void* ppvObject)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -67,36 +67,36 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static uint AddRef<TThis>(this TThis thisVtbl) where TThis : IComVtbl<ID3D11Linker>
+    public static uint AddRef(this ComPtr<ID3D11Linker> thisVtbl)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, uint>)@this->LpVtbl[1])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static uint Release<TThis>(this TThis thisVtbl) where TThis : IComVtbl<ID3D11Linker>
+    public static uint Release(this ComPtr<ID3D11Linker> thisVtbl)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, uint>)@this->LpVtbl[2])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, byte* pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, byte* pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)@this->LpVtbl[3])(@this, pEntry, pEntryName, pTargetName, uFlags, ppShaderBlob, ppErrorBuffer);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, byte* pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, byte* pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
         {
@@ -106,9 +106,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, byte* pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, byte* pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
         {
@@ -118,9 +118,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, byte* pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, byte* pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
         {
@@ -133,9 +133,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, byte* pEntryName, ref byte pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, byte* pEntryName, ref byte pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (byte* pTargetNamePtr = &pTargetName)
         {
@@ -145,9 +145,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, byte* pEntryName, ref byte pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, byte* pEntryName, ref byte pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (byte* pTargetNamePtr = &pTargetName)
         {
@@ -160,9 +160,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, byte* pEntryName, ref byte pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, byte* pEntryName, ref byte pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (byte* pTargetNamePtr = &pTargetName)
         {
@@ -175,9 +175,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, byte* pEntryName, ref byte pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, byte* pEntryName, ref byte pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (byte* pTargetNamePtr = &pTargetName)
         {
@@ -193,9 +193,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, byte* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, byte* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         var pTargetNamePtr = (byte*) SilkMarshal.StringToPtr(pTargetName, NativeStringEncoding.LPStr);
         ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)@this->LpVtbl[3])(@this, pEntry, pEntryName, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
@@ -204,9 +204,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, byte* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, byte* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         var pTargetNamePtr = (byte*) SilkMarshal.StringToPtr(pTargetName, NativeStringEncoding.LPStr);
         fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
@@ -218,9 +218,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, byte* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, byte* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         var pTargetNamePtr = (byte*) SilkMarshal.StringToPtr(pTargetName, NativeStringEncoding.LPStr);
         fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
@@ -232,9 +232,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, byte* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, byte* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         var pTargetNamePtr = (byte*) SilkMarshal.StringToPtr(pTargetName, NativeStringEncoding.LPStr);
         fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
@@ -249,9 +249,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, ref byte pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, ref byte pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (byte* pEntryNamePtr = &pEntryName)
         {
@@ -261,9 +261,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, ref byte pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, ref byte pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (byte* pEntryNamePtr = &pEntryName)
         {
@@ -276,9 +276,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, ref byte pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, ref byte pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (byte* pEntryNamePtr = &pEntryName)
         {
@@ -291,9 +291,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, ref byte pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, ref byte pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (byte* pEntryNamePtr = &pEntryName)
         {
@@ -309,9 +309,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, ref byte pEntryName, ref byte pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, ref byte pEntryName, ref byte pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (byte* pEntryNamePtr = &pEntryName)
         {
@@ -324,9 +324,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, ref byte pEntryName, ref byte pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, ref byte pEntryName, ref byte pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (byte* pEntryNamePtr = &pEntryName)
         {
@@ -342,9 +342,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, ref byte pEntryName, ref byte pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, ref byte pEntryName, ref byte pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (byte* pEntryNamePtr = &pEntryName)
         {
@@ -360,9 +360,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, ref byte pEntryName, ref byte pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, ref byte pEntryName, ref byte pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (byte* pEntryNamePtr = &pEntryName)
         {
@@ -381,9 +381,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, ref byte pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, ref byte pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (byte* pEntryNamePtr = &pEntryName)
         {
@@ -395,9 +395,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, ref byte pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, ref byte pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (byte* pEntryNamePtr = &pEntryName)
         {
@@ -412,9 +412,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, ref byte pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, ref byte pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (byte* pEntryNamePtr = &pEntryName)
         {
@@ -429,9 +429,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, ref byte pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, ref byte pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (byte* pEntryNamePtr = &pEntryName)
         {
@@ -449,9 +449,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPStr);
         ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)@this->LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetName, uFlags, ppShaderBlob, ppErrorBuffer);
@@ -460,9 +460,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPStr);
         fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
@@ -474,9 +474,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPStr);
         fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
@@ -488,9 +488,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPStr);
         fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
@@ -505,9 +505,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, ref byte pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, ref byte pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPStr);
         fixed (byte* pTargetNamePtr = &pTargetName)
@@ -519,9 +519,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, ref byte pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, ref byte pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPStr);
         fixed (byte* pTargetNamePtr = &pTargetName)
@@ -536,9 +536,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, ref byte pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, ref byte pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPStr);
         fixed (byte* pTargetNamePtr = &pTargetName)
@@ -553,9 +553,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, ref byte pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, ref byte pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPStr);
         fixed (byte* pTargetNamePtr = &pTargetName)
@@ -573,9 +573,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPStr);
         var pTargetNamePtr = (byte*) SilkMarshal.StringToPtr(pTargetName, NativeStringEncoding.LPStr);
@@ -586,9 +586,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPStr);
         var pTargetNamePtr = (byte*) SilkMarshal.StringToPtr(pTargetName, NativeStringEncoding.LPStr);
@@ -602,9 +602,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPStr);
         var pTargetNamePtr = (byte*) SilkMarshal.StringToPtr(pTargetName, NativeStringEncoding.LPStr);
@@ -618,9 +618,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPStr);
         var pTargetNamePtr = (byte*) SilkMarshal.StringToPtr(pTargetName, NativeStringEncoding.LPStr);
@@ -637,9 +637,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ref ID3D11ModuleInstance pEntry, byte* pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ref ID3D11ModuleInstance pEntry, byte* pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
         {
@@ -649,9 +649,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ref ID3D11ModuleInstance pEntry, byte* pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ref ID3D11ModuleInstance pEntry, byte* pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
         {
@@ -664,9 +664,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ref ID3D11ModuleInstance pEntry, byte* pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ref ID3D11ModuleInstance pEntry, byte* pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
         {
@@ -679,9 +679,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ref ID3D11ModuleInstance pEntry, byte* pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ref ID3D11ModuleInstance pEntry, byte* pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
         {
@@ -697,9 +697,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ref ID3D11ModuleInstance pEntry, byte* pEntryName, ref byte pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ref ID3D11ModuleInstance pEntry, byte* pEntryName, ref byte pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
         {
@@ -712,9 +712,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ref ID3D11ModuleInstance pEntry, byte* pEntryName, ref byte pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ref ID3D11ModuleInstance pEntry, byte* pEntryName, ref byte pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
         {
@@ -730,9 +730,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ref ID3D11ModuleInstance pEntry, byte* pEntryName, ref byte pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ref ID3D11ModuleInstance pEntry, byte* pEntryName, ref byte pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
         {
@@ -748,9 +748,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ref ID3D11ModuleInstance pEntry, byte* pEntryName, ref byte pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ref ID3D11ModuleInstance pEntry, byte* pEntryName, ref byte pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
         {
@@ -769,9 +769,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ref ID3D11ModuleInstance pEntry, byte* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ref ID3D11ModuleInstance pEntry, byte* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
         {
@@ -783,9 +783,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ref ID3D11ModuleInstance pEntry, byte* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ref ID3D11ModuleInstance pEntry, byte* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
         {
@@ -800,9 +800,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ref ID3D11ModuleInstance pEntry, byte* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ref ID3D11ModuleInstance pEntry, byte* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
         {
@@ -817,9 +817,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ref ID3D11ModuleInstance pEntry, byte* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ref ID3D11ModuleInstance pEntry, byte* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
         {
@@ -837,9 +837,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ref ID3D11ModuleInstance pEntry, ref byte pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ref ID3D11ModuleInstance pEntry, ref byte pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
         {
@@ -852,9 +852,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ref ID3D11ModuleInstance pEntry, ref byte pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ref ID3D11ModuleInstance pEntry, ref byte pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
         {
@@ -870,9 +870,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ref ID3D11ModuleInstance pEntry, ref byte pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ref ID3D11ModuleInstance pEntry, ref byte pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
         {
@@ -888,9 +888,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ref ID3D11ModuleInstance pEntry, ref byte pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ref ID3D11ModuleInstance pEntry, ref byte pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
         {
@@ -909,9 +909,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ref ID3D11ModuleInstance pEntry, ref byte pEntryName, ref byte pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ref ID3D11ModuleInstance pEntry, ref byte pEntryName, ref byte pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
         {
@@ -927,9 +927,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ref ID3D11ModuleInstance pEntry, ref byte pEntryName, ref byte pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ref ID3D11ModuleInstance pEntry, ref byte pEntryName, ref byte pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
         {
@@ -948,9 +948,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ref ID3D11ModuleInstance pEntry, ref byte pEntryName, ref byte pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ref ID3D11ModuleInstance pEntry, ref byte pEntryName, ref byte pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
         {
@@ -969,9 +969,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ref ID3D11ModuleInstance pEntry, ref byte pEntryName, ref byte pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ref ID3D11ModuleInstance pEntry, ref byte pEntryName, ref byte pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
         {
@@ -993,9 +993,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ref ID3D11ModuleInstance pEntry, ref byte pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ref ID3D11ModuleInstance pEntry, ref byte pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
         {
@@ -1010,9 +1010,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ref ID3D11ModuleInstance pEntry, ref byte pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ref ID3D11ModuleInstance pEntry, ref byte pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
         {
@@ -1030,9 +1030,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ref ID3D11ModuleInstance pEntry, ref byte pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ref ID3D11ModuleInstance pEntry, ref byte pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
         {
@@ -1050,9 +1050,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ref ID3D11ModuleInstance pEntry, ref byte pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ref ID3D11ModuleInstance pEntry, ref byte pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
         {
@@ -1073,9 +1073,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ref ID3D11ModuleInstance pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ref ID3D11ModuleInstance pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
         {
@@ -1087,9 +1087,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ref ID3D11ModuleInstance pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ref ID3D11ModuleInstance pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
         {
@@ -1104,9 +1104,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ref ID3D11ModuleInstance pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ref ID3D11ModuleInstance pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
         {
@@ -1121,9 +1121,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ref ID3D11ModuleInstance pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ref ID3D11ModuleInstance pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
         {
@@ -1141,9 +1141,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ref ID3D11ModuleInstance pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, ref byte pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ref ID3D11ModuleInstance pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, ref byte pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
         {
@@ -1158,9 +1158,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ref ID3D11ModuleInstance pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, ref byte pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ref ID3D11ModuleInstance pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, ref byte pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
         {
@@ -1178,9 +1178,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ref ID3D11ModuleInstance pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, ref byte pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ref ID3D11ModuleInstance pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, ref byte pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
         {
@@ -1198,9 +1198,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ref ID3D11ModuleInstance pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, ref byte pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ref ID3D11ModuleInstance pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, ref byte pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
         {
@@ -1221,9 +1221,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ref ID3D11ModuleInstance pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ref ID3D11ModuleInstance pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
         {
@@ -1237,9 +1237,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ref ID3D11ModuleInstance pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ref ID3D11ModuleInstance pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
         {
@@ -1256,9 +1256,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ref ID3D11ModuleInstance pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ref ID3D11ModuleInstance pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
         {
@@ -1275,9 +1275,9 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ref ID3D11ModuleInstance pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ref ID3D11ModuleInstance pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
         {
@@ -1297,18 +1297,18 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UseLibrary<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pLibraryMI) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int UseLibrary(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pLibraryMI)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, int>)@this->LpVtbl[4])(@this, pLibraryMI);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int UseLibrary<TThis>(this TThis thisVtbl, ref ID3D11ModuleInstance pLibraryMI) where TThis : IComVtbl<ID3D11Linker>
+    public static int UseLibrary(this ComPtr<ID3D11Linker> thisVtbl, ref ID3D11ModuleInstance pLibraryMI)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D11ModuleInstance* pLibraryMIPtr = &pLibraryMI)
         {
@@ -1318,499 +1318,499 @@ public unsafe static class D3D11LinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddClipPlaneFromCBuffer<TThis>(this TThis thisVtbl, uint uCBufferSlot, uint uCBufferEntry) where TThis : IComVtbl<ID3D11Linker>
+    public static int AddClipPlaneFromCBuffer(this ComPtr<ID3D11Linker> thisVtbl, uint uCBufferSlot, uint uCBufferEntry)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, uint, uint, int>)@this->LpVtbl[5])(@this, uCBufferSlot, uCBufferEntry);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D11Linker>
+    public static int QueryInterface<TI0>(this ComPtr<ID3D11Linker> thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppvObject = default;
         return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int QueryInterface(this ComPtr<ID3D11Linker> thisVtbl, Span<Guid> riid, void** ppvObject)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int QueryInterface(this ComPtr<ID3D11Linker> thisVtbl, Span<Guid> riid, ref void* ppvObject)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, byte* pEntryName, Span<byte> pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, byte* pEntryName, Span<byte> pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(pEntry, pEntryName, ref pTargetName.GetPinnableReference(), uFlags, ppShaderBlob, ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, byte* pEntryName, Span<byte> pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, byte* pEntryName, Span<byte> pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(pEntry, pEntryName, ref pTargetName.GetPinnableReference(), uFlags, ppShaderBlob, ref ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, byte* pEntryName, Span<byte> pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, byte* pEntryName, Span<byte> pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(pEntry, pEntryName, ref pTargetName.GetPinnableReference(), uFlags, ref ppShaderBlob, ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, byte* pEntryName, Span<byte> pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, byte* pEntryName, Span<byte> pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(pEntry, pEntryName, ref pTargetName.GetPinnableReference(), uFlags, ref ppShaderBlob, ref ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, Span<byte> pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, Span<byte> pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(pEntry, ref pEntryName.GetPinnableReference(), pTargetName, uFlags, ppShaderBlob, ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, Span<byte> pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, Span<byte> pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(pEntry, ref pEntryName.GetPinnableReference(), pTargetName, uFlags, ppShaderBlob, ref ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, Span<byte> pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, Span<byte> pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(pEntry, ref pEntryName.GetPinnableReference(), pTargetName, uFlags, ref ppShaderBlob, ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, Span<byte> pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, Span<byte> pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(pEntry, ref pEntryName.GetPinnableReference(), pTargetName, uFlags, ref ppShaderBlob, ref ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, Span<byte> pEntryName, Span<byte> pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, Span<byte> pEntryName, Span<byte> pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(pEntry, ref pEntryName.GetPinnableReference(), ref pTargetName.GetPinnableReference(), uFlags, ppShaderBlob, ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, Span<byte> pEntryName, Span<byte> pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, Span<byte> pEntryName, Span<byte> pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(pEntry, ref pEntryName.GetPinnableReference(), ref pTargetName.GetPinnableReference(), uFlags, ppShaderBlob, ref ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, Span<byte> pEntryName, Span<byte> pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, Span<byte> pEntryName, Span<byte> pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(pEntry, ref pEntryName.GetPinnableReference(), ref pTargetName.GetPinnableReference(), uFlags, ref ppShaderBlob, ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, Span<byte> pEntryName, Span<byte> pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, Span<byte> pEntryName, Span<byte> pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(pEntry, ref pEntryName.GetPinnableReference(), ref pTargetName.GetPinnableReference(), uFlags, ref ppShaderBlob, ref ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, Span<byte> pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, Span<byte> pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(pEntry, ref pEntryName.GetPinnableReference(), pTargetName, uFlags, ppShaderBlob, ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, Span<byte> pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, Span<byte> pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(pEntry, ref pEntryName.GetPinnableReference(), pTargetName, uFlags, ppShaderBlob, ref ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, Span<byte> pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, Span<byte> pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(pEntry, ref pEntryName.GetPinnableReference(), pTargetName, uFlags, ref ppShaderBlob, ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, Span<byte> pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, Span<byte> pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(pEntry, ref pEntryName.GetPinnableReference(), pTargetName, uFlags, ref ppShaderBlob, ref ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, Span<byte> pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, Span<byte> pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(pEntry, pEntryName, ref pTargetName.GetPinnableReference(), uFlags, ppShaderBlob, ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, Span<byte> pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, Span<byte> pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(pEntry, pEntryName, ref pTargetName.GetPinnableReference(), uFlags, ppShaderBlob, ref ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, Span<byte> pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, Span<byte> pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(pEntry, pEntryName, ref pTargetName.GetPinnableReference(), uFlags, ref ppShaderBlob, ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, ID3D11ModuleInstance* pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, Span<byte> pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, ID3D11ModuleInstance* pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, Span<byte> pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(pEntry, pEntryName, ref pTargetName.GetPinnableReference(), uFlags, ref ppShaderBlob, ref ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<ID3D11ModuleInstance> pEntry, byte* pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, Span<ID3D11ModuleInstance> pEntry, byte* pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(ref pEntry.GetPinnableReference(), pEntryName, pTargetName, uFlags, ppShaderBlob, ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<ID3D11ModuleInstance> pEntry, byte* pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, Span<ID3D11ModuleInstance> pEntry, byte* pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(ref pEntry.GetPinnableReference(), pEntryName, pTargetName, uFlags, ppShaderBlob, ref ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<ID3D11ModuleInstance> pEntry, byte* pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, Span<ID3D11ModuleInstance> pEntry, byte* pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(ref pEntry.GetPinnableReference(), pEntryName, pTargetName, uFlags, ref ppShaderBlob, ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<ID3D11ModuleInstance> pEntry, byte* pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, Span<ID3D11ModuleInstance> pEntry, byte* pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(ref pEntry.GetPinnableReference(), pEntryName, pTargetName, uFlags, ref ppShaderBlob, ref ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<ID3D11ModuleInstance> pEntry, byte* pEntryName, Span<byte> pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, Span<ID3D11ModuleInstance> pEntry, byte* pEntryName, Span<byte> pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(ref pEntry.GetPinnableReference(), pEntryName, ref pTargetName.GetPinnableReference(), uFlags, ppShaderBlob, ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<ID3D11ModuleInstance> pEntry, byte* pEntryName, Span<byte> pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, Span<ID3D11ModuleInstance> pEntry, byte* pEntryName, Span<byte> pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(ref pEntry.GetPinnableReference(), pEntryName, ref pTargetName.GetPinnableReference(), uFlags, ppShaderBlob, ref ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<ID3D11ModuleInstance> pEntry, byte* pEntryName, Span<byte> pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, Span<ID3D11ModuleInstance> pEntry, byte* pEntryName, Span<byte> pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(ref pEntry.GetPinnableReference(), pEntryName, ref pTargetName.GetPinnableReference(), uFlags, ref ppShaderBlob, ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<ID3D11ModuleInstance> pEntry, byte* pEntryName, Span<byte> pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, Span<ID3D11ModuleInstance> pEntry, byte* pEntryName, Span<byte> pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(ref pEntry.GetPinnableReference(), pEntryName, ref pTargetName.GetPinnableReference(), uFlags, ref ppShaderBlob, ref ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<ID3D11ModuleInstance> pEntry, byte* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, Span<ID3D11ModuleInstance> pEntry, byte* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(ref pEntry.GetPinnableReference(), pEntryName, pTargetName, uFlags, ppShaderBlob, ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<ID3D11ModuleInstance> pEntry, byte* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, Span<ID3D11ModuleInstance> pEntry, byte* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(ref pEntry.GetPinnableReference(), pEntryName, pTargetName, uFlags, ppShaderBlob, ref ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<ID3D11ModuleInstance> pEntry, byte* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, Span<ID3D11ModuleInstance> pEntry, byte* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(ref pEntry.GetPinnableReference(), pEntryName, pTargetName, uFlags, ref ppShaderBlob, ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<ID3D11ModuleInstance> pEntry, byte* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, Span<ID3D11ModuleInstance> pEntry, byte* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(ref pEntry.GetPinnableReference(), pEntryName, pTargetName, uFlags, ref ppShaderBlob, ref ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<ID3D11ModuleInstance> pEntry, Span<byte> pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, Span<ID3D11ModuleInstance> pEntry, Span<byte> pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(ref pEntry.GetPinnableReference(), ref pEntryName.GetPinnableReference(), pTargetName, uFlags, ppShaderBlob, ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<ID3D11ModuleInstance> pEntry, Span<byte> pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, Span<ID3D11ModuleInstance> pEntry, Span<byte> pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(ref pEntry.GetPinnableReference(), ref pEntryName.GetPinnableReference(), pTargetName, uFlags, ppShaderBlob, ref ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<ID3D11ModuleInstance> pEntry, Span<byte> pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, Span<ID3D11ModuleInstance> pEntry, Span<byte> pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(ref pEntry.GetPinnableReference(), ref pEntryName.GetPinnableReference(), pTargetName, uFlags, ref ppShaderBlob, ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<ID3D11ModuleInstance> pEntry, Span<byte> pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, Span<ID3D11ModuleInstance> pEntry, Span<byte> pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(ref pEntry.GetPinnableReference(), ref pEntryName.GetPinnableReference(), pTargetName, uFlags, ref ppShaderBlob, ref ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<ID3D11ModuleInstance> pEntry, Span<byte> pEntryName, Span<byte> pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, Span<ID3D11ModuleInstance> pEntry, Span<byte> pEntryName, Span<byte> pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(ref pEntry.GetPinnableReference(), ref pEntryName.GetPinnableReference(), ref pTargetName.GetPinnableReference(), uFlags, ppShaderBlob, ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<ID3D11ModuleInstance> pEntry, Span<byte> pEntryName, Span<byte> pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, Span<ID3D11ModuleInstance> pEntry, Span<byte> pEntryName, Span<byte> pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(ref pEntry.GetPinnableReference(), ref pEntryName.GetPinnableReference(), ref pTargetName.GetPinnableReference(), uFlags, ppShaderBlob, ref ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<ID3D11ModuleInstance> pEntry, Span<byte> pEntryName, Span<byte> pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, Span<ID3D11ModuleInstance> pEntry, Span<byte> pEntryName, Span<byte> pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(ref pEntry.GetPinnableReference(), ref pEntryName.GetPinnableReference(), ref pTargetName.GetPinnableReference(), uFlags, ref ppShaderBlob, ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<ID3D11ModuleInstance> pEntry, Span<byte> pEntryName, Span<byte> pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, Span<ID3D11ModuleInstance> pEntry, Span<byte> pEntryName, Span<byte> pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(ref pEntry.GetPinnableReference(), ref pEntryName.GetPinnableReference(), ref pTargetName.GetPinnableReference(), uFlags, ref ppShaderBlob, ref ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<ID3D11ModuleInstance> pEntry, Span<byte> pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, Span<ID3D11ModuleInstance> pEntry, Span<byte> pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(ref pEntry.GetPinnableReference(), ref pEntryName.GetPinnableReference(), pTargetName, uFlags, ppShaderBlob, ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<ID3D11ModuleInstance> pEntry, Span<byte> pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, Span<ID3D11ModuleInstance> pEntry, Span<byte> pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(ref pEntry.GetPinnableReference(), ref pEntryName.GetPinnableReference(), pTargetName, uFlags, ppShaderBlob, ref ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<ID3D11ModuleInstance> pEntry, Span<byte> pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, Span<ID3D11ModuleInstance> pEntry, Span<byte> pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(ref pEntry.GetPinnableReference(), ref pEntryName.GetPinnableReference(), pTargetName, uFlags, ref ppShaderBlob, ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<ID3D11ModuleInstance> pEntry, Span<byte> pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, Span<ID3D11ModuleInstance> pEntry, Span<byte> pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(ref pEntry.GetPinnableReference(), ref pEntryName.GetPinnableReference(), pTargetName, uFlags, ref ppShaderBlob, ref ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<ID3D11ModuleInstance> pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, Span<ID3D11ModuleInstance> pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(ref pEntry.GetPinnableReference(), pEntryName, pTargetName, uFlags, ppShaderBlob, ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<ID3D11ModuleInstance> pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, Span<ID3D11ModuleInstance> pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(ref pEntry.GetPinnableReference(), pEntryName, pTargetName, uFlags, ppShaderBlob, ref ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<ID3D11ModuleInstance> pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, Span<ID3D11ModuleInstance> pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(ref pEntry.GetPinnableReference(), pEntryName, pTargetName, uFlags, ref ppShaderBlob, ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<ID3D11ModuleInstance> pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, Span<ID3D11ModuleInstance> pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(ref pEntry.GetPinnableReference(), pEntryName, pTargetName, uFlags, ref ppShaderBlob, ref ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<ID3D11ModuleInstance> pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, Span<byte> pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, Span<ID3D11ModuleInstance> pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, Span<byte> pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(ref pEntry.GetPinnableReference(), pEntryName, ref pTargetName.GetPinnableReference(), uFlags, ppShaderBlob, ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<ID3D11ModuleInstance> pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, Span<byte> pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, Span<ID3D11ModuleInstance> pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, Span<byte> pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(ref pEntry.GetPinnableReference(), pEntryName, ref pTargetName.GetPinnableReference(), uFlags, ppShaderBlob, ref ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<ID3D11ModuleInstance> pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, Span<byte> pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, Span<ID3D11ModuleInstance> pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, Span<byte> pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(ref pEntry.GetPinnableReference(), pEntryName, ref pTargetName.GetPinnableReference(), uFlags, ref ppShaderBlob, ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<ID3D11ModuleInstance> pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, Span<byte> pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, Span<ID3D11ModuleInstance> pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, Span<byte> pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(ref pEntry.GetPinnableReference(), pEntryName, ref pTargetName.GetPinnableReference(), uFlags, ref ppShaderBlob, ref ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<ID3D11ModuleInstance> pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, Span<ID3D11ModuleInstance> pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(ref pEntry.GetPinnableReference(), pEntryName, pTargetName, uFlags, ppShaderBlob, ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<ID3D11ModuleInstance> pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, Span<ID3D11ModuleInstance> pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(ref pEntry.GetPinnableReference(), pEntryName, pTargetName, uFlags, ppShaderBlob, ref ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<ID3D11ModuleInstance> pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, Span<ID3D11ModuleInstance> pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(ref pEntry.GetPinnableReference(), pEntryName, pTargetName, uFlags, ref ppShaderBlob, ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<ID3D11ModuleInstance> pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer) where TThis : IComVtbl<ID3D11Linker>
+    public static unsafe int Link(this ComPtr<ID3D11Linker> thisVtbl, Span<ID3D11ModuleInstance> pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Link(ref pEntry.GetPinnableReference(), pEntryName, pTargetName, uFlags, ref ppShaderBlob, ref ppErrorBuffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static int UseLibrary<TThis>(this TThis thisVtbl, Span<ID3D11ModuleInstance> pLibraryMI) where TThis : IComVtbl<ID3D11Linker>
+    public static int UseLibrary(this ComPtr<ID3D11Linker> thisVtbl, Span<ID3D11ModuleInstance> pLibraryMI)
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->UseLibrary(ref pLibraryMI.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D11Linker>
+    public static ComPtr<TI0> QueryInterface<TI0>(this ComPtr<ID3D11Linker> thisVtbl) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D11Linker*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
         return silkRet;

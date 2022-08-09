@@ -19,18 +19,18 @@ namespace Silk.NET.DXGI;
 public unsafe static class DXGIInfoQueueVtblExtensions
 {
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Guid* riid, void** ppvObject) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static unsafe int QueryInterface(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid* riid, void** ppvObject)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Guid* riid, ref void* ppvObject) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static unsafe int QueryInterface(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid* riid, ref void* ppvObject)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppvObjectPtr = &ppvObject)
         {
@@ -40,9 +40,9 @@ public unsafe static class DXGIInfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, ref Guid riid, void** ppvObject) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static unsafe int QueryInterface(this ComPtr<IDXGIInfoQueue> thisVtbl, ref Guid riid, void** ppvObject)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -52,9 +52,9 @@ public unsafe static class DXGIInfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, ref Guid riid, ref void* ppvObject) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static unsafe int QueryInterface(this ComPtr<IDXGIInfoQueue> thisVtbl, ref Guid riid, ref void* ppvObject)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -67,52 +67,52 @@ public unsafe static class DXGIInfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static uint AddRef<TThis>(this TThis thisVtbl) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static uint AddRef(this ComPtr<IDXGIInfoQueue> thisVtbl)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, uint>)@this->LpVtbl[1])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static uint Release<TThis>(this TThis thisVtbl) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static uint Release(this ComPtr<IDXGIInfoQueue> thisVtbl)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, uint>)@this->LpVtbl[2])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetMessageCountLimit<TThis>(this TThis thisVtbl, Guid Producer, ulong MessageCountLimit) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static int SetMessageCountLimit(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, ulong MessageCountLimit)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, ulong, int>)@this->LpVtbl[3])(@this, Producer, MessageCountLimit);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static void ClearStoredMessages<TThis>(this TThis thisVtbl, Guid Producer) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static void ClearStoredMessages(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, void>)@this->LpVtbl[4])(@this, Producer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetMessageA<TThis>(this TThis thisVtbl, Guid Producer, ulong MessageIndex, InfoQueueMessage* pMessage, nuint* pMessageByteLength) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static unsafe int GetMessageA(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, ulong MessageIndex, InfoQueueMessage* pMessage, nuint* pMessageByteLength)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, ulong, InfoQueueMessage*, nuint*, int>)@this->LpVtbl[5])(@this, Producer, MessageIndex, pMessage, pMessageByteLength);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetMessageA<TThis>(this TThis thisVtbl, Guid Producer, ulong MessageIndex, InfoQueueMessage* pMessage, ref nuint pMessageByteLength) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static unsafe int GetMessageA(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, ulong MessageIndex, InfoQueueMessage* pMessage, ref nuint pMessageByteLength)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (nuint* pMessageByteLengthPtr = &pMessageByteLength)
         {
@@ -122,9 +122,9 @@ public unsafe static class DXGIInfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetMessageA<TThis>(this TThis thisVtbl, Guid Producer, ulong MessageIndex, ref InfoQueueMessage pMessage, nuint* pMessageByteLength) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static unsafe int GetMessageA(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, ulong MessageIndex, ref InfoQueueMessage pMessage, nuint* pMessageByteLength)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (InfoQueueMessage* pMessagePtr = &pMessage)
         {
@@ -134,9 +134,9 @@ public unsafe static class DXGIInfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetMessageA<TThis>(this TThis thisVtbl, Guid Producer, ulong MessageIndex, ref InfoQueueMessage pMessage, ref nuint pMessageByteLength) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static int GetMessageA(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, ulong MessageIndex, ref InfoQueueMessage pMessage, ref nuint pMessageByteLength)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (InfoQueueMessage* pMessagePtr = &pMessage)
         {
@@ -149,72 +149,72 @@ public unsafe static class DXGIInfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ulong GetNumStoredMessagesAllowedByRetrievalFilters<TThis>(this TThis thisVtbl, Guid Producer) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static ulong GetNumStoredMessagesAllowedByRetrievalFilters(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ulong ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, ulong>)@this->LpVtbl[6])(@this, Producer);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static ulong GetNumStoredMessages<TThis>(this TThis thisVtbl, Guid Producer) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static ulong GetNumStoredMessages(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ulong ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, ulong>)@this->LpVtbl[7])(@this, Producer);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static ulong GetNumMessagesDiscardedByMessageCountLimit<TThis>(this TThis thisVtbl, Guid Producer) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static ulong GetNumMessagesDiscardedByMessageCountLimit(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ulong ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, ulong>)@this->LpVtbl[8])(@this, Producer);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static ulong GetMessageCountLimit<TThis>(this TThis thisVtbl, Guid Producer) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static ulong GetMessageCountLimit(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ulong ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, ulong>)@this->LpVtbl[9])(@this, Producer);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static ulong GetNumMessagesAllowedByStorageFilter<TThis>(this TThis thisVtbl, Guid Producer) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static ulong GetNumMessagesAllowedByStorageFilter(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ulong ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, ulong>)@this->LpVtbl[10])(@this, Producer);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static ulong GetNumMessagesDeniedByStorageFilter<TThis>(this TThis thisVtbl, Guid Producer) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static ulong GetNumMessagesDeniedByStorageFilter(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ulong ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, ulong>)@this->LpVtbl[11])(@this, Producer);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddStorageFilterEntries<TThis>(this TThis thisVtbl, Guid Producer, InfoQueueFilter* pFilter) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static unsafe int AddStorageFilterEntries(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, InfoQueueFilter* pFilter)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)@this->LpVtbl[12])(@this, Producer, pFilter);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddStorageFilterEntries<TThis>(this TThis thisVtbl, Guid Producer, ref InfoQueueFilter pFilter) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static int AddStorageFilterEntries(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, ref InfoQueueFilter pFilter)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (InfoQueueFilter* pFilterPtr = &pFilter)
         {
@@ -224,18 +224,18 @@ public unsafe static class DXGIInfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetStorageFilter<TThis>(this TThis thisVtbl, Guid Producer, InfoQueueFilter* pFilter, nuint* pFilterByteLength) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static unsafe int GetStorageFilter(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, InfoQueueFilter* pFilter, nuint* pFilterByteLength)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)@this->LpVtbl[13])(@this, Producer, pFilter, pFilterByteLength);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetStorageFilter<TThis>(this TThis thisVtbl, Guid Producer, InfoQueueFilter* pFilter, ref nuint pFilterByteLength) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static unsafe int GetStorageFilter(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, InfoQueueFilter* pFilter, ref nuint pFilterByteLength)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (nuint* pFilterByteLengthPtr = &pFilterByteLength)
         {
@@ -245,9 +245,9 @@ public unsafe static class DXGIInfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetStorageFilter<TThis>(this TThis thisVtbl, Guid Producer, ref InfoQueueFilter pFilter, nuint* pFilterByteLength) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static unsafe int GetStorageFilter(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, ref InfoQueueFilter pFilter, nuint* pFilterByteLength)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (InfoQueueFilter* pFilterPtr = &pFilter)
         {
@@ -257,9 +257,9 @@ public unsafe static class DXGIInfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetStorageFilter<TThis>(this TThis thisVtbl, Guid Producer, ref InfoQueueFilter pFilter, ref nuint pFilterByteLength) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static int GetStorageFilter(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, ref InfoQueueFilter pFilter, ref nuint pFilterByteLength)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (InfoQueueFilter* pFilterPtr = &pFilter)
         {
@@ -272,52 +272,52 @@ public unsafe static class DXGIInfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void ClearStorageFilter<TThis>(this TThis thisVtbl, Guid Producer) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static void ClearStorageFilter(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, void>)@this->LpVtbl[14])(@this, Producer);
     }
 
     /// <summary>To be documented.</summary>
-    public static int PushEmptyStorageFilter<TThis>(this TThis thisVtbl, Guid Producer) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static int PushEmptyStorageFilter(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int>)@this->LpVtbl[15])(@this, Producer);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int PushDenyAllStorageFilter<TThis>(this TThis thisVtbl, Guid Producer) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static int PushDenyAllStorageFilter(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int>)@this->LpVtbl[16])(@this, Producer);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int PushCopyOfStorageFilter<TThis>(this TThis thisVtbl, Guid Producer) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static int PushCopyOfStorageFilter(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int>)@this->LpVtbl[17])(@this, Producer);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int PushStorageFilter<TThis>(this TThis thisVtbl, Guid Producer, InfoQueueFilter* pFilter) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static unsafe int PushStorageFilter(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, InfoQueueFilter* pFilter)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)@this->LpVtbl[18])(@this, Producer, pFilter);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int PushStorageFilter<TThis>(this TThis thisVtbl, Guid Producer, ref InfoQueueFilter pFilter) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static int PushStorageFilter(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, ref InfoQueueFilter pFilter)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (InfoQueueFilter* pFilterPtr = &pFilter)
         {
@@ -327,34 +327,34 @@ public unsafe static class DXGIInfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void PopStorageFilter<TThis>(this TThis thisVtbl, Guid Producer) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static void PopStorageFilter(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, void>)@this->LpVtbl[19])(@this, Producer);
     }
 
     /// <summary>To be documented.</summary>
-    public static uint GetStorageFilterStackSize<TThis>(this TThis thisVtbl, Guid Producer) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static uint GetStorageFilterStackSize(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, uint>)@this->LpVtbl[20])(@this, Producer);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddRetrievalFilterEntries<TThis>(this TThis thisVtbl, Guid Producer, InfoQueueFilter* pFilter) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static unsafe int AddRetrievalFilterEntries(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, InfoQueueFilter* pFilter)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)@this->LpVtbl[21])(@this, Producer, pFilter);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddRetrievalFilterEntries<TThis>(this TThis thisVtbl, Guid Producer, ref InfoQueueFilter pFilter) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static int AddRetrievalFilterEntries(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, ref InfoQueueFilter pFilter)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (InfoQueueFilter* pFilterPtr = &pFilter)
         {
@@ -364,18 +364,18 @@ public unsafe static class DXGIInfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetRetrievalFilter<TThis>(this TThis thisVtbl, Guid Producer, InfoQueueFilter* pFilter, nuint* pFilterByteLength) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static unsafe int GetRetrievalFilter(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, InfoQueueFilter* pFilter, nuint* pFilterByteLength)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)@this->LpVtbl[22])(@this, Producer, pFilter, pFilterByteLength);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetRetrievalFilter<TThis>(this TThis thisVtbl, Guid Producer, InfoQueueFilter* pFilter, ref nuint pFilterByteLength) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static unsafe int GetRetrievalFilter(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, InfoQueueFilter* pFilter, ref nuint pFilterByteLength)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (nuint* pFilterByteLengthPtr = &pFilterByteLength)
         {
@@ -385,9 +385,9 @@ public unsafe static class DXGIInfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetRetrievalFilter<TThis>(this TThis thisVtbl, Guid Producer, ref InfoQueueFilter pFilter, nuint* pFilterByteLength) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static unsafe int GetRetrievalFilter(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, ref InfoQueueFilter pFilter, nuint* pFilterByteLength)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (InfoQueueFilter* pFilterPtr = &pFilter)
         {
@@ -397,9 +397,9 @@ public unsafe static class DXGIInfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetRetrievalFilter<TThis>(this TThis thisVtbl, Guid Producer, ref InfoQueueFilter pFilter, ref nuint pFilterByteLength) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static int GetRetrievalFilter(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, ref InfoQueueFilter pFilter, ref nuint pFilterByteLength)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (InfoQueueFilter* pFilterPtr = &pFilter)
         {
@@ -412,52 +412,52 @@ public unsafe static class DXGIInfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void ClearRetrievalFilter<TThis>(this TThis thisVtbl, Guid Producer) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static void ClearRetrievalFilter(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, void>)@this->LpVtbl[23])(@this, Producer);
     }
 
     /// <summary>To be documented.</summary>
-    public static int PushEmptyRetrievalFilter<TThis>(this TThis thisVtbl, Guid Producer) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static int PushEmptyRetrievalFilter(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int>)@this->LpVtbl[24])(@this, Producer);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int PushDenyAllRetrievalFilter<TThis>(this TThis thisVtbl, Guid Producer) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static int PushDenyAllRetrievalFilter(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int>)@this->LpVtbl[25])(@this, Producer);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int PushCopyOfRetrievalFilter<TThis>(this TThis thisVtbl, Guid Producer) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static int PushCopyOfRetrievalFilter(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int>)@this->LpVtbl[26])(@this, Producer);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int PushRetrievalFilter<TThis>(this TThis thisVtbl, Guid Producer, InfoQueueFilter* pFilter) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static unsafe int PushRetrievalFilter(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, InfoQueueFilter* pFilter)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)@this->LpVtbl[27])(@this, Producer, pFilter);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int PushRetrievalFilter<TThis>(this TThis thisVtbl, Guid Producer, ref InfoQueueFilter pFilter) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static int PushRetrievalFilter(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, ref InfoQueueFilter pFilter)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (InfoQueueFilter* pFilterPtr = &pFilter)
         {
@@ -467,34 +467,34 @@ public unsafe static class DXGIInfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void PopRetrievalFilter<TThis>(this TThis thisVtbl, Guid Producer) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static void PopRetrievalFilter(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, void>)@this->LpVtbl[28])(@this, Producer);
     }
 
     /// <summary>To be documented.</summary>
-    public static uint GetRetrievalFilterStackSize<TThis>(this TThis thisVtbl, Guid Producer) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static uint GetRetrievalFilterStackSize(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, uint>)@this->LpVtbl[29])(@this, Producer);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMessage<TThis>(this TThis thisVtbl, Guid Producer, InfoQueueMessageCategory Category, InfoQueueMessageSeverity Severity, int ID, byte* pDescription) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static unsafe int AddMessage(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, InfoQueueMessageCategory Category, InfoQueueMessageSeverity Severity, int ID, byte* pDescription)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, InfoQueueMessageSeverity, int, byte*, int>)@this->LpVtbl[30])(@this, Producer, Category, Severity, ID, pDescription);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddMessage<TThis>(this TThis thisVtbl, Guid Producer, InfoQueueMessageCategory Category, InfoQueueMessageSeverity Severity, int ID, ref byte pDescription) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static int AddMessage(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, InfoQueueMessageCategory Category, InfoQueueMessageSeverity Severity, int ID, ref byte pDescription)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (byte* pDescriptionPtr = &pDescription)
         {
@@ -504,9 +504,9 @@ public unsafe static class DXGIInfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddMessage<TThis>(this TThis thisVtbl, Guid Producer, InfoQueueMessageCategory Category, InfoQueueMessageSeverity Severity, int ID, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDescription) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static int AddMessage(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, InfoQueueMessageCategory Category, InfoQueueMessageSeverity Severity, int ID, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDescription)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         var pDescriptionPtr = (byte*) SilkMarshal.StringToPtr(pDescription, NativeStringEncoding.LPStr);
         ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, InfoQueueMessageSeverity, int, byte*, int>)@this->LpVtbl[30])(@this, Producer, Category, Severity, ID, pDescriptionPtr);
@@ -515,18 +515,18 @@ public unsafe static class DXGIInfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddApplicationMessage<TThis>(this TThis thisVtbl, InfoQueueMessageSeverity Severity, byte* pDescription) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static unsafe int AddApplicationMessage(this ComPtr<IDXGIInfoQueue> thisVtbl, InfoQueueMessageSeverity Severity, byte* pDescription)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, InfoQueueMessageSeverity, byte*, int>)@this->LpVtbl[31])(@this, Severity, pDescription);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddApplicationMessage<TThis>(this TThis thisVtbl, InfoQueueMessageSeverity Severity, ref byte pDescription) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static int AddApplicationMessage(this ComPtr<IDXGIInfoQueue> thisVtbl, InfoQueueMessageSeverity Severity, ref byte pDescription)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (byte* pDescriptionPtr = &pDescription)
         {
@@ -536,9 +536,9 @@ public unsafe static class DXGIInfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddApplicationMessage<TThis>(this TThis thisVtbl, InfoQueueMessageSeverity Severity, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDescription) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static int AddApplicationMessage(this ComPtr<IDXGIInfoQueue> thisVtbl, InfoQueueMessageSeverity Severity, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDescription)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         var pDescriptionPtr = (byte*) SilkMarshal.StringToPtr(pDescription, NativeStringEncoding.LPStr);
         ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, InfoQueueMessageSeverity, byte*, int>)@this->LpVtbl[31])(@this, Severity, pDescriptionPtr);
@@ -547,224 +547,224 @@ public unsafe static class DXGIInfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetBreakOnCategory<TThis>(this TThis thisVtbl, Guid Producer, InfoQueueMessageCategory Category, int bEnable) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static int SetBreakOnCategory(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, InfoQueueMessageCategory Category, int bEnable)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, int, int>)@this->LpVtbl[32])(@this, Producer, Category, bEnable);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetBreakOnSeverity<TThis>(this TThis thisVtbl, Guid Producer, InfoQueueMessageSeverity Severity, int bEnable) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static int SetBreakOnSeverity(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, InfoQueueMessageSeverity Severity, int bEnable)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageSeverity, int, int>)@this->LpVtbl[33])(@this, Producer, Severity, bEnable);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetBreakOnID<TThis>(this TThis thisVtbl, Guid Producer, int ID, int bEnable) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static int SetBreakOnID(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, int ID, int bEnable)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int, int, int>)@this->LpVtbl[34])(@this, Producer, ID, bEnable);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetBreakOnCategory<TThis>(this TThis thisVtbl, Guid Producer, InfoQueueMessageCategory Category) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static int GetBreakOnCategory(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, InfoQueueMessageCategory Category)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, int>)@this->LpVtbl[35])(@this, Producer, Category);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetBreakOnSeverity<TThis>(this TThis thisVtbl, Guid Producer, InfoQueueMessageSeverity Severity) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static int GetBreakOnSeverity(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, InfoQueueMessageSeverity Severity)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageSeverity, int>)@this->LpVtbl[36])(@this, Producer, Severity);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetBreakOnID<TThis>(this TThis thisVtbl, Guid Producer, int ID) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static int GetBreakOnID(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, int ID)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int, int>)@this->LpVtbl[37])(@this, Producer, ID);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetMuteDebugOutput<TThis>(this TThis thisVtbl, Guid Producer, int bMute) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static void SetMuteDebugOutput(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, int bMute)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int, void>)@this->LpVtbl[38])(@this, Producer, bMute);
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetMuteDebugOutput<TThis>(this TThis thisVtbl, Guid Producer) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static int GetMuteDebugOutput(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int>)@this->LpVtbl[39])(@this, Producer);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXGIInfoQueue>
+    public static int QueryInterface<TI0>(this ComPtr<IDXGIInfoQueue> thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppvObject = default;
         return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static unsafe int QueryInterface(this ComPtr<IDXGIInfoQueue> thisVtbl, Span<Guid> riid, void** ppvObject)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static unsafe int QueryInterface(this ComPtr<IDXGIInfoQueue> thisVtbl, Span<Guid> riid, ref void* ppvObject)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetMessageA<TThis>(this TThis thisVtbl, Guid Producer, ulong MessageIndex, InfoQueueMessage* pMessage, Span<nuint> pMessageByteLength) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static unsafe int GetMessageA(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, ulong MessageIndex, InfoQueueMessage* pMessage, Span<nuint> pMessageByteLength)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetMessageA(Producer, MessageIndex, pMessage, ref pMessageByteLength.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetMessageA<TThis>(this TThis thisVtbl, Guid Producer, ulong MessageIndex, Span<InfoQueueMessage> pMessage, nuint* pMessageByteLength) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static unsafe int GetMessageA(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, ulong MessageIndex, Span<InfoQueueMessage> pMessage, nuint* pMessageByteLength)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetMessageA(Producer, MessageIndex, ref pMessage.GetPinnableReference(), pMessageByteLength);
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetMessageA<TThis>(this TThis thisVtbl, Guid Producer, ulong MessageIndex, Span<InfoQueueMessage> pMessage, Span<nuint> pMessageByteLength) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static int GetMessageA(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, ulong MessageIndex, Span<InfoQueueMessage> pMessage, Span<nuint> pMessageByteLength)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetMessageA(Producer, MessageIndex, ref pMessage.GetPinnableReference(), ref pMessageByteLength.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddStorageFilterEntries<TThis>(this TThis thisVtbl, Guid Producer, Span<InfoQueueFilter> pFilter) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static int AddStorageFilterEntries(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, Span<InfoQueueFilter> pFilter)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->AddStorageFilterEntries(Producer, ref pFilter.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetStorageFilter<TThis>(this TThis thisVtbl, Guid Producer, InfoQueueFilter* pFilter, Span<nuint> pFilterByteLength) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static unsafe int GetStorageFilter(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, InfoQueueFilter* pFilter, Span<nuint> pFilterByteLength)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetStorageFilter(Producer, pFilter, ref pFilterByteLength.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetStorageFilter<TThis>(this TThis thisVtbl, Guid Producer, Span<InfoQueueFilter> pFilter, nuint* pFilterByteLength) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static unsafe int GetStorageFilter(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, Span<InfoQueueFilter> pFilter, nuint* pFilterByteLength)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetStorageFilter(Producer, ref pFilter.GetPinnableReference(), pFilterByteLength);
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetStorageFilter<TThis>(this TThis thisVtbl, Guid Producer, Span<InfoQueueFilter> pFilter, Span<nuint> pFilterByteLength) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static int GetStorageFilter(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, Span<InfoQueueFilter> pFilter, Span<nuint> pFilterByteLength)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetStorageFilter(Producer, ref pFilter.GetPinnableReference(), ref pFilterByteLength.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int PushStorageFilter<TThis>(this TThis thisVtbl, Guid Producer, Span<InfoQueueFilter> pFilter) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static int PushStorageFilter(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, Span<InfoQueueFilter> pFilter)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->PushStorageFilter(Producer, ref pFilter.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddRetrievalFilterEntries<TThis>(this TThis thisVtbl, Guid Producer, Span<InfoQueueFilter> pFilter) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static int AddRetrievalFilterEntries(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, Span<InfoQueueFilter> pFilter)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->AddRetrievalFilterEntries(Producer, ref pFilter.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetRetrievalFilter<TThis>(this TThis thisVtbl, Guid Producer, InfoQueueFilter* pFilter, Span<nuint> pFilterByteLength) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static unsafe int GetRetrievalFilter(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, InfoQueueFilter* pFilter, Span<nuint> pFilterByteLength)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetRetrievalFilter(Producer, pFilter, ref pFilterByteLength.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetRetrievalFilter<TThis>(this TThis thisVtbl, Guid Producer, Span<InfoQueueFilter> pFilter, nuint* pFilterByteLength) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static unsafe int GetRetrievalFilter(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, Span<InfoQueueFilter> pFilter, nuint* pFilterByteLength)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetRetrievalFilter(Producer, ref pFilter.GetPinnableReference(), pFilterByteLength);
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetRetrievalFilter<TThis>(this TThis thisVtbl, Guid Producer, Span<InfoQueueFilter> pFilter, Span<nuint> pFilterByteLength) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static int GetRetrievalFilter(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, Span<InfoQueueFilter> pFilter, Span<nuint> pFilterByteLength)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetRetrievalFilter(Producer, ref pFilter.GetPinnableReference(), ref pFilterByteLength.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int PushRetrievalFilter<TThis>(this TThis thisVtbl, Guid Producer, Span<InfoQueueFilter> pFilter) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static int PushRetrievalFilter(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, Span<InfoQueueFilter> pFilter)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->PushRetrievalFilter(Producer, ref pFilter.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddMessage<TThis>(this TThis thisVtbl, Guid Producer, InfoQueueMessageCategory Category, InfoQueueMessageSeverity Severity, int ID, Span<byte> pDescription) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static int AddMessage(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, InfoQueueMessageCategory Category, InfoQueueMessageSeverity Severity, int ID, Span<byte> pDescription)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->AddMessage(Producer, Category, Severity, ID, ref pDescription.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddApplicationMessage<TThis>(this TThis thisVtbl, InfoQueueMessageSeverity Severity, Span<byte> pDescription) where TThis : IComVtbl<IDXGIInfoQueue>
+    public static int AddApplicationMessage(this ComPtr<IDXGIInfoQueue> thisVtbl, InfoQueueMessageSeverity Severity, Span<byte> pDescription)
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->AddApplicationMessage(Severity, ref pDescription.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXGIInfoQueue>
+    public static ComPtr<TI0> QueryInterface<TI0>(this ComPtr<IDXGIInfoQueue> thisVtbl) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
         return silkRet;

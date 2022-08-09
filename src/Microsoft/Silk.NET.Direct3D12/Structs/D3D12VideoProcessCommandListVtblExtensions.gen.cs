@@ -19,18 +19,18 @@ namespace Silk.NET.Direct3D12;
 public unsafe static class D3D12VideoProcessCommandListVtblExtensions
 {
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Guid* riid, void** ppvObject) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe int QueryInterface(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, Guid* riid, void** ppvObject)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Guid* riid, ref void* ppvObject) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe int QueryInterface(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, Guid* riid, ref void* ppvObject)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppvObjectPtr = &ppvObject)
         {
@@ -40,9 +40,9 @@ public unsafe static class D3D12VideoProcessCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, ref Guid riid, void** ppvObject) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe int QueryInterface(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, ref Guid riid, void** ppvObject)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -52,9 +52,9 @@ public unsafe static class D3D12VideoProcessCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, ref Guid riid, ref void* ppvObject) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe int QueryInterface(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, ref Guid riid, ref void* ppvObject)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -67,36 +67,36 @@ public unsafe static class D3D12VideoProcessCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static uint AddRef<TThis>(this TThis thisVtbl) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static uint AddRef(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList*, uint>)@this->LpVtbl[1])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static uint Release<TThis>(this TThis thisVtbl) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static uint Release(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList*, uint>)@this->LpVtbl[2])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Guid* guid, uint* pDataSize, void* pData) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe int GetPrivateData(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, Guid* guid, uint* pDataSize, void* pData)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guid, pDataSize, pData);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, Guid* guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void* pDataPtr = &pData)
         {
@@ -106,9 +106,9 @@ public unsafe static class D3D12VideoProcessCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Guid* guid, ref uint pDataSize, void* pData) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe int GetPrivateData(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, Guid* guid, ref uint pDataSize, void* pData)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pDataSizePtr = &pDataSize)
         {
@@ -118,9 +118,9 @@ public unsafe static class D3D12VideoProcessCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, Guid* guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pDataSizePtr = &pDataSize)
         {
@@ -133,9 +133,9 @@ public unsafe static class D3D12VideoProcessCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, ref Guid guid, uint* pDataSize, void* pData) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe int GetPrivateData(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, ref Guid guid, uint* pDataSize, void* pData)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* guidPtr = &guid)
         {
@@ -145,9 +145,9 @@ public unsafe static class D3D12VideoProcessCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, ref Guid guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, ref Guid guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* guidPtr = &guid)
         {
@@ -160,9 +160,9 @@ public unsafe static class D3D12VideoProcessCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, ref Guid guid, ref uint pDataSize, void* pData) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe int GetPrivateData(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, ref Guid guid, ref uint pDataSize, void* pData)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* guidPtr = &guid)
         {
@@ -175,9 +175,9 @@ public unsafe static class D3D12VideoProcessCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetPrivateData<T0, TThis>(this TThis thisVtbl, ref Guid guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static int GetPrivateData<T0>(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, ref Guid guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* guidPtr = &guid)
         {
@@ -193,18 +193,18 @@ public unsafe static class D3D12VideoProcessCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<TThis>(this TThis thisVtbl, Guid* guid, uint DataSize, void* pData) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe int SetPrivateData(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, Guid* guid, uint DataSize, void* pData)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList*, Guid*, uint, void*, int>)@this->LpVtbl[4])(@this, guid, DataSize, pData);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* guid, uint DataSize, ref T0 pData) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, Guid* guid, uint DataSize, ref T0 pData) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void* pDataPtr = &pData)
         {
@@ -214,9 +214,9 @@ public unsafe static class D3D12VideoProcessCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<TThis>(this TThis thisVtbl, ref Guid guid, uint DataSize, void* pData) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe int SetPrivateData(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, ref Guid guid, uint DataSize, void* pData)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* guidPtr = &guid)
         {
@@ -226,9 +226,9 @@ public unsafe static class D3D12VideoProcessCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0, TThis>(this TThis thisVtbl, ref Guid guid, uint DataSize, ref T0 pData) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static int SetPrivateData<T0>(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, ref Guid guid, uint DataSize, ref T0 pData) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* guidPtr = &guid)
         {
@@ -241,18 +241,18 @@ public unsafe static class D3D12VideoProcessCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Guid* guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, Guid* guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[5])(@this, guid, pData);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Guid* guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, Guid* guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
         {
@@ -262,9 +262,9 @@ public unsafe static class D3D12VideoProcessCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface<TThis>(this TThis thisVtbl, ref Guid guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, ref Guid guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* guidPtr = &guid)
         {
@@ -274,9 +274,9 @@ public unsafe static class D3D12VideoProcessCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateDataInterface<TThis>(this TThis thisVtbl, ref Guid guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static int SetPrivateDataInterface(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, ref Guid guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* guidPtr = &guid)
         {
@@ -289,18 +289,18 @@ public unsafe static class D3D12VideoProcessCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetName<TThis>(this TThis thisVtbl, char* Name) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe int SetName(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, char* Name)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList*, char*, int>)@this->LpVtbl[6])(@this, Name);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName<TThis>(this TThis thisVtbl, ref char Name) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static int SetName(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, ref char Name)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (char* NamePtr = &Name)
         {
@@ -310,9 +310,9 @@ public unsafe static class D3D12VideoProcessCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static int SetName(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         var NamePtr = (byte*) SilkMarshal.StringToPtr(Name, NativeStringEncoding.LPWStr);
         ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList*, byte*, int>)@this->LpVtbl[6])(@this, NamePtr);
@@ -321,18 +321,18 @@ public unsafe static class D3D12VideoProcessCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDevice<TThis>(this TThis thisVtbl, Guid* riid, void** ppvDevice) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe int GetDevice(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, Guid* riid, void** ppvDevice)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList*, Guid*, void**, int>)@this->LpVtbl[7])(@this, riid, ppvDevice);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDevice<TThis>(this TThis thisVtbl, Guid* riid, ref void* ppvDevice) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe int GetDevice(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, Guid* riid, ref void* ppvDevice)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppvDevicePtr = &ppvDevice)
         {
@@ -342,9 +342,9 @@ public unsafe static class D3D12VideoProcessCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDevice<TThis>(this TThis thisVtbl, ref Guid riid, void** ppvDevice) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe int GetDevice(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, ref Guid riid, void** ppvDevice)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -354,9 +354,9 @@ public unsafe static class D3D12VideoProcessCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDevice<TThis>(this TThis thisVtbl, ref Guid riid, ref void* ppvDevice) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe int GetDevice(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, ref Guid riid, ref void* ppvDevice)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -369,36 +369,36 @@ public unsafe static class D3D12VideoProcessCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static CommandListType GetType<TThis>(this TThis thisVtbl) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static CommandListType GetType(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         CommandListType ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList*, CommandListType>)@this->LpVtbl[8])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int Close<TThis>(this TThis thisVtbl) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static int Close(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList*, int>)@this->LpVtbl[9])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Reset<TThis>(this TThis thisVtbl, ID3D12CommandAllocator* pAllocator) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe int Reset(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, ID3D12CommandAllocator* pAllocator)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList*, ID3D12CommandAllocator*, int>)@this->LpVtbl[10])(@this, pAllocator);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int Reset<TThis>(this TThis thisVtbl, ref ID3D12CommandAllocator pAllocator) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static int Reset(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, ref ID3D12CommandAllocator pAllocator)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D12CommandAllocator* pAllocatorPtr = &pAllocator)
         {
@@ -408,23 +408,23 @@ public unsafe static class D3D12VideoProcessCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void ClearState<TThis>(this TThis thisVtbl) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static void ClearState(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList*, void>)@this->LpVtbl[11])(@this);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ResourceBarrier<TThis>(this TThis thisVtbl, uint NumBarriers, ResourceBarrier* pBarriers) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe void ResourceBarrier(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, uint NumBarriers, ResourceBarrier* pBarriers)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList*, uint, ResourceBarrier*, void>)@this->LpVtbl[12])(@this, NumBarriers, pBarriers);
     }
 
     /// <summary>To be documented.</summary>
-    public static void ResourceBarrier<TThis>(this TThis thisVtbl, uint NumBarriers, ref ResourceBarrier pBarriers) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static void ResourceBarrier(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, uint NumBarriers, ref ResourceBarrier pBarriers)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         fixed (ResourceBarrier* pBarriersPtr = &pBarriers)
         {
             ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList*, uint, ResourceBarrier*, void>)@this->LpVtbl[12])(@this, NumBarriers, pBarriersPtr);
@@ -432,16 +432,16 @@ public unsafe static class D3D12VideoProcessCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DiscardResource<TThis>(this TThis thisVtbl, ID3D12Resource* pResource, DiscardRegion* pRegion) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe void DiscardResource(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, ID3D12Resource* pResource, DiscardRegion* pRegion)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList*, ID3D12Resource*, DiscardRegion*, void>)@this->LpVtbl[13])(@this, pResource, pRegion);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DiscardResource<TThis>(this TThis thisVtbl, ID3D12Resource* pResource, ref DiscardRegion pRegion) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe void DiscardResource(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, ID3D12Resource* pResource, ref DiscardRegion pRegion)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         fixed (DiscardRegion* pRegionPtr = &pRegion)
         {
             ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList*, ID3D12Resource*, DiscardRegion*, void>)@this->LpVtbl[13])(@this, pResource, pRegionPtr);
@@ -449,9 +449,9 @@ public unsafe static class D3D12VideoProcessCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DiscardResource<TThis>(this TThis thisVtbl, ref ID3D12Resource pResource, DiscardRegion* pRegion) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe void DiscardResource(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, ref ID3D12Resource pResource, DiscardRegion* pRegion)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
         {
             ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList*, ID3D12Resource*, DiscardRegion*, void>)@this->LpVtbl[13])(@this, pResourcePtr, pRegion);
@@ -459,9 +459,9 @@ public unsafe static class D3D12VideoProcessCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DiscardResource<TThis>(this TThis thisVtbl, ref ID3D12Resource pResource, ref DiscardRegion pRegion) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static void DiscardResource(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, ref ID3D12Resource pResource, ref DiscardRegion pRegion)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
         {
             fixed (DiscardRegion* pRegionPtr = &pRegion)
@@ -472,16 +472,16 @@ public unsafe static class D3D12VideoProcessCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void BeginQuery<TThis>(this TThis thisVtbl, ID3D12QueryHeap* pQueryHeap, QueryType Type, uint Index) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe void BeginQuery(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, ID3D12QueryHeap* pQueryHeap, QueryType Type, uint Index)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList*, ID3D12QueryHeap*, QueryType, uint, void>)@this->LpVtbl[14])(@this, pQueryHeap, Type, Index);
     }
 
     /// <summary>To be documented.</summary>
-    public static void BeginQuery<TThis>(this TThis thisVtbl, ref ID3D12QueryHeap pQueryHeap, QueryType Type, uint Index) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static void BeginQuery(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, ref ID3D12QueryHeap pQueryHeap, QueryType Type, uint Index)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         fixed (ID3D12QueryHeap* pQueryHeapPtr = &pQueryHeap)
         {
             ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList*, ID3D12QueryHeap*, QueryType, uint, void>)@this->LpVtbl[14])(@this, pQueryHeapPtr, Type, Index);
@@ -489,16 +489,16 @@ public unsafe static class D3D12VideoProcessCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void EndQuery<TThis>(this TThis thisVtbl, ID3D12QueryHeap* pQueryHeap, QueryType Type, uint Index) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe void EndQuery(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, ID3D12QueryHeap* pQueryHeap, QueryType Type, uint Index)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList*, ID3D12QueryHeap*, QueryType, uint, void>)@this->LpVtbl[15])(@this, pQueryHeap, Type, Index);
     }
 
     /// <summary>To be documented.</summary>
-    public static void EndQuery<TThis>(this TThis thisVtbl, ref ID3D12QueryHeap pQueryHeap, QueryType Type, uint Index) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static void EndQuery(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, ref ID3D12QueryHeap pQueryHeap, QueryType Type, uint Index)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         fixed (ID3D12QueryHeap* pQueryHeapPtr = &pQueryHeap)
         {
             ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList*, ID3D12QueryHeap*, QueryType, uint, void>)@this->LpVtbl[15])(@this, pQueryHeapPtr, Type, Index);
@@ -506,16 +506,16 @@ public unsafe static class D3D12VideoProcessCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ResolveQueryData<TThis>(this TThis thisVtbl, ID3D12QueryHeap* pQueryHeap, QueryType Type, uint StartIndex, uint NumQueries, ID3D12Resource* pDestinationBuffer, ulong AlignedDestinationBufferOffset) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe void ResolveQueryData(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, ID3D12QueryHeap* pQueryHeap, QueryType Type, uint StartIndex, uint NumQueries, ID3D12Resource* pDestinationBuffer, ulong AlignedDestinationBufferOffset)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList*, ID3D12QueryHeap*, QueryType, uint, uint, ID3D12Resource*, ulong, void>)@this->LpVtbl[16])(@this, pQueryHeap, Type, StartIndex, NumQueries, pDestinationBuffer, AlignedDestinationBufferOffset);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ResolveQueryData<TThis>(this TThis thisVtbl, ID3D12QueryHeap* pQueryHeap, QueryType Type, uint StartIndex, uint NumQueries, ref ID3D12Resource pDestinationBuffer, ulong AlignedDestinationBufferOffset) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe void ResolveQueryData(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, ID3D12QueryHeap* pQueryHeap, QueryType Type, uint StartIndex, uint NumQueries, ref ID3D12Resource pDestinationBuffer, ulong AlignedDestinationBufferOffset)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pDestinationBufferPtr = &pDestinationBuffer)
         {
             ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList*, ID3D12QueryHeap*, QueryType, uint, uint, ID3D12Resource*, ulong, void>)@this->LpVtbl[16])(@this, pQueryHeap, Type, StartIndex, NumQueries, pDestinationBufferPtr, AlignedDestinationBufferOffset);
@@ -523,9 +523,9 @@ public unsafe static class D3D12VideoProcessCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ResolveQueryData<TThis>(this TThis thisVtbl, ref ID3D12QueryHeap pQueryHeap, QueryType Type, uint StartIndex, uint NumQueries, ID3D12Resource* pDestinationBuffer, ulong AlignedDestinationBufferOffset) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe void ResolveQueryData(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, ref ID3D12QueryHeap pQueryHeap, QueryType Type, uint StartIndex, uint NumQueries, ID3D12Resource* pDestinationBuffer, ulong AlignedDestinationBufferOffset)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         fixed (ID3D12QueryHeap* pQueryHeapPtr = &pQueryHeap)
         {
             ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList*, ID3D12QueryHeap*, QueryType, uint, uint, ID3D12Resource*, ulong, void>)@this->LpVtbl[16])(@this, pQueryHeapPtr, Type, StartIndex, NumQueries, pDestinationBuffer, AlignedDestinationBufferOffset);
@@ -533,9 +533,9 @@ public unsafe static class D3D12VideoProcessCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void ResolveQueryData<TThis>(this TThis thisVtbl, ref ID3D12QueryHeap pQueryHeap, QueryType Type, uint StartIndex, uint NumQueries, ref ID3D12Resource pDestinationBuffer, ulong AlignedDestinationBufferOffset) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static void ResolveQueryData(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, ref ID3D12QueryHeap pQueryHeap, QueryType Type, uint StartIndex, uint NumQueries, ref ID3D12Resource pDestinationBuffer, ulong AlignedDestinationBufferOffset)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         fixed (ID3D12QueryHeap* pQueryHeapPtr = &pQueryHeap)
         {
             fixed (ID3D12Resource* pDestinationBufferPtr = &pDestinationBuffer)
@@ -546,16 +546,16 @@ public unsafe static class D3D12VideoProcessCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SetPredication<TThis>(this TThis thisVtbl, ID3D12Resource* pBuffer, ulong AlignedBufferOffset, PredicationOp Operation) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe void SetPredication(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, ID3D12Resource* pBuffer, ulong AlignedBufferOffset, PredicationOp Operation)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList*, ID3D12Resource*, ulong, PredicationOp, void>)@this->LpVtbl[17])(@this, pBuffer, AlignedBufferOffset, Operation);
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetPredication<TThis>(this TThis thisVtbl, ref ID3D12Resource pBuffer, ulong AlignedBufferOffset, PredicationOp Operation) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static void SetPredication(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, ref ID3D12Resource pBuffer, ulong AlignedBufferOffset, PredicationOp Operation)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pBufferPtr = &pBuffer)
         {
             ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList*, ID3D12Resource*, ulong, PredicationOp, void>)@this->LpVtbl[17])(@this, pBufferPtr, AlignedBufferOffset, Operation);
@@ -563,16 +563,16 @@ public unsafe static class D3D12VideoProcessCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SetMarker<TThis>(this TThis thisVtbl, uint Metadata, void* pData, uint Size) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe void SetMarker(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, uint Metadata, void* pData, uint Size)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList*, uint, void*, uint, void>)@this->LpVtbl[18])(@this, Metadata, pData, Size);
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetMarker<T0, TThis>(this TThis thisVtbl, uint Metadata, ref T0 pData, uint Size) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static void SetMarker<T0>(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, uint Metadata, ref T0 pData, uint Size) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         fixed (void* pDataPtr = &pData)
         {
             ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList*, uint, void*, uint, void>)@this->LpVtbl[18])(@this, Metadata, pDataPtr, Size);
@@ -580,16 +580,16 @@ public unsafe static class D3D12VideoProcessCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void BeginEvent<TThis>(this TThis thisVtbl, uint Metadata, void* pData, uint Size) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe void BeginEvent(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, uint Metadata, void* pData, uint Size)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList*, uint, void*, uint, void>)@this->LpVtbl[19])(@this, Metadata, pData, Size);
     }
 
     /// <summary>To be documented.</summary>
-    public static void BeginEvent<T0, TThis>(this TThis thisVtbl, uint Metadata, ref T0 pData, uint Size) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static void BeginEvent<T0>(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, uint Metadata, ref T0 pData, uint Size) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         fixed (void* pDataPtr = &pData)
         {
             ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList*, uint, void*, uint, void>)@this->LpVtbl[19])(@this, Metadata, pDataPtr, Size);
@@ -597,23 +597,23 @@ public unsafe static class D3D12VideoProcessCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void EndEvent<TThis>(this TThis thisVtbl) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static void EndEvent(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList*, void>)@this->LpVtbl[20])(@this);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames<TThis>(this TThis thisVtbl, ID3D12VideoProcessor* pVideoProcessor, VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, VideoProcessInputStreamArguments* pInputArguments) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, ID3D12VideoProcessor* pVideoProcessor, VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, VideoProcessInputStreamArguments* pInputArguments)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList*, ID3D12VideoProcessor*, VideoProcessOutputStreamArguments*, uint, VideoProcessInputStreamArguments*, void>)@this->LpVtbl[21])(@this, pVideoProcessor, pOutputArguments, NumInputStreams, pInputArguments);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames<TThis>(this TThis thisVtbl, ID3D12VideoProcessor* pVideoProcessor, VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, ref VideoProcessInputStreamArguments pInputArguments) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, ID3D12VideoProcessor* pVideoProcessor, VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, ref VideoProcessInputStreamArguments pInputArguments)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         fixed (VideoProcessInputStreamArguments* pInputArgumentsPtr = &pInputArguments)
         {
             ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList*, ID3D12VideoProcessor*, VideoProcessOutputStreamArguments*, uint, VideoProcessInputStreamArguments*, void>)@this->LpVtbl[21])(@this, pVideoProcessor, pOutputArguments, NumInputStreams, pInputArgumentsPtr);
@@ -621,9 +621,9 @@ public unsafe static class D3D12VideoProcessCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames<TThis>(this TThis thisVtbl, ID3D12VideoProcessor* pVideoProcessor, ref VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, VideoProcessInputStreamArguments* pInputArguments) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, ID3D12VideoProcessor* pVideoProcessor, ref VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, VideoProcessInputStreamArguments* pInputArguments)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         fixed (VideoProcessOutputStreamArguments* pOutputArgumentsPtr = &pOutputArguments)
         {
             ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList*, ID3D12VideoProcessor*, VideoProcessOutputStreamArguments*, uint, VideoProcessInputStreamArguments*, void>)@this->LpVtbl[21])(@this, pVideoProcessor, pOutputArgumentsPtr, NumInputStreams, pInputArguments);
@@ -631,9 +631,9 @@ public unsafe static class D3D12VideoProcessCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames<TThis>(this TThis thisVtbl, ID3D12VideoProcessor* pVideoProcessor, ref VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, ref VideoProcessInputStreamArguments pInputArguments) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, ID3D12VideoProcessor* pVideoProcessor, ref VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, ref VideoProcessInputStreamArguments pInputArguments)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         fixed (VideoProcessOutputStreamArguments* pOutputArgumentsPtr = &pOutputArguments)
         {
             fixed (VideoProcessInputStreamArguments* pInputArgumentsPtr = &pInputArguments)
@@ -644,9 +644,9 @@ public unsafe static class D3D12VideoProcessCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames<TThis>(this TThis thisVtbl, ref ID3D12VideoProcessor pVideoProcessor, VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, VideoProcessInputStreamArguments* pInputArguments) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, ref ID3D12VideoProcessor pVideoProcessor, VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, VideoProcessInputStreamArguments* pInputArguments)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         fixed (ID3D12VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
             ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList*, ID3D12VideoProcessor*, VideoProcessOutputStreamArguments*, uint, VideoProcessInputStreamArguments*, void>)@this->LpVtbl[21])(@this, pVideoProcessorPtr, pOutputArguments, NumInputStreams, pInputArguments);
@@ -654,9 +654,9 @@ public unsafe static class D3D12VideoProcessCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames<TThis>(this TThis thisVtbl, ref ID3D12VideoProcessor pVideoProcessor, VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, ref VideoProcessInputStreamArguments pInputArguments) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, ref ID3D12VideoProcessor pVideoProcessor, VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, ref VideoProcessInputStreamArguments pInputArguments)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         fixed (ID3D12VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
             fixed (VideoProcessInputStreamArguments* pInputArgumentsPtr = &pInputArguments)
@@ -667,9 +667,9 @@ public unsafe static class D3D12VideoProcessCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames<TThis>(this TThis thisVtbl, ref ID3D12VideoProcessor pVideoProcessor, ref VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, VideoProcessInputStreamArguments* pInputArguments) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, ref ID3D12VideoProcessor pVideoProcessor, ref VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, VideoProcessInputStreamArguments* pInputArguments)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         fixed (ID3D12VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
             fixed (VideoProcessOutputStreamArguments* pOutputArgumentsPtr = &pOutputArguments)
@@ -680,9 +680,9 @@ public unsafe static class D3D12VideoProcessCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void ProcessFrames<TThis>(this TThis thisVtbl, ref ID3D12VideoProcessor pVideoProcessor, ref VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, ref VideoProcessInputStreamArguments pInputArguments) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, ref ID3D12VideoProcessor pVideoProcessor, ref VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, ref VideoProcessInputStreamArguments pInputArguments)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         fixed (ID3D12VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
             fixed (VideoProcessOutputStreamArguments* pOutputArgumentsPtr = &pOutputArguments)
@@ -696,16 +696,16 @@ public unsafe static class D3D12VideoProcessCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void WriteBufferImmediate<TThis>(this TThis thisVtbl, uint Count, WritebufferimmediateParameter* pParams, WritebufferimmediateMode* pModes) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe void WriteBufferImmediate(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, uint Count, WritebufferimmediateParameter* pParams, WritebufferimmediateMode* pModes)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList*, uint, WritebufferimmediateParameter*, WritebufferimmediateMode*, void>)@this->LpVtbl[22])(@this, Count, pParams, pModes);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void WriteBufferImmediate<TThis>(this TThis thisVtbl, uint Count, WritebufferimmediateParameter* pParams, ref WritebufferimmediateMode pModes) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe void WriteBufferImmediate(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, uint Count, WritebufferimmediateParameter* pParams, ref WritebufferimmediateMode pModes)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         fixed (WritebufferimmediateMode* pModesPtr = &pModes)
         {
             ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList*, uint, WritebufferimmediateParameter*, WritebufferimmediateMode*, void>)@this->LpVtbl[22])(@this, Count, pParams, pModesPtr);
@@ -713,9 +713,9 @@ public unsafe static class D3D12VideoProcessCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void WriteBufferImmediate<TThis>(this TThis thisVtbl, uint Count, ref WritebufferimmediateParameter pParams, WritebufferimmediateMode* pModes) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe void WriteBufferImmediate(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, uint Count, ref WritebufferimmediateParameter pParams, WritebufferimmediateMode* pModes)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         fixed (WritebufferimmediateParameter* pParamsPtr = &pParams)
         {
             ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList*, uint, WritebufferimmediateParameter*, WritebufferimmediateMode*, void>)@this->LpVtbl[22])(@this, Count, pParamsPtr, pModes);
@@ -723,9 +723,9 @@ public unsafe static class D3D12VideoProcessCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void WriteBufferImmediate<TThis>(this TThis thisVtbl, uint Count, ref WritebufferimmediateParameter pParams, ref WritebufferimmediateMode pModes) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static void WriteBufferImmediate(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, uint Count, ref WritebufferimmediateParameter pParams, ref WritebufferimmediateMode pModes)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         fixed (WritebufferimmediateParameter* pParamsPtr = &pParams)
         {
             fixed (WritebufferimmediateMode* pModesPtr = &pModes)
@@ -736,364 +736,364 @@ public unsafe static class D3D12VideoProcessCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static int QueryInterface<TI0>(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppvObject = default;
         return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe int QueryInterface(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, Span<Guid> riid, void** ppvObject)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe int QueryInterface(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, Span<Guid> riid, ref void* ppvObject)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* guid, uint* pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, Guid* guid, uint* pDataSize, Span<T0> pData) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetPrivateData(guid, pDataSize, ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Guid* guid, Span<uint> pDataSize, void* pData) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe int GetPrivateData(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, Guid* guid, Span<uint> pDataSize, void* pData)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetPrivateData(guid, ref pDataSize.GetPinnableReference(), pData);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* guid, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, Guid* guid, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetPrivateData(guid, ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> guid, uint* pDataSize, void* pData) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe int GetPrivateData(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, Span<Guid> guid, uint* pDataSize, void* pData)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetPrivateData(ref guid.GetPinnableReference(), pDataSize, pData);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> guid, uint* pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, Span<Guid> guid, uint* pDataSize, Span<T0> pData) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetPrivateData(ref guid.GetPinnableReference(), pDataSize, ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> guid, Span<uint> pDataSize, void* pData) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe int GetPrivateData(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, Span<Guid> guid, Span<uint> pDataSize, void* pData)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetPrivateData(ref guid.GetPinnableReference(), ref pDataSize.GetPinnableReference(), pData);
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> guid, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static int GetPrivateData<T0>(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, Span<Guid> guid, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetPrivateData(ref guid.GetPinnableReference(), ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* guid, uint DataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, Guid* guid, uint DataSize, Span<T0> pData) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->SetPrivateData(guid, DataSize, ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> guid, uint DataSize, void* pData) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe int SetPrivateData(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, Span<Guid> guid, uint DataSize, void* pData)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, pData);
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> guid, uint DataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static int SetPrivateData<T0>(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, Span<Guid> guid, uint DataSize, Span<T0> pData) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Guid* guid, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, Guid* guid, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->SetPrivateDataInterface(guid, in pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Span<Guid> guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, Span<Guid> guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->SetPrivateDataInterface(ref guid.GetPinnableReference(), pData);
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Span<Guid> guid, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static int SetPrivateDataInterface(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, Span<Guid> guid, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->SetPrivateDataInterface(ref guid.GetPinnableReference(), in pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName<TThis>(this TThis thisVtbl, Span<char> Name) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static int SetName(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, Span<char> Name)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->SetName(ref Name.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetDevice<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvDevice) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static int GetDevice<TI0>(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, out ComPtr<TI0> ppvDevice) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppvDevice = default;
         return @this->GetDevice(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvDevice.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDevice<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvDevice) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe int GetDevice(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, Span<Guid> riid, void** ppvDevice)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDevice(ref riid.GetPinnableReference(), ppvDevice);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDevice<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvDevice) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe int GetDevice(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, Span<Guid> riid, ref void* ppvDevice)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDevice(ref riid.GetPinnableReference(), ref ppvDevice);
     }
 
     /// <summary>To be documented.</summary>
-    public static int Reset<TThis>(this TThis thisVtbl, Span<ID3D12CommandAllocator> pAllocator) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static int Reset(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, Span<ID3D12CommandAllocator> pAllocator)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Reset(ref pAllocator.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static void ResourceBarrier<TThis>(this TThis thisVtbl, uint NumBarriers, Span<ResourceBarrier> pBarriers) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static void ResourceBarrier(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, uint NumBarriers, Span<ResourceBarrier> pBarriers)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->ResourceBarrier(NumBarriers, ref pBarriers.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DiscardResource<TThis>(this TThis thisVtbl, ID3D12Resource* pResource, Span<DiscardRegion> pRegion) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe void DiscardResource(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, ID3D12Resource* pResource, Span<DiscardRegion> pRegion)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->DiscardResource(pResource, ref pRegion.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DiscardResource<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pResource, DiscardRegion* pRegion) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe void DiscardResource(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, Span<ID3D12Resource> pResource, DiscardRegion* pRegion)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->DiscardResource(ref pResource.GetPinnableReference(), pRegion);
     }
 
     /// <summary>To be documented.</summary>
-    public static void DiscardResource<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pResource, Span<DiscardRegion> pRegion) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static void DiscardResource(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, Span<ID3D12Resource> pResource, Span<DiscardRegion> pRegion)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->DiscardResource(ref pResource.GetPinnableReference(), ref pRegion.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static void BeginQuery<TThis>(this TThis thisVtbl, Span<ID3D12QueryHeap> pQueryHeap, QueryType Type, uint Index) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static void BeginQuery(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, Span<ID3D12QueryHeap> pQueryHeap, QueryType Type, uint Index)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->BeginQuery(ref pQueryHeap.GetPinnableReference(), Type, Index);
     }
 
     /// <summary>To be documented.</summary>
-    public static void EndQuery<TThis>(this TThis thisVtbl, Span<ID3D12QueryHeap> pQueryHeap, QueryType Type, uint Index) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static void EndQuery(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, Span<ID3D12QueryHeap> pQueryHeap, QueryType Type, uint Index)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->EndQuery(ref pQueryHeap.GetPinnableReference(), Type, Index);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ResolveQueryData<TThis>(this TThis thisVtbl, ID3D12QueryHeap* pQueryHeap, QueryType Type, uint StartIndex, uint NumQueries, Span<ID3D12Resource> pDestinationBuffer, ulong AlignedDestinationBufferOffset) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe void ResolveQueryData(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, ID3D12QueryHeap* pQueryHeap, QueryType Type, uint StartIndex, uint NumQueries, Span<ID3D12Resource> pDestinationBuffer, ulong AlignedDestinationBufferOffset)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->ResolveQueryData(pQueryHeap, Type, StartIndex, NumQueries, ref pDestinationBuffer.GetPinnableReference(), AlignedDestinationBufferOffset);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ResolveQueryData<TThis>(this TThis thisVtbl, Span<ID3D12QueryHeap> pQueryHeap, QueryType Type, uint StartIndex, uint NumQueries, ID3D12Resource* pDestinationBuffer, ulong AlignedDestinationBufferOffset) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe void ResolveQueryData(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, Span<ID3D12QueryHeap> pQueryHeap, QueryType Type, uint StartIndex, uint NumQueries, ID3D12Resource* pDestinationBuffer, ulong AlignedDestinationBufferOffset)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->ResolveQueryData(ref pQueryHeap.GetPinnableReference(), Type, StartIndex, NumQueries, pDestinationBuffer, AlignedDestinationBufferOffset);
     }
 
     /// <summary>To be documented.</summary>
-    public static void ResolveQueryData<TThis>(this TThis thisVtbl, Span<ID3D12QueryHeap> pQueryHeap, QueryType Type, uint StartIndex, uint NumQueries, Span<ID3D12Resource> pDestinationBuffer, ulong AlignedDestinationBufferOffset) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static void ResolveQueryData(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, Span<ID3D12QueryHeap> pQueryHeap, QueryType Type, uint StartIndex, uint NumQueries, Span<ID3D12Resource> pDestinationBuffer, ulong AlignedDestinationBufferOffset)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->ResolveQueryData(ref pQueryHeap.GetPinnableReference(), Type, StartIndex, NumQueries, ref pDestinationBuffer.GetPinnableReference(), AlignedDestinationBufferOffset);
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetPredication<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pBuffer, ulong AlignedBufferOffset, PredicationOp Operation) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static void SetPredication(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, Span<ID3D12Resource> pBuffer, ulong AlignedBufferOffset, PredicationOp Operation)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->SetPredication(ref pBuffer.GetPinnableReference(), AlignedBufferOffset, Operation);
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetMarker<T0, TThis>(this TThis thisVtbl, uint Metadata, Span<T0> pData, uint Size) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static void SetMarker<T0>(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, uint Metadata, Span<T0> pData, uint Size) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->SetMarker(Metadata, ref pData.GetPinnableReference(), Size);
     }
 
     /// <summary>To be documented.</summary>
-    public static void BeginEvent<T0, TThis>(this TThis thisVtbl, uint Metadata, Span<T0> pData, uint Size) where T0 : unmanaged where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static void BeginEvent<T0>(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, uint Metadata, Span<T0> pData, uint Size) where T0 : unmanaged
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->BeginEvent(Metadata, ref pData.GetPinnableReference(), Size);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames<TThis>(this TThis thisVtbl, ID3D12VideoProcessor* pVideoProcessor, VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, Span<VideoProcessInputStreamArguments> pInputArguments) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, ID3D12VideoProcessor* pVideoProcessor, VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, Span<VideoProcessInputStreamArguments> pInputArguments)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->ProcessFrames(pVideoProcessor, pOutputArguments, NumInputStreams, ref pInputArguments.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames<TThis>(this TThis thisVtbl, ID3D12VideoProcessor* pVideoProcessor, Span<VideoProcessOutputStreamArguments> pOutputArguments, uint NumInputStreams, VideoProcessInputStreamArguments* pInputArguments) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, ID3D12VideoProcessor* pVideoProcessor, Span<VideoProcessOutputStreamArguments> pOutputArguments, uint NumInputStreams, VideoProcessInputStreamArguments* pInputArguments)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->ProcessFrames(pVideoProcessor, ref pOutputArguments.GetPinnableReference(), NumInputStreams, pInputArguments);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames<TThis>(this TThis thisVtbl, ID3D12VideoProcessor* pVideoProcessor, Span<VideoProcessOutputStreamArguments> pOutputArguments, uint NumInputStreams, Span<VideoProcessInputStreamArguments> pInputArguments) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, ID3D12VideoProcessor* pVideoProcessor, Span<VideoProcessOutputStreamArguments> pOutputArguments, uint NumInputStreams, Span<VideoProcessInputStreamArguments> pInputArguments)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->ProcessFrames(pVideoProcessor, ref pOutputArguments.GetPinnableReference(), NumInputStreams, ref pInputArguments.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames<TThis>(this TThis thisVtbl, Span<ID3D12VideoProcessor> pVideoProcessor, VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, VideoProcessInputStreamArguments* pInputArguments) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, Span<ID3D12VideoProcessor> pVideoProcessor, VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, VideoProcessInputStreamArguments* pInputArguments)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->ProcessFrames(ref pVideoProcessor.GetPinnableReference(), pOutputArguments, NumInputStreams, pInputArguments);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames<TThis>(this TThis thisVtbl, Span<ID3D12VideoProcessor> pVideoProcessor, VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, Span<VideoProcessInputStreamArguments> pInputArguments) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, Span<ID3D12VideoProcessor> pVideoProcessor, VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, Span<VideoProcessInputStreamArguments> pInputArguments)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->ProcessFrames(ref pVideoProcessor.GetPinnableReference(), pOutputArguments, NumInputStreams, ref pInputArguments.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames<TThis>(this TThis thisVtbl, Span<ID3D12VideoProcessor> pVideoProcessor, Span<VideoProcessOutputStreamArguments> pOutputArguments, uint NumInputStreams, VideoProcessInputStreamArguments* pInputArguments) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, Span<ID3D12VideoProcessor> pVideoProcessor, Span<VideoProcessOutputStreamArguments> pOutputArguments, uint NumInputStreams, VideoProcessInputStreamArguments* pInputArguments)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->ProcessFrames(ref pVideoProcessor.GetPinnableReference(), ref pOutputArguments.GetPinnableReference(), NumInputStreams, pInputArguments);
     }
 
     /// <summary>To be documented.</summary>
-    public static void ProcessFrames<TThis>(this TThis thisVtbl, Span<ID3D12VideoProcessor> pVideoProcessor, Span<VideoProcessOutputStreamArguments> pOutputArguments, uint NumInputStreams, Span<VideoProcessInputStreamArguments> pInputArguments) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, Span<ID3D12VideoProcessor> pVideoProcessor, Span<VideoProcessOutputStreamArguments> pOutputArguments, uint NumInputStreams, Span<VideoProcessInputStreamArguments> pInputArguments)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->ProcessFrames(ref pVideoProcessor.GetPinnableReference(), ref pOutputArguments.GetPinnableReference(), NumInputStreams, ref pInputArguments.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void WriteBufferImmediate<TThis>(this TThis thisVtbl, uint Count, WritebufferimmediateParameter* pParams, Span<WritebufferimmediateMode> pModes) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe void WriteBufferImmediate(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, uint Count, WritebufferimmediateParameter* pParams, Span<WritebufferimmediateMode> pModes)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->WriteBufferImmediate(Count, pParams, ref pModes.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void WriteBufferImmediate<TThis>(this TThis thisVtbl, uint Count, Span<WritebufferimmediateParameter> pParams, WritebufferimmediateMode* pModes) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static unsafe void WriteBufferImmediate(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, uint Count, Span<WritebufferimmediateParameter> pParams, WritebufferimmediateMode* pModes)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->WriteBufferImmediate(Count, ref pParams.GetPinnableReference(), pModes);
     }
 
     /// <summary>To be documented.</summary>
-    public static void WriteBufferImmediate<TThis>(this TThis thisVtbl, uint Count, Span<WritebufferimmediateParameter> pParams, Span<WritebufferimmediateMode> pModes) where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static void WriteBufferImmediate(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl, uint Count, Span<WritebufferimmediateParameter> pParams, Span<WritebufferimmediateMode> pModes)
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->WriteBufferImmediate(Count, ref pParams.GetPinnableReference(), ref pModes.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static ComPtr<TI0> QueryInterface<TI0>(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> GetDevice<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoProcessCommandList>
+    public static ComPtr<TI0> GetDevice<TI0>(this ComPtr<ID3D12VideoProcessCommandList> thisVtbl) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12VideoProcessCommandList*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->GetDevice(out ComPtr<TI0> silkRet));
         return silkRet;

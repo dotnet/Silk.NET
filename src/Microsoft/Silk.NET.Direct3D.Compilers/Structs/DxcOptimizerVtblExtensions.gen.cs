@@ -19,18 +19,18 @@ namespace Silk.NET.Direct3D.Compilers;
 public unsafe static class DxcOptimizerVtblExtensions
 {
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Guid* riid, void** ppvObject) where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int QueryInterface(this ComPtr<IDxcOptimizer> thisVtbl, Guid* riid, void** ppvObject)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Guid* riid, ref void* ppvObject) where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int QueryInterface(this ComPtr<IDxcOptimizer> thisVtbl, Guid* riid, ref void* ppvObject)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppvObjectPtr = &ppvObject)
         {
@@ -40,9 +40,9 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, ref Guid riid, void** ppvObject) where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int QueryInterface(this ComPtr<IDxcOptimizer> thisVtbl, ref Guid riid, void** ppvObject)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -52,9 +52,9 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, ref Guid riid, ref void* ppvObject) where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int QueryInterface(this ComPtr<IDxcOptimizer> thisVtbl, ref Guid riid, ref void* ppvObject)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -67,36 +67,36 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static uint AddRef<TThis>(this TThis thisVtbl) where TThis : IComVtbl<IDxcOptimizer>
+    public static uint AddRef(this ComPtr<IDxcOptimizer> thisVtbl)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, uint>)@this->LpVtbl[1])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static uint Release<TThis>(this TThis thisVtbl) where TThis : IComVtbl<IDxcOptimizer>
+    public static uint Release(this ComPtr<IDxcOptimizer> thisVtbl)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, uint>)@this->LpVtbl[2])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetAvailablePassCount<TThis>(this TThis thisVtbl, uint* pCount) where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int GetAvailablePassCount(this ComPtr<IDxcOptimizer> thisVtbl, uint* pCount)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, uint*, int>)@this->LpVtbl[3])(@this, pCount);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetAvailablePassCount<TThis>(this TThis thisVtbl, ref uint pCount) where TThis : IComVtbl<IDxcOptimizer>
+    public static int GetAvailablePassCount(this ComPtr<IDxcOptimizer> thisVtbl, ref uint pCount)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pCountPtr = &pCount)
         {
@@ -106,18 +106,18 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetAvailablePass<TThis>(this TThis thisVtbl, uint index, IDxcOptimizerPass** ppResult) where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int GetAvailablePass(this ComPtr<IDxcOptimizer> thisVtbl, uint index, IDxcOptimizerPass** ppResult)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, uint, IDxcOptimizerPass**, int>)@this->LpVtbl[4])(@this, index, ppResult);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetAvailablePass<TThis>(this TThis thisVtbl, uint index, ref IDxcOptimizerPass* ppResult) where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int GetAvailablePass(this ComPtr<IDxcOptimizer> thisVtbl, uint index, ref IDxcOptimizerPass* ppResult)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDxcOptimizerPass** ppResultPtr = &ppResult)
         {
@@ -127,18 +127,18 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, IDxcBlob* pBlob, char** ppOptions, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, IDxcBlob* pBlob, char** ppOptions, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)@this->LpVtbl[5])(@this, pBlob, ppOptions, optionCount, pOutputModule, ppOutputText);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, IDxcBlob* pBlob, char** ppOptions, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, IDxcBlob* pBlob, char** ppOptions, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDxcBlobEncoding** ppOutputTextPtr = &ppOutputText)
         {
@@ -148,9 +148,9 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, IDxcBlob* pBlob, char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, IDxcBlob* pBlob, char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDxcBlob** pOutputModulePtr = &pOutputModule)
         {
@@ -160,9 +160,9 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, IDxcBlob* pBlob, char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, IDxcBlob* pBlob, char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDxcBlob** pOutputModulePtr = &pOutputModule)
         {
@@ -175,9 +175,9 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, IDxcBlob* pBlob, ref char* ppOptions, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, IDxcBlob* pBlob, ref char* ppOptions, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (char** ppOptionsPtr = &ppOptions)
         {
@@ -187,9 +187,9 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, IDxcBlob* pBlob, ref char* ppOptions, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, IDxcBlob* pBlob, ref char* ppOptions, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (char** ppOptionsPtr = &ppOptions)
         {
@@ -202,9 +202,9 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, IDxcBlob* pBlob, ref char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, IDxcBlob* pBlob, ref char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (char** ppOptionsPtr = &ppOptions)
         {
@@ -217,9 +217,9 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, IDxcBlob* pBlob, ref char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, IDxcBlob* pBlob, ref char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (char** ppOptionsPtr = &ppOptions)
         {
@@ -235,9 +235,9 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, ref IDxcBlob pBlob, char** ppOptions, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, char** ppOptions, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDxcBlob* pBlobPtr = &pBlob)
         {
@@ -247,9 +247,9 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, ref IDxcBlob pBlob, char** ppOptions, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, char** ppOptions, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDxcBlob* pBlobPtr = &pBlob)
         {
@@ -262,9 +262,9 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, ref IDxcBlob pBlob, char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDxcBlob* pBlobPtr = &pBlob)
         {
@@ -277,9 +277,9 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, ref IDxcBlob pBlob, char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDxcBlob* pBlobPtr = &pBlob)
         {
@@ -295,9 +295,9 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, ref IDxcBlob pBlob, ref char* ppOptions, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, ref char* ppOptions, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDxcBlob* pBlobPtr = &pBlob)
         {
@@ -310,9 +310,9 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, ref IDxcBlob pBlob, ref char* ppOptions, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, ref char* ppOptions, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDxcBlob* pBlobPtr = &pBlob)
         {
@@ -328,9 +328,9 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, ref IDxcBlob pBlob, ref char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, ref char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDxcBlob* pBlobPtr = &pBlob)
         {
@@ -346,9 +346,9 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, ref IDxcBlob pBlob, ref char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, ref char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDxcBlob* pBlobPtr = &pBlob)
         {
@@ -367,50 +367,50 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcOptimizer>
+    public static int QueryInterface<TI0>(this ComPtr<IDxcOptimizer> thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppvObject = default;
         return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int QueryInterface(this ComPtr<IDxcOptimizer> thisVtbl, Span<Guid> riid, void** ppvObject)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int QueryInterface(this ComPtr<IDxcOptimizer> thisVtbl, Span<Guid> riid, ref void* ppvObject)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetAvailablePassCount<TThis>(this TThis thisVtbl, Span<uint> pCount) where TThis : IComVtbl<IDxcOptimizer>
+    public static int GetAvailablePassCount(this ComPtr<IDxcOptimizer> thisVtbl, Span<uint> pCount)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetAvailablePassCount(ref pCount.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetAvailablePass<TI0, TThis>(this TThis thisVtbl, uint index, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOptimizerPass>, IComVtbl<TI0> where TThis : IComVtbl<IDxcOptimizer>
+    public static int GetAvailablePass<TI0>(this ComPtr<IDxcOptimizer> thisVtbl, uint index, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOptimizerPass>, IComVtbl<TI0>
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->GetAvailablePass(index, (IDxcOptimizerPass**) ppResult.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, IDxcBlob* pBlob, string[] ppOptionsSa, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, IDxcBlob* pBlob, string[] ppOptionsSa, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // StringArrayOverloader
         var ppOptions = (char**) SilkMarshal.StringArrayToPtr(ppOptionsSa);
         var ret = @this->RunOptimizer(pBlob, ppOptions, optionCount, pOutputModule, ppOutputText);
@@ -420,17 +420,17 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TI0, TI1, TThis>(this TThis thisVtbl, IDxcBlob* pBlob, char** ppOptions, uint optionCount, ref ComPtr<TI0> pOutputModule, ref ComPtr<TI1> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI1> where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int RunOptimizer<TI0, TI1>(this ComPtr<IDxcOptimizer> thisVtbl, IDxcBlob* pBlob, char** ppOptions, uint optionCount, ref ComPtr<TI0> pOutputModule, ref ComPtr<TI1> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI1>
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->RunOptimizer(pBlob, ppOptions, optionCount, (IDxcBlob**) pOutputModule.GetAddressOf(), (IDxcBlobEncoding**) ppOutputText.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, IDxcBlob* pBlob, string[] ppOptionsSa, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, IDxcBlob* pBlob, string[] ppOptionsSa, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // StringArrayOverloader
         var ppOptions = (char**) SilkMarshal.StringArrayToPtr(ppOptionsSa);
         var ret = @this->RunOptimizer(pBlob, ppOptions, optionCount, pOutputModule, ref ppOutputText);
@@ -440,17 +440,17 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TI0, TThis>(this TThis thisVtbl, IDxcBlob* pBlob, char** ppOptions, uint optionCount, ref ComPtr<TI0> pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int RunOptimizer<TI0>(this ComPtr<IDxcOptimizer> thisVtbl, IDxcBlob* pBlob, char** ppOptions, uint optionCount, ref ComPtr<TI0> pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->RunOptimizer(pBlob, ppOptions, optionCount, (IDxcBlob**) pOutputModule.GetAddressOf(), ref ppOutputText);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, IDxcBlob* pBlob, string[] ppOptionsSa, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, IDxcBlob* pBlob, string[] ppOptionsSa, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // StringArrayOverloader
         var ppOptions = (char**) SilkMarshal.StringArrayToPtr(ppOptionsSa);
         var ret = @this->RunOptimizer(pBlob, ppOptions, optionCount, ref pOutputModule, ppOutputText);
@@ -460,17 +460,17 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TI0, TThis>(this TThis thisVtbl, IDxcBlob* pBlob, char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref ComPtr<TI0> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0> where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int RunOptimizer<TI0>(this ComPtr<IDxcOptimizer> thisVtbl, IDxcBlob* pBlob, char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref ComPtr<TI0> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->RunOptimizer(pBlob, ppOptions, optionCount, ref pOutputModule, (IDxcBlobEncoding**) ppOutputText.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, IDxcBlob* pBlob, string[] ppOptionsSa, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, IDxcBlob* pBlob, string[] ppOptionsSa, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // StringArrayOverloader
         var ppOptions = (char**) SilkMarshal.StringArrayToPtr(ppOptionsSa);
         var ret = @this->RunOptimizer(pBlob, ppOptions, optionCount, ref pOutputModule, ref ppOutputText);
@@ -480,33 +480,33 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TI0, TI1, TThis>(this TThis thisVtbl, IDxcBlob* pBlob, ref char* ppOptions, uint optionCount, ref ComPtr<TI0> pOutputModule, ref ComPtr<TI1> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI1> where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int RunOptimizer<TI0, TI1>(this ComPtr<IDxcOptimizer> thisVtbl, IDxcBlob* pBlob, ref char* ppOptions, uint optionCount, ref ComPtr<TI0> pOutputModule, ref ComPtr<TI1> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI1>
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->RunOptimizer(pBlob, ref ppOptions, optionCount, (IDxcBlob**) pOutputModule.GetAddressOf(), (IDxcBlobEncoding**) ppOutputText.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TI0, TThis>(this TThis thisVtbl, IDxcBlob* pBlob, ref char* ppOptions, uint optionCount, ref ComPtr<TI0> pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int RunOptimizer<TI0>(this ComPtr<IDxcOptimizer> thisVtbl, IDxcBlob* pBlob, ref char* ppOptions, uint optionCount, ref ComPtr<TI0> pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->RunOptimizer(pBlob, ref ppOptions, optionCount, (IDxcBlob**) pOutputModule.GetAddressOf(), ref ppOutputText);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TI0, TThis>(this TThis thisVtbl, IDxcBlob* pBlob, ref char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref ComPtr<TI0> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0> where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int RunOptimizer<TI0>(this ComPtr<IDxcOptimizer> thisVtbl, IDxcBlob* pBlob, ref char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref ComPtr<TI0> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->RunOptimizer(pBlob, ref ppOptions, optionCount, ref pOutputModule, (IDxcBlobEncoding**) ppOutputText.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, ref IDxcBlob pBlob, string[] ppOptionsSa, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, string[] ppOptionsSa, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // StringArrayOverloader
         var ppOptions = (char**) SilkMarshal.StringArrayToPtr(ppOptionsSa);
         var ret = @this->RunOptimizer(ref pBlob, ppOptions, optionCount, pOutputModule, ppOutputText);
@@ -516,25 +516,25 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, Span<IDxcBlob> pBlob, char** ppOptions, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, Span<IDxcBlob> pBlob, char** ppOptions, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->RunOptimizer(ref pBlob.GetPinnableReference(), ppOptions, optionCount, pOutputModule, ppOutputText);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TI0, TI1, TThis>(this TThis thisVtbl, ref IDxcBlob pBlob, char** ppOptions, uint optionCount, ref ComPtr<TI0> pOutputModule, ref ComPtr<TI1> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI1> where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int RunOptimizer<TI0, TI1>(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, char** ppOptions, uint optionCount, ref ComPtr<TI0> pOutputModule, ref ComPtr<TI1> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI1>
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->RunOptimizer(ref pBlob, ppOptions, optionCount, (IDxcBlob**) pOutputModule.GetAddressOf(), (IDxcBlobEncoding**) ppOutputText.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, ref IDxcBlob pBlob, string[] ppOptionsSa, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, string[] ppOptionsSa, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // StringArrayOverloader
         var ppOptions = (char**) SilkMarshal.StringArrayToPtr(ppOptionsSa);
         var ret = @this->RunOptimizer(ref pBlob, ppOptions, optionCount, pOutputModule, ref ppOutputText);
@@ -544,25 +544,25 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, Span<IDxcBlob> pBlob, char** ppOptions, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, Span<IDxcBlob> pBlob, char** ppOptions, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->RunOptimizer(ref pBlob.GetPinnableReference(), ppOptions, optionCount, pOutputModule, ref ppOutputText);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TI0, TThis>(this TThis thisVtbl, ref IDxcBlob pBlob, char** ppOptions, uint optionCount, ref ComPtr<TI0> pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int RunOptimizer<TI0>(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, char** ppOptions, uint optionCount, ref ComPtr<TI0> pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->RunOptimizer(ref pBlob, ppOptions, optionCount, (IDxcBlob**) pOutputModule.GetAddressOf(), ref ppOutputText);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, ref IDxcBlob pBlob, string[] ppOptionsSa, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, string[] ppOptionsSa, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // StringArrayOverloader
         var ppOptions = (char**) SilkMarshal.StringArrayToPtr(ppOptionsSa);
         var ret = @this->RunOptimizer(ref pBlob, ppOptions, optionCount, ref pOutputModule, ppOutputText);
@@ -572,25 +572,25 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, Span<IDxcBlob> pBlob, char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, Span<IDxcBlob> pBlob, char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->RunOptimizer(ref pBlob.GetPinnableReference(), ppOptions, optionCount, ref pOutputModule, ppOutputText);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TI0, TThis>(this TThis thisVtbl, ref IDxcBlob pBlob, char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref ComPtr<TI0> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0> where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int RunOptimizer<TI0>(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref ComPtr<TI0> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->RunOptimizer(ref pBlob, ppOptions, optionCount, ref pOutputModule, (IDxcBlobEncoding**) ppOutputText.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, ref IDxcBlob pBlob, string[] ppOptionsSa, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, string[] ppOptionsSa, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // StringArrayOverloader
         var ppOptions = (char**) SilkMarshal.StringArrayToPtr(ppOptionsSa);
         var ret = @this->RunOptimizer(ref pBlob, ppOptions, optionCount, ref pOutputModule, ref ppOutputText);
@@ -600,73 +600,73 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, Span<IDxcBlob> pBlob, char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, Span<IDxcBlob> pBlob, char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->RunOptimizer(ref pBlob.GetPinnableReference(), ppOptions, optionCount, ref pOutputModule, ref ppOutputText);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, Span<IDxcBlob> pBlob, ref char* ppOptions, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, Span<IDxcBlob> pBlob, ref char* ppOptions, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->RunOptimizer(ref pBlob.GetPinnableReference(), ref ppOptions, optionCount, pOutputModule, ppOutputText);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TI0, TI1, TThis>(this TThis thisVtbl, ref IDxcBlob pBlob, ref char* ppOptions, uint optionCount, ref ComPtr<TI0> pOutputModule, ref ComPtr<TI1> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI1> where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int RunOptimizer<TI0, TI1>(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, ref char* ppOptions, uint optionCount, ref ComPtr<TI0> pOutputModule, ref ComPtr<TI1> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI1>
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->RunOptimizer(ref pBlob, ref ppOptions, optionCount, (IDxcBlob**) pOutputModule.GetAddressOf(), (IDxcBlobEncoding**) ppOutputText.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, Span<IDxcBlob> pBlob, ref char* ppOptions, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, Span<IDxcBlob> pBlob, ref char* ppOptions, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->RunOptimizer(ref pBlob.GetPinnableReference(), ref ppOptions, optionCount, pOutputModule, ref ppOutputText);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TI0, TThis>(this TThis thisVtbl, ref IDxcBlob pBlob, ref char* ppOptions, uint optionCount, ref ComPtr<TI0> pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int RunOptimizer<TI0>(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, ref char* ppOptions, uint optionCount, ref ComPtr<TI0> pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->RunOptimizer(ref pBlob, ref ppOptions, optionCount, (IDxcBlob**) pOutputModule.GetAddressOf(), ref ppOutputText);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, Span<IDxcBlob> pBlob, ref char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, Span<IDxcBlob> pBlob, ref char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->RunOptimizer(ref pBlob.GetPinnableReference(), ref ppOptions, optionCount, ref pOutputModule, ppOutputText);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TI0, TThis>(this TThis thisVtbl, ref IDxcBlob pBlob, ref char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref ComPtr<TI0> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0> where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int RunOptimizer<TI0>(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, ref char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref ComPtr<TI0> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->RunOptimizer(ref pBlob, ref ppOptions, optionCount, ref pOutputModule, (IDxcBlobEncoding**) ppOutputText.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, Span<IDxcBlob> pBlob, ref char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, Span<IDxcBlob> pBlob, ref char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText)
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->RunOptimizer(ref pBlob.GetPinnableReference(), ref ppOptions, optionCount, ref pOutputModule, ref ppOutputText);
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcOptimizer>
+    public static ComPtr<TI0> QueryInterface<TI0>(this ComPtr<IDxcOptimizer> thisVtbl) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
         return silkRet;

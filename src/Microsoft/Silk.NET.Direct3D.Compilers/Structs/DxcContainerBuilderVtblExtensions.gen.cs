@@ -19,18 +19,18 @@ namespace Silk.NET.Direct3D.Compilers;
 public unsafe static class DxcContainerBuilderVtblExtensions
 {
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Guid* riid, void** ppvObject) where TThis : IComVtbl<IDxcContainerBuilder>
+    public static unsafe int QueryInterface(this ComPtr<IDxcContainerBuilder> thisVtbl, Guid* riid, void** ppvObject)
     {
-        var @this = (IDxcContainerBuilder*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDxcContainerBuilder*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Guid* riid, ref void* ppvObject) where TThis : IComVtbl<IDxcContainerBuilder>
+    public static unsafe int QueryInterface(this ComPtr<IDxcContainerBuilder> thisVtbl, Guid* riid, ref void* ppvObject)
     {
-        var @this = (IDxcContainerBuilder*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppvObjectPtr = &ppvObject)
         {
@@ -40,9 +40,9 @@ public unsafe static class DxcContainerBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, ref Guid riid, void** ppvObject) where TThis : IComVtbl<IDxcContainerBuilder>
+    public static unsafe int QueryInterface(this ComPtr<IDxcContainerBuilder> thisVtbl, ref Guid riid, void** ppvObject)
     {
-        var @this = (IDxcContainerBuilder*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -52,9 +52,9 @@ public unsafe static class DxcContainerBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, ref Guid riid, ref void* ppvObject) where TThis : IComVtbl<IDxcContainerBuilder>
+    public static unsafe int QueryInterface(this ComPtr<IDxcContainerBuilder> thisVtbl, ref Guid riid, ref void* ppvObject)
     {
-        var @this = (IDxcContainerBuilder*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -67,36 +67,36 @@ public unsafe static class DxcContainerBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static uint AddRef<TThis>(this TThis thisVtbl) where TThis : IComVtbl<IDxcContainerBuilder>
+    public static uint AddRef(this ComPtr<IDxcContainerBuilder> thisVtbl)
     {
-        var @this = (IDxcContainerBuilder*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDxcContainerBuilder*, uint>)@this->LpVtbl[1])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static uint Release<TThis>(this TThis thisVtbl) where TThis : IComVtbl<IDxcContainerBuilder>
+    public static uint Release(this ComPtr<IDxcContainerBuilder> thisVtbl)
     {
-        var @this = (IDxcContainerBuilder*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDxcContainerBuilder*, uint>)@this->LpVtbl[2])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Load<TThis>(this TThis thisVtbl, IDxcBlob* pDxilContainerHeader) where TThis : IComVtbl<IDxcContainerBuilder>
+    public static unsafe int Load(this ComPtr<IDxcContainerBuilder> thisVtbl, IDxcBlob* pDxilContainerHeader)
     {
-        var @this = (IDxcContainerBuilder*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDxcContainerBuilder*, IDxcBlob*, int>)@this->LpVtbl[3])(@this, pDxilContainerHeader);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int Load<TThis>(this TThis thisVtbl, ref IDxcBlob pDxilContainerHeader) where TThis : IComVtbl<IDxcContainerBuilder>
+    public static int Load(this ComPtr<IDxcContainerBuilder> thisVtbl, ref IDxcBlob pDxilContainerHeader)
     {
-        var @this = (IDxcContainerBuilder*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDxcBlob* pDxilContainerHeaderPtr = &pDxilContainerHeader)
         {
@@ -106,18 +106,18 @@ public unsafe static class DxcContainerBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddPart<TThis>(this TThis thisVtbl, uint fourCC, IDxcBlob* pSource) where TThis : IComVtbl<IDxcContainerBuilder>
+    public static unsafe int AddPart(this ComPtr<IDxcContainerBuilder> thisVtbl, uint fourCC, IDxcBlob* pSource)
     {
-        var @this = (IDxcContainerBuilder*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDxcContainerBuilder*, uint, IDxcBlob*, int>)@this->LpVtbl[4])(@this, fourCC, pSource);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddPart<TThis>(this TThis thisVtbl, uint fourCC, ref IDxcBlob pSource) where TThis : IComVtbl<IDxcContainerBuilder>
+    public static int AddPart(this ComPtr<IDxcContainerBuilder> thisVtbl, uint fourCC, ref IDxcBlob pSource)
     {
-        var @this = (IDxcContainerBuilder*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDxcBlob* pSourcePtr = &pSource)
         {
@@ -127,27 +127,27 @@ public unsafe static class DxcContainerBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int RemovePart<TThis>(this TThis thisVtbl, uint fourCC) where TThis : IComVtbl<IDxcContainerBuilder>
+    public static int RemovePart(this ComPtr<IDxcContainerBuilder> thisVtbl, uint fourCC)
     {
-        var @this = (IDxcContainerBuilder*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDxcContainerBuilder*, uint, int>)@this->LpVtbl[5])(@this, fourCC);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SerializeContainer<TThis>(this TThis thisVtbl, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcContainerBuilder>
+    public static unsafe int SerializeContainer(this ComPtr<IDxcContainerBuilder> thisVtbl, IDxcOperationResult** ppResult)
     {
-        var @this = (IDxcContainerBuilder*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDxcContainerBuilder*, IDxcOperationResult**, int>)@this->LpVtbl[6])(@this, ppResult);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SerializeContainer<TThis>(this TThis thisVtbl, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcContainerBuilder>
+    public static unsafe int SerializeContainer(this ComPtr<IDxcContainerBuilder> thisVtbl, ref IDxcOperationResult* ppResult)
     {
-        var @this = (IDxcContainerBuilder*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDxcOperationResult** ppResultPtr = &ppResult)
         {
@@ -157,58 +157,58 @@ public unsafe static class DxcContainerBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcContainerBuilder>
+    public static int QueryInterface<TI0>(this ComPtr<IDxcContainerBuilder> thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (IDxcContainerBuilder*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppvObject = default;
         return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDxcContainerBuilder>
+    public static unsafe int QueryInterface(this ComPtr<IDxcContainerBuilder> thisVtbl, Span<Guid> riid, void** ppvObject)
     {
-        var @this = (IDxcContainerBuilder*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDxcContainerBuilder>
+    public static unsafe int QueryInterface(this ComPtr<IDxcContainerBuilder> thisVtbl, Span<Guid> riid, ref void* ppvObject)
     {
-        var @this = (IDxcContainerBuilder*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
     }
 
     /// <summary>To be documented.</summary>
-    public static int Load<TThis>(this TThis thisVtbl, Span<IDxcBlob> pDxilContainerHeader) where TThis : IComVtbl<IDxcContainerBuilder>
+    public static int Load(this ComPtr<IDxcContainerBuilder> thisVtbl, Span<IDxcBlob> pDxilContainerHeader)
     {
-        var @this = (IDxcContainerBuilder*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->Load(ref pDxilContainerHeader.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddPart<TThis>(this TThis thisVtbl, uint fourCC, Span<IDxcBlob> pSource) where TThis : IComVtbl<IDxcContainerBuilder>
+    public static int AddPart(this ComPtr<IDxcContainerBuilder> thisVtbl, uint fourCC, Span<IDxcBlob> pSource)
     {
-        var @this = (IDxcContainerBuilder*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->AddPart(fourCC, ref pSource.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int SerializeContainer<TI0, TThis>(this TThis thisVtbl, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0> where TThis : IComVtbl<IDxcContainerBuilder>
+    public static int SerializeContainer<TI0>(this ComPtr<IDxcContainerBuilder> thisVtbl, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
     {
-        var @this = (IDxcContainerBuilder*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->SerializeContainer((IDxcOperationResult**) ppResult.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcContainerBuilder>
+    public static ComPtr<TI0> QueryInterface<TI0>(this ComPtr<IDxcContainerBuilder> thisVtbl) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (IDxcContainerBuilder*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
         return silkRet;

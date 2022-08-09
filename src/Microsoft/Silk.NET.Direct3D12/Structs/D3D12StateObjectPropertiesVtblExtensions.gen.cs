@@ -19,18 +19,18 @@ namespace Silk.NET.Direct3D12;
 public unsafe static class D3D12StateObjectPropertiesVtblExtensions
 {
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Guid* riid, void** ppvObject) where TThis : IComVtbl<ID3D12StateObjectProperties>
+    public static unsafe int QueryInterface(this ComPtr<ID3D12StateObjectProperties> thisVtbl, Guid* riid, void** ppvObject)
     {
-        var @this = (ID3D12StateObjectProperties*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12StateObjectProperties*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Guid* riid, ref void* ppvObject) where TThis : IComVtbl<ID3D12StateObjectProperties>
+    public static unsafe int QueryInterface(this ComPtr<ID3D12StateObjectProperties> thisVtbl, Guid* riid, ref void* ppvObject)
     {
-        var @this = (ID3D12StateObjectProperties*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppvObjectPtr = &ppvObject)
         {
@@ -40,9 +40,9 @@ public unsafe static class D3D12StateObjectPropertiesVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, ref Guid riid, void** ppvObject) where TThis : IComVtbl<ID3D12StateObjectProperties>
+    public static unsafe int QueryInterface(this ComPtr<ID3D12StateObjectProperties> thisVtbl, ref Guid riid, void** ppvObject)
     {
-        var @this = (ID3D12StateObjectProperties*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -52,9 +52,9 @@ public unsafe static class D3D12StateObjectPropertiesVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, ref Guid riid, ref void* ppvObject) where TThis : IComVtbl<ID3D12StateObjectProperties>
+    public static unsafe int QueryInterface(this ComPtr<ID3D12StateObjectProperties> thisVtbl, ref Guid riid, ref void* ppvObject)
     {
-        var @this = (ID3D12StateObjectProperties*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -67,36 +67,36 @@ public unsafe static class D3D12StateObjectPropertiesVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static uint AddRef<TThis>(this TThis thisVtbl) where TThis : IComVtbl<ID3D12StateObjectProperties>
+    public static uint AddRef(this ComPtr<ID3D12StateObjectProperties> thisVtbl)
     {
-        var @this = (ID3D12StateObjectProperties*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12StateObjectProperties*, uint>)@this->LpVtbl[1])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static uint Release<TThis>(this TThis thisVtbl) where TThis : IComVtbl<ID3D12StateObjectProperties>
+    public static uint Release(this ComPtr<ID3D12StateObjectProperties> thisVtbl)
     {
-        var @this = (ID3D12StateObjectProperties*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12StateObjectProperties*, uint>)@this->LpVtbl[2])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void* GetShaderIdentifier<TThis>(this TThis thisVtbl, char* pExportName) where TThis : IComVtbl<ID3D12StateObjectProperties>
+    public static unsafe void* GetShaderIdentifier(this ComPtr<ID3D12StateObjectProperties> thisVtbl, char* pExportName)
     {
-        var @this = (ID3D12StateObjectProperties*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         void* ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12StateObjectProperties*, char*, void*>)@this->LpVtbl[3])(@this, pExportName);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void* GetShaderIdentifier<TThis>(this TThis thisVtbl, ref char pExportName) where TThis : IComVtbl<ID3D12StateObjectProperties>
+    public static unsafe void* GetShaderIdentifier(this ComPtr<ID3D12StateObjectProperties> thisVtbl, ref char pExportName)
     {
-        var @this = (ID3D12StateObjectProperties*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         void* ret = default;
         fixed (char* pExportNamePtr = &pExportName)
         {
@@ -106,9 +106,9 @@ public unsafe static class D3D12StateObjectPropertiesVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void* GetShaderIdentifier<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pExportName) where TThis : IComVtbl<ID3D12StateObjectProperties>
+    public static unsafe void* GetShaderIdentifier(this ComPtr<ID3D12StateObjectProperties> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pExportName)
     {
-        var @this = (ID3D12StateObjectProperties*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         void* ret = default;
         var pExportNamePtr = (byte*) SilkMarshal.StringToPtr(pExportName, NativeStringEncoding.LPWStr);
         ret = ((delegate* unmanaged[Stdcall]<ID3D12StateObjectProperties*, byte*, void*>)@this->LpVtbl[3])(@this, pExportNamePtr);
@@ -117,18 +117,18 @@ public unsafe static class D3D12StateObjectPropertiesVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ulong GetShaderStackSize<TThis>(this TThis thisVtbl, char* pExportName) where TThis : IComVtbl<ID3D12StateObjectProperties>
+    public static unsafe ulong GetShaderStackSize(this ComPtr<ID3D12StateObjectProperties> thisVtbl, char* pExportName)
     {
-        var @this = (ID3D12StateObjectProperties*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ulong ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12StateObjectProperties*, char*, ulong>)@this->LpVtbl[4])(@this, pExportName);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static ulong GetShaderStackSize<TThis>(this TThis thisVtbl, ref char pExportName) where TThis : IComVtbl<ID3D12StateObjectProperties>
+    public static ulong GetShaderStackSize(this ComPtr<ID3D12StateObjectProperties> thisVtbl, ref char pExportName)
     {
-        var @this = (ID3D12StateObjectProperties*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ulong ret = default;
         fixed (char* pExportNamePtr = &pExportName)
         {
@@ -138,9 +138,9 @@ public unsafe static class D3D12StateObjectPropertiesVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ulong GetShaderStackSize<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pExportName) where TThis : IComVtbl<ID3D12StateObjectProperties>
+    public static ulong GetShaderStackSize(this ComPtr<ID3D12StateObjectProperties> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pExportName)
     {
-        var @this = (ID3D12StateObjectProperties*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ulong ret = default;
         var pExportNamePtr = (byte*) SilkMarshal.StringToPtr(pExportName, NativeStringEncoding.LPWStr);
         ret = ((delegate* unmanaged[Stdcall]<ID3D12StateObjectProperties*, byte*, ulong>)@this->LpVtbl[4])(@this, pExportNamePtr);
@@ -149,66 +149,66 @@ public unsafe static class D3D12StateObjectPropertiesVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ulong GetPipelineStackSize<TThis>(this TThis thisVtbl) where TThis : IComVtbl<ID3D12StateObjectProperties>
+    public static ulong GetPipelineStackSize(this ComPtr<ID3D12StateObjectProperties> thisVtbl)
     {
-        var @this = (ID3D12StateObjectProperties*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ulong ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12StateObjectProperties*, ulong>)@this->LpVtbl[5])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetPipelineStackSize<TThis>(this TThis thisVtbl, ulong PipelineStackSizeInBytes) where TThis : IComVtbl<ID3D12StateObjectProperties>
+    public static void SetPipelineStackSize(this ComPtr<ID3D12StateObjectProperties> thisVtbl, ulong PipelineStackSizeInBytes)
     {
-        var @this = (ID3D12StateObjectProperties*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12StateObjectProperties*, ulong, void>)@this->LpVtbl[6])(@this, PipelineStackSizeInBytes);
     }
 
     /// <summary>To be documented.</summary>
-    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12StateObjectProperties>
+    public static int QueryInterface<TI0>(this ComPtr<ID3D12StateObjectProperties> thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12StateObjectProperties*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppvObject = default;
         return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<ID3D12StateObjectProperties>
+    public static unsafe int QueryInterface(this ComPtr<ID3D12StateObjectProperties> thisVtbl, Span<Guid> riid, void** ppvObject)
     {
-        var @this = (ID3D12StateObjectProperties*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<ID3D12StateObjectProperties>
+    public static unsafe int QueryInterface(this ComPtr<ID3D12StateObjectProperties> thisVtbl, Span<Guid> riid, ref void* ppvObject)
     {
-        var @this = (ID3D12StateObjectProperties*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void* GetShaderIdentifier<TThis>(this TThis thisVtbl, Span<char> pExportName) where TThis : IComVtbl<ID3D12StateObjectProperties>
+    public static unsafe void* GetShaderIdentifier(this ComPtr<ID3D12StateObjectProperties> thisVtbl, Span<char> pExportName)
     {
-        var @this = (ID3D12StateObjectProperties*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetShaderIdentifier(ref pExportName.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static ulong GetShaderStackSize<TThis>(this TThis thisVtbl, Span<char> pExportName) where TThis : IComVtbl<ID3D12StateObjectProperties>
+    public static ulong GetShaderStackSize(this ComPtr<ID3D12StateObjectProperties> thisVtbl, Span<char> pExportName)
     {
-        var @this = (ID3D12StateObjectProperties*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetShaderStackSize(ref pExportName.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12StateObjectProperties>
+    public static ComPtr<TI0> QueryInterface<TI0>(this ComPtr<ID3D12StateObjectProperties> thisVtbl) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12StateObjectProperties*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
         return silkRet;

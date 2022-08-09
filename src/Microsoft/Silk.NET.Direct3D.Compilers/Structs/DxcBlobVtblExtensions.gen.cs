@@ -19,18 +19,18 @@ namespace Silk.NET.Direct3D.Compilers;
 public unsafe static class DxcBlobVtblExtensions
 {
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Guid* riid, void** ppvObject) where TThis : IComVtbl<IDxcBlob>
+    public static unsafe int QueryInterface(this ComPtr<IDxcBlob> thisVtbl, Guid* riid, void** ppvObject)
     {
-        var @this = (IDxcBlob*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDxcBlob*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Guid* riid, ref void* ppvObject) where TThis : IComVtbl<IDxcBlob>
+    public static unsafe int QueryInterface(this ComPtr<IDxcBlob> thisVtbl, Guid* riid, ref void* ppvObject)
     {
-        var @this = (IDxcBlob*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppvObjectPtr = &ppvObject)
         {
@@ -40,9 +40,9 @@ public unsafe static class DxcBlobVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, ref Guid riid, void** ppvObject) where TThis : IComVtbl<IDxcBlob>
+    public static unsafe int QueryInterface(this ComPtr<IDxcBlob> thisVtbl, ref Guid riid, void** ppvObject)
     {
-        var @this = (IDxcBlob*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -52,9 +52,9 @@ public unsafe static class DxcBlobVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, ref Guid riid, ref void* ppvObject) where TThis : IComVtbl<IDxcBlob>
+    public static unsafe int QueryInterface(this ComPtr<IDxcBlob> thisVtbl, ref Guid riid, ref void* ppvObject)
     {
-        var @this = (IDxcBlob*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -67,70 +67,70 @@ public unsafe static class DxcBlobVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static uint AddRef<TThis>(this TThis thisVtbl) where TThis : IComVtbl<IDxcBlob>
+    public static uint AddRef(this ComPtr<IDxcBlob> thisVtbl)
     {
-        var @this = (IDxcBlob*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDxcBlob*, uint>)@this->LpVtbl[1])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static uint Release<TThis>(this TThis thisVtbl) where TThis : IComVtbl<IDxcBlob>
+    public static uint Release(this ComPtr<IDxcBlob> thisVtbl)
     {
-        var @this = (IDxcBlob*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDxcBlob*, uint>)@this->LpVtbl[2])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void* GetBufferPointer<TThis>(this TThis thisVtbl) where TThis : IComVtbl<IDxcBlob>
+    public static unsafe void* GetBufferPointer(this ComPtr<IDxcBlob> thisVtbl)
     {
-        var @this = (IDxcBlob*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         void* ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDxcBlob*, void*>)@this->LpVtbl[3])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static nuint GetBufferSize<TThis>(this TThis thisVtbl) where TThis : IComVtbl<IDxcBlob>
+    public static nuint GetBufferSize(this ComPtr<IDxcBlob> thisVtbl)
     {
-        var @this = (IDxcBlob*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         nuint ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDxcBlob*, nuint>)@this->LpVtbl[4])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcBlob>
+    public static int QueryInterface<TI0>(this ComPtr<IDxcBlob> thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (IDxcBlob*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppvObject = default;
         return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDxcBlob>
+    public static unsafe int QueryInterface(this ComPtr<IDxcBlob> thisVtbl, Span<Guid> riid, void** ppvObject)
     {
-        var @this = (IDxcBlob*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDxcBlob>
+    public static unsafe int QueryInterface(this ComPtr<IDxcBlob> thisVtbl, Span<Guid> riid, ref void* ppvObject)
     {
-        var @this = (IDxcBlob*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcBlob>
+    public static ComPtr<TI0> QueryInterface<TI0>(this ComPtr<IDxcBlob> thisVtbl) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (IDxcBlob*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
         return silkRet;

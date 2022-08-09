@@ -19,18 +19,18 @@ namespace Silk.NET.Direct3D12;
 public unsafe static class D3D12SharingContractVtblExtensions
 {
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Guid* riid, void** ppvObject) where TThis : IComVtbl<ID3D12SharingContract>
+    public static unsafe int QueryInterface(this ComPtr<ID3D12SharingContract> thisVtbl, Guid* riid, void** ppvObject)
     {
-        var @this = (ID3D12SharingContract*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12SharingContract*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Guid* riid, ref void* ppvObject) where TThis : IComVtbl<ID3D12SharingContract>
+    public static unsafe int QueryInterface(this ComPtr<ID3D12SharingContract> thisVtbl, Guid* riid, ref void* ppvObject)
     {
-        var @this = (ID3D12SharingContract*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppvObjectPtr = &ppvObject)
         {
@@ -40,9 +40,9 @@ public unsafe static class D3D12SharingContractVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, ref Guid riid, void** ppvObject) where TThis : IComVtbl<ID3D12SharingContract>
+    public static unsafe int QueryInterface(this ComPtr<ID3D12SharingContract> thisVtbl, ref Guid riid, void** ppvObject)
     {
-        var @this = (ID3D12SharingContract*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -52,9 +52,9 @@ public unsafe static class D3D12SharingContractVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, ref Guid riid, ref void* ppvObject) where TThis : IComVtbl<ID3D12SharingContract>
+    public static unsafe int QueryInterface(this ComPtr<ID3D12SharingContract> thisVtbl, ref Guid riid, ref void* ppvObject)
     {
-        var @this = (ID3D12SharingContract*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -67,34 +67,34 @@ public unsafe static class D3D12SharingContractVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static uint AddRef<TThis>(this TThis thisVtbl) where TThis : IComVtbl<ID3D12SharingContract>
+    public static uint AddRef(this ComPtr<ID3D12SharingContract> thisVtbl)
     {
-        var @this = (ID3D12SharingContract*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12SharingContract*, uint>)@this->LpVtbl[1])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static uint Release<TThis>(this TThis thisVtbl) where TThis : IComVtbl<ID3D12SharingContract>
+    public static uint Release(this ComPtr<ID3D12SharingContract> thisVtbl)
     {
-        var @this = (ID3D12SharingContract*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12SharingContract*, uint>)@this->LpVtbl[2])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void Present<TThis>(this TThis thisVtbl, ID3D12Resource* pResource, uint Subresource, nint window) where TThis : IComVtbl<ID3D12SharingContract>
+    public static unsafe void Present(this ComPtr<ID3D12SharingContract> thisVtbl, ID3D12Resource* pResource, uint Subresource, nint window)
     {
-        var @this = (ID3D12SharingContract*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12SharingContract*, ID3D12Resource*, uint, nint, void>)@this->LpVtbl[3])(@this, pResource, Subresource, window);
     }
 
     /// <summary>To be documented.</summary>
-    public static void Present<TThis>(this TThis thisVtbl, ref ID3D12Resource pResource, uint Subresource, nint window) where TThis : IComVtbl<ID3D12SharingContract>
+    public static void Present(this ComPtr<ID3D12SharingContract> thisVtbl, ref ID3D12Resource pResource, uint Subresource, nint window)
     {
-        var @this = (ID3D12SharingContract*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
         {
             ((delegate* unmanaged[Stdcall]<ID3D12SharingContract*, ID3D12Resource*, uint, nint, void>)@this->LpVtbl[3])(@this, pResourcePtr, Subresource, window);
@@ -102,16 +102,16 @@ public unsafe static class D3D12SharingContractVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SharedFenceSignal<TThis>(this TThis thisVtbl, ID3D12Fence* pFence, ulong FenceValue) where TThis : IComVtbl<ID3D12SharingContract>
+    public static unsafe void SharedFenceSignal(this ComPtr<ID3D12SharingContract> thisVtbl, ID3D12Fence* pFence, ulong FenceValue)
     {
-        var @this = (ID3D12SharingContract*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12SharingContract*, ID3D12Fence*, ulong, void>)@this->LpVtbl[4])(@this, pFence, FenceValue);
     }
 
     /// <summary>To be documented.</summary>
-    public static void SharedFenceSignal<TThis>(this TThis thisVtbl, ref ID3D12Fence pFence, ulong FenceValue) where TThis : IComVtbl<ID3D12SharingContract>
+    public static void SharedFenceSignal(this ComPtr<ID3D12SharingContract> thisVtbl, ref ID3D12Fence pFence, ulong FenceValue)
     {
-        var @this = (ID3D12SharingContract*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         fixed (ID3D12Fence* pFencePtr = &pFence)
         {
             ((delegate* unmanaged[Stdcall]<ID3D12SharingContract*, ID3D12Fence*, ulong, void>)@this->LpVtbl[4])(@this, pFencePtr, FenceValue);
@@ -119,16 +119,16 @@ public unsafe static class D3D12SharingContractVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void BeginCapturableWork<TThis>(this TThis thisVtbl, Guid* guid) where TThis : IComVtbl<ID3D12SharingContract>
+    public static unsafe void BeginCapturableWork(this ComPtr<ID3D12SharingContract> thisVtbl, Guid* guid)
     {
-        var @this = (ID3D12SharingContract*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12SharingContract*, Guid*, void>)@this->LpVtbl[5])(@this, guid);
     }
 
     /// <summary>To be documented.</summary>
-    public static void BeginCapturableWork<TThis>(this TThis thisVtbl, ref Guid guid) where TThis : IComVtbl<ID3D12SharingContract>
+    public static void BeginCapturableWork(this ComPtr<ID3D12SharingContract> thisVtbl, ref Guid guid)
     {
-        var @this = (ID3D12SharingContract*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         fixed (Guid* guidPtr = &guid)
         {
             ((delegate* unmanaged[Stdcall]<ID3D12SharingContract*, Guid*, void>)@this->LpVtbl[5])(@this, guidPtr);
@@ -136,16 +136,16 @@ public unsafe static class D3D12SharingContractVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void EndCapturableWork<TThis>(this TThis thisVtbl, Guid* guid) where TThis : IComVtbl<ID3D12SharingContract>
+    public static unsafe void EndCapturableWork(this ComPtr<ID3D12SharingContract> thisVtbl, Guid* guid)
     {
-        var @this = (ID3D12SharingContract*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12SharingContract*, Guid*, void>)@this->LpVtbl[6])(@this, guid);
     }
 
     /// <summary>To be documented.</summary>
-    public static void EndCapturableWork<TThis>(this TThis thisVtbl, ref Guid guid) where TThis : IComVtbl<ID3D12SharingContract>
+    public static void EndCapturableWork(this ComPtr<ID3D12SharingContract> thisVtbl, ref Guid guid)
     {
-        var @this = (ID3D12SharingContract*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         fixed (Guid* guidPtr = &guid)
         {
             ((delegate* unmanaged[Stdcall]<ID3D12SharingContract*, Guid*, void>)@this->LpVtbl[6])(@this, guidPtr);
@@ -153,66 +153,66 @@ public unsafe static class D3D12SharingContractVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12SharingContract>
+    public static int QueryInterface<TI0>(this ComPtr<ID3D12SharingContract> thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12SharingContract*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppvObject = default;
         return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<ID3D12SharingContract>
+    public static unsafe int QueryInterface(this ComPtr<ID3D12SharingContract> thisVtbl, Span<Guid> riid, void** ppvObject)
     {
-        var @this = (ID3D12SharingContract*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<ID3D12SharingContract>
+    public static unsafe int QueryInterface(this ComPtr<ID3D12SharingContract> thisVtbl, Span<Guid> riid, ref void* ppvObject)
     {
-        var @this = (ID3D12SharingContract*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
     }
 
     /// <summary>To be documented.</summary>
-    public static void Present<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pResource, uint Subresource, nint window) where TThis : IComVtbl<ID3D12SharingContract>
+    public static void Present(this ComPtr<ID3D12SharingContract> thisVtbl, Span<ID3D12Resource> pResource, uint Subresource, nint window)
     {
-        var @this = (ID3D12SharingContract*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->Present(ref pResource.GetPinnableReference(), Subresource, window);
     }
 
     /// <summary>To be documented.</summary>
-    public static void SharedFenceSignal<TThis>(this TThis thisVtbl, Span<ID3D12Fence> pFence, ulong FenceValue) where TThis : IComVtbl<ID3D12SharingContract>
+    public static void SharedFenceSignal(this ComPtr<ID3D12SharingContract> thisVtbl, Span<ID3D12Fence> pFence, ulong FenceValue)
     {
-        var @this = (ID3D12SharingContract*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->SharedFenceSignal(ref pFence.GetPinnableReference(), FenceValue);
     }
 
     /// <summary>To be documented.</summary>
-    public static void BeginCapturableWork<TThis>(this TThis thisVtbl, Span<Guid> guid) where TThis : IComVtbl<ID3D12SharingContract>
+    public static void BeginCapturableWork(this ComPtr<ID3D12SharingContract> thisVtbl, Span<Guid> guid)
     {
-        var @this = (ID3D12SharingContract*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->BeginCapturableWork(ref guid.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static void EndCapturableWork<TThis>(this TThis thisVtbl, Span<Guid> guid) where TThis : IComVtbl<ID3D12SharingContract>
+    public static void EndCapturableWork(this ComPtr<ID3D12SharingContract> thisVtbl, Span<Guid> guid)
     {
-        var @this = (ID3D12SharingContract*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->EndCapturableWork(ref guid.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12SharingContract>
+    public static ComPtr<TI0> QueryInterface<TI0>(this ComPtr<ID3D12SharingContract> thisVtbl) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (ID3D12SharingContract*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
         return silkRet;

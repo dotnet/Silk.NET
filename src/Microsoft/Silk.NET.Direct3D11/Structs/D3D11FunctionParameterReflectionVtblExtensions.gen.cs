@@ -19,18 +19,18 @@ namespace Silk.NET.Direct3D11;
 public unsafe static class D3D11FunctionParameterReflectionVtblExtensions
 {
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDesc<TThis>(this TThis thisVtbl, ParameterDesc* pDesc) where TThis : IComVtbl<ID3D11FunctionParameterReflection>
+    public static unsafe int GetDesc(this ComPtr<ID3D11FunctionParameterReflection> thisVtbl, ParameterDesc* pDesc)
     {
-        var @this = (ID3D11FunctionParameterReflection*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionParameterReflection*, ParameterDesc*, int>)@this->LpVtbl[0])(@this, pDesc);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetDesc<TThis>(this TThis thisVtbl, ref ParameterDesc pDesc) where TThis : IComVtbl<ID3D11FunctionParameterReflection>
+    public static int GetDesc(this ComPtr<ID3D11FunctionParameterReflection> thisVtbl, ref ParameterDesc pDesc)
     {
-        var @this = (ID3D11FunctionParameterReflection*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ParameterDesc* pDescPtr = &pDesc)
         {
@@ -40,9 +40,9 @@ public unsafe static class D3D11FunctionParameterReflectionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetDesc<TThis>(this TThis thisVtbl, Span<ParameterDesc> pDesc) where TThis : IComVtbl<ID3D11FunctionParameterReflection>
+    public static int GetDesc(this ComPtr<ID3D11FunctionParameterReflection> thisVtbl, Span<ParameterDesc> pDesc)
     {
-        var @this = (ID3D11FunctionParameterReflection*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetDesc(ref pDesc.GetPinnableReference());
     }

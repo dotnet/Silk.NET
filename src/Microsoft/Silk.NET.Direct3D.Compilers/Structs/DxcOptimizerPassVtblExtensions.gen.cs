@@ -19,18 +19,18 @@ namespace Silk.NET.Direct3D.Compilers;
 public unsafe static class DxcOptimizerPassVtblExtensions
 {
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Guid* riid, void** ppvObject) where TThis : IComVtbl<IDxcOptimizerPass>
+    public static unsafe int QueryInterface(this ComPtr<IDxcOptimizerPass> thisVtbl, Guid* riid, void** ppvObject)
     {
-        var @this = (IDxcOptimizerPass*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizerPass*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Guid* riid, ref void* ppvObject) where TThis : IComVtbl<IDxcOptimizerPass>
+    public static unsafe int QueryInterface(this ComPtr<IDxcOptimizerPass> thisVtbl, Guid* riid, ref void* ppvObject)
     {
-        var @this = (IDxcOptimizerPass*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppvObjectPtr = &ppvObject)
         {
@@ -40,9 +40,9 @@ public unsafe static class DxcOptimizerPassVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, ref Guid riid, void** ppvObject) where TThis : IComVtbl<IDxcOptimizerPass>
+    public static unsafe int QueryInterface(this ComPtr<IDxcOptimizerPass> thisVtbl, ref Guid riid, void** ppvObject)
     {
-        var @this = (IDxcOptimizerPass*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -52,9 +52,9 @@ public unsafe static class DxcOptimizerPassVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, ref Guid riid, ref void* ppvObject) where TThis : IComVtbl<IDxcOptimizerPass>
+    public static unsafe int QueryInterface(this ComPtr<IDxcOptimizerPass> thisVtbl, ref Guid riid, ref void* ppvObject)
     {
-        var @this = (IDxcOptimizerPass*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
@@ -67,36 +67,36 @@ public unsafe static class DxcOptimizerPassVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static uint AddRef<TThis>(this TThis thisVtbl) where TThis : IComVtbl<IDxcOptimizerPass>
+    public static uint AddRef(this ComPtr<IDxcOptimizerPass> thisVtbl)
     {
-        var @this = (IDxcOptimizerPass*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizerPass*, uint>)@this->LpVtbl[1])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static uint Release<TThis>(this TThis thisVtbl) where TThis : IComVtbl<IDxcOptimizerPass>
+    public static uint Release(this ComPtr<IDxcOptimizerPass> thisVtbl)
     {
-        var @this = (IDxcOptimizerPass*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         uint ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizerPass*, uint>)@this->LpVtbl[2])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetOptionName<TThis>(this TThis thisVtbl, char** ppResult) where TThis : IComVtbl<IDxcOptimizerPass>
+    public static unsafe int GetOptionName(this ComPtr<IDxcOptimizerPass> thisVtbl, char** ppResult)
     {
-        var @this = (IDxcOptimizerPass*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizerPass*, char**, int>)@this->LpVtbl[3])(@this, ppResult);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetOptionName<TThis>(this TThis thisVtbl, ref char* ppResult) where TThis : IComVtbl<IDxcOptimizerPass>
+    public static unsafe int GetOptionName(this ComPtr<IDxcOptimizerPass> thisVtbl, ref char* ppResult)
     {
-        var @this = (IDxcOptimizerPass*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (char** ppResultPtr = &ppResult)
         {
@@ -106,18 +106,18 @@ public unsafe static class DxcOptimizerPassVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDescription<TThis>(this TThis thisVtbl, char** ppResult) where TThis : IComVtbl<IDxcOptimizerPass>
+    public static unsafe int GetDescription(this ComPtr<IDxcOptimizerPass> thisVtbl, char** ppResult)
     {
-        var @this = (IDxcOptimizerPass*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizerPass*, char**, int>)@this->LpVtbl[4])(@this, ppResult);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDescription<TThis>(this TThis thisVtbl, ref char* ppResult) where TThis : IComVtbl<IDxcOptimizerPass>
+    public static unsafe int GetDescription(this ComPtr<IDxcOptimizerPass> thisVtbl, ref char* ppResult)
     {
-        var @this = (IDxcOptimizerPass*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (char** ppResultPtr = &ppResult)
         {
@@ -127,18 +127,18 @@ public unsafe static class DxcOptimizerPassVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetOptionArgCount<TThis>(this TThis thisVtbl, uint* pCount) where TThis : IComVtbl<IDxcOptimizerPass>
+    public static unsafe int GetOptionArgCount(this ComPtr<IDxcOptimizerPass> thisVtbl, uint* pCount)
     {
-        var @this = (IDxcOptimizerPass*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizerPass*, uint*, int>)@this->LpVtbl[5])(@this, pCount);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetOptionArgCount<TThis>(this TThis thisVtbl, ref uint pCount) where TThis : IComVtbl<IDxcOptimizerPass>
+    public static int GetOptionArgCount(this ComPtr<IDxcOptimizerPass> thisVtbl, ref uint pCount)
     {
-        var @this = (IDxcOptimizerPass*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pCountPtr = &pCount)
         {
@@ -148,18 +148,18 @@ public unsafe static class DxcOptimizerPassVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetOptionArgName<TThis>(this TThis thisVtbl, uint argIndex, char** ppResult) where TThis : IComVtbl<IDxcOptimizerPass>
+    public static unsafe int GetOptionArgName(this ComPtr<IDxcOptimizerPass> thisVtbl, uint argIndex, char** ppResult)
     {
-        var @this = (IDxcOptimizerPass*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizerPass*, uint, char**, int>)@this->LpVtbl[6])(@this, argIndex, ppResult);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetOptionArgName<TThis>(this TThis thisVtbl, uint argIndex, ref char* ppResult) where TThis : IComVtbl<IDxcOptimizerPass>
+    public static unsafe int GetOptionArgName(this ComPtr<IDxcOptimizerPass> thisVtbl, uint argIndex, ref char* ppResult)
     {
-        var @this = (IDxcOptimizerPass*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (char** ppResultPtr = &ppResult)
         {
@@ -169,18 +169,18 @@ public unsafe static class DxcOptimizerPassVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetOptionArgDescription<TThis>(this TThis thisVtbl, uint argIndex, char** ppResult) where TThis : IComVtbl<IDxcOptimizerPass>
+    public static unsafe int GetOptionArgDescription(this ComPtr<IDxcOptimizerPass> thisVtbl, uint argIndex, char** ppResult)
     {
-        var @this = (IDxcOptimizerPass*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizerPass*, uint, char**, int>)@this->LpVtbl[7])(@this, argIndex, ppResult);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetOptionArgDescription<TThis>(this TThis thisVtbl, uint argIndex, ref char* ppResult) where TThis : IComVtbl<IDxcOptimizerPass>
+    public static unsafe int GetOptionArgDescription(this ComPtr<IDxcOptimizerPass> thisVtbl, uint argIndex, ref char* ppResult)
     {
-        var @this = (IDxcOptimizerPass*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         int ret = default;
         fixed (char** ppResultPtr = &ppResult)
         {
@@ -190,34 +190,34 @@ public unsafe static class DxcOptimizerPassVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcOptimizerPass>
+    public static int QueryInterface<TI0>(this ComPtr<IDxcOptimizerPass> thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (IDxcOptimizerPass*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppvObject = default;
         return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDxcOptimizerPass>
+    public static unsafe int QueryInterface(this ComPtr<IDxcOptimizerPass> thisVtbl, Span<Guid> riid, void** ppvObject)
     {
-        var @this = (IDxcOptimizerPass*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDxcOptimizerPass>
+    public static unsafe int QueryInterface(this ComPtr<IDxcOptimizerPass> thisVtbl, Span<Guid> riid, ref void* ppvObject)
     {
-        var @this = (IDxcOptimizerPass*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetOptionName<TThis>(this TThis thisVtbl, string[] ppResultSa) where TThis : IComVtbl<IDxcOptimizerPass>
+    public static int GetOptionName(this ComPtr<IDxcOptimizerPass> thisVtbl, string[] ppResultSa)
     {
-        var @this = (IDxcOptimizerPass*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // StringArrayOverloader
         var ppResult = (char**) SilkMarshal.StringArrayToPtr(ppResultSa);
         var ret = @this->GetOptionName(ppResult);
@@ -227,9 +227,9 @@ public unsafe static class DxcOptimizerPassVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetDescription<TThis>(this TThis thisVtbl, string[] ppResultSa) where TThis : IComVtbl<IDxcOptimizerPass>
+    public static int GetDescription(this ComPtr<IDxcOptimizerPass> thisVtbl, string[] ppResultSa)
     {
-        var @this = (IDxcOptimizerPass*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // StringArrayOverloader
         var ppResult = (char**) SilkMarshal.StringArrayToPtr(ppResultSa);
         var ret = @this->GetDescription(ppResult);
@@ -239,17 +239,17 @@ public unsafe static class DxcOptimizerPassVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetOptionArgCount<TThis>(this TThis thisVtbl, Span<uint> pCount) where TThis : IComVtbl<IDxcOptimizerPass>
+    public static int GetOptionArgCount(this ComPtr<IDxcOptimizerPass> thisVtbl, Span<uint> pCount)
     {
-        var @this = (IDxcOptimizerPass*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetOptionArgCount(ref pCount.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetOptionArgName<TThis>(this TThis thisVtbl, uint argIndex, string[] ppResultSa) where TThis : IComVtbl<IDxcOptimizerPass>
+    public static int GetOptionArgName(this ComPtr<IDxcOptimizerPass> thisVtbl, uint argIndex, string[] ppResultSa)
     {
-        var @this = (IDxcOptimizerPass*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // StringArrayOverloader
         var ppResult = (char**) SilkMarshal.StringArrayToPtr(ppResultSa);
         var ret = @this->GetOptionArgName(argIndex, ppResult);
@@ -259,9 +259,9 @@ public unsafe static class DxcOptimizerPassVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetOptionArgDescription<TThis>(this TThis thisVtbl, uint argIndex, string[] ppResultSa) where TThis : IComVtbl<IDxcOptimizerPass>
+    public static int GetOptionArgDescription(this ComPtr<IDxcOptimizerPass> thisVtbl, uint argIndex, string[] ppResultSa)
     {
-        var @this = (IDxcOptimizerPass*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // StringArrayOverloader
         var ppResult = (char**) SilkMarshal.StringArrayToPtr(ppResultSa);
         var ret = @this->GetOptionArgDescription(argIndex, ppResult);
@@ -271,9 +271,9 @@ public unsafe static class DxcOptimizerPassVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcOptimizerPass>
+    public static ComPtr<TI0> QueryInterface<TI0>(this ComPtr<IDxcOptimizerPass> thisVtbl) where TI0 : unmanaged, IComVtbl<TI0>
     {
-        var @this = (IDxcOptimizerPass*) thisVtbl.AsVtblPtr();
+        var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
         return silkRet;
