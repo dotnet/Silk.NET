@@ -11,12 +11,12 @@ In general each symbol listed below should have a corresponding method `VisitMyS
 (Order alphabetically please!)
 
 Parent Symbols (Unlisted, abstract):
-| Name |
-| ---- |
-| MemberSymbol |
-| Symbol |
-| TypeReference |
-| TypeSymbol |
+| Name | See Also |
+| ---- | -------- |
+| MemberSymbol | |
+| Symbol | |
+| TypeReference | [here](../type-references.md) |
+| TypeSymbol | |
 
 | Name                    | Symbol Layer File                                                                         | Symbol Layer Tests                                                                                             | Emitter Tests                                                                          |
 | ----------------------- | ----------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
