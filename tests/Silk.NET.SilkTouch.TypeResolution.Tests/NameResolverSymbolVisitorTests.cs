@@ -20,11 +20,13 @@ public class NameResolverSymbolVisitorTests
         {
             new(new UnresolvedTypeReference("a"), new IdentifierSymbol("someField"))
         }.ToImmutableArray());
+        var typeStore = new TypeStore();
+        typeStore.Store(testType);
         var resolutionScope = new TypeResolutionScope
         (
-            new Dictionary<TypeSymbol, TypeResolutionScope>
+            new Dictionary<TypeId, TypeResolutionScope>
             {
-                [testType] = new TypeResolutionScope(new())
+                [testType.Id] = new TypeResolutionScope(new())
             }
         );
         var serviceProvider = Helpers.CreateServiceProvider();
@@ -32,7 +34,7 @@ public class NameResolverSymbolVisitorTests
         (
             serviceProvider.GetRequiredService<ILoggerFactory>().CreateLogger<NameResolverSymbolVisitor>(),
             resolutionScope,
-            new TypeStore()
+            typeStore
         );
 
         var resultType = visitor.Visit(testType);

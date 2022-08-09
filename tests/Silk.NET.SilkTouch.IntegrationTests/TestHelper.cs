@@ -11,6 +11,7 @@ using Microsoft.Extensions.Logging;
 using Silk.NET.SilkTouch.Emitter;
 using Silk.NET.SilkTouch.Scraper;
 using Silk.NET.SilkTouch.Symbols;
+using Silk.NET.SilkTouch.TypeResolution;
 using Xunit;
 
 namespace Silk.NET.SilkTouch.IntegrationTests;
@@ -48,7 +49,23 @@ public static class TestHelper
         Assert.NotNull(xml);
 
         var typeStore = new TypeStore();
-        var symbols = scraper.ScrapeXML(xml!, typeStore);
+        var symbols = scraper.ScrapeXML(xml!, typeStore).ToArray();
+
+        var typeScopeSymbolVisitor = ActivatorUtilities.CreateInstance<TypeScopeSymbolVisitor>(serviceProvider, typeStore);
+        var processors = new SymbolVisitor[]
+        {
+            ActivatorUtilities.CreateInstance<PointerTypeResolver>(serviceProvider, typeStore),
+
+            typeScopeSymbolVisitor,
+            ActivatorUtilities.CreateInstance<NameResolverSymbolVisitor>
+                (serviceProvider, typeScopeSymbolVisitor.RootScope, typeStore)
+        };
+
+        foreach (var processor in processors)
+        {
+            symbols = symbols.Select(processor.Visit).ToArray();
+        }
+
         var emitter = new CSharpEmitter();
         var outputs = symbols.Select(x => emitter.Transform(x, typeStore));
         return outputs.Aggregate

@@ -9,6 +9,6 @@ namespace Silk.NET.SilkTouch.TypeResolution;
 /// Used to track types and child scopes, used to resolve <see cref="UnresolvedTypeReference"/>
 /// </summary>
 /// <param name="ChildTypeScopes">Mapping of child types to their scopes</param>
-public sealed record TypeResolutionScope(Dictionary<TypeSymbol, TypeResolutionScope> ChildTypeScopes)
+public sealed record TypeResolutionScope(Dictionary<TypeId, TypeResolutionScope> ChildTypeScopes)
 {
 }

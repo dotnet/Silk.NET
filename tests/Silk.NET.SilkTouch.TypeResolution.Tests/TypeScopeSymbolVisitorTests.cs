@@ -20,7 +20,7 @@ public sealed class TypeScopeSymbolVisitorTests
 
         var rootScope = visitor.RootScope;
         var single = Assert.Single(rootScope.ChildTypeScopes);
-        Assert.StrictEqual(testType, single.Key);
+        Assert.StrictEqual(testType.Id, single.Key);
         var associatedScope = single.Value;
         Assert.Empty(associatedScope.ChildTypeScopes);
     }
@@ -55,7 +55,7 @@ public sealed class TypeScopeSymbolVisitorTests
 
         var rootScope = visitor.RootScope;
         var single = Assert.Single(rootScope.ChildTypeScopes);
-        Assert.StrictEqual(testType, single.Key);
+        Assert.StrictEqual(testType.Id, single.Key);
         var associatedScope = single.Value;
         Assert.Empty(associatedScope.ChildTypeScopes);
     }
@@ -86,19 +86,19 @@ public sealed class TypeScopeSymbolVisitorTests
             rootScope.ChildTypeScopes,
             (kv) =>
             {
-                Assert.StrictEqual(testType1, kv.Key);
+                Assert.StrictEqual(testType1.Id, kv.Key);
                 var associatedScope = kv.Value;
                 Assert.Empty(associatedScope.ChildTypeScopes);
             },
             (kv) =>
             {
-                Assert.StrictEqual(testType2, kv.Key);
+                Assert.StrictEqual(testType2.Id, kv.Key);
                 var associatedScope = kv.Value;
                 Assert.Empty(associatedScope.ChildTypeScopes);
             },
             (kv) =>
             {
-                Assert.StrictEqual(testType3, kv.Key);
+                Assert.StrictEqual(testType3.Id, kv.Key);
                 var associatedScope = kv.Value;
                 Assert.Empty(associatedScope.ChildTypeScopes);
             }

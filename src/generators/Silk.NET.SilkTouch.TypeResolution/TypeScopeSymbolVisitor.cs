@@ -34,12 +34,21 @@ public sealed class TypeScopeSymbolVisitor : SymbolVisitor
         var newScope = new TypeResolutionScope(new());
         var oldScope = _currentScope;
         var oldParent = _currentParent;
-        _currentScope.ChildTypeScopes[typeSymbol] = newScope;
+        _currentScope.ChildTypeScopes[typeSymbol.Id] = newScope;
         _currentScope = newScope;
         _currentParent = typeSymbol;
         var result = base.VisitType(typeSymbol);
         _currentScope = oldScope;
         _currentParent = oldParent;
         return result;
+    }
+
+    /// <inheritdoc />
+    protected override TypeReference VisitTypeReference(TypeReference typeReference)
+    {
+        if (typeReference is UnresolvedTypeReference)
+            return typeReference;
+
+        return base.VisitTypeReference(typeReference);
     }
 }
