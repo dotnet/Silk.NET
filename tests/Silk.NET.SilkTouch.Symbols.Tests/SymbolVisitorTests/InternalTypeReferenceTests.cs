@@ -10,7 +10,7 @@ namespace Silk.NET.SilkTouch.Symbols.Tests.SymbolVisitorTests;
 
 public class InternalTypeReferenceTests
 {
-    [Fact, Trait("Category", "Type Resolution")]
+    [Fact, Trait("Category", "Symbols")]
     public void VisitedAsSelf()
     {
         var symbol = new InternalTypeReference(TypeId.CreateNew());
@@ -24,7 +24,7 @@ public class InternalTypeReferenceTests
                 ("VisitInternalTypeReference", Times.Once(), ItExpr.IsAny<InternalTypeReference>());
     }
     
-    [Fact, Trait("Category", "Type Resolution")]
+    [Fact, Trait("Category", "Symbols")]
     public void VisitedAsParent()
     {
         var symbol = new InternalTypeReference(TypeId.CreateNew());
@@ -39,7 +39,7 @@ public class InternalTypeReferenceTests
     }
     
     
-    [Fact, Trait("Category", "Type Resolution")]
+    [Fact, Trait("Category", "Symbols")]
     public void TypeIdIsVisited()
     {
         var id = TypeId.CreateNew();
