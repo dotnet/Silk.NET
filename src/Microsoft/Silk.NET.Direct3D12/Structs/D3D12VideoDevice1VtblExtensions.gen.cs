@@ -1650,4 +1650,157 @@ public unsafe static class D3D12VideoDevice1VtblExtensions
         return @this->CreateVideoMotionVectorHeap(ref pDesc.GetPinnableReference(), ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppVideoMotionVectorHeap);
     }
 
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice1>
+    {
+        var @this = (ID3D12VideoDevice1*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateVideoDecoder<TI0, TThis>(this TThis thisVtbl, VideoDecoderDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice1>
+    {
+        var @this = (ID3D12VideoDevice1*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateVideoDecoder(pDesc, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> CreateVideoDecoder<TI0, TThis>(this TThis thisVtbl, ref VideoDecoderDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice1>
+    {
+        var @this = (ID3D12VideoDevice1*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateVideoDecoder(ref pDesc, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateVideoDecoderHeap<TI0, TThis>(this TThis thisVtbl, VideoDecoderHeapDesc* pVideoDecoderHeapDesc) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice1>
+    {
+        var @this = (ID3D12VideoDevice1*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateVideoDecoderHeap(pVideoDecoderHeapDesc, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> CreateVideoDecoderHeap<TI0, TThis>(this TThis thisVtbl, ref VideoDecoderHeapDesc pVideoDecoderHeapDesc) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice1>
+    {
+        var @this = (ID3D12VideoDevice1*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateVideoDecoderHeap(ref pVideoDecoderHeapDesc, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateVideoProcessor<TI0, TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice1>
+    {
+        var @this = (ID3D12VideoDevice1*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateVideoProcessor(NodeMask, pOutputStreamDesc, NumInputStreamDescs, pInputStreamDescs, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateVideoProcessor<TI0, TThis>(this TThis thisVtbl, uint NodeMask, VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice1>
+    {
+        var @this = (ID3D12VideoDevice1*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateVideoProcessor(NodeMask, pOutputStreamDesc, NumInputStreamDescs, ref pInputStreamDescs, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateVideoProcessor<TI0, TThis>(this TThis thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice1>
+    {
+        var @this = (ID3D12VideoDevice1*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateVideoProcessor(NodeMask, ref pOutputStreamDesc, NumInputStreamDescs, pInputStreamDescs, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> CreateVideoProcessor<TI0, TThis>(this TThis thisVtbl, uint NodeMask, ref VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice1>
+    {
+        var @this = (ID3D12VideoDevice1*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateVideoProcessor(NodeMask, ref pOutputStreamDesc, NumInputStreamDescs, ref pInputStreamDescs, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateVideoMotionEstimator<TI0, TThis>(this TThis thisVtbl, VideoMotionEstimatorDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice1>
+    {
+        var @this = (ID3D12VideoDevice1*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateVideoMotionEstimator(pDesc, pProtectedResourceSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateVideoMotionEstimator<TI0, TThis>(this TThis thisVtbl, VideoMotionEstimatorDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice1>
+    {
+        var @this = (ID3D12VideoDevice1*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateVideoMotionEstimator(pDesc, ref pProtectedResourceSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateVideoMotionEstimator<TI0, TThis>(this TThis thisVtbl, ref VideoMotionEstimatorDesc pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice1>
+    {
+        var @this = (ID3D12VideoDevice1*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateVideoMotionEstimator(ref pDesc, pProtectedResourceSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> CreateVideoMotionEstimator<TI0, TThis>(this TThis thisVtbl, ref VideoMotionEstimatorDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice1>
+    {
+        var @this = (ID3D12VideoDevice1*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateVideoMotionEstimator(ref pDesc, ref pProtectedResourceSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateVideoMotionVectorHeap<TI0, TThis>(this TThis thisVtbl, VideoMotionVectorHeapDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice1>
+    {
+        var @this = (ID3D12VideoDevice1*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateVideoMotionVectorHeap(pDesc, pProtectedResourceSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateVideoMotionVectorHeap<TI0, TThis>(this TThis thisVtbl, VideoMotionVectorHeapDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice1>
+    {
+        var @this = (ID3D12VideoDevice1*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateVideoMotionVectorHeap(pDesc, ref pProtectedResourceSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateVideoMotionVectorHeap<TI0, TThis>(this TThis thisVtbl, ref VideoMotionVectorHeapDesc pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice1>
+    {
+        var @this = (ID3D12VideoDevice1*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateVideoMotionVectorHeap(ref pDesc, pProtectedResourceSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> CreateVideoMotionVectorHeap<TI0, TThis>(this TThis thisVtbl, ref VideoMotionVectorHeapDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12VideoDevice1>
+    {
+        var @this = (ID3D12VideoDevice1*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateVideoMotionVectorHeap(ref pDesc, ref pProtectedResourceSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
 }

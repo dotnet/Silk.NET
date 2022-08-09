@@ -645,4 +645,13 @@ public unsafe static class D3D11VideoProcessorEnumerator1VtblExtensions
         return @this->CheckVideoProcessorFormatConversion(InputFormat, InputColorSpace, OutputFormat, OutputColorSpace, ref pSupported.GetPinnableReference());
     }
 
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D11VideoProcessorEnumerator1>
+    {
+        var @this = (ID3D11VideoProcessorEnumerator1*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
 }

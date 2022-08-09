@@ -658,4 +658,22 @@ public unsafe static class Direct3DSurface9VtblExtensions
         return @this->GetDC(ref phdc.GetPinnableReference());
     }
 
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DSurface9>
+    {
+        var @this = (IDirect3DSurface9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> GetContainer<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DSurface9>
+    {
+        var @this = (IDirect3DSurface9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->GetContainer(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
 }

@@ -11139,4 +11139,13 @@ public unsafe static class D3D11VideoContextVtblExtensions
         @this->VideoProcessorGetStreamRotation(ref pVideoProcessor.GetPinnableReference(), StreamIndex, ref pEnable.GetPinnableReference(), ref pRotation.GetPinnableReference());
     }
 
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D11VideoContext>
+    {
+        var @this = (ID3D11VideoContext*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
 }

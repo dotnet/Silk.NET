@@ -809,4 +809,85 @@ public unsafe static class DStorageFactoryVtblExtensions
         return @this->CreateStatusArray(capacity, name, ref riid.GetPinnableReference(), ref ppv);
     }
 
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDStorageFactory>
+    {
+        var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateQueue<TI0, TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] QueueDesc* desc) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDStorageFactory>
+    {
+        var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateQueue(desc, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> CreateQueue<TI0, TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] in QueueDesc desc) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDStorageFactory>
+    {
+        var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateQueue(in desc, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> OpenFile<TI0, TThis>(this TThis thisVtbl, char* path) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDStorageFactory>
+    {
+        var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->OpenFile(path, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> OpenFile<TI0, TThis>(this TThis thisVtbl, ref char path) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDStorageFactory>
+    {
+        var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->OpenFile(ref path, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> OpenFile<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string path) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDStorageFactory>
+    {
+        var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->OpenFile(path, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateStatusArray<TI0, TThis>(this TThis thisVtbl, uint capacity, byte* name) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDStorageFactory>
+    {
+        var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateStatusArray(capacity, name, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> CreateStatusArray<TI0, TThis>(this TThis thisVtbl, uint capacity, ref byte name) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDStorageFactory>
+    {
+        var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateStatusArray(capacity, ref name, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> CreateStatusArray<TI0, TThis>(this TThis thisVtbl, uint capacity, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDStorageFactory>
+    {
+        var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateStatusArray(capacity, name, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
 }

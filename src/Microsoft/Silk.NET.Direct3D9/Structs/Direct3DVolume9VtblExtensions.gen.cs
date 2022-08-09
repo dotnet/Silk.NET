@@ -586,4 +586,22 @@ public unsafe static class Direct3DVolume9VtblExtensions
         return @this->LockBox(ref pLockedVolume.GetPinnableReference(), ref pBox.GetPinnableReference(), Flags);
     }
 
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DVolume9>
+    {
+        var @this = (IDirect3DVolume9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> GetContainer<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DVolume9>
+    {
+        var @this = (IDirect3DVolume9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->GetContainer(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
 }

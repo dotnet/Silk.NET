@@ -327,4 +327,22 @@ public unsafe static class DxcContainerReflectionVtblExtensions
         return @this->GetPartReflection(idx, ref iid.GetPinnableReference(), ref ppvObject);
     }
 
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcContainerReflection>
+    {
+        var @this = (IDxcContainerReflection*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> GetPartReflection<TI0, TThis>(this TThis thisVtbl, uint idx) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcContainerReflection>
+    {
+        var @this = (IDxcContainerReflection*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->GetPartReflection(idx, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
 }

@@ -30103,5 +30103,14 @@ namespace Silk.NET.Direct3D.Compilers
             return @this->Disassemble(ref pSource, (IDxcBlobEncoding**) ppDisassembly.GetAddressOf());
         }
 
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
     }
 }

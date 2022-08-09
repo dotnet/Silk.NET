@@ -61281,4 +61281,76 @@ public unsafe static class D3D11Device2VtblExtensions
         return @this->CheckMultisampleQualityLevels1(Format, SampleCount, Flags, ref pNumQualityLevels.GetPinnableReference());
     }
 
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D11Device2>
+    {
+        var @this = (ID3D11Device2*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> OpenSharedResource<TI0, TThis>(this TThis thisVtbl, void* hResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D11Device2>
+    {
+        var @this = (ID3D11Device2*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->OpenSharedResource(hResource, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> OpenSharedResource<T0, TI0, TThis>(this TThis thisVtbl, ref T0 hResource) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D11Device2>
+    {
+        var @this = (ID3D11Device2*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->OpenSharedResource(ref hResource, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> OpenSharedResource1<TI0, TThis>(this TThis thisVtbl, void* hResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D11Device2>
+    {
+        var @this = (ID3D11Device2*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->OpenSharedResource1(hResource, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> OpenSharedResource1<T0, TI0, TThis>(this TThis thisVtbl, ref T0 hResource) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D11Device2>
+    {
+        var @this = (ID3D11Device2*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->OpenSharedResource1(ref hResource, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> OpenSharedResourceByName<TI0, TThis>(this TThis thisVtbl, char* lpName, uint dwDesiredAccess) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D11Device2>
+    {
+        var @this = (ID3D11Device2*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->OpenSharedResourceByName(lpName, dwDesiredAccess, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> OpenSharedResourceByName<TI0, TThis>(this TThis thisVtbl, ref char lpName, uint dwDesiredAccess) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D11Device2>
+    {
+        var @this = (ID3D11Device2*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->OpenSharedResourceByName(ref lpName, dwDesiredAccess, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> OpenSharedResourceByName<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpName, uint dwDesiredAccess) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D11Device2>
+    {
+        var @this = (ID3D11Device2*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->OpenSharedResourceByName(lpName, dwDesiredAccess, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
 }

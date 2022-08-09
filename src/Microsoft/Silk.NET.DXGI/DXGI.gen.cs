@@ -313,6 +313,51 @@ namespace Silk.NET.DXGI
             return CreateDXGIFactory1(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppFactory.GetAddressOf());
         }
 
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 163, Column 16 in dxgidebug.h")]
+        public unsafe ComPtr<TI0> GetDebugInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(GetDebugInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 121, Column 16 in dxgi1_3.h")]
+        public unsafe ComPtr<TI0> CreateDXGIFactory2<TI0>(uint Flags) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(CreateDXGIFactory2(Flags, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 122, Column 16 in dxgi1_3.h")]
+        public unsafe ComPtr<TI0> GetDebugInterface1<TI0>(uint Flags) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(GetDebugInterface1(Flags, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2293, Column 16 in dxgi.h")]
+        public unsafe ComPtr<TI0> CreateDXGIFactory<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(CreateDXGIFactory(out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2296, Column 16 in dxgi.h")]
+        public unsafe ComPtr<TI0> CreateDXGIFactory1<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(CreateDXGIFactory1(out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
 
         public DXGI(INativeContext ctx)
             : base(ctx)

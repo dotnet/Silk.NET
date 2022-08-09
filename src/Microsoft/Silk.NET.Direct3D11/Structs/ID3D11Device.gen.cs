@@ -43605,5 +43605,32 @@ namespace Silk.NET.Direct3D11
             @this->GetImmediateContext((ID3D11DeviceContext**) ppImmediateContext.GetAddressOf());
         }
 
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D11Device*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe ComPtr<TI0> OpenSharedResource<TI0>(void* hResource) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D11Device*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->OpenSharedResource(hResource, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> OpenSharedResource<T0, TI0>(ref T0 hResource) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D11Device*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->OpenSharedResource(ref hResource, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
     }
 }

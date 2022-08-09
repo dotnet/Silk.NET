@@ -2025,4 +2025,13 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
         return @this->CreateVideoDecoder(ref Guid.GetPinnableReference(), ref pVideoDesc.GetPinnableReference(), ref pConfig.GetPinnableReference(), ref ppDecoderRenderTargets, NumRenderTargets, ref ppDecode);
     }
 
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDirectXVideoDecoderService>
+    {
+        var @this = (IDirectXVideoDecoderService*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
 }

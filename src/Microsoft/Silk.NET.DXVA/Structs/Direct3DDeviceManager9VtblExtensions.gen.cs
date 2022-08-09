@@ -484,4 +484,31 @@ public unsafe static class Direct3DDeviceManager9VtblExtensions
         return @this->GetVideoService(ref hDevice.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppService);
     }
 
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDeviceManager9>
+    {
+        var @this = (IDirect3DDeviceManager9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> GetVideoService<TI0, TThis>(this TThis thisVtbl, void* hDevice) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDeviceManager9>
+    {
+        var @this = (IDirect3DDeviceManager9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->GetVideoService(hDevice, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> GetVideoService<T0, TI0, TThis>(this TThis thisVtbl, ref T0 hDevice) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDeviceManager9>
+    {
+        var @this = (IDirect3DDeviceManager9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->GetVideoService(ref hDevice, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
 }

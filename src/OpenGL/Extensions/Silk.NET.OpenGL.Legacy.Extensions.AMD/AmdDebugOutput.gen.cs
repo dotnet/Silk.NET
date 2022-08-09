@@ -956,6 +956,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
             return GetDebugMessageLog((uint) lengths.Length, (uint) message.Length, out categories.GetPinnableReference(), out severities.GetPinnableReference(), out ids.GetPinnableReference(), out lengths.GetPinnableReference(), out message.GetPinnableReference());
         }
 
+        public unsafe T0 DebugMessageCallback<T0>([Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] DebugProcAmd callback) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            DebugMessageCallback(callback, out T0 silkRet);
+            return silkRet;
+        }
+
         public AmdDebugOutput(INativeContext ctx)
             : base(ctx)
         {

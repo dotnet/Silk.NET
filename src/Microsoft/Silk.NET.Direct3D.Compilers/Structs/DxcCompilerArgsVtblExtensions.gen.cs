@@ -222,4 +222,13 @@ public unsafe static class DxcCompilerArgsVtblExtensions
         return @this->AddDefines(in pDefines.GetPinnableReference(), defineCount);
     }
 
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcCompilerArgs>
+    {
+        var @this = (IDxcCompilerArgs*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
 }

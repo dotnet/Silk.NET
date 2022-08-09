@@ -189,4 +189,13 @@ public unsafe static class DxcValidatorVtblExtensions
         return @this->Validate(ref pShader.GetPinnableReference(), Flags, ref ppResult);
     }
 
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcValidator>
+    {
+        var @this = (IDxcValidator*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
 }

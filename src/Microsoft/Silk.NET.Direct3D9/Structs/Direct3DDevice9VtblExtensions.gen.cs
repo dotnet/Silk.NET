@@ -4724,4 +4724,13 @@ public unsafe static class Direct3DDevice9VtblExtensions
         return @this->CreateQuery(Type, (IDirect3DQuery9**) ppQuery.GetAddressOf());
     }
 
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9>
+    {
+        var @this = (IDirect3DDevice9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
 }

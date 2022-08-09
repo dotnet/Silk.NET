@@ -2175,4 +2175,13 @@ public unsafe static class D3D11FunctionLinkingGraphVtblExtensions
         return @this->PassValueWithSwizzle(ref pSrcNode.GetPinnableReference(), SrcParameterIndex, pSrcSwizzle, ref pDstNode.GetPinnableReference(), DstParameterIndex, pDstSwizzle);
     }
 
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D11FunctionLinkingGraph>
+    {
+        var @this = (ID3D11FunctionLinkingGraph*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
 }

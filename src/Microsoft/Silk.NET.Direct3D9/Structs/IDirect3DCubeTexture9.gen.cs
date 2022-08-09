@@ -545,5 +545,14 @@ namespace Silk.NET.Direct3D9
             return @this->GetCubeMapSurface(FaceType, Level, (IDirect3DSurface9**) ppCubeMapSurface.GetAddressOf());
         }
 
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCubeTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
     }
 }

@@ -1243,5 +1243,14 @@ namespace Silk.NET.DXVA
             return @this->CreateVideoProcessor(ref VideoProcDeviceGuid, ref pVideoDesc, RenderTargetFormat, MaxNumSubStreams, (IDirectXVideoProcessor**) ppVidProcess.GetAddressOf());
         }
 
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDirectXVideoProcessorService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
     }
 }

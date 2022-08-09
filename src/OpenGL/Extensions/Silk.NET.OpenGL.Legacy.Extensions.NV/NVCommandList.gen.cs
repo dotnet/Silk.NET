@@ -377,6 +377,20 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             ListDrawCommandsStatesClient(list, segment, in indirects, in sizes.GetPinnableReference(), in states.GetPinnableReference(), in fbos.GetPinnableReference(), (uint) fbos.Length);
         }
 
+        public unsafe uint CreateCommandLists([Flow(FlowDirection.In)] uint n)
+        {
+            // NonKhrReturnTypeOverloader
+            CreateCommandLists(n, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe uint CreateStates([Flow(FlowDirection.In)] uint n)
+        {
+            // NonKhrReturnTypeOverloader
+            CreateStates(n, out uint silkRet);
+            return silkRet;
+        }
+
         public NVCommandList(INativeContext ctx)
             : base(ctx)
         {

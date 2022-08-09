@@ -118,6 +118,24 @@ namespace Silk.NET.Vulkan.Extensions.KHR
             return QueueSubmit2(queue, (uint) pSubmits.Length, in pSubmits.GetPinnableReference(), fence);
         }
 
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pCheckpointData = new(StructureType.CheckpointData2NV);")]
+        public unsafe CheckpointData2NV GetQueueCheckpointData2([Count(Count = 0)] Queue queue, [Count(Count = 0)] uint* pCheckpointDataCount)
+        {
+            // NonKhrReturnTypeOverloader
+            GetQueueCheckpointData2(queue, pCheckpointDataCount, out CheckpointData2NV silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pCheckpointData = new(StructureType.CheckpointData2NV);")]
+        public unsafe CheckpointData2NV GetQueueCheckpointData2([Count(Count = 0)] Queue queue, [Count(Count = 0)] ref uint pCheckpointDataCount)
+        {
+            // NonKhrReturnTypeOverloader
+            GetQueueCheckpointData2(queue, ref pCheckpointDataCount, out CheckpointData2NV silkRet);
+            return silkRet;
+        }
+
         public KhrSynchronization2(INativeContext ctx)
             : base(ctx)
         {

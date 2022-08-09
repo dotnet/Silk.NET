@@ -46,6 +46,24 @@ namespace Silk.NET.Vulkan.Extensions.NV
         [NativeApi(EntryPoint = "vkGetQueueCheckpointDataNV", Convention = CallingConvention.Winapi)]
         public partial void GetQueueCheckpointData([Count(Count = 0)] Queue queue, [Count(Count = 0)] ref uint pCheckpointDataCount, [Count(Parameter = "pCheckpointDataCount"), Flow(FlowDirection.Out)] out CheckpointDataNV pCheckpointData);
 
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pCheckpointData = new(StructureType.CheckpointDataNV);")]
+        public unsafe CheckpointDataNV GetQueueCheckpointData([Count(Count = 0)] Queue queue, [Count(Count = 0)] uint* pCheckpointDataCount)
+        {
+            // NonKhrReturnTypeOverloader
+            GetQueueCheckpointData(queue, pCheckpointDataCount, out CheckpointDataNV silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pCheckpointData = new(StructureType.CheckpointDataNV);")]
+        public unsafe CheckpointDataNV GetQueueCheckpointData([Count(Count = 0)] Queue queue, [Count(Count = 0)] ref uint pCheckpointDataCount)
+        {
+            // NonKhrReturnTypeOverloader
+            GetQueueCheckpointData(queue, ref pCheckpointDataCount, out CheckpointDataNV silkRet);
+            return silkRet;
+        }
+
         public NVDeviceDiagnosticCheckpoints(INativeContext ctx)
             : base(ctx)
         {

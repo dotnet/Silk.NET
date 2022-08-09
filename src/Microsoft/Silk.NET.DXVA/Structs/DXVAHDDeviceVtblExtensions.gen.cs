@@ -455,4 +455,22 @@ public unsafe static class DXVAHDDeviceVtblExtensions
         return @this->CreateVideoProcessor(ref pVPGuid.GetPinnableReference(), ref ppVideoProcessor);
     }
 
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXVAHDDevice>
+    {
+        var @this = (IDXVAHDDevice*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> CreateVideoProcessor<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<IDXVAHDVideoProcessor>, IComVtbl<TI0> where TThis : IComVtbl<IDXVAHDDevice>
+    {
+        var @this = (IDXVAHDDevice*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateVideoProcessor(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
 }

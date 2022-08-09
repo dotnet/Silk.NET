@@ -437,4 +437,13 @@ public unsafe static class Direct3DResource9VtblExtensions
         return @this->FreePrivateData(ref refguid.GetPinnableReference());
     }
 
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DResource9>
+    {
+        var @this = (IDirect3DResource9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
 }

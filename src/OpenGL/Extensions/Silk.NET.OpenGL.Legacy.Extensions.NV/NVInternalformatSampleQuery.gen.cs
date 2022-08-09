@@ -116,6 +116,62 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             GetInternalformatSample(target, internalformat, samples, pname, (uint) @params.Length, out @params.GetPinnableReference());
         }
 
+        public unsafe int GetInternalformatSample([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV internalformat, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] uint count)
+        {
+            // NonKhrReturnTypeOverloader
+            GetInternalformatSample(target, internalformat, samples, pname, count, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetInternalformatSample([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV internalformat, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormatPName pname, [Flow(FlowDirection.In)] uint count)
+        {
+            // NonKhrReturnTypeOverloader
+            GetInternalformatSample(target, internalformat, samples, pname, count, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetInternalformatSample([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] uint count)
+        {
+            // NonKhrReturnTypeOverloader
+            GetInternalformatSample(target, internalformat, samples, pname, count, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetInternalformatSample([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormatPName pname, [Flow(FlowDirection.In)] uint count)
+        {
+            // NonKhrReturnTypeOverloader
+            GetInternalformatSample(target, internalformat, samples, pname, count, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetInternalformatSample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] NV internalformat, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] uint count)
+        {
+            // NonKhrReturnTypeOverloader
+            GetInternalformatSample(target, internalformat, samples, pname, count, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetInternalformatSample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] NV internalformat, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormatPName pname, [Flow(FlowDirection.In)] uint count)
+        {
+            // NonKhrReturnTypeOverloader
+            GetInternalformatSample(target, internalformat, samples, pname, count, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetInternalformatSample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] uint count)
+        {
+            // NonKhrReturnTypeOverloader
+            GetInternalformatSample(target, internalformat, samples, pname, count, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetInternalformatSample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormatPName pname, [Flow(FlowDirection.In)] uint count)
+        {
+            // NonKhrReturnTypeOverloader
+            GetInternalformatSample(target, internalformat, samples, pname, count, out int silkRet);
+            return silkRet;
+        }
+
         public NVInternalformatSampleQuery(INativeContext ctx)
             : base(ctx)
         {

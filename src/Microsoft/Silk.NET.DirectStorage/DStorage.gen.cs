@@ -71,6 +71,15 @@ namespace Silk.NET.DirectStorage
             return GetFactory(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppv.GetAddressOf());
         }
 
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 903, Column 16 in C:\\Users\\perks\\AppData\\Local\\Temp\\<...>\\native\\include\\dstorage.h")]
+        public unsafe ComPtr<TI0> GetFactory<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(GetFactory(out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
 
         public DStorage(INativeContext ctx)
             : base(ctx)

@@ -496,5 +496,59 @@ namespace Silk.NET.Direct3D12
             return @this->GetCurrentResourceAndCommandQueue(ref riidResource, ref ppvResource, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvQueue.GetAddressOf());
         }
 
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12SwapChainAssistant*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> GetSwapChainObject<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12SwapChainAssistant*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->GetSwapChainObject(out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI1> GetCurrentResourceAndCommandQueue<TI0, TI1>(ref ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        {
+            var @this = (ID3D12SwapChainAssistant*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->GetCurrentResourceAndCommandQueue(ref ppvResource, out ComPtr<TI1> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe ComPtr<TI0> GetCurrentResourceAndCommandQueue<TI0>(Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12SwapChainAssistant*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->GetCurrentResourceAndCommandQueue(riidResource, ref ppvResource, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe ComPtr<TI0> GetCurrentResourceAndCommandQueue<TI0>(ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12SwapChainAssistant*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->GetCurrentResourceAndCommandQueue(ref riidResource, ppvResource, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe ComPtr<TI0> GetCurrentResourceAndCommandQueue<TI0>(ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12SwapChainAssistant*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->GetCurrentResourceAndCommandQueue(ref riidResource, ref ppvResource, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
     }
 }

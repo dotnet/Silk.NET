@@ -5804,4 +5804,49 @@ public unsafe static class D3D11VideoDevice1VtblExtensions
         return @this->RecommendVideoDecoderDownsampleParameters(ref pInputDesc.GetPinnableReference(), InputColorSpace, ref pInputConfig.GetPinnableReference(), ref pFrameRate.GetPinnableReference(), ref pRecommendedOutputDesc.GetPinnableReference());
     }
 
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D11VideoDevice1>
+    {
+        var @this = (ID3D11VideoDevice1*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCryptoSession<TI0, TThis>(this TThis thisVtbl, Guid* pCryptoType, Guid* pDecoderProfile) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TThis : IComVtbl<ID3D11VideoDevice1>
+    {
+        var @this = (ID3D11VideoDevice1*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCryptoSession(pCryptoType, pDecoderProfile, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCryptoSession<TI0, TThis>(this TThis thisVtbl, Guid* pCryptoType, ref Guid pDecoderProfile) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TThis : IComVtbl<ID3D11VideoDevice1>
+    {
+        var @this = (ID3D11VideoDevice1*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCryptoSession(pCryptoType, ref pDecoderProfile, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCryptoSession<TI0, TThis>(this TThis thisVtbl, ref Guid pCryptoType, Guid* pDecoderProfile) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TThis : IComVtbl<ID3D11VideoDevice1>
+    {
+        var @this = (ID3D11VideoDevice1*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCryptoSession(ref pCryptoType, pDecoderProfile, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> CreateCryptoSession<TI0, TThis>(this TThis thisVtbl, ref Guid pCryptoType, ref Guid pDecoderProfile) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TThis : IComVtbl<ID3D11VideoDevice1>
+    {
+        var @this = (ID3D11VideoDevice1*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCryptoSession(ref pCryptoType, ref pDecoderProfile, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
 }

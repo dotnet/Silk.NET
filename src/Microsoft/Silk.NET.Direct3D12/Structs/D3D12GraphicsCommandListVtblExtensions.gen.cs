@@ -2625,4 +2625,22 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
         @this->ExecuteIndirect(ref pCommandSignature.GetPinnableReference(), MaxCommandCount, ref pArgumentBuffer.GetPinnableReference(), ArgumentBufferOffset, ref pCountBuffer.GetPinnableReference(), CountBufferOffset);
     }
 
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12GraphicsCommandList>
+    {
+        var @this = (ID3D12GraphicsCommandList*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> GetDevice<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12GraphicsCommandList>
+    {
+        var @this = (ID3D12GraphicsCommandList*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->GetDevice(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
 }

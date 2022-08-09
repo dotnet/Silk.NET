@@ -89,6 +89,20 @@ namespace Silk.NET.OpenGLES.Extensions.NV
         [NativeApi(EntryPoint = "glViewportIndexedfvNV", Convention = CallingConvention.Winapi)]
         public partial void ViewportIndexed([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] in float v);
 
+        public unsafe float GetFloat([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index)
+        {
+            // NonKhrReturnTypeOverloader
+            GetFloat(target, index, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetFloat([Flow(FlowDirection.In)] GetPName target, [Flow(FlowDirection.In)] uint index)
+        {
+            // NonKhrReturnTypeOverloader
+            GetFloat(target, index, out float silkRet);
+            return silkRet;
+        }
+
         public NVViewportArray(INativeContext ctx)
             : base(ctx)
         {

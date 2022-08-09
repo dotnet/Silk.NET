@@ -663,4 +663,13 @@ public unsafe static class DxcOptimizerVtblExtensions
         return @this->RunOptimizer(ref pBlob.GetPinnableReference(), ref ppOptions, optionCount, ref pOutputModule, ref ppOutputText);
     }
 
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcOptimizer>
+    {
+        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
 }

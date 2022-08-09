@@ -1646,6 +1646,87 @@ namespace Silk.NET.Direct3D12
             return GetInterface(ref rclsid, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvDebug.GetAddressOf());
         }
 
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 3956, Column 16 in d3d12.h")]
+        public unsafe ComPtr<TI0> CreateRootSignatureDeserializer<TI0>(void* pSrcData, nuint SrcDataSizeInBytes) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(CreateRootSignatureDeserializer(pSrcData, SrcDataSizeInBytes, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 3956, Column 16 in d3d12.h")]
+        public unsafe ComPtr<TI0> CreateRootSignatureDeserializer<T0, TI0>(ref T0 pSrcData, nuint SrcDataSizeInBytes) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(CreateRootSignatureDeserializer(ref pSrcData, SrcDataSizeInBytes, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 3978, Column 16 in d3d12.h")]
+        public unsafe ComPtr<TI0> CreateVersionedRootSignatureDeserializer<TI0>(void* pSrcData, nuint SrcDataSizeInBytes) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(CreateVersionedRootSignatureDeserializer(pSrcData, SrcDataSizeInBytes, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 3978, Column 16 in d3d12.h")]
+        public unsafe ComPtr<TI0> CreateVersionedRootSignatureDeserializer<T0, TI0>(ref T0 pSrcData, nuint SrcDataSizeInBytes) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(CreateVersionedRootSignatureDeserializer(ref pSrcData, SrcDataSizeInBytes, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 22472, Column 16 in d3d12.h")]
+        public unsafe ComPtr<TI0> CreateDevice<TI0>(Silk.NET.Core.Native.IUnknown* pAdapter, Silk.NET.Core.Native.D3DFeatureLevel MinimumFeatureLevel) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(CreateDevice(pAdapter, MinimumFeatureLevel, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 22472, Column 16 in d3d12.h")]
+        public unsafe ComPtr<TI0> CreateDevice<TI0>(ref Silk.NET.Core.Native.IUnknown pAdapter, Silk.NET.Core.Native.D3DFeatureLevel MinimumFeatureLevel) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(CreateDevice(ref pAdapter, MinimumFeatureLevel, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 22481, Column 16 in d3d12.h")]
+        public unsafe ComPtr<TI0> GetDebugInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(GetDebugInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 22570, Column 16 in d3d12.h")]
+        public unsafe ComPtr<TI0> GetInterface<TI0>(Guid* rclsid) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(GetInterface(rclsid, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 22570, Column 16 in d3d12.h")]
+        public unsafe ComPtr<TI0> GetInterface<TI0>(ref Guid rclsid) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(GetInterface(ref rclsid, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
 
         public D3D12(INativeContext ctx)
             : base(ctx)

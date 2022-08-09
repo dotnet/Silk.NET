@@ -58611,4 +58611,31 @@ public unsafe static class D3D11DeviceVtblExtensions
         @this->GetImmediateContext((ID3D11DeviceContext**) ppImmediateContext.GetAddressOf());
     }
 
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D11Device>
+    {
+        var @this = (ID3D11Device*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> OpenSharedResource<TI0, TThis>(this TThis thisVtbl, void* hResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D11Device>
+    {
+        var @this = (ID3D11Device*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->OpenSharedResource(hResource, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> OpenSharedResource<T0, TI0, TThis>(this TThis thisVtbl, ref T0 hResource) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D11Device>
+    {
+        var @this = (ID3D11Device*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->OpenSharedResource(ref hResource, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
 }

@@ -290,6 +290,60 @@ namespace Silk.NET.Direct3D.Compilers
             return CreateInstance2(ref pMalloc, ref rclsid, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppv.GetAddressOf());
         }
 
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 76, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
+        public unsafe ComPtr<TI0> CreateInstance<TI0>(Guid* rclsid) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(CreateInstance(rclsid, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 76, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
+        public unsafe ComPtr<TI0> CreateInstance<TI0>(ref Guid rclsid) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(CreateInstance(ref rclsid, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
+        public unsafe ComPtr<TI0> CreateInstance2<TI0>(IMalloc* pMalloc, Guid* rclsid) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(CreateInstance2(pMalloc, rclsid, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
+        public unsafe ComPtr<TI0> CreateInstance2<TI0>(IMalloc* pMalloc, ref Guid rclsid) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(CreateInstance2(pMalloc, ref rclsid, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
+        public unsafe ComPtr<TI0> CreateInstance2<TI0>(ref IMalloc pMalloc, Guid* rclsid) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(CreateInstance2(ref pMalloc, rclsid, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
+        public unsafe ComPtr<TI0> CreateInstance2<TI0>(ref IMalloc pMalloc, ref Guid rclsid) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(CreateInstance2(ref pMalloc, ref rclsid, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
 
         public DXC(INativeContext ctx)
             : base(ctx)

@@ -595,5 +595,14 @@ namespace Silk.NET.Direct3D9
             return @this->CreateCryptoSession(ref pCryptoType, ref pDecodeProfile, (IDirect3DCryptoSession9**) ppCryptoSession.GetAddressOf(), ref pCryptoHandle);
         }
 
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
     }
 }

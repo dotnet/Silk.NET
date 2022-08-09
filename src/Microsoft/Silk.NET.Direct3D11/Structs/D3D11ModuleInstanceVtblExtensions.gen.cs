@@ -354,4 +354,13 @@ public unsafe static class D3D11ModuleInstanceVtblExtensions
         return @this->BindResourceAsUnorderedAccessViewByName(ref pSrvName.GetPinnableReference(), uDstUavSlot, uCount);
     }
 
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D11ModuleInstance>
+    {
+        var @this = (ID3D11ModuleInstance*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
 }

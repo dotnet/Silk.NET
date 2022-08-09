@@ -167,4 +167,13 @@ public unsafe static class D3D12DeviceRemovedExtendedDataVtblExtensions
         return @this->GetPageFaultAllocationOutput(ref pOutput.GetPinnableReference());
     }
 
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12DeviceRemovedExtendedData>
+    {
+        var @this = (ID3D12DeviceRemovedExtendedData*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
 }

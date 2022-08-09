@@ -392,6 +392,104 @@ namespace Silk.NET.OpenGL.Extensions.ARB
             GenRenderbuffers((uint) renderbuffers.Length, out renderbuffers.GetPinnableReference());
         }
 
+        public unsafe uint GenFramebuffers([Flow(FlowDirection.In)] uint n)
+        {
+            // NonKhrReturnTypeOverloader
+            GenFramebuffers(n, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe uint GenRenderbuffers([Flow(FlowDirection.In)] uint n)
+        {
+            // NonKhrReturnTypeOverloader
+            GenRenderbuffers(n, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetFramebufferAttachmentParameter([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB attachment, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetFramebufferAttachmentParameter(target, attachment, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetFramebufferAttachmentParameter([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB attachment, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetFramebufferAttachmentParameter(target, attachment, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetFramebufferAttachmentParameter([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetFramebufferAttachmentParameter(target, attachment, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetFramebufferAttachmentParameter([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetFramebufferAttachmentParameter(target, attachment, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetFramebufferAttachmentParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] ARB attachment, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetFramebufferAttachmentParameter(target, attachment, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetFramebufferAttachmentParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] ARB attachment, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetFramebufferAttachmentParameter(target, attachment, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetFramebufferAttachmentParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetFramebufferAttachmentParameter(target, attachment, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetFramebufferAttachmentParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetFramebufferAttachmentParameter(target, attachment, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetRenderbufferParameter([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetRenderbufferParameter(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetRenderbufferParameter([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] RenderbufferParameterName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetRenderbufferParameter(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetRenderbufferParameter([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetRenderbufferParameter(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetRenderbufferParameter([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] RenderbufferParameterName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetRenderbufferParameter(target, pname, out int silkRet);
+            return silkRet;
+        }
+
         public ArbFramebufferObject(INativeContext ctx)
             : base(ctx)
         {

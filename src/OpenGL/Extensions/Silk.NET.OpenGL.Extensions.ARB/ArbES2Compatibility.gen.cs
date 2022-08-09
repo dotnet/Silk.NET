@@ -197,6 +197,62 @@ namespace Silk.NET.OpenGL.Extensions.ARB
             ShaderBinary((uint) shaders.Length, in shaders.GetPinnableReference(), binaryFormat, in binary.GetPinnableReference(), (uint) (binary.Length * Unsafe.SizeOf<T0>()));
         }
 
+        public unsafe int GetShaderPrecisionFormat([Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] ARB precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] int* range)
+        {
+            // NonKhrReturnTypeOverloader
+            GetShaderPrecisionFormat(shadertype, precisiontype, range, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetShaderPrecisionFormat([Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] ARB precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] out int range)
+        {
+            // NonKhrReturnTypeOverloader
+            GetShaderPrecisionFormat(shadertype, precisiontype, out range, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetShaderPrecisionFormat([Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] PrecisionType precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] int* range)
+        {
+            // NonKhrReturnTypeOverloader
+            GetShaderPrecisionFormat(shadertype, precisiontype, range, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetShaderPrecisionFormat([Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] PrecisionType precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] out int range)
+        {
+            // NonKhrReturnTypeOverloader
+            GetShaderPrecisionFormat(shadertype, precisiontype, out range, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetShaderPrecisionFormat([Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] ARB precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] int* range)
+        {
+            // NonKhrReturnTypeOverloader
+            GetShaderPrecisionFormat(shadertype, precisiontype, range, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetShaderPrecisionFormat([Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] ARB precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] out int range)
+        {
+            // NonKhrReturnTypeOverloader
+            GetShaderPrecisionFormat(shadertype, precisiontype, out range, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetShaderPrecisionFormat([Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] PrecisionType precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] int* range)
+        {
+            // NonKhrReturnTypeOverloader
+            GetShaderPrecisionFormat(shadertype, precisiontype, range, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetShaderPrecisionFormat([Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] PrecisionType precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] out int range)
+        {
+            // NonKhrReturnTypeOverloader
+            GetShaderPrecisionFormat(shadertype, precisiontype, out range, out int silkRet);
+            return silkRet;
+        }
+
         public ArbES2Compatibility(INativeContext ctx)
             : base(ctx)
         {

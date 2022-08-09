@@ -526,4 +526,13 @@ public unsafe static class DxcExtraOutputsVtblExtensions
         return @this->GetOutput(uIndex, ref iid.GetPinnableReference(), ref ppvObject, ref ppOutputType, ref ppOutputName);
     }
 
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcExtraOutputs>
+    {
+        var @this = (IDxcExtraOutputs*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
 }

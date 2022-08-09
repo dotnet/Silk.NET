@@ -56,6 +56,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             return ret;
         }
 
+        public unsafe float GetCoverageModulationTable([Flow(FlowDirection.In)] uint bufSize)
+        {
+            // NonKhrReturnTypeOverloader
+            GetCoverageModulationTable(bufSize, out float silkRet);
+            return silkRet;
+        }
+
         public NVFramebufferMixedSamples(INativeContext ctx)
             : base(ctx)
         {

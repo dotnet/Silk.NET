@@ -937,4 +937,13 @@ public unsafe static class DirectXVideoProcessorVtblExtensions
         return @this->VideoProcessBlt(ref pRenderTarget.GetPinnableReference(), ref pBltParams.GetPinnableReference(), ref pSamples.GetPinnableReference(), NumSamples, ref pHandleComplete);
     }
 
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDirectXVideoProcessor>
+    {
+        var @this = (IDirectXVideoProcessor*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
 }

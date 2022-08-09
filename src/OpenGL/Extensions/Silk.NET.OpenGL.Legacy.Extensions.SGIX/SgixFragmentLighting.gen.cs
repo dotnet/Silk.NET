@@ -314,6 +314,62 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         [NativeApi(EntryPoint = "glLightEnviSGIX", Convention = CallingConvention.Winapi)]
         public partial void LightEnv([Flow(FlowDirection.In)] LightEnvParameterSGIX pname, [Flow(FlowDirection.In)] int param);
 
+        public unsafe float GetFragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] SGIX pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetFragmentLight(light, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetFragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetFragmentLight(light, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetFragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] SGIX pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetFragmentLight(light, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetFragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetFragmentLight(light, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetFragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetFragmentMaterial(face, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetFragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetFragmentMaterial(face, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetFragmentMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] SGIX pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetFragmentMaterial(face, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetFragmentMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetFragmentMaterial(face, pname, out float silkRet);
+            return silkRet;
+        }
+
         public SgixFragmentLighting(INativeContext ctx)
             : base(ctx)
         {

@@ -7404,6 +7404,70 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
             return ret;
         }
 
+        public unsafe byte GetObjectLabel([Flow(FlowDirection.In)] KHR identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetObjectLabel(identifier, name, bufSize, length, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetObjectLabel([Flow(FlowDirection.In)] KHR identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetObjectLabel(identifier, name, bufSize, out length, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetObjectLabel([Flow(FlowDirection.In)] ObjectIdentifier identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetObjectLabel(identifier, name, bufSize, length, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetObjectLabel([Flow(FlowDirection.In)] ObjectIdentifier identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetObjectLabel(identifier, name, bufSize, out length, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetObjectPtrLabel([Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetObjectPtrLabel(ptr, bufSize, length, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetObjectPtrLabel([Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetObjectPtrLabel(ptr, bufSize, out length, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetObjectPtrLabel<T0>([Flow(FlowDirection.In)] in T0 ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetObjectPtrLabel(in ptr, bufSize, length, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetObjectPtrLabel<T0>([Flow(FlowDirection.In)] in T0 ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetObjectPtrLabel(in ptr, bufSize, out length, out byte silkRet);
+            return silkRet;
+        }
+
+        [System.Obsolete("Deprecated in version ")]
+        public unsafe void* GetPointer([Flow(FlowDirection.In)] GetPointervPName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPointer(pname, out void* silkRet);
+            return silkRet;
+        }
+
         public KhrDebug(INativeContext ctx)
             : base(ctx)
         {

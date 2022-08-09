@@ -3526,4 +3526,49 @@ public unsafe static class DXGIFactory6VtblExtensions
         return @this->EnumAdapterByGpuPreference(Adapter, GpuPreference, ref riid.GetPinnableReference(), ref ppvAdapter);
     }
 
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> GetParent<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->GetParent(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> EnumAdapterByLuid<TI0, TThis>(this TThis thisVtbl, Luid AdapterLuid) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->EnumAdapterByLuid(AdapterLuid, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> EnumWarpAdapter<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->EnumWarpAdapter(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> EnumAdapterByGpuPreference<TI0, TThis>(this TThis thisVtbl, uint Adapter, GpuPreference GpuPreference) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->EnumAdapterByGpuPreference(Adapter, GpuPreference, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
 }

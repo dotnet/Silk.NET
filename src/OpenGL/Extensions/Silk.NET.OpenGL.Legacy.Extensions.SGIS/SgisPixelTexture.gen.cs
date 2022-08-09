@@ -88,6 +88,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
             return ret;
         }
 
+        public unsafe int GetPixelTexGenParameter([Flow(FlowDirection.In)] PixelTexGenParameterNameSGIS pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPixelTexGenParameter(pname, out int silkRet);
+            return silkRet;
+        }
+
         public SgisPixelTexture(INativeContext ctx)
             : base(ctx)
         {

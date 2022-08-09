@@ -14101,4 +14101,13 @@ public unsafe static class D3D11DeviceContext4VtblExtensions
         return @this->Wait(ref pFence.GetPinnableReference(), Value);
     }
 
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D11DeviceContext4>
+    {
+        var @this = (ID3D11DeviceContext4*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
 }

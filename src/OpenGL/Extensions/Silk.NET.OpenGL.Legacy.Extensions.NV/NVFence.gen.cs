@@ -86,6 +86,27 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             GenFences((uint) fences.Length, out fences.GetPinnableReference());
         }
 
+        public unsafe uint GenFences([Flow(FlowDirection.In)] uint n)
+        {
+            // NonKhrReturnTypeOverloader
+            GenFences(n, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetFence([Flow(FlowDirection.In)] uint fence, [Flow(FlowDirection.In)] NV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetFence(fence, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetFence([Flow(FlowDirection.In)] uint fence, [Flow(FlowDirection.In)] FenceParameterNameNV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetFence(fence, pname, out int silkRet);
+            return silkRet;
+        }
+
         public NVFence(INativeContext ctx)
             : base(ctx)
         {

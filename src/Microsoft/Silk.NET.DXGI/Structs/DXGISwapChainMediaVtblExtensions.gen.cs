@@ -219,4 +219,13 @@ public unsafe static class DXGISwapChainMediaVtblExtensions
         return @this->CheckPresentDurationSupport(DesiredPresentDuration, ref pClosestSmallerPresentDuration.GetPinnableReference(), ref pClosestLargerPresentDuration.GetPinnableReference());
     }
 
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXGISwapChainMedia>
+    {
+        var @this = (IDXGISwapChainMedia*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
 }

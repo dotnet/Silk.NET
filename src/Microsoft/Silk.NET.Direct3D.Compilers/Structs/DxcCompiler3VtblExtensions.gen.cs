@@ -1299,4 +1299,103 @@ public unsafe static class DxcCompiler3VtblExtensions
         return @this->Disassemble(in pObject.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppResult);
     }
 
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> Compile<TI0, TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] Buffer* pSource, char** pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->Compile(pSource, pArguments, argCount, pIncludeHandler, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> Compile<TI0, TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] Buffer* pSource, char** pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->Compile(pSource, pArguments, argCount, ref pIncludeHandler, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> Compile<TI0, TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] Buffer* pSource, ref char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->Compile(pSource, ref pArguments, argCount, pIncludeHandler, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> Compile<TI0, TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] Buffer* pSource, ref char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->Compile(pSource, ref pArguments, argCount, ref pIncludeHandler, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> Compile<TI0, TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] in Buffer pSource, char** pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->Compile(in pSource, pArguments, argCount, pIncludeHandler, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> Compile<TI0, TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] in Buffer pSource, char** pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->Compile(in pSource, pArguments, argCount, ref pIncludeHandler, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> Compile<TI0, TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] in Buffer pSource, ref char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->Compile(in pSource, ref pArguments, argCount, pIncludeHandler, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> Compile<TI0, TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] in Buffer pSource, ref char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->Compile(in pSource, ref pArguments, argCount, ref pIncludeHandler, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> Disassemble<TI0, TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] Buffer* pObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->Disassemble(pObject, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> Disassemble<TI0, TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] in Buffer pObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->Disassemble(in pObject, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
 }

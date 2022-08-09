@@ -1472,4 +1472,22 @@ public unsafe static class DXGIOutput4VtblExtensions
         return @this->CheckOverlayColorSpaceSupport(Format, ColorSpace, ref pConcernedDevice.GetPinnableReference(), ref pFlags.GetPinnableReference());
     }
 
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXGIOutput4>
+    {
+        var @this = (IDXGIOutput4*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> GetParent<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXGIOutput4>
+    {
+        var @this = (IDXGIOutput4*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->GetParent(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
 }

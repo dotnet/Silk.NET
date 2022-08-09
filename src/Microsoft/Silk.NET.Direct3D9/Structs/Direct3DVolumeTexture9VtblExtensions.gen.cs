@@ -657,4 +657,13 @@ public unsafe static class Direct3DVolumeTexture9VtblExtensions
         return @this->AddDirtyBox(ref pDirtyBox.GetPinnableReference());
     }
 
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DVolumeTexture9>
+    {
+        var @this = (IDirect3DVolumeTexture9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
 }

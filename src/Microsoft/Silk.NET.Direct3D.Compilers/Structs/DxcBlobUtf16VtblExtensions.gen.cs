@@ -227,4 +227,13 @@ public unsafe static class DxcBlobUtf16VtblExtensions
         return @this->GetEncoding(ref pKnown.GetPinnableReference(), ref pCodePage.GetPinnableReference());
     }
 
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcBlobUtf16>
+    {
+        var @this = (IDxcBlobUtf16*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
 }

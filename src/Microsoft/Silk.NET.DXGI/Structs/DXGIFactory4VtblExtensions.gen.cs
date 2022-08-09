@@ -3424,4 +3424,40 @@ public unsafe static class DXGIFactory4VtblExtensions
         return @this->EnumWarpAdapter(ref riid.GetPinnableReference(), ref ppvAdapter);
     }
 
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory4>
+    {
+        var @this = (IDXGIFactory4*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> GetParent<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory4>
+    {
+        var @this = (IDXGIFactory4*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->GetParent(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> EnumAdapterByLuid<TI0, TThis>(this TThis thisVtbl, Luid AdapterLuid) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory4>
+    {
+        var @this = (IDXGIFactory4*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->EnumAdapterByLuid(AdapterLuid, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> EnumWarpAdapter<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory4>
+    {
+        var @this = (IDXGIFactory4*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->EnumWarpAdapter(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
 }

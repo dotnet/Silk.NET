@@ -2736,4 +2736,13 @@ public unsafe static class DxcLinkerVtblExtensions
         return @this->Link(pEntryName, pTargetProfile, ref pLibNames, libCount, ref pArguments, argCount, (IDxcOperationResult**) ppResult.GetAddressOf());
     }
 
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
 }

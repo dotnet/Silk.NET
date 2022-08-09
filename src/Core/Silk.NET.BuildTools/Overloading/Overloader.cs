@@ -42,11 +42,11 @@ namespace Silk.NET.BuildTools.Overloading
                 new SpanOverloader(),
                 new ImplicitCountSpanOverloader(),
                 new ComPtrOverloader()
+            },
+            new IComplexFunctionOverloader[]
+            {
+                new NonKhrReturnTypeOverloader()
             }
-            //new IComplexFunctionOverloader[]
-            //{
-            //    new NonKhrReturnTypeOverloader()
-            //}
         };
 
         private static IEnumerable<T> Filter<T>

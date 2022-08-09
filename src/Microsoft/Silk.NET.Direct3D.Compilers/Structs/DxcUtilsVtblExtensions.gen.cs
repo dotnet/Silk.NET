@@ -9212,4 +9212,31 @@ public unsafe static class DxcUtilsVtblExtensions
         return @this->GetPDBContents(ref pPDBBlob.GetPinnableReference(), ref ppHash, ref ppContainer);
     }
 
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateReflection<TI0, TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] Buffer* pData) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateReflection(pData, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> CreateReflection<TI0, TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] in Buffer pData) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateReflection(in pData, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
 }

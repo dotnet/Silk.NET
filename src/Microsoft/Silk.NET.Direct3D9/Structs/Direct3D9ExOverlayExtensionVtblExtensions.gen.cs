@@ -181,4 +181,13 @@ public unsafe static class Direct3D9ExOverlayExtensionVtblExtensions
         return @this->CheckDeviceOverlayType(Adapter, DevType, OverlayWidth, OverlayHeight, OverlayFormat, ref pDisplayMode.GetPinnableReference(), DisplayRotation, ref pOverlayCaps.GetPinnableReference());
     }
 
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDirect3D9ExOverlayExtension>
+    {
+        var @this = (IDirect3D9ExOverlayExtension*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
 }

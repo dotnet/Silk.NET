@@ -298,4 +298,13 @@ public unsafe static class DxcVersionInfo2VtblExtensions
         return @this->GetCommitInfo(ref pCommitCount.GetPinnableReference(), ref pCommitHash);
     }
 
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcVersionInfo2>
+    {
+        var @this = (IDxcVersionInfo2*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
 }

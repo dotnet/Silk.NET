@@ -18945,4 +18945,1174 @@ public unsafe static class D3D12Device9VtblExtensions
         return @this->CreateCommandQueue1(ref pDesc.GetPinnableReference(), ref CreatorID.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppCommandQueue);
     }
 
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommandQueue<TI0, TThis>(this TThis thisVtbl, CommandQueueDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommandQueue(pDesc, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> CreateCommandQueue<TI0, TThis>(this TThis thisVtbl, ref CommandQueueDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommandQueue(ref pDesc, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> CreateCommandAllocator<TI0, TThis>(this TThis thisVtbl, CommandListType type) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommandAllocator(type, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateGraphicsPipelineState<TI0, TThis>(this TThis thisVtbl, GraphicsPipelineStateDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateGraphicsPipelineState(pDesc, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> CreateGraphicsPipelineState<TI0, TThis>(this TThis thisVtbl, ref GraphicsPipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateGraphicsPipelineState(ref pDesc, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateComputePipelineState<TI0, TThis>(this TThis thisVtbl, ComputePipelineStateDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateComputePipelineState(pDesc, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> CreateComputePipelineState<TI0, TThis>(this TThis thisVtbl, ref ComputePipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateComputePipelineState(ref pDesc, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommandList<TI0, TThis>(this TThis thisVtbl, uint nodeMask, CommandListType type, ID3D12CommandAllocator* pCommandAllocator, ID3D12PipelineState* pInitialState) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommandList(nodeMask, type, pCommandAllocator, pInitialState, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommandList<TI0, TThis>(this TThis thisVtbl, uint nodeMask, CommandListType type, ID3D12CommandAllocator* pCommandAllocator, ref ID3D12PipelineState pInitialState) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommandList(nodeMask, type, pCommandAllocator, ref pInitialState, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommandList<TI0, TThis>(this TThis thisVtbl, uint nodeMask, CommandListType type, ref ID3D12CommandAllocator pCommandAllocator, ID3D12PipelineState* pInitialState) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommandList(nodeMask, type, ref pCommandAllocator, pInitialState, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> CreateCommandList<TI0, TThis>(this TThis thisVtbl, uint nodeMask, CommandListType type, ref ID3D12CommandAllocator pCommandAllocator, ref ID3D12PipelineState pInitialState) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommandList(nodeMask, type, ref pCommandAllocator, ref pInitialState, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateDescriptorHeap<TI0, TThis>(this TThis thisVtbl, DescriptorHeapDesc* pDescriptorHeapDesc) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateDescriptorHeap(pDescriptorHeapDesc, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> CreateDescriptorHeap<TI0, TThis>(this TThis thisVtbl, ref DescriptorHeapDesc pDescriptorHeapDesc) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateDescriptorHeap(ref pDescriptorHeapDesc, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateRootSignature<TI0, TThis>(this TThis thisVtbl, uint nodeMask, void* pBlobWithRootSignature, nuint blobLengthInBytes) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateRootSignature(nodeMask, pBlobWithRootSignature, blobLengthInBytes, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> CreateRootSignature<T0, TI0, TThis>(this TThis thisVtbl, uint nodeMask, ref T0 pBlobWithRootSignature, nuint blobLengthInBytes) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateRootSignature(nodeMask, ref pBlobWithRootSignature, blobLengthInBytes, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommittedResource<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommittedResource(pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommittedResource<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommittedResource(pHeapProperties, HeapFlags, pDesc, InitialResourceState, ref pOptimizedClearValue, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommittedResource<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommittedResource(pHeapProperties, HeapFlags, ref pDesc, InitialResourceState, pOptimizedClearValue, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommittedResource<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommittedResource(pHeapProperties, HeapFlags, ref pDesc, InitialResourceState, ref pOptimizedClearValue, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommittedResource<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommittedResource(ref pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommittedResource<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommittedResource(ref pHeapProperties, HeapFlags, pDesc, InitialResourceState, ref pOptimizedClearValue, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommittedResource<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommittedResource(ref pHeapProperties, HeapFlags, ref pDesc, InitialResourceState, pOptimizedClearValue, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> CreateCommittedResource<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommittedResource(ref pHeapProperties, HeapFlags, ref pDesc, InitialResourceState, ref pOptimizedClearValue, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateHeap<TI0, TThis>(this TThis thisVtbl, HeapDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateHeap(pDesc, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> CreateHeap<TI0, TThis>(this TThis thisVtbl, ref HeapDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateHeap(ref pDesc, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreatePlacedResource<TI0, TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, ResourceDesc* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreatePlacedResource(pHeap, HeapOffset, pDesc, InitialState, pOptimizedClearValue, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreatePlacedResource<TI0, TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, ResourceDesc* pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreatePlacedResource(pHeap, HeapOffset, pDesc, InitialState, ref pOptimizedClearValue, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreatePlacedResource<TI0, TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, ref ResourceDesc pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreatePlacedResource(pHeap, HeapOffset, ref pDesc, InitialState, pOptimizedClearValue, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreatePlacedResource<TI0, TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, ref ResourceDesc pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreatePlacedResource(pHeap, HeapOffset, ref pDesc, InitialState, ref pOptimizedClearValue, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreatePlacedResource<TI0, TThis>(this TThis thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, ResourceDesc* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreatePlacedResource(ref pHeap, HeapOffset, pDesc, InitialState, pOptimizedClearValue, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreatePlacedResource<TI0, TThis>(this TThis thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, ResourceDesc* pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreatePlacedResource(ref pHeap, HeapOffset, pDesc, InitialState, ref pOptimizedClearValue, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreatePlacedResource<TI0, TThis>(this TThis thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, ref ResourceDesc pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreatePlacedResource(ref pHeap, HeapOffset, ref pDesc, InitialState, pOptimizedClearValue, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> CreatePlacedResource<TI0, TThis>(this TThis thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, ref ResourceDesc pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreatePlacedResource(ref pHeap, HeapOffset, ref pDesc, InitialState, ref pOptimizedClearValue, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateReservedResource<TI0, TThis>(this TThis thisVtbl, ResourceDesc* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateReservedResource(pDesc, InitialState, pOptimizedClearValue, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateReservedResource<TI0, TThis>(this TThis thisVtbl, ResourceDesc* pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateReservedResource(pDesc, InitialState, ref pOptimizedClearValue, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateReservedResource<TI0, TThis>(this TThis thisVtbl, ref ResourceDesc pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateReservedResource(ref pDesc, InitialState, pOptimizedClearValue, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> CreateReservedResource<TI0, TThis>(this TThis thisVtbl, ref ResourceDesc pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateReservedResource(ref pDesc, InitialState, ref pOptimizedClearValue, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> OpenSharedHandle<TI0, TThis>(this TThis thisVtbl, void* NTHandle) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->OpenSharedHandle(NTHandle, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> OpenSharedHandle<T0, TI0, TThis>(this TThis thisVtbl, ref T0 NTHandle) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->OpenSharedHandle(ref NTHandle, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> CreateFence<TI0, TThis>(this TThis thisVtbl, ulong InitialValue, FenceFlags Flags) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateFence(InitialValue, Flags, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateQueryHeap<TI0, TThis>(this TThis thisVtbl, QueryHeapDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateQueryHeap(pDesc, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> CreateQueryHeap<TI0, TThis>(this TThis thisVtbl, ref QueryHeapDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateQueryHeap(ref pDesc, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommandSignature<TI0, TThis>(this TThis thisVtbl, CommandSignatureDesc* pDesc, ID3D12RootSignature* pRootSignature) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommandSignature(pDesc, pRootSignature, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommandSignature<TI0, TThis>(this TThis thisVtbl, CommandSignatureDesc* pDesc, ref ID3D12RootSignature pRootSignature) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommandSignature(pDesc, ref pRootSignature, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommandSignature<TI0, TThis>(this TThis thisVtbl, ref CommandSignatureDesc pDesc, ID3D12RootSignature* pRootSignature) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommandSignature(ref pDesc, pRootSignature, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> CreateCommandSignature<TI0, TThis>(this TThis thisVtbl, ref CommandSignatureDesc pDesc, ref ID3D12RootSignature pRootSignature) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommandSignature(ref pDesc, ref pRootSignature, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreatePipelineLibrary<TI0, TThis>(this TThis thisVtbl, void* pLibraryBlob, nuint BlobLength) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreatePipelineLibrary(pLibraryBlob, BlobLength, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> CreatePipelineLibrary<T0, TI0, TThis>(this TThis thisVtbl, ref T0 pLibraryBlob, nuint BlobLength) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreatePipelineLibrary(ref pLibraryBlob, BlobLength, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreatePipelineState<TI0, TThis>(this TThis thisVtbl, PipelineStateStreamDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreatePipelineState(pDesc, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> CreatePipelineState<TI0, TThis>(this TThis thisVtbl, ref PipelineStateStreamDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreatePipelineState(ref pDesc, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> OpenExistingHeapFromAddress<TI0, TThis>(this TThis thisVtbl, void* pAddress) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->OpenExistingHeapFromAddress(pAddress, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> OpenExistingHeapFromAddress<T0, TI0, TThis>(this TThis thisVtbl, ref T0 pAddress) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->OpenExistingHeapFromAddress(ref pAddress, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> OpenExistingHeapFromFileMapping<TI0, TThis>(this TThis thisVtbl, void* hFileMapping) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->OpenExistingHeapFromFileMapping(hFileMapping, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> OpenExistingHeapFromFileMapping<T0, TI0, TThis>(this TThis thisVtbl, ref T0 hFileMapping) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->OpenExistingHeapFromFileMapping(ref hFileMapping, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> CreateCommandList1<TI0, TThis>(this TThis thisVtbl, uint nodeMask, CommandListType type, CommandListFlags flags) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommandList1(nodeMask, type, flags, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateProtectedResourceSession<TI0, TThis>(this TThis thisVtbl, ProtectedResourceSessionDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateProtectedResourceSession(pDesc, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> CreateProtectedResourceSession<TI0, TThis>(this TThis thisVtbl, ref ProtectedResourceSessionDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateProtectedResourceSession(ref pDesc, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommittedResource1<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommittedResource1(pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, pProtectedSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommittedResource1<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommittedResource1(pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, ref pProtectedSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommittedResource1<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommittedResource1(pHeapProperties, HeapFlags, pDesc, InitialResourceState, ref pOptimizedClearValue, pProtectedSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommittedResource1<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommittedResource1(pHeapProperties, HeapFlags, pDesc, InitialResourceState, ref pOptimizedClearValue, ref pProtectedSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommittedResource1<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommittedResource1(pHeapProperties, HeapFlags, ref pDesc, InitialResourceState, pOptimizedClearValue, pProtectedSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommittedResource1<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommittedResource1(pHeapProperties, HeapFlags, ref pDesc, InitialResourceState, pOptimizedClearValue, ref pProtectedSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommittedResource1<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommittedResource1(pHeapProperties, HeapFlags, ref pDesc, InitialResourceState, ref pOptimizedClearValue, pProtectedSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommittedResource1<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommittedResource1(pHeapProperties, HeapFlags, ref pDesc, InitialResourceState, ref pOptimizedClearValue, ref pProtectedSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommittedResource1<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommittedResource1(ref pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, pProtectedSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommittedResource1<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommittedResource1(ref pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, ref pProtectedSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommittedResource1<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommittedResource1(ref pHeapProperties, HeapFlags, pDesc, InitialResourceState, ref pOptimizedClearValue, pProtectedSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommittedResource1<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommittedResource1(ref pHeapProperties, HeapFlags, pDesc, InitialResourceState, ref pOptimizedClearValue, ref pProtectedSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommittedResource1<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommittedResource1(ref pHeapProperties, HeapFlags, ref pDesc, InitialResourceState, pOptimizedClearValue, pProtectedSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommittedResource1<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommittedResource1(ref pHeapProperties, HeapFlags, ref pDesc, InitialResourceState, pOptimizedClearValue, ref pProtectedSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommittedResource1<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommittedResource1(ref pHeapProperties, HeapFlags, ref pDesc, InitialResourceState, ref pOptimizedClearValue, pProtectedSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> CreateCommittedResource1<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommittedResource1(ref pHeapProperties, HeapFlags, ref pDesc, InitialResourceState, ref pOptimizedClearValue, ref pProtectedSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateHeap1<TI0, TThis>(this TThis thisVtbl, HeapDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateHeap1(pDesc, pProtectedSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateHeap1<TI0, TThis>(this TThis thisVtbl, HeapDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateHeap1(pDesc, ref pProtectedSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateHeap1<TI0, TThis>(this TThis thisVtbl, ref HeapDesc pDesc, ID3D12ProtectedResourceSession* pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateHeap1(ref pDesc, pProtectedSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> CreateHeap1<TI0, TThis>(this TThis thisVtbl, ref HeapDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateHeap1(ref pDesc, ref pProtectedSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateReservedResource1<TI0, TThis>(this TThis thisVtbl, ResourceDesc* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateReservedResource1(pDesc, InitialState, pOptimizedClearValue, pProtectedSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateReservedResource1<TI0, TThis>(this TThis thisVtbl, ResourceDesc* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateReservedResource1(pDesc, InitialState, pOptimizedClearValue, ref pProtectedSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateReservedResource1<TI0, TThis>(this TThis thisVtbl, ResourceDesc* pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateReservedResource1(pDesc, InitialState, ref pOptimizedClearValue, pProtectedSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateReservedResource1<TI0, TThis>(this TThis thisVtbl, ResourceDesc* pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateReservedResource1(pDesc, InitialState, ref pOptimizedClearValue, ref pProtectedSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateReservedResource1<TI0, TThis>(this TThis thisVtbl, ref ResourceDesc pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateReservedResource1(ref pDesc, InitialState, pOptimizedClearValue, pProtectedSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateReservedResource1<TI0, TThis>(this TThis thisVtbl, ref ResourceDesc pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateReservedResource1(ref pDesc, InitialState, pOptimizedClearValue, ref pProtectedSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateReservedResource1<TI0, TThis>(this TThis thisVtbl, ref ResourceDesc pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateReservedResource1(ref pDesc, InitialState, ref pOptimizedClearValue, pProtectedSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> CreateReservedResource1<TI0, TThis>(this TThis thisVtbl, ref ResourceDesc pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateReservedResource1(ref pDesc, InitialState, ref pOptimizedClearValue, ref pProtectedSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateLifetimeTracker<TI0, TThis>(this TThis thisVtbl, ID3D12LifetimeOwner* pOwner) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateLifetimeTracker(pOwner, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> CreateLifetimeTracker<TI0, TThis>(this TThis thisVtbl, ref ID3D12LifetimeOwner pOwner) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateLifetimeTracker(ref pOwner, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateMetaCommand<TI0, TThis>(this TThis thisVtbl, Guid* CommandId, uint NodeMask, void* pCreationParametersData, nuint CreationParametersDataSizeInBytes) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateMetaCommand(CommandId, NodeMask, pCreationParametersData, CreationParametersDataSizeInBytes, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateMetaCommand<T0, TI0, TThis>(this TThis thisVtbl, Guid* CommandId, uint NodeMask, ref T0 pCreationParametersData, nuint CreationParametersDataSizeInBytes) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateMetaCommand(CommandId, NodeMask, ref pCreationParametersData, CreationParametersDataSizeInBytes, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateMetaCommand<TI0, TThis>(this TThis thisVtbl, ref Guid CommandId, uint NodeMask, void* pCreationParametersData, nuint CreationParametersDataSizeInBytes) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateMetaCommand(ref CommandId, NodeMask, pCreationParametersData, CreationParametersDataSizeInBytes, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> CreateMetaCommand<T0, TI0, TThis>(this TThis thisVtbl, ref Guid CommandId, uint NodeMask, ref T0 pCreationParametersData, nuint CreationParametersDataSizeInBytes) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateMetaCommand(ref CommandId, NodeMask, ref pCreationParametersData, CreationParametersDataSizeInBytes, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateStateObject<TI0, TThis>(this TThis thisVtbl, StateObjectDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateStateObject(pDesc, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> CreateStateObject<TI0, TThis>(this TThis thisVtbl, ref StateObjectDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateStateObject(ref pDesc, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> AddToStateObject<TI0, TThis>(this TThis thisVtbl, StateObjectDesc* pAddition, ID3D12StateObject* pStateObjectToGrowFrom) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->AddToStateObject(pAddition, pStateObjectToGrowFrom, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> AddToStateObject<TI0, TThis>(this TThis thisVtbl, StateObjectDesc* pAddition, ref ID3D12StateObject pStateObjectToGrowFrom) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->AddToStateObject(pAddition, ref pStateObjectToGrowFrom, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> AddToStateObject<TI0, TThis>(this TThis thisVtbl, ref StateObjectDesc pAddition, ID3D12StateObject* pStateObjectToGrowFrom) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->AddToStateObject(ref pAddition, pStateObjectToGrowFrom, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> AddToStateObject<TI0, TThis>(this TThis thisVtbl, ref StateObjectDesc pAddition, ref ID3D12StateObject pStateObjectToGrowFrom) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->AddToStateObject(ref pAddition, ref pStateObjectToGrowFrom, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateProtectedResourceSession1<TI0, TThis>(this TThis thisVtbl, ProtectedResourceSessionDesc1* pDesc) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateProtectedResourceSession1(pDesc, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> CreateProtectedResourceSession1<TI0, TThis>(this TThis thisVtbl, ref ProtectedResourceSessionDesc1 pDesc) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateProtectedResourceSession1(ref pDesc, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommittedResource2<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc1* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommittedResource2(pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, pProtectedSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommittedResource2<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc1* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommittedResource2(pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, ref pProtectedSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommittedResource2<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc1* pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommittedResource2(pHeapProperties, HeapFlags, pDesc, InitialResourceState, ref pOptimizedClearValue, pProtectedSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommittedResource2<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc1* pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommittedResource2(pHeapProperties, HeapFlags, pDesc, InitialResourceState, ref pOptimizedClearValue, ref pProtectedSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommittedResource2<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc1 pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommittedResource2(pHeapProperties, HeapFlags, ref pDesc, InitialResourceState, pOptimizedClearValue, pProtectedSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommittedResource2<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc1 pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommittedResource2(pHeapProperties, HeapFlags, ref pDesc, InitialResourceState, pOptimizedClearValue, ref pProtectedSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommittedResource2<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc1 pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommittedResource2(pHeapProperties, HeapFlags, ref pDesc, InitialResourceState, ref pOptimizedClearValue, pProtectedSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommittedResource2<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc1 pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommittedResource2(pHeapProperties, HeapFlags, ref pDesc, InitialResourceState, ref pOptimizedClearValue, ref pProtectedSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommittedResource2<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc1* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommittedResource2(ref pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, pProtectedSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommittedResource2<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc1* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommittedResource2(ref pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, ref pProtectedSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommittedResource2<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc1* pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommittedResource2(ref pHeapProperties, HeapFlags, pDesc, InitialResourceState, ref pOptimizedClearValue, pProtectedSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommittedResource2<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc1* pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommittedResource2(ref pHeapProperties, HeapFlags, pDesc, InitialResourceState, ref pOptimizedClearValue, ref pProtectedSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommittedResource2<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc1 pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommittedResource2(ref pHeapProperties, HeapFlags, ref pDesc, InitialResourceState, pOptimizedClearValue, pProtectedSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommittedResource2<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc1 pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommittedResource2(ref pHeapProperties, HeapFlags, ref pDesc, InitialResourceState, pOptimizedClearValue, ref pProtectedSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommittedResource2<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc1 pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommittedResource2(ref pHeapProperties, HeapFlags, ref pDesc, InitialResourceState, ref pOptimizedClearValue, pProtectedSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> CreateCommittedResource2<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc1 pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommittedResource2(ref pHeapProperties, HeapFlags, ref pDesc, InitialResourceState, ref pOptimizedClearValue, ref pProtectedSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreatePlacedResource1<TI0, TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, ResourceDesc1* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreatePlacedResource1(pHeap, HeapOffset, pDesc, InitialState, pOptimizedClearValue, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreatePlacedResource1<TI0, TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, ResourceDesc1* pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreatePlacedResource1(pHeap, HeapOffset, pDesc, InitialState, ref pOptimizedClearValue, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreatePlacedResource1<TI0, TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, ref ResourceDesc1 pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreatePlacedResource1(pHeap, HeapOffset, ref pDesc, InitialState, pOptimizedClearValue, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreatePlacedResource1<TI0, TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, ref ResourceDesc1 pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreatePlacedResource1(pHeap, HeapOffset, ref pDesc, InitialState, ref pOptimizedClearValue, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreatePlacedResource1<TI0, TThis>(this TThis thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, ResourceDesc1* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreatePlacedResource1(ref pHeap, HeapOffset, pDesc, InitialState, pOptimizedClearValue, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreatePlacedResource1<TI0, TThis>(this TThis thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, ResourceDesc1* pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreatePlacedResource1(ref pHeap, HeapOffset, pDesc, InitialState, ref pOptimizedClearValue, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreatePlacedResource1<TI0, TThis>(this TThis thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, ref ResourceDesc1 pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreatePlacedResource1(ref pHeap, HeapOffset, ref pDesc, InitialState, pOptimizedClearValue, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> CreatePlacedResource1<TI0, TThis>(this TThis thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, ref ResourceDesc1 pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreatePlacedResource1(ref pHeap, HeapOffset, ref pDesc, InitialState, ref pOptimizedClearValue, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateShaderCacheSession<TI0, TThis>(this TThis thisVtbl, ShaderCacheSessionDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateShaderCacheSession(pDesc, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> CreateShaderCacheSession<TI0, TThis>(this TThis thisVtbl, ref ShaderCacheSessionDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateShaderCacheSession(ref pDesc, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommandQueue1<TI0, TThis>(this TThis thisVtbl, CommandQueueDesc* pDesc, Guid* CreatorID) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommandQueue1(pDesc, CreatorID, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommandQueue1<TI0, TThis>(this TThis thisVtbl, CommandQueueDesc* pDesc, ref Guid CreatorID) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommandQueue1(pDesc, ref CreatorID, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateCommandQueue1<TI0, TThis>(this TThis thisVtbl, ref CommandQueueDesc pDesc, Guid* CreatorID) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommandQueue1(ref pDesc, CreatorID, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> CreateCommandQueue1<TI0, TThis>(this TThis thisVtbl, ref CommandQueueDesc pDesc, ref Guid CreatorID) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device9>
+    {
+        var @this = (ID3D12Device9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateCommandQueue1(ref pDesc, ref CreatorID, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
 }

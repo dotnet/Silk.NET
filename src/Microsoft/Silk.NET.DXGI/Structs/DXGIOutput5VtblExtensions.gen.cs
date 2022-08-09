@@ -1660,4 +1660,22 @@ public unsafe static class DXGIOutput5VtblExtensions
         return @this->DuplicateOutput1(ref pDevice.GetPinnableReference(), Flags, SupportedFormatsCount, ref pSupportedFormats.GetPinnableReference(), ref ppOutputDuplication);
     }
 
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXGIOutput5>
+    {
+        var @this = (IDXGIOutput5*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> GetParent<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXGIOutput5>
+    {
+        var @this = (IDXGIOutput5*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->GetParent(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
 }

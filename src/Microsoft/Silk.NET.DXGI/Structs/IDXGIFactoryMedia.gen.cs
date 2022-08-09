@@ -2183,5 +2183,14 @@ namespace Silk.NET.DXGI
             return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(ref pDevice, ref hSurface, ref pDesc, ref pYuvDecodeBuffers, ref pRestrictToOutput, (IDXGIDecodeSwapChain**) ppSwapChain.GetAddressOf());
         }
 
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
     }
 }

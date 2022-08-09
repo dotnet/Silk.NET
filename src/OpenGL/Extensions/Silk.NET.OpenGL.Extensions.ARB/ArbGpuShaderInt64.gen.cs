@@ -296,6 +296,20 @@ namespace Silk.NET.OpenGL.Extensions.ARB
             Uniform4(location, (uint) value.Length, in value.GetPinnableReference());
         }
 
+        public unsafe long GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize)
+        {
+            // NonKhrReturnTypeOverloader
+            GetnUniform(program, location, bufSize, out long silkRet);
+            return silkRet;
+        }
+
+        public unsafe long GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location)
+        {
+            // NonKhrReturnTypeOverloader
+            GetUniform(program, location, out long silkRet);
+            return silkRet;
+        }
+
         public ArbGpuShaderInt64(INativeContext ctx)
             : base(ctx)
         {

@@ -104,6 +104,13 @@ namespace Silk.NET.OpenGL.Extensions.ARB
             GenTransformFeedbacks((uint) ids.Length, out ids.GetPinnableReference());
         }
 
+        public unsafe uint GenTransformFeedbacks([Flow(FlowDirection.In)] uint n)
+        {
+            // NonKhrReturnTypeOverloader
+            GenTransformFeedbacks(n, out uint silkRet);
+            return silkRet;
+        }
+
         public ArbTransformFeedback2(INativeContext ctx)
             : base(ctx)
         {

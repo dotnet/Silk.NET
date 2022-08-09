@@ -16400,6 +16400,42 @@ namespace Silk.NET.Direct3D.Compilers
             return ReflectLibrary(ref pSrcData, SrcDataSize, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppReflector.GetAddressOf());
         }
 
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 311, Column 1 in d3dcompiler.h")]
+        public unsafe ComPtr<TI0> Reflect<TI0>(void* pSrcData, nuint SrcDataSize) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(Reflect(pSrcData, SrcDataSize, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 311, Column 1 in d3dcompiler.h")]
+        public unsafe ComPtr<TI0> Reflect<T0, TI0>(ref T0 pSrcData, nuint SrcDataSize) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(Reflect(ref pSrcData, SrcDataSize, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 324, Column 1 in d3dcompiler.h")]
+        public unsafe ComPtr<TI0> ReflectLibrary<TI0>(void* pSrcData, nuint SrcDataSize) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(ReflectLibrary(pSrcData, SrcDataSize, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 324, Column 1 in d3dcompiler.h")]
+        public unsafe ComPtr<TI0> ReflectLibrary<T0, TI0>(ref T0 pSrcData, nuint SrcDataSize) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(ReflectLibrary(ref pSrcData, SrcDataSize, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
 
         public D3DCompiler(INativeContext ctx)
             : base(ctx)

@@ -309,6 +309,24 @@ namespace Silk.NET.DXVA
             return DXVA2CreateVideoService(ref pDD, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppService.GetAddressOf());
         }
 
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1971, Column 8 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxva2api.h")]
+        public unsafe ComPtr<TI0> DXVA2CreateVideoService<TI0>(Silk.NET.Direct3D9.IDirect3DDevice9* pDD) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(DXVA2CreateVideoService(pDD, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1971, Column 8 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxva2api.h")]
+        public unsafe ComPtr<TI0> DXVA2CreateVideoService<TI0>(ref Silk.NET.Direct3D9.IDirect3DDevice9 pDD) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(DXVA2CreateVideoService(ref pDD, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
 
         public DXVA(INativeContext ctx)
             : base(ctx)

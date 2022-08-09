@@ -210,4 +210,13 @@ public unsafe static class Direct3DPixelShader9VtblExtensions
         return @this->GetFunction(ref arg0.GetPinnableReference(), ref pSizeOfData.GetPinnableReference());
     }
 
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DPixelShader9>
+    {
+        var @this = (IDirect3DPixelShader9*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
 }

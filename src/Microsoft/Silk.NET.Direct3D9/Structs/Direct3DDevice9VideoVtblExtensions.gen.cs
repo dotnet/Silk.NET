@@ -737,4 +737,13 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
         return @this->CreateCryptoSession(ref pCryptoType.GetPinnableReference(), ref pDecodeProfile.GetPinnableReference(), ref ppCryptoSession, ref pCryptoHandle);
     }
 
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Video>
+    {
+        var @this = (IDirect3DDevice9Video*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
 }

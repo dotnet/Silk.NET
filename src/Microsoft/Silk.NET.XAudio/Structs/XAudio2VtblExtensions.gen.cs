@@ -1429,4 +1429,13 @@ public unsafe static class XAudio2VtblExtensions
         @this->SetDebugConfiguration(ref pDebugConfiguration.GetPinnableReference(), ref pReserved.GetPinnableReference());
     }
 
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IXAudio2>
+    {
+        var @this = (IXAudio2*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
 }

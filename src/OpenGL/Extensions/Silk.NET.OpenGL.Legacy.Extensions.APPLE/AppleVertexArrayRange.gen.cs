@@ -50,6 +50,20 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
             VertexArrayRange((uint) (pointer.Length * Unsafe.SizeOf<T0>()), out pointer.GetPinnableReference());
         }
 
+        public unsafe T0 FlushVertexArrayRange<T0>([Flow(FlowDirection.In)] uint length) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            FlushVertexArrayRange(length, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 VertexArrayRange<T0>([Flow(FlowDirection.In)] uint length) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            VertexArrayRange(length, out T0 silkRet);
+            return silkRet;
+        }
+
         public AppleVertexArrayRange(INativeContext ctx)
             : base(ctx)
         {

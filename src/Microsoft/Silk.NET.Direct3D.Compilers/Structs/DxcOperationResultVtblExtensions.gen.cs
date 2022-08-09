@@ -196,4 +196,13 @@ public unsafe static class DxcOperationResultVtblExtensions
         return @this->GetErrorBuffer((IDxcBlobEncoding**) ppErrors.GetAddressOf());
     }
 
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> QueryInterface<TI0, TThis>(this TThis thisVtbl) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcOperationResult>
+    {
+        var @this = (IDxcOperationResult*) thisVtbl.AsVtblPtr();
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
 }

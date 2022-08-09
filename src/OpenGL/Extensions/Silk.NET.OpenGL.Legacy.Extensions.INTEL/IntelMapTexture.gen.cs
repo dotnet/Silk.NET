@@ -38,6 +38,20 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.INTEL
         [NativeApi(EntryPoint = "glUnmapTexture2DINTEL", Convention = CallingConvention.Winapi)]
         public partial void UnmapTexture2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
 
+        public unsafe INTEL MapTexture2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint access, [Count(Count = 1), Flow(FlowDirection.Out)] int* stride)
+        {
+            // NonKhrReturnTypeOverloader
+            MapTexture2D(texture, level, access, stride, out INTEL silkRet);
+            return silkRet;
+        }
+
+        public unsafe INTEL MapTexture2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint access, [Count(Count = 1), Flow(FlowDirection.Out)] out int stride)
+        {
+            // NonKhrReturnTypeOverloader
+            MapTexture2D(texture, level, access, out stride, out INTEL silkRet);
+            return silkRet;
+        }
+
         public IntelMapTexture(INativeContext ctx)
             : base(ctx)
         {
