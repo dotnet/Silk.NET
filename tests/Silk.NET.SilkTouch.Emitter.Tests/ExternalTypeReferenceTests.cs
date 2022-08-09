@@ -10,7 +10,8 @@ namespace Silk.NET.SilkTouch.Emitter.Tests;
 
 public class ExternalTypeReferenceTests : EmitterTest
 {
-    [Fact, Trait("Category", "Symbols")]
+    [Fact, Trait("Category", "Symbols"),
+     Trait("Target Language", "C#")]
     public void StringTestNoNamespace()
     {
         var symbol = new ExternalTypeReference(null, new IdentifierSymbol("ETR1"));
@@ -20,7 +21,8 @@ public class ExternalTypeReferenceTests : EmitterTest
         Assert.Equal("ETR1", transformed.ToFullString());
     }
     
-    [Fact, Trait("Category", "Symbols")]
+    [Fact, Trait("Category", "Symbols"),
+     Trait("Target Language", "C#")]
     public void StringTestWithNamespace()
     {
         var symbol = new ExternalTypeReference(new IdentifierSymbol("Namespace"), new IdentifierSymbol("ETR1"));

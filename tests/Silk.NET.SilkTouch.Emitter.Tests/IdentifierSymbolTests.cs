@@ -9,7 +9,8 @@ namespace Silk.NET.SilkTouch.Emitter.Tests;
 
 public class IdentifierSymbolTests : EmitterTest
 {
-    [Theory, Trait("Category", "Symbols")]
+    [Theory, Trait("Category", "Symbols"),
+     Trait("Target Language", "C#")]
     [InlineData("a", "a")]
     [InlineData("int", "int")]
     [InlineData("using", "using")]
