@@ -6,7 +6,7 @@ namespace LIBRARY_NAMESPACE
 {
     public struct Test
     {
-        public int f1;
-        public int f2;
+        public System.Int32 f1;
+        public System.Int32 f2;
     }
 }

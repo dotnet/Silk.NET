@@ -10,7 +10,7 @@ namespace Silk.NET.SilkTouch.IntegrationTests;
 [UsesVerify]
 public class StructIntegrationTests
 {
-    [Fact(Skip = "TODO: Reenable after proper type support"),
+    [Fact,
      Trait("Category", "Integration"),
      Trait("Source Language", "C++"),
      Trait("Target Language", "C#"),
