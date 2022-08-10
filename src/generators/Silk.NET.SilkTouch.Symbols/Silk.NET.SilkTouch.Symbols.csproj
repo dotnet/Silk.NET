@@ -8,5 +8,6 @@
     
     <ItemGroup>
         <PackageReference Include="System.Collections.Immutable" />
+        <PackageReference Include="System.Text.Json" />
     </ItemGroup>
 </Project>

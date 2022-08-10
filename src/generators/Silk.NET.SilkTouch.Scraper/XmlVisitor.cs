@@ -26,6 +26,7 @@ internal sealed class XmlVisitor
 
     public IEnumerable<Symbol> Visit(XmlNode node)
     {
+        _logger.LogTrace("Visiting XML Node of kind {name}", node.Name);
         switch (node)
         {
             case XmlElement { Name: "bindings" } bindings:
@@ -38,7 +39,12 @@ internal sealed class XmlVisitor
                 return VisitField(field);
             default:
             {
+                _logger.LogWarning("Skipping unknown XML Node of kind {name}", node.Name);
+                #if DEBUG
                 throw new NotImplementedException();
+                #else
+                return Array.Empty<Symbol>();
+                #endif
             }
         }
     }

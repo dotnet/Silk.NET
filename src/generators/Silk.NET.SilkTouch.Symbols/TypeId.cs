@@ -1,11 +1,15 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.Text.Json;
+using System.Text.Json.Serialization;
+
 namespace Silk.NET.SilkTouch.Symbols;
 
 /// <summary>
 /// The Id of a <see cref="TypeSymbol"/>
 /// </summary>
+[JsonConverter(typeof(TypeId.JsonConverter))]
 public readonly struct TypeId : IEquatable<TypeId>
 {
     private readonly Guid _guid;
@@ -34,4 +38,25 @@ public readonly struct TypeId : IEquatable<TypeId>
     
     /// <inheritdoc />
     public static bool operator !=(TypeId left, TypeId right) => !left.Equals(right);
+
+    /// <inheritdoc />
+    public override string ToString()
+    {
+        return _guid.ToString();
+    }
+
+    private sealed class JsonConverter : JsonConverter<TypeId>
+    {
+        public override TypeId Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            if (!reader.TryGetGuid(out var guid))
+                throw new InvalidOperationException("Could not parse TypeId");
+
+            return new TypeId(guid);
+        }
+        public override void Write(Utf8JsonWriter writer, TypeId value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(value._guid);
+        }
+    }
 }
