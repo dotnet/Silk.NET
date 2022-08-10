@@ -75,6 +75,7 @@ namespace Silk.NET.SilkTouch.DotnetTool
 
             var generateBindings = new Command("bindings")
             {
+                logLevel,
                 xmlFile,
                 rawSymbolsFile,
                 processedSymbolsFile,
