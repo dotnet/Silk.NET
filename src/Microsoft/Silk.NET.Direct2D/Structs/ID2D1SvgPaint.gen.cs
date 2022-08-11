@@ -187,40 +187,40 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetColor(_D3DCOLORVALUE* color)
+        public readonly unsafe int SetColor(Silk.NET.DXGI.D3Dcolorvalue* color)
         {
             var @this = (ID2D1SvgPaint*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgPaint*, _D3DCOLORVALUE*, int>)LpVtbl[8])(@this, color);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgPaint*, Silk.NET.DXGI.D3Dcolorvalue*, int>)LpVtbl[8])(@this, color);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetColor(ref _D3DCOLORVALUE color)
+        public readonly int SetColor(ref Silk.NET.DXGI.D3Dcolorvalue color)
         {
             var @this = (ID2D1SvgPaint*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (_D3DCOLORVALUE* colorPtr = &color)
+            fixed (Silk.NET.DXGI.D3Dcolorvalue* colorPtr = &color)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgPaint*, _D3DCOLORVALUE*, int>)LpVtbl[8])(@this, colorPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgPaint*, Silk.NET.DXGI.D3Dcolorvalue*, int>)LpVtbl[8])(@this, colorPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void GetColor(_D3DCOLORVALUE* color)
+        public readonly unsafe void GetColor(Silk.NET.DXGI.D3Dcolorvalue* color)
         {
             var @this = (ID2D1SvgPaint*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1SvgPaint*, _D3DCOLORVALUE*, void>)LpVtbl[9])(@this, color);
+            ((delegate* unmanaged[Stdcall]<ID2D1SvgPaint*, Silk.NET.DXGI.D3Dcolorvalue*, void>)LpVtbl[9])(@this, color);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void GetColor(ref _D3DCOLORVALUE color)
+        public readonly void GetColor(ref Silk.NET.DXGI.D3Dcolorvalue color)
         {
             var @this = (ID2D1SvgPaint*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (_D3DCOLORVALUE* colorPtr = &color)
+            fixed (Silk.NET.DXGI.D3Dcolorvalue* colorPtr = &color)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1SvgPaint*, _D3DCOLORVALUE*, void>)LpVtbl[9])(@this, colorPtr);
+                ((delegate* unmanaged[Stdcall]<ID2D1SvgPaint*, Silk.NET.DXGI.D3Dcolorvalue*, void>)LpVtbl[9])(@this, colorPtr);
             }
         }
 

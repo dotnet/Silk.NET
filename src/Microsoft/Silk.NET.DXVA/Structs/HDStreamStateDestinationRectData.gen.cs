@@ -22,7 +22,7 @@ namespace Silk.NET.DXVA
         public HDStreamStateDestinationRectData
         (
             int? enable = null,
-            Silk.NET.Maths.Rectangle<int>? destinationRect = null
+            Silk.NET.Maths.Box2D<int>? destinationRect = null
         ) : this()
         {
             if (enable is not null)
@@ -45,6 +45,6 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "RECT")]
         [NativeName("Type.Name", "RECT")]
         [NativeName("Name", "DestinationRect")]
-        public Silk.NET.Maths.Rectangle<int> DestinationRect;
+        public Silk.NET.Maths.Box2D<int> DestinationRect;
     }
 }

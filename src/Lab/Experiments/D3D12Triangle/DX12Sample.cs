@@ -1,4 +1,4 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
+// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
@@ -30,7 +30,7 @@ namespace D3D12Triangle
         private ID3D12CommandQueue* _commandQueue;
         private ID3D12CommandAllocator*[] _commandAllocators;
         private Viewport _viewport;
-        private Rectangle<int> _scissorRect;
+        private Box2D<int> _scissorRect;
         private uint _rtvDescriptorSize;
         private Silk.NET.Direct3D12.D3D12 _d3d12;
         private Silk.NET.DXGI.DXGI _dxgi;
@@ -95,7 +95,7 @@ namespace D3D12Triangle
 
         public ID3D12DescriptorHeap* RTVHeap => _rtvHeap;
 
-        public ref Rectangle<int> ScissorRect => ref _scissorRect;
+        public ref Box2D<int> ScissorRect => ref _scissorRect;
 
         public IDXGISwapChain3* SwapChain => _swapChain;
 
@@ -849,7 +849,7 @@ namespace D3D12Triangle
                 GraphicsCommandList->RSSetViewports(1, viewport);
             }
 
-            fixed (Rectangle<int>* scissorRect = &ScissorRect)
+            fixed (Box2D<int>* scissorRect = &ScissorRect)
             {
                 GraphicsCommandList->RSSetScissorRects(1, scissorRect);
             }

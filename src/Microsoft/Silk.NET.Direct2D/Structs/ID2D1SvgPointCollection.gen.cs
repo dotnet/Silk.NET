@@ -178,43 +178,43 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdatePoints(D2D_POINT_2F* points, uint pointsCount, uint startIndex)
+        public readonly unsafe int UpdatePoints(Silk.NET.Maths.Vector2D<float>* points, uint pointsCount, uint startIndex)
         {
             var @this = (ID2D1SvgPointCollection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgPointCollection*, D2D_POINT_2F*, uint, uint, int>)LpVtbl[7])(@this, points, pointsCount, startIndex);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgPointCollection*, Silk.NET.Maths.Vector2D<float>*, uint, uint, int>)LpVtbl[7])(@this, points, pointsCount, startIndex);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int UpdatePoints(ref D2D_POINT_2F points, uint pointsCount, uint startIndex)
+        public readonly int UpdatePoints(ref Silk.NET.Maths.Vector2D<float> points, uint pointsCount, uint startIndex)
         {
             var @this = (ID2D1SvgPointCollection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (D2D_POINT_2F* pointsPtr = &points)
+            fixed (Silk.NET.Maths.Vector2D<float>* pointsPtr = &points)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgPointCollection*, D2D_POINT_2F*, uint, uint, int>)LpVtbl[7])(@this, pointsPtr, pointsCount, startIndex);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgPointCollection*, Silk.NET.Maths.Vector2D<float>*, uint, uint, int>)LpVtbl[7])(@this, pointsPtr, pointsCount, startIndex);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetPoints(D2D_POINT_2F* points, uint pointsCount, uint startIndex)
+        public readonly unsafe int GetPoints(Silk.NET.Maths.Vector2D<float>* points, uint pointsCount, uint startIndex)
         {
             var @this = (ID2D1SvgPointCollection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgPointCollection*, D2D_POINT_2F*, uint, uint, int>)LpVtbl[8])(@this, points, pointsCount, startIndex);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgPointCollection*, Silk.NET.Maths.Vector2D<float>*, uint, uint, int>)LpVtbl[8])(@this, points, pointsCount, startIndex);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetPoints(ref D2D_POINT_2F points, uint pointsCount, uint startIndex)
+        public readonly int GetPoints(ref Silk.NET.Maths.Vector2D<float> points, uint pointsCount, uint startIndex)
         {
             var @this = (ID2D1SvgPointCollection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (D2D_POINT_2F* pointsPtr = &points)
+            fixed (Silk.NET.Maths.Vector2D<float>* pointsPtr = &points)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgPointCollection*, D2D_POINT_2F*, uint, uint, int>)LpVtbl[8])(@this, pointsPtr, pointsCount, startIndex);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgPointCollection*, Silk.NET.Maths.Vector2D<float>*, uint, uint, int>)LpVtbl[8])(@this, pointsPtr, pointsCount, startIndex);
             }
             return ret;
         }

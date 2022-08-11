@@ -21,7 +21,7 @@ namespace Silk.NET.Direct2D
     {
         public BitmapProperties1
         (
-            D2D1_PIXEL_FORMAT? pixelFormat = null,
+            PixelFormat? pixelFormat = null,
             float? dpiX = null,
             float? dpiY = null,
             BitmapOptions? bitmapOptions = null,
@@ -58,7 +58,7 @@ namespace Silk.NET.Direct2D
         [NativeName("Type", "D2D1_PIXEL_FORMAT")]
         [NativeName("Type.Name", "D2D1_PIXEL_FORMAT")]
         [NativeName("Name", "pixelFormat")]
-        public D2D1_PIXEL_FORMAT PixelFormat;
+        public PixelFormat PixelFormat;
 
         [NativeName("Type", "FLOAT")]
         [NativeName("Type.Name", "FLOAT")]

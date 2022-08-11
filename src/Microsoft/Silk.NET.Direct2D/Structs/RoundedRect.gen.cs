@@ -21,7 +21,7 @@ namespace Silk.NET.Direct2D
     {
         public RoundedRect
         (
-            Silk.NET.Maths.Rectangle<float>? rect = null,
+            Silk.NET.Maths.Box2D<float>? rect = null,
             float? radiusX = null,
             float? radiusY = null
         ) : this()
@@ -46,7 +46,7 @@ namespace Silk.NET.Direct2D
         [NativeName("Type", "D2D1_RECT_F")]
         [NativeName("Type.Name", "D2D1_RECT_F")]
         [NativeName("Name", "rect")]
-        public Silk.NET.Maths.Rectangle<float> Rect;
+        public Silk.NET.Maths.Box2D<float> Rect;
 
         [NativeName("Type", "FLOAT")]
         [NativeName("Type.Name", "FLOAT")]

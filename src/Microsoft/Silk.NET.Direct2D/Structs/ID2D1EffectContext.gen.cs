@@ -382,48 +382,48 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBoundsAdjustmentTransform(Silk.NET.Maths.Rectangle<int>* outputRectangle, ID2D1BoundsAdjustmentTransform** transform)
+        public readonly unsafe int CreateBoundsAdjustmentTransform(Silk.NET.Maths.Box2D<int>* outputRectangle, ID2D1BoundsAdjustmentTransform** transform)
         {
             var @this = (ID2D1EffectContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectContext*, Silk.NET.Maths.Rectangle<int>*, ID2D1BoundsAdjustmentTransform**, int>)LpVtbl[10])(@this, outputRectangle, transform);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectContext*, Silk.NET.Maths.Box2D<int>*, ID2D1BoundsAdjustmentTransform**, int>)LpVtbl[10])(@this, outputRectangle, transform);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBoundsAdjustmentTransform(Silk.NET.Maths.Rectangle<int>* outputRectangle, ref ID2D1BoundsAdjustmentTransform* transform)
+        public readonly unsafe int CreateBoundsAdjustmentTransform(Silk.NET.Maths.Box2D<int>* outputRectangle, ref ID2D1BoundsAdjustmentTransform* transform)
         {
             var @this = (ID2D1EffectContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID2D1BoundsAdjustmentTransform** transformPtr = &transform)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectContext*, Silk.NET.Maths.Rectangle<int>*, ID2D1BoundsAdjustmentTransform**, int>)LpVtbl[10])(@this, outputRectangle, transformPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectContext*, Silk.NET.Maths.Box2D<int>*, ID2D1BoundsAdjustmentTransform**, int>)LpVtbl[10])(@this, outputRectangle, transformPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBoundsAdjustmentTransform(ref Silk.NET.Maths.Rectangle<int> outputRectangle, ID2D1BoundsAdjustmentTransform** transform)
+        public readonly unsafe int CreateBoundsAdjustmentTransform(ref Silk.NET.Maths.Box2D<int> outputRectangle, ID2D1BoundsAdjustmentTransform** transform)
         {
             var @this = (ID2D1EffectContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<int>* outputRectanglePtr = &outputRectangle)
+            fixed (Silk.NET.Maths.Box2D<int>* outputRectanglePtr = &outputRectangle)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectContext*, Silk.NET.Maths.Rectangle<int>*, ID2D1BoundsAdjustmentTransform**, int>)LpVtbl[10])(@this, outputRectanglePtr, transform);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectContext*, Silk.NET.Maths.Box2D<int>*, ID2D1BoundsAdjustmentTransform**, int>)LpVtbl[10])(@this, outputRectanglePtr, transform);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBoundsAdjustmentTransform(ref Silk.NET.Maths.Rectangle<int> outputRectangle, ref ID2D1BoundsAdjustmentTransform* transform)
+        public readonly unsafe int CreateBoundsAdjustmentTransform(ref Silk.NET.Maths.Box2D<int> outputRectangle, ref ID2D1BoundsAdjustmentTransform* transform)
         {
             var @this = (ID2D1EffectContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<int>* outputRectanglePtr = &outputRectangle)
+            fixed (Silk.NET.Maths.Box2D<int>* outputRectanglePtr = &outputRectangle)
             {
                 fixed (ID2D1BoundsAdjustmentTransform** transformPtr = &transform)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectContext*, Silk.NET.Maths.Rectangle<int>*, ID2D1BoundsAdjustmentTransform**, int>)LpVtbl[10])(@this, outputRectanglePtr, transformPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectContext*, Silk.NET.Maths.Box2D<int>*, ID2D1BoundsAdjustmentTransform**, int>)LpVtbl[10])(@this, outputRectanglePtr, transformPtr);
                 }
             }
             return ret;

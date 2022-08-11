@@ -22,7 +22,7 @@ namespace Silk.NET.Direct2D
         public GradientStop
         (
             float? position = null,
-            _D3DCOLORVALUE? color = null
+            Silk.NET.DXGI.D3Dcolorvalue? color = null
         ) : this()
         {
             if (position is not null)
@@ -45,6 +45,6 @@ namespace Silk.NET.Direct2D
         [NativeName("Type", "D2D1_COLOR_F")]
         [NativeName("Type.Name", "D2D1_COLOR_F")]
         [NativeName("Name", "color")]
-        public _D3DCOLORVALUE Color;
+        public Silk.NET.DXGI.D3Dcolorvalue Color;
     }
 }

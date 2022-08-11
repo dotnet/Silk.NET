@@ -129,22 +129,22 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ReleaseDC(Silk.NET.Maths.Rectangle<int>* update)
+        public readonly unsafe int ReleaseDC(Silk.NET.Maths.Box2D<int>* update)
         {
             var @this = (ID2D1GdiInteropRenderTarget*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1GdiInteropRenderTarget*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[4])(@this, update);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1GdiInteropRenderTarget*, Silk.NET.Maths.Box2D<int>*, int>)LpVtbl[4])(@this, update);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int ReleaseDC(ref Silk.NET.Maths.Rectangle<int> update)
+        public readonly int ReleaseDC(ref Silk.NET.Maths.Box2D<int> update)
         {
             var @this = (ID2D1GdiInteropRenderTarget*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<int>* updatePtr = &update)
+            fixed (Silk.NET.Maths.Box2D<int>* updatePtr = &update)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1GdiInteropRenderTarget*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[4])(@this, updatePtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1GdiInteropRenderTarget*, Silk.NET.Maths.Box2D<int>*, int>)LpVtbl[4])(@this, updatePtr);
             }
             return ret;
         }

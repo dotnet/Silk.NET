@@ -126,6 +126,36 @@ namespace Silk.NET.BuildTools.Common
 
         /// <summary>
         /// An extension method which returns the given enumerable without duplicate elements.
+        /// This uses .ToString() to sort faster through the duplicate entries
+        /// </summary>
+        /// <param name="enumerable">The enumerable to process.</param>
+        /// <typeparam name="T">The type contained within this enumerable.</typeparam>
+        /// <returns>An enumerable with no duplicates.</returns>
+        public static IEnumerable<T> RemoveDuplicatesFast<T>(this IEnumerable<T> enumerable, Func<T, string> GetSignature)
+        {
+            // note: this is required because ApiProfile.GetCategories() returns duplicates.
+            var ret = new List<T>();
+            var checker = new Dictionary<string, List<T>>();
+            foreach (var item in enumerable)
+            {
+                var signature = GetSignature(item);
+                if (checker.ContainsKey(signature))
+                {
+                    if (checker[signature].Any(x => x.Equals(item))) continue;
+                    checker[signature].Add(item);
+                }
+                else
+                {
+                    checker.Add(signature, new List<T>() { item });
+                }
+                ret.Add(item);
+            }
+
+            return ret;
+        }
+
+        /// <summary>
+        /// An extension method which returns the given enumerable without duplicate elements.
         /// </summary>
         /// <param name="enumerable">The enumerable to process.</param>
         /// <param name="isDuplicate">A function that checks whether or not items are duplicates.</param>
@@ -143,6 +173,35 @@ namespace Silk.NET.BuildTools.Common
                 }
             }
 
+            return ret;
+        }
+
+        /// <summary>
+        /// An extension method which returns the given enumerable without duplicate elements.
+        /// </summary>
+        /// <param name="enumerable">The enumerable to process.</param>
+        /// <param name="isDuplicate">A function that checks whether or not items are duplicates.</param>
+        /// <typeparam name="T">The type contained within this enumerable.</typeparam>
+        /// <returns>An enumerable with no duplicates.</returns>
+        public static IEnumerable<T> RemoveDuplicatesFast<T>(this IEnumerable<T> enumerable, Func<T, T, bool> isDuplicate, Func<T, string> GetSignature)
+        {
+            // note: this is required because ApiProfile.GetCategories() returns duplicates.
+            var ret = new List<T>();
+            var checker = new Dictionary<string, List<T>>();
+            foreach (var item in enumerable)
+            {
+                var signature = GetSignature(item);
+                if (checker.ContainsKey(signature))
+                {
+                    if (checker[signature].Any(x => isDuplicate(x, item))) continue;
+                    checker[signature].Add(item);
+                }
+                else
+                {
+                    checker.Add(signature, new List<T>() { item });
+                }
+                ret.Add(item);
+            }
             return ret;
         }
 

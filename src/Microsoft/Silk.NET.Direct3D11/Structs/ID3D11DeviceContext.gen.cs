@@ -1374,19 +1374,19 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void RSSetScissorRects(uint NumRects, Silk.NET.Maths.Rectangle<int>* pRects)
+        public readonly unsafe void RSSetScissorRects(uint NumRects, Silk.NET.Maths.Box2D<int>* pRects)
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[45])(@this, NumRects, pRects);
+            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, uint, Silk.NET.Maths.Box2D<int>*, void>)LpVtbl[45])(@this, NumRects, pRects);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void RSSetScissorRects(uint NumRects, ref Silk.NET.Maths.Rectangle<int> pRects)
+        public readonly void RSSetScissorRects(uint NumRects, ref Silk.NET.Maths.Box2D<int> pRects)
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Maths.Rectangle<int>* pRectsPtr = &pRects)
+            fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[45])(@this, NumRects, pRectsPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, uint, Silk.NET.Maths.Box2D<int>*, void>)LpVtbl[45])(@this, NumRects, pRectsPtr);
             }
         }
 
@@ -3242,41 +3242,41 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void RSGetScissorRects(uint* pNumRects, Silk.NET.Maths.Rectangle<int>* pRects)
+        public readonly unsafe void RSGetScissorRects(uint* pNumRects, Silk.NET.Maths.Box2D<int>* pRects)
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, uint*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[96])(@this, pNumRects, pRects);
+            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, uint*, Silk.NET.Maths.Box2D<int>*, void>)LpVtbl[96])(@this, pNumRects, pRects);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void RSGetScissorRects(uint* pNumRects, ref Silk.NET.Maths.Rectangle<int> pRects)
+        public readonly unsafe void RSGetScissorRects(uint* pNumRects, ref Silk.NET.Maths.Box2D<int> pRects)
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Maths.Rectangle<int>* pRectsPtr = &pRects)
+            fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, uint*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[96])(@this, pNumRects, pRectsPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, uint*, Silk.NET.Maths.Box2D<int>*, void>)LpVtbl[96])(@this, pNumRects, pRectsPtr);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void RSGetScissorRects(ref uint pNumRects, Silk.NET.Maths.Rectangle<int>* pRects)
+        public readonly unsafe void RSGetScissorRects(ref uint pNumRects, Silk.NET.Maths.Box2D<int>* pRects)
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* pNumRectsPtr = &pNumRects)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, uint*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[96])(@this, pNumRectsPtr, pRects);
+                ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, uint*, Silk.NET.Maths.Box2D<int>*, void>)LpVtbl[96])(@this, pNumRectsPtr, pRects);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void RSGetScissorRects(ref uint pNumRects, ref Silk.NET.Maths.Rectangle<int> pRects)
+        public readonly void RSGetScissorRects(ref uint pNumRects, ref Silk.NET.Maths.Box2D<int> pRects)
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* pNumRectsPtr = &pNumRects)
             {
-                fixed (Silk.NET.Maths.Rectangle<int>* pRectsPtr = &pRects)
+                fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, uint*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[96])(@this, pNumRectsPtr, pRectsPtr);
+                    ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, uint*, Silk.NET.Maths.Box2D<int>*, void>)LpVtbl[96])(@this, pNumRectsPtr, pRectsPtr);
                 }
             }
         }

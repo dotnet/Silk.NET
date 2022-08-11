@@ -123,155 +123,155 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapOutputRectToInputRects(Silk.NET.Maths.Rectangle<int>* outputRect, Silk.NET.Maths.Rectangle<int>* inputRects, uint inputRectsCount)
+        public readonly unsafe int MapOutputRectToInputRects(Silk.NET.Maths.Box2D<int>* outputRect, Silk.NET.Maths.Box2D<int>* inputRects, uint inputRectsCount)
         {
             var @this = (ID2D1DrawTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1DrawTransform*, Silk.NET.Maths.Rectangle<int>*, Silk.NET.Maths.Rectangle<int>*, uint, int>)LpVtbl[4])(@this, outputRect, inputRects, inputRectsCount);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1DrawTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, int>)LpVtbl[4])(@this, outputRect, inputRects, inputRectsCount);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapOutputRectToInputRects(Silk.NET.Maths.Rectangle<int>* outputRect, ref Silk.NET.Maths.Rectangle<int> inputRects, uint inputRectsCount)
+        public readonly unsafe int MapOutputRectToInputRects(Silk.NET.Maths.Box2D<int>* outputRect, ref Silk.NET.Maths.Box2D<int> inputRects, uint inputRectsCount)
         {
             var @this = (ID2D1DrawTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<int>* inputRectsPtr = &inputRects)
+            fixed (Silk.NET.Maths.Box2D<int>* inputRectsPtr = &inputRects)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DrawTransform*, Silk.NET.Maths.Rectangle<int>*, Silk.NET.Maths.Rectangle<int>*, uint, int>)LpVtbl[4])(@this, outputRect, inputRectsPtr, inputRectsCount);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1DrawTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, int>)LpVtbl[4])(@this, outputRect, inputRectsPtr, inputRectsCount);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapOutputRectToInputRects(ref Silk.NET.Maths.Rectangle<int> outputRect, Silk.NET.Maths.Rectangle<int>* inputRects, uint inputRectsCount)
+        public readonly unsafe int MapOutputRectToInputRects(ref Silk.NET.Maths.Box2D<int> outputRect, Silk.NET.Maths.Box2D<int>* inputRects, uint inputRectsCount)
         {
             var @this = (ID2D1DrawTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<int>* outputRectPtr = &outputRect)
+            fixed (Silk.NET.Maths.Box2D<int>* outputRectPtr = &outputRect)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DrawTransform*, Silk.NET.Maths.Rectangle<int>*, Silk.NET.Maths.Rectangle<int>*, uint, int>)LpVtbl[4])(@this, outputRectPtr, inputRects, inputRectsCount);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1DrawTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, int>)LpVtbl[4])(@this, outputRectPtr, inputRects, inputRectsCount);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int MapOutputRectToInputRects(ref Silk.NET.Maths.Rectangle<int> outputRect, ref Silk.NET.Maths.Rectangle<int> inputRects, uint inputRectsCount)
+        public readonly int MapOutputRectToInputRects(ref Silk.NET.Maths.Box2D<int> outputRect, ref Silk.NET.Maths.Box2D<int> inputRects, uint inputRectsCount)
         {
             var @this = (ID2D1DrawTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<int>* outputRectPtr = &outputRect)
+            fixed (Silk.NET.Maths.Box2D<int>* outputRectPtr = &outputRect)
             {
-                fixed (Silk.NET.Maths.Rectangle<int>* inputRectsPtr = &inputRects)
+                fixed (Silk.NET.Maths.Box2D<int>* inputRectsPtr = &inputRects)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DrawTransform*, Silk.NET.Maths.Rectangle<int>*, Silk.NET.Maths.Rectangle<int>*, uint, int>)LpVtbl[4])(@this, outputRectPtr, inputRectsPtr, inputRectsCount);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DrawTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, int>)LpVtbl[4])(@this, outputRectPtr, inputRectsPtr, inputRectsCount);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapInputRectsToOutputRect(Silk.NET.Maths.Rectangle<int>* inputRects, Silk.NET.Maths.Rectangle<int>* inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Rectangle<int>* outputRect, Silk.NET.Maths.Rectangle<int>* outputOpaqueSubRect)
+        public readonly unsafe int MapInputRectsToOutputRect(Silk.NET.Maths.Box2D<int>* inputRects, Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
         {
             var @this = (ID2D1DrawTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1DrawTransform*, Silk.NET.Maths.Rectangle<int>*, Silk.NET.Maths.Rectangle<int>*, uint, Silk.NET.Maths.Rectangle<int>*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[5])(@this, inputRects, inputOpaqueSubRects, inputRectCount, outputRect, outputOpaqueSubRect);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1DrawTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)LpVtbl[5])(@this, inputRects, inputOpaqueSubRects, inputRectCount, outputRect, outputOpaqueSubRect);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapInputRectsToOutputRect(Silk.NET.Maths.Rectangle<int>* inputRects, Silk.NET.Maths.Rectangle<int>* inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Rectangle<int>* outputRect, ref Silk.NET.Maths.Rectangle<int> outputOpaqueSubRect)
+        public readonly unsafe int MapInputRectsToOutputRect(Silk.NET.Maths.Box2D<int>* inputRects, Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, ref Silk.NET.Maths.Box2D<int> outputOpaqueSubRect)
         {
             var @this = (ID2D1DrawTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<int>* outputOpaqueSubRectPtr = &outputOpaqueSubRect)
+            fixed (Silk.NET.Maths.Box2D<int>* outputOpaqueSubRectPtr = &outputOpaqueSubRect)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DrawTransform*, Silk.NET.Maths.Rectangle<int>*, Silk.NET.Maths.Rectangle<int>*, uint, Silk.NET.Maths.Rectangle<int>*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[5])(@this, inputRects, inputOpaqueSubRects, inputRectCount, outputRect, outputOpaqueSubRectPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1DrawTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)LpVtbl[5])(@this, inputRects, inputOpaqueSubRects, inputRectCount, outputRect, outputOpaqueSubRectPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapInputRectsToOutputRect(Silk.NET.Maths.Rectangle<int>* inputRects, Silk.NET.Maths.Rectangle<int>* inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Rectangle<int> outputRect, Silk.NET.Maths.Rectangle<int>* outputOpaqueSubRect)
+        public readonly unsafe int MapInputRectsToOutputRect(Silk.NET.Maths.Box2D<int>* inputRects, Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Box2D<int> outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
         {
             var @this = (ID2D1DrawTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<int>* outputRectPtr = &outputRect)
+            fixed (Silk.NET.Maths.Box2D<int>* outputRectPtr = &outputRect)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DrawTransform*, Silk.NET.Maths.Rectangle<int>*, Silk.NET.Maths.Rectangle<int>*, uint, Silk.NET.Maths.Rectangle<int>*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[5])(@this, inputRects, inputOpaqueSubRects, inputRectCount, outputRectPtr, outputOpaqueSubRect);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1DrawTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)LpVtbl[5])(@this, inputRects, inputOpaqueSubRects, inputRectCount, outputRectPtr, outputOpaqueSubRect);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapInputRectsToOutputRect(Silk.NET.Maths.Rectangle<int>* inputRects, Silk.NET.Maths.Rectangle<int>* inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Rectangle<int> outputRect, ref Silk.NET.Maths.Rectangle<int> outputOpaqueSubRect)
+        public readonly unsafe int MapInputRectsToOutputRect(Silk.NET.Maths.Box2D<int>* inputRects, Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Box2D<int> outputRect, ref Silk.NET.Maths.Box2D<int> outputOpaqueSubRect)
         {
             var @this = (ID2D1DrawTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<int>* outputRectPtr = &outputRect)
+            fixed (Silk.NET.Maths.Box2D<int>* outputRectPtr = &outputRect)
             {
-                fixed (Silk.NET.Maths.Rectangle<int>* outputOpaqueSubRectPtr = &outputOpaqueSubRect)
+                fixed (Silk.NET.Maths.Box2D<int>* outputOpaqueSubRectPtr = &outputOpaqueSubRect)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DrawTransform*, Silk.NET.Maths.Rectangle<int>*, Silk.NET.Maths.Rectangle<int>*, uint, Silk.NET.Maths.Rectangle<int>*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[5])(@this, inputRects, inputOpaqueSubRects, inputRectCount, outputRectPtr, outputOpaqueSubRectPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DrawTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)LpVtbl[5])(@this, inputRects, inputOpaqueSubRects, inputRectCount, outputRectPtr, outputOpaqueSubRectPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapInputRectsToOutputRect(Silk.NET.Maths.Rectangle<int>* inputRects, ref Silk.NET.Maths.Rectangle<int> inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Rectangle<int>* outputRect, Silk.NET.Maths.Rectangle<int>* outputOpaqueSubRect)
+        public readonly unsafe int MapInputRectsToOutputRect(Silk.NET.Maths.Box2D<int>* inputRects, ref Silk.NET.Maths.Box2D<int> inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
         {
             var @this = (ID2D1DrawTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<int>* inputOpaqueSubRectsPtr = &inputOpaqueSubRects)
+            fixed (Silk.NET.Maths.Box2D<int>* inputOpaqueSubRectsPtr = &inputOpaqueSubRects)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DrawTransform*, Silk.NET.Maths.Rectangle<int>*, Silk.NET.Maths.Rectangle<int>*, uint, Silk.NET.Maths.Rectangle<int>*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[5])(@this, inputRects, inputOpaqueSubRectsPtr, inputRectCount, outputRect, outputOpaqueSubRect);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1DrawTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)LpVtbl[5])(@this, inputRects, inputOpaqueSubRectsPtr, inputRectCount, outputRect, outputOpaqueSubRect);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapInputRectsToOutputRect(Silk.NET.Maths.Rectangle<int>* inputRects, ref Silk.NET.Maths.Rectangle<int> inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Rectangle<int>* outputRect, ref Silk.NET.Maths.Rectangle<int> outputOpaqueSubRect)
+        public readonly unsafe int MapInputRectsToOutputRect(Silk.NET.Maths.Box2D<int>* inputRects, ref Silk.NET.Maths.Box2D<int> inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, ref Silk.NET.Maths.Box2D<int> outputOpaqueSubRect)
         {
             var @this = (ID2D1DrawTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<int>* inputOpaqueSubRectsPtr = &inputOpaqueSubRects)
+            fixed (Silk.NET.Maths.Box2D<int>* inputOpaqueSubRectsPtr = &inputOpaqueSubRects)
             {
-                fixed (Silk.NET.Maths.Rectangle<int>* outputOpaqueSubRectPtr = &outputOpaqueSubRect)
+                fixed (Silk.NET.Maths.Box2D<int>* outputOpaqueSubRectPtr = &outputOpaqueSubRect)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DrawTransform*, Silk.NET.Maths.Rectangle<int>*, Silk.NET.Maths.Rectangle<int>*, uint, Silk.NET.Maths.Rectangle<int>*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[5])(@this, inputRects, inputOpaqueSubRectsPtr, inputRectCount, outputRect, outputOpaqueSubRectPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DrawTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)LpVtbl[5])(@this, inputRects, inputOpaqueSubRectsPtr, inputRectCount, outputRect, outputOpaqueSubRectPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapInputRectsToOutputRect(Silk.NET.Maths.Rectangle<int>* inputRects, ref Silk.NET.Maths.Rectangle<int> inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Rectangle<int> outputRect, Silk.NET.Maths.Rectangle<int>* outputOpaqueSubRect)
+        public readonly unsafe int MapInputRectsToOutputRect(Silk.NET.Maths.Box2D<int>* inputRects, ref Silk.NET.Maths.Box2D<int> inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Box2D<int> outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
         {
             var @this = (ID2D1DrawTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<int>* inputOpaqueSubRectsPtr = &inputOpaqueSubRects)
+            fixed (Silk.NET.Maths.Box2D<int>* inputOpaqueSubRectsPtr = &inputOpaqueSubRects)
             {
-                fixed (Silk.NET.Maths.Rectangle<int>* outputRectPtr = &outputRect)
+                fixed (Silk.NET.Maths.Box2D<int>* outputRectPtr = &outputRect)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DrawTransform*, Silk.NET.Maths.Rectangle<int>*, Silk.NET.Maths.Rectangle<int>*, uint, Silk.NET.Maths.Rectangle<int>*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[5])(@this, inputRects, inputOpaqueSubRectsPtr, inputRectCount, outputRectPtr, outputOpaqueSubRect);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DrawTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)LpVtbl[5])(@this, inputRects, inputOpaqueSubRectsPtr, inputRectCount, outputRectPtr, outputOpaqueSubRect);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapInputRectsToOutputRect(Silk.NET.Maths.Rectangle<int>* inputRects, ref Silk.NET.Maths.Rectangle<int> inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Rectangle<int> outputRect, ref Silk.NET.Maths.Rectangle<int> outputOpaqueSubRect)
+        public readonly unsafe int MapInputRectsToOutputRect(Silk.NET.Maths.Box2D<int>* inputRects, ref Silk.NET.Maths.Box2D<int> inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Box2D<int> outputRect, ref Silk.NET.Maths.Box2D<int> outputOpaqueSubRect)
         {
             var @this = (ID2D1DrawTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<int>* inputOpaqueSubRectsPtr = &inputOpaqueSubRects)
+            fixed (Silk.NET.Maths.Box2D<int>* inputOpaqueSubRectsPtr = &inputOpaqueSubRects)
             {
-                fixed (Silk.NET.Maths.Rectangle<int>* outputRectPtr = &outputRect)
+                fixed (Silk.NET.Maths.Box2D<int>* outputRectPtr = &outputRect)
                 {
-                    fixed (Silk.NET.Maths.Rectangle<int>* outputOpaqueSubRectPtr = &outputOpaqueSubRect)
+                    fixed (Silk.NET.Maths.Box2D<int>* outputOpaqueSubRectPtr = &outputOpaqueSubRect)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1DrawTransform*, Silk.NET.Maths.Rectangle<int>*, Silk.NET.Maths.Rectangle<int>*, uint, Silk.NET.Maths.Rectangle<int>*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[5])(@this, inputRects, inputOpaqueSubRectsPtr, inputRectCount, outputRectPtr, outputOpaqueSubRectPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1DrawTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)LpVtbl[5])(@this, inputRects, inputOpaqueSubRectsPtr, inputRectCount, outputRectPtr, outputOpaqueSubRectPtr);
                     }
                 }
             }
@@ -279,59 +279,59 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapInputRectsToOutputRect(ref Silk.NET.Maths.Rectangle<int> inputRects, Silk.NET.Maths.Rectangle<int>* inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Rectangle<int>* outputRect, Silk.NET.Maths.Rectangle<int>* outputOpaqueSubRect)
+        public readonly unsafe int MapInputRectsToOutputRect(ref Silk.NET.Maths.Box2D<int> inputRects, Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
         {
             var @this = (ID2D1DrawTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<int>* inputRectsPtr = &inputRects)
+            fixed (Silk.NET.Maths.Box2D<int>* inputRectsPtr = &inputRects)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DrawTransform*, Silk.NET.Maths.Rectangle<int>*, Silk.NET.Maths.Rectangle<int>*, uint, Silk.NET.Maths.Rectangle<int>*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[5])(@this, inputRectsPtr, inputOpaqueSubRects, inputRectCount, outputRect, outputOpaqueSubRect);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1DrawTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)LpVtbl[5])(@this, inputRectsPtr, inputOpaqueSubRects, inputRectCount, outputRect, outputOpaqueSubRect);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapInputRectsToOutputRect(ref Silk.NET.Maths.Rectangle<int> inputRects, Silk.NET.Maths.Rectangle<int>* inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Rectangle<int>* outputRect, ref Silk.NET.Maths.Rectangle<int> outputOpaqueSubRect)
+        public readonly unsafe int MapInputRectsToOutputRect(ref Silk.NET.Maths.Box2D<int> inputRects, Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, ref Silk.NET.Maths.Box2D<int> outputOpaqueSubRect)
         {
             var @this = (ID2D1DrawTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<int>* inputRectsPtr = &inputRects)
+            fixed (Silk.NET.Maths.Box2D<int>* inputRectsPtr = &inputRects)
             {
-                fixed (Silk.NET.Maths.Rectangle<int>* outputOpaqueSubRectPtr = &outputOpaqueSubRect)
+                fixed (Silk.NET.Maths.Box2D<int>* outputOpaqueSubRectPtr = &outputOpaqueSubRect)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DrawTransform*, Silk.NET.Maths.Rectangle<int>*, Silk.NET.Maths.Rectangle<int>*, uint, Silk.NET.Maths.Rectangle<int>*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[5])(@this, inputRectsPtr, inputOpaqueSubRects, inputRectCount, outputRect, outputOpaqueSubRectPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DrawTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)LpVtbl[5])(@this, inputRectsPtr, inputOpaqueSubRects, inputRectCount, outputRect, outputOpaqueSubRectPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapInputRectsToOutputRect(ref Silk.NET.Maths.Rectangle<int> inputRects, Silk.NET.Maths.Rectangle<int>* inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Rectangle<int> outputRect, Silk.NET.Maths.Rectangle<int>* outputOpaqueSubRect)
+        public readonly unsafe int MapInputRectsToOutputRect(ref Silk.NET.Maths.Box2D<int> inputRects, Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Box2D<int> outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
         {
             var @this = (ID2D1DrawTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<int>* inputRectsPtr = &inputRects)
+            fixed (Silk.NET.Maths.Box2D<int>* inputRectsPtr = &inputRects)
             {
-                fixed (Silk.NET.Maths.Rectangle<int>* outputRectPtr = &outputRect)
+                fixed (Silk.NET.Maths.Box2D<int>* outputRectPtr = &outputRect)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DrawTransform*, Silk.NET.Maths.Rectangle<int>*, Silk.NET.Maths.Rectangle<int>*, uint, Silk.NET.Maths.Rectangle<int>*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[5])(@this, inputRectsPtr, inputOpaqueSubRects, inputRectCount, outputRectPtr, outputOpaqueSubRect);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DrawTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)LpVtbl[5])(@this, inputRectsPtr, inputOpaqueSubRects, inputRectCount, outputRectPtr, outputOpaqueSubRect);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapInputRectsToOutputRect(ref Silk.NET.Maths.Rectangle<int> inputRects, Silk.NET.Maths.Rectangle<int>* inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Rectangle<int> outputRect, ref Silk.NET.Maths.Rectangle<int> outputOpaqueSubRect)
+        public readonly unsafe int MapInputRectsToOutputRect(ref Silk.NET.Maths.Box2D<int> inputRects, Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Box2D<int> outputRect, ref Silk.NET.Maths.Box2D<int> outputOpaqueSubRect)
         {
             var @this = (ID2D1DrawTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<int>* inputRectsPtr = &inputRects)
+            fixed (Silk.NET.Maths.Box2D<int>* inputRectsPtr = &inputRects)
             {
-                fixed (Silk.NET.Maths.Rectangle<int>* outputRectPtr = &outputRect)
+                fixed (Silk.NET.Maths.Box2D<int>* outputRectPtr = &outputRect)
                 {
-                    fixed (Silk.NET.Maths.Rectangle<int>* outputOpaqueSubRectPtr = &outputOpaqueSubRect)
+                    fixed (Silk.NET.Maths.Box2D<int>* outputOpaqueSubRectPtr = &outputOpaqueSubRect)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1DrawTransform*, Silk.NET.Maths.Rectangle<int>*, Silk.NET.Maths.Rectangle<int>*, uint, Silk.NET.Maths.Rectangle<int>*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[5])(@this, inputRectsPtr, inputOpaqueSubRects, inputRectCount, outputRectPtr, outputOpaqueSubRectPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1DrawTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)LpVtbl[5])(@this, inputRectsPtr, inputOpaqueSubRects, inputRectCount, outputRectPtr, outputOpaqueSubRectPtr);
                     }
                 }
             }
@@ -339,32 +339,32 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapInputRectsToOutputRect(ref Silk.NET.Maths.Rectangle<int> inputRects, ref Silk.NET.Maths.Rectangle<int> inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Rectangle<int>* outputRect, Silk.NET.Maths.Rectangle<int>* outputOpaqueSubRect)
+        public readonly unsafe int MapInputRectsToOutputRect(ref Silk.NET.Maths.Box2D<int> inputRects, ref Silk.NET.Maths.Box2D<int> inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
         {
             var @this = (ID2D1DrawTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<int>* inputRectsPtr = &inputRects)
+            fixed (Silk.NET.Maths.Box2D<int>* inputRectsPtr = &inputRects)
             {
-                fixed (Silk.NET.Maths.Rectangle<int>* inputOpaqueSubRectsPtr = &inputOpaqueSubRects)
+                fixed (Silk.NET.Maths.Box2D<int>* inputOpaqueSubRectsPtr = &inputOpaqueSubRects)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DrawTransform*, Silk.NET.Maths.Rectangle<int>*, Silk.NET.Maths.Rectangle<int>*, uint, Silk.NET.Maths.Rectangle<int>*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[5])(@this, inputRectsPtr, inputOpaqueSubRectsPtr, inputRectCount, outputRect, outputOpaqueSubRect);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DrawTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)LpVtbl[5])(@this, inputRectsPtr, inputOpaqueSubRectsPtr, inputRectCount, outputRect, outputOpaqueSubRect);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapInputRectsToOutputRect(ref Silk.NET.Maths.Rectangle<int> inputRects, ref Silk.NET.Maths.Rectangle<int> inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Rectangle<int>* outputRect, ref Silk.NET.Maths.Rectangle<int> outputOpaqueSubRect)
+        public readonly unsafe int MapInputRectsToOutputRect(ref Silk.NET.Maths.Box2D<int> inputRects, ref Silk.NET.Maths.Box2D<int> inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, ref Silk.NET.Maths.Box2D<int> outputOpaqueSubRect)
         {
             var @this = (ID2D1DrawTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<int>* inputRectsPtr = &inputRects)
+            fixed (Silk.NET.Maths.Box2D<int>* inputRectsPtr = &inputRects)
             {
-                fixed (Silk.NET.Maths.Rectangle<int>* inputOpaqueSubRectsPtr = &inputOpaqueSubRects)
+                fixed (Silk.NET.Maths.Box2D<int>* inputOpaqueSubRectsPtr = &inputOpaqueSubRects)
                 {
-                    fixed (Silk.NET.Maths.Rectangle<int>* outputOpaqueSubRectPtr = &outputOpaqueSubRect)
+                    fixed (Silk.NET.Maths.Box2D<int>* outputOpaqueSubRectPtr = &outputOpaqueSubRect)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1DrawTransform*, Silk.NET.Maths.Rectangle<int>*, Silk.NET.Maths.Rectangle<int>*, uint, Silk.NET.Maths.Rectangle<int>*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[5])(@this, inputRectsPtr, inputOpaqueSubRectsPtr, inputRectCount, outputRect, outputOpaqueSubRectPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1DrawTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)LpVtbl[5])(@this, inputRectsPtr, inputOpaqueSubRectsPtr, inputRectCount, outputRect, outputOpaqueSubRectPtr);
                     }
                 }
             }
@@ -372,17 +372,17 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapInputRectsToOutputRect(ref Silk.NET.Maths.Rectangle<int> inputRects, ref Silk.NET.Maths.Rectangle<int> inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Rectangle<int> outputRect, Silk.NET.Maths.Rectangle<int>* outputOpaqueSubRect)
+        public readonly unsafe int MapInputRectsToOutputRect(ref Silk.NET.Maths.Box2D<int> inputRects, ref Silk.NET.Maths.Box2D<int> inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Box2D<int> outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
         {
             var @this = (ID2D1DrawTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<int>* inputRectsPtr = &inputRects)
+            fixed (Silk.NET.Maths.Box2D<int>* inputRectsPtr = &inputRects)
             {
-                fixed (Silk.NET.Maths.Rectangle<int>* inputOpaqueSubRectsPtr = &inputOpaqueSubRects)
+                fixed (Silk.NET.Maths.Box2D<int>* inputOpaqueSubRectsPtr = &inputOpaqueSubRects)
                 {
-                    fixed (Silk.NET.Maths.Rectangle<int>* outputRectPtr = &outputRect)
+                    fixed (Silk.NET.Maths.Box2D<int>* outputRectPtr = &outputRect)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1DrawTransform*, Silk.NET.Maths.Rectangle<int>*, Silk.NET.Maths.Rectangle<int>*, uint, Silk.NET.Maths.Rectangle<int>*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[5])(@this, inputRectsPtr, inputOpaqueSubRectsPtr, inputRectCount, outputRectPtr, outputOpaqueSubRect);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1DrawTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)LpVtbl[5])(@this, inputRectsPtr, inputOpaqueSubRectsPtr, inputRectCount, outputRectPtr, outputOpaqueSubRect);
                     }
                 }
             }
@@ -390,19 +390,19 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int MapInputRectsToOutputRect(ref Silk.NET.Maths.Rectangle<int> inputRects, ref Silk.NET.Maths.Rectangle<int> inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Rectangle<int> outputRect, ref Silk.NET.Maths.Rectangle<int> outputOpaqueSubRect)
+        public readonly int MapInputRectsToOutputRect(ref Silk.NET.Maths.Box2D<int> inputRects, ref Silk.NET.Maths.Box2D<int> inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Box2D<int> outputRect, ref Silk.NET.Maths.Box2D<int> outputOpaqueSubRect)
         {
             var @this = (ID2D1DrawTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<int>* inputRectsPtr = &inputRects)
+            fixed (Silk.NET.Maths.Box2D<int>* inputRectsPtr = &inputRects)
             {
-                fixed (Silk.NET.Maths.Rectangle<int>* inputOpaqueSubRectsPtr = &inputOpaqueSubRects)
+                fixed (Silk.NET.Maths.Box2D<int>* inputOpaqueSubRectsPtr = &inputOpaqueSubRects)
                 {
-                    fixed (Silk.NET.Maths.Rectangle<int>* outputRectPtr = &outputRect)
+                    fixed (Silk.NET.Maths.Box2D<int>* outputRectPtr = &outputRect)
                     {
-                        fixed (Silk.NET.Maths.Rectangle<int>* outputOpaqueSubRectPtr = &outputOpaqueSubRect)
+                        fixed (Silk.NET.Maths.Box2D<int>* outputOpaqueSubRectPtr = &outputOpaqueSubRect)
                         {
-                            ret = ((delegate* unmanaged[Stdcall]<ID2D1DrawTransform*, Silk.NET.Maths.Rectangle<int>*, Silk.NET.Maths.Rectangle<int>*, uint, Silk.NET.Maths.Rectangle<int>*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[5])(@this, inputRectsPtr, inputOpaqueSubRectsPtr, inputRectCount, outputRectPtr, outputOpaqueSubRectPtr);
+                            ret = ((delegate* unmanaged[Stdcall]<ID2D1DrawTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)LpVtbl[5])(@this, inputRectsPtr, inputOpaqueSubRectsPtr, inputRectCount, outputRectPtr, outputOpaqueSubRectPtr);
                         }
                     }
                 }
@@ -411,22 +411,22 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapInvalidRect(uint inputIndex, Silk.NET.Maths.Rectangle<int> invalidInputRect, Silk.NET.Maths.Rectangle<int>* invalidOutputRect)
+        public readonly unsafe int MapInvalidRect(uint inputIndex, Silk.NET.Maths.Box2D<int> invalidInputRect, Silk.NET.Maths.Box2D<int>* invalidOutputRect)
         {
             var @this = (ID2D1DrawTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1DrawTransform*, uint, Silk.NET.Maths.Rectangle<int>, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[6])(@this, inputIndex, invalidInputRect, invalidOutputRect);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1DrawTransform*, uint, Silk.NET.Maths.Box2D<int>, Silk.NET.Maths.Box2D<int>*, int>)LpVtbl[6])(@this, inputIndex, invalidInputRect, invalidOutputRect);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int MapInvalidRect(uint inputIndex, Silk.NET.Maths.Rectangle<int> invalidInputRect, ref Silk.NET.Maths.Rectangle<int> invalidOutputRect)
+        public readonly int MapInvalidRect(uint inputIndex, Silk.NET.Maths.Box2D<int> invalidInputRect, ref Silk.NET.Maths.Box2D<int> invalidOutputRect)
         {
             var @this = (ID2D1DrawTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<int>* invalidOutputRectPtr = &invalidOutputRect)
+            fixed (Silk.NET.Maths.Box2D<int>* invalidOutputRectPtr = &invalidOutputRect)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DrawTransform*, uint, Silk.NET.Maths.Rectangle<int>, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[6])(@this, inputIndex, invalidInputRect, invalidOutputRectPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1DrawTransform*, uint, Silk.NET.Maths.Box2D<int>, Silk.NET.Maths.Box2D<int>*, int>)LpVtbl[6])(@this, inputIndex, invalidInputRect, invalidOutputRectPtr);
             }
             return ret;
         }

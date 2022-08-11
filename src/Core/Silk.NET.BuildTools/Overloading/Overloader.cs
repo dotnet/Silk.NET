@@ -1,4 +1,4 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
+// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
@@ -91,13 +91,17 @@ namespace Silk.NET.BuildTools.Overloading
         (
             IEnumerable<Function> allFunctions,
             Project core,
-            Dictionary<string, string[]>? overloadExcludedFunctions
+            Dictionary<string, string[]>? overloadExcludedFunctions,
+            bool fastCheck = false
         )
         {
-            return Get().RemoveDuplicates(CheckDuplicate);
+            return fastCheck? Get().RemoveDuplicatesFast(CheckDuplicate, GetSignature) : Get().RemoveDuplicates(CheckDuplicate);
 
             static bool CheckDuplicate(ImplementedFunction left, ImplementedFunction right)
                 => left.Signature.Equals(right.Signature);
+
+            static string GetSignature(ImplementedFunction func)
+                => func.Signature.ToString(null, returnType: false, appendAttributes: false);
 
             IEnumerable<ImplementedFunction> Get()
             {

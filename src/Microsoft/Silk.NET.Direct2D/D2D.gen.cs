@@ -38,212 +38,212 @@ namespace Silk.NET.Direct2D
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 190, Column 5 in d2d1_2.h")]
         [NativeApi(EntryPoint = "D2D1ComputeMaximumScaleFactor", Convention = CallingConvention.StdCall)]
-        public unsafe partial float ComputeMaximumScaleFactor(Silk.NET.Maths.Matrix3X2<float>* matrix);
+        public unsafe partial float D2D1ComputeMaximumScaleFactor(Silk.NET.Maths.Matrix3X2<float>* matrix);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 190, Column 5 in d2d1_2.h")]
         [NativeApi(EntryPoint = "D2D1ComputeMaximumScaleFactor", Convention = CallingConvention.StdCall)]
-        public partial float ComputeMaximumScaleFactor(ref Silk.NET.Maths.Matrix3X2<float> matrix);
+        public partial float D2D1ComputeMaximumScaleFactor(ref Silk.NET.Maths.Matrix3X2<float> matrix);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 5 in d2d1_1.h")]
         [NativeApi(EntryPoint = "D2D1CreateDevice", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateDevice(IDXGIDevice* dxgiDevice, CreationProperties* creationProperties, ID2D1Device** d2dDevice);
+        public unsafe partial int D2D1CreateDevice(Silk.NET.DXGI.IDXGIDevice* dxgiDevice, CreationProperties* creationProperties, ID2D1Device** d2dDevice);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 5 in d2d1_1.h")]
         [NativeApi(EntryPoint = "D2D1CreateDevice", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateDevice(IDXGIDevice* dxgiDevice, CreationProperties* creationProperties, ref ID2D1Device* d2dDevice);
+        public unsafe partial int D2D1CreateDevice(Silk.NET.DXGI.IDXGIDevice* dxgiDevice, CreationProperties* creationProperties, ref ID2D1Device* d2dDevice);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 5 in d2d1_1.h")]
         [NativeApi(EntryPoint = "D2D1CreateDevice", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateDevice(IDXGIDevice* dxgiDevice, ref CreationProperties creationProperties, ID2D1Device** d2dDevice);
+        public unsafe partial int D2D1CreateDevice(Silk.NET.DXGI.IDXGIDevice* dxgiDevice, ref CreationProperties creationProperties, ID2D1Device** d2dDevice);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 5 in d2d1_1.h")]
         [NativeApi(EntryPoint = "D2D1CreateDevice", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateDevice(IDXGIDevice* dxgiDevice, ref CreationProperties creationProperties, ref ID2D1Device* d2dDevice);
+        public unsafe partial int D2D1CreateDevice(Silk.NET.DXGI.IDXGIDevice* dxgiDevice, ref CreationProperties creationProperties, ref ID2D1Device* d2dDevice);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 5 in d2d1_1.h")]
         [NativeApi(EntryPoint = "D2D1CreateDevice", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateDevice(ref IDXGIDevice dxgiDevice, CreationProperties* creationProperties, ID2D1Device** d2dDevice);
+        public unsafe partial int D2D1CreateDevice(ref Silk.NET.DXGI.IDXGIDevice dxgiDevice, CreationProperties* creationProperties, ID2D1Device** d2dDevice);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 5 in d2d1_1.h")]
         [NativeApi(EntryPoint = "D2D1CreateDevice", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateDevice(ref IDXGIDevice dxgiDevice, CreationProperties* creationProperties, ref ID2D1Device* d2dDevice);
+        public unsafe partial int D2D1CreateDevice(ref Silk.NET.DXGI.IDXGIDevice dxgiDevice, CreationProperties* creationProperties, ref ID2D1Device* d2dDevice);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 5 in d2d1_1.h")]
         [NativeApi(EntryPoint = "D2D1CreateDevice", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateDevice(ref IDXGIDevice dxgiDevice, ref CreationProperties creationProperties, ID2D1Device** d2dDevice);
+        public unsafe partial int D2D1CreateDevice(ref Silk.NET.DXGI.IDXGIDevice dxgiDevice, ref CreationProperties creationProperties, ID2D1Device** d2dDevice);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 5 in d2d1_1.h")]
         [NativeApi(EntryPoint = "D2D1CreateDevice", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateDevice(ref IDXGIDevice dxgiDevice, ref CreationProperties creationProperties, ref ID2D1Device* d2dDevice);
+        public unsafe partial int D2D1CreateDevice(ref Silk.NET.DXGI.IDXGIDevice dxgiDevice, ref CreationProperties creationProperties, ref ID2D1Device* d2dDevice);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2456, Column 5 in d2d1_1.h")]
         [NativeApi(EntryPoint = "D2D1CreateDeviceContext", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateDeviceContext(IDXGISurface* dxgiSurface, CreationProperties* creationProperties, ID2D1DeviceContext** d2dDeviceContext);
+        public unsafe partial int D2D1CreateDeviceContext(Silk.NET.DXGI.IDXGISurface* dxgiSurface, CreationProperties* creationProperties, ID2D1DeviceContext** d2dDeviceContext);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2456, Column 5 in d2d1_1.h")]
         [NativeApi(EntryPoint = "D2D1CreateDeviceContext", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateDeviceContext(IDXGISurface* dxgiSurface, CreationProperties* creationProperties, ref ID2D1DeviceContext* d2dDeviceContext);
+        public unsafe partial int D2D1CreateDeviceContext(Silk.NET.DXGI.IDXGISurface* dxgiSurface, CreationProperties* creationProperties, ref ID2D1DeviceContext* d2dDeviceContext);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2456, Column 5 in d2d1_1.h")]
         [NativeApi(EntryPoint = "D2D1CreateDeviceContext", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateDeviceContext(IDXGISurface* dxgiSurface, ref CreationProperties creationProperties, ID2D1DeviceContext** d2dDeviceContext);
+        public unsafe partial int D2D1CreateDeviceContext(Silk.NET.DXGI.IDXGISurface* dxgiSurface, ref CreationProperties creationProperties, ID2D1DeviceContext** d2dDeviceContext);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2456, Column 5 in d2d1_1.h")]
         [NativeApi(EntryPoint = "D2D1CreateDeviceContext", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateDeviceContext(IDXGISurface* dxgiSurface, ref CreationProperties creationProperties, ref ID2D1DeviceContext* d2dDeviceContext);
+        public unsafe partial int D2D1CreateDeviceContext(Silk.NET.DXGI.IDXGISurface* dxgiSurface, ref CreationProperties creationProperties, ref ID2D1DeviceContext* d2dDeviceContext);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2456, Column 5 in d2d1_1.h")]
         [NativeApi(EntryPoint = "D2D1CreateDeviceContext", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateDeviceContext(ref IDXGISurface dxgiSurface, CreationProperties* creationProperties, ID2D1DeviceContext** d2dDeviceContext);
+        public unsafe partial int D2D1CreateDeviceContext(ref Silk.NET.DXGI.IDXGISurface dxgiSurface, CreationProperties* creationProperties, ID2D1DeviceContext** d2dDeviceContext);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2456, Column 5 in d2d1_1.h")]
         [NativeApi(EntryPoint = "D2D1CreateDeviceContext", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateDeviceContext(ref IDXGISurface dxgiSurface, CreationProperties* creationProperties, ref ID2D1DeviceContext* d2dDeviceContext);
+        public unsafe partial int D2D1CreateDeviceContext(ref Silk.NET.DXGI.IDXGISurface dxgiSurface, CreationProperties* creationProperties, ref ID2D1DeviceContext* d2dDeviceContext);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2456, Column 5 in d2d1_1.h")]
         [NativeApi(EntryPoint = "D2D1CreateDeviceContext", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateDeviceContext(ref IDXGISurface dxgiSurface, ref CreationProperties creationProperties, ID2D1DeviceContext** d2dDeviceContext);
+        public unsafe partial int D2D1CreateDeviceContext(ref Silk.NET.DXGI.IDXGISurface dxgiSurface, ref CreationProperties creationProperties, ID2D1DeviceContext** d2dDeviceContext);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2456, Column 5 in d2d1_1.h")]
         [NativeApi(EntryPoint = "D2D1CreateDeviceContext", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateDeviceContext(ref IDXGISurface dxgiSurface, ref CreationProperties creationProperties, ref ID2D1DeviceContext* d2dDeviceContext);
+        public unsafe partial int D2D1CreateDeviceContext(ref Silk.NET.DXGI.IDXGISurface dxgiSurface, ref CreationProperties creationProperties, ref ID2D1DeviceContext* d2dDeviceContext);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2463, Column 5 in d2d1_1.h")]
         [NativeApi(EntryPoint = "D2D1ConvertColorSpace", Convention = CallingConvention.StdCall)]
-        public unsafe partial _D3DCOLORVALUE ConvertColorSpace(ColorSpace sourceColorSpace, ColorSpace destinationColorSpace, _D3DCOLORVALUE* color);
+        public unsafe partial Silk.NET.DXGI.D3Dcolorvalue D2D1ConvertColorSpace(ColorSpace sourceColorSpace, ColorSpace destinationColorSpace, Silk.NET.DXGI.D3Dcolorvalue* color);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2463, Column 5 in d2d1_1.h")]
         [NativeApi(EntryPoint = "D2D1ConvertColorSpace", Convention = CallingConvention.StdCall)]
-        public partial _D3DCOLORVALUE ConvertColorSpace(ColorSpace sourceColorSpace, ColorSpace destinationColorSpace, ref _D3DCOLORVALUE color);
+        public partial Silk.NET.DXGI.D3Dcolorvalue D2D1ConvertColorSpace(ColorSpace sourceColorSpace, ColorSpace destinationColorSpace, ref Silk.NET.DXGI.D3Dcolorvalue color);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 5 in d2d1_1.h")]
         [NativeApi(EntryPoint = "D2D1SinCos", Convention = CallingConvention.StdCall)]
-        public unsafe partial void SinCos(float angle, float* s, float* c);
+        public unsafe partial void D2D1SinCos(float angle, float* s, float* c);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 5 in d2d1_1.h")]
         [NativeApi(EntryPoint = "D2D1SinCos", Convention = CallingConvention.StdCall)]
-        public unsafe partial void SinCos(float angle, float* s, ref float c);
+        public unsafe partial void D2D1SinCos(float angle, float* s, ref float c);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 5 in d2d1_1.h")]
         [NativeApi(EntryPoint = "D2D1SinCos", Convention = CallingConvention.StdCall)]
-        public unsafe partial void SinCos(float angle, ref float s, float* c);
+        public unsafe partial void D2D1SinCos(float angle, ref float s, float* c);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 5 in d2d1_1.h")]
         [NativeApi(EntryPoint = "D2D1SinCos", Convention = CallingConvention.StdCall)]
-        public partial void SinCos(float angle, ref float s, ref float c);
+        public partial void D2D1SinCos(float angle, ref float s, ref float c);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2477, Column 5 in d2d1_1.h")]
         [NativeApi(EntryPoint = "D2D1Tan", Convention = CallingConvention.StdCall)]
-        public partial float Tan(float angle);
+        public partial float D2D1Tan(float angle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2482, Column 5 in d2d1_1.h")]
         [NativeApi(EntryPoint = "D2D1Vec3Length", Convention = CallingConvention.StdCall)]
-        public partial float Vec3Length(float x, float y, float z);
+        public partial float D2D1Vec3Length(float x, float y, float z);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3667, Column 5 in d2d1.h")]
         [NativeApi(EntryPoint = "D2D1CreateFactory", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateFactory(FactoryType factoryType, Guid* riid, FactoryOptions* pFactoryOptions, void** ppIFactory);
+        public unsafe partial int D2D1CreateFactory(FactoryType factoryType, Guid* riid, FactoryOptions* pFactoryOptions, void** ppIFactory);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3667, Column 5 in d2d1.h")]
         [NativeApi(EntryPoint = "D2D1CreateFactory", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateFactory(FactoryType factoryType, Guid* riid, FactoryOptions* pFactoryOptions, ref void* ppIFactory);
+        public unsafe partial int D2D1CreateFactory(FactoryType factoryType, Guid* riid, FactoryOptions* pFactoryOptions, ref void* ppIFactory);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3667, Column 5 in d2d1.h")]
         [NativeApi(EntryPoint = "D2D1CreateFactory", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateFactory(FactoryType factoryType, Guid* riid, ref FactoryOptions pFactoryOptions, void** ppIFactory);
+        public unsafe partial int D2D1CreateFactory(FactoryType factoryType, Guid* riid, ref FactoryOptions pFactoryOptions, void** ppIFactory);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3667, Column 5 in d2d1.h")]
         [NativeApi(EntryPoint = "D2D1CreateFactory", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateFactory(FactoryType factoryType, Guid* riid, ref FactoryOptions pFactoryOptions, ref void* ppIFactory);
+        public unsafe partial int D2D1CreateFactory(FactoryType factoryType, Guid* riid, ref FactoryOptions pFactoryOptions, ref void* ppIFactory);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3667, Column 5 in d2d1.h")]
         [NativeApi(EntryPoint = "D2D1CreateFactory", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateFactory(FactoryType factoryType, ref Guid riid, FactoryOptions* pFactoryOptions, void** ppIFactory);
+        public unsafe partial int D2D1CreateFactory(FactoryType factoryType, ref Guid riid, FactoryOptions* pFactoryOptions, void** ppIFactory);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3667, Column 5 in d2d1.h")]
         [NativeApi(EntryPoint = "D2D1CreateFactory", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateFactory(FactoryType factoryType, ref Guid riid, FactoryOptions* pFactoryOptions, ref void* ppIFactory);
+        public unsafe partial int D2D1CreateFactory(FactoryType factoryType, ref Guid riid, FactoryOptions* pFactoryOptions, ref void* ppIFactory);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3667, Column 5 in d2d1.h")]
         [NativeApi(EntryPoint = "D2D1CreateFactory", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateFactory(FactoryType factoryType, ref Guid riid, ref FactoryOptions pFactoryOptions, void** ppIFactory);
+        public unsafe partial int D2D1CreateFactory(FactoryType factoryType, ref Guid riid, ref FactoryOptions pFactoryOptions, void** ppIFactory);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3667, Column 5 in d2d1.h")]
         [NativeApi(EntryPoint = "D2D1CreateFactory", Convention = CallingConvention.StdCall)]
-        public unsafe partial int CreateFactory(FactoryType factoryType, ref Guid riid, ref FactoryOptions pFactoryOptions, ref void* ppIFactory);
+        public unsafe partial int D2D1CreateFactory(FactoryType factoryType, ref Guid riid, ref FactoryOptions pFactoryOptions, ref void* ppIFactory);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3676, Column 5 in d2d1.h")]
         [NativeApi(EntryPoint = "D2D1MakeRotateMatrix", Convention = CallingConvention.StdCall)]
-        public unsafe partial void MakeRotateMatrix(float angle, D2D_POINT_2F center, Silk.NET.Maths.Matrix3X2<float>* matrix);
+        public unsafe partial void D2D1MakeRotateMatrix(float angle, Silk.NET.Maths.Vector2D<float> center, Silk.NET.Maths.Matrix3X2<float>* matrix);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3676, Column 5 in d2d1.h")]
         [NativeApi(EntryPoint = "D2D1MakeRotateMatrix", Convention = CallingConvention.StdCall)]
-        public partial void MakeRotateMatrix(float angle, D2D_POINT_2F center, ref Silk.NET.Maths.Matrix3X2<float> matrix);
+        public partial void D2D1MakeRotateMatrix(float angle, Silk.NET.Maths.Vector2D<float> center, ref Silk.NET.Maths.Matrix3X2<float> matrix);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3683, Column 5 in d2d1.h")]
         [NativeApi(EntryPoint = "D2D1MakeSkewMatrix", Convention = CallingConvention.StdCall)]
-        public unsafe partial void MakeSkewMatrix(float angleX, float angleY, D2D_POINT_2F center, Silk.NET.Maths.Matrix3X2<float>* matrix);
+        public unsafe partial void D2D1MakeSkewMatrix(float angleX, float angleY, Silk.NET.Maths.Vector2D<float> center, Silk.NET.Maths.Matrix3X2<float>* matrix);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3683, Column 5 in d2d1.h")]
         [NativeApi(EntryPoint = "D2D1MakeSkewMatrix", Convention = CallingConvention.StdCall)]
-        public partial void MakeSkewMatrix(float angleX, float angleY, D2D_POINT_2F center, ref Silk.NET.Maths.Matrix3X2<float> matrix);
+        public partial void D2D1MakeSkewMatrix(float angleX, float angleY, Silk.NET.Maths.Vector2D<float> center, ref Silk.NET.Maths.Matrix3X2<float> matrix);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3691, Column 5 in d2d1.h")]
         [NativeApi(EntryPoint = "D2D1IsMatrixInvertible", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IsMatrixInvertible(Silk.NET.Maths.Matrix3X2<float>* matrix);
+        public unsafe partial int D2D1IsMatrixInvertible(Silk.NET.Maths.Matrix3X2<float>* matrix);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3691, Column 5 in d2d1.h")]
         [NativeApi(EntryPoint = "D2D1IsMatrixInvertible", Convention = CallingConvention.StdCall)]
-        public partial int IsMatrixInvertible(ref Silk.NET.Maths.Matrix3X2<float> matrix);
+        public partial int D2D1IsMatrixInvertible(ref Silk.NET.Maths.Matrix3X2<float> matrix);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3696, Column 5 in d2d1.h")]
         [NativeApi(EntryPoint = "D2D1InvertMatrix", Convention = CallingConvention.StdCall)]
-        public unsafe partial int InvertMatrix(Silk.NET.Maths.Matrix3X2<float>* matrix);
+        public unsafe partial int D2D1InvertMatrix(Silk.NET.Maths.Matrix3X2<float>* matrix);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3696, Column 5 in d2d1.h")]
         [NativeApi(EntryPoint = "D2D1InvertMatrix", Convention = CallingConvention.StdCall)]
-        public partial int InvertMatrix(ref Silk.NET.Maths.Matrix3X2<float> matrix);
+        public partial int D2D1InvertMatrix(ref Silk.NET.Maths.Matrix3X2<float> matrix);
 
 
         public D2D(INativeContext ctx)

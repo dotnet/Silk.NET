@@ -149,22 +149,22 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetBounds(Silk.NET.Maths.Rectangle<float>* bounds)
+        public readonly unsafe int GetBounds(Silk.NET.Maths.Box2D<float>* bounds)
         {
             var @this = (ID2D1GdiMetafile*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1GdiMetafile*, Silk.NET.Maths.Rectangle<float>*, int>)LpVtbl[5])(@this, bounds);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1GdiMetafile*, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[5])(@this, bounds);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetBounds(ref Silk.NET.Maths.Rectangle<float> bounds)
+        public readonly int GetBounds(ref Silk.NET.Maths.Box2D<float> bounds)
         {
             var @this = (ID2D1GdiMetafile*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<float>* boundsPtr = &bounds)
+            fixed (Silk.NET.Maths.Box2D<float>* boundsPtr = &bounds)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1GdiMetafile*, Silk.NET.Maths.Rectangle<float>*, int>)LpVtbl[5])(@this, boundsPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1GdiMetafile*, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[5])(@this, boundsPtr);
             }
             return ret;
         }

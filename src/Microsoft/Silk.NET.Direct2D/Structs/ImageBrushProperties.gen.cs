@@ -21,7 +21,7 @@ namespace Silk.NET.Direct2D
     {
         public ImageBrushProperties
         (
-            Silk.NET.Maths.Rectangle<float>? sourceRectangle = null,
+            Silk.NET.Maths.Box2D<float>? sourceRectangle = null,
             ExtendMode? extendModeX = null,
             ExtendMode? extendModeY = null,
             InterpolationMode? interpolationMode = null
@@ -52,7 +52,7 @@ namespace Silk.NET.Direct2D
         [NativeName("Type", "D2D1_RECT_F")]
         [NativeName("Type.Name", "D2D1_RECT_F")]
         [NativeName("Name", "sourceRectangle")]
-        public Silk.NET.Maths.Rectangle<float> SourceRectangle;
+        public Silk.NET.Maths.Box2D<float> SourceRectangle;
 
         [NativeName("Type", "D2D1_EXTEND_MODE")]
         [NativeName("Type.Name", "D2D1_EXTEND_MODE")]

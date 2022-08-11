@@ -163,48 +163,48 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRectangleGeometry(Silk.NET.Maths.Rectangle<float>* rectangle, ID2D1RectangleGeometry** rectangleGeometry)
+        public readonly unsafe int CreateRectangleGeometry(Silk.NET.Maths.Box2D<float>* rectangle, ID2D1RectangleGeometry** rectangleGeometry)
         {
             var @this = (ID2D1Factory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, Silk.NET.Maths.Rectangle<float>*, ID2D1RectangleGeometry**, int>)LpVtbl[5])(@this, rectangle, rectangleGeometry);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, Silk.NET.Maths.Box2D<float>*, ID2D1RectangleGeometry**, int>)LpVtbl[5])(@this, rectangle, rectangleGeometry);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRectangleGeometry(Silk.NET.Maths.Rectangle<float>* rectangle, ref ID2D1RectangleGeometry* rectangleGeometry)
+        public readonly unsafe int CreateRectangleGeometry(Silk.NET.Maths.Box2D<float>* rectangle, ref ID2D1RectangleGeometry* rectangleGeometry)
         {
             var @this = (ID2D1Factory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID2D1RectangleGeometry** rectangleGeometryPtr = &rectangleGeometry)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, Silk.NET.Maths.Rectangle<float>*, ID2D1RectangleGeometry**, int>)LpVtbl[5])(@this, rectangle, rectangleGeometryPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, Silk.NET.Maths.Box2D<float>*, ID2D1RectangleGeometry**, int>)LpVtbl[5])(@this, rectangle, rectangleGeometryPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRectangleGeometry(ref Silk.NET.Maths.Rectangle<float> rectangle, ID2D1RectangleGeometry** rectangleGeometry)
+        public readonly unsafe int CreateRectangleGeometry(ref Silk.NET.Maths.Box2D<float> rectangle, ID2D1RectangleGeometry** rectangleGeometry)
         {
             var @this = (ID2D1Factory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<float>* rectanglePtr = &rectangle)
+            fixed (Silk.NET.Maths.Box2D<float>* rectanglePtr = &rectangle)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, Silk.NET.Maths.Rectangle<float>*, ID2D1RectangleGeometry**, int>)LpVtbl[5])(@this, rectanglePtr, rectangleGeometry);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, Silk.NET.Maths.Box2D<float>*, ID2D1RectangleGeometry**, int>)LpVtbl[5])(@this, rectanglePtr, rectangleGeometry);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRectangleGeometry(ref Silk.NET.Maths.Rectangle<float> rectangle, ref ID2D1RectangleGeometry* rectangleGeometry)
+        public readonly unsafe int CreateRectangleGeometry(ref Silk.NET.Maths.Box2D<float> rectangle, ref ID2D1RectangleGeometry* rectangleGeometry)
         {
             var @this = (ID2D1Factory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<float>* rectanglePtr = &rectangle)
+            fixed (Silk.NET.Maths.Box2D<float>* rectanglePtr = &rectangle)
             {
                 fixed (ID2D1RectangleGeometry** rectangleGeometryPtr = &rectangleGeometry)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, Silk.NET.Maths.Rectangle<float>*, ID2D1RectangleGeometry**, int>)LpVtbl[5])(@this, rectanglePtr, rectangleGeometryPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, Silk.NET.Maths.Box2D<float>*, ID2D1RectangleGeometry**, int>)LpVtbl[5])(@this, rectanglePtr, rectangleGeometryPtr);
                 }
             }
             return ret;
@@ -916,40 +916,40 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDxgiSurfaceRenderTarget(IDXGISurface* dxgiSurface, RenderTargetProperties* renderTargetProperties, ID2D1RenderTarget** renderTarget)
+        public readonly unsafe int CreateDxgiSurfaceRenderTarget(Silk.NET.DXGI.IDXGISurface* dxgiSurface, RenderTargetProperties* renderTargetProperties, ID2D1RenderTarget** renderTarget)
         {
             var @this = (ID2D1Factory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, IDXGISurface*, RenderTargetProperties*, ID2D1RenderTarget**, int>)LpVtbl[15])(@this, dxgiSurface, renderTargetProperties, renderTarget);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, Silk.NET.DXGI.IDXGISurface*, RenderTargetProperties*, ID2D1RenderTarget**, int>)LpVtbl[15])(@this, dxgiSurface, renderTargetProperties, renderTarget);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDxgiSurfaceRenderTarget(IDXGISurface* dxgiSurface, RenderTargetProperties* renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
+        public readonly unsafe int CreateDxgiSurfaceRenderTarget(Silk.NET.DXGI.IDXGISurface* dxgiSurface, RenderTargetProperties* renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
         {
             var @this = (ID2D1Factory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID2D1RenderTarget** renderTargetPtr = &renderTarget)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, IDXGISurface*, RenderTargetProperties*, ID2D1RenderTarget**, int>)LpVtbl[15])(@this, dxgiSurface, renderTargetProperties, renderTargetPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, Silk.NET.DXGI.IDXGISurface*, RenderTargetProperties*, ID2D1RenderTarget**, int>)LpVtbl[15])(@this, dxgiSurface, renderTargetProperties, renderTargetPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDxgiSurfaceRenderTarget(IDXGISurface* dxgiSurface, ref RenderTargetProperties renderTargetProperties, ID2D1RenderTarget** renderTarget)
+        public readonly unsafe int CreateDxgiSurfaceRenderTarget(Silk.NET.DXGI.IDXGISurface* dxgiSurface, ref RenderTargetProperties renderTargetProperties, ID2D1RenderTarget** renderTarget)
         {
             var @this = (ID2D1Factory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (RenderTargetProperties* renderTargetPropertiesPtr = &renderTargetProperties)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, IDXGISurface*, RenderTargetProperties*, ID2D1RenderTarget**, int>)LpVtbl[15])(@this, dxgiSurface, renderTargetPropertiesPtr, renderTarget);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, Silk.NET.DXGI.IDXGISurface*, RenderTargetProperties*, ID2D1RenderTarget**, int>)LpVtbl[15])(@this, dxgiSurface, renderTargetPropertiesPtr, renderTarget);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDxgiSurfaceRenderTarget(IDXGISurface* dxgiSurface, ref RenderTargetProperties renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
+        public readonly unsafe int CreateDxgiSurfaceRenderTarget(Silk.NET.DXGI.IDXGISurface* dxgiSurface, ref RenderTargetProperties renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
         {
             var @this = (ID2D1Factory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -957,66 +957,66 @@ namespace Silk.NET.Direct2D
             {
                 fixed (ID2D1RenderTarget** renderTargetPtr = &renderTarget)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, IDXGISurface*, RenderTargetProperties*, ID2D1RenderTarget**, int>)LpVtbl[15])(@this, dxgiSurface, renderTargetPropertiesPtr, renderTargetPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, Silk.NET.DXGI.IDXGISurface*, RenderTargetProperties*, ID2D1RenderTarget**, int>)LpVtbl[15])(@this, dxgiSurface, renderTargetPropertiesPtr, renderTargetPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDxgiSurfaceRenderTarget(ref IDXGISurface dxgiSurface, RenderTargetProperties* renderTargetProperties, ID2D1RenderTarget** renderTarget)
+        public readonly unsafe int CreateDxgiSurfaceRenderTarget(ref Silk.NET.DXGI.IDXGISurface dxgiSurface, RenderTargetProperties* renderTargetProperties, ID2D1RenderTarget** renderTarget)
         {
             var @this = (ID2D1Factory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (IDXGISurface* dxgiSurfacePtr = &dxgiSurface)
+            fixed (Silk.NET.DXGI.IDXGISurface* dxgiSurfacePtr = &dxgiSurface)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, IDXGISurface*, RenderTargetProperties*, ID2D1RenderTarget**, int>)LpVtbl[15])(@this, dxgiSurfacePtr, renderTargetProperties, renderTarget);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, Silk.NET.DXGI.IDXGISurface*, RenderTargetProperties*, ID2D1RenderTarget**, int>)LpVtbl[15])(@this, dxgiSurfacePtr, renderTargetProperties, renderTarget);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDxgiSurfaceRenderTarget(ref IDXGISurface dxgiSurface, RenderTargetProperties* renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
+        public readonly unsafe int CreateDxgiSurfaceRenderTarget(ref Silk.NET.DXGI.IDXGISurface dxgiSurface, RenderTargetProperties* renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
         {
             var @this = (ID2D1Factory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (IDXGISurface* dxgiSurfacePtr = &dxgiSurface)
+            fixed (Silk.NET.DXGI.IDXGISurface* dxgiSurfacePtr = &dxgiSurface)
             {
                 fixed (ID2D1RenderTarget** renderTargetPtr = &renderTarget)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, IDXGISurface*, RenderTargetProperties*, ID2D1RenderTarget**, int>)LpVtbl[15])(@this, dxgiSurfacePtr, renderTargetProperties, renderTargetPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, Silk.NET.DXGI.IDXGISurface*, RenderTargetProperties*, ID2D1RenderTarget**, int>)LpVtbl[15])(@this, dxgiSurfacePtr, renderTargetProperties, renderTargetPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDxgiSurfaceRenderTarget(ref IDXGISurface dxgiSurface, ref RenderTargetProperties renderTargetProperties, ID2D1RenderTarget** renderTarget)
+        public readonly unsafe int CreateDxgiSurfaceRenderTarget(ref Silk.NET.DXGI.IDXGISurface dxgiSurface, ref RenderTargetProperties renderTargetProperties, ID2D1RenderTarget** renderTarget)
         {
             var @this = (ID2D1Factory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (IDXGISurface* dxgiSurfacePtr = &dxgiSurface)
+            fixed (Silk.NET.DXGI.IDXGISurface* dxgiSurfacePtr = &dxgiSurface)
             {
                 fixed (RenderTargetProperties* renderTargetPropertiesPtr = &renderTargetProperties)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, IDXGISurface*, RenderTargetProperties*, ID2D1RenderTarget**, int>)LpVtbl[15])(@this, dxgiSurfacePtr, renderTargetPropertiesPtr, renderTarget);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, Silk.NET.DXGI.IDXGISurface*, RenderTargetProperties*, ID2D1RenderTarget**, int>)LpVtbl[15])(@this, dxgiSurfacePtr, renderTargetPropertiesPtr, renderTarget);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDxgiSurfaceRenderTarget(ref IDXGISurface dxgiSurface, ref RenderTargetProperties renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
+        public readonly unsafe int CreateDxgiSurfaceRenderTarget(ref Silk.NET.DXGI.IDXGISurface dxgiSurface, ref RenderTargetProperties renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
         {
             var @this = (ID2D1Factory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (IDXGISurface* dxgiSurfacePtr = &dxgiSurface)
+            fixed (Silk.NET.DXGI.IDXGISurface* dxgiSurfacePtr = &dxgiSurface)
             {
                 fixed (RenderTargetProperties* renderTargetPropertiesPtr = &renderTargetProperties)
                 {
                     fixed (ID2D1RenderTarget** renderTargetPtr = &renderTarget)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, IDXGISurface*, RenderTargetProperties*, ID2D1RenderTarget**, int>)LpVtbl[15])(@this, dxgiSurfacePtr, renderTargetPropertiesPtr, renderTargetPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, Silk.NET.DXGI.IDXGISurface*, RenderTargetProperties*, ID2D1RenderTarget**, int>)LpVtbl[15])(@this, dxgiSurfacePtr, renderTargetPropertiesPtr, renderTargetPtr);
                     }
                 }
             }
@@ -1072,203 +1072,203 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDevice(IDXGIDevice* dxgiDevice, ID2D1Device** d2dDevice)
+        public readonly unsafe int CreateDevice(Silk.NET.DXGI.IDXGIDevice* dxgiDevice, ID2D1Device** d2dDevice)
         {
             var @this = (ID2D1Factory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, IDXGIDevice*, ID2D1Device**, int>)LpVtbl[17])(@this, dxgiDevice, d2dDevice);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, Silk.NET.DXGI.IDXGIDevice*, ID2D1Device**, int>)LpVtbl[17])(@this, dxgiDevice, d2dDevice);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDevice(IDXGIDevice* dxgiDevice, ref ID2D1Device* d2dDevice)
+        public readonly unsafe int CreateDevice(Silk.NET.DXGI.IDXGIDevice* dxgiDevice, ref ID2D1Device* d2dDevice)
         {
             var @this = (ID2D1Factory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID2D1Device** d2dDevicePtr = &d2dDevice)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, IDXGIDevice*, ID2D1Device**, int>)LpVtbl[17])(@this, dxgiDevice, d2dDevicePtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, Silk.NET.DXGI.IDXGIDevice*, ID2D1Device**, int>)LpVtbl[17])(@this, dxgiDevice, d2dDevicePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDevice(ref IDXGIDevice dxgiDevice, ID2D1Device** d2dDevice)
+        public readonly unsafe int CreateDevice(ref Silk.NET.DXGI.IDXGIDevice dxgiDevice, ID2D1Device** d2dDevice)
         {
             var @this = (ID2D1Factory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (IDXGIDevice* dxgiDevicePtr = &dxgiDevice)
+            fixed (Silk.NET.DXGI.IDXGIDevice* dxgiDevicePtr = &dxgiDevice)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, IDXGIDevice*, ID2D1Device**, int>)LpVtbl[17])(@this, dxgiDevicePtr, d2dDevice);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, Silk.NET.DXGI.IDXGIDevice*, ID2D1Device**, int>)LpVtbl[17])(@this, dxgiDevicePtr, d2dDevice);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDevice(ref IDXGIDevice dxgiDevice, ref ID2D1Device* d2dDevice)
+        public readonly unsafe int CreateDevice(ref Silk.NET.DXGI.IDXGIDevice dxgiDevice, ref ID2D1Device* d2dDevice)
         {
             var @this = (ID2D1Factory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (IDXGIDevice* dxgiDevicePtr = &dxgiDevice)
+            fixed (Silk.NET.DXGI.IDXGIDevice* dxgiDevicePtr = &dxgiDevice)
             {
                 fixed (ID2D1Device** d2dDevicePtr = &d2dDevice)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, IDXGIDevice*, ID2D1Device**, int>)LpVtbl[17])(@this, dxgiDevicePtr, d2dDevicePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, Silk.NET.DXGI.IDXGIDevice*, ID2D1Device**, int>)LpVtbl[17])(@this, dxgiDevicePtr, d2dDevicePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGdiMetafile(IStream* metafileStream, ID2D1GdiMetafile** metafile)
+        public readonly unsafe int CreateGdiMetafile(Silk.NET.Core.Native.IStream* metafileStream, ID2D1GdiMetafile** metafile)
         {
             var @this = (ID2D1Factory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, IStream*, ID2D1GdiMetafile**, int>)LpVtbl[18])(@this, metafileStream, metafile);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, Silk.NET.Core.Native.IStream*, ID2D1GdiMetafile**, int>)LpVtbl[18])(@this, metafileStream, metafile);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGdiMetafile(IStream* metafileStream, ref ID2D1GdiMetafile* metafile)
+        public readonly unsafe int CreateGdiMetafile(Silk.NET.Core.Native.IStream* metafileStream, ref ID2D1GdiMetafile* metafile)
         {
             var @this = (ID2D1Factory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID2D1GdiMetafile** metafilePtr = &metafile)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, IStream*, ID2D1GdiMetafile**, int>)LpVtbl[18])(@this, metafileStream, metafilePtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, Silk.NET.Core.Native.IStream*, ID2D1GdiMetafile**, int>)LpVtbl[18])(@this, metafileStream, metafilePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGdiMetafile(ref IStream metafileStream, ID2D1GdiMetafile** metafile)
+        public readonly unsafe int CreateGdiMetafile(ref Silk.NET.Core.Native.IStream metafileStream, ID2D1GdiMetafile** metafile)
         {
             var @this = (ID2D1Factory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (IStream* metafileStreamPtr = &metafileStream)
+            fixed (Silk.NET.Core.Native.IStream* metafileStreamPtr = &metafileStream)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, IStream*, ID2D1GdiMetafile**, int>)LpVtbl[18])(@this, metafileStreamPtr, metafile);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, Silk.NET.Core.Native.IStream*, ID2D1GdiMetafile**, int>)LpVtbl[18])(@this, metafileStreamPtr, metafile);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGdiMetafile(ref IStream metafileStream, ref ID2D1GdiMetafile* metafile)
+        public readonly unsafe int CreateGdiMetafile(ref Silk.NET.Core.Native.IStream metafileStream, ref ID2D1GdiMetafile* metafile)
         {
             var @this = (ID2D1Factory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (IStream* metafileStreamPtr = &metafileStream)
+            fixed (Silk.NET.Core.Native.IStream* metafileStreamPtr = &metafileStream)
             {
                 fixed (ID2D1GdiMetafile** metafilePtr = &metafile)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, IStream*, ID2D1GdiMetafile**, int>)LpVtbl[18])(@this, metafileStreamPtr, metafilePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, Silk.NET.Core.Native.IStream*, ID2D1GdiMetafile**, int>)LpVtbl[18])(@this, metafileStreamPtr, metafilePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterEffectFromStream(Guid* classId, IStream* propertyXml, PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+        public readonly unsafe int RegisterEffectFromStream(Guid* classId, Silk.NET.Core.Native.IStream* propertyXml, PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
         {
             var @this = (ID2D1Factory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, Guid*, IStream*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)LpVtbl[19])(@this, classId, propertyXml, bindings, bindingsCount, effectFactory);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, Guid*, Silk.NET.Core.Native.IStream*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)LpVtbl[19])(@this, classId, propertyXml, bindings, bindingsCount, effectFactory);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterEffectFromStream(Guid* classId, IStream* propertyXml, ref PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+        public readonly unsafe int RegisterEffectFromStream(Guid* classId, Silk.NET.Core.Native.IStream* propertyXml, ref PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
         {
             var @this = (ID2D1Factory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (PropertyBinding* bindingsPtr = &bindings)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, Guid*, IStream*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)LpVtbl[19])(@this, classId, propertyXml, bindingsPtr, bindingsCount, effectFactory);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, Guid*, Silk.NET.Core.Native.IStream*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)LpVtbl[19])(@this, classId, propertyXml, bindingsPtr, bindingsCount, effectFactory);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterEffectFromStream(Guid* classId, ref IStream propertyXml, PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+        public readonly unsafe int RegisterEffectFromStream(Guid* classId, ref Silk.NET.Core.Native.IStream propertyXml, PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
         {
             var @this = (ID2D1Factory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (IStream* propertyXmlPtr = &propertyXml)
+            fixed (Silk.NET.Core.Native.IStream* propertyXmlPtr = &propertyXml)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, Guid*, IStream*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)LpVtbl[19])(@this, classId, propertyXmlPtr, bindings, bindingsCount, effectFactory);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, Guid*, Silk.NET.Core.Native.IStream*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)LpVtbl[19])(@this, classId, propertyXmlPtr, bindings, bindingsCount, effectFactory);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterEffectFromStream(Guid* classId, ref IStream propertyXml, ref PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+        public readonly unsafe int RegisterEffectFromStream(Guid* classId, ref Silk.NET.Core.Native.IStream propertyXml, ref PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
         {
             var @this = (ID2D1Factory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (IStream* propertyXmlPtr = &propertyXml)
-            {
-                fixed (PropertyBinding* bindingsPtr = &bindings)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, Guid*, IStream*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)LpVtbl[19])(@this, classId, propertyXmlPtr, bindingsPtr, bindingsCount, effectFactory);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterEffectFromStream(ref Guid classId, IStream* propertyXml, PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
-        {
-            var @this = (ID2D1Factory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* classIdPtr = &classId)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, Guid*, IStream*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)LpVtbl[19])(@this, classIdPtr, propertyXml, bindings, bindingsCount, effectFactory);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterEffectFromStream(ref Guid classId, IStream* propertyXml, ref PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
-        {
-            var @this = (ID2D1Factory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* classIdPtr = &classId)
+            fixed (Silk.NET.Core.Native.IStream* propertyXmlPtr = &propertyXml)
             {
                 fixed (PropertyBinding* bindingsPtr = &bindings)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, Guid*, IStream*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)LpVtbl[19])(@this, classIdPtr, propertyXml, bindingsPtr, bindingsCount, effectFactory);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, Guid*, Silk.NET.Core.Native.IStream*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)LpVtbl[19])(@this, classId, propertyXmlPtr, bindingsPtr, bindingsCount, effectFactory);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterEffectFromStream(ref Guid classId, ref IStream propertyXml, PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+        public readonly unsafe int RegisterEffectFromStream(ref Guid classId, Silk.NET.Core.Native.IStream* propertyXml, PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
         {
             var @this = (ID2D1Factory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* classIdPtr = &classId)
             {
-                fixed (IStream* propertyXmlPtr = &propertyXml)
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, Guid*, Silk.NET.Core.Native.IStream*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)LpVtbl[19])(@this, classIdPtr, propertyXml, bindings, bindingsCount, effectFactory);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RegisterEffectFromStream(ref Guid classId, Silk.NET.Core.Native.IStream* propertyXml, ref PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+        {
+            var @this = (ID2D1Factory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* classIdPtr = &classId)
+            {
+                fixed (PropertyBinding* bindingsPtr = &bindings)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, Guid*, IStream*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)LpVtbl[19])(@this, classIdPtr, propertyXmlPtr, bindings, bindingsCount, effectFactory);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, Guid*, Silk.NET.Core.Native.IStream*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)LpVtbl[19])(@this, classIdPtr, propertyXml, bindingsPtr, bindingsCount, effectFactory);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int RegisterEffectFromStream(ref Guid classId, ref IStream propertyXml, ref PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+        public readonly unsafe int RegisterEffectFromStream(ref Guid classId, ref Silk.NET.Core.Native.IStream propertyXml, PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
         {
             var @this = (ID2D1Factory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* classIdPtr = &classId)
             {
-                fixed (IStream* propertyXmlPtr = &propertyXml)
+                fixed (Silk.NET.Core.Native.IStream* propertyXmlPtr = &propertyXml)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, Guid*, Silk.NET.Core.Native.IStream*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)LpVtbl[19])(@this, classIdPtr, propertyXmlPtr, bindings, bindingsCount, effectFactory);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int RegisterEffectFromStream(ref Guid classId, ref Silk.NET.Core.Native.IStream propertyXml, ref PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+        {
+            var @this = (ID2D1Factory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* classIdPtr = &classId)
+            {
+                fixed (Silk.NET.Core.Native.IStream* propertyXmlPtr = &propertyXml)
                 {
                     fixed (PropertyBinding* bindingsPtr = &bindings)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, Guid*, IStream*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)LpVtbl[19])(@this, classIdPtr, propertyXmlPtr, bindingsPtr, bindingsCount, effectFactory);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory2*, Guid*, Silk.NET.Core.Native.IStream*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)LpVtbl[19])(@this, classIdPtr, propertyXmlPtr, bindingsPtr, bindingsCount, effectFactory);
                     }
                 }
             }

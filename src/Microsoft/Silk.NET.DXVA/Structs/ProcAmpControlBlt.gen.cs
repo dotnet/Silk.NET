@@ -22,8 +22,8 @@ namespace Silk.NET.DXVA
         public ProcAmpControlBlt
         (
             uint? size = null,
-            Silk.NET.Maths.Rectangle<int>? dstRect = null,
-            Silk.NET.Maths.Rectangle<int>? srcRect = null,
+            Silk.NET.Maths.Box2D<int>? dstRect = null,
+            Silk.NET.Maths.Box2D<int>? srcRect = null,
             float? alpha = null,
             float? brightness = null,
             float? contrast = null,
@@ -81,12 +81,12 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "RECT")]
         [NativeName("Type.Name", "RECT")]
         [NativeName("Name", "DstRect")]
-        public Silk.NET.Maths.Rectangle<int> DstRect;
+        public Silk.NET.Maths.Box2D<int> DstRect;
 
         [NativeName("Type", "RECT")]
         [NativeName("Type.Name", "RECT")]
         [NativeName("Name", "SrcRect")]
-        public Silk.NET.Maths.Rectangle<int> SrcRect;
+        public Silk.NET.Maths.Box2D<int> SrcRect;
 
         [NativeName("Type", "FLOAT")]
         [NativeName("Type.Name", "FLOAT")]

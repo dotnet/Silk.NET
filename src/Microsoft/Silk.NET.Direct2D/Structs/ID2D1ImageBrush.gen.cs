@@ -219,19 +219,19 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void SetSourceRectangle(Silk.NET.Maths.Rectangle<float>* sourceRectangle)
+        public readonly unsafe void SetSourceRectangle(Silk.NET.Maths.Box2D<float>* sourceRectangle)
         {
             var @this = (ID2D1ImageBrush*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1ImageBrush*, Silk.NET.Maths.Rectangle<float>*, void>)LpVtbl[12])(@this, sourceRectangle);
+            ((delegate* unmanaged[Stdcall]<ID2D1ImageBrush*, Silk.NET.Maths.Box2D<float>*, void>)LpVtbl[12])(@this, sourceRectangle);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetSourceRectangle(ref Silk.NET.Maths.Rectangle<float> sourceRectangle)
+        public readonly void SetSourceRectangle(ref Silk.NET.Maths.Box2D<float> sourceRectangle)
         {
             var @this = (ID2D1ImageBrush*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Maths.Rectangle<float>* sourceRectanglePtr = &sourceRectangle)
+            fixed (Silk.NET.Maths.Box2D<float>* sourceRectanglePtr = &sourceRectangle)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1ImageBrush*, Silk.NET.Maths.Rectangle<float>*, void>)LpVtbl[12])(@this, sourceRectanglePtr);
+                ((delegate* unmanaged[Stdcall]<ID2D1ImageBrush*, Silk.NET.Maths.Box2D<float>*, void>)LpVtbl[12])(@this, sourceRectanglePtr);
             }
         }
 
@@ -280,19 +280,19 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void GetSourceRectangle(Silk.NET.Maths.Rectangle<float>* sourceRectangle)
+        public readonly unsafe void GetSourceRectangle(Silk.NET.Maths.Box2D<float>* sourceRectangle)
         {
             var @this = (ID2D1ImageBrush*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1ImageBrush*, Silk.NET.Maths.Rectangle<float>*, void>)LpVtbl[17])(@this, sourceRectangle);
+            ((delegate* unmanaged[Stdcall]<ID2D1ImageBrush*, Silk.NET.Maths.Box2D<float>*, void>)LpVtbl[17])(@this, sourceRectangle);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void GetSourceRectangle(ref Silk.NET.Maths.Rectangle<float> sourceRectangle)
+        public readonly void GetSourceRectangle(ref Silk.NET.Maths.Box2D<float> sourceRectangle)
         {
             var @this = (ID2D1ImageBrush*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Maths.Rectangle<float>* sourceRectanglePtr = &sourceRectangle)
+            fixed (Silk.NET.Maths.Box2D<float>* sourceRectanglePtr = &sourceRectangle)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1ImageBrush*, Silk.NET.Maths.Rectangle<float>*, void>)LpVtbl[17])(@this, sourceRectanglePtr);
+                ((delegate* unmanaged[Stdcall]<ID2D1ImageBrush*, Silk.NET.Maths.Box2D<float>*, void>)LpVtbl[17])(@this, sourceRectanglePtr);
             }
         }
 

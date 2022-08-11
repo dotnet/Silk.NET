@@ -21,8 +21,8 @@ namespace Silk.NET.Direct2D
     {
         public LinearGradientBrushProperties
         (
-            D2D_POINT_2F? startPoint = null,
-            D2D_POINT_2F? endPoint = null
+            Silk.NET.Maths.Vector2D<float>? startPoint = null,
+            Silk.NET.Maths.Vector2D<float>? endPoint = null
         ) : this()
         {
             if (startPoint is not null)
@@ -40,11 +40,11 @@ namespace Silk.NET.Direct2D
         [NativeName("Type", "D2D1_POINT_2F")]
         [NativeName("Type.Name", "D2D1_POINT_2F")]
         [NativeName("Name", "startPoint")]
-        public D2D_POINT_2F StartPoint;
+        public Silk.NET.Maths.Vector2D<float> StartPoint;
 
         [NativeName("Type", "D2D1_POINT_2F")]
         [NativeName("Type.Name", "D2D1_POINT_2F")]
         [NativeName("Name", "endPoint")]
-        public D2D_POINT_2F EndPoint;
+        public Silk.NET.Maths.Vector2D<float> EndPoint;
     }
 }

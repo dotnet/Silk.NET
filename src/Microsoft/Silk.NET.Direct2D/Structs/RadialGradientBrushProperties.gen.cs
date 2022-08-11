@@ -21,8 +21,8 @@ namespace Silk.NET.Direct2D
     {
         public RadialGradientBrushProperties
         (
-            D2D_POINT_2F? center = null,
-            D2D_POINT_2F? gradientOriginOffset = null,
+            Silk.NET.Maths.Vector2D<float>? center = null,
+            Silk.NET.Maths.Vector2D<float>? gradientOriginOffset = null,
             float? radiusX = null,
             float? radiusY = null
         ) : this()
@@ -52,12 +52,12 @@ namespace Silk.NET.Direct2D
         [NativeName("Type", "D2D1_POINT_2F")]
         [NativeName("Type.Name", "D2D1_POINT_2F")]
         [NativeName("Name", "center")]
-        public D2D_POINT_2F Center;
+        public Silk.NET.Maths.Vector2D<float> Center;
 
         [NativeName("Type", "D2D1_POINT_2F")]
         [NativeName("Type.Name", "D2D1_POINT_2F")]
         [NativeName("Name", "gradientOriginOffset")]
-        public D2D_POINT_2F GradientOriginOffset;
+        public Silk.NET.Maths.Vector2D<float> GradientOriginOffset;
 
         [NativeName("Type", "FLOAT")]
         [NativeName("Type.Name", "FLOAT")]

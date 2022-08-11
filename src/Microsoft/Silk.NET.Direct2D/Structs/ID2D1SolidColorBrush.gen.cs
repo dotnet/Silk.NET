@@ -181,30 +181,30 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void SetColor(_D3DCOLORVALUE* color)
+        public readonly unsafe void SetColor(Silk.NET.DXGI.D3Dcolorvalue* color)
         {
             var @this = (ID2D1SolidColorBrush*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1SolidColorBrush*, _D3DCOLORVALUE*, void>)LpVtbl[8])(@this, color);
+            ((delegate* unmanaged[Stdcall]<ID2D1SolidColorBrush*, Silk.NET.DXGI.D3Dcolorvalue*, void>)LpVtbl[8])(@this, color);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetColor(ref _D3DCOLORVALUE color)
+        public readonly void SetColor(ref Silk.NET.DXGI.D3Dcolorvalue color)
         {
             var @this = (ID2D1SolidColorBrush*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (_D3DCOLORVALUE* colorPtr = &color)
+            fixed (Silk.NET.DXGI.D3Dcolorvalue* colorPtr = &color)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1SolidColorBrush*, _D3DCOLORVALUE*, void>)LpVtbl[8])(@this, colorPtr);
+                ((delegate* unmanaged[Stdcall]<ID2D1SolidColorBrush*, Silk.NET.DXGI.D3Dcolorvalue*, void>)LpVtbl[8])(@this, colorPtr);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly _D3DCOLORVALUE GetColor()
+        public readonly Silk.NET.DXGI.D3Dcolorvalue GetColor()
         {
-            _D3DCOLORVALUE silkDotNetReturnFixupResult;
+            Silk.NET.DXGI.D3Dcolorvalue silkDotNetReturnFixupResult;
             var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
             var @this = (ID2D1SolidColorBrush*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            _D3DCOLORVALUE* ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SolidColorBrush*, _D3DCOLORVALUE*, _D3DCOLORVALUE*>)LpVtbl[9])(@this, pSilkDotNetReturnFixupResult);
+            Silk.NET.DXGI.D3Dcolorvalue* ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SolidColorBrush*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.DXGI.D3Dcolorvalue*>)LpVtbl[9])(@this, pSilkDotNetReturnFixupResult);
             return *ret;
         }
 

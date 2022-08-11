@@ -22,7 +22,7 @@ namespace Silk.NET.Direct2D
         public RenderingControls
         (
             BufferPrecision? bufferPrecision = null,
-            D2D_SIZE_U? tileSize = null
+            Silk.NET.Maths.Vector2D<uint>? tileSize = null
         ) : this()
         {
             if (bufferPrecision is not null)
@@ -45,6 +45,6 @@ namespace Silk.NET.Direct2D
         [NativeName("Type", "D2D1_SIZE_U")]
         [NativeName("Type.Name", "D2D1_SIZE_U")]
         [NativeName("Name", "tileSize")]
-        public D2D_SIZE_U TileSize;
+        public Silk.NET.Maths.Vector2D<uint> TileSize;
     }
 }

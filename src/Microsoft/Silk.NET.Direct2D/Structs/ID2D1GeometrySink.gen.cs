@@ -125,26 +125,26 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void BeginFigure(D2D_POINT_2F startPoint, FigureBegin figureBegin)
+        public readonly void BeginFigure(Silk.NET.Maths.Vector2D<float> startPoint, FigureBegin figureBegin)
         {
             var @this = (ID2D1GeometrySink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1GeometrySink*, D2D_POINT_2F, FigureBegin, void>)LpVtbl[5])(@this, startPoint, figureBegin);
+            ((delegate* unmanaged[Stdcall]<ID2D1GeometrySink*, Silk.NET.Maths.Vector2D<float>, FigureBegin, void>)LpVtbl[5])(@this, startPoint, figureBegin);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AddLines(D2D_POINT_2F* points, uint pointsCount)
+        public readonly unsafe void AddLines(Silk.NET.Maths.Vector2D<float>* points, uint pointsCount)
         {
             var @this = (ID2D1GeometrySink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1GeometrySink*, D2D_POINT_2F*, uint, void>)LpVtbl[6])(@this, points, pointsCount);
+            ((delegate* unmanaged[Stdcall]<ID2D1GeometrySink*, Silk.NET.Maths.Vector2D<float>*, uint, void>)LpVtbl[6])(@this, points, pointsCount);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void AddLines(ref D2D_POINT_2F points, uint pointsCount)
+        public readonly void AddLines(ref Silk.NET.Maths.Vector2D<float> points, uint pointsCount)
         {
             var @this = (ID2D1GeometrySink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (D2D_POINT_2F* pointsPtr = &points)
+            fixed (Silk.NET.Maths.Vector2D<float>* pointsPtr = &points)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1GeometrySink*, D2D_POINT_2F*, uint, void>)LpVtbl[6])(@this, pointsPtr, pointsCount);
+                ((delegate* unmanaged[Stdcall]<ID2D1GeometrySink*, Silk.NET.Maths.Vector2D<float>*, uint, void>)LpVtbl[6])(@this, pointsPtr, pointsCount);
             }
         }
 
@@ -182,10 +182,10 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void AddLine(D2D_POINT_2F point)
+        public readonly void AddLine(Silk.NET.Maths.Vector2D<float> point)
         {
             var @this = (ID2D1GeometrySink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1GeometrySink*, D2D_POINT_2F, void>)LpVtbl[10])(@this, point);
+            ((delegate* unmanaged[Stdcall]<ID2D1GeometrySink*, Silk.NET.Maths.Vector2D<float>, void>)LpVtbl[10])(@this, point);
         }
 
         /// <summary>To be documented.</summary>

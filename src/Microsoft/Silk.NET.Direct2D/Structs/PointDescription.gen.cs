@@ -21,8 +21,8 @@ namespace Silk.NET.Direct2D
     {
         public PointDescription
         (
-            D2D_POINT_2F? point = null,
-            D2D_POINT_2F? unitTangentVector = null,
+            Silk.NET.Maths.Vector2D<float>? point = null,
+            Silk.NET.Maths.Vector2D<float>? unitTangentVector = null,
             uint? endSegment = null,
             uint? endFigure = null,
             float? lengthToEndSegment = null
@@ -58,12 +58,12 @@ namespace Silk.NET.Direct2D
         [NativeName("Type", "D2D1_POINT_2F")]
         [NativeName("Type.Name", "D2D1_POINT_2F")]
         [NativeName("Name", "point")]
-        public D2D_POINT_2F Point;
+        public Silk.NET.Maths.Vector2D<float> Point;
 
         [NativeName("Type", "D2D1_POINT_2F")]
         [NativeName("Type.Name", "D2D1_POINT_2F")]
         [NativeName("Name", "unitTangentVector")]
-        public D2D_POINT_2F UnitTangentVector;
+        public Silk.NET.Maths.Vector2D<float> UnitTangentVector;
 
         [NativeName("Type", "UINT32")]
         [NativeName("Type.Name", "UINT32")]

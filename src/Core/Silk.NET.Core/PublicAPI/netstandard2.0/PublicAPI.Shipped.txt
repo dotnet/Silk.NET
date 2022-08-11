@@ -1008,6 +1008,67 @@ Silk.NET.Core.Version64.Patch.get -> uint
 Silk.NET.Core.Version64.Value.get -> ulong
 Silk.NET.Core.Version64.Version64() -> void
 Silk.NET.Core.Version64.Version64(uint major, uint minor, uint patch) -> void
+Silk.NET.Core.Native.FileTime
+Silk.NET.Core.Native.FileTime.dwHighDateTime -> uint
+Silk.NET.Core.Native.FileTime.dwLowDateTime -> uint
+Silk.NET.Core.Native.FileTime.FileTime() -> void
+Silk.NET.Core.Native.ISequentialStream
+Silk.NET.Core.Native.ISequentialStream.AddRef() -> uint
+Silk.NET.Core.Native.ISequentialStream.ISequentialStream() -> void
+Silk.NET.Core.Native.ISequentialStream.ISequentialStream(void** lpVtbl = null) -> void
+Silk.NET.Core.Native.ISequentialStream.LpVtbl -> void**
+Silk.NET.Core.Native.ISequentialStream.QueryInterface(ref System.Guid riid, ref void* ppvObject) -> int
+Silk.NET.Core.Native.ISequentialStream.QueryInterface(ref System.Guid riid, void** ppvObject) -> int
+Silk.NET.Core.Native.ISequentialStream.QueryInterface(System.Guid* riid, ref void* ppvObject) -> int
+Silk.NET.Core.Native.ISequentialStream.QueryInterface(System.Guid* riid, void** ppvObject) -> int
+Silk.NET.Core.Native.ISequentialStream.Read(void* pv, uint cb, ref uint pcbRead) -> int
+Silk.NET.Core.Native.ISequentialStream.Read(void* pv, uint cb, uint* pcbRead) -> int
+Silk.NET.Core.Native.ISequentialStream.Release() -> uint
+Silk.NET.Core.Native.ISequentialStream.Write(void* pv, uint cb, ref uint pcbWritten) -> int
+Silk.NET.Core.Native.ISequentialStream.Write(void* pv, uint cb, uint* pcbWritten) -> int
+Silk.NET.Core.Native.IStream
+Silk.NET.Core.Native.IStream.AddRef() -> uint
+Silk.NET.Core.Native.IStream.Clone(ref Silk.NET.Core.Native.IStream* ppstm) -> int
+Silk.NET.Core.Native.IStream.Clone(Silk.NET.Core.Native.IStream** ppstm) -> int
+Silk.NET.Core.Native.IStream.Commit(uint grfCommitFlags) -> int
+Silk.NET.Core.Native.IStream.CopyTo(ref Silk.NET.Core.Native.IStream pstm, ulong cb, ref ulong pcbRead, ref ulong pcbWritten) -> int
+Silk.NET.Core.Native.IStream.CopyTo(ref Silk.NET.Core.Native.IStream pstm, ulong cb, ref ulong pcbRead, ulong* pcbWritten) -> int
+Silk.NET.Core.Native.IStream.CopyTo(ref Silk.NET.Core.Native.IStream pstm, ulong cb, ulong* pcbRead, ref ulong pcbWritten) -> int
+Silk.NET.Core.Native.IStream.CopyTo(ref Silk.NET.Core.Native.IStream pstm, ulong cb, ulong* pcbRead, ulong* pcbWritten) -> int
+Silk.NET.Core.Native.IStream.CopyTo(Silk.NET.Core.Native.IStream* pstm, ulong cb, ulong* pcbRead, ulong* pcbWritten) -> int
+Silk.NET.Core.Native.IStream.IStream() -> void
+Silk.NET.Core.Native.IStream.IStream(void** lpVtbl = null) -> void
+Silk.NET.Core.Native.IStream.LockRegion(ulong libOffset, ulong cb, uint dwLockType) -> int
+Silk.NET.Core.Native.IStream.LpVtbl -> void**
+Silk.NET.Core.Native.IStream.QueryInterface(ref System.Guid riid, ref void* ppvObject) -> int
+Silk.NET.Core.Native.IStream.QueryInterface(ref System.Guid riid, void** ppvObject) -> int
+Silk.NET.Core.Native.IStream.QueryInterface(System.Guid* riid, ref void* ppvObject) -> int
+Silk.NET.Core.Native.IStream.QueryInterface(System.Guid* riid, void** ppvObject) -> int
+Silk.NET.Core.Native.IStream.Read(void* pv, uint cb, ref uint pcbRead) -> int
+Silk.NET.Core.Native.IStream.Read(void* pv, uint cb, uint* pcbRead) -> int
+Silk.NET.Core.Native.IStream.Release() -> uint
+Silk.NET.Core.Native.IStream.Revert() -> int
+Silk.NET.Core.Native.IStream.Seek(long dlibMove, int dwOrigin, ref ulong plibNewPosition) -> int
+Silk.NET.Core.Native.IStream.Seek(long dlibMove, int dwOrigin, ulong* plibNewPosition) -> int
+Silk.NET.Core.Native.IStream.SetSize(ulong libNewSize) -> int
+Silk.NET.Core.Native.IStream.Stat(ref Silk.NET.Core.Native.StatSTG pstatstg, uint grfStatFlag) -> int
+Silk.NET.Core.Native.IStream.Stat(Silk.NET.Core.Native.StatSTG* pstatstg, uint grfStatFlag) -> int
+Silk.NET.Core.Native.IStream.UnlockRegion(ulong libOffset, ulong cb, uint dwLockType) -> int
+Silk.NET.Core.Native.IStream.Write(void* pv, uint cb, ref uint pcbWritten) -> int
+Silk.NET.Core.Native.IStream.Write(void* pv, uint cb, uint* pcbWritten) -> int
+Silk.NET.Core.Native.StatSTG
+Silk.NET.Core.Native.StatSTG.atime -> Silk.NET.Core.Native.FileTime
+Silk.NET.Core.Native.StatSTG.cbSize -> ulong
+Silk.NET.Core.Native.StatSTG.clsid -> System.Guid
+Silk.NET.Core.Native.StatSTG.ctime -> Silk.NET.Core.Native.FileTime
+Silk.NET.Core.Native.StatSTG.grfLocksSupported -> uint
+Silk.NET.Core.Native.StatSTG.grfMode -> uint
+Silk.NET.Core.Native.StatSTG.grfStateBits -> uint
+Silk.NET.Core.Native.StatSTG.mtime -> Silk.NET.Core.Native.FileTime
+Silk.NET.Core.Native.StatSTG.pwcsName -> char*
+Silk.NET.Core.Native.StatSTG.reserved -> uint
+Silk.NET.Core.Native.StatSTG.StatSTG() -> void
+Silk.NET.Core.Native.StatSTG.type -> uint
 static extern Silk.NET.Core.Native.SilkMarshal.CloseWindowsHandle(nint hObject) -> int
 static readonly Silk.NET.Core.Native.ID3D10Blob.Guid -> System.Guid
 static readonly Silk.NET.Core.Native.ID3DDestructionNotifier.Guid -> System.Guid
@@ -1065,6 +1126,11 @@ static Silk.NET.Core.Version32.explicit operator Silk.NET.Core.Version32(uint va
 static Silk.NET.Core.Version32.implicit operator uint(Silk.NET.Core.Version32 version) -> uint
 static Silk.NET.Core.Version64.explicit operator Silk.NET.Core.Version64(ulong val) -> Silk.NET.Core.Version64
 static Silk.NET.Core.Version64.implicit operator ulong(Silk.NET.Core.Version64 version) -> ulong
+static readonly Silk.NET.Core.Native.ISequentialStream.Guid -> System.Guid
+static readonly Silk.NET.Core.Native.IStream.Guid -> System.Guid
+static Silk.NET.Core.Native.ISequentialStream.implicit operator Silk.NET.Core.Native.IUnknown(Silk.NET.Core.Native.ISequentialStream val) -> Silk.NET.Core.Native.IUnknown
+static Silk.NET.Core.Native.IStream.implicit operator Silk.NET.Core.Native.ISequentialStream(Silk.NET.Core.Native.IStream val) -> Silk.NET.Core.Native.ISequentialStream
+static Silk.NET.Core.Native.IStream.implicit operator Silk.NET.Core.Native.IUnknown(Silk.NET.Core.Native.IStream val) -> Silk.NET.Core.Native.IUnknown
 virtual Silk.NET.Core.Native.NativeApiContainer.CoreGcSlotCount() -> int
 virtual Silk.NET.Core.Native.NativeApiContainer.CreateVTable() -> Silk.NET.Core.Native.IVTable!
 virtual Silk.NET.Core.Native.NativeApiContainer.PostInit() -> void

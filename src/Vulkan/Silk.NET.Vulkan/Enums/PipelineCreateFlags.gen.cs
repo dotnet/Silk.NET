@@ -84,6 +84,9 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"CreateEarlyReturnOnFailureBitExt\"")]
         [NativeName("Name", "VK_PIPELINE_CREATE_EARLY_RETURN_ON_FAILURE_BIT_EXT")]
         PipelineCreateEarlyReturnOnFailureBitExt = 512,
+        [Obsolete("Deprecated in favour of \"CreateReserved29Amd\"")]
+        [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_29_AMD")]
+        PipelineCreateReserved29Amd = 536870912,
         [Obsolete("Deprecated in favour of \"CreateRetainLinkTimeOptimizationInfoBitExt\"")]
         [NativeName("Name", "VK_PIPELINE_CREATE_RETAIN_LINK_TIME_OPTIMIZATION_INFO_BIT_EXT")]
         PipelineCreateRetainLinkTimeOptimizationInfoBitExt = 8388608,
@@ -93,15 +96,18 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"CreateRayTracingAllowMotionBitNV\"")]
         [NativeName("Name", "VK_PIPELINE_CREATE_RAY_TRACING_ALLOW_MOTION_BIT_NV")]
         PipelineCreateRayTracingAllowMotionBitNV = 1048576,
-        [Obsolete("Deprecated in favour of \"CreateReserved25BitExt\"")]
-        [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_25_BIT_EXT")]
-        PipelineCreateReserved25BitExt = 33554432,
-        [Obsolete("Deprecated in favour of \"CreateReserved26BitExt\"")]
-        [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_26_BIT_EXT")]
-        PipelineCreateReserved26BitExt = 67108864,
+        [Obsolete("Deprecated in favour of \"CreateColorAttachmentFeedbackLoopBitExt\"")]
+        [NativeName("Name", "VK_PIPELINE_CREATE_COLOR_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT")]
+        PipelineCreateColorAttachmentFeedbackLoopBitExt = 33554432,
+        [Obsolete("Deprecated in favour of \"CreateDepthStencilAttachmentFeedbackLoopBitExt\"")]
+        [NativeName("Name", "VK_PIPELINE_CREATE_DEPTH_STENCIL_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT")]
+        PipelineCreateDepthStencilAttachmentFeedbackLoopBitExt = 67108864,
         [Obsolete("Deprecated in favour of \"CreateReserved24BitNV\"")]
         [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_24_BIT_NV")]
         PipelineCreateReserved24BitNV = 16777216,
+        [Obsolete("Deprecated in favour of \"CreateReservedBit28NV\"")]
+        [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_BIT_28_NV")]
+        PipelineCreateReservedBit28NV = 268435456,
         [Obsolete("Deprecated in favour of \"CreateReserved27BitExt\"")]
         [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_27_BIT_EXT")]
         PipelineCreateReserved27BitExt = 134217728,
@@ -166,18 +172,22 @@ namespace Silk.NET.Vulkan
         CreateFailOnPipelineCompileRequiredBitExt = 256,
         [NativeName("Name", "VK_PIPELINE_CREATE_EARLY_RETURN_ON_FAILURE_BIT_EXT")]
         CreateEarlyReturnOnFailureBitExt = 512,
+        [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_29_AMD")]
+        CreateReserved29Amd = 536870912,
         [NativeName("Name", "VK_PIPELINE_CREATE_RETAIN_LINK_TIME_OPTIMIZATION_INFO_BIT_EXT")]
         CreateRetainLinkTimeOptimizationInfoBitExt = 8388608,
         [NativeName("Name", "VK_PIPELINE_CREATE_LINK_TIME_OPTIMIZATION_BIT_EXT")]
         CreateLinkTimeOptimizationBitExt = 1024,
         [NativeName("Name", "VK_PIPELINE_CREATE_RAY_TRACING_ALLOW_MOTION_BIT_NV")]
         CreateRayTracingAllowMotionBitNV = 1048576,
-        [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_25_BIT_EXT")]
-        CreateReserved25BitExt = 33554432,
-        [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_26_BIT_EXT")]
-        CreateReserved26BitExt = 67108864,
+        [NativeName("Name", "VK_PIPELINE_CREATE_COLOR_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT")]
+        CreateColorAttachmentFeedbackLoopBitExt = 33554432,
+        [NativeName("Name", "VK_PIPELINE_CREATE_DEPTH_STENCIL_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT")]
+        CreateDepthStencilAttachmentFeedbackLoopBitExt = 67108864,
         [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_24_BIT_NV")]
         CreateReserved24BitNV = 16777216,
+        [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_BIT_28_NV")]
+        CreateReservedBit28NV = 268435456,
         [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_27_BIT_EXT")]
         CreateReserved27BitExt = 134217728,
         [NativeName("Name", "VK_PIPELINE_CREATE_VIEW_INDEX_FROM_DEVICE_INDEX_BIT")]

@@ -134,40 +134,40 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmap(D2D_SIZE_U size, void* srcData, uint pitch, BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap)
+        public readonly unsafe int CreateBitmap(Silk.NET.Maths.Vector2D<uint> size, void* srcData, uint pitch, BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_SIZE_U, void*, uint, BitmapProperties*, ID2D1Bitmap**, int>)LpVtbl[4])(@this, size, srcData, pitch, bitmapProperties, bitmap);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<uint>, void*, uint, BitmapProperties*, ID2D1Bitmap**, int>)LpVtbl[4])(@this, size, srcData, pitch, bitmapProperties, bitmap);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmap(D2D_SIZE_U size, void* srcData, uint pitch, BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap)
+        public readonly unsafe int CreateBitmap(Silk.NET.Maths.Vector2D<uint> size, void* srcData, uint pitch, BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID2D1Bitmap** bitmapPtr = &bitmap)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_SIZE_U, void*, uint, BitmapProperties*, ID2D1Bitmap**, int>)LpVtbl[4])(@this, size, srcData, pitch, bitmapProperties, bitmapPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<uint>, void*, uint, BitmapProperties*, ID2D1Bitmap**, int>)LpVtbl[4])(@this, size, srcData, pitch, bitmapProperties, bitmapPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmap(D2D_SIZE_U size, void* srcData, uint pitch, ref BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap)
+        public readonly unsafe int CreateBitmap(Silk.NET.Maths.Vector2D<uint> size, void* srcData, uint pitch, ref BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (BitmapProperties* bitmapPropertiesPtr = &bitmapProperties)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_SIZE_U, void*, uint, BitmapProperties*, ID2D1Bitmap**, int>)LpVtbl[4])(@this, size, srcData, pitch, bitmapPropertiesPtr, bitmap);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<uint>, void*, uint, BitmapProperties*, ID2D1Bitmap**, int>)LpVtbl[4])(@this, size, srcData, pitch, bitmapPropertiesPtr, bitmap);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmap(D2D_SIZE_U size, void* srcData, uint pitch, ref BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap)
+        public readonly unsafe int CreateBitmap(Silk.NET.Maths.Vector2D<uint> size, void* srcData, uint pitch, ref BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -175,26 +175,26 @@ namespace Silk.NET.Direct2D
             {
                 fixed (ID2D1Bitmap** bitmapPtr = &bitmap)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_SIZE_U, void*, uint, BitmapProperties*, ID2D1Bitmap**, int>)LpVtbl[4])(@this, size, srcData, pitch, bitmapPropertiesPtr, bitmapPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<uint>, void*, uint, BitmapProperties*, ID2D1Bitmap**, int>)LpVtbl[4])(@this, size, srcData, pitch, bitmapPropertiesPtr, bitmapPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmap<T0>(D2D_SIZE_U size, ref T0 srcData, uint pitch, BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
+        public readonly unsafe int CreateBitmap<T0>(Silk.NET.Maths.Vector2D<uint> size, ref T0 srcData, uint pitch, BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (void* srcDataPtr = &srcData)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_SIZE_U, void*, uint, BitmapProperties*, ID2D1Bitmap**, int>)LpVtbl[4])(@this, size, srcDataPtr, pitch, bitmapProperties, bitmap);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<uint>, void*, uint, BitmapProperties*, ID2D1Bitmap**, int>)LpVtbl[4])(@this, size, srcDataPtr, pitch, bitmapProperties, bitmap);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmap<T0>(D2D_SIZE_U size, ref T0 srcData, uint pitch, BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
+        public readonly unsafe int CreateBitmap<T0>(Silk.NET.Maths.Vector2D<uint> size, ref T0 srcData, uint pitch, BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -202,14 +202,14 @@ namespace Silk.NET.Direct2D
             {
                 fixed (ID2D1Bitmap** bitmapPtr = &bitmap)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_SIZE_U, void*, uint, BitmapProperties*, ID2D1Bitmap**, int>)LpVtbl[4])(@this, size, srcDataPtr, pitch, bitmapProperties, bitmapPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<uint>, void*, uint, BitmapProperties*, ID2D1Bitmap**, int>)LpVtbl[4])(@this, size, srcDataPtr, pitch, bitmapProperties, bitmapPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmap<T0>(D2D_SIZE_U size, ref T0 srcData, uint pitch, ref BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
+        public readonly unsafe int CreateBitmap<T0>(Silk.NET.Maths.Vector2D<uint> size, ref T0 srcData, uint pitch, ref BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -217,14 +217,14 @@ namespace Silk.NET.Direct2D
             {
                 fixed (BitmapProperties* bitmapPropertiesPtr = &bitmapProperties)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_SIZE_U, void*, uint, BitmapProperties*, ID2D1Bitmap**, int>)LpVtbl[4])(@this, size, srcDataPtr, pitch, bitmapPropertiesPtr, bitmap);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<uint>, void*, uint, BitmapProperties*, ID2D1Bitmap**, int>)LpVtbl[4])(@this, size, srcDataPtr, pitch, bitmapPropertiesPtr, bitmap);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmap<T0>(D2D_SIZE_U size, ref T0 srcData, uint pitch, ref BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
+        public readonly unsafe int CreateBitmap<T0>(Silk.NET.Maths.Vector2D<uint> size, ref T0 srcData, uint pitch, ref BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -234,7 +234,7 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (ID2D1Bitmap** bitmapPtr = &bitmap)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_SIZE_U, void*, uint, BitmapProperties*, ID2D1Bitmap**, int>)LpVtbl[4])(@this, size, srcDataPtr, pitch, bitmapPropertiesPtr, bitmapPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<uint>, void*, uint, BitmapProperties*, ID2D1Bitmap**, int>)LpVtbl[4])(@this, size, srcDataPtr, pitch, bitmapPropertiesPtr, bitmapPtr);
                     }
                 }
             }
@@ -830,40 +830,40 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSolidColorBrush(_D3DCOLORVALUE* color, BrushProperties* brushProperties, ID2D1SolidColorBrush** solidColorBrush)
+        public readonly unsafe int CreateSolidColorBrush(Silk.NET.DXGI.D3Dcolorvalue* color, BrushProperties* brushProperties, ID2D1SolidColorBrush** solidColorBrush)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, _D3DCOLORVALUE*, BrushProperties*, ID2D1SolidColorBrush**, int>)LpVtbl[8])(@this, color, brushProperties, solidColorBrush);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.DXGI.D3Dcolorvalue*, BrushProperties*, ID2D1SolidColorBrush**, int>)LpVtbl[8])(@this, color, brushProperties, solidColorBrush);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSolidColorBrush(_D3DCOLORVALUE* color, BrushProperties* brushProperties, ref ID2D1SolidColorBrush* solidColorBrush)
+        public readonly unsafe int CreateSolidColorBrush(Silk.NET.DXGI.D3Dcolorvalue* color, BrushProperties* brushProperties, ref ID2D1SolidColorBrush* solidColorBrush)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID2D1SolidColorBrush** solidColorBrushPtr = &solidColorBrush)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, _D3DCOLORVALUE*, BrushProperties*, ID2D1SolidColorBrush**, int>)LpVtbl[8])(@this, color, brushProperties, solidColorBrushPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.DXGI.D3Dcolorvalue*, BrushProperties*, ID2D1SolidColorBrush**, int>)LpVtbl[8])(@this, color, brushProperties, solidColorBrushPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSolidColorBrush(_D3DCOLORVALUE* color, ref BrushProperties brushProperties, ID2D1SolidColorBrush** solidColorBrush)
+        public readonly unsafe int CreateSolidColorBrush(Silk.NET.DXGI.D3Dcolorvalue* color, ref BrushProperties brushProperties, ID2D1SolidColorBrush** solidColorBrush)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (BrushProperties* brushPropertiesPtr = &brushProperties)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, _D3DCOLORVALUE*, BrushProperties*, ID2D1SolidColorBrush**, int>)LpVtbl[8])(@this, color, brushPropertiesPtr, solidColorBrush);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.DXGI.D3Dcolorvalue*, BrushProperties*, ID2D1SolidColorBrush**, int>)LpVtbl[8])(@this, color, brushPropertiesPtr, solidColorBrush);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSolidColorBrush(_D3DCOLORVALUE* color, ref BrushProperties brushProperties, ref ID2D1SolidColorBrush* solidColorBrush)
+        public readonly unsafe int CreateSolidColorBrush(Silk.NET.DXGI.D3Dcolorvalue* color, ref BrushProperties brushProperties, ref ID2D1SolidColorBrush* solidColorBrush)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -871,66 +871,66 @@ namespace Silk.NET.Direct2D
             {
                 fixed (ID2D1SolidColorBrush** solidColorBrushPtr = &solidColorBrush)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, _D3DCOLORVALUE*, BrushProperties*, ID2D1SolidColorBrush**, int>)LpVtbl[8])(@this, color, brushPropertiesPtr, solidColorBrushPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.DXGI.D3Dcolorvalue*, BrushProperties*, ID2D1SolidColorBrush**, int>)LpVtbl[8])(@this, color, brushPropertiesPtr, solidColorBrushPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSolidColorBrush(ref _D3DCOLORVALUE color, BrushProperties* brushProperties, ID2D1SolidColorBrush** solidColorBrush)
+        public readonly unsafe int CreateSolidColorBrush(ref Silk.NET.DXGI.D3Dcolorvalue color, BrushProperties* brushProperties, ID2D1SolidColorBrush** solidColorBrush)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (_D3DCOLORVALUE* colorPtr = &color)
+            fixed (Silk.NET.DXGI.D3Dcolorvalue* colorPtr = &color)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, _D3DCOLORVALUE*, BrushProperties*, ID2D1SolidColorBrush**, int>)LpVtbl[8])(@this, colorPtr, brushProperties, solidColorBrush);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.DXGI.D3Dcolorvalue*, BrushProperties*, ID2D1SolidColorBrush**, int>)LpVtbl[8])(@this, colorPtr, brushProperties, solidColorBrush);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSolidColorBrush(ref _D3DCOLORVALUE color, BrushProperties* brushProperties, ref ID2D1SolidColorBrush* solidColorBrush)
+        public readonly unsafe int CreateSolidColorBrush(ref Silk.NET.DXGI.D3Dcolorvalue color, BrushProperties* brushProperties, ref ID2D1SolidColorBrush* solidColorBrush)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (_D3DCOLORVALUE* colorPtr = &color)
+            fixed (Silk.NET.DXGI.D3Dcolorvalue* colorPtr = &color)
             {
                 fixed (ID2D1SolidColorBrush** solidColorBrushPtr = &solidColorBrush)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, _D3DCOLORVALUE*, BrushProperties*, ID2D1SolidColorBrush**, int>)LpVtbl[8])(@this, colorPtr, brushProperties, solidColorBrushPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.DXGI.D3Dcolorvalue*, BrushProperties*, ID2D1SolidColorBrush**, int>)LpVtbl[8])(@this, colorPtr, brushProperties, solidColorBrushPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSolidColorBrush(ref _D3DCOLORVALUE color, ref BrushProperties brushProperties, ID2D1SolidColorBrush** solidColorBrush)
+        public readonly unsafe int CreateSolidColorBrush(ref Silk.NET.DXGI.D3Dcolorvalue color, ref BrushProperties brushProperties, ID2D1SolidColorBrush** solidColorBrush)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (_D3DCOLORVALUE* colorPtr = &color)
+            fixed (Silk.NET.DXGI.D3Dcolorvalue* colorPtr = &color)
             {
                 fixed (BrushProperties* brushPropertiesPtr = &brushProperties)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, _D3DCOLORVALUE*, BrushProperties*, ID2D1SolidColorBrush**, int>)LpVtbl[8])(@this, colorPtr, brushPropertiesPtr, solidColorBrush);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.DXGI.D3Dcolorvalue*, BrushProperties*, ID2D1SolidColorBrush**, int>)LpVtbl[8])(@this, colorPtr, brushPropertiesPtr, solidColorBrush);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSolidColorBrush(ref _D3DCOLORVALUE color, ref BrushProperties brushProperties, ref ID2D1SolidColorBrush* solidColorBrush)
+        public readonly unsafe int CreateSolidColorBrush(ref Silk.NET.DXGI.D3Dcolorvalue color, ref BrushProperties brushProperties, ref ID2D1SolidColorBrush* solidColorBrush)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (_D3DCOLORVALUE* colorPtr = &color)
+            fixed (Silk.NET.DXGI.D3Dcolorvalue* colorPtr = &color)
             {
                 fixed (BrushProperties* brushPropertiesPtr = &brushProperties)
                 {
                     fixed (ID2D1SolidColorBrush** solidColorBrushPtr = &solidColorBrush)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, _D3DCOLORVALUE*, BrushProperties*, ID2D1SolidColorBrush**, int>)LpVtbl[8])(@this, colorPtr, brushPropertiesPtr, solidColorBrushPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.DXGI.D3Dcolorvalue*, BrushProperties*, ID2D1SolidColorBrush**, int>)LpVtbl[8])(@this, colorPtr, brushPropertiesPtr, solidColorBrushPtr);
                     }
                 }
             }
@@ -1466,200 +1466,107 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCompatibleRenderTarget(D2D_SIZE_F* desiredSize, D2D_SIZE_U* desiredPixelSize, D2D1_PIXEL_FORMAT* desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
+        public readonly unsafe int CreateCompatibleRenderTarget(Silk.NET.Maths.Vector2D<float>* desiredSize, Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_SIZE_F*, D2D_SIZE_U*, D2D1_PIXEL_FORMAT*, CompatibleRenderTargetOptions, ID2D1BitmapRenderTarget**, int>)LpVtbl[12])(@this, desiredSize, desiredPixelSize, desiredFormat, options, bitmapRenderTarget);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<uint>*, PixelFormat*, CompatibleRenderTargetOptions, ID2D1BitmapRenderTarget**, int>)LpVtbl[12])(@this, desiredSize, desiredPixelSize, desiredFormat, options, bitmapRenderTarget);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCompatibleRenderTarget(D2D_SIZE_F* desiredSize, D2D_SIZE_U* desiredPixelSize, D2D1_PIXEL_FORMAT* desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
+        public readonly unsafe int CreateCompatibleRenderTarget(Silk.NET.Maths.Vector2D<float>* desiredSize, Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID2D1BitmapRenderTarget** bitmapRenderTargetPtr = &bitmapRenderTarget)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_SIZE_F*, D2D_SIZE_U*, D2D1_PIXEL_FORMAT*, CompatibleRenderTargetOptions, ID2D1BitmapRenderTarget**, int>)LpVtbl[12])(@this, desiredSize, desiredPixelSize, desiredFormat, options, bitmapRenderTargetPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<uint>*, PixelFormat*, CompatibleRenderTargetOptions, ID2D1BitmapRenderTarget**, int>)LpVtbl[12])(@this, desiredSize, desiredPixelSize, desiredFormat, options, bitmapRenderTargetPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCompatibleRenderTarget(D2D_SIZE_F* desiredSize, D2D_SIZE_U* desiredPixelSize, ref D2D1_PIXEL_FORMAT desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
+        public readonly unsafe int CreateCompatibleRenderTarget(Silk.NET.Maths.Vector2D<float>* desiredSize, Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, ref PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (D2D1_PIXEL_FORMAT* desiredFormatPtr = &desiredFormat)
+            fixed (PixelFormat* desiredFormatPtr = &desiredFormat)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_SIZE_F*, D2D_SIZE_U*, D2D1_PIXEL_FORMAT*, CompatibleRenderTargetOptions, ID2D1BitmapRenderTarget**, int>)LpVtbl[12])(@this, desiredSize, desiredPixelSize, desiredFormatPtr, options, bitmapRenderTarget);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<uint>*, PixelFormat*, CompatibleRenderTargetOptions, ID2D1BitmapRenderTarget**, int>)LpVtbl[12])(@this, desiredSize, desiredPixelSize, desiredFormatPtr, options, bitmapRenderTarget);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCompatibleRenderTarget(D2D_SIZE_F* desiredSize, D2D_SIZE_U* desiredPixelSize, ref D2D1_PIXEL_FORMAT desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
+        public readonly unsafe int CreateCompatibleRenderTarget(Silk.NET.Maths.Vector2D<float>* desiredSize, Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, ref PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (D2D1_PIXEL_FORMAT* desiredFormatPtr = &desiredFormat)
-            {
-                fixed (ID2D1BitmapRenderTarget** bitmapRenderTargetPtr = &bitmapRenderTarget)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_SIZE_F*, D2D_SIZE_U*, D2D1_PIXEL_FORMAT*, CompatibleRenderTargetOptions, ID2D1BitmapRenderTarget**, int>)LpVtbl[12])(@this, desiredSize, desiredPixelSize, desiredFormatPtr, options, bitmapRenderTargetPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCompatibleRenderTarget(D2D_SIZE_F* desiredSize, ref D2D_SIZE_U desiredPixelSize, D2D1_PIXEL_FORMAT* desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
-        {
-            var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (D2D_SIZE_U* desiredPixelSizePtr = &desiredPixelSize)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_SIZE_F*, D2D_SIZE_U*, D2D1_PIXEL_FORMAT*, CompatibleRenderTargetOptions, ID2D1BitmapRenderTarget**, int>)LpVtbl[12])(@this, desiredSize, desiredPixelSizePtr, desiredFormat, options, bitmapRenderTarget);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCompatibleRenderTarget(D2D_SIZE_F* desiredSize, ref D2D_SIZE_U desiredPixelSize, D2D1_PIXEL_FORMAT* desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
-        {
-            var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (D2D_SIZE_U* desiredPixelSizePtr = &desiredPixelSize)
+            fixed (PixelFormat* desiredFormatPtr = &desiredFormat)
             {
                 fixed (ID2D1BitmapRenderTarget** bitmapRenderTargetPtr = &bitmapRenderTarget)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_SIZE_F*, D2D_SIZE_U*, D2D1_PIXEL_FORMAT*, CompatibleRenderTargetOptions, ID2D1BitmapRenderTarget**, int>)LpVtbl[12])(@this, desiredSize, desiredPixelSizePtr, desiredFormat, options, bitmapRenderTargetPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<uint>*, PixelFormat*, CompatibleRenderTargetOptions, ID2D1BitmapRenderTarget**, int>)LpVtbl[12])(@this, desiredSize, desiredPixelSize, desiredFormatPtr, options, bitmapRenderTargetPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCompatibleRenderTarget(D2D_SIZE_F* desiredSize, ref D2D_SIZE_U desiredPixelSize, ref D2D1_PIXEL_FORMAT desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
+        public readonly unsafe int CreateCompatibleRenderTarget(Silk.NET.Maths.Vector2D<float>* desiredSize, ref Silk.NET.Maths.Vector2D<uint> desiredPixelSize, PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (D2D_SIZE_U* desiredPixelSizePtr = &desiredPixelSize)
+            fixed (Silk.NET.Maths.Vector2D<uint>* desiredPixelSizePtr = &desiredPixelSize)
             {
-                fixed (D2D1_PIXEL_FORMAT* desiredFormatPtr = &desiredFormat)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_SIZE_F*, D2D_SIZE_U*, D2D1_PIXEL_FORMAT*, CompatibleRenderTargetOptions, ID2D1BitmapRenderTarget**, int>)LpVtbl[12])(@this, desiredSize, desiredPixelSizePtr, desiredFormatPtr, options, bitmapRenderTarget);
-                }
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<uint>*, PixelFormat*, CompatibleRenderTargetOptions, ID2D1BitmapRenderTarget**, int>)LpVtbl[12])(@this, desiredSize, desiredPixelSizePtr, desiredFormat, options, bitmapRenderTarget);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCompatibleRenderTarget(D2D_SIZE_F* desiredSize, ref D2D_SIZE_U desiredPixelSize, ref D2D1_PIXEL_FORMAT desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
+        public readonly unsafe int CreateCompatibleRenderTarget(Silk.NET.Maths.Vector2D<float>* desiredSize, ref Silk.NET.Maths.Vector2D<uint> desiredPixelSize, PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (D2D_SIZE_U* desiredPixelSizePtr = &desiredPixelSize)
-            {
-                fixed (D2D1_PIXEL_FORMAT* desiredFormatPtr = &desiredFormat)
-                {
-                    fixed (ID2D1BitmapRenderTarget** bitmapRenderTargetPtr = &bitmapRenderTarget)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_SIZE_F*, D2D_SIZE_U*, D2D1_PIXEL_FORMAT*, CompatibleRenderTargetOptions, ID2D1BitmapRenderTarget**, int>)LpVtbl[12])(@this, desiredSize, desiredPixelSizePtr, desiredFormatPtr, options, bitmapRenderTargetPtr);
-                    }
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCompatibleRenderTarget(ref D2D_SIZE_F desiredSize, D2D_SIZE_U* desiredPixelSize, D2D1_PIXEL_FORMAT* desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
-        {
-            var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (D2D_SIZE_F* desiredSizePtr = &desiredSize)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_SIZE_F*, D2D_SIZE_U*, D2D1_PIXEL_FORMAT*, CompatibleRenderTargetOptions, ID2D1BitmapRenderTarget**, int>)LpVtbl[12])(@this, desiredSizePtr, desiredPixelSize, desiredFormat, options, bitmapRenderTarget);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCompatibleRenderTarget(ref D2D_SIZE_F desiredSize, D2D_SIZE_U* desiredPixelSize, D2D1_PIXEL_FORMAT* desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
-        {
-            var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (D2D_SIZE_F* desiredSizePtr = &desiredSize)
+            fixed (Silk.NET.Maths.Vector2D<uint>* desiredPixelSizePtr = &desiredPixelSize)
             {
                 fixed (ID2D1BitmapRenderTarget** bitmapRenderTargetPtr = &bitmapRenderTarget)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_SIZE_F*, D2D_SIZE_U*, D2D1_PIXEL_FORMAT*, CompatibleRenderTargetOptions, ID2D1BitmapRenderTarget**, int>)LpVtbl[12])(@this, desiredSizePtr, desiredPixelSize, desiredFormat, options, bitmapRenderTargetPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<uint>*, PixelFormat*, CompatibleRenderTargetOptions, ID2D1BitmapRenderTarget**, int>)LpVtbl[12])(@this, desiredSize, desiredPixelSizePtr, desiredFormat, options, bitmapRenderTargetPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCompatibleRenderTarget(ref D2D_SIZE_F desiredSize, D2D_SIZE_U* desiredPixelSize, ref D2D1_PIXEL_FORMAT desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
+        public readonly unsafe int CreateCompatibleRenderTarget(Silk.NET.Maths.Vector2D<float>* desiredSize, ref Silk.NET.Maths.Vector2D<uint> desiredPixelSize, ref PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (D2D_SIZE_F* desiredSizePtr = &desiredSize)
+            fixed (Silk.NET.Maths.Vector2D<uint>* desiredPixelSizePtr = &desiredPixelSize)
             {
-                fixed (D2D1_PIXEL_FORMAT* desiredFormatPtr = &desiredFormat)
+                fixed (PixelFormat* desiredFormatPtr = &desiredFormat)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_SIZE_F*, D2D_SIZE_U*, D2D1_PIXEL_FORMAT*, CompatibleRenderTargetOptions, ID2D1BitmapRenderTarget**, int>)LpVtbl[12])(@this, desiredSizePtr, desiredPixelSize, desiredFormatPtr, options, bitmapRenderTarget);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<uint>*, PixelFormat*, CompatibleRenderTargetOptions, ID2D1BitmapRenderTarget**, int>)LpVtbl[12])(@this, desiredSize, desiredPixelSizePtr, desiredFormatPtr, options, bitmapRenderTarget);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCompatibleRenderTarget(ref D2D_SIZE_F desiredSize, D2D_SIZE_U* desiredPixelSize, ref D2D1_PIXEL_FORMAT desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
+        public readonly unsafe int CreateCompatibleRenderTarget(Silk.NET.Maths.Vector2D<float>* desiredSize, ref Silk.NET.Maths.Vector2D<uint> desiredPixelSize, ref PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (D2D_SIZE_F* desiredSizePtr = &desiredSize)
+            fixed (Silk.NET.Maths.Vector2D<uint>* desiredPixelSizePtr = &desiredPixelSize)
             {
-                fixed (D2D1_PIXEL_FORMAT* desiredFormatPtr = &desiredFormat)
-                {
-                    fixed (ID2D1BitmapRenderTarget** bitmapRenderTargetPtr = &bitmapRenderTarget)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_SIZE_F*, D2D_SIZE_U*, D2D1_PIXEL_FORMAT*, CompatibleRenderTargetOptions, ID2D1BitmapRenderTarget**, int>)LpVtbl[12])(@this, desiredSizePtr, desiredPixelSize, desiredFormatPtr, options, bitmapRenderTargetPtr);
-                    }
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCompatibleRenderTarget(ref D2D_SIZE_F desiredSize, ref D2D_SIZE_U desiredPixelSize, D2D1_PIXEL_FORMAT* desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
-        {
-            var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (D2D_SIZE_F* desiredSizePtr = &desiredSize)
-            {
-                fixed (D2D_SIZE_U* desiredPixelSizePtr = &desiredPixelSize)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_SIZE_F*, D2D_SIZE_U*, D2D1_PIXEL_FORMAT*, CompatibleRenderTargetOptions, ID2D1BitmapRenderTarget**, int>)LpVtbl[12])(@this, desiredSizePtr, desiredPixelSizePtr, desiredFormat, options, bitmapRenderTarget);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCompatibleRenderTarget(ref D2D_SIZE_F desiredSize, ref D2D_SIZE_U desiredPixelSize, D2D1_PIXEL_FORMAT* desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
-        {
-            var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (D2D_SIZE_F* desiredSizePtr = &desiredSize)
-            {
-                fixed (D2D_SIZE_U* desiredPixelSizePtr = &desiredPixelSize)
+                fixed (PixelFormat* desiredFormatPtr = &desiredFormat)
                 {
                     fixed (ID2D1BitmapRenderTarget** bitmapRenderTargetPtr = &bitmapRenderTarget)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_SIZE_F*, D2D_SIZE_U*, D2D1_PIXEL_FORMAT*, CompatibleRenderTargetOptions, ID2D1BitmapRenderTarget**, int>)LpVtbl[12])(@this, desiredSizePtr, desiredPixelSizePtr, desiredFormat, options, bitmapRenderTargetPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<uint>*, PixelFormat*, CompatibleRenderTargetOptions, ID2D1BitmapRenderTarget**, int>)LpVtbl[12])(@this, desiredSize, desiredPixelSizePtr, desiredFormatPtr, options, bitmapRenderTargetPtr);
                     }
                 }
             }
@@ -1667,17 +1574,59 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCompatibleRenderTarget(ref D2D_SIZE_F desiredSize, ref D2D_SIZE_U desiredPixelSize, ref D2D1_PIXEL_FORMAT desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
+        public readonly unsafe int CreateCompatibleRenderTarget(ref Silk.NET.Maths.Vector2D<float> desiredSize, Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (D2D_SIZE_F* desiredSizePtr = &desiredSize)
+            fixed (Silk.NET.Maths.Vector2D<float>* desiredSizePtr = &desiredSize)
             {
-                fixed (D2D_SIZE_U* desiredPixelSizePtr = &desiredPixelSize)
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<uint>*, PixelFormat*, CompatibleRenderTargetOptions, ID2D1BitmapRenderTarget**, int>)LpVtbl[12])(@this, desiredSizePtr, desiredPixelSize, desiredFormat, options, bitmapRenderTarget);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCompatibleRenderTarget(ref Silk.NET.Maths.Vector2D<float> desiredSize, Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
+        {
+            var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.Maths.Vector2D<float>* desiredSizePtr = &desiredSize)
+            {
+                fixed (ID2D1BitmapRenderTarget** bitmapRenderTargetPtr = &bitmapRenderTarget)
                 {
-                    fixed (D2D1_PIXEL_FORMAT* desiredFormatPtr = &desiredFormat)
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<uint>*, PixelFormat*, CompatibleRenderTargetOptions, ID2D1BitmapRenderTarget**, int>)LpVtbl[12])(@this, desiredSizePtr, desiredPixelSize, desiredFormat, options, bitmapRenderTargetPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCompatibleRenderTarget(ref Silk.NET.Maths.Vector2D<float> desiredSize, Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, ref PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
+        {
+            var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.Maths.Vector2D<float>* desiredSizePtr = &desiredSize)
+            {
+                fixed (PixelFormat* desiredFormatPtr = &desiredFormat)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<uint>*, PixelFormat*, CompatibleRenderTargetOptions, ID2D1BitmapRenderTarget**, int>)LpVtbl[12])(@this, desiredSizePtr, desiredPixelSize, desiredFormatPtr, options, bitmapRenderTarget);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCompatibleRenderTarget(ref Silk.NET.Maths.Vector2D<float> desiredSize, Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, ref PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
+        {
+            var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.Maths.Vector2D<float>* desiredSizePtr = &desiredSize)
+            {
+                fixed (PixelFormat* desiredFormatPtr = &desiredFormat)
+                {
+                    fixed (ID2D1BitmapRenderTarget** bitmapRenderTargetPtr = &bitmapRenderTarget)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_SIZE_F*, D2D_SIZE_U*, D2D1_PIXEL_FORMAT*, CompatibleRenderTargetOptions, ID2D1BitmapRenderTarget**, int>)LpVtbl[12])(@this, desiredSizePtr, desiredPixelSizePtr, desiredFormatPtr, options, bitmapRenderTarget);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<uint>*, PixelFormat*, CompatibleRenderTargetOptions, ID2D1BitmapRenderTarget**, int>)LpVtbl[12])(@this, desiredSizePtr, desiredPixelSize, desiredFormatPtr, options, bitmapRenderTargetPtr);
                     }
                 }
             }
@@ -1685,19 +1634,70 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCompatibleRenderTarget(ref D2D_SIZE_F desiredSize, ref D2D_SIZE_U desiredPixelSize, ref D2D1_PIXEL_FORMAT desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
+        public readonly unsafe int CreateCompatibleRenderTarget(ref Silk.NET.Maths.Vector2D<float> desiredSize, ref Silk.NET.Maths.Vector2D<uint> desiredPixelSize, PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (D2D_SIZE_F* desiredSizePtr = &desiredSize)
+            fixed (Silk.NET.Maths.Vector2D<float>* desiredSizePtr = &desiredSize)
             {
-                fixed (D2D_SIZE_U* desiredPixelSizePtr = &desiredPixelSize)
+                fixed (Silk.NET.Maths.Vector2D<uint>* desiredPixelSizePtr = &desiredPixelSize)
                 {
-                    fixed (D2D1_PIXEL_FORMAT* desiredFormatPtr = &desiredFormat)
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<uint>*, PixelFormat*, CompatibleRenderTargetOptions, ID2D1BitmapRenderTarget**, int>)LpVtbl[12])(@this, desiredSizePtr, desiredPixelSizePtr, desiredFormat, options, bitmapRenderTarget);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCompatibleRenderTarget(ref Silk.NET.Maths.Vector2D<float> desiredSize, ref Silk.NET.Maths.Vector2D<uint> desiredPixelSize, PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
+        {
+            var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.Maths.Vector2D<float>* desiredSizePtr = &desiredSize)
+            {
+                fixed (Silk.NET.Maths.Vector2D<uint>* desiredPixelSizePtr = &desiredPixelSize)
+                {
+                    fixed (ID2D1BitmapRenderTarget** bitmapRenderTargetPtr = &bitmapRenderTarget)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<uint>*, PixelFormat*, CompatibleRenderTargetOptions, ID2D1BitmapRenderTarget**, int>)LpVtbl[12])(@this, desiredSizePtr, desiredPixelSizePtr, desiredFormat, options, bitmapRenderTargetPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCompatibleRenderTarget(ref Silk.NET.Maths.Vector2D<float> desiredSize, ref Silk.NET.Maths.Vector2D<uint> desiredPixelSize, ref PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
+        {
+            var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.Maths.Vector2D<float>* desiredSizePtr = &desiredSize)
+            {
+                fixed (Silk.NET.Maths.Vector2D<uint>* desiredPixelSizePtr = &desiredPixelSize)
+                {
+                    fixed (PixelFormat* desiredFormatPtr = &desiredFormat)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<uint>*, PixelFormat*, CompatibleRenderTargetOptions, ID2D1BitmapRenderTarget**, int>)LpVtbl[12])(@this, desiredSizePtr, desiredPixelSizePtr, desiredFormatPtr, options, bitmapRenderTarget);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCompatibleRenderTarget(ref Silk.NET.Maths.Vector2D<float> desiredSize, ref Silk.NET.Maths.Vector2D<uint> desiredPixelSize, ref PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
+        {
+            var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.Maths.Vector2D<float>* desiredSizePtr = &desiredSize)
+            {
+                fixed (Silk.NET.Maths.Vector2D<uint>* desiredPixelSizePtr = &desiredPixelSize)
+                {
+                    fixed (PixelFormat* desiredFormatPtr = &desiredFormat)
                     {
                         fixed (ID2D1BitmapRenderTarget** bitmapRenderTargetPtr = &bitmapRenderTarget)
                         {
-                            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_SIZE_F*, D2D_SIZE_U*, D2D1_PIXEL_FORMAT*, CompatibleRenderTargetOptions, ID2D1BitmapRenderTarget**, int>)LpVtbl[12])(@this, desiredSizePtr, desiredPixelSizePtr, desiredFormatPtr, options, bitmapRenderTargetPtr);
+                            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<uint>*, PixelFormat*, CompatibleRenderTargetOptions, ID2D1BitmapRenderTarget**, int>)LpVtbl[12])(@this, desiredSizePtr, desiredPixelSizePtr, desiredFormatPtr, options, bitmapRenderTargetPtr);
                         }
                     }
                 }
@@ -1706,48 +1706,48 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLayer(D2D_SIZE_F* size, ID2D1Layer** layer)
+        public readonly unsafe int CreateLayer(Silk.NET.Maths.Vector2D<float>* size, ID2D1Layer** layer)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_SIZE_F*, ID2D1Layer**, int>)LpVtbl[13])(@this, size, layer);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<float>*, ID2D1Layer**, int>)LpVtbl[13])(@this, size, layer);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLayer(D2D_SIZE_F* size, ref ID2D1Layer* layer)
+        public readonly unsafe int CreateLayer(Silk.NET.Maths.Vector2D<float>* size, ref ID2D1Layer* layer)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID2D1Layer** layerPtr = &layer)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_SIZE_F*, ID2D1Layer**, int>)LpVtbl[13])(@this, size, layerPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<float>*, ID2D1Layer**, int>)LpVtbl[13])(@this, size, layerPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLayer(ref D2D_SIZE_F size, ID2D1Layer** layer)
+        public readonly unsafe int CreateLayer(ref Silk.NET.Maths.Vector2D<float> size, ID2D1Layer** layer)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (D2D_SIZE_F* sizePtr = &size)
+            fixed (Silk.NET.Maths.Vector2D<float>* sizePtr = &size)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_SIZE_F*, ID2D1Layer**, int>)LpVtbl[13])(@this, sizePtr, layer);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<float>*, ID2D1Layer**, int>)LpVtbl[13])(@this, sizePtr, layer);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLayer(ref D2D_SIZE_F size, ref ID2D1Layer* layer)
+        public readonly unsafe int CreateLayer(ref Silk.NET.Maths.Vector2D<float> size, ref ID2D1Layer* layer)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (D2D_SIZE_F* sizePtr = &size)
+            fixed (Silk.NET.Maths.Vector2D<float>* sizePtr = &size)
             {
                 fixed (ID2D1Layer** layerPtr = &layer)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_SIZE_F*, ID2D1Layer**, int>)LpVtbl[13])(@this, sizePtr, layerPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<float>*, ID2D1Layer**, int>)LpVtbl[13])(@this, sizePtr, layerPtr);
                 }
             }
             return ret;
@@ -1775,173 +1775,173 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawLine(D2D_POINT_2F point0, D2D_POINT_2F point1, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+        public readonly unsafe void DrawLine(Silk.NET.Maths.Vector2D<float> point0, Silk.NET.Maths.Vector2D<float> point1, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_POINT_2F, D2D_POINT_2F, ID2D1Brush*, float, ID2D1StrokeStyle*, void>)LpVtbl[15])(@this, point0, point1, brush, strokeWidth, strokeStyle);
+            ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Maths.Vector2D<float>, ID2D1Brush*, float, ID2D1StrokeStyle*, void>)LpVtbl[15])(@this, point0, point1, brush, strokeWidth, strokeStyle);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawLine(D2D_POINT_2F point0, D2D_POINT_2F point1, ID2D1Brush* brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
+        public readonly unsafe void DrawLine(Silk.NET.Maths.Vector2D<float> point0, Silk.NET.Maths.Vector2D<float> point1, ID2D1Brush* brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1StrokeStyle* strokeStylePtr = &strokeStyle)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_POINT_2F, D2D_POINT_2F, ID2D1Brush*, float, ID2D1StrokeStyle*, void>)LpVtbl[15])(@this, point0, point1, brush, strokeWidth, strokeStylePtr);
+                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Maths.Vector2D<float>, ID2D1Brush*, float, ID2D1StrokeStyle*, void>)LpVtbl[15])(@this, point0, point1, brush, strokeWidth, strokeStylePtr);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawLine(D2D_POINT_2F point0, D2D_POINT_2F point1, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+        public readonly unsafe void DrawLine(Silk.NET.Maths.Vector2D<float> point0, Silk.NET.Maths.Vector2D<float> point1, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Brush* brushPtr = &brush)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_POINT_2F, D2D_POINT_2F, ID2D1Brush*, float, ID2D1StrokeStyle*, void>)LpVtbl[15])(@this, point0, point1, brushPtr, strokeWidth, strokeStyle);
+                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Maths.Vector2D<float>, ID2D1Brush*, float, ID2D1StrokeStyle*, void>)LpVtbl[15])(@this, point0, point1, brushPtr, strokeWidth, strokeStyle);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DrawLine(D2D_POINT_2F point0, D2D_POINT_2F point1, ref ID2D1Brush brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
+        public readonly void DrawLine(Silk.NET.Maths.Vector2D<float> point0, Silk.NET.Maths.Vector2D<float> point1, ref ID2D1Brush brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Brush* brushPtr = &brush)
             {
                 fixed (ID2D1StrokeStyle* strokeStylePtr = &strokeStyle)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_POINT_2F, D2D_POINT_2F, ID2D1Brush*, float, ID2D1StrokeStyle*, void>)LpVtbl[15])(@this, point0, point1, brushPtr, strokeWidth, strokeStylePtr);
+                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Maths.Vector2D<float>, ID2D1Brush*, float, ID2D1StrokeStyle*, void>)LpVtbl[15])(@this, point0, point1, brushPtr, strokeWidth, strokeStylePtr);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawRectangle(Silk.NET.Maths.Rectangle<float>* rect, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+        public readonly unsafe void DrawRectangle(Silk.NET.Maths.Box2D<float>* rect, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Rectangle<float>*, ID2D1Brush*, float, ID2D1StrokeStyle*, void>)LpVtbl[16])(@this, rect, brush, strokeWidth, strokeStyle);
+            ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, float, ID2D1StrokeStyle*, void>)LpVtbl[16])(@this, rect, brush, strokeWidth, strokeStyle);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawRectangle(Silk.NET.Maths.Rectangle<float>* rect, ID2D1Brush* brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
+        public readonly unsafe void DrawRectangle(Silk.NET.Maths.Box2D<float>* rect, ID2D1Brush* brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1StrokeStyle* strokeStylePtr = &strokeStyle)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Rectangle<float>*, ID2D1Brush*, float, ID2D1StrokeStyle*, void>)LpVtbl[16])(@this, rect, brush, strokeWidth, strokeStylePtr);
+                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, float, ID2D1StrokeStyle*, void>)LpVtbl[16])(@this, rect, brush, strokeWidth, strokeStylePtr);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawRectangle(Silk.NET.Maths.Rectangle<float>* rect, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+        public readonly unsafe void DrawRectangle(Silk.NET.Maths.Box2D<float>* rect, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Brush* brushPtr = &brush)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Rectangle<float>*, ID2D1Brush*, float, ID2D1StrokeStyle*, void>)LpVtbl[16])(@this, rect, brushPtr, strokeWidth, strokeStyle);
+                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, float, ID2D1StrokeStyle*, void>)LpVtbl[16])(@this, rect, brushPtr, strokeWidth, strokeStyle);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawRectangle(Silk.NET.Maths.Rectangle<float>* rect, ref ID2D1Brush brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
+        public readonly unsafe void DrawRectangle(Silk.NET.Maths.Box2D<float>* rect, ref ID2D1Brush brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Brush* brushPtr = &brush)
             {
                 fixed (ID2D1StrokeStyle* strokeStylePtr = &strokeStyle)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Rectangle<float>*, ID2D1Brush*, float, ID2D1StrokeStyle*, void>)LpVtbl[16])(@this, rect, brushPtr, strokeWidth, strokeStylePtr);
+                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, float, ID2D1StrokeStyle*, void>)LpVtbl[16])(@this, rect, brushPtr, strokeWidth, strokeStylePtr);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawRectangle(ref Silk.NET.Maths.Rectangle<float> rect, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+        public readonly unsafe void DrawRectangle(ref Silk.NET.Maths.Box2D<float> rect, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Maths.Rectangle<float>* rectPtr = &rect)
+            fixed (Silk.NET.Maths.Box2D<float>* rectPtr = &rect)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Rectangle<float>*, ID2D1Brush*, float, ID2D1StrokeStyle*, void>)LpVtbl[16])(@this, rectPtr, brush, strokeWidth, strokeStyle);
+                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, float, ID2D1StrokeStyle*, void>)LpVtbl[16])(@this, rectPtr, brush, strokeWidth, strokeStyle);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawRectangle(ref Silk.NET.Maths.Rectangle<float> rect, ID2D1Brush* brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
+        public readonly unsafe void DrawRectangle(ref Silk.NET.Maths.Box2D<float> rect, ID2D1Brush* brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Maths.Rectangle<float>* rectPtr = &rect)
+            fixed (Silk.NET.Maths.Box2D<float>* rectPtr = &rect)
             {
                 fixed (ID2D1StrokeStyle* strokeStylePtr = &strokeStyle)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Rectangle<float>*, ID2D1Brush*, float, ID2D1StrokeStyle*, void>)LpVtbl[16])(@this, rectPtr, brush, strokeWidth, strokeStylePtr);
+                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, float, ID2D1StrokeStyle*, void>)LpVtbl[16])(@this, rectPtr, brush, strokeWidth, strokeStylePtr);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawRectangle(ref Silk.NET.Maths.Rectangle<float> rect, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+        public readonly unsafe void DrawRectangle(ref Silk.NET.Maths.Box2D<float> rect, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Maths.Rectangle<float>* rectPtr = &rect)
+            fixed (Silk.NET.Maths.Box2D<float>* rectPtr = &rect)
             {
                 fixed (ID2D1Brush* brushPtr = &brush)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Rectangle<float>*, ID2D1Brush*, float, ID2D1StrokeStyle*, void>)LpVtbl[16])(@this, rectPtr, brushPtr, strokeWidth, strokeStyle);
+                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, float, ID2D1StrokeStyle*, void>)LpVtbl[16])(@this, rectPtr, brushPtr, strokeWidth, strokeStyle);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DrawRectangle(ref Silk.NET.Maths.Rectangle<float> rect, ref ID2D1Brush brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
+        public readonly void DrawRectangle(ref Silk.NET.Maths.Box2D<float> rect, ref ID2D1Brush brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Maths.Rectangle<float>* rectPtr = &rect)
+            fixed (Silk.NET.Maths.Box2D<float>* rectPtr = &rect)
             {
                 fixed (ID2D1Brush* brushPtr = &brush)
                 {
                     fixed (ID2D1StrokeStyle* strokeStylePtr = &strokeStyle)
                     {
-                        ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Rectangle<float>*, ID2D1Brush*, float, ID2D1StrokeStyle*, void>)LpVtbl[16])(@this, rectPtr, brushPtr, strokeWidth, strokeStylePtr);
+                        ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, float, ID2D1StrokeStyle*, void>)LpVtbl[16])(@this, rectPtr, brushPtr, strokeWidth, strokeStylePtr);
                     }
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillRectangle(Silk.NET.Maths.Rectangle<float>* rect, ID2D1Brush* brush)
+        public readonly unsafe void FillRectangle(Silk.NET.Maths.Box2D<float>* rect, ID2D1Brush* brush)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Rectangle<float>*, ID2D1Brush*, void>)LpVtbl[17])(@this, rect, brush);
+            ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, void>)LpVtbl[17])(@this, rect, brush);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillRectangle(Silk.NET.Maths.Rectangle<float>* rect, ref ID2D1Brush brush)
+        public readonly unsafe void FillRectangle(Silk.NET.Maths.Box2D<float>* rect, ref ID2D1Brush brush)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Brush* brushPtr = &brush)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Rectangle<float>*, ID2D1Brush*, void>)LpVtbl[17])(@this, rect, brushPtr);
+                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, void>)LpVtbl[17])(@this, rect, brushPtr);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillRectangle(ref Silk.NET.Maths.Rectangle<float> rect, ID2D1Brush* brush)
+        public readonly unsafe void FillRectangle(ref Silk.NET.Maths.Box2D<float> rect, ID2D1Brush* brush)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Maths.Rectangle<float>* rectPtr = &rect)
+            fixed (Silk.NET.Maths.Box2D<float>* rectPtr = &rect)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Rectangle<float>*, ID2D1Brush*, void>)LpVtbl[17])(@this, rectPtr, brush);
+                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, void>)LpVtbl[17])(@this, rectPtr, brush);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void FillRectangle(ref Silk.NET.Maths.Rectangle<float> rect, ref ID2D1Brush brush)
+        public readonly void FillRectangle(ref Silk.NET.Maths.Box2D<float> rect, ref ID2D1Brush brush)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Maths.Rectangle<float>* rectPtr = &rect)
+            fixed (Silk.NET.Maths.Box2D<float>* rectPtr = &rect)
             {
                 fixed (ID2D1Brush* brushPtr = &brush)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Rectangle<float>*, ID2D1Brush*, void>)LpVtbl[17])(@this, rectPtr, brushPtr);
+                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, void>)LpVtbl[17])(@this, rectPtr, brushPtr);
                 }
             }
         }
@@ -2435,207 +2435,207 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillOpacityMask(ID2D1Bitmap* opacityMask, ID2D1Brush* brush, OpacityMaskContent content, Silk.NET.Maths.Rectangle<float>* destinationRectangle, Silk.NET.Maths.Rectangle<float>* sourceRectangle)
+        public readonly unsafe void FillOpacityMask(ID2D1Bitmap* opacityMask, ID2D1Brush* brush, OpacityMaskContent content, Silk.NET.Maths.Box2D<float>* destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, ID2D1Brush*, OpacityMaskContent, Silk.NET.Maths.Rectangle<float>*, Silk.NET.Maths.Rectangle<float>*, void>)LpVtbl[25])(@this, opacityMask, brush, content, destinationRectangle, sourceRectangle);
+            ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, ID2D1Brush*, OpacityMaskContent, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<float>*, void>)LpVtbl[25])(@this, opacityMask, brush, content, destinationRectangle, sourceRectangle);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillOpacityMask(ID2D1Bitmap* opacityMask, ID2D1Brush* brush, OpacityMaskContent content, Silk.NET.Maths.Rectangle<float>* destinationRectangle, ref Silk.NET.Maths.Rectangle<float> sourceRectangle)
+        public readonly unsafe void FillOpacityMask(ID2D1Bitmap* opacityMask, ID2D1Brush* brush, OpacityMaskContent content, Silk.NET.Maths.Box2D<float>* destinationRectangle, ref Silk.NET.Maths.Box2D<float> sourceRectangle)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Maths.Rectangle<float>* sourceRectanglePtr = &sourceRectangle)
+            fixed (Silk.NET.Maths.Box2D<float>* sourceRectanglePtr = &sourceRectangle)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, ID2D1Brush*, OpacityMaskContent, Silk.NET.Maths.Rectangle<float>*, Silk.NET.Maths.Rectangle<float>*, void>)LpVtbl[25])(@this, opacityMask, brush, content, destinationRectangle, sourceRectanglePtr);
+                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, ID2D1Brush*, OpacityMaskContent, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<float>*, void>)LpVtbl[25])(@this, opacityMask, brush, content, destinationRectangle, sourceRectanglePtr);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillOpacityMask(ID2D1Bitmap* opacityMask, ID2D1Brush* brush, OpacityMaskContent content, ref Silk.NET.Maths.Rectangle<float> destinationRectangle, Silk.NET.Maths.Rectangle<float>* sourceRectangle)
+        public readonly unsafe void FillOpacityMask(ID2D1Bitmap* opacityMask, ID2D1Brush* brush, OpacityMaskContent content, ref Silk.NET.Maths.Box2D<float> destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Maths.Rectangle<float>* destinationRectanglePtr = &destinationRectangle)
+            fixed (Silk.NET.Maths.Box2D<float>* destinationRectanglePtr = &destinationRectangle)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, ID2D1Brush*, OpacityMaskContent, Silk.NET.Maths.Rectangle<float>*, Silk.NET.Maths.Rectangle<float>*, void>)LpVtbl[25])(@this, opacityMask, brush, content, destinationRectanglePtr, sourceRectangle);
+                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, ID2D1Brush*, OpacityMaskContent, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<float>*, void>)LpVtbl[25])(@this, opacityMask, brush, content, destinationRectanglePtr, sourceRectangle);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillOpacityMask(ID2D1Bitmap* opacityMask, ID2D1Brush* brush, OpacityMaskContent content, ref Silk.NET.Maths.Rectangle<float> destinationRectangle, ref Silk.NET.Maths.Rectangle<float> sourceRectangle)
+        public readonly unsafe void FillOpacityMask(ID2D1Bitmap* opacityMask, ID2D1Brush* brush, OpacityMaskContent content, ref Silk.NET.Maths.Box2D<float> destinationRectangle, ref Silk.NET.Maths.Box2D<float> sourceRectangle)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Maths.Rectangle<float>* destinationRectanglePtr = &destinationRectangle)
+            fixed (Silk.NET.Maths.Box2D<float>* destinationRectanglePtr = &destinationRectangle)
             {
-                fixed (Silk.NET.Maths.Rectangle<float>* sourceRectanglePtr = &sourceRectangle)
+                fixed (Silk.NET.Maths.Box2D<float>* sourceRectanglePtr = &sourceRectangle)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, ID2D1Brush*, OpacityMaskContent, Silk.NET.Maths.Rectangle<float>*, Silk.NET.Maths.Rectangle<float>*, void>)LpVtbl[25])(@this, opacityMask, brush, content, destinationRectanglePtr, sourceRectanglePtr);
+                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, ID2D1Brush*, OpacityMaskContent, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<float>*, void>)LpVtbl[25])(@this, opacityMask, brush, content, destinationRectanglePtr, sourceRectanglePtr);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillOpacityMask(ID2D1Bitmap* opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, Silk.NET.Maths.Rectangle<float>* destinationRectangle, Silk.NET.Maths.Rectangle<float>* sourceRectangle)
+        public readonly unsafe void FillOpacityMask(ID2D1Bitmap* opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, Silk.NET.Maths.Box2D<float>* destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Brush* brushPtr = &brush)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, ID2D1Brush*, OpacityMaskContent, Silk.NET.Maths.Rectangle<float>*, Silk.NET.Maths.Rectangle<float>*, void>)LpVtbl[25])(@this, opacityMask, brushPtr, content, destinationRectangle, sourceRectangle);
+                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, ID2D1Brush*, OpacityMaskContent, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<float>*, void>)LpVtbl[25])(@this, opacityMask, brushPtr, content, destinationRectangle, sourceRectangle);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillOpacityMask(ID2D1Bitmap* opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, Silk.NET.Maths.Rectangle<float>* destinationRectangle, ref Silk.NET.Maths.Rectangle<float> sourceRectangle)
+        public readonly unsafe void FillOpacityMask(ID2D1Bitmap* opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, Silk.NET.Maths.Box2D<float>* destinationRectangle, ref Silk.NET.Maths.Box2D<float> sourceRectangle)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Brush* brushPtr = &brush)
             {
-                fixed (Silk.NET.Maths.Rectangle<float>* sourceRectanglePtr = &sourceRectangle)
+                fixed (Silk.NET.Maths.Box2D<float>* sourceRectanglePtr = &sourceRectangle)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, ID2D1Brush*, OpacityMaskContent, Silk.NET.Maths.Rectangle<float>*, Silk.NET.Maths.Rectangle<float>*, void>)LpVtbl[25])(@this, opacityMask, brushPtr, content, destinationRectangle, sourceRectanglePtr);
+                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, ID2D1Brush*, OpacityMaskContent, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<float>*, void>)LpVtbl[25])(@this, opacityMask, brushPtr, content, destinationRectangle, sourceRectanglePtr);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillOpacityMask(ID2D1Bitmap* opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, ref Silk.NET.Maths.Rectangle<float> destinationRectangle, Silk.NET.Maths.Rectangle<float>* sourceRectangle)
+        public readonly unsafe void FillOpacityMask(ID2D1Bitmap* opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, ref Silk.NET.Maths.Box2D<float> destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Brush* brushPtr = &brush)
             {
-                fixed (Silk.NET.Maths.Rectangle<float>* destinationRectanglePtr = &destinationRectangle)
+                fixed (Silk.NET.Maths.Box2D<float>* destinationRectanglePtr = &destinationRectangle)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, ID2D1Brush*, OpacityMaskContent, Silk.NET.Maths.Rectangle<float>*, Silk.NET.Maths.Rectangle<float>*, void>)LpVtbl[25])(@this, opacityMask, brushPtr, content, destinationRectanglePtr, sourceRectangle);
+                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, ID2D1Brush*, OpacityMaskContent, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<float>*, void>)LpVtbl[25])(@this, opacityMask, brushPtr, content, destinationRectanglePtr, sourceRectangle);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillOpacityMask(ID2D1Bitmap* opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, ref Silk.NET.Maths.Rectangle<float> destinationRectangle, ref Silk.NET.Maths.Rectangle<float> sourceRectangle)
+        public readonly unsafe void FillOpacityMask(ID2D1Bitmap* opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, ref Silk.NET.Maths.Box2D<float> destinationRectangle, ref Silk.NET.Maths.Box2D<float> sourceRectangle)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Brush* brushPtr = &brush)
             {
-                fixed (Silk.NET.Maths.Rectangle<float>* destinationRectanglePtr = &destinationRectangle)
+                fixed (Silk.NET.Maths.Box2D<float>* destinationRectanglePtr = &destinationRectangle)
                 {
-                    fixed (Silk.NET.Maths.Rectangle<float>* sourceRectanglePtr = &sourceRectangle)
+                    fixed (Silk.NET.Maths.Box2D<float>* sourceRectanglePtr = &sourceRectangle)
                     {
-                        ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, ID2D1Brush*, OpacityMaskContent, Silk.NET.Maths.Rectangle<float>*, Silk.NET.Maths.Rectangle<float>*, void>)LpVtbl[25])(@this, opacityMask, brushPtr, content, destinationRectanglePtr, sourceRectanglePtr);
+                        ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, ID2D1Brush*, OpacityMaskContent, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<float>*, void>)LpVtbl[25])(@this, opacityMask, brushPtr, content, destinationRectanglePtr, sourceRectanglePtr);
                     }
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillOpacityMask(ref ID2D1Bitmap opacityMask, ID2D1Brush* brush, OpacityMaskContent content, Silk.NET.Maths.Rectangle<float>* destinationRectangle, Silk.NET.Maths.Rectangle<float>* sourceRectangle)
+        public readonly unsafe void FillOpacityMask(ref ID2D1Bitmap opacityMask, ID2D1Brush* brush, OpacityMaskContent content, Silk.NET.Maths.Box2D<float>* destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Bitmap* opacityMaskPtr = &opacityMask)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, ID2D1Brush*, OpacityMaskContent, Silk.NET.Maths.Rectangle<float>*, Silk.NET.Maths.Rectangle<float>*, void>)LpVtbl[25])(@this, opacityMaskPtr, brush, content, destinationRectangle, sourceRectangle);
+                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, ID2D1Brush*, OpacityMaskContent, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<float>*, void>)LpVtbl[25])(@this, opacityMaskPtr, brush, content, destinationRectangle, sourceRectangle);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillOpacityMask(ref ID2D1Bitmap opacityMask, ID2D1Brush* brush, OpacityMaskContent content, Silk.NET.Maths.Rectangle<float>* destinationRectangle, ref Silk.NET.Maths.Rectangle<float> sourceRectangle)
+        public readonly unsafe void FillOpacityMask(ref ID2D1Bitmap opacityMask, ID2D1Brush* brush, OpacityMaskContent content, Silk.NET.Maths.Box2D<float>* destinationRectangle, ref Silk.NET.Maths.Box2D<float> sourceRectangle)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Bitmap* opacityMaskPtr = &opacityMask)
             {
-                fixed (Silk.NET.Maths.Rectangle<float>* sourceRectanglePtr = &sourceRectangle)
+                fixed (Silk.NET.Maths.Box2D<float>* sourceRectanglePtr = &sourceRectangle)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, ID2D1Brush*, OpacityMaskContent, Silk.NET.Maths.Rectangle<float>*, Silk.NET.Maths.Rectangle<float>*, void>)LpVtbl[25])(@this, opacityMaskPtr, brush, content, destinationRectangle, sourceRectanglePtr);
+                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, ID2D1Brush*, OpacityMaskContent, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<float>*, void>)LpVtbl[25])(@this, opacityMaskPtr, brush, content, destinationRectangle, sourceRectanglePtr);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillOpacityMask(ref ID2D1Bitmap opacityMask, ID2D1Brush* brush, OpacityMaskContent content, ref Silk.NET.Maths.Rectangle<float> destinationRectangle, Silk.NET.Maths.Rectangle<float>* sourceRectangle)
+        public readonly unsafe void FillOpacityMask(ref ID2D1Bitmap opacityMask, ID2D1Brush* brush, OpacityMaskContent content, ref Silk.NET.Maths.Box2D<float> destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Bitmap* opacityMaskPtr = &opacityMask)
             {
-                fixed (Silk.NET.Maths.Rectangle<float>* destinationRectanglePtr = &destinationRectangle)
+                fixed (Silk.NET.Maths.Box2D<float>* destinationRectanglePtr = &destinationRectangle)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, ID2D1Brush*, OpacityMaskContent, Silk.NET.Maths.Rectangle<float>*, Silk.NET.Maths.Rectangle<float>*, void>)LpVtbl[25])(@this, opacityMaskPtr, brush, content, destinationRectanglePtr, sourceRectangle);
+                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, ID2D1Brush*, OpacityMaskContent, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<float>*, void>)LpVtbl[25])(@this, opacityMaskPtr, brush, content, destinationRectanglePtr, sourceRectangle);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillOpacityMask(ref ID2D1Bitmap opacityMask, ID2D1Brush* brush, OpacityMaskContent content, ref Silk.NET.Maths.Rectangle<float> destinationRectangle, ref Silk.NET.Maths.Rectangle<float> sourceRectangle)
+        public readonly unsafe void FillOpacityMask(ref ID2D1Bitmap opacityMask, ID2D1Brush* brush, OpacityMaskContent content, ref Silk.NET.Maths.Box2D<float> destinationRectangle, ref Silk.NET.Maths.Box2D<float> sourceRectangle)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Bitmap* opacityMaskPtr = &opacityMask)
             {
-                fixed (Silk.NET.Maths.Rectangle<float>* destinationRectanglePtr = &destinationRectangle)
+                fixed (Silk.NET.Maths.Box2D<float>* destinationRectanglePtr = &destinationRectangle)
                 {
-                    fixed (Silk.NET.Maths.Rectangle<float>* sourceRectanglePtr = &sourceRectangle)
+                    fixed (Silk.NET.Maths.Box2D<float>* sourceRectanglePtr = &sourceRectangle)
                     {
-                        ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, ID2D1Brush*, OpacityMaskContent, Silk.NET.Maths.Rectangle<float>*, Silk.NET.Maths.Rectangle<float>*, void>)LpVtbl[25])(@this, opacityMaskPtr, brush, content, destinationRectanglePtr, sourceRectanglePtr);
+                        ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, ID2D1Brush*, OpacityMaskContent, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<float>*, void>)LpVtbl[25])(@this, opacityMaskPtr, brush, content, destinationRectanglePtr, sourceRectanglePtr);
                     }
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillOpacityMask(ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, Silk.NET.Maths.Rectangle<float>* destinationRectangle, Silk.NET.Maths.Rectangle<float>* sourceRectangle)
+        public readonly unsafe void FillOpacityMask(ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, Silk.NET.Maths.Box2D<float>* destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Bitmap* opacityMaskPtr = &opacityMask)
             {
                 fixed (ID2D1Brush* brushPtr = &brush)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, ID2D1Brush*, OpacityMaskContent, Silk.NET.Maths.Rectangle<float>*, Silk.NET.Maths.Rectangle<float>*, void>)LpVtbl[25])(@this, opacityMaskPtr, brushPtr, content, destinationRectangle, sourceRectangle);
+                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, ID2D1Brush*, OpacityMaskContent, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<float>*, void>)LpVtbl[25])(@this, opacityMaskPtr, brushPtr, content, destinationRectangle, sourceRectangle);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillOpacityMask(ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, Silk.NET.Maths.Rectangle<float>* destinationRectangle, ref Silk.NET.Maths.Rectangle<float> sourceRectangle)
+        public readonly unsafe void FillOpacityMask(ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, Silk.NET.Maths.Box2D<float>* destinationRectangle, ref Silk.NET.Maths.Box2D<float> sourceRectangle)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Bitmap* opacityMaskPtr = &opacityMask)
             {
                 fixed (ID2D1Brush* brushPtr = &brush)
                 {
-                    fixed (Silk.NET.Maths.Rectangle<float>* sourceRectanglePtr = &sourceRectangle)
+                    fixed (Silk.NET.Maths.Box2D<float>* sourceRectanglePtr = &sourceRectangle)
                     {
-                        ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, ID2D1Brush*, OpacityMaskContent, Silk.NET.Maths.Rectangle<float>*, Silk.NET.Maths.Rectangle<float>*, void>)LpVtbl[25])(@this, opacityMaskPtr, brushPtr, content, destinationRectangle, sourceRectanglePtr);
+                        ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, ID2D1Brush*, OpacityMaskContent, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<float>*, void>)LpVtbl[25])(@this, opacityMaskPtr, brushPtr, content, destinationRectangle, sourceRectanglePtr);
                     }
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillOpacityMask(ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, ref Silk.NET.Maths.Rectangle<float> destinationRectangle, Silk.NET.Maths.Rectangle<float>* sourceRectangle)
+        public readonly unsafe void FillOpacityMask(ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, ref Silk.NET.Maths.Box2D<float> destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Bitmap* opacityMaskPtr = &opacityMask)
             {
                 fixed (ID2D1Brush* brushPtr = &brush)
                 {
-                    fixed (Silk.NET.Maths.Rectangle<float>* destinationRectanglePtr = &destinationRectangle)
+                    fixed (Silk.NET.Maths.Box2D<float>* destinationRectanglePtr = &destinationRectangle)
                     {
-                        ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, ID2D1Brush*, OpacityMaskContent, Silk.NET.Maths.Rectangle<float>*, Silk.NET.Maths.Rectangle<float>*, void>)LpVtbl[25])(@this, opacityMaskPtr, brushPtr, content, destinationRectanglePtr, sourceRectangle);
+                        ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, ID2D1Brush*, OpacityMaskContent, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<float>*, void>)LpVtbl[25])(@this, opacityMaskPtr, brushPtr, content, destinationRectanglePtr, sourceRectangle);
                     }
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void FillOpacityMask(ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, ref Silk.NET.Maths.Rectangle<float> destinationRectangle, ref Silk.NET.Maths.Rectangle<float> sourceRectangle)
+        public readonly void FillOpacityMask(ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, ref Silk.NET.Maths.Box2D<float> destinationRectangle, ref Silk.NET.Maths.Box2D<float> sourceRectangle)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Bitmap* opacityMaskPtr = &opacityMask)
             {
                 fixed (ID2D1Brush* brushPtr = &brush)
                 {
-                    fixed (Silk.NET.Maths.Rectangle<float>* destinationRectanglePtr = &destinationRectangle)
+                    fixed (Silk.NET.Maths.Box2D<float>* destinationRectanglePtr = &destinationRectangle)
                     {
-                        fixed (Silk.NET.Maths.Rectangle<float>* sourceRectanglePtr = &sourceRectangle)
+                        fixed (Silk.NET.Maths.Box2D<float>* sourceRectanglePtr = &sourceRectangle)
                         {
-                            ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, ID2D1Brush*, OpacityMaskContent, Silk.NET.Maths.Rectangle<float>*, Silk.NET.Maths.Rectangle<float>*, void>)LpVtbl[25])(@this, opacityMaskPtr, brushPtr, content, destinationRectanglePtr, sourceRectanglePtr);
+                            ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, ID2D1Brush*, OpacityMaskContent, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<float>*, void>)LpVtbl[25])(@this, opacityMaskPtr, brushPtr, content, destinationRectanglePtr, sourceRectanglePtr);
                         }
                     }
                 }
@@ -2643,299 +2643,299 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawBitmap(ID2D1Bitmap* bitmap, Silk.NET.Maths.Rectangle<float>* destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, Silk.NET.Maths.Rectangle<float>* sourceRectangle)
+        public readonly unsafe void DrawBitmap(ID2D1Bitmap* bitmap, Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, Silk.NET.Maths.Box2D<float>* sourceRectangle)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, Silk.NET.Maths.Rectangle<float>*, float, BitmapInterpolationMode, Silk.NET.Maths.Rectangle<float>*, void>)LpVtbl[26])(@this, bitmap, destinationRectangle, opacity, interpolationMode, sourceRectangle);
+            ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, Silk.NET.Maths.Box2D<float>*, float, BitmapInterpolationMode, Silk.NET.Maths.Box2D<float>*, void>)LpVtbl[26])(@this, bitmap, destinationRectangle, opacity, interpolationMode, sourceRectangle);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawBitmap(ID2D1Bitmap* bitmap, Silk.NET.Maths.Rectangle<float>* destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, ref Silk.NET.Maths.Rectangle<float> sourceRectangle)
+        public readonly unsafe void DrawBitmap(ID2D1Bitmap* bitmap, Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, ref Silk.NET.Maths.Box2D<float> sourceRectangle)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Maths.Rectangle<float>* sourceRectanglePtr = &sourceRectangle)
+            fixed (Silk.NET.Maths.Box2D<float>* sourceRectanglePtr = &sourceRectangle)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, Silk.NET.Maths.Rectangle<float>*, float, BitmapInterpolationMode, Silk.NET.Maths.Rectangle<float>*, void>)LpVtbl[26])(@this, bitmap, destinationRectangle, opacity, interpolationMode, sourceRectanglePtr);
+                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, Silk.NET.Maths.Box2D<float>*, float, BitmapInterpolationMode, Silk.NET.Maths.Box2D<float>*, void>)LpVtbl[26])(@this, bitmap, destinationRectangle, opacity, interpolationMode, sourceRectanglePtr);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawBitmap(ID2D1Bitmap* bitmap, ref Silk.NET.Maths.Rectangle<float> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, Silk.NET.Maths.Rectangle<float>* sourceRectangle)
+        public readonly unsafe void DrawBitmap(ID2D1Bitmap* bitmap, ref Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, Silk.NET.Maths.Box2D<float>* sourceRectangle)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Maths.Rectangle<float>* destinationRectanglePtr = &destinationRectangle)
+            fixed (Silk.NET.Maths.Box2D<float>* destinationRectanglePtr = &destinationRectangle)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, Silk.NET.Maths.Rectangle<float>*, float, BitmapInterpolationMode, Silk.NET.Maths.Rectangle<float>*, void>)LpVtbl[26])(@this, bitmap, destinationRectanglePtr, opacity, interpolationMode, sourceRectangle);
+                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, Silk.NET.Maths.Box2D<float>*, float, BitmapInterpolationMode, Silk.NET.Maths.Box2D<float>*, void>)LpVtbl[26])(@this, bitmap, destinationRectanglePtr, opacity, interpolationMode, sourceRectangle);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawBitmap(ID2D1Bitmap* bitmap, ref Silk.NET.Maths.Rectangle<float> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, ref Silk.NET.Maths.Rectangle<float> sourceRectangle)
+        public readonly unsafe void DrawBitmap(ID2D1Bitmap* bitmap, ref Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, ref Silk.NET.Maths.Box2D<float> sourceRectangle)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Maths.Rectangle<float>* destinationRectanglePtr = &destinationRectangle)
+            fixed (Silk.NET.Maths.Box2D<float>* destinationRectanglePtr = &destinationRectangle)
             {
-                fixed (Silk.NET.Maths.Rectangle<float>* sourceRectanglePtr = &sourceRectangle)
+                fixed (Silk.NET.Maths.Box2D<float>* sourceRectanglePtr = &sourceRectangle)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, Silk.NET.Maths.Rectangle<float>*, float, BitmapInterpolationMode, Silk.NET.Maths.Rectangle<float>*, void>)LpVtbl[26])(@this, bitmap, destinationRectanglePtr, opacity, interpolationMode, sourceRectanglePtr);
+                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, Silk.NET.Maths.Box2D<float>*, float, BitmapInterpolationMode, Silk.NET.Maths.Box2D<float>*, void>)LpVtbl[26])(@this, bitmap, destinationRectanglePtr, opacity, interpolationMode, sourceRectanglePtr);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawBitmap(ref ID2D1Bitmap bitmap, Silk.NET.Maths.Rectangle<float>* destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, Silk.NET.Maths.Rectangle<float>* sourceRectangle)
+        public readonly unsafe void DrawBitmap(ref ID2D1Bitmap bitmap, Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, Silk.NET.Maths.Box2D<float>* sourceRectangle)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Bitmap* bitmapPtr = &bitmap)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, Silk.NET.Maths.Rectangle<float>*, float, BitmapInterpolationMode, Silk.NET.Maths.Rectangle<float>*, void>)LpVtbl[26])(@this, bitmapPtr, destinationRectangle, opacity, interpolationMode, sourceRectangle);
+                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, Silk.NET.Maths.Box2D<float>*, float, BitmapInterpolationMode, Silk.NET.Maths.Box2D<float>*, void>)LpVtbl[26])(@this, bitmapPtr, destinationRectangle, opacity, interpolationMode, sourceRectangle);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawBitmap(ref ID2D1Bitmap bitmap, Silk.NET.Maths.Rectangle<float>* destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, ref Silk.NET.Maths.Rectangle<float> sourceRectangle)
+        public readonly unsafe void DrawBitmap(ref ID2D1Bitmap bitmap, Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, ref Silk.NET.Maths.Box2D<float> sourceRectangle)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Bitmap* bitmapPtr = &bitmap)
             {
-                fixed (Silk.NET.Maths.Rectangle<float>* sourceRectanglePtr = &sourceRectangle)
+                fixed (Silk.NET.Maths.Box2D<float>* sourceRectanglePtr = &sourceRectangle)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, Silk.NET.Maths.Rectangle<float>*, float, BitmapInterpolationMode, Silk.NET.Maths.Rectangle<float>*, void>)LpVtbl[26])(@this, bitmapPtr, destinationRectangle, opacity, interpolationMode, sourceRectanglePtr);
+                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, Silk.NET.Maths.Box2D<float>*, float, BitmapInterpolationMode, Silk.NET.Maths.Box2D<float>*, void>)LpVtbl[26])(@this, bitmapPtr, destinationRectangle, opacity, interpolationMode, sourceRectanglePtr);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawBitmap(ref ID2D1Bitmap bitmap, ref Silk.NET.Maths.Rectangle<float> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, Silk.NET.Maths.Rectangle<float>* sourceRectangle)
+        public readonly unsafe void DrawBitmap(ref ID2D1Bitmap bitmap, ref Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, Silk.NET.Maths.Box2D<float>* sourceRectangle)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Bitmap* bitmapPtr = &bitmap)
             {
-                fixed (Silk.NET.Maths.Rectangle<float>* destinationRectanglePtr = &destinationRectangle)
+                fixed (Silk.NET.Maths.Box2D<float>* destinationRectanglePtr = &destinationRectangle)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, Silk.NET.Maths.Rectangle<float>*, float, BitmapInterpolationMode, Silk.NET.Maths.Rectangle<float>*, void>)LpVtbl[26])(@this, bitmapPtr, destinationRectanglePtr, opacity, interpolationMode, sourceRectangle);
+                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, Silk.NET.Maths.Box2D<float>*, float, BitmapInterpolationMode, Silk.NET.Maths.Box2D<float>*, void>)LpVtbl[26])(@this, bitmapPtr, destinationRectanglePtr, opacity, interpolationMode, sourceRectangle);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DrawBitmap(ref ID2D1Bitmap bitmap, ref Silk.NET.Maths.Rectangle<float> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, ref Silk.NET.Maths.Rectangle<float> sourceRectangle)
+        public readonly void DrawBitmap(ref ID2D1Bitmap bitmap, ref Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, ref Silk.NET.Maths.Box2D<float> sourceRectangle)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Bitmap* bitmapPtr = &bitmap)
             {
-                fixed (Silk.NET.Maths.Rectangle<float>* destinationRectanglePtr = &destinationRectangle)
+                fixed (Silk.NET.Maths.Box2D<float>* destinationRectanglePtr = &destinationRectangle)
                 {
-                    fixed (Silk.NET.Maths.Rectangle<float>* sourceRectanglePtr = &sourceRectangle)
+                    fixed (Silk.NET.Maths.Box2D<float>* sourceRectanglePtr = &sourceRectangle)
                     {
-                        ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, Silk.NET.Maths.Rectangle<float>*, float, BitmapInterpolationMode, Silk.NET.Maths.Rectangle<float>*, void>)LpVtbl[26])(@this, bitmapPtr, destinationRectanglePtr, opacity, interpolationMode, sourceRectanglePtr);
+                        ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Bitmap*, Silk.NET.Maths.Box2D<float>*, float, BitmapInterpolationMode, Silk.NET.Maths.Box2D<float>*, void>)LpVtbl[26])(@this, bitmapPtr, destinationRectanglePtr, opacity, interpolationMode, sourceRectanglePtr);
                     }
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA(char* @string, uint stringLength, IDWriteTextFormat* textFormat, Silk.NET.Maths.Rectangle<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DWRITE_MEASURING_MODE measuringMode)
+        public readonly unsafe void DrawTextA(char* @string, uint stringLength, IDWriteTextFormat* textFormat, Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, char*, uint, IDWriteTextFormat*, Silk.NET.Maths.Rectangle<float>*, ID2D1Brush*, DrawTextOptions, DWRITE_MEASURING_MODE, void>)LpVtbl[27])(@this, string, stringLength, textFormat, layoutRect, defaultFillBrush, options, measuringMode);
+            ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, char*, uint, IDWriteTextFormat*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, DrawTextOptions, DwriteMeasuringMode, void>)LpVtbl[27])(@this, @string, stringLength, textFormat, layoutRect, defaultFillBrush, options, measuringMode);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA(char* @string, uint stringLength, IDWriteTextFormat* textFormat, Silk.NET.Maths.Rectangle<float>* layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DWRITE_MEASURING_MODE measuringMode)
+        public readonly unsafe void DrawTextA(char* @string, uint stringLength, IDWriteTextFormat* textFormat, Silk.NET.Maths.Box2D<float>* layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Brush* defaultFillBrushPtr = &defaultFillBrush)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, char*, uint, IDWriteTextFormat*, Silk.NET.Maths.Rectangle<float>*, ID2D1Brush*, DrawTextOptions, DWRITE_MEASURING_MODE, void>)LpVtbl[27])(@this, string, stringLength, textFormat, layoutRect, defaultFillBrushPtr, options, measuringMode);
+                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, char*, uint, IDWriteTextFormat*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, DrawTextOptions, DwriteMeasuringMode, void>)LpVtbl[27])(@this, @string, stringLength, textFormat, layoutRect, defaultFillBrushPtr, options, measuringMode);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA(char* @string, uint stringLength, IDWriteTextFormat* textFormat, ref Silk.NET.Maths.Rectangle<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DWRITE_MEASURING_MODE measuringMode)
+        public readonly unsafe void DrawTextA(char* @string, uint stringLength, IDWriteTextFormat* textFormat, ref Silk.NET.Maths.Box2D<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Maths.Rectangle<float>* layoutRectPtr = &layoutRect)
+            fixed (Silk.NET.Maths.Box2D<float>* layoutRectPtr = &layoutRect)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, char*, uint, IDWriteTextFormat*, Silk.NET.Maths.Rectangle<float>*, ID2D1Brush*, DrawTextOptions, DWRITE_MEASURING_MODE, void>)LpVtbl[27])(@this, string, stringLength, textFormat, layoutRectPtr, defaultFillBrush, options, measuringMode);
+                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, char*, uint, IDWriteTextFormat*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, DrawTextOptions, DwriteMeasuringMode, void>)LpVtbl[27])(@this, @string, stringLength, textFormat, layoutRectPtr, defaultFillBrush, options, measuringMode);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA(char* @string, uint stringLength, IDWriteTextFormat* textFormat, ref Silk.NET.Maths.Rectangle<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DWRITE_MEASURING_MODE measuringMode)
+        public readonly unsafe void DrawTextA(char* @string, uint stringLength, IDWriteTextFormat* textFormat, ref Silk.NET.Maths.Box2D<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Maths.Rectangle<float>* layoutRectPtr = &layoutRect)
-            {
-                fixed (ID2D1Brush* defaultFillBrushPtr = &defaultFillBrush)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, char*, uint, IDWriteTextFormat*, Silk.NET.Maths.Rectangle<float>*, ID2D1Brush*, DrawTextOptions, DWRITE_MEASURING_MODE, void>)LpVtbl[27])(@this, string, stringLength, textFormat, layoutRectPtr, defaultFillBrushPtr, options, measuringMode);
-                }
-            }
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA(char* @string, uint stringLength, ref IDWriteTextFormat textFormat, Silk.NET.Maths.Rectangle<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DWRITE_MEASURING_MODE measuringMode)
-        {
-            var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (IDWriteTextFormat* textFormatPtr = &textFormat)
-            {
-                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, char*, uint, IDWriteTextFormat*, Silk.NET.Maths.Rectangle<float>*, ID2D1Brush*, DrawTextOptions, DWRITE_MEASURING_MODE, void>)LpVtbl[27])(@this, string, stringLength, textFormatPtr, layoutRect, defaultFillBrush, options, measuringMode);
-            }
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA(char* @string, uint stringLength, ref IDWriteTextFormat textFormat, Silk.NET.Maths.Rectangle<float>* layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DWRITE_MEASURING_MODE measuringMode)
-        {
-            var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (IDWriteTextFormat* textFormatPtr = &textFormat)
+            fixed (Silk.NET.Maths.Box2D<float>* layoutRectPtr = &layoutRect)
             {
                 fixed (ID2D1Brush* defaultFillBrushPtr = &defaultFillBrush)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, char*, uint, IDWriteTextFormat*, Silk.NET.Maths.Rectangle<float>*, ID2D1Brush*, DrawTextOptions, DWRITE_MEASURING_MODE, void>)LpVtbl[27])(@this, string, stringLength, textFormatPtr, layoutRect, defaultFillBrushPtr, options, measuringMode);
+                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, char*, uint, IDWriteTextFormat*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, DrawTextOptions, DwriteMeasuringMode, void>)LpVtbl[27])(@this, @string, stringLength, textFormat, layoutRectPtr, defaultFillBrushPtr, options, measuringMode);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA(char* @string, uint stringLength, ref IDWriteTextFormat textFormat, ref Silk.NET.Maths.Rectangle<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DWRITE_MEASURING_MODE measuringMode)
+        public readonly unsafe void DrawTextA(char* @string, uint stringLength, ref IDWriteTextFormat textFormat, Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (IDWriteTextFormat* textFormatPtr = &textFormat)
             {
-                fixed (Silk.NET.Maths.Rectangle<float>* layoutRectPtr = &layoutRect)
+                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, char*, uint, IDWriteTextFormat*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, DrawTextOptions, DwriteMeasuringMode, void>)LpVtbl[27])(@this, @string, stringLength, textFormatPtr, layoutRect, defaultFillBrush, options, measuringMode);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DrawTextA(char* @string, uint stringLength, ref IDWriteTextFormat textFormat, Silk.NET.Maths.Box2D<float>* layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+        {
+            var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (IDWriteTextFormat* textFormatPtr = &textFormat)
+            {
+                fixed (ID2D1Brush* defaultFillBrushPtr = &defaultFillBrush)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, char*, uint, IDWriteTextFormat*, Silk.NET.Maths.Rectangle<float>*, ID2D1Brush*, DrawTextOptions, DWRITE_MEASURING_MODE, void>)LpVtbl[27])(@this, string, stringLength, textFormatPtr, layoutRectPtr, defaultFillBrush, options, measuringMode);
+                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, char*, uint, IDWriteTextFormat*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, DrawTextOptions, DwriteMeasuringMode, void>)LpVtbl[27])(@this, @string, stringLength, textFormatPtr, layoutRect, defaultFillBrushPtr, options, measuringMode);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA(char* @string, uint stringLength, ref IDWriteTextFormat textFormat, ref Silk.NET.Maths.Rectangle<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DWRITE_MEASURING_MODE measuringMode)
+        public readonly unsafe void DrawTextA(char* @string, uint stringLength, ref IDWriteTextFormat textFormat, ref Silk.NET.Maths.Box2D<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (IDWriteTextFormat* textFormatPtr = &textFormat)
             {
-                fixed (Silk.NET.Maths.Rectangle<float>* layoutRectPtr = &layoutRect)
+                fixed (Silk.NET.Maths.Box2D<float>* layoutRectPtr = &layoutRect)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, char*, uint, IDWriteTextFormat*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, DrawTextOptions, DwriteMeasuringMode, void>)LpVtbl[27])(@this, @string, stringLength, textFormatPtr, layoutRectPtr, defaultFillBrush, options, measuringMode);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DrawTextA(char* @string, uint stringLength, ref IDWriteTextFormat textFormat, ref Silk.NET.Maths.Box2D<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+        {
+            var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (IDWriteTextFormat* textFormatPtr = &textFormat)
+            {
+                fixed (Silk.NET.Maths.Box2D<float>* layoutRectPtr = &layoutRect)
                 {
                     fixed (ID2D1Brush* defaultFillBrushPtr = &defaultFillBrush)
                     {
-                        ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, char*, uint, IDWriteTextFormat*, Silk.NET.Maths.Rectangle<float>*, ID2D1Brush*, DrawTextOptions, DWRITE_MEASURING_MODE, void>)LpVtbl[27])(@this, string, stringLength, textFormatPtr, layoutRectPtr, defaultFillBrushPtr, options, measuringMode);
+                        ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, char*, uint, IDWriteTextFormat*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, DrawTextOptions, DwriteMeasuringMode, void>)LpVtbl[27])(@this, @string, stringLength, textFormatPtr, layoutRectPtr, defaultFillBrushPtr, options, measuringMode);
                     }
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA(ref char @string, uint stringLength, IDWriteTextFormat* textFormat, Silk.NET.Maths.Rectangle<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DWRITE_MEASURING_MODE measuringMode)
+        public readonly unsafe void DrawTextA(ref char @string, uint stringLength, IDWriteTextFormat* textFormat, Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (char* @stringPtr = &@string)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, char*, uint, IDWriteTextFormat*, Silk.NET.Maths.Rectangle<float>*, ID2D1Brush*, DrawTextOptions, DWRITE_MEASURING_MODE, void>)LpVtbl[27])(@this, @stringPtr, stringLength, textFormat, layoutRect, defaultFillBrush, options, measuringMode);
+                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, char*, uint, IDWriteTextFormat*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, DrawTextOptions, DwriteMeasuringMode, void>)LpVtbl[27])(@this, @stringPtr, stringLength, textFormat, layoutRect, defaultFillBrush, options, measuringMode);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA(ref char @string, uint stringLength, IDWriteTextFormat* textFormat, Silk.NET.Maths.Rectangle<float>* layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DWRITE_MEASURING_MODE measuringMode)
+        public readonly unsafe void DrawTextA(ref char @string, uint stringLength, IDWriteTextFormat* textFormat, Silk.NET.Maths.Box2D<float>* layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (char* @stringPtr = &@string)
             {
                 fixed (ID2D1Brush* defaultFillBrushPtr = &defaultFillBrush)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, char*, uint, IDWriteTextFormat*, Silk.NET.Maths.Rectangle<float>*, ID2D1Brush*, DrawTextOptions, DWRITE_MEASURING_MODE, void>)LpVtbl[27])(@this, @stringPtr, stringLength, textFormat, layoutRect, defaultFillBrushPtr, options, measuringMode);
+                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, char*, uint, IDWriteTextFormat*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, DrawTextOptions, DwriteMeasuringMode, void>)LpVtbl[27])(@this, @stringPtr, stringLength, textFormat, layoutRect, defaultFillBrushPtr, options, measuringMode);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA(ref char @string, uint stringLength, IDWriteTextFormat* textFormat, ref Silk.NET.Maths.Rectangle<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DWRITE_MEASURING_MODE measuringMode)
+        public readonly unsafe void DrawTextA(ref char @string, uint stringLength, IDWriteTextFormat* textFormat, ref Silk.NET.Maths.Box2D<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (char* @stringPtr = &@string)
             {
-                fixed (Silk.NET.Maths.Rectangle<float>* layoutRectPtr = &layoutRect)
+                fixed (Silk.NET.Maths.Box2D<float>* layoutRectPtr = &layoutRect)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, char*, uint, IDWriteTextFormat*, Silk.NET.Maths.Rectangle<float>*, ID2D1Brush*, DrawTextOptions, DWRITE_MEASURING_MODE, void>)LpVtbl[27])(@this, @stringPtr, stringLength, textFormat, layoutRectPtr, defaultFillBrush, options, measuringMode);
+                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, char*, uint, IDWriteTextFormat*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, DrawTextOptions, DwriteMeasuringMode, void>)LpVtbl[27])(@this, @stringPtr, stringLength, textFormat, layoutRectPtr, defaultFillBrush, options, measuringMode);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA(ref char @string, uint stringLength, IDWriteTextFormat* textFormat, ref Silk.NET.Maths.Rectangle<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DWRITE_MEASURING_MODE measuringMode)
+        public readonly unsafe void DrawTextA(ref char @string, uint stringLength, IDWriteTextFormat* textFormat, ref Silk.NET.Maths.Box2D<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (char* @stringPtr = &@string)
             {
-                fixed (Silk.NET.Maths.Rectangle<float>* layoutRectPtr = &layoutRect)
-                {
-                    fixed (ID2D1Brush* defaultFillBrushPtr = &defaultFillBrush)
-                    {
-                        ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, char*, uint, IDWriteTextFormat*, Silk.NET.Maths.Rectangle<float>*, ID2D1Brush*, DrawTextOptions, DWRITE_MEASURING_MODE, void>)LpVtbl[27])(@this, @stringPtr, stringLength, textFormat, layoutRectPtr, defaultFillBrushPtr, options, measuringMode);
-                    }
-                }
-            }
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA(ref char @string, uint stringLength, ref IDWriteTextFormat textFormat, Silk.NET.Maths.Rectangle<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DWRITE_MEASURING_MODE measuringMode)
-        {
-            var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (char* @stringPtr = &@string)
-            {
-                fixed (IDWriteTextFormat* textFormatPtr = &textFormat)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, char*, uint, IDWriteTextFormat*, Silk.NET.Maths.Rectangle<float>*, ID2D1Brush*, DrawTextOptions, DWRITE_MEASURING_MODE, void>)LpVtbl[27])(@this, @stringPtr, stringLength, textFormatPtr, layoutRect, defaultFillBrush, options, measuringMode);
-                }
-            }
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA(ref char @string, uint stringLength, ref IDWriteTextFormat textFormat, Silk.NET.Maths.Rectangle<float>* layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DWRITE_MEASURING_MODE measuringMode)
-        {
-            var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (char* @stringPtr = &@string)
-            {
-                fixed (IDWriteTextFormat* textFormatPtr = &textFormat)
+                fixed (Silk.NET.Maths.Box2D<float>* layoutRectPtr = &layoutRect)
                 {
                     fixed (ID2D1Brush* defaultFillBrushPtr = &defaultFillBrush)
                     {
-                        ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, char*, uint, IDWriteTextFormat*, Silk.NET.Maths.Rectangle<float>*, ID2D1Brush*, DrawTextOptions, DWRITE_MEASURING_MODE, void>)LpVtbl[27])(@this, @stringPtr, stringLength, textFormatPtr, layoutRect, defaultFillBrushPtr, options, measuringMode);
+                        ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, char*, uint, IDWriteTextFormat*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, DrawTextOptions, DwriteMeasuringMode, void>)LpVtbl[27])(@this, @stringPtr, stringLength, textFormat, layoutRectPtr, defaultFillBrushPtr, options, measuringMode);
                     }
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA(ref char @string, uint stringLength, ref IDWriteTextFormat textFormat, ref Silk.NET.Maths.Rectangle<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DWRITE_MEASURING_MODE measuringMode)
+        public readonly unsafe void DrawTextA(ref char @string, uint stringLength, ref IDWriteTextFormat textFormat, Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (char* @stringPtr = &@string)
             {
                 fixed (IDWriteTextFormat* textFormatPtr = &textFormat)
                 {
-                    fixed (Silk.NET.Maths.Rectangle<float>* layoutRectPtr = &layoutRect)
+                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, char*, uint, IDWriteTextFormat*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, DrawTextOptions, DwriteMeasuringMode, void>)LpVtbl[27])(@this, @stringPtr, stringLength, textFormatPtr, layoutRect, defaultFillBrush, options, measuringMode);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DrawTextA(ref char @string, uint stringLength, ref IDWriteTextFormat textFormat, Silk.NET.Maths.Box2D<float>* layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+        {
+            var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (char* @stringPtr = &@string)
+            {
+                fixed (IDWriteTextFormat* textFormatPtr = &textFormat)
+                {
+                    fixed (ID2D1Brush* defaultFillBrushPtr = &defaultFillBrush)
                     {
-                        ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, char*, uint, IDWriteTextFormat*, Silk.NET.Maths.Rectangle<float>*, ID2D1Brush*, DrawTextOptions, DWRITE_MEASURING_MODE, void>)LpVtbl[27])(@this, @stringPtr, stringLength, textFormatPtr, layoutRectPtr, defaultFillBrush, options, measuringMode);
+                        ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, char*, uint, IDWriteTextFormat*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, DrawTextOptions, DwriteMeasuringMode, void>)LpVtbl[27])(@this, @stringPtr, stringLength, textFormatPtr, layoutRect, defaultFillBrushPtr, options, measuringMode);
                     }
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DrawTextA(ref char @string, uint stringLength, ref IDWriteTextFormat textFormat, ref Silk.NET.Maths.Rectangle<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DWRITE_MEASURING_MODE measuringMode)
+        public readonly unsafe void DrawTextA(ref char @string, uint stringLength, ref IDWriteTextFormat textFormat, ref Silk.NET.Maths.Box2D<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (char* @stringPtr = &@string)
             {
                 fixed (IDWriteTextFormat* textFormatPtr = &textFormat)
                 {
-                    fixed (Silk.NET.Maths.Rectangle<float>* layoutRectPtr = &layoutRect)
+                    fixed (Silk.NET.Maths.Box2D<float>* layoutRectPtr = &layoutRect)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, char*, uint, IDWriteTextFormat*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, DrawTextOptions, DwriteMeasuringMode, void>)LpVtbl[27])(@this, @stringPtr, stringLength, textFormatPtr, layoutRectPtr, defaultFillBrush, options, measuringMode);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void DrawTextA(ref char @string, uint stringLength, ref IDWriteTextFormat textFormat, ref Silk.NET.Maths.Box2D<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+        {
+            var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (char* @stringPtr = &@string)
+            {
+                fixed (IDWriteTextFormat* textFormatPtr = &textFormat)
+                {
+                    fixed (Silk.NET.Maths.Box2D<float>* layoutRectPtr = &layoutRect)
                     {
                         fixed (ID2D1Brush* defaultFillBrushPtr = &defaultFillBrush)
                         {
-                            ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, char*, uint, IDWriteTextFormat*, Silk.NET.Maths.Rectangle<float>*, ID2D1Brush*, DrawTextOptions, DWRITE_MEASURING_MODE, void>)LpVtbl[27])(@this, @stringPtr, stringLength, textFormatPtr, layoutRectPtr, defaultFillBrushPtr, options, measuringMode);
+                            ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, char*, uint, IDWriteTextFormat*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, DrawTextOptions, DwriteMeasuringMode, void>)LpVtbl[27])(@this, @stringPtr, stringLength, textFormatPtr, layoutRectPtr, defaultFillBrushPtr, options, measuringMode);
                         }
                     }
                 }
@@ -2943,107 +2943,107 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, Silk.NET.Maths.Rectangle<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DWRITE_MEASURING_MODE measuringMode)
+        public readonly unsafe void DrawTextA([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             var @stringPtr = (byte*) SilkMarshal.StringToPtr(@string, NativeStringEncoding.UTF8);
-            ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, byte*, uint, IDWriteTextFormat*, Silk.NET.Maths.Rectangle<float>*, ID2D1Brush*, DrawTextOptions, DWRITE_MEASURING_MODE, void>)LpVtbl[27])(@this, @stringPtr, stringLength, textFormat, layoutRect, defaultFillBrush, options, measuringMode);
+            ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, byte*, uint, IDWriteTextFormat*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, DrawTextOptions, DwriteMeasuringMode, void>)LpVtbl[27])(@this, @stringPtr, stringLength, textFormat, layoutRect, defaultFillBrush, options, measuringMode);
             SilkMarshal.Free((nint)@stringPtr);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, Silk.NET.Maths.Rectangle<float>* layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DWRITE_MEASURING_MODE measuringMode)
+        public readonly unsafe void DrawTextA([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, Silk.NET.Maths.Box2D<float>* layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             var @stringPtr = (byte*) SilkMarshal.StringToPtr(@string, NativeStringEncoding.UTF8);
             fixed (ID2D1Brush* defaultFillBrushPtr = &defaultFillBrush)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, byte*, uint, IDWriteTextFormat*, Silk.NET.Maths.Rectangle<float>*, ID2D1Brush*, DrawTextOptions, DWRITE_MEASURING_MODE, void>)LpVtbl[27])(@this, @stringPtr, stringLength, textFormat, layoutRect, defaultFillBrushPtr, options, measuringMode);
+                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, byte*, uint, IDWriteTextFormat*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, DrawTextOptions, DwriteMeasuringMode, void>)LpVtbl[27])(@this, @stringPtr, stringLength, textFormat, layoutRect, defaultFillBrushPtr, options, measuringMode);
             }
             SilkMarshal.Free((nint)@stringPtr);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, ref Silk.NET.Maths.Rectangle<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DWRITE_MEASURING_MODE measuringMode)
+        public readonly unsafe void DrawTextA([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, ref Silk.NET.Maths.Box2D<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             var @stringPtr = (byte*) SilkMarshal.StringToPtr(@string, NativeStringEncoding.UTF8);
-            fixed (Silk.NET.Maths.Rectangle<float>* layoutRectPtr = &layoutRect)
+            fixed (Silk.NET.Maths.Box2D<float>* layoutRectPtr = &layoutRect)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, byte*, uint, IDWriteTextFormat*, Silk.NET.Maths.Rectangle<float>*, ID2D1Brush*, DrawTextOptions, DWRITE_MEASURING_MODE, void>)LpVtbl[27])(@this, @stringPtr, stringLength, textFormat, layoutRectPtr, defaultFillBrush, options, measuringMode);
+                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, byte*, uint, IDWriteTextFormat*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, DrawTextOptions, DwriteMeasuringMode, void>)LpVtbl[27])(@this, @stringPtr, stringLength, textFormat, layoutRectPtr, defaultFillBrush, options, measuringMode);
             }
             SilkMarshal.Free((nint)@stringPtr);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, ref Silk.NET.Maths.Rectangle<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DWRITE_MEASURING_MODE measuringMode)
+        public readonly unsafe void DrawTextA([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, ref Silk.NET.Maths.Box2D<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             var @stringPtr = (byte*) SilkMarshal.StringToPtr(@string, NativeStringEncoding.UTF8);
-            fixed (Silk.NET.Maths.Rectangle<float>* layoutRectPtr = &layoutRect)
-            {
-                fixed (ID2D1Brush* defaultFillBrushPtr = &defaultFillBrush)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, byte*, uint, IDWriteTextFormat*, Silk.NET.Maths.Rectangle<float>*, ID2D1Brush*, DrawTextOptions, DWRITE_MEASURING_MODE, void>)LpVtbl[27])(@this, @stringPtr, stringLength, textFormat, layoutRectPtr, defaultFillBrushPtr, options, measuringMode);
-                }
-            }
-            SilkMarshal.Free((nint)@stringPtr);
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ref IDWriteTextFormat textFormat, Silk.NET.Maths.Rectangle<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DWRITE_MEASURING_MODE measuringMode)
-        {
-            var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            var @stringPtr = (byte*) SilkMarshal.StringToPtr(@string, NativeStringEncoding.UTF8);
-            fixed (IDWriteTextFormat* textFormatPtr = &textFormat)
-            {
-                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, byte*, uint, IDWriteTextFormat*, Silk.NET.Maths.Rectangle<float>*, ID2D1Brush*, DrawTextOptions, DWRITE_MEASURING_MODE, void>)LpVtbl[27])(@this, @stringPtr, stringLength, textFormatPtr, layoutRect, defaultFillBrush, options, measuringMode);
-            }
-            SilkMarshal.Free((nint)@stringPtr);
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ref IDWriteTextFormat textFormat, Silk.NET.Maths.Rectangle<float>* layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DWRITE_MEASURING_MODE measuringMode)
-        {
-            var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            var @stringPtr = (byte*) SilkMarshal.StringToPtr(@string, NativeStringEncoding.UTF8);
-            fixed (IDWriteTextFormat* textFormatPtr = &textFormat)
+            fixed (Silk.NET.Maths.Box2D<float>* layoutRectPtr = &layoutRect)
             {
                 fixed (ID2D1Brush* defaultFillBrushPtr = &defaultFillBrush)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, byte*, uint, IDWriteTextFormat*, Silk.NET.Maths.Rectangle<float>*, ID2D1Brush*, DrawTextOptions, DWRITE_MEASURING_MODE, void>)LpVtbl[27])(@this, @stringPtr, stringLength, textFormatPtr, layoutRect, defaultFillBrushPtr, options, measuringMode);
+                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, byte*, uint, IDWriteTextFormat*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, DrawTextOptions, DwriteMeasuringMode, void>)LpVtbl[27])(@this, @stringPtr, stringLength, textFormat, layoutRectPtr, defaultFillBrushPtr, options, measuringMode);
                 }
             }
             SilkMarshal.Free((nint)@stringPtr);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ref IDWriteTextFormat textFormat, ref Silk.NET.Maths.Rectangle<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DWRITE_MEASURING_MODE measuringMode)
+        public readonly unsafe void DrawTextA([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ref IDWriteTextFormat textFormat, Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             var @stringPtr = (byte*) SilkMarshal.StringToPtr(@string, NativeStringEncoding.UTF8);
             fixed (IDWriteTextFormat* textFormatPtr = &textFormat)
             {
-                fixed (Silk.NET.Maths.Rectangle<float>* layoutRectPtr = &layoutRect)
+                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, byte*, uint, IDWriteTextFormat*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, DrawTextOptions, DwriteMeasuringMode, void>)LpVtbl[27])(@this, @stringPtr, stringLength, textFormatPtr, layoutRect, defaultFillBrush, options, measuringMode);
+            }
+            SilkMarshal.Free((nint)@stringPtr);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DrawTextA([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ref IDWriteTextFormat textFormat, Silk.NET.Maths.Box2D<float>* layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+        {
+            var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            var @stringPtr = (byte*) SilkMarshal.StringToPtr(@string, NativeStringEncoding.UTF8);
+            fixed (IDWriteTextFormat* textFormatPtr = &textFormat)
+            {
+                fixed (ID2D1Brush* defaultFillBrushPtr = &defaultFillBrush)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, byte*, uint, IDWriteTextFormat*, Silk.NET.Maths.Rectangle<float>*, ID2D1Brush*, DrawTextOptions, DWRITE_MEASURING_MODE, void>)LpVtbl[27])(@this, @stringPtr, stringLength, textFormatPtr, layoutRectPtr, defaultFillBrush, options, measuringMode);
+                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, byte*, uint, IDWriteTextFormat*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, DrawTextOptions, DwriteMeasuringMode, void>)LpVtbl[27])(@this, @stringPtr, stringLength, textFormatPtr, layoutRect, defaultFillBrushPtr, options, measuringMode);
                 }
             }
             SilkMarshal.Free((nint)@stringPtr);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DrawTextA([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ref IDWriteTextFormat textFormat, ref Silk.NET.Maths.Rectangle<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DWRITE_MEASURING_MODE measuringMode)
+        public readonly unsafe void DrawTextA([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ref IDWriteTextFormat textFormat, ref Silk.NET.Maths.Box2D<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             var @stringPtr = (byte*) SilkMarshal.StringToPtr(@string, NativeStringEncoding.UTF8);
             fixed (IDWriteTextFormat* textFormatPtr = &textFormat)
             {
-                fixed (Silk.NET.Maths.Rectangle<float>* layoutRectPtr = &layoutRect)
+                fixed (Silk.NET.Maths.Box2D<float>* layoutRectPtr = &layoutRect)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, byte*, uint, IDWriteTextFormat*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, DrawTextOptions, DwriteMeasuringMode, void>)LpVtbl[27])(@this, @stringPtr, stringLength, textFormatPtr, layoutRectPtr, defaultFillBrush, options, measuringMode);
+                }
+            }
+            SilkMarshal.Free((nint)@stringPtr);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void DrawTextA([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ref IDWriteTextFormat textFormat, ref Silk.NET.Maths.Box2D<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+        {
+            var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            var @stringPtr = (byte*) SilkMarshal.StringToPtr(@string, NativeStringEncoding.UTF8);
+            fixed (IDWriteTextFormat* textFormatPtr = &textFormat)
+            {
+                fixed (Silk.NET.Maths.Box2D<float>* layoutRectPtr = &layoutRect)
                 {
                     fixed (ID2D1Brush* defaultFillBrushPtr = &defaultFillBrush)
                     {
-                        ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, byte*, uint, IDWriteTextFormat*, Silk.NET.Maths.Rectangle<float>*, ID2D1Brush*, DrawTextOptions, DWRITE_MEASURING_MODE, void>)LpVtbl[27])(@this, @stringPtr, stringLength, textFormatPtr, layoutRectPtr, defaultFillBrushPtr, options, measuringMode);
+                        ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, byte*, uint, IDWriteTextFormat*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, DrawTextOptions, DwriteMeasuringMode, void>)LpVtbl[27])(@this, @stringPtr, stringLength, textFormatPtr, layoutRectPtr, defaultFillBrushPtr, options, measuringMode);
                     }
                 }
             }
@@ -3051,81 +3051,81 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextLayout(D2D_POINT_2F origin, IDWriteTextLayout* textLayout, ID2D1Brush* defaultFillBrush, DrawTextOptions options)
+        public readonly unsafe void DrawTextLayout(Silk.NET.Maths.Vector2D<float> origin, IDWriteTextLayout* textLayout, ID2D1Brush* defaultFillBrush, DrawTextOptions options)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_POINT_2F, IDWriteTextLayout*, ID2D1Brush*, DrawTextOptions, void>)LpVtbl[28])(@this, origin, textLayout, defaultFillBrush, options);
+            ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<float>, IDWriteTextLayout*, ID2D1Brush*, DrawTextOptions, void>)LpVtbl[28])(@this, origin, textLayout, defaultFillBrush, options);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextLayout(D2D_POINT_2F origin, IDWriteTextLayout* textLayout, ref ID2D1Brush defaultFillBrush, DrawTextOptions options)
+        public readonly unsafe void DrawTextLayout(Silk.NET.Maths.Vector2D<float> origin, IDWriteTextLayout* textLayout, ref ID2D1Brush defaultFillBrush, DrawTextOptions options)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Brush* defaultFillBrushPtr = &defaultFillBrush)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_POINT_2F, IDWriteTextLayout*, ID2D1Brush*, DrawTextOptions, void>)LpVtbl[28])(@this, origin, textLayout, defaultFillBrushPtr, options);
+                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<float>, IDWriteTextLayout*, ID2D1Brush*, DrawTextOptions, void>)LpVtbl[28])(@this, origin, textLayout, defaultFillBrushPtr, options);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextLayout(D2D_POINT_2F origin, ref IDWriteTextLayout textLayout, ID2D1Brush* defaultFillBrush, DrawTextOptions options)
+        public readonly unsafe void DrawTextLayout(Silk.NET.Maths.Vector2D<float> origin, ref IDWriteTextLayout textLayout, ID2D1Brush* defaultFillBrush, DrawTextOptions options)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (IDWriteTextLayout* textLayoutPtr = &textLayout)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_POINT_2F, IDWriteTextLayout*, ID2D1Brush*, DrawTextOptions, void>)LpVtbl[28])(@this, origin, textLayoutPtr, defaultFillBrush, options);
+                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<float>, IDWriteTextLayout*, ID2D1Brush*, DrawTextOptions, void>)LpVtbl[28])(@this, origin, textLayoutPtr, defaultFillBrush, options);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DrawTextLayout(D2D_POINT_2F origin, ref IDWriteTextLayout textLayout, ref ID2D1Brush defaultFillBrush, DrawTextOptions options)
+        public readonly void DrawTextLayout(Silk.NET.Maths.Vector2D<float> origin, ref IDWriteTextLayout textLayout, ref ID2D1Brush defaultFillBrush, DrawTextOptions options)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (IDWriteTextLayout* textLayoutPtr = &textLayout)
             {
                 fixed (ID2D1Brush* defaultFillBrushPtr = &defaultFillBrush)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_POINT_2F, IDWriteTextLayout*, ID2D1Brush*, DrawTextOptions, void>)LpVtbl[28])(@this, origin, textLayoutPtr, defaultFillBrushPtr, options);
+                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<float>, IDWriteTextLayout*, ID2D1Brush*, DrawTextOptions, void>)LpVtbl[28])(@this, origin, textLayoutPtr, defaultFillBrushPtr, options);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawGlyphRun(D2D_POINT_2F baselineOrigin, DwriteGlyphRun* glyphRun, ID2D1Brush* foregroundBrush, DWRITE_MEASURING_MODE measuringMode)
+        public readonly unsafe void DrawGlyphRun(Silk.NET.Maths.Vector2D<float> baselineOrigin, DwriteGlyphRun* glyphRun, ID2D1Brush* foregroundBrush, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_POINT_2F, DwriteGlyphRun*, ID2D1Brush*, DWRITE_MEASURING_MODE, void>)LpVtbl[29])(@this, baselineOrigin, glyphRun, foregroundBrush, measuringMode);
+            ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<float>, DwriteGlyphRun*, ID2D1Brush*, DwriteMeasuringMode, void>)LpVtbl[29])(@this, baselineOrigin, glyphRun, foregroundBrush, measuringMode);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawGlyphRun(D2D_POINT_2F baselineOrigin, DwriteGlyphRun* glyphRun, ref ID2D1Brush foregroundBrush, DWRITE_MEASURING_MODE measuringMode)
+        public readonly unsafe void DrawGlyphRun(Silk.NET.Maths.Vector2D<float> baselineOrigin, DwriteGlyphRun* glyphRun, ref ID2D1Brush foregroundBrush, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Brush* foregroundBrushPtr = &foregroundBrush)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_POINT_2F, DwriteGlyphRun*, ID2D1Brush*, DWRITE_MEASURING_MODE, void>)LpVtbl[29])(@this, baselineOrigin, glyphRun, foregroundBrushPtr, measuringMode);
+                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<float>, DwriteGlyphRun*, ID2D1Brush*, DwriteMeasuringMode, void>)LpVtbl[29])(@this, baselineOrigin, glyphRun, foregroundBrushPtr, measuringMode);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawGlyphRun(D2D_POINT_2F baselineOrigin, ref DwriteGlyphRun glyphRun, ID2D1Brush* foregroundBrush, DWRITE_MEASURING_MODE measuringMode)
+        public readonly unsafe void DrawGlyphRun(Silk.NET.Maths.Vector2D<float> baselineOrigin, ref DwriteGlyphRun glyphRun, ID2D1Brush* foregroundBrush, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (DwriteGlyphRun* glyphRunPtr = &glyphRun)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_POINT_2F, DwriteGlyphRun*, ID2D1Brush*, DWRITE_MEASURING_MODE, void>)LpVtbl[29])(@this, baselineOrigin, glyphRunPtr, foregroundBrush, measuringMode);
+                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<float>, DwriteGlyphRun*, ID2D1Brush*, DwriteMeasuringMode, void>)LpVtbl[29])(@this, baselineOrigin, glyphRunPtr, foregroundBrush, measuringMode);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DrawGlyphRun(D2D_POINT_2F baselineOrigin, ref DwriteGlyphRun glyphRun, ref ID2D1Brush foregroundBrush, DWRITE_MEASURING_MODE measuringMode)
+        public readonly void DrawGlyphRun(Silk.NET.Maths.Vector2D<float> baselineOrigin, ref DwriteGlyphRun glyphRun, ref ID2D1Brush foregroundBrush, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (DwriteGlyphRun* glyphRunPtr = &glyphRun)
             {
                 fixed (ID2D1Brush* foregroundBrushPtr = &foregroundBrush)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_POINT_2F, DwriteGlyphRun*, ID2D1Brush*, DWRITE_MEASURING_MODE, void>)LpVtbl[29])(@this, baselineOrigin, glyphRunPtr, foregroundBrushPtr, measuringMode);
+                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<float>, DwriteGlyphRun*, ID2D1Brush*, DwriteMeasuringMode, void>)LpVtbl[29])(@this, baselineOrigin, glyphRunPtr, foregroundBrushPtr, measuringMode);
                 }
             }
         }
@@ -3407,19 +3407,19 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void PushAxisAlignedClip(Silk.NET.Maths.Rectangle<float>* clipRect, AntialiasMode antialiasMode)
+        public readonly unsafe void PushAxisAlignedClip(Silk.NET.Maths.Box2D<float>* clipRect, AntialiasMode antialiasMode)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Rectangle<float>*, AntialiasMode, void>)LpVtbl[45])(@this, clipRect, antialiasMode);
+            ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Box2D<float>*, AntialiasMode, void>)LpVtbl[45])(@this, clipRect, antialiasMode);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void PushAxisAlignedClip(ref Silk.NET.Maths.Rectangle<float> clipRect, AntialiasMode antialiasMode)
+        public readonly void PushAxisAlignedClip(ref Silk.NET.Maths.Box2D<float> clipRect, AntialiasMode antialiasMode)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Maths.Rectangle<float>* clipRectPtr = &clipRect)
+            fixed (Silk.NET.Maths.Box2D<float>* clipRectPtr = &clipRect)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Rectangle<float>*, AntialiasMode, void>)LpVtbl[45])(@this, clipRectPtr, antialiasMode);
+                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Box2D<float>*, AntialiasMode, void>)LpVtbl[45])(@this, clipRectPtr, antialiasMode);
             }
         }
 
@@ -3431,19 +3431,19 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void Clear(_D3DCOLORVALUE* clearColor)
+        public readonly unsafe void Clear(Silk.NET.DXGI.D3Dcolorvalue* clearColor)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, _D3DCOLORVALUE*, void>)LpVtbl[47])(@this, clearColor);
+            ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.DXGI.D3Dcolorvalue*, void>)LpVtbl[47])(@this, clearColor);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void Clear(ref _D3DCOLORVALUE clearColor)
+        public readonly void Clear(ref Silk.NET.DXGI.D3Dcolorvalue clearColor)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (_D3DCOLORVALUE* clearColorPtr = &clearColor)
+            fixed (Silk.NET.DXGI.D3Dcolorvalue* clearColorPtr = &clearColor)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, _D3DCOLORVALUE*, void>)LpVtbl[47])(@this, clearColorPtr);
+                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.DXGI.D3Dcolorvalue*, void>)LpVtbl[47])(@this, clearColorPtr);
             }
         }
 
@@ -3503,13 +3503,13 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly D2D1_PIXEL_FORMAT GetPixelFormat()
+        public readonly PixelFormat GetPixelFormat()
         {
-            D2D1_PIXEL_FORMAT silkDotNetReturnFixupResult;
+            PixelFormat silkDotNetReturnFixupResult;
             var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            D2D1_PIXEL_FORMAT* ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D1_PIXEL_FORMAT*, D2D1_PIXEL_FORMAT*>)LpVtbl[50])(@this, pSilkDotNetReturnFixupResult);
+            PixelFormat* ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, PixelFormat*, PixelFormat*>)LpVtbl[50])(@this, pSilkDotNetReturnFixupResult);
             return *ret;
         }
 
@@ -3561,24 +3561,24 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly D2D_SIZE_F GetSize()
+        public readonly Silk.NET.Maths.Vector2D<float> GetSize()
         {
-            D2D_SIZE_F silkDotNetReturnFixupResult;
+            Silk.NET.Maths.Vector2D<float> silkDotNetReturnFixupResult;
             var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            D2D_SIZE_F* ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_SIZE_F*, D2D_SIZE_F*>)LpVtbl[53])(@this, pSilkDotNetReturnFixupResult);
+            Silk.NET.Maths.Vector2D<float>* ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<float>*>)LpVtbl[53])(@this, pSilkDotNetReturnFixupResult);
             return *ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly D2D_SIZE_U GetPixelSize()
+        public readonly Silk.NET.Maths.Vector2D<uint> GetPixelSize()
         {
-            D2D_SIZE_U silkDotNetReturnFixupResult;
+            Silk.NET.Maths.Vector2D<uint> silkDotNetReturnFixupResult;
             var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            D2D_SIZE_U* ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_SIZE_U*, D2D_SIZE_U*>)LpVtbl[54])(@this, pSilkDotNetReturnFixupResult);
+            Silk.NET.Maths.Vector2D<uint>* ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<uint>*, Silk.NET.Maths.Vector2D<uint>*>)LpVtbl[54])(@this, pSilkDotNetReturnFixupResult);
             return *ret;
         }
 
@@ -3807,40 +3807,40 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromDxgiSurface(IDXGISurface* surface, BitmapProperties1* bitmapProperties, ID2D1Bitmap1** bitmap)
+        public readonly unsafe int CreateBitmapFromDxgiSurface(Silk.NET.DXGI.IDXGISurface* surface, BitmapProperties1* bitmapProperties, ID2D1Bitmap1** bitmap)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, IDXGISurface*, BitmapProperties1*, ID2D1Bitmap1**, int>)LpVtbl[60])(@this, surface, bitmapProperties, bitmap);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.DXGI.IDXGISurface*, BitmapProperties1*, ID2D1Bitmap1**, int>)LpVtbl[60])(@this, surface, bitmapProperties, bitmap);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromDxgiSurface(IDXGISurface* surface, BitmapProperties1* bitmapProperties, ref ID2D1Bitmap1* bitmap)
+        public readonly unsafe int CreateBitmapFromDxgiSurface(Silk.NET.DXGI.IDXGISurface* surface, BitmapProperties1* bitmapProperties, ref ID2D1Bitmap1* bitmap)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID2D1Bitmap1** bitmapPtr = &bitmap)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, IDXGISurface*, BitmapProperties1*, ID2D1Bitmap1**, int>)LpVtbl[60])(@this, surface, bitmapProperties, bitmapPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.DXGI.IDXGISurface*, BitmapProperties1*, ID2D1Bitmap1**, int>)LpVtbl[60])(@this, surface, bitmapProperties, bitmapPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromDxgiSurface(IDXGISurface* surface, ref BitmapProperties1 bitmapProperties, ID2D1Bitmap1** bitmap)
+        public readonly unsafe int CreateBitmapFromDxgiSurface(Silk.NET.DXGI.IDXGISurface* surface, ref BitmapProperties1 bitmapProperties, ID2D1Bitmap1** bitmap)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (BitmapProperties1* bitmapPropertiesPtr = &bitmapProperties)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, IDXGISurface*, BitmapProperties1*, ID2D1Bitmap1**, int>)LpVtbl[60])(@this, surface, bitmapPropertiesPtr, bitmap);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.DXGI.IDXGISurface*, BitmapProperties1*, ID2D1Bitmap1**, int>)LpVtbl[60])(@this, surface, bitmapPropertiesPtr, bitmap);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromDxgiSurface(IDXGISurface* surface, ref BitmapProperties1 bitmapProperties, ref ID2D1Bitmap1* bitmap)
+        public readonly unsafe int CreateBitmapFromDxgiSurface(Silk.NET.DXGI.IDXGISurface* surface, ref BitmapProperties1 bitmapProperties, ref ID2D1Bitmap1* bitmap)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3848,66 +3848,66 @@ namespace Silk.NET.Direct2D
             {
                 fixed (ID2D1Bitmap1** bitmapPtr = &bitmap)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, IDXGISurface*, BitmapProperties1*, ID2D1Bitmap1**, int>)LpVtbl[60])(@this, surface, bitmapPropertiesPtr, bitmapPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.DXGI.IDXGISurface*, BitmapProperties1*, ID2D1Bitmap1**, int>)LpVtbl[60])(@this, surface, bitmapPropertiesPtr, bitmapPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromDxgiSurface(ref IDXGISurface surface, BitmapProperties1* bitmapProperties, ID2D1Bitmap1** bitmap)
+        public readonly unsafe int CreateBitmapFromDxgiSurface(ref Silk.NET.DXGI.IDXGISurface surface, BitmapProperties1* bitmapProperties, ID2D1Bitmap1** bitmap)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (IDXGISurface* surfacePtr = &surface)
+            fixed (Silk.NET.DXGI.IDXGISurface* surfacePtr = &surface)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, IDXGISurface*, BitmapProperties1*, ID2D1Bitmap1**, int>)LpVtbl[60])(@this, surfacePtr, bitmapProperties, bitmap);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.DXGI.IDXGISurface*, BitmapProperties1*, ID2D1Bitmap1**, int>)LpVtbl[60])(@this, surfacePtr, bitmapProperties, bitmap);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromDxgiSurface(ref IDXGISurface surface, BitmapProperties1* bitmapProperties, ref ID2D1Bitmap1* bitmap)
+        public readonly unsafe int CreateBitmapFromDxgiSurface(ref Silk.NET.DXGI.IDXGISurface surface, BitmapProperties1* bitmapProperties, ref ID2D1Bitmap1* bitmap)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (IDXGISurface* surfacePtr = &surface)
+            fixed (Silk.NET.DXGI.IDXGISurface* surfacePtr = &surface)
             {
                 fixed (ID2D1Bitmap1** bitmapPtr = &bitmap)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, IDXGISurface*, BitmapProperties1*, ID2D1Bitmap1**, int>)LpVtbl[60])(@this, surfacePtr, bitmapProperties, bitmapPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.DXGI.IDXGISurface*, BitmapProperties1*, ID2D1Bitmap1**, int>)LpVtbl[60])(@this, surfacePtr, bitmapProperties, bitmapPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromDxgiSurface(ref IDXGISurface surface, ref BitmapProperties1 bitmapProperties, ID2D1Bitmap1** bitmap)
+        public readonly unsafe int CreateBitmapFromDxgiSurface(ref Silk.NET.DXGI.IDXGISurface surface, ref BitmapProperties1 bitmapProperties, ID2D1Bitmap1** bitmap)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (IDXGISurface* surfacePtr = &surface)
+            fixed (Silk.NET.DXGI.IDXGISurface* surfacePtr = &surface)
             {
                 fixed (BitmapProperties1* bitmapPropertiesPtr = &bitmapProperties)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, IDXGISurface*, BitmapProperties1*, ID2D1Bitmap1**, int>)LpVtbl[60])(@this, surfacePtr, bitmapPropertiesPtr, bitmap);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.DXGI.IDXGISurface*, BitmapProperties1*, ID2D1Bitmap1**, int>)LpVtbl[60])(@this, surfacePtr, bitmapPropertiesPtr, bitmap);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromDxgiSurface(ref IDXGISurface surface, ref BitmapProperties1 bitmapProperties, ref ID2D1Bitmap1* bitmap)
+        public readonly unsafe int CreateBitmapFromDxgiSurface(ref Silk.NET.DXGI.IDXGISurface surface, ref BitmapProperties1 bitmapProperties, ref ID2D1Bitmap1* bitmap)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (IDXGISurface* surfacePtr = &surface)
+            fixed (Silk.NET.DXGI.IDXGISurface* surfacePtr = &surface)
             {
                 fixed (BitmapProperties1* bitmapPropertiesPtr = &bitmapProperties)
                 {
                     fixed (ID2D1Bitmap1** bitmapPtr = &bitmap)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, IDXGISurface*, BitmapProperties1*, ID2D1Bitmap1**, int>)LpVtbl[60])(@this, surfacePtr, bitmapPropertiesPtr, bitmapPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.DXGI.IDXGISurface*, BitmapProperties1*, ID2D1Bitmap1**, int>)LpVtbl[60])(@this, surfacePtr, bitmapPropertiesPtr, bitmapPtr);
                     }
                 }
             }
@@ -4242,144 +4242,144 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetImageLocalBounds(ID2D1Image* image, Silk.NET.Maths.Rectangle<float>* localBounds)
+        public readonly unsafe int GetImageLocalBounds(ID2D1Image* image, Silk.NET.Maths.Box2D<float>* localBounds)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Image*, Silk.NET.Maths.Rectangle<float>*, int>)LpVtbl[66])(@this, image, localBounds);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Image*, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[66])(@this, image, localBounds);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetImageLocalBounds(ID2D1Image* image, ref Silk.NET.Maths.Rectangle<float> localBounds)
+        public readonly unsafe int GetImageLocalBounds(ID2D1Image* image, ref Silk.NET.Maths.Box2D<float> localBounds)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<float>* localBoundsPtr = &localBounds)
+            fixed (Silk.NET.Maths.Box2D<float>* localBoundsPtr = &localBounds)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Image*, Silk.NET.Maths.Rectangle<float>*, int>)LpVtbl[66])(@this, image, localBoundsPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Image*, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[66])(@this, image, localBoundsPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetImageLocalBounds(ref ID2D1Image image, Silk.NET.Maths.Rectangle<float>* localBounds)
+        public readonly unsafe int GetImageLocalBounds(ref ID2D1Image image, Silk.NET.Maths.Box2D<float>* localBounds)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID2D1Image* imagePtr = &image)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Image*, Silk.NET.Maths.Rectangle<float>*, int>)LpVtbl[66])(@this, imagePtr, localBounds);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Image*, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[66])(@this, imagePtr, localBounds);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetImageLocalBounds(ref ID2D1Image image, ref Silk.NET.Maths.Rectangle<float> localBounds)
+        public readonly int GetImageLocalBounds(ref ID2D1Image image, ref Silk.NET.Maths.Box2D<float> localBounds)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID2D1Image* imagePtr = &image)
             {
-                fixed (Silk.NET.Maths.Rectangle<float>* localBoundsPtr = &localBounds)
+                fixed (Silk.NET.Maths.Box2D<float>* localBoundsPtr = &localBounds)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Image*, Silk.NET.Maths.Rectangle<float>*, int>)LpVtbl[66])(@this, imagePtr, localBoundsPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Image*, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[66])(@this, imagePtr, localBoundsPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetImageWorldBounds(ID2D1Image* image, Silk.NET.Maths.Rectangle<float>* worldBounds)
+        public readonly unsafe int GetImageWorldBounds(ID2D1Image* image, Silk.NET.Maths.Box2D<float>* worldBounds)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Image*, Silk.NET.Maths.Rectangle<float>*, int>)LpVtbl[67])(@this, image, worldBounds);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Image*, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[67])(@this, image, worldBounds);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetImageWorldBounds(ID2D1Image* image, ref Silk.NET.Maths.Rectangle<float> worldBounds)
+        public readonly unsafe int GetImageWorldBounds(ID2D1Image* image, ref Silk.NET.Maths.Box2D<float> worldBounds)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<float>* worldBoundsPtr = &worldBounds)
+            fixed (Silk.NET.Maths.Box2D<float>* worldBoundsPtr = &worldBounds)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Image*, Silk.NET.Maths.Rectangle<float>*, int>)LpVtbl[67])(@this, image, worldBoundsPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Image*, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[67])(@this, image, worldBoundsPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetImageWorldBounds(ref ID2D1Image image, Silk.NET.Maths.Rectangle<float>* worldBounds)
+        public readonly unsafe int GetImageWorldBounds(ref ID2D1Image image, Silk.NET.Maths.Box2D<float>* worldBounds)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID2D1Image* imagePtr = &image)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Image*, Silk.NET.Maths.Rectangle<float>*, int>)LpVtbl[67])(@this, imagePtr, worldBounds);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Image*, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[67])(@this, imagePtr, worldBounds);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetImageWorldBounds(ref ID2D1Image image, ref Silk.NET.Maths.Rectangle<float> worldBounds)
+        public readonly int GetImageWorldBounds(ref ID2D1Image image, ref Silk.NET.Maths.Box2D<float> worldBounds)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID2D1Image* imagePtr = &image)
             {
-                fixed (Silk.NET.Maths.Rectangle<float>* worldBoundsPtr = &worldBounds)
+                fixed (Silk.NET.Maths.Box2D<float>* worldBoundsPtr = &worldBounds)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Image*, Silk.NET.Maths.Rectangle<float>*, int>)LpVtbl[67])(@this, imagePtr, worldBoundsPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Image*, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[67])(@this, imagePtr, worldBoundsPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetGlyphRunWorldBounds(D2D_POINT_2F baselineOrigin, DwriteGlyphRun* glyphRun, DWRITE_MEASURING_MODE measuringMode, Silk.NET.Maths.Rectangle<float>* bounds)
+        public readonly unsafe int GetGlyphRunWorldBounds(Silk.NET.Maths.Vector2D<float> baselineOrigin, DwriteGlyphRun* glyphRun, DwriteMeasuringMode measuringMode, Silk.NET.Maths.Box2D<float>* bounds)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_POINT_2F, DwriteGlyphRun*, DWRITE_MEASURING_MODE, Silk.NET.Maths.Rectangle<float>*, int>)LpVtbl[68])(@this, baselineOrigin, glyphRun, measuringMode, bounds);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<float>, DwriteGlyphRun*, DwriteMeasuringMode, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[68])(@this, baselineOrigin, glyphRun, measuringMode, bounds);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetGlyphRunWorldBounds(D2D_POINT_2F baselineOrigin, DwriteGlyphRun* glyphRun, DWRITE_MEASURING_MODE measuringMode, ref Silk.NET.Maths.Rectangle<float> bounds)
+        public readonly unsafe int GetGlyphRunWorldBounds(Silk.NET.Maths.Vector2D<float> baselineOrigin, DwriteGlyphRun* glyphRun, DwriteMeasuringMode measuringMode, ref Silk.NET.Maths.Box2D<float> bounds)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<float>* boundsPtr = &bounds)
+            fixed (Silk.NET.Maths.Box2D<float>* boundsPtr = &bounds)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_POINT_2F, DwriteGlyphRun*, DWRITE_MEASURING_MODE, Silk.NET.Maths.Rectangle<float>*, int>)LpVtbl[68])(@this, baselineOrigin, glyphRun, measuringMode, boundsPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<float>, DwriteGlyphRun*, DwriteMeasuringMode, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[68])(@this, baselineOrigin, glyphRun, measuringMode, boundsPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetGlyphRunWorldBounds(D2D_POINT_2F baselineOrigin, ref DwriteGlyphRun glyphRun, DWRITE_MEASURING_MODE measuringMode, Silk.NET.Maths.Rectangle<float>* bounds)
+        public readonly unsafe int GetGlyphRunWorldBounds(Silk.NET.Maths.Vector2D<float> baselineOrigin, ref DwriteGlyphRun glyphRun, DwriteMeasuringMode measuringMode, Silk.NET.Maths.Box2D<float>* bounds)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (DwriteGlyphRun* glyphRunPtr = &glyphRun)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_POINT_2F, DwriteGlyphRun*, DWRITE_MEASURING_MODE, Silk.NET.Maths.Rectangle<float>*, int>)LpVtbl[68])(@this, baselineOrigin, glyphRunPtr, measuringMode, bounds);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<float>, DwriteGlyphRun*, DwriteMeasuringMode, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[68])(@this, baselineOrigin, glyphRunPtr, measuringMode, bounds);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetGlyphRunWorldBounds(D2D_POINT_2F baselineOrigin, ref DwriteGlyphRun glyphRun, DWRITE_MEASURING_MODE measuringMode, ref Silk.NET.Maths.Rectangle<float> bounds)
+        public readonly int GetGlyphRunWorldBounds(Silk.NET.Maths.Vector2D<float> baselineOrigin, ref DwriteGlyphRun glyphRun, DwriteMeasuringMode measuringMode, ref Silk.NET.Maths.Box2D<float> bounds)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (DwriteGlyphRun* glyphRunPtr = &glyphRun)
             {
-                fixed (Silk.NET.Maths.Rectangle<float>* boundsPtr = &bounds)
+                fixed (Silk.NET.Maths.Box2D<float>* boundsPtr = &bounds)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, D2D_POINT_2F, DwriteGlyphRun*, DWRITE_MEASURING_MODE, Silk.NET.Maths.Rectangle<float>*, int>)LpVtbl[68])(@this, baselineOrigin, glyphRunPtr, measuringMode, boundsPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, Silk.NET.Maths.Vector2D<float>, DwriteGlyphRun*, DwriteMeasuringMode, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[68])(@this, baselineOrigin, glyphRunPtr, measuringMode, boundsPtr);
                 }
             }
             return ret;
@@ -4503,180 +4503,180 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawImage(ID2D1Image* image, D2D_POINT_2F* targetOffset, Silk.NET.Maths.Rectangle<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+        public readonly unsafe void DrawImage(ID2D1Image* image, Silk.NET.Maths.Vector2D<float>* targetOffset, Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Image*, D2D_POINT_2F*, Silk.NET.Maths.Rectangle<float>*, InterpolationMode, CompositeMode, void>)LpVtbl[78])(@this, image, targetOffset, imageRectangle, interpolationMode, compositeMode);
+            ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Image*, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Box2D<float>*, InterpolationMode, CompositeMode, void>)LpVtbl[78])(@this, image, targetOffset, imageRectangle, interpolationMode, compositeMode);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawImage(ID2D1Image* image, D2D_POINT_2F* targetOffset, ref Silk.NET.Maths.Rectangle<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+        public readonly unsafe void DrawImage(ID2D1Image* image, Silk.NET.Maths.Vector2D<float>* targetOffset, ref Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Maths.Rectangle<float>* imageRectanglePtr = &imageRectangle)
+            fixed (Silk.NET.Maths.Box2D<float>* imageRectanglePtr = &imageRectangle)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Image*, D2D_POINT_2F*, Silk.NET.Maths.Rectangle<float>*, InterpolationMode, CompositeMode, void>)LpVtbl[78])(@this, image, targetOffset, imageRectanglePtr, interpolationMode, compositeMode);
+                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Image*, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Box2D<float>*, InterpolationMode, CompositeMode, void>)LpVtbl[78])(@this, image, targetOffset, imageRectanglePtr, interpolationMode, compositeMode);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawImage(ID2D1Image* image, ref D2D_POINT_2F targetOffset, Silk.NET.Maths.Rectangle<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+        public readonly unsafe void DrawImage(ID2D1Image* image, ref Silk.NET.Maths.Vector2D<float> targetOffset, Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (D2D_POINT_2F* targetOffsetPtr = &targetOffset)
+            fixed (Silk.NET.Maths.Vector2D<float>* targetOffsetPtr = &targetOffset)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Image*, D2D_POINT_2F*, Silk.NET.Maths.Rectangle<float>*, InterpolationMode, CompositeMode, void>)LpVtbl[78])(@this, image, targetOffsetPtr, imageRectangle, interpolationMode, compositeMode);
+                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Image*, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Box2D<float>*, InterpolationMode, CompositeMode, void>)LpVtbl[78])(@this, image, targetOffsetPtr, imageRectangle, interpolationMode, compositeMode);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawImage(ID2D1Image* image, ref D2D_POINT_2F targetOffset, ref Silk.NET.Maths.Rectangle<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+        public readonly unsafe void DrawImage(ID2D1Image* image, ref Silk.NET.Maths.Vector2D<float> targetOffset, ref Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (D2D_POINT_2F* targetOffsetPtr = &targetOffset)
+            fixed (Silk.NET.Maths.Vector2D<float>* targetOffsetPtr = &targetOffset)
             {
-                fixed (Silk.NET.Maths.Rectangle<float>* imageRectanglePtr = &imageRectangle)
+                fixed (Silk.NET.Maths.Box2D<float>* imageRectanglePtr = &imageRectangle)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Image*, D2D_POINT_2F*, Silk.NET.Maths.Rectangle<float>*, InterpolationMode, CompositeMode, void>)LpVtbl[78])(@this, image, targetOffsetPtr, imageRectanglePtr, interpolationMode, compositeMode);
+                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Image*, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Box2D<float>*, InterpolationMode, CompositeMode, void>)LpVtbl[78])(@this, image, targetOffsetPtr, imageRectanglePtr, interpolationMode, compositeMode);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawImage(ref ID2D1Image image, D2D_POINT_2F* targetOffset, Silk.NET.Maths.Rectangle<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+        public readonly unsafe void DrawImage(ref ID2D1Image image, Silk.NET.Maths.Vector2D<float>* targetOffset, Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Image* imagePtr = &image)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Image*, D2D_POINT_2F*, Silk.NET.Maths.Rectangle<float>*, InterpolationMode, CompositeMode, void>)LpVtbl[78])(@this, imagePtr, targetOffset, imageRectangle, interpolationMode, compositeMode);
+                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Image*, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Box2D<float>*, InterpolationMode, CompositeMode, void>)LpVtbl[78])(@this, imagePtr, targetOffset, imageRectangle, interpolationMode, compositeMode);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawImage(ref ID2D1Image image, D2D_POINT_2F* targetOffset, ref Silk.NET.Maths.Rectangle<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+        public readonly unsafe void DrawImage(ref ID2D1Image image, Silk.NET.Maths.Vector2D<float>* targetOffset, ref Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Image* imagePtr = &image)
             {
-                fixed (Silk.NET.Maths.Rectangle<float>* imageRectanglePtr = &imageRectangle)
+                fixed (Silk.NET.Maths.Box2D<float>* imageRectanglePtr = &imageRectangle)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Image*, D2D_POINT_2F*, Silk.NET.Maths.Rectangle<float>*, InterpolationMode, CompositeMode, void>)LpVtbl[78])(@this, imagePtr, targetOffset, imageRectanglePtr, interpolationMode, compositeMode);
+                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Image*, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Box2D<float>*, InterpolationMode, CompositeMode, void>)LpVtbl[78])(@this, imagePtr, targetOffset, imageRectanglePtr, interpolationMode, compositeMode);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawImage(ref ID2D1Image image, ref D2D_POINT_2F targetOffset, Silk.NET.Maths.Rectangle<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+        public readonly unsafe void DrawImage(ref ID2D1Image image, ref Silk.NET.Maths.Vector2D<float> targetOffset, Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Image* imagePtr = &image)
             {
-                fixed (D2D_POINT_2F* targetOffsetPtr = &targetOffset)
+                fixed (Silk.NET.Maths.Vector2D<float>* targetOffsetPtr = &targetOffset)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Image*, D2D_POINT_2F*, Silk.NET.Maths.Rectangle<float>*, InterpolationMode, CompositeMode, void>)LpVtbl[78])(@this, imagePtr, targetOffsetPtr, imageRectangle, interpolationMode, compositeMode);
+                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Image*, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Box2D<float>*, InterpolationMode, CompositeMode, void>)LpVtbl[78])(@this, imagePtr, targetOffsetPtr, imageRectangle, interpolationMode, compositeMode);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DrawImage(ref ID2D1Image image, ref D2D_POINT_2F targetOffset, ref Silk.NET.Maths.Rectangle<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+        public readonly void DrawImage(ref ID2D1Image image, ref Silk.NET.Maths.Vector2D<float> targetOffset, ref Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Image* imagePtr = &image)
             {
-                fixed (D2D_POINT_2F* targetOffsetPtr = &targetOffset)
+                fixed (Silk.NET.Maths.Vector2D<float>* targetOffsetPtr = &targetOffset)
                 {
-                    fixed (Silk.NET.Maths.Rectangle<float>* imageRectanglePtr = &imageRectangle)
+                    fixed (Silk.NET.Maths.Box2D<float>* imageRectanglePtr = &imageRectangle)
                     {
-                        ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Image*, D2D_POINT_2F*, Silk.NET.Maths.Rectangle<float>*, InterpolationMode, CompositeMode, void>)LpVtbl[78])(@this, imagePtr, targetOffsetPtr, imageRectanglePtr, interpolationMode, compositeMode);
+                        ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Image*, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Box2D<float>*, InterpolationMode, CompositeMode, void>)LpVtbl[78])(@this, imagePtr, targetOffsetPtr, imageRectanglePtr, interpolationMode, compositeMode);
                     }
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawGdiMetafile(ID2D1GdiMetafile* gdiMetafile, D2D_POINT_2F* targetOffset)
+        public readonly unsafe void DrawGdiMetafile(ID2D1GdiMetafile* gdiMetafile, Silk.NET.Maths.Vector2D<float>* targetOffset)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1GdiMetafile*, D2D_POINT_2F*, void>)LpVtbl[79])(@this, gdiMetafile, targetOffset);
+            ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1GdiMetafile*, Silk.NET.Maths.Vector2D<float>*, void>)LpVtbl[79])(@this, gdiMetafile, targetOffset);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawGdiMetafile(ID2D1GdiMetafile* gdiMetafile, ref D2D_POINT_2F targetOffset)
+        public readonly unsafe void DrawGdiMetafile(ID2D1GdiMetafile* gdiMetafile, ref Silk.NET.Maths.Vector2D<float> targetOffset)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (D2D_POINT_2F* targetOffsetPtr = &targetOffset)
+            fixed (Silk.NET.Maths.Vector2D<float>* targetOffsetPtr = &targetOffset)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1GdiMetafile*, D2D_POINT_2F*, void>)LpVtbl[79])(@this, gdiMetafile, targetOffsetPtr);
+                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1GdiMetafile*, Silk.NET.Maths.Vector2D<float>*, void>)LpVtbl[79])(@this, gdiMetafile, targetOffsetPtr);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawGdiMetafile(ref ID2D1GdiMetafile gdiMetafile, D2D_POINT_2F* targetOffset)
+        public readonly unsafe void DrawGdiMetafile(ref ID2D1GdiMetafile gdiMetafile, Silk.NET.Maths.Vector2D<float>* targetOffset)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1GdiMetafile* gdiMetafilePtr = &gdiMetafile)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1GdiMetafile*, D2D_POINT_2F*, void>)LpVtbl[79])(@this, gdiMetafilePtr, targetOffset);
+                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1GdiMetafile*, Silk.NET.Maths.Vector2D<float>*, void>)LpVtbl[79])(@this, gdiMetafilePtr, targetOffset);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DrawGdiMetafile(ref ID2D1GdiMetafile gdiMetafile, ref D2D_POINT_2F targetOffset)
+        public readonly void DrawGdiMetafile(ref ID2D1GdiMetafile gdiMetafile, ref Silk.NET.Maths.Vector2D<float> targetOffset)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1GdiMetafile* gdiMetafilePtr = &gdiMetafile)
             {
-                fixed (D2D_POINT_2F* targetOffsetPtr = &targetOffset)
+                fixed (Silk.NET.Maths.Vector2D<float>* targetOffsetPtr = &targetOffset)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1GdiMetafile*, D2D_POINT_2F*, void>)LpVtbl[79])(@this, gdiMetafilePtr, targetOffsetPtr);
+                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1GdiMetafile*, Silk.NET.Maths.Vector2D<float>*, void>)LpVtbl[79])(@this, gdiMetafilePtr, targetOffsetPtr);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int InvalidateEffectInputRectangle(ID2D1Effect* effect, uint input, Silk.NET.Maths.Rectangle<float>* inputRectangle)
+        public readonly unsafe int InvalidateEffectInputRectangle(ID2D1Effect* effect, uint input, Silk.NET.Maths.Box2D<float>* inputRectangle)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, uint, Silk.NET.Maths.Rectangle<float>*, int>)LpVtbl[80])(@this, effect, input, inputRectangle);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, uint, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[80])(@this, effect, input, inputRectangle);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int InvalidateEffectInputRectangle(ID2D1Effect* effect, uint input, ref Silk.NET.Maths.Rectangle<float> inputRectangle)
+        public readonly unsafe int InvalidateEffectInputRectangle(ID2D1Effect* effect, uint input, ref Silk.NET.Maths.Box2D<float> inputRectangle)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<float>* inputRectanglePtr = &inputRectangle)
+            fixed (Silk.NET.Maths.Box2D<float>* inputRectanglePtr = &inputRectangle)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, uint, Silk.NET.Maths.Rectangle<float>*, int>)LpVtbl[80])(@this, effect, input, inputRectanglePtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, uint, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[80])(@this, effect, input, inputRectanglePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int InvalidateEffectInputRectangle(ref ID2D1Effect effect, uint input, Silk.NET.Maths.Rectangle<float>* inputRectangle)
+        public readonly unsafe int InvalidateEffectInputRectangle(ref ID2D1Effect effect, uint input, Silk.NET.Maths.Box2D<float>* inputRectangle)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID2D1Effect* effectPtr = &effect)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, uint, Silk.NET.Maths.Rectangle<float>*, int>)LpVtbl[80])(@this, effectPtr, input, inputRectangle);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, uint, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[80])(@this, effectPtr, input, inputRectangle);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int InvalidateEffectInputRectangle(ref ID2D1Effect effect, uint input, ref Silk.NET.Maths.Rectangle<float> inputRectangle)
+        public readonly int InvalidateEffectInputRectangle(ref ID2D1Effect effect, uint input, ref Silk.NET.Maths.Box2D<float> inputRectangle)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID2D1Effect* effectPtr = &effect)
             {
-                fixed (Silk.NET.Maths.Rectangle<float>* inputRectanglePtr = &inputRectangle)
+                fixed (Silk.NET.Maths.Box2D<float>* inputRectanglePtr = &inputRectangle)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, uint, Silk.NET.Maths.Rectangle<float>*, int>)LpVtbl[80])(@this, effectPtr, input, inputRectanglePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, uint, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[80])(@this, effectPtr, input, inputRectanglePtr);
                 }
             }
             return ret;
@@ -4731,155 +4731,155 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetEffectInvalidRectangles(ID2D1Effect* effect, Silk.NET.Maths.Rectangle<float>* rectangles, uint rectanglesCount)
+        public readonly unsafe int GetEffectInvalidRectangles(ID2D1Effect* effect, Silk.NET.Maths.Box2D<float>* rectangles, uint rectanglesCount)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, Silk.NET.Maths.Rectangle<float>*, uint, int>)LpVtbl[82])(@this, effect, rectangles, rectanglesCount);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, Silk.NET.Maths.Box2D<float>*, uint, int>)LpVtbl[82])(@this, effect, rectangles, rectanglesCount);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetEffectInvalidRectangles(ID2D1Effect* effect, ref Silk.NET.Maths.Rectangle<float> rectangles, uint rectanglesCount)
+        public readonly unsafe int GetEffectInvalidRectangles(ID2D1Effect* effect, ref Silk.NET.Maths.Box2D<float> rectangles, uint rectanglesCount)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<float>* rectanglesPtr = &rectangles)
+            fixed (Silk.NET.Maths.Box2D<float>* rectanglesPtr = &rectangles)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, Silk.NET.Maths.Rectangle<float>*, uint, int>)LpVtbl[82])(@this, effect, rectanglesPtr, rectanglesCount);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, Silk.NET.Maths.Box2D<float>*, uint, int>)LpVtbl[82])(@this, effect, rectanglesPtr, rectanglesCount);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetEffectInvalidRectangles(ref ID2D1Effect effect, Silk.NET.Maths.Rectangle<float>* rectangles, uint rectanglesCount)
+        public readonly unsafe int GetEffectInvalidRectangles(ref ID2D1Effect effect, Silk.NET.Maths.Box2D<float>* rectangles, uint rectanglesCount)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID2D1Effect* effectPtr = &effect)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, Silk.NET.Maths.Rectangle<float>*, uint, int>)LpVtbl[82])(@this, effectPtr, rectangles, rectanglesCount);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, Silk.NET.Maths.Box2D<float>*, uint, int>)LpVtbl[82])(@this, effectPtr, rectangles, rectanglesCount);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetEffectInvalidRectangles(ref ID2D1Effect effect, ref Silk.NET.Maths.Rectangle<float> rectangles, uint rectanglesCount)
+        public readonly int GetEffectInvalidRectangles(ref ID2D1Effect effect, ref Silk.NET.Maths.Box2D<float> rectangles, uint rectanglesCount)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID2D1Effect* effectPtr = &effect)
             {
-                fixed (Silk.NET.Maths.Rectangle<float>* rectanglesPtr = &rectangles)
+                fixed (Silk.NET.Maths.Box2D<float>* rectanglesPtr = &rectangles)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, Silk.NET.Maths.Rectangle<float>*, uint, int>)LpVtbl[82])(@this, effectPtr, rectanglesPtr, rectanglesCount);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, Silk.NET.Maths.Box2D<float>*, uint, int>)LpVtbl[82])(@this, effectPtr, rectanglesPtr, rectanglesCount);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetEffectRequiredInputRectangles(ID2D1Effect* renderEffect, Silk.NET.Maths.Rectangle<float>* renderImageRectangle, EffectInputDescription* inputDescriptions, Silk.NET.Maths.Rectangle<float>* requiredInputRects, uint inputCount)
+        public readonly unsafe int GetEffectRequiredInputRectangles(ID2D1Effect* renderEffect, Silk.NET.Maths.Box2D<float>* renderImageRectangle, EffectInputDescription* inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, Silk.NET.Maths.Rectangle<float>*, EffectInputDescription*, Silk.NET.Maths.Rectangle<float>*, uint, int>)LpVtbl[83])(@this, renderEffect, renderImageRectangle, inputDescriptions, requiredInputRects, inputCount);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, Silk.NET.Maths.Box2D<float>*, EffectInputDescription*, Silk.NET.Maths.Box2D<float>*, uint, int>)LpVtbl[83])(@this, renderEffect, renderImageRectangle, inputDescriptions, requiredInputRects, inputCount);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetEffectRequiredInputRectangles(ID2D1Effect* renderEffect, Silk.NET.Maths.Rectangle<float>* renderImageRectangle, EffectInputDescription* inputDescriptions, ref Silk.NET.Maths.Rectangle<float> requiredInputRects, uint inputCount)
+        public readonly unsafe int GetEffectRequiredInputRectangles(ID2D1Effect* renderEffect, Silk.NET.Maths.Box2D<float>* renderImageRectangle, EffectInputDescription* inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<float>* requiredInputRectsPtr = &requiredInputRects)
+            fixed (Silk.NET.Maths.Box2D<float>* requiredInputRectsPtr = &requiredInputRects)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, Silk.NET.Maths.Rectangle<float>*, EffectInputDescription*, Silk.NET.Maths.Rectangle<float>*, uint, int>)LpVtbl[83])(@this, renderEffect, renderImageRectangle, inputDescriptions, requiredInputRectsPtr, inputCount);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, Silk.NET.Maths.Box2D<float>*, EffectInputDescription*, Silk.NET.Maths.Box2D<float>*, uint, int>)LpVtbl[83])(@this, renderEffect, renderImageRectangle, inputDescriptions, requiredInputRectsPtr, inputCount);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetEffectRequiredInputRectangles(ID2D1Effect* renderEffect, Silk.NET.Maths.Rectangle<float>* renderImageRectangle, ref EffectInputDescription inputDescriptions, Silk.NET.Maths.Rectangle<float>* requiredInputRects, uint inputCount)
+        public readonly unsafe int GetEffectRequiredInputRectangles(ID2D1Effect* renderEffect, Silk.NET.Maths.Box2D<float>* renderImageRectangle, ref EffectInputDescription inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (EffectInputDescription* inputDescriptionsPtr = &inputDescriptions)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, Silk.NET.Maths.Rectangle<float>*, EffectInputDescription*, Silk.NET.Maths.Rectangle<float>*, uint, int>)LpVtbl[83])(@this, renderEffect, renderImageRectangle, inputDescriptionsPtr, requiredInputRects, inputCount);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, Silk.NET.Maths.Box2D<float>*, EffectInputDescription*, Silk.NET.Maths.Box2D<float>*, uint, int>)LpVtbl[83])(@this, renderEffect, renderImageRectangle, inputDescriptionsPtr, requiredInputRects, inputCount);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetEffectRequiredInputRectangles(ID2D1Effect* renderEffect, Silk.NET.Maths.Rectangle<float>* renderImageRectangle, ref EffectInputDescription inputDescriptions, ref Silk.NET.Maths.Rectangle<float> requiredInputRects, uint inputCount)
+        public readonly unsafe int GetEffectRequiredInputRectangles(ID2D1Effect* renderEffect, Silk.NET.Maths.Box2D<float>* renderImageRectangle, ref EffectInputDescription inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (EffectInputDescription* inputDescriptionsPtr = &inputDescriptions)
             {
-                fixed (Silk.NET.Maths.Rectangle<float>* requiredInputRectsPtr = &requiredInputRects)
+                fixed (Silk.NET.Maths.Box2D<float>* requiredInputRectsPtr = &requiredInputRects)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, Silk.NET.Maths.Rectangle<float>*, EffectInputDescription*, Silk.NET.Maths.Rectangle<float>*, uint, int>)LpVtbl[83])(@this, renderEffect, renderImageRectangle, inputDescriptionsPtr, requiredInputRectsPtr, inputCount);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, Silk.NET.Maths.Box2D<float>*, EffectInputDescription*, Silk.NET.Maths.Box2D<float>*, uint, int>)LpVtbl[83])(@this, renderEffect, renderImageRectangle, inputDescriptionsPtr, requiredInputRectsPtr, inputCount);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetEffectRequiredInputRectangles(ID2D1Effect* renderEffect, ref Silk.NET.Maths.Rectangle<float> renderImageRectangle, EffectInputDescription* inputDescriptions, Silk.NET.Maths.Rectangle<float>* requiredInputRects, uint inputCount)
+        public readonly unsafe int GetEffectRequiredInputRectangles(ID2D1Effect* renderEffect, ref Silk.NET.Maths.Box2D<float> renderImageRectangle, EffectInputDescription* inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<float>* renderImageRectanglePtr = &renderImageRectangle)
+            fixed (Silk.NET.Maths.Box2D<float>* renderImageRectanglePtr = &renderImageRectangle)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, Silk.NET.Maths.Rectangle<float>*, EffectInputDescription*, Silk.NET.Maths.Rectangle<float>*, uint, int>)LpVtbl[83])(@this, renderEffect, renderImageRectanglePtr, inputDescriptions, requiredInputRects, inputCount);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, Silk.NET.Maths.Box2D<float>*, EffectInputDescription*, Silk.NET.Maths.Box2D<float>*, uint, int>)LpVtbl[83])(@this, renderEffect, renderImageRectanglePtr, inputDescriptions, requiredInputRects, inputCount);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetEffectRequiredInputRectangles(ID2D1Effect* renderEffect, ref Silk.NET.Maths.Rectangle<float> renderImageRectangle, EffectInputDescription* inputDescriptions, ref Silk.NET.Maths.Rectangle<float> requiredInputRects, uint inputCount)
+        public readonly unsafe int GetEffectRequiredInputRectangles(ID2D1Effect* renderEffect, ref Silk.NET.Maths.Box2D<float> renderImageRectangle, EffectInputDescription* inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<float>* renderImageRectanglePtr = &renderImageRectangle)
+            fixed (Silk.NET.Maths.Box2D<float>* renderImageRectanglePtr = &renderImageRectangle)
             {
-                fixed (Silk.NET.Maths.Rectangle<float>* requiredInputRectsPtr = &requiredInputRects)
+                fixed (Silk.NET.Maths.Box2D<float>* requiredInputRectsPtr = &requiredInputRects)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, Silk.NET.Maths.Rectangle<float>*, EffectInputDescription*, Silk.NET.Maths.Rectangle<float>*, uint, int>)LpVtbl[83])(@this, renderEffect, renderImageRectanglePtr, inputDescriptions, requiredInputRectsPtr, inputCount);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, Silk.NET.Maths.Box2D<float>*, EffectInputDescription*, Silk.NET.Maths.Box2D<float>*, uint, int>)LpVtbl[83])(@this, renderEffect, renderImageRectanglePtr, inputDescriptions, requiredInputRectsPtr, inputCount);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetEffectRequiredInputRectangles(ID2D1Effect* renderEffect, ref Silk.NET.Maths.Rectangle<float> renderImageRectangle, ref EffectInputDescription inputDescriptions, Silk.NET.Maths.Rectangle<float>* requiredInputRects, uint inputCount)
+        public readonly unsafe int GetEffectRequiredInputRectangles(ID2D1Effect* renderEffect, ref Silk.NET.Maths.Box2D<float> renderImageRectangle, ref EffectInputDescription inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<float>* renderImageRectanglePtr = &renderImageRectangle)
+            fixed (Silk.NET.Maths.Box2D<float>* renderImageRectanglePtr = &renderImageRectangle)
             {
                 fixed (EffectInputDescription* inputDescriptionsPtr = &inputDescriptions)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, Silk.NET.Maths.Rectangle<float>*, EffectInputDescription*, Silk.NET.Maths.Rectangle<float>*, uint, int>)LpVtbl[83])(@this, renderEffect, renderImageRectanglePtr, inputDescriptionsPtr, requiredInputRects, inputCount);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, Silk.NET.Maths.Box2D<float>*, EffectInputDescription*, Silk.NET.Maths.Box2D<float>*, uint, int>)LpVtbl[83])(@this, renderEffect, renderImageRectanglePtr, inputDescriptionsPtr, requiredInputRects, inputCount);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetEffectRequiredInputRectangles(ID2D1Effect* renderEffect, ref Silk.NET.Maths.Rectangle<float> renderImageRectangle, ref EffectInputDescription inputDescriptions, ref Silk.NET.Maths.Rectangle<float> requiredInputRects, uint inputCount)
+        public readonly unsafe int GetEffectRequiredInputRectangles(ID2D1Effect* renderEffect, ref Silk.NET.Maths.Box2D<float> renderImageRectangle, ref EffectInputDescription inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<float>* renderImageRectanglePtr = &renderImageRectangle)
+            fixed (Silk.NET.Maths.Box2D<float>* renderImageRectanglePtr = &renderImageRectangle)
             {
                 fixed (EffectInputDescription* inputDescriptionsPtr = &inputDescriptions)
                 {
-                    fixed (Silk.NET.Maths.Rectangle<float>* requiredInputRectsPtr = &requiredInputRects)
+                    fixed (Silk.NET.Maths.Box2D<float>* requiredInputRectsPtr = &requiredInputRects)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, Silk.NET.Maths.Rectangle<float>*, EffectInputDescription*, Silk.NET.Maths.Rectangle<float>*, uint, int>)LpVtbl[83])(@this, renderEffect, renderImageRectanglePtr, inputDescriptionsPtr, requiredInputRectsPtr, inputCount);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, Silk.NET.Maths.Box2D<float>*, EffectInputDescription*, Silk.NET.Maths.Box2D<float>*, uint, int>)LpVtbl[83])(@this, renderEffect, renderImageRectanglePtr, inputDescriptionsPtr, requiredInputRectsPtr, inputCount);
                     }
                 }
             }
@@ -4887,34 +4887,34 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetEffectRequiredInputRectangles(ref ID2D1Effect renderEffect, Silk.NET.Maths.Rectangle<float>* renderImageRectangle, EffectInputDescription* inputDescriptions, Silk.NET.Maths.Rectangle<float>* requiredInputRects, uint inputCount)
+        public readonly unsafe int GetEffectRequiredInputRectangles(ref ID2D1Effect renderEffect, Silk.NET.Maths.Box2D<float>* renderImageRectangle, EffectInputDescription* inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID2D1Effect* renderEffectPtr = &renderEffect)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, Silk.NET.Maths.Rectangle<float>*, EffectInputDescription*, Silk.NET.Maths.Rectangle<float>*, uint, int>)LpVtbl[83])(@this, renderEffectPtr, renderImageRectangle, inputDescriptions, requiredInputRects, inputCount);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, Silk.NET.Maths.Box2D<float>*, EffectInputDescription*, Silk.NET.Maths.Box2D<float>*, uint, int>)LpVtbl[83])(@this, renderEffectPtr, renderImageRectangle, inputDescriptions, requiredInputRects, inputCount);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetEffectRequiredInputRectangles(ref ID2D1Effect renderEffect, Silk.NET.Maths.Rectangle<float>* renderImageRectangle, EffectInputDescription* inputDescriptions, ref Silk.NET.Maths.Rectangle<float> requiredInputRects, uint inputCount)
+        public readonly unsafe int GetEffectRequiredInputRectangles(ref ID2D1Effect renderEffect, Silk.NET.Maths.Box2D<float>* renderImageRectangle, EffectInputDescription* inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID2D1Effect* renderEffectPtr = &renderEffect)
             {
-                fixed (Silk.NET.Maths.Rectangle<float>* requiredInputRectsPtr = &requiredInputRects)
+                fixed (Silk.NET.Maths.Box2D<float>* requiredInputRectsPtr = &requiredInputRects)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, Silk.NET.Maths.Rectangle<float>*, EffectInputDescription*, Silk.NET.Maths.Rectangle<float>*, uint, int>)LpVtbl[83])(@this, renderEffectPtr, renderImageRectangle, inputDescriptions, requiredInputRectsPtr, inputCount);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, Silk.NET.Maths.Box2D<float>*, EffectInputDescription*, Silk.NET.Maths.Box2D<float>*, uint, int>)LpVtbl[83])(@this, renderEffectPtr, renderImageRectangle, inputDescriptions, requiredInputRectsPtr, inputCount);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetEffectRequiredInputRectangles(ref ID2D1Effect renderEffect, Silk.NET.Maths.Rectangle<float>* renderImageRectangle, ref EffectInputDescription inputDescriptions, Silk.NET.Maths.Rectangle<float>* requiredInputRects, uint inputCount)
+        public readonly unsafe int GetEffectRequiredInputRectangles(ref ID2D1Effect renderEffect, Silk.NET.Maths.Box2D<float>* renderImageRectangle, ref EffectInputDescription inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4922,14 +4922,14 @@ namespace Silk.NET.Direct2D
             {
                 fixed (EffectInputDescription* inputDescriptionsPtr = &inputDescriptions)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, Silk.NET.Maths.Rectangle<float>*, EffectInputDescription*, Silk.NET.Maths.Rectangle<float>*, uint, int>)LpVtbl[83])(@this, renderEffectPtr, renderImageRectangle, inputDescriptionsPtr, requiredInputRects, inputCount);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, Silk.NET.Maths.Box2D<float>*, EffectInputDescription*, Silk.NET.Maths.Box2D<float>*, uint, int>)LpVtbl[83])(@this, renderEffectPtr, renderImageRectangle, inputDescriptionsPtr, requiredInputRects, inputCount);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetEffectRequiredInputRectangles(ref ID2D1Effect renderEffect, Silk.NET.Maths.Rectangle<float>* renderImageRectangle, ref EffectInputDescription inputDescriptions, ref Silk.NET.Maths.Rectangle<float> requiredInputRects, uint inputCount)
+        public readonly unsafe int GetEffectRequiredInputRectangles(ref ID2D1Effect renderEffect, Silk.NET.Maths.Box2D<float>* renderImageRectangle, ref EffectInputDescription inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4937,9 +4937,9 @@ namespace Silk.NET.Direct2D
             {
                 fixed (EffectInputDescription* inputDescriptionsPtr = &inputDescriptions)
                 {
-                    fixed (Silk.NET.Maths.Rectangle<float>* requiredInputRectsPtr = &requiredInputRects)
+                    fixed (Silk.NET.Maths.Box2D<float>* requiredInputRectsPtr = &requiredInputRects)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, Silk.NET.Maths.Rectangle<float>*, EffectInputDescription*, Silk.NET.Maths.Rectangle<float>*, uint, int>)LpVtbl[83])(@this, renderEffectPtr, renderImageRectangle, inputDescriptionsPtr, requiredInputRectsPtr, inputCount);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, Silk.NET.Maths.Box2D<float>*, EffectInputDescription*, Silk.NET.Maths.Box2D<float>*, uint, int>)LpVtbl[83])(@this, renderEffectPtr, renderImageRectangle, inputDescriptionsPtr, requiredInputRectsPtr, inputCount);
                     }
                 }
             }
@@ -4947,32 +4947,32 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetEffectRequiredInputRectangles(ref ID2D1Effect renderEffect, ref Silk.NET.Maths.Rectangle<float> renderImageRectangle, EffectInputDescription* inputDescriptions, Silk.NET.Maths.Rectangle<float>* requiredInputRects, uint inputCount)
+        public readonly unsafe int GetEffectRequiredInputRectangles(ref ID2D1Effect renderEffect, ref Silk.NET.Maths.Box2D<float> renderImageRectangle, EffectInputDescription* inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID2D1Effect* renderEffectPtr = &renderEffect)
             {
-                fixed (Silk.NET.Maths.Rectangle<float>* renderImageRectanglePtr = &renderImageRectangle)
+                fixed (Silk.NET.Maths.Box2D<float>* renderImageRectanglePtr = &renderImageRectangle)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, Silk.NET.Maths.Rectangle<float>*, EffectInputDescription*, Silk.NET.Maths.Rectangle<float>*, uint, int>)LpVtbl[83])(@this, renderEffectPtr, renderImageRectanglePtr, inputDescriptions, requiredInputRects, inputCount);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, Silk.NET.Maths.Box2D<float>*, EffectInputDescription*, Silk.NET.Maths.Box2D<float>*, uint, int>)LpVtbl[83])(@this, renderEffectPtr, renderImageRectanglePtr, inputDescriptions, requiredInputRects, inputCount);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetEffectRequiredInputRectangles(ref ID2D1Effect renderEffect, ref Silk.NET.Maths.Rectangle<float> renderImageRectangle, EffectInputDescription* inputDescriptions, ref Silk.NET.Maths.Rectangle<float> requiredInputRects, uint inputCount)
+        public readonly unsafe int GetEffectRequiredInputRectangles(ref ID2D1Effect renderEffect, ref Silk.NET.Maths.Box2D<float> renderImageRectangle, EffectInputDescription* inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID2D1Effect* renderEffectPtr = &renderEffect)
             {
-                fixed (Silk.NET.Maths.Rectangle<float>* renderImageRectanglePtr = &renderImageRectangle)
+                fixed (Silk.NET.Maths.Box2D<float>* renderImageRectanglePtr = &renderImageRectangle)
                 {
-                    fixed (Silk.NET.Maths.Rectangle<float>* requiredInputRectsPtr = &requiredInputRects)
+                    fixed (Silk.NET.Maths.Box2D<float>* requiredInputRectsPtr = &requiredInputRects)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, Silk.NET.Maths.Rectangle<float>*, EffectInputDescription*, Silk.NET.Maths.Rectangle<float>*, uint, int>)LpVtbl[83])(@this, renderEffectPtr, renderImageRectanglePtr, inputDescriptions, requiredInputRectsPtr, inputCount);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, Silk.NET.Maths.Box2D<float>*, EffectInputDescription*, Silk.NET.Maths.Box2D<float>*, uint, int>)LpVtbl[83])(@this, renderEffectPtr, renderImageRectanglePtr, inputDescriptions, requiredInputRectsPtr, inputCount);
                     }
                 }
             }
@@ -4980,17 +4980,17 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetEffectRequiredInputRectangles(ref ID2D1Effect renderEffect, ref Silk.NET.Maths.Rectangle<float> renderImageRectangle, ref EffectInputDescription inputDescriptions, Silk.NET.Maths.Rectangle<float>* requiredInputRects, uint inputCount)
+        public readonly unsafe int GetEffectRequiredInputRectangles(ref ID2D1Effect renderEffect, ref Silk.NET.Maths.Box2D<float> renderImageRectangle, ref EffectInputDescription inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID2D1Effect* renderEffectPtr = &renderEffect)
             {
-                fixed (Silk.NET.Maths.Rectangle<float>* renderImageRectanglePtr = &renderImageRectangle)
+                fixed (Silk.NET.Maths.Box2D<float>* renderImageRectanglePtr = &renderImageRectangle)
                 {
                     fixed (EffectInputDescription* inputDescriptionsPtr = &inputDescriptions)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, Silk.NET.Maths.Rectangle<float>*, EffectInputDescription*, Silk.NET.Maths.Rectangle<float>*, uint, int>)LpVtbl[83])(@this, renderEffectPtr, renderImageRectanglePtr, inputDescriptionsPtr, requiredInputRects, inputCount);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, Silk.NET.Maths.Box2D<float>*, EffectInputDescription*, Silk.NET.Maths.Box2D<float>*, uint, int>)LpVtbl[83])(@this, renderEffectPtr, renderImageRectanglePtr, inputDescriptionsPtr, requiredInputRects, inputCount);
                     }
                 }
             }
@@ -4998,19 +4998,19 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetEffectRequiredInputRectangles(ref ID2D1Effect renderEffect, ref Silk.NET.Maths.Rectangle<float> renderImageRectangle, ref EffectInputDescription inputDescriptions, ref Silk.NET.Maths.Rectangle<float> requiredInputRects, uint inputCount)
+        public readonly int GetEffectRequiredInputRectangles(ref ID2D1Effect renderEffect, ref Silk.NET.Maths.Box2D<float> renderImageRectangle, ref EffectInputDescription inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
         {
             var @this = (ID2D1DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID2D1Effect* renderEffectPtr = &renderEffect)
             {
-                fixed (Silk.NET.Maths.Rectangle<float>* renderImageRectanglePtr = &renderImageRectangle)
+                fixed (Silk.NET.Maths.Box2D<float>* renderImageRectanglePtr = &renderImageRectangle)
                 {
                     fixed (EffectInputDescription* inputDescriptionsPtr = &inputDescriptions)
                     {
-                        fixed (Silk.NET.Maths.Rectangle<float>* requiredInputRectsPtr = &requiredInputRects)
+                        fixed (Silk.NET.Maths.Box2D<float>* requiredInputRectsPtr = &requiredInputRects)
                         {
-                            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, Silk.NET.Maths.Rectangle<float>*, EffectInputDescription*, Silk.NET.Maths.Rectangle<float>*, uint, int>)LpVtbl[83])(@this, renderEffectPtr, renderImageRectanglePtr, inputDescriptionsPtr, requiredInputRectsPtr, inputCount);
+                            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext1*, ID2D1Effect*, Silk.NET.Maths.Box2D<float>*, EffectInputDescription*, Silk.NET.Maths.Box2D<float>*, uint, int>)LpVtbl[83])(@this, renderEffectPtr, renderImageRectanglePtr, inputDescriptionsPtr, requiredInputRectsPtr, inputCount);
                         }
                     }
                 }

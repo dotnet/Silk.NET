@@ -28,11 +28,11 @@ namespace Silk.NET.DXGI
         public static implicit operator Silk.NET.DXGI.IDXGISwapChain(IDXGISwapChain2 val)
             => Unsafe.As<IDXGISwapChain2, Silk.NET.DXGI.IDXGISwapChain>(ref val);
 
-        public static implicit operator IDXGIDeviceSubObject(IDXGISwapChain2 val)
-            => Unsafe.As<IDXGISwapChain2, IDXGIDeviceSubObject>(ref val);
+        public static implicit operator Silk.NET.DXGI.IDXGIDeviceSubObject(IDXGISwapChain2 val)
+            => Unsafe.As<IDXGISwapChain2, Silk.NET.DXGI.IDXGIDeviceSubObject>(ref val);
 
-        public static implicit operator IDXGIObject(IDXGISwapChain2 val)
-            => Unsafe.As<IDXGISwapChain2, IDXGIObject>(ref val);
+        public static implicit operator Silk.NET.DXGI.IDXGIObject(IDXGISwapChain2 val)
+            => Unsafe.As<IDXGISwapChain2, Silk.NET.DXGI.IDXGIObject>(ref val);
 
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGISwapChain2 val)
             => Unsafe.As<IDXGISwapChain2, Silk.NET.Core.Native.IUnknown>(ref val);

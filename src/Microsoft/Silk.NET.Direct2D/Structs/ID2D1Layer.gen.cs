@@ -128,13 +128,13 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly D2D_SIZE_F GetSize()
+        public readonly Silk.NET.Maths.Vector2D<float> GetSize()
         {
-            D2D_SIZE_F silkDotNetReturnFixupResult;
+            Silk.NET.Maths.Vector2D<float> silkDotNetReturnFixupResult;
             var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
             var @this = (ID2D1Layer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            D2D_SIZE_F* ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1Layer*, D2D_SIZE_F*, D2D_SIZE_F*>)LpVtbl[4])(@this, pSilkDotNetReturnFixupResult);
+            Silk.NET.Maths.Vector2D<float>* ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1Layer*, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<float>*>)LpVtbl[4])(@this, pSilkDotNetReturnFixupResult);
             return *ret;
         }
 

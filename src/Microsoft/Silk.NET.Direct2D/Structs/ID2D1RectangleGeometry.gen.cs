@@ -131,145 +131,130 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetBounds(Silk.NET.Maths.Matrix3X2<float>* worldTransform, Silk.NET.Maths.Rectangle<float>* bounds)
+        public readonly unsafe int GetBounds(Silk.NET.Maths.Matrix3X2<float>* worldTransform, Silk.NET.Maths.Box2D<float>* bounds)
         {
             var @this = (ID2D1RectangleGeometry*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, Silk.NET.Maths.Matrix3X2<float>*, Silk.NET.Maths.Rectangle<float>*, int>)LpVtbl[4])(@this, worldTransform, bounds);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, Silk.NET.Maths.Matrix3X2<float>*, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[4])(@this, worldTransform, bounds);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetBounds(Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref Silk.NET.Maths.Rectangle<float> bounds)
+        public readonly unsafe int GetBounds(Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref Silk.NET.Maths.Box2D<float> bounds)
         {
             var @this = (ID2D1RectangleGeometry*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<float>* boundsPtr = &bounds)
+            fixed (Silk.NET.Maths.Box2D<float>* boundsPtr = &bounds)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, Silk.NET.Maths.Matrix3X2<float>*, Silk.NET.Maths.Rectangle<float>*, int>)LpVtbl[4])(@this, worldTransform, boundsPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, Silk.NET.Maths.Matrix3X2<float>*, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[4])(@this, worldTransform, boundsPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetBounds(ref Silk.NET.Maths.Matrix3X2<float> worldTransform, Silk.NET.Maths.Rectangle<float>* bounds)
+        public readonly unsafe int GetBounds(ref Silk.NET.Maths.Matrix3X2<float> worldTransform, Silk.NET.Maths.Box2D<float>* bounds)
         {
             var @this = (ID2D1RectangleGeometry*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Silk.NET.Maths.Matrix3X2<float>* worldTransformPtr = &worldTransform)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, Silk.NET.Maths.Matrix3X2<float>*, Silk.NET.Maths.Rectangle<float>*, int>)LpVtbl[4])(@this, worldTransformPtr, bounds);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, Silk.NET.Maths.Matrix3X2<float>*, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[4])(@this, worldTransformPtr, bounds);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetBounds(ref Silk.NET.Maths.Matrix3X2<float> worldTransform, ref Silk.NET.Maths.Rectangle<float> bounds)
+        public readonly int GetBounds(ref Silk.NET.Maths.Matrix3X2<float> worldTransform, ref Silk.NET.Maths.Box2D<float> bounds)
         {
             var @this = (ID2D1RectangleGeometry*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Silk.NET.Maths.Matrix3X2<float>* worldTransformPtr = &worldTransform)
             {
-                fixed (Silk.NET.Maths.Rectangle<float>* boundsPtr = &bounds)
+                fixed (Silk.NET.Maths.Box2D<float>* boundsPtr = &bounds)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, Silk.NET.Maths.Matrix3X2<float>*, Silk.NET.Maths.Rectangle<float>*, int>)LpVtbl[4])(@this, worldTransformPtr, boundsPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, Silk.NET.Maths.Matrix3X2<float>*, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[4])(@this, worldTransformPtr, boundsPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetWidenedBounds(float strokeWidth, ID2D1StrokeStyle* strokeStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Silk.NET.Maths.Rectangle<float>* bounds)
+        public readonly unsafe int GetWidenedBounds(float strokeWidth, ID2D1StrokeStyle* strokeStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Silk.NET.Maths.Box2D<float>* bounds)
         {
             var @this = (ID2D1RectangleGeometry*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Rectangle<float>*, int>)LpVtbl[5])(@this, strokeWidth, strokeStyle, worldTransform, flatteningTolerance, bounds);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[5])(@this, strokeWidth, strokeStyle, worldTransform, flatteningTolerance, bounds);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetWidenedBounds(float strokeWidth, ID2D1StrokeStyle* strokeStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref Silk.NET.Maths.Rectangle<float> bounds)
+        public readonly unsafe int GetWidenedBounds(float strokeWidth, ID2D1StrokeStyle* strokeStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref Silk.NET.Maths.Box2D<float> bounds)
         {
             var @this = (ID2D1RectangleGeometry*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<float>* boundsPtr = &bounds)
+            fixed (Silk.NET.Maths.Box2D<float>* boundsPtr = &bounds)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Rectangle<float>*, int>)LpVtbl[5])(@this, strokeWidth, strokeStyle, worldTransform, flatteningTolerance, boundsPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[5])(@this, strokeWidth, strokeStyle, worldTransform, flatteningTolerance, boundsPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetWidenedBounds(float strokeWidth, ID2D1StrokeStyle* strokeStyle, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, Silk.NET.Maths.Rectangle<float>* bounds)
+        public readonly unsafe int GetWidenedBounds(float strokeWidth, ID2D1StrokeStyle* strokeStyle, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, Silk.NET.Maths.Box2D<float>* bounds)
         {
             var @this = (ID2D1RectangleGeometry*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Silk.NET.Maths.Matrix3X2<float>* worldTransformPtr = &worldTransform)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Rectangle<float>*, int>)LpVtbl[5])(@this, strokeWidth, strokeStyle, worldTransformPtr, flatteningTolerance, bounds);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[5])(@this, strokeWidth, strokeStyle, worldTransformPtr, flatteningTolerance, bounds);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetWidenedBounds(float strokeWidth, ID2D1StrokeStyle* strokeStyle, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref Silk.NET.Maths.Rectangle<float> bounds)
+        public readonly unsafe int GetWidenedBounds(float strokeWidth, ID2D1StrokeStyle* strokeStyle, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref Silk.NET.Maths.Box2D<float> bounds)
         {
             var @this = (ID2D1RectangleGeometry*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Silk.NET.Maths.Matrix3X2<float>* worldTransformPtr = &worldTransform)
             {
-                fixed (Silk.NET.Maths.Rectangle<float>* boundsPtr = &bounds)
+                fixed (Silk.NET.Maths.Box2D<float>* boundsPtr = &bounds)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Rectangle<float>*, int>)LpVtbl[5])(@this, strokeWidth, strokeStyle, worldTransformPtr, flatteningTolerance, boundsPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[5])(@this, strokeWidth, strokeStyle, worldTransformPtr, flatteningTolerance, boundsPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetWidenedBounds(float strokeWidth, ref ID2D1StrokeStyle strokeStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Silk.NET.Maths.Rectangle<float>* bounds)
+        public readonly unsafe int GetWidenedBounds(float strokeWidth, ref ID2D1StrokeStyle strokeStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Silk.NET.Maths.Box2D<float>* bounds)
         {
             var @this = (ID2D1RectangleGeometry*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID2D1StrokeStyle* strokeStylePtr = &strokeStyle)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Rectangle<float>*, int>)LpVtbl[5])(@this, strokeWidth, strokeStylePtr, worldTransform, flatteningTolerance, bounds);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[5])(@this, strokeWidth, strokeStylePtr, worldTransform, flatteningTolerance, bounds);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetWidenedBounds(float strokeWidth, ref ID2D1StrokeStyle strokeStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref Silk.NET.Maths.Rectangle<float> bounds)
+        public readonly unsafe int GetWidenedBounds(float strokeWidth, ref ID2D1StrokeStyle strokeStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref Silk.NET.Maths.Box2D<float> bounds)
         {
             var @this = (ID2D1RectangleGeometry*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID2D1StrokeStyle* strokeStylePtr = &strokeStyle)
             {
-                fixed (Silk.NET.Maths.Rectangle<float>* boundsPtr = &bounds)
+                fixed (Silk.NET.Maths.Box2D<float>* boundsPtr = &bounds)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Rectangle<float>*, int>)LpVtbl[5])(@this, strokeWidth, strokeStylePtr, worldTransform, flatteningTolerance, boundsPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[5])(@this, strokeWidth, strokeStylePtr, worldTransform, flatteningTolerance, boundsPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetWidenedBounds(float strokeWidth, ref ID2D1StrokeStyle strokeStyle, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, Silk.NET.Maths.Rectangle<float>* bounds)
-        {
-            var @this = (ID2D1RectangleGeometry*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (ID2D1StrokeStyle* strokeStylePtr = &strokeStyle)
-            {
-                fixed (Silk.NET.Maths.Matrix3X2<float>* worldTransformPtr = &worldTransform)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Rectangle<float>*, int>)LpVtbl[5])(@this, strokeWidth, strokeStylePtr, worldTransformPtr, flatteningTolerance, bounds);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int GetWidenedBounds(float strokeWidth, ref ID2D1StrokeStyle strokeStyle, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref Silk.NET.Maths.Rectangle<float> bounds)
+        public readonly unsafe int GetWidenedBounds(float strokeWidth, ref ID2D1StrokeStyle strokeStyle, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, Silk.NET.Maths.Box2D<float>* bounds)
         {
             var @this = (ID2D1RectangleGeometry*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -277,9 +262,24 @@ namespace Silk.NET.Direct2D
             {
                 fixed (Silk.NET.Maths.Matrix3X2<float>* worldTransformPtr = &worldTransform)
                 {
-                    fixed (Silk.NET.Maths.Rectangle<float>* boundsPtr = &bounds)
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[5])(@this, strokeWidth, strokeStylePtr, worldTransformPtr, flatteningTolerance, bounds);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetWidenedBounds(float strokeWidth, ref ID2D1StrokeStyle strokeStyle, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref Silk.NET.Maths.Box2D<float> bounds)
+        {
+            var @this = (ID2D1RectangleGeometry*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID2D1StrokeStyle* strokeStylePtr = &strokeStyle)
+            {
+                fixed (Silk.NET.Maths.Matrix3X2<float>* worldTransformPtr = &worldTransform)
+                {
+                    fixed (Silk.NET.Maths.Box2D<float>* boundsPtr = &bounds)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Rectangle<float>*, int>)LpVtbl[5])(@this, strokeWidth, strokeStylePtr, worldTransformPtr, flatteningTolerance, boundsPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[5])(@this, strokeWidth, strokeStylePtr, worldTransformPtr, flatteningTolerance, boundsPtr);
                     }
                 }
             }
@@ -287,40 +287,40 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int StrokeContainsPoint(D2D_POINT_2F point, float strokeWidth, ID2D1StrokeStyle* strokeStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, int* contains)
+        public readonly unsafe int StrokeContainsPoint(Silk.NET.Maths.Vector2D<float> point, float strokeWidth, ID2D1StrokeStyle* strokeStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, int* contains)
         {
             var @this = (ID2D1RectangleGeometry*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, D2D_POINT_2F, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)LpVtbl[6])(@this, point, strokeWidth, strokeStyle, worldTransform, flatteningTolerance, contains);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, Silk.NET.Maths.Vector2D<float>, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)LpVtbl[6])(@this, point, strokeWidth, strokeStyle, worldTransform, flatteningTolerance, contains);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int StrokeContainsPoint(D2D_POINT_2F point, float strokeWidth, ID2D1StrokeStyle* strokeStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref int contains)
+        public readonly unsafe int StrokeContainsPoint(Silk.NET.Maths.Vector2D<float> point, float strokeWidth, ID2D1StrokeStyle* strokeStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref int contains)
         {
             var @this = (ID2D1RectangleGeometry*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (int* containsPtr = &contains)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, D2D_POINT_2F, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)LpVtbl[6])(@this, point, strokeWidth, strokeStyle, worldTransform, flatteningTolerance, containsPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, Silk.NET.Maths.Vector2D<float>, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)LpVtbl[6])(@this, point, strokeWidth, strokeStyle, worldTransform, flatteningTolerance, containsPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int StrokeContainsPoint(D2D_POINT_2F point, float strokeWidth, ID2D1StrokeStyle* strokeStyle, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, int* contains)
+        public readonly unsafe int StrokeContainsPoint(Silk.NET.Maths.Vector2D<float> point, float strokeWidth, ID2D1StrokeStyle* strokeStyle, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, int* contains)
         {
             var @this = (ID2D1RectangleGeometry*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Silk.NET.Maths.Matrix3X2<float>* worldTransformPtr = &worldTransform)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, D2D_POINT_2F, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)LpVtbl[6])(@this, point, strokeWidth, strokeStyle, worldTransformPtr, flatteningTolerance, contains);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, Silk.NET.Maths.Vector2D<float>, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)LpVtbl[6])(@this, point, strokeWidth, strokeStyle, worldTransformPtr, flatteningTolerance, contains);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int StrokeContainsPoint(D2D_POINT_2F point, float strokeWidth, ID2D1StrokeStyle* strokeStyle, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref int contains)
+        public readonly unsafe int StrokeContainsPoint(Silk.NET.Maths.Vector2D<float> point, float strokeWidth, ID2D1StrokeStyle* strokeStyle, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref int contains)
         {
             var @this = (ID2D1RectangleGeometry*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -328,26 +328,26 @@ namespace Silk.NET.Direct2D
             {
                 fixed (int* containsPtr = &contains)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, D2D_POINT_2F, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)LpVtbl[6])(@this, point, strokeWidth, strokeStyle, worldTransformPtr, flatteningTolerance, containsPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, Silk.NET.Maths.Vector2D<float>, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)LpVtbl[6])(@this, point, strokeWidth, strokeStyle, worldTransformPtr, flatteningTolerance, containsPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int StrokeContainsPoint(D2D_POINT_2F point, float strokeWidth, ref ID2D1StrokeStyle strokeStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, int* contains)
+        public readonly unsafe int StrokeContainsPoint(Silk.NET.Maths.Vector2D<float> point, float strokeWidth, ref ID2D1StrokeStyle strokeStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, int* contains)
         {
             var @this = (ID2D1RectangleGeometry*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID2D1StrokeStyle* strokeStylePtr = &strokeStyle)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, D2D_POINT_2F, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)LpVtbl[6])(@this, point, strokeWidth, strokeStylePtr, worldTransform, flatteningTolerance, contains);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, Silk.NET.Maths.Vector2D<float>, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)LpVtbl[6])(@this, point, strokeWidth, strokeStylePtr, worldTransform, flatteningTolerance, contains);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int StrokeContainsPoint(D2D_POINT_2F point, float strokeWidth, ref ID2D1StrokeStyle strokeStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref int contains)
+        public readonly unsafe int StrokeContainsPoint(Silk.NET.Maths.Vector2D<float> point, float strokeWidth, ref ID2D1StrokeStyle strokeStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref int contains)
         {
             var @this = (ID2D1RectangleGeometry*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -355,14 +355,14 @@ namespace Silk.NET.Direct2D
             {
                 fixed (int* containsPtr = &contains)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, D2D_POINT_2F, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)LpVtbl[6])(@this, point, strokeWidth, strokeStylePtr, worldTransform, flatteningTolerance, containsPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, Silk.NET.Maths.Vector2D<float>, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)LpVtbl[6])(@this, point, strokeWidth, strokeStylePtr, worldTransform, flatteningTolerance, containsPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int StrokeContainsPoint(D2D_POINT_2F point, float strokeWidth, ref ID2D1StrokeStyle strokeStyle, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, int* contains)
+        public readonly unsafe int StrokeContainsPoint(Silk.NET.Maths.Vector2D<float> point, float strokeWidth, ref ID2D1StrokeStyle strokeStyle, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, int* contains)
         {
             var @this = (ID2D1RectangleGeometry*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -370,14 +370,14 @@ namespace Silk.NET.Direct2D
             {
                 fixed (Silk.NET.Maths.Matrix3X2<float>* worldTransformPtr = &worldTransform)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, D2D_POINT_2F, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)LpVtbl[6])(@this, point, strokeWidth, strokeStylePtr, worldTransformPtr, flatteningTolerance, contains);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, Silk.NET.Maths.Vector2D<float>, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)LpVtbl[6])(@this, point, strokeWidth, strokeStylePtr, worldTransformPtr, flatteningTolerance, contains);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int StrokeContainsPoint(D2D_POINT_2F point, float strokeWidth, ref ID2D1StrokeStyle strokeStyle, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref int contains)
+        public readonly int StrokeContainsPoint(Silk.NET.Maths.Vector2D<float> point, float strokeWidth, ref ID2D1StrokeStyle strokeStyle, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref int contains)
         {
             var @this = (ID2D1RectangleGeometry*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -387,7 +387,7 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (int* containsPtr = &contains)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, D2D_POINT_2F, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)LpVtbl[6])(@this, point, strokeWidth, strokeStylePtr, worldTransformPtr, flatteningTolerance, containsPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, Silk.NET.Maths.Vector2D<float>, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)LpVtbl[6])(@this, point, strokeWidth, strokeStylePtr, worldTransformPtr, flatteningTolerance, containsPtr);
                     }
                 }
             }
@@ -395,40 +395,40 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FillContainsPoint(D2D_POINT_2F point, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, int* contains)
+        public readonly unsafe int FillContainsPoint(Silk.NET.Maths.Vector2D<float> point, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, int* contains)
         {
             var @this = (ID2D1RectangleGeometry*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, D2D_POINT_2F, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)LpVtbl[7])(@this, point, worldTransform, flatteningTolerance, contains);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)LpVtbl[7])(@this, point, worldTransform, flatteningTolerance, contains);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FillContainsPoint(D2D_POINT_2F point, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref int contains)
+        public readonly unsafe int FillContainsPoint(Silk.NET.Maths.Vector2D<float> point, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref int contains)
         {
             var @this = (ID2D1RectangleGeometry*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (int* containsPtr = &contains)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, D2D_POINT_2F, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)LpVtbl[7])(@this, point, worldTransform, flatteningTolerance, containsPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)LpVtbl[7])(@this, point, worldTransform, flatteningTolerance, containsPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FillContainsPoint(D2D_POINT_2F point, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, int* contains)
+        public readonly unsafe int FillContainsPoint(Silk.NET.Maths.Vector2D<float> point, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, int* contains)
         {
             var @this = (ID2D1RectangleGeometry*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Silk.NET.Maths.Matrix3X2<float>* worldTransformPtr = &worldTransform)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, D2D_POINT_2F, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)LpVtbl[7])(@this, point, worldTransformPtr, flatteningTolerance, contains);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)LpVtbl[7])(@this, point, worldTransformPtr, flatteningTolerance, contains);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int FillContainsPoint(D2D_POINT_2F point, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref int contains)
+        public readonly int FillContainsPoint(Silk.NET.Maths.Vector2D<float> point, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref int contains)
         {
             var @this = (ID2D1RectangleGeometry*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -436,7 +436,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (int* containsPtr = &contains)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, D2D_POINT_2F, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)LpVtbl[7])(@this, point, worldTransformPtr, flatteningTolerance, containsPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)LpVtbl[7])(@this, point, worldTransformPtr, flatteningTolerance, containsPtr);
                 }
             }
             return ret;
@@ -899,107 +899,107 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ComputePointAtLength(float length, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, D2D_POINT_2F* point, D2D_POINT_2F* unitTangentVector)
+        public readonly unsafe int ComputePointAtLength(float length, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Silk.NET.Maths.Vector2D<float>* point, Silk.NET.Maths.Vector2D<float>* unitTangentVector)
         {
             var @this = (ID2D1RectangleGeometry*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, float, Silk.NET.Maths.Matrix3X2<float>*, float, D2D_POINT_2F*, D2D_POINT_2F*, int>)LpVtbl[15])(@this, length, worldTransform, flatteningTolerance, point, unitTangentVector);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, float, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<float>*, int>)LpVtbl[15])(@this, length, worldTransform, flatteningTolerance, point, unitTangentVector);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ComputePointAtLength(float length, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, D2D_POINT_2F* point, ref D2D_POINT_2F unitTangentVector)
+        public readonly unsafe int ComputePointAtLength(float length, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Silk.NET.Maths.Vector2D<float>* point, ref Silk.NET.Maths.Vector2D<float> unitTangentVector)
         {
             var @this = (ID2D1RectangleGeometry*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (D2D_POINT_2F* unitTangentVectorPtr = &unitTangentVector)
+            fixed (Silk.NET.Maths.Vector2D<float>* unitTangentVectorPtr = &unitTangentVector)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, float, Silk.NET.Maths.Matrix3X2<float>*, float, D2D_POINT_2F*, D2D_POINT_2F*, int>)LpVtbl[15])(@this, length, worldTransform, flatteningTolerance, point, unitTangentVectorPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, float, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<float>*, int>)LpVtbl[15])(@this, length, worldTransform, flatteningTolerance, point, unitTangentVectorPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ComputePointAtLength(float length, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref D2D_POINT_2F point, D2D_POINT_2F* unitTangentVector)
+        public readonly unsafe int ComputePointAtLength(float length, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref Silk.NET.Maths.Vector2D<float> point, Silk.NET.Maths.Vector2D<float>* unitTangentVector)
         {
             var @this = (ID2D1RectangleGeometry*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (D2D_POINT_2F* pointPtr = &point)
+            fixed (Silk.NET.Maths.Vector2D<float>* pointPtr = &point)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, float, Silk.NET.Maths.Matrix3X2<float>*, float, D2D_POINT_2F*, D2D_POINT_2F*, int>)LpVtbl[15])(@this, length, worldTransform, flatteningTolerance, pointPtr, unitTangentVector);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, float, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<float>*, int>)LpVtbl[15])(@this, length, worldTransform, flatteningTolerance, pointPtr, unitTangentVector);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ComputePointAtLength(float length, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref D2D_POINT_2F point, ref D2D_POINT_2F unitTangentVector)
+        public readonly unsafe int ComputePointAtLength(float length, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref Silk.NET.Maths.Vector2D<float> point, ref Silk.NET.Maths.Vector2D<float> unitTangentVector)
         {
             var @this = (ID2D1RectangleGeometry*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (D2D_POINT_2F* pointPtr = &point)
+            fixed (Silk.NET.Maths.Vector2D<float>* pointPtr = &point)
             {
-                fixed (D2D_POINT_2F* unitTangentVectorPtr = &unitTangentVector)
+                fixed (Silk.NET.Maths.Vector2D<float>* unitTangentVectorPtr = &unitTangentVector)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, float, Silk.NET.Maths.Matrix3X2<float>*, float, D2D_POINT_2F*, D2D_POINT_2F*, int>)LpVtbl[15])(@this, length, worldTransform, flatteningTolerance, pointPtr, unitTangentVectorPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, float, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<float>*, int>)LpVtbl[15])(@this, length, worldTransform, flatteningTolerance, pointPtr, unitTangentVectorPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ComputePointAtLength(float length, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, D2D_POINT_2F* point, D2D_POINT_2F* unitTangentVector)
+        public readonly unsafe int ComputePointAtLength(float length, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, Silk.NET.Maths.Vector2D<float>* point, Silk.NET.Maths.Vector2D<float>* unitTangentVector)
         {
             var @this = (ID2D1RectangleGeometry*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Silk.NET.Maths.Matrix3X2<float>* worldTransformPtr = &worldTransform)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, float, Silk.NET.Maths.Matrix3X2<float>*, float, D2D_POINT_2F*, D2D_POINT_2F*, int>)LpVtbl[15])(@this, length, worldTransformPtr, flatteningTolerance, point, unitTangentVector);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, float, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<float>*, int>)LpVtbl[15])(@this, length, worldTransformPtr, flatteningTolerance, point, unitTangentVector);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ComputePointAtLength(float length, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, D2D_POINT_2F* point, ref D2D_POINT_2F unitTangentVector)
+        public readonly unsafe int ComputePointAtLength(float length, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, Silk.NET.Maths.Vector2D<float>* point, ref Silk.NET.Maths.Vector2D<float> unitTangentVector)
         {
             var @this = (ID2D1RectangleGeometry*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Silk.NET.Maths.Matrix3X2<float>* worldTransformPtr = &worldTransform)
             {
-                fixed (D2D_POINT_2F* unitTangentVectorPtr = &unitTangentVector)
+                fixed (Silk.NET.Maths.Vector2D<float>* unitTangentVectorPtr = &unitTangentVector)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, float, Silk.NET.Maths.Matrix3X2<float>*, float, D2D_POINT_2F*, D2D_POINT_2F*, int>)LpVtbl[15])(@this, length, worldTransformPtr, flatteningTolerance, point, unitTangentVectorPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, float, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<float>*, int>)LpVtbl[15])(@this, length, worldTransformPtr, flatteningTolerance, point, unitTangentVectorPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ComputePointAtLength(float length, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref D2D_POINT_2F point, D2D_POINT_2F* unitTangentVector)
+        public readonly unsafe int ComputePointAtLength(float length, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref Silk.NET.Maths.Vector2D<float> point, Silk.NET.Maths.Vector2D<float>* unitTangentVector)
         {
             var @this = (ID2D1RectangleGeometry*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Silk.NET.Maths.Matrix3X2<float>* worldTransformPtr = &worldTransform)
             {
-                fixed (D2D_POINT_2F* pointPtr = &point)
+                fixed (Silk.NET.Maths.Vector2D<float>* pointPtr = &point)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, float, Silk.NET.Maths.Matrix3X2<float>*, float, D2D_POINT_2F*, D2D_POINT_2F*, int>)LpVtbl[15])(@this, length, worldTransformPtr, flatteningTolerance, pointPtr, unitTangentVector);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, float, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<float>*, int>)LpVtbl[15])(@this, length, worldTransformPtr, flatteningTolerance, pointPtr, unitTangentVector);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int ComputePointAtLength(float length, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref D2D_POINT_2F point, ref D2D_POINT_2F unitTangentVector)
+        public readonly int ComputePointAtLength(float length, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref Silk.NET.Maths.Vector2D<float> point, ref Silk.NET.Maths.Vector2D<float> unitTangentVector)
         {
             var @this = (ID2D1RectangleGeometry*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Silk.NET.Maths.Matrix3X2<float>* worldTransformPtr = &worldTransform)
             {
-                fixed (D2D_POINT_2F* pointPtr = &point)
+                fixed (Silk.NET.Maths.Vector2D<float>* pointPtr = &point)
                 {
-                    fixed (D2D_POINT_2F* unitTangentVectorPtr = &unitTangentVector)
+                    fixed (Silk.NET.Maths.Vector2D<float>* unitTangentVectorPtr = &unitTangentVector)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, float, Silk.NET.Maths.Matrix3X2<float>*, float, D2D_POINT_2F*, D2D_POINT_2F*, int>)LpVtbl[15])(@this, length, worldTransformPtr, flatteningTolerance, pointPtr, unitTangentVectorPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, float, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<float>*, int>)LpVtbl[15])(@this, length, worldTransformPtr, flatteningTolerance, pointPtr, unitTangentVectorPtr);
                     }
                 }
             }
@@ -1115,19 +1115,19 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void GetRect(Silk.NET.Maths.Rectangle<float>* rect)
+        public readonly unsafe void GetRect(Silk.NET.Maths.Box2D<float>* rect)
         {
             var @this = (ID2D1RectangleGeometry*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, Silk.NET.Maths.Rectangle<float>*, void>)LpVtbl[17])(@this, rect);
+            ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, Silk.NET.Maths.Box2D<float>*, void>)LpVtbl[17])(@this, rect);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void GetRect(ref Silk.NET.Maths.Rectangle<float> rect)
+        public readonly void GetRect(ref Silk.NET.Maths.Box2D<float> rect)
         {
             var @this = (ID2D1RectangleGeometry*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Maths.Rectangle<float>* rectPtr = &rect)
+            fixed (Silk.NET.Maths.Box2D<float>* rectPtr = &rect)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, Silk.NET.Maths.Rectangle<float>*, void>)LpVtbl[17])(@this, rectPtr);
+                ((delegate* unmanaged[Stdcall]<ID2D1RectangleGeometry*, Silk.NET.Maths.Box2D<float>*, void>)LpVtbl[17])(@this, rectPtr);
             }
         }
 

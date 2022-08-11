@@ -23,7 +23,7 @@ namespace Silk.NET.Direct2D
         (
             ID2D1Effect* effect = null,
             uint? inputIndex = null,
-            Silk.NET.Maths.Rectangle<float>? inputRectangle = null
+            Silk.NET.Maths.Box2D<float>? inputRectangle = null
         ) : this()
         {
             if (effect is not null)
@@ -56,6 +56,6 @@ namespace Silk.NET.Direct2D
         [NativeName("Type", "D2D1_RECT_F")]
         [NativeName("Type.Name", "D2D1_RECT_F")]
         [NativeName("Name", "inputRectangle")]
-        public Silk.NET.Maths.Rectangle<float> InputRectangle;
+        public Silk.NET.Maths.Box2D<float> InputRectangle;
     }
 }

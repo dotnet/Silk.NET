@@ -22,7 +22,7 @@ namespace Silk.NET.DXGI
         public OutduplMoveRect
         (
             Silk.NET.Maths.Vector2D<int>? sourcePoint = null,
-            Silk.NET.Maths.Rectangle<int>? destinationRect = null
+            Silk.NET.Maths.Box2D<int>? destinationRect = null
         ) : this()
         {
             if (sourcePoint is not null)
@@ -45,6 +45,6 @@ namespace Silk.NET.DXGI
         [NativeName("Type", "RECT")]
         [NativeName("Type.Name", "RECT")]
         [NativeName("Name", "DestinationRect")]
-        public Silk.NET.Maths.Rectangle<int> DestinationRect;
+        public Silk.NET.Maths.Box2D<int> DestinationRect;
     }
 }

@@ -120,36 +120,36 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void SetOutputBounds(Silk.NET.Maths.Rectangle<int>* outputBounds)
+        public readonly unsafe void SetOutputBounds(Silk.NET.Maths.Box2D<int>* outputBounds)
         {
             var @this = (ID2D1BoundsAdjustmentTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1BoundsAdjustmentTransform*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[4])(@this, outputBounds);
+            ((delegate* unmanaged[Stdcall]<ID2D1BoundsAdjustmentTransform*, Silk.NET.Maths.Box2D<int>*, void>)LpVtbl[4])(@this, outputBounds);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetOutputBounds(ref Silk.NET.Maths.Rectangle<int> outputBounds)
+        public readonly void SetOutputBounds(ref Silk.NET.Maths.Box2D<int> outputBounds)
         {
             var @this = (ID2D1BoundsAdjustmentTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Maths.Rectangle<int>* outputBoundsPtr = &outputBounds)
+            fixed (Silk.NET.Maths.Box2D<int>* outputBoundsPtr = &outputBounds)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1BoundsAdjustmentTransform*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[4])(@this, outputBoundsPtr);
+                ((delegate* unmanaged[Stdcall]<ID2D1BoundsAdjustmentTransform*, Silk.NET.Maths.Box2D<int>*, void>)LpVtbl[4])(@this, outputBoundsPtr);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void GetOutputBounds(Silk.NET.Maths.Rectangle<int>* outputBounds)
+        public readonly unsafe void GetOutputBounds(Silk.NET.Maths.Box2D<int>* outputBounds)
         {
             var @this = (ID2D1BoundsAdjustmentTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1BoundsAdjustmentTransform*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[5])(@this, outputBounds);
+            ((delegate* unmanaged[Stdcall]<ID2D1BoundsAdjustmentTransform*, Silk.NET.Maths.Box2D<int>*, void>)LpVtbl[5])(@this, outputBounds);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void GetOutputBounds(ref Silk.NET.Maths.Rectangle<int> outputBounds)
+        public readonly void GetOutputBounds(ref Silk.NET.Maths.Box2D<int> outputBounds)
         {
             var @this = (ID2D1BoundsAdjustmentTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Maths.Rectangle<int>* outputBoundsPtr = &outputBounds)
+            fixed (Silk.NET.Maths.Box2D<int>* outputBoundsPtr = &outputBounds)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1BoundsAdjustmentTransform*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[5])(@this, outputBoundsPtr);
+                ((delegate* unmanaged[Stdcall]<ID2D1BoundsAdjustmentTransform*, Silk.NET.Maths.Box2D<int>*, void>)LpVtbl[5])(@this, outputBoundsPtr);
             }
         }
 

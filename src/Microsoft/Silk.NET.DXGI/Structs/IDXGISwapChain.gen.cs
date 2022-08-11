@@ -22,11 +22,11 @@ namespace Silk.NET.DXGI
     {
         public static readonly Guid Guid = new("310d36a0-d2e7-4c0a-aa04-6a9d23b8886a");
 
-        public static implicit operator IDXGIDeviceSubObject(IDXGISwapChain val)
-            => Unsafe.As<IDXGISwapChain, IDXGIDeviceSubObject>(ref val);
+        public static implicit operator Silk.NET.DXGI.IDXGIDeviceSubObject(IDXGISwapChain val)
+            => Unsafe.As<IDXGISwapChain, Silk.NET.DXGI.IDXGIDeviceSubObject>(ref val);
 
-        public static implicit operator IDXGIObject(IDXGISwapChain val)
-            => Unsafe.As<IDXGISwapChain, IDXGIObject>(ref val);
+        public static implicit operator Silk.NET.DXGI.IDXGIObject(IDXGISwapChain val)
+            => Unsafe.As<IDXGISwapChain, Silk.NET.DXGI.IDXGIObject>(ref val);
 
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGISwapChain val)
             => Unsafe.As<IDXGISwapChain, Silk.NET.Core.Native.IUnknown>(ref val);

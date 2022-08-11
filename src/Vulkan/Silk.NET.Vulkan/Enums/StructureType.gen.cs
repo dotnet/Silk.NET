@@ -1210,6 +1210,8 @@ namespace Silk.NET.Vulkan
         ImageSubresource2Ext = 1000338003,
         [NativeName("Name", "VK_STRUCTURE_TYPE_IMAGE_COMPRESSION_PROPERTIES_EXT")]
         ImageCompressionPropertiesExt = 1000338004,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ATTACHMENT_FEEDBACK_LOOP_LAYOUT_FEATURES_EXT")]
+        PhysicalDeviceAttachmentFeedbackLoopLayoutFeaturesExt = 1000339000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_4444_FORMATS_FEATURES_EXT")]
         PhysicalDevice4444FormatsFeaturesExt = 1000340000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RASTERIZATION_ORDER_ATTACHMENT_ACCESS_FEATURES_ARM")]
@@ -1376,6 +1378,10 @@ namespace Silk.NET.Vulkan
         PhysicalDeviceTilePropertiesFeaturesQCom = 1000484000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_TILE_PROPERTIES_QCOM")]
         TilePropertiesQCom = 1000484001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_AMIGO_PROFILING_FEATURES_SEC")]
+        PhysicalDeviceAmigoProfilingFeaturesSec = 1000485000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_AMIGO_PROFILING_SUBMIT_INFO_SEC")]
+        AmigoProfilingSubmitInfoSec = 1000485001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBGROUP_PROPERTIES")]
         PhysicalDeviceSubgroupProperties = 1000094000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_BIND_BUFFER_MEMORY_INFO")]

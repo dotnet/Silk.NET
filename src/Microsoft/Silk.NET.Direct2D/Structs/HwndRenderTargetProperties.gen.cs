@@ -22,7 +22,7 @@ namespace Silk.NET.Direct2D
         public HwndRenderTargetProperties
         (
             nint? hwnd = null,
-            D2D_SIZE_U? pixelSize = null,
+            Silk.NET.Maths.Vector2D<uint>? pixelSize = null,
             PresentOptions? presentOptions = null
         ) : this()
         {
@@ -51,7 +51,7 @@ namespace Silk.NET.Direct2D
         [NativeName("Type", "D2D1_SIZE_U")]
         [NativeName("Type.Name", "D2D1_SIZE_U")]
         [NativeName("Name", "pixelSize")]
-        public D2D_SIZE_U PixelSize;
+        public Silk.NET.Maths.Vector2D<uint> PixelSize;
 
         [NativeName("Type", "D2D1_PRESENT_OPTIONS")]
         [NativeName("Type.Name", "D2D1_PRESENT_OPTIONS")]

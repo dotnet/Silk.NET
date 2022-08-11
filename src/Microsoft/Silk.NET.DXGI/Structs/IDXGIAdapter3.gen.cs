@@ -31,8 +31,8 @@ namespace Silk.NET.DXGI
         public static implicit operator Silk.NET.DXGI.IDXGIAdapter(IDXGIAdapter3 val)
             => Unsafe.As<IDXGIAdapter3, Silk.NET.DXGI.IDXGIAdapter>(ref val);
 
-        public static implicit operator IDXGIObject(IDXGIAdapter3 val)
-            => Unsafe.As<IDXGIAdapter3, IDXGIObject>(ref val);
+        public static implicit operator Silk.NET.DXGI.IDXGIObject(IDXGIAdapter3 val)
+            => Unsafe.As<IDXGIAdapter3, Silk.NET.DXGI.IDXGIObject>(ref val);
 
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGIAdapter3 val)
             => Unsafe.As<IDXGIAdapter3, Silk.NET.Core.Native.IUnknown>(ref val);

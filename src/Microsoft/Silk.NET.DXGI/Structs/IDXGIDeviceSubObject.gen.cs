@@ -22,8 +22,8 @@ namespace Silk.NET.DXGI
     {
         public static readonly Guid Guid = new("3d3e0379-f9de-4d58-bb6c-18d62992f1a6");
 
-        public static implicit operator IDXGIObject(IDXGIDeviceSubObject val)
-            => Unsafe.As<IDXGIDeviceSubObject, IDXGIObject>(ref val);
+        public static implicit operator Silk.NET.DXGI.IDXGIObject(IDXGIDeviceSubObject val)
+            => Unsafe.As<IDXGIDeviceSubObject, Silk.NET.DXGI.IDXGIObject>(ref val);
 
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGIDeviceSubObject val)
             => Unsafe.As<IDXGIDeviceSubObject, Silk.NET.Core.Native.IUnknown>(ref val);

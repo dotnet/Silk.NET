@@ -21,8 +21,8 @@ namespace Silk.NET.Direct2D
     {
         public ArcSegment
         (
-            D2D_POINT_2F? point = null,
-            D2D_SIZE_F? size = null,
+            Silk.NET.Maths.Vector2D<float>? point = null,
+            Silk.NET.Maths.Vector2D<float>? size = null,
             float? rotationAngle = null,
             SweepDirection? sweepDirection = null,
             ArcSize? arcSize = null
@@ -58,12 +58,12 @@ namespace Silk.NET.Direct2D
         [NativeName("Type", "D2D1_POINT_2F")]
         [NativeName("Type.Name", "D2D1_POINT_2F")]
         [NativeName("Name", "point")]
-        public D2D_POINT_2F Point;
+        public Silk.NET.Maths.Vector2D<float> Point;
 
         [NativeName("Type", "D2D1_SIZE_F")]
         [NativeName("Type.Name", "D2D1_SIZE_F")]
         [NativeName("Name", "size")]
-        public D2D_SIZE_F Size;
+        public Silk.NET.Maths.Vector2D<float> Size;
 
         [NativeName("Type", "FLOAT")]
         [NativeName("Type.Name", "FLOAT")]

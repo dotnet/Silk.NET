@@ -21,7 +21,7 @@ namespace Silk.NET.Direct2D
     {
         public LayerParameters
         (
-            Silk.NET.Maths.Rectangle<float>? contentBounds = null,
+            Silk.NET.Maths.Box2D<float>? contentBounds = null,
             ID2D1Geometry* geometricMask = null,
             AntialiasMode? maskAntialiasMode = null,
             Silk.NET.Maths.Matrix3X2<float>? maskTransform = null,
@@ -70,7 +70,7 @@ namespace Silk.NET.Direct2D
         [NativeName("Type", "D2D1_RECT_F")]
         [NativeName("Type.Name", "D2D1_RECT_F")]
         [NativeName("Name", "contentBounds")]
-        public Silk.NET.Maths.Rectangle<float> ContentBounds;
+        public Silk.NET.Maths.Box2D<float> ContentBounds;
 
         [NativeName("Type", "ID2D1Geometry *")]
         [NativeName("Type.Name", "ID2D1Geometry *")]

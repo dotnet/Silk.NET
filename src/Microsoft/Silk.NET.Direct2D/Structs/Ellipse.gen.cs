@@ -21,7 +21,7 @@ namespace Silk.NET.Direct2D
     {
         public Ellipse
         (
-            D2D_POINT_2F? point = null,
+            Silk.NET.Maths.Vector2D<float>? point = null,
             float? radiusX = null,
             float? radiusY = null
         ) : this()
@@ -46,7 +46,7 @@ namespace Silk.NET.Direct2D
         [NativeName("Type", "D2D1_POINT_2F")]
         [NativeName("Type.Name", "D2D1_POINT_2F")]
         [NativeName("Name", "point")]
-        public D2D_POINT_2F Point;
+        public Silk.NET.Maths.Vector2D<float> Point;
 
         [NativeName("Type", "FLOAT")]
         [NativeName("Type.Name", "FLOAT")]

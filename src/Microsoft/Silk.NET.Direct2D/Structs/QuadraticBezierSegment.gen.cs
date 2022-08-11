@@ -21,8 +21,8 @@ namespace Silk.NET.Direct2D
     {
         public QuadraticBezierSegment
         (
-            D2D_POINT_2F? point1 = null,
-            D2D_POINT_2F? point2 = null
+            Silk.NET.Maths.Vector2D<float>? point1 = null,
+            Silk.NET.Maths.Vector2D<float>? point2 = null
         ) : this()
         {
             if (point1 is not null)
@@ -40,11 +40,11 @@ namespace Silk.NET.Direct2D
         [NativeName("Type", "D2D1_POINT_2F")]
         [NativeName("Type.Name", "D2D1_POINT_2F")]
         [NativeName("Name", "point1")]
-        public D2D_POINT_2F Point1;
+        public Silk.NET.Maths.Vector2D<float> Point1;
 
         [NativeName("Type", "D2D1_POINT_2F")]
         [NativeName("Type.Name", "D2D1_POINT_2F")]
         [NativeName("Name", "point2")]
-        public D2D_POINT_2F Point2;
+        public Silk.NET.Maths.Vector2D<float> Point2;
     }
 }

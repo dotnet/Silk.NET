@@ -181,17 +181,17 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetCenter(D2D_POINT_2F center)
+        public readonly void SetCenter(Silk.NET.Maths.Vector2D<float> center)
         {
             var @this = (ID2D1RadialGradientBrush*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1RadialGradientBrush*, D2D_POINT_2F, void>)LpVtbl[8])(@this, center);
+            ((delegate* unmanaged[Stdcall]<ID2D1RadialGradientBrush*, Silk.NET.Maths.Vector2D<float>, void>)LpVtbl[8])(@this, center);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetGradientOriginOffset(D2D_POINT_2F gradientOriginOffset)
+        public readonly void SetGradientOriginOffset(Silk.NET.Maths.Vector2D<float> gradientOriginOffset)
         {
             var @this = (ID2D1RadialGradientBrush*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1RadialGradientBrush*, D2D_POINT_2F, void>)LpVtbl[9])(@this, gradientOriginOffset);
+            ((delegate* unmanaged[Stdcall]<ID2D1RadialGradientBrush*, Silk.NET.Maths.Vector2D<float>, void>)LpVtbl[9])(@this, gradientOriginOffset);
         }
 
         /// <summary>To be documented.</summary>
@@ -209,24 +209,24 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly D2D_POINT_2F GetCenter()
+        public readonly Silk.NET.Maths.Vector2D<float> GetCenter()
         {
-            D2D_POINT_2F silkDotNetReturnFixupResult;
+            Silk.NET.Maths.Vector2D<float> silkDotNetReturnFixupResult;
             var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
             var @this = (ID2D1RadialGradientBrush*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            D2D_POINT_2F* ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1RadialGradientBrush*, D2D_POINT_2F*, D2D_POINT_2F*>)LpVtbl[12])(@this, pSilkDotNetReturnFixupResult);
+            Silk.NET.Maths.Vector2D<float>* ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1RadialGradientBrush*, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<float>*>)LpVtbl[12])(@this, pSilkDotNetReturnFixupResult);
             return *ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly D2D_POINT_2F GetGradientOriginOffset()
+        public readonly Silk.NET.Maths.Vector2D<float> GetGradientOriginOffset()
         {
-            D2D_POINT_2F silkDotNetReturnFixupResult;
+            Silk.NET.Maths.Vector2D<float> silkDotNetReturnFixupResult;
             var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
             var @this = (ID2D1RadialGradientBrush*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            D2D_POINT_2F* ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1RadialGradientBrush*, D2D_POINT_2F*, D2D_POINT_2F*>)LpVtbl[13])(@this, pSilkDotNetReturnFixupResult);
+            Silk.NET.Maths.Vector2D<float>* ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1RadialGradientBrush*, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<float>*>)LpVtbl[13])(@this, pSilkDotNetReturnFixupResult);
             return *ret;
         }
 
