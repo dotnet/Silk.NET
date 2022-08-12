@@ -150,7 +150,7 @@ namespace Silk.NET.BuildTools.Bind
 
                     foreach (var (rel, fileBefore) in filesBefore)
                     {
-                        if (rel.EndsWith(".gen.cs") && !filesAfter.ContainsKey(rel))
+                        if (rel.EndsWith(".gen.cs") && !filesAfter.ContainsKey(rel) && !originalTask.Controls.Contains("keep-unknown-gen-files"))
                         {
                             deleted++;
                             ResilientDelete(fileBefore);

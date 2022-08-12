@@ -1411,7 +1411,9 @@
             "cacheKey": "dxc",
             "controlDescriptors": [
                 "convert-windows-only",
-                "no-csproj"
+                "no-csproj",
+                "COMMENT: the below is needed because D3DCompiler and Dxc are in the same project and will fight eachother otherwise",
+                "keep-unknown-gen-files"
             ],
             "prefix": "Dxc",
             "clang": {
@@ -1486,7 +1488,9 @@
             "cacheDir": "build/cache",
             "cacheKey": "d3dcompiler",
             "controlDescriptors": [
-                "convert-windows-only"
+                "convert-windows-only",
+                "COMMENT: the below is needed because D3DCompiler and Dxc are in the same project and will fight eachother otherwise",
+                "keep-unknown-gen-files"
             ],
             "prefix": "D3D",
             "clang": {
