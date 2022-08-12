@@ -71,7 +71,7 @@ namespace Silk.NET.SilkTouch.DotnetTool
             var processedSymbolsFile = new Option<FileInfo?>
                 (new[] { "processed-symbols-file", "psf" }, "The File to read/write Processed Symbols from/to");
             var csharpDir = new Option<DirectoryInfo?>
-                (new[] { "csharp-dir", "csd" }, "The Directory to read/write C# files from/to");
+                (new[] { "csharp-directory", "csharp-dir", "csd" }, "The Directory to read/write C# files from/to");
 
             var generateBindings = new Command("bindings")
             {
@@ -137,7 +137,7 @@ namespace Silk.NET.SilkTouch.DotnetTool
                     }
 
                     var csharp = GetCSharp(serviceProvider, processedSymbols, typeStore).Select(x => x.ToFullString())
-                        .Select((x, i) => (x, i.ToString()));
+                        .Select((x, i) => (x, i.ToString() + ".cs"));
                     var csharpDirRes = context.ParseResult.GetValueForOption(csharpDir);
                     if (csharpDirRes is not null)
                     {
@@ -178,7 +178,7 @@ namespace Silk.NET.SilkTouch.DotnetTool
                     }
 
                     var csharp = GetCSharp(serviceProvider, symbols, typeStore).Select(x => x.ToFullString())
-                        .Select((x, i) => (x, i.ToString()));
+                        .Select((x, i) => (x, i.ToString() + ".cs"));
                     if (csharpDir is not null)
                     {
                         foreach (var (contents, fileName) in csharp)
