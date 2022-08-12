@@ -815,8 +815,8 @@ namespace Silk.NET.Maths.Tests
         public void Vector2ConstructorTest3()
         {
             Vector2D<float> target = new Vector2D<float>(float.NaN, float.MaxValue);
-            Assert.Equal(target.X, float.NaN);
-            Assert.Equal(target.Y, float.MaxValue);
+            Assert.Equal(float.NaN, target.X);
+            Assert.Equal(float.MaxValue, target.Y);
         }
 
         // A test for Vector2f (float)
