@@ -8,4 +8,11 @@ namespace Silk.NET.SilkTouch.Symbols;
 /// <summary>
 /// A <see cref="MemberSymbol"/> representing a method with a signature.
 /// </summary>
-public abstract record MethodSymbol(TypeReference ReturnType, ImmutableArray<TypeReference> Parameters, IdentifierSymbol Identifier) : MemberSymbol;
+public abstract record MethodSymbol(TypeReference ReturnType, ImmutableArray<Parameter> Parameters, IdentifierSymbol Identifier) : MemberSymbol;
+
+/// <summary>
+/// Represents a Parameter to a <see cref="MethodSymbol"/>
+/// </summary>
+/// <param name="TypeReference">The type of this parameter</param>
+/// <param name="Identifier">The identifier of this parameter</param>
+public sealed record Parameter(TypeReference TypeReference, IdentifierSymbol Identifier);

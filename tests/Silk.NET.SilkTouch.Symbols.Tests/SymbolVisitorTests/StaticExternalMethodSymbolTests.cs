@@ -14,7 +14,7 @@ public class StaticExternalMethodSymbolTests
     public void VisitedAsSelf()
     {
         var symbol = new StaticExternalMethodSymbol
-            (new InternalTypeReference(TypeId.CreateNew()), ImmutableArray<TypeReference>.Empty, new IdentifierSymbol(""));
+            (new InternalTypeReference(TypeId.CreateNew()), ImmutableArray<Parameter>.Empty, new IdentifierSymbol(""));
         
         var visitor = new Mock<MockSymbolVisitor> { CallBase = true };
 
@@ -29,7 +29,7 @@ public class StaticExternalMethodSymbolTests
     public void VisitedAsMethod()
     {
         var symbol = new StaticExternalMethodSymbol
-            (new InternalTypeReference(TypeId.CreateNew()), ImmutableArray<TypeReference>.Empty, new IdentifierSymbol(""));
+            (new InternalTypeReference(TypeId.CreateNew()), ImmutableArray<Parameter>.Empty, new IdentifierSymbol(""));
         
         var visitor = new Mock<MockSymbolVisitor> { CallBase = true };
 

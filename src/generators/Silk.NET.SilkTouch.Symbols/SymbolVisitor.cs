@@ -96,7 +96,9 @@ public abstract class SymbolVisitor
         return new StaticExternalMethodSymbol
         (
             VisitTypeReference(staticExternalMethodSymbol.ReturnType),
-            staticExternalMethodSymbol.Parameters.Select(VisitTypeReference).ToImmutableArray(),
+            staticExternalMethodSymbol.Parameters.Select
+                    (x => new Parameter(VisitTypeReference(x.TypeReference), VisitIdentifier(x.Identifier)))
+                .ToImmutableArray(),
             VisitIdentifier(staticExternalMethodSymbol.Identifier)
         );
     }
