@@ -182,7 +182,7 @@ namespace Silk.NET.BuildTools.Bind
                 sw.WriteLine();
             }
 
-            if (@struct.Vtbl?.Count > 0 && @struct.Uuid is not null)
+            if (@struct.Vtbl?.Count > 0)
             {
                 sw.WriteLine("        void*** IComVtbl.AsVtblPtr()");
                 sw.WriteLine("            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));");

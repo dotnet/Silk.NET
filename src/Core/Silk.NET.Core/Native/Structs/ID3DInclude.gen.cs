@@ -19,6 +19,9 @@ namespace Silk.NET.Core.Native
     [NativeName("Name", "ID3DInclude")]
     public unsafe partial struct ID3DInclude : IComVtbl<ID3DInclude>
     {
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+
         public ID3DInclude
         (
             void** lpVtbl = null

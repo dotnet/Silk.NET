@@ -19,6 +19,9 @@ namespace Silk.NET.XAudio
     [NativeName("Name", "IXAudio2MasteringVoice")]
     public unsafe partial struct IXAudio2MasteringVoice : IComVtbl<IXAudio2MasteringVoice>, IComVtbl<IXAudio2Voice>
     {
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+
         public static implicit operator IXAudio2Voice(IXAudio2MasteringVoice val)
             => Unsafe.As<IXAudio2MasteringVoice, IXAudio2Voice>(ref val);
 

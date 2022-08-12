@@ -490,11 +490,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGL.Legacy.Exte
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.Vulkan.Extensions.SEC", "src\Vulkan\Extensions\Silk.NET.Vulkan.Extensions.SEC\Silk.NET.Vulkan.Extensions.SEC.csproj", "{22FDAB62-4DE6-4896-BB6E-CC19BBBE5951}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.DirectStorage.Native", "src\Native\Silk.NET.DirectStorage.Native\Silk.NET.DirectStorage.Native.csproj", "{100C6D6A-F8B9-4E41-B82C-F665C3BD2160}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.DirectStorage.Native", "src\Native\Silk.NET.DirectStorage.Native\Silk.NET.DirectStorage.Native.csproj", "{100C6D6A-F8B9-4E41-B82C-F665C3BD2160}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.DirectStorage", "src\Microsoft\Silk.NET.DirectStorage\Silk.NET.DirectStorage.csproj", "{950FCED7-5720-4855-ACA3-B0EAB246F669}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.DirectStorage", "src\Microsoft\Silk.NET.DirectStorage\Silk.NET.DirectStorage.csproj", "{950FCED7-5720-4855-ACA3-B0EAB246F669}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenXR.Extensions.QCOM", "src\OpenXR\Extensions\Silk.NET.OpenXR.Extensions.QCOM\Silk.NET.OpenXR.Extensions.QCOM.csproj", "{1F9D7264-DA42-4351-AE08-6ABB7597B8E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenXR.Extensions.QCOM", "src\OpenXR\Extensions\Silk.NET.OpenXR.Extensions.QCOM\Silk.NET.OpenXR.Extensions.QCOM.csproj", "{1F9D7264-DA42-4351-AE08-6ABB7597B8E5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Direct3D11 Tutorials", "Direct3D11 Tutorials", "{5CED5BE9-5348-4AFD-AF34-147F81F8C9C6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial 1.2 - Hello quad", "examples\CSharp\Direct3D11 Tutorials\Tutorial 1.2 - Hello quad\Tutorial 1.2 - Hello quad.csproj", "{F86248D7-5012-4820-ADBE-BCE8B701581D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -3001,6 +3005,18 @@ Global
 		{1F9D7264-DA42-4351-AE08-6ABB7597B8E5}.Release|x64.Build.0 = Release|Any CPU
 		{1F9D7264-DA42-4351-AE08-6ABB7597B8E5}.Release|x86.ActiveCfg = Release|Any CPU
 		{1F9D7264-DA42-4351-AE08-6ABB7597B8E5}.Release|x86.Build.0 = Release|Any CPU
+		{F86248D7-5012-4820-ADBE-BCE8B701581D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F86248D7-5012-4820-ADBE-BCE8B701581D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F86248D7-5012-4820-ADBE-BCE8B701581D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F86248D7-5012-4820-ADBE-BCE8B701581D}.Debug|x64.Build.0 = Debug|Any CPU
+		{F86248D7-5012-4820-ADBE-BCE8B701581D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F86248D7-5012-4820-ADBE-BCE8B701581D}.Debug|x86.Build.0 = Debug|Any CPU
+		{F86248D7-5012-4820-ADBE-BCE8B701581D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F86248D7-5012-4820-ADBE-BCE8B701581D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F86248D7-5012-4820-ADBE-BCE8B701581D}.Release|x64.ActiveCfg = Release|Any CPU
+		{F86248D7-5012-4820-ADBE-BCE8B701581D}.Release|x64.Build.0 = Release|Any CPU
+		{F86248D7-5012-4820-ADBE-BCE8B701581D}.Release|x86.ActiveCfg = Release|Any CPU
+		{F86248D7-5012-4820-ADBE-BCE8B701581D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -3241,6 +3257,8 @@ Global
 		{100C6D6A-F8B9-4E41-B82C-F665C3BD2160} = {72E7FA64-5B1E-477D-BD30-63B7F206B3C4}
 		{950FCED7-5720-4855-ACA3-B0EAB246F669} = {F2CF5D32-4B41-425E-B229-8FFC48F88063}
 		{1F9D7264-DA42-4351-AE08-6ABB7597B8E5} = {90471225-AC23-424E-B62E-F6EC4C6ECAC0}
+		{5CED5BE9-5348-4AFD-AF34-147F81F8C9C6} = {6842A2C6-5C7B-42DD-9825-0EDE91BFEBF7}
+		{F86248D7-5012-4820-ADBE-BCE8B701581D} = {5CED5BE9-5348-4AFD-AF34-147F81F8C9C6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F5273D7F-3334-48DF-94E3-41AE6816CD4D}
