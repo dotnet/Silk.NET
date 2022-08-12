@@ -131,7 +131,7 @@ namespace Silk.NET.BuildTools.Bind
                 interfaces.Add("IChainStart");
             }
 
-            if (@struct.Vtbl?.Count > 0 && @struct.Uuid is not null)
+            if (@struct.Vtbl?.Count > 0)
             {
                 interfaces.Add($"IComVtbl<{@struct.Name}>");
                 interfaces.AddRange(@struct.ComBases.Distinct().Select(x => $"IComVtbl<{x}>"));
@@ -582,7 +582,7 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine("}");
             sw.Flush();
             sw.Dispose();
-            if (@struct.Vtbl?.Count > 0 && @struct.Uuid is not null)
+            if (@struct.Vtbl?.Count > 0)
             {
                 var className = @struct.Name.StartsWith('I')
                     ? $"{@struct.Name[1..]}VtblExtensions"

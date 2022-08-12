@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Core.Native
 {
     [NativeName("Name", "ID3DInclude")]
-    public unsafe partial struct ID3DInclude
+    public unsafe partial struct ID3DInclude : IComVtbl<ID3DInclude>
     {
         public ID3DInclude
         (

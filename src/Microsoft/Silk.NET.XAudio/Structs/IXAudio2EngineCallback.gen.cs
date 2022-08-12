@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.XAudio
 {
     [NativeName("Name", "IXAudio2EngineCallback")]
-    public unsafe partial struct IXAudio2EngineCallback
+    public unsafe partial struct IXAudio2EngineCallback : IComVtbl<IXAudio2EngineCallback>
     {
         public IXAudio2EngineCallback
         (

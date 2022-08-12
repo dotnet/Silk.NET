@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.XAudio
 {
     [NativeName("Name", "IXAudio2SourceVoice")]
-    public unsafe partial struct IXAudio2SourceVoice
+    public unsafe partial struct IXAudio2SourceVoice : IComVtbl<IXAudio2SourceVoice>, IComVtbl<IXAudio2Voice>
     {
         public static implicit operator IXAudio2Voice(IXAudio2SourceVoice val)
             => Unsafe.As<IXAudio2SourceVoice, IXAudio2Voice>(ref val);
