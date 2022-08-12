@@ -66,6 +66,19 @@ public abstract class SymbolVisitor
     {
         return new FieldSymbol(VisitTypeReference(fieldSymbol.Type), VisitIdentifier(fieldSymbol.Identifier));
     }
+
+    /// <summary>
+    /// Visit a <see cref="MethodSymbol"/>. Will call the appropriate methods to visit the different parts of the symbol.
+    /// </summary>
+    /// <param name="methodSymbol">The method to visit</param>
+    /// <returns>The rewritten symbol</returns>
+    /// <remarks>
+    /// The order in which the parts are visited is kept as an implementation detail. Do not rely on this order.
+    /// </remarks>
+    protected virtual MethodSymbol VisitMethod(MethodSymbol methodSymbol)
+    {
+        return ThrowUnknownSymbol<MethodSymbol>(methodSymbol);
+    }
     
     /// <summary>
     /// Visit a <see cref="TypeReference"/>. Will call the appropriate methods to visit the different parts of the symbol.
