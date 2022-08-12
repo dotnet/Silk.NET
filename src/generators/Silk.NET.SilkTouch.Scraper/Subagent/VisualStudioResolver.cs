@@ -96,10 +96,8 @@ public static class VisualStudioResolver
         Debug.WriteLine(visualStudios.Length + " Visual Studio installation(s)");
         
         // cycle through candidate installations, try and find everything we're looking for.
-        var hasVs = false;
         foreach (var visualStudio in visualStudios)
         {
-            hasVs = true;
             Debug.WriteLine
             (
                 $"Testing \"{visualStudio.Name}\" v{visualStudio.Version.ToString(3)} at " +
@@ -157,19 +155,6 @@ public static class VisualStudioResolver
 
             return true;
         }
-
-        if (!hasVs)
-        {
-            Console.WriteLine("No instance of Visual Studio found whatsoever.");
-        }
-        
-        // if any of it's still null, we couldn't find a candidate.
-        Console.WriteLine
-        (
-            "Couldn't find a viable Visual Studio installation - ensure you have the Windows 10 SDK and C++ " +
-            "tools installed. SilkTouch Scraper may not function correctly without Visual Studio or Visual " +
-            "Studio Build Tools with these workloads."
-        );
 
         info = null;
         _vsInfoKnownError = true;

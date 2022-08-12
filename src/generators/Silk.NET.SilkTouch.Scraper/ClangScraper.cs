@@ -260,8 +260,29 @@ public sealed class ClangScraper
 
         try
         {
-            
-            if (result != CXErrorCode.CXError_Success)
+            if (result == CXErrorCode.CXError_Failure)
+            {
+                if (handle.NumDiagnostics > 0)
+                {
+                    for (uint i = 0; i < handle.NumDiagnostics; i++)
+                    {
+                        var x = handle.GetDiagnostic(i);
+                        
+                        logger.Log(x.Severity switch
+                        {
+                            CXDiagnosticSeverity.CXDiagnostic_Ignored => LogLevel.Trace,
+                            CXDiagnosticSeverity.CXDiagnostic_Note => LogLevel.Debug,
+                            CXDiagnosticSeverity.CXDiagnostic_Warning => LogLevel.Warning,
+                            CXDiagnosticSeverity.CXDiagnostic_Error => LogLevel.Error,
+                            CXDiagnosticSeverity.CXDiagnostic_Fatal => LogLevel.Critical,
+                            _ => throw new ArgumentOutOfRangeException()
+                        }, "{category} {message}", x.CategoryText, x.Format(0));
+                    }
+                }
+                
+                throw new Exception($"Could not parse translational unit. {Enum.GetName(result)}");
+            }
+            else if (result != CXErrorCode.CXError_Success)
             {
                 if (handle.NumDiagnostics > 0)
                 {
@@ -274,7 +295,7 @@ public sealed class ClangScraper
                         }
                     }
                 }
-                
+
                 throw new Exception($"Could not parse translational unit. {Enum.GetName(result)}");
             }
             

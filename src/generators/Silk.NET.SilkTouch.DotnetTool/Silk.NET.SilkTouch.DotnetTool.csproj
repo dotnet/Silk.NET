@@ -5,22 +5,24 @@
         <TargetFramework>net6.0</TargetFramework>
         <PackAsTool Condition="'$(Configuration)' != 'Debug'">true</PackAsTool>
         <ToolCommandName>silktouch</ToolCommandName>
+        <PackageType>DotnetTool</PackageType>
+        <GeneratePackageOnBuild Condition="'$(Configuration)' != 'Debug'">true</GeneratePackageOnBuild>
+
         <!-- Workaround for issue https://github.com/microsoft/ClangSharp/issues/129 -->
         <RuntimeIdentifier Condition="'$(RuntimeIdentifier)' == '' AND '$(PackAsTool)' != 'true'">$(NETCoreSdkRuntimeIdentifier)</RuntimeIdentifier>
     </PropertyGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\Silk.NET.SilkTouch.Emitter\Silk.NET.SilkTouch.Emitter.csproj" />
-      <ProjectReference Include="..\Silk.NET.SilkTouch.Overloader\Silk.NET.SilkTouch.Overloader.csproj" />
       <ProjectReference Include="..\Silk.NET.SilkTouch.Scraper\Silk.NET.SilkTouch.Scraper.csproj" />
+      <ProjectReference Include="..\Silk.NET.SilkTouch.TypeResolution\Silk.NET.SilkTouch.TypeResolution.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Microsoft.Build.Framework" ExcludeAssets="runtime" />
-      <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" />
-      <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.MSBuild" />
       <PackageReference Include="System.CommandLine" />
       <PackageReference Include="Microsoft.Extensions.Hosting" />
+      <PackageReference Include="libclang" />
+      <PackageReference Include="libClangSharp" />
     </ItemGroup>
 
 </Project>
