@@ -10,6 +10,7 @@ using System.Reflection.Metadata;
 using System.Xml;
 using Microsoft.Extensions.Logging;
 using Silk.NET.SilkTouch.Symbols;
+using Parameter=Silk.NET.SilkTouch.Symbols.Parameter;
 using TypeReference=Silk.NET.SilkTouch.Symbols.TypeReference;
 
 namespace Silk.NET.SilkTouch.Scraper;
@@ -37,6 +38,10 @@ internal sealed class XmlVisitor
                 return VisitStruct(@struct);
             case XmlElement { Name: "field" } field:
                 return VisitField(field);
+            case XmlElement { Name: "class" } @class:
+                return VisitClass(@class);
+            case XmlElement { Name: "function" } function:
+                return VisitFunction(function);
             default:
             {
                 _logger.LogWarning("Skipping unknown XML Node of kind {name}", node.Name);
@@ -47,6 +52,75 @@ internal sealed class XmlVisitor
                 #endif
             }
         }
+    }
+
+    private IEnumerable<Symbol> VisitClass(XmlElement @class)
+    {
+        var name = @class.Attributes["name"]?.Value;
+        if (name is null)
+            throw new InvalidOperationException("Class name cannot be null");
+
+        var members = @class.ChildNodes.Cast<XmlNode>()
+            .SelectMany
+            (
+                x =>
+                {
+                    var results = Visit(x).ToArray();
+                    if (results.Any(x => x is not MethodSymbol))
+                        throw new NotImplementedException("Class only supports method members for now");
+                    return results.OfType<MethodSymbol>();
+                }
+            );
+        return new[]
+        {
+            new ClassSymbol(TypeId.CreateNew(), new IdentifierSymbol(name), members.ToImmutableArray())
+        };
+    }
+
+    private IEnumerable<Symbol> VisitFunction(XmlElement function)
+    {
+        var name = function.Attributes["name"]?.Value;
+        if (name is null)
+            throw new InvalidOperationException("Function name cannot be null");
+
+        var returnTypeNode = function.ChildNodes.Cast<XmlNode>().OfType<XmlElement>().FirstOrDefault(x => x.Name == "type");
+        if (returnTypeNode is null)
+            throw new InvalidOperationException("Could not find return type of function");
+        
+        var returnType = VisitType(returnTypeNode).Single();
+        if (returnType is not TypeReference rt)
+            throw new InvalidOperationException("VisitType needs to return single type reference");
+
+        var parameters = function.ChildNodes.Cast<XmlNode>()
+            .OfType<XmlElement>()
+            .Where(x => x.Name == "param")
+            .Select
+            (
+                x =>
+                {
+                    var paramName = x.Attributes["name"]?.Value;
+                    if (paramName is null)
+                        throw new InvalidOperationException("Function parameter name cannot be null");
+
+                    var paramTypeNode = x.ChildNodes.Cast<XmlNode>()
+                        .OfType<XmlElement>()
+                        .SingleOrDefault(x => x.Name == "type");
+                    if (paramTypeNode is null)
+                        throw new InvalidOperationException("Parameter type cannot be null");
+
+                    var paramType = VisitType(paramTypeNode).Single();
+                    if (paramType is not TypeReference pt)
+                        throw new InvalidOperationException("VisitType needs to return single type reference");
+
+                    return new Parameter(pt, new IdentifierSymbol(paramName));
+                }
+            )
+            .ToImmutableArray();
+
+        return new[]
+        {
+            new StaticExternalMethodSymbol(rt, parameters, new IdentifierSymbol(name))
+        };
     }
 
     private IEnumerable<Symbol> VisitField(XmlElement field)
@@ -99,25 +173,6 @@ internal sealed class XmlVisitor
         {
             new FieldSymbol(finalType, new IdentifierSymbol(name))
         };
-    }
-    
-    // TODO: Configurable Type maps
-    private static readonly Dictionary<string, TypeReference> _typeMap = new()
-    {
-        ["int"] = new ExternalTypeReference(null, new IdentifierSymbol("int"))
-    };
-    
-    private bool TryResolveTypeRef(string text, [NotNullWhen(true)] out TypeReference? reference)
-    {
-        if (_typeMap.TryGetValue(text, out reference))
-        {
-            return true;
-        }
-        else
-        {
-            _logger.LogDebug("Failed to resolve type reference from \"{text}\"", text);
-            return false;
-        }
     }
 
     // NOTE: This does not visit types as in class/struct, but visits *references* to types. Like from methods or fields.

@@ -294,7 +294,7 @@ public sealed class CSharpEmitter
                         throw new InvalidOperationException("Syntax Token was not correctly visited");
                     ClearState();
 
-                    return Parameter(identifierToken2).WithType(resultToken);
+                    return Parameter(identifierToken2.WithLeadingTrivia(Space)).WithType(resultToken);
                 }
             ).ToImmutableArray();
 
