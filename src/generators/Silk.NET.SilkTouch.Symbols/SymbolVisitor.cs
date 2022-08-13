@@ -118,7 +118,7 @@ public abstract class SymbolVisitor
     {
         if (typeReference is ExternalTypeReference etr) return VisitExternalTypeReference(etr);
         if (typeReference is InternalTypeReference itr) return VisitInternalTypeReference(itr);
-        if (typeReference is UnresolvedTypeReference utr) UnresolvedTypeReference.ThrowInvalidSymbol();
+        if (typeReference is UnresolvedTypeReference utr) UnresolvedTypeReference.ThrowInvalidSymbol(utr);
         if (typeReference is PointerTypeReference ptr) return VisitPointerTypeReference(ptr);
         if (typeReference is FunctionPointerTypeReference fptr) return VisitFunctionPointerTypeReference(fptr);
         return ThrowUnknownSymbol<TypeReference>(typeReference);
