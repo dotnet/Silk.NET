@@ -24,8 +24,9 @@ public sealed class PrimitiveTypeResolverTests
         InlineData("ulong", "System", "UInt64"),
         InlineData("short", "System", "Int16"),
         InlineData("ushort", "System", "UInt16"),
+        InlineData("void", null, "void"),
     ]
-    public void ShouldResolve(string text, string @namespace, string identifier)
+    public void ShouldResolve(string text, string? @namespace, string identifier)
     {
         var symbol = new UnresolvedTypeReference(text);
         var output = new PrimitiveTypeResolver(new TypeStore());
