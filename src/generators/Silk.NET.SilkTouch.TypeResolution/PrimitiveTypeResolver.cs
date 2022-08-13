@@ -16,8 +16,8 @@ public sealed class PrimitiveTypeResolver : SimpleTypeResolverBase
     {
     }
 
-    private static ExternalTypeReference CreateExternalTypeRef(string @namespace, string name)
-        => new ExternalTypeReference(new IdentifierSymbol(@namespace), new IdentifierSymbol(name));
+    private static ExternalTypeReference CreateExternalTypeRef(string? @namespace, string name)
+        => new ExternalTypeReference(@namespace is not null ? new IdentifierSymbol(@namespace) : null, new IdentifierSymbol(name));
     private static readonly Dictionary<string, TypeReference> _typeMap = new Dictionary<string, TypeReference>()
     {
         ["bool"] = CreateExternalTypeRef("System", "Boolean"),
@@ -35,6 +35,7 @@ public sealed class PrimitiveTypeResolver : SimpleTypeResolverBase
         ["ulong"] = CreateExternalTypeRef("System", "UInt64"),
         ["short"] = CreateExternalTypeRef("System", "Int16"),
         ["ushort"] = CreateExternalTypeRef("System", "UInt16"),
+        ["void"] = CreateExternalTypeRef(null, "void")
     };
 
     /// <inheritdoc />
