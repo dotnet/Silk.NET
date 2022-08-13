@@ -200,4 +200,21 @@ GLFWAPI int test(int* pointer);
 ");
         return Verifier.Verify(result);
     }
+    
+    [Fact,
+     Trait("Category", "Integration"),
+     Trait("Source Language", "C++"),
+     Trait("Target Language", "C#"),
+     Trait("Feature", "Structs"),
+     Trait("Feature", "Fields")]
+    public Task Test11()
+    {
+        var result = TestHelper.GetCSharpOutputFromCpp(@"
+#include <stdint.h>
+
+typedef struct {
+    int32_t*** f1;
+} Test;");
+        return Verifier.Verify(result);
+    }
 }

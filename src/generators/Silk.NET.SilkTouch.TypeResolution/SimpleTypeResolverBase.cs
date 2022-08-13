@@ -18,11 +18,19 @@ public abstract class SimpleTypeResolverBase : SymbolVisitor
     /// <inheritdoc />
     protected override TypeReference VisitTypeReference(TypeReference typeSymbol)
     {
-        if (typeSymbol is UnresolvedTypeReference utr)
+        while (true)
         {
-            return TryResolve(utr, out var result) ? result! : utr;
+            if (typeSymbol is UnresolvedTypeReference utr)
+            {
+                if (TryResolve(utr, out var result))
+                {
+                    typeSymbol = result!;
+                    continue;
+                }
+                return utr;
+            }
+            return base.VisitTypeReference(typeSymbol);
         }
-        return base.VisitTypeReference(typeSymbol);
     }
 
     /// <summary>
