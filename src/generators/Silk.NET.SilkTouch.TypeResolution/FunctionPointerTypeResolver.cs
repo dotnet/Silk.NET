@@ -15,11 +15,6 @@ namespace Silk.NET.SilkTouch.TypeResolution;
 public class FunctionPointerTypeResolver : SimpleTypeResolverBase
 {
     private readonly ILogger _logger;
-    private static readonly Regex _regex = new
-    (/*lang=regex*/
-        @"delegate\*\sunmanaged(\[((?'modifier'.(?=,\s?)?)+)*\])?\<((?'parameter'(.(?=,\s?)+))(,\s?))*(?'return_type'(.)+)\>",
-        RegexOptions.CultureInvariant | RegexOptions.Compiled | RegexOptions.Singleline
-    );
 
     /// <inheritdoc />
     public FunctionPointerTypeResolver(ILogger<FunctionPointerTypeResolver> logger, TypeStore typeStore) : base(typeStore)
