@@ -342,6 +342,11 @@ namespace Silk.NET.SilkTouch.DotnetTool
                 visitors.Add(ActivatorUtilities.CreateInstance<PointerTypeResolver>(serviceProvider, typeStore));
             }
 
+            if ((usedSymbolVisitors & AvailableSymbolVisitors.FunctionPointerTypeResolver) != 0)
+            {
+                visitors.Add(ActivatorUtilities.CreateInstance<FunctionPointerTypeResolver>(serviceProvider, typeStore));
+            }
+
             if ((usedSymbolVisitors & AvailableSymbolVisitors.InternalTypeResolver) != 0)
             {
                 var typeScopeSymbolVisitor = ActivatorUtilities.CreateInstance<TypeScopeSymbolVisitor>
@@ -518,7 +523,8 @@ namespace Silk.NET.SilkTouch.DotnetTool
             PointerTypeResolver = 1 << 1,
             InternalTypeResolver = 1 << 2,
             PrimitiveTypeResolver = 1 << 3,
-            AllTypeResolvers = PointerTypeResolver | InternalTypeResolver | PrimitiveTypeResolver,
+            FunctionPointerTypeResolver = 1 << 4,
+            AllTypeResolvers = PointerTypeResolver | InternalTypeResolver | PrimitiveTypeResolver | FunctionPointerTypeResolver,
         }
     }
 }

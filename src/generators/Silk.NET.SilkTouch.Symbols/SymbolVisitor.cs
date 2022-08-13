@@ -120,6 +120,7 @@ public abstract class SymbolVisitor
         if (typeReference is InternalTypeReference itr) return VisitInternalTypeReference(itr);
         if (typeReference is UnresolvedTypeReference utr) UnresolvedTypeReference.ThrowInvalidSymbol();
         if (typeReference is PointerTypeReference ptr) return VisitPointerTypeReference(ptr);
+        if (typeReference is FunctionPointerTypeReference fptr) return VisitFunctionPointerTypeReference(fptr);
         return ThrowUnknownSymbol<TypeReference>(typeReference);
     }
     
@@ -135,7 +136,24 @@ public abstract class SymbolVisitor
     {
         return new PointerTypeReference(VisitTypeReference(pointerTypeReference.Underlying));
     }
-
+    /// <summary>
+    /// Visit a <see cref="FunctionPointerTypeReference"/>. Will call the appropriate methods to visit the different parts of the symbol.
+    /// </summary>
+    /// <param name="functionPointerTypeReference">The function pointer type reference to visit</param>
+    /// <returns>The rewritten symbol</returns>
+    /// <remarks>
+    /// The order in which the parts are visited is kept as an implementation detail. Do not rely on this order.
+    /// </remarks>
+    protected virtual FunctionPointerTypeReference VisitFunctionPointerTypeReference
+        (FunctionPointerTypeReference functionPointerTypeReference)
+    {
+        return new FunctionPointerTypeReference
+        (
+            VisitTypeReference(functionPointerTypeReference.ReturnType),
+            functionPointerTypeReference.ParameterTypes.Select(VisitTypeReference).ToImmutableArray()
+        );
+    }
+    
     /// <summary>
     /// Visit a <see cref="InternalTypeReference"/>. Will call the appropriate methods to visit the different parts of the symbol.
     /// </summary>

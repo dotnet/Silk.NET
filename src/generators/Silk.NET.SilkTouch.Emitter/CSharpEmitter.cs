@@ -236,6 +236,45 @@ public sealed class CSharpEmitter
             return pointerTypeReference;
         }
 
+        protected override FunctionPointerTypeReference VisitFunctionPointerTypeReference
+            (FunctionPointerTypeReference functionPointerTypeReference)
+        {
+            AssertClearState();
+
+            var paramList = functionPointerTypeReference.ParameterTypes
+                .Append(functionPointerTypeReference.ReturnType)
+                .Select
+                (
+                    (x, i) =>
+                    {
+                        VisitTypeReference(x);
+                        if (_syntax is not TypeSyntax typeSyntax)
+                            throw new InvalidOperationException("TypeReference did not return TypeSyntax");
+                        ClearState();
+
+                        if (i == 0 || i > functionPointerTypeReference.ParameterTypes.Length)
+                            return typeSyntax;
+                        else
+                            return typeSyntax.WithLeadingTrivia(Space); // not ideal, but the easiest way to do this
+                    }
+                )
+                .Select(FunctionPointerParameter)
+                .ToImmutableArray();
+
+            _syntax = FunctionPointerType
+            (
+                Token(SyntaxKind.DelegateKeyword),
+                Token(SyntaxKind.AsteriskToken),
+                FunctionPointerCallingConvention(Token(SyntaxKind.UnmanagedKeyword)).WithLeadingTrivia(Space),
+                FunctionPointerParameterList
+                (
+                    SeparatedList(paramList)
+                )
+            );
+            
+            return functionPointerTypeReference;
+        }
+
         protected override ExternalTypeReference VisitExternalTypeReference(ExternalTypeReference typeReference)
         {
             AssertClearState();
