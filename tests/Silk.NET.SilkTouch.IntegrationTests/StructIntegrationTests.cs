@@ -173,7 +173,7 @@ struct a {
         return Verifier.Verify(result);
     }
 
-    [Fact,
+    [Fact(Skip = "__declspec is windows only"),
      Trait("Category", "Integration"),
      Trait("Source Language", "C++"),
      Trait("Target Language", "C#"),
