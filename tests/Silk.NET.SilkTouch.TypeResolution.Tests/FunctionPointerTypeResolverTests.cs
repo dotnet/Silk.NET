@@ -8,7 +8,7 @@ using Xunit;
 
 namespace Silk.NET.SilkTouch.TypeResolution.Tests;
 
-public class FunctionPointerResolverTests
+public class FunctionPointerTypeResolverTests
 {
     [Theory, Trait("Category", "Type Resolution"),
      InlineData("delegate* unmanaged<A>", "A", new string[0]),
@@ -20,7 +20,7 @@ public class FunctionPointerResolverTests
     ]
     public void ShouldMatch(string text, string returnString, string[] parameters)
     {
-        var result = new FunctionPointerResolver(new TypeStore()).Visit(new UnresolvedTypeReference(text));
+        var result = new FunctionPointerTypeResolver(new TypeStore()).Visit(new UnresolvedTypeReference(text));
 
         var fptr = Assert.IsType<FunctionPointerTypeReference>(result);
         Assert.Equal(returnString, Assert.IsType<UnresolvedTypeReference>(fptr.ReturnType).Text);
@@ -48,7 +48,7 @@ public class FunctionPointerResolverTests
     ]
     public void ShouldNotMatch(string text)
     {
-        var result = new FunctionPointerResolver(new TypeStore()).Visit(new UnresolvedTypeReference(text));
+        var result = new FunctionPointerTypeResolver(new TypeStore()).Visit(new UnresolvedTypeReference(text));
 
         Assert.IsNotType<FunctionPointerTypeReference>(result);
     }
