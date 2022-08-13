@@ -172,4 +172,32 @@ struct a {
 };");
         return Verifier.Verify(result);
     }
+
+    [Fact,
+     Trait("Category", "Integration"),
+     Trait("Source Language", "C++"),
+     Trait("Target Language", "C#"),
+     Trait("Feature", "Functions")]
+    public Task Test9()
+    {
+        var result = TestHelper.GetCSharpOutputFromCpp(@"
+#define GLFWAPI __declspec(dllexport)
+GLFWAPI int test(int* pointer);
+");
+        return Verifier.Verify(result);
+    }
+    
+    [Fact,
+     Trait("Category", "Integration"),
+     Trait("Source Language", "C++"),
+     Trait("Target Language", "C#"),
+     Trait("Feature", "Functions")]
+    public Task Test10()
+    {
+        var result = TestHelper.GetCSharpOutputFromCpp(@"
+#define GLFWAPI __attribute__((visibility(""default"")))
+GLFWAPI int test(int* pointer);
+");
+        return Verifier.Verify(result);
+    }
 }

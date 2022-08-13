@@ -21,6 +21,7 @@ namespace Silk.NET.SilkTouch.TestFramework
             ["Nested Types"] = true,
             ["Structs"] = true,
             ["Unions"] = false,
+            ["Functions"] = true
         };
 
         public SilkTouchTestFramework(IMessageSink messageSink)
