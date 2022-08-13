@@ -259,96 +259,96 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Serialize(Silk.NET.Core.Native.IStream* outputXmlStream, ID2D1SvgElement* subtree)
+        public readonly unsafe int Serialize(Silk.NET.Core.Win32Extras.IStream* outputXmlStream, ID2D1SvgElement* subtree)
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Silk.NET.Core.Native.IStream*, ID2D1SvgElement*, int>)LpVtbl[9])(@this, outputXmlStream, subtree);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Silk.NET.Core.Win32Extras.IStream*, ID2D1SvgElement*, int>)LpVtbl[9])(@this, outputXmlStream, subtree);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Serialize(Silk.NET.Core.Native.IStream* outputXmlStream, ref ID2D1SvgElement subtree)
+        public readonly unsafe int Serialize(Silk.NET.Core.Win32Extras.IStream* outputXmlStream, ref ID2D1SvgElement subtree)
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID2D1SvgElement* subtreePtr = &subtree)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Silk.NET.Core.Native.IStream*, ID2D1SvgElement*, int>)LpVtbl[9])(@this, outputXmlStream, subtreePtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Silk.NET.Core.Win32Extras.IStream*, ID2D1SvgElement*, int>)LpVtbl[9])(@this, outputXmlStream, subtreePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Serialize(ref Silk.NET.Core.Native.IStream outputXmlStream, ID2D1SvgElement* subtree)
+        public readonly unsafe int Serialize(ref Silk.NET.Core.Win32Extras.IStream outputXmlStream, ID2D1SvgElement* subtree)
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Core.Native.IStream* outputXmlStreamPtr = &outputXmlStream)
+            fixed (Silk.NET.Core.Win32Extras.IStream* outputXmlStreamPtr = &outputXmlStream)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Silk.NET.Core.Native.IStream*, ID2D1SvgElement*, int>)LpVtbl[9])(@this, outputXmlStreamPtr, subtree);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Silk.NET.Core.Win32Extras.IStream*, ID2D1SvgElement*, int>)LpVtbl[9])(@this, outputXmlStreamPtr, subtree);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Serialize(ref Silk.NET.Core.Native.IStream outputXmlStream, ref ID2D1SvgElement subtree)
+        public readonly int Serialize(ref Silk.NET.Core.Win32Extras.IStream outputXmlStream, ref ID2D1SvgElement subtree)
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Core.Native.IStream* outputXmlStreamPtr = &outputXmlStream)
+            fixed (Silk.NET.Core.Win32Extras.IStream* outputXmlStreamPtr = &outputXmlStream)
             {
                 fixed (ID2D1SvgElement* subtreePtr = &subtree)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Silk.NET.Core.Native.IStream*, ID2D1SvgElement*, int>)LpVtbl[9])(@this, outputXmlStreamPtr, subtreePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Silk.NET.Core.Win32Extras.IStream*, ID2D1SvgElement*, int>)LpVtbl[9])(@this, outputXmlStreamPtr, subtreePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Deserialize(Silk.NET.Core.Native.IStream* inputXmlStream, ID2D1SvgElement** subtree)
+        public readonly unsafe int Deserialize(Silk.NET.Core.Win32Extras.IStream* inputXmlStream, ID2D1SvgElement** subtree)
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Silk.NET.Core.Native.IStream*, ID2D1SvgElement**, int>)LpVtbl[10])(@this, inputXmlStream, subtree);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Silk.NET.Core.Win32Extras.IStream*, ID2D1SvgElement**, int>)LpVtbl[10])(@this, inputXmlStream, subtree);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Deserialize(Silk.NET.Core.Native.IStream* inputXmlStream, ref ID2D1SvgElement* subtree)
+        public readonly unsafe int Deserialize(Silk.NET.Core.Win32Extras.IStream* inputXmlStream, ref ID2D1SvgElement* subtree)
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID2D1SvgElement** subtreePtr = &subtree)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Silk.NET.Core.Native.IStream*, ID2D1SvgElement**, int>)LpVtbl[10])(@this, inputXmlStream, subtreePtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Silk.NET.Core.Win32Extras.IStream*, ID2D1SvgElement**, int>)LpVtbl[10])(@this, inputXmlStream, subtreePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Deserialize(ref Silk.NET.Core.Native.IStream inputXmlStream, ID2D1SvgElement** subtree)
+        public readonly unsafe int Deserialize(ref Silk.NET.Core.Win32Extras.IStream inputXmlStream, ID2D1SvgElement** subtree)
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Core.Native.IStream* inputXmlStreamPtr = &inputXmlStream)
+            fixed (Silk.NET.Core.Win32Extras.IStream* inputXmlStreamPtr = &inputXmlStream)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Silk.NET.Core.Native.IStream*, ID2D1SvgElement**, int>)LpVtbl[10])(@this, inputXmlStreamPtr, subtree);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Silk.NET.Core.Win32Extras.IStream*, ID2D1SvgElement**, int>)LpVtbl[10])(@this, inputXmlStreamPtr, subtree);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Deserialize(ref Silk.NET.Core.Native.IStream inputXmlStream, ref ID2D1SvgElement* subtree)
+        public readonly unsafe int Deserialize(ref Silk.NET.Core.Win32Extras.IStream inputXmlStream, ref ID2D1SvgElement* subtree)
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Core.Native.IStream* inputXmlStreamPtr = &inputXmlStream)
+            fixed (Silk.NET.Core.Win32Extras.IStream* inputXmlStreamPtr = &inputXmlStream)
             {
                 fixed (ID2D1SvgElement** subtreePtr = &subtree)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Silk.NET.Core.Native.IStream*, ID2D1SvgElement**, int>)LpVtbl[10])(@this, inputXmlStreamPtr, subtreePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Silk.NET.Core.Win32Extras.IStream*, ID2D1SvgElement**, int>)LpVtbl[10])(@this, inputXmlStreamPtr, subtreePtr);
                 }
             }
             return ret;

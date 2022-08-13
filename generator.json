@@ -908,12 +908,15 @@
                     "-Ibuild/include"
                 ],
                 "traverse": [
+                    "$windowsSdkDir/Include/$windowsSdkVersion/shared/rpcdcep.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/shared/WTypesbase.h",
                     "$windowsSdkDir/Include/$windowsSdkVersion/shared/evntrace.h",
                     "$windowsSdkDir/Include/$windowsSdkVersion/um/minwinbase.h",
                     "$windowsSdkDir/Include/$windowsSdkVersion/um/timezoneapi.h",
                     "$windowsSdkDir/Include/$windowsSdkVersion/um/winnt.h",
                     "$windowsSdkDir/Include/$windowsSdkVersion/um/handleapi.h",
-                    "$windowsSdkDir/Include/$windowsSdkVersion/um/fileapi.h"
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/fileapi.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/objidlbase.h"
                 ],
                 "classes": {
                     "win32extras.h": "[Core]Windows"
@@ -946,7 +949,8 @@
                     "_TIME_ZONE_INFORMATION": "TimeZoneInformation",
                     "_WNODE_HEADER": "WnodeHeader",
                     "_EXCEPTION_RECORD": "ExceptionRecord",
-                    "_FILE_SEGMENT_ELEMENT": "FileSegmentElement"
+                    "_FILE_SEGMENT_ELEMENT": "FileSegmentElement",
+					"_RPC_MESSAGE": "RPCMessage"
                 },
                 {
                     "$include.dxTypemap": "build/dx_typemap.json",

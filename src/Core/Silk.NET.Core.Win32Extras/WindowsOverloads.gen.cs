@@ -9033,7 +9033,1879 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1671, Column 1 in D:/Windows Kits/10/Include/10.0.22621.0/shared\\evntrace.h")]
+        [NativeName("Src", "Line 2005, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IEnumUnknownRemoteNextProxy(this Windows thisApi, IEnumUnknown* This, uint celt, Silk.NET.Core.Native.IUnknown** rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumUnknownRemoteNextProxy(This, celt, rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2005, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IEnumUnknownRemoteNextProxy(this Windows thisApi, IEnumUnknown* This, uint celt, ref Silk.NET.Core.Native.IUnknown* rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumUnknownRemoteNextProxy(This, celt, ref rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2005, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IEnumUnknownRemoteNextProxy(this Windows thisApi, Span<IEnumUnknown> This, uint celt, Silk.NET.Core.Native.IUnknown** rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumUnknownRemoteNextProxy(ref This.GetPinnableReference(), celt, rgelt, pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2005, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IEnumUnknownRemoteNextProxy(this Windows thisApi, Span<IEnumUnknown> This, uint celt, Silk.NET.Core.Native.IUnknown** rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumUnknownRemoteNextProxy(ref This.GetPinnableReference(), celt, rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2005, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IEnumUnknownRemoteNextProxy(this Windows thisApi, Span<IEnumUnknown> This, uint celt, ref Silk.NET.Core.Native.IUnknown* rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumUnknownRemoteNextProxy(ref This.GetPinnableReference(), celt, ref rgelt, pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2005, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IEnumUnknownRemoteNextProxy(this Windows thisApi, Span<IEnumUnknown> This, uint celt, ref Silk.NET.Core.Native.IUnknown* rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumUnknownRemoteNextProxy(ref This.GetPinnableReference(), celt, ref rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2012, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IEnumUnknownRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumUnknownRemoteNextStub(This, _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2012, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IEnumUnknownRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumUnknownRemoteNextStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2012, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IEnumUnknownRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumUnknownRemoteNextStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2012, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IEnumUnknownRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumUnknownRemoteNextStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2012, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IEnumUnknownRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumUnknownRemoteNextStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2012, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IEnumUnknownRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumUnknownRemoteNextStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2012, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IEnumUnknownRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumUnknownRemoteNextStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2012, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IEnumUnknownRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumUnknownRemoteNextStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2012, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IEnumUnknownRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumUnknownRemoteNextStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2012, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IEnumUnknownRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumUnknownRemoteNextStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2012, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IEnumUnknownRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumUnknownRemoteNextStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2012, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IEnumUnknownRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumUnknownRemoteNextStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2012, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IEnumUnknownRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumUnknownRemoteNextStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2012, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IEnumUnknownRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumUnknownRemoteNextStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2012, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IEnumUnknownRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumUnknownRemoteNextStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2144, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IEnumStringRemoteNextProxy(this Windows thisApi, IEnumString* This, uint celt, char** rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumStringRemoteNextProxy(This, celt, rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2144, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IEnumStringRemoteNextProxy(this Windows thisApi, IEnumString* This, uint celt, ref char* rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumStringRemoteNextProxy(This, celt, ref rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2144, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IEnumStringRemoteNextProxy(this Windows thisApi, Span<IEnumString> This, uint celt, char** rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumStringRemoteNextProxy(ref This.GetPinnableReference(), celt, rgelt, pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2144, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IEnumStringRemoteNextProxy(this Windows thisApi, Span<IEnumString> This, uint celt, char** rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumStringRemoteNextProxy(ref This.GetPinnableReference(), celt, rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2144, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IEnumStringRemoteNextProxy(this Windows thisApi, Span<IEnumString> This, uint celt, ref char* rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumStringRemoteNextProxy(ref This.GetPinnableReference(), celt, ref rgelt, pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2144, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IEnumStringRemoteNextProxy(this Windows thisApi, Span<IEnumString> This, uint celt, ref char* rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumStringRemoteNextProxy(ref This.GetPinnableReference(), celt, ref rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2151, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IEnumStringRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumStringRemoteNextStub(This, _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2151, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IEnumStringRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumStringRemoteNextStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2151, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IEnumStringRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumStringRemoteNextStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2151, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IEnumStringRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumStringRemoteNextStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2151, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IEnumStringRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumStringRemoteNextStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2151, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IEnumStringRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumStringRemoteNextStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2151, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IEnumStringRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumStringRemoteNextStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2151, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IEnumStringRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumStringRemoteNextStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2151, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IEnumStringRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumStringRemoteNextStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2151, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IEnumStringRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumStringRemoteNextStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2151, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IEnumStringRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumStringRemoteNextStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2151, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IEnumStringRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumStringRemoteNextStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2151, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IEnumStringRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumStringRemoteNextStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2151, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IEnumStringRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumStringRemoteNextStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2151, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IEnumStringRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IEnumStringRemoteNextStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2273, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamRemoteReadProxy(this Windows thisApi, ISequentialStream* This, byte* pv, uint cb, Span<uint> pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamRemoteReadProxy(This, pv, cb, ref pcbRead.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2273, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamRemoteReadProxy(this Windows thisApi, ISequentialStream* This, Span<byte> pv, uint cb, uint* pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamRemoteReadProxy(This, ref pv.GetPinnableReference(), cb, pcbRead);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2273, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamRemoteReadProxy(this Windows thisApi, ISequentialStream* This, Span<byte> pv, uint cb, Span<uint> pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamRemoteReadProxy(This, ref pv.GetPinnableReference(), cb, ref pcbRead.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2273, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamRemoteReadProxy(this Windows thisApi, ISequentialStream* This, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, Span<uint> pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamRemoteReadProxy(This, pv, cb, ref pcbRead.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2273, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamRemoteReadProxy(this Windows thisApi, Span<ISequentialStream> This, byte* pv, uint cb, uint* pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamRemoteReadProxy(ref This.GetPinnableReference(), pv, cb, pcbRead);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2273, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamRemoteReadProxy(this Windows thisApi, Span<ISequentialStream> This, byte* pv, uint cb, Span<uint> pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamRemoteReadProxy(ref This.GetPinnableReference(), pv, cb, ref pcbRead.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2273, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamRemoteReadProxy(this Windows thisApi, Span<ISequentialStream> This, Span<byte> pv, uint cb, uint* pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamRemoteReadProxy(ref This.GetPinnableReference(), ref pv.GetPinnableReference(), cb, pcbRead);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2273, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamRemoteReadProxy(this Windows thisApi, Span<ISequentialStream> This, Span<byte> pv, uint cb, Span<uint> pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamRemoteReadProxy(ref This.GetPinnableReference(), ref pv.GetPinnableReference(), cb, ref pcbRead.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2273, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamRemoteReadProxy(this Windows thisApi, Span<ISequentialStream> This, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, uint* pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamRemoteReadProxy(ref This.GetPinnableReference(), pv, cb, pcbRead);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2273, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamRemoteReadProxy(this Windows thisApi, Span<ISequentialStream> This, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, Span<uint> pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamRemoteReadProxy(ref This.GetPinnableReference(), pv, cb, ref pcbRead.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2280, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void ISequentialStreamRemoteReadStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ISequentialStreamRemoteReadStub(This, _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2280, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void ISequentialStreamRemoteReadStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ISequentialStreamRemoteReadStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2280, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void ISequentialStreamRemoteReadStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ISequentialStreamRemoteReadStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2280, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void ISequentialStreamRemoteReadStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ISequentialStreamRemoteReadStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2280, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void ISequentialStreamRemoteReadStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ISequentialStreamRemoteReadStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2280, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void ISequentialStreamRemoteReadStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ISequentialStreamRemoteReadStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2280, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void ISequentialStreamRemoteReadStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ISequentialStreamRemoteReadStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2280, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void ISequentialStreamRemoteReadStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ISequentialStreamRemoteReadStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2280, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void ISequentialStreamRemoteReadStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ISequentialStreamRemoteReadStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2280, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void ISequentialStreamRemoteReadStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ISequentialStreamRemoteReadStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2280, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void ISequentialStreamRemoteReadStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ISequentialStreamRemoteReadStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2280, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void ISequentialStreamRemoteReadStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ISequentialStreamRemoteReadStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2280, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void ISequentialStreamRemoteReadStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ISequentialStreamRemoteReadStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2280, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void ISequentialStreamRemoteReadStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ISequentialStreamRemoteReadStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2280, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void ISequentialStreamRemoteReadStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ISequentialStreamRemoteReadStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2287, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamRemoteWriteProxy(this Windows thisApi, ISequentialStream* This, byte* pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamRemoteWriteProxy(This, pv, cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2287, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamRemoteWriteProxy(this Windows thisApi, ISequentialStream* This, Span<byte> pv, uint cb, uint* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamRemoteWriteProxy(This, ref pv.GetPinnableReference(), cb, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2287, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamRemoteWriteProxy(this Windows thisApi, ISequentialStream* This, Span<byte> pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamRemoteWriteProxy(This, ref pv.GetPinnableReference(), cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2287, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamRemoteWriteProxy(this Windows thisApi, ISequentialStream* This, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamRemoteWriteProxy(This, pv, cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2287, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamRemoteWriteProxy(this Windows thisApi, Span<ISequentialStream> This, byte* pv, uint cb, uint* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamRemoteWriteProxy(ref This.GetPinnableReference(), pv, cb, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2287, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamRemoteWriteProxy(this Windows thisApi, Span<ISequentialStream> This, byte* pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamRemoteWriteProxy(ref This.GetPinnableReference(), pv, cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2287, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamRemoteWriteProxy(this Windows thisApi, Span<ISequentialStream> This, Span<byte> pv, uint cb, uint* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamRemoteWriteProxy(ref This.GetPinnableReference(), ref pv.GetPinnableReference(), cb, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2287, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamRemoteWriteProxy(this Windows thisApi, Span<ISequentialStream> This, Span<byte> pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamRemoteWriteProxy(ref This.GetPinnableReference(), ref pv.GetPinnableReference(), cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2287, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamRemoteWriteProxy(this Windows thisApi, Span<ISequentialStream> This, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, uint* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamRemoteWriteProxy(ref This.GetPinnableReference(), pv, cb, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2287, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamRemoteWriteProxy(this Windows thisApi, Span<ISequentialStream> This, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamRemoteWriteProxy(ref This.GetPinnableReference(), pv, cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2294, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void ISequentialStreamRemoteWriteStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ISequentialStreamRemoteWriteStub(This, _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2294, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void ISequentialStreamRemoteWriteStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ISequentialStreamRemoteWriteStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2294, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void ISequentialStreamRemoteWriteStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ISequentialStreamRemoteWriteStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2294, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void ISequentialStreamRemoteWriteStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ISequentialStreamRemoteWriteStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2294, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void ISequentialStreamRemoteWriteStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ISequentialStreamRemoteWriteStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2294, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void ISequentialStreamRemoteWriteStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ISequentialStreamRemoteWriteStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2294, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void ISequentialStreamRemoteWriteStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ISequentialStreamRemoteWriteStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2294, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void ISequentialStreamRemoteWriteStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ISequentialStreamRemoteWriteStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2294, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void ISequentialStreamRemoteWriteStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ISequentialStreamRemoteWriteStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2294, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void ISequentialStreamRemoteWriteStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ISequentialStreamRemoteWriteStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2294, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void ISequentialStreamRemoteWriteStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ISequentialStreamRemoteWriteStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2294, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void ISequentialStreamRemoteWriteStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ISequentialStreamRemoteWriteStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2294, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void ISequentialStreamRemoteWriteStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ISequentialStreamRemoteWriteStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2294, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void ISequentialStreamRemoteWriteStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ISequentialStreamRemoteWriteStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2294, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void ISequentialStreamRemoteWriteStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.ISequentialStreamRemoteWriteStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2568, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamRemoteSeekProxy(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, long dlibMove, uint dwOrigin, Span<ulong> plibNewPosition)
+        {
+            // SpanOverloader
+            return thisApi.IStreamRemoteSeekProxy(This, dlibMove, dwOrigin, ref plibNewPosition.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2568, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamRemoteSeekProxy(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, long dlibMove, uint dwOrigin, ulong* plibNewPosition)
+        {
+            // SpanOverloader
+            return thisApi.IStreamRemoteSeekProxy(ref This.GetPinnableReference(), dlibMove, dwOrigin, plibNewPosition);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2568, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamRemoteSeekProxy(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, long dlibMove, uint dwOrigin, Span<ulong> plibNewPosition)
+        {
+            // SpanOverloader
+            return thisApi.IStreamRemoteSeekProxy(ref This.GetPinnableReference(), dlibMove, dwOrigin, ref plibNewPosition.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2575, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IStreamRemoteSeekStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStreamRemoteSeekStub(This, _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2575, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IStreamRemoteSeekStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStreamRemoteSeekStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2575, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IStreamRemoteSeekStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStreamRemoteSeekStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2575, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IStreamRemoteSeekStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStreamRemoteSeekStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2575, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IStreamRemoteSeekStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStreamRemoteSeekStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2575, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IStreamRemoteSeekStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStreamRemoteSeekStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2575, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IStreamRemoteSeekStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStreamRemoteSeekStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2575, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IStreamRemoteSeekStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStreamRemoteSeekStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2575, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IStreamRemoteSeekStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStreamRemoteSeekStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2575, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IStreamRemoteSeekStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStreamRemoteSeekStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2575, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IStreamRemoteSeekStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStreamRemoteSeekStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2575, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IStreamRemoteSeekStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStreamRemoteSeekStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2575, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IStreamRemoteSeekStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStreamRemoteSeekStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2575, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IStreamRemoteSeekStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStreamRemoteSeekStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2575, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IStreamRemoteSeekStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStreamRemoteSeekStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2582, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamRemoteCopyToProxy(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, Silk.NET.Core.Win32Extras.IStream* pstm, ulong cb, ulong* pcbRead, Span<ulong> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamRemoteCopyToProxy(This, pstm, cb, pcbRead, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2582, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamRemoteCopyToProxy(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, Silk.NET.Core.Win32Extras.IStream* pstm, ulong cb, Span<ulong> pcbRead, ulong* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamRemoteCopyToProxy(This, pstm, cb, ref pcbRead.GetPinnableReference(), pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2582, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamRemoteCopyToProxy(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, Silk.NET.Core.Win32Extras.IStream* pstm, ulong cb, Span<ulong> pcbRead, Span<ulong> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamRemoteCopyToProxy(This, pstm, cb, ref pcbRead.GetPinnableReference(), ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2582, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamRemoteCopyToProxy(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, ulong* pcbRead, ulong* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamRemoteCopyToProxy(This, ref pstm.GetPinnableReference(), cb, pcbRead, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2582, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamRemoteCopyToProxy(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, ulong* pcbRead, Span<ulong> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamRemoteCopyToProxy(This, ref pstm.GetPinnableReference(), cb, pcbRead, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2582, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamRemoteCopyToProxy(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, Span<ulong> pcbRead, ulong* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamRemoteCopyToProxy(This, ref pstm.GetPinnableReference(), cb, ref pcbRead.GetPinnableReference(), pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2582, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamRemoteCopyToProxy(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, Span<ulong> pcbRead, Span<ulong> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamRemoteCopyToProxy(This, ref pstm.GetPinnableReference(), cb, ref pcbRead.GetPinnableReference(), ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2582, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamRemoteCopyToProxy(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Silk.NET.Core.Win32Extras.IStream* pstm, ulong cb, ulong* pcbRead, ulong* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamRemoteCopyToProxy(ref This.GetPinnableReference(), pstm, cb, pcbRead, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2582, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamRemoteCopyToProxy(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Silk.NET.Core.Win32Extras.IStream* pstm, ulong cb, ulong* pcbRead, Span<ulong> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamRemoteCopyToProxy(ref This.GetPinnableReference(), pstm, cb, pcbRead, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2582, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamRemoteCopyToProxy(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Silk.NET.Core.Win32Extras.IStream* pstm, ulong cb, Span<ulong> pcbRead, ulong* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamRemoteCopyToProxy(ref This.GetPinnableReference(), pstm, cb, ref pcbRead.GetPinnableReference(), pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2582, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamRemoteCopyToProxy(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Silk.NET.Core.Win32Extras.IStream* pstm, ulong cb, Span<ulong> pcbRead, Span<ulong> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamRemoteCopyToProxy(ref This.GetPinnableReference(), pstm, cb, ref pcbRead.GetPinnableReference(), ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2582, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamRemoteCopyToProxy(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, ulong* pcbRead, ulong* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamRemoteCopyToProxy(ref This.GetPinnableReference(), ref pstm.GetPinnableReference(), cb, pcbRead, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2582, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamRemoteCopyToProxy(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, ulong* pcbRead, Span<ulong> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamRemoteCopyToProxy(ref This.GetPinnableReference(), ref pstm.GetPinnableReference(), cb, pcbRead, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2582, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamRemoteCopyToProxy(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, Span<ulong> pcbRead, ulong* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamRemoteCopyToProxy(ref This.GetPinnableReference(), ref pstm.GetPinnableReference(), cb, ref pcbRead.GetPinnableReference(), pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2582, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamRemoteCopyToProxy(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, Span<ulong> pcbRead, Span<ulong> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamRemoteCopyToProxy(ref This.GetPinnableReference(), ref pstm.GetPinnableReference(), cb, ref pcbRead.GetPinnableReference(), ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2590, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IStreamRemoteCopyToStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStreamRemoteCopyToStub(This, _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2590, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IStreamRemoteCopyToStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStreamRemoteCopyToStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2590, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IStreamRemoteCopyToStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStreamRemoteCopyToStub(This, _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2590, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IStreamRemoteCopyToStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStreamRemoteCopyToStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2590, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IStreamRemoteCopyToStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStreamRemoteCopyToStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2590, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IStreamRemoteCopyToStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStreamRemoteCopyToStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2590, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IStreamRemoteCopyToStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStreamRemoteCopyToStub(This, ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2590, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IStreamRemoteCopyToStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStreamRemoteCopyToStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2590, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IStreamRemoteCopyToStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStreamRemoteCopyToStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2590, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IStreamRemoteCopyToStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStreamRemoteCopyToStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2590, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IStreamRemoteCopyToStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStreamRemoteCopyToStub(ref This.GetPinnableReference(), _pRpcChannelBuffer, ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2590, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IStreamRemoteCopyToStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStreamRemoteCopyToStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2590, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IStreamRemoteCopyToStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStreamRemoteCopyToStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), _pRpcMessage, ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2590, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IStreamRemoteCopyToStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStreamRemoteCopyToStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), _pdwStubPhase);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2590, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe void IStreamRemoteCopyToStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
+        {
+            // SpanOverloader
+            thisApi.IStreamRemoteCopyToStub(ref This.GetPinnableReference(), ref _pRpcChannelBuffer.GetPinnableReference(), ref _pRpcMessage.GetPinnableReference(), ref _pdwStubPhase.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8449, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IEnumUnknownNextProxy(this Windows thisApi, IEnumUnknown* This, uint celt, Silk.NET.Core.Native.IUnknown** rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumUnknownNextProxy(This, celt, rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8449, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IEnumUnknownNextProxy(this Windows thisApi, IEnumUnknown* This, uint celt, ref Silk.NET.Core.Native.IUnknown* rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumUnknownNextProxy(This, celt, ref rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8449, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IEnumUnknownNextProxy(this Windows thisApi, Span<IEnumUnknown> This, uint celt, Silk.NET.Core.Native.IUnknown** rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumUnknownNextProxy(ref This.GetPinnableReference(), celt, rgelt, pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8449, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IEnumUnknownNextProxy(this Windows thisApi, Span<IEnumUnknown> This, uint celt, Silk.NET.Core.Native.IUnknown** rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumUnknownNextProxy(ref This.GetPinnableReference(), celt, rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8449, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IEnumUnknownNextProxy(this Windows thisApi, Span<IEnumUnknown> This, uint celt, ref Silk.NET.Core.Native.IUnknown* rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumUnknownNextProxy(ref This.GetPinnableReference(), celt, ref rgelt, pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8449, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IEnumUnknownNextProxy(this Windows thisApi, Span<IEnumUnknown> This, uint celt, ref Silk.NET.Core.Native.IUnknown* rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumUnknownNextProxy(ref This.GetPinnableReference(), celt, ref rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8459, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IEnumUnknownNextStub(this Windows thisApi, IEnumUnknown* This, uint celt, Silk.NET.Core.Native.IUnknown** rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumUnknownNextStub(This, celt, rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8459, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IEnumUnknownNextStub(this Windows thisApi, IEnumUnknown* This, uint celt, ref Silk.NET.Core.Native.IUnknown* rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumUnknownNextStub(This, celt, ref rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8459, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IEnumUnknownNextStub(this Windows thisApi, Span<IEnumUnknown> This, uint celt, Silk.NET.Core.Native.IUnknown** rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumUnknownNextStub(ref This.GetPinnableReference(), celt, rgelt, pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8459, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IEnumUnknownNextStub(this Windows thisApi, Span<IEnumUnknown> This, uint celt, Silk.NET.Core.Native.IUnknown** rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumUnknownNextStub(ref This.GetPinnableReference(), celt, rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8459, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IEnumUnknownNextStub(this Windows thisApi, Span<IEnumUnknown> This, uint celt, ref Silk.NET.Core.Native.IUnknown* rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumUnknownNextStub(ref This.GetPinnableReference(), celt, ref rgelt, pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8459, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IEnumUnknownNextStub(this Windows thisApi, Span<IEnumUnknown> This, uint celt, ref Silk.NET.Core.Native.IUnknown* rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumUnknownNextStub(ref This.GetPinnableReference(), celt, ref rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8465, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IEnumStringNextProxy(this Windows thisApi, IEnumString* This, uint celt, char** rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumStringNextProxy(This, celt, rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8465, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IEnumStringNextProxy(this Windows thisApi, IEnumString* This, uint celt, ref char* rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumStringNextProxy(This, celt, ref rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8465, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IEnumStringNextProxy(this Windows thisApi, Span<IEnumString> This, uint celt, char** rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumStringNextProxy(ref This.GetPinnableReference(), celt, rgelt, pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8465, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IEnumStringNextProxy(this Windows thisApi, Span<IEnumString> This, uint celt, char** rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumStringNextProxy(ref This.GetPinnableReference(), celt, rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8465, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IEnumStringNextProxy(this Windows thisApi, Span<IEnumString> This, uint celt, ref char* rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumStringNextProxy(ref This.GetPinnableReference(), celt, ref rgelt, pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8465, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IEnumStringNextProxy(this Windows thisApi, Span<IEnumString> This, uint celt, ref char* rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumStringNextProxy(ref This.GetPinnableReference(), celt, ref rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8474, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IEnumStringNextStub(this Windows thisApi, IEnumString* This, uint celt, char** rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumStringNextStub(This, celt, rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8474, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IEnumStringNextStub(this Windows thisApi, IEnumString* This, uint celt, ref char* rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumStringNextStub(This, celt, ref rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8474, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IEnumStringNextStub(this Windows thisApi, Span<IEnumString> This, uint celt, char** rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumStringNextStub(ref This.GetPinnableReference(), celt, rgelt, pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8474, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IEnumStringNextStub(this Windows thisApi, Span<IEnumString> This, uint celt, char** rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumStringNextStub(ref This.GetPinnableReference(), celt, rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8474, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IEnumStringNextStub(this Windows thisApi, Span<IEnumString> This, uint celt, ref char* rgelt, uint* pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumStringNextStub(ref This.GetPinnableReference(), celt, ref rgelt, pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8474, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IEnumStringNextStub(this Windows thisApi, Span<IEnumString> This, uint celt, ref char* rgelt, Span<uint> pceltFetched)
+        {
+            // SpanOverloader
+            return thisApi.IEnumStringNextStub(ref This.GetPinnableReference(), celt, ref rgelt, ref pceltFetched.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8480, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamReadProxy(this Windows thisApi, ISequentialStream* This, void* pv, uint cb, Span<uint> pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamReadProxy(This, pv, cb, ref pcbRead.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8480, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamReadProxy<T0>(this Windows thisApi, ISequentialStream* This, Span<T0> pv, uint cb, uint* pcbRead) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamReadProxy(This, ref pv.GetPinnableReference(), cb, pcbRead);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8480, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamReadProxy<T0>(this Windows thisApi, ISequentialStream* This, Span<T0> pv, uint cb, Span<uint> pcbRead) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamReadProxy(This, ref pv.GetPinnableReference(), cb, ref pcbRead.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8480, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamReadProxy(this Windows thisApi, Span<ISequentialStream> This, void* pv, uint cb, uint* pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamReadProxy(ref This.GetPinnableReference(), pv, cb, pcbRead);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8480, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamReadProxy(this Windows thisApi, Span<ISequentialStream> This, void* pv, uint cb, Span<uint> pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamReadProxy(ref This.GetPinnableReference(), pv, cb, ref pcbRead.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8480, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamReadProxy<T0>(this Windows thisApi, Span<ISequentialStream> This, Span<T0> pv, uint cb, uint* pcbRead) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamReadProxy(ref This.GetPinnableReference(), ref pv.GetPinnableReference(), cb, pcbRead);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8480, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamReadProxy<T0>(this Windows thisApi, Span<ISequentialStream> This, Span<T0> pv, uint cb, Span<uint> pcbRead) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamReadProxy(ref This.GetPinnableReference(), ref pv.GetPinnableReference(), cb, ref pcbRead.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8490, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamReadStub(this Windows thisApi, ISequentialStream* This, byte* pv, uint cb, Span<uint> pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamReadStub(This, pv, cb, ref pcbRead.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8490, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamReadStub(this Windows thisApi, ISequentialStream* This, Span<byte> pv, uint cb, uint* pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamReadStub(This, ref pv.GetPinnableReference(), cb, pcbRead);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8490, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamReadStub(this Windows thisApi, ISequentialStream* This, Span<byte> pv, uint cb, Span<uint> pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamReadStub(This, ref pv.GetPinnableReference(), cb, ref pcbRead.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8490, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamReadStub(this Windows thisApi, ISequentialStream* This, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, Span<uint> pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamReadStub(This, pv, cb, ref pcbRead.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8490, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamReadStub(this Windows thisApi, Span<ISequentialStream> This, byte* pv, uint cb, uint* pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamReadStub(ref This.GetPinnableReference(), pv, cb, pcbRead);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8490, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamReadStub(this Windows thisApi, Span<ISequentialStream> This, byte* pv, uint cb, Span<uint> pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamReadStub(ref This.GetPinnableReference(), pv, cb, ref pcbRead.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8490, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamReadStub(this Windows thisApi, Span<ISequentialStream> This, Span<byte> pv, uint cb, uint* pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamReadStub(ref This.GetPinnableReference(), ref pv.GetPinnableReference(), cb, pcbRead);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8490, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamReadStub(this Windows thisApi, Span<ISequentialStream> This, Span<byte> pv, uint cb, Span<uint> pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamReadStub(ref This.GetPinnableReference(), ref pv.GetPinnableReference(), cb, ref pcbRead.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8490, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamReadStub(this Windows thisApi, Span<ISequentialStream> This, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, uint* pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamReadStub(ref This.GetPinnableReference(), pv, cb, pcbRead);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8490, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamReadStub(this Windows thisApi, Span<ISequentialStream> This, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, Span<uint> pcbRead)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamReadStub(ref This.GetPinnableReference(), pv, cb, ref pcbRead.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8496, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamWriteProxy(this Windows thisApi, ISequentialStream* This, void* pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamWriteProxy(This, pv, cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8496, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamWriteProxy<T0>(this Windows thisApi, ISequentialStream* This, Span<T0> pv, uint cb, uint* pcbWritten) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamWriteProxy(This, ref pv.GetPinnableReference(), cb, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8496, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamWriteProxy<T0>(this Windows thisApi, ISequentialStream* This, Span<T0> pv, uint cb, Span<uint> pcbWritten) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamWriteProxy(This, ref pv.GetPinnableReference(), cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8496, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamWriteProxy(this Windows thisApi, Span<ISequentialStream> This, void* pv, uint cb, uint* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamWriteProxy(ref This.GetPinnableReference(), pv, cb, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8496, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamWriteProxy(this Windows thisApi, Span<ISequentialStream> This, void* pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamWriteProxy(ref This.GetPinnableReference(), pv, cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8496, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamWriteProxy<T0>(this Windows thisApi, Span<ISequentialStream> This, Span<T0> pv, uint cb, uint* pcbWritten) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamWriteProxy(ref This.GetPinnableReference(), ref pv.GetPinnableReference(), cb, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8496, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamWriteProxy<T0>(this Windows thisApi, Span<ISequentialStream> This, Span<T0> pv, uint cb, Span<uint> pcbWritten) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamWriteProxy(ref This.GetPinnableReference(), ref pv.GetPinnableReference(), cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8506, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamWriteStub(this Windows thisApi, ISequentialStream* This, byte* pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamWriteStub(This, pv, cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8506, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamWriteStub(this Windows thisApi, ISequentialStream* This, Span<byte> pv, uint cb, uint* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamWriteStub(This, ref pv.GetPinnableReference(), cb, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8506, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamWriteStub(this Windows thisApi, ISequentialStream* This, Span<byte> pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamWriteStub(This, ref pv.GetPinnableReference(), cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8506, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamWriteStub(this Windows thisApi, ISequentialStream* This, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamWriteStub(This, pv, cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8506, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamWriteStub(this Windows thisApi, Span<ISequentialStream> This, byte* pv, uint cb, uint* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamWriteStub(ref This.GetPinnableReference(), pv, cb, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8506, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamWriteStub(this Windows thisApi, Span<ISequentialStream> This, byte* pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamWriteStub(ref This.GetPinnableReference(), pv, cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8506, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamWriteStub(this Windows thisApi, Span<ISequentialStream> This, Span<byte> pv, uint cb, uint* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamWriteStub(ref This.GetPinnableReference(), ref pv.GetPinnableReference(), cb, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8506, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamWriteStub(this Windows thisApi, Span<ISequentialStream> This, Span<byte> pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamWriteStub(ref This.GetPinnableReference(), ref pv.GetPinnableReference(), cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8506, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamWriteStub(this Windows thisApi, Span<ISequentialStream> This, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, uint* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamWriteStub(ref This.GetPinnableReference(), pv, cb, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8506, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int ISequentialStreamWriteStub(this Windows thisApi, Span<ISequentialStream> This, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, Span<uint> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.ISequentialStreamWriteStub(ref This.GetPinnableReference(), pv, cb, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8512, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamSeekProxy(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, long dlibMove, uint dwOrigin, Span<ulong> plibNewPosition)
+        {
+            // SpanOverloader
+            return thisApi.IStreamSeekProxy(This, dlibMove, dwOrigin, ref plibNewPosition.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8512, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamSeekProxy(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, long dlibMove, uint dwOrigin, ulong* plibNewPosition)
+        {
+            // SpanOverloader
+            return thisApi.IStreamSeekProxy(ref This.GetPinnableReference(), dlibMove, dwOrigin, plibNewPosition);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8512, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamSeekProxy(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, long dlibMove, uint dwOrigin, Span<ulong> plibNewPosition)
+        {
+            // SpanOverloader
+            return thisApi.IStreamSeekProxy(ref This.GetPinnableReference(), dlibMove, dwOrigin, ref plibNewPosition.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8520, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamSeekStub(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, long dlibMove, uint dwOrigin, Span<ulong> plibNewPosition)
+        {
+            // SpanOverloader
+            return thisApi.IStreamSeekStub(This, dlibMove, dwOrigin, ref plibNewPosition.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8520, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamSeekStub(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, long dlibMove, uint dwOrigin, ulong* plibNewPosition)
+        {
+            // SpanOverloader
+            return thisApi.IStreamSeekStub(ref This.GetPinnableReference(), dlibMove, dwOrigin, plibNewPosition);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8520, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamSeekStub(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, long dlibMove, uint dwOrigin, Span<ulong> plibNewPosition)
+        {
+            // SpanOverloader
+            return thisApi.IStreamSeekStub(ref This.GetPinnableReference(), dlibMove, dwOrigin, ref plibNewPosition.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8526, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamCopyToProxy(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, Silk.NET.Core.Win32Extras.IStream* pstm, ulong cb, ulong* pcbRead, Span<ulong> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamCopyToProxy(This, pstm, cb, pcbRead, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8526, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamCopyToProxy(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, Silk.NET.Core.Win32Extras.IStream* pstm, ulong cb, Span<ulong> pcbRead, ulong* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamCopyToProxy(This, pstm, cb, ref pcbRead.GetPinnableReference(), pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8526, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamCopyToProxy(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, Silk.NET.Core.Win32Extras.IStream* pstm, ulong cb, Span<ulong> pcbRead, Span<ulong> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamCopyToProxy(This, pstm, cb, ref pcbRead.GetPinnableReference(), ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8526, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamCopyToProxy(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, ulong* pcbRead, ulong* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamCopyToProxy(This, ref pstm.GetPinnableReference(), cb, pcbRead, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8526, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamCopyToProxy(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, ulong* pcbRead, Span<ulong> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamCopyToProxy(This, ref pstm.GetPinnableReference(), cb, pcbRead, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8526, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamCopyToProxy(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, Span<ulong> pcbRead, ulong* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamCopyToProxy(This, ref pstm.GetPinnableReference(), cb, ref pcbRead.GetPinnableReference(), pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8526, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamCopyToProxy(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, Span<ulong> pcbRead, Span<ulong> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamCopyToProxy(This, ref pstm.GetPinnableReference(), cb, ref pcbRead.GetPinnableReference(), ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8526, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamCopyToProxy(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Silk.NET.Core.Win32Extras.IStream* pstm, ulong cb, ulong* pcbRead, ulong* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamCopyToProxy(ref This.GetPinnableReference(), pstm, cb, pcbRead, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8526, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamCopyToProxy(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Silk.NET.Core.Win32Extras.IStream* pstm, ulong cb, ulong* pcbRead, Span<ulong> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamCopyToProxy(ref This.GetPinnableReference(), pstm, cb, pcbRead, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8526, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamCopyToProxy(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Silk.NET.Core.Win32Extras.IStream* pstm, ulong cb, Span<ulong> pcbRead, ulong* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamCopyToProxy(ref This.GetPinnableReference(), pstm, cb, ref pcbRead.GetPinnableReference(), pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8526, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamCopyToProxy(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Silk.NET.Core.Win32Extras.IStream* pstm, ulong cb, Span<ulong> pcbRead, Span<ulong> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamCopyToProxy(ref This.GetPinnableReference(), pstm, cb, ref pcbRead.GetPinnableReference(), ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8526, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamCopyToProxy(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, ulong* pcbRead, ulong* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamCopyToProxy(ref This.GetPinnableReference(), ref pstm.GetPinnableReference(), cb, pcbRead, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8526, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamCopyToProxy(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, ulong* pcbRead, Span<ulong> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamCopyToProxy(ref This.GetPinnableReference(), ref pstm.GetPinnableReference(), cb, pcbRead, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8526, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamCopyToProxy(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, Span<ulong> pcbRead, ulong* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamCopyToProxy(ref This.GetPinnableReference(), ref pstm.GetPinnableReference(), cb, ref pcbRead.GetPinnableReference(), pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8526, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamCopyToProxy(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, Span<ulong> pcbRead, Span<ulong> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamCopyToProxy(ref This.GetPinnableReference(), ref pstm.GetPinnableReference(), cb, ref pcbRead.GetPinnableReference(), ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8537, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamCopyToStub(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, Silk.NET.Core.Win32Extras.IStream* pstm, ulong cb, ulong* pcbRead, Span<ulong> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamCopyToStub(This, pstm, cb, pcbRead, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8537, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamCopyToStub(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, Silk.NET.Core.Win32Extras.IStream* pstm, ulong cb, Span<ulong> pcbRead, ulong* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamCopyToStub(This, pstm, cb, ref pcbRead.GetPinnableReference(), pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8537, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamCopyToStub(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, Silk.NET.Core.Win32Extras.IStream* pstm, ulong cb, Span<ulong> pcbRead, Span<ulong> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamCopyToStub(This, pstm, cb, ref pcbRead.GetPinnableReference(), ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8537, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamCopyToStub(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, ulong* pcbRead, ulong* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamCopyToStub(This, ref pstm.GetPinnableReference(), cb, pcbRead, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8537, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamCopyToStub(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, ulong* pcbRead, Span<ulong> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamCopyToStub(This, ref pstm.GetPinnableReference(), cb, pcbRead, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8537, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamCopyToStub(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, Span<ulong> pcbRead, ulong* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamCopyToStub(This, ref pstm.GetPinnableReference(), cb, ref pcbRead.GetPinnableReference(), pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8537, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamCopyToStub(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, Span<ulong> pcbRead, Span<ulong> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamCopyToStub(This, ref pstm.GetPinnableReference(), cb, ref pcbRead.GetPinnableReference(), ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8537, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamCopyToStub(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Silk.NET.Core.Win32Extras.IStream* pstm, ulong cb, ulong* pcbRead, ulong* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamCopyToStub(ref This.GetPinnableReference(), pstm, cb, pcbRead, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8537, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamCopyToStub(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Silk.NET.Core.Win32Extras.IStream* pstm, ulong cb, ulong* pcbRead, Span<ulong> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamCopyToStub(ref This.GetPinnableReference(), pstm, cb, pcbRead, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8537, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamCopyToStub(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Silk.NET.Core.Win32Extras.IStream* pstm, ulong cb, Span<ulong> pcbRead, ulong* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamCopyToStub(ref This.GetPinnableReference(), pstm, cb, ref pcbRead.GetPinnableReference(), pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8537, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamCopyToStub(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Silk.NET.Core.Win32Extras.IStream* pstm, ulong cb, Span<ulong> pcbRead, Span<ulong> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamCopyToStub(ref This.GetPinnableReference(), pstm, cb, ref pcbRead.GetPinnableReference(), ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8537, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamCopyToStub(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, ulong* pcbRead, ulong* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamCopyToStub(ref This.GetPinnableReference(), ref pstm.GetPinnableReference(), cb, pcbRead, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8537, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamCopyToStub(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, ulong* pcbRead, Span<ulong> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamCopyToStub(ref This.GetPinnableReference(), ref pstm.GetPinnableReference(), cb, pcbRead, ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8537, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamCopyToStub(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, Span<ulong> pcbRead, ulong* pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamCopyToStub(ref This.GetPinnableReference(), ref pstm.GetPinnableReference(), cb, ref pcbRead.GetPinnableReference(), pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8537, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        public static unsafe int IStreamCopyToStub(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, Span<ulong> pcbRead, Span<ulong> pcbWritten)
+        {
+            // SpanOverloader
+            return thisApi.IStreamCopyToStub(ref This.GetPinnableReference(), ref pstm.GetPinnableReference(), cb, ref pcbRead.GetPinnableReference(), ref pcbWritten.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1671, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared\\evntrace.h")]
         public static unsafe uint StartTraceW(this Windows thisApi, ulong* TraceHandle, char* InstanceName, Span<EventTraceProperties> Properties)
         {
             // SpanOverloader

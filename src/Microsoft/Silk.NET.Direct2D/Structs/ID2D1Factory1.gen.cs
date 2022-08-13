@@ -1117,155 +1117,155 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGdiMetafile(Silk.NET.Core.Native.IStream* metafileStream, ID2D1GdiMetafile** metafile)
+        public readonly unsafe int CreateGdiMetafile(Silk.NET.Core.Win32Extras.IStream* metafileStream, ID2D1GdiMetafile** metafile)
         {
             var @this = (ID2D1Factory1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory1*, Silk.NET.Core.Native.IStream*, ID2D1GdiMetafile**, int>)LpVtbl[18])(@this, metafileStream, metafile);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory1*, Silk.NET.Core.Win32Extras.IStream*, ID2D1GdiMetafile**, int>)LpVtbl[18])(@this, metafileStream, metafile);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGdiMetafile(Silk.NET.Core.Native.IStream* metafileStream, ref ID2D1GdiMetafile* metafile)
+        public readonly unsafe int CreateGdiMetafile(Silk.NET.Core.Win32Extras.IStream* metafileStream, ref ID2D1GdiMetafile* metafile)
         {
             var @this = (ID2D1Factory1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID2D1GdiMetafile** metafilePtr = &metafile)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory1*, Silk.NET.Core.Native.IStream*, ID2D1GdiMetafile**, int>)LpVtbl[18])(@this, metafileStream, metafilePtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory1*, Silk.NET.Core.Win32Extras.IStream*, ID2D1GdiMetafile**, int>)LpVtbl[18])(@this, metafileStream, metafilePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGdiMetafile(ref Silk.NET.Core.Native.IStream metafileStream, ID2D1GdiMetafile** metafile)
+        public readonly unsafe int CreateGdiMetafile(ref Silk.NET.Core.Win32Extras.IStream metafileStream, ID2D1GdiMetafile** metafile)
         {
             var @this = (ID2D1Factory1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Core.Native.IStream* metafileStreamPtr = &metafileStream)
+            fixed (Silk.NET.Core.Win32Extras.IStream* metafileStreamPtr = &metafileStream)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory1*, Silk.NET.Core.Native.IStream*, ID2D1GdiMetafile**, int>)LpVtbl[18])(@this, metafileStreamPtr, metafile);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory1*, Silk.NET.Core.Win32Extras.IStream*, ID2D1GdiMetafile**, int>)LpVtbl[18])(@this, metafileStreamPtr, metafile);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGdiMetafile(ref Silk.NET.Core.Native.IStream metafileStream, ref ID2D1GdiMetafile* metafile)
+        public readonly unsafe int CreateGdiMetafile(ref Silk.NET.Core.Win32Extras.IStream metafileStream, ref ID2D1GdiMetafile* metafile)
         {
             var @this = (ID2D1Factory1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Core.Native.IStream* metafileStreamPtr = &metafileStream)
+            fixed (Silk.NET.Core.Win32Extras.IStream* metafileStreamPtr = &metafileStream)
             {
                 fixed (ID2D1GdiMetafile** metafilePtr = &metafile)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory1*, Silk.NET.Core.Native.IStream*, ID2D1GdiMetafile**, int>)LpVtbl[18])(@this, metafileStreamPtr, metafilePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory1*, Silk.NET.Core.Win32Extras.IStream*, ID2D1GdiMetafile**, int>)LpVtbl[18])(@this, metafileStreamPtr, metafilePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterEffectFromStream(Guid* classId, Silk.NET.Core.Native.IStream* propertyXml, PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+        public readonly unsafe int RegisterEffectFromStream(Guid* classId, Silk.NET.Core.Win32Extras.IStream* propertyXml, PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
         {
             var @this = (ID2D1Factory1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory1*, Guid*, Silk.NET.Core.Native.IStream*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)LpVtbl[19])(@this, classId, propertyXml, bindings, bindingsCount, effectFactory);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory1*, Guid*, Silk.NET.Core.Win32Extras.IStream*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)LpVtbl[19])(@this, classId, propertyXml, bindings, bindingsCount, effectFactory);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterEffectFromStream(Guid* classId, Silk.NET.Core.Native.IStream* propertyXml, ref PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+        public readonly unsafe int RegisterEffectFromStream(Guid* classId, Silk.NET.Core.Win32Extras.IStream* propertyXml, ref PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
         {
             var @this = (ID2D1Factory1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (PropertyBinding* bindingsPtr = &bindings)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory1*, Guid*, Silk.NET.Core.Native.IStream*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)LpVtbl[19])(@this, classId, propertyXml, bindingsPtr, bindingsCount, effectFactory);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory1*, Guid*, Silk.NET.Core.Win32Extras.IStream*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)LpVtbl[19])(@this, classId, propertyXml, bindingsPtr, bindingsCount, effectFactory);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterEffectFromStream(Guid* classId, ref Silk.NET.Core.Native.IStream propertyXml, PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+        public readonly unsafe int RegisterEffectFromStream(Guid* classId, ref Silk.NET.Core.Win32Extras.IStream propertyXml, PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
         {
             var @this = (ID2D1Factory1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Core.Native.IStream* propertyXmlPtr = &propertyXml)
+            fixed (Silk.NET.Core.Win32Extras.IStream* propertyXmlPtr = &propertyXml)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory1*, Guid*, Silk.NET.Core.Native.IStream*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)LpVtbl[19])(@this, classId, propertyXmlPtr, bindings, bindingsCount, effectFactory);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory1*, Guid*, Silk.NET.Core.Win32Extras.IStream*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)LpVtbl[19])(@this, classId, propertyXmlPtr, bindings, bindingsCount, effectFactory);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterEffectFromStream(Guid* classId, ref Silk.NET.Core.Native.IStream propertyXml, ref PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+        public readonly unsafe int RegisterEffectFromStream(Guid* classId, ref Silk.NET.Core.Win32Extras.IStream propertyXml, ref PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
         {
             var @this = (ID2D1Factory1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Core.Native.IStream* propertyXmlPtr = &propertyXml)
-            {
-                fixed (PropertyBinding* bindingsPtr = &bindings)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory1*, Guid*, Silk.NET.Core.Native.IStream*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)LpVtbl[19])(@this, classId, propertyXmlPtr, bindingsPtr, bindingsCount, effectFactory);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterEffectFromStream(ref Guid classId, Silk.NET.Core.Native.IStream* propertyXml, PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
-        {
-            var @this = (ID2D1Factory1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* classIdPtr = &classId)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory1*, Guid*, Silk.NET.Core.Native.IStream*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)LpVtbl[19])(@this, classIdPtr, propertyXml, bindings, bindingsCount, effectFactory);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterEffectFromStream(ref Guid classId, Silk.NET.Core.Native.IStream* propertyXml, ref PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
-        {
-            var @this = (ID2D1Factory1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* classIdPtr = &classId)
+            fixed (Silk.NET.Core.Win32Extras.IStream* propertyXmlPtr = &propertyXml)
             {
                 fixed (PropertyBinding* bindingsPtr = &bindings)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory1*, Guid*, Silk.NET.Core.Native.IStream*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)LpVtbl[19])(@this, classIdPtr, propertyXml, bindingsPtr, bindingsCount, effectFactory);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory1*, Guid*, Silk.NET.Core.Win32Extras.IStream*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)LpVtbl[19])(@this, classId, propertyXmlPtr, bindingsPtr, bindingsCount, effectFactory);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterEffectFromStream(ref Guid classId, ref Silk.NET.Core.Native.IStream propertyXml, PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+        public readonly unsafe int RegisterEffectFromStream(ref Guid classId, Silk.NET.Core.Win32Extras.IStream* propertyXml, PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
         {
             var @this = (ID2D1Factory1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* classIdPtr = &classId)
             {
-                fixed (Silk.NET.Core.Native.IStream* propertyXmlPtr = &propertyXml)
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory1*, Guid*, Silk.NET.Core.Win32Extras.IStream*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)LpVtbl[19])(@this, classIdPtr, propertyXml, bindings, bindingsCount, effectFactory);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RegisterEffectFromStream(ref Guid classId, Silk.NET.Core.Win32Extras.IStream* propertyXml, ref PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+        {
+            var @this = (ID2D1Factory1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* classIdPtr = &classId)
+            {
+                fixed (PropertyBinding* bindingsPtr = &bindings)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory1*, Guid*, Silk.NET.Core.Native.IStream*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)LpVtbl[19])(@this, classIdPtr, propertyXmlPtr, bindings, bindingsCount, effectFactory);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory1*, Guid*, Silk.NET.Core.Win32Extras.IStream*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)LpVtbl[19])(@this, classIdPtr, propertyXml, bindingsPtr, bindingsCount, effectFactory);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int RegisterEffectFromStream(ref Guid classId, ref Silk.NET.Core.Native.IStream propertyXml, ref PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+        public readonly unsafe int RegisterEffectFromStream(ref Guid classId, ref Silk.NET.Core.Win32Extras.IStream propertyXml, PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
         {
             var @this = (ID2D1Factory1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* classIdPtr = &classId)
             {
-                fixed (Silk.NET.Core.Native.IStream* propertyXmlPtr = &propertyXml)
+                fixed (Silk.NET.Core.Win32Extras.IStream* propertyXmlPtr = &propertyXml)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory1*, Guid*, Silk.NET.Core.Win32Extras.IStream*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)LpVtbl[19])(@this, classIdPtr, propertyXmlPtr, bindings, bindingsCount, effectFactory);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int RegisterEffectFromStream(ref Guid classId, ref Silk.NET.Core.Win32Extras.IStream propertyXml, ref PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+        {
+            var @this = (ID2D1Factory1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* classIdPtr = &classId)
+            {
+                fixed (Silk.NET.Core.Win32Extras.IStream* propertyXmlPtr = &propertyXml)
                 {
                     fixed (PropertyBinding* bindingsPtr = &bindings)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory1*, Guid*, Silk.NET.Core.Native.IStream*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)LpVtbl[19])(@this, classIdPtr, propertyXmlPtr, bindingsPtr, bindingsCount, effectFactory);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory1*, Guid*, Silk.NET.Core.Win32Extras.IStream*, PropertyBinding*, uint, PfnPD2D1EffectFactory, int>)LpVtbl[19])(@this, classIdPtr, propertyXmlPtr, bindingsPtr, bindingsCount, effectFactory);
                     }
                 }
             }

@@ -138,6 +138,8 @@
     "HMONITOR__*": "nint",
     "HDC__**": "nint*",
     "HMONITOR__**": "nint*",
+	"HBITMAP__*": "nint*",
+	"HENHMETAFILE__*": "nint*",
     "_LUID": "Luid",
     "_LARGE_INTEGER": "long",
     "_ULARGE_INTEGER": "ulong",
@@ -159,5 +161,6 @@
     "_screen_window": "void",
     "_screen_context": "void",
     "cl_properties": "ulong",
-	"IStream": "Silk.NET.Core.Native.IStream"
+	"IStream": "Silk.NET.Core.Win32Extras.IStream",
+	"FILETIME": "Silk.NET.Core.Win32Extras.Filetime"
 }

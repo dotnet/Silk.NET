@@ -108,40 +108,40 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddPage(ID2D1CommandList* commandList, Silk.NET.Maths.Vector2D<float> pageSize, Silk.NET.Core.Native.IStream* pagePrintTicketStream, ulong* tag1, ulong* tag2)
+        public readonly unsafe int AddPage(ID2D1CommandList* commandList, Silk.NET.Maths.Vector2D<float> pageSize, Silk.NET.Core.Win32Extras.IStream* pagePrintTicketStream, ulong* tag1, ulong* tag2)
         {
             var @this = (ID2D1PrintControl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1PrintControl*, ID2D1CommandList*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Core.Native.IStream*, ulong*, ulong*, int>)LpVtbl[3])(@this, commandList, pageSize, pagePrintTicketStream, tag1, tag2);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1PrintControl*, ID2D1CommandList*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Core.Win32Extras.IStream*, ulong*, ulong*, int>)LpVtbl[3])(@this, commandList, pageSize, pagePrintTicketStream, tag1, tag2);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddPage(ID2D1CommandList* commandList, Silk.NET.Maths.Vector2D<float> pageSize, Silk.NET.Core.Native.IStream* pagePrintTicketStream, ulong* tag1, ref ulong tag2)
+        public readonly unsafe int AddPage(ID2D1CommandList* commandList, Silk.NET.Maths.Vector2D<float> pageSize, Silk.NET.Core.Win32Extras.IStream* pagePrintTicketStream, ulong* tag1, ref ulong tag2)
         {
             var @this = (ID2D1PrintControl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ulong* tag2Ptr = &tag2)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1PrintControl*, ID2D1CommandList*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Core.Native.IStream*, ulong*, ulong*, int>)LpVtbl[3])(@this, commandList, pageSize, pagePrintTicketStream, tag1, tag2Ptr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1PrintControl*, ID2D1CommandList*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Core.Win32Extras.IStream*, ulong*, ulong*, int>)LpVtbl[3])(@this, commandList, pageSize, pagePrintTicketStream, tag1, tag2Ptr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddPage(ID2D1CommandList* commandList, Silk.NET.Maths.Vector2D<float> pageSize, Silk.NET.Core.Native.IStream* pagePrintTicketStream, ref ulong tag1, ulong* tag2)
+        public readonly unsafe int AddPage(ID2D1CommandList* commandList, Silk.NET.Maths.Vector2D<float> pageSize, Silk.NET.Core.Win32Extras.IStream* pagePrintTicketStream, ref ulong tag1, ulong* tag2)
         {
             var @this = (ID2D1PrintControl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ulong* tag1Ptr = &tag1)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1PrintControl*, ID2D1CommandList*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Core.Native.IStream*, ulong*, ulong*, int>)LpVtbl[3])(@this, commandList, pageSize, pagePrintTicketStream, tag1Ptr, tag2);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1PrintControl*, ID2D1CommandList*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Core.Win32Extras.IStream*, ulong*, ulong*, int>)LpVtbl[3])(@this, commandList, pageSize, pagePrintTicketStream, tag1Ptr, tag2);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddPage(ID2D1CommandList* commandList, Silk.NET.Maths.Vector2D<float> pageSize, Silk.NET.Core.Native.IStream* pagePrintTicketStream, ref ulong tag1, ref ulong tag2)
+        public readonly unsafe int AddPage(ID2D1CommandList* commandList, Silk.NET.Maths.Vector2D<float> pageSize, Silk.NET.Core.Win32Extras.IStream* pagePrintTicketStream, ref ulong tag1, ref ulong tag2)
         {
             var @this = (ID2D1PrintControl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -149,66 +149,66 @@ namespace Silk.NET.Direct2D
             {
                 fixed (ulong* tag2Ptr = &tag2)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PrintControl*, ID2D1CommandList*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Core.Native.IStream*, ulong*, ulong*, int>)LpVtbl[3])(@this, commandList, pageSize, pagePrintTicketStream, tag1Ptr, tag2Ptr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PrintControl*, ID2D1CommandList*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Core.Win32Extras.IStream*, ulong*, ulong*, int>)LpVtbl[3])(@this, commandList, pageSize, pagePrintTicketStream, tag1Ptr, tag2Ptr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddPage(ID2D1CommandList* commandList, Silk.NET.Maths.Vector2D<float> pageSize, ref Silk.NET.Core.Native.IStream pagePrintTicketStream, ulong* tag1, ulong* tag2)
+        public readonly unsafe int AddPage(ID2D1CommandList* commandList, Silk.NET.Maths.Vector2D<float> pageSize, ref Silk.NET.Core.Win32Extras.IStream pagePrintTicketStream, ulong* tag1, ulong* tag2)
         {
             var @this = (ID2D1PrintControl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Core.Native.IStream* pagePrintTicketStreamPtr = &pagePrintTicketStream)
+            fixed (Silk.NET.Core.Win32Extras.IStream* pagePrintTicketStreamPtr = &pagePrintTicketStream)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1PrintControl*, ID2D1CommandList*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Core.Native.IStream*, ulong*, ulong*, int>)LpVtbl[3])(@this, commandList, pageSize, pagePrintTicketStreamPtr, tag1, tag2);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1PrintControl*, ID2D1CommandList*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Core.Win32Extras.IStream*, ulong*, ulong*, int>)LpVtbl[3])(@this, commandList, pageSize, pagePrintTicketStreamPtr, tag1, tag2);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddPage(ID2D1CommandList* commandList, Silk.NET.Maths.Vector2D<float> pageSize, ref Silk.NET.Core.Native.IStream pagePrintTicketStream, ulong* tag1, ref ulong tag2)
+        public readonly unsafe int AddPage(ID2D1CommandList* commandList, Silk.NET.Maths.Vector2D<float> pageSize, ref Silk.NET.Core.Win32Extras.IStream pagePrintTicketStream, ulong* tag1, ref ulong tag2)
         {
             var @this = (ID2D1PrintControl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Core.Native.IStream* pagePrintTicketStreamPtr = &pagePrintTicketStream)
+            fixed (Silk.NET.Core.Win32Extras.IStream* pagePrintTicketStreamPtr = &pagePrintTicketStream)
             {
                 fixed (ulong* tag2Ptr = &tag2)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PrintControl*, ID2D1CommandList*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Core.Native.IStream*, ulong*, ulong*, int>)LpVtbl[3])(@this, commandList, pageSize, pagePrintTicketStreamPtr, tag1, tag2Ptr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PrintControl*, ID2D1CommandList*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Core.Win32Extras.IStream*, ulong*, ulong*, int>)LpVtbl[3])(@this, commandList, pageSize, pagePrintTicketStreamPtr, tag1, tag2Ptr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddPage(ID2D1CommandList* commandList, Silk.NET.Maths.Vector2D<float> pageSize, ref Silk.NET.Core.Native.IStream pagePrintTicketStream, ref ulong tag1, ulong* tag2)
+        public readonly unsafe int AddPage(ID2D1CommandList* commandList, Silk.NET.Maths.Vector2D<float> pageSize, ref Silk.NET.Core.Win32Extras.IStream pagePrintTicketStream, ref ulong tag1, ulong* tag2)
         {
             var @this = (ID2D1PrintControl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Core.Native.IStream* pagePrintTicketStreamPtr = &pagePrintTicketStream)
+            fixed (Silk.NET.Core.Win32Extras.IStream* pagePrintTicketStreamPtr = &pagePrintTicketStream)
             {
                 fixed (ulong* tag1Ptr = &tag1)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PrintControl*, ID2D1CommandList*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Core.Native.IStream*, ulong*, ulong*, int>)LpVtbl[3])(@this, commandList, pageSize, pagePrintTicketStreamPtr, tag1Ptr, tag2);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PrintControl*, ID2D1CommandList*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Core.Win32Extras.IStream*, ulong*, ulong*, int>)LpVtbl[3])(@this, commandList, pageSize, pagePrintTicketStreamPtr, tag1Ptr, tag2);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddPage(ID2D1CommandList* commandList, Silk.NET.Maths.Vector2D<float> pageSize, ref Silk.NET.Core.Native.IStream pagePrintTicketStream, ref ulong tag1, ref ulong tag2)
+        public readonly unsafe int AddPage(ID2D1CommandList* commandList, Silk.NET.Maths.Vector2D<float> pageSize, ref Silk.NET.Core.Win32Extras.IStream pagePrintTicketStream, ref ulong tag1, ref ulong tag2)
         {
             var @this = (ID2D1PrintControl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Core.Native.IStream* pagePrintTicketStreamPtr = &pagePrintTicketStream)
+            fixed (Silk.NET.Core.Win32Extras.IStream* pagePrintTicketStreamPtr = &pagePrintTicketStream)
             {
                 fixed (ulong* tag1Ptr = &tag1)
                 {
                     fixed (ulong* tag2Ptr = &tag2)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1PrintControl*, ID2D1CommandList*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Core.Native.IStream*, ulong*, ulong*, int>)LpVtbl[3])(@this, commandList, pageSize, pagePrintTicketStreamPtr, tag1Ptr, tag2Ptr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1PrintControl*, ID2D1CommandList*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Core.Win32Extras.IStream*, ulong*, ulong*, int>)LpVtbl[3])(@this, commandList, pageSize, pagePrintTicketStreamPtr, tag1Ptr, tag2Ptr);
                     }
                 }
             }
@@ -216,19 +216,19 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddPage(ref ID2D1CommandList commandList, Silk.NET.Maths.Vector2D<float> pageSize, Silk.NET.Core.Native.IStream* pagePrintTicketStream, ulong* tag1, ulong* tag2)
+        public readonly unsafe int AddPage(ref ID2D1CommandList commandList, Silk.NET.Maths.Vector2D<float> pageSize, Silk.NET.Core.Win32Extras.IStream* pagePrintTicketStream, ulong* tag1, ulong* tag2)
         {
             var @this = (ID2D1PrintControl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID2D1CommandList* commandListPtr = &commandList)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1PrintControl*, ID2D1CommandList*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Core.Native.IStream*, ulong*, ulong*, int>)LpVtbl[3])(@this, commandListPtr, pageSize, pagePrintTicketStream, tag1, tag2);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1PrintControl*, ID2D1CommandList*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Core.Win32Extras.IStream*, ulong*, ulong*, int>)LpVtbl[3])(@this, commandListPtr, pageSize, pagePrintTicketStream, tag1, tag2);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddPage(ref ID2D1CommandList commandList, Silk.NET.Maths.Vector2D<float> pageSize, Silk.NET.Core.Native.IStream* pagePrintTicketStream, ulong* tag1, ref ulong tag2)
+        public readonly unsafe int AddPage(ref ID2D1CommandList commandList, Silk.NET.Maths.Vector2D<float> pageSize, Silk.NET.Core.Win32Extras.IStream* pagePrintTicketStream, ulong* tag1, ref ulong tag2)
         {
             var @this = (ID2D1PrintControl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -236,14 +236,14 @@ namespace Silk.NET.Direct2D
             {
                 fixed (ulong* tag2Ptr = &tag2)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PrintControl*, ID2D1CommandList*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Core.Native.IStream*, ulong*, ulong*, int>)LpVtbl[3])(@this, commandListPtr, pageSize, pagePrintTicketStream, tag1, tag2Ptr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PrintControl*, ID2D1CommandList*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Core.Win32Extras.IStream*, ulong*, ulong*, int>)LpVtbl[3])(@this, commandListPtr, pageSize, pagePrintTicketStream, tag1, tag2Ptr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddPage(ref ID2D1CommandList commandList, Silk.NET.Maths.Vector2D<float> pageSize, Silk.NET.Core.Native.IStream* pagePrintTicketStream, ref ulong tag1, ulong* tag2)
+        public readonly unsafe int AddPage(ref ID2D1CommandList commandList, Silk.NET.Maths.Vector2D<float> pageSize, Silk.NET.Core.Win32Extras.IStream* pagePrintTicketStream, ref ulong tag1, ulong* tag2)
         {
             var @this = (ID2D1PrintControl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -251,14 +251,14 @@ namespace Silk.NET.Direct2D
             {
                 fixed (ulong* tag1Ptr = &tag1)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PrintControl*, ID2D1CommandList*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Core.Native.IStream*, ulong*, ulong*, int>)LpVtbl[3])(@this, commandListPtr, pageSize, pagePrintTicketStream, tag1Ptr, tag2);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PrintControl*, ID2D1CommandList*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Core.Win32Extras.IStream*, ulong*, ulong*, int>)LpVtbl[3])(@this, commandListPtr, pageSize, pagePrintTicketStream, tag1Ptr, tag2);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddPage(ref ID2D1CommandList commandList, Silk.NET.Maths.Vector2D<float> pageSize, Silk.NET.Core.Native.IStream* pagePrintTicketStream, ref ulong tag1, ref ulong tag2)
+        public readonly unsafe int AddPage(ref ID2D1CommandList commandList, Silk.NET.Maths.Vector2D<float> pageSize, Silk.NET.Core.Win32Extras.IStream* pagePrintTicketStream, ref ulong tag1, ref ulong tag2)
         {
             var @this = (ID2D1PrintControl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -268,7 +268,7 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (ulong* tag2Ptr = &tag2)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1PrintControl*, ID2D1CommandList*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Core.Native.IStream*, ulong*, ulong*, int>)LpVtbl[3])(@this, commandListPtr, pageSize, pagePrintTicketStream, tag1Ptr, tag2Ptr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1PrintControl*, ID2D1CommandList*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Core.Win32Extras.IStream*, ulong*, ulong*, int>)LpVtbl[3])(@this, commandListPtr, pageSize, pagePrintTicketStream, tag1Ptr, tag2Ptr);
                     }
                 }
             }
@@ -276,32 +276,32 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddPage(ref ID2D1CommandList commandList, Silk.NET.Maths.Vector2D<float> pageSize, ref Silk.NET.Core.Native.IStream pagePrintTicketStream, ulong* tag1, ulong* tag2)
+        public readonly unsafe int AddPage(ref ID2D1CommandList commandList, Silk.NET.Maths.Vector2D<float> pageSize, ref Silk.NET.Core.Win32Extras.IStream pagePrintTicketStream, ulong* tag1, ulong* tag2)
         {
             var @this = (ID2D1PrintControl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID2D1CommandList* commandListPtr = &commandList)
             {
-                fixed (Silk.NET.Core.Native.IStream* pagePrintTicketStreamPtr = &pagePrintTicketStream)
+                fixed (Silk.NET.Core.Win32Extras.IStream* pagePrintTicketStreamPtr = &pagePrintTicketStream)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PrintControl*, ID2D1CommandList*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Core.Native.IStream*, ulong*, ulong*, int>)LpVtbl[3])(@this, commandListPtr, pageSize, pagePrintTicketStreamPtr, tag1, tag2);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PrintControl*, ID2D1CommandList*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Core.Win32Extras.IStream*, ulong*, ulong*, int>)LpVtbl[3])(@this, commandListPtr, pageSize, pagePrintTicketStreamPtr, tag1, tag2);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddPage(ref ID2D1CommandList commandList, Silk.NET.Maths.Vector2D<float> pageSize, ref Silk.NET.Core.Native.IStream pagePrintTicketStream, ulong* tag1, ref ulong tag2)
+        public readonly unsafe int AddPage(ref ID2D1CommandList commandList, Silk.NET.Maths.Vector2D<float> pageSize, ref Silk.NET.Core.Win32Extras.IStream pagePrintTicketStream, ulong* tag1, ref ulong tag2)
         {
             var @this = (ID2D1PrintControl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID2D1CommandList* commandListPtr = &commandList)
             {
-                fixed (Silk.NET.Core.Native.IStream* pagePrintTicketStreamPtr = &pagePrintTicketStream)
+                fixed (Silk.NET.Core.Win32Extras.IStream* pagePrintTicketStreamPtr = &pagePrintTicketStream)
                 {
                     fixed (ulong* tag2Ptr = &tag2)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1PrintControl*, ID2D1CommandList*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Core.Native.IStream*, ulong*, ulong*, int>)LpVtbl[3])(@this, commandListPtr, pageSize, pagePrintTicketStreamPtr, tag1, tag2Ptr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1PrintControl*, ID2D1CommandList*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Core.Win32Extras.IStream*, ulong*, ulong*, int>)LpVtbl[3])(@this, commandListPtr, pageSize, pagePrintTicketStreamPtr, tag1, tag2Ptr);
                     }
                 }
             }
@@ -309,17 +309,17 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddPage(ref ID2D1CommandList commandList, Silk.NET.Maths.Vector2D<float> pageSize, ref Silk.NET.Core.Native.IStream pagePrintTicketStream, ref ulong tag1, ulong* tag2)
+        public readonly unsafe int AddPage(ref ID2D1CommandList commandList, Silk.NET.Maths.Vector2D<float> pageSize, ref Silk.NET.Core.Win32Extras.IStream pagePrintTicketStream, ref ulong tag1, ulong* tag2)
         {
             var @this = (ID2D1PrintControl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID2D1CommandList* commandListPtr = &commandList)
             {
-                fixed (Silk.NET.Core.Native.IStream* pagePrintTicketStreamPtr = &pagePrintTicketStream)
+                fixed (Silk.NET.Core.Win32Extras.IStream* pagePrintTicketStreamPtr = &pagePrintTicketStream)
                 {
                     fixed (ulong* tag1Ptr = &tag1)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1PrintControl*, ID2D1CommandList*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Core.Native.IStream*, ulong*, ulong*, int>)LpVtbl[3])(@this, commandListPtr, pageSize, pagePrintTicketStreamPtr, tag1Ptr, tag2);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1PrintControl*, ID2D1CommandList*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Core.Win32Extras.IStream*, ulong*, ulong*, int>)LpVtbl[3])(@this, commandListPtr, pageSize, pagePrintTicketStreamPtr, tag1Ptr, tag2);
                     }
                 }
             }
@@ -327,19 +327,19 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int AddPage(ref ID2D1CommandList commandList, Silk.NET.Maths.Vector2D<float> pageSize, ref Silk.NET.Core.Native.IStream pagePrintTicketStream, ref ulong tag1, ref ulong tag2)
+        public readonly int AddPage(ref ID2D1CommandList commandList, Silk.NET.Maths.Vector2D<float> pageSize, ref Silk.NET.Core.Win32Extras.IStream pagePrintTicketStream, ref ulong tag1, ref ulong tag2)
         {
             var @this = (ID2D1PrintControl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID2D1CommandList* commandListPtr = &commandList)
             {
-                fixed (Silk.NET.Core.Native.IStream* pagePrintTicketStreamPtr = &pagePrintTicketStream)
+                fixed (Silk.NET.Core.Win32Extras.IStream* pagePrintTicketStreamPtr = &pagePrintTicketStream)
                 {
                     fixed (ulong* tag1Ptr = &tag1)
                     {
                         fixed (ulong* tag2Ptr = &tag2)
                         {
-                            ret = ((delegate* unmanaged[Stdcall]<ID2D1PrintControl*, ID2D1CommandList*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Core.Native.IStream*, ulong*, ulong*, int>)LpVtbl[3])(@this, commandListPtr, pageSize, pagePrintTicketStreamPtr, tag1Ptr, tag2Ptr);
+                            ret = ((delegate* unmanaged[Stdcall]<ID2D1PrintControl*, ID2D1CommandList*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Core.Win32Extras.IStream*, ulong*, ulong*, int>)LpVtbl[3])(@this, commandListPtr, pageSize, pagePrintTicketStreamPtr, tag1Ptr, tag2Ptr);
                         }
                     }
                 }

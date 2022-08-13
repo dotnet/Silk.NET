@@ -7679,48 +7679,48 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSvgDocument(Silk.NET.Core.Native.IStream* inputXmlStream, Silk.NET.Maths.Vector2D<float> viewportSize, ID2D1SvgDocument** svgDocument)
+        public readonly unsafe int CreateSvgDocument(Silk.NET.Core.Win32Extras.IStream* inputXmlStream, Silk.NET.Maths.Vector2D<float> viewportSize, ID2D1SvgDocument** svgDocument)
         {
             var @this = (ID2D1DeviceContext5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext5*, Silk.NET.Core.Native.IStream*, Silk.NET.Maths.Vector2D<float>, ID2D1SvgDocument**, int>)LpVtbl[104])(@this, inputXmlStream, viewportSize, svgDocument);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext5*, Silk.NET.Core.Win32Extras.IStream*, Silk.NET.Maths.Vector2D<float>, ID2D1SvgDocument**, int>)LpVtbl[104])(@this, inputXmlStream, viewportSize, svgDocument);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSvgDocument(Silk.NET.Core.Native.IStream* inputXmlStream, Silk.NET.Maths.Vector2D<float> viewportSize, ref ID2D1SvgDocument* svgDocument)
+        public readonly unsafe int CreateSvgDocument(Silk.NET.Core.Win32Extras.IStream* inputXmlStream, Silk.NET.Maths.Vector2D<float> viewportSize, ref ID2D1SvgDocument* svgDocument)
         {
             var @this = (ID2D1DeviceContext5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID2D1SvgDocument** svgDocumentPtr = &svgDocument)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext5*, Silk.NET.Core.Native.IStream*, Silk.NET.Maths.Vector2D<float>, ID2D1SvgDocument**, int>)LpVtbl[104])(@this, inputXmlStream, viewportSize, svgDocumentPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext5*, Silk.NET.Core.Win32Extras.IStream*, Silk.NET.Maths.Vector2D<float>, ID2D1SvgDocument**, int>)LpVtbl[104])(@this, inputXmlStream, viewportSize, svgDocumentPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSvgDocument(ref Silk.NET.Core.Native.IStream inputXmlStream, Silk.NET.Maths.Vector2D<float> viewportSize, ID2D1SvgDocument** svgDocument)
+        public readonly unsafe int CreateSvgDocument(ref Silk.NET.Core.Win32Extras.IStream inputXmlStream, Silk.NET.Maths.Vector2D<float> viewportSize, ID2D1SvgDocument** svgDocument)
         {
             var @this = (ID2D1DeviceContext5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Core.Native.IStream* inputXmlStreamPtr = &inputXmlStream)
+            fixed (Silk.NET.Core.Win32Extras.IStream* inputXmlStreamPtr = &inputXmlStream)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext5*, Silk.NET.Core.Native.IStream*, Silk.NET.Maths.Vector2D<float>, ID2D1SvgDocument**, int>)LpVtbl[104])(@this, inputXmlStreamPtr, viewportSize, svgDocument);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext5*, Silk.NET.Core.Win32Extras.IStream*, Silk.NET.Maths.Vector2D<float>, ID2D1SvgDocument**, int>)LpVtbl[104])(@this, inputXmlStreamPtr, viewportSize, svgDocument);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSvgDocument(ref Silk.NET.Core.Native.IStream inputXmlStream, Silk.NET.Maths.Vector2D<float> viewportSize, ref ID2D1SvgDocument* svgDocument)
+        public readonly unsafe int CreateSvgDocument(ref Silk.NET.Core.Win32Extras.IStream inputXmlStream, Silk.NET.Maths.Vector2D<float> viewportSize, ref ID2D1SvgDocument* svgDocument)
         {
             var @this = (ID2D1DeviceContext5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Core.Native.IStream* inputXmlStreamPtr = &inputXmlStream)
+            fixed (Silk.NET.Core.Win32Extras.IStream* inputXmlStreamPtr = &inputXmlStream)
             {
                 fixed (ID2D1SvgDocument** svgDocumentPtr = &svgDocument)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext5*, Silk.NET.Core.Native.IStream*, Silk.NET.Maths.Vector2D<float>, ID2D1SvgDocument**, int>)LpVtbl[104])(@this, inputXmlStreamPtr, viewportSize, svgDocumentPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext5*, Silk.NET.Core.Win32Extras.IStream*, Silk.NET.Maths.Vector2D<float>, ID2D1SvgDocument**, int>)LpVtbl[104])(@this, inputXmlStreamPtr, viewportSize, svgDocumentPtr);
                 }
             }
             return ret;
