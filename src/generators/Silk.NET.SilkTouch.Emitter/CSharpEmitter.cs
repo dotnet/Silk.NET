@@ -4,6 +4,7 @@
 using System;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Diagnostics;
 using System.Linq;
 using Microsoft.CodeAnalysis;
@@ -226,6 +227,54 @@ public sealed class CSharpEmitter
             }
             
             return typeReference;
+        }
+
+        protected override StaticExternalMethodSymbol VisitStaticExternalMethod(StaticExternalMethodSymbol staticExternalMethodSymbol)
+        {
+            AssertClearState();
+
+            VisitTypeReference(staticExternalMethodSymbol.ReturnType);
+            if (_syntax is not TypeSyntax returnSyntaxToken)
+                throw new InvalidOperationException("Type Reference not correctly visited");
+            ClearState();
+
+            VisitIdentifier(staticExternalMethodSymbol.Identifier);
+            if (_syntaxToken is not {} identifierToken)
+                throw new InvalidOperationException("Type Reference not correctly visited");  
+            ClearState();
+
+            var parameters = staticExternalMethodSymbol.Parameters.Select
+            (
+                x =>
+                {
+                    VisitTypeReference(x.TypeReference);
+                    if (_syntax is not TypeSyntax resultToken)
+                        throw new InvalidOperationException("Type Reference not correctly visited");
+                    ClearState();
+
+                    VisitIdentifier(x.Identifier);
+                    if (_syntaxToken is not {} identifierToken2)
+                        throw new InvalidOperationException("Syntax Token was not correctly visited");
+                    ClearState();
+
+                    return Parameter(identifierToken2).WithType(resultToken);
+                }
+            ).ToImmutableArray();
+
+            _syntax = MethodDeclaration(returnSyntaxToken.WithLeadingTrivia(Space), identifierToken.WithLeadingTrivia(Space))
+                .WithModifiers
+                (
+                    TokenList
+                    (
+                        Token(SyntaxKind.PublicKeyword),
+                        Token(SyntaxKind.StaticKeyword).WithLeadingTrivia(Space),
+                        Token(SyntaxKind.ExternKeyword).WithLeadingTrivia(Space)
+                    )
+                )
+                .WithParameterList(ParameterList(SeparatedList(parameters)))
+                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
+
+            return staticExternalMethodSymbol;
         }
 
         protected override IdentifierSymbol VisitIdentifier(IdentifierSymbol identifierSymbol)

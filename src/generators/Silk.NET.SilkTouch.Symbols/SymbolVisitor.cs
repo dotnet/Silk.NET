@@ -50,6 +50,7 @@ public abstract class SymbolVisitor
     protected virtual MemberSymbol VisitMember(MemberSymbol memberSymbol)
     {
         if (memberSymbol is FieldSymbol fs) return VisitField(fs);
+        if (memberSymbol is MethodSymbol ms) return VisitMethod(ms);
         
         return ThrowUnknownSymbol<MemberSymbol>(memberSymbol);
     }
@@ -66,7 +67,42 @@ public abstract class SymbolVisitor
     {
         return new FieldSymbol(VisitTypeReference(fieldSymbol.Type), VisitIdentifier(fieldSymbol.Identifier));
     }
-    
+
+    /// <summary>
+    /// Visit a <see cref="MethodSymbol"/>. Will call the appropriate methods to visit the different parts of the symbol.
+    /// </summary>
+    /// <param name="methodSymbol">The method to visit</param>
+    /// <returns>The rewritten symbol</returns>
+    /// <remarks>
+    /// The order in which the parts are visited is kept as an implementation detail. Do not rely on this order.
+    /// </remarks>
+    protected virtual MethodSymbol VisitMethod(MethodSymbol methodSymbol)
+    {
+        if (methodSymbol is StaticExternalMethodSymbol stms) return VisitStaticExternalMethod(stms);
+        return ThrowUnknownSymbol<MethodSymbol>(methodSymbol);
+    }
+
+    /// <summary>
+    /// Visit a <see cref="StaticExternalMethodSymbol"/>. Will call the appropriate methods to visit the different parts of the symbol.
+    /// </summary>
+    /// <param name="staticExternalMethodSymbol">The method to visit</param>
+    /// <returns>The rewritten symbol</returns>
+    /// <remarks>
+    /// The order in which the parts are visited is kept as an implementation detail. Do not rely on this order.
+    /// </remarks>
+    protected virtual StaticExternalMethodSymbol VisitStaticExternalMethod
+        (StaticExternalMethodSymbol staticExternalMethodSymbol)
+    {
+        return new StaticExternalMethodSymbol
+        (
+            VisitTypeReference(staticExternalMethodSymbol.ReturnType),
+            staticExternalMethodSymbol.Parameters.Select
+                    (x => new Parameter(VisitTypeReference(x.TypeReference), VisitIdentifier(x.Identifier)))
+                .ToImmutableArray(),
+            VisitIdentifier(staticExternalMethodSymbol.Identifier)
+        );
+    }
+
     /// <summary>
     /// Visit a <see cref="TypeReference"/>. Will call the appropriate methods to visit the different parts of the symbol.
     /// </summary>
