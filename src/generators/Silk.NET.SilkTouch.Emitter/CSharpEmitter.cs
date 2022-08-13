@@ -107,6 +107,43 @@ public sealed class CSharpEmitter
             return structSymbol;
         }
 
+        protected override ClassSymbol VisitClass(ClassSymbol classSymbol)
+        {
+            AssertClearState();
+
+            VisitIdentifier(classSymbol.Identifier);
+            if (_syntaxToken is not {} identifierSyntaxToken)
+                throw new InvalidOperationException("Identifier was not visited correctly");
+            ClearState();
+
+            Indent();
+            var members = List
+            (
+                classSymbol.Methods.Select
+                    (
+                        x =>
+                        {
+                            VisitMethod(x);
+                            if (_syntax is not MethodDeclarationSyntax mds)
+                                throw new InvalidOperationException("Method not visited correctly");
+                            ClearState();
+                            return ((MemberDeclarationSyntax) mds).WithLeadingTrivia(NewLine);
+                        }
+                    )
+                    .ToImmutableArray()
+            );
+            Outdent();
+
+            _syntax = ClassDeclaration(identifierSyntaxToken.WithLeadingTrivia(Space))
+                .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
+                .WithKeyword(Token(SyntaxKind.ClassKeyword).WithLeadingTrivia(Space))
+                .WithOpenBraceToken(Token(SyntaxKind.OpenBraceToken).WithLeadingTrivia(NewLine))
+                .WithCloseBraceToken(Token(SyntaxKind.CloseBraceToken).WithLeadingTrivia(NewLine))
+                .WithMembers(members);
+            
+            return classSymbol;
+        }
+
         protected override FieldSymbol VisitField(FieldSymbol fieldSymbol)
         {
             AssertClearState();

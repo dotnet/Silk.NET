@@ -188,6 +188,7 @@ public abstract class SymbolVisitor
     {
         TypeSymbol? result = null;
         if (typeSymbol is StructSymbol @struct) result = VisitStruct(@struct);
+        else if (typeSymbol is ClassSymbol @class) result = VisitClass(@class);
 
         if (result is not null)
         {
@@ -196,6 +197,25 @@ public abstract class SymbolVisitor
         }
 
         return ThrowUnknownSymbol<TypeSymbol>(typeSymbol);
+    }
+    
+    /// <summary>
+    /// Visit a <see cref="ClassSymbol"/>. Will call the appropriate methods to visit the different parts of the class.
+    /// </summary>
+    /// <param name="classSymbol">The class symbol to visit</param>
+    /// <returns>The rewritten symbol</returns>
+    /// <seealso cref="VisitType"/>
+    /// <remarks>
+    /// The order in which the parts are visited is kept as an implementation detail. Do not rely on this order.
+    /// </remarks>
+    protected virtual ClassSymbol VisitClass(ClassSymbol classSymbol)
+    {
+        return new ClassSymbol
+        (
+            classSymbol.Id,
+            VisitIdentifier(classSymbol.Identifier),
+            classSymbol.Methods.Select(VisitMethod).ToImmutableArray()
+        );
     }
     
     /// <summary>
