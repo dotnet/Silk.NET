@@ -15,6 +15,8 @@ public class FunctionPointerResolverTests
      InlineData("delegate* unmanaged<A, B, C>", "C", new[] { "A", "B"}),
      InlineData("delegate* unmanaged[Cdecl]<A>", "A", new string[0]),
      InlineData("delegate* unmanaged[Cdecl]<A, B, C>", "C", new[] { "A", "B"}),
+     InlineData("delegate* unmanaged<A, B,C>", "C", new[] { "A", "B"}),
+     InlineData("delegate* unmanaged[Cdecl]<A,B, C>", "C", new[] { "A", "B"}),
     ]
     public void ShouldMatch(string text, string returnString, string[] parameters)
     {

@@ -55,6 +55,7 @@ public static class TestHelper
         var processors = new SymbolVisitor[]
         {
             ActivatorUtilities.CreateInstance<PointerTypeResolver>(serviceProvider, typeStore),
+            ActivatorUtilities.CreateInstance<FunctionPointerTypeResolver>(serviceProvider, typeStore),
             ActivatorUtilities.CreateInstance<PrimitiveTypeResolver>(serviceProvider, typeStore),
 
             typeScopeSymbolVisitor,

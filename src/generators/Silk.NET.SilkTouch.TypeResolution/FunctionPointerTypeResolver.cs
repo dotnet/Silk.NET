@@ -10,7 +10,7 @@ namespace Silk.NET.SilkTouch.TypeResolution;
 /// <summary>
 /// A <see cref="SimpleTypeResolverBase"/> that resolves strings of standard C# form
 /// </summary>
-public class FunctionPointerResolver : SimpleTypeResolverBase
+public class FunctionPointerTypeResolver : SimpleTypeResolverBase
 {
     private static readonly Regex _regex = new
     (/*lang=regex*/
@@ -19,7 +19,7 @@ public class FunctionPointerResolver : SimpleTypeResolverBase
     );
 
     /// <inheritdoc />
-    public FunctionPointerResolver(TypeStore typeStore) : base(typeStore)
+    public FunctionPointerTypeResolver(TypeStore typeStore) : base(typeStore)
     {
     }
 
