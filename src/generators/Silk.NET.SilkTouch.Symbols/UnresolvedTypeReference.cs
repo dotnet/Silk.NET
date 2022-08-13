@@ -14,9 +14,12 @@ public sealed record UnresolvedTypeReference(string Text) : TypeReference
     /// Throw helper to use when encountering <see cref="UnresolvedTypeReference"/> when type resolution should've already happened.
     /// </summary>
     /// <exception cref="InvalidOperationException"></exception>
-    public static void ThrowInvalidSymbol()
+    public static void ThrowInvalidSymbol(UnresolvedTypeReference utr)
     {
+        // This is by far the most common exception during generation, so make sure it's useful!!
         throw new InvalidOperationException
-            ($"Visited {nameof(UnresolvedTypeReference)}, but type resolution should have already happened.");
+        (
+            $"Visited {nameof(UnresolvedTypeReference)}, but type resolution should have already happened. Text: \"{utr.Text}\""
+        );
     }
 }
