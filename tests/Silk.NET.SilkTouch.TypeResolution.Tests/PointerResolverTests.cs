@@ -39,4 +39,17 @@ public sealed class PointerResolverTests
         var finalSymbol = output.Visit(symbol);
         Assert.IsNotType<PointerTypeReference>(finalSymbol);
     }
+
+    [Fact, Trait("Category", "Type Resolution")]
+    public void MultiPointer()
+    {
+        var symbol = new UnresolvedTypeReference("int***");
+        var output = new PointerTypeResolver(new TypeStore());
+
+        var finalSymbol = output.Visit(symbol);
+        var outer = Assert.IsType<PointerTypeReference>(finalSymbol);
+        var middle = Assert.IsType<PointerTypeReference>(outer.Underlying);
+        var inner = Assert.IsType<PointerTypeReference>(middle.Underlying);
+        Assert.IsNotType<PointerTypeReference>(inner.Underlying);
+    }
 }
