@@ -82,6 +82,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.SilkTouch.Integrat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.SilkTouch.TestFramework", "tests\Silk.NET.SilkTouch.TestFramework\Silk.NET.SilkTouch.TestFramework.csproj", "{381D1039-3259-488F-BB25-D90EE63A3E82}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Core.Tests", "tests\Silk.NET.Core.Tests\Silk.NET.Core.Tests.csproj", "{6076C9E6-D094-49C5-B526-0AF355D11AC7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -332,6 +334,18 @@ Global
 		{381D1039-3259-488F-BB25-D90EE63A3E82}.Release|x64.Build.0 = Release|Any CPU
 		{381D1039-3259-488F-BB25-D90EE63A3E82}.Release|x86.ActiveCfg = Release|Any CPU
 		{381D1039-3259-488F-BB25-D90EE63A3E82}.Release|x86.Build.0 = Release|Any CPU
+		{6076C9E6-D094-49C5-B526-0AF355D11AC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6076C9E6-D094-49C5-B526-0AF355D11AC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6076C9E6-D094-49C5-B526-0AF355D11AC7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6076C9E6-D094-49C5-B526-0AF355D11AC7}.Debug|x64.Build.0 = Debug|Any CPU
+		{6076C9E6-D094-49C5-B526-0AF355D11AC7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6076C9E6-D094-49C5-B526-0AF355D11AC7}.Debug|x86.Build.0 = Debug|Any CPU
+		{6076C9E6-D094-49C5-B526-0AF355D11AC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6076C9E6-D094-49C5-B526-0AF355D11AC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6076C9E6-D094-49C5-B526-0AF355D11AC7}.Release|x64.ActiveCfg = Release|Any CPU
+		{6076C9E6-D094-49C5-B526-0AF355D11AC7}.Release|x64.Build.0 = Release|Any CPU
+		{6076C9E6-D094-49C5-B526-0AF355D11AC7}.Release|x86.ActiveCfg = Release|Any CPU
+		{6076C9E6-D094-49C5-B526-0AF355D11AC7}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -364,6 +378,7 @@ Global
 		{66FE736C-C407-44C3-A94E-4345E22AA95E} = {94D5D1E1-B998-4CB1-9D04-DA138A2B0F3C}
 		{381D1039-3259-488F-BB25-D90EE63A3E82} = {94D5D1E1-B998-4CB1-9D04-DA138A2B0F3C}
 		{7A2A3176-DBA1-4026-AF65-8E36B4F09B02} = {C9718C94-2F21-4E8D-B55D-8F0B1A131346}
+		{6076C9E6-D094-49C5-B526-0AF355D11AC7} = {94D5D1E1-B998-4CB1-9D04-DA138A2B0F3C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F5273D7F-3334-48DF-94E3-41AE6816CD4D}

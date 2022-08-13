@@ -1,12 +1,23 @@
-﻿using Silk.NET.Core;
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+using Silk.NET.Core;
 using Silk.NET.Maths;
 
 namespace Silk.NET.Windowing
 {
     public interface INativeGLSurface : ISurface
     {
+        /// <summary>
+        /// the GL Handle
+        /// </summary>
         nint Handle { get; }
+        /// <summary>
+        /// Whether this is the currently running context on this thread
+        /// </summary>
         bool IsContextCurrent { get; set; }
+        /// <summary>
+        /// Should the buffers swap immediately upon completion?
+        /// </summary>
         bool ShouldSwapAutomatically { get; set; }
         
         /// <summary>
@@ -48,9 +59,6 @@ namespace Silk.NET.Windowing
         Version32? ApiVersion { get; set; }
 
         nint? GetProcAddress(string proc);
-        void SwapBuffers()
-        {
-            throw new NotImplementedException();
-        }
+        void SwapBuffers();
     }
 }

@@ -1,6 +1,7 @@
-﻿
-// Licensed to the .NET Foundation under one or more agreements.
+﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
+using System;
+
 namespace Silk.NET.Core
 {
     /// <summary>
@@ -14,7 +15,7 @@ namespace Silk.NET.Core
         /// <param name="width">The width of the image.</param>
         /// <param name="height">The height of the image.</param>
         /// <param name="rgbaPixels">The image daqta.</param>
-        public RawImage(int width, int height, Memory<byte> rgbaPixels)
+        public RawImage(int width, int height, ReadOnlyMemory<byte> rgbaPixels)
         {
             Pixels = rgbaPixels;
             Width = width;
@@ -33,7 +34,7 @@ namespace Silk.NET.Core
         /// <summary>
         /// The image data.
         /// </summary>
-        public Memory<byte> Pixels { get; }
+        public ReadOnlyMemory<byte> Pixels { get; }
 
         /// <summary>
         /// Checks whether the two given <see cref="RawImage"/>s are equal.
@@ -72,7 +73,7 @@ namespace Silk.NET.Core
         }
 
         /// <inheritdoc />
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             return obj is RawImage other && Equals(other);
         }
