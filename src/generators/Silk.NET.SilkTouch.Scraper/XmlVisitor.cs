@@ -27,7 +27,7 @@ internal sealed class XmlVisitor
 
     public IEnumerable<Symbol> Visit(XmlNode node)
     {
-        _logger.LogTrace("Visiting XML Node of kind {name}", node.Name);
+        _logger.LogTrace("Visiting XML Node of kind {name} {inner}", node.Name, node.InnerXml);
         switch (node)
         {
             case XmlElement { Name: "bindings" } bindings:

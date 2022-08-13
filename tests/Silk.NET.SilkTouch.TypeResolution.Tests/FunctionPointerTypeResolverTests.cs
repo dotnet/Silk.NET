@@ -3,6 +3,8 @@
 
 using System;
 using System.Linq;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Silk.NET.SilkTouch.Symbols;
 using Xunit;
 
@@ -17,11 +19,16 @@ public class FunctionPointerTypeResolverTests
      InlineData("delegate* unmanaged[Cdecl]<A, B, C>", "C", new[] { "A", "B"}),
      InlineData("delegate* unmanaged<A, B,C>", "C", new[] { "A", "B"}),
      InlineData("delegate* unmanaged[Cdecl]<A,B, C>", "C", new[] { "A", "B"}),
+     InlineData("delegate* unmanaged[Cdecl, SupressGCTransition]<A>", "A", new string[0]),
+     InlineData("delegate* unmanaged[Cdecl, SupressGCTransition]<A, B, C>", "C", new[] { "A", "B"}),
     ]
     public void ShouldMatch(string text, string returnString, string[] parameters)
     {
-        var result = new FunctionPointerTypeResolver(new TypeStore()).Visit(new UnresolvedTypeReference(text));
-
+        var serviceProvider = Helpers.CreateServiceProvider();
+        var result = new FunctionPointerTypeResolver
+            (serviceProvider.GetRequiredService<ILogger<FunctionPointerTypeResolver>>(), new TypeStore()).Visit
+            (new UnresolvedTypeReference(text));
+        
         var fptr = Assert.IsType<FunctionPointerTypeReference>(result);
         Assert.Equal(returnString, Assert.IsType<UnresolvedTypeReference>(fptr.ReturnType).Text);
         Assert.Collection
@@ -44,11 +51,15 @@ public class FunctionPointerTypeResolverTests
      InlineData("longType"),
      InlineData("int"),
      InlineData("using"),
-     InlineData("delegate*")
+     InlineData("delegate*"),
+    InlineData("delegate* unmanaged<>"),
     ]
     public void ShouldNotMatch(string text)
     {
-        var result = new FunctionPointerTypeResolver(new TypeStore()).Visit(new UnresolvedTypeReference(text));
+        var serviceProvider = Helpers.CreateServiceProvider();
+        var result = new FunctionPointerTypeResolver
+            (serviceProvider.GetRequiredService<ILogger<FunctionPointerTypeResolver>>(), new TypeStore()).Visit
+            (new UnresolvedTypeReference(text));
 
         Assert.IsNotType<FunctionPointerTypeReference>(result);
     }
