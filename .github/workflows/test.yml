@@ -86,10 +86,25 @@ jobs:
             - uses: actions/download-artifact@v3
               with:
                 path: ./coverage
+            - name: Setup .NET Core # Required to execute ReportGenerator
+              uses: actions/setup-dotnet@v1
+              with:
+                dotnet-version: 6.0.300
+
+            - name: ReportGenerator
+              uses: danielpalme/ReportGenerator-GitHub-Action@5.1.9
+              with:
+                reports: './coverage/**/**/coverage.cobertura.xml'
+                targetdir: './coveragereport'
+                reporttypes: 'Cobertura'
+                # historydir: '' # Optional directory for storing persistent coverage information. Can be used in future reports to show coverage evolution.
+                # plugins: '' # Optional plugin files for custom reports or custom history storage (separated by semicolon).
+                verbosity: 'Info' # The verbosity level of the log messages. Values: Verbose, Info, Warning, Error, Off
+                tag: '${{ github.run_number }}_${{ github.run_id }}' # Optional tag or build version.
             - name: Generate Summary
               uses: irongut/CodeCoverageSummary@v1.3.0
               with:
-                filename: './coverage/**/**/coverage.cobertura.xml'
+                filename: './coveragereport/Cobertura.xml'
                 badge: true
                 fail_below_min: true
                 format: markdown
