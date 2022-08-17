@@ -18,8 +18,10 @@ jobs:
                     # between datacenter versions and home versions
                     - rid: win-x64
                       os: windows-latest
+                      name: win-x64
                     - rid: win-x86
                       os: windows-latest
+                      name: win-x86
                     
                     # given there appear to be significant differences
                     # we test all available ubuntu versions here
@@ -31,6 +33,7 @@ jobs:
                     
                     - rid: ubuntu.20.04-x64
                       os: ubuntu-20.04
+                      name: ubuntu-20.04-x64
                     
                     # Ubuntu raises an SEH exception, see https://discord.com/channels/521092042781229087/1004867182787838043/1004887853500739684
                     # - rid: ubuntu.18.04-x64
@@ -42,11 +45,13 @@ jobs:
                       os: macos-12
                       xcode_sdk: macosx12.3 # macos-12 image is currently (5th August 2022) on MacOS 12.5 but the latest sdk is macosx12.3
                       xcode_version: Xcode_13.4.1
+                      name: macosx12.3-xcode13
                       
                     - rid: osx.11.0-x64
                       os: macos-11
                       xcode_sdk: macosx11.3
                       xcode_version: Xcode_12.5.1
+                      name: macosx11.3-xcode12
         runs-on: ${{ matrix.os }}
         steps:
             - uses: actions/checkout@v3
@@ -54,6 +59,7 @@ jobs:
                   submodules: "true"
             - name: Setup .NET
               uses: actions/setup-dotnet@v2
+
             - name: Restore
               run: dotnet restore --runtime ${{ matrix.rid }}
             # Build can't be done in a separate step as building for a specific runtime & configuration is unsupported for some reason...
@@ -63,6 +69,37 @@ jobs:
               if: matrix.xcode_version != 0
               run: sudo xcode-select -switch /Applications/${{ matrix.xcode_version }}.app
             - name: Test
-              run: dotnet test -c Release --no-restore --runtime ${{ matrix.rid }}
+              run: dotnet test -c Release --no-restore --runtime ${{ matrix.rid }} --collect:"XPlat Code Coverage" --results-directory ./coverage
               env:
                 SILK_DOTNET_Scraper__XcodeSdk: ${{ matrix.xcode_sdk }}
+            - name: Upload Coverage Results
+              uses: actions/upload-artifact@v3
+              with:
+                name: coverage-${{ matrix.name }}
+                path: ./coverage/**/coverage.cobertura.xml
+    Report Coverage:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/download-artifact@v3
+              with:
+                path: ./coverage
+            - name: Setup .NET Core # Required to execute ReportGenerator
+            - uses: actions/setup-dotnet@v1
+              with:
+                dotnet-version: 6.0.300
+
+            - name: ReportGenerator
+              uses: danielpalme/ReportGenerator-GitHub-Action@5.1.9
+              with:
+                reports: './coverage/**/**/coverage.cobertura.xml'
+                targetdir: './coveragereport'
+                reporttypes: 'MarkdownSummary;Cobertura'
+                # historydir: '' # Optional directory for storing persistent coverage information. Can be used in future reports to show coverage evolution.
+                # plugins: '' # Optional plugin files for custom reports or custom history storage (separated by semicolon).
+                verbosity: 'Info' # The verbosity level of the log messages. Values: Verbose, Info, Warning, Error, Off
+                # title: '' # Optional title.
+                tag: '${{ github.run_number }}_${{ github.run_id }}' # Optional tag or build version.
+            - uses: actions/upload-artifact@v3
+              with:
+                name: coverage-final
+                path: ./coveragereport/*
