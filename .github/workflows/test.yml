@@ -109,4 +109,4 @@ jobs:
               if: github.event_name == 'pull_request'
               with:
                 header: coverage-results
-                path: code-coverage-results.md
+                path: ./coveragereport/Summary.md
