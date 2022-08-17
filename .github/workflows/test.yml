@@ -86,29 +86,21 @@ jobs:
             - uses: actions/download-artifact@v3
               with:
                 path: ./coverage
-            - name: Setup .NET Core # Required to execute ReportGenerator
-              uses: actions/setup-dotnet@v1
+            - name: Generate Summary
+              uses: irongut/CodeCoverageSummary@v1.3.0
               with:
-                dotnet-version: 6.0.300
-
-            - name: ReportGenerator
-              uses: danielpalme/ReportGenerator-GitHub-Action@5.1.9
-              with:
-                reports: './coverage/**/**/coverage.cobertura.xml'
-                targetdir: './coveragereport'
-                reporttypes: 'MarkdownSummary;Cobertura'
-                # historydir: '' # Optional directory for storing persistent coverage information. Can be used in future reports to show coverage evolution.
-                # plugins: '' # Optional plugin files for custom reports or custom history storage (separated by semicolon).
-                verbosity: 'Info' # The verbosity level of the log messages. Values: Verbose, Info, Warning, Error, Off
-                # title: '' # Optional title.
-                tag: '${{ github.run_number }}_${{ github.run_id }}' # Optional tag or build version.
-            - uses: actions/upload-artifact@v3
-              with:
-                name: coverage-final
-                path: ./coveragereport/*
+                filename: './coverage/**/**/coverage.cobertura.xml'
+                badge: true
+                fail_below_min: true
+                format: markdown
+                hide_branch_rate: false
+                hide_complexity: true
+                indicators: true
+                output: file
+                thresholds: '60 80'
             - name: Add Coverage PR Comment
               uses: marocchino/sticky-pull-request-comment@v2
               if: github.event_name == 'pull_request'
               with:
                 header: coverage-results
-                path: ./coveragereport/Summary.md
+                path: code-coverage-results.md
