@@ -79,6 +79,7 @@ jobs:
                 path: ./coverage/**/coverage.cobertura.xml
     Report Coverage:
         runs-on: ubuntu-latest
+        needs: Test
         steps:
             - uses: actions/download-artifact@v3
               with:
