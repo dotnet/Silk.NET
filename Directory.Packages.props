@@ -50,5 +50,6 @@
         <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="$(MsExtensionNugetVersion)" />
         <PackageVersion Include="Microsoft.Extensions.Logging" Version="$(MsExtensionNugetVersion)" />
         <PackageVersion Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="$(MsExtensionNugetVersion)" />
+        <PackageVersion Include="Bogus" Version="34.0.2" />
     </ItemGroup>
 </Project>

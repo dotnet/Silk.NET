@@ -24,6 +24,14 @@ public readonly struct TypeId : IEquatable<TypeId>
     /// <returns>The new instance</returns>
     public static TypeId CreateNew() => new TypeId(Guid.NewGuid());
 
+    /// <summary>
+    /// Creates a new TypeID from a GUID. This is not a stable interface. DO NOT USE
+    /// </summary>
+    /// <param name="guid">The Guid to use for underlying identity</param>
+    /// <returns>The Type ID</returns>
+    [Obsolete("DO NOT USE. THIS IS NOT A STABLE INTERFACE")]
+    public static TypeId From(Guid guid) => new TypeId(guid);
+
     /// <inheritdoc />
     public bool Equals(TypeId other) => _guid.Equals(other._guid);
     

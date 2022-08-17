@@ -18,8 +18,10 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\src\generators\Silk.NET.SilkTouch.Symbols\Silk.NET.SilkTouch.Symbols.csproj" />
-      <ProjectReference Include="..\Silk.NET.SilkTouch.TestFramework\Silk.NET.SilkTouch.TestFramework.csproj" />
+        <ProjectReference Include="..\..\src\generators\Silk.NET.SilkTouch.Symbols\Silk.NET.SilkTouch.Symbols.csproj" />
+        <ProjectReference Include="..\Silk.NET.SilkTouch.TestFramework\Silk.NET.SilkTouch.TestFramework.csproj" />
+        <ProjectReference Include="..\Silk.NET.SilkTouch.Tests.Common\Silk.NET.SilkTouch.Tests.Common.csproj" />
+        <PackageReference Include="Bogus" />
     </ItemGroup>
 
 </Project>

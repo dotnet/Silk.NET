@@ -1,21 +1,26 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System.Collections.Immutable;
+using System.Collections.Generic;
+using System.Linq;
 using Moq;
 using Moq.Protected;
+using Silk.NET.SilkTouch.Tests.Common;
 using Xunit;
 
 namespace Silk.NET.SilkTouch.Symbols.Tests.SymbolVisitorTests;
 
 public class FieldTests
 {
-    [Fact,
+    public static IEnumerable<object[]> BogusData => Fakers.FieldSymbol.Generate(Fakers.StandardGenerateCount)
+        .Select(x => new[] { (object)x });
+    
+    [Theory,
+     MemberData(nameof(BogusData)),
      Trait("Category", "Symbols"),
      Trait("Feature", "Fields")]
-    public void FieldIsVisitedAsField()
+    public void FieldIsVisitedAsField(FieldSymbol symbol)
     {
-        var symbol = new FieldSymbol(new ExternalTypeReference(null, new IdentifierSymbol("")), new IdentifierSymbol(""));
         var visitor = new Mock<MockSymbolVisitor> { CallBase = true };
         visitor.Object.Visit(symbol);
         
@@ -23,12 +28,12 @@ public class FieldTests
             .Verify<FieldSymbol>("VisitField", Times.Once(), ItExpr.IsAny<FieldSymbol>());
     }
 
-    [Fact,
+    [Theory,
+     MemberData(nameof(BogusData)),
      Trait("Category", "Symbols"),
      Trait("Feature", "Fields")]
-    public void FieldIsVisitedAsMember()
+    public void FieldIsVisitedAsMember(FieldSymbol symbol)
     {
-        var symbol = new FieldSymbol(new ExternalTypeReference(null, new IdentifierSymbol("")), new IdentifierSymbol(""));
         var visitor = new Mock<MockSymbolVisitor> { CallBase = true };
         visitor.Object.Visit(symbol);
         
@@ -36,30 +41,35 @@ public class FieldTests
             .Verify<MemberSymbol>("VisitMember", Times.Once(), ItExpr.IsAny<MemberSymbol>());
     }
 
-    [Fact,
+    [Theory,
+     MemberData(nameof(BogusData)),
      Trait("Category", "Symbols"),
      Trait("Feature", "Fields")]
-    public void FieldTypeIsVisited()
+    public void FieldTypeIsVisited(FieldSymbol symbol)
     {
-        var symbol = new FieldSymbol(new ExternalTypeReference(null, new IdentifierSymbol("")), new IdentifierSymbol(""));
         var visitor = new Mock<MockSymbolVisitor> { CallBase = true };
         visitor.Object.Visit(symbol);
-        
+
         visitor.Protected()
-            .Verify<IdentifierSymbol>("VisitIdentifier", Times.Exactly(2), ItExpr.IsAny<IdentifierSymbol>());
+            .Verify<TypeReference>
+                ("VisitTypeReference", Times.Once(), ItExpr.Is<TypeReference>(x => ReferenceEquals(x, symbol.Type)));
     }
 
-    [Fact,
+    [Theory,
+     MemberData(nameof(BogusData)),
      Trait("Category", "Symbols"),
      Trait("Feature", "Fields")]
-    public void FieldIdentifierIsVisited()
+    public void FieldIdentifierIsVisited(FieldSymbol symbol)
     {
-        var symbol = new FieldSymbol(new ExternalTypeReference(null, new IdentifierSymbol("")), new IdentifierSymbol(""));
         var visitor = new Mock<MockSymbolVisitor> { CallBase = true };
         visitor.Object.Visit(symbol);
-        
+
         visitor.Protected()
             .Verify<IdentifierSymbol>
-                ("VisitIdentifier", Times.Exactly(1), ItExpr.Is<IdentifierSymbol>(x => object.ReferenceEquals(x, symbol.Identifier)));
+            (
+                "VisitIdentifier",
+                Times.Once(),
+                ItExpr.Is<IdentifierSymbol>(x => ReferenceEquals(x, symbol.Identifier))
+            );
     }
 }

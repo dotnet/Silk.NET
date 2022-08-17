@@ -1,20 +1,23 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System.Collections.Immutable;
+using System.Collections.Generic;
+using System.Linq;
 using Moq;
 using Moq.Protected;
+using Silk.NET.SilkTouch.Tests.Common;
 using Xunit;
 
 namespace Silk.NET.SilkTouch.Symbols.Tests.SymbolVisitorTests;
 
 public class ClassSymbolTests
 {
-    [Fact, Trait("Category", "Symbols")]
-    public void IsVisitedAsSelf()
+    public static IEnumerable<object[]> BogusData => Fakers.ClassSymbol.Generate(Fakers.StandardGenerateCount)
+        .Select(x => new[] { (object)x });
+
+    [Theory, MemberData(nameof(BogusData)), Trait("Category", "Symbols")]
+    public void IsVisitedAsSelf(ClassSymbol symbol)
     {
-        var symbol = new ClassSymbol(TypeId.CreateNew(), new IdentifierSymbol(""), ImmutableArray<MethodSymbol>.Empty);
-        
         var visitor = new Mock<MockSymbolVisitor> { CallBase = true };
         visitor.Object.Visit(symbol);
         
@@ -22,11 +25,9 @@ public class ClassSymbolTests
             .Verify<ClassSymbol>("VisitClass", Times.Once(), ItExpr.IsAny<ClassSymbol>());
     }
     
-    [Fact, Trait("Category", "Symbols")]
-    public void IsVisitedAsType()
+    [Theory, MemberData(nameof(BogusData)), Trait("Category", "Symbols")]
+    public void IsVisitedAsType(ClassSymbol symbol)
     {
-        var symbol = new ClassSymbol(TypeId.CreateNew(), new IdentifierSymbol(""), ImmutableArray<MethodSymbol>.Empty);
-        
         var visitor = new Mock<MockSymbolVisitor> { CallBase = true };
         visitor.Object.Visit(symbol);
         

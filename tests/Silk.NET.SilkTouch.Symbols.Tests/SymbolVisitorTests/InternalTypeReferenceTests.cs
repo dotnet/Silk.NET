@@ -1,20 +1,25 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System.ComponentModel;
+using System.Collections.Generic;
+using System.Linq;
 using Moq;
 using Moq.Protected;
+using Silk.NET.SilkTouch.Tests.Common;
 using Xunit;
 
 namespace Silk.NET.SilkTouch.Symbols.Tests.SymbolVisitorTests;
 
 public class InternalTypeReferenceTests
 {
-    [Fact, Trait("Category", "Symbols")]
-    public void VisitedAsSelf()
+    public static IEnumerable<object[]> BogusData => Fakers.InternalTypeReference.Generate(Fakers.StandardGenerateCount)
+        .Select(x => new[] { (object)x });
+    
+    [Theory,
+     MemberData(nameof(BogusData)),
+     Trait("Category", "Symbols")]
+    public void VisitedAsSelf(InternalTypeReference symbol)
     {
-        var symbol = new InternalTypeReference(TypeId.CreateNew());
-        
         var visitor = new Mock<MockSymbolVisitor> { CallBase = true };
 
         visitor.Object.Visit(symbol);
@@ -24,11 +29,11 @@ public class InternalTypeReferenceTests
                 ("VisitInternalTypeReference", Times.Once(), ItExpr.IsAny<InternalTypeReference>());
     }
     
-    [Fact, Trait("Category", "Symbols")]
-    public void VisitedAsParent()
+    [Theory,
+     MemberData(nameof(BogusData)),
+     Trait("Category", "Symbols")]
+    public void VisitedAsParent(InternalTypeReference symbol)
     {
-        var symbol = new InternalTypeReference(TypeId.CreateNew());
-        
         var visitor = new Mock<MockSymbolVisitor> { CallBase = true };
 
         visitor.Object.Visit(symbol);
@@ -38,17 +43,15 @@ public class InternalTypeReferenceTests
                 ("VisitTypeReference", Times.Once(), ItExpr.IsAny<TypeReference>());
     }
     
-    
-    [Fact, Trait("Category", "Symbols")]
-    public void TypeIdIsVisited()
+    [Theory,
+     MemberData(nameof(BogusData)),
+     Trait("Category", "Symbols")]
+    public void TypeIdIsVisited(InternalTypeReference symbol)
     {
-        var id = TypeId.CreateNew();
-        var symbol = new InternalTypeReference(id);
-        
         var visitor = new Mock<MockSymbolVisitor> { CallBase = true };
 
         visitor.Object.Visit(symbol);
 
-        visitor.Protected().Verify<TypeId>("VisitTypeId", Times.Once(), ItExpr.Is<TypeId>(x => x == id));
+        visitor.Protected().Verify<TypeId>("VisitTypeId", Times.Once(), ItExpr.Is<TypeId>(x => x == symbol.ReferencedTypeId));
     }
 }
