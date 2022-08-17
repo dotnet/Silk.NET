@@ -104,8 +104,8 @@ jobs:
               with:
                 name: coverage-final
                 path: ./coveragereport/*
-                - name: Add Coverage PR Comment
-            - uses: marocchino/sticky-pull-request-comment@v2
+            - name: Add Coverage PR Comment
+              uses: marocchino/sticky-pull-request-comment@v2
               if: github.event_name == 'pull_request'
               with:
                 header: coverage-results
