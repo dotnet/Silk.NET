@@ -80,6 +80,8 @@ jobs:
     Report_Coverage:
         runs-on: ubuntu-latest
         needs: Test
+        permissions:
+            pull-requests: write
         steps:
             - uses: actions/download-artifact@v3
               with:
