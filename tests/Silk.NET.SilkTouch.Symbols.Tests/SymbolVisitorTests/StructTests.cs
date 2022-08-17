@@ -1,22 +1,26 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System;
-using System.Collections.Immutable;
+using System.Collections.Generic;
+using System.Linq;
 using Moq;
 using Moq.Protected;
+using Silk.NET.SilkTouch.Tests.Common;
 using Xunit;
 
 namespace Silk.NET.SilkTouch.Symbols.Tests.SymbolVisitorTests;
 
 public class StructTests
 {
-    [Fact,
+    public static IEnumerable<object[]> BogusData => Fakers.StructSymbol.Generate(Fakers.StandardGenerateCount)
+        .Select(x => new[] { (object)x });  
+    
+    [Theory,
+     MemberData(nameof(BogusData)),
      Trait("Category", "Symbols"),
      Trait("Feature", "Structs")]
-    public void StructSymbolIsVisitedAsType()
+    public void StructSymbolIsVisitedAsType(StructSymbol symbol)
     {
-        var symbol = new StructSymbol(TypeId.CreateNew(), new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty);
         var visitor = new Mock<MockSymbolVisitor> { CallBase = true };
         visitor.Object.Visit(symbol);
         
@@ -24,12 +28,12 @@ public class StructTests
             .Verify<TypeSymbol>("VisitType", Times.Once(), ItExpr.IsAny<TypeSymbol>());
     }
 
-    [Fact,
+    [Theory,
+     MemberData(nameof(BogusData)),
      Trait("Category", "Symbols"),
      Trait("Feature", "Structs")]
-    public void StructSymbolIsVisitedAsStruct()
+    public void StructSymbolIsVisitedAsStruct(StructSymbol symbol)
     {
-        var symbol = new StructSymbol(TypeId.CreateNew(), new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty);
         var visitor = new Mock<MockSymbolVisitor> { CallBase = true };
         visitor.Object.Visit(symbol);
         
@@ -37,57 +41,38 @@ public class StructTests
             .Verify<StructSymbol>("VisitStruct", Times.Once(), ItExpr.IsAny<StructSymbol>());
     }
 
-    [Fact,
+    [Theory,
+     MemberData(nameof(BogusData)),
      Trait("Category", "Symbols"),
      Trait("Feature", "Structs")]
-    public void StructIdentifierIsVisitedAsIdentifier()
+    public void StructIdentifierIsVisitedAsIdentifier(StructSymbol symbol)
     {
-        var symbol = new StructSymbol(TypeId.CreateNew(), new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty);
         var visitor = new Mock<MockSymbolVisitor> { CallBase = true };
         visitor.Object.Visit(symbol);
-        
-        visitor.Protected()
-            .Verify<IdentifierSymbol>("VisitIdentifier", Times.Once(), ItExpr.IsAny<IdentifierSymbol>());
-    }
 
-    [Fact,
+        visitor.Protected()
+            .Verify<IdentifierSymbol>
+            (
+                "VisitIdentifier",
+                Times.Once(),
+                ItExpr.Is<IdentifierSymbol>(x => ReferenceEquals(x, symbol.Identifier))
+            );
+    }
+    
+    [Theory,
+     MemberData(nameof(BogusData)),
      Trait("Category", "Symbols"),
      Trait("Feature", "Structs"),
      Trait("Feature", "Fields")]
-    public void StructFieldIsVisited()
+    public void StructFieldsAreVisited(StructSymbol symbol)
     {
-        var member = new FieldSymbol(new ExternalTypeReference(null, new IdentifierSymbol("int")), new IdentifierSymbol("Test1"));
-        var symbol = new StructSymbol(TypeId.CreateNew(), new IdentifierSymbol("Test"), new[]
-        {
-            member
-        }.ToImmutableArray());
         var visitor = new Mock<MockSymbolVisitor> { CallBase = true };
         visitor.Object.Visit(symbol);
-        
-        visitor.Protected()
-            .Verify<FieldSymbol>("VisitField", Times.Once(), ItExpr.Is<FieldSymbol>(x => x == member));
-    }
 
-
-    [Fact,
-     Trait("Category", "Symbols"),
-     Trait("Feature", "Structs"),
-     Trait("Feature", "Fields")]
-    public void StructFieldsAreVisited()
-    {
-        var member1 = new FieldSymbol(new ExternalTypeReference(null, new IdentifierSymbol("int")), new IdentifierSymbol("Test1"));
-        var member2 = new FieldSymbol(new ExternalTypeReference(null, new IdentifierSymbol("int")), new IdentifierSymbol("Test2"));
-        var symbol = new StructSymbol(TypeId.CreateNew(), new IdentifierSymbol("Test"), new[]
+        foreach (var v in symbol.Fields)
         {
-            member1, member2
-        }.ToImmutableArray());
-        var visitor = new Mock<MockSymbolVisitor> { CallBase = true };
-        visitor.Object.Visit(symbol);
-        
-        visitor.Protected()
-            .Verify<FieldSymbol>("VisitField", Times.Once(), ItExpr.Is<FieldSymbol>(x => x == member1));
-        
-        visitor.Protected()
-            .Verify<FieldSymbol>("VisitField", Times.Once(), ItExpr.Is<FieldSymbol>(x => x == member2));
+            visitor.Protected()
+                .Verify<FieldSymbol>("VisitField", Times.Once(), ItExpr.Is<FieldSymbol>(x => ReferenceEquals(x, v)));
+        }
     }
 }
