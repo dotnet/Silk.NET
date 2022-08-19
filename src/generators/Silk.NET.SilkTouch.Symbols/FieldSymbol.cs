@@ -9,4 +9,4 @@ namespace Silk.NET.SilkTouch.Symbols;
 /// <param name="Type">The <see cref="TypeReference"/> of the data stored in this field</param>
 /// <param name="Identifier">The Identifier of this field</param>
 /// <seealso cref="MemberSymbol"/>
-public sealed record FieldSymbol(TypeReference Type, IdentifierSymbol Identifier) : MemberSymbol;
+public sealed record FieldSymbol(TypeReference Type, IdentifierSymbol Identifier) : MemberSymbol(Identifier);
