@@ -14,7 +14,7 @@ public static class Fakers
         Faker.DefaultStrictMode = true;
     }
 
-    public static int StandardGenerateCount { get; } = 10;
+    public static int StandardGenerateCount { get; } = 20;
 
     public static Faker<IdentifierSymbol> IdentifierSymbol { get; } = new Faker<IdentifierSymbol>().SkipConstructor()
         .RuleFor
