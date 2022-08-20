@@ -23,14 +23,22 @@ public class EmitterStructMemberFieldsTests : EmitterTest
             new StructSymbol
             (
                 TypeId.CreateNew(),
-                new IdentifierSymbol("Test"), new[]
-                { 
+                new IdentifierSymbol("Test", ImmutableArray<ISymbolAnnotation>.Empty),
+                new[]
+                {
                     new FieldSymbol
                     (
-                        new ExternalTypeReference(null, new IdentifierSymbol("int")),
-                        new IdentifierSymbol("F1")
-                    )  
-                }.ToImmutableArray()
+                        new ExternalTypeReference
+                        (
+                            null,
+                            new IdentifierSymbol("int", ImmutableArray<ISymbolAnnotation>.Empty),
+                            ImmutableArray<ISymbolAnnotation>.Empty
+                        ),
+                        new IdentifierSymbol("F1", ImmutableArray<ISymbolAnnotation>.Empty),
+                        ImmutableArray<ISymbolAnnotation>.Empty
+                    )
+                }.ToImmutableArray(),
+                ImmutableArray<ISymbolAnnotation>.Empty
             )
         );
 
@@ -55,24 +63,44 @@ public class EmitterStructMemberFieldsTests : EmitterTest
             new StructSymbol
             (
                 TypeId.CreateNew(),
-                new IdentifierSymbol("Test"), new[]
+                new IdentifierSymbol("Test", ImmutableArray<ISymbolAnnotation>.Empty),
+                new[]
                 {
                     new FieldSymbol
                     (
-                        new ExternalTypeReference(null, new IdentifierSymbol("int")),
-                        new IdentifierSymbol("F1")
+                        new ExternalTypeReference
+                        (
+                            null,
+                            new IdentifierSymbol("int", ImmutableArray<ISymbolAnnotation>.Empty),
+                            ImmutableArray<ISymbolAnnotation>.Empty
+                        ),
+                        new IdentifierSymbol("F1", ImmutableArray<ISymbolAnnotation>.Empty),
+                        ImmutableArray<ISymbolAnnotation>.Empty
                     ),
                     new FieldSymbol
                     (
-                        new ExternalTypeReference(null, new IdentifierSymbol("int")),
-                        new IdentifierSymbol("F2")
+                        new ExternalTypeReference
+                        (
+                            null,
+                            new IdentifierSymbol("int", ImmutableArray<ISymbolAnnotation>.Empty),
+                            ImmutableArray<ISymbolAnnotation>.Empty
+                        ),
+                        new IdentifierSymbol("F2", ImmutableArray<ISymbolAnnotation>.Empty),
+                        ImmutableArray<ISymbolAnnotation>.Empty
                     ),
                     new FieldSymbol
                     (
-                        new ExternalTypeReference(null, new IdentifierSymbol("int")),
-                        new IdentifierSymbol("F3")
+                        new ExternalTypeReference
+                        (
+                            null,
+                            new IdentifierSymbol("int", ImmutableArray<ISymbolAnnotation>.Empty),
+                            ImmutableArray<ISymbolAnnotation>.Empty
+                        ),
+                        new IdentifierSymbol("F3", ImmutableArray<ISymbolAnnotation>.Empty),
+                        ImmutableArray<ISymbolAnnotation>.Empty
                     )
-                }.ToImmutableArray()
+                }.ToImmutableArray(),
+                ImmutableArray<ISymbolAnnotation>.Empty
             )
         );
 

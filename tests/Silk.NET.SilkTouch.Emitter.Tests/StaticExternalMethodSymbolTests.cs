@@ -14,9 +14,15 @@ public class StaticExternalMethodSymbolTests : EmitterTest
     {
         var symbol = new StaticExternalMethodSymbol
         (
-            new ExternalTypeReference(null, new IdentifierSymbol("int")),
+            new ExternalTypeReference
+            (
+                null,
+                new IdentifierSymbol("int", ImmutableArray<ISymbolAnnotation>.Empty),
+                ImmutableArray<ISymbolAnnotation>.Empty
+            ),
             ImmutableArray<Parameter>.Empty,
-            new IdentifierSymbol("M")
+            new IdentifierSymbol("M", ImmutableArray<ISymbolAnnotation>.Empty),
+            ImmutableArray<ISymbolAnnotation>.Empty
         );
 
         var transformed = Transform(symbol);

@@ -11,6 +11,7 @@ namespace Silk.NET.SilkTouch.Symbols;
 /// <param name="Id">An Identifier used for referencing types globally</param>
 /// <param name="Identifier">The Identifier of this struct</param>
 /// <param name="Fields">The fields of this struct</param>
+/// <param name="Annotations">The annotations of this symbol</param>
 /// <remarks>
 /// In this context, a Struct means a type that represents the layout of a continuous block of memory.
 /// </remarks>
@@ -19,4 +20,9 @@ namespace Silk.NET.SilkTouch.Symbols;
 /// For types that would require such behavior there are separate symbols that may be defined.
 /// </remarks>
 public sealed record StructSymbol
-    (TypeId Id, IdentifierSymbol Identifier, ImmutableArray<FieldSymbol> Fields) : TypeSymbol(Id, Identifier);
+(
+    TypeId Id,
+    IdentifierSymbol Identifier,
+    ImmutableArray<FieldSymbol> Fields,
+    ImmutableArray<ISymbolAnnotation> Annotations
+) : TypeSymbol(Id, Identifier, Annotations);

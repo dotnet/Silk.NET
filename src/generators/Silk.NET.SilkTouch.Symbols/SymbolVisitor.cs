@@ -65,7 +65,7 @@ public abstract class SymbolVisitor
     /// </remarks>
     protected virtual FieldSymbol VisitField(FieldSymbol fieldSymbol)
     {
-        return new FieldSymbol(VisitTypeReference(fieldSymbol.Type), VisitIdentifier(fieldSymbol.Identifier));
+        return new FieldSymbol(VisitTypeReference(fieldSymbol.Type), VisitIdentifier(fieldSymbol.Identifier), fieldSymbol.Annotations);
     }
 
     /// <summary>
@@ -99,7 +99,8 @@ public abstract class SymbolVisitor
             staticExternalMethodSymbol.Parameters.Select
                     (x => new Parameter(VisitTypeReference(x.TypeReference), VisitIdentifier(x.Identifier)))
                 .ToImmutableArray(),
-            VisitIdentifier(staticExternalMethodSymbol.Identifier)
+            VisitIdentifier(staticExternalMethodSymbol.Identifier),
+            staticExternalMethodSymbol.Annotations
         );
     }
 
@@ -134,7 +135,7 @@ public abstract class SymbolVisitor
     /// </remarks>
     protected virtual PointerTypeReference VisitPointerTypeReference(PointerTypeReference pointerTypeReference)
     {
-        return new PointerTypeReference(VisitTypeReference(pointerTypeReference.Underlying));
+        return new PointerTypeReference(VisitTypeReference(pointerTypeReference.Underlying), pointerTypeReference.Annotations);
     }
     /// <summary>
     /// Visit a <see cref="FunctionPointerTypeReference"/>. Will call the appropriate methods to visit the different parts of the symbol.
@@ -150,7 +151,8 @@ public abstract class SymbolVisitor
         return new FunctionPointerTypeReference
         (
             VisitTypeReference(functionPointerTypeReference.ReturnType),
-            functionPointerTypeReference.ParameterTypes.Select(VisitTypeReference).ToImmutableArray()
+            functionPointerTypeReference.ParameterTypes.Select(VisitTypeReference).ToImmutableArray(),
+            functionPointerTypeReference.Annotations
         );
     }
     
@@ -164,7 +166,7 @@ public abstract class SymbolVisitor
     /// </remarks>
     protected virtual InternalTypeReference VisitInternalTypeReference(InternalTypeReference typeReference)
     {
-        return new InternalTypeReference(VisitTypeId(typeReference.ReferencedTypeId));
+        return new InternalTypeReference(VisitTypeId(typeReference.ReferencedTypeId), typeReference.Annotations);
     }
     
     /// <summary>
@@ -180,7 +182,8 @@ public abstract class SymbolVisitor
         return new ExternalTypeReference
         (
             typeReference.Namespace is not null ? VisitIdentifier(typeReference.Namespace) : null,
-            VisitIdentifier(typeReference.TypeIdentifier)
+            VisitIdentifier(typeReference.TypeIdentifier),
+            typeReference.Annotations
         );
     }
 
@@ -232,7 +235,8 @@ public abstract class SymbolVisitor
         (
             classSymbol.Id,
             VisitIdentifier(classSymbol.Identifier),
-            classSymbol.Methods.Select(VisitMethod).ToImmutableArray()
+            classSymbol.Methods.Select(VisitMethod).ToImmutableArray(),
+            classSymbol.Annotations
         );
     }
     
@@ -251,7 +255,8 @@ public abstract class SymbolVisitor
         (
             structSymbol.Id,
             VisitIdentifier(structSymbol.Identifier),
-            structSymbol.Fields.Select(VisitField).ToImmutableArray()
+            structSymbol.Fields.Select(VisitField).ToImmutableArray(),
+            structSymbol.Annotations
         );
     }
 

@@ -1,6 +1,8 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.Collections.Immutable;
+
 namespace Silk.NET.SilkTouch.Symbols;
 
 /// <summary>
@@ -8,5 +10,7 @@ namespace Silk.NET.SilkTouch.Symbols;
 /// </summary>
 /// <param name="Id">An Identifier used for referencing types globally</param>
 /// <param name="Identifier">The identifier of this type</param>
+/// <param name="Annotations">The annotations of this symbol</param>
 /// <seealso cref="StructSymbol"/>
-public abstract record TypeSymbol(TypeId Id, IdentifierSymbol Identifier) : Symbol;
+public abstract record TypeSymbol
+    (TypeId Id, IdentifierSymbol Identifier, ImmutableArray<ISymbolAnnotation> Annotations) : Symbol(Annotations);

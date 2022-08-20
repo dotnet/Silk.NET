@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using System.Collections.Immutable;
 using System.Linq;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -27,7 +28,7 @@ public class FunctionPointerTypeResolverTests
         var serviceProvider = Helpers.CreateServiceProvider();
         var result = new FunctionPointerTypeResolver
             (serviceProvider.GetRequiredService<ILogger<FunctionPointerTypeResolver>>(), new TypeStore()).Visit
-            (new UnresolvedTypeReference(text));
+            (new UnresolvedTypeReference(text, ImmutableArray<ISymbolAnnotation>.Empty));
         
         var fptr = Assert.IsType<FunctionPointerTypeReference>(result);
         Assert.Equal(returnString, Assert.IsType<UnresolvedTypeReference>(fptr.ReturnType).Text);
@@ -59,7 +60,7 @@ public class FunctionPointerTypeResolverTests
         var serviceProvider = Helpers.CreateServiceProvider();
         var result = new FunctionPointerTypeResolver
             (serviceProvider.GetRequiredService<ILogger<FunctionPointerTypeResolver>>(), new TypeStore()).Visit
-            (new UnresolvedTypeReference(text));
+            (new UnresolvedTypeReference(text, ImmutableArray<ISymbolAnnotation>.Empty));
 
         Assert.IsNotType<FunctionPointerTypeReference>(result);
     }

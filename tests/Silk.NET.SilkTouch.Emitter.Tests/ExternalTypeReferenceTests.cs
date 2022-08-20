@@ -1,6 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.Collections.Immutable;
 using System.ComponentModel;
 using System.Security.Cryptography.X509Certificates;
 using Silk.NET.SilkTouch.Symbols;
@@ -14,7 +15,12 @@ public class ExternalTypeReferenceTests : EmitterTest
      Trait("Target Language", "C#")]
     public void StringTestNoNamespace()
     {
-        var symbol = new ExternalTypeReference(null, new IdentifierSymbol("ETR1"));
+        var symbol = new ExternalTypeReference
+        (
+            null,
+            new IdentifierSymbol("ETR1", ImmutableArray<ISymbolAnnotation>.Empty),
+            ImmutableArray<ISymbolAnnotation>.Empty
+        );
 
         var transformed = Transform(symbol);
 
@@ -25,7 +31,12 @@ public class ExternalTypeReferenceTests : EmitterTest
      Trait("Target Language", "C#")]
     public void StringTestWithNamespace()
     {
-        var symbol = new ExternalTypeReference(new IdentifierSymbol("Namespace"), new IdentifierSymbol("ETR1"));
+        var symbol = new ExternalTypeReference
+        (
+            new IdentifierSymbol("Namespace", ImmutableArray<ISymbolAnnotation>.Empty),
+            new IdentifierSymbol("ETR1", ImmutableArray<ISymbolAnnotation>.Empty),
+            ImmutableArray<ISymbolAnnotation>.Empty
+        );
 
         var transformed = Transform(symbol);
 

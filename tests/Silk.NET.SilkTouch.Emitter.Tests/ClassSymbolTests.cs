@@ -12,33 +12,46 @@ public sealed class ClassSymbolTests : EmitterTest
     [Fact, Trait("Category", "Symbols"), Trait("Target Language", "C#")]
     public void StringTestNoMethods()
     {
-        var symbol = new ClassSymbol(TypeId.CreateNew(), new IdentifierSymbol("C"), ImmutableArray<MethodSymbol>.Empty);
+        var symbol = new ClassSymbol
+        (
+            TypeId.CreateNew(),
+            new IdentifierSymbol("C", ImmutableArray<ISymbolAnnotation>.Empty),
+            ImmutableArray<MethodSymbol>.Empty,
+            ImmutableArray<ISymbolAnnotation>.Empty
+        );
 
         var result = Transform(symbol);
 
         Assert.Equal("public class C\n" + "{\n" + "}", result.ToFullString());
     }
-    
+
     [Fact, Trait("Category", "Symbols"), Trait("Target Language", "C#")]
     public void StringTestWithMethods()
     {
         var method = new StaticExternalMethodSymbol
         (
-            new ExternalTypeReference(null, new IdentifierSymbol("int")),
+            new ExternalTypeReference
+            (
+                null,
+                new IdentifierSymbol("int", ImmutableArray<ISymbolAnnotation>.Empty),
+                ImmutableArray<ISymbolAnnotation>.Empty
+            ),
             ImmutableArray<Parameter>.Empty,
-            new IdentifierSymbol("M")
+            new IdentifierSymbol("M", ImmutableArray<ISymbolAnnotation>.Empty),
+            ImmutableArray<ISymbolAnnotation>.Empty
         );
         var symbol = new ClassSymbol
         (
             TypeId.CreateNew(),
-            new IdentifierSymbol("C"),
+            new IdentifierSymbol("C", ImmutableArray<ISymbolAnnotation>.Empty),
             new MethodSymbol[]
             {
                 method
-            }.ToImmutableArray()
+            }.ToImmutableArray(),
+            ImmutableArray<ISymbolAnnotation>.Empty
         );
-        
-        
+
+
 
         var result = Transform(symbol);
 

@@ -1,6 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.Collections.Immutable;
 using Silk.NET.SilkTouch.Symbols;
 
 namespace Silk.NET.SilkTouch.TypeResolution;
@@ -17,7 +18,12 @@ public sealed class PrimitiveTypeResolver : SimpleTypeResolverBase
     }
 
     private static ExternalTypeReference CreateExternalTypeRef(string? @namespace, string name)
-        => new ExternalTypeReference(@namespace is not null ? new IdentifierSymbol(@namespace) : null, new IdentifierSymbol(name));
+        => new ExternalTypeReference
+        (
+            @namespace is not null ? new IdentifierSymbol(@namespace, ImmutableArray<ISymbolAnnotation>.Empty) : null,
+            new IdentifierSymbol(name, ImmutableArray<ISymbolAnnotation>.Empty),
+            ImmutableArray<ISymbolAnnotation>.Empty
+        );
     private static readonly Dictionary<string, TypeReference> _typeMap = new Dictionary<string, TypeReference>()
     {
         ["bool"] = CreateExternalTypeRef("System", "Boolean"),

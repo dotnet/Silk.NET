@@ -1,6 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.Collections.Immutable;
 using Silk.NET.SilkTouch.Symbols;
 using Xunit;
 
@@ -15,7 +16,7 @@ public sealed class PointerResolverTests
     ]
     public void ShouldResolve(string text)
     {
-        var symbol = new UnresolvedTypeReference(text);
+        var symbol = new UnresolvedTypeReference(text, ImmutableArray<ISymbolAnnotation>.Empty);
         var output = new PointerTypeResolver(new TypeStore());
 
         var finalSymbol = output.Visit(symbol);
@@ -33,7 +34,7 @@ public sealed class PointerResolverTests
     ]
     public void ShouldNotResolve(string text)
     {
-        var symbol = new UnresolvedTypeReference(text);
+        var symbol = new UnresolvedTypeReference(text, ImmutableArray<ISymbolAnnotation>.Empty);
         var output = new PointerTypeResolver(new TypeStore());
 
         var finalSymbol = output.Visit(symbol);
@@ -43,7 +44,7 @@ public sealed class PointerResolverTests
     [Fact, Trait("Category", "Type Resolution")]
     public void MultiPointer()
     {
-        var symbol = new UnresolvedTypeReference("int***");
+        var symbol = new UnresolvedTypeReference("int***", ImmutableArray<ISymbolAnnotation>.Empty);
         var output = new PointerTypeResolver(new TypeStore());
 
         var finalSymbol = output.Visit(symbol);

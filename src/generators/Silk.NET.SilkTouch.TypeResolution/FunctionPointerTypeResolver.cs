@@ -56,7 +56,7 @@ public class FunctionPointerTypeResolver : SimpleTypeResolverBase
                             var typeText = text.Substring(c, typeTextEndIndex);
                             c += typeTextEndIndex + 1;
                             if (text[c] == ' ') c++;
-                            types.Add(new UnresolvedTypeReference(typeText));
+                            types.Add(new UnresolvedTypeReference(typeText, ImmutableArray<ISymbolAnnotation>.Empty));
                         }
                         else
                         {
@@ -64,7 +64,7 @@ public class FunctionPointerTypeResolver : SimpleTypeResolverBase
                             if (l > 0)
                             {
                                 var typeText = text.Substring(c, l);
-                                types.Add(new UnresolvedTypeReference(typeText));
+                                types.Add(new UnresolvedTypeReference(typeText, ImmutableArray<ISymbolAnnotation>.Empty));
                             }
                             break;
                         }
@@ -80,7 +80,7 @@ public class FunctionPointerTypeResolver : SimpleTypeResolverBase
                 if (types.Count > 0)
                 {
                     resolved = new FunctionPointerTypeReference
-                        (types.Last(), types.Take(types.Count - 1).ToImmutableArray());
+                        (types.Last(), types.Take(types.Count - 1).ToImmutableArray(), utr.Annotations);
                     _logger.LogTrace("{text} resolved to function pointer {ptr}", utr.Text, resolved);
                     return true;
                 }

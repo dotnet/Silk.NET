@@ -8,6 +8,9 @@ namespace Silk.NET.SilkTouch.Symbols;
 /// <summary>
 /// A <see cref="TypeReference"/> representing a function pointer.
 /// </summary>
-public sealed record FunctionPointerTypeReference(TypeReference ReturnType, ImmutableArray<TypeReference> ParameterTypes) : TypeReference
-{
-}
+public sealed record FunctionPointerTypeReference
+(
+    TypeReference ReturnType,
+    ImmutableArray<TypeReference> ParameterTypes,
+    ImmutableArray<ISymbolAnnotation> Annotations
+) : TypeReference(Annotations);

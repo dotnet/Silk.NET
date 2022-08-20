@@ -17,12 +17,17 @@ public class InternalTypeReferenceTests : EmitterTest
 
         var typeId = TypeId.CreateNew();
         var actualType = new StructSymbol
-            (typeId, new IdentifierSymbol("Identifier"), ImmutableArray<FieldSymbol>.Empty);
+        (
+            typeId,
+            new IdentifierSymbol("Identifier", ImmutableArray<ISymbolAnnotation>.Empty),
+            ImmutableArray<FieldSymbol>.Empty,
+            ImmutableArray<ISymbolAnnotation>.Empty
+        );
         typeStore.Store(actualType);
-        var symbol = new InternalTypeReference(typeId);
+        var symbol = new InternalTypeReference(typeId, ImmutableArray<ISymbolAnnotation>.Empty);
 
         var transformed = Transform(symbol, typeStore);
-        
+
         Assert.Equal("Identifier", transformed.ToFullString());
     }
 }

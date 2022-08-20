@@ -8,5 +8,10 @@ namespace Silk.NET.SilkTouch.Symbols;
 /// <summary>
 /// A <see cref="TypeReference"/> representing a <c>class</c>
 /// </summary>
-public sealed record ClassSymbol(TypeId Id, IdentifierSymbol Identifier, ImmutableArray<MethodSymbol> Methods)
-    : TypeSymbol(Id, Identifier);
+public sealed record ClassSymbol
+(
+    TypeId Id,
+    IdentifierSymbol Identifier,
+    ImmutableArray<MethodSymbol> Methods,
+    ImmutableArray<ISymbolAnnotation> Annotations
+) : TypeSymbol(Id, Identifier, Annotations);

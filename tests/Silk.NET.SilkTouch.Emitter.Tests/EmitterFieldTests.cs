@@ -19,7 +19,20 @@ public sealed class EmitterFieldIntegrationTests : EmitterTest
     Trait("Target Language", "C#")]
     public void FieldIntegration()
     {
-        var syntax = Transform(new FieldSymbol(new ExternalTypeReference(null, new IdentifierSymbol("int")), new IdentifierSymbol("Test")));
+        var syntax = Transform
+        (
+            new FieldSymbol
+            (
+                new ExternalTypeReference
+                (
+                    null,
+                    new IdentifierSymbol("int", ImmutableArray<ISymbolAnnotation>.Empty),
+                    ImmutableArray<ISymbolAnnotation>.Empty
+                ),
+                new IdentifierSymbol("Test", ImmutableArray<ISymbolAnnotation>.Empty),
+                ImmutableArray<ISymbolAnnotation>.Empty
+            )
+        );
 
         var result = syntax.ToFullString();
         Assert.Equal("public int Test;", result);
@@ -35,8 +48,14 @@ public sealed class EmitterFieldIntegrationTests : EmitterTest
         (
             new FieldSymbol
             (
-                new ExternalTypeReference(null, new IdentifierSymbol("")),
-                new IdentifierSymbol("Test")
+                new ExternalTypeReference
+                (
+                    null,
+                    new IdentifierSymbol("", ImmutableArray<ISymbolAnnotation>.Empty),
+                    ImmutableArray<ISymbolAnnotation>.Empty
+                ),
+                new IdentifierSymbol("Test", ImmutableArray<ISymbolAnnotation>.Empty),
+                ImmutableArray<ISymbolAnnotation>.Empty
             )
         ) as FieldDeclarationSyntax;
 
@@ -54,8 +73,14 @@ public sealed class EmitterFieldIntegrationTests : EmitterTest
         (
             new FieldSymbol
             (
-                new ExternalTypeReference(null, new IdentifierSymbol("int")),
-                new IdentifierSymbol("Test")
+                new ExternalTypeReference
+                (
+                    null,
+                    new IdentifierSymbol("int", ImmutableArray<ISymbolAnnotation>.Empty),
+                    ImmutableArray<ISymbolAnnotation>.Empty
+                ),
+                new IdentifierSymbol("Test", ImmutableArray<ISymbolAnnotation>.Empty),
+                ImmutableArray<ISymbolAnnotation>.Empty
             )
         ) as FieldDeclarationSyntax;
 
@@ -75,8 +100,14 @@ public sealed class EmitterFieldIntegrationTests : EmitterTest
         (
             new FieldSymbol
             (
-                new ExternalTypeReference(null, new IdentifierSymbol("")),
-                new IdentifierSymbol("Test")
+                new ExternalTypeReference
+                (
+                    null,
+                    new IdentifierSymbol("", ImmutableArray<ISymbolAnnotation>.Empty),
+                    ImmutableArray<ISymbolAnnotation>.Empty
+                ),
+                new IdentifierSymbol("Test", ImmutableArray<ISymbolAnnotation>.Empty),
+                ImmutableArray<ISymbolAnnotation>.Empty
             )
         ) as FieldDeclarationSyntax;
 

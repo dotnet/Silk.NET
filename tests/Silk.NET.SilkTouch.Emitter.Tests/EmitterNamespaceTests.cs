@@ -18,7 +18,15 @@ public class EmitterNamespaceTests : EmitterTest
      Trait("Target Language", "C#")]
     public void NamespaceIntegration()
     {
-        var syntax = Transform(new NamespaceSymbol(new IdentifierSymbol("Test"), ImmutableArray<TypeSymbol>.Empty));
+        var syntax = Transform
+        (
+            new NamespaceSymbol
+            (
+                new IdentifierSymbol("Test", ImmutableArray<ISymbolAnnotation>.Empty),
+                ImmutableArray<TypeSymbol>.Empty,
+                ImmutableArray<ISymbolAnnotation>.Empty
+            )
+        );
 
         var result = syntax.ToFullString();
         Assert.Equal("namespace Test\n{\n}", result);
@@ -31,8 +39,14 @@ public class EmitterNamespaceTests : EmitterTest
     public void CorrectIdentifier()
     {
         var syntax = Transform
-                (new NamespaceSymbol(new IdentifierSymbol("Test"), ImmutableArray<TypeSymbol>.Empty)) as
-            NamespaceDeclarationSyntax;
+        (
+            new NamespaceSymbol
+            (
+                new IdentifierSymbol("Test", ImmutableArray<ISymbolAnnotation>.Empty),
+                ImmutableArray<TypeSymbol>.Empty,
+                ImmutableArray<ISymbolAnnotation>.Empty
+            )
+        ) as NamespaceDeclarationSyntax;
 
         Assert.NotNull(syntax);
 

@@ -13,7 +13,13 @@ public sealed class TypeScopeSymbolVisitorTests
     [Fact, Trait("Category", "Type Resolution")]
     public void RootScopeContainsSingleRootType()
     {
-        var testType = new StructSymbol(TypeId.CreateNew(), new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty);
+        var testType = new StructSymbol
+        (
+            TypeId.CreateNew(),
+            new IdentifierSymbol("", ImmutableArray<ISymbolAnnotation>.Empty),
+            ImmutableArray<FieldSymbol>.Empty,
+            ImmutableArray<ISymbolAnnotation>.Empty
+        );
         var visitor = new TypeScopeSymbolVisitor(new TypeStore());
 
         visitor.Visit(testType);
@@ -28,7 +34,12 @@ public sealed class TypeScopeSymbolVisitorTests
     [Fact, Trait("Category", "Type Resolution")]
     public void RootScopeEmptyWithEmptyNamespace()
     {
-        var @namespace = new NamespaceSymbol(new IdentifierSymbol(""), ImmutableArray<TypeSymbol>.Empty);
+        var @namespace = new NamespaceSymbol
+        (
+            new IdentifierSymbol("", ImmutableArray<ISymbolAnnotation>.Empty),
+            ImmutableArray<TypeSymbol>.Empty,
+            ImmutableArray<ISymbolAnnotation>.Empty
+        );
         var visitor = new TypeScopeSymbolVisitor(new TypeStore());
 
         visitor.Visit(@namespace);
@@ -40,14 +51,21 @@ public sealed class TypeScopeSymbolVisitorTests
     [Fact, Trait("Category", "Type Resolution")]
     public void RootScopeContainsSingleNamespacedType()
     {
-        var testType = new StructSymbol(TypeId.CreateNew(), new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty);
+        var testType = new StructSymbol
+        (
+            TypeId.CreateNew(),
+            new IdentifierSymbol("", ImmutableArray<ISymbolAnnotation>.Empty),
+            ImmutableArray<FieldSymbol>.Empty,
+            ImmutableArray<ISymbolAnnotation>.Empty
+        );
         var @namespace = new NamespaceSymbol
         (
-            new IdentifierSymbol(""),
+            new IdentifierSymbol("", ImmutableArray<ISymbolAnnotation>.Empty),
             new[]
             {
                 (TypeSymbol) testType
-            }.ToImmutableArray()
+            }.ToImmutableArray(),
+            ImmutableArray<ISymbolAnnotation>.Empty
         );
         var visitor = new TypeScopeSymbolVisitor(new TypeStore());
 
@@ -59,22 +77,41 @@ public sealed class TypeScopeSymbolVisitorTests
         var associatedScope = single.Value;
         Assert.Empty(associatedScope.ChildTypeScopes);
     }
-    
+
     [Fact, Trait("Category", "Type Resolution")]
     public void RootScopeContainsMultipleNamespacedTypes()
     {
-        var testType1 = new StructSymbol(TypeId.CreateNew(), new IdentifierSymbol("T1"), ImmutableArray<FieldSymbol>.Empty);
-        var testType2 = new StructSymbol(TypeId.CreateNew(), new IdentifierSymbol("T2"), ImmutableArray<FieldSymbol>.Empty);
-        var testType3 = new StructSymbol(TypeId.CreateNew(), new IdentifierSymbol("T3"), ImmutableArray<FieldSymbol>.Empty);
+        var testType1 = new StructSymbol
+        (
+            TypeId.CreateNew(),
+            new IdentifierSymbol("T1", ImmutableArray<ISymbolAnnotation>.Empty),
+            ImmutableArray<FieldSymbol>.Empty,
+            ImmutableArray<ISymbolAnnotation>.Empty
+        );
+        var testType2 = new StructSymbol
+        (
+            TypeId.CreateNew(),
+            new IdentifierSymbol("T2", ImmutableArray<ISymbolAnnotation>.Empty),
+            ImmutableArray<FieldSymbol>.Empty,
+            ImmutableArray<ISymbolAnnotation>.Empty
+        );
+        var testType3 = new StructSymbol
+        (
+            TypeId.CreateNew(),
+            new IdentifierSymbol("T3", ImmutableArray<ISymbolAnnotation>.Empty),
+            ImmutableArray<FieldSymbol>.Empty,
+            ImmutableArray<ISymbolAnnotation>.Empty
+        );
         var @namespace = new NamespaceSymbol
         (
-            new IdentifierSymbol(""),
+            new IdentifierSymbol("", ImmutableArray<ISymbolAnnotation>.Empty),
             new TypeSymbol[]
             {
                 testType1,
                 testType2,
                 testType3
-            }.ToImmutableArray()
+            }.ToImmutableArray(),
+            ImmutableArray<ISymbolAnnotation>.Empty
         );
         var visitor = new TypeScopeSymbolVisitor(new TypeStore());
 

@@ -14,7 +14,16 @@ public class FunctionPointerTypeReferenceTests : EmitterTest
     public void StringTestNoParams()
     {
         var symbol = new FunctionPointerTypeReference
-            (new ExternalTypeReference(null, new IdentifierSymbol("Ret")), ImmutableArray<TypeReference>.Empty);
+        (
+            new ExternalTypeReference
+            (
+                null,
+                new IdentifierSymbol("Ret", ImmutableArray<ISymbolAnnotation>.Empty),
+                ImmutableArray<ISymbolAnnotation>.Empty
+            ),
+            ImmutableArray<TypeReference>.Empty,
+            ImmutableArray<ISymbolAnnotation>.Empty
+        );
 
         var transformed = Transform(symbol);
 
@@ -26,11 +35,30 @@ public class FunctionPointerTypeReferenceTests : EmitterTest
     public void StringTestWithParams()
     {
         var symbol = new FunctionPointerTypeReference
-            (new ExternalTypeReference(null, new IdentifierSymbol("Ret")), new TypeReference[]
+        (
+            new ExternalTypeReference
+            (
+                null,
+                new IdentifierSymbol("Ret", ImmutableArray<ISymbolAnnotation>.Empty),
+                ImmutableArray<ISymbolAnnotation>.Empty
+            ),
+            new TypeReference[]
             {
-                new ExternalTypeReference(null, new IdentifierSymbol("Param1")),
-                new ExternalTypeReference(null, new IdentifierSymbol("Param2")),
-            }.ToImmutableArray());
+                new ExternalTypeReference
+                (
+                    null,
+                    new IdentifierSymbol("Param1", ImmutableArray<ISymbolAnnotation>.Empty),
+                    ImmutableArray<ISymbolAnnotation>.Empty
+                ),
+                new ExternalTypeReference
+                (
+                    null,
+                    new IdentifierSymbol("Param2", ImmutableArray<ISymbolAnnotation>.Empty),
+                    ImmutableArray<ISymbolAnnotation>.Empty
+                ),
+            }.ToImmutableArray(),
+            ImmutableArray<ISymbolAnnotation>.Empty
+        );
 
         var transformed = Transform(symbol);
 

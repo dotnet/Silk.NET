@@ -1,6 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.Collections.Immutable;
 using Silk.NET.SilkTouch.Symbols;
 using Xunit;
 
@@ -28,7 +29,7 @@ public sealed class PrimitiveTypeResolverTests
     ]
     public void ShouldResolve(string text, string? @namespace, string identifier)
     {
-        var symbol = new UnresolvedTypeReference(text);
+        var symbol = new UnresolvedTypeReference(text, ImmutableArray<ISymbolAnnotation>.Empty);
         var output = new PrimitiveTypeResolver(new TypeStore());
 
         var finalSymbol = output.Visit(symbol);
@@ -47,7 +48,7 @@ public sealed class PrimitiveTypeResolverTests
     ]
     public void ShouldNotResolve(string text)
     {
-        var symbol = new UnresolvedTypeReference(text);
+        var symbol = new UnresolvedTypeReference(text, ImmutableArray<ISymbolAnnotation>.Empty);
         var output = new PrimitiveTypeResolver(new TypeStore());
 
         var finalSymbol = output.Visit(symbol);
