@@ -25,26 +25,21 @@ public static class ImmutableArrayHelpers
 
         while (true)
         {
-            int toRemove = -1;
             for (var index = 0; index < builder.Count; index++)
             {
                 if (old(builder[index]))
                 {
-                    toRemove = index;
-                    break;
+                    builder.RemoveAt(index);
+                    index--;
                 }
             }
-            if (toRemove == -1)
+            builder.Add(@new);
+            // PERF: This incurs a re-allocation :/
+            if (builder.Capacity != builder.Count)
             {
-                builder.Add(@new);
-                // PERF: This incurs a re-allocation :/
-                if (builder.Capacity != builder.Count)
-                {
-                    builder.Capacity = builder.Count;
-                }
-                return builder.MoveToImmutable();
+                builder.Capacity = builder.Count;
             }
-            builder.RemoveAt(toRemove);
+            return builder.MoveToImmutable();
         }
     }
 }
