@@ -138,7 +138,7 @@ public static class Fakers
     {
         var count = ((IFakerTInternal)faker).FakerHub.Random.Number(min, max);
         var builder = ImmutableArray.CreateBuilder<T>(count);
-        for (int i = 0; i <= max; i++)
+        for (int i = 0; i < count; i++)
         {
             builder.Add(faker.Generate());
         }
