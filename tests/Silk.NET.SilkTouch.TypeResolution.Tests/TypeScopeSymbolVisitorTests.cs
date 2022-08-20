@@ -61,10 +61,7 @@ public sealed class TypeScopeSymbolVisitorTests
         var @namespace = new NamespaceSymbol
         (
             new IdentifierSymbol("", ImmutableArray<ISymbolAnnotation>.Empty),
-            new[]
-            {
-                (TypeSymbol) testType
-            }.ToImmutableArray(),
+            ImmutableArray.Create<TypeSymbol>(testType),
             ImmutableArray<ISymbolAnnotation>.Empty
         );
         var visitor = new TypeScopeSymbolVisitor(new TypeStore());
@@ -105,12 +102,7 @@ public sealed class TypeScopeSymbolVisitorTests
         var @namespace = new NamespaceSymbol
         (
             new IdentifierSymbol("", ImmutableArray<ISymbolAnnotation>.Empty),
-            new TypeSymbol[]
-            {
-                testType1,
-                testType2,
-                testType3
-            }.ToImmutableArray(),
+            ImmutableArray.Create<TypeSymbol>(testType1, testType2, testType3),
             ImmutableArray<ISymbolAnnotation>.Empty
         );
         var visitor = new TypeScopeSymbolVisitor(new TypeStore());

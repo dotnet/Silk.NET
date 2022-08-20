@@ -44,10 +44,7 @@ public sealed class ClassSymbolTests : EmitterTest
         (
             TypeId.CreateNew(),
             new IdentifierSymbol("C", ImmutableArray<ISymbolAnnotation>.Empty),
-            new MethodSymbol[]
-            {
-                method
-            }.ToImmutableArray(),
+            ImmutableArray.Create<MethodSymbol>(method),
             ImmutableArray<ISymbolAnnotation>.Empty
         );
 

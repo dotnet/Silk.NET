@@ -21,15 +21,15 @@ public class NameResolverSymbolVisitorTests
         (
             TypeId.CreateNew(),
             new IdentifierSymbol("a", ImmutableArray<ISymbolAnnotation>.Empty),
-            new FieldSymbol[]
-            {
-                new
+            ImmutableArray.Create
+            (
+                new FieldSymbol
                 (
                     new UnresolvedTypeReference("a", ImmutableArray<ISymbolAnnotation>.Empty),
                     new IdentifierSymbol("someField", ImmutableArray<ISymbolAnnotation>.Empty),
                     ImmutableArray<ISymbolAnnotation>.Empty
                 )
-            }.ToImmutableArray(),
+            ),
             ImmutableArray<ISymbolAnnotation>.Empty
         );
         var typeStore = new TypeStore();

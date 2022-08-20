@@ -24,8 +24,8 @@ public class EmitterStructMemberFieldsTests : EmitterTest
             (
                 TypeId.CreateNew(),
                 new IdentifierSymbol("Test", ImmutableArray<ISymbolAnnotation>.Empty),
-                new[]
-                {
+                ImmutableArray.Create
+                (
                     new FieldSymbol
                     (
                         new ExternalTypeReference
@@ -37,7 +37,7 @@ public class EmitterStructMemberFieldsTests : EmitterTest
                         new IdentifierSymbol("F1", ImmutableArray<ISymbolAnnotation>.Empty),
                         ImmutableArray<ISymbolAnnotation>.Empty
                     )
-                }.ToImmutableArray(),
+                ),
                 ImmutableArray<ISymbolAnnotation>.Empty
             )
         );
@@ -64,8 +64,8 @@ public class EmitterStructMemberFieldsTests : EmitterTest
             (
                 TypeId.CreateNew(),
                 new IdentifierSymbol("Test", ImmutableArray<ISymbolAnnotation>.Empty),
-                new[]
-                {
+                ImmutableArray.Create
+                (
                     new FieldSymbol
                     (
                         new ExternalTypeReference
@@ -99,7 +99,7 @@ public class EmitterStructMemberFieldsTests : EmitterTest
                         new IdentifierSymbol("F3", ImmutableArray<ISymbolAnnotation>.Empty),
                         ImmutableArray<ISymbolAnnotation>.Empty
                     )
-                }.ToImmutableArray(),
+                ),
                 ImmutableArray<ISymbolAnnotation>.Empty
             )
         );
