@@ -9,6 +9,7 @@ using System.Linq;
 using System.Reflection.Metadata;
 using System.Xml;
 using Microsoft.Extensions.Logging;
+using Silk.NET.SilkTouch.Scraper.Annotations;
 using Silk.NET.SilkTouch.Symbols;
 using Parameter=Silk.NET.SilkTouch.Symbols.Parameter;
 using TypeReference=Silk.NET.SilkTouch.Symbols.TypeReference;
@@ -78,7 +79,7 @@ internal sealed class XmlVisitor
                 TypeId.CreateNew(),
                 new IdentifierSymbol(name, ImmutableArray<ISymbolAnnotation>.Empty),
                 members.ToImmutableArray(),
-                ImmutableArray<ISymbolAnnotation>.Empty
+                ImmutableArray.Create<ISymbolAnnotation>(new NativeNameAnnotation(name))
             )
         };
     }
@@ -130,7 +131,7 @@ internal sealed class XmlVisitor
                 rt,
                 parameters,
                 new IdentifierSymbol(name, ImmutableArray<ISymbolAnnotation>.Empty),
-                ImmutableArray<ISymbolAnnotation>.Empty
+                ImmutableArray.Create<ISymbolAnnotation>(new NativeNameAnnotation(name))
             )
         };
     }
@@ -187,7 +188,7 @@ internal sealed class XmlVisitor
             (
                 finalType,
                 new IdentifierSymbol(name, ImmutableArray<ISymbolAnnotation>.Empty),
-                ImmutableArray<ISymbolAnnotation>.Empty
+                ImmutableArray.Create<ISymbolAnnotation>(new NativeNameAnnotation(name))
             )
         };
     }
@@ -195,9 +196,13 @@ internal sealed class XmlVisitor
     // NOTE: This does not visit types as in class/struct, but visits *references* to types. Like from methods or fields.
     private IEnumerable<Symbol> VisitType(XmlElement type)
     {
+        var nativeName = type.Attributes["native"]?.Value;
+        var annotations = nativeName is null
+            ? ImmutableArray<ISymbolAnnotation>.Empty
+            : ImmutableArray.Create<ISymbolAnnotation>(new NativeNameAnnotation(nativeName));
         return new[]
         {
-            new UnresolvedTypeReference(type.InnerText, ImmutableArray<ISymbolAnnotation>.Empty)
+            new UnresolvedTypeReference(type.InnerText, annotations)
         };
     }
 
@@ -216,6 +221,7 @@ internal sealed class XmlVisitor
             }
         }
 
+        var name = @struct.Attributes?["name"]?.Value ?? throw new InvalidOperationException();
         return new[]
         {
             StoreType
@@ -225,11 +231,11 @@ internal sealed class XmlVisitor
                     TypeId.CreateNew(),
                     new IdentifierSymbol
                     (
-                        @struct.Attributes?["name"]?.Value ?? throw new InvalidOperationException(),
+                        name,
                         ImmutableArray<ISymbolAnnotation>.Empty
                     ),
                     fields.ToImmutableArray(),
-                    ImmutableArray<ISymbolAnnotation>.Empty
+                    ImmutableArray.Create<ISymbolAnnotation>(new NativeNameAnnotation(name))
                 )
             )
         };
@@ -242,13 +248,14 @@ internal sealed class XmlVisitor
 
     private IEnumerable<Symbol> VisitNamespace(XmlElement @namespace)
     {
+        var name = @namespace.Attributes?["name"]?.Value ?? throw new InvalidOperationException();
         return new[]
         {
             new NamespaceSymbol
             (
                 new IdentifierSymbol
                 (
-                    @namespace.Attributes?["name"]?.Value ?? throw new InvalidOperationException(),
+                    name,
                     ImmutableArray<ISymbolAnnotation>.Empty
                 ),
                 @namespace.ChildNodes.Cast<XmlNode>()
@@ -262,7 +269,7 @@ internal sealed class XmlVisitor
                         }
                     )
                     .ToImmutableArray(),
-                ImmutableArray<ISymbolAnnotation>.Empty
+                ImmutableArray.Create<ISymbolAnnotation>(new NativeNameAnnotation(name))
             )
         };
     }
