@@ -7,6 +7,7 @@ using System.Linq;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Silk.NET.SilkTouch.Symbols;
+using Silk.NET.SilkTouch.TypeResolution.Annotations;
 using Xunit;
 
 namespace Silk.NET.SilkTouch.TypeResolution.Tests;
@@ -31,6 +32,7 @@ public class FunctionPointerTypeResolverTests
             (new UnresolvedTypeReference(text, ImmutableArray<ISymbolAnnotation>.Empty));
         
         var fptr = Assert.IsType<FunctionPointerTypeReference>(result);
+        Assert.Equal(text, Assert.IsType<ResolvedFromAnnotation>(Assert.Single(fptr.Annotations)).OriginalString);
         Assert.Equal(returnString, Assert.IsType<UnresolvedTypeReference>(fptr.ReturnType).Text);
         Assert.Collection
         (

@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Text.RegularExpressions;
 using Microsoft.Extensions.Logging;
 using Silk.NET.SilkTouch.Symbols;
+using Silk.NET.SilkTouch.TypeResolution.Annotations;
 
 namespace Silk.NET.SilkTouch.TypeResolution;
 
@@ -47,6 +48,7 @@ public class FunctionPointerTypeResolver : SimpleTypeResolverBase
                 var types = new List<TypeReference>();
                 if (text[c] == '<')
                 {
+                    var annotations = ImmutableArray<ISymbolAnnotation>.Empty;
                     c += 1;
                     while (true)
                     {
@@ -56,7 +58,7 @@ public class FunctionPointerTypeResolver : SimpleTypeResolverBase
                             var typeText = text.Substring(c, typeTextEndIndex);
                             c += typeTextEndIndex + 1;
                             if (text[c] == ' ') c++;
-                            types.Add(new UnresolvedTypeReference(typeText, ImmutableArray<ISymbolAnnotation>.Empty));
+                            types.Add(new UnresolvedTypeReference(typeText, annotations));
                         }
                         else
                         {
@@ -64,7 +66,7 @@ public class FunctionPointerTypeResolver : SimpleTypeResolverBase
                             if (l > 0)
                             {
                                 var typeText = text.Substring(c, l);
-                                types.Add(new UnresolvedTypeReference(typeText, ImmutableArray<ISymbolAnnotation>.Empty));
+                                types.Add(new UnresolvedTypeReference(typeText, annotations));
                             }
                             break;
                         }
@@ -80,7 +82,11 @@ public class FunctionPointerTypeResolver : SimpleTypeResolverBase
                 if (types.Count > 0)
                 {
                     resolved = new FunctionPointerTypeReference
-                        (types.Last(), types.Take(types.Count - 1).ToImmutableArray(), utr.Annotations);
+                    (
+                        types.Last(),
+                        types.Take(types.Count - 1).ToImmutableArray(),
+                        utr.Annotations.ReplaceOrAdd(x => x is ResolvedFromAnnotation, new ResolvedFromAnnotation(text))
+                    );
                     _logger.LogTrace("{text} resolved to function pointer {ptr}", utr.Text, resolved);
                     return true;
                 }

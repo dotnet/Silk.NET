@@ -7,6 +7,7 @@ using System.Collections.Immutable;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Silk.NET.SilkTouch.Symbols;
+using Silk.NET.SilkTouch.TypeResolution.Annotations;
 using Xunit;
 
 namespace Silk.NET.SilkTouch.TypeResolution.Tests;
@@ -56,5 +57,6 @@ public class NameResolverSymbolVisitorTests
         Assert.StrictEqual(testType.Fields[0].Identifier, @field.Identifier);
         var reference = Assert.IsType<InternalTypeReference>(field.Type);
         Assert.StrictEqual(@struct.Id, reference.ReferencedTypeId);
+        Assert.Equal("a", Assert.IsType<ResolvedFromAnnotation>(Assert.Single(reference.Annotations)).OriginalString);
     }
 }

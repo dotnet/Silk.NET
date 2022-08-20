@@ -5,6 +5,7 @@ using System.Collections;
 using System.Diagnostics;
 using Microsoft.Extensions.Logging;
 using Silk.NET.SilkTouch.Symbols;
+using Silk.NET.SilkTouch.TypeResolution.Annotations;
 
 namespace Silk.NET.SilkTouch.TypeResolution;
 
@@ -61,31 +62,36 @@ public sealed class NameResolverSymbolVisitor : SymbolVisitor
     /// <inheritdoc />
     protected override TypeReference VisitTypeReference(TypeReference typeReference)
     {
-        if (typeReference is UnresolvedTypeReference unresolvedTypeReference)
+        if (typeReference is UnresolvedTypeReference utr)
         {
-            _logger.LogTrace("Attempting to resolve \"{text}\" to an internal reference", unresolvedTypeReference.Text);
-            if (TryFindMatchingType(_currentScope, unresolvedTypeReference.Text, out var foundDirectChild))
+            _logger.LogTrace("Attempting to resolve \"{text}\" to an internal reference", utr.Text);
+            if (TryFindMatchingType(_currentScope, utr.Text, out var foundDirectChild))
             {
                 _logger.LogTrace("Resolved to direct child {type}", foundDirectChild);
-                return new InternalTypeReference(foundDirectChild!.Id, unresolvedTypeReference.Annotations);
+                return new InternalTypeReference(foundDirectChild!.Id, utr.Annotations);
             }
             
             // note: iterating a stack is ordered, just like repeatedly calling .Pop(), but doesn't disturb contents.
             foreach (var scope in _seenScopes)
             {
-                if (TryFindMatchingType(scope, unresolvedTypeReference.Text, out var foundChild))
+                if (TryFindMatchingType(scope, utr.Text, out var foundChild))
                 {
                     _logger.LogTrace
                     (
                         "Successfully resolved \"{text}\" to internal type {type}",
-                        unresolvedTypeReference.Text,
+                        utr.Text,
                         foundChild
                     );
-                    return new InternalTypeReference(foundChild!.Id, unresolvedTypeReference.Annotations);
+                    return new InternalTypeReference
+                    (
+                        foundChild!.Id,
+                        utr.Annotations.ReplaceOrAdd
+                            (x => x is ResolvedFromAnnotation, new ResolvedFromAnnotation(utr.Text))
+                    );
                 }
             }
 
-            return unresolvedTypeReference;
+            return utr;
         }
         return base.VisitTypeReference(typeReference);
     }
