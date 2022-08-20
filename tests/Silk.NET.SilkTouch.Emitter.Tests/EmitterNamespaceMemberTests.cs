@@ -21,12 +21,18 @@ public class EmitterNamespaceMemberTests : EmitterTest
         (
             new NamespaceSymbol
             (
-                new IdentifierSymbol("Test"),
+                new IdentifierSymbol("Test", ImmutableArray<ISymbolAnnotation>.Empty),
                 new[]
                 {
                     (TypeSymbol) new StructSymbol
-                        (TypeId.CreateNew(), new IdentifierSymbol("Test2"), ImmutableArray<FieldSymbol>.Empty)
-                }.ToImmutableArray()
+                    (
+                        TypeId.CreateNew(),
+                        new IdentifierSymbol("Test2", ImmutableArray<ISymbolAnnotation>.Empty),
+                        ImmutableArray<FieldSymbol>.Empty,
+                        ImmutableArray<ISymbolAnnotation>.Empty
+                    )
+                }.ToImmutableArray(),
+                ImmutableArray<ISymbolAnnotation>.Empty
             )
         );
 
@@ -49,14 +55,25 @@ public class EmitterNamespaceMemberTests : EmitterTest
         (
             new NamespaceSymbol
             (
-                new IdentifierSymbol("Test"),
+                new IdentifierSymbol("Test", ImmutableArray<ISymbolAnnotation>.Empty),
                 new[]
                 {
                     (TypeSymbol) new StructSymbol
-                        (TypeId.CreateNew(), new IdentifierSymbol("Test2"), ImmutableArray<FieldSymbol>.Empty),
+                    (
+                        TypeId.CreateNew(),
+                        new IdentifierSymbol("Test2", ImmutableArray<ISymbolAnnotation>.Empty),
+                        ImmutableArray<FieldSymbol>.Empty,
+                        ImmutableArray<ISymbolAnnotation>.Empty
+                    ),
                     (TypeSymbol) new StructSymbol
-                        (TypeId.CreateNew(), new IdentifierSymbol("Test3"), ImmutableArray<FieldSymbol>.Empty)
-                }.ToImmutableArray()
+                    (
+                        TypeId.CreateNew(),
+                        new IdentifierSymbol("Test3", ImmutableArray<ISymbolAnnotation>.Empty),
+                        ImmutableArray<FieldSymbol>.Empty,
+                        ImmutableArray<ISymbolAnnotation>.Empty
+                    )
+                }.ToImmutableArray(),
+                ImmutableArray<ISymbolAnnotation>.Empty
             )
         );
 

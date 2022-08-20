@@ -10,6 +10,10 @@ namespace Silk.NET.SilkTouch.Symbols;
 /// </summary>
 /// <param name="Identifier">The Identifier of this Namespace</param>
 /// <param name="Types">The types in this namespace</param>
-public sealed record NamespaceSymbol(IdentifierSymbol Identifier, ImmutableArray<TypeSymbol> Types) : Symbol
-{
-}
+/// <param name="Annotations">The annotations of this symbol</param>
+public sealed record NamespaceSymbol
+(
+    IdentifierSymbol Identifier,
+    ImmutableArray<TypeSymbol> Types,
+    ImmutableArray<ISymbolAnnotation> Annotations
+) : Symbol(Annotations);

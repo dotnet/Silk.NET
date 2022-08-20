@@ -1,6 +1,8 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.Collections.Immutable;
+
 namespace Silk.NET.SilkTouch.Symbols;
 
 /// <summary>
@@ -8,7 +10,9 @@ namespace Silk.NET.SilkTouch.Symbols;
 /// Visitors are free to throw <see cref="InvalidOperationException"/> using <see cref="ThrowInvalidSymbol"/> when they encounter this symbol, but type resolution should've already happened.
 /// </summary>
 /// <param name="Text">Arbitrary text to interpret</param>
-public sealed record UnresolvedTypeReference(string Text) : TypeReference
+/// <param name="Annotations">The annotations of this symbol</param>
+public sealed record UnresolvedTypeReference
+    (string Text, ImmutableArray<ISymbolAnnotation> Annotations) : TypeReference(Annotations)
 {
     /// <summary>
     /// Throw helper to use when encountering <see cref="UnresolvedTypeReference"/> when type resolution should've already happened.

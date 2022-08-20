@@ -1,6 +1,8 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.Collections.Immutable;
+
 namespace Silk.NET.SilkTouch.Symbols;
 
 /// <summary>
@@ -8,6 +10,4 @@ namespace Silk.NET.SilkTouch.Symbols;
 /// </summary>
 /// <seealso cref="ExternalTypeReference"/>
 /// <seealso cref="InternalTypeReference"/>
-public abstract record TypeReference() : Symbol
-{
-}
+public abstract record TypeReference(ImmutableArray<ISymbolAnnotation> Annotations) : Symbol(Annotations);

@@ -1,6 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.Collections.Immutable;
 using Silk.NET.SilkTouch.Symbols;
 
 namespace Silk.NET.SilkTouch.TypeResolution;
@@ -44,7 +45,12 @@ public sealed class PointerTypeResolver : SimpleTypeResolverBase
     {
         if (utr.Text.Length > 1 && utr.Text[utr.Text.Length - 1] == '*')
         {
-            resolved = new PointerTypeReference(new UnresolvedTypeReference(utr.Text.Substring(0, utr.Text.Length - 1)));
+            resolved = new PointerTypeReference
+            (
+                new UnresolvedTypeReference
+                    (utr.Text.Substring(0, utr.Text.Length - 1), ImmutableArray<ISymbolAnnotation>.Empty),
+                utr.Annotations
+            );
             return true;
         }
         resolved = null;

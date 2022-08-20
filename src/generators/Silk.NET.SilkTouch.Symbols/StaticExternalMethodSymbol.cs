@@ -10,7 +10,9 @@ namespace Silk.NET.SilkTouch.Symbols;
 /// External meaning it must be loaded 
 /// </summary>
 public sealed record StaticExternalMethodSymbol
-    (TypeReference ReturnType, ImmutableArray<Parameter> Parameters, IdentifierSymbol Identifier)
-    : MethodSymbol(ReturnType, Parameters, Identifier)
-{
-}
+(
+    TypeReference ReturnType,
+    ImmutableArray<Parameter> Parameters,
+    IdentifierSymbol Identifier,
+    ImmutableArray<ISymbolAnnotation> Annotations
+) : MethodSymbol(ReturnType, Parameters, Identifier, Annotations);

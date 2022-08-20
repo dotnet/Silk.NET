@@ -1,6 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.Collections.Immutable;
 using System.ComponentModel;
 using Silk.NET.SilkTouch.Symbols;
 using Xunit;
@@ -18,7 +19,7 @@ public class IdentifierSymbolTests : EmitterTest
     [InlineData("this is invalid # /**/", "this is invalid # /**/")]
     public void StringTest(string identifierText, string csharp)
     {
-        var symbol = new IdentifierSymbol(identifierText);
+        var symbol = new IdentifierSymbol(identifierText, ImmutableArray<ISymbolAnnotation>.Empty);
 
         var transformed = Transform(symbol);
         
@@ -30,7 +31,7 @@ public class IdentifierSymbolTests : EmitterTest
      Trait("Target Language", "C#")]
     public void IdentifierHasNoLeadingTrivia()
     {
-        var node = Transform(new IdentifierSymbol("Test"));
+        var node = Transform(new IdentifierSymbol("Test", ImmutableArray<ISymbolAnnotation>.Empty));
         
         Assert.Empty(node.GetLeadingTrivia());
         Assert.False(node.HasLeadingTrivia);
@@ -41,7 +42,7 @@ public class IdentifierSymbolTests : EmitterTest
      Trait("Target Language", "C#")]
     public void IdentifierHasNoTrailingTrivia()
     {
-        var node = Transform(new IdentifierSymbol("Test"));
+        var node = Transform(new IdentifierSymbol("Test", ImmutableArray<ISymbolAnnotation>.Empty));
         
         Assert.Empty(node.GetTrailingTrivia());
         Assert.False(node.HasTrailingTrivia);

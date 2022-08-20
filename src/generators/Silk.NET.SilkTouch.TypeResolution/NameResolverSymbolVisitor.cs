@@ -67,7 +67,7 @@ public sealed class NameResolverSymbolVisitor : SymbolVisitor
             if (TryFindMatchingType(_currentScope, unresolvedTypeReference.Text, out var foundDirectChild))
             {
                 _logger.LogTrace("Resolved to direct child {type}", foundDirectChild);
-                return new InternalTypeReference(foundDirectChild!.Id);
+                return new InternalTypeReference(foundDirectChild!.Id, unresolvedTypeReference.Annotations);
             }
             
             // note: iterating a stack is ordered, just like repeatedly calling .Pop(), but doesn't disturb contents.
@@ -81,7 +81,7 @@ public sealed class NameResolverSymbolVisitor : SymbolVisitor
                         unresolvedTypeReference.Text,
                         foundChild
                     );
-                    return new InternalTypeReference(foundChild!.Id);
+                    return new InternalTypeReference(foundChild!.Id, unresolvedTypeReference.Annotations);
                 }
             }
 

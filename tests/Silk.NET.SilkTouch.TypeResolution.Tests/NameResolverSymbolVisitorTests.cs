@@ -16,10 +16,21 @@ public class NameResolverSymbolVisitorTests
     [Fact, Trait("Category", "Type Resolution")]
     public void SelfTypeIsResolvedCorrectly()
     {
-        var testType = new StructSymbol(TypeId.CreateNew(), new IdentifierSymbol("a"), new FieldSymbol[]
-        {
-            new(new UnresolvedTypeReference("a"), new IdentifierSymbol("someField"))
-        }.ToImmutableArray());
+        var testType = new StructSymbol
+        (
+            TypeId.CreateNew(),
+            new IdentifierSymbol("a", ImmutableArray<ISymbolAnnotation>.Empty),
+            new FieldSymbol[]
+            {
+                new
+                (
+                    new UnresolvedTypeReference("a", ImmutableArray<ISymbolAnnotation>.Empty),
+                    new IdentifierSymbol("someField", ImmutableArray<ISymbolAnnotation>.Empty),
+                    ImmutableArray<ISymbolAnnotation>.Empty
+                )
+            }.ToImmutableArray(),
+            ImmutableArray<ISymbolAnnotation>.Empty
+        );
         var typeStore = new TypeStore();
         typeStore.Store(testType);
         var resolutionScope = new TypeResolutionScope

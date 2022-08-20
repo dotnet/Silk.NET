@@ -73,7 +73,13 @@ internal sealed class XmlVisitor
             );
         return new[]
         {
-            new ClassSymbol(TypeId.CreateNew(), new IdentifierSymbol(name), members.ToImmutableArray())
+            new ClassSymbol
+            (
+                TypeId.CreateNew(),
+                new IdentifierSymbol(name, ImmutableArray<ISymbolAnnotation>.Empty),
+                members.ToImmutableArray(),
+                ImmutableArray<ISymbolAnnotation>.Empty
+            )
         };
     }
 
@@ -112,14 +118,20 @@ internal sealed class XmlVisitor
                     if (paramType is not TypeReference pt)
                         throw new InvalidOperationException("VisitType needs to return single type reference");
 
-                    return new Parameter(pt, new IdentifierSymbol(paramName));
+                    return new Parameter(pt, new IdentifierSymbol(paramName, ImmutableArray<ISymbolAnnotation>.Empty));
                 }
             )
             .ToImmutableArray();
 
         return new[]
         {
-            new StaticExternalMethodSymbol(rt, parameters, new IdentifierSymbol(name))
+            new StaticExternalMethodSymbol
+            (
+                rt,
+                parameters,
+                new IdentifierSymbol(name, ImmutableArray<ISymbolAnnotation>.Empty),
+                ImmutableArray<ISymbolAnnotation>.Empty
+            )
         };
     }
 
@@ -171,7 +183,12 @@ internal sealed class XmlVisitor
 
         return new[]
         {
-            new FieldSymbol(finalType, new IdentifierSymbol(name))
+            new FieldSymbol
+            (
+                finalType,
+                new IdentifierSymbol(name, ImmutableArray<ISymbolAnnotation>.Empty),
+                ImmutableArray<ISymbolAnnotation>.Empty
+            )
         };
     }
 
@@ -180,7 +197,7 @@ internal sealed class XmlVisitor
     {
         return new[]
         {
-            new UnresolvedTypeReference(type.InnerText)
+            new UnresolvedTypeReference(type.InnerText, ImmutableArray<ISymbolAnnotation>.Empty)
         };
     }
 
@@ -206,8 +223,13 @@ internal sealed class XmlVisitor
                 new StructSymbol
                 (
                     TypeId.CreateNew(),
-                    new IdentifierSymbol(@struct.Attributes?["name"]?.Value ?? throw new InvalidOperationException()),
-                    fields.ToImmutableArray()
+                    new IdentifierSymbol
+                    (
+                        @struct.Attributes?["name"]?.Value ?? throw new InvalidOperationException(),
+                        ImmutableArray<ISymbolAnnotation>.Empty
+                    ),
+                    fields.ToImmutableArray(),
+                    ImmutableArray<ISymbolAnnotation>.Empty
                 )
             )
         };
@@ -224,7 +246,11 @@ internal sealed class XmlVisitor
         {
             new NamespaceSymbol
             (
-                new IdentifierSymbol(@namespace.Attributes?["name"]?.Value ?? throw new InvalidOperationException()),
+                new IdentifierSymbol
+                (
+                    @namespace.Attributes?["name"]?.Value ?? throw new InvalidOperationException(),
+                    ImmutableArray<ISymbolAnnotation>.Empty
+                ),
                 @namespace.ChildNodes.Cast<XmlNode>()
                     .SelectMany(Visit)
                     .Select
@@ -235,7 +261,8 @@ internal sealed class XmlVisitor
                             return ts;
                         }
                     )
-                    .ToImmutableArray()
+                    .ToImmutableArray(),
+                ImmutableArray<ISymbolAnnotation>.Empty
             )
         };
     }
