@@ -3,6 +3,7 @@
 
 using System.Collections.Immutable;
 using Silk.NET.SilkTouch.Symbols;
+using Silk.NET.SilkTouch.TypeResolution.Annotations;
 using Xunit;
 
 namespace Silk.NET.SilkTouch.TypeResolution.Tests;
@@ -36,6 +37,7 @@ public sealed class PrimitiveTypeResolverTests
         var @ref = Assert.IsType<ExternalTypeReference>(finalSymbol);
         Assert.Equal(@namespace, @ref.Namespace?.Value);
         Assert.Equal(identifier, @ref.TypeIdentifier.Value);
+        Assert.Equal(text, Assert.IsType<ResolvedFromAnnotation>(Assert.Single(@ref.Annotations)).OriginalString);
     }
 
     [Theory, Trait("Category", "Type Resolution"),

@@ -3,6 +3,7 @@
 
 using System.Collections.Immutable;
 using Silk.NET.SilkTouch.Symbols;
+using Silk.NET.SilkTouch.TypeResolution.Annotations;
 using Xunit;
 
 namespace Silk.NET.SilkTouch.TypeResolution.Tests;
@@ -20,7 +21,8 @@ public sealed class PointerResolverTests
         var output = new PointerTypeResolver(new TypeStore());
 
         var finalSymbol = output.Visit(symbol);
-        Assert.IsType<PointerTypeReference>(finalSymbol);
+        var typed = Assert.IsType<PointerTypeReference>(finalSymbol);
+        Assert.Equal(text, Assert.IsType<ResolvedFromAnnotation>(Assert.Single(typed.Annotations)).OriginalString);
     }
 
     [Theory, Trait("Category", "Type Resolution"),
@@ -52,5 +54,9 @@ public sealed class PointerResolverTests
         var middle = Assert.IsType<PointerTypeReference>(outer.Underlying);
         var inner = Assert.IsType<PointerTypeReference>(middle.Underlying);
         Assert.IsNotType<PointerTypeReference>(inner.Underlying);
+        
+        Assert.Equal("int***", Assert.IsType<ResolvedFromAnnotation>(Assert.Single(outer.Annotations)).OriginalString);
+        Assert.Equal("int**", Assert.IsType<ResolvedFromAnnotation>(Assert.Single(middle.Annotations)).OriginalString);
+        Assert.Equal("int*", Assert.IsType<ResolvedFromAnnotation>(Assert.Single(inner.Annotations)).OriginalString);
     }
 }

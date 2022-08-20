@@ -1,7 +1,9 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.Diagnostics;
 using Silk.NET.SilkTouch.Symbols;
+using Silk.NET.SilkTouch.TypeResolution.Annotations;
 
 namespace Silk.NET.SilkTouch.TypeResolution;
 
@@ -24,7 +26,16 @@ public abstract class SimpleTypeResolverBase : SymbolVisitor
             {
                 if (TryResolve(utr, out var result))
                 {
-                    typeSymbol = result!;
+                    Debug.Assert(result is not null);
+                    if (result!.Annotations == typeSymbol.Annotations)
+                    {
+                        result = result with
+                        {
+                            Annotations = result.Annotations.ReplaceOrAdd
+                                (x => x is ResolvedFromAnnotation, new ResolvedFromAnnotation(utr.Text))
+                        };
+                    }
+                    typeSymbol = result;
                     continue;
                 }
                 return utr;
@@ -43,6 +54,9 @@ public abstract class SimpleTypeResolverBase : SymbolVisitor
     /// This method is free to return a partial resolution, and still return true.
     /// Partial resolutions are such that do not have a <see cref="UnresolvedTypeReference"/> at the root,
     /// but have <see cref="UnresolvedTypeReference"/> somewhere in the tree.
+    /// </remarks>
+    /// <remarks>
+    /// Implementors don't need to worry about adding <see cref="ResolvedFromAnnotation"/>. This is done automatically.
     /// </remarks>
     protected abstract bool TryResolve(UnresolvedTypeReference utr, out TypeReference? resolved);
 }
