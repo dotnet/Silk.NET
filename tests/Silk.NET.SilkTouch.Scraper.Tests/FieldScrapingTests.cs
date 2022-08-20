@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Xml;
+using Silk.NET.SilkTouch.Scraper.Annotations;
 using Silk.NET.SilkTouch.Symbols;
 using Xunit;
 
@@ -52,5 +53,6 @@ public class FieldScrapingTests
         var field = Assert.IsType<FieldSymbol>(symbol);
         var type = Assert.IsType<UnresolvedTypeReference>(field.Type);
         Assert.Equal("int", type.Text);
+        Assert.Equal("int32_t", Assert.IsType<NativeNameAnnotation>(Assert.Single(type.Annotations)).NativeName);
     }
 }
