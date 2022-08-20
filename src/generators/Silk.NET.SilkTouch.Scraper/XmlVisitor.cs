@@ -7,6 +7,7 @@ using System.Collections.Immutable;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Reflection.Metadata;
+using System.Runtime.InteropServices;
 using System.Xml;
 using Microsoft.Extensions.Logging;
 using Silk.NET.SilkTouch.Scraper.Annotations;
@@ -208,7 +209,8 @@ internal sealed class XmlVisitor
 
     private IEnumerable<Symbol> VisitStruct(XmlElement @struct)
     {
-        var fields = new List<FieldSymbol>();
+        var fields = new FieldSymbol[@struct.ChildNodes.Count];
+        var i = 0;
         foreach (var node in @struct.ChildNodes.Cast<XmlNode>())
         {
             var symbols = Visit(node);
@@ -216,7 +218,7 @@ internal sealed class XmlVisitor
             {
                 if (v is FieldSymbol fieldSymbol)
                 {
-                    fields.Add(fieldSymbol);
+                    fields[i++] = fieldSymbol;
                 }
             }
         }
@@ -234,7 +236,7 @@ internal sealed class XmlVisitor
                         name,
                         ImmutableArray<ISymbolAnnotation>.Empty
                     ),
-                    fields.ToImmutableArray(),
+                    ImmutableArray.Create(fields, 0, i),
                     ImmutableArray.Create<ISymbolAnnotation>(new NativeNameAnnotation(name))
                 )
             )

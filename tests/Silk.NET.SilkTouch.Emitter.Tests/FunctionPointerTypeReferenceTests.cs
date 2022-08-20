@@ -42,8 +42,8 @@ public class FunctionPointerTypeReferenceTests : EmitterTest
                 new IdentifierSymbol("Ret", ImmutableArray<ISymbolAnnotation>.Empty),
                 ImmutableArray<ISymbolAnnotation>.Empty
             ),
-            new TypeReference[]
-            {
+            ImmutableArray.Create<TypeReference>
+            (
                 new ExternalTypeReference
                 (
                     null,
@@ -55,8 +55,8 @@ public class FunctionPointerTypeReferenceTests : EmitterTest
                     null,
                     new IdentifierSymbol("Param2", ImmutableArray<ISymbolAnnotation>.Empty),
                     ImmutableArray<ISymbolAnnotation>.Empty
-                ),
-            }.ToImmutableArray(),
+                )
+            ),
             ImmutableArray<ISymbolAnnotation>.Empty
         );
 
