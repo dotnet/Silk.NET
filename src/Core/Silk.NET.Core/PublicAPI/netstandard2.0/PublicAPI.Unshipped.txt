@@ -48,3 +48,4 @@ Silk.NET.Core.Native.D3DShaderVariableFlags.None = 0 -> Silk.NET.Core.Native.D3D
 Silk.NET.Core.Native.D3DTessellatorDomain.None = 0 -> Silk.NET.Core.Native.D3DTessellatorDomain
 Silk.NET.Core.Native.D3DTessellatorOutputPrimitive.None = 0 -> Silk.NET.Core.Native.D3DTessellatorOutputPrimitive
 Silk.NET.Core.Native.D3DTessellatorPartitioning.None = 0 -> Silk.NET.Core.Native.D3DTessellatorPartitioning
+Silk.NET.Core.Contexts.INativeWindow.DXHandle.get -> nint?
