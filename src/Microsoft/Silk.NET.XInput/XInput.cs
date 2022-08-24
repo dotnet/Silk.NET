@@ -12,7 +12,7 @@ namespace Silk.NET.XInput
     {
         public static XInput GetApi()
         {
-             throw new NotImplementedException();
+            return new XInput(CreateDefaultContext("XInput1_3"));
         }
 
         public bool TryGetExtension<T>(out T ext)
