@@ -39,7 +39,7 @@ namespace Silk.NET.GLFW
                 var hwnd = ((delegate* unmanaged[Cdecl]<WindowHandle*, nint>) getHwnd)(window);
                 Kind |= NativeWindowFlags.Win32;
                 Win32 = (hwnd, Win32GetDC(hwnd), GetWindowLongPtr(hwnd, GwlpHInstance));
-                DXHandle = Win32.Hwnd;
+                DXHandle = hwnd;
                 return;
             }
 

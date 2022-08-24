@@ -34,7 +34,7 @@ namespace Silk.NET.SDL
                 {
                     Kind |= NativeWindowFlags.Win32;
                     Win32 = (info.Info.Win.Hwnd, info.Info.Win.HDC, info.Info.Win.HInstance);
-                    DXHandle = Win32.Hwnd;
+                    DXHandle = info.Info.Win.Hwnd;
                     break;
                 }
                 case SysWMType.X11:
