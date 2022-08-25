@@ -12,7 +12,10 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_BITSTREAM_ENCRYPTION_TYPE")]
     public enum BitstreamEncryptionType : int
     {
+        [Obsolete("Deprecated in favour of \"None\"")]
         [NativeName("Name", "D3D12_BITSTREAM_ENCRYPTION_TYPE_NONE")]
         BitstreamEncryptionTypeNone = 0x0,
+        [NativeName("Name", "D3D12_BITSTREAM_ENCRYPTION_TYPE_NONE")]
+        None = 0x0,
     }
 }

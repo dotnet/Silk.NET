@@ -14,13 +14,27 @@ namespace Silk.NET.SDL
     [NativeName("Name", "SDL_SensorType")]
     public enum SensorType : int
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"Invalid\"")]
         [NativeName("Name", "SDL_SENSOR_INVALID")]
         SensorInvalid = unchecked((int) 0xFFFFFFFFFFFFFFFF),
+        [Obsolete("Deprecated in favour of \"Unknown\"")]
         [NativeName("Name", "SDL_SENSOR_UNKNOWN")]
         SensorUnknown = 0x0,
+        [Obsolete("Deprecated in favour of \"Accel\"")]
         [NativeName("Name", "SDL_SENSOR_ACCEL")]
         SensorAccel = 0x1,
+        [Obsolete("Deprecated in favour of \"Gyro\"")]
         [NativeName("Name", "SDL_SENSOR_GYRO")]
         SensorGyro = 0x2,
+        [NativeName("Name", "SDL_SENSOR_INVALID")]
+        Invalid = unchecked((int) 0xFFFFFFFFFFFFFFFF),
+        [NativeName("Name", "SDL_SENSOR_UNKNOWN")]
+        Unknown = 0x0,
+        [NativeName("Name", "SDL_SENSOR_ACCEL")]
+        Accel = 0x1,
+        [NativeName("Name", "SDL_SENSOR_GYRO")]
+        Gyro = 0x2,
     }
 }

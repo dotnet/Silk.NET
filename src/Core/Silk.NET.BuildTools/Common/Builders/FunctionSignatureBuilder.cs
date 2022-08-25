@@ -3,7 +3,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
-
+using System.Runtime.InteropServices;
 using Silk.NET.BuildTools.Common.Functions;
 
 namespace Silk.NET.BuildTools.Common.Builders
@@ -36,6 +36,8 @@ namespace Silk.NET.BuildTools.Common.Builders
 
         private SignatureKind _newKind;
 
+        private CallingConvention _newCallingConvention;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="FunctionSignatureBuilder" /> class.
         /// </summary>
@@ -53,6 +55,7 @@ namespace Silk.NET.BuildTools.Common.Builders
             _newDoc = functionSignature.Doc;
             _newAccessibility = functionSignature.Accessibility;
             _newKind = functionSignature.Kind;
+            _newCallingConvention = functionSignature.Convention;
         }
 
         /// <summary>
@@ -169,6 +172,17 @@ namespace Silk.NET.BuildTools.Common.Builders
         }
 
         /// <summary>
+        /// Sets a new function calling convention.
+        /// </summary>
+        /// <param name="kind">The new calling convention.</param>
+        /// <returns>The builder, with the change applied.</returns>
+        public FunctionSignatureBuilder WithCallingConvention(CallingConvention callingConvention)
+        {
+            _newCallingConvention = callingConvention;
+            return this;
+        }
+
+        /// <summary>
         /// Builds the final instance.
         /// </summary>
         /// <returns>The instance.</returns>
@@ -186,7 +200,8 @@ namespace Silk.NET.BuildTools.Common.Builders
                 Attributes = _newAttributes.ToList(),
                 Doc = _newDoc,
                 Accessibility = _newAccessibility,
-                Kind = _newKind
+                Kind = _newKind,
+                Convention = _newCallingConvention
             };
         }
     }

@@ -21,13 +21,19 @@ namespace Silk.NET.Vulkan.Video
     {
         public StdVideoDecodeH265ReferenceInfoFlags
         (
-            uint? isLongTerm = null,
+            uint? usedForLongTermReference = null,
+            uint? unusedForReference = null,
             uint? isNonExisting = null
         ) : this()
         {
-            if (isLongTerm is not null)
+            if (usedForLongTermReference is not null)
             {
-                IsLongTerm = isLongTerm.Value;
+                UsedForLongTermReference = usedForLongTermReference.Value;
+            }
+
+            if (unusedForReference is not null)
+            {
+                UnusedForReference = unusedForReference.Value;
             }
 
             if (isNonExisting is not null)
@@ -39,7 +45,7 @@ namespace Silk.NET.Vulkan.Video
 
         private uint _bitfield1;
 
-        public uint IsLongTerm
+        public uint UsedForLongTermReference
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)(_bitfield1 & 0x1u);
@@ -47,12 +53,20 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~0x1u) | (uint)((uint)(value) & 0x1u));
         }
 
-        public uint IsNonExisting
+        public uint UnusedForReference
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 1) & 0x1u);
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 1)) | (uint)(((uint)(value) & 0x1u) << 1));
+        }
+
+        public uint IsNonExisting
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 2) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 2)) | (uint)(((uint)(value) & 0x1u) << 2));
         }
     }
 }

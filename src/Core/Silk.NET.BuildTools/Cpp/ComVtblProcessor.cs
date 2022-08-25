@@ -17,10 +17,10 @@ namespace Silk.NET.BuildTools.Cpp
 {
     public static class ComVtblProcessor
     {
-        public static IEnumerable<ImplementedFunction> GetHelperFunctions(Struct @struct, Project core)
+        public static IEnumerable<ImplementedFunction> GetHelperFunctions(Struct @struct, Profile profile)
         {
             var sb = new StringBuilder();
-            foreach (var vtblFunction in GetWithVariants(@struct.Vtbl, core))
+            foreach (var vtblFunction in GetWithVariants(@struct.Vtbl, profile))
             {
                 sb.Clear();
                 Implement(sb, vtblFunction.New, @struct, vtblFunction.Original.VtblIndex);
@@ -32,7 +32,7 @@ namespace Silk.NET.BuildTools.Cpp
         public static IEnumerable<(Function Original, Function New)> GetWithVariants
         (
             IEnumerable<Function> functions,
-            Project core
+            Profile profile
         )
         {
             var enumerable = GetOriginals(functions);
@@ -44,7 +44,7 @@ namespace Silk.NET.BuildTools.Cpp
             foreach (var overload in enumerable)
             {
                 foreach (var final in SimpleReturnOverloader.GetWithOverloads
-                    (overload.New, core, Overloader.ReturnOverloaders))
+                    (overload.New, profile, Overloader.ReturnOverloaders))
                 {
                     yield return (overload.Original, final);
                 }
@@ -64,7 +64,7 @@ namespace Silk.NET.BuildTools.Cpp
                 foreach (var function in functions)
                 {
                     foreach (var overload in SimpleParameterOverloader.GetWithOverloads
-                        (function.Item2, core, overloaders))
+                        (function.Item2, profile, overloaders))
                     {
                         yield return (function.Item1, overload);
                     }

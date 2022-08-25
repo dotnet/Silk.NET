@@ -14,9 +14,17 @@ namespace Silk.NET.SDL
     [NativeName("Name", "SDL_MessageBoxButtonFlags")]
     public enum MessageBoxButtonFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"ReturnkeyDefault\"")]
         [NativeName("Name", "SDL_MESSAGEBOX_BUTTON_RETURNKEY_DEFAULT")]
         MessageboxButtonReturnkeyDefault = 0x1,
+        [Obsolete("Deprecated in favour of \"EscapekeyDefault\"")]
         [NativeName("Name", "SDL_MESSAGEBOX_BUTTON_ESCAPEKEY_DEFAULT")]
         MessageboxButtonEscapekeyDefault = 0x2,
+        [NativeName("Name", "SDL_MESSAGEBOX_BUTTON_RETURNKEY_DEFAULT")]
+        ReturnkeyDefault = 0x1,
+        [NativeName("Name", "SDL_MESSAGEBOX_BUTTON_ESCAPEKEY_DEFAULT")]
+        EscapekeyDefault = 0x2,
     }
 }

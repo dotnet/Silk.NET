@@ -6,6 +6,8 @@ on:
       - 'release/*'
     paths-ignore:
       - 'documentation/**'
+    tags:
+      - '*'
   pull_request:
     # all branches
     paths-ignore:
@@ -25,7 +27,7 @@ jobs:
     - name: Setup .NET 6.0
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 6.0.100
+        dotnet-version: 6.0.201
     - name: Setup .NET 5.0
       uses: actions/setup-dotnet@v1
       with:
@@ -38,19 +40,47 @@ jobs:
       run: dotnet tool install Nuke.GlobalTool --global
     - name: Install Workloads
       # TODO: This is slow. Maybe we can make a docker container with this already done?
-      run: dotnet workload install android android-aot ios maccatalyst maui
+      run: dotnet workload install android ios maccatalyst maui
     - name: Test
+      if: ${{ github.repository != 'dotnet/Silk.NET' || !startsWith(github.ref, 'refs/tags/') }}
       # skip Clean, Restore, and Compile as this will build the affect the whole solution.
       # dotnet test will compile the necessary projects for testing only.
       run: nuke Test --skip Clean Restore Compile
     - name: Validation Checks
+      if: ${{ github.repository != 'dotnet/Silk.NET' || !startsWith(github.ref, 'refs/tags/') }}
       run: nuke ValidateSolution
-    - name: Pack
+    - name: Pack (CI)
+      if: ${{ github.repository != 'dotnet/Silk.NET' || !startsWith(github.ref, 'refs/tags/') }}
       # TODO build native mixins such as BuildLibSilkDroid
-      run: nuke Pack --configuration Release --msbuild-properties VersionSuffix=build${{ github.run_number }}.0 ContinuousIntegrationBuild=true --feature-sets Legacy-Android Legacy-iOS
-    - name: Push to NuGet
+      run: nuke Pack --configuration Release --msbuild-properties VersionSuffix=build${{ github.run_number }}.0 ContinuousIntegrationBuild=true
+    - name: Pack (CD)
+      if: ${{ github.repository == 'dotnet/Silk.NET' && startsWith(github.ref, 'refs/tags/') }}
+      # TODO build native mixins such as BuildLibSilkDroid
+      run: nuke Pack --configuration Release --msbuild-properties ContinuousIntegrationBuild=true
+    - name: Upload Unsigned Artifacts to Actions
+      uses: actions/upload-artifact@v2.2.4
+      with:
+        name: unsigned_nupkgs
+        path: "build/output_packages/*.nupkg"
+        if-no-files-found: warn
+        retention-days: 1
+    - name: Sign Packages
+      if: ${{ github.repository == 'dotnet/Silk.NET' && startsWith(github.ref, 'refs/tags/') }}
+      run: nuke SignPackages --sign-username "${{ secrets.SIGN_USERNAME }}" --sign-password "${{ secrets.SIGN_PASSWORD }}"
+    - name: Push to Azure Experimental Feed
       if: ${{ github.repository == 'dotnet/Silk.NET' && github.event_name != 'pull_request' }}
       run: nuke PushToNuGet --skip Clean Restore Compile Pack --nuget-feed https://pkgs.dev.azure.com/UltzOS/Silk.NET/_packaging/Experimental/nuget/v3/index.json --nuget-username ${{ secrets.AZDO_ARTIFACTS_USERNAME }} --nuget-password ${{ secrets.AZDO_ARTIFACTS_TOKEN }} --nuget-api-key az
     - name: Push to GitHub Packages
       if: ${{ github.repository == 'dotnet/Silk.NET' && github.event_name != 'pull_request' }}
       run: nuke PushToNuGet --skip Clean Restore Compile Pack --nuget-feed https://nuget.pkg.github.com/dotnet/index.json --nuget-api-key ${{ secrets.GITHUB_TOKEN }}
+    - name: Upload Signed Artifacts to Actions
+      if: ${{ github.repository == 'dotnet/Silk.NET' && startsWith(github.ref, 'refs/tags/') }}
+      uses: actions/upload-artifact@v2.2.4
+      with:
+        name: signed_nupkgs
+        path: "build/output_packages/*.nupkg"
+        if-no-files-found: warn
+    - name: Push to NuGet
+      if: ${{ github.repository == 'dotnet/Silk.NET' && startsWith(github.ref, 'refs/tags/') }}
+      run: nuke PushToNuGet --skip Clean Restore Pack --nuget-api-key ${{ secrets.NUGET_TOKEN }}
+    

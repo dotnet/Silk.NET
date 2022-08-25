@@ -12,7 +12,10 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkDeviceEventTypeEXT")]
     public enum DeviceEventTypeEXT : int
     {
+        [Obsolete("Deprecated in favour of \"DisplayHotplugExt\"")]
         [NativeName("Name", "VK_DEVICE_EVENT_TYPE_DISPLAY_HOTPLUG_EXT")]
         DeviceEventTypeDisplayHotplugExt = 0,
+        [NativeName("Name", "VK_DEVICE_EVENT_TYPE_DISPLAY_HOTPLUG_EXT")]
+        DisplayHotplugExt = 0,
     }
 }

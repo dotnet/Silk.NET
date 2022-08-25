@@ -187,7 +187,7 @@ namespace Silk.NET.Input.Glfw
             Keys.AltRight => Key.AltRight,
             Keys.SuperRight => Key.SuperRight,
             Keys.Menu => Key.Menu,
-            _ => throw new ArgumentOutOfRangeException()
+            _ => Key.Unknown
         };
 
         private static Keys ConvertKey(Key keys) => keys switch
@@ -313,7 +313,7 @@ namespace Silk.NET.Input.Glfw
             Key.AltRight => Keys.AltRight,
             Key.SuperRight => Keys.SuperRight,
             Key.Menu => Keys.Menu,
-            _ => throw new ArgumentOutOfRangeException()
+            _ => Keys.Unknown
         };
     }
 }

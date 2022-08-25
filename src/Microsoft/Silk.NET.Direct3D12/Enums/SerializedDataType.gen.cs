@@ -12,7 +12,10 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_SERIALIZED_DATA_TYPE")]
     public enum SerializedDataType : int
     {
+        [Obsolete("Deprecated in favour of \"RaytracingAccelerationStructure\"")]
         [NativeName("Name", "D3D12_SERIALIZED_DATA_RAYTRACING_ACCELERATION_STRUCTURE")]
         SerializedDataRaytracingAccelerationStructure = 0x0,
+        [NativeName("Name", "D3D12_SERIALIZED_DATA_RAYTRACING_ACCELERATION_STRUCTURE")]
+        RaytracingAccelerationStructure = 0x0,
     }
 }

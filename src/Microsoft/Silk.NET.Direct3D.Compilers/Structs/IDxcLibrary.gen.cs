@@ -46,18 +46,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDxcLibrary*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -68,18 +57,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDxcLibrary*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -91,18 +69,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDxcLibrary*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -116,18 +83,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDxcLibrary*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -156,18 +112,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDxcLibrary*, IMalloc*, int>)LpVtbl[3])(@this, pMalloc);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IMalloc*, int>)LpVtbl[3])(@this, pMalloc);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, IMalloc*, int>)LpVtbl[3])(@this, pMalloc);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IMalloc*, int>)LpVtbl[3])(@this, pMalloc);
             return ret;
         }
 
@@ -178,18 +123,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (IMalloc* pMallocPtr = &pMalloc)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDxcLibrary*, IMalloc*, int>)LpVtbl[3])(@this, pMallocPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IMalloc*, int>)LpVtbl[3])(@this, pMallocPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, IMalloc*, int>)LpVtbl[3])(@this, pMallocPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IMalloc*, int>)LpVtbl[3])(@this, pMallocPtr);
             }
             return ret;
         }
@@ -199,18 +133,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDxcLibrary*, IDxcBlob*, uint, uint, IDxcBlob**, int>)LpVtbl[4])(@this, pBlob, offset, length, ppResult);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, uint, uint, IDxcBlob**, int>)LpVtbl[4])(@this, pBlob, offset, length, ppResult);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, IDxcBlob*, uint, uint, IDxcBlob**, int>)LpVtbl[4])(@this, pBlob, offset, length, ppResult);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, uint, uint, IDxcBlob**, int>)LpVtbl[4])(@this, pBlob, offset, length, ppResult);
             return ret;
         }
 
@@ -221,18 +144,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (IDxcBlob** ppResultPtr = &ppResult)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDxcLibrary*, IDxcBlob*, uint, uint, IDxcBlob**, int>)LpVtbl[4])(@this, pBlob, offset, length, ppResultPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, uint, uint, IDxcBlob**, int>)LpVtbl[4])(@this, pBlob, offset, length, ppResultPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, IDxcBlob*, uint, uint, IDxcBlob**, int>)LpVtbl[4])(@this, pBlob, offset, length, ppResultPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, uint, uint, IDxcBlob**, int>)LpVtbl[4])(@this, pBlob, offset, length, ppResultPtr);
             }
             return ret;
         }
@@ -244,18 +156,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (IDxcBlob* pBlobPtr = &pBlob)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDxcLibrary*, IDxcBlob*, uint, uint, IDxcBlob**, int>)LpVtbl[4])(@this, pBlobPtr, offset, length, ppResult);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, uint, uint, IDxcBlob**, int>)LpVtbl[4])(@this, pBlobPtr, offset, length, ppResult);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, IDxcBlob*, uint, uint, IDxcBlob**, int>)LpVtbl[4])(@this, pBlobPtr, offset, length, ppResult);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, uint, uint, IDxcBlob**, int>)LpVtbl[4])(@this, pBlobPtr, offset, length, ppResult);
             }
             return ret;
         }
@@ -269,18 +170,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (IDxcBlob** ppResultPtr = &ppResult)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDxcLibrary*, IDxcBlob*, uint, uint, IDxcBlob**, int>)LpVtbl[4])(@this, pBlobPtr, offset, length, ppResultPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, uint, uint, IDxcBlob**, int>)LpVtbl[4])(@this, pBlobPtr, offset, length, ppResultPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, IDxcBlob*, uint, uint, IDxcBlob**, int>)LpVtbl[4])(@this, pBlobPtr, offset, length, ppResultPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, uint, uint, IDxcBlob**, int>)LpVtbl[4])(@this, pBlobPtr, offset, length, ppResultPtr);
                 }
             }
             return ret;
@@ -291,18 +181,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileName, codePage, pBlobEncoding);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileName, codePage, pBlobEncoding);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileName, codePage, pBlobEncoding);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileName, codePage, pBlobEncoding);
             return ret;
         }
 
@@ -313,18 +192,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileName, codePage, pBlobEncodingPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileName, codePage, pBlobEncodingPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileName, codePage, pBlobEncodingPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileName, codePage, pBlobEncodingPtr);
             }
             return ret;
         }
@@ -336,18 +204,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (uint* codePagePtr = &codePage)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileName, codePagePtr, pBlobEncoding);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileName, codePagePtr, pBlobEncoding);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileName, codePagePtr, pBlobEncoding);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileName, codePagePtr, pBlobEncoding);
             }
             return ret;
         }
@@ -361,18 +218,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileName, codePagePtr, pBlobEncodingPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileName, codePagePtr, pBlobEncodingPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileName, codePagePtr, pBlobEncodingPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileName, codePagePtr, pBlobEncodingPtr);
                 }
             }
             return ret;
@@ -385,18 +231,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (char* pFileNamePtr = &pFileName)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePage, pBlobEncoding);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePage, pBlobEncoding);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePage, pBlobEncoding);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePage, pBlobEncoding);
             }
             return ret;
         }
@@ -410,18 +245,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePage, pBlobEncodingPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePage, pBlobEncodingPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePage, pBlobEncodingPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePage, pBlobEncodingPtr);
                 }
             }
             return ret;
@@ -436,18 +260,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (uint* codePagePtr = &codePage)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePagePtr, pBlobEncoding);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePagePtr, pBlobEncoding);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePagePtr, pBlobEncoding);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePagePtr, pBlobEncoding);
                 }
             }
             return ret;
@@ -464,18 +277,7 @@ namespace Silk.NET.Direct3D.Compilers
                 {
                     fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePagePtr, pBlobEncodingPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePagePtr, pBlobEncodingPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePagePtr, pBlobEncodingPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePagePtr, pBlobEncodingPtr);
                     }
                 }
             }
@@ -488,18 +290,7 @@ namespace Silk.NET.Direct3D.Compilers
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var pFileNamePtr = (byte*) SilkMarshal.StringToPtr(pFileName, NativeStringEncoding.LPWStr);
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDxcLibrary*, byte*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePage, pBlobEncoding);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, byte*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePage, pBlobEncoding);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, byte*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePage, pBlobEncoding);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, byte*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePage, pBlobEncoding);
             SilkMarshal.Free((nint)pFileNamePtr);
             return ret;
         }
@@ -512,18 +303,7 @@ namespace Silk.NET.Direct3D.Compilers
             var pFileNamePtr = (byte*) SilkMarshal.StringToPtr(pFileName, NativeStringEncoding.LPWStr);
             fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDxcLibrary*, byte*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePage, pBlobEncodingPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, byte*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePage, pBlobEncodingPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, byte*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePage, pBlobEncodingPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, byte*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePage, pBlobEncodingPtr);
             }
             SilkMarshal.Free((nint)pFileNamePtr);
             return ret;
@@ -537,18 +317,7 @@ namespace Silk.NET.Direct3D.Compilers
             var pFileNamePtr = (byte*) SilkMarshal.StringToPtr(pFileName, NativeStringEncoding.LPWStr);
             fixed (uint* codePagePtr = &codePage)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDxcLibrary*, byte*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePagePtr, pBlobEncoding);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, byte*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePagePtr, pBlobEncoding);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, byte*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePagePtr, pBlobEncoding);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, byte*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePagePtr, pBlobEncoding);
             }
             SilkMarshal.Free((nint)pFileNamePtr);
             return ret;
@@ -564,18 +333,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDxcLibrary*, byte*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePagePtr, pBlobEncodingPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, byte*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePagePtr, pBlobEncodingPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, byte*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePagePtr, pBlobEncodingPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, byte*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePagePtr, pBlobEncodingPtr);
                 }
             }
             SilkMarshal.Free((nint)pFileNamePtr);
@@ -587,18 +345,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[6])(@this, pText, size, codePage, pBlobEncoding);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[6])(@this, pText, size, codePage, pBlobEncoding);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[6])(@this, pText, size, codePage, pBlobEncoding);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[6])(@this, pText, size, codePage, pBlobEncoding);
             return ret;
         }
 
@@ -609,18 +356,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[6])(@this, pText, size, codePage, pBlobEncodingPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[6])(@this, pText, size, codePage, pBlobEncodingPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[6])(@this, pText, size, codePage, pBlobEncodingPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[6])(@this, pText, size, codePage, pBlobEncodingPtr);
             }
             return ret;
         }
@@ -632,18 +368,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (void* pTextPtr = &pText)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[6])(@this, pTextPtr, size, codePage, pBlobEncoding);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[6])(@this, pTextPtr, size, codePage, pBlobEncoding);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[6])(@this, pTextPtr, size, codePage, pBlobEncoding);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[6])(@this, pTextPtr, size, codePage, pBlobEncoding);
             }
             return ret;
         }
@@ -657,18 +382,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[6])(@this, pTextPtr, size, codePage, pBlobEncodingPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[6])(@this, pTextPtr, size, codePage, pBlobEncodingPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[6])(@this, pTextPtr, size, codePage, pBlobEncodingPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[6])(@this, pTextPtr, size, codePage, pBlobEncodingPtr);
                 }
             }
             return ret;
@@ -679,18 +393,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[7])(@this, pText, size, codePage, pBlobEncoding);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[7])(@this, pText, size, codePage, pBlobEncoding);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[7])(@this, pText, size, codePage, pBlobEncoding);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[7])(@this, pText, size, codePage, pBlobEncoding);
             return ret;
         }
 
@@ -701,18 +404,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[7])(@this, pText, size, codePage, pBlobEncodingPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[7])(@this, pText, size, codePage, pBlobEncodingPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[7])(@this, pText, size, codePage, pBlobEncodingPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[7])(@this, pText, size, codePage, pBlobEncodingPtr);
             }
             return ret;
         }
@@ -724,18 +416,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (void* pTextPtr = &pText)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[7])(@this, pTextPtr, size, codePage, pBlobEncoding);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[7])(@this, pTextPtr, size, codePage, pBlobEncoding);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[7])(@this, pTextPtr, size, codePage, pBlobEncoding);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[7])(@this, pTextPtr, size, codePage, pBlobEncoding);
             }
             return ret;
         }
@@ -749,18 +430,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[7])(@this, pTextPtr, size, codePage, pBlobEncodingPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[7])(@this, pTextPtr, size, codePage, pBlobEncodingPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[7])(@this, pTextPtr, size, codePage, pBlobEncodingPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[7])(@this, pTextPtr, size, codePage, pBlobEncodingPtr);
                 }
             }
             return ret;
@@ -771,18 +441,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[8])(@this, pText, pIMalloc, size, codePage, pBlobEncoding);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[8])(@this, pText, pIMalloc, size, codePage, pBlobEncoding);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[8])(@this, pText, pIMalloc, size, codePage, pBlobEncoding);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[8])(@this, pText, pIMalloc, size, codePage, pBlobEncoding);
             return ret;
         }
 
@@ -793,18 +452,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[8])(@this, pText, pIMalloc, size, codePage, pBlobEncodingPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[8])(@this, pText, pIMalloc, size, codePage, pBlobEncodingPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[8])(@this, pText, pIMalloc, size, codePage, pBlobEncodingPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[8])(@this, pText, pIMalloc, size, codePage, pBlobEncodingPtr);
             }
             return ret;
         }
@@ -816,18 +464,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (IMalloc* pIMallocPtr = &pIMalloc)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[8])(@this, pText, pIMallocPtr, size, codePage, pBlobEncoding);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[8])(@this, pText, pIMallocPtr, size, codePage, pBlobEncoding);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[8])(@this, pText, pIMallocPtr, size, codePage, pBlobEncoding);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[8])(@this, pText, pIMallocPtr, size, codePage, pBlobEncoding);
             }
             return ret;
         }
@@ -841,18 +478,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[8])(@this, pText, pIMallocPtr, size, codePage, pBlobEncodingPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[8])(@this, pText, pIMallocPtr, size, codePage, pBlobEncodingPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[8])(@this, pText, pIMallocPtr, size, codePage, pBlobEncodingPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[8])(@this, pText, pIMallocPtr, size, codePage, pBlobEncodingPtr);
                 }
             }
             return ret;
@@ -865,18 +491,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (void* pTextPtr = &pText)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[8])(@this, pTextPtr, pIMalloc, size, codePage, pBlobEncoding);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[8])(@this, pTextPtr, pIMalloc, size, codePage, pBlobEncoding);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[8])(@this, pTextPtr, pIMalloc, size, codePage, pBlobEncoding);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[8])(@this, pTextPtr, pIMalloc, size, codePage, pBlobEncoding);
             }
             return ret;
         }
@@ -890,18 +505,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[8])(@this, pTextPtr, pIMalloc, size, codePage, pBlobEncodingPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[8])(@this, pTextPtr, pIMalloc, size, codePage, pBlobEncodingPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[8])(@this, pTextPtr, pIMalloc, size, codePage, pBlobEncodingPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[8])(@this, pTextPtr, pIMalloc, size, codePage, pBlobEncodingPtr);
                 }
             }
             return ret;
@@ -916,18 +520,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (IMalloc* pIMallocPtr = &pIMalloc)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[8])(@this, pTextPtr, pIMallocPtr, size, codePage, pBlobEncoding);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[8])(@this, pTextPtr, pIMallocPtr, size, codePage, pBlobEncoding);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[8])(@this, pTextPtr, pIMallocPtr, size, codePage, pBlobEncoding);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[8])(@this, pTextPtr, pIMallocPtr, size, codePage, pBlobEncoding);
                 }
             }
             return ret;
@@ -944,18 +537,7 @@ namespace Silk.NET.Direct3D.Compilers
                 {
                     fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[8])(@this, pTextPtr, pIMallocPtr, size, codePage, pBlobEncodingPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[8])(@this, pTextPtr, pIMallocPtr, size, codePage, pBlobEncodingPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[8])(@this, pTextPtr, pIMallocPtr, size, codePage, pBlobEncodingPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[8])(@this, pTextPtr, pIMallocPtr, size, codePage, pBlobEncodingPtr);
                     }
                 }
             }
@@ -967,18 +549,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDxcLibrary*, IDxcIncludeHandler**, int>)LpVtbl[9])(@this, ppResult);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcIncludeHandler**, int>)LpVtbl[9])(@this, ppResult);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, IDxcIncludeHandler**, int>)LpVtbl[9])(@this, ppResult);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcIncludeHandler**, int>)LpVtbl[9])(@this, ppResult);
             return ret;
         }
 
@@ -989,18 +560,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (IDxcIncludeHandler** ppResultPtr = &ppResult)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDxcLibrary*, IDxcIncludeHandler**, int>)LpVtbl[9])(@this, ppResultPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcIncludeHandler**, int>)LpVtbl[9])(@this, ppResultPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, IDxcIncludeHandler**, int>)LpVtbl[9])(@this, ppResultPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcIncludeHandler**, int>)LpVtbl[9])(@this, ppResultPtr);
             }
             return ret;
         }
@@ -1010,18 +570,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDxcLibrary*, IDxcBlob*, void**, int>)LpVtbl[10])(@this, pBlob, ppStream);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, void**, int>)LpVtbl[10])(@this, pBlob, ppStream);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, IDxcBlob*, void**, int>)LpVtbl[10])(@this, pBlob, ppStream);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, void**, int>)LpVtbl[10])(@this, pBlob, ppStream);
             return ret;
         }
 
@@ -1032,18 +581,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (void** ppStreamPtr = &ppStream)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDxcLibrary*, IDxcBlob*, void**, int>)LpVtbl[10])(@this, pBlob, ppStreamPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, void**, int>)LpVtbl[10])(@this, pBlob, ppStreamPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, IDxcBlob*, void**, int>)LpVtbl[10])(@this, pBlob, ppStreamPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, void**, int>)LpVtbl[10])(@this, pBlob, ppStreamPtr);
             }
             return ret;
         }
@@ -1055,18 +593,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (IDxcBlob* pBlobPtr = &pBlob)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDxcLibrary*, IDxcBlob*, void**, int>)LpVtbl[10])(@this, pBlobPtr, ppStream);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, void**, int>)LpVtbl[10])(@this, pBlobPtr, ppStream);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, IDxcBlob*, void**, int>)LpVtbl[10])(@this, pBlobPtr, ppStream);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, void**, int>)LpVtbl[10])(@this, pBlobPtr, ppStream);
             }
             return ret;
         }
@@ -1080,18 +607,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (void** ppStreamPtr = &ppStream)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDxcLibrary*, IDxcBlob*, void**, int>)LpVtbl[10])(@this, pBlobPtr, ppStreamPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, void**, int>)LpVtbl[10])(@this, pBlobPtr, ppStreamPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, IDxcBlob*, void**, int>)LpVtbl[10])(@this, pBlobPtr, ppStreamPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, void**, int>)LpVtbl[10])(@this, pBlobPtr, ppStreamPtr);
                 }
             }
             return ret;
@@ -1102,18 +618,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)LpVtbl[11])(@this, pBlob, pBlobEncoding);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)LpVtbl[11])(@this, pBlob, pBlobEncoding);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)LpVtbl[11])(@this, pBlob, pBlobEncoding);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)LpVtbl[11])(@this, pBlob, pBlobEncoding);
             return ret;
         }
 
@@ -1124,18 +629,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)LpVtbl[11])(@this, pBlob, pBlobEncodingPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)LpVtbl[11])(@this, pBlob, pBlobEncodingPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)LpVtbl[11])(@this, pBlob, pBlobEncodingPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)LpVtbl[11])(@this, pBlob, pBlobEncodingPtr);
             }
             return ret;
         }
@@ -1147,18 +641,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (IDxcBlob* pBlobPtr = &pBlob)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)LpVtbl[11])(@this, pBlobPtr, pBlobEncoding);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)LpVtbl[11])(@this, pBlobPtr, pBlobEncoding);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)LpVtbl[11])(@this, pBlobPtr, pBlobEncoding);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)LpVtbl[11])(@this, pBlobPtr, pBlobEncoding);
             }
             return ret;
         }
@@ -1172,18 +655,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)LpVtbl[11])(@this, pBlobPtr, pBlobEncodingPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)LpVtbl[11])(@this, pBlobPtr, pBlobEncodingPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)LpVtbl[11])(@this, pBlobPtr, pBlobEncodingPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)LpVtbl[11])(@this, pBlobPtr, pBlobEncodingPtr);
                 }
             }
             return ret;
@@ -1194,18 +666,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)LpVtbl[12])(@this, pBlob, pBlobEncoding);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)LpVtbl[12])(@this, pBlob, pBlobEncoding);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)LpVtbl[12])(@this, pBlob, pBlobEncoding);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)LpVtbl[12])(@this, pBlob, pBlobEncoding);
             return ret;
         }
 
@@ -1216,18 +677,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)LpVtbl[12])(@this, pBlob, pBlobEncodingPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)LpVtbl[12])(@this, pBlob, pBlobEncodingPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)LpVtbl[12])(@this, pBlob, pBlobEncodingPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)LpVtbl[12])(@this, pBlob, pBlobEncodingPtr);
             }
             return ret;
         }
@@ -1239,18 +689,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (IDxcBlob* pBlobPtr = &pBlob)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)LpVtbl[12])(@this, pBlobPtr, pBlobEncoding);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)LpVtbl[12])(@this, pBlobPtr, pBlobEncoding);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)LpVtbl[12])(@this, pBlobPtr, pBlobEncoding);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)LpVtbl[12])(@this, pBlobPtr, pBlobEncoding);
             }
             return ret;
         }
@@ -1264,18 +703,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)LpVtbl[12])(@this, pBlobPtr, pBlobEncodingPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)LpVtbl[12])(@this, pBlobPtr, pBlobEncodingPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)LpVtbl[12])(@this, pBlobPtr, pBlobEncodingPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)LpVtbl[12])(@this, pBlobPtr, pBlobEncodingPtr);
                 }
             }
             return ret;

@@ -13,6 +13,8 @@ namespace Silk.NET.Core.Native
     [NativeName("Name", "D3D_RESOURCE_RETURN_TYPE")]
     public enum D3DResourceReturnType : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D_RETURN_TYPE_UNORM")]
         D3DReturnTypeUnorm = 0x1,
         [NativeName("Name", "D3D_RETURN_TYPE_SNORM")]

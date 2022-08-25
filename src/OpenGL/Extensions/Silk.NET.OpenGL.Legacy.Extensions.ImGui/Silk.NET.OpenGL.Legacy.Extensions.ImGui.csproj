@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>netstandard2.0;netstandard2.1;netcoreapp3.1;net5.0</TargetFrameworks>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <LangVersion>preview</LangVersion>
+        <RootNamespace>Silk.NET.OpenGL.Legacy.Extensions.ImGui</RootNamespace>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+        <DefineConstants>$(DefineConstants);LEGACY</DefineConstants>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+        <DefineConstants>$(DefineConstants);LEGACY</DefineConstants>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="..\Silk.NET.OpenGL.Extensions.ImGui\*.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\..\Input\Extensions\Silk.NET.Input.Extensions\Silk.NET.Input.Extensions.csproj" />
+        <ProjectReference Include="..\..\..\Input\Silk.NET.Input.Common\Silk.NET.Input.Common.csproj" />
+        <ProjectReference Include="..\..\Silk.NET.OpenGL.Legacy\Silk.NET.OpenGL.Legacy.csproj" />
+        <ProjectReference Include="..\..\..\Windowing\Silk.NET.Windowing.Common\Silk.NET.Windowing.Common.csproj" />
+        <PackageReference Include="ImGui.NET" Version="1.87.3" />
+    </ItemGroup>
+
+    <Import Project="..\..\..\..\build\props\common.props" />
+</Project>

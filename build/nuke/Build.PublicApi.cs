@@ -16,8 +16,49 @@ using static Nuke.Common.Tools.DotNet.DotNetTasks;
 
 partial class Build
 {
-    const string FormatDeclCmd =
-        "format analyzers {0} --diagnostics=RS0016 --severity=error -v=diag --include-generated";
+    const string DefaultFormatCmd = "dotnet format";
+    string FormatCmd
+    {
+        get
+        {
+            // hack to use the dotnet-format NOT included with the SDK if it's available. this is useful if the one
+            // that's shipped with the SDK is bugged.
+            var process = OperatingSystem.IsWindows()
+                ? InheritedShell("cmd /c where dotnet-format")
+                : InheritedShell("whereis dotnet-format");
+            process.AssertWaitForExit();
+            if (process.ExitCode == 1)
+            {
+                return DefaultFormatCmd;
+            }
+
+            var path = process.Output.FirstOrDefault(x => !string.IsNullOrWhiteSpace(x.Text)).Text;
+            if (path is null)
+            {
+                return DefaultFormatCmd;
+            }
+
+            const string startsWith = "dotnet-format:";
+            if (path.StartsWith(startsWith))
+            {
+                path = path[startsWith.Length..].Trim();
+            }
+
+            var split = path.Split(' ');
+            for (var i = 1; i <= split.Length; i++)
+            {
+                var candidatePath = string.Join(' ', split[..i]).Trim();
+                if (File.Exists(candidatePath))
+                {
+                    var preface = OperatingSystem.IsWindows() ? "& " : string.Empty;
+                    return $"{preface}\"{candidatePath}\"";
+                }
+            }
+
+            return DefaultFormatCmd;
+        }
+    }
+    string FormatDeclCmd => $"{FormatCmd} analyzers {{0}} --diagnostics=RS0016 --severity=error -v=diag --include-generated";
 
     Target ShipApi => CommonTarget
     (
@@ -63,7 +104,14 @@ partial class Build
         )
     );
 
-    Target DeclareApi => CommonTarget(x => x.Executes(() => DotNet(string.Format(FormatDeclCmd, "Silk.NET.sln"))));
+    Target DeclareApi => CommonTarget
+    (
+        x => x.Executes
+        (
+            () => InheritedShell(string.Format(FormatDeclCmd, "Silk.NET.sln"))
+                .AssertZeroExitCode()
+        )
+    );
 
     Target EnsureApiDeclared => CommonTarget
     (
@@ -76,7 +124,7 @@ partial class Build
                     var cmd = string.Format
                     (
                         FormatDeclCmd,
-                        GitHubActions.Instance.GitHubRef?.Contains("/pull/") ?? false
+                        GitHubActions.Instance.Ref?.Contains("/pull/") ?? false
                             ? "inbound_pr/Silk.NET.sln"
                             : "Silk.NET.sln"
                     );
@@ -87,7 +135,7 @@ partial class Build
                     EnvironmentInfo.SetVariable("GITHUB_TOKEN", string.Empty);
                     
                     // run the format command
-                    DotNet($"{cmd} --verify-no-changes");
+                    InheritedShell($"{cmd} --verify-no-changes").AssertZeroExitCode();
                     
                     // add our github token back
                     EnvironmentInfo.SetVariable("GITHUB_TOKEN", githubToken);
@@ -106,7 +154,7 @@ partial class Build
     {
         var pushableToken = EnvironmentInfo.GetVariable<string>("PUSHABLE_GITHUB_TOKEN");
         var curBranch = GitCurrentBranch(RootDirectory);
-        if (GitHubActions.Instance?.GitHubRepository == "dotnet/Silk.NET" &&
+        if (GitHubActions.Instance?.Repository == "dotnet/Silk.NET" &&
             !string.IsNullOrWhiteSpace(pushableToken))
         {
             if (curBranch == "HEAD" || string.IsNullOrWhiteSpace(curBranch))

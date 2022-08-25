@@ -13,9 +13,17 @@ namespace Silk.NET.OpenXR
     [NativeName("Name", "XrSwapchainCreateFoveationFlagsFB")]
     public enum SwapchainCreateFoveationFlagsFB : long
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"ScaledBinBitFB\"")]
         [NativeName("Name", "XR_SWAPCHAIN_CREATE_FOVEATION_SCALED_BIN_BIT_FB")]
         SwapchainCreateFoveationScaledBinBitFB = 1,
+        [Obsolete("Deprecated in favour of \"FragmentDensityMapBitFB\"")]
         [NativeName("Name", "XR_SWAPCHAIN_CREATE_FOVEATION_FRAGMENT_DENSITY_MAP_BIT_FB")]
         SwapchainCreateFoveationFragmentDensityMapBitFB = 2,
+        [NativeName("Name", "XR_SWAPCHAIN_CREATE_FOVEATION_SCALED_BIN_BIT_FB")]
+        ScaledBinBitFB = 1,
+        [NativeName("Name", "XR_SWAPCHAIN_CREATE_FOVEATION_FRAGMENT_DENSITY_MAP_BIT_FB")]
+        FragmentDensityMapBitFB = 2,
     }
 }

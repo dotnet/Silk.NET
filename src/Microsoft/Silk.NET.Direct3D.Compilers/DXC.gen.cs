@@ -117,123 +117,123 @@ namespace Silk.NET.Direct3D.Compilers
         public const string ExtraOutputNameStderr = unchecked((string) "*stderr*");
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 76, Column 34 in D:/Windows Kits/10/Include/10.0.22000.0/um\\dxcapi.h")]
-        [NativeApi(EntryPoint = "DxcCreateInstance", Convention = CallingConvention.Winapi)]
+        [NativeName("Src", "Line 76, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
+        [NativeApi(EntryPoint = "DxcCreateInstance", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance(Guid* rclsid, Guid* riid, void** ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 76, Column 34 in D:/Windows Kits/10/Include/10.0.22000.0/um\\dxcapi.h")]
-        [NativeApi(EntryPoint = "DxcCreateInstance", Convention = CallingConvention.Winapi)]
+        [NativeName("Src", "Line 76, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
+        [NativeApi(EntryPoint = "DxcCreateInstance", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance(Guid* rclsid, Guid* riid, ref void* ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 76, Column 34 in D:/Windows Kits/10/Include/10.0.22000.0/um\\dxcapi.h")]
-        [NativeApi(EntryPoint = "DxcCreateInstance", Convention = CallingConvention.Winapi)]
+        [NativeName("Src", "Line 76, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
+        [NativeApi(EntryPoint = "DxcCreateInstance", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance(Guid* rclsid, ref Guid riid, void** ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 76, Column 34 in D:/Windows Kits/10/Include/10.0.22000.0/um\\dxcapi.h")]
-        [NativeApi(EntryPoint = "DxcCreateInstance", Convention = CallingConvention.Winapi)]
+        [NativeName("Src", "Line 76, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
+        [NativeApi(EntryPoint = "DxcCreateInstance", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance(Guid* rclsid, ref Guid riid, ref void* ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 76, Column 34 in D:/Windows Kits/10/Include/10.0.22000.0/um\\dxcapi.h")]
-        [NativeApi(EntryPoint = "DxcCreateInstance", Convention = CallingConvention.Winapi)]
+        [NativeName("Src", "Line 76, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
+        [NativeApi(EntryPoint = "DxcCreateInstance", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance(ref Guid rclsid, Guid* riid, void** ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 76, Column 34 in D:/Windows Kits/10/Include/10.0.22000.0/um\\dxcapi.h")]
-        [NativeApi(EntryPoint = "DxcCreateInstance", Convention = CallingConvention.Winapi)]
+        [NativeName("Src", "Line 76, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
+        [NativeApi(EntryPoint = "DxcCreateInstance", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance(ref Guid rclsid, Guid* riid, ref void* ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 76, Column 34 in D:/Windows Kits/10/Include/10.0.22000.0/um\\dxcapi.h")]
-        [NativeApi(EntryPoint = "DxcCreateInstance", Convention = CallingConvention.Winapi)]
+        [NativeName("Src", "Line 76, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
+        [NativeApi(EntryPoint = "DxcCreateInstance", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance(ref Guid rclsid, ref Guid riid, void** ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 76, Column 34 in D:/Windows Kits/10/Include/10.0.22000.0/um\\dxcapi.h")]
-        [NativeApi(EntryPoint = "DxcCreateInstance", Convention = CallingConvention.Winapi)]
+        [NativeName("Src", "Line 76, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
+        [NativeApi(EntryPoint = "DxcCreateInstance", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance(ref Guid rclsid, ref Guid riid, ref void* ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22000.0/um\\dxcapi.h")]
-        [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.Winapi)]
+        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
+        [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance2(IMalloc* pMalloc, Guid* rclsid, Guid* riid, void** ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22000.0/um\\dxcapi.h")]
-        [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.Winapi)]
+        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
+        [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance2(IMalloc* pMalloc, Guid* rclsid, Guid* riid, ref void* ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22000.0/um\\dxcapi.h")]
-        [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.Winapi)]
+        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
+        [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance2(IMalloc* pMalloc, Guid* rclsid, ref Guid riid, void** ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22000.0/um\\dxcapi.h")]
-        [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.Winapi)]
+        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
+        [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance2(IMalloc* pMalloc, Guid* rclsid, ref Guid riid, ref void* ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22000.0/um\\dxcapi.h")]
-        [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.Winapi)]
+        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
+        [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance2(IMalloc* pMalloc, ref Guid rclsid, Guid* riid, void** ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22000.0/um\\dxcapi.h")]
-        [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.Winapi)]
+        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
+        [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance2(IMalloc* pMalloc, ref Guid rclsid, Guid* riid, ref void* ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22000.0/um\\dxcapi.h")]
-        [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.Winapi)]
+        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
+        [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance2(IMalloc* pMalloc, ref Guid rclsid, ref Guid riid, void** ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22000.0/um\\dxcapi.h")]
-        [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.Winapi)]
+        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
+        [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance2(IMalloc* pMalloc, ref Guid rclsid, ref Guid riid, ref void* ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22000.0/um\\dxcapi.h")]
-        [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.Winapi)]
+        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
+        [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance2(ref IMalloc pMalloc, Guid* rclsid, Guid* riid, void** ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22000.0/um\\dxcapi.h")]
-        [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.Winapi)]
+        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
+        [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance2(ref IMalloc pMalloc, Guid* rclsid, Guid* riid, ref void* ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22000.0/um\\dxcapi.h")]
-        [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.Winapi)]
+        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
+        [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance2(ref IMalloc pMalloc, Guid* rclsid, ref Guid riid, void** ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22000.0/um\\dxcapi.h")]
-        [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.Winapi)]
+        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
+        [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance2(ref IMalloc pMalloc, Guid* rclsid, ref Guid riid, ref void* ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22000.0/um\\dxcapi.h")]
-        [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.Winapi)]
+        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
+        [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance2(ref IMalloc pMalloc, ref Guid rclsid, Guid* riid, void** ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22000.0/um\\dxcapi.h")]
-        [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.Winapi)]
+        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
+        [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance2(ref IMalloc pMalloc, ref Guid rclsid, Guid* riid, ref void* ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22000.0/um\\dxcapi.h")]
-        [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.Winapi)]
+        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
+        [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance2(ref IMalloc pMalloc, ref Guid rclsid, ref Guid riid, void** ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22000.0/um\\dxcapi.h")]
-        [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.Winapi)]
+        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
+        [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance2(ref IMalloc pMalloc, ref Guid rclsid, ref Guid riid, ref void* ppv);
 
 

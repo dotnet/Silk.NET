@@ -16,19 +16,40 @@ namespace Silk.NET.OpenCL.Extensions.KHR
 {
     public static class KhrEglImageOverloads
     {
-        public static unsafe nint CreateFromEglimage(this KhrEglImage thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint egldisplay, [Flow(FlowDirection.In)] nint eglimage, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.In)] nint* properties, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        public static unsafe nint CreateFromEglimage(this KhrEglImage thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint egldisplay, [Flow(FlowDirection.In)] nint eglimage, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] nint* properties, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
             return thisApi.CreateFromEglimage(context, egldisplay, eglimage, flags, properties, out errcode_ret.GetPinnableReference());
         }
 
-        public static unsafe nint CreateFromEglimage(this KhrEglImage thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint egldisplay, [Flow(FlowDirection.In)] nint eglimage, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.In)] ReadOnlySpan<nint> properties, [Flow(FlowDirection.Out)] int* errcode_ret)
+        public static unsafe nint CreateFromEglimage(this KhrEglImage thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint egldisplay, [Flow(FlowDirection.In)] nint eglimage, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<nint> properties, [Flow(FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
             return thisApi.CreateFromEglimage(context, egldisplay, eglimage, flags, in properties.GetPinnableReference(), errcode_ret);
         }
 
-        public static unsafe nint CreateFromEglimage(this KhrEglImage thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint egldisplay, [Flow(FlowDirection.In)] nint eglimage, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.In)] ReadOnlySpan<nint> properties, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        public static unsafe nint CreateFromEglimage(this KhrEglImage thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint egldisplay, [Flow(FlowDirection.In)] nint eglimage, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<nint> properties, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateFromEglimage(context, egldisplay, eglimage, flags, in properties.GetPinnableReference(), out errcode_ret.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum, KHR) are deprecated in favour of the \"grouped\" enums (MemFlags, EglImageProperties). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateFromEglimage(this KhrEglImage thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint egldisplay, [Flow(FlowDirection.In)] nint eglimage, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] nint* properties, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateFromEglimage(context, egldisplay, eglimage, flags, properties, out errcode_ret.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum, KHR) are deprecated in favour of the \"grouped\" enums (MemFlags, EglImageProperties). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateFromEglimage(this KhrEglImage thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint egldisplay, [Flow(FlowDirection.In)] nint eglimage, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ReadOnlySpan<nint> properties, [Flow(FlowDirection.Out)] int* errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateFromEglimage(context, egldisplay, eglimage, flags, in properties.GetPinnableReference(), errcode_ret);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum, KHR) are deprecated in favour of the \"grouped\" enums (MemFlags, EglImageProperties). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateFromEglimage(this KhrEglImage thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint egldisplay, [Flow(FlowDirection.In)] nint eglimage, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ReadOnlySpan<nint> properties, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
             return thisApi.CreateFromEglimage(context, egldisplay, eglimage, flags, in properties.GetPinnableReference(), out errcode_ret.GetPinnableReference());

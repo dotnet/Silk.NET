@@ -101,7 +101,7 @@ namespace Silk.NET.Windowing
         public bool TransparentFramebuffer { get; set; }
 
         /// <inheritdoc />
-        public IGLContext? SharedContext { get; }
+        public IGLContext? SharedContext { get; set; }
 
         /// <inheritdoc />
         public string? WindowClass { get; set; }

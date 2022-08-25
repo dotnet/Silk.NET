@@ -25,7 +25,6 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             VideoEncodeFlagsKHR? flags = null,
             uint? qualityLevel = null,
-            Extent2D? codedExtent = null,
             Buffer? dstBitstreamBuffer = null,
             ulong? dstBitstreamBufferOffset = null,
             ulong? dstBitstreamBufferMaxRange = null,
@@ -54,11 +53,6 @@ namespace Silk.NET.Vulkan
             if (qualityLevel is not null)
             {
                 QualityLevel = qualityLevel.Value;
-            }
-
-            if (codedExtent is not null)
-            {
-                CodedExtent = codedExtent.Value;
             }
 
             if (dstBitstreamBuffer is not null)
@@ -122,11 +116,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "qualityLevel")]
         public uint QualityLevel;
-/// <summary></summary>
-        [NativeName("Type", "VkExtent2D")]
-        [NativeName("Type.Name", "VkExtent2D")]
-        [NativeName("Name", "codedExtent")]
-        public Extent2D CodedExtent;
 /// <summary></summary>
         [NativeName("Type", "VkBuffer")]
         [NativeName("Type.Name", "VkBuffer")]

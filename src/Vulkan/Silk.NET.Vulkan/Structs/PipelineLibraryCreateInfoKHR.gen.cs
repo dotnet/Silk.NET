@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineLibraryCreateInfoKHR")]
-    public unsafe partial struct PipelineLibraryCreateInfoKHR : IChainable
+    public unsafe partial struct PipelineLibraryCreateInfoKHR : IExtendsChain<GraphicsPipelineCreateInfo>
     {
         public PipelineLibraryCreateInfoKHR
         (

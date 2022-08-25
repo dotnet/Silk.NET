@@ -48,12 +48,12 @@ partial class Build
 
                     if (Native)
                     {
-                        var silkDroid = SourceDirectory / "Windowing" / "SilkDroid";
-                        using var process = RuntimeInformation.IsOSPlatform(OSPlatform.Linux)
-                            ? StartProcess("bash", "-c \"./gradlew clean\"", silkDroid)
-                            : StartProcess("cmd", "/c \".\\gradlew clean\"", silkDroid);
-                        process.AssertZeroExitCode();
-                        outputs = outputs.Concat(process.Output);
+                        outputs = outputs.Concat
+                        (
+                            StartShell($".{Path.PathSeparator}gradlew clean", SourceDirectory / "Windowing" / "SilkDroid")
+                                .AssertZeroExitCode()
+                                .Output
+                        );
                     }
                     else
                     {
@@ -84,7 +84,7 @@ partial class Build
             .After(Clean)
             .Executes
             (
-                () => DotNetBuild
+                () => ErrorsOnly<DotNetBuildSettings>
                 (
                     s => s.SetProjectFile(Solution)
                         .SetConfiguration(Configuration)

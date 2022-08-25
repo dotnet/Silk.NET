@@ -40,6 +40,7 @@ namespace Silk.NET.BuildTools
         // TODO the following 2 properties are only implemented in Clang. implement on ConvertConstruct?
         [JsonProperty("exclude")] public List<string> ExcludedNativeNames { get; set; }
         [JsonProperty("rename")] public Dictionary<string, string> RenamedNativeNames { get; set; }
+        [JsonProperty("copy")] public Dictionary<string, string> CopyFiles { get; set; }
 
         public void InjectTypeMap(Dictionary<string, string> map)
             => TypeMaps.Insert

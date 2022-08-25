@@ -46,18 +46,7 @@ namespace Silk.NET.Core.Native
         {
             var @this = (ID3DDestructionNotifier*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3DDestructionNotifier*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3DDestructionNotifier*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3DDestructionNotifier*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3DDestructionNotifier*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -68,18 +57,7 @@ namespace Silk.NET.Core.Native
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3DDestructionNotifier*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3DDestructionNotifier*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3DDestructionNotifier*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3DDestructionNotifier*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -91,18 +69,7 @@ namespace Silk.NET.Core.Native
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3DDestructionNotifier*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3DDestructionNotifier*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3DDestructionNotifier*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3DDestructionNotifier*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -116,18 +83,7 @@ namespace Silk.NET.Core.Native
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3DDestructionNotifier*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3DDestructionNotifier*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3DDestructionNotifier*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3DDestructionNotifier*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -156,18 +112,7 @@ namespace Silk.NET.Core.Native
         {
             var @this = (ID3DDestructionNotifier*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3DDestructionNotifier*, PfnDestructionCallback, void*, uint*, int>)LpVtbl[3])(@this, callbackFn, pData, pCallbackID);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3DDestructionNotifier*, PfnDestructionCallback, void*, uint*, int>)LpVtbl[3])(@this, callbackFn, pData, pCallbackID);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3DDestructionNotifier*, PfnDestructionCallback, void*, uint*, int>)LpVtbl[3])(@this, callbackFn, pData, pCallbackID);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3DDestructionNotifier*, PfnDestructionCallback, void*, uint*, int>)LpVtbl[3])(@this, callbackFn, pData, pCallbackID);
             return ret;
         }
 
@@ -178,18 +123,7 @@ namespace Silk.NET.Core.Native
             int ret = default;
             fixed (uint* pCallbackIDPtr = &pCallbackID)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3DDestructionNotifier*, PfnDestructionCallback, void*, uint*, int>)LpVtbl[3])(@this, callbackFn, pData, pCallbackIDPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3DDestructionNotifier*, PfnDestructionCallback, void*, uint*, int>)LpVtbl[3])(@this, callbackFn, pData, pCallbackIDPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3DDestructionNotifier*, PfnDestructionCallback, void*, uint*, int>)LpVtbl[3])(@this, callbackFn, pData, pCallbackIDPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3DDestructionNotifier*, PfnDestructionCallback, void*, uint*, int>)LpVtbl[3])(@this, callbackFn, pData, pCallbackIDPtr);
             }
             return ret;
         }
@@ -201,18 +135,7 @@ namespace Silk.NET.Core.Native
             int ret = default;
             fixed (void* pDataPtr = &pData)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3DDestructionNotifier*, PfnDestructionCallback, void*, uint*, int>)LpVtbl[3])(@this, callbackFn, pDataPtr, pCallbackID);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3DDestructionNotifier*, PfnDestructionCallback, void*, uint*, int>)LpVtbl[3])(@this, callbackFn, pDataPtr, pCallbackID);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3DDestructionNotifier*, PfnDestructionCallback, void*, uint*, int>)LpVtbl[3])(@this, callbackFn, pDataPtr, pCallbackID);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3DDestructionNotifier*, PfnDestructionCallback, void*, uint*, int>)LpVtbl[3])(@this, callbackFn, pDataPtr, pCallbackID);
             }
             return ret;
         }
@@ -226,18 +149,7 @@ namespace Silk.NET.Core.Native
             {
                 fixed (uint* pCallbackIDPtr = &pCallbackID)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3DDestructionNotifier*, PfnDestructionCallback, void*, uint*, int>)LpVtbl[3])(@this, callbackFn, pDataPtr, pCallbackIDPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3DDestructionNotifier*, PfnDestructionCallback, void*, uint*, int>)LpVtbl[3])(@this, callbackFn, pDataPtr, pCallbackIDPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3DDestructionNotifier*, PfnDestructionCallback, void*, uint*, int>)LpVtbl[3])(@this, callbackFn, pDataPtr, pCallbackIDPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3DDestructionNotifier*, PfnDestructionCallback, void*, uint*, int>)LpVtbl[3])(@this, callbackFn, pDataPtr, pCallbackIDPtr);
                 }
             }
             return ret;
@@ -248,18 +160,7 @@ namespace Silk.NET.Core.Native
         {
             var @this = (ID3DDestructionNotifier*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3DDestructionNotifier*, uint, int>)LpVtbl[4])(@this, callbackID);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3DDestructionNotifier*, uint, int>)LpVtbl[4])(@this, callbackID);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3DDestructionNotifier*, uint, int>)LpVtbl[4])(@this, callbackID);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3DDestructionNotifier*, uint, int>)LpVtbl[4])(@this, callbackID);
             return ret;
         }
 

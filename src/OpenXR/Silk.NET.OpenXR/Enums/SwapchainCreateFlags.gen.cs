@@ -13,9 +13,17 @@ namespace Silk.NET.OpenXR
     [NativeName("Name", "XrSwapchainCreateFlags")]
     public enum SwapchainCreateFlags : long
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"ProtectedContentBit\"")]
         [NativeName("Name", "XR_SWAPCHAIN_CREATE_PROTECTED_CONTENT_BIT")]
         SwapchainCreateProtectedContentBit = 1,
+        [Obsolete("Deprecated in favour of \"StaticImageBit\"")]
         [NativeName("Name", "XR_SWAPCHAIN_CREATE_STATIC_IMAGE_BIT")]
         SwapchainCreateStaticImageBit = 2,
+        [NativeName("Name", "XR_SWAPCHAIN_CREATE_PROTECTED_CONTENT_BIT")]
+        ProtectedContentBit = 1,
+        [NativeName("Name", "XR_SWAPCHAIN_CREATE_STATIC_IMAGE_BIT")]
+        StaticImageBit = 2,
     }
 }

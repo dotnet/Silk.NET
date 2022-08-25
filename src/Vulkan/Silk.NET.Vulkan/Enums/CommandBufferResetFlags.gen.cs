@@ -13,7 +13,12 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkCommandBufferResetFlags")]
     public enum CommandBufferResetFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"ReleaseResourcesBit\"")]
         [NativeName("Name", "VK_COMMAND_BUFFER_RESET_RELEASE_RESOURCES_BIT")]
         CommandBufferResetReleaseResourcesBit = 1,
+        [NativeName("Name", "VK_COMMAND_BUFFER_RESET_RELEASE_RESOURCES_BIT")]
+        ReleaseResourcesBit = 1,
     }
 }

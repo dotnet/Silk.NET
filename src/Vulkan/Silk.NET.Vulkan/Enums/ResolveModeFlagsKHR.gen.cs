@@ -13,15 +13,30 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkResolveModeFlagsKHR")]
     public enum ResolveModeFlagsKHR : int
     {
+        [Obsolete("Deprecated in favour of \"None\"")]
         [NativeName("Name", "VK_RESOLVE_MODE_NONE")]
         ResolveModeNone = 0,
+        [Obsolete("Deprecated in favour of \"SampleZeroBit\"")]
         [NativeName("Name", "VK_RESOLVE_MODE_SAMPLE_ZERO_BIT")]
         ResolveModeSampleZeroBit = 1,
+        [Obsolete("Deprecated in favour of \"AverageBit\"")]
         [NativeName("Name", "VK_RESOLVE_MODE_AVERAGE_BIT")]
         ResolveModeAverageBit = 2,
+        [Obsolete("Deprecated in favour of \"MinBit\"")]
         [NativeName("Name", "VK_RESOLVE_MODE_MIN_BIT")]
         ResolveModeMinBit = 4,
+        [Obsolete("Deprecated in favour of \"MaxBit\"")]
         [NativeName("Name", "VK_RESOLVE_MODE_MAX_BIT")]
         ResolveModeMaxBit = 8,
+        [NativeName("Name", "VK_RESOLVE_MODE_NONE")]
+        None = 0,
+        [NativeName("Name", "VK_RESOLVE_MODE_SAMPLE_ZERO_BIT")]
+        SampleZeroBit = 1,
+        [NativeName("Name", "VK_RESOLVE_MODE_AVERAGE_BIT")]
+        AverageBit = 2,
+        [NativeName("Name", "VK_RESOLVE_MODE_MIN_BIT")]
+        MinBit = 4,
+        [NativeName("Name", "VK_RESOLVE_MODE_MAX_BIT")]
+        MaxBit = 8,
     }
 }

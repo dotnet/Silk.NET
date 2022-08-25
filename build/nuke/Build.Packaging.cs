@@ -15,7 +15,7 @@ partial class Build
             .Produces("build/output_packages/*.nupkg")
             .Executes
             (
-                () => DotNetPack
+                () => ErrorsOnly<DotNetPackSettings>
                 (
                     s => s.SetProject(Solution)
                         .SetConfiguration(Configuration)

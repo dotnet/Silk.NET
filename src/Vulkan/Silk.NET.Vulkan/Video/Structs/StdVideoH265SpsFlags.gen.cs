@@ -44,6 +44,7 @@ namespace Silk.NET.Vulkan.Video
             uint? highPrecisionOffsetsEnabledFlag = null,
             uint? persistentRiceAdaptationEnabledFlag = null,
             uint? cabacBypassAlignmentEnabledFlag = null,
+            uint? spsSccExtensionFlag = null,
             uint? spsCurrPicRefEnabledFlag = null,
             uint? paletteModeEnabledFlag = null,
             uint? spsPalettePredictorInitializerPresentFlag = null,
@@ -163,6 +164,11 @@ namespace Silk.NET.Vulkan.Video
             if (cabacBypassAlignmentEnabledFlag is not null)
             {
                 CabacBypassAlignmentEnabledFlag = cabacBypassAlignmentEnabledFlag.Value;
+            }
+
+            if (spsSccExtensionFlag is not null)
+            {
+                SpsSccExtensionFlag = spsSccExtensionFlag.Value;
             }
 
             if (spsCurrPicRefEnabledFlag is not null)
@@ -373,7 +379,7 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 22)) | (uint)(((uint)(value) & 0x1u) << 22));
         }
 
-        public uint SpsCurrPicRefEnabledFlag
+        public uint SpsSccExtensionFlag
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 23) & 0x1u);
@@ -381,7 +387,7 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 23)) | (uint)(((uint)(value) & 0x1u) << 23));
         }
 
-        public uint PaletteModeEnabledFlag
+        public uint SpsCurrPicRefEnabledFlag
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 24) & 0x1u);
@@ -389,7 +395,7 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 24)) | (uint)(((uint)(value) & 0x1u) << 24));
         }
 
-        public uint SpsPalettePredictorInitializerPresentFlag
+        public uint PaletteModeEnabledFlag
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 25) & 0x1u);
@@ -397,12 +403,20 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 25)) | (uint)(((uint)(value) & 0x1u) << 25));
         }
 
-        public uint IntraBoundaryFilteringDisabledFlag
+        public uint SpsPalettePredictorInitializerPresentFlag
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 26) & 0x1u);
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 26)) | (uint)(((uint)(value) & 0x1u) << 26));
+        }
+
+        public uint IntraBoundaryFilteringDisabledFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 27) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 27)) | (uint)(((uint)(value) & 0x1u) << 27));
         }
     }
 }

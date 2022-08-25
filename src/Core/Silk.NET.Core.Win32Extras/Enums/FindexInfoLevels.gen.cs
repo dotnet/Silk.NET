@@ -13,6 +13,8 @@ namespace Silk.NET.Core.Win32Extras
     [NativeName("Name", "_FINDEX_INFO_LEVELS")]
     public enum FindexInfoLevels : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "FindExInfoStandard")]
         FindExInfoStandard = 0x0,
         [NativeName("Name", "FindExInfoBasic")]

@@ -36,6 +36,42 @@ namespace Silk.NET.OpenXR.Extensions.MSFT
         [NativeApi(EntryPoint = "xrCreateSpatialGraphNodeSpaceMSFT", Convention = CallingConvention.Winapi)]
         public partial Result CreateSpatialGraphNodeSpaceMsft([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in SpatialGraphNodeSpaceCreateInfoMSFT createInfo, [Count(Count = 0)] ref Space space);
 
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrDestroySpatialGraphNodeBindingMSFT", Convention = CallingConvention.Winapi)]
+        public partial Result DestroySpatialGraphNodeBindingMsft([Count(Count = 0)] SpatialGraphNodeBindingMSFT nodeBinding);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrGetSpatialGraphNodeBindingPropertiesMSFT", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result GetSpatialGraphNodeBindingPropertiesMsft([Count(Count = 0)] SpatialGraphNodeBindingMSFT nodeBinding, [Count(Count = 0), Flow(FlowDirection.In)] SpatialGraphNodeBindingPropertiesGetInfoMSFT* getInfo, [Count(Count = 0)] SpatialGraphNodeBindingPropertiesMSFT* properties);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrGetSpatialGraphNodeBindingPropertiesMSFT", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result GetSpatialGraphNodeBindingPropertiesMsft([Count(Count = 0)] SpatialGraphNodeBindingMSFT nodeBinding, [Count(Count = 0), Flow(FlowDirection.In)] SpatialGraphNodeBindingPropertiesGetInfoMSFT* getInfo, [Count(Count = 0)] ref SpatialGraphNodeBindingPropertiesMSFT properties);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrGetSpatialGraphNodeBindingPropertiesMSFT", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result GetSpatialGraphNodeBindingPropertiesMsft([Count(Count = 0)] SpatialGraphNodeBindingMSFT nodeBinding, [Count(Count = 0), Flow(FlowDirection.In)] in SpatialGraphNodeBindingPropertiesGetInfoMSFT getInfo, [Count(Count = 0)] SpatialGraphNodeBindingPropertiesMSFT* properties);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrGetSpatialGraphNodeBindingPropertiesMSFT", Convention = CallingConvention.Winapi)]
+        public partial Result GetSpatialGraphNodeBindingPropertiesMsft([Count(Count = 0)] SpatialGraphNodeBindingMSFT nodeBinding, [Count(Count = 0), Flow(FlowDirection.In)] in SpatialGraphNodeBindingPropertiesGetInfoMSFT getInfo, [Count(Count = 0)] ref SpatialGraphNodeBindingPropertiesMSFT properties);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrTryCreateSpatialGraphStaticNodeBindingMSFT", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result TryCreateSpatialGraphStaticNodeBindingMsft([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] SpatialGraphStaticNodeBindingCreateInfoMSFT* createInfo, [Count(Count = 0)] SpatialGraphNodeBindingMSFT* nodeBinding);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrTryCreateSpatialGraphStaticNodeBindingMSFT", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result TryCreateSpatialGraphStaticNodeBindingMsft([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] SpatialGraphStaticNodeBindingCreateInfoMSFT* createInfo, [Count(Count = 0)] ref SpatialGraphNodeBindingMSFT nodeBinding);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrTryCreateSpatialGraphStaticNodeBindingMSFT", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result TryCreateSpatialGraphStaticNodeBindingMsft([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in SpatialGraphStaticNodeBindingCreateInfoMSFT createInfo, [Count(Count = 0)] SpatialGraphNodeBindingMSFT* nodeBinding);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrTryCreateSpatialGraphStaticNodeBindingMSFT", Convention = CallingConvention.Winapi)]
+        public partial Result TryCreateSpatialGraphStaticNodeBindingMsft([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in SpatialGraphStaticNodeBindingCreateInfoMSFT createInfo, [Count(Count = 0)] ref SpatialGraphNodeBindingMSFT nodeBinding);
+
         public MsftSpatialGraphBridge(INativeContext ctx)
             : base(ctx)
         {

@@ -372,6 +372,11 @@ namespace Silk.NET.Windowing.Sdl
                                 FocusChanged?.Invoke(false);
                                 break;
                             }
+                            case WindowEventID.WindoweventClose:
+                            {
+                                Close();
+                                break;
+                            }
                             default:
                             {
                                 i++;

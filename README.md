@@ -48,7 +48,7 @@ Proud to be an official project under the benevolent [.NET Foundation](https://d
 Having poured lots of hours into examining generated C# code and its JIT assembly, you can count on us to deliver blazing fast bindings with negligible overhead induced by Silk.NET!
 
 ### Up-to-date
-With an efficient bindings regeneration mechanism, we are committed to ensuring our bindings reflect the latest specifications with monthly updates generated straight from the upstream sources.
+With an efficient bindings regeneration mechanism, we are committed to ensuring our bindings reflect the latest specifications with frequent updates generated straight from the upstream sources.
 
 ### High-level utilities
 In addition to providing high-speed, direct, and transparent bindings, we provide high-level utilities and wrappers to maximise productivity in common workloads such as platform-agnostic abstractions around Windowing and Input, bringing your apps to a vast number of platforms without changing a single line!
@@ -61,8 +61,7 @@ Silk.NET caters for anything you could need in swift development of multimedia, 
 <h1 align="center">The team</h1>
 
 We currently have the following maintainers:
-- [Dylan Perks](https://github.com/Perksey) [<img src="https://about.twitter.com/etc/designs/about2-twitter/public/img/favicon.ico" alt="Follow Dylan Perks on Twitter" width="16" />](https://twitter.com/intent/follow?screen_name=Dylan_Perks)
-- [Kai Jellinghaus](https://github.com/HurricanKai) [<img src="https://about.twitter.com/etc/designs/about2-twitter/public/img/favicon.ico" alt="Follow Dylan Perks on Twitter" width="16" />](https://twitter.com/intent/follow?screen_name=KJellinghaus)
+- [Kai Jellinghaus](https://github.com/HurricanKai) [<img src="https://about.twitter.com/etc/designs/about2-twitter/public/img/favicon.ico" alt="Follow Kai on Twitter" width="16" />](https://twitter.com/intent/follow?screen_name=KJellinghaus)
 - [Thomas Mizrahi](https://github.com/ThomasMiz)
 
 In addition, the Silk.NET working group help drive larger user-facing changes providing key consultation from the perspective of dedicated users and professionals.
@@ -72,10 +71,10 @@ In addition, the Silk.NET working group help drive larger user-facing changes pr
 Prerequisites
 - **Must**: .NET 6 SDK
 - **Should**: [NUKE](https://nuke.build) (build system). Install using `dotnet tool install Nuke.GlobalTool --global`
-- **Should**: Android (w/ AOT), iOS, and MAUI .NET 6 workloads (use `dotnet workload install android android-aot ios maui` to install them)
+- **Should**: Android, iOS, and MAUI .NET 6 workloads (use `dotnet workload install android ios maccatalyst maui` to install them)
 - **Should**: Android SDK version 30 with NDK tools installed. On Windows, for best results this should be installed into `C:\ProgramData\Android\android-sdk`.
 - **Could**: Java JDK (for gradle)
-- **Could**: Visual Studio 2019 Community version 16.10 or later
+- **Could**: Visual Studio 2022 Community version 17.0 or later
 
 Instructions
 - Clone the repository (recursively)
@@ -96,26 +95,14 @@ Silk.NET uses and encourages [Early Pull Requests](https://medium.com/practical-
 4. Make your commits in small, incremental steps with clear descriptions.
 5. Tag a maintainer when you're done and ask for a review!
 
-The Silk.NET solution is **very large**. As such, to generate a solution that only has the projects you care about for your contribution, use the following command:
-`nuke sln --projects project1 project2...`. `<projects>` can be substitued for:
-- A name of an individual project. The Silk.NET prefix can be omitted provided there is no matching subfolder.
-- A name of a subfolder in the repo root, `src/`, or `examples/CSharp`
-
-Example: `nuke sln --projects opengl silk.net.vulkan core.win32extras "opengl tutorials" build`. This:
-- matches `opengl` to `src/OpenGL`
-- matches `silk.net.vulkan` to `src/Vulkan/Silk.NET.Vulkan`
-- matches `core.win32extras` to `src/Core/Silk.NET.Core.Win32Extras`
-- matches `"opengl tutorials"` to `examples/CSharp/OpenGL Tutorials`
-- matches `build` to `build/`
-
-The generated solution is: `Silk.NET.gen.sln`
+The Silk.NET solution is **very large**. Learn about how you can combat this using our build process in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 <!-- End exclude from NuGet readme. -->
 
 <h2 align="center">Funding</h2>
 Silk.NET requires significant effort to maintain, as such we greatly appreciate any financial support you are able to provide!
 
-This helps ensure Silk.NET's long term viability, and to help support the developers who maintain Silk.NET in their free time. [Dylan](https://github.com/sponsors/Perksey) and [Kai](https://github.com/sponsors/HurricanKai) are accepting GitHub Sponsorships.
+This helps ensure Silk.NET's long term viability, and to help support the developers who maintain Silk.NET in their free time. [Kai](https://github.com/sponsors/HurricanKai) is accepting GitHub Sponsorships.
 
 <h1 align="center">Further resources</h1>
 

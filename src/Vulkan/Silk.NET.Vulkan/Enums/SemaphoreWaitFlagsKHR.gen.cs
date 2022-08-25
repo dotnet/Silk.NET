@@ -13,7 +13,12 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkSemaphoreWaitFlagsKHR")]
     public enum SemaphoreWaitFlagsKHR : int
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"AnyBit\"")]
         [NativeName("Name", "VK_SEMAPHORE_WAIT_ANY_BIT")]
         SemaphoreWaitAnyBit = 1,
+        [NativeName("Name", "VK_SEMAPHORE_WAIT_ANY_BIT")]
+        AnyBit = 1,
     }
 }

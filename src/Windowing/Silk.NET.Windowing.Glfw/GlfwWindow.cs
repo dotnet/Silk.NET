@@ -326,12 +326,15 @@ namespace Silk.NET.Windowing.Glfw
                 _glfw.WindowHint(WindowHintBool.OpenGLDebugContext, true);
             }
 
-            // Set API profile
-            _glfw.WindowHint
-            (
-                WindowHintOpenGlProfile.OpenGlProfile,
-                opts.API.Profile == ContextProfile.Core ? OpenGlProfile.Core : OpenGlProfile.Compat
-            );
+            if ((opts.API.Version.MajorVersion == 3 && opts.API.Version.MinorVersion >= 2) || opts.API.Version.MajorVersion > 3)
+            {
+                // Set API profile
+                _glfw.WindowHint
+                (
+                    WindowHintOpenGlProfile.OpenGlProfile,
+                    opts.API.Profile == ContextProfile.Core ? OpenGlProfile.Core : OpenGlProfile.Compat
+                );
+            }
 
             // Set video mode (-1 = don't care)
             _glfw.WindowHint(WindowHintInt.RefreshRate, opts.VideoMode.RefreshRate ?? -1);
@@ -366,14 +369,13 @@ namespace Silk.NET.Windowing.Glfw
             if (opts.IsVisible)
             {
                 _glfw.ShowWindow(_glfwWindow);
+                CoreWindowState = opts.WindowState;
             }
             else
             {
                 _glfw.HideWindow(_glfwWindow);
             }
             
-            CoreWindowState = opts.WindowState;
-
             if (opts.API.API == ContextAPI.OpenGL || opts.API.API == ContextAPI.OpenGLES)
             {
                 _glfw.MakeContextCurrent(_glfwWindow);
@@ -701,6 +703,15 @@ namespace Silk.NET.Windowing.Glfw
                 _glfw.GcUtility.Unpin(_onFramebufferResize);
                 _glfw.GcUtility.Unpin(_onFileDrop);
                 _glfw.GcUtility.Unpin(_onFocusChanged);
+
+                _onClosing = null;
+                _onMaximized = null;
+                _onMinimized = null;
+                _onMove = null;
+                _onResize = null;
+                _onFramebufferResize = null;
+                _onFileDrop = null;
+                _onFocusChanged = null;
             }
         }
 

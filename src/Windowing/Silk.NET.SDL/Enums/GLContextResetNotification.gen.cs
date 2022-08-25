@@ -14,9 +14,17 @@ namespace Silk.NET.SDL
     [NativeName("Name", "SDL_GLContextResetNotification")]
     public enum GLContextResetNotification : int
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"NoNotification\"")]
         [NativeName("Name", "SDL_GL_CONTEXT_RESET_NO_NOTIFICATION")]
         GLContextResetNoNotification = 0x0,
+        [Obsolete("Deprecated in favour of \"LoseContext\"")]
         [NativeName("Name", "SDL_GL_CONTEXT_RESET_LOSE_CONTEXT")]
         GLContextResetLoseContext = 0x1,
+        [NativeName("Name", "SDL_GL_CONTEXT_RESET_NO_NOTIFICATION")]
+        NoNotification = 0x0,
+        [NativeName("Name", "SDL_GL_CONTEXT_RESET_LOSE_CONTEXT")]
+        LoseContext = 0x1,
     }
 }

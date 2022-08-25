@@ -13,11 +13,22 @@ namespace Silk.NET.Direct3D9
     [NativeName("Name", "_D3DAUTHENTICATEDCHANNEL_PROCESSIDENTIFIERTYPE")]
     public enum AuthenticatedchannelProcessidentifiertype : int
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"Unknown\"")]
         [NativeName("Name", "PROCESSIDTYPE_UNKNOWN")]
         ProcessidtypeUnknown = 0x0,
+        [Obsolete("Deprecated in favour of \"Dwm\"")]
         [NativeName("Name", "PROCESSIDTYPE_DWM")]
         ProcessidtypeDwm = 0x1,
+        [Obsolete("Deprecated in favour of \"Handle\"")]
         [NativeName("Name", "PROCESSIDTYPE_HANDLE")]
         ProcessidtypeHandle = 0x2,
+        [NativeName("Name", "PROCESSIDTYPE_UNKNOWN")]
+        Unknown = 0x0,
+        [NativeName("Name", "PROCESSIDTYPE_DWM")]
+        Dwm = 0x1,
+        [NativeName("Name", "PROCESSIDTYPE_HANDLE")]
+        Handle = 0x2,
     }
 }

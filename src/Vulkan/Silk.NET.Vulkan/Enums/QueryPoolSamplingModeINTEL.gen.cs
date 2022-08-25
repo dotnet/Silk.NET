@@ -12,7 +12,10 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkQueryPoolSamplingModeINTEL")]
     public enum QueryPoolSamplingModeINTEL : int
     {
+        [Obsolete("Deprecated in favour of \"ManualIntel\"")]
         [NativeName("Name", "VK_QUERY_POOL_SAMPLING_MODE_MANUAL_INTEL")]
         QueryPoolSamplingModeManualIntel = 0,
+        [NativeName("Name", "VK_QUERY_POOL_SAMPLING_MODE_MANUAL_INTEL")]
+        ManualIntel = 0,
     }
 }

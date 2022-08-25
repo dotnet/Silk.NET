@@ -10,6 +10,8 @@ using Silk.NET.Maths;
 using Silk.NET.OpenGLES;
 #elif GL
 using Silk.NET.OpenGL;
+#elif LEGACY
+using Silk.NET.OpenGL.Legacy;
 #endif
 using Silk.NET.Windowing;
 
@@ -18,6 +20,8 @@ using Silk.NET.Windowing;
 namespace Silk.NET.OpenGL.Extensions.ImGui
 #elif GLES
 namespace Silk.NET.OpenGLES.Extensions.ImGui
+#elif LEGACY
+namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
 #endif
 {
     public class ImGuiController : IDisposable
@@ -25,7 +29,6 @@ namespace Silk.NET.OpenGLES.Extensions.ImGui
         private GL _gl;
         private IView _view;
         private IInputContext _input;
-        private Version _glVersion;
         private bool _frameBegun;
         private readonly List<char> _pressedChars = new List<char>();
         private IKeyboard _keyboard;
@@ -44,6 +47,8 @@ namespace Silk.NET.OpenGLES.Extensions.ImGui
 
         private int _windowWidth;
         private int _windowHeight;
+
+        public IntPtr Context;
 
         /// <summary>
         /// Constructs a new ImGuiController.
@@ -91,17 +96,21 @@ namespace Silk.NET.OpenGLES.Extensions.ImGui
             BeginFrame();
         }
 
+        public void MakeCurrent()
+        {
+            ImGuiNET.ImGui.SetCurrentContext(this.Context);
+        }
+
         private void Init(GL gl, IView view, IInputContext input)
         {
             _gl = gl;
-            _glVersion = new Version(gl.GetInteger(GLEnum.MajorVersion), gl.GetInteger(GLEnum.MinorVersion));
             _view = view;
             _input = input;
             _windowWidth = view.Size.X;
             _windowHeight = view.Size.Y;
 
-            IntPtr context = ImGuiNET.ImGui.CreateContext();
-            ImGuiNET.ImGui.SetCurrentContext(context);
+            Context = ImGuiNET.ImGui.CreateContext();
+            ImGuiNET.ImGui.SetCurrentContext(Context);
             ImGuiNET.ImGui.StyleColorsDark();
         }
 
@@ -135,9 +144,21 @@ namespace Silk.NET.OpenGLES.Extensions.ImGui
         {
             if (_frameBegun)
             {
+                var oldCtx = ImGuiNET.ImGui.GetCurrentContext();
+
+                if (oldCtx != this.Context)
+                {
+                    ImGuiNET.ImGui.SetCurrentContext(this.Context);
+                }
+                
                 _frameBegun = false;
                 ImGuiNET.ImGui.Render();
                 RenderImDrawData(ImGuiNET.ImGui.GetDrawData());
+                
+                if (oldCtx != this.Context)
+                {
+                    ImGuiNET.ImGui.SetCurrentContext(oldCtx);
+                }
             }
         }
 
@@ -146,6 +167,13 @@ namespace Silk.NET.OpenGLES.Extensions.ImGui
         /// </summary>
         public void Update(float deltaSeconds)
         {
+            var oldCtx = ImGuiNET.ImGui.GetCurrentContext();
+
+            if (oldCtx != this.Context)
+            {
+                ImGuiNET.ImGui.SetCurrentContext(this.Context);
+            }
+            
             if (_frameBegun)
             {
                 ImGuiNET.ImGui.Render();
@@ -156,6 +184,11 @@ namespace Silk.NET.OpenGLES.Extensions.ImGui
 
             _frameBegun = true;
             ImGuiNET.ImGui.NewFrame();
+            
+            if (oldCtx != this.Context)
+            {
+                ImGuiNET.ImGui.SetCurrentContext(oldCtx);
+            }
         }
 
         /// <summary>
@@ -176,6 +209,7 @@ namespace Silk.NET.OpenGLES.Extensions.ImGui
             io.DeltaTime = deltaSeconds; // DeltaTime is in seconds.
         }
 
+        private static Key[]  keyEnumArr = (Key[]) Enum.GetValues(typeof(Key));
         private void UpdateImGuiInput()
         {
             var io = ImGuiNET.ImGui.GetIO();
@@ -194,7 +228,7 @@ namespace Silk.NET.OpenGLES.Extensions.ImGui
             io.MouseWheel = wheel.Y;
             io.MouseWheelH = wheel.X;
 
-            foreach (Key key in Enum.GetValues(typeof(Key)))
+            foreach (var key in keyEnumArr)
             {
                 if (key == Key.Unknown)
                 {
@@ -255,7 +289,7 @@ namespace Silk.NET.OpenGLES.Extensions.ImGui
             _gl.Disable(GLEnum.DepthTest);
             _gl.Disable(GLEnum.StencilTest);
             _gl.Enable(GLEnum.ScissorTest);
-            #if !GLES
+            #if !GLES && !LEGACY
             _gl.Disable(GLEnum.PrimitiveRestart);
             _gl.PolygonMode(GLEnum.FrontAndBack, GLEnum.Fill);
             #endif
@@ -339,7 +373,7 @@ namespace Silk.NET.OpenGLES.Extensions.ImGui
             bool lastEnableStencilTest = _gl.IsEnabled(GLEnum.StencilTest);
             bool lastEnableScissorTest = _gl.IsEnabled(GLEnum.ScissorTest);
 
-            #if !GLES
+            #if !GLES && !LEGACY
             bool lastEnablePrimitiveRestart = _gl.IsEnabled(GLEnum.PrimitiveRestart);
             #endif
             
@@ -456,7 +490,7 @@ namespace Silk.NET.OpenGLES.Extensions.ImGui
                 _gl.Disable(GLEnum.ScissorTest);
             }
             
-            #if !GLES
+            #if !GLES && !LEGACY
             if (lastEnablePrimitiveRestart)
             {
                 _gl.Enable(GLEnum.PrimitiveRestart);
@@ -511,6 +545,23 @@ namespace Silk.NET.OpenGLES.Extensions.ImGui
             Frag_Color = Color;
             gl_Position = ProjMtx * vec4(Position.xy,0,1);
         }";
+        #elif LEGACY
+                @"#version 110
+        attribute vec2 Position;
+        attribute vec2 UV;
+        attribute vec4 Color;
+
+        uniform mat4 ProjMtx;
+
+        varying vec2 Frag_UV;
+        varying vec4 Frag_Color;
+
+        void main()
+        {
+            Frag_UV = UV;
+            Frag_Color = Color;
+            gl_Position = ProjMtx * vec4(Position.xy,0,1);
+        }";
         #endif
 
 
@@ -536,6 +587,17 @@ namespace Silk.NET.OpenGLES.Extensions.ImGui
         void main()
         {
             Out_Color = Frag_Color * texture(Texture, Frag_UV.st);
+        }";
+        #elif LEGACY
+                @"#version 110
+        varying vec2 Frag_UV;
+        varying vec4 Frag_Color;
+
+        uniform sampler2D Texture;
+
+        void main()
+        {
+            gl_FragColor = Frag_Color * texture2D(Texture, Frag_UV.st);
         }";
         #endif
 
@@ -571,7 +633,7 @@ namespace Silk.NET.OpenGLES.Extensions.ImGui
             io.Fonts.GetTexDataAsRGBA32(out IntPtr pixels, out int width, out int height, out int bytesPerPixel);   // Load as RGBA 32-bit (75% of the memory is wasted, but default font is so small) because it is more likely to be compatible with user's existing shaders. If your ImTextureId represent a higher-level concept than just a GL texture id, consider calling GetTexDataAsAlpha8() instead to save on GPU memory.
 
             // Upload texture to graphics system
-            _gl.GetInteger(GLEnum.Texture2D, out int lastTexture);
+            _gl.GetInteger(GLEnum.TextureBinding2D, out int lastTexture);
          
             _fontTexture = new Texture(_gl, width, height, pixels);
             _fontTexture.Bind();
@@ -599,6 +661,8 @@ namespace Silk.NET.OpenGLES.Extensions.ImGui
 
             _fontTexture.Dispose();
             _shader.Dispose();
+            
+            ImGuiNET.ImGui.DestroyContext(this.Context);
         }
     }
 }

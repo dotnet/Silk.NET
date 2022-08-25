@@ -13,13 +13,27 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_HEAP_TYPE")]
     public enum HeapType : int
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"Default\"")]
         [NativeName("Name", "D3D12_HEAP_TYPE_DEFAULT")]
         HeapTypeDefault = 0x1,
+        [Obsolete("Deprecated in favour of \"Upload\"")]
         [NativeName("Name", "D3D12_HEAP_TYPE_UPLOAD")]
         HeapTypeUpload = 0x2,
+        [Obsolete("Deprecated in favour of \"Readback\"")]
         [NativeName("Name", "D3D12_HEAP_TYPE_READBACK")]
         HeapTypeReadback = 0x3,
+        [Obsolete("Deprecated in favour of \"Custom\"")]
         [NativeName("Name", "D3D12_HEAP_TYPE_CUSTOM")]
         HeapTypeCustom = 0x4,
+        [NativeName("Name", "D3D12_HEAP_TYPE_DEFAULT")]
+        Default = 0x1,
+        [NativeName("Name", "D3D12_HEAP_TYPE_UPLOAD")]
+        Upload = 0x2,
+        [NativeName("Name", "D3D12_HEAP_TYPE_READBACK")]
+        Readback = 0x3,
+        [NativeName("Name", "D3D12_HEAP_TYPE_CUSTOM")]
+        Custom = 0x4,
     }
 }

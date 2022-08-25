@@ -12,9 +12,15 @@ namespace Silk.NET.OpenGLES
     [NativeName("Name", "PerformanceQueryCapsMaskINTEL")]
     public enum PerformanceQueryCapsMaskINTEL : int
     {
+        [Obsolete("Deprecated in favour of \"SingleContextIntel\"")]
         [NativeName("Name", "GL_PERFQUERY_SINGLE_CONTEXT_INTEL")]
         PerfquerySingleContextIntel = 0x0,
+        [Obsolete("Deprecated in favour of \"GlobalContextIntel\"")]
         [NativeName("Name", "GL_PERFQUERY_GLOBAL_CONTEXT_INTEL")]
         PerfqueryGlobalContextIntel = 0x1,
+        [NativeName("Name", "GL_PERFQUERY_SINGLE_CONTEXT_INTEL")]
+        SingleContextIntel = 0x0,
+        [NativeName("Name", "GL_PERFQUERY_GLOBAL_CONTEXT_INTEL")]
+        GlobalContextIntel = 0x1,
     }
 }

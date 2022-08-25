@@ -12,7 +12,10 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "D3D11_FEATURE_VIDEO")]
     public enum FeatureVideo : int
     {
+        [Obsolete("Deprecated in favour of \"DecoderHistogram\"")]
         [NativeName("Name", "D3D11_FEATURE_VIDEO_DECODER_HISTOGRAM")]
         FeatureVideoDecoderHistogram = 0x0,
+        [NativeName("Name", "D3D11_FEATURE_VIDEO_DECODER_HISTOGRAM")]
+        DecoderHistogram = 0x0,
     }
 }

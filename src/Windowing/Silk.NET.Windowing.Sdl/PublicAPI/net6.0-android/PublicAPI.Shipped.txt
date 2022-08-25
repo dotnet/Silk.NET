@@ -240,3 +240,4 @@ virtual Org.Libsdl.App.SDLActivity.PressBackButton() -> void
 virtual Org.Libsdl.App.SDLActivity.ResumeNativeThread() -> void
 virtual Org.Libsdl.App.SDLActivity.SetOrientationBis(int w, int h, bool resizable, string? hint) -> void
 virtual Org.Libsdl.App.SDLActivity.SuperOnBackPressed() -> void
+override Silk.NET.Windowing.Sdl.Android.SilkActivity.OnDestroy() -> void

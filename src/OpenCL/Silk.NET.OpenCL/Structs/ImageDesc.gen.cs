@@ -21,7 +21,7 @@ namespace Silk.NET.OpenCL
     {
         public ImageDesc
         (
-            uint? imageType = null,
+            MemObjectType? imageType = null,
             nuint? imageWidth = null,
             nuint? imageHeight = null,
             nuint? imageDepth = null,
@@ -82,7 +82,7 @@ namespace Silk.NET.OpenCL
         [NativeName("Type", "cl_mem_object_type")]
         [NativeName("Type.Name", "cl_mem_object_type")]
         [NativeName("Name", "image_type")]
-        public uint ImageType;
+        public MemObjectType ImageType;
 /// <summary></summary>
         [NativeName("Type", "size_t")]
         [NativeName("Type.Name", "size_t")]

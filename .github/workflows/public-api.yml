@@ -41,10 +41,10 @@ jobs:
             - name: Setup .NET 6.0
               uses: actions/setup-dotnet@v1
               with:
-                  dotnet-version: 6.0.100
+                  dotnet-version: 6.0.201
             - name: Install Workloads for Restore
               # TODO: This is slow. Maybe we can make a docker container with this already done?
-              run: dotnet workload install android android-aot ios maccatalyst maui
+              run: dotnet workload install android ios maccatalyst maui
             - name: Ensure Public API Declared
               run: ./build.sh EnsureApiDeclared
               env:
@@ -71,7 +71,7 @@ jobs:
             - name: Setup .NET 6.0
               uses: actions/setup-dotnet@v1
               with:
-                  dotnet-version: 6.0.100
+                  dotnet-version: 6.0.201
             - name: Ship Public API
               run: ./build.sh ShipApi
               env:

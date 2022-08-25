@@ -12,7 +12,10 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_PROTECTED_RESOURCE_SESSION_FLAGS")]
     public enum ProtectedResourceSessionFlags : int
     {
+        [Obsolete("Deprecated in favour of \"None\"")]
         [NativeName("Name", "D3D12_PROTECTED_RESOURCE_SESSION_FLAG_NONE")]
         ProtectedResourceSessionFlagNone = 0x0,
+        [NativeName("Name", "D3D12_PROTECTED_RESOURCE_SESSION_FLAG_NONE")]
+        None = 0x0,
     }
 }

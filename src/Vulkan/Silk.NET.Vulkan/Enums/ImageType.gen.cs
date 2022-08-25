@@ -12,11 +12,20 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkImageType")]
     public enum ImageType : int
     {
+        [Obsolete("Deprecated in favour of \"Type1D\"")]
         [NativeName("Name", "VK_IMAGE_TYPE_1D")]
         ImageType1D = 0,
+        [Obsolete("Deprecated in favour of \"Type2D\"")]
         [NativeName("Name", "VK_IMAGE_TYPE_2D")]
         ImageType2D = 1,
+        [Obsolete("Deprecated in favour of \"Type3D\"")]
         [NativeName("Name", "VK_IMAGE_TYPE_3D")]
         ImageType3D = 2,
+        [NativeName("Name", "VK_IMAGE_TYPE_1D")]
+        Type1D = 0,
+        [NativeName("Name", "VK_IMAGE_TYPE_2D")]
+        Type2D = 1,
+        [NativeName("Name", "VK_IMAGE_TYPE_3D")]
+        Type3D = 2,
     }
 }

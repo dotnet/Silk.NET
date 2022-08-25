@@ -26,7 +26,7 @@ namespace Silk.NET.Windowing
 
         private static bool _initializedFirstPartyPlatforms = false;
 
-        internal static string DefaultWindowClass { get; }
+        public static string DefaultWindowClass { get; }
 
         private static string PlatformsStr
         {

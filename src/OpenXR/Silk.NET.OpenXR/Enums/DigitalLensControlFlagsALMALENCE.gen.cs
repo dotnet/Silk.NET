@@ -13,7 +13,12 @@ namespace Silk.NET.OpenXR
     [NativeName("Name", "XrDigitalLensControlFlagsALMALENCE")]
     public enum DigitalLensControlFlagsALMALENCE : long
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"ProcessingDisableBitAlmalence\"")]
         [NativeName("Name", "XR_DIGITAL_LENS_CONTROL_PROCESSING_DISABLE_BIT_ALMALENCE")]
         DigitalLensControlProcessingDisableBitAlmalence = 1,
+        [NativeName("Name", "XR_DIGITAL_LENS_CONTROL_PROCESSING_DISABLE_BIT_ALMALENCE")]
+        ProcessingDisableBitAlmalence = 1,
     }
 }

@@ -13,11 +13,22 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkVideoEncodeH265RateControlStructureFlagsEXT")]
     public enum VideoEncodeH265RateControlStructureFlagsEXT : int
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"UnknownExt\"")]
         [NativeName("Name", "VK_VIDEO_ENCODE_H265_RATE_CONTROL_STRUCTURE_UNKNOWN_EXT")]
         VideoEncodeH265RateControlStructureUnknownExt = 0,
+        [Obsolete("Deprecated in favour of \"FlatBitExt\"")]
         [NativeName("Name", "VK_VIDEO_ENCODE_H265_RATE_CONTROL_STRUCTURE_FLAT_BIT_EXT")]
         VideoEncodeH265RateControlStructureFlatBitExt = 1,
+        [Obsolete("Deprecated in favour of \"DyadicBitExt\"")]
         [NativeName("Name", "VK_VIDEO_ENCODE_H265_RATE_CONTROL_STRUCTURE_DYADIC_BIT_EXT")]
         VideoEncodeH265RateControlStructureDyadicBitExt = 2,
+        [NativeName("Name", "VK_VIDEO_ENCODE_H265_RATE_CONTROL_STRUCTURE_UNKNOWN_EXT")]
+        UnknownExt = 0,
+        [NativeName("Name", "VK_VIDEO_ENCODE_H265_RATE_CONTROL_STRUCTURE_FLAT_BIT_EXT")]
+        FlatBitExt = 1,
+        [NativeName("Name", "VK_VIDEO_ENCODE_H265_RATE_CONTROL_STRUCTURE_DYADIC_BIT_EXT")]
+        DyadicBitExt = 2,
     }
 }

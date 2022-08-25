@@ -40,20 +40,40 @@ namespace Silk.NET.Input.Sdl
             {
                 case EventType.Keydown:
                 {
-                    if (@event.Key.Repeat != 1 && _keyMap.TryGetValue((KeyCode) @event.Key.Keysym.Sym, out var key))
+                    if (@event.Key.Repeat != 1)
                     {
-                        _keysDown.Add(key);
-                        KeyDown?.Invoke(this, key, (int) @event.Key.Keysym.Scancode);
+                        Key keyDown;
+                        if (_keyMap.TryGetValue(@event.Key.Keysym.Scancode, out var key))
+                        {
+                            keyDown = key;
+                            _keysDown.Add(keyDown);
+                        }
+                        else
+                        {
+                            keyDown = Key.Unknown;
+                        }
+
+                        KeyDown?.Invoke(this, keyDown, (int) @event.Key.Keysym.Scancode);
                     }
 
                     break;
                 }
                 case EventType.Keyup:
                 {
-                    if (@event.Key.Repeat != 1 && _keyMap.TryGetValue((KeyCode) @event.Key.Keysym.Sym, out var key))
+                    if (@event.Key.Repeat != 1)
                     {
-                        _keysDown.Remove(key);
-                        KeyUp?.Invoke(this, key, (int) @event.Key.Keysym.Scancode);
+                        Key keyUp;
+                        if (_keyMap.TryGetValue(@event.Key.Keysym.Scancode, out var key))
+                        {
+                            keyUp = key;
+                            _keysDown.Remove(keyUp);
+                        }
+                        else
+                        {
+                            keyUp = Key.Unknown;
+                        }
+
+                        KeyUp?.Invoke(this, keyUp, (int) @event.Key.Keysym.Scancode);
                     }
 
                     break;

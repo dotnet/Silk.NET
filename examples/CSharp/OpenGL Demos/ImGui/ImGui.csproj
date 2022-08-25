@@ -1,14 +1,10 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <TargetFramework>net6.0</TargetFramework>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
-
-    <ItemGroup>
-      <PackageReference Include="ImGui.NET" Version="1.86.0" />
-    </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\..\..\..\src\Input\Silk.NET.Input\Silk.NET.Input.csproj" />

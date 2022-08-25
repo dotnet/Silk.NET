@@ -13,13 +13,22 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkVideoEncodeH265CtbSizeFlagsEXT")]
     public enum VideoEncodeH265CtbSizeFlagsEXT : int
     {
-        [NativeName("Name", "VK_VIDEO_ENCODE_H265_CTB_SIZE_8_BIT_EXT")]
-        VideoEncodeH265CtbSize8BitExt = 1,
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"Size16BitExt\"")]
         [NativeName("Name", "VK_VIDEO_ENCODE_H265_CTB_SIZE_16_BIT_EXT")]
-        VideoEncodeH265CtbSize16BitExt = 2,
+        VideoEncodeH265CtbSize16BitExt = 1,
+        [Obsolete("Deprecated in favour of \"Size32BitExt\"")]
         [NativeName("Name", "VK_VIDEO_ENCODE_H265_CTB_SIZE_32_BIT_EXT")]
-        VideoEncodeH265CtbSize32BitExt = 4,
+        VideoEncodeH265CtbSize32BitExt = 2,
+        [Obsolete("Deprecated in favour of \"Size64BitExt\"")]
         [NativeName("Name", "VK_VIDEO_ENCODE_H265_CTB_SIZE_64_BIT_EXT")]
-        VideoEncodeH265CtbSize64BitExt = 8,
+        VideoEncodeH265CtbSize64BitExt = 4,
+        [NativeName("Name", "VK_VIDEO_ENCODE_H265_CTB_SIZE_16_BIT_EXT")]
+        Size16BitExt = 1,
+        [NativeName("Name", "VK_VIDEO_ENCODE_H265_CTB_SIZE_32_BIT_EXT")]
+        Size32BitExt = 2,
+        [NativeName("Name", "VK_VIDEO_ENCODE_H265_CTB_SIZE_64_BIT_EXT")]
+        Size64BitExt = 4,
     }
 }

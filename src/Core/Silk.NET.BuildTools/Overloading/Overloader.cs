@@ -17,7 +17,8 @@ namespace Silk.NET.BuildTools.Overloading
             new ISimpleParameterOverloader[]
             {
                 new GroupOverloader(),
-                new ClassOverloader()
+                new ClassOverloader(),
+                new OpenCLUngroupCompatOverloader()
             },
             new ISimpleParameterOverloader[]
             {
@@ -54,7 +55,7 @@ namespace Silk.NET.BuildTools.Overloading
         public static IEnumerable<Function> GetWithVariants
         (
             IEnumerable<Function> functions,
-            Project core,
+            Profile profile,
             Dictionary<string, string[]>? overloadExcludedFunctions
         )
         {
@@ -67,7 +68,7 @@ namespace Silk.NET.BuildTools.Overloading
             foreach (var overload in enumerable)
             {
                 foreach (var final in SimpleReturnOverloader.GetWithOverloads
-                    (overload, core, ReturnOverloaders.Filter(overload, overloadExcludedFunctions)))
+                    (overload, profile, ReturnOverloaders.Filter(overload, overloadExcludedFunctions)))
                 {
                     yield return final;
                 }
@@ -78,7 +79,7 @@ namespace Silk.NET.BuildTools.Overloading
                 foreach (var function in functions)
                 {
                     foreach (var overload in SimpleParameterOverloader.GetWithOverloads
-                        (function, core, overloaders.Filter(function, overloadExcludedFunctions)))
+                        (function, profile, overloaders.Filter(function, overloadExcludedFunctions)))
                     {
                         yield return overload;
                     }
