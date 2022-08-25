@@ -23,12 +23,10 @@ namespace Silk.NET.OpenAL.Extensions.EXT
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetIntegerv")]
-        public unsafe partial void GetContextProperty(Device* device, DisconnectContextInteger param, int count,
-            void* data);
+        public unsafe partial void GetContextProperty(Device* device, DisconnectContextInteger param, int count, void* data);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetIntegerv")]
-        public unsafe partial void GetContextProperty(Device* device, DisconnectContextInteger param, int count,
-            int* data);
+        public unsafe partial void GetContextProperty(Device* device, DisconnectContextInteger param, int count, int* data);
     }
 }
