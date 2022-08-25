@@ -71,5 +71,11 @@ namespace Silk.NET.Core.Contexts
         /// underlying window is not using SDL.
         /// </summary>
         nint? Sdl { get; }
+
+        /// <summaray>
+        /// The handle to use for DirectX applications. This will be the Win32 Hwnd on Windows, and it will be the GLFW
+        /// or SDL handle on non-windows platforms for use with dxvk-native. May not be null.
+        /// </summary>
+        nint? DXHandle { get; }
     }
 }
