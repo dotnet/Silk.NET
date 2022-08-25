@@ -31,6 +31,24 @@ partial class Build
                     );
                 }
             )
+            .Executes
+            (
+                () => 
+                {
+                    var project = OriginalSolution.GetProject("ReSharperPlugin.SilkDotNet.DataGenerator");
+                    if (project == default) 
+                    {
+                        Logger.Error("Couldnt find the Resharper plugin data generator in the solution file.");
+                        return;
+                    }
+
+                    DotNetRun
+                    (
+                        s => s.SetProjectFile(project)
+                            .SetConfiguration("Release")
+                    );
+                }
+            )
     );
 
 }
