@@ -1,6 +1,7 @@
 #nullable enable
 Silk.NET.Windowing.IWindowProperties.TopMost.get -> bool
 Silk.NET.Windowing.IWindowProperties.TopMost.set -> void
+static Silk.NET.Windowing.Window.DefaultWindowClass.get -> string
 Silk.NET.Windowing.VideoMode.AspectRatioEstimate.get -> Silk.NET.Maths.Vector2D<int>?
 Silk.NET.Windowing.WindowOptions.TopMost.get -> bool
 Silk.NET.Windowing.WindowOptions.TopMost.set -> void
