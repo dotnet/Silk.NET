@@ -194,6 +194,6 @@ namespace Silk.NET.Windowing.Internals
             }
         }
 
-        public Rectangle<int> BorderSize             => IsInitialized ? CoreBorderSize : default;
+        public Rectangle<int> BorderSize => IsInitialized ? CoreBorderSize : default;
     }
 }
