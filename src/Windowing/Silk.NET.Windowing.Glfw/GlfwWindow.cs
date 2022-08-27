@@ -245,6 +245,11 @@ namespace Silk.NET.Windowing.Glfw
             }
         }
 
+        protected override bool CoreTopMost {
+            get => _glfw.GetWindowAttrib(_glfwWindow, WindowAttributeGetter.Floating);
+            set => _glfw.SetWindowAttrib(_glfwWindow, WindowAttributeSetter.Floating, value);
+        }
+
         protected override bool IsClosingSettable
         {
             set
