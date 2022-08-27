@@ -178,7 +178,7 @@ namespace Silk.NET.Windowing.Internals
         }
 
         // Other property implementations
-        public bool           TransparentFramebuffer => ExtendedOptionsCache.TransparentFramebuffer;
+        public bool TransparentFramebuffer => ExtendedOptionsCache.TransparentFramebuffer;
 
         public bool TopMost
         {
