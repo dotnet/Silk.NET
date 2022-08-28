@@ -8,7 +8,7 @@ namespace Silk.NET.Core.Tests
     public class Tests
     {
         //Gets an IEnumerable with Offsets of 0
-        private IEnumerable<(uint, uint, uint, uint)> Range => Sample();
+        private static IEnumerable<(uint, uint, uint, uint)> Range => Sample();
         /// <summary>
         /// Tests within the range of valid for <see cref="Version32"/>> if any of them throw, fail the test
         /// </summary>
@@ -38,11 +38,14 @@ namespace Silk.NET.Core.Tests
 
         public static IEnumerable<(uint, uint, uint, uint)> Sample()
         {
-            for (uint variant = 0; variant == CalcNumBits(3); variant++)
-                for(uint major = 0; major == CalcNumBits(7); major++)
-                    for(uint minor = 0; minor == CalcNumBits(10); minor++)
-                        for (uint patch = 0; patch == CalcNumBits(12); patch++)
-                            yield return (variant,major,minor,patch);
+            for (uint variant = 0; variant <= CalcNumBits(3); variant++)
+                for(uint major = 0; major <= CalcNumBits(7); major++)
+                    for(uint minor = 0; minor <= CalcNumBits(10); minor++)
+                        for (uint patch = 0; patch <= CalcNumBits(12); patch++)
+                        {
+                            yield return (variant,major,minor,patch); 
+                        }
+
         }
         
 
