@@ -272,6 +272,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             PrioritizeTextures((uint) priorities.Length, in textures.GetPinnableReference(), in priorities.GetPinnableReference());
         }
 
+        public unsafe uint GenTextures([Flow(FlowDirection.In)] uint n)
+        {
+            // NonKhrReturnTypeOverloader
+            GenTextures(n, out uint silkRet);
+            return silkRet;
+        }
+
         public ExtTextureObject(INativeContext ctx)
             : base(ctx)
         {

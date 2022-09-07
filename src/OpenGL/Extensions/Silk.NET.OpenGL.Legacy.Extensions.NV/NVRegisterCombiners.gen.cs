@@ -3704,6 +3704,202 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         [NativeApi(EntryPoint = "glGetFinalCombinerInputParameterivNV", Convention = CallingConvention.Winapi)]
         public partial void GetFinalCombinerInputParameter([Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
+        public unsafe float GetCombinerInputParameter([Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] NV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetCombinerInputParameter(stage, portion, variable, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetCombinerInputParameter([Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetCombinerInputParameter(stage, portion, variable, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetCombinerInputParameter([Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] NV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetCombinerInputParameter(stage, portion, variable, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetCombinerInputParameter([Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetCombinerInputParameter(stage, portion, variable, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetCombinerInputParameter([Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] NV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetCombinerInputParameter(stage, portion, variable, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetCombinerInputParameter([Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetCombinerInputParameter(stage, portion, variable, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetCombinerInputParameter([Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] NV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetCombinerInputParameter(stage, portion, variable, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetCombinerInputParameter([Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetCombinerInputParameter(stage, portion, variable, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetCombinerInputParameter([Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] NV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetCombinerInputParameter(stage, portion, variable, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetCombinerInputParameter([Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetCombinerInputParameter(stage, portion, variable, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetCombinerInputParameter([Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] NV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetCombinerInputParameter(stage, portion, variable, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetCombinerInputParameter([Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetCombinerInputParameter(stage, portion, variable, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetCombinerInputParameter([Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] NV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetCombinerInputParameter(stage, portion, variable, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetCombinerInputParameter([Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetCombinerInputParameter(stage, portion, variable, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetCombinerInputParameter([Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] NV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetCombinerInputParameter(stage, portion, variable, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetCombinerInputParameter([Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetCombinerInputParameter(stage, portion, variable, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetCombinerOutputParameter([Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] NV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetCombinerOutputParameter(stage, portion, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetCombinerOutputParameter([Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] CombinerParameterNV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetCombinerOutputParameter(stage, portion, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetCombinerOutputParameter([Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] NV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetCombinerOutputParameter(stage, portion, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetCombinerOutputParameter([Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] CombinerParameterNV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetCombinerOutputParameter(stage, portion, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetCombinerOutputParameter([Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] NV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetCombinerOutputParameter(stage, portion, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetCombinerOutputParameter([Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] CombinerParameterNV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetCombinerOutputParameter(stage, portion, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetCombinerOutputParameter([Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] NV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetCombinerOutputParameter(stage, portion, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetCombinerOutputParameter([Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] CombinerParameterNV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetCombinerOutputParameter(stage, portion, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetFinalCombinerInputParameter([Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] NV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetFinalCombinerInputParameter(variable, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetFinalCombinerInputParameter([Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetFinalCombinerInputParameter(variable, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetFinalCombinerInputParameter([Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] NV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetFinalCombinerInputParameter(variable, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetFinalCombinerInputParameter([Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetFinalCombinerInputParameter(variable, pname, out float silkRet);
+            return silkRet;
+        }
+
         public NVRegisterCombiners(INativeContext ctx)
             : base(ctx)
         {

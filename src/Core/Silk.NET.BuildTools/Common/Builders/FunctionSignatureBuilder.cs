@@ -38,6 +38,10 @@ namespace Silk.NET.BuildTools.Common.Builders
 
         private CallingConvention _newCallingConvention;
 
+        private string? _invocationPrefix;
+
+        private bool _isReadOnly;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="FunctionSignatureBuilder" /> class.
         /// </summary>
@@ -56,6 +60,8 @@ namespace Silk.NET.BuildTools.Common.Builders
             _newAccessibility = functionSignature.Accessibility;
             _newKind = functionSignature.Kind;
             _newCallingConvention = functionSignature.Convention;
+            _invocationPrefix = functionSignature.InvocationPrefix;
+            _isReadOnly = functionSignature.IsReadOnly;
         }
 
         /// <summary>
@@ -201,7 +207,9 @@ namespace Silk.NET.BuildTools.Common.Builders
                 Doc = _newDoc,
                 Accessibility = _newAccessibility,
                 Kind = _newKind,
-                Convention = _newCallingConvention
+                Convention = _newCallingConvention,
+                InvocationPrefix = _invocationPrefix,
+                IsReadOnly = _isReadOnly
             };
         }
     }

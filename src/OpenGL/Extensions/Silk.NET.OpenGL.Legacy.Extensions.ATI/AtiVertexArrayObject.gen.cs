@@ -188,6 +188,62 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
             UpdateObjectBuffer(buffer, offset, (uint) (pointer.Length * Unsafe.SizeOf<T0>()), in pointer.GetPinnableReference(), preserve);
         }
 
+        public unsafe float GetArrayObject([Flow(FlowDirection.In)] ATI array, [Flow(FlowDirection.In)] ATI pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetArrayObject(array, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetArrayObject([Flow(FlowDirection.In)] ATI array, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetArrayObject(array, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetArrayObject([Flow(FlowDirection.In)] EnableCap array, [Flow(FlowDirection.In)] ATI pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetArrayObject(array, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetArrayObject([Flow(FlowDirection.In)] EnableCap array, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetArrayObject(array, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetObjectBuffer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ATI pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetObjectBuffer(buffer, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetObjectBuffer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetObjectBuffer(buffer, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetVariantArrayObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ATI pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetVariantArrayObject(id, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetVariantArrayObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetVariantArrayObject(id, pname, out float silkRet);
+            return silkRet;
+        }
+
         public AtiVertexArrayObject(INativeContext ctx)
             : base(ctx)
         {

@@ -75,9 +75,9 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"VideoEncodeDpbBitKhr\"")]
         [NativeName("Name", "VK_IMAGE_USAGE_VIDEO_ENCODE_DPB_BIT_KHR")]
         ImageUsageVideoEncodeDpbBitKhr = 32768,
-        [Obsolete("Deprecated in favour of \"Reserved19BitExt\"")]
-        [NativeName("Name", "VK_IMAGE_USAGE_RESERVED_19_BIT_EXT")]
-        ImageUsageReserved19BitExt = 524288,
+        [Obsolete("Deprecated in favour of \"AttachmentFeedbackLoopBitExt\"")]
+        [NativeName("Name", "VK_IMAGE_USAGE_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT")]
+        ImageUsageAttachmentFeedbackLoopBitExt = 524288,
         [Obsolete("Deprecated in favour of \"InvocationMaskBitHuawei\"")]
         [NativeName("Name", "VK_IMAGE_USAGE_INVOCATION_MASK_BIT_HUAWEI")]
         ImageUsageInvocationMaskBitHuawei = 262144,
@@ -127,8 +127,8 @@ namespace Silk.NET.Vulkan
         VideoEncodeSrcBitKhr = 16384,
         [NativeName("Name", "VK_IMAGE_USAGE_VIDEO_ENCODE_DPB_BIT_KHR")]
         VideoEncodeDpbBitKhr = 32768,
-        [NativeName("Name", "VK_IMAGE_USAGE_RESERVED_19_BIT_EXT")]
-        Reserved19BitExt = 524288,
+        [NativeName("Name", "VK_IMAGE_USAGE_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT")]
+        AttachmentFeedbackLoopBitExt = 524288,
         [NativeName("Name", "VK_IMAGE_USAGE_INVOCATION_MASK_BIT_HUAWEI")]
         InvocationMaskBitHuawei = 262144,
         [NativeName("Name", "VK_IMAGE_USAGE_SAMPLE_WEIGHT_BIT_QCOM")]

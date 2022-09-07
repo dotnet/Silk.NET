@@ -38,7 +38,8 @@ namespace Silk.NET.BuildTools.Baking
                 new Project
                 {
                     Namespace = string.Empty, IsRoot = true,
-                    Classes = new List<Class>{}
+                    Classes = new List<Class>{},
+                    ComRefs = task.ClangOpts.ComRefs ?? new HashSet<string>()
                 }
             );
 

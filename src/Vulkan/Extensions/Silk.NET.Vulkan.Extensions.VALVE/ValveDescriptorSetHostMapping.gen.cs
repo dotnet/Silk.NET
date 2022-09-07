@@ -46,6 +46,24 @@ namespace Silk.NET.Vulkan.Extensions.VALVE
         [NativeApi(EntryPoint = "vkGetDescriptorSetLayoutHostMappingInfoVALVE", Convention = CallingConvention.Winapi)]
         public partial void GetDescriptorSetLayoutHostMappingInfoValve([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in DescriptorSetBindingReferenceVALVE pBindingReference, [Count(Count = 0), Flow(FlowDirection.Out)] out DescriptorSetLayoutHostMappingInfoVALVE pHostMapping);
 
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pHostMapping = new(StructureType.DescriptorSetLayoutHostMappingInfoValve);")]
+        public unsafe DescriptorSetLayoutHostMappingInfoVALVE GetDescriptorSetLayoutHostMappingInfoValve([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DescriptorSetBindingReferenceVALVE* pBindingReference)
+        {
+            // NonKhrReturnTypeOverloader
+            GetDescriptorSetLayoutHostMappingInfoValve(device, pBindingReference, out DescriptorSetLayoutHostMappingInfoVALVE silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pHostMapping = new(StructureType.DescriptorSetLayoutHostMappingInfoValve);")]
+        public unsafe DescriptorSetLayoutHostMappingInfoVALVE GetDescriptorSetLayoutHostMappingInfoValve([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in DescriptorSetBindingReferenceVALVE pBindingReference)
+        {
+            // NonKhrReturnTypeOverloader
+            GetDescriptorSetLayoutHostMappingInfoValve(device, in pBindingReference, out DescriptorSetLayoutHostMappingInfoVALVE silkRet);
+            return silkRet;
+        }
+
         public ValveDescriptorSetHostMapping(INativeContext ctx)
             : base(ctx)
         {

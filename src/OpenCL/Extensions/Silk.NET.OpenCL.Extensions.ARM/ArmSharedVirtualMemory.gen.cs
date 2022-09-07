@@ -277,6 +277,13 @@ namespace Silk.NET.OpenCL.Extensions.ARM
         [NativeApi(EntryPoint = "clSVMFreeARM", Convention = CallingConvention.Winapi)]
         public partial void Svmfree<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.Out)] out T0 svm_pointer) where T0 : unmanaged;
 
+        public unsafe T0 Svmfree<T0>([Flow(FlowDirection.In)] nint context) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            Svmfree(context, out T0 silkRet);
+            return silkRet;
+        }
+
         public ArmSharedVirtualMemory(INativeContext ctx)
             : base(ctx)
         {

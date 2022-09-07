@@ -59,6 +59,34 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         [NativeApi(EntryPoint = "glUnmapBufferOES", Convention = CallingConvention.Winapi)]
         public partial bool UnmapBuffer([Flow(FlowDirection.In)] OES target);
 
+        public unsafe void* GetBufferPointer([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetBufferPointer(target, pname, out void* silkRet);
+            return silkRet;
+        }
+
+        public unsafe void* GetBufferPointer([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] BufferPointerNameARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetBufferPointer(target, pname, out void* silkRet);
+            return silkRet;
+        }
+
+        public unsafe void* GetBufferPointer([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] OES pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetBufferPointer(target, pname, out void* silkRet);
+            return silkRet;
+        }
+
+        public unsafe void* GetBufferPointer([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] BufferPointerNameARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetBufferPointer(target, pname, out void* silkRet);
+            return silkRet;
+        }
+
         public OesMapbuffer(INativeContext ctx)
             : base(ctx)
         {

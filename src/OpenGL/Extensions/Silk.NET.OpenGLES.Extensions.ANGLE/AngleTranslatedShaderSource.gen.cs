@@ -62,6 +62,20 @@ namespace Silk.NET.OpenGLES.Extensions.ANGLE
             GetTranslatedShaderSource(shader, (uint) source.Length, out length, out source.GetPinnableReference());
         }
 
+        public unsafe byte GetTranslatedShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTranslatedShaderSource(shader, bufSize, length, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetTranslatedShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTranslatedShaderSource(shader, bufSize, out length, out byte silkRet);
+            return silkRet;
+        }
+
         public AngleTranslatedShaderSource(INativeContext ctx)
             : base(ctx)
         {

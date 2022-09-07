@@ -118,6 +118,41 @@ namespace Silk.NET.OpenGLES.Extensions.APPLE
             GetSync(sync, pname, (uint) values.Length, out length, out values.GetPinnableReference());
         }
 
+        public unsafe long GetInteger64([Flow(FlowDirection.In)] GetPName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetInteger64(pname, out long silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] APPLE pname, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.Out)] uint* length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetSync(sync, pname, count, length, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] APPLE pname, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.Out)] out uint length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetSync(sync, pname, count, out length, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] SyncParameterName pname, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.Out)] uint* length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetSync(sync, pname, count, length, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] SyncParameterName pname, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.Out)] out uint length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetSync(sync, pname, count, out length, out int silkRet);
+            return silkRet;
+        }
+
         public AppleSync(INativeContext ctx)
             : base(ctx)
         {

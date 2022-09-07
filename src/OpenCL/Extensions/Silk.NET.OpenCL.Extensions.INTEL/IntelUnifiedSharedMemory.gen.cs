@@ -346,6 +346,96 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
         [NativeApi(EntryPoint = "clSharedMemAllocINTEL", Convention = CallingConvention.Winapi)]
         public unsafe partial void* SharedMemAlloc([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] in CLEnum properties, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint alignment, [Flow(FlowDirection.Out)] out int errcode_ret);
 
+        public unsafe int DeviceMemAlloc([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] MemProperties* properties, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint alignment)
+        {
+            // NonKhrReturnTypeOverloader
+            DeviceMemAlloc(context, device, properties, size, alignment, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int DeviceMemAlloc([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] in MemProperties properties, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint alignment)
+        {
+            // NonKhrReturnTypeOverloader
+            DeviceMemAlloc(context, device, in properties, size, alignment, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (INTEL) are deprecated in favour of the \"grouped\" enums (MemProperties). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int DeviceMemAlloc([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint alignment)
+        {
+            // NonKhrReturnTypeOverloader
+            DeviceMemAlloc(context, device, properties, size, alignment, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (INTEL) are deprecated in favour of the \"grouped\" enums (MemProperties). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int DeviceMemAlloc([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] in CLEnum properties, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint alignment)
+        {
+            // NonKhrReturnTypeOverloader
+            DeviceMemAlloc(context, device, in properties, size, alignment, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int HostMemAlloc([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemProperties* properties, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint alignment)
+        {
+            // NonKhrReturnTypeOverloader
+            HostMemAlloc(context, properties, size, alignment, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int HostMemAlloc([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] in MemProperties properties, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint alignment)
+        {
+            // NonKhrReturnTypeOverloader
+            HostMemAlloc(context, in properties, size, alignment, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (INTEL) are deprecated in favour of the \"grouped\" enums (MemProperties). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int HostMemAlloc([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint alignment)
+        {
+            // NonKhrReturnTypeOverloader
+            HostMemAlloc(context, properties, size, alignment, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (INTEL) are deprecated in favour of the \"grouped\" enums (MemProperties). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int HostMemAlloc([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] in CLEnum properties, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint alignment)
+        {
+            // NonKhrReturnTypeOverloader
+            HostMemAlloc(context, in properties, size, alignment, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int SharedMemAlloc([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] MemProperties* properties, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint alignment)
+        {
+            // NonKhrReturnTypeOverloader
+            SharedMemAlloc(context, device, properties, size, alignment, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int SharedMemAlloc([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] in MemProperties properties, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint alignment)
+        {
+            // NonKhrReturnTypeOverloader
+            SharedMemAlloc(context, device, in properties, size, alignment, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (INTEL) are deprecated in favour of the \"grouped\" enums (MemProperties). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int SharedMemAlloc([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint alignment)
+        {
+            // NonKhrReturnTypeOverloader
+            SharedMemAlloc(context, device, properties, size, alignment, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (INTEL) are deprecated in favour of the \"grouped\" enums (MemProperties). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int SharedMemAlloc([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] in CLEnum properties, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint alignment)
+        {
+            // NonKhrReturnTypeOverloader
+            SharedMemAlloc(context, device, in properties, size, alignment, out int silkRet);
+            return silkRet;
+        }
+
         public IntelUnifiedSharedMemory(INativeContext ctx)
             : base(ctx)
         {

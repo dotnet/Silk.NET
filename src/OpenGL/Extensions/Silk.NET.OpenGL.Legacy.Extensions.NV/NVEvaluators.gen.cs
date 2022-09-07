@@ -272,6 +272,118 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         [NativeApi(EntryPoint = "glMapParameterfvNV", Convention = CallingConvention.Winapi)]
         public partial void MapParameter([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] MapParameterNV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.In)] in float @params);
 
+        public unsafe int GetMapAttribParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetMapAttribParameter(target, index, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetMapAttribParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] MapAttribParameterNV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetMapAttribParameter(target, index, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetMapAttribParameter([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetMapAttribParameter(target, index, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetMapAttribParameter([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] MapAttribParameterNV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetMapAttribParameter(target, index, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetMapControlPoints<T0>([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] bool packed) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetMapControlPoints(target, index, type, ustride, vstride, packed, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetMapControlPoints<T0>([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] Boolean packed) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetMapControlPoints(target, index, type, ustride, vstride, packed, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetMapControlPoints<T0>([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] MapTypeNV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] bool packed) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetMapControlPoints(target, index, type, ustride, vstride, packed, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetMapControlPoints<T0>([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] MapTypeNV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] Boolean packed) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetMapControlPoints(target, index, type, ustride, vstride, packed, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetMapControlPoints<T0>([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] bool packed) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetMapControlPoints(target, index, type, ustride, vstride, packed, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetMapControlPoints<T0>([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] Boolean packed) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetMapControlPoints(target, index, type, ustride, vstride, packed, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetMapControlPoints<T0>([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] MapTypeNV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] bool packed) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetMapControlPoints(target, index, type, ustride, vstride, packed, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetMapControlPoints<T0>([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] MapTypeNV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] Boolean packed) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetMapControlPoints(target, index, type, ustride, vstride, packed, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetMapParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetMapParameter(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetMapParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] MapParameterNV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetMapParameter(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetMapParameter([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] NV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetMapParameter(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetMapParameter([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] MapParameterNV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetMapParameter(target, pname, out int silkRet);
+            return silkRet;
+        }
+
         public NVEvaluators(INativeContext ctx)
             : base(ctx)
         {

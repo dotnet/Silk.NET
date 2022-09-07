@@ -287,6 +287,69 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             TransformFeedbackVaryings(program, (uint) locations.Length, in locations.GetPinnableReference(), bufferMode);
         }
 
+        public unsafe byte GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] NV* type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveVarying(program, index, bufSize, length, size, type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] out NV type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveVarying(program, index, bufSize, length, size, out type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] NV* type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveVarying(program, index, bufSize, length, out size, type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] out NV type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveVarying(program, index, bufSize, length, out size, out type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] NV* type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveVarying(program, index, bufSize, out length, size, type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] out NV type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveVarying(program, index, bufSize, out length, size, out type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] NV* type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveVarying(program, index, bufSize, out length, out size, type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] out NV type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveVarying(program, index, bufSize, out length, out size, out type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTransformFeedbackVarying(program, index, out int silkRet);
+            return silkRet;
+        }
+
         public NVTransformFeedback(INativeContext ctx)
             : base(ctx)
         {

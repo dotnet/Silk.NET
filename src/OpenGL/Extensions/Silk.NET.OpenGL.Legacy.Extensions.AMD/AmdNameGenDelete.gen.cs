@@ -47,6 +47,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
             GenNames(identifier, (uint) names.Length, out names.GetPinnableReference());
         }
 
+        public unsafe uint GenNames([Flow(FlowDirection.In)] AMD identifier, [Flow(FlowDirection.In)] uint num)
+        {
+            // NonKhrReturnTypeOverloader
+            GenNames(identifier, num, out uint silkRet);
+            return silkRet;
+        }
+
         public AmdNameGenDelete(INativeContext ctx)
             : base(ctx)
         {

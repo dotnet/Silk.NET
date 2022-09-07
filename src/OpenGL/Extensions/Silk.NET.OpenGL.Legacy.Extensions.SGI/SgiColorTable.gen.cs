@@ -272,6 +272,90 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         [NativeApi(EntryPoint = "glGetColorTableParameterivSGI", Convention = CallingConvention.Winapi)]
         public partial void GetColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] GetColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
+        public unsafe T0 GetColorTable<T0>([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI format, [Flow(FlowDirection.In)] SGI type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetColorTable(target, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetColorTable<T0>([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetColorTable(target, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetColorTable<T0>([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] SGI type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetColorTable(target, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetColorTable<T0>([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetColorTable(target, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetColorTable<T0>([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] SGI format, [Flow(FlowDirection.In)] SGI type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetColorTable(target, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetColorTable<T0>([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] SGI format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetColorTable(target, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetColorTable<T0>([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] SGI type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetColorTable(target, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetColorTable<T0>([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetColorTable(target, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetColorTableParameter([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetColorTableParameter(target, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetColorTableParameter([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] GetColorTableParameterPNameSGI pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetColorTableParameter(target, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] SGI pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetColorTableParameter(target, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] GetColorTableParameterPNameSGI pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetColorTableParameter(target, pname, out float silkRet);
+            return silkRet;
+        }
+
         public SgiColorTable(INativeContext ctx)
             : base(ctx)
         {

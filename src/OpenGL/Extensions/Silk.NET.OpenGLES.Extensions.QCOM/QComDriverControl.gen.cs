@@ -92,6 +92,34 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
             GetDriverControlString(driverControl, (uint) driverControlString.Length, out length, out driverControlString.GetPinnableReference());
         }
 
+        public unsafe uint GetDriverControl([Flow(FlowDirection.Out)] int* num, [Flow(FlowDirection.In)] uint size)
+        {
+            // NonKhrReturnTypeOverloader
+            GetDriverControl(num, size, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe uint GetDriverControl([Flow(FlowDirection.Out)] out int num, [Flow(FlowDirection.In)] uint size)
+        {
+            // NonKhrReturnTypeOverloader
+            GetDriverControl(out num, size, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetDriverControlString([Flow(FlowDirection.In)] uint driverControl, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] uint* length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetDriverControlString(driverControl, bufSize, length, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetDriverControlString([Flow(FlowDirection.In)] uint driverControl, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] out uint length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetDriverControlString(driverControl, bufSize, out length, out byte silkRet);
+            return silkRet;
+        }
+
         public QComDriverControl(INativeContext ctx)
             : base(ctx)
         {

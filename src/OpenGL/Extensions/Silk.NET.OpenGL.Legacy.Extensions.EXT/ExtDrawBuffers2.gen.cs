@@ -122,6 +122,34 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         [NativeApi(EntryPoint = "glIsEnabledIndexedEXT", Convention = CallingConvention.Winapi)]
         public partial bool IsEnabledIndexed([Flow(FlowDirection.In)] EnableCap target, [Flow(FlowDirection.In)] uint index);
 
+        public unsafe bool GetBooleanIndexed([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index)
+        {
+            // NonKhrReturnTypeOverloader
+            GetBooleanIndexed(target, index, out bool silkRet);
+            return silkRet;
+        }
+
+        public unsafe bool GetBooleanIndexed([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint index)
+        {
+            // NonKhrReturnTypeOverloader
+            GetBooleanIndexed(target, index, out bool silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetIntegerIndexed([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index)
+        {
+            // NonKhrReturnTypeOverloader
+            GetIntegerIndexed(target, index, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetIntegerIndexed([Flow(FlowDirection.In)] GetPName target, [Flow(FlowDirection.In)] uint index)
+        {
+            // NonKhrReturnTypeOverloader
+            GetIntegerIndexed(target, index, out int silkRet);
+            return silkRet;
+        }
+
         public ExtDrawBuffers2(INativeContext ctx)
             : base(ctx)
         {

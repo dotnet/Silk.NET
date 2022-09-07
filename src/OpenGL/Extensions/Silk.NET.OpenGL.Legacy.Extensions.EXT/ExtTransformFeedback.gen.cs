@@ -398,6 +398,118 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             SilkMarshal.Free((nint) varyings);
         }
 
+        public unsafe byte GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] EXT* type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTransformFeedbackVarying(program, index, bufSize, length, size, type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] out EXT type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTransformFeedbackVarying(program, index, bufSize, length, size, out type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] EXT* type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTransformFeedbackVarying(program, index, bufSize, length, out size, type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] out EXT type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTransformFeedbackVarying(program, index, bufSize, length, out size, out type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] EXT* type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTransformFeedbackVarying(program, index, bufSize, out length, size, type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] out EXT type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTransformFeedbackVarying(program, index, bufSize, out length, size, out type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] EXT* type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTransformFeedbackVarying(program, index, bufSize, out length, out size, type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] out EXT type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTransformFeedbackVarying(program, index, bufSize, out length, out size, out type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTransformFeedbackVarying(program, index, bufSize, length, size, type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] out AttributeType type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTransformFeedbackVarying(program, index, bufSize, length, size, out type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTransformFeedbackVarying(program, index, bufSize, length, out size, type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] out AttributeType type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTransformFeedbackVarying(program, index, bufSize, length, out size, out type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTransformFeedbackVarying(program, index, bufSize, out length, size, type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] out AttributeType type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTransformFeedbackVarying(program, index, bufSize, out length, size, out type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTransformFeedbackVarying(program, index, bufSize, out length, out size, type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] out AttributeType type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTransformFeedbackVarying(program, index, bufSize, out length, out size, out type, out byte silkRet);
+            return silkRet;
+        }
+
         public ExtTransformFeedback(INativeContext ctx)
             : base(ctx)
         {

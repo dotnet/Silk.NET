@@ -269,6 +269,132 @@ namespace Silk.NET.OpenGL.Extensions.AMD
             SelectPerfMonitorCounters(monitor, enable, group, (int) counterList.Length, out counterList.GetPinnableReference());
         }
 
+        public unsafe uint DeletePerfMonitors([Flow(FlowDirection.In)] uint n)
+        {
+            // NonKhrReturnTypeOverloader
+            DeletePerfMonitors(n, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe uint GenPerfMonitors([Flow(FlowDirection.In)] uint n)
+        {
+            // NonKhrReturnTypeOverloader
+            GenPerfMonitors(n, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetPerfMonitorCounterData([Flow(FlowDirection.In)] uint monitor, [Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] uint dataSize, [Count(Parameter = "dataSize"), Flow(FlowDirection.Out)] uint* data)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPerfMonitorCounterData(monitor, pname, dataSize, data, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetPerfMonitorCounterData([Flow(FlowDirection.In)] uint monitor, [Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] uint dataSize, [Count(Parameter = "dataSize"), Flow(FlowDirection.Out)] out uint data)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPerfMonitorCounterData(monitor, pname, dataSize, out data, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetPerfMonitorCounterInfo<T0>([Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] uint counter, [Flow(FlowDirection.In)] AMD pname) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetPerfMonitorCounterInfo(group, counter, pname, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe uint GetPerfMonitorCounters([Flow(FlowDirection.In)] uint group, [Count(Count = 1), Flow(FlowDirection.Out)] int* numCounters, [Count(Count = 1), Flow(FlowDirection.Out)] int* maxActiveCounters, [Flow(FlowDirection.In)] uint counterSize)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPerfMonitorCounters(group, numCounters, maxActiveCounters, counterSize, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe uint GetPerfMonitorCounters([Flow(FlowDirection.In)] uint group, [Count(Count = 1), Flow(FlowDirection.Out)] int* numCounters, [Count(Count = 1), Flow(FlowDirection.Out)] out int maxActiveCounters, [Flow(FlowDirection.In)] uint counterSize)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPerfMonitorCounters(group, numCounters, out maxActiveCounters, counterSize, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe uint GetPerfMonitorCounters([Flow(FlowDirection.In)] uint group, [Count(Count = 1), Flow(FlowDirection.Out)] out int numCounters, [Count(Count = 1), Flow(FlowDirection.Out)] int* maxActiveCounters, [Flow(FlowDirection.In)] uint counterSize)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPerfMonitorCounters(group, out numCounters, maxActiveCounters, counterSize, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe uint GetPerfMonitorCounters([Flow(FlowDirection.In)] uint group, [Count(Count = 1), Flow(FlowDirection.Out)] out int numCounters, [Count(Count = 1), Flow(FlowDirection.Out)] out int maxActiveCounters, [Flow(FlowDirection.In)] uint counterSize)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPerfMonitorCounters(group, out numCounters, out maxActiveCounters, counterSize, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetPerfMonitorCounterString([Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] uint counter, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPerfMonitorCounterString(group, counter, bufSize, length, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetPerfMonitorCounterString([Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] uint counter, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPerfMonitorCounterString(group, counter, bufSize, out length, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe uint GetPerfMonitorGroups([Count(Count = 1), Flow(FlowDirection.Out)] int* numGroups, [Flow(FlowDirection.In)] uint groupsSize)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPerfMonitorGroups(numGroups, groupsSize, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe uint GetPerfMonitorGroups([Count(Count = 1), Flow(FlowDirection.Out)] out int numGroups, [Flow(FlowDirection.In)] uint groupsSize)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPerfMonitorGroups(out numGroups, groupsSize, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetPerfMonitorGroupString([Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPerfMonitorGroupString(group, bufSize, length, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetPerfMonitorGroupString([Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPerfMonitorGroupString(group, bufSize, out length, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe uint SelectPerfMonitorCounters([Flow(FlowDirection.In)] uint monitor, [Flow(FlowDirection.In)] bool enable, [Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] int numCounters)
+        {
+            // NonKhrReturnTypeOverloader
+            SelectPerfMonitorCounters(monitor, enable, group, numCounters, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe uint SelectPerfMonitorCounters([Flow(FlowDirection.In)] uint monitor, [Flow(FlowDirection.In)] Boolean enable, [Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] int numCounters)
+        {
+            // NonKhrReturnTypeOverloader
+            SelectPerfMonitorCounters(monitor, enable, group, numCounters, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetPerfMonitorCounterData([Flow(FlowDirection.In)] uint monitor, [Flow(FlowDirection.In)] AMD pname, [Count(Parameter = "dataSize"), Flow(FlowDirection.Out)] Span<uint> data)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPerfMonitorCounterData(monitor, pname, data, out int silkRet);
+            return silkRet;
+        }
+
         public AmdPerformanceMonitor(INativeContext ctx)
             : base(ctx)
         {
