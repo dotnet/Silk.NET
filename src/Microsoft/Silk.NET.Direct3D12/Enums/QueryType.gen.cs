@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D12
 {
+    [Flags]
     [NativeName("Name", "D3D12_QUERY_TYPE")]
     public enum QueryType : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [Obsolete("Deprecated in favour of \"Occlusion\"")]
         [NativeName("Name", "D3D12_QUERY_TYPE_OCCLUSION")]
         QueryTypeOcclusion = 0x0,
@@ -39,9 +42,6 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"VideoDecodeStatistics\"")]
         [NativeName("Name", "D3D12_QUERY_TYPE_VIDEO_DECODE_STATISTICS")]
         QueryTypeVideoDecodeStatistics = 0x8,
-        [Obsolete("Deprecated in favour of \"PipelineStatistics1\"")]
-        [NativeName("Name", "D3D12_QUERY_TYPE_PIPELINE_STATISTICS1")]
-        QueryTypePipelineStatistics1 = 0xA,
         [NativeName("Name", "D3D12_QUERY_TYPE_OCCLUSION")]
         Occlusion = 0x0,
         [NativeName("Name", "D3D12_QUERY_TYPE_BINARY_OCCLUSION")]
@@ -60,7 +60,5 @@ namespace Silk.NET.Direct3D12
         SOStatisticsStream3 = 0x7,
         [NativeName("Name", "D3D12_QUERY_TYPE_VIDEO_DECODE_STATISTICS")]
         VideoDecodeStatistics = 0x8,
-        [NativeName("Name", "D3D12_QUERY_TYPE_PIPELINE_STATISTICS1")]
-        PipelineStatistics1 = 0xA,
     }
 }

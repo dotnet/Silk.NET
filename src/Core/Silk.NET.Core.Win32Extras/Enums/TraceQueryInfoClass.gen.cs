@@ -58,17 +58,7 @@ namespace Silk.NET.Core.Win32Extras
         TraceLbrEventListInfo = 0x15,
         [NativeName("Name", "TraceMaxPmcCounterQuery")]
         TraceMaxPmcCounterQuery = 0x16,
-        [NativeName("Name", "TraceStreamCount")]
-        TraceStreamCount = 0x17,
-        [NativeName("Name", "TraceStackCachingInfo")]
-        TraceStackCachingInfo = 0x18,
-        [NativeName("Name", "TracePmcCounterOwners")]
-        TracePmcCounterOwners = 0x19,
-        [NativeName("Name", "TraceUnifiedStackCachingInfo")]
-        TraceUnifiedStackCachingInfo = 0x1A,
-        [NativeName("Name", "TracePmcSessionInformation")]
-        TracePmcSessionInformation = 0x1B,
         [NativeName("Name", "MaxTraceSetInfoClass")]
-        MaxTraceSetInfoClass = 0x1C,
+        MaxTraceSetInfoClass = 0x17,
     }
 }

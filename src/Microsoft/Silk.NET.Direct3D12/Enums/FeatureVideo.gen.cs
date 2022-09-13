@@ -93,45 +93,6 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"ProcessorSize1\"")]
         [NativeName("Name", "D3D12_FEATURE_VIDEO_PROCESSOR_SIZE1")]
         FeatureVideoProcessorSize1 = 0x20,
-        [Obsolete("Deprecated in favour of \"EncoderCodec\"")]
-        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_CODEC")]
-        FeatureVideoEncoderCodec = 0x21,
-        [Obsolete("Deprecated in favour of \"EncoderProfileLevel\"")]
-        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_PROFILE_LEVEL")]
-        FeatureVideoEncoderProfileLevel = 0x22,
-        [Obsolete("Deprecated in favour of \"EncoderOutputResolutionRatiosCount\"")]
-        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_OUTPUT_RESOLUTION_RATIOS_COUNT")]
-        FeatureVideoEncoderOutputResolutionRatiosCount = 0x23,
-        [Obsolete("Deprecated in favour of \"EncoderOutputResolution\"")]
-        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_OUTPUT_RESOLUTION")]
-        FeatureVideoEncoderOutputResolution = 0x24,
-        [Obsolete("Deprecated in favour of \"EncoderInputFormat\"")]
-        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_INPUT_FORMAT")]
-        FeatureVideoEncoderInputFormat = 0x25,
-        [Obsolete("Deprecated in favour of \"EncoderRateControlMode\"")]
-        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_RATE_CONTROL_MODE")]
-        FeatureVideoEncoderRateControlMode = 0x26,
-        [Obsolete("Deprecated in favour of \"EncoderIntraRefreshMode\"")]
-        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_INTRA_REFRESH_MODE")]
-        FeatureVideoEncoderIntraRefreshMode = 0x27,
-        [Obsolete("Deprecated in favour of \"EncoderFrameSubregionLayoutMode\"")]
-        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_FRAME_SUBREGION_LAYOUT_MODE")]
-        FeatureVideoEncoderFrameSubregionLayoutMode = 0x28,
-        [Obsolete("Deprecated in favour of \"EncoderHeapSize\"")]
-        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_HEAP_SIZE")]
-        FeatureVideoEncoderHeapSize = 0x29,
-        [Obsolete("Deprecated in favour of \"EncoderCodecConfigurationSupport\"")]
-        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT")]
-        FeatureVideoEncoderCodecConfigurationSupport = 0x2A,
-        [Obsolete("Deprecated in favour of \"EncoderSupport\"")]
-        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_SUPPORT")]
-        FeatureVideoEncoderSupport = 0x2B,
-        [Obsolete("Deprecated in favour of \"EncoderCodecPictureControlSupport\"")]
-        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_CODEC_PICTURE_CONTROL_SUPPORT")]
-        FeatureVideoEncoderCodecPictureControlSupport = 0x2C,
-        [Obsolete("Deprecated in favour of \"EncoderResourceRequirements\"")]
-        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_RESOURCE_REQUIREMENTS")]
-        FeatureVideoEncoderResourceRequirements = 0x2D,
         [NativeName("Name", "D3D12_FEATURE_VIDEO_DECODE_SUPPORT")]
         DecodeSupport = 0x0,
         [NativeName("Name", "D3D12_FEATURE_VIDEO_DECODE_PROFILES")]
@@ -186,31 +147,5 @@ namespace Silk.NET.Direct3D12
         DecoderHeapSize1 = 0x1F,
         [NativeName("Name", "D3D12_FEATURE_VIDEO_PROCESSOR_SIZE1")]
         ProcessorSize1 = 0x20,
-        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_CODEC")]
-        EncoderCodec = 0x21,
-        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_PROFILE_LEVEL")]
-        EncoderProfileLevel = 0x22,
-        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_OUTPUT_RESOLUTION_RATIOS_COUNT")]
-        EncoderOutputResolutionRatiosCount = 0x23,
-        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_OUTPUT_RESOLUTION")]
-        EncoderOutputResolution = 0x24,
-        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_INPUT_FORMAT")]
-        EncoderInputFormat = 0x25,
-        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_RATE_CONTROL_MODE")]
-        EncoderRateControlMode = 0x26,
-        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_INTRA_REFRESH_MODE")]
-        EncoderIntraRefreshMode = 0x27,
-        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_FRAME_SUBREGION_LAYOUT_MODE")]
-        EncoderFrameSubregionLayoutMode = 0x28,
-        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_HEAP_SIZE")]
-        EncoderHeapSize = 0x29,
-        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT")]
-        EncoderCodecConfigurationSupport = 0x2A,
-        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_SUPPORT")]
-        EncoderSupport = 0x2B,
-        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_CODEC_PICTURE_CONTROL_SUPPORT")]
-        EncoderCodecPictureControlSupport = 0x2C,
-        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_RESOURCE_REQUIREMENTS")]
-        EncoderResourceRequirements = 0x2D,
     }
 }

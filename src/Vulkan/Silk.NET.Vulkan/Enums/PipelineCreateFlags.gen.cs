@@ -111,6 +111,9 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"CreateReserved27BitExt\"")]
         [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_27_BIT_EXT")]
         PipelineCreateReserved27BitExt = 134217728,
+        [Obsolete("Deprecated in favour of \"CreateReserved30BitExt\"")]
+        [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_30_BIT_EXT")]
+        PipelineCreateReserved30BitExt = 1073741824,
         [Obsolete("Deprecated in favour of \"CreateViewIndexFromDeviceIndexBit\"")]
         [NativeName("Name", "VK_PIPELINE_CREATE_VIEW_INDEX_FROM_DEVICE_INDEX_BIT")]
         PipelineCreateViewIndexFromDeviceIndexBit = 8,
@@ -190,6 +193,8 @@ namespace Silk.NET.Vulkan
         CreateReservedBit28NV = 268435456,
         [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_27_BIT_EXT")]
         CreateReserved27BitExt = 134217728,
+        [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_30_BIT_EXT")]
+        CreateReserved30BitExt = 1073741824,
         [NativeName("Name", "VK_PIPELINE_CREATE_VIEW_INDEX_FROM_DEVICE_INDEX_BIT")]
         CreateViewIndexFromDeviceIndexBit = 8,
         [NativeName("Name", "VK_PIPELINE_CREATE_DISPATCH_BASE_BIT")]

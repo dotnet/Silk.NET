@@ -42,9 +42,6 @@ namespace Silk.NET.Core.Native
         [Obsolete("Deprecated in favour of \"Level121\"")]
         [NativeName("Name", "D3D_FEATURE_LEVEL_12_1")]
         D3DFeatureLevel121 = 0xC100,
-        [Obsolete("Deprecated in favour of \"Level122\"")]
-        [NativeName("Name", "D3D_FEATURE_LEVEL_12_2")]
-        D3DFeatureLevel122 = 0xC200,
         [NativeName("Name", "D3D_FEATURE_LEVEL_1_0_CORE")]
         Level10Core = 0x1000,
         [NativeName("Name", "D3D_FEATURE_LEVEL_9_1")]
@@ -65,7 +62,5 @@ namespace Silk.NET.Core.Native
         Level120 = 0xC000,
         [NativeName("Name", "D3D_FEATURE_LEVEL_12_1")]
         Level121 = 0xC100,
-        [NativeName("Name", "D3D_FEATURE_LEVEL_12_2")]
-        Level122 = 0xC200,
     }
 }

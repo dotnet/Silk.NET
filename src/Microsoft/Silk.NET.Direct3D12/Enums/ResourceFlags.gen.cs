@@ -37,12 +37,6 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"VideoDecodeReferenceOnly\"")]
         [NativeName("Name", "D3D12_RESOURCE_FLAG_VIDEO_DECODE_REFERENCE_ONLY")]
         ResourceFlagVideoDecodeReferenceOnly = 0x40,
-        [Obsolete("Deprecated in favour of \"VideoEncodeReferenceOnly\"")]
-        [NativeName("Name", "D3D12_RESOURCE_FLAG_VIDEO_ENCODE_REFERENCE_ONLY")]
-        ResourceFlagVideoEncodeReferenceOnly = 0x80,
-        [Obsolete("Deprecated in favour of \"RaytracingAccelerationStructure\"")]
-        [NativeName("Name", "D3D12_RESOURCE_FLAG_RAYTRACING_ACCELERATION_STRUCTURE")]
-        ResourceFlagRaytracingAccelerationStructure = 0x100,
         [NativeName("Name", "D3D12_RESOURCE_FLAG_NONE")]
         None = 0x0,
         [NativeName("Name", "D3D12_RESOURCE_FLAG_ALLOW_RENDER_TARGET")]
@@ -59,9 +53,5 @@ namespace Silk.NET.Direct3D12
         AllowSimultaneousAccess = 0x20,
         [NativeName("Name", "D3D12_RESOURCE_FLAG_VIDEO_DECODE_REFERENCE_ONLY")]
         VideoDecodeReferenceOnly = 0x40,
-        [NativeName("Name", "D3D12_RESOURCE_FLAG_VIDEO_ENCODE_REFERENCE_ONLY")]
-        VideoEncodeReferenceOnly = 0x80,
-        [NativeName("Name", "D3D12_RESOURCE_FLAG_RAYTRACING_ACCELERATION_STRUCTURE")]
-        RaytracingAccelerationStructure = 0x100,
     }
 }
