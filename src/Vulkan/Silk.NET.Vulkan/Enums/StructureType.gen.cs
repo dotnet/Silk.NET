@@ -1396,6 +1396,10 @@ namespace Silk.NET.Vulkan
         PhysicalDeviceAmigoProfilingFeaturesSec = 1000485000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_AMIGO_PROFILING_SUBMIT_INFO_SEC")]
         AmigoProfilingSubmitInfoSec = 1000485001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MUTABLE_DESCRIPTOR_TYPE_FEATURES_EXT")]
+        PhysicalDeviceMutableDescriptorTypeFeaturesExt = 1000351000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_MUTABLE_DESCRIPTOR_TYPE_CREATE_INFO_EXT")]
+        MutableDescriptorTypeCreateInfoExt = 1000351002,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBGROUP_PROPERTIES")]
         PhysicalDeviceSubgroupProperties = 1000094000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_BIND_BUFFER_MEMORY_INFO")]

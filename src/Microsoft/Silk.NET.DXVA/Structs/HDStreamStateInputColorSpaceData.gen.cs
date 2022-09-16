@@ -68,7 +68,7 @@ namespace Silk.NET.DXVA
 
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_dxvahd_L392_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_dxvahd_L400_C5")]
         [NativeName("Name", "anonymous1")]
         public HDStreamStateInputColorSpaceDataUnion Anonymous;
 #if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER

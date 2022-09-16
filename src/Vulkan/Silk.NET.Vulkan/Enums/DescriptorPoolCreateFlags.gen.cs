@@ -24,6 +24,9 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"HostOnlyBitValve\"")]
         [NativeName("Name", "VK_DESCRIPTOR_POOL_CREATE_HOST_ONLY_BIT_VALVE")]
         DescriptorPoolCreateHostOnlyBitValve = 4,
+        [Obsolete("Deprecated in favour of \"HostOnlyBitExt\"")]
+        [NativeName("Name", "VK_DESCRIPTOR_POOL_CREATE_HOST_ONLY_BIT_EXT")]
+        DescriptorPoolCreateHostOnlyBitExt = 4,
         [Obsolete("Deprecated in favour of \"UpdateAfterBindBit\"")]
         [NativeName("Name", "VK_DESCRIPTOR_POOL_CREATE_UPDATE_AFTER_BIND_BIT")]
         DescriptorPoolCreateUpdateAfterBindBit = 2,
@@ -33,6 +36,8 @@ namespace Silk.NET.Vulkan
         UpdateAfterBindBitExt = 2,
         [NativeName("Name", "VK_DESCRIPTOR_POOL_CREATE_HOST_ONLY_BIT_VALVE")]
         HostOnlyBitValve = 4,
+        [NativeName("Name", "VK_DESCRIPTOR_POOL_CREATE_HOST_ONLY_BIT_EXT")]
+        HostOnlyBitExt = 4,
         [NativeName("Name", "VK_DESCRIPTOR_POOL_CREATE_UPDATE_AFTER_BIND_BIT")]
         UpdateAfterBindBit = 2,
     }

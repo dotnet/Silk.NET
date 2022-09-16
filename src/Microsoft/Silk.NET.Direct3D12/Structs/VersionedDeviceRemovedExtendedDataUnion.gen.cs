@@ -17,14 +17,15 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Direct3D12
 {
     [StructLayout(LayoutKind.Explicit)]
-    [NativeName("Name", "__AnonymousRecord_d3d12_L13459_C5")]
+    [NativeName("Name", "__AnonymousRecord_d3d12_L14437_C5")]
     public unsafe partial struct VersionedDeviceRemovedExtendedDataUnion
     {
         public VersionedDeviceRemovedExtendedDataUnion
         (
             DeviceRemovedExtendedData? dred10 = null,
             DeviceRemovedExtendedData1? dred11 = null,
-            DeviceRemovedExtendedData2? dred12 = null
+            DeviceRemovedExtendedData2? dred12 = null,
+            DeviceRemovedExtendedData3? dred13 = null
         ) : this()
         {
             if (dred10 is not null)
@@ -40,6 +41,11 @@ namespace Silk.NET.Direct3D12
             if (dred12 is not null)
             {
                 Dred12 = dred12.Value;
+            }
+
+            if (dred13 is not null)
+            {
+                Dred13 = dred13.Value;
             }
         }
 
@@ -61,5 +67,11 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type.Name", "D3D12_DEVICE_REMOVED_EXTENDED_DATA2")]
         [NativeName("Name", "Dred_1_2")]
         public DeviceRemovedExtendedData2 Dred12;
+
+        [FieldOffset(0)]
+        [NativeName("Type", "D3D12_DEVICE_REMOVED_EXTENDED_DATA3")]
+        [NativeName("Type.Name", "D3D12_DEVICE_REMOVED_EXTENDED_DATA3")]
+        [NativeName("Name", "Dred_1_3")]
+        public DeviceRemovedExtendedData3 Dred13;
     }
 }
