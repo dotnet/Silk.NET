@@ -37,6 +37,8 @@ namespace Silk.NET.Assimp
             Camera** mCameras = null,
             Metadata* mMetaData = null,
             AssimpString? mName = null,
+            uint? mNumSkeletons = null,
+            Skeleton** mSkeletons = null,
             void* mPrivate = null
         ) : this()
         {
@@ -118,6 +120,16 @@ namespace Silk.NET.Assimp
             if (mName is not null)
             {
                 MName = mName.Value;
+            }
+
+            if (mNumSkeletons is not null)
+            {
+                MNumSkeletons = mNumSkeletons.Value;
+            }
+
+            if (mSkeletons is not null)
+            {
+                MSkeletons = mSkeletons;
             }
 
             if (mPrivate is not null)
@@ -206,6 +218,16 @@ namespace Silk.NET.Assimp
         [NativeName("Type.Name", "aiString")]
         [NativeName("Name", "mName")]
         public AssimpString MName;
+
+        [NativeName("Type", "unsigned int")]
+        [NativeName("Type.Name", "unsigned int")]
+        [NativeName("Name", "mNumSkeletons")]
+        public uint MNumSkeletons;
+
+        [NativeName("Type", "aiSkeleton **")]
+        [NativeName("Type.Name", "aiSkeleton **")]
+        [NativeName("Name", "mSkeletons")]
+        public Skeleton** MSkeletons;
 
         [NativeName("Type", "void *")]
         [NativeName("Type.Name", "void *")]

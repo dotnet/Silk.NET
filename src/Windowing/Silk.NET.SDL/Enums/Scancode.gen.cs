@@ -499,6 +499,14 @@ namespace Silk.NET.SDL
         ScancodeAudiorewind = 0x11D,
         [NativeName("Name", "SDL_SCANCODE_AUDIOFASTFORWARD")]
         ScancodeAudiofastforward = 0x11E,
+        [NativeName("Name", "SDL_SCANCODE_SOFTLEFT")]
+        ScancodeSoftleft = 0x11F,
+        [NativeName("Name", "SDL_SCANCODE_SOFTRIGHT")]
+        ScancodeSoftright = 0x120,
+        [NativeName("Name", "SDL_SCANCODE_CALL")]
+        ScancodeCall = 0x121,
+        [NativeName("Name", "SDL_SCANCODE_ENDCALL")]
+        ScancodeEndcall = 0x122,
         [NativeName("Name", "SDL_NUM_SCANCODES")]
         NumScancodes = 0x200,
     }

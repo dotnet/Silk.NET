@@ -10,7 +10,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.SDL
 {
     [Flags]
-    [NativeName("AnonymousName", "__AnonymousEnum_SDL_error_L133_C9")]
+    [NativeName("AnonymousName", "__AnonymousEnum_SDL_error_L142_C9")]
     [NativeName("Name", "SDL_errorcode")]
     public enum Errorcode : int
     {

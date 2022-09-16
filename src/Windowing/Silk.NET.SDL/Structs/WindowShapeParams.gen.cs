@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.SDL
 {
     [StructLayout(LayoutKind.Explicit)]
-    [NativeName("AnonymousName", "__AnonymousRecord_SDL_shape_L94_C9")]
+    [NativeName("AnonymousName", "__AnonymousRecord_SDL_shape_L99_C9")]
     [NativeName("Name", "SDL_WindowShapeParams")]
     public unsafe partial struct WindowShapeParams
     {
