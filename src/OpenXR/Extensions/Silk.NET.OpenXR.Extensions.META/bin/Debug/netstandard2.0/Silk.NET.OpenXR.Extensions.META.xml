@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Silk.NET.OpenXR.Extensions.META</name>
+    </assembly>
+    <members>
+        <member name="M:Silk.NET.OpenXR.Extensions.META.MetaPerformanceMetrics.EnumeratePerformanceMetricsCounterPathsMeta(Silk.NET.OpenXR.Instance,System.UInt32,System.UInt32*,System.UInt64*)">
+            <summary>To be documented.</summary>
+        </member>
+        <member name="M:Silk.NET.OpenXR.Extensions.META.MetaPerformanceMetrics.EnumeratePerformanceMetricsCounterPathsMeta(Silk.NET.OpenXR.Instance,System.UInt32,System.UInt32*,System.UInt64@)">
+            <summary>To be documented.</summary>
+        </member>
+        <member name="M:Silk.NET.OpenXR.Extensions.META.MetaPerformanceMetrics.EnumeratePerformanceMetricsCounterPathsMeta(Silk.NET.OpenXR.Instance,System.UInt32,System.UInt32@,System.UInt64*)">
+            <summary>To be documented.</summary>
+        </member>
+        <member name="M:Silk.NET.OpenXR.Extensions.META.MetaPerformanceMetrics.EnumeratePerformanceMetricsCounterPathsMeta(Silk.NET.OpenXR.Instance,System.UInt32,System.UInt32@,System.UInt64@)">
+            <summary>To be documented.</summary>
+        </member>
+        <member name="M:Silk.NET.OpenXR.Extensions.META.MetaPerformanceMetrics.GetPerformanceMetricsStateMeta(Silk.NET.OpenXR.Session,Silk.NET.OpenXR.PerformanceMetricsStateMETA*)">
+            <summary>To be documented.</summary>
+        </member>
+        <member name="M:Silk.NET.OpenXR.Extensions.META.MetaPerformanceMetrics.GetPerformanceMetricsStateMeta(Silk.NET.OpenXR.Session,Silk.NET.OpenXR.PerformanceMetricsStateMETA@)">
+            <summary>To be documented.</summary>
+        </member>
+        <member name="M:Silk.NET.OpenXR.Extensions.META.MetaPerformanceMetrics.QueryPerformanceMetricsCounterMeta(Silk.NET.OpenXR.Session,System.UInt64,Silk.NET.OpenXR.PerformanceMetricsCounterMETA*)">
+            <summary>To be documented.</summary>
+        </member>
+        <member name="M:Silk.NET.OpenXR.Extensions.META.MetaPerformanceMetrics.QueryPerformanceMetricsCounterMeta(Silk.NET.OpenXR.Session,System.UInt64,Silk.NET.OpenXR.PerformanceMetricsCounterMETA@)">
+            <summary>To be documented.</summary>
+        </member>
+        <member name="M:Silk.NET.OpenXR.Extensions.META.MetaPerformanceMetrics.SetPerformanceMetricsStateMeta(Silk.NET.OpenXR.Session,Silk.NET.OpenXR.PerformanceMetricsStateMETA*)">
+            <summary>To be documented.</summary>
+        </member>
+        <member name="M:Silk.NET.OpenXR.Extensions.META.MetaPerformanceMetrics.SetPerformanceMetricsStateMeta(Silk.NET.OpenXR.Session,Silk.NET.OpenXR.PerformanceMetricsStateMETA@)">
+            <summary>To be documented.</summary>
+        </member>
+        <member name="M:Silk.NET.OpenXR.Extensions.META.MetaPerformanceMetrics.EnumeratePerformanceMetricsCounterPathsMeta(Silk.NET.OpenXR.Instance,System.UInt32*,System.Span{System.UInt64})">
+            <summary>To be documented.</summary>
+        </member>
+        <member name="M:Silk.NET.OpenXR.Extensions.META.MetaPerformanceMetrics.EnumeratePerformanceMetricsCounterPathsMeta(Silk.NET.OpenXR.Instance,System.UInt32@,System.Span{System.UInt64})">
+            <summary>To be documented.</summary>
+        </member>
+        <member name="M:Silk.NET.OpenXR.Extensions.META.MetaPerformanceMetricsOverloads.EnumeratePerformanceMetricsCounterPathsMeta(Silk.NET.OpenXR.Extensions.META.MetaPerformanceMetrics,Silk.NET.OpenXR.Instance,System.UInt32,System.UInt32*,System.Span{System.UInt64})">
+            <summary>To be documented.</summary>
+        </member>
+        <member name="M:Silk.NET.OpenXR.Extensions.META.MetaPerformanceMetricsOverloads.EnumeratePerformanceMetricsCounterPathsMeta(Silk.NET.OpenXR.Extensions.META.MetaPerformanceMetrics,Silk.NET.OpenXR.Instance,System.UInt32,System.Span{System.UInt32},System.UInt64*)">
+            <summary>To be documented.</summary>
+        </member>
+        <member name="M:Silk.NET.OpenXR.Extensions.META.MetaPerformanceMetricsOverloads.EnumeratePerformanceMetricsCounterPathsMeta(Silk.NET.OpenXR.Extensions.META.MetaPerformanceMetrics,Silk.NET.OpenXR.Instance,System.UInt32,System.Span{System.UInt32},System.Span{System.UInt64})">
+            <summary>To be documented.</summary>
+        </member>
+        <member name="M:Silk.NET.OpenXR.Extensions.META.MetaPerformanceMetricsOverloads.GetPerformanceMetricsStateMeta(Silk.NET.OpenXR.Extensions.META.MetaPerformanceMetrics,Silk.NET.OpenXR.Session,System.Span{Silk.NET.OpenXR.PerformanceMetricsStateMETA})">
+            <summary>To be documented.</summary>
+        </member>
+        <member name="M:Silk.NET.OpenXR.Extensions.META.MetaPerformanceMetricsOverloads.QueryPerformanceMetricsCounterMeta(Silk.NET.OpenXR.Extensions.META.MetaPerformanceMetrics,Silk.NET.OpenXR.Session,System.UInt64,System.Span{Silk.NET.OpenXR.PerformanceMetricsCounterMETA})">
+            <summary>To be documented.</summary>
+        </member>
+        <member name="M:Silk.NET.OpenXR.Extensions.META.MetaPerformanceMetricsOverloads.SetPerformanceMetricsStateMeta(Silk.NET.OpenXR.Extensions.META.MetaPerformanceMetrics,Silk.NET.OpenXR.Session,System.ReadOnlySpan{Silk.NET.OpenXR.PerformanceMetricsStateMETA})">
+            <summary>To be documented.</summary>
+        </member>
+    </members>
+</doc>
