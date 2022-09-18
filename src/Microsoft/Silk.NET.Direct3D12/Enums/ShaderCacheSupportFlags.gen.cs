@@ -28,15 +28,6 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"AutomaticDiskCache\"")]
         [NativeName("Name", "D3D12_SHADER_CACHE_SUPPORT_AUTOMATIC_DISK_CACHE")]
         ShaderCacheSupportAutomaticDiskCache = 0x8,
-        [Obsolete("Deprecated in favour of \"DriverManagedCache\"")]
-        [NativeName("Name", "D3D12_SHADER_CACHE_SUPPORT_DRIVER_MANAGED_CACHE")]
-        ShaderCacheSupportDriverManagedCache = 0x10,
-        [Obsolete("Deprecated in favour of \"ShaderControlClear\"")]
-        [NativeName("Name", "D3D12_SHADER_CACHE_SUPPORT_SHADER_CONTROL_CLEAR")]
-        ShaderCacheSupportShaderControlClear = 0x20,
-        [Obsolete("Deprecated in favour of \"ShaderSessionDelete\"")]
-        [NativeName("Name", "D3D12_SHADER_CACHE_SUPPORT_SHADER_SESSION_DELETE")]
-        ShaderCacheSupportShaderSessionDelete = 0x40,
         [NativeName("Name", "D3D12_SHADER_CACHE_SUPPORT_NONE")]
         None = 0x0,
         [NativeName("Name", "D3D12_SHADER_CACHE_SUPPORT_SINGLE_PSO")]
@@ -47,11 +38,5 @@ namespace Silk.NET.Direct3D12
         AutomaticInprocCache = 0x4,
         [NativeName("Name", "D3D12_SHADER_CACHE_SUPPORT_AUTOMATIC_DISK_CACHE")]
         AutomaticDiskCache = 0x8,
-        [NativeName("Name", "D3D12_SHADER_CACHE_SUPPORT_DRIVER_MANAGED_CACHE")]
-        DriverManagedCache = 0x10,
-        [NativeName("Name", "D3D12_SHADER_CACHE_SUPPORT_SHADER_CONTROL_CLEAR")]
-        ShaderControlClear = 0x20,
-        [NativeName("Name", "D3D12_SHADER_CACHE_SUPPORT_SHADER_SESSION_DELETE")]
-        ShaderSessionDelete = 0x40,
     }
 }

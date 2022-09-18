@@ -66,12 +66,6 @@ namespace Silk.NET.Direct3D11
         [Obsolete("Deprecated in favour of \"HWProtected\"")]
         [NativeName("Name", "D3D11_RESOURCE_MISC_HW_PROTECTED")]
         ResourceMiscHWProtected = 0x80000,
-        [Obsolete("Deprecated in favour of \"SharedDisplayable\"")]
-        [NativeName("Name", "D3D11_RESOURCE_MISC_SHARED_DISPLAYABLE")]
-        ResourceMiscSharedDisplayable = 0x100000,
-        [Obsolete("Deprecated in favour of \"SharedExclusiveWriter\"")]
-        [NativeName("Name", "D3D11_RESOURCE_MISC_SHARED_EXCLUSIVE_WRITER")]
-        ResourceMiscSharedExclusiveWriter = 0x200000,
         [NativeName("Name", "D3D11_RESOURCE_MISC_GENERATE_MIPS")]
         GenerateMips = 0x1,
         [NativeName("Name", "D3D11_RESOURCE_MISC_SHARED")]
@@ -106,9 +100,5 @@ namespace Silk.NET.Direct3D11
         Tiled = 0x40000,
         [NativeName("Name", "D3D11_RESOURCE_MISC_HW_PROTECTED")]
         HWProtected = 0x80000,
-        [NativeName("Name", "D3D11_RESOURCE_MISC_SHARED_DISPLAYABLE")]
-        SharedDisplayable = 0x100000,
-        [NativeName("Name", "D3D11_RESOURCE_MISC_SHARED_EXCLUSIVE_WRITER")]
-        SharedExclusiveWriter = 0x200000,
     }
 }

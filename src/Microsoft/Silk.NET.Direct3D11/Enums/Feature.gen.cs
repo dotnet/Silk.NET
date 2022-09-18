@@ -72,9 +72,6 @@ namespace Silk.NET.Direct3D11
         [Obsolete("Deprecated in favour of \"D3D11Options5\"")]
         [NativeName("Name", "D3D11_FEATURE_D3D11_OPTIONS5")]
         FeatureD3D11Options5 = 0x13,
-        [Obsolete("Deprecated in favour of \"Displayable\"")]
-        [NativeName("Name", "D3D11_FEATURE_DISPLAYABLE")]
-        FeatureDisplayable = 0x14,
         [NativeName("Name", "D3D11_FEATURE_THREADING")]
         Threading = 0x0,
         [NativeName("Name", "D3D11_FEATURE_DOUBLES")]
@@ -115,7 +112,5 @@ namespace Silk.NET.Direct3D11
         ShaderCache = 0x12,
         [NativeName("Name", "D3D11_FEATURE_D3D11_OPTIONS5")]
         D3D11Options5 = 0x13,
-        [NativeName("Name", "D3D11_FEATURE_DISPLAYABLE")]
-        Displayable = 0x14,
     }
 }

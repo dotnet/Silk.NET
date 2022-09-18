@@ -75,9 +75,6 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"D3D12Options5\"")]
         [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS5")]
         FeatureD3D12Options5 = 0x1B,
-        [Obsolete("Deprecated in favour of \"Displayable\"")]
-        [NativeName("Name", "D3D12_FEATURE_DISPLAYABLE")]
-        FeatureDisplayable = 0x1C,
         [Obsolete("Deprecated in favour of \"D3D12Options6\"")]
         [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS6")]
         FeatureD3D12Options6 = 0x1E,
@@ -93,24 +90,6 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"ProtectedResourceSessionTypes\"")]
         [NativeName("Name", "D3D12_FEATURE_PROTECTED_RESOURCE_SESSION_TYPES")]
         FeatureProtectedResourceSessionTypes = 0x22,
-        [Obsolete("Deprecated in favour of \"D3D12Options8\"")]
-        [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS8")]
-        FeatureD3D12Options8 = 0x24,
-        [Obsolete("Deprecated in favour of \"D3D12Options9\"")]
-        [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS9")]
-        FeatureD3D12Options9 = 0x25,
-        [Obsolete("Deprecated in favour of \"D3D12Options10\"")]
-        [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS10")]
-        FeatureD3D12Options10 = 0x27,
-        [Obsolete("Deprecated in favour of \"D3D12Options11\"")]
-        [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS11")]
-        FeatureD3D12Options11 = 0x28,
-        [Obsolete("Deprecated in favour of \"D3D12Options12\"")]
-        [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS12")]
-        FeatureD3D12Options12 = 0x29,
-        [Obsolete("Deprecated in favour of \"D3D12Options13\"")]
-        [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS13")]
-        FeatureD3D12Options13 = 0x2A,
         [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS")]
         D3D12Options = 0x0,
         [NativeName("Name", "D3D12_FEATURE_ARCHITECTURE")]
@@ -153,8 +132,6 @@ namespace Silk.NET.Direct3D12
         CrossNode = 0x19,
         [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS5")]
         D3D12Options5 = 0x1B,
-        [NativeName("Name", "D3D12_FEATURE_DISPLAYABLE")]
-        Displayable = 0x1C,
         [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS6")]
         D3D12Options6 = 0x1E,
         [NativeName("Name", "D3D12_FEATURE_QUERY_META_COMMAND")]
@@ -165,17 +142,5 @@ namespace Silk.NET.Direct3D12
         ProtectedResourceSessionTypeCount = 0x21,
         [NativeName("Name", "D3D12_FEATURE_PROTECTED_RESOURCE_SESSION_TYPES")]
         ProtectedResourceSessionTypes = 0x22,
-        [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS8")]
-        D3D12Options8 = 0x24,
-        [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS9")]
-        D3D12Options9 = 0x25,
-        [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS10")]
-        D3D12Options10 = 0x27,
-        [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS11")]
-        D3D12Options11 = 0x28,
-        [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS12")]
-        D3D12Options12 = 0x29,
-        [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS13")]
-        D3D12Options13 = 0x2A,
     }
 }

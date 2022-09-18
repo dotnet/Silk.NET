@@ -132,43 +132,43 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetResult(IDxcBlob** ppResult)
+        public readonly unsafe int GetResult(IDxcBlob** pResult)
         {
             var @this = (IDxcOperationResult*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDxcOperationResult*, IDxcBlob**, int>)@this->LpVtbl[4])(@this, ppResult);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcOperationResult*, IDxcBlob**, int>)@this->LpVtbl[4])(@this, pResult);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetResult(ref IDxcBlob* ppResult)
+        public readonly unsafe int GetResult(ref IDxcBlob* pResult)
         {
             var @this = (IDxcOperationResult*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (IDxcBlob** ppResultPtr = &ppResult)
+            fixed (IDxcBlob** pResultPtr = &pResult)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcOperationResult*, IDxcBlob**, int>)@this->LpVtbl[4])(@this, ppResultPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcOperationResult*, IDxcBlob**, int>)@this->LpVtbl[4])(@this, pResultPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetErrorBuffer(IDxcBlobEncoding** ppErrors)
+        public readonly unsafe int GetErrorBuffer(IDxcBlobEncoding** pErrors)
         {
             var @this = (IDxcOperationResult*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDxcOperationResult*, IDxcBlobEncoding**, int>)@this->LpVtbl[5])(@this, ppErrors);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcOperationResult*, IDxcBlobEncoding**, int>)@this->LpVtbl[5])(@this, pErrors);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetErrorBuffer(ref IDxcBlobEncoding* ppErrors)
+        public readonly unsafe int GetErrorBuffer(ref IDxcBlobEncoding* pErrors)
         {
             var @this = (IDxcOperationResult*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (IDxcBlobEncoding** ppErrorsPtr = &ppErrors)
+            fixed (IDxcBlobEncoding** pErrorsPtr = &pErrors)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcOperationResult*, IDxcBlobEncoding**, int>)@this->LpVtbl[5])(@this, ppErrorsPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcOperationResult*, IDxcBlobEncoding**, int>)@this->LpVtbl[5])(@this, pErrorsPtr);
             }
             return ret;
         }
@@ -183,19 +183,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetResult<TI0>(ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        public readonly int GetResult<TI0>(ref ComPtr<TI0> pResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
         {
             var @this = (IDxcOperationResult*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->GetResult((IDxcBlob**) ppResult.GetAddressOf());
+            return @this->GetResult((IDxcBlob**) pResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetErrorBuffer<TI0>(ref ComPtr<TI0> ppErrors) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
+        public readonly int GetErrorBuffer<TI0>(ref ComPtr<TI0> pErrors) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
         {
             var @this = (IDxcOperationResult*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->GetErrorBuffer((IDxcBlobEncoding**) ppErrors.GetAddressOf());
+            return @this->GetErrorBuffer((IDxcBlobEncoding**) pErrors.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
