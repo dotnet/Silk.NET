@@ -2880,13 +2880,13 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 338, Column 24 in build/submodules/Assimp/include\\assimp/material.h")]
-        [NativeApi(EntryPoint = "TextureTypeToString")]
+        [NativeApi(EntryPoint = "aiTextureTypeToString")]
         public unsafe partial byte* TextureTypeToString(TextureType @in);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 338, Column 24 in build/submodules/Assimp/include\\assimp/material.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "TextureTypeToString")]
+        [NativeApi(EntryPoint = "aiTextureTypeToString")]
         public partial string TextureTypeToStringS(TextureType @in);
 
         /// <summary>To be documented.</summary>
