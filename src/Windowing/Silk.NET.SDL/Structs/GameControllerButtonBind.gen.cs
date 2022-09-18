@@ -22,7 +22,7 @@ namespace Silk.NET.SDL
         public GameControllerButtonBind
         (
             GameControllerBindType? bindType = null,
-            GameControllerButtonBindValue? value = null
+            GameControllerBindValue? value = null
         ) : this()
         {
             if (bindType is not null)
@@ -42,9 +42,9 @@ namespace Silk.NET.SDL
         [NativeName("Name", "bindType")]
         public GameControllerBindType BindType;
 
-        [NativeName("Type", "union (unnamed union at build/submodules/SDL/include\\SDL_gamecontroller.h:93:5)")]
-        [NativeName("Type.Name", "union (unnamed union at build/submodules/SDL/include\\SDL_gamecontroller.h:93:5)")]
+        [NativeName("Type", "union (unnamed union at build/submodules/SDL/include\\SDL_gamecontroller.h:87:5)")]
+        [NativeName("Type.Name", "union (unnamed union at build/submodules/SDL/include\\SDL_gamecontroller.h:87:5)")]
         [NativeName("Name", "value")]
-        public GameControllerButtonBindValue Value;
+        public GameControllerBindValue Value;
     }
 }

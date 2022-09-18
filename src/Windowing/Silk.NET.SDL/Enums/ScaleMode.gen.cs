@@ -10,7 +10,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.SDL
 {
     [Flags]
-    [NativeName("AnonymousName", "__AnonymousEnum_SDL_render_L101_C9")]
+    [NativeName("AnonymousName", "__AnonymousEnum_SDL_render_L91_C9")]
     [NativeName("Name", "SDL_ScaleMode")]
     public enum ScaleMode : int
     {
