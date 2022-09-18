@@ -90,6 +90,12 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"VideoExtensionCommand\"")]
         [NativeName("Name", "D3D12_DRED_ALLOCATION_TYPE_VIDEO_EXTENSION_COMMAND")]
         DredAllocationTypeVideoExtensionCommand = 0x2F,
+        [Obsolete("Deprecated in favour of \"VideoEncoder\"")]
+        [NativeName("Name", "D3D12_DRED_ALLOCATION_TYPE_VIDEO_ENCODER")]
+        DredAllocationTypeVideoEncoder = 0x30,
+        [Obsolete("Deprecated in favour of \"VideoEncoderHeap\"")]
+        [NativeName("Name", "D3D12_DRED_ALLOCATION_TYPE_VIDEO_ENCODER_HEAP")]
+        DredAllocationTypeVideoEncoderHeap = 0x31,
         [Obsolete("Deprecated in favour of \"Invalid\"")]
         [NativeName("Name", "D3D12_DRED_ALLOCATION_TYPE_INVALID")]
         DredAllocationTypeInvalid = unchecked((int) 0xFFFFFFFFFFFFFFFF),
@@ -145,6 +151,10 @@ namespace Silk.NET.Direct3D12
         VideoMotionVectorHeap = 0x2E,
         [NativeName("Name", "D3D12_DRED_ALLOCATION_TYPE_VIDEO_EXTENSION_COMMAND")]
         VideoExtensionCommand = 0x2F,
+        [NativeName("Name", "D3D12_DRED_ALLOCATION_TYPE_VIDEO_ENCODER")]
+        VideoEncoder = 0x30,
+        [NativeName("Name", "D3D12_DRED_ALLOCATION_TYPE_VIDEO_ENCODER_HEAP")]
+        VideoEncoderHeap = 0x31,
         [NativeName("Name", "D3D12_DRED_ALLOCATION_TYPE_INVALID")]
         Invalid = unchecked((int) 0xFFFFFFFFFFFFFFFF),
     }

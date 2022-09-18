@@ -24,16 +24,11 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"MutableFormatBitKhr\"")]
         [NativeName("Name", "VK_SWAPCHAIN_CREATE_MUTABLE_FORMAT_BIT_KHR")]
         SwapchainCreateMutableFormatBitKhr = 4,
-        [Obsolete("Deprecated in favour of \"Reserved3BitSec\"")]
-        [NativeName("Name", "VK_SWAPCHAIN_CREATE_RESERVED_3_BIT_SEC")]
-        SwapchainCreateReserved3BitSec = 8,
         [NativeName("Name", "VK_SWAPCHAIN_CREATE_SPLIT_INSTANCE_BIND_REGIONS_BIT_KHR")]
         SplitInstanceBindRegionsBitKhr = 1,
         [NativeName("Name", "VK_SWAPCHAIN_CREATE_PROTECTED_BIT_KHR")]
         ProtectedBitKhr = 2,
         [NativeName("Name", "VK_SWAPCHAIN_CREATE_MUTABLE_FORMAT_BIT_KHR")]
         MutableFormatBitKhr = 4,
-        [NativeName("Name", "VK_SWAPCHAIN_CREATE_RESERVED_3_BIT_SEC")]
-        Reserved3BitSec = 8,
     }
 }

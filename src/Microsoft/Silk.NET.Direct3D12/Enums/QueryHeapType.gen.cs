@@ -33,6 +33,9 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"CopyQueueTimestamp\"")]
         [NativeName("Name", "D3D12_QUERY_HEAP_TYPE_COPY_QUEUE_TIMESTAMP")]
         QueryHeapTypeCopyQueueTimestamp = 0x5,
+        [Obsolete("Deprecated in favour of \"PipelineStatistics1\"")]
+        [NativeName("Name", "D3D12_QUERY_HEAP_TYPE_PIPELINE_STATISTICS1")]
+        QueryHeapTypePipelineStatistics1 = 0x7,
         [NativeName("Name", "D3D12_QUERY_HEAP_TYPE_OCCLUSION")]
         Occlusion = 0x0,
         [NativeName("Name", "D3D12_QUERY_HEAP_TYPE_TIMESTAMP")]
@@ -45,5 +48,7 @@ namespace Silk.NET.Direct3D12
         VideoDecodeStatistics = 0x4,
         [NativeName("Name", "D3D12_QUERY_HEAP_TYPE_COPY_QUEUE_TIMESTAMP")]
         CopyQueueTimestamp = 0x5,
+        [NativeName("Name", "D3D12_QUERY_HEAP_TYPE_PIPELINE_STATISTICS1")]
+        PipelineStatistics1 = 0x7,
     }
 }

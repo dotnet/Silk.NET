@@ -45,6 +45,15 @@ namespace Silk.NET.XAudio
         [Obsolete("Deprecated in favour of \"Media\"")]
         [NativeName("Name", "AudioCategory_Media")]
         AudioCategoryMedia = 0xB,
+        [Obsolete("Deprecated in favour of \"FarFieldSpeech\"")]
+        [NativeName("Name", "AudioCategory_FarFieldSpeech")]
+        AudioCategoryFarFieldSpeech = 0xC,
+        [Obsolete("Deprecated in favour of \"UniformSpeech\"")]
+        [NativeName("Name", "AudioCategory_UniformSpeech")]
+        AudioCategoryUniformSpeech = 0xD,
+        [Obsolete("Deprecated in favour of \"VoiceTyping\"")]
+        [NativeName("Name", "AudioCategory_VoiceTyping")]
+        AudioCategoryVoiceTyping = 0xE,
         [NativeName("Name", "AudioCategory_Other")]
         Other = 0x0,
         [NativeName("Name", "AudioCategory_ForegroundOnlyMedia")]
@@ -67,5 +76,11 @@ namespace Silk.NET.XAudio
         Movie = 0xA,
         [NativeName("Name", "AudioCategory_Media")]
         Media = 0xB,
+        [NativeName("Name", "AudioCategory_FarFieldSpeech")]
+        FarFieldSpeech = 0xC,
+        [NativeName("Name", "AudioCategory_UniformSpeech")]
+        UniformSpeech = 0xD,
+        [NativeName("Name", "AudioCategory_VoiceTyping")]
+        VoiceTyping = 0xE,
     }
 }

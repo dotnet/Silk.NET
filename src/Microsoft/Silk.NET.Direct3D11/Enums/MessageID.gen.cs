@@ -3519,507 +3519,510 @@ namespace Silk.NET.Direct3D11
         [Obsolete("Deprecated in favour of \"GetcryptosessionprivatedatasizeInvalidKeyExchangeType\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_GETCRYPTOSESSIONPRIVATEDATASIZE_INVALID_KEY_EXCHANGE_TYPE")]
         MessageIDGetcryptosessionprivatedatasizeInvalidKeyExchangeType = 0x300184,
+        [Obsolete("Deprecated in favour of \"DeviceOpenSharedResource1AccessDenied\"")]
+        [NativeName("Name", "D3D11_MESSAGE_ID_DEVICE_OPEN_SHARED_RESOURCE1_ACCESS_DENIED")]
+        MessageIDDeviceOpenSharedResource1AccessDenied = 0x300185,
         [Obsolete("Deprecated in favour of \"D3D111MessagesEnd\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_D3D11_1_MESSAGES_END")]
-        MessageIDD3D111MessagesEnd = 0x300185,
+        MessageIDD3D111MessagesEnd = 0x300186,
         [Obsolete("Deprecated in favour of \"D3D112MessagesStart\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_D3D11_2_MESSAGES_START")]
-        MessageIDD3D112MessagesStart = 0x300186,
+        MessageIDD3D112MessagesStart = 0x300187,
         [Obsolete("Deprecated in favour of \"CreatebufferInvalidusage\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATEBUFFER_INVALIDUSAGE")]
-        MessageIDCreatebufferInvalidusage = 0x300187,
+        MessageIDCreatebufferInvalidusage = 0x300188,
         [Obsolete("Deprecated in favour of \"Createtexture1DInvalidusage\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATETEXTURE1D_INVALIDUSAGE")]
-        MessageIDCreatetexture1DInvalidusage = 0x300188,
+        MessageIDCreatetexture1DInvalidusage = 0x300189,
         [Obsolete("Deprecated in favour of \"Createtexture2DInvalidusage\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATETEXTURE2D_INVALIDUSAGE")]
-        MessageIDCreatetexture2DInvalidusage = 0x300189,
+        MessageIDCreatetexture2DInvalidusage = 0x30018A,
         [Obsolete("Deprecated in favour of \"CreateinputlayoutLevel9SteprateNot1\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATEINPUTLAYOUT_LEVEL9_STEPRATE_NOT_1")]
-        MessageIDCreateinputlayoutLevel9SteprateNot1 = 0x30018A,
+        MessageIDCreateinputlayoutLevel9SteprateNot1 = 0x30018B,
         [Obsolete("Deprecated in favour of \"CreateinputlayoutLevel9InstancingNotSupported\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATEINPUTLAYOUT_LEVEL9_INSTANCING_NOT_SUPPORTED")]
-        MessageIDCreateinputlayoutLevel9InstancingNotSupported = 0x30018B,
+        MessageIDCreateinputlayoutLevel9InstancingNotSupported = 0x30018C,
         [Obsolete("Deprecated in favour of \"UpdatetilemappingsInvalidParameter\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_UPDATETILEMAPPINGS_INVALID_PARAMETER")]
-        MessageIDUpdatetilemappingsInvalidParameter = 0x30018C,
+        MessageIDUpdatetilemappingsInvalidParameter = 0x30018D,
         [Obsolete("Deprecated in favour of \"CopytilemappingsInvalidParameter\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_COPYTILEMAPPINGS_INVALID_PARAMETER")]
-        MessageIDCopytilemappingsInvalidParameter = 0x30018D,
+        MessageIDCopytilemappingsInvalidParameter = 0x30018E,
         [Obsolete("Deprecated in favour of \"CopytilesInvalidParameter\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_COPYTILES_INVALID_PARAMETER")]
-        MessageIDCopytilesInvalidParameter = 0x30018E,
+        MessageIDCopytilesInvalidParameter = 0x30018F,
         [Obsolete("Deprecated in favour of \"UpdatetilesInvalidParameter\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_UPDATETILES_INVALID_PARAMETER")]
-        MessageIDUpdatetilesInvalidParameter = 0x30018F,
+        MessageIDUpdatetilesInvalidParameter = 0x300190,
         [Obsolete("Deprecated in favour of \"ResizetilepoolInvalidParameter\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_RESIZETILEPOOL_INVALID_PARAMETER")]
-        MessageIDResizetilepoolInvalidParameter = 0x300190,
+        MessageIDResizetilepoolInvalidParameter = 0x300191,
         [Obsolete("Deprecated in favour of \"TiledresourcebarrierInvalidParameter\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_TILEDRESOURCEBARRIER_INVALID_PARAMETER")]
-        MessageIDTiledresourcebarrierInvalidParameter = 0x300191,
+        MessageIDTiledresourcebarrierInvalidParameter = 0x300192,
         [Obsolete("Deprecated in favour of \"NullTileMappingAccessWarning\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_NULL_TILE_MAPPING_ACCESS_WARNING")]
-        MessageIDNullTileMappingAccessWarning = 0x300192,
+        MessageIDNullTileMappingAccessWarning = 0x300193,
         [Obsolete("Deprecated in favour of \"NullTileMappingAccessError\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_NULL_TILE_MAPPING_ACCESS_ERROR")]
-        MessageIDNullTileMappingAccessError = 0x300193,
+        MessageIDNullTileMappingAccessError = 0x300194,
         [Obsolete("Deprecated in favour of \"DirtyTileMappingAccess\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_DIRTY_TILE_MAPPING_ACCESS")]
-        MessageIDDirtyTileMappingAccess = 0x300194,
+        MessageIDDirtyTileMappingAccess = 0x300195,
         [Obsolete("Deprecated in favour of \"DuplicateTileMappingsInCoveredArea\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_DUPLICATE_TILE_MAPPINGS_IN_COVERED_AREA")]
-        MessageIDDuplicateTileMappingsInCoveredArea = 0x300195,
+        MessageIDDuplicateTileMappingsInCoveredArea = 0x300196,
         [Obsolete("Deprecated in favour of \"TileMappingsInCoveredAreaDuplicatedOutside\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_TILE_MAPPINGS_IN_COVERED_AREA_DUPLICATED_OUTSIDE")]
-        MessageIDTileMappingsInCoveredAreaDuplicatedOutside = 0x300196,
+        MessageIDTileMappingsInCoveredAreaDuplicatedOutside = 0x300197,
         [Obsolete("Deprecated in favour of \"TileMappingsSharedBetweenIncompatibleResources\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_TILE_MAPPINGS_SHARED_BETWEEN_INCOMPATIBLE_RESOURCES")]
-        MessageIDTileMappingsSharedBetweenIncompatibleResources = 0x300197,
+        MessageIDTileMappingsSharedBetweenIncompatibleResources = 0x300198,
         [Obsolete("Deprecated in favour of \"TileMappingsSharedBetweenInputAndOutput\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_TILE_MAPPINGS_SHARED_BETWEEN_INPUT_AND_OUTPUT")]
-        MessageIDTileMappingsSharedBetweenInputAndOutput = 0x300198,
+        MessageIDTileMappingsSharedBetweenInputAndOutput = 0x300199,
         [Obsolete("Deprecated in favour of \"CheckmultisamplequalitylevelsInvalidflags\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_CHECKMULTISAMPLEQUALITYLEVELS_INVALIDFLAGS")]
-        MessageIDCheckmultisamplequalitylevelsInvalidflags = 0x300199,
+        MessageIDCheckmultisamplequalitylevelsInvalidflags = 0x30019A,
         [Obsolete("Deprecated in favour of \"GetresourcetilingNontiledResource\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_GETRESOURCETILING_NONTILED_RESOURCE")]
-        MessageIDGetresourcetilingNontiledResource = 0x30019A,
+        MessageIDGetresourcetilingNontiledResource = 0x30019B,
         [Obsolete("Deprecated in favour of \"ResizetilepoolShrinkWithMappingsStillDefinedPastEnd\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_RESIZETILEPOOL_SHRINK_WITH_MAPPINGS_STILL_DEFINED_PAST_END")]
-        MessageIDResizetilepoolShrinkWithMappingsStillDefinedPastEnd = 0x30019B,
+        MessageIDResizetilepoolShrinkWithMappingsStillDefinedPastEnd = 0x30019C,
         [Obsolete("Deprecated in favour of \"NeedToCallTiledresourcebarrier\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_NEED_TO_CALL_TILEDRESOURCEBARRIER")]
-        MessageIDNeedToCallTiledresourcebarrier = 0x30019C,
+        MessageIDNeedToCallTiledresourcebarrier = 0x30019D,
         [Obsolete("Deprecated in favour of \"CreatedeviceInvalidargs\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATEDEVICE_INVALIDARGS")]
-        MessageIDCreatedeviceInvalidargs = 0x30019D,
+        MessageIDCreatedeviceInvalidargs = 0x30019E,
         [Obsolete("Deprecated in favour of \"CreatedeviceWarning\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATEDEVICE_WARNING")]
-        MessageIDCreatedeviceWarning = 0x30019E,
+        MessageIDCreatedeviceWarning = 0x30019F,
         [Obsolete("Deprecated in favour of \"ClearunorderedaccessviewuintHazard\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_CLEARUNORDEREDACCESSVIEWUINT_HAZARD")]
-        MessageIDClearunorderedaccessviewuintHazard = 0x30019F,
+        MessageIDClearunorderedaccessviewuintHazard = 0x3001A0,
         [Obsolete("Deprecated in favour of \"ClearunorderedaccessviewfloatHazard\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_CLEARUNORDEREDACCESSVIEWFLOAT_HAZARD")]
-        MessageIDClearunorderedaccessviewfloatHazard = 0x3001A0,
+        MessageIDClearunorderedaccessviewfloatHazard = 0x3001A1,
         [Obsolete("Deprecated in favour of \"TiledResourceTier1BufferTextureMismatch\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_TILED_RESOURCE_TIER_1_BUFFER_TEXTURE_MISMATCH")]
-        MessageIDTiledResourceTier1BufferTextureMismatch = 0x3001A1,
+        MessageIDTiledResourceTier1BufferTextureMismatch = 0x3001A2,
         [Obsolete("Deprecated in favour of \"CreateCryptosession\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATE_CRYPTOSESSION")]
-        MessageIDCreateCryptosession = 0x3001A2,
+        MessageIDCreateCryptosession = 0x3001A3,
         [Obsolete("Deprecated in favour of \"CreateAuthenticatedchannel\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATE_AUTHENTICATEDCHANNEL")]
-        MessageIDCreateAuthenticatedchannel = 0x3001A3,
+        MessageIDCreateAuthenticatedchannel = 0x3001A4,
         [Obsolete("Deprecated in favour of \"LiveCryptosession\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_LIVE_CRYPTOSESSION")]
-        MessageIDLiveCryptosession = 0x3001A4,
+        MessageIDLiveCryptosession = 0x3001A5,
         [Obsolete("Deprecated in favour of \"LiveAuthenticatedchannel\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_LIVE_AUTHENTICATEDCHANNEL")]
-        MessageIDLiveAuthenticatedchannel = 0x3001A5,
+        MessageIDLiveAuthenticatedchannel = 0x3001A6,
         [Obsolete("Deprecated in favour of \"DestroyCryptosession\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_DESTROY_CRYPTOSESSION")]
-        MessageIDDestroyCryptosession = 0x3001A6,
+        MessageIDDestroyCryptosession = 0x3001A7,
         [Obsolete("Deprecated in favour of \"DestroyAuthenticatedchannel\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_DESTROY_AUTHENTICATEDCHANNEL")]
-        MessageIDDestroyAuthenticatedchannel = 0x3001A7,
+        MessageIDDestroyAuthenticatedchannel = 0x3001A8,
         [Obsolete("Deprecated in favour of \"D3D112MessagesEnd\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_D3D11_2_MESSAGES_END")]
-        MessageIDD3D112MessagesEnd = 0x3001A8,
+        MessageIDD3D112MessagesEnd = 0x3001A9,
         [Obsolete("Deprecated in favour of \"D3D113MessagesStart\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_D3D11_3_MESSAGES_START")]
-        MessageIDD3D113MessagesStart = 0x3001A9,
+        MessageIDD3D113MessagesStart = 0x3001AA,
         [Obsolete("Deprecated in favour of \"CreaterasterizerstateInvalidConservativerastermode\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATERASTERIZERSTATE_INVALID_CONSERVATIVERASTERMODE")]
-        MessageIDCreaterasterizerstateInvalidConservativerastermode = 0x3001AA,
+        MessageIDCreaterasterizerstateInvalidConservativerastermode = 0x3001AB,
         [Obsolete("Deprecated in favour of \"DeviceDrawInvalidSystemvalue\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_DEVICE_DRAW_INVALID_SYSTEMVALUE")]
-        MessageIDDeviceDrawInvalidSystemvalue = 0x3001AB,
+        MessageIDDeviceDrawInvalidSystemvalue = 0x3001AC,
         [Obsolete("Deprecated in favour of \"CreatequeryorpredicateInvalidcontexttype\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATEQUERYORPREDICATE_INVALIDCONTEXTTYPE")]
-        MessageIDCreatequeryorpredicateInvalidcontexttype = 0x3001AC,
+        MessageIDCreatequeryorpredicateInvalidcontexttype = 0x3001AD,
         [Obsolete("Deprecated in favour of \"CreatequeryorpredicateDecodenotsupported\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATEQUERYORPREDICATE_DECODENOTSUPPORTED")]
-        MessageIDCreatequeryorpredicateDecodenotsupported = 0x3001AD,
+        MessageIDCreatequeryorpredicateDecodenotsupported = 0x3001AE,
         [Obsolete("Deprecated in favour of \"CreatequeryorpredicateEncodenotsupported\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATEQUERYORPREDICATE_ENCODENOTSUPPORTED")]
-        MessageIDCreatequeryorpredicateEncodenotsupported = 0x3001AE,
+        MessageIDCreatequeryorpredicateEncodenotsupported = 0x3001AF,
         [Obsolete("Deprecated in favour of \"CreateshaderresourceviewInvalidplaneindex\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATESHADERRESOURCEVIEW_INVALIDPLANEINDEX")]
-        MessageIDCreateshaderresourceviewInvalidplaneindex = 0x3001AF,
+        MessageIDCreateshaderresourceviewInvalidplaneindex = 0x3001B0,
         [Obsolete("Deprecated in favour of \"CreateshaderresourceviewInvalidvideoplaneindex\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATESHADERRESOURCEVIEW_INVALIDVIDEOPLANEINDEX")]
-        MessageIDCreateshaderresourceviewInvalidvideoplaneindex = 0x3001B0,
+        MessageIDCreateshaderresourceviewInvalidvideoplaneindex = 0x3001B1,
         [Obsolete("Deprecated in favour of \"CreateshaderresourceviewAmbiguousvideoplaneindex\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATESHADERRESOURCEVIEW_AMBIGUOUSVIDEOPLANEINDEX")]
-        MessageIDCreateshaderresourceviewAmbiguousvideoplaneindex = 0x3001B1,
+        MessageIDCreateshaderresourceviewAmbiguousvideoplaneindex = 0x3001B2,
         [Obsolete("Deprecated in favour of \"CreaterendertargetviewInvalidplaneindex\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATERENDERTARGETVIEW_INVALIDPLANEINDEX")]
-        MessageIDCreaterendertargetviewInvalidplaneindex = 0x3001B2,
+        MessageIDCreaterendertargetviewInvalidplaneindex = 0x3001B3,
         [Obsolete("Deprecated in favour of \"CreaterendertargetviewInvalidvideoplaneindex\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATERENDERTARGETVIEW_INVALIDVIDEOPLANEINDEX")]
-        MessageIDCreaterendertargetviewInvalidvideoplaneindex = 0x3001B3,
+        MessageIDCreaterendertargetviewInvalidvideoplaneindex = 0x3001B4,
         [Obsolete("Deprecated in favour of \"CreaterendertargetviewAmbiguousvideoplaneindex\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATERENDERTARGETVIEW_AMBIGUOUSVIDEOPLANEINDEX")]
-        MessageIDCreaterendertargetviewAmbiguousvideoplaneindex = 0x3001B4,
+        MessageIDCreaterendertargetviewAmbiguousvideoplaneindex = 0x3001B5,
         [Obsolete("Deprecated in favour of \"CreateunorderedaccessviewInvalidplaneindex\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATEUNORDEREDACCESSVIEW_INVALIDPLANEINDEX")]
-        MessageIDCreateunorderedaccessviewInvalidplaneindex = 0x3001B5,
+        MessageIDCreateunorderedaccessviewInvalidplaneindex = 0x3001B6,
         [Obsolete("Deprecated in favour of \"CreateunorderedaccessviewInvalidvideoplaneindex\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATEUNORDEREDACCESSVIEW_INVALIDVIDEOPLANEINDEX")]
-        MessageIDCreateunorderedaccessviewInvalidvideoplaneindex = 0x3001B6,
+        MessageIDCreateunorderedaccessviewInvalidvideoplaneindex = 0x3001B7,
         [Obsolete("Deprecated in favour of \"CreateunorderedaccessviewAmbiguousvideoplaneindex\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATEUNORDEREDACCESSVIEW_AMBIGUOUSVIDEOPLANEINDEX")]
-        MessageIDCreateunorderedaccessviewAmbiguousvideoplaneindex = 0x3001B7,
+        MessageIDCreateunorderedaccessviewAmbiguousvideoplaneindex = 0x3001B8,
         [Obsolete("Deprecated in favour of \"JpegdecodeInvalidscandataoffset\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_INVALIDSCANDATAOFFSET")]
-        MessageIDJpegdecodeInvalidscandataoffset = 0x3001B8,
+        MessageIDJpegdecodeInvalidscandataoffset = 0x3001B9,
         [Obsolete("Deprecated in favour of \"JpegdecodeNotsupported\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_NOTSUPPORTED")]
-        MessageIDJpegdecodeNotsupported = 0x3001B9,
+        MessageIDJpegdecodeNotsupported = 0x3001BA,
         [Obsolete("Deprecated in favour of \"JpegdecodeDimensionstoolarge\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_DIMENSIONSTOOLARGE")]
-        MessageIDJpegdecodeDimensionstoolarge = 0x3001BA,
+        MessageIDJpegdecodeDimensionstoolarge = 0x3001BB,
         [Obsolete("Deprecated in favour of \"JpegdecodeInvalidcomponents\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_INVALIDCOMPONENTS")]
-        MessageIDJpegdecodeInvalidcomponents = 0x3001BB,
+        MessageIDJpegdecodeInvalidcomponents = 0x3001BC,
         [Obsolete("Deprecated in favour of \"JpegdecodeDestinationnot2D\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_DESTINATIONNOT2D")]
-        MessageIDJpegdecodeDestinationnot2D = 0x3001BC,
+        MessageIDJpegdecodeDestinationnot2D = 0x3001BD,
         [Obsolete("Deprecated in favour of \"JpegdecodeTiledresourcesunsupported\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_TILEDRESOURCESUNSUPPORTED")]
-        MessageIDJpegdecodeTiledresourcesunsupported = 0x3001BD,
+        MessageIDJpegdecodeTiledresourcesunsupported = 0x3001BE,
         [Obsolete("Deprecated in favour of \"JpegdecodeGuardrectsunsupported\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_GUARDRECTSUNSUPPORTED")]
-        MessageIDJpegdecodeGuardrectsunsupported = 0x3001BE,
+        MessageIDJpegdecodeGuardrectsunsupported = 0x3001BF,
         [Obsolete("Deprecated in favour of \"JpegdecodeFormatunsupported\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_FORMATUNSUPPORTED")]
-        MessageIDJpegdecodeFormatunsupported = 0x3001BF,
+        MessageIDJpegdecodeFormatunsupported = 0x3001C0,
         [Obsolete("Deprecated in favour of \"JpegdecodeInvalidsubresource\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_INVALIDSUBRESOURCE")]
-        MessageIDJpegdecodeInvalidsubresource = 0x3001C0,
+        MessageIDJpegdecodeInvalidsubresource = 0x3001C1,
         [Obsolete("Deprecated in favour of \"JpegdecodeInvalidmiplevel\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_INVALIDMIPLEVEL")]
-        MessageIDJpegdecodeInvalidmiplevel = 0x3001C1,
+        MessageIDJpegdecodeInvalidmiplevel = 0x3001C2,
         [Obsolete("Deprecated in favour of \"JpegdecodeEmptydestbox\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_EMPTYDESTBOX")]
-        MessageIDJpegdecodeEmptydestbox = 0x3001C2,
+        MessageIDJpegdecodeEmptydestbox = 0x3001C3,
         [Obsolete("Deprecated in favour of \"JpegdecodeDestboxnot2D\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_DESTBOXNOT2D")]
-        MessageIDJpegdecodeDestboxnot2D = 0x3001C3,
+        MessageIDJpegdecodeDestboxnot2D = 0x3001C4,
         [Obsolete("Deprecated in favour of \"JpegdecodeDestboxnotsub\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_DESTBOXNOTSUB")]
-        MessageIDJpegdecodeDestboxnotsub = 0x3001C4,
+        MessageIDJpegdecodeDestboxnotsub = 0x3001C5,
         [Obsolete("Deprecated in favour of \"JpegdecodeDestboxesintersect\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_DESTBOXESINTERSECT")]
-        MessageIDJpegdecodeDestboxesintersect = 0x3001C5,
+        MessageIDJpegdecodeDestboxesintersect = 0x3001C6,
         [Obsolete("Deprecated in favour of \"JpegdecodeXsubsamplemismatch\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_XSUBSAMPLEMISMATCH")]
-        MessageIDJpegdecodeXsubsamplemismatch = 0x3001C6,
+        MessageIDJpegdecodeXsubsamplemismatch = 0x3001C7,
         [Obsolete("Deprecated in favour of \"JpegdecodeYsubsamplemismatch\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_YSUBSAMPLEMISMATCH")]
-        MessageIDJpegdecodeYsubsamplemismatch = 0x3001C7,
+        MessageIDJpegdecodeYsubsamplemismatch = 0x3001C8,
         [Obsolete("Deprecated in favour of \"JpegdecodeXsubsampleodd\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_XSUBSAMPLEODD")]
-        MessageIDJpegdecodeXsubsampleodd = 0x3001C8,
+        MessageIDJpegdecodeXsubsampleodd = 0x3001C9,
         [Obsolete("Deprecated in favour of \"JpegdecodeYsubsampleodd\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_YSUBSAMPLEODD")]
-        MessageIDJpegdecodeYsubsampleodd = 0x3001C9,
+        MessageIDJpegdecodeYsubsampleodd = 0x3001CA,
         [Obsolete("Deprecated in favour of \"JpegdecodeOutputdimensionstoolarge\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_OUTPUTDIMENSIONSTOOLARGE")]
-        MessageIDJpegdecodeOutputdimensionstoolarge = 0x3001CA,
+        MessageIDJpegdecodeOutputdimensionstoolarge = 0x3001CB,
         [Obsolete("Deprecated in favour of \"JpegdecodeNonpow2Scaleunsupported\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_NONPOW2SCALEUNSUPPORTED")]
-        MessageIDJpegdecodeNonpow2Scaleunsupported = 0x3001CB,
+        MessageIDJpegdecodeNonpow2Scaleunsupported = 0x3001CC,
         [Obsolete("Deprecated in favour of \"JpegdecodeFractionaldownscaletolarge\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_FRACTIONALDOWNSCALETOLARGE")]
-        MessageIDJpegdecodeFractionaldownscaletolarge = 0x3001CC,
+        MessageIDJpegdecodeFractionaldownscaletolarge = 0x3001CD,
         [Obsolete("Deprecated in favour of \"JpegdecodeChromasizemismatch\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_CHROMASIZEMISMATCH")]
-        MessageIDJpegdecodeChromasizemismatch = 0x3001CD,
+        MessageIDJpegdecodeChromasizemismatch = 0x3001CE,
         [Obsolete("Deprecated in favour of \"JpegdecodeLumachromasizemismatch\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_LUMACHROMASIZEMISMATCH")]
-        MessageIDJpegdecodeLumachromasizemismatch = 0x3001CE,
+        MessageIDJpegdecodeLumachromasizemismatch = 0x3001CF,
         [Obsolete("Deprecated in favour of \"JpegdecodeInvalidnumdestinations\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_INVALIDNUMDESTINATIONS")]
-        MessageIDJpegdecodeInvalidnumdestinations = 0x3001CF,
+        MessageIDJpegdecodeInvalidnumdestinations = 0x3001D0,
         [Obsolete("Deprecated in favour of \"JpegdecodeSubboxunsupported\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_SUBBOXUNSUPPORTED")]
-        MessageIDJpegdecodeSubboxunsupported = 0x3001D0,
+        MessageIDJpegdecodeSubboxunsupported = 0x3001D1,
         [Obsolete("Deprecated in favour of \"Jpegdecode1Destunsupportedformat\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_1DESTUNSUPPORTEDFORMAT")]
-        MessageIDJpegdecode1Destunsupportedformat = 0x3001D1,
+        MessageIDJpegdecode1Destunsupportedformat = 0x3001D2,
         [Obsolete("Deprecated in favour of \"Jpegdecode3Destunsupportedformat\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_3DESTUNSUPPORTEDFORMAT")]
-        MessageIDJpegdecode3Destunsupportedformat = 0x3001D2,
+        MessageIDJpegdecode3Destunsupportedformat = 0x3001D3,
         [Obsolete("Deprecated in favour of \"JpegdecodeScaleunsupported\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_SCALEUNSUPPORTED")]
-        MessageIDJpegdecodeScaleunsupported = 0x3001D3,
+        MessageIDJpegdecodeScaleunsupported = 0x3001D4,
         [Obsolete("Deprecated in favour of \"JpegdecodeInvalidsourcesize\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_INVALIDSOURCESIZE")]
-        MessageIDJpegdecodeInvalidsourcesize = 0x3001D4,
+        MessageIDJpegdecodeInvalidsourcesize = 0x3001D5,
         [Obsolete("Deprecated in favour of \"JpegdecodeInvalidcopyflags\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_INVALIDCOPYFLAGS")]
-        MessageIDJpegdecodeInvalidcopyflags = 0x3001D5,
+        MessageIDJpegdecodeInvalidcopyflags = 0x3001D6,
         [Obsolete("Deprecated in favour of \"JpegdecodeHazard\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_HAZARD")]
-        MessageIDJpegdecodeHazard = 0x3001D6,
+        MessageIDJpegdecodeHazard = 0x3001D7,
         [Obsolete("Deprecated in favour of \"JpegdecodeUnsupportedsrcbufferusage\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_UNSUPPORTEDSRCBUFFERUSAGE")]
-        MessageIDJpegdecodeUnsupportedsrcbufferusage = 0x3001D7,
+        MessageIDJpegdecodeUnsupportedsrcbufferusage = 0x3001D8,
         [Obsolete("Deprecated in favour of \"JpegdecodeUnsupportedsrcbuffermiscflags\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_UNSUPPORTEDSRCBUFFERMISCFLAGS")]
-        MessageIDJpegdecodeUnsupportedsrcbuffermiscflags = 0x3001D8,
+        MessageIDJpegdecodeUnsupportedsrcbuffermiscflags = 0x3001D9,
         [Obsolete("Deprecated in favour of \"JpegdecodeUnsupporteddsttextureusage\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_UNSUPPORTEDDSTTEXTUREUSAGE")]
-        MessageIDJpegdecodeUnsupporteddsttextureusage = 0x3001D9,
+        MessageIDJpegdecodeUnsupporteddsttextureusage = 0x3001DA,
         [Obsolete("Deprecated in favour of \"JpegdecodeBackbuffernotsupported\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_BACKBUFFERNOTSUPPORTED")]
-        MessageIDJpegdecodeBackbuffernotsupported = 0x3001DA,
+        MessageIDJpegdecodeBackbuffernotsupported = 0x3001DB,
         [Obsolete("Deprecated in favour of \"JpegdecodeUnsupprtedcopyflags\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_UNSUPPRTEDCOPYFLAGS")]
-        MessageIDJpegdecodeUnsupprtedcopyflags = 0x3001DB,
+        MessageIDJpegdecodeUnsupprtedcopyflags = 0x3001DC,
         [Obsolete("Deprecated in favour of \"JpegencodeNotsupported\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGENCODE_NOTSUPPORTED")]
-        MessageIDJpegencodeNotsupported = 0x3001DC,
+        MessageIDJpegencodeNotsupported = 0x3001DD,
         [Obsolete("Deprecated in favour of \"JpegencodeInvalidscandataoffset\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGENCODE_INVALIDSCANDATAOFFSET")]
-        MessageIDJpegencodeInvalidscandataoffset = 0x3001DD,
+        MessageIDJpegencodeInvalidscandataoffset = 0x3001DE,
         [Obsolete("Deprecated in favour of \"JpegencodeInvalidcomponents\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGENCODE_INVALIDCOMPONENTS")]
-        MessageIDJpegencodeInvalidcomponents = 0x3001DE,
+        MessageIDJpegencodeInvalidcomponents = 0x3001DF,
         [Obsolete("Deprecated in favour of \"JpegencodeSourcenot2D\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGENCODE_SOURCENOT2D")]
-        MessageIDJpegencodeSourcenot2D = 0x3001DF,
+        MessageIDJpegencodeSourcenot2D = 0x3001E0,
         [Obsolete("Deprecated in favour of \"JpegencodeTiledresourcesunsupported\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGENCODE_TILEDRESOURCESUNSUPPORTED")]
-        MessageIDJpegencodeTiledresourcesunsupported = 0x3001E0,
+        MessageIDJpegencodeTiledresourcesunsupported = 0x3001E1,
         [Obsolete("Deprecated in favour of \"JpegencodeGuardrectsunsupported\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGENCODE_GUARDRECTSUNSUPPORTED")]
-        MessageIDJpegencodeGuardrectsunsupported = 0x3001E1,
+        MessageIDJpegencodeGuardrectsunsupported = 0x3001E2,
         [Obsolete("Deprecated in favour of \"JpegencodeXsubsamplemismatch\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGENCODE_XSUBSAMPLEMISMATCH")]
-        MessageIDJpegencodeXsubsamplemismatch = 0x3001E2,
+        MessageIDJpegencodeXsubsamplemismatch = 0x3001E3,
         [Obsolete("Deprecated in favour of \"JpegencodeYsubsamplemismatch\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGENCODE_YSUBSAMPLEMISMATCH")]
-        MessageIDJpegencodeYsubsamplemismatch = 0x3001E3,
+        MessageIDJpegencodeYsubsamplemismatch = 0x3001E4,
         [Obsolete("Deprecated in favour of \"JpegencodeFormatunsupported\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGENCODE_FORMATUNSUPPORTED")]
-        MessageIDJpegencodeFormatunsupported = 0x3001E4,
+        MessageIDJpegencodeFormatunsupported = 0x3001E5,
         [Obsolete("Deprecated in favour of \"JpegencodeInvalidsubresource\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGENCODE_INVALIDSUBRESOURCE")]
-        MessageIDJpegencodeInvalidsubresource = 0x3001E5,
+        MessageIDJpegencodeInvalidsubresource = 0x3001E6,
         [Obsolete("Deprecated in favour of \"JpegencodeInvalidmiplevel\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGENCODE_INVALIDMIPLEVEL")]
-        MessageIDJpegencodeInvalidmiplevel = 0x3001E6,
+        MessageIDJpegencodeInvalidmiplevel = 0x3001E7,
         [Obsolete("Deprecated in favour of \"JpegencodeDimensionstoolarge\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGENCODE_DIMENSIONSTOOLARGE")]
-        MessageIDJpegencodeDimensionstoolarge = 0x3001E7,
+        MessageIDJpegencodeDimensionstoolarge = 0x3001E8,
         [Obsolete("Deprecated in favour of \"JpegencodeHazard\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGENCODE_HAZARD")]
-        MessageIDJpegencodeHazard = 0x3001E8,
+        MessageIDJpegencodeHazard = 0x3001E9,
         [Obsolete("Deprecated in favour of \"JpegencodeUnsupporteddstbufferusage\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGENCODE_UNSUPPORTEDDSTBUFFERUSAGE")]
-        MessageIDJpegencodeUnsupporteddstbufferusage = 0x3001E9,
+        MessageIDJpegencodeUnsupporteddstbufferusage = 0x3001EA,
         [Obsolete("Deprecated in favour of \"JpegencodeUnsupporteddstbuffermiscflags\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGENCODE_UNSUPPORTEDDSTBUFFERMISCFLAGS")]
-        MessageIDJpegencodeUnsupporteddstbuffermiscflags = 0x3001EA,
+        MessageIDJpegencodeUnsupporteddstbuffermiscflags = 0x3001EB,
         [Obsolete("Deprecated in favour of \"JpegencodeUnsupportedsrctextureusage\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGENCODE_UNSUPPORTEDSRCTEXTUREUSAGE")]
-        MessageIDJpegencodeUnsupportedsrctextureusage = 0x3001EB,
+        MessageIDJpegencodeUnsupportedsrctextureusage = 0x3001EC,
         [Obsolete("Deprecated in favour of \"JpegencodeBackbuffernotsupported\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGENCODE_BACKBUFFERNOTSUPPORTED")]
-        MessageIDJpegencodeBackbuffernotsupported = 0x3001EC,
+        MessageIDJpegencodeBackbuffernotsupported = 0x3001ED,
         [Obsolete("Deprecated in favour of \"CreatequeryorpredicateUnsupportedcontextttypeforquery\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATEQUERYORPREDICATE_UNSUPPORTEDCONTEXTTTYPEFORQUERY")]
-        MessageIDCreatequeryorpredicateUnsupportedcontextttypeforquery = 0x3001ED,
+        MessageIDCreatequeryorpredicateUnsupportedcontextttypeforquery = 0x3001EE,
         [Obsolete("Deprecated in favour of \"Flush1Invalidcontexttype\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_FLUSH1_INVALIDCONTEXTTYPE")]
-        MessageIDFlush1Invalidcontexttype = 0x3001EE,
+        MessageIDFlush1Invalidcontexttype = 0x3001EF,
         [Obsolete("Deprecated in favour of \"DeviceSethardwareprotectionInvalidcontext\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_DEVICE_SETHARDWAREPROTECTION_INVALIDCONTEXT")]
-        MessageIDDeviceSethardwareprotectionInvalidcontext = 0x3001EF,
+        MessageIDDeviceSethardwareprotectionInvalidcontext = 0x3001F0,
         [Obsolete("Deprecated in favour of \"VideoprocessorsetoutputhdrmetadataNullparam\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORSETOUTPUTHDRMETADATA_NULLPARAM")]
-        MessageIDVideoprocessorsetoutputhdrmetadataNullparam = 0x3001F0,
+        MessageIDVideoprocessorsetoutputhdrmetadataNullparam = 0x3001F1,
         [Obsolete("Deprecated in favour of \"VideoprocessorsetoutputhdrmetadataInvalidsize\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORSETOUTPUTHDRMETADATA_INVALIDSIZE")]
-        MessageIDVideoprocessorsetoutputhdrmetadataInvalidsize = 0x3001F1,
+        MessageIDVideoprocessorsetoutputhdrmetadataInvalidsize = 0x3001F2,
         [Obsolete("Deprecated in favour of \"VideoprocessorgetoutputhdrmetadataNullparam\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORGETOUTPUTHDRMETADATA_NULLPARAM")]
-        MessageIDVideoprocessorgetoutputhdrmetadataNullparam = 0x3001F2,
+        MessageIDVideoprocessorgetoutputhdrmetadataNullparam = 0x3001F3,
         [Obsolete("Deprecated in favour of \"VideoprocessorgetoutputhdrmetadataInvalidsize\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORGETOUTPUTHDRMETADATA_INVALIDSIZE")]
-        MessageIDVideoprocessorgetoutputhdrmetadataInvalidsize = 0x3001F3,
+        MessageIDVideoprocessorgetoutputhdrmetadataInvalidsize = 0x3001F4,
         [Obsolete("Deprecated in favour of \"VideoprocessorsetstreamhdrmetadataNullparam\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORSETSTREAMHDRMETADATA_NULLPARAM")]
-        MessageIDVideoprocessorsetstreamhdrmetadataNullparam = 0x3001F4,
+        MessageIDVideoprocessorsetstreamhdrmetadataNullparam = 0x3001F5,
         [Obsolete("Deprecated in favour of \"VideoprocessorsetstreamhdrmetadataInvalidstream\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORSETSTREAMHDRMETADATA_INVALIDSTREAM")]
-        MessageIDVideoprocessorsetstreamhdrmetadataInvalidstream = 0x3001F5,
+        MessageIDVideoprocessorsetstreamhdrmetadataInvalidstream = 0x3001F6,
         [Obsolete("Deprecated in favour of \"VideoprocessorsetstreamhdrmetadataInvalidsize\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORSETSTREAMHDRMETADATA_INVALIDSIZE")]
-        MessageIDVideoprocessorsetstreamhdrmetadataInvalidsize = 0x3001F6,
+        MessageIDVideoprocessorsetstreamhdrmetadataInvalidsize = 0x3001F7,
         [Obsolete("Deprecated in favour of \"VideoprocessorgetstreamhdrmetadataNullparam\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORGETSTREAMHDRMETADATA_NULLPARAM")]
-        MessageIDVideoprocessorgetstreamhdrmetadataNullparam = 0x3001F7,
+        MessageIDVideoprocessorgetstreamhdrmetadataNullparam = 0x3001F8,
         [Obsolete("Deprecated in favour of \"VideoprocessorgetstreamhdrmetadataInvalidstream\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORGETSTREAMHDRMETADATA_INVALIDSTREAM")]
-        MessageIDVideoprocessorgetstreamhdrmetadataInvalidstream = 0x3001F8,
+        MessageIDVideoprocessorgetstreamhdrmetadataInvalidstream = 0x3001F9,
         [Obsolete("Deprecated in favour of \"VideoprocessorgetstreamhdrmetadataInvalidsize\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORGETSTREAMHDRMETADATA_INVALIDSIZE")]
-        MessageIDVideoprocessorgetstreamhdrmetadataInvalidsize = 0x3001F9,
+        MessageIDVideoprocessorgetstreamhdrmetadataInvalidsize = 0x3001FA,
         [Obsolete("Deprecated in favour of \"VideoprocessorgetstreamframeformatInvalidstream\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORGETSTREAMFRAMEFORMAT_INVALIDSTREAM")]
-        MessageIDVideoprocessorgetstreamframeformatInvalidstream = 0x3001FA,
+        MessageIDVideoprocessorgetstreamframeformatInvalidstream = 0x3001FB,
         [Obsolete("Deprecated in favour of \"VideoprocessorgetstreamcolorspaceInvalidstream\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORGETSTREAMCOLORSPACE_INVALIDSTREAM")]
-        MessageIDVideoprocessorgetstreamcolorspaceInvalidstream = 0x3001FB,
+        MessageIDVideoprocessorgetstreamcolorspaceInvalidstream = 0x3001FC,
         [Obsolete("Deprecated in favour of \"VideoprocessorgetstreamoutputrateInvalidstream\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORGETSTREAMOUTPUTRATE_INVALIDSTREAM")]
-        MessageIDVideoprocessorgetstreamoutputrateInvalidstream = 0x3001FC,
+        MessageIDVideoprocessorgetstreamoutputrateInvalidstream = 0x3001FD,
         [Obsolete("Deprecated in favour of \"VideoprocessorgetstreamsourcerectInvalidstream\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORGETSTREAMSOURCERECT_INVALIDSTREAM")]
-        MessageIDVideoprocessorgetstreamsourcerectInvalidstream = 0x3001FD,
+        MessageIDVideoprocessorgetstreamsourcerectInvalidstream = 0x3001FE,
         [Obsolete("Deprecated in favour of \"VideoprocessorgetstreamdestrectInvalidstream\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORGETSTREAMDESTRECT_INVALIDSTREAM")]
-        MessageIDVideoprocessorgetstreamdestrectInvalidstream = 0x3001FE,
+        MessageIDVideoprocessorgetstreamdestrectInvalidstream = 0x3001FF,
         [Obsolete("Deprecated in favour of \"VideoprocessorgetstreamalphaInvalidstream\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORGETSTREAMALPHA_INVALIDSTREAM")]
-        MessageIDVideoprocessorgetstreamalphaInvalidstream = 0x3001FF,
+        MessageIDVideoprocessorgetstreamalphaInvalidstream = 0x300200,
         [Obsolete("Deprecated in favour of \"VideoprocessorgetstreampaletteInvalidstream\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORGETSTREAMPALETTE_INVALIDSTREAM")]
-        MessageIDVideoprocessorgetstreampaletteInvalidstream = 0x300200,
+        MessageIDVideoprocessorgetstreampaletteInvalidstream = 0x300201,
         [Obsolete("Deprecated in favour of \"VideoprocessorgetstreampixelaspectratioInvalidstream\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORGETSTREAMPIXELASPECTRATIO_INVALIDSTREAM")]
-        MessageIDVideoprocessorgetstreampixelaspectratioInvalidstream = 0x300201,
+        MessageIDVideoprocessorgetstreampixelaspectratioInvalidstream = 0x300202,
         [Obsolete("Deprecated in favour of \"VideoprocessorgetstreamlumakeyInvalidstream\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORGETSTREAMLUMAKEY_INVALIDSTREAM")]
-        MessageIDVideoprocessorgetstreamlumakeyInvalidstream = 0x300202,
+        MessageIDVideoprocessorgetstreamlumakeyInvalidstream = 0x300203,
         [Obsolete("Deprecated in favour of \"VideoprocessorgetstreamstereoformatInvalidstream\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORGETSTREAMSTEREOFORMAT_INVALIDSTREAM")]
-        MessageIDVideoprocessorgetstreamstereoformatInvalidstream = 0x300203,
+        MessageIDVideoprocessorgetstreamstereoformatInvalidstream = 0x300204,
         [Obsolete("Deprecated in favour of \"VideoprocessorgetstreamautoprocessingmodeInvalidstream\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORGETSTREAMAUTOPROCESSINGMODE_INVALIDSTREAM")]
-        MessageIDVideoprocessorgetstreamautoprocessingmodeInvalidstream = 0x300204,
+        MessageIDVideoprocessorgetstreamautoprocessingmodeInvalidstream = 0x300205,
         [Obsolete("Deprecated in favour of \"VideoprocessorgetstreamfilterInvalidstream\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORGETSTREAMFILTER_INVALIDSTREAM")]
-        MessageIDVideoprocessorgetstreamfilterInvalidstream = 0x300205,
+        MessageIDVideoprocessorgetstreamfilterInvalidstream = 0x300206,
         [Obsolete("Deprecated in favour of \"VideoprocessorgetstreamrotationInvalidstream\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORGETSTREAMROTATION_INVALIDSTREAM")]
-        MessageIDVideoprocessorgetstreamrotationInvalidstream = 0x300206,
+        MessageIDVideoprocessorgetstreamrotationInvalidstream = 0x300207,
         [Obsolete("Deprecated in favour of \"Videoprocessorgetstreamcolorspace1Invalidstream\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORGETSTREAMCOLORSPACE1_INVALIDSTREAM")]
-        MessageIDVideoprocessorgetstreamcolorspace1Invalidstream = 0x300207,
+        MessageIDVideoprocessorgetstreamcolorspace1Invalidstream = 0x300208,
         [Obsolete("Deprecated in favour of \"VideoprocessorgetstreammirrorInvalidstream\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORGETSTREAMMIRROR_INVALIDSTREAM")]
-        MessageIDVideoprocessorgetstreammirrorInvalidstream = 0x300208,
+        MessageIDVideoprocessorgetstreammirrorInvalidstream = 0x300209,
         [Obsolete("Deprecated in favour of \"CreateFence\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATE_FENCE")]
-        MessageIDCreateFence = 0x300209,
+        MessageIDCreateFence = 0x30020A,
         [Obsolete("Deprecated in favour of \"LiveFence\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_LIVE_FENCE")]
-        MessageIDLiveFence = 0x30020A,
+        MessageIDLiveFence = 0x30020B,
         [Obsolete("Deprecated in favour of \"DestroyFence\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_DESTROY_FENCE")]
-        MessageIDDestroyFence = 0x30020B,
+        MessageIDDestroyFence = 0x30020C,
         [Obsolete("Deprecated in favour of \"CreateSynchronizedchannel\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATE_SYNCHRONIZEDCHANNEL")]
-        MessageIDCreateSynchronizedchannel = 0x30020C,
+        MessageIDCreateSynchronizedchannel = 0x30020D,
         [Obsolete("Deprecated in favour of \"LiveSynchronizedchannel\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_LIVE_SYNCHRONIZEDCHANNEL")]
-        MessageIDLiveSynchronizedchannel = 0x30020D,
+        MessageIDLiveSynchronizedchannel = 0x30020E,
         [Obsolete("Deprecated in favour of \"DestroySynchronizedchannel\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_DESTROY_SYNCHRONIZEDCHANNEL")]
-        MessageIDDestroySynchronizedchannel = 0x30020E,
+        MessageIDDestroySynchronizedchannel = 0x30020F,
         [Obsolete("Deprecated in favour of \"CreatefenceInvalidflags\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATEFENCE_INVALIDFLAGS")]
-        MessageIDCreatefenceInvalidflags = 0x30020F,
+        MessageIDCreatefenceInvalidflags = 0x300210,
         [Obsolete("Deprecated in favour of \"D3D113MessagesEnd\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_D3D11_3_MESSAGES_END")]
-        MessageIDD3D113MessagesEnd = 0x300210,
+        MessageIDD3D113MessagesEnd = 0x300211,
         [Obsolete("Deprecated in favour of \"D3D115MessagesStart\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_D3D11_5_MESSAGES_START")]
-        MessageIDD3D115MessagesStart = 0x300211,
+        MessageIDD3D115MessagesStart = 0x300212,
         [Obsolete("Deprecated in favour of \"NegotiatecryptosessionkeyexchangemtInvalidkeyexchangetype\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_NEGOTIATECRYPTOSESSIONKEYEXCHANGEMT_INVALIDKEYEXCHANGETYPE")]
-        MessageIDNegotiatecryptosessionkeyexchangemtInvalidkeyexchangetype = 0x300212,
+        MessageIDNegotiatecryptosessionkeyexchangemtInvalidkeyexchangetype = 0x300213,
         [Obsolete("Deprecated in favour of \"NegotiatecryptosessionkeyexchangemtNotSupported\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_NEGOTIATECRYPTOSESSIONKEYEXCHANGEMT_NOT_SUPPORTED")]
-        MessageIDNegotiatecryptosessionkeyexchangemtNotSupported = 0x300213,
+        MessageIDNegotiatecryptosessionkeyexchangemtNotSupported = 0x300214,
         [Obsolete("Deprecated in favour of \"DecoderbeginframeInvalidHistogramComponentCount\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_DECODERBEGINFRAME_INVALID_HISTOGRAM_COMPONENT_COUNT")]
-        MessageIDDecoderbeginframeInvalidHistogramComponentCount = 0x300214,
+        MessageIDDecoderbeginframeInvalidHistogramComponentCount = 0x300215,
         [Obsolete("Deprecated in favour of \"DecoderbeginframeInvalidHistogramComponent\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_DECODERBEGINFRAME_INVALID_HISTOGRAM_COMPONENT")]
-        MessageIDDecoderbeginframeInvalidHistogramComponent = 0x300215,
+        MessageIDDecoderbeginframeInvalidHistogramComponent = 0x300216,
         [Obsolete("Deprecated in favour of \"DecoderbeginframeInvalidHistogramBufferSize\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_DECODERBEGINFRAME_INVALID_HISTOGRAM_BUFFER_SIZE")]
-        MessageIDDecoderbeginframeInvalidHistogramBufferSize = 0x300216,
+        MessageIDDecoderbeginframeInvalidHistogramBufferSize = 0x300217,
         [Obsolete("Deprecated in favour of \"DecoderbeginframeInvalidHistogramBufferUsage\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_DECODERBEGINFRAME_INVALID_HISTOGRAM_BUFFER_USAGE")]
-        MessageIDDecoderbeginframeInvalidHistogramBufferUsage = 0x300217,
+        MessageIDDecoderbeginframeInvalidHistogramBufferUsage = 0x300218,
         [Obsolete("Deprecated in favour of \"DecoderbeginframeInvalidHistogramBufferMiscFlags\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_DECODERBEGINFRAME_INVALID_HISTOGRAM_BUFFER_MISC_FLAGS")]
-        MessageIDDecoderbeginframeInvalidHistogramBufferMiscFlags = 0x300218,
+        MessageIDDecoderbeginframeInvalidHistogramBufferMiscFlags = 0x300219,
         [Obsolete("Deprecated in favour of \"DecoderbeginframeInvalidHistogramBufferOffset\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_DECODERBEGINFRAME_INVALID_HISTOGRAM_BUFFER_OFFSET")]
-        MessageIDDecoderbeginframeInvalidHistogramBufferOffset = 0x300219,
+        MessageIDDecoderbeginframeInvalidHistogramBufferOffset = 0x30021A,
         [Obsolete("Deprecated in favour of \"CreateTrackedworkload\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATE_TRACKEDWORKLOAD")]
-        MessageIDCreateTrackedworkload = 0x30021A,
+        MessageIDCreateTrackedworkload = 0x30021B,
         [Obsolete("Deprecated in favour of \"LiveTrackedworkload\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_LIVE_TRACKEDWORKLOAD")]
-        MessageIDLiveTrackedworkload = 0x30021B,
+        MessageIDLiveTrackedworkload = 0x30021C,
         [Obsolete("Deprecated in favour of \"DestroyTrackedworkload\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_DESTROY_TRACKEDWORKLOAD")]
-        MessageIDDestroyTrackedworkload = 0x30021C,
+        MessageIDDestroyTrackedworkload = 0x30021D,
         [Obsolete("Deprecated in favour of \"CreateTrackedWorkloadNullparam\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATE_TRACKED_WORKLOAD_NULLPARAM")]
-        MessageIDCreateTrackedWorkloadNullparam = 0x30021D,
+        MessageIDCreateTrackedWorkloadNullparam = 0x30021E,
         [Obsolete("Deprecated in favour of \"CreateTrackedWorkloadInvalidMaxInstances\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATE_TRACKED_WORKLOAD_INVALID_MAX_INSTANCES")]
-        MessageIDCreateTrackedWorkloadInvalidMaxInstances = 0x30021E,
+        MessageIDCreateTrackedWorkloadInvalidMaxInstances = 0x30021F,
         [Obsolete("Deprecated in favour of \"CreateTrackedWorkloadInvalidDeadlineType\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATE_TRACKED_WORKLOAD_INVALID_DEADLINE_TYPE")]
-        MessageIDCreateTrackedWorkloadInvalidDeadlineType = 0x30021F,
+        MessageIDCreateTrackedWorkloadInvalidDeadlineType = 0x300220,
         [Obsolete("Deprecated in favour of \"CreateTrackedWorkloadInvalidEngineType\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATE_TRACKED_WORKLOAD_INVALID_ENGINE_TYPE")]
-        MessageIDCreateTrackedWorkloadInvalidEngineType = 0x300220,
+        MessageIDCreateTrackedWorkloadInvalidEngineType = 0x300221,
         [Obsolete("Deprecated in favour of \"MultipleTrackedWorkloads\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_MULTIPLE_TRACKED_WORKLOADS")]
-        MessageIDMultipleTrackedWorkloads = 0x300221,
+        MessageIDMultipleTrackedWorkloads = 0x300222,
         [Obsolete("Deprecated in favour of \"MultipleTrackedWorkloadPairs\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_MULTIPLE_TRACKED_WORKLOAD_PAIRS")]
-        MessageIDMultipleTrackedWorkloadPairs = 0x300222,
+        MessageIDMultipleTrackedWorkloadPairs = 0x300223,
         [Obsolete("Deprecated in favour of \"IncompleteTrackedWorkloadPair\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_INCOMPLETE_TRACKED_WORKLOAD_PAIR")]
-        MessageIDIncompleteTrackedWorkloadPair = 0x300223,
+        MessageIDIncompleteTrackedWorkloadPair = 0x300224,
         [Obsolete("Deprecated in favour of \"OutOfOrderTrackedWorkloadPair\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_OUT_OF_ORDER_TRACKED_WORKLOAD_PAIR")]
-        MessageIDOutOfOrderTrackedWorkloadPair = 0x300224,
+        MessageIDOutOfOrderTrackedWorkloadPair = 0x300225,
         [Obsolete("Deprecated in favour of \"CannotAddTrackedWorkload\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_CANNOT_ADD_TRACKED_WORKLOAD")]
-        MessageIDCannotAddTrackedWorkload = 0x300225,
+        MessageIDCannotAddTrackedWorkload = 0x300226,
         [Obsolete("Deprecated in favour of \"TrackedWorkloadNotSupported\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_TRACKED_WORKLOAD_NOT_SUPPORTED")]
-        MessageIDTrackedWorkloadNotSupported = 0x300226,
+        MessageIDTrackedWorkloadNotSupported = 0x300227,
         [Obsolete("Deprecated in favour of \"TrackedWorkloadEngineTypeNotFound\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_TRACKED_WORKLOAD_ENGINE_TYPE_NOT_FOUND")]
-        MessageIDTrackedWorkloadEngineTypeNotFound = 0x300227,
+        MessageIDTrackedWorkloadEngineTypeNotFound = 0x300228,
         [Obsolete("Deprecated in favour of \"NoTrackedWorkloadSlotAvailable\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_NO_TRACKED_WORKLOAD_SLOT_AVAILABLE")]
-        MessageIDNoTrackedWorkloadSlotAvailable = 0x300228,
+        MessageIDNoTrackedWorkloadSlotAvailable = 0x300229,
         [Obsolete("Deprecated in favour of \"EndTrackedWorkloadInvalidArg\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_END_TRACKED_WORKLOAD_INVALID_ARG")]
-        MessageIDEndTrackedWorkloadInvalidArg = 0x300229,
+        MessageIDEndTrackedWorkloadInvalidArg = 0x30022A,
         [Obsolete("Deprecated in favour of \"TrackedWorkloadDisjointFailure\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_TRACKED_WORKLOAD_DISJOINT_FAILURE")]
-        MessageIDTrackedWorkloadDisjointFailure = 0x30022A,
+        MessageIDTrackedWorkloadDisjointFailure = 0x30022B,
         [Obsolete("Deprecated in favour of \"D3D115MessagesEnd\"")]
         [NativeName("Name", "D3D11_MESSAGE_ID_D3D11_5_MESSAGES_END")]
-        MessageIDD3D115MessagesEnd = 0x30022B,
+        MessageIDD3D115MessagesEnd = 0x30022C,
         [NativeName("Name", "D3D11_MESSAGE_ID_UNKNOWN")]
         Unknown = 0x0,
         [NativeName("Name", "D3D11_MESSAGE_ID_DEVICE_IASETVERTEXBUFFERS_HAZARD")]
@@ -6358,339 +6361,341 @@ namespace Silk.NET.Direct3D11
         VideoprocessorgetbehaviorhintsInvaliddestrect = 0x300183,
         [NativeName("Name", "D3D11_MESSAGE_ID_GETCRYPTOSESSIONPRIVATEDATASIZE_INVALID_KEY_EXCHANGE_TYPE")]
         GetcryptosessionprivatedatasizeInvalidKeyExchangeType = 0x300184,
+        [NativeName("Name", "D3D11_MESSAGE_ID_DEVICE_OPEN_SHARED_RESOURCE1_ACCESS_DENIED")]
+        DeviceOpenSharedResource1AccessDenied = 0x300185,
         [NativeName("Name", "D3D11_MESSAGE_ID_D3D11_1_MESSAGES_END")]
-        D3D111MessagesEnd = 0x300185,
+        D3D111MessagesEnd = 0x300186,
         [NativeName("Name", "D3D11_MESSAGE_ID_D3D11_2_MESSAGES_START")]
-        D3D112MessagesStart = 0x300186,
+        D3D112MessagesStart = 0x300187,
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATEBUFFER_INVALIDUSAGE")]
-        CreatebufferInvalidusage = 0x300187,
+        CreatebufferInvalidusage = 0x300188,
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATETEXTURE1D_INVALIDUSAGE")]
-        Createtexture1DInvalidusage = 0x300188,
+        Createtexture1DInvalidusage = 0x300189,
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATETEXTURE2D_INVALIDUSAGE")]
-        Createtexture2DInvalidusage = 0x300189,
+        Createtexture2DInvalidusage = 0x30018A,
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATEINPUTLAYOUT_LEVEL9_STEPRATE_NOT_1")]
-        CreateinputlayoutLevel9SteprateNot1 = 0x30018A,
+        CreateinputlayoutLevel9SteprateNot1 = 0x30018B,
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATEINPUTLAYOUT_LEVEL9_INSTANCING_NOT_SUPPORTED")]
-        CreateinputlayoutLevel9InstancingNotSupported = 0x30018B,
+        CreateinputlayoutLevel9InstancingNotSupported = 0x30018C,
         [NativeName("Name", "D3D11_MESSAGE_ID_UPDATETILEMAPPINGS_INVALID_PARAMETER")]
-        UpdatetilemappingsInvalidParameter = 0x30018C,
+        UpdatetilemappingsInvalidParameter = 0x30018D,
         [NativeName("Name", "D3D11_MESSAGE_ID_COPYTILEMAPPINGS_INVALID_PARAMETER")]
-        CopytilemappingsInvalidParameter = 0x30018D,
+        CopytilemappingsInvalidParameter = 0x30018E,
         [NativeName("Name", "D3D11_MESSAGE_ID_COPYTILES_INVALID_PARAMETER")]
-        CopytilesInvalidParameter = 0x30018E,
+        CopytilesInvalidParameter = 0x30018F,
         [NativeName("Name", "D3D11_MESSAGE_ID_UPDATETILES_INVALID_PARAMETER")]
-        UpdatetilesInvalidParameter = 0x30018F,
+        UpdatetilesInvalidParameter = 0x300190,
         [NativeName("Name", "D3D11_MESSAGE_ID_RESIZETILEPOOL_INVALID_PARAMETER")]
-        ResizetilepoolInvalidParameter = 0x300190,
+        ResizetilepoolInvalidParameter = 0x300191,
         [NativeName("Name", "D3D11_MESSAGE_ID_TILEDRESOURCEBARRIER_INVALID_PARAMETER")]
-        TiledresourcebarrierInvalidParameter = 0x300191,
+        TiledresourcebarrierInvalidParameter = 0x300192,
         [NativeName("Name", "D3D11_MESSAGE_ID_NULL_TILE_MAPPING_ACCESS_WARNING")]
-        NullTileMappingAccessWarning = 0x300192,
+        NullTileMappingAccessWarning = 0x300193,
         [NativeName("Name", "D3D11_MESSAGE_ID_NULL_TILE_MAPPING_ACCESS_ERROR")]
-        NullTileMappingAccessError = 0x300193,
+        NullTileMappingAccessError = 0x300194,
         [NativeName("Name", "D3D11_MESSAGE_ID_DIRTY_TILE_MAPPING_ACCESS")]
-        DirtyTileMappingAccess = 0x300194,
+        DirtyTileMappingAccess = 0x300195,
         [NativeName("Name", "D3D11_MESSAGE_ID_DUPLICATE_TILE_MAPPINGS_IN_COVERED_AREA")]
-        DuplicateTileMappingsInCoveredArea = 0x300195,
+        DuplicateTileMappingsInCoveredArea = 0x300196,
         [NativeName("Name", "D3D11_MESSAGE_ID_TILE_MAPPINGS_IN_COVERED_AREA_DUPLICATED_OUTSIDE")]
-        TileMappingsInCoveredAreaDuplicatedOutside = 0x300196,
+        TileMappingsInCoveredAreaDuplicatedOutside = 0x300197,
         [NativeName("Name", "D3D11_MESSAGE_ID_TILE_MAPPINGS_SHARED_BETWEEN_INCOMPATIBLE_RESOURCES")]
-        TileMappingsSharedBetweenIncompatibleResources = 0x300197,
+        TileMappingsSharedBetweenIncompatibleResources = 0x300198,
         [NativeName("Name", "D3D11_MESSAGE_ID_TILE_MAPPINGS_SHARED_BETWEEN_INPUT_AND_OUTPUT")]
-        TileMappingsSharedBetweenInputAndOutput = 0x300198,
+        TileMappingsSharedBetweenInputAndOutput = 0x300199,
         [NativeName("Name", "D3D11_MESSAGE_ID_CHECKMULTISAMPLEQUALITYLEVELS_INVALIDFLAGS")]
-        CheckmultisamplequalitylevelsInvalidflags = 0x300199,
+        CheckmultisamplequalitylevelsInvalidflags = 0x30019A,
         [NativeName("Name", "D3D11_MESSAGE_ID_GETRESOURCETILING_NONTILED_RESOURCE")]
-        GetresourcetilingNontiledResource = 0x30019A,
+        GetresourcetilingNontiledResource = 0x30019B,
         [NativeName("Name", "D3D11_MESSAGE_ID_RESIZETILEPOOL_SHRINK_WITH_MAPPINGS_STILL_DEFINED_PAST_END")]
-        ResizetilepoolShrinkWithMappingsStillDefinedPastEnd = 0x30019B,
+        ResizetilepoolShrinkWithMappingsStillDefinedPastEnd = 0x30019C,
         [NativeName("Name", "D3D11_MESSAGE_ID_NEED_TO_CALL_TILEDRESOURCEBARRIER")]
-        NeedToCallTiledresourcebarrier = 0x30019C,
+        NeedToCallTiledresourcebarrier = 0x30019D,
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATEDEVICE_INVALIDARGS")]
-        CreatedeviceInvalidargs = 0x30019D,
+        CreatedeviceInvalidargs = 0x30019E,
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATEDEVICE_WARNING")]
-        CreatedeviceWarning = 0x30019E,
+        CreatedeviceWarning = 0x30019F,
         [NativeName("Name", "D3D11_MESSAGE_ID_CLEARUNORDEREDACCESSVIEWUINT_HAZARD")]
-        ClearunorderedaccessviewuintHazard = 0x30019F,
+        ClearunorderedaccessviewuintHazard = 0x3001A0,
         [NativeName("Name", "D3D11_MESSAGE_ID_CLEARUNORDEREDACCESSVIEWFLOAT_HAZARD")]
-        ClearunorderedaccessviewfloatHazard = 0x3001A0,
+        ClearunorderedaccessviewfloatHazard = 0x3001A1,
         [NativeName("Name", "D3D11_MESSAGE_ID_TILED_RESOURCE_TIER_1_BUFFER_TEXTURE_MISMATCH")]
-        TiledResourceTier1BufferTextureMismatch = 0x3001A1,
+        TiledResourceTier1BufferTextureMismatch = 0x3001A2,
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATE_CRYPTOSESSION")]
-        CreateCryptosession = 0x3001A2,
+        CreateCryptosession = 0x3001A3,
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATE_AUTHENTICATEDCHANNEL")]
-        CreateAuthenticatedchannel = 0x3001A3,
+        CreateAuthenticatedchannel = 0x3001A4,
         [NativeName("Name", "D3D11_MESSAGE_ID_LIVE_CRYPTOSESSION")]
-        LiveCryptosession = 0x3001A4,
+        LiveCryptosession = 0x3001A5,
         [NativeName("Name", "D3D11_MESSAGE_ID_LIVE_AUTHENTICATEDCHANNEL")]
-        LiveAuthenticatedchannel = 0x3001A5,
+        LiveAuthenticatedchannel = 0x3001A6,
         [NativeName("Name", "D3D11_MESSAGE_ID_DESTROY_CRYPTOSESSION")]
-        DestroyCryptosession = 0x3001A6,
+        DestroyCryptosession = 0x3001A7,
         [NativeName("Name", "D3D11_MESSAGE_ID_DESTROY_AUTHENTICATEDCHANNEL")]
-        DestroyAuthenticatedchannel = 0x3001A7,
+        DestroyAuthenticatedchannel = 0x3001A8,
         [NativeName("Name", "D3D11_MESSAGE_ID_D3D11_2_MESSAGES_END")]
-        D3D112MessagesEnd = 0x3001A8,
+        D3D112MessagesEnd = 0x3001A9,
         [NativeName("Name", "D3D11_MESSAGE_ID_D3D11_3_MESSAGES_START")]
-        D3D113MessagesStart = 0x3001A9,
+        D3D113MessagesStart = 0x3001AA,
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATERASTERIZERSTATE_INVALID_CONSERVATIVERASTERMODE")]
-        CreaterasterizerstateInvalidConservativerastermode = 0x3001AA,
+        CreaterasterizerstateInvalidConservativerastermode = 0x3001AB,
         [NativeName("Name", "D3D11_MESSAGE_ID_DEVICE_DRAW_INVALID_SYSTEMVALUE")]
-        DeviceDrawInvalidSystemvalue = 0x3001AB,
+        DeviceDrawInvalidSystemvalue = 0x3001AC,
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATEQUERYORPREDICATE_INVALIDCONTEXTTYPE")]
-        CreatequeryorpredicateInvalidcontexttype = 0x3001AC,
+        CreatequeryorpredicateInvalidcontexttype = 0x3001AD,
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATEQUERYORPREDICATE_DECODENOTSUPPORTED")]
-        CreatequeryorpredicateDecodenotsupported = 0x3001AD,
+        CreatequeryorpredicateDecodenotsupported = 0x3001AE,
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATEQUERYORPREDICATE_ENCODENOTSUPPORTED")]
-        CreatequeryorpredicateEncodenotsupported = 0x3001AE,
+        CreatequeryorpredicateEncodenotsupported = 0x3001AF,
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATESHADERRESOURCEVIEW_INVALIDPLANEINDEX")]
-        CreateshaderresourceviewInvalidplaneindex = 0x3001AF,
+        CreateshaderresourceviewInvalidplaneindex = 0x3001B0,
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATESHADERRESOURCEVIEW_INVALIDVIDEOPLANEINDEX")]
-        CreateshaderresourceviewInvalidvideoplaneindex = 0x3001B0,
+        CreateshaderresourceviewInvalidvideoplaneindex = 0x3001B1,
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATESHADERRESOURCEVIEW_AMBIGUOUSVIDEOPLANEINDEX")]
-        CreateshaderresourceviewAmbiguousvideoplaneindex = 0x3001B1,
+        CreateshaderresourceviewAmbiguousvideoplaneindex = 0x3001B2,
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATERENDERTARGETVIEW_INVALIDPLANEINDEX")]
-        CreaterendertargetviewInvalidplaneindex = 0x3001B2,
+        CreaterendertargetviewInvalidplaneindex = 0x3001B3,
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATERENDERTARGETVIEW_INVALIDVIDEOPLANEINDEX")]
-        CreaterendertargetviewInvalidvideoplaneindex = 0x3001B3,
+        CreaterendertargetviewInvalidvideoplaneindex = 0x3001B4,
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATERENDERTARGETVIEW_AMBIGUOUSVIDEOPLANEINDEX")]
-        CreaterendertargetviewAmbiguousvideoplaneindex = 0x3001B4,
+        CreaterendertargetviewAmbiguousvideoplaneindex = 0x3001B5,
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATEUNORDEREDACCESSVIEW_INVALIDPLANEINDEX")]
-        CreateunorderedaccessviewInvalidplaneindex = 0x3001B5,
+        CreateunorderedaccessviewInvalidplaneindex = 0x3001B6,
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATEUNORDEREDACCESSVIEW_INVALIDVIDEOPLANEINDEX")]
-        CreateunorderedaccessviewInvalidvideoplaneindex = 0x3001B6,
+        CreateunorderedaccessviewInvalidvideoplaneindex = 0x3001B7,
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATEUNORDEREDACCESSVIEW_AMBIGUOUSVIDEOPLANEINDEX")]
-        CreateunorderedaccessviewAmbiguousvideoplaneindex = 0x3001B7,
+        CreateunorderedaccessviewAmbiguousvideoplaneindex = 0x3001B8,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_INVALIDSCANDATAOFFSET")]
-        JpegdecodeInvalidscandataoffset = 0x3001B8,
+        JpegdecodeInvalidscandataoffset = 0x3001B9,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_NOTSUPPORTED")]
-        JpegdecodeNotsupported = 0x3001B9,
+        JpegdecodeNotsupported = 0x3001BA,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_DIMENSIONSTOOLARGE")]
-        JpegdecodeDimensionstoolarge = 0x3001BA,
+        JpegdecodeDimensionstoolarge = 0x3001BB,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_INVALIDCOMPONENTS")]
-        JpegdecodeInvalidcomponents = 0x3001BB,
+        JpegdecodeInvalidcomponents = 0x3001BC,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_DESTINATIONNOT2D")]
-        JpegdecodeDestinationnot2D = 0x3001BC,
+        JpegdecodeDestinationnot2D = 0x3001BD,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_TILEDRESOURCESUNSUPPORTED")]
-        JpegdecodeTiledresourcesunsupported = 0x3001BD,
+        JpegdecodeTiledresourcesunsupported = 0x3001BE,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_GUARDRECTSUNSUPPORTED")]
-        JpegdecodeGuardrectsunsupported = 0x3001BE,
+        JpegdecodeGuardrectsunsupported = 0x3001BF,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_FORMATUNSUPPORTED")]
-        JpegdecodeFormatunsupported = 0x3001BF,
+        JpegdecodeFormatunsupported = 0x3001C0,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_INVALIDSUBRESOURCE")]
-        JpegdecodeInvalidsubresource = 0x3001C0,
+        JpegdecodeInvalidsubresource = 0x3001C1,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_INVALIDMIPLEVEL")]
-        JpegdecodeInvalidmiplevel = 0x3001C1,
+        JpegdecodeInvalidmiplevel = 0x3001C2,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_EMPTYDESTBOX")]
-        JpegdecodeEmptydestbox = 0x3001C2,
+        JpegdecodeEmptydestbox = 0x3001C3,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_DESTBOXNOT2D")]
-        JpegdecodeDestboxnot2D = 0x3001C3,
+        JpegdecodeDestboxnot2D = 0x3001C4,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_DESTBOXNOTSUB")]
-        JpegdecodeDestboxnotsub = 0x3001C4,
+        JpegdecodeDestboxnotsub = 0x3001C5,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_DESTBOXESINTERSECT")]
-        JpegdecodeDestboxesintersect = 0x3001C5,
+        JpegdecodeDestboxesintersect = 0x3001C6,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_XSUBSAMPLEMISMATCH")]
-        JpegdecodeXsubsamplemismatch = 0x3001C6,
+        JpegdecodeXsubsamplemismatch = 0x3001C7,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_YSUBSAMPLEMISMATCH")]
-        JpegdecodeYsubsamplemismatch = 0x3001C7,
+        JpegdecodeYsubsamplemismatch = 0x3001C8,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_XSUBSAMPLEODD")]
-        JpegdecodeXsubsampleodd = 0x3001C8,
+        JpegdecodeXsubsampleodd = 0x3001C9,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_YSUBSAMPLEODD")]
-        JpegdecodeYsubsampleodd = 0x3001C9,
+        JpegdecodeYsubsampleodd = 0x3001CA,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_OUTPUTDIMENSIONSTOOLARGE")]
-        JpegdecodeOutputdimensionstoolarge = 0x3001CA,
+        JpegdecodeOutputdimensionstoolarge = 0x3001CB,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_NONPOW2SCALEUNSUPPORTED")]
-        JpegdecodeNonpow2Scaleunsupported = 0x3001CB,
+        JpegdecodeNonpow2Scaleunsupported = 0x3001CC,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_FRACTIONALDOWNSCALETOLARGE")]
-        JpegdecodeFractionaldownscaletolarge = 0x3001CC,
+        JpegdecodeFractionaldownscaletolarge = 0x3001CD,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_CHROMASIZEMISMATCH")]
-        JpegdecodeChromasizemismatch = 0x3001CD,
+        JpegdecodeChromasizemismatch = 0x3001CE,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_LUMACHROMASIZEMISMATCH")]
-        JpegdecodeLumachromasizemismatch = 0x3001CE,
+        JpegdecodeLumachromasizemismatch = 0x3001CF,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_INVALIDNUMDESTINATIONS")]
-        JpegdecodeInvalidnumdestinations = 0x3001CF,
+        JpegdecodeInvalidnumdestinations = 0x3001D0,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_SUBBOXUNSUPPORTED")]
-        JpegdecodeSubboxunsupported = 0x3001D0,
+        JpegdecodeSubboxunsupported = 0x3001D1,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_1DESTUNSUPPORTEDFORMAT")]
-        Jpegdecode1Destunsupportedformat = 0x3001D1,
+        Jpegdecode1Destunsupportedformat = 0x3001D2,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_3DESTUNSUPPORTEDFORMAT")]
-        Jpegdecode3Destunsupportedformat = 0x3001D2,
+        Jpegdecode3Destunsupportedformat = 0x3001D3,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_SCALEUNSUPPORTED")]
-        JpegdecodeScaleunsupported = 0x3001D3,
+        JpegdecodeScaleunsupported = 0x3001D4,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_INVALIDSOURCESIZE")]
-        JpegdecodeInvalidsourcesize = 0x3001D4,
+        JpegdecodeInvalidsourcesize = 0x3001D5,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_INVALIDCOPYFLAGS")]
-        JpegdecodeInvalidcopyflags = 0x3001D5,
+        JpegdecodeInvalidcopyflags = 0x3001D6,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_HAZARD")]
-        JpegdecodeHazard = 0x3001D6,
+        JpegdecodeHazard = 0x3001D7,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_UNSUPPORTEDSRCBUFFERUSAGE")]
-        JpegdecodeUnsupportedsrcbufferusage = 0x3001D7,
+        JpegdecodeUnsupportedsrcbufferusage = 0x3001D8,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_UNSUPPORTEDSRCBUFFERMISCFLAGS")]
-        JpegdecodeUnsupportedsrcbuffermiscflags = 0x3001D8,
+        JpegdecodeUnsupportedsrcbuffermiscflags = 0x3001D9,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_UNSUPPORTEDDSTTEXTUREUSAGE")]
-        JpegdecodeUnsupporteddsttextureusage = 0x3001D9,
+        JpegdecodeUnsupporteddsttextureusage = 0x3001DA,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_BACKBUFFERNOTSUPPORTED")]
-        JpegdecodeBackbuffernotsupported = 0x3001DA,
+        JpegdecodeBackbuffernotsupported = 0x3001DB,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGDECODE_UNSUPPRTEDCOPYFLAGS")]
-        JpegdecodeUnsupprtedcopyflags = 0x3001DB,
+        JpegdecodeUnsupprtedcopyflags = 0x3001DC,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGENCODE_NOTSUPPORTED")]
-        JpegencodeNotsupported = 0x3001DC,
+        JpegencodeNotsupported = 0x3001DD,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGENCODE_INVALIDSCANDATAOFFSET")]
-        JpegencodeInvalidscandataoffset = 0x3001DD,
+        JpegencodeInvalidscandataoffset = 0x3001DE,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGENCODE_INVALIDCOMPONENTS")]
-        JpegencodeInvalidcomponents = 0x3001DE,
+        JpegencodeInvalidcomponents = 0x3001DF,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGENCODE_SOURCENOT2D")]
-        JpegencodeSourcenot2D = 0x3001DF,
+        JpegencodeSourcenot2D = 0x3001E0,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGENCODE_TILEDRESOURCESUNSUPPORTED")]
-        JpegencodeTiledresourcesunsupported = 0x3001E0,
+        JpegencodeTiledresourcesunsupported = 0x3001E1,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGENCODE_GUARDRECTSUNSUPPORTED")]
-        JpegencodeGuardrectsunsupported = 0x3001E1,
+        JpegencodeGuardrectsunsupported = 0x3001E2,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGENCODE_XSUBSAMPLEMISMATCH")]
-        JpegencodeXsubsamplemismatch = 0x3001E2,
+        JpegencodeXsubsamplemismatch = 0x3001E3,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGENCODE_YSUBSAMPLEMISMATCH")]
-        JpegencodeYsubsamplemismatch = 0x3001E3,
+        JpegencodeYsubsamplemismatch = 0x3001E4,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGENCODE_FORMATUNSUPPORTED")]
-        JpegencodeFormatunsupported = 0x3001E4,
+        JpegencodeFormatunsupported = 0x3001E5,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGENCODE_INVALIDSUBRESOURCE")]
-        JpegencodeInvalidsubresource = 0x3001E5,
+        JpegencodeInvalidsubresource = 0x3001E6,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGENCODE_INVALIDMIPLEVEL")]
-        JpegencodeInvalidmiplevel = 0x3001E6,
+        JpegencodeInvalidmiplevel = 0x3001E7,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGENCODE_DIMENSIONSTOOLARGE")]
-        JpegencodeDimensionstoolarge = 0x3001E7,
+        JpegencodeDimensionstoolarge = 0x3001E8,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGENCODE_HAZARD")]
-        JpegencodeHazard = 0x3001E8,
+        JpegencodeHazard = 0x3001E9,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGENCODE_UNSUPPORTEDDSTBUFFERUSAGE")]
-        JpegencodeUnsupporteddstbufferusage = 0x3001E9,
+        JpegencodeUnsupporteddstbufferusage = 0x3001EA,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGENCODE_UNSUPPORTEDDSTBUFFERMISCFLAGS")]
-        JpegencodeUnsupporteddstbuffermiscflags = 0x3001EA,
+        JpegencodeUnsupporteddstbuffermiscflags = 0x3001EB,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGENCODE_UNSUPPORTEDSRCTEXTUREUSAGE")]
-        JpegencodeUnsupportedsrctextureusage = 0x3001EB,
+        JpegencodeUnsupportedsrctextureusage = 0x3001EC,
         [NativeName("Name", "D3D11_MESSAGE_ID_JPEGENCODE_BACKBUFFERNOTSUPPORTED")]
-        JpegencodeBackbuffernotsupported = 0x3001EC,
+        JpegencodeBackbuffernotsupported = 0x3001ED,
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATEQUERYORPREDICATE_UNSUPPORTEDCONTEXTTTYPEFORQUERY")]
-        CreatequeryorpredicateUnsupportedcontextttypeforquery = 0x3001ED,
+        CreatequeryorpredicateUnsupportedcontextttypeforquery = 0x3001EE,
         [NativeName("Name", "D3D11_MESSAGE_ID_FLUSH1_INVALIDCONTEXTTYPE")]
-        Flush1Invalidcontexttype = 0x3001EE,
+        Flush1Invalidcontexttype = 0x3001EF,
         [NativeName("Name", "D3D11_MESSAGE_ID_DEVICE_SETHARDWAREPROTECTION_INVALIDCONTEXT")]
-        DeviceSethardwareprotectionInvalidcontext = 0x3001EF,
+        DeviceSethardwareprotectionInvalidcontext = 0x3001F0,
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORSETOUTPUTHDRMETADATA_NULLPARAM")]
-        VideoprocessorsetoutputhdrmetadataNullparam = 0x3001F0,
+        VideoprocessorsetoutputhdrmetadataNullparam = 0x3001F1,
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORSETOUTPUTHDRMETADATA_INVALIDSIZE")]
-        VideoprocessorsetoutputhdrmetadataInvalidsize = 0x3001F1,
+        VideoprocessorsetoutputhdrmetadataInvalidsize = 0x3001F2,
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORGETOUTPUTHDRMETADATA_NULLPARAM")]
-        VideoprocessorgetoutputhdrmetadataNullparam = 0x3001F2,
+        VideoprocessorgetoutputhdrmetadataNullparam = 0x3001F3,
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORGETOUTPUTHDRMETADATA_INVALIDSIZE")]
-        VideoprocessorgetoutputhdrmetadataInvalidsize = 0x3001F3,
+        VideoprocessorgetoutputhdrmetadataInvalidsize = 0x3001F4,
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORSETSTREAMHDRMETADATA_NULLPARAM")]
-        VideoprocessorsetstreamhdrmetadataNullparam = 0x3001F4,
+        VideoprocessorsetstreamhdrmetadataNullparam = 0x3001F5,
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORSETSTREAMHDRMETADATA_INVALIDSTREAM")]
-        VideoprocessorsetstreamhdrmetadataInvalidstream = 0x3001F5,
+        VideoprocessorsetstreamhdrmetadataInvalidstream = 0x3001F6,
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORSETSTREAMHDRMETADATA_INVALIDSIZE")]
-        VideoprocessorsetstreamhdrmetadataInvalidsize = 0x3001F6,
+        VideoprocessorsetstreamhdrmetadataInvalidsize = 0x3001F7,
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORGETSTREAMHDRMETADATA_NULLPARAM")]
-        VideoprocessorgetstreamhdrmetadataNullparam = 0x3001F7,
+        VideoprocessorgetstreamhdrmetadataNullparam = 0x3001F8,
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORGETSTREAMHDRMETADATA_INVALIDSTREAM")]
-        VideoprocessorgetstreamhdrmetadataInvalidstream = 0x3001F8,
+        VideoprocessorgetstreamhdrmetadataInvalidstream = 0x3001F9,
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORGETSTREAMHDRMETADATA_INVALIDSIZE")]
-        VideoprocessorgetstreamhdrmetadataInvalidsize = 0x3001F9,
+        VideoprocessorgetstreamhdrmetadataInvalidsize = 0x3001FA,
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORGETSTREAMFRAMEFORMAT_INVALIDSTREAM")]
-        VideoprocessorgetstreamframeformatInvalidstream = 0x3001FA,
+        VideoprocessorgetstreamframeformatInvalidstream = 0x3001FB,
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORGETSTREAMCOLORSPACE_INVALIDSTREAM")]
-        VideoprocessorgetstreamcolorspaceInvalidstream = 0x3001FB,
+        VideoprocessorgetstreamcolorspaceInvalidstream = 0x3001FC,
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORGETSTREAMOUTPUTRATE_INVALIDSTREAM")]
-        VideoprocessorgetstreamoutputrateInvalidstream = 0x3001FC,
+        VideoprocessorgetstreamoutputrateInvalidstream = 0x3001FD,
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORGETSTREAMSOURCERECT_INVALIDSTREAM")]
-        VideoprocessorgetstreamsourcerectInvalidstream = 0x3001FD,
+        VideoprocessorgetstreamsourcerectInvalidstream = 0x3001FE,
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORGETSTREAMDESTRECT_INVALIDSTREAM")]
-        VideoprocessorgetstreamdestrectInvalidstream = 0x3001FE,
+        VideoprocessorgetstreamdestrectInvalidstream = 0x3001FF,
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORGETSTREAMALPHA_INVALIDSTREAM")]
-        VideoprocessorgetstreamalphaInvalidstream = 0x3001FF,
+        VideoprocessorgetstreamalphaInvalidstream = 0x300200,
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORGETSTREAMPALETTE_INVALIDSTREAM")]
-        VideoprocessorgetstreampaletteInvalidstream = 0x300200,
+        VideoprocessorgetstreampaletteInvalidstream = 0x300201,
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORGETSTREAMPIXELASPECTRATIO_INVALIDSTREAM")]
-        VideoprocessorgetstreampixelaspectratioInvalidstream = 0x300201,
+        VideoprocessorgetstreampixelaspectratioInvalidstream = 0x300202,
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORGETSTREAMLUMAKEY_INVALIDSTREAM")]
-        VideoprocessorgetstreamlumakeyInvalidstream = 0x300202,
+        VideoprocessorgetstreamlumakeyInvalidstream = 0x300203,
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORGETSTREAMSTEREOFORMAT_INVALIDSTREAM")]
-        VideoprocessorgetstreamstereoformatInvalidstream = 0x300203,
+        VideoprocessorgetstreamstereoformatInvalidstream = 0x300204,
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORGETSTREAMAUTOPROCESSINGMODE_INVALIDSTREAM")]
-        VideoprocessorgetstreamautoprocessingmodeInvalidstream = 0x300204,
+        VideoprocessorgetstreamautoprocessingmodeInvalidstream = 0x300205,
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORGETSTREAMFILTER_INVALIDSTREAM")]
-        VideoprocessorgetstreamfilterInvalidstream = 0x300205,
+        VideoprocessorgetstreamfilterInvalidstream = 0x300206,
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORGETSTREAMROTATION_INVALIDSTREAM")]
-        VideoprocessorgetstreamrotationInvalidstream = 0x300206,
+        VideoprocessorgetstreamrotationInvalidstream = 0x300207,
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORGETSTREAMCOLORSPACE1_INVALIDSTREAM")]
-        Videoprocessorgetstreamcolorspace1Invalidstream = 0x300207,
+        Videoprocessorgetstreamcolorspace1Invalidstream = 0x300208,
         [NativeName("Name", "D3D11_MESSAGE_ID_VIDEOPROCESSORGETSTREAMMIRROR_INVALIDSTREAM")]
-        VideoprocessorgetstreammirrorInvalidstream = 0x300208,
+        VideoprocessorgetstreammirrorInvalidstream = 0x300209,
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATE_FENCE")]
-        CreateFence = 0x300209,
+        CreateFence = 0x30020A,
         [NativeName("Name", "D3D11_MESSAGE_ID_LIVE_FENCE")]
-        LiveFence = 0x30020A,
+        LiveFence = 0x30020B,
         [NativeName("Name", "D3D11_MESSAGE_ID_DESTROY_FENCE")]
-        DestroyFence = 0x30020B,
+        DestroyFence = 0x30020C,
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATE_SYNCHRONIZEDCHANNEL")]
-        CreateSynchronizedchannel = 0x30020C,
+        CreateSynchronizedchannel = 0x30020D,
         [NativeName("Name", "D3D11_MESSAGE_ID_LIVE_SYNCHRONIZEDCHANNEL")]
-        LiveSynchronizedchannel = 0x30020D,
+        LiveSynchronizedchannel = 0x30020E,
         [NativeName("Name", "D3D11_MESSAGE_ID_DESTROY_SYNCHRONIZEDCHANNEL")]
-        DestroySynchronizedchannel = 0x30020E,
+        DestroySynchronizedchannel = 0x30020F,
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATEFENCE_INVALIDFLAGS")]
-        CreatefenceInvalidflags = 0x30020F,
+        CreatefenceInvalidflags = 0x300210,
         [NativeName("Name", "D3D11_MESSAGE_ID_D3D11_3_MESSAGES_END")]
-        D3D113MessagesEnd = 0x300210,
+        D3D113MessagesEnd = 0x300211,
         [NativeName("Name", "D3D11_MESSAGE_ID_D3D11_5_MESSAGES_START")]
-        D3D115MessagesStart = 0x300211,
+        D3D115MessagesStart = 0x300212,
         [NativeName("Name", "D3D11_MESSAGE_ID_NEGOTIATECRYPTOSESSIONKEYEXCHANGEMT_INVALIDKEYEXCHANGETYPE")]
-        NegotiatecryptosessionkeyexchangemtInvalidkeyexchangetype = 0x300212,
+        NegotiatecryptosessionkeyexchangemtInvalidkeyexchangetype = 0x300213,
         [NativeName("Name", "D3D11_MESSAGE_ID_NEGOTIATECRYPTOSESSIONKEYEXCHANGEMT_NOT_SUPPORTED")]
-        NegotiatecryptosessionkeyexchangemtNotSupported = 0x300213,
+        NegotiatecryptosessionkeyexchangemtNotSupported = 0x300214,
         [NativeName("Name", "D3D11_MESSAGE_ID_DECODERBEGINFRAME_INVALID_HISTOGRAM_COMPONENT_COUNT")]
-        DecoderbeginframeInvalidHistogramComponentCount = 0x300214,
+        DecoderbeginframeInvalidHistogramComponentCount = 0x300215,
         [NativeName("Name", "D3D11_MESSAGE_ID_DECODERBEGINFRAME_INVALID_HISTOGRAM_COMPONENT")]
-        DecoderbeginframeInvalidHistogramComponent = 0x300215,
+        DecoderbeginframeInvalidHistogramComponent = 0x300216,
         [NativeName("Name", "D3D11_MESSAGE_ID_DECODERBEGINFRAME_INVALID_HISTOGRAM_BUFFER_SIZE")]
-        DecoderbeginframeInvalidHistogramBufferSize = 0x300216,
+        DecoderbeginframeInvalidHistogramBufferSize = 0x300217,
         [NativeName("Name", "D3D11_MESSAGE_ID_DECODERBEGINFRAME_INVALID_HISTOGRAM_BUFFER_USAGE")]
-        DecoderbeginframeInvalidHistogramBufferUsage = 0x300217,
+        DecoderbeginframeInvalidHistogramBufferUsage = 0x300218,
         [NativeName("Name", "D3D11_MESSAGE_ID_DECODERBEGINFRAME_INVALID_HISTOGRAM_BUFFER_MISC_FLAGS")]
-        DecoderbeginframeInvalidHistogramBufferMiscFlags = 0x300218,
+        DecoderbeginframeInvalidHistogramBufferMiscFlags = 0x300219,
         [NativeName("Name", "D3D11_MESSAGE_ID_DECODERBEGINFRAME_INVALID_HISTOGRAM_BUFFER_OFFSET")]
-        DecoderbeginframeInvalidHistogramBufferOffset = 0x300219,
+        DecoderbeginframeInvalidHistogramBufferOffset = 0x30021A,
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATE_TRACKEDWORKLOAD")]
-        CreateTrackedworkload = 0x30021A,
+        CreateTrackedworkload = 0x30021B,
         [NativeName("Name", "D3D11_MESSAGE_ID_LIVE_TRACKEDWORKLOAD")]
-        LiveTrackedworkload = 0x30021B,
+        LiveTrackedworkload = 0x30021C,
         [NativeName("Name", "D3D11_MESSAGE_ID_DESTROY_TRACKEDWORKLOAD")]
-        DestroyTrackedworkload = 0x30021C,
+        DestroyTrackedworkload = 0x30021D,
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATE_TRACKED_WORKLOAD_NULLPARAM")]
-        CreateTrackedWorkloadNullparam = 0x30021D,
+        CreateTrackedWorkloadNullparam = 0x30021E,
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATE_TRACKED_WORKLOAD_INVALID_MAX_INSTANCES")]
-        CreateTrackedWorkloadInvalidMaxInstances = 0x30021E,
+        CreateTrackedWorkloadInvalidMaxInstances = 0x30021F,
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATE_TRACKED_WORKLOAD_INVALID_DEADLINE_TYPE")]
-        CreateTrackedWorkloadInvalidDeadlineType = 0x30021F,
+        CreateTrackedWorkloadInvalidDeadlineType = 0x300220,
         [NativeName("Name", "D3D11_MESSAGE_ID_CREATE_TRACKED_WORKLOAD_INVALID_ENGINE_TYPE")]
-        CreateTrackedWorkloadInvalidEngineType = 0x300220,
+        CreateTrackedWorkloadInvalidEngineType = 0x300221,
         [NativeName("Name", "D3D11_MESSAGE_ID_MULTIPLE_TRACKED_WORKLOADS")]
-        MultipleTrackedWorkloads = 0x300221,
+        MultipleTrackedWorkloads = 0x300222,
         [NativeName("Name", "D3D11_MESSAGE_ID_MULTIPLE_TRACKED_WORKLOAD_PAIRS")]
-        MultipleTrackedWorkloadPairs = 0x300222,
+        MultipleTrackedWorkloadPairs = 0x300223,
         [NativeName("Name", "D3D11_MESSAGE_ID_INCOMPLETE_TRACKED_WORKLOAD_PAIR")]
-        IncompleteTrackedWorkloadPair = 0x300223,
+        IncompleteTrackedWorkloadPair = 0x300224,
         [NativeName("Name", "D3D11_MESSAGE_ID_OUT_OF_ORDER_TRACKED_WORKLOAD_PAIR")]
-        OutOfOrderTrackedWorkloadPair = 0x300224,
+        OutOfOrderTrackedWorkloadPair = 0x300225,
         [NativeName("Name", "D3D11_MESSAGE_ID_CANNOT_ADD_TRACKED_WORKLOAD")]
-        CannotAddTrackedWorkload = 0x300225,
+        CannotAddTrackedWorkload = 0x300226,
         [NativeName("Name", "D3D11_MESSAGE_ID_TRACKED_WORKLOAD_NOT_SUPPORTED")]
-        TrackedWorkloadNotSupported = 0x300226,
+        TrackedWorkloadNotSupported = 0x300227,
         [NativeName("Name", "D3D11_MESSAGE_ID_TRACKED_WORKLOAD_ENGINE_TYPE_NOT_FOUND")]
-        TrackedWorkloadEngineTypeNotFound = 0x300227,
+        TrackedWorkloadEngineTypeNotFound = 0x300228,
         [NativeName("Name", "D3D11_MESSAGE_ID_NO_TRACKED_WORKLOAD_SLOT_AVAILABLE")]
-        NoTrackedWorkloadSlotAvailable = 0x300228,
+        NoTrackedWorkloadSlotAvailable = 0x300229,
         [NativeName("Name", "D3D11_MESSAGE_ID_END_TRACKED_WORKLOAD_INVALID_ARG")]
-        EndTrackedWorkloadInvalidArg = 0x300229,
+        EndTrackedWorkloadInvalidArg = 0x30022A,
         [NativeName("Name", "D3D11_MESSAGE_ID_TRACKED_WORKLOAD_DISJOINT_FAILURE")]
-        TrackedWorkloadDisjointFailure = 0x30022A,
+        TrackedWorkloadDisjointFailure = 0x30022B,
         [NativeName("Name", "D3D11_MESSAGE_ID_D3D11_5_MESSAGES_END")]
-        D3D115MessagesEnd = 0x30022B,
+        D3D115MessagesEnd = 0x30022C,
     }
 }

@@ -25,7 +25,7 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             uint? queueFamilyIndex = null,
             VideoSessionCreateFlagsKHR? flags = null,
-            VideoProfileInfoKHR* pVideoProfile = null,
+            VideoProfileKHR* pVideoProfile = null,
             Format? pictureFormat = null,
             Extent2D? maxCodedExtent = null,
             Format? referencePicturesFormat = null,
@@ -111,10 +111,10 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "flags")]
         public VideoSessionCreateFlagsKHR Flags;
 /// <summary></summary>
-        [NativeName("Type", "VkVideoProfileInfoKHR*")]
-        [NativeName("Type.Name", "VkVideoProfileInfoKHR")]
+        [NativeName("Type", "VkVideoProfileKHR*")]
+        [NativeName("Type.Name", "VkVideoProfileKHR")]
         [NativeName("Name", "pVideoProfile")]
-        public VideoProfileInfoKHR* PVideoProfile;
+        public VideoProfileKHR* PVideoProfile;
 /// <summary></summary>
         [NativeName("Type", "VkFormat")]
         [NativeName("Type.Name", "VkFormat")]

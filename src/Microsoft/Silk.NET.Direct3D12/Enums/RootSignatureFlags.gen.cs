@@ -46,6 +46,12 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"DenyMeshShaderRootAccess\"")]
         [NativeName("Name", "D3D12_ROOT_SIGNATURE_FLAG_DENY_MESH_SHADER_ROOT_ACCESS")]
         RootSignatureFlagDenyMeshShaderRootAccess = 0x200,
+        [Obsolete("Deprecated in favour of \"CbvSrvUavHeapDirectlyIndexed\"")]
+        [NativeName("Name", "D3D12_ROOT_SIGNATURE_FLAG_CBV_SRV_UAV_HEAP_DIRECTLY_INDEXED")]
+        RootSignatureFlagCbvSrvUavHeapDirectlyIndexed = 0x400,
+        [Obsolete("Deprecated in favour of \"SamplerHeapDirectlyIndexed\"")]
+        [NativeName("Name", "D3D12_ROOT_SIGNATURE_FLAG_SAMPLER_HEAP_DIRECTLY_INDEXED")]
+        RootSignatureFlagSamplerHeapDirectlyIndexed = 0x800,
         [NativeName("Name", "D3D12_ROOT_SIGNATURE_FLAG_NONE")]
         None = 0x0,
         [NativeName("Name", "D3D12_ROOT_SIGNATURE_FLAG_ALLOW_INPUT_ASSEMBLER_INPUT_LAYOUT")]
@@ -68,5 +74,9 @@ namespace Silk.NET.Direct3D12
         DenyAmplificationShaderRootAccess = 0x100,
         [NativeName("Name", "D3D12_ROOT_SIGNATURE_FLAG_DENY_MESH_SHADER_ROOT_ACCESS")]
         DenyMeshShaderRootAccess = 0x200,
+        [NativeName("Name", "D3D12_ROOT_SIGNATURE_FLAG_CBV_SRV_UAV_HEAP_DIRECTLY_INDEXED")]
+        CbvSrvUavHeapDirectlyIndexed = 0x400,
+        [NativeName("Name", "D3D12_ROOT_SIGNATURE_FLAG_SAMPLER_HEAP_DIRECTLY_INDEXED")]
+        SamplerHeapDirectlyIndexed = 0x800,
     }
 }

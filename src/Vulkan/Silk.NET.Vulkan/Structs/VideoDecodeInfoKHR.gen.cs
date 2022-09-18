@@ -23,14 +23,14 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.VideoDecodeInfoKhr,
             void* pNext = null,
-            uint? flags = null,
+            VideoDecodeFlagsKHR? flags = null,
             Buffer? srcBuffer = null,
             ulong? srcBufferOffset = null,
             ulong? srcBufferRange = null,
-            VideoPictureResourceInfoKHR? dstPictureResource = null,
-            VideoReferenceSlotInfoKHR* pSetupReferenceSlot = null,
+            VideoPictureResourceKHR? dstPictureResource = null,
+            VideoReferenceSlotKHR* pSetupReferenceSlot = null,
             uint? referenceSlotCount = null,
-            VideoReferenceSlotInfoKHR* pReferenceSlots = null
+            VideoReferenceSlotKHR* pReferenceSlots = null
         ) : this()
         {
             if (sType is not null)
@@ -98,7 +98,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "VkVideoDecodeFlagsKHR")]
         [NativeName("Type.Name", "VkVideoDecodeFlagsKHR")]
         [NativeName("Name", "flags")]
-        public uint Flags;
+        public VideoDecodeFlagsKHR Flags;
 /// <summary></summary>
         [NativeName("Type", "VkBuffer")]
         [NativeName("Type.Name", "VkBuffer")]
@@ -115,25 +115,25 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "srcBufferRange")]
         public ulong SrcBufferRange;
 /// <summary></summary>
-        [NativeName("Type", "VkVideoPictureResourceInfoKHR")]
-        [NativeName("Type.Name", "VkVideoPictureResourceInfoKHR")]
+        [NativeName("Type", "VkVideoPictureResourceKHR")]
+        [NativeName("Type.Name", "VkVideoPictureResourceKHR")]
         [NativeName("Name", "dstPictureResource")]
-        public VideoPictureResourceInfoKHR DstPictureResource;
+        public VideoPictureResourceKHR DstPictureResource;
 /// <summary></summary>
-        [NativeName("Type", "VkVideoReferenceSlotInfoKHR*")]
-        [NativeName("Type.Name", "VkVideoReferenceSlotInfoKHR")]
+        [NativeName("Type", "VkVideoReferenceSlotKHR*")]
+        [NativeName("Type.Name", "VkVideoReferenceSlotKHR")]
         [NativeName("Name", "pSetupReferenceSlot")]
-        public VideoReferenceSlotInfoKHR* PSetupReferenceSlot;
+        public VideoReferenceSlotKHR* PSetupReferenceSlot;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "referenceSlotCount")]
         public uint ReferenceSlotCount;
 /// <summary></summary>
-        [NativeName("Type", "VkVideoReferenceSlotInfoKHR*")]
-        [NativeName("Type.Name", "VkVideoReferenceSlotInfoKHR")]
+        [NativeName("Type", "VkVideoReferenceSlotKHR*")]
+        [NativeName("Type.Name", "VkVideoReferenceSlotKHR")]
         [NativeName("Name", "pReferenceSlots")]
-        public VideoReferenceSlotInfoKHR* PReferenceSlots;
+        public VideoReferenceSlotKHR* PReferenceSlots;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

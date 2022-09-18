@@ -570,9 +570,6 @@ namespace Silk.NET.OpenXR
         [Obsolete("Deprecated in favour of \"GeometryInstanceTransformFB\"")]
         [NativeName("Name", "XR_TYPE_GEOMETRY_INSTANCE_TRANSFORM_FB")]
         TypeGeometryInstanceTransformFB = 1000118005,
-        [Obsolete("Deprecated in favour of \"SystemPassthroughProperties2FB\"")]
-        [NativeName("Name", "XR_TYPE_SYSTEM_PASSTHROUGH_PROPERTIES2_FB")]
-        TypeSystemPassthroughProperties2FB = 1000118006,
         [Obsolete("Deprecated in favour of \"PassthroughStyleFB\"")]
         [NativeName("Name", "XR_TYPE_PASSTHROUGH_STYLE_FB")]
         TypePassthroughStyleFB = 1000118020,
@@ -1089,8 +1086,6 @@ namespace Silk.NET.OpenXR
         GeometryInstanceCreateInfoFB = 1000118004,
         [NativeName("Name", "XR_TYPE_GEOMETRY_INSTANCE_TRANSFORM_FB")]
         GeometryInstanceTransformFB = 1000118005,
-        [NativeName("Name", "XR_TYPE_SYSTEM_PASSTHROUGH_PROPERTIES2_FB")]
-        SystemPassthroughProperties2FB = 1000118006,
         [NativeName("Name", "XR_TYPE_PASSTHROUGH_STYLE_FB")]
         PassthroughStyleFB = 1000118020,
         [NativeName("Name", "XR_TYPE_PASSTHROUGH_COLOR_MAP_MONO_TO_RGBA_FB")]

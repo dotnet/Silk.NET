@@ -21,7 +21,9 @@ namespace Silk.NET.Core.Win32Extras
         EtwQueryPartitionInformationV2 = 0x2,
         [NativeName("Name", "EtwQueryLastDroppedTimes")]
         EtwQueryLastDroppedTimes = 0x3,
+        [NativeName("Name", "EtwQueryLogFileHeader")]
+        EtwQueryLogFileHeader = 0x4,
         [NativeName("Name", "EtwQueryProcessHandleInfoMax")]
-        EtwQueryProcessHandleInfoMax = 0x4,
+        EtwQueryProcessHandleInfoMax = 0x5,
     }
 }

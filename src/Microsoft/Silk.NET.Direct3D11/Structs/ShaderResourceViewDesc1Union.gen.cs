@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Direct3D11
 {
     [StructLayout(LayoutKind.Explicit)]
-    [NativeName("Name", "__AnonymousRecord_d3d11_3_L886_C5")]
+    [NativeName("Name", "__AnonymousRecord_d3d11_3_L928_C5")]
     public unsafe partial struct ShaderResourceViewDesc1Union
     {
         public ShaderResourceViewDesc1Union

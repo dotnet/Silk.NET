@@ -106,43 +106,43 @@ public unsafe static class DxcOperationResultVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetResult(this ComPtr<IDxcOperationResult> thisVtbl, IDxcBlob** pResult)
+    public static unsafe int GetResult(this ComPtr<IDxcOperationResult> thisVtbl, IDxcBlob** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDxcOperationResult*, IDxcBlob**, int>)@this->LpVtbl[4])(@this, pResult);
+        ret = ((delegate* unmanaged[Stdcall]<IDxcOperationResult*, IDxcBlob**, int>)@this->LpVtbl[4])(@this, ppResult);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetResult(this ComPtr<IDxcOperationResult> thisVtbl, ref IDxcBlob* pResult)
+    public static unsafe int GetResult(this ComPtr<IDxcOperationResult> thisVtbl, ref IDxcBlob* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (IDxcBlob** pResultPtr = &pResult)
+        fixed (IDxcBlob** ppResultPtr = &ppResult)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDxcOperationResult*, IDxcBlob**, int>)@this->LpVtbl[4])(@this, pResultPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcOperationResult*, IDxcBlob**, int>)@this->LpVtbl[4])(@this, ppResultPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetErrorBuffer(this ComPtr<IDxcOperationResult> thisVtbl, IDxcBlobEncoding** pErrors)
+    public static unsafe int GetErrorBuffer(this ComPtr<IDxcOperationResult> thisVtbl, IDxcBlobEncoding** ppErrors)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDxcOperationResult*, IDxcBlobEncoding**, int>)@this->LpVtbl[5])(@this, pErrors);
+        ret = ((delegate* unmanaged[Stdcall]<IDxcOperationResult*, IDxcBlobEncoding**, int>)@this->LpVtbl[5])(@this, ppErrors);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetErrorBuffer(this ComPtr<IDxcOperationResult> thisVtbl, ref IDxcBlobEncoding* pErrors)
+    public static unsafe int GetErrorBuffer(this ComPtr<IDxcOperationResult> thisVtbl, ref IDxcBlobEncoding* ppErrors)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (IDxcBlobEncoding** pErrorsPtr = &pErrors)
+        fixed (IDxcBlobEncoding** ppErrorsPtr = &ppErrors)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDxcOperationResult*, IDxcBlobEncoding**, int>)@this->LpVtbl[5])(@this, pErrorsPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcOperationResult*, IDxcBlobEncoding**, int>)@this->LpVtbl[5])(@this, ppErrorsPtr);
         }
         return ret;
     }
@@ -181,19 +181,19 @@ public unsafe static class DxcOperationResultVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetResult<TI0>(this ComPtr<IDxcOperationResult> thisVtbl, ref ComPtr<TI0> pResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+    public static int GetResult<TI0>(this ComPtr<IDxcOperationResult> thisVtbl, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->GetResult((IDxcBlob**) pResult.GetAddressOf());
+        return @this->GetResult((IDxcBlob**) ppResult.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetErrorBuffer<TI0>(this ComPtr<IDxcOperationResult> thisVtbl, ref ComPtr<TI0> pErrors) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
+    public static int GetErrorBuffer<TI0>(this ComPtr<IDxcOperationResult> thisVtbl, ref ComPtr<TI0> ppErrors) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->GetErrorBuffer((IDxcBlobEncoding**) pErrors.GetAddressOf());
+        return @this->GetErrorBuffer((IDxcBlobEncoding**) ppErrors.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
