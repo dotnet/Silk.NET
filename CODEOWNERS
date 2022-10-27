@@ -20,10 +20,8 @@
 # OpenGL
 /src/OpenGL/**/*.cs                 @ThomasMiz
 
-# OpenGL ImGui Controllers
+# OpenGL ImGui Controller
 /src/OpenGL/Extensions/Silk.NET.OpenGL.Extensions.ImGui/**/*.cs        @Beyley
-/src/OpenGL/Extensions/Silk.NET.OpenGLES.Extensions.ImGui/**/*.cs      @Beyley
-/src/OpenGL/Extensions/Silk.NET.OpenGL.Legacy.Extensions.ImGui/**/*.cs @Beyley
 
 # BuildTools
 #/src/Core/Silk.NET.BuildTools       @Perksey
