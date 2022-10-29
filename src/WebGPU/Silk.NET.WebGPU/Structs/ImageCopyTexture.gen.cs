@@ -22,7 +22,7 @@ namespace Silk.NET.WebGPU
         public ImageCopyTexture
         (
             ChainedStruct* nextInChain = null,
-            TextureImpl* texture = null,
+            Texture* texture = null,
             uint? mipLevel = null,
             Origin3D? origin = null,
             TextureAspect? aspect = null
@@ -63,7 +63,7 @@ namespace Silk.NET.WebGPU
         [NativeName("Type", "WGPUTexture")]
         [NativeName("Type.Name", "WGPUTexture")]
         [NativeName("Name", "texture")]
-        public TextureImpl* Texture;
+        public Texture* Texture;
 
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]

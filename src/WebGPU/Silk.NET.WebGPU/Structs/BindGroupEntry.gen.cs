@@ -23,11 +23,11 @@ namespace Silk.NET.WebGPU
         (
             ChainedStruct* nextInChain = null,
             uint? binding = null,
-            BufferImpl* buffer = null,
+            Buffer* buffer = null,
             ulong? offset = null,
             ulong? size = null,
-            SamplerImpl* sampler = null,
-            TextureViewImpl* textureView = null
+            Sampler* sampler = null,
+            TextureView* textureView = null
         ) : this()
         {
             if (nextInChain is not null)
@@ -80,7 +80,7 @@ namespace Silk.NET.WebGPU
         [NativeName("Type", "WGPUBuffer")]
         [NativeName("Type.Name", "WGPUBuffer")]
         [NativeName("Name", "buffer")]
-        public BufferImpl* Buffer;
+        public Buffer* Buffer;
 
         [NativeName("Type", "uint64_t")]
         [NativeName("Type.Name", "uint64_t")]
@@ -95,11 +95,11 @@ namespace Silk.NET.WebGPU
         [NativeName("Type", "WGPUSampler")]
         [NativeName("Type.Name", "WGPUSampler")]
         [NativeName("Name", "sampler")]
-        public SamplerImpl* Sampler;
+        public Sampler* Sampler;
 
         [NativeName("Type", "WGPUTextureView")]
         [NativeName("Type.Name", "WGPUTextureView")]
         [NativeName("Name", "textureView")]
-        public TextureViewImpl* TextureView;
+        public TextureView* TextureView;
     }
 }

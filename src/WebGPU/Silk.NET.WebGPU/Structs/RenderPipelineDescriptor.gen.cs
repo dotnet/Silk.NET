@@ -23,7 +23,7 @@ namespace Silk.NET.WebGPU
         (
             ChainedStruct* nextInChain = null,
             byte* label = null,
-            PipelineLayoutImpl* layout = null,
+            PipelineLayout* layout = null,
             VertexState? vertex = null,
             PrimitiveState? primitive = null,
             DepthStencilState* depthStencil = null,
@@ -86,7 +86,7 @@ namespace Silk.NET.WebGPU
         [NativeName("Type", "WGPUPipelineLayout")]
         [NativeName("Type.Name", "WGPUPipelineLayout")]
         [NativeName("Name", "layout")]
-        public PipelineLayoutImpl* Layout;
+        public PipelineLayout* Layout;
 
         [NativeName("Type", "WGPUVertexState")]
         [NativeName("Type.Name", "WGPUVertexState")]

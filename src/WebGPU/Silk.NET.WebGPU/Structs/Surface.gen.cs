@@ -16,8 +16,8 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.WebGPU
 {
-    [NativeName("Name", "WGPUAdapterImpl")]
-    public unsafe partial struct AdapterImpl
+    [NativeName("Name", "WGPUSurfaceImpl")]
+    public unsafe partial struct Surface
     {
     }
 }

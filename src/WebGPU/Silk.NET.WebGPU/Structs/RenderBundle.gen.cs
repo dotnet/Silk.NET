@@ -16,8 +16,8 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.WebGPU
 {
-    [NativeName("Name", "WGPUComputePipelineImpl")]
-    public unsafe partial struct ComputePipelineImpl
+    [NativeName("Name", "WGPURenderBundleImpl")]
+    public unsafe partial struct RenderBundle
     {
     }
 }

@@ -26,7 +26,7 @@ namespace Silk.NET.WebGPU
             uint? colorAttachmentCount = null,
             RenderPassColorAttachment* colorAttachments = null,
             RenderPassDepthStencilAttachment* depthStencilAttachment = null,
-            QuerySetImpl* occlusionQuerySet = null,
+            QuerySet* occlusionQuerySet = null,
             uint? timestampWriteCount = null,
             RenderPassTimestampWrite* timestampWrites = null
         ) : this()
@@ -101,7 +101,7 @@ namespace Silk.NET.WebGPU
         [NativeName("Type", "WGPUQuerySet")]
         [NativeName("Type.Name", "WGPUQuerySet")]
         [NativeName("Name", "occlusionQuerySet")]
-        public QuerySetImpl* OcclusionQuerySet;
+        public QuerySet* OcclusionQuerySet;
 
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]

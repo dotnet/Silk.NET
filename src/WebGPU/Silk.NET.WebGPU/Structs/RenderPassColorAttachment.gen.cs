@@ -21,8 +21,8 @@ namespace Silk.NET.WebGPU
     {
         public RenderPassColorAttachment
         (
-            TextureViewImpl* view = null,
-            TextureViewImpl* resolveTarget = null,
+            TextureView* view = null,
+            TextureView* resolveTarget = null,
             LoadOp? loadOp = null,
             StoreOp? storeOp = null,
             Color? clearValue = null
@@ -58,12 +58,12 @@ namespace Silk.NET.WebGPU
         [NativeName("Type", "WGPUTextureView")]
         [NativeName("Type.Name", "WGPUTextureView")]
         [NativeName("Name", "view")]
-        public TextureViewImpl* View;
+        public TextureView* View;
 
         [NativeName("Type", "WGPUTextureView")]
         [NativeName("Type.Name", "WGPUTextureView")]
         [NativeName("Name", "resolveTarget")]
-        public TextureViewImpl* ResolveTarget;
+        public TextureView* ResolveTarget;
 
         [NativeName("Type", "WGPULoadOp")]
         [NativeName("Type.Name", "WGPULoadOp")]

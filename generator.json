@@ -2033,7 +2033,29 @@
                 
             ],
             "rename": {
-                
+                "WGPUComputePipelineImpl": "ComputePipeline",
+                "WGPUAdapterImpl": "Adapter",
+                "WGPUBindGroupImpl": "BindGroup",
+                "WGPUBindGroupLayoutImpl": "WGPUBindGroupLayout",
+                "WGPUBufferImpl": "Buffer",
+                "WGPUCommandBufferImpl": "CommandBuffer",
+                "WGPUCommandEncoderImpl": "CommandEncoder",
+                "WGPUComputePassEncoderImpl": "ComputePassEncoder",
+                "WGPUDeviceImpl": "Device",
+                "WGPUInstanceImpl": "Instance",
+                "WGPUPipelineLayoutImpl": "PipelineLayout",
+                "WGPUQuerySetImpl": "QuerySet",
+                "WGPUQueueImpl": "Queue",
+                "WGPURenderBundleEncoderImpl": "RenderBundleEncoder",
+                "WGPURenderBundleImpl": "RenderBundle",
+                "WGPURenderPassEncoderImpl": "RenderPassEncoder",
+                "WGPURenderPipelineImpl": "RenderPipeline",
+                "WGPUSamplerImpl": "Sampler",
+                "WGPUShaderModuleImpl": "ShaderModule",
+                "WGPUSurfaceImpl": "Surface",
+                "WGPUSwapChainImpl": "SwapChain",
+                "WGPUTextureImpl": "Texture",
+                "WGPUTextureViewImpl": "TextureView"
             },
             "bakery": {
                 "profileNames": [

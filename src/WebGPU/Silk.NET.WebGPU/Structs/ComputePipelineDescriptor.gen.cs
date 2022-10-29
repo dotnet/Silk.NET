@@ -23,7 +23,7 @@ namespace Silk.NET.WebGPU
         (
             ChainedStruct* nextInChain = null,
             byte* label = null,
-            PipelineLayoutImpl* layout = null,
+            PipelineLayout* layout = null,
             ProgrammableStageDescriptor? compute = null
         ) : this()
         {
@@ -62,7 +62,7 @@ namespace Silk.NET.WebGPU
         [NativeName("Type", "WGPUPipelineLayout")]
         [NativeName("Type.Name", "WGPUPipelineLayout")]
         [NativeName("Name", "layout")]
-        public PipelineLayoutImpl* Layout;
+        public PipelineLayout* Layout;
 
         [NativeName("Type", "WGPUProgrammableStageDescriptor")]
         [NativeName("Type.Name", "WGPUProgrammableStageDescriptor")]

@@ -22,7 +22,7 @@ namespace Silk.NET.WebGPU
         public RequestAdapterOptions
         (
             ChainedStruct* nextInChain = null,
-            SurfaceImpl* compatibleSurface = null,
+            Surface* compatibleSurface = null,
             PowerPreference? powerPreference = null,
             bool? forceFallbackAdapter = null
         ) : this()
@@ -57,7 +57,7 @@ namespace Silk.NET.WebGPU
         [NativeName("Type", "WGPUSurface")]
         [NativeName("Type.Name", "WGPUSurface")]
         [NativeName("Name", "compatibleSurface")]
-        public SurfaceImpl* CompatibleSurface;
+        public Surface* CompatibleSurface;
 
         [NativeName("Type", "WGPUPowerPreference")]
         [NativeName("Type.Name", "WGPUPowerPreference")]

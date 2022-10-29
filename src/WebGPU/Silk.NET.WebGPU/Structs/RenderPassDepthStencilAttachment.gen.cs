@@ -21,7 +21,7 @@ namespace Silk.NET.WebGPU
     {
         public RenderPassDepthStencilAttachment
         (
-            TextureViewImpl* view = null,
+            TextureView* view = null,
             LoadOp? depthLoadOp = null,
             StoreOp? depthStoreOp = null,
             float? depthClearValue = null,
@@ -82,7 +82,7 @@ namespace Silk.NET.WebGPU
         [NativeName("Type", "WGPUTextureView")]
         [NativeName("Type.Name", "WGPUTextureView")]
         [NativeName("Name", "view")]
-        public TextureViewImpl* View;
+        public TextureView* View;
 
         [NativeName("Type", "WGPULoadOp")]
         [NativeName("Type.Name", "WGPULoadOp")]

@@ -23,7 +23,7 @@ namespace Silk.NET.WebGPU
         (
             ChainedStruct* nextInChain = null,
             byte* entryPoint = null,
-            PipelineLayoutImpl* layout = null
+            PipelineLayout* layout = null
         ) : this()
         {
             if (nextInChain is not null)
@@ -56,6 +56,6 @@ namespace Silk.NET.WebGPU
         [NativeName("Type", "WGPUPipelineLayout")]
         [NativeName("Type.Name", "WGPUPipelineLayout")]
         [NativeName("Name", "layout")]
-        public PipelineLayoutImpl* Layout;
+        public PipelineLayout* Layout;
     }
 }
