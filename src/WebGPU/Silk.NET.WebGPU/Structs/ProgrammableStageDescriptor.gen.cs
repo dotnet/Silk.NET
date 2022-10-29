@@ -22,7 +22,7 @@ namespace Silk.NET.WebGPU
         public ProgrammableStageDescriptor
         (
             ChainedStruct* nextInChain = null,
-            ShaderModuleImpl* module = null,
+            ShaderModule* module = null,
             byte* entryPoint = null,
             uint? constantCount = null,
             ConstantEntry* constants = null
@@ -63,7 +63,7 @@ namespace Silk.NET.WebGPU
         [NativeName("Type", "WGPUShaderModule")]
         [NativeName("Type.Name", "WGPUShaderModule")]
         [NativeName("Name", "module")]
-        public ShaderModuleImpl* Module;
+        public ShaderModule* Module;
 
         [NativeName("Type", "const char *")]
         [NativeName("Type.Name", "const char *")]

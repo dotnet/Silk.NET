@@ -16,8 +16,8 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.WebGPU
 {
-    [NativeName("Name", "WGPUInstanceImpl")]
-    public unsafe partial struct InstanceImpl
+    [NativeName("Name", "WGPUQueueImpl")]
+    public unsafe partial struct Queue
     {
     }
 }

@@ -16,8 +16,8 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.WebGPU
 {
-    [NativeName("Name", "WGPUBindGroupLayoutImpl")]
-    public unsafe partial struct BindGroupLayoutImpl
+    [NativeName("Name", "WGPUCommandEncoderImpl")]
+    public unsafe partial struct CommandEncoder
     {
     }
 }

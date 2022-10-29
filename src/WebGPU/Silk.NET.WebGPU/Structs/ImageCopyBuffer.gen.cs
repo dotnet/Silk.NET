@@ -23,7 +23,7 @@ namespace Silk.NET.WebGPU
         (
             ChainedStruct* nextInChain = null,
             TextureDataLayout? layout = null,
-            BufferImpl* buffer = null
+            Buffer* buffer = null
         ) : this()
         {
             if (nextInChain is not null)
@@ -56,6 +56,6 @@ namespace Silk.NET.WebGPU
         [NativeName("Type", "WGPUBuffer")]
         [NativeName("Type.Name", "WGPUBuffer")]
         [NativeName("Name", "buffer")]
-        public BufferImpl* Buffer;
+        public Buffer* Buffer;
     }
 }

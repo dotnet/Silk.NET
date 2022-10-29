@@ -23,7 +23,7 @@ namespace Silk.NET.WebGPU
         (
             ChainedStruct* nextInChain = null,
             byte* label = null,
-            BindGroupLayoutImpl* layout = null,
+            WGPUBindGroupLayout* layout = null,
             uint? entryCount = null,
             BindGroupEntry* entries = null
         ) : this()
@@ -68,7 +68,7 @@ namespace Silk.NET.WebGPU
         [NativeName("Type", "WGPUBindGroupLayout")]
         [NativeName("Type.Name", "WGPUBindGroupLayout")]
         [NativeName("Name", "layout")]
-        public BindGroupLayoutImpl* Layout;
+        public WGPUBindGroupLayout* Layout;
 
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
