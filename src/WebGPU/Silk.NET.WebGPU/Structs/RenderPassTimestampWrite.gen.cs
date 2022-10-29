@@ -21,7 +21,7 @@ namespace Silk.NET.WebGPU
     {
         public RenderPassTimestampWrite
         (
-            QuerySetImpl* querySet = null,
+            QuerySet* querySet = null,
             uint? queryIndex = null,
             RenderPassTimestampLocation? location = null
         ) : this()
@@ -46,7 +46,7 @@ namespace Silk.NET.WebGPU
         [NativeName("Type", "WGPUQuerySet")]
         [NativeName("Type.Name", "WGPUQuerySet")]
         [NativeName("Name", "querySet")]
-        public QuerySetImpl* QuerySet;
+        public QuerySet* QuerySet;
 
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]

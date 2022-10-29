@@ -16,8 +16,8 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.WebGPU
 {
-    [NativeName("Name", "WGPUShaderModuleImpl")]
-    public unsafe partial struct ShaderModuleImpl
+    [NativeName("Name", "WGPUBindGroupLayoutImpl")]
+    public unsafe partial struct WGPUBindGroupLayout
     {
     }
 }
