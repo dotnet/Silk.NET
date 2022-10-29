@@ -23,6 +23,7 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.VideoSessionParametersCreateInfoKhr,
             void* pNext = null,
+            uint? flags = null,
             VideoSessionParametersKHR? videoSessionParametersTemplate = null,
             VideoSessionKHR? videoSession = null
         ) : this()
@@ -35,6 +36,11 @@ namespace Silk.NET.Vulkan
             if (pNext is not null)
             {
                 PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
             }
 
             if (videoSessionParametersTemplate is not null)
@@ -58,6 +64,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "void")]
         [NativeName("Name", "pNext")]
         public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkVideoSessionParametersCreateFlagsKHR")]
+        [NativeName("Type.Name", "VkVideoSessionParametersCreateFlagsKHR")]
+        [NativeName("Name", "flags")]
+        public uint Flags;
 /// <summary></summary>
         [NativeName("Type", "VkVideoSessionParametersKHR")]
         [NativeName("Type.Name", "VkVideoSessionParametersKHR")]

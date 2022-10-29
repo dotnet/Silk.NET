@@ -12,5 +12,7 @@ namespace Silk.NET.OpenCL.Extensions.KHR
     [NativeName("Name", "cl_ndrange_kernel_command_properties_khr")]
     public enum NdrangeKernelCommandProperties : ulong
     {
+        [NativeName("Name", "CL_MUTABLE_DISPATCH_UPDATABLE_FIELDS_KHR")]
+        MutableDispatchUpdatableFields = 0x12B1,
     }
 }

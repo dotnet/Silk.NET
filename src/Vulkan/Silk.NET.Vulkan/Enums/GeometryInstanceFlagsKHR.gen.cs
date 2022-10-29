@@ -30,12 +30,12 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"TriangleFrontCounterclockwiseBitKhr\"")]
         [NativeName("Name", "VK_GEOMETRY_INSTANCE_TRIANGLE_FRONT_COUNTERCLOCKWISE_BIT_KHR")]
         GeometryInstanceTriangleFrontCounterclockwiseBitKhr = 2,
-        [Obsolete("Deprecated in favour of \"Reserved4BitNV\"")]
-        [NativeName("Name", "VK_GEOMETRY_INSTANCE_RESERVED_4_BIT_NV")]
-        GeometryInstanceReserved4BitNV = 16,
-        [Obsolete("Deprecated in favour of \"Reserved5BitNV\"")]
-        [NativeName("Name", "VK_GEOMETRY_INSTANCE_RESERVED_5_BIT_NV")]
-        GeometryInstanceReserved5BitNV = 32,
+        [Obsolete("Deprecated in favour of \"ForceOpacityMicromap2StateExt\"")]
+        [NativeName("Name", "VK_GEOMETRY_INSTANCE_FORCE_OPACITY_MICROMAP_2_STATE_EXT")]
+        GeometryInstanceForceOpacityMicromap2StateExt = 16,
+        [Obsolete("Deprecated in favour of \"DisableOpacityMicromapsExt\"")]
+        [NativeName("Name", "VK_GEOMETRY_INSTANCE_DISABLE_OPACITY_MICROMAPS_EXT")]
+        GeometryInstanceDisableOpacityMicromapsExt = 32,
         [NativeName("Name", "VK_GEOMETRY_INSTANCE_TRIANGLE_FACING_CULL_DISABLE_BIT_KHR")]
         TriangleFacingCullDisableBitKhr = 1,
         [NativeName("Name", "VK_GEOMETRY_INSTANCE_TRIANGLE_FLIP_FACING_BIT_KHR")]
@@ -46,9 +46,9 @@ namespace Silk.NET.Vulkan
         ForceNoOpaqueBitKhr = 8,
         [NativeName("Name", "VK_GEOMETRY_INSTANCE_TRIANGLE_FRONT_COUNTERCLOCKWISE_BIT_KHR")]
         TriangleFrontCounterclockwiseBitKhr = 2,
-        [NativeName("Name", "VK_GEOMETRY_INSTANCE_RESERVED_4_BIT_NV")]
-        Reserved4BitNV = 16,
-        [NativeName("Name", "VK_GEOMETRY_INSTANCE_RESERVED_5_BIT_NV")]
-        Reserved5BitNV = 32,
+        [NativeName("Name", "VK_GEOMETRY_INSTANCE_FORCE_OPACITY_MICROMAP_2_STATE_EXT")]
+        ForceOpacityMicromap2StateExt = 16,
+        [NativeName("Name", "VK_GEOMETRY_INSTANCE_DISABLE_OPACITY_MICROMAPS_EXT")]
+        DisableOpacityMicromapsExt = 32,
     }
 }

@@ -25,5 +25,9 @@ namespace Silk.NET.OpenCL.Extensions.ARM
         DeferredFlush = 0x8,
         [NativeName("Name", "CL_DEVICE_SCHEDULING_REGISTER_ALLOCATION_ARM")]
         RegisterAllocation = 0x10,
+        [NativeName("Name", "CL_DEVICE_SCHEDULING_WARP_THROTTLING_ARM")]
+        WarpThrottling = 0x20,
+        [NativeName("Name", "CL_DEVICE_SCHEDULING_COMPUTE_UNIT_BATCH_QUEUE_SIZE_ARM")]
+        ComputeUnitBatchQueueSize = 0x40,
     }
 }

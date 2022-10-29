@@ -166,7 +166,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.ColorTableParameter(target, pname, in @params.GetPinnableReference());
         }
 
-        public static unsafe void ColorTableParameter(this ArbImaging thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+        public static unsafe void ColorTableParameter(this ArbImaging thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ColorTableParameterPName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
         {
             // SpanOverloader
             thisApi.ColorTableParameter(target, pname, in @params.GetPinnableReference());
@@ -178,7 +178,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.ColorTableParameter(target, pname, in @params.GetPinnableReference());
         }
 
-        public static unsafe void ColorTableParameter(this ArbImaging thisApi, [Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] ColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+        public static unsafe void ColorTableParameter(this ArbImaging thisApi, [Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] ColorTableParameterPName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
         {
             // SpanOverloader
             thisApi.ColorTableParameter(target, pname, in @params.GetPinnableReference());
@@ -190,7 +190,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.ColorTableParameter(target, pname, in @params.GetPinnableReference());
         }
 
-        public static unsafe void ColorTableParameter(this ArbImaging thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
+        public static unsafe void ColorTableParameter(this ArbImaging thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ColorTableParameterPName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
         {
             // SpanOverloader
             thisApi.ColorTableParameter(target, pname, in @params.GetPinnableReference());
@@ -202,7 +202,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.ColorTableParameter(target, pname, in @params.GetPinnableReference());
         }
 
-        public static unsafe void ColorTableParameter(this ArbImaging thisApi, [Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] ColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
+        public static unsafe void ColorTableParameter(this ArbImaging thisApi, [Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] ColorTableParameterPName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
         {
             // SpanOverloader
             thisApi.ColorTableParameter(target, pname, in @params.GetPinnableReference());
@@ -406,7 +406,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.ConvolutionParameter(target, pname, in @params.GetPinnableReference());
         }
 
-        public static unsafe void ConvolutionParameter(this ArbImaging thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+        public static unsafe void ConvolutionParameter(this ArbImaging thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ConvolutionParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
         {
             // SpanOverloader
             thisApi.ConvolutionParameter(target, pname, in @params.GetPinnableReference());
@@ -418,7 +418,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.ConvolutionParameter(target, pname, in @params.GetPinnableReference());
         }
 
-        public static unsafe void ConvolutionParameter(this ArbImaging thisApi, [Flow(FlowDirection.In)] ConvolutionTarget target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+        public static unsafe void ConvolutionParameter(this ArbImaging thisApi, [Flow(FlowDirection.In)] ConvolutionTarget target, [Flow(FlowDirection.In)] ConvolutionParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
         {
             // SpanOverloader
             thisApi.ConvolutionParameter(target, pname, in @params.GetPinnableReference());
@@ -430,7 +430,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.ConvolutionParameter(target, pname, in @params.GetPinnableReference());
         }
 
-        public static unsafe void ConvolutionParameter(this ArbImaging thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
+        public static unsafe void ConvolutionParameter(this ArbImaging thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ConvolutionParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
         {
             // SpanOverloader
             thisApi.ConvolutionParameter(target, pname, in @params.GetPinnableReference());
@@ -442,7 +442,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.ConvolutionParameter(target, pname, in @params.GetPinnableReference());
         }
 
-        public static unsafe void ConvolutionParameter(this ArbImaging thisApi, [Flow(FlowDirection.In)] ConvolutionTarget target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
+        public static unsafe void ConvolutionParameter(this ArbImaging thisApi, [Flow(FlowDirection.In)] ConvolutionTarget target, [Flow(FlowDirection.In)] ConvolutionParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
         {
             // SpanOverloader
             thisApi.ConvolutionParameter(target, pname, in @params.GetPinnableReference());
@@ -502,7 +502,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetColorTableParameter(target, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetColorTableParameter(this ArbImaging thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] GetColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetColorTableParameter(this ArbImaging thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ColorTableParameterPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetColorTableParameter(target, pname, out @params.GetPinnableReference());
@@ -514,7 +514,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetColorTableParameter(target, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetColorTableParameter(this ArbImaging thisApi, [Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] GetColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetColorTableParameter(this ArbImaging thisApi, [Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] ColorTableParameterPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetColorTableParameter(target, pname, out @params.GetPinnableReference());
@@ -526,7 +526,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetColorTableParameter(target, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetColorTableParameter(this ArbImaging thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] GetColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetColorTableParameter(this ArbImaging thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ColorTableParameterPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetColorTableParameter(target, pname, out @params.GetPinnableReference());
@@ -538,7 +538,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetColorTableParameter(target, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetColorTableParameter(this ArbImaging thisApi, [Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] GetColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetColorTableParameter(this ArbImaging thisApi, [Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] ColorTableParameterPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetColorTableParameter(target, pname, out @params.GetPinnableReference());
@@ -598,7 +598,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetConvolutionParameter(target, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetConvolutionParameter(this ArbImaging thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetConvolutionParameter(this ArbImaging thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ConvolutionParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetConvolutionParameter(target, pname, out @params.GetPinnableReference());
@@ -610,7 +610,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetConvolutionParameter(target, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetConvolutionParameter(this ArbImaging thisApi, [Flow(FlowDirection.In)] ConvolutionTarget target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetConvolutionParameter(this ArbImaging thisApi, [Flow(FlowDirection.In)] ConvolutionTarget target, [Flow(FlowDirection.In)] ConvolutionParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetConvolutionParameter(target, pname, out @params.GetPinnableReference());
@@ -622,7 +622,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetConvolutionParameter(target, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetConvolutionParameter(this ArbImaging thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetConvolutionParameter(this ArbImaging thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ConvolutionParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetConvolutionParameter(target, pname, out @params.GetPinnableReference());
@@ -634,7 +634,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetConvolutionParameter(target, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetConvolutionParameter(this ArbImaging thisApi, [Flow(FlowDirection.In)] ConvolutionTarget target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetConvolutionParameter(this ArbImaging thisApi, [Flow(FlowDirection.In)] ConvolutionTarget target, [Flow(FlowDirection.In)] ConvolutionParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetConvolutionParameter(target, pname, out @params.GetPinnableReference());

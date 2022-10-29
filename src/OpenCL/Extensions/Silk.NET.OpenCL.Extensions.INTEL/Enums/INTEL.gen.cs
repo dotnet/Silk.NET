@@ -761,6 +761,10 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
         ThreadLocalExecEnableIntel = unchecked((int) 0x80000000),
         [NativeName("Name", "CL_QUEUE_THREAD_LOCAL_EXEC_ENABLE_INTEL")]
         QueueThreadLocalExecEnableIntel = unchecked((int) 0x80000000),
+        [NativeName("Name", "CL_QUEUE_NO_SYNC_OPERATIONS_INTEL")]
+        NoSyncOperationsIntel = 0x20000000,
+        [NativeName("Name", "CL_QUEUE_NO_SYNC_OPERATIONS_INTEL")]
+        QueueNoSyncOperationsIntel = 0x20000000,
         [NativeName("Name", "CL_COMMAND_ACQUIRE_VA_API_MEDIA_SURFACES_INTEL")]
         AcquireVAApiMediaSurfacesIntel = 0x409A,
         [NativeName("Name", "CL_COMMAND_ACQUIRE_VA_API_MEDIA_SURFACES_INTEL")]

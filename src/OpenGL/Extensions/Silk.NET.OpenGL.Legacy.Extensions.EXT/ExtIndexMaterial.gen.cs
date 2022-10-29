@@ -27,10 +27,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void IndexMaterial([Flow(FlowDirection.In)] EXT face, [Flow(FlowDirection.In)] IndexMaterialParameterEXT mode);
 
         [NativeApi(EntryPoint = "glIndexMaterialEXT", Convention = CallingConvention.Winapi)]
-        public partial void IndexMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] EXT mode);
+        public partial void IndexMaterial([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] EXT mode);
 
         [NativeApi(EntryPoint = "glIndexMaterialEXT", Convention = CallingConvention.Winapi)]
-        public partial void IndexMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] IndexMaterialParameterEXT mode);
+        public partial void IndexMaterial([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] IndexMaterialParameterEXT mode);
 
         public ExtIndexMaterial(INativeContext ctx)
             : base(ctx)

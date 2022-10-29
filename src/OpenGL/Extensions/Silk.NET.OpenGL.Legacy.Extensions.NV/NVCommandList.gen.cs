@@ -176,6 +176,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         [NativeApi(EntryPoint = "glGetCommandHeaderNV", Convention = CallingConvention.Winapi)]
         public partial uint GetCommandHeader([Flow(FlowDirection.In)] NV tokenID, [Flow(FlowDirection.In)] uint size);
 
+        [NativeApi(EntryPoint = "glGetCommandHeaderNV", Convention = CallingConvention.Winapi)]
+        public partial uint GetCommandHeader([Flow(FlowDirection.In)] CommandOpcodesNV tokenID, [Flow(FlowDirection.In)] uint size);
+
         [NativeApi(EntryPoint = "glGetStageIndexNV", Convention = CallingConvention.Winapi)]
         public partial ushort GetStageIndex([Flow(FlowDirection.In)] NV shadertype);
 

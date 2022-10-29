@@ -22,11 +22,11 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public const string ExtensionName = "VK_KHR_video_queue";
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkBindVideoSessionMemoryKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result BindVideoSessionMemory([Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionKHR videoSession, [Count(Count = 0)] uint videoSessionBindMemoryCount, [Count(Parameter = "videoSessionBindMemoryCount"), Flow(FlowDirection.In)] VideoBindMemoryKHR* pVideoSessionBindMemories);
+        public unsafe partial Result BindVideoSessionMemory([Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionKHR videoSession, [Count(Count = 0)] uint bindSessionMemoryInfoCount, [Count(Parameter = "bindSessionMemoryInfoCount"), Flow(FlowDirection.In)] BindVideoSessionMemoryInfoKHR* pBindSessionMemoryInfos);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkBindVideoSessionMemoryKHR", Convention = CallingConvention.Winapi)]
-        public partial Result BindVideoSessionMemory([Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionKHR videoSession, [Count(Count = 0)] uint videoSessionBindMemoryCount, [Count(Parameter = "videoSessionBindMemoryCount"), Flow(FlowDirection.In)] in VideoBindMemoryKHR pVideoSessionBindMemories);
+        public partial Result BindVideoSessionMemory([Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionKHR videoSession, [Count(Count = 0)] uint bindSessionMemoryInfoCount, [Count(Parameter = "bindSessionMemoryInfoCount"), Flow(FlowDirection.In)] in BindVideoSessionMemoryInfoKHR pBindSessionMemoryInfos);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdBeginVideoCodingKHR", Convention = CallingConvention.Winapi)]
@@ -134,21 +134,21 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceVideoCapabilitiesKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPhysicalDeviceVideoCapabilities([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] VideoProfileKHR* pVideoProfile, [Count(Count = 0), Flow(FlowDirection.Out)] VideoCapabilitiesKHR* pCapabilities);
+        public unsafe partial Result GetPhysicalDeviceVideoCapabilities([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] VideoProfileInfoKHR* pVideoProfile, [Count(Count = 0), Flow(FlowDirection.Out)] VideoCapabilitiesKHR* pCapabilities);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pCapabilities = new(StructureType.VideoCapabilitiesKhr);")]
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceVideoCapabilitiesKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPhysicalDeviceVideoCapabilities([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] VideoProfileKHR* pVideoProfile, [Count(Count = 0), Flow(FlowDirection.Out)] out VideoCapabilitiesKHR pCapabilities);
+        public unsafe partial Result GetPhysicalDeviceVideoCapabilities([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] VideoProfileInfoKHR* pVideoProfile, [Count(Count = 0), Flow(FlowDirection.Out)] out VideoCapabilitiesKHR pCapabilities);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceVideoCapabilitiesKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPhysicalDeviceVideoCapabilities([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in VideoProfileKHR pVideoProfile, [Count(Count = 0), Flow(FlowDirection.Out)] VideoCapabilitiesKHR* pCapabilities);
+        public unsafe partial Result GetPhysicalDeviceVideoCapabilities([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in VideoProfileInfoKHR pVideoProfile, [Count(Count = 0), Flow(FlowDirection.Out)] VideoCapabilitiesKHR* pCapabilities);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pCapabilities = new(StructureType.VideoCapabilitiesKhr);")]
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceVideoCapabilitiesKHR", Convention = CallingConvention.Winapi)]
-        public partial Result GetPhysicalDeviceVideoCapabilities([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in VideoProfileKHR pVideoProfile, [Count(Count = 0), Flow(FlowDirection.Out)] out VideoCapabilitiesKHR pCapabilities);
+        public partial Result GetPhysicalDeviceVideoCapabilities([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in VideoProfileInfoKHR pVideoProfile, [Count(Count = 0), Flow(FlowDirection.Out)] out VideoCapabilitiesKHR pCapabilities);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceVideoFormatPropertiesKHR", Convention = CallingConvention.Winapi)]
@@ -188,21 +188,21 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetVideoSessionMemoryRequirementsKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetVideoSessionMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionKHR videoSession, [Count(Count = 0)] uint* pVideoSessionMemoryRequirementsCount, [Count(Parameter = "pVideoSessionMemoryRequirementsCount"), Flow(FlowDirection.Out)] VideoGetMemoryPropertiesKHR* pVideoSessionMemoryRequirements);
+        public unsafe partial Result GetVideoSessionMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionKHR videoSession, [Count(Count = 0)] uint* pMemoryRequirementsCount, [Count(Parameter = "pMemoryRequirementsCount"), Flow(FlowDirection.Out)] VideoSessionMemoryRequirementsKHR* pMemoryRequirements);
 
         /// <summary>To be documented.</summary>
-        [Inject(SilkTouchStage.Begin, "pVideoSessionMemoryRequirements = new(StructureType.VideoGetMemoryPropertiesKhr);")]
+        [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.VideoSessionMemoryRequirementsKhr);")]
         [NativeApi(EntryPoint = "vkGetVideoSessionMemoryRequirementsKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetVideoSessionMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionKHR videoSession, [Count(Count = 0)] uint* pVideoSessionMemoryRequirementsCount, [Count(Parameter = "pVideoSessionMemoryRequirementsCount"), Flow(FlowDirection.Out)] out VideoGetMemoryPropertiesKHR pVideoSessionMemoryRequirements);
+        public unsafe partial Result GetVideoSessionMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionKHR videoSession, [Count(Count = 0)] uint* pMemoryRequirementsCount, [Count(Parameter = "pMemoryRequirementsCount"), Flow(FlowDirection.Out)] out VideoSessionMemoryRequirementsKHR pMemoryRequirements);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetVideoSessionMemoryRequirementsKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetVideoSessionMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionKHR videoSession, [Count(Count = 0)] ref uint pVideoSessionMemoryRequirementsCount, [Count(Parameter = "pVideoSessionMemoryRequirementsCount"), Flow(FlowDirection.Out)] VideoGetMemoryPropertiesKHR* pVideoSessionMemoryRequirements);
+        public unsafe partial Result GetVideoSessionMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionKHR videoSession, [Count(Count = 0)] ref uint pMemoryRequirementsCount, [Count(Parameter = "pMemoryRequirementsCount"), Flow(FlowDirection.Out)] VideoSessionMemoryRequirementsKHR* pMemoryRequirements);
 
         /// <summary>To be documented.</summary>
-        [Inject(SilkTouchStage.Begin, "pVideoSessionMemoryRequirements = new(StructureType.VideoGetMemoryPropertiesKhr);")]
+        [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.VideoSessionMemoryRequirementsKhr);")]
         [NativeApi(EntryPoint = "vkGetVideoSessionMemoryRequirementsKHR", Convention = CallingConvention.Winapi)]
-        public partial Result GetVideoSessionMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionKHR videoSession, [Count(Count = 0)] ref uint pVideoSessionMemoryRequirementsCount, [Count(Parameter = "pVideoSessionMemoryRequirementsCount"), Flow(FlowDirection.Out)] out VideoGetMemoryPropertiesKHR pVideoSessionMemoryRequirements);
+        public partial Result GetVideoSessionMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionKHR videoSession, [Count(Count = 0)] ref uint pMemoryRequirementsCount, [Count(Parameter = "pMemoryRequirementsCount"), Flow(FlowDirection.Out)] out VideoSessionMemoryRequirementsKHR pMemoryRequirements);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkUpdateVideoSessionParametersKHR", Convention = CallingConvention.Winapi)]
@@ -213,10 +213,10 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public partial Result UpdateVideoSessionParameters([Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionParametersKHR videoSessionParameters, [Count(Count = 0), Flow(FlowDirection.In)] in VideoSessionParametersUpdateInfoKHR pUpdateInfo);
 
         /// <summary>To be documented.</summary>
-        public unsafe Result BindVideoSessionMemory([Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionKHR videoSession, [Count(Parameter = "videoSessionBindMemoryCount"), Flow(FlowDirection.In)] ReadOnlySpan<VideoBindMemoryKHR> pVideoSessionBindMemories)
+        public unsafe Result BindVideoSessionMemory([Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionKHR videoSession, [Count(Parameter = "bindSessionMemoryInfoCount"), Flow(FlowDirection.In)] ReadOnlySpan<BindVideoSessionMemoryInfoKHR> pBindSessionMemoryInfos)
         {
             // ImplicitCountSpanOverloader
-            return BindVideoSessionMemory(device, videoSession, (uint) pVideoSessionBindMemories.Length, in pVideoSessionBindMemories.GetPinnableReference());
+            return BindVideoSessionMemory(device, videoSession, (uint) pBindSessionMemoryInfos.Length, in pBindSessionMemoryInfos.GetPinnableReference());
         }
 
         public KhrVideoQueue(INativeContext ctx)

@@ -166,7 +166,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.GetColorTableParameter(target, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetColorTableParameter(this ExtPalettedTexture thisApi, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] GetColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetColorTableParameter(this ExtPalettedTexture thisApi, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] ColorTableParameterPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetColorTableParameter(target, pname, out @params.GetPinnableReference());
@@ -178,7 +178,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.GetColorTableParameter(target, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetColorTableParameter(this ExtPalettedTexture thisApi, [Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] GetColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetColorTableParameter(this ExtPalettedTexture thisApi, [Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] ColorTableParameterPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetColorTableParameter(target, pname, out @params.GetPinnableReference());
@@ -190,7 +190,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.GetColorTableParameter(target, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetColorTableParameter(this ExtPalettedTexture thisApi, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] GetColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetColorTableParameter(this ExtPalettedTexture thisApi, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] ColorTableParameterPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetColorTableParameter(target, pname, out @params.GetPinnableReference());
@@ -202,7 +202,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.GetColorTableParameter(target, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetColorTableParameter(this ExtPalettedTexture thisApi, [Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] GetColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetColorTableParameter(this ExtPalettedTexture thisApi, [Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] ColorTableParameterPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetColorTableParameter(target, pname, out @params.GetPinnableReference());

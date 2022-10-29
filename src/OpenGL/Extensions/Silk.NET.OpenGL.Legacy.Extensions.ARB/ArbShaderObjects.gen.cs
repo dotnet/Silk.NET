@@ -200,6 +200,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         [NativeApi(EntryPoint = "glGetHandleARB", Convention = CallingConvention.Winapi)]
         public partial uint GetHandle([Flow(FlowDirection.In)] ARB pname);
 
+        [NativeApi(EntryPoint = "glGetHandleARB", Convention = CallingConvention.Winapi)]
+        public partial uint GetHandle([Flow(FlowDirection.In)] ContainerType pname);
+
         [NativeApi(EntryPoint = "glGetInfoLogARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetInfoLog([Flow(FlowDirection.In)] uint obj, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* infoLog);
 

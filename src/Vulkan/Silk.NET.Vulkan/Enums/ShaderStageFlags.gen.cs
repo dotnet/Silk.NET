@@ -81,6 +81,12 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"MeshBitNV\"")]
         [NativeName("Name", "VK_SHADER_STAGE_MESH_BIT_NV")]
         ShaderStageMeshBitNV = 128,
+        [Obsolete("Deprecated in favour of \"TaskBitExt\"")]
+        [NativeName("Name", "VK_SHADER_STAGE_TASK_BIT_EXT")]
+        ShaderStageTaskBitExt = 64,
+        [Obsolete("Deprecated in favour of \"MeshBitExt\"")]
+        [NativeName("Name", "VK_SHADER_STAGE_MESH_BIT_EXT")]
+        ShaderStageMeshBitExt = 128,
         [Obsolete("Deprecated in favour of \"SubpassShadingBitHuawei\"")]
         [NativeName("Name", "VK_SHADER_STAGE_SUBPASS_SHADING_BIT_HUAWEI")]
         ShaderStageSubpassShadingBitHuawei = 16384,
@@ -137,6 +143,10 @@ namespace Silk.NET.Vulkan
         TaskBitNV = 64,
         [NativeName("Name", "VK_SHADER_STAGE_MESH_BIT_NV")]
         MeshBitNV = 128,
+        [NativeName("Name", "VK_SHADER_STAGE_TASK_BIT_EXT")]
+        TaskBitExt = 64,
+        [NativeName("Name", "VK_SHADER_STAGE_MESH_BIT_EXT")]
+        MeshBitExt = 128,
         [NativeName("Name", "VK_SHADER_STAGE_SUBPASS_SHADING_BIT_HUAWEI")]
         SubpassShadingBitHuawei = 16384,
         [NativeName("Name", "VK_SHADER_STAGE_EXT_483_RESERVE_15")]
