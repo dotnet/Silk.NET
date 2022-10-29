@@ -2036,7 +2036,7 @@
                 "WGPUComputePipelineImpl": "ComputePipeline",
                 "WGPUAdapterImpl": "Adapter",
                 "WGPUBindGroupImpl": "BindGroup",
-                "WGPUBindGroupLayoutImpl": "WGPUBindGroupLayout",
+                "WGPUBindGroupLayoutImpl": "BindGroupLayout",
                 "WGPUBufferImpl": "Buffer",
                 "WGPUCommandBufferImpl": "CommandBuffer",
                 "WGPUCommandEncoderImpl": "CommandEncoder",

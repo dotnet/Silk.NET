@@ -221,32 +221,32 @@ namespace Silk.NET.WebGPU
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1419, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuBindGroupLayoutSetLabel")]
-        public unsafe partial void BindGroupLayoutSetLabel(WGPUBindGroupLayout* bindGroupLayout, byte* label);
+        public unsafe partial void BindGroupLayoutSetLabel(BindGroupLayout* bindGroupLayout, byte* label);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1419, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuBindGroupLayoutSetLabel")]
-        public unsafe partial void BindGroupLayoutSetLabel(WGPUBindGroupLayout* bindGroupLayout, ref byte label);
+        public unsafe partial void BindGroupLayoutSetLabel(BindGroupLayout* bindGroupLayout, ref byte label);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1419, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuBindGroupLayoutSetLabel")]
-        public unsafe partial void BindGroupLayoutSetLabel(WGPUBindGroupLayout* bindGroupLayout, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string label);
+        public unsafe partial void BindGroupLayoutSetLabel(BindGroupLayout* bindGroupLayout, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string label);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1419, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuBindGroupLayoutSetLabel")]
-        public unsafe partial void BindGroupLayoutSetLabel(ref WGPUBindGroupLayout bindGroupLayout, byte* label);
+        public unsafe partial void BindGroupLayoutSetLabel(ref BindGroupLayout bindGroupLayout, byte* label);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1419, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuBindGroupLayoutSetLabel")]
-        public partial void BindGroupLayoutSetLabel(ref WGPUBindGroupLayout bindGroupLayout, ref byte label);
+        public partial void BindGroupLayoutSetLabel(ref BindGroupLayout bindGroupLayout, ref byte label);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1419, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuBindGroupLayoutSetLabel")]
-        public partial void BindGroupLayoutSetLabel(ref WGPUBindGroupLayout bindGroupLayout, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string label);
+        public partial void BindGroupLayoutSetLabel(ref BindGroupLayout bindGroupLayout, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string label);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1422, Column 18 in webgpu.h")]
@@ -1141,12 +1141,12 @@ namespace Silk.NET.WebGPU
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1464, Column 33 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuComputePipelineGetBindGroupLayout")]
-        public unsafe partial WGPUBindGroupLayout* ComputePipelineGetBindGroupLayout(ComputePipeline* computePipeline, uint groupIndex);
+        public unsafe partial BindGroupLayout* ComputePipelineGetBindGroupLayout(ComputePipeline* computePipeline, uint groupIndex);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1464, Column 33 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuComputePipelineGetBindGroupLayout")]
-        public unsafe partial WGPUBindGroupLayout* ComputePipelineGetBindGroupLayout(ref ComputePipeline computePipeline, uint groupIndex);
+        public unsafe partial BindGroupLayout* ComputePipelineGetBindGroupLayout(ref ComputePipeline computePipeline, uint groupIndex);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1465, Column 18 in webgpu.h")]
@@ -1201,22 +1201,22 @@ namespace Silk.NET.WebGPU
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1469, Column 33 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceCreateBindGroupLayout")]
-        public unsafe partial WGPUBindGroupLayout* DeviceCreateBindGroupLayout(Device* device, BindGroupLayoutDescriptor* descriptor);
+        public unsafe partial BindGroupLayout* DeviceCreateBindGroupLayout(Device* device, BindGroupLayoutDescriptor* descriptor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1469, Column 33 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceCreateBindGroupLayout")]
-        public unsafe partial WGPUBindGroupLayout* DeviceCreateBindGroupLayout(Device* device, ref BindGroupLayoutDescriptor descriptor);
+        public unsafe partial BindGroupLayout* DeviceCreateBindGroupLayout(Device* device, ref BindGroupLayoutDescriptor descriptor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1469, Column 33 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceCreateBindGroupLayout")]
-        public unsafe partial WGPUBindGroupLayout* DeviceCreateBindGroupLayout(ref Device device, BindGroupLayoutDescriptor* descriptor);
+        public unsafe partial BindGroupLayout* DeviceCreateBindGroupLayout(ref Device device, BindGroupLayoutDescriptor* descriptor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1469, Column 33 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceCreateBindGroupLayout")]
-        public unsafe partial WGPUBindGroupLayout* DeviceCreateBindGroupLayout(ref Device device, ref BindGroupLayoutDescriptor descriptor);
+        public unsafe partial BindGroupLayout* DeviceCreateBindGroupLayout(ref Device device, ref BindGroupLayoutDescriptor descriptor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1470, Column 24 in webgpu.h")]
@@ -2811,12 +2811,12 @@ namespace Silk.NET.WebGPU
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1555, Column 33 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuRenderPipelineGetBindGroupLayout")]
-        public unsafe partial WGPUBindGroupLayout* RenderPipelineGetBindGroupLayout(RenderPipeline* renderPipeline, uint groupIndex);
+        public unsafe partial BindGroupLayout* RenderPipelineGetBindGroupLayout(RenderPipeline* renderPipeline, uint groupIndex);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1555, Column 33 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuRenderPipelineGetBindGroupLayout")]
-        public unsafe partial WGPUBindGroupLayout* RenderPipelineGetBindGroupLayout(ref RenderPipeline renderPipeline, uint groupIndex);
+        public unsafe partial BindGroupLayout* RenderPipelineGetBindGroupLayout(ref RenderPipeline renderPipeline, uint groupIndex);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1556, Column 18 in webgpu.h")]

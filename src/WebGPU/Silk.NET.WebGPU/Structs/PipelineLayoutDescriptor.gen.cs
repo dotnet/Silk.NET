@@ -24,7 +24,7 @@ namespace Silk.NET.WebGPU
             ChainedStruct* nextInChain = null,
             byte* label = null,
             uint? bindGroupLayoutCount = null,
-            WGPUBindGroupLayout** bindGroupLayouts = null
+            BindGroupLayout** bindGroupLayouts = null
         ) : this()
         {
             if (nextInChain is not null)
@@ -67,6 +67,6 @@ namespace Silk.NET.WebGPU
         [NativeName("Type", "const WGPUBindGroupLayout *")]
         [NativeName("Type.Name", "const WGPUBindGroupLayout *")]
         [NativeName("Name", "bindGroupLayouts")]
-        public WGPUBindGroupLayout** BindGroupLayouts;
+        public BindGroupLayout** BindGroupLayouts;
     }
 }
