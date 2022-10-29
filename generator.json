@@ -1862,6 +1862,71 @@
                     "$include.commonTypeMap": "build/csharp_typemap.json"
                 }
             ]
+        },
+        {
+            "profileName": "webgpu",
+            "sources": [
+                "build/submodules/webgpu-headers/webgpu.h"
+            ],
+            "mode": "Clang",
+            "cacheDir": "build/cache",
+            "cacheKey": "webgpu",
+            "controlDescriptors": [
+                "convert-windows-only"
+            ],
+            "converter": {},
+            "prefix": "wgpu",
+            "clang": {
+                "args": [
+                    "--language=c++",
+                    "--std=c++17",
+                    "-m64",
+                    "-Wno-expansion-to-defined",
+                    "-Wno-ignored-attributes",
+                    "-Wno-ignored-pragma-intrinsic",
+                    "-Wno-nonportable-include-path",
+                    "-Wno-pragma-pack",
+                    "-I$windowsSdkIncludes"
+                ],
+                "traverse": [
+                    "build/submodules/webgpu-headers/*.h"
+                ],
+                "classes": {
+                    "webgpu.h": "[Core]WebGPU"
+                }
+            },
+            "exclude": [
+                
+            ],
+            "rename": {
+                
+            },
+            "bakery": {
+                "profileNames": [
+                    "webgpu"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/WebGPU",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.WebGPU",
+            "extensionsNamespace": "Silk.NET.WebGPU.Extensions",
+            "nameContainer": {
+                "linux-x64": "libwgpu.so",
+                "win-x64": "libwgpu.dll",
+                "win-x86": "libwgpu.dll",
+                "osx-x64": "libwgpu.dylib",
+                "android": "libwgpu.so",
+                "className": "WebGPULibraryNameContainer"
+            },
+            "typeMaps": [
+                {
+                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                }
+            ]
         }
     ]
 }

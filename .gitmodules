@@ -19,3 +19,6 @@
 [submodule "build/submodules/Assimp"]
 	path = build/submodules/Assimp
 	url = https://github.com/assimp/assimp
+[submodule "build/submodules/webgpu-headers"]
+	path = build/submodules/webgpu-headers
+	url = https://github.com/webgpu-native/webgpu-headers/
