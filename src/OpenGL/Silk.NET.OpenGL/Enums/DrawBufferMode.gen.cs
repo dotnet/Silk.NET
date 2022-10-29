@@ -36,36 +36,68 @@ namespace Silk.NET.OpenGL
         FrontAndBack = 0x408,
         [NativeName("Name", "GL_COLOR_ATTACHMENT0")]
         ColorAttachment0 = 0x8CE0,
+        [NativeName("Name", "GL_COLOR_ATTACHMENT0_NV")]
+        ColorAttachment0NV = 0x8CE0,
         [NativeName("Name", "GL_COLOR_ATTACHMENT1")]
         ColorAttachment1 = 0x8CE1,
+        [NativeName("Name", "GL_COLOR_ATTACHMENT1_NV")]
+        ColorAttachment1NV = 0x8CE1,
         [NativeName("Name", "GL_COLOR_ATTACHMENT2")]
         ColorAttachment2 = 0x8CE2,
+        [NativeName("Name", "GL_COLOR_ATTACHMENT2_NV")]
+        ColorAttachment2NV = 0x8CE2,
         [NativeName("Name", "GL_COLOR_ATTACHMENT3")]
         ColorAttachment3 = 0x8CE3,
+        [NativeName("Name", "GL_COLOR_ATTACHMENT3_NV")]
+        ColorAttachment3NV = 0x8CE3,
         [NativeName("Name", "GL_COLOR_ATTACHMENT4")]
         ColorAttachment4 = 0x8CE4,
+        [NativeName("Name", "GL_COLOR_ATTACHMENT4_NV")]
+        ColorAttachment4NV = 0x8CE4,
         [NativeName("Name", "GL_COLOR_ATTACHMENT5")]
         ColorAttachment5 = 0x8CE5,
+        [NativeName("Name", "GL_COLOR_ATTACHMENT5_NV")]
+        ColorAttachment5NV = 0x8CE5,
         [NativeName("Name", "GL_COLOR_ATTACHMENT6")]
         ColorAttachment6 = 0x8CE6,
+        [NativeName("Name", "GL_COLOR_ATTACHMENT6_NV")]
+        ColorAttachment6NV = 0x8CE6,
         [NativeName("Name", "GL_COLOR_ATTACHMENT7")]
         ColorAttachment7 = 0x8CE7,
+        [NativeName("Name", "GL_COLOR_ATTACHMENT7_NV")]
+        ColorAttachment7NV = 0x8CE7,
         [NativeName("Name", "GL_COLOR_ATTACHMENT8")]
         ColorAttachment8 = 0x8CE8,
+        [NativeName("Name", "GL_COLOR_ATTACHMENT8_NV")]
+        ColorAttachment8NV = 0x8CE8,
         [NativeName("Name", "GL_COLOR_ATTACHMENT9")]
         ColorAttachment9 = 0x8CE9,
+        [NativeName("Name", "GL_COLOR_ATTACHMENT9_NV")]
+        ColorAttachment9NV = 0x8CE9,
         [NativeName("Name", "GL_COLOR_ATTACHMENT10")]
         ColorAttachment10 = 0x8CEA,
+        [NativeName("Name", "GL_COLOR_ATTACHMENT10_NV")]
+        ColorAttachment10NV = 0x8CEA,
         [NativeName("Name", "GL_COLOR_ATTACHMENT11")]
         ColorAttachment11 = 0x8CEB,
+        [NativeName("Name", "GL_COLOR_ATTACHMENT11_NV")]
+        ColorAttachment11NV = 0x8CEB,
         [NativeName("Name", "GL_COLOR_ATTACHMENT12")]
         ColorAttachment12 = 0x8CEC,
+        [NativeName("Name", "GL_COLOR_ATTACHMENT12_NV")]
+        ColorAttachment12NV = 0x8CEC,
         [NativeName("Name", "GL_COLOR_ATTACHMENT13")]
         ColorAttachment13 = 0x8CED,
+        [NativeName("Name", "GL_COLOR_ATTACHMENT13_NV")]
+        ColorAttachment13NV = 0x8CED,
         [NativeName("Name", "GL_COLOR_ATTACHMENT14")]
         ColorAttachment14 = 0x8CEE,
+        [NativeName("Name", "GL_COLOR_ATTACHMENT14_NV")]
+        ColorAttachment14NV = 0x8CEE,
         [NativeName("Name", "GL_COLOR_ATTACHMENT15")]
         ColorAttachment15 = 0x8CEF,
+        [NativeName("Name", "GL_COLOR_ATTACHMENT15_NV")]
+        ColorAttachment15NV = 0x8CEF,
         [NativeName("Name", "GL_COLOR_ATTACHMENT16")]
         ColorAttachment16 = 0x8CF0,
         [NativeName("Name", "GL_COLOR_ATTACHMENT17")]

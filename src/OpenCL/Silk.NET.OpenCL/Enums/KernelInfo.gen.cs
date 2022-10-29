@@ -24,5 +24,7 @@ namespace Silk.NET.OpenCL
         Program = 0x1194,
         [NativeName("Name", "CL_KERNEL_ATTRIBUTES")]
         Attributes = 0x1195,
+        [NativeName("Name", "CL_KERNEL_MAX_WARP_COUNT_ARM")]
+        MaxWarpCountArm = 0x41E9,
     }
 }

@@ -2080,6 +2080,288 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.INTEL
             thisApi.GetPerfQueryInfo(queryId, queryNameLength, out queryName.GetPinnableReference(), out dataSize.GetPinnableReference(), out noCounters.GetPinnableReference(), out noInstances.GetPinnableReference(), out capsMask.GetPinnableReference());
         }
 
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] Span<PerformanceQueryCapsMaskINTEL> capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, queryName, dataSize, noCounters, noInstances, out capsMask.GetPinnableReference());
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] Span<uint> noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, queryName, dataSize, noCounters, out noInstances.GetPinnableReference(), capsMask);
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] Span<uint> noInstances, [Flow(FlowDirection.Out)] Span<PerformanceQueryCapsMaskINTEL> capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, queryName, dataSize, noCounters, out noInstances.GetPinnableReference(), out capsMask.GetPinnableReference());
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] Span<uint> noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, queryName, dataSize, out noCounters.GetPinnableReference(), noInstances, capsMask);
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] Span<uint> noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] Span<PerformanceQueryCapsMaskINTEL> capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, queryName, dataSize, out noCounters.GetPinnableReference(), noInstances, out capsMask.GetPinnableReference());
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] Span<uint> noCounters, [Flow(FlowDirection.Out)] Span<uint> noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, queryName, dataSize, out noCounters.GetPinnableReference(), out noInstances.GetPinnableReference(), capsMask);
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] Span<uint> noCounters, [Flow(FlowDirection.Out)] Span<uint> noInstances, [Flow(FlowDirection.Out)] Span<PerformanceQueryCapsMaskINTEL> capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, queryName, dataSize, out noCounters.GetPinnableReference(), out noInstances.GetPinnableReference(), out capsMask.GetPinnableReference());
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] Span<uint> dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, queryName, out dataSize.GetPinnableReference(), noCounters, noInstances, capsMask);
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] Span<uint> dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] Span<PerformanceQueryCapsMaskINTEL> capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, queryName, out dataSize.GetPinnableReference(), noCounters, noInstances, out capsMask.GetPinnableReference());
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] Span<uint> dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] Span<uint> noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, queryName, out dataSize.GetPinnableReference(), noCounters, out noInstances.GetPinnableReference(), capsMask);
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] Span<uint> dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] Span<uint> noInstances, [Flow(FlowDirection.Out)] Span<PerformanceQueryCapsMaskINTEL> capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, queryName, out dataSize.GetPinnableReference(), noCounters, out noInstances.GetPinnableReference(), out capsMask.GetPinnableReference());
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] Span<uint> dataSize, [Flow(FlowDirection.Out)] Span<uint> noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, queryName, out dataSize.GetPinnableReference(), out noCounters.GetPinnableReference(), noInstances, capsMask);
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] Span<uint> dataSize, [Flow(FlowDirection.Out)] Span<uint> noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] Span<PerformanceQueryCapsMaskINTEL> capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, queryName, out dataSize.GetPinnableReference(), out noCounters.GetPinnableReference(), noInstances, out capsMask.GetPinnableReference());
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] Span<uint> dataSize, [Flow(FlowDirection.Out)] Span<uint> noCounters, [Flow(FlowDirection.Out)] Span<uint> noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, queryName, out dataSize.GetPinnableReference(), out noCounters.GetPinnableReference(), out noInstances.GetPinnableReference(), capsMask);
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] Span<uint> dataSize, [Flow(FlowDirection.Out)] Span<uint> noCounters, [Flow(FlowDirection.Out)] Span<uint> noInstances, [Flow(FlowDirection.Out)] Span<PerformanceQueryCapsMaskINTEL> capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, queryName, out dataSize.GetPinnableReference(), out noCounters.GetPinnableReference(), out noInstances.GetPinnableReference(), out capsMask.GetPinnableReference());
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<byte> queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, out queryName.GetPinnableReference(), dataSize, noCounters, noInstances, capsMask);
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<byte> queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] Span<PerformanceQueryCapsMaskINTEL> capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, out queryName.GetPinnableReference(), dataSize, noCounters, noInstances, out capsMask.GetPinnableReference());
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<byte> queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] Span<uint> noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, out queryName.GetPinnableReference(), dataSize, noCounters, out noInstances.GetPinnableReference(), capsMask);
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<byte> queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] Span<uint> noInstances, [Flow(FlowDirection.Out)] Span<PerformanceQueryCapsMaskINTEL> capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, out queryName.GetPinnableReference(), dataSize, noCounters, out noInstances.GetPinnableReference(), out capsMask.GetPinnableReference());
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<byte> queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] Span<uint> noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, out queryName.GetPinnableReference(), dataSize, out noCounters.GetPinnableReference(), noInstances, capsMask);
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<byte> queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] Span<uint> noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] Span<PerformanceQueryCapsMaskINTEL> capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, out queryName.GetPinnableReference(), dataSize, out noCounters.GetPinnableReference(), noInstances, out capsMask.GetPinnableReference());
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<byte> queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] Span<uint> noCounters, [Flow(FlowDirection.Out)] Span<uint> noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, out queryName.GetPinnableReference(), dataSize, out noCounters.GetPinnableReference(), out noInstances.GetPinnableReference(), capsMask);
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<byte> queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] Span<uint> noCounters, [Flow(FlowDirection.Out)] Span<uint> noInstances, [Flow(FlowDirection.Out)] Span<PerformanceQueryCapsMaskINTEL> capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, out queryName.GetPinnableReference(), dataSize, out noCounters.GetPinnableReference(), out noInstances.GetPinnableReference(), out capsMask.GetPinnableReference());
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<byte> queryName, [Flow(FlowDirection.Out)] Span<uint> dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, out queryName.GetPinnableReference(), out dataSize.GetPinnableReference(), noCounters, noInstances, capsMask);
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<byte> queryName, [Flow(FlowDirection.Out)] Span<uint> dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] Span<PerformanceQueryCapsMaskINTEL> capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, out queryName.GetPinnableReference(), out dataSize.GetPinnableReference(), noCounters, noInstances, out capsMask.GetPinnableReference());
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<byte> queryName, [Flow(FlowDirection.Out)] Span<uint> dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] Span<uint> noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, out queryName.GetPinnableReference(), out dataSize.GetPinnableReference(), noCounters, out noInstances.GetPinnableReference(), capsMask);
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<byte> queryName, [Flow(FlowDirection.Out)] Span<uint> dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] Span<uint> noInstances, [Flow(FlowDirection.Out)] Span<PerformanceQueryCapsMaskINTEL> capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, out queryName.GetPinnableReference(), out dataSize.GetPinnableReference(), noCounters, out noInstances.GetPinnableReference(), out capsMask.GetPinnableReference());
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<byte> queryName, [Flow(FlowDirection.Out)] Span<uint> dataSize, [Flow(FlowDirection.Out)] Span<uint> noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, out queryName.GetPinnableReference(), out dataSize.GetPinnableReference(), out noCounters.GetPinnableReference(), noInstances, capsMask);
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<byte> queryName, [Flow(FlowDirection.Out)] Span<uint> dataSize, [Flow(FlowDirection.Out)] Span<uint> noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] Span<PerformanceQueryCapsMaskINTEL> capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, out queryName.GetPinnableReference(), out dataSize.GetPinnableReference(), out noCounters.GetPinnableReference(), noInstances, out capsMask.GetPinnableReference());
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<byte> queryName, [Flow(FlowDirection.Out)] Span<uint> dataSize, [Flow(FlowDirection.Out)] Span<uint> noCounters, [Flow(FlowDirection.Out)] Span<uint> noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, out queryName.GetPinnableReference(), out dataSize.GetPinnableReference(), out noCounters.GetPinnableReference(), out noInstances.GetPinnableReference(), capsMask);
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<byte> queryName, [Flow(FlowDirection.Out)] Span<uint> dataSize, [Flow(FlowDirection.Out)] Span<uint> noCounters, [Flow(FlowDirection.Out)] Span<uint> noInstances, [Flow(FlowDirection.Out)] Span<PerformanceQueryCapsMaskINTEL> capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, out queryName.GetPinnableReference(), out dataSize.GetPinnableReference(), out noCounters.GetPinnableReference(), out noInstances.GetPinnableReference(), out capsMask.GetPinnableReference());
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<string> queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, out queryName.GetPinnableReference(), dataSize, noCounters, noInstances, capsMask);
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<string> queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] Span<PerformanceQueryCapsMaskINTEL> capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, out queryName.GetPinnableReference(), dataSize, noCounters, noInstances, out capsMask.GetPinnableReference());
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<string> queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] Span<uint> noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, out queryName.GetPinnableReference(), dataSize, noCounters, out noInstances.GetPinnableReference(), capsMask);
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<string> queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] Span<uint> noInstances, [Flow(FlowDirection.Out)] Span<PerformanceQueryCapsMaskINTEL> capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, out queryName.GetPinnableReference(), dataSize, noCounters, out noInstances.GetPinnableReference(), out capsMask.GetPinnableReference());
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<string> queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] Span<uint> noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, out queryName.GetPinnableReference(), dataSize, out noCounters.GetPinnableReference(), noInstances, capsMask);
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<string> queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] Span<uint> noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] Span<PerformanceQueryCapsMaskINTEL> capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, out queryName.GetPinnableReference(), dataSize, out noCounters.GetPinnableReference(), noInstances, out capsMask.GetPinnableReference());
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<string> queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] Span<uint> noCounters, [Flow(FlowDirection.Out)] Span<uint> noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, out queryName.GetPinnableReference(), dataSize, out noCounters.GetPinnableReference(), out noInstances.GetPinnableReference(), capsMask);
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<string> queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] Span<uint> noCounters, [Flow(FlowDirection.Out)] Span<uint> noInstances, [Flow(FlowDirection.Out)] Span<PerformanceQueryCapsMaskINTEL> capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, out queryName.GetPinnableReference(), dataSize, out noCounters.GetPinnableReference(), out noInstances.GetPinnableReference(), out capsMask.GetPinnableReference());
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<string> queryName, [Flow(FlowDirection.Out)] Span<uint> dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, out queryName.GetPinnableReference(), out dataSize.GetPinnableReference(), noCounters, noInstances, capsMask);
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<string> queryName, [Flow(FlowDirection.Out)] Span<uint> dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] Span<PerformanceQueryCapsMaskINTEL> capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, out queryName.GetPinnableReference(), out dataSize.GetPinnableReference(), noCounters, noInstances, out capsMask.GetPinnableReference());
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<string> queryName, [Flow(FlowDirection.Out)] Span<uint> dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] Span<uint> noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, out queryName.GetPinnableReference(), out dataSize.GetPinnableReference(), noCounters, out noInstances.GetPinnableReference(), capsMask);
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<string> queryName, [Flow(FlowDirection.Out)] Span<uint> dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] Span<uint> noInstances, [Flow(FlowDirection.Out)] Span<PerformanceQueryCapsMaskINTEL> capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, out queryName.GetPinnableReference(), out dataSize.GetPinnableReference(), noCounters, out noInstances.GetPinnableReference(), out capsMask.GetPinnableReference());
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<string> queryName, [Flow(FlowDirection.Out)] Span<uint> dataSize, [Flow(FlowDirection.Out)] Span<uint> noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, out queryName.GetPinnableReference(), out dataSize.GetPinnableReference(), out noCounters.GetPinnableReference(), noInstances, capsMask);
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<string> queryName, [Flow(FlowDirection.Out)] Span<uint> dataSize, [Flow(FlowDirection.Out)] Span<uint> noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] Span<PerformanceQueryCapsMaskINTEL> capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, out queryName.GetPinnableReference(), out dataSize.GetPinnableReference(), out noCounters.GetPinnableReference(), noInstances, out capsMask.GetPinnableReference());
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<string> queryName, [Flow(FlowDirection.Out)] Span<uint> dataSize, [Flow(FlowDirection.Out)] Span<uint> noCounters, [Flow(FlowDirection.Out)] Span<uint> noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, out queryName.GetPinnableReference(), out dataSize.GetPinnableReference(), out noCounters.GetPinnableReference(), out noInstances.GetPinnableReference(), capsMask);
+        }
+
+        public static unsafe void GetPerfQueryInfo(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<string> queryName, [Flow(FlowDirection.Out)] Span<uint> dataSize, [Flow(FlowDirection.Out)] Span<uint> noCounters, [Flow(FlowDirection.Out)] Span<uint> noInstances, [Flow(FlowDirection.Out)] Span<PerformanceQueryCapsMaskINTEL> capsMask)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryInfo(queryId, queryNameLength, out queryName.GetPinnableReference(), out dataSize.GetPinnableReference(), out noCounters.GetPinnableReference(), out noInstances.GetPinnableReference(), out capsMask.GetPinnableReference());
+        }
+
     }
 }
 

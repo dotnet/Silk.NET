@@ -9725,16 +9725,16 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void StencilFuncSeparate([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] StencilFunction func, [Flow(FlowDirection.In)] int @ref, [Flow(FlowDirection.In)] uint mask);
 
         [NativeApi(EntryPoint = "glStencilFuncSeparate", Convention = CallingConvention.Winapi)]
-        public partial void StencilFuncSeparate([Flow(FlowDirection.In)] StencilFaceDirection face, [Flow(FlowDirection.In)] GLEnum func, [Flow(FlowDirection.In)] int @ref, [Flow(FlowDirection.In)] uint mask);
+        public partial void StencilFuncSeparate([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] GLEnum func, [Flow(FlowDirection.In)] int @ref, [Flow(FlowDirection.In)] uint mask);
 
         [NativeApi(EntryPoint = "glStencilFuncSeparate", Convention = CallingConvention.Winapi)]
-        public partial void StencilFuncSeparate([Flow(FlowDirection.In)] StencilFaceDirection face, [Flow(FlowDirection.In)] StencilFunction func, [Flow(FlowDirection.In)] int @ref, [Flow(FlowDirection.In)] uint mask);
+        public partial void StencilFuncSeparate([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] StencilFunction func, [Flow(FlowDirection.In)] int @ref, [Flow(FlowDirection.In)] uint mask);
 
         [NativeApi(EntryPoint = "glStencilMaskSeparate", Convention = CallingConvention.Winapi)]
         public partial void StencilMaskSeparate([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] uint mask);
 
         [NativeApi(EntryPoint = "glStencilMaskSeparate", Convention = CallingConvention.Winapi)]
-        public partial void StencilMaskSeparate([Flow(FlowDirection.In)] StencilFaceDirection face, [Flow(FlowDirection.In)] uint mask);
+        public partial void StencilMaskSeparate([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] uint mask);
 
         [NativeApi(EntryPoint = "glStencilOpSeparate", Convention = CallingConvention.Winapi)]
         public partial void StencilOpSeparate([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] GLEnum sfail, [Flow(FlowDirection.In)] GLEnum dpfail, [Flow(FlowDirection.In)] GLEnum dppass);
@@ -9761,28 +9761,28 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void StencilOpSeparate([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] StencilOp sfail, [Flow(FlowDirection.In)] StencilOp dpfail, [Flow(FlowDirection.In)] StencilOp dppass);
 
         [NativeApi(EntryPoint = "glStencilOpSeparate", Convention = CallingConvention.Winapi)]
-        public partial void StencilOpSeparate([Flow(FlowDirection.In)] StencilFaceDirection face, [Flow(FlowDirection.In)] GLEnum sfail, [Flow(FlowDirection.In)] GLEnum dpfail, [Flow(FlowDirection.In)] GLEnum dppass);
+        public partial void StencilOpSeparate([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] GLEnum sfail, [Flow(FlowDirection.In)] GLEnum dpfail, [Flow(FlowDirection.In)] GLEnum dppass);
 
         [NativeApi(EntryPoint = "glStencilOpSeparate", Convention = CallingConvention.Winapi)]
-        public partial void StencilOpSeparate([Flow(FlowDirection.In)] StencilFaceDirection face, [Flow(FlowDirection.In)] GLEnum sfail, [Flow(FlowDirection.In)] GLEnum dpfail, [Flow(FlowDirection.In)] StencilOp dppass);
+        public partial void StencilOpSeparate([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] GLEnum sfail, [Flow(FlowDirection.In)] GLEnum dpfail, [Flow(FlowDirection.In)] StencilOp dppass);
 
         [NativeApi(EntryPoint = "glStencilOpSeparate", Convention = CallingConvention.Winapi)]
-        public partial void StencilOpSeparate([Flow(FlowDirection.In)] StencilFaceDirection face, [Flow(FlowDirection.In)] GLEnum sfail, [Flow(FlowDirection.In)] StencilOp dpfail, [Flow(FlowDirection.In)] GLEnum dppass);
+        public partial void StencilOpSeparate([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] GLEnum sfail, [Flow(FlowDirection.In)] StencilOp dpfail, [Flow(FlowDirection.In)] GLEnum dppass);
 
         [NativeApi(EntryPoint = "glStencilOpSeparate", Convention = CallingConvention.Winapi)]
-        public partial void StencilOpSeparate([Flow(FlowDirection.In)] StencilFaceDirection face, [Flow(FlowDirection.In)] GLEnum sfail, [Flow(FlowDirection.In)] StencilOp dpfail, [Flow(FlowDirection.In)] StencilOp dppass);
+        public partial void StencilOpSeparate([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] GLEnum sfail, [Flow(FlowDirection.In)] StencilOp dpfail, [Flow(FlowDirection.In)] StencilOp dppass);
 
         [NativeApi(EntryPoint = "glStencilOpSeparate", Convention = CallingConvention.Winapi)]
-        public partial void StencilOpSeparate([Flow(FlowDirection.In)] StencilFaceDirection face, [Flow(FlowDirection.In)] StencilOp sfail, [Flow(FlowDirection.In)] GLEnum dpfail, [Flow(FlowDirection.In)] GLEnum dppass);
+        public partial void StencilOpSeparate([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] StencilOp sfail, [Flow(FlowDirection.In)] GLEnum dpfail, [Flow(FlowDirection.In)] GLEnum dppass);
 
         [NativeApi(EntryPoint = "glStencilOpSeparate", Convention = CallingConvention.Winapi)]
-        public partial void StencilOpSeparate([Flow(FlowDirection.In)] StencilFaceDirection face, [Flow(FlowDirection.In)] StencilOp sfail, [Flow(FlowDirection.In)] GLEnum dpfail, [Flow(FlowDirection.In)] StencilOp dppass);
+        public partial void StencilOpSeparate([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] StencilOp sfail, [Flow(FlowDirection.In)] GLEnum dpfail, [Flow(FlowDirection.In)] StencilOp dppass);
 
         [NativeApi(EntryPoint = "glStencilOpSeparate", Convention = CallingConvention.Winapi)]
-        public partial void StencilOpSeparate([Flow(FlowDirection.In)] StencilFaceDirection face, [Flow(FlowDirection.In)] StencilOp sfail, [Flow(FlowDirection.In)] StencilOp dpfail, [Flow(FlowDirection.In)] GLEnum dppass);
+        public partial void StencilOpSeparate([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] StencilOp sfail, [Flow(FlowDirection.In)] StencilOp dpfail, [Flow(FlowDirection.In)] GLEnum dppass);
 
         [NativeApi(EntryPoint = "glStencilOpSeparate", Convention = CallingConvention.Winapi)]
-        public partial void StencilOpSeparate([Flow(FlowDirection.In)] StencilFaceDirection face, [Flow(FlowDirection.In)] StencilOp sfail, [Flow(FlowDirection.In)] StencilOp dpfail, [Flow(FlowDirection.In)] StencilOp dppass);
+        public partial void StencilOpSeparate([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] StencilOp sfail, [Flow(FlowDirection.In)] StencilOp dpfail, [Flow(FlowDirection.In)] StencilOp dppass);
 
         [NativeApi(EntryPoint = "glUniform1f", Convention = CallingConvention.Winapi)]
         public partial void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] float v0);
@@ -12253,11 +12253,11 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColorMaterial", Convention = CallingConvention.Winapi)]
-        public partial void ColorMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] GLEnum mode);
+        public partial void ColorMaterial([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] GLEnum mode);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColorMaterial", Convention = CallingConvention.Winapi)]
-        public partial void ColorMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] ColorMaterialParameter mode);
+        public partial void ColorMaterial([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] ColorMaterialParameter mode);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glCopyPixels", Convention = CallingConvention.Winapi)]
@@ -12271,7 +12271,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void CullFace([Flow(FlowDirection.In)] GLEnum mode);
 
         [NativeApi(EntryPoint = "glCullFace", Convention = CallingConvention.Winapi)]
-        public partial void CullFace([Flow(FlowDirection.In)] CullFaceMode mode);
+        public partial void CullFace([Flow(FlowDirection.In)] TriangleFace mode);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glDeleteLists", Convention = CallingConvention.Winapi)]
@@ -12787,19 +12787,19 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMaterialfv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetMaterial([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMaterialfv", Convention = CallingConvention.Winapi)]
-        public partial void GetMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+        public partial void GetMaterial([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMaterialfv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetMaterial([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMaterialfv", Convention = CallingConvention.Winapi)]
-        public partial void GetMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+        public partial void GetMaterial([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMaterialiv", Convention = CallingConvention.Winapi)]
@@ -12819,19 +12819,19 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMaterialiv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetMaterial([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMaterialiv", Convention = CallingConvention.Winapi)]
-        public partial void GetMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        public partial void GetMaterial([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMaterialiv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetMaterial([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMaterialiv", Convention = CallingConvention.Winapi)]
-        public partial void GetMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        public partial void GetMaterial([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetPixelMapfv", Convention = CallingConvention.Winapi)]
@@ -13564,11 +13564,11 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMaterialf", Convention = CallingConvention.Winapi)]
-        public partial void Material([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] float param);
+        public partial void Material([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] float param);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMaterialf", Convention = CallingConvention.Winapi)]
-        public partial void Material([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Flow(FlowDirection.In)] float param);
+        public partial void Material([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Flow(FlowDirection.In)] float param);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMaterialfv", Convention = CallingConvention.Winapi)]
@@ -13588,19 +13588,19 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMaterialfv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void Material([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        public unsafe partial void Material([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMaterialfv", Convention = CallingConvention.Winapi)]
-        public partial void Material([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
+        public partial void Material([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMaterialfv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void Material([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        public unsafe partial void Material([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMaterialfv", Convention = CallingConvention.Winapi)]
-        public partial void Material([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
+        public partial void Material([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMateriali", Convention = CallingConvention.Winapi)]
@@ -13612,11 +13612,11 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMateriali", Convention = CallingConvention.Winapi)]
-        public partial void Material([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] int param);
+        public partial void Material([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] int param);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMateriali", Convention = CallingConvention.Winapi)]
-        public partial void Material([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Flow(FlowDirection.In)] int param);
+        public partial void Material([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Flow(FlowDirection.In)] int param);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMaterialiv", Convention = CallingConvention.Winapi)]
@@ -13636,19 +13636,19 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMaterialiv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void Material([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void Material([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMaterialiv", Convention = CallingConvention.Winapi)]
-        public partial void Material([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
+        public partial void Material([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMaterialiv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void Material([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void Material([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMaterialiv", Convention = CallingConvention.Winapi)]
-        public partial void Material([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
+        public partial void Material([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMatrixMode", Convention = CallingConvention.Winapi)]
@@ -13840,10 +13840,10 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void PolygonMode([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] PolygonMode mode);
 
         [NativeApi(EntryPoint = "glPolygonMode", Convention = CallingConvention.Winapi)]
-        public partial void PolygonMode([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] GLEnum mode);
+        public partial void PolygonMode([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] GLEnum mode);
 
         [NativeApi(EntryPoint = "glPolygonMode", Convention = CallingConvention.Winapi)]
-        public partial void PolygonMode([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] PolygonMode mode);
+        public partial void PolygonMode([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] PolygonMode mode);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glPolygonStipple", Convention = CallingConvention.Winapi)]
@@ -27288,7 +27288,7 @@ namespace Silk.NET.OpenGL.Legacy
         }
 
         [System.Obsolete("Deprecated in version 1.0")]
-        public unsafe float GetMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] GLEnum pname)
+        public unsafe float GetMaterial([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] GLEnum pname)
         {
             // NonKhrReturnTypeOverloader
             GetMaterial(face, pname, out float silkRet);
@@ -27296,7 +27296,7 @@ namespace Silk.NET.OpenGL.Legacy
         }
 
         [System.Obsolete("Deprecated in version 1.0")]
-        public unsafe float GetMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname)
+        public unsafe float GetMaterial([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] MaterialParameter pname)
         {
             // NonKhrReturnTypeOverloader
             GetMaterial(face, pname, out float silkRet);

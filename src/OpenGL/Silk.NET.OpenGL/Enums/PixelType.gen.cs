@@ -26,6 +26,14 @@ namespace Silk.NET.OpenGL
         UnsignedInt = 0x1405,
         [NativeName("Name", "GL_FLOAT")]
         Float = 0x1406,
+        [NativeName("Name", "GL_HALF_FLOAT")]
+        HalfFloat = 0x140B,
+        [NativeName("Name", "GL_HALF_FLOAT_ARB")]
+        HalfFloatArb = 0x140B,
+        [NativeName("Name", "GL_HALF_FLOAT_NV")]
+        HalfFloatNV = 0x140B,
+        [NativeName("Name", "GL_HALF_APPLE")]
+        HalfApple = 0x140B,
         [NativeName("Name", "GL_UNSIGNED_BYTE_3_3_2")]
         UnsignedByte332 = 0x8032,
         [NativeName("Name", "GL_UNSIGNED_BYTE_3_3_2_EXT")]
@@ -76,5 +84,29 @@ namespace Silk.NET.OpenGL
         UnsignedInt2101010Rev = 0x8368,
         [NativeName("Name", "GL_UNSIGNED_INT_2_10_10_10_REV_EXT")]
         UnsignedInt2101010RevExt = 0x8368,
+        [NativeName("Name", "GL_UNSIGNED_INT_24_8")]
+        UnsignedInt248 = 0x84FA,
+        [NativeName("Name", "GL_UNSIGNED_INT_24_8_EXT")]
+        UnsignedInt248Ext = 0x84FA,
+        [NativeName("Name", "GL_UNSIGNED_INT_24_8_NV")]
+        UnsignedInt248NV = 0x84FA,
+        [NativeName("Name", "GL_UNSIGNED_INT_24_8_OES")]
+        UnsignedInt248Oes = 0x84FA,
+        [NativeName("Name", "GL_UNSIGNED_INT_10F_11F_11F_REV")]
+        UnsignedInt10f11f11fRev = 0x8C3B,
+        [NativeName("Name", "GL_UNSIGNED_INT_10F_11F_11F_REV_APPLE")]
+        UnsignedInt10f11f11fRevApple = 0x8C3B,
+        [NativeName("Name", "GL_UNSIGNED_INT_10F_11F_11F_REV_EXT")]
+        UnsignedInt10f11f11fRevExt = 0x8C3B,
+        [NativeName("Name", "GL_UNSIGNED_INT_5_9_9_9_REV")]
+        UnsignedInt5999Rev = 0x8C3E,
+        [NativeName("Name", "GL_UNSIGNED_INT_5_9_9_9_REV_APPLE")]
+        UnsignedInt5999RevApple = 0x8C3E,
+        [NativeName("Name", "GL_UNSIGNED_INT_5_9_9_9_REV_EXT")]
+        UnsignedInt5999RevExt = 0x8C3E,
+        [NativeName("Name", "GL_FLOAT_32_UNSIGNED_INT_24_8_REV")]
+        Float32UnsignedInt248Rev = 0x8DAD,
+        [NativeName("Name", "GL_FLOAT_32_UNSIGNED_INT_24_8_REV_NV")]
+        Float32UnsignedInt248RevNV = 0x8DAD,
     }
 }
