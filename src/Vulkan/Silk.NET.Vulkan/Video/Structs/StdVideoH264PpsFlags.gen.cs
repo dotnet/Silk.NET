@@ -25,8 +25,9 @@ namespace Silk.NET.Vulkan.Video
             uint? redundantPicCntPresentFlag = null,
             uint? constrainedIntraPredFlag = null,
             uint? deblockingFilterControlPresentFlag = null,
+            uint? weightedBipredIdcFlag = null,
             uint? weightedPredFlag = null,
-            uint? bottomFieldPicOrderInFramePresentFlag = null,
+            uint? picOrderPresentFlag = null,
             uint? entropyCodingModeFlag = null,
             uint? picScalingMatrixPresentFlag = null
         ) : this()
@@ -51,14 +52,19 @@ namespace Silk.NET.Vulkan.Video
                 DeblockingFilterControlPresentFlag = deblockingFilterControlPresentFlag.Value;
             }
 
+            if (weightedBipredIdcFlag is not null)
+            {
+                WeightedBipredIdcFlag = weightedBipredIdcFlag.Value;
+            }
+
             if (weightedPredFlag is not null)
             {
                 WeightedPredFlag = weightedPredFlag.Value;
             }
 
-            if (bottomFieldPicOrderInFramePresentFlag is not null)
+            if (picOrderPresentFlag is not null)
             {
-                BottomFieldPicOrderInFramePresentFlag = bottomFieldPicOrderInFramePresentFlag.Value;
+                PicOrderPresentFlag = picOrderPresentFlag.Value;
             }
 
             if (entropyCodingModeFlag is not null)
@@ -107,7 +113,7 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 3)) | (uint)(((uint)(value) & 0x1u) << 3));
         }
 
-        public uint WeightedPredFlag
+        public uint WeightedBipredIdcFlag
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 4) & 0x1u);
@@ -115,7 +121,7 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 4)) | (uint)(((uint)(value) & 0x1u) << 4));
         }
 
-        public uint BottomFieldPicOrderInFramePresentFlag
+        public uint WeightedPredFlag
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 5) & 0x1u);
@@ -123,7 +129,7 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 5)) | (uint)(((uint)(value) & 0x1u) << 5));
         }
 
-        public uint EntropyCodingModeFlag
+        public uint PicOrderPresentFlag
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 6) & 0x1u);
@@ -131,12 +137,20 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 6)) | (uint)(((uint)(value) & 0x1u) << 6));
         }
 
-        public uint PicScalingMatrixPresentFlag
+        public uint EntropyCodingModeFlag
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 7) & 0x1u);
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 7)) | (uint)(((uint)(value) & 0x1u) << 7));
+        }
+
+        public uint PicScalingMatrixPresentFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 8) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 8)) | (uint)(((uint)(value) & 0x1u) << 8));
         }
     }
 }

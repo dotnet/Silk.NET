@@ -22,7 +22,7 @@ namespace Silk.NET.Vulkan.Video
         public StdVideoH265SequenceParameterSetVui
         (
             StdVideoH265SpsVuiFlags? flags = null,
-            StdVideoH265AspectRatioIdc? aspectRatioIdc = null,
+            byte? aspectRatioIdc = null,
             ushort? sarWidth = null,
             ushort? sarHeight = null,
             byte? videoFormat = null,
@@ -31,8 +31,6 @@ namespace Silk.NET.Vulkan.Video
             byte? matrixCoeffs = null,
             byte? chromaSampleLocTypeTopField = null,
             byte? chromaSampleLocTypeBottomField = null,
-            byte? reserved1 = null,
-            byte? reserved2 = null,
             ushort? defDispWinLeftOffset = null,
             ushort? defDispWinRightOffset = null,
             ushort? defDispWinTopOffset = null,
@@ -40,13 +38,12 @@ namespace Silk.NET.Vulkan.Video
             uint? vuiNumUnitsInTick = null,
             uint? vuiTimeScale = null,
             uint? vuiNumTicksPocDiffOneMinus1 = null,
+            StdVideoH265HrdParameters* pHrdParameters = null,
             ushort? minSpatialSegmentationIdc = null,
-            ushort? reserved3 = null,
             byte? maxBytesPerPicDenom = null,
             byte? maxBitsPerMinCuDenom = null,
             byte? log2MaxMvLengthHorizontal = null,
-            byte? log2MaxMvLengthVertical = null,
-            StdVideoH265HrdParameters* pHrdParameters = null
+            byte? log2MaxMvLengthVertical = null
         ) : this()
         {
             if (flags is not null)
@@ -99,16 +96,6 @@ namespace Silk.NET.Vulkan.Video
                 ChromaSampleLocTypeBottomField = chromaSampleLocTypeBottomField.Value;
             }
 
-            if (reserved1 is not null)
-            {
-                Reserved1 = reserved1.Value;
-            }
-
-            if (reserved2 is not null)
-            {
-                Reserved2 = reserved2.Value;
-            }
-
             if (defDispWinLeftOffset is not null)
             {
                 DefDispWinLeftOffset = defDispWinLeftOffset.Value;
@@ -144,14 +131,14 @@ namespace Silk.NET.Vulkan.Video
                 VuiNumTicksPocDiffOneMinus1 = vuiNumTicksPocDiffOneMinus1.Value;
             }
 
+            if (pHrdParameters is not null)
+            {
+                PHrdParameters = pHrdParameters;
+            }
+
             if (minSpatialSegmentationIdc is not null)
             {
                 MinSpatialSegmentationIdc = minSpatialSegmentationIdc.Value;
-            }
-
-            if (reserved3 is not null)
-            {
-                Reserved3 = reserved3.Value;
             }
 
             if (maxBytesPerPicDenom is not null)
@@ -173,11 +160,6 @@ namespace Silk.NET.Vulkan.Video
             {
                 Log2MaxMvLengthVertical = log2MaxMvLengthVertical.Value;
             }
-
-            if (pHrdParameters is not null)
-            {
-                PHrdParameters = pHrdParameters;
-            }
         }
 
 
@@ -186,10 +168,10 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Name", "flags")]
         public StdVideoH265SpsVuiFlags Flags;
 
-        [NativeName("Type", "StdVideoH265AspectRatioIdc")]
-        [NativeName("Type.Name", "StdVideoH265AspectRatioIdc")]
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
         [NativeName("Name", "aspect_ratio_idc")]
-        public StdVideoH265AspectRatioIdc AspectRatioIdc;
+        public byte AspectRatioIdc;
 
         [NativeName("Type", "uint16_t")]
         [NativeName("Type.Name", "uint16_t")]
@@ -231,16 +213,6 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Name", "chroma_sample_loc_type_bottom_field")]
         public byte ChromaSampleLocTypeBottomField;
 
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "reserved1")]
-        public byte Reserved1;
-
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "reserved2")]
-        public byte Reserved2;
-
         [NativeName("Type", "uint16_t")]
         [NativeName("Type.Name", "uint16_t")]
         [NativeName("Name", "def_disp_win_left_offset")]
@@ -276,15 +248,15 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Name", "vui_num_ticks_poc_diff_one_minus1")]
         public uint VuiNumTicksPocDiffOneMinus1;
 
+        [NativeName("Type", "const StdVideoH265HrdParameters *")]
+        [NativeName("Type.Name", "const StdVideoH265HrdParameters *")]
+        [NativeName("Name", "pHrdParameters")]
+        public StdVideoH265HrdParameters* PHrdParameters;
+
         [NativeName("Type", "uint16_t")]
         [NativeName("Type.Name", "uint16_t")]
         [NativeName("Name", "min_spatial_segmentation_idc")]
         public ushort MinSpatialSegmentationIdc;
-
-        [NativeName("Type", "uint16_t")]
-        [NativeName("Type.Name", "uint16_t")]
-        [NativeName("Name", "reserved3")]
-        public ushort Reserved3;
 
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
@@ -305,10 +277,5 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type.Name", "uint8_t")]
         [NativeName("Name", "log2_max_mv_length_vertical")]
         public byte Log2MaxMvLengthVertical;
-
-        [NativeName("Type", "const StdVideoH265HrdParameters *")]
-        [NativeName("Type.Name", "const StdVideoH265HrdParameters *")]
-        [NativeName("Name", "pHrdParameters")]
-        public StdVideoH265HrdParameters* PHrdParameters;
     }
 }

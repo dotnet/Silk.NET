@@ -16,30 +16,36 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Vulkan.Video
 {
-    [NativeName("Name", "StdVideoH265ShortTermRefPicSetFlags")]
-    public unsafe partial struct StdVideoH265ShortTermRefPicSetFlags
+    [NativeName("Name", "StdVideoDecodeH264MvcElementFlags")]
+    public unsafe partial struct StdVideoDecodeH264MvcElementFlags
     {
-        public StdVideoH265ShortTermRefPicSetFlags
+        public StdVideoDecodeH264MvcElementFlags
         (
-            uint? interRefPicSetPredictionFlag = null,
-            uint? deltaRpsSign = null
+            uint? nonIdr = null,
+            uint? anchorPic = null,
+            uint? interView = null
         ) : this()
         {
-            if (interRefPicSetPredictionFlag is not null)
+            if (nonIdr is not null)
             {
-                InterRefPicSetPredictionFlag = interRefPicSetPredictionFlag.Value;
+                NonIdr = nonIdr.Value;
             }
 
-            if (deltaRpsSign is not null)
+            if (anchorPic is not null)
             {
-                DeltaRpsSign = deltaRpsSign.Value;
+                AnchorPic = anchorPic.Value;
+            }
+
+            if (interView is not null)
+            {
+                InterView = interView.Value;
             }
         }
 
 
         private uint _bitfield1;
 
-        public uint InterRefPicSetPredictionFlag
+        public uint NonIdr
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)(_bitfield1 & 0x1u);
@@ -47,12 +53,20 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~0x1u) | (uint)((uint)(value) & 0x1u));
         }
 
-        public uint DeltaRpsSign
+        public uint AnchorPic
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 1) & 0x1u);
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 1)) | (uint)(((uint)(value) & 0x1u) << 1));
+        }
+
+        public uint InterView
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 2) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 2)) | (uint)(((uint)(value) & 0x1u) << 2));
         }
     }
 }
