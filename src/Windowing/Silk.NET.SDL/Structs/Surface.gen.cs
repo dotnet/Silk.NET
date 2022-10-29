@@ -147,8 +147,8 @@ namespace Silk.NET.SDL
         [NativeName("Name", "clip_rect")]
         public Silk.NET.Maths.Rectangle<int> ClipRect;
 
-        [NativeName("Type", "struct SDL_BlitMap *")]
-        [NativeName("Type.Name", "struct SDL_BlitMap *")]
+        [NativeName("Type", "SDL_BlitMap *")]
+        [NativeName("Type.Name", "SDL_BlitMap *")]
         [NativeName("Name", "map")]
         public BlitMap* Map;
 

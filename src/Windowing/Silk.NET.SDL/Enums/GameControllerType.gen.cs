@@ -37,6 +37,24 @@ namespace Silk.NET.SDL
         [Obsolete("Deprecated in favour of \"PS5\"")]
         [NativeName("Name", "SDL_CONTROLLER_TYPE_PS5")]
         ControllerTypePS5 = 0x7,
+        [Obsolete("Deprecated in favour of \"AmazonLuna\"")]
+        [NativeName("Name", "SDL_CONTROLLER_TYPE_AMAZON_LUNA")]
+        ControllerTypeAmazonLuna = 0x8,
+        [Obsolete("Deprecated in favour of \"GoogleStadia\"")]
+        [NativeName("Name", "SDL_CONTROLLER_TYPE_GOOGLE_STADIA")]
+        ControllerTypeGoogleStadia = 0x9,
+        [Obsolete("Deprecated in favour of \"NvidiaShield\"")]
+        [NativeName("Name", "SDL_CONTROLLER_TYPE_NVIDIA_SHIELD")]
+        ControllerTypeNvidiaShield = 0xA,
+        [Obsolete("Deprecated in favour of \"NintendoSwitchJoyconLeft\"")]
+        [NativeName("Name", "SDL_CONTROLLER_TYPE_NINTENDO_SWITCH_JOYCON_LEFT")]
+        ControllerTypeNintendoSwitchJoyconLeft = 0xB,
+        [Obsolete("Deprecated in favour of \"NintendoSwitchJoyconRight\"")]
+        [NativeName("Name", "SDL_CONTROLLER_TYPE_NINTENDO_SWITCH_JOYCON_RIGHT")]
+        ControllerTypeNintendoSwitchJoyconRight = 0xC,
+        [Obsolete("Deprecated in favour of \"NintendoSwitchJoyconPair\"")]
+        [NativeName("Name", "SDL_CONTROLLER_TYPE_NINTENDO_SWITCH_JOYCON_PAIR")]
+        ControllerTypeNintendoSwitchJoyconPair = 0xD,
         [NativeName("Name", "SDL_CONTROLLER_TYPE_UNKNOWN")]
         Unknown = 0x0,
         [NativeName("Name", "SDL_CONTROLLER_TYPE_XBOX360")]
@@ -53,5 +71,17 @@ namespace Silk.NET.SDL
         Virtual = 0x6,
         [NativeName("Name", "SDL_CONTROLLER_TYPE_PS5")]
         PS5 = 0x7,
+        [NativeName("Name", "SDL_CONTROLLER_TYPE_AMAZON_LUNA")]
+        AmazonLuna = 0x8,
+        [NativeName("Name", "SDL_CONTROLLER_TYPE_GOOGLE_STADIA")]
+        GoogleStadia = 0x9,
+        [NativeName("Name", "SDL_CONTROLLER_TYPE_NVIDIA_SHIELD")]
+        NvidiaShield = 0xA,
+        [NativeName("Name", "SDL_CONTROLLER_TYPE_NINTENDO_SWITCH_JOYCON_LEFT")]
+        NintendoSwitchJoyconLeft = 0xB,
+        [NativeName("Name", "SDL_CONTROLLER_TYPE_NINTENDO_SWITCH_JOYCON_RIGHT")]
+        NintendoSwitchJoyconRight = 0xC,
+        [NativeName("Name", "SDL_CONTROLLER_TYPE_NINTENDO_SWITCH_JOYCON_PAIR")]
+        NintendoSwitchJoyconPair = 0xD,
     }
 }

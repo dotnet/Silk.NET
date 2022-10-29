@@ -16,20 +16,17 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.SDL
 {
-    [NativeName("Name", "SDL_MouseWheelEvent")]
-    public unsafe partial struct MouseWheelEvent
+    [NativeName("Name", "SDL_TextEditingExtEvent")]
+    public unsafe partial struct TextEditingExtEvent
     {
-        public MouseWheelEvent
+        public TextEditingExtEvent
         (
             uint? type = null,
             uint? timestamp = null,
             uint? windowID = null,
-            uint? which = null,
-            int? x = null,
-            int? y = null,
-            uint? direction = null,
-            float? preciseX = null,
-            float? preciseY = null
+            byte* text = null,
+            int? start = null,
+            int? length = null
         ) : this()
         {
             if (type is not null)
@@ -47,34 +44,19 @@ namespace Silk.NET.SDL
                 WindowID = windowID.Value;
             }
 
-            if (which is not null)
+            if (text is not null)
             {
-                Which = which.Value;
+                Text = text;
             }
 
-            if (x is not null)
+            if (start is not null)
             {
-                X = x.Value;
+                Start = start.Value;
             }
 
-            if (y is not null)
+            if (length is not null)
             {
-                Y = y.Value;
-            }
-
-            if (direction is not null)
-            {
-                Direction = direction.Value;
-            }
-
-            if (preciseX is not null)
-            {
-                PreciseX = preciseX.Value;
-            }
-
-            if (preciseY is not null)
-            {
-                PreciseY = preciseY.Value;
+                Length = length.Value;
             }
         }
 
@@ -94,34 +76,19 @@ namespace Silk.NET.SDL
         [NativeName("Name", "windowID")]
         public uint WindowID;
 
-        [NativeName("Type", "Uint32")]
-        [NativeName("Type.Name", "Uint32")]
-        [NativeName("Name", "which")]
-        public uint Which;
+        [NativeName("Type", "char *")]
+        [NativeName("Type.Name", "char *")]
+        [NativeName("Name", "text")]
+        public byte* Text;
 
         [NativeName("Type", "Sint32")]
         [NativeName("Type.Name", "Sint32")]
-        [NativeName("Name", "x")]
-        public int X;
+        [NativeName("Name", "start")]
+        public int Start;
 
         [NativeName("Type", "Sint32")]
         [NativeName("Type.Name", "Sint32")]
-        [NativeName("Name", "y")]
-        public int Y;
-
-        [NativeName("Type", "Uint32")]
-        [NativeName("Type.Name", "Uint32")]
-        [NativeName("Name", "direction")]
-        public uint Direction;
-
-        [NativeName("Type", "float")]
-        [NativeName("Type.Name", "float")]
-        [NativeName("Name", "preciseX")]
-        public float PreciseX;
-
-        [NativeName("Type", "float")]
-        [NativeName("Type.Name", "float")]
-        [NativeName("Name", "preciseY")]
-        public float PreciseY;
+        [NativeName("Name", "length")]
+        public int Length;
     }
 }
