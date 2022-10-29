@@ -226,7 +226,7 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1419, Column 18 in webgpu.h")]
-        public static unsafe void BindGroupLayoutSetLabel(this WebGPU thisApi, WGPUBindGroupLayout* bindGroupLayout, Span<byte> label)
+        public static unsafe void BindGroupLayoutSetLabel(this WebGPU thisApi, BindGroupLayout* bindGroupLayout, Span<byte> label)
         {
             // SpanOverloader
             thisApi.BindGroupLayoutSetLabel(bindGroupLayout, ref label.GetPinnableReference());
@@ -234,7 +234,7 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1419, Column 18 in webgpu.h")]
-        public static unsafe void BindGroupLayoutSetLabel(this WebGPU thisApi, Span<WGPUBindGroupLayout> bindGroupLayout, byte* label)
+        public static unsafe void BindGroupLayoutSetLabel(this WebGPU thisApi, Span<BindGroupLayout> bindGroupLayout, byte* label)
         {
             // SpanOverloader
             thisApi.BindGroupLayoutSetLabel(ref bindGroupLayout.GetPinnableReference(), label);
@@ -242,7 +242,7 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1419, Column 18 in webgpu.h")]
-        public static unsafe void BindGroupLayoutSetLabel(this WebGPU thisApi, Span<WGPUBindGroupLayout> bindGroupLayout, Span<byte> label)
+        public static unsafe void BindGroupLayoutSetLabel(this WebGPU thisApi, Span<BindGroupLayout> bindGroupLayout, Span<byte> label)
         {
             // SpanOverloader
             thisApi.BindGroupLayoutSetLabel(ref bindGroupLayout.GetPinnableReference(), ref label.GetPinnableReference());
@@ -250,7 +250,7 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1419, Column 18 in webgpu.h")]
-        public static unsafe void BindGroupLayoutSetLabel(this WebGPU thisApi, Span<WGPUBindGroupLayout> bindGroupLayout, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string label)
+        public static unsafe void BindGroupLayoutSetLabel(this WebGPU thisApi, Span<BindGroupLayout> bindGroupLayout, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string label)
         {
             // SpanOverloader
             thisApi.BindGroupLayoutSetLabel(ref bindGroupLayout.GetPinnableReference(), label);
@@ -1346,7 +1346,7 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1464, Column 33 in webgpu.h")]
-        public static unsafe WGPUBindGroupLayout* ComputePipelineGetBindGroupLayout(this WebGPU thisApi, Span<ComputePipeline> computePipeline, uint groupIndex)
+        public static unsafe BindGroupLayout* ComputePipelineGetBindGroupLayout(this WebGPU thisApi, Span<ComputePipeline> computePipeline, uint groupIndex)
         {
             // SpanOverloader
             return thisApi.ComputePipelineGetBindGroupLayout(ref computePipeline.GetPinnableReference(), groupIndex);
@@ -1410,7 +1410,7 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1469, Column 33 in webgpu.h")]
-        public static unsafe WGPUBindGroupLayout* DeviceCreateBindGroupLayout(this WebGPU thisApi, Device* device, Span<BindGroupLayoutDescriptor> descriptor)
+        public static unsafe BindGroupLayout* DeviceCreateBindGroupLayout(this WebGPU thisApi, Device* device, Span<BindGroupLayoutDescriptor> descriptor)
         {
             // SpanOverloader
             return thisApi.DeviceCreateBindGroupLayout(device, ref descriptor.GetPinnableReference());
@@ -1418,7 +1418,7 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1469, Column 33 in webgpu.h")]
-        public static unsafe WGPUBindGroupLayout* DeviceCreateBindGroupLayout(this WebGPU thisApi, Span<Device> device, BindGroupLayoutDescriptor* descriptor)
+        public static unsafe BindGroupLayout* DeviceCreateBindGroupLayout(this WebGPU thisApi, Span<Device> device, BindGroupLayoutDescriptor* descriptor)
         {
             // SpanOverloader
             return thisApi.DeviceCreateBindGroupLayout(ref device.GetPinnableReference(), descriptor);
@@ -1426,7 +1426,7 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1469, Column 33 in webgpu.h")]
-        public static unsafe WGPUBindGroupLayout* DeviceCreateBindGroupLayout(this WebGPU thisApi, Span<Device> device, Span<BindGroupLayoutDescriptor> descriptor)
+        public static unsafe BindGroupLayout* DeviceCreateBindGroupLayout(this WebGPU thisApi, Span<Device> device, Span<BindGroupLayoutDescriptor> descriptor)
         {
             // SpanOverloader
             return thisApi.DeviceCreateBindGroupLayout(ref device.GetPinnableReference(), ref descriptor.GetPinnableReference());
@@ -3314,7 +3314,7 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1555, Column 33 in webgpu.h")]
-        public static unsafe WGPUBindGroupLayout* RenderPipelineGetBindGroupLayout(this WebGPU thisApi, Span<RenderPipeline> renderPipeline, uint groupIndex)
+        public static unsafe BindGroupLayout* RenderPipelineGetBindGroupLayout(this WebGPU thisApi, Span<RenderPipeline> renderPipeline, uint groupIndex)
         {
             // SpanOverloader
             return thisApi.RenderPipelineGetBindGroupLayout(ref renderPipeline.GetPinnableReference(), groupIndex);
