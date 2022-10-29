@@ -34,11 +34,17 @@ namespace Silk.NET.Vulkan
         PerformanceQueryIntel = 1000210000,
         [NativeName("Name", "VK_QUERY_TYPE_VIDEO_ENCODE_BITSTREAM_BUFFER_RANGE_KHR")]
         VideoEncodeBitstreamBufferRangeKhr = 1000299000,
+        [NativeName("Name", "VK_QUERY_TYPE_MESH_PRIMITIVES_GENERATED_EXT")]
+        MeshPrimitivesGeneratedExt = 1000328000,
         [NativeName("Name", "VK_QUERY_TYPE_PRIMITIVES_GENERATED_EXT")]
         PrimitivesGeneratedExt = 1000382000,
         [NativeName("Name", "VK_QUERY_TYPE_ACCELERATION_STRUCTURE_SERIALIZATION_BOTTOM_LEVEL_POINTERS_KHR")]
         AccelerationStructureSerializationBottomLevelPointersKhr = 1000386000,
         [NativeName("Name", "VK_QUERY_TYPE_ACCELERATION_STRUCTURE_SIZE_KHR")]
         AccelerationStructureSizeKhr = 1000386001,
+        [NativeName("Name", "VK_QUERY_TYPE_MICROMAP_SERIALIZATION_SIZE_EXT")]
+        MicromapSerializationSizeExt = 1000396000,
+        [NativeName("Name", "VK_QUERY_TYPE_MICROMAP_COMPACTED_SIZE_EXT")]
+        MicromapCompactedSizeExt = 1000396001,
     }
 }

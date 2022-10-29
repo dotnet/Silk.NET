@@ -17,10 +17,10 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     public static class KhrVideoQueueOverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe Result BindVideoSessionMemory(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionKHR videoSession, [Count(Count = 0)] uint videoSessionBindMemoryCount, [Count(Parameter = "videoSessionBindMemoryCount"), Flow(FlowDirection.In)] ReadOnlySpan<VideoBindMemoryKHR> pVideoSessionBindMemories)
+        public static unsafe Result BindVideoSessionMemory(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionKHR videoSession, [Count(Count = 0)] uint bindSessionMemoryInfoCount, [Count(Parameter = "bindSessionMemoryInfoCount"), Flow(FlowDirection.In)] ReadOnlySpan<BindVideoSessionMemoryInfoKHR> pBindSessionMemoryInfos)
         {
             // SpanOverloader
-            return thisApi.BindVideoSessionMemory(device, videoSession, videoSessionBindMemoryCount, in pVideoSessionBindMemories.GetPinnableReference());
+            return thisApi.BindVideoSessionMemory(device, videoSession, bindSessionMemoryInfoCount, in pBindSessionMemoryInfos.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -158,14 +158,14 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pCapabilities = new(StructureType.VideoCapabilitiesKhr);")]
-        public static unsafe Result GetPhysicalDeviceVideoCapabilities(this KhrVideoQueue thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] VideoProfileKHR* pVideoProfile, [Count(Count = 0), Flow(FlowDirection.Out)] Span<VideoCapabilitiesKHR> pCapabilities)
+        public static unsafe Result GetPhysicalDeviceVideoCapabilities(this KhrVideoQueue thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] VideoProfileInfoKHR* pVideoProfile, [Count(Count = 0), Flow(FlowDirection.Out)] Span<VideoCapabilitiesKHR> pCapabilities)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceVideoCapabilities(physicalDevice, pVideoProfile, out pCapabilities.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetPhysicalDeviceVideoCapabilities(this KhrVideoQueue thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<VideoProfileKHR> pVideoProfile, [Count(Count = 0), Flow(FlowDirection.Out)] VideoCapabilitiesKHR* pCapabilities)
+        public static unsafe Result GetPhysicalDeviceVideoCapabilities(this KhrVideoQueue thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<VideoProfileInfoKHR> pVideoProfile, [Count(Count = 0), Flow(FlowDirection.Out)] VideoCapabilitiesKHR* pCapabilities)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceVideoCapabilities(physicalDevice, in pVideoProfile.GetPinnableReference(), pCapabilities);
@@ -173,7 +173,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pCapabilities = new(StructureType.VideoCapabilitiesKhr);")]
-        public static unsafe Result GetPhysicalDeviceVideoCapabilities(this KhrVideoQueue thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<VideoProfileKHR> pVideoProfile, [Count(Count = 0), Flow(FlowDirection.Out)] Span<VideoCapabilitiesKHR> pCapabilities)
+        public static unsafe Result GetPhysicalDeviceVideoCapabilities(this KhrVideoQueue thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<VideoProfileInfoKHR> pVideoProfile, [Count(Count = 0), Flow(FlowDirection.Out)] Span<VideoCapabilitiesKHR> pCapabilities)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceVideoCapabilities(physicalDevice, in pVideoProfile.GetPinnableReference(), out pCapabilities.GetPinnableReference());
@@ -233,26 +233,26 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
-        [Inject(SilkTouchStage.Begin, "pVideoSessionMemoryRequirements = new(StructureType.VideoGetMemoryPropertiesKhr);")]
-        public static unsafe Result GetVideoSessionMemoryRequirements(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionKHR videoSession, [Count(Count = 0)] uint* pVideoSessionMemoryRequirementsCount, [Count(Parameter = "pVideoSessionMemoryRequirementsCount"), Flow(FlowDirection.Out)] Span<VideoGetMemoryPropertiesKHR> pVideoSessionMemoryRequirements)
+        [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.VideoSessionMemoryRequirementsKhr);")]
+        public static unsafe Result GetVideoSessionMemoryRequirements(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionKHR videoSession, [Count(Count = 0)] uint* pMemoryRequirementsCount, [Count(Parameter = "pMemoryRequirementsCount"), Flow(FlowDirection.Out)] Span<VideoSessionMemoryRequirementsKHR> pMemoryRequirements)
         {
             // SpanOverloader
-            return thisApi.GetVideoSessionMemoryRequirements(device, videoSession, pVideoSessionMemoryRequirementsCount, out pVideoSessionMemoryRequirements.GetPinnableReference());
+            return thisApi.GetVideoSessionMemoryRequirements(device, videoSession, pMemoryRequirementsCount, out pMemoryRequirements.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetVideoSessionMemoryRequirements(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionKHR videoSession, [Count(Count = 0)] Span<uint> pVideoSessionMemoryRequirementsCount, [Count(Parameter = "pVideoSessionMemoryRequirementsCount"), Flow(FlowDirection.Out)] VideoGetMemoryPropertiesKHR* pVideoSessionMemoryRequirements)
+        public static unsafe Result GetVideoSessionMemoryRequirements(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionKHR videoSession, [Count(Count = 0)] Span<uint> pMemoryRequirementsCount, [Count(Parameter = "pMemoryRequirementsCount"), Flow(FlowDirection.Out)] VideoSessionMemoryRequirementsKHR* pMemoryRequirements)
         {
             // SpanOverloader
-            return thisApi.GetVideoSessionMemoryRequirements(device, videoSession, ref pVideoSessionMemoryRequirementsCount.GetPinnableReference(), pVideoSessionMemoryRequirements);
+            return thisApi.GetVideoSessionMemoryRequirements(device, videoSession, ref pMemoryRequirementsCount.GetPinnableReference(), pMemoryRequirements);
         }
 
         /// <summary>To be documented.</summary>
-        [Inject(SilkTouchStage.Begin, "pVideoSessionMemoryRequirements = new(StructureType.VideoGetMemoryPropertiesKhr);")]
-        public static unsafe Result GetVideoSessionMemoryRequirements(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionKHR videoSession, [Count(Count = 0)] Span<uint> pVideoSessionMemoryRequirementsCount, [Count(Parameter = "pVideoSessionMemoryRequirementsCount"), Flow(FlowDirection.Out)] Span<VideoGetMemoryPropertiesKHR> pVideoSessionMemoryRequirements)
+        [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.VideoSessionMemoryRequirementsKhr);")]
+        public static unsafe Result GetVideoSessionMemoryRequirements(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionKHR videoSession, [Count(Count = 0)] Span<uint> pMemoryRequirementsCount, [Count(Parameter = "pMemoryRequirementsCount"), Flow(FlowDirection.Out)] Span<VideoSessionMemoryRequirementsKHR> pMemoryRequirements)
         {
             // SpanOverloader
-            return thisApi.GetVideoSessionMemoryRequirements(device, videoSession, ref pVideoSessionMemoryRequirementsCount.GetPinnableReference(), out pVideoSessionMemoryRequirements.GetPinnableReference());
+            return thisApi.GetVideoSessionMemoryRequirements(device, videoSession, ref pMemoryRequirementsCount.GetPinnableReference(), out pMemoryRequirements.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>

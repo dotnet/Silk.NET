@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoEncodeH264RateControlInfoEXT")]
-    public unsafe partial struct VideoEncodeH264RateControlInfoEXT : IExtendsChain<VideoEncodeRateControlInfoKHR>
+    public unsafe partial struct VideoEncodeH264RateControlInfoEXT : IExtendsChain<VideoCodingControlInfoKHR>
     {
         public VideoEncodeH264RateControlInfoEXT
         (
@@ -26,7 +26,7 @@ namespace Silk.NET.Vulkan
             uint? gopFrameCount = null,
             uint? idrPeriod = null,
             uint? consecutiveBFrameCount = null,
-            VideoEncodeH264RateControlStructureFlagsEXT? rateControlStructure = null,
+            VideoEncodeH264RateControlStructureEXT? rateControlStructure = null,
             byte? temporalLayerCount = null
         ) : this()
         {
@@ -92,10 +92,10 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "consecutiveBFrameCount")]
         public uint ConsecutiveBFrameCount;
 /// <summary></summary>
-        [NativeName("Type", "VkVideoEncodeH264RateControlStructureFlagBitsEXT")]
-        [NativeName("Type.Name", "VkVideoEncodeH264RateControlStructureFlagBitsEXT")]
+        [NativeName("Type", "VkVideoEncodeH264RateControlStructureEXT")]
+        [NativeName("Type.Name", "VkVideoEncodeH264RateControlStructureEXT")]
         [NativeName("Name", "rateControlStructure")]
-        public VideoEncodeH264RateControlStructureFlagsEXT RateControlStructure;
+        public VideoEncodeH264RateControlStructureEXT RateControlStructure;
 /// <summary></summary>
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]

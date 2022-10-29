@@ -39,9 +39,9 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"Reserved7BitQCom\"")]
         [NativeName("Name", "VK_QUEUE_RESERVED_7_BIT_QCOM")]
         QueueReserved7BitQCom = 128,
-        [Obsolete("Deprecated in favour of \"Reserved8BitNV\"")]
-        [NativeName("Name", "VK_QUEUE_RESERVED_8_BIT_NV")]
-        QueueReserved8BitNV = 256,
+        [Obsolete("Deprecated in favour of \"OpticalFlowBitNV\"")]
+        [NativeName("Name", "VK_QUEUE_OPTICAL_FLOW_BIT_NV")]
+        QueueOpticalFlowBitNV = 256,
         [Obsolete("Deprecated in favour of \"ProtectedBit\"")]
         [NativeName("Name", "VK_QUEUE_PROTECTED_BIT")]
         QueueProtectedBit = 16,
@@ -61,8 +61,8 @@ namespace Silk.NET.Vulkan
         VideoEncodeBitKhr = 64,
         [NativeName("Name", "VK_QUEUE_RESERVED_7_BIT_QCOM")]
         Reserved7BitQCom = 128,
-        [NativeName("Name", "VK_QUEUE_RESERVED_8_BIT_NV")]
-        Reserved8BitNV = 256,
+        [NativeName("Name", "VK_QUEUE_OPTICAL_FLOW_BIT_NV")]
+        OpticalFlowBitNV = 256,
         [NativeName("Name", "VK_QUEUE_PROTECTED_BIT")]
         ProtectedBit = 16,
     }

@@ -23,12 +23,12 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.VideoDecodeH265SessionParametersAddInfoExt,
             void* pNext = null,
-            uint? vpsStdCount = null,
-            Video.StdVideoH265VideoParameterSet* pVpsStd = null,
-            uint? spsStdCount = null,
-            Video.StdVideoH265SequenceParameterSet* pSpsStd = null,
-            uint? ppsStdCount = null,
-            Video.StdVideoH265PictureParameterSet* pPpsStd = null
+            uint? stdVpscount = null,
+            Video.StdVideoH265VideoParameterSet* pStdVpss = null,
+            uint? stdSpscount = null,
+            Video.StdVideoH265SequenceParameterSet* pStdSpss = null,
+            uint? stdPpscount = null,
+            Video.StdVideoH265PictureParameterSet* pStdPpss = null
         ) : this()
         {
             if (sType is not null)
@@ -41,34 +41,34 @@ namespace Silk.NET.Vulkan
                 PNext = pNext;
             }
 
-            if (vpsStdCount is not null)
+            if (stdVpscount is not null)
             {
-                VpsStdCount = vpsStdCount.Value;
+                StdVpscount = stdVpscount.Value;
             }
 
-            if (pVpsStd is not null)
+            if (pStdVpss is not null)
             {
-                PVpsStd = pVpsStd;
+                PStdVpss = pStdVpss;
             }
 
-            if (spsStdCount is not null)
+            if (stdSpscount is not null)
             {
-                SpsStdCount = spsStdCount.Value;
+                StdSpscount = stdSpscount.Value;
             }
 
-            if (pSpsStd is not null)
+            if (pStdSpss is not null)
             {
-                PSpsStd = pSpsStd;
+                PStdSpss = pStdSpss;
             }
 
-            if (ppsStdCount is not null)
+            if (stdPpscount is not null)
             {
-                PpsStdCount = ppsStdCount.Value;
+                StdPpscount = stdPpscount.Value;
             }
 
-            if (pPpsStd is not null)
+            if (pStdPpss is not null)
             {
-                PPpsStd = pPpsStd;
+                PStdPpss = pStdPpss;
             }
         }
 
@@ -85,33 +85,33 @@ namespace Silk.NET.Vulkan
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "vpsStdCount")]
-        public uint VpsStdCount;
+        [NativeName("Name", "stdVPSCount")]
+        public uint StdVpscount;
 /// <summary></summary>
         [NativeName("Type", "StdVideoH265VideoParameterSet*")]
         [NativeName("Type.Name", "StdVideoH265VideoParameterSet")]
-        [NativeName("Name", "pVpsStd")]
-        public Video.StdVideoH265VideoParameterSet* PVpsStd;
+        [NativeName("Name", "pStdVPSs")]
+        public Video.StdVideoH265VideoParameterSet* PStdVpss;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "spsStdCount")]
-        public uint SpsStdCount;
+        [NativeName("Name", "stdSPSCount")]
+        public uint StdSpscount;
 /// <summary></summary>
         [NativeName("Type", "StdVideoH265SequenceParameterSet*")]
         [NativeName("Type.Name", "StdVideoH265SequenceParameterSet")]
-        [NativeName("Name", "pSpsStd")]
-        public Video.StdVideoH265SequenceParameterSet* PSpsStd;
+        [NativeName("Name", "pStdSPSs")]
+        public Video.StdVideoH265SequenceParameterSet* PStdSpss;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "ppsStdCount")]
-        public uint PpsStdCount;
+        [NativeName("Name", "stdPPSCount")]
+        public uint StdPpscount;
 /// <summary></summary>
         [NativeName("Type", "StdVideoH265PictureParameterSet*")]
         [NativeName("Type.Name", "StdVideoH265PictureParameterSet")]
-        [NativeName("Name", "pPpsStd")]
-        public Video.StdVideoH265PictureParameterSet* PPpsStd;
+        [NativeName("Name", "pStdPPSs")]
+        public Video.StdVideoH265PictureParameterSet* PStdPpss;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
