@@ -10,7 +10,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.SDL
 {
     [Flags]
-    [NativeName("AnonymousName", "__AnonymousEnum_SDL_video_L276_C9")]
+    [NativeName("AnonymousName", "__AnonymousEnum_SDL_video_L259_C9")]
     [NativeName("Name", "SDL_GLContextResetNotification")]
     public enum GLContextResetNotification : int
     {

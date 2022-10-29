@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
-    [NativeName("AnonymousName", "__AnonymousEnum_SDL_video_L223_C9")]
+    [NativeName("AnonymousName", "__AnonymousEnum_SDL_video_L207_C9")]
     [NativeName("Name", "SDL_GLattr")]
     public enum GLattr : int
     {
@@ -94,9 +94,6 @@ namespace Silk.NET.SDL
         [Obsolete("Deprecated in favour of \"ContextNoError\"")]
         [NativeName("Name", "SDL_GL_CONTEXT_NO_ERROR")]
         GLContextNoError = 0x1A,
-        [Obsolete("Deprecated in favour of \"Floatbuffers\"")]
-        [NativeName("Name", "SDL_GL_FLOATBUFFERS")]
-        GLFloatbuffers = 0x1B,
         [NativeName("Name", "SDL_GL_RED_SIZE")]
         RedSize = 0x0,
         [NativeName("Name", "SDL_GL_GREEN_SIZE")]
@@ -151,7 +148,5 @@ namespace Silk.NET.SDL
         ContextResetNotification = 0x19,
         [NativeName("Name", "SDL_GL_CONTEXT_NO_ERROR")]
         ContextNoError = 0x1A,
-        [NativeName("Name", "SDL_GL_FLOATBUFFERS")]
-        Floatbuffers = 0x1B,
     }
 }

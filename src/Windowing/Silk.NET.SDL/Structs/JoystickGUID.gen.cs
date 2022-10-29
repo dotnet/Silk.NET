@@ -16,8 +16,13 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.SDL
 {
-    [NativeName("Name", "ID3D12Device")]
-    public unsafe partial struct ID3D12Device
+    [NativeName("AnonymousName", "__AnonymousRecord_SDL_joystick_L72_C9")]
+    [NativeName("Name", "SDL_JoystickGUID")]
+    public unsafe partial struct JoystickGUID
     {
+        [NativeName("Type", "Uint8 [16]")]
+        [NativeName("Type.Name", "Uint8 [16]")]
+        [NativeName("Name", "data")]
+        public fixed byte Data[16];
     }
 }
