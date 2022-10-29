@@ -23,8 +23,8 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.VideoDecodeH264SessionParametersCreateInfoExt,
             void* pNext = null,
-            uint? maxStdSpscount = null,
-            uint? maxStdPpscount = null,
+            uint? maxSpsStdCount = null,
+            uint? maxPpsStdCount = null,
             VideoDecodeH264SessionParametersAddInfoEXT* pParametersAddInfo = null
         ) : this()
         {
@@ -38,14 +38,14 @@ namespace Silk.NET.Vulkan
                 PNext = pNext;
             }
 
-            if (maxStdSpscount is not null)
+            if (maxSpsStdCount is not null)
             {
-                MaxStdSpscount = maxStdSpscount.Value;
+                MaxSpsStdCount = maxSpsStdCount.Value;
             }
 
-            if (maxStdPpscount is not null)
+            if (maxPpsStdCount is not null)
             {
-                MaxStdPpscount = maxStdPpscount.Value;
+                MaxPpsStdCount = maxPpsStdCount.Value;
             }
 
             if (pParametersAddInfo is not null)
@@ -67,13 +67,13 @@ namespace Silk.NET.Vulkan
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxStdSPSCount")]
-        public uint MaxStdSpscount;
+        [NativeName("Name", "maxSpsStdCount")]
+        public uint MaxSpsStdCount;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxStdPPSCount")]
-        public uint MaxStdPpscount;
+        [NativeName("Name", "maxPpsStdCount")]
+        public uint MaxPpsStdCount;
 /// <summary></summary>
         [NativeName("Type", "VkVideoDecodeH264SessionParametersAddInfoEXT*")]
         [NativeName("Type.Name", "VkVideoDecodeH264SessionParametersAddInfoEXT")]

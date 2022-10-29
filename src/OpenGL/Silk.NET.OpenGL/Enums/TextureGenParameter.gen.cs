@@ -12,8 +12,6 @@ namespace Silk.NET.OpenGL
     [NativeName("Name", "TextureGenParameter")]
     public enum TextureGenParameter : int
     {
-        [NativeName("Name", "GL_TEXTURE_GEN_MODE_OES")]
-        TextureGenModeOes = 0x2500,
         [NativeName("Name", "GL_EYE_POINT_SGIS")]
         EyePointSgis = 0x81F4,
         [NativeName("Name", "GL_OBJECT_POINT_SGIS")]

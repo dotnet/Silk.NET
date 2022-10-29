@@ -23,9 +23,9 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.VideoDecodeH265SessionParametersCreateInfoExt,
             void* pNext = null,
-            uint? maxStdVpscount = null,
-            uint? maxStdSpscount = null,
-            uint? maxStdPpscount = null,
+            uint? maxVpsStdCount = null,
+            uint? maxSpsStdCount = null,
+            uint? maxPpsStdCount = null,
             VideoDecodeH265SessionParametersAddInfoEXT* pParametersAddInfo = null
         ) : this()
         {
@@ -39,19 +39,19 @@ namespace Silk.NET.Vulkan
                 PNext = pNext;
             }
 
-            if (maxStdVpscount is not null)
+            if (maxVpsStdCount is not null)
             {
-                MaxStdVpscount = maxStdVpscount.Value;
+                MaxVpsStdCount = maxVpsStdCount.Value;
             }
 
-            if (maxStdSpscount is not null)
+            if (maxSpsStdCount is not null)
             {
-                MaxStdSpscount = maxStdSpscount.Value;
+                MaxSpsStdCount = maxSpsStdCount.Value;
             }
 
-            if (maxStdPpscount is not null)
+            if (maxPpsStdCount is not null)
             {
-                MaxStdPpscount = maxStdPpscount.Value;
+                MaxPpsStdCount = maxPpsStdCount.Value;
             }
 
             if (pParametersAddInfo is not null)
@@ -73,18 +73,18 @@ namespace Silk.NET.Vulkan
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxStdVPSCount")]
-        public uint MaxStdVpscount;
+        [NativeName("Name", "maxVpsStdCount")]
+        public uint MaxVpsStdCount;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxStdSPSCount")]
-        public uint MaxStdSpscount;
+        [NativeName("Name", "maxSpsStdCount")]
+        public uint MaxSpsStdCount;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxStdPPSCount")]
-        public uint MaxStdPpscount;
+        [NativeName("Name", "maxPpsStdCount")]
+        public uint MaxPpsStdCount;
 /// <summary></summary>
         [NativeName("Type", "VkVideoDecodeH265SessionParametersAddInfoEXT*")]
         [NativeName("Type.Name", "VkVideoDecodeH265SessionParametersAddInfoEXT")]

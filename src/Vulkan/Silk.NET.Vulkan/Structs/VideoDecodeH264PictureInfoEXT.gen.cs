@@ -17,15 +17,15 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoDecodeH264PictureInfoEXT")]
-    public unsafe partial struct VideoDecodeH264PictureInfoEXT : IExtendsChain<VideoDecodeInfoKHR>
+    public unsafe partial struct VideoDecodeH264PictureInfoEXT : IChainStart, IExtendsChain<VideoDecodeInfoKHR>
     {
         public VideoDecodeH264PictureInfoEXT
         (
             StructureType? sType = StructureType.VideoDecodeH264PictureInfoExt,
             void* pNext = null,
             Video.StdVideoDecodeH264PictureInfo* pStdPictureInfo = null,
-            uint? sliceCount = null,
-            uint* pSliceOffsets = null
+            uint? slicesCount = null,
+            uint* pSlicesDataOffsets = null
         ) : this()
         {
             if (sType is not null)
@@ -43,14 +43,14 @@ namespace Silk.NET.Vulkan
                 PStdPictureInfo = pStdPictureInfo;
             }
 
-            if (sliceCount is not null)
+            if (slicesCount is not null)
             {
-                SliceCount = sliceCount.Value;
+                SlicesCount = slicesCount.Value;
             }
 
-            if (pSliceOffsets is not null)
+            if (pSlicesDataOffsets is not null)
             {
-                PSliceOffsets = pSliceOffsets;
+                PSlicesDataOffsets = pSlicesDataOffsets;
             }
         }
 
@@ -72,13 +72,13 @@ namespace Silk.NET.Vulkan
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "sliceCount")]
-        public uint SliceCount;
+        [NativeName("Name", "slicesCount")]
+        public uint SlicesCount;
 /// <summary></summary>
         [NativeName("Type", "uint32_t*")]
         [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "pSliceOffsets")]
-        public uint* PSliceOffsets;
+        [NativeName("Name", "pSlicesDataOffsets")]
+        public uint* PSlicesDataOffsets;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
@@ -91,6 +91,18 @@ namespace Silk.NET.Vulkan
         {
             get => (BaseInStructure*) PNext;
             set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref VideoDecodeH264PictureInfoEXT Chain(
+            out VideoDecodeH264PictureInfoEXT capture)
+        {
+            capture = new VideoDecodeH264PictureInfoEXT(StructureType.VideoDecodeH264PictureInfoExt);
+            return ref capture;
         }
     }
 }

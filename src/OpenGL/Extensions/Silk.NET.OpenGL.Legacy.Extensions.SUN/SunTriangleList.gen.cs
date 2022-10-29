@@ -23,9 +23,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
         [NativeApi(EntryPoint = "glReplacementCodeuiSUN", Convention = CallingConvention.Winapi)]
         public partial void ReplacementCode([Flow(FlowDirection.In)] uint code);
 
-        [NativeApi(EntryPoint = "glReplacementCodeuiSUN", Convention = CallingConvention.Winapi)]
-        public partial void ReplacementCode([Flow(FlowDirection.In)] TriangleListSUN code);
-
         [NativeApi(EntryPoint = "glReplacementCodeusSUN", Convention = CallingConvention.Winapi)]
         public partial void ReplacementCode([Flow(FlowDirection.In)] ushort code);
 
@@ -37,12 +34,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
 
         [NativeApi(EntryPoint = "glReplacementCodeuivSUN", Convention = CallingConvention.Winapi)]
         public partial void ReplacementCode([Count(Count = 0), Flow(FlowDirection.In)] in uint code);
-
-        [NativeApi(EntryPoint = "glReplacementCodeuivSUN", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ReplacementCode([Count(Count = 0), Flow(FlowDirection.In)] TriangleListSUN* code);
-
-        [NativeApi(EntryPoint = "glReplacementCodeuivSUN", Convention = CallingConvention.Winapi)]
-        public partial void ReplacementCode([Count(Count = 0), Flow(FlowDirection.In)] in TriangleListSUN code);
 
         [NativeApi(EntryPoint = "glReplacementCodeusvSUN", Convention = CallingConvention.Winapi)]
         public unsafe partial void ReplacementCode([Count(Count = 0), Flow(FlowDirection.In)] ushort* code);

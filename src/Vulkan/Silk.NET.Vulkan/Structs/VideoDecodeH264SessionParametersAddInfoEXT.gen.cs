@@ -23,10 +23,10 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.VideoDecodeH264SessionParametersAddInfoExt,
             void* pNext = null,
-            uint? stdSpscount = null,
-            Video.StdVideoH264SequenceParameterSet* pStdSpss = null,
-            uint? stdPpscount = null,
-            Video.StdVideoH264PictureParameterSet* pStdPpss = null
+            uint? spsStdCount = null,
+            Video.StdVideoH264SequenceParameterSet* pSpsStd = null,
+            uint? ppsStdCount = null,
+            Video.StdVideoH264PictureParameterSet* pPpsStd = null
         ) : this()
         {
             if (sType is not null)
@@ -39,24 +39,24 @@ namespace Silk.NET.Vulkan
                 PNext = pNext;
             }
 
-            if (stdSpscount is not null)
+            if (spsStdCount is not null)
             {
-                StdSpscount = stdSpscount.Value;
+                SpsStdCount = spsStdCount.Value;
             }
 
-            if (pStdSpss is not null)
+            if (pSpsStd is not null)
             {
-                PStdSpss = pStdSpss;
+                PSpsStd = pSpsStd;
             }
 
-            if (stdPpscount is not null)
+            if (ppsStdCount is not null)
             {
-                StdPpscount = stdPpscount.Value;
+                PpsStdCount = ppsStdCount.Value;
             }
 
-            if (pStdPpss is not null)
+            if (pPpsStd is not null)
             {
-                PStdPpss = pStdPpss;
+                PPpsStd = pPpsStd;
             }
         }
 
@@ -73,23 +73,23 @@ namespace Silk.NET.Vulkan
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "stdSPSCount")]
-        public uint StdSpscount;
+        [NativeName("Name", "spsStdCount")]
+        public uint SpsStdCount;
 /// <summary></summary>
         [NativeName("Type", "StdVideoH264SequenceParameterSet*")]
         [NativeName("Type.Name", "StdVideoH264SequenceParameterSet")]
-        [NativeName("Name", "pStdSPSs")]
-        public Video.StdVideoH264SequenceParameterSet* PStdSpss;
+        [NativeName("Name", "pSpsStd")]
+        public Video.StdVideoH264SequenceParameterSet* PSpsStd;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "stdPPSCount")]
-        public uint StdPpscount;
+        [NativeName("Name", "ppsStdCount")]
+        public uint PpsStdCount;
 /// <summary></summary>
         [NativeName("Type", "StdVideoH264PictureParameterSet*")]
         [NativeName("Type.Name", "StdVideoH264PictureParameterSet")]
-        [NativeName("Name", "pStdPPSs")]
-        public Video.StdVideoH264PictureParameterSet* PStdPpss;
+        [NativeName("Name", "pPpsStd")]
+        public Video.StdVideoH264PictureParameterSet* PPpsStd;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

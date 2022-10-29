@@ -12,7 +12,5 @@ namespace Silk.NET.OpenGL
     [NativeName("Name", "TextureCoordName")]
     public enum TextureCoordName : int
     {
-        [NativeName("Name", "GL_TEXTURE_GEN_STR_OES")]
-        TextureGenStrOes = 0x8D60,
     }
 }

@@ -17,15 +17,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMutableDescriptorTypeCreateInfoVALVE")]
-    [NativeName("AliasOf", "VkMutableDescriptorTypeCreateInfoEXT")]
     public unsafe partial struct MutableDescriptorTypeCreateInfoVALVE : IExtendsChain<DescriptorSetLayoutCreateInfo>, IExtendsChain<DescriptorPoolCreateInfo>
     {
         public MutableDescriptorTypeCreateInfoVALVE
         (
-            StructureType? sType = StructureType.MutableDescriptorTypeCreateInfoExt,
+            StructureType? sType = StructureType.MutableDescriptorTypeCreateInfoValve,
             void* pNext = null,
             uint? mutableDescriptorTypeListCount = null,
-            MutableDescriptorTypeListEXT* pMutableDescriptorTypeLists = null
+            MutableDescriptorTypeListVALVE* pMutableDescriptorTypeLists = null
         ) : this()
         {
             if (sType is not null)
@@ -65,15 +64,15 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "mutableDescriptorTypeListCount")]
         public uint MutableDescriptorTypeListCount;
 /// <summary></summary>
-        [NativeName("Type", "VkMutableDescriptorTypeListEXT*")]
-        [NativeName("Type.Name", "VkMutableDescriptorTypeListEXT")]
+        [NativeName("Type", "VkMutableDescriptorTypeListVALVE*")]
+        [NativeName("Type.Name", "VkMutableDescriptorTypeListVALVE")]
         [NativeName("Name", "pMutableDescriptorTypeLists")]
-        public MutableDescriptorTypeListEXT* PMutableDescriptorTypeLists;
+        public MutableDescriptorTypeListVALVE* PMutableDescriptorTypeLists;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.MutableDescriptorTypeCreateInfoExt;
+            return SType = StructureType.MutableDescriptorTypeCreateInfoValve;
         }
 
         /// <inheritdoc />

@@ -17,12 +17,11 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesARM")]
-    [NativeName("AliasOf", "VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT")]
     public unsafe partial struct PhysicalDeviceRasterizationOrderAttachmentAccessFeaturesARM : IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2KHR>, IExtendsChain<DeviceCreateInfo>
     {
         public PhysicalDeviceRasterizationOrderAttachmentAccessFeaturesARM
         (
-            StructureType? sType = StructureType.PhysicalDeviceRasterizationOrderAttachmentAccessFeaturesExt,
+            StructureType? sType = StructureType.PhysicalDeviceRasterizationOrderAttachmentAccessFeaturesArm,
             void* pNext = null,
             Bool32? rasterizationOrderColorAttachmentAccess = null,
             Bool32? rasterizationOrderDepthAttachmentAccess = null,
@@ -84,7 +83,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.PhysicalDeviceRasterizationOrderAttachmentAccessFeaturesExt;
+            return SType = StructureType.PhysicalDeviceRasterizationOrderAttachmentAccessFeaturesArm;
         }
 
         /// <inheritdoc />

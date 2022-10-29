@@ -22,11 +22,11 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public const string ExtensionName = "VK_KHR_video_decode_queue";
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdDecodeVideoKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdDecodeVideo([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] VideoDecodeInfoKHR* pDecodeInfo);
+        public unsafe partial void CmdDecodeVideo([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] VideoDecodeInfoKHR* pFrameInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdDecodeVideoKHR", Convention = CallingConvention.Winapi)]
-        public partial void CmdDecodeVideo([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in VideoDecodeInfoKHR pDecodeInfo);
+        public partial void CmdDecodeVideo([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in VideoDecodeInfoKHR pFrameInfo);
 
         public KhrVideoDecodeQueue(INativeContext ctx)
             : base(ctx)

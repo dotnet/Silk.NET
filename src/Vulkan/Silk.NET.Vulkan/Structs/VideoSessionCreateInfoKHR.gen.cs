@@ -25,12 +25,12 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             uint? queueFamilyIndex = null,
             VideoSessionCreateFlagsKHR? flags = null,
-            VideoProfileInfoKHR* pVideoProfile = null,
+            VideoProfileKHR* pVideoProfile = null,
             Format? pictureFormat = null,
             Extent2D? maxCodedExtent = null,
-            Format? referencePictureFormat = null,
-            uint? maxDpbSlots = null,
-            uint? maxActiveReferencePictures = null,
+            Format? referencePicturesFormat = null,
+            uint? maxReferencePicturesSlotsCount = null,
+            uint? maxReferencePicturesActiveCount = null,
             ExtensionProperties* pStdHeaderVersion = null
         ) : this()
         {
@@ -69,19 +69,19 @@ namespace Silk.NET.Vulkan
                 MaxCodedExtent = maxCodedExtent.Value;
             }
 
-            if (referencePictureFormat is not null)
+            if (referencePicturesFormat is not null)
             {
-                ReferencePictureFormat = referencePictureFormat.Value;
+                ReferencePicturesFormat = referencePicturesFormat.Value;
             }
 
-            if (maxDpbSlots is not null)
+            if (maxReferencePicturesSlotsCount is not null)
             {
-                MaxDpbSlots = maxDpbSlots.Value;
+                MaxReferencePicturesSlotsCount = maxReferencePicturesSlotsCount.Value;
             }
 
-            if (maxActiveReferencePictures is not null)
+            if (maxReferencePicturesActiveCount is not null)
             {
-                MaxActiveReferencePictures = maxActiveReferencePictures.Value;
+                MaxReferencePicturesActiveCount = maxReferencePicturesActiveCount.Value;
             }
 
             if (pStdHeaderVersion is not null)
@@ -111,10 +111,10 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "flags")]
         public VideoSessionCreateFlagsKHR Flags;
 /// <summary></summary>
-        [NativeName("Type", "VkVideoProfileInfoKHR*")]
-        [NativeName("Type.Name", "VkVideoProfileInfoKHR")]
+        [NativeName("Type", "VkVideoProfileKHR*")]
+        [NativeName("Type.Name", "VkVideoProfileKHR")]
         [NativeName("Name", "pVideoProfile")]
-        public VideoProfileInfoKHR* PVideoProfile;
+        public VideoProfileKHR* PVideoProfile;
 /// <summary></summary>
         [NativeName("Type", "VkFormat")]
         [NativeName("Type.Name", "VkFormat")]
@@ -128,18 +128,18 @@ namespace Silk.NET.Vulkan
 /// <summary></summary>
         [NativeName("Type", "VkFormat")]
         [NativeName("Type.Name", "VkFormat")]
-        [NativeName("Name", "referencePictureFormat")]
-        public Format ReferencePictureFormat;
+        [NativeName("Name", "referencePicturesFormat")]
+        public Format ReferencePicturesFormat;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxDpbSlots")]
-        public uint MaxDpbSlots;
+        [NativeName("Name", "maxReferencePicturesSlotsCount")]
+        public uint MaxReferencePicturesSlotsCount;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxActiveReferencePictures")]
-        public uint MaxActiveReferencePictures;
+        [NativeName("Name", "maxReferencePicturesActiveCount")]
+        public uint MaxReferencePicturesActiveCount;
 /// <summary></summary>
         [NativeName("Type", "VkExtensionProperties*")]
         [NativeName("Type.Name", "VkExtensionProperties")]

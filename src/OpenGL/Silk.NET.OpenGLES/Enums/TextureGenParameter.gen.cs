@@ -15,8 +15,6 @@ namespace Silk.NET.OpenGLES
         [System.Obsolete]
         [NativeName("Name", "GL_TEXTURE_GEN_MODE")]
         TextureGenMode = 0x2500,
-        [NativeName("Name", "GL_TEXTURE_GEN_MODE_OES")]
-        TextureGenModeOes = 0x2500,
         [System.Obsolete]
         [NativeName("Name", "GL_OBJECT_PLANE")]
         ObjectPlane = 0x2501,

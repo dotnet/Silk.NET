@@ -17,7 +17,6 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMutableDescriptorTypeListVALVE")]
-    [NativeName("AliasOf", "VkMutableDescriptorTypeListEXT")]
     public unsafe partial struct MutableDescriptorTypeListVALVE
     {
         public MutableDescriptorTypeListVALVE

@@ -14,7 +14,5 @@ namespace Silk.NET.OpenGL
     {
         [NativeName("Name", "GL_TIMESTAMP")]
         Timestamp = 0x8E28,
-        [NativeName("Name", "GL_TIMESTAMP_EXT")]
-        TimestampExt = 0x8E28,
     }
 }
