@@ -29,6 +29,7 @@ namespace Silk.NET.Core.Loader
                 ? RuntimeInformation.IsOSPlatform(OSPlatform.Create("IOS"))
                     ? UnderlyingPlatform.IOS // NOTE: This seems to work inconsistently. Recommend setting manually.
                     : UnderlyingPlatform.MacOS
+            : RuntimeInformation.IsOSPlatform(OSPlatform.Create("BROWSER")) ? UnderlyingPlatform.Browser
             : UnderlyingPlatform.Unknown;
 
         /// <summary>
@@ -61,6 +62,8 @@ namespace Silk.NET.Core.Loader
         /// </summary>
         public virtual string IOS => MacOS;
 
+        public virtual string Browser => throw new NotImplementedException("No Browser library available");
+
         /// <summary>
         /// Gets the library name to use on the current platform.
         /// </summary>
@@ -74,6 +77,7 @@ namespace Silk.NET.Core.Loader
             UnderlyingPlatform.Android => Android,
             UnderlyingPlatform.MacOS => MacOS,
             UnderlyingPlatform.IOS => IOS,
+            UnderlyingPlatform.Browser => Browser,
             _ => ThrowInvalidPlatform()
         };
         
