@@ -11,6 +11,7 @@ namespace Silk.NET.SDL
     // TODO for Silk.NET 3.0:
     // ideally we'd only use override 1 on android, but we can't really do that until it's better supported in .net 6
     // (we'd need a preprocessor directive which is only available in xamarin)
+    [PInvokeOverride(2, "SDL")]
     [PInvokeOverride(1, "libSDL2.so")]
     [PInvokeOverride(0, "__Internal")]
     public partial class Sdl
