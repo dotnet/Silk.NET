@@ -330,6 +330,11 @@ namespace Silk.NET.Core.Loader
                 return new BsdLibraryLoader();
             }
 
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Create("BROWSER")))
+            {
+                return new EmscriptenLibraryLoader();
+            }
+
             PlatformNotSupported();
             return default;
 #endif
@@ -388,6 +393,24 @@ namespace Silk.NET.Core.Loader
             protected override nint CoreLoadNativeLibrary(string name)
             {
                 return Libc.dlopen(name, Libc.RtldNow);
+            }
+        }
+        
+        private class EmscriptenLibraryLoader : LibraryLoader
+        {
+            protected override void CoreFreeNativeLibrary(nint handle)
+            {
+                Emscripten.dlclose(handle);
+            }
+
+            protected override nint CoreLoadFunctionPointer(nint handle, string functionName)
+            {
+                return Emscripten.dlsym(handle, functionName);
+            }
+
+            protected override nint CoreLoadNativeLibrary(string name)
+            {
+                return Emscripten.dlopen(name, Emscripten.RtldNow);
             }
         }
 
