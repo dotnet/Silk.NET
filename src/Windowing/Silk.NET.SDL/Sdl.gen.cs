@@ -16771,6 +16771,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 140, Column 29 in SDL.h")]
+        [Inject((SilkTouchStage) 1, "SilkMarshal.Log();")]
         [NativeApi(EntryPoint = "SDL_Init")]
         public partial int Init(uint flags);
 
