@@ -12,6 +12,7 @@ namespace Silk.NET.Core.Loader
         Linux,
         Android,
         MacOS,
-        IOS
+        IOS,
+        Browser
     }
 }

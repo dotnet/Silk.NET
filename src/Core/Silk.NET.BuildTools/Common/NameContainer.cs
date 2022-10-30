@@ -45,6 +45,12 @@ namespace Silk.NET.BuildTools.Common
         /// </summary>
         [JsonProperty("iOS")]
         public string IOS { get; set; }
+        
+        /// <summary>
+        /// Gets or sets the browser library name.
+        /// </summary>
+        [JsonProperty("browser")]
+        public string Browser { get; set; }
 
         /// <summary>
         /// Gets or sets the class name of the output name container.
