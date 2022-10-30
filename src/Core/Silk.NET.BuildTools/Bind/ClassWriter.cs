@@ -55,6 +55,9 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine();
             sw.WriteLine("        /// <inheritdoc />");
             sw.WriteLine($"        public override string[] Windows86 => new[] {{ \"{task.Task.NameContainer.Windows86}\" }};");
+            sw.WriteLine();
+            sw.WriteLine("        /// <inheritdoc />");
+            sw.WriteLine($"        public override string[] Browser => new [] {{ \"{task.Task.NameContainer.Browser}\" }};");
             sw.WriteLine("    }");
             sw.WriteLine("}");
         }

@@ -27,5 +27,8 @@ namespace Silk.NET.SDL
 
         /// <inheritdoc />
         public override string[] Windows86 => new[] { "SDL2.dll" };
+        
+        /// <inheritdoc />
+        public override string[] Browser => new[] { "SDL" };
     }
 }
