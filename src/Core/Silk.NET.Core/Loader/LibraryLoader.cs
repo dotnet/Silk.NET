@@ -332,7 +332,7 @@ namespace Silk.NET.Core.Loader
 
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Create("BROWSER")))
             {
-                return new EmscriptenLibraryLoader();
+                return new UnixLibraryLoader();
             }
 
             PlatformNotSupported();
@@ -396,23 +396,23 @@ namespace Silk.NET.Core.Loader
             }
         }
         
-        private class EmscriptenLibraryLoader : LibraryLoader
-        {
-            protected override void CoreFreeNativeLibrary(nint handle)
-            {
-                Emscripten.dlclose(handle);
-            }
-
-            protected override nint CoreLoadFunctionPointer(nint handle, string functionName)
-            {
-                return Emscripten.dlsym(handle, functionName);
-            }
-
-            protected override nint CoreLoadNativeLibrary(string name)
-            {
-                return Emscripten.dlopen(name, Emscripten.RtldNow);
-            }
-        }
+        // private class EmscriptenLibraryLoader : LibraryLoader
+        // {
+        //     protected override void CoreFreeNativeLibrary(nint handle)
+        //     {
+        //         Emscripten.dlclose(handle);
+        //     }
+        //
+        //     protected override nint CoreLoadFunctionPointer(nint handle, string functionName)
+        //     {
+        //         return Emscripten.dlsym(handle, functionName);
+        //     }
+        //
+        //     protected override nint CoreLoadNativeLibrary(string name)
+        //     {
+        //         return Emscripten.dlopen(name, Emscripten.RtldNow);
+        //     }
+        // }
 
         private class Win32LibraryLoader : LibraryLoader
         {
