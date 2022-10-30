@@ -6992,6 +6992,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 680, Column 38 in build/submodules/SDL/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_CreateWindow")]
+        [Inject((SilkTouchStage) 1, "SilkMarshal.Log();")]
         public unsafe partial Window* CreateWindow(byte* title, int x, int y, int w, int h, uint flags);
 
         /// <summary>To be documented.</summary>
@@ -16793,6 +16794,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 212, Column 30 in SDL.h")]
         [NativeApi(EntryPoint = "SDL_Quit")]
+        [Inject((SilkTouchStage) 1, "SilkMarshal.Log();")]
         public partial void Quit();
 
         /// <summary>To be documented.</summary>

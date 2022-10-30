@@ -27,6 +27,8 @@ namespace Silk.NET.Core.Native
         /// </remarks>
         public static readonly bool IsWinapiStdcall;
 
+        public static void Log([CallerMemberName] string cmn = "") => Console.WriteLine(cmn);
+
         static SilkMarshal()
         {
 #if NET5_0_OR_GREATER

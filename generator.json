@@ -809,7 +809,16 @@
                         "SDL_iPhone.*",
                         "__debugbreak"
                     ]
-                }
+                },
+                "inject": [ 
+                    {
+                        "functions": [
+                            "SDL_Init"
+                        ],
+                        "stage": "begin",
+                        "code": "SilkMarshal.Log();"
+                    }
+                ]
             },
             "namespace": "Silk.NET.SDL",
             "extensionsNamespace": "Silk.NET.SDL.Extensions",
