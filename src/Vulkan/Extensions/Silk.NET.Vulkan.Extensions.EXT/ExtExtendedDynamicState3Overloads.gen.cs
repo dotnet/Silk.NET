@@ -52,7 +52,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdSetSampleMask(this ExtExtendedDynamicState3 thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] SampleCountFlags samples, [Count(Computed = "latexmath:[\lceil{\mathit{samples} \over 32}\rceil]"), Flow(FlowDirection.In)] ReadOnlySpan<uint> pSampleMask)
+        public static unsafe void CmdSetSampleMask(this ExtExtendedDynamicState3 thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] SampleCountFlags samples, [Count(Computed = "latexmath:[\\lceil{\\mathit{samples} \\over 32}\\rceil]"), Flow(FlowDirection.In)] ReadOnlySpan<uint> pSampleMask)
         {
             // SpanOverloader
             thisApi.CmdSetSampleMask(commandBuffer, samples, in pSampleMask.GetPinnableReference());
