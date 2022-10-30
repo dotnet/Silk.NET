@@ -8592,70 +8592,82 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 198, Column 29 in SDL_main.h")]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_RegisterApp")]
         public unsafe partial int RegisterApp([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name, uint style, void* hInst);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 198, Column 29 in SDL_main.h")]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_RegisterApp")]
         public unsafe partial int RegisterApp<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name, uint style, ref T0 hInst) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 198, Column 29 in SDL_main.h")]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_RegisterApp")]
         public unsafe partial int RegisterApp([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name, uint style, void* hInst);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 198, Column 29 in SDL_main.h")]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_RegisterApp")]
         public partial int RegisterApp<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name, uint style, ref T0 hInst) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 198, Column 29 in SDL_main.h")]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_RegisterApp")]
         public unsafe partial int RegisterApp([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, uint style, void* hInst);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 198, Column 29 in SDL_main.h")]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_RegisterApp")]
         public partial int RegisterApp<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, uint style, ref T0 hInst) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 215, Column 30 in SDL_main.h")]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_UnregisterApp")]
         public partial void UnregisterApp();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 232, Column 29 in SDL_main.h")]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_WinRTRunApp")]
         public unsafe partial int WinRTRunApp(PfnMainFunc mainFunction, void* reserved);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 232, Column 29 in SDL_main.h")]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_WinRTRunApp")]
         public partial int WinRTRunApp<T0>(PfnMainFunc mainFunction, ref T0 reserved) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 248, Column 29 in SDL_main.h")]
+        [NativeName("Src", "Line 248, Column 29 in build/submodules/SDL/include\\SDL_main.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_UIKitRunApp")]
         public unsafe partial int UIKitRunApp(int argc, byte** argv, PfnMainFunc mainFunction);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 248, Column 29 in SDL_main.h")]
+        [NativeName("Src", "Line 248, Column 29 in build/submodules/SDL/include\\SDL_main.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_UIKitRunApp")]
         public unsafe partial int UIKitRunApp(int argc, ref byte* argv, PfnMainFunc mainFunction);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 52, Column 25 in SDL_assert.h")]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "__debugbreak")]
         public partial void Debugbreak();
 
@@ -14542,121 +14554,166 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 56, Column 30 in SDL_system.h")]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_SetWindowsMessageHook")]
         public unsafe partial void SetWindowsMessageHook(PfnWindowsMessageHook callback, void* userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 56, Column 30 in SDL_system.h")]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_SetWindowsMessageHook")]
         public partial void SetWindowsMessageHook<T0>(PfnWindowsMessageHook callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 75, Column 29 in SDL_system.h")]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_Direct3D9GetAdapterIndex")]
         public partial int Direct3D9GetAdapterIndex(int displayIndex);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 91, Column 43 in SDL_system.h")]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_RenderGetD3D9Device")]
         public unsafe partial IDirect3DDevice9* RenderGetD3D9Device(Renderer* renderer);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 107, Column 39 in SDL_system.h")]
+        [NativeName("Src", "Line 91, Column 43 in build/submodules/SDL/include\\SDL_system.h")]
+        [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
+        [NativeApi(EntryPoint = "SDL_RenderGetD3D9Device")]
+        public unsafe partial IDirect3DDevice9* RenderGetD3D9Device(ref Renderer renderer);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 99, Column 39 in build/submodules/SDL/include\\SDL_system.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_RenderGetD3D11Device")]
         public unsafe partial Silk.NET.Core.Native.IUnknown* RenderGetD3D11Device(Renderer* renderer);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 127, Column 39 in SDL_system.h")]
+        [NativeName("Src", "Line 99, Column 39 in build/submodules/SDL/include\\SDL_system.h")]
+        [ExcludeFromOverride(2)]
+        [NativeApi(EntryPoint = "SDL_RenderGetD3D11Device")]
+        public unsafe partial Silk.NET.Core.Native.IUnknown* RenderGetD3D11Device(ref Renderer renderer);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 127, Column 39 in build/submodules/SDL/include\\SDL_system.h")]
         [NativeApi(EntryPoint = "SDL_RenderGetD3D12Device")]
         public unsafe partial Silk.NET.Core.Native.IUnknown* RenderGetD3D12Device(Renderer* renderer);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 151, Column 34 in SDL_system.h")]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_DXGIGetOutputInfo")]
         public unsafe partial SdlBool DXGIGetOutputInfo(int displayIndex, int* adapterIndex, int* outputIndex);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 151, Column 34 in SDL_system.h")]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_DXGIGetOutputInfo")]
         public unsafe partial SdlBool DXGIGetOutputInfo(int displayIndex, int* adapterIndex, ref int outputIndex);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 151, Column 34 in SDL_system.h")]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_DXGIGetOutputInfo")]
         public unsafe partial SdlBool DXGIGetOutputInfo(int displayIndex, ref int adapterIndex, int* outputIndex);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 151, Column 34 in SDL_system.h")]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_DXGIGetOutputInfo")]
         public partial SdlBool DXGIGetOutputInfo(int displayIndex, ref int adapterIndex, ref int outputIndex);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 225, Column 29 in SDL_system.h")]
+        [NativeName("Src", "Line 144, Column 29 in build/submodules/SDL/include\\SDL_system.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_iPhoneSetAnimationCallback")]
         public unsafe partial int IPhoneSetAnimationCallback(Window* window, int interval, PfnFreeFunc callback, void* callbackParam);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 225, Column 29 in SDL_system.h")]
+        [NativeName("Src", "Line 144, Column 29 in build/submodules/SDL/include\\SDL_system.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_iPhoneSetAnimationCallback")]
         public unsafe partial int IPhoneSetAnimationCallback<T0>(Window* window, int interval, PfnFreeFunc callback, ref T0 callbackParam) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 243, Column 30 in SDL_system.h")]
+        [NativeName("Src", "Line 225, Column 29 in build/submodules/SDL/include\\SDL_system.h")]
+        [ExcludeFromOverride(2)]
+        [NativeApi(EntryPoint = "SDL_iPhoneSetAnimationCallback")]
+        public unsafe partial int IPhoneSetAnimationCallback(ref Window window, int interval, PfnFreeFunc callback, void* callbackParam);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 144, Column 29 in build/submodules/SDL/include\\SDL_system.h")]
+        [ExcludeFromOverride(2)]
+        [NativeApi(EntryPoint = "SDL_iPhoneSetAnimationCallback")]
+        public partial int IPhoneSetAnimationCallback<T0>(ref Window window, int interval, PfnFreeFunc callback, ref T0 callbackParam) where T0 : unmanaged;
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 147, Column 30 in build/submodules/SDL/include\\SDL_system.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_iPhoneSetEventPump")]
         public partial void IPhoneSetEventPump(SdlBool enabled);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 268, Column 32 in SDL_system.h")]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_AndroidGetJNIEnv")]
         public unsafe partial void* AndroidGetJNIEnv();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 290, Column 32 in SDL_system.h")]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_AndroidGetActivity")]
         public unsafe partial void* AndroidGetActivity();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 322, Column 29 in SDL_system.h")]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GetAndroidSDKVersion")]
         public partial int GetAndroidSDKVersion();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 331, Column 34 in SDL_system.h")]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_IsAndroidTV")]
         public partial SdlBool IsAndroidTV();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 340, Column 34 in SDL_system.h")]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_IsChromebook")]
         public partial SdlBool IsChromebook();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 349, Column 34 in SDL_system.h")]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_IsDeXMode")]
         public partial SdlBool IsDeXMode();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 356, Column 30 in SDL_system.h")]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_AndroidBackButton")]
         public partial void AndroidBackButton();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 381, Column 38 in SDL_system.h")]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_AndroidGetInternalStoragePath")]
         public unsafe partial byte* AndroidGetInternalStoragePath();
 
@@ -14664,18 +14721,21 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 381, Column 38 in SDL_system.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_AndroidGetInternalStoragePath")]
         public partial string AndroidGetInternalStoragePathS();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 398, Column 29 in SDL_system.h")]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_AndroidGetExternalStorageState")]
         public partial int AndroidGetExternalStorageState();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 416, Column 38 in SDL_system.h")]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_AndroidGetExternalStoragePath")]
         public unsafe partial byte* AndroidGetExternalStoragePath();
 
@@ -14683,42 +14743,49 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 416, Column 38 in SDL_system.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_AndroidGetExternalStoragePath")]
         public partial string AndroidGetExternalStoragePathS();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 428, Column 34 in SDL_system.h")]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_AndroidRequestPermission")]
         public unsafe partial SdlBool AndroidRequestPermission([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* permission);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 428, Column 34 in SDL_system.h")]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_AndroidRequestPermission")]
         public partial SdlBool AndroidRequestPermission([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte permission);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 428, Column 34 in SDL_system.h")]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_AndroidRequestPermission")]
         public partial SdlBool AndroidRequestPermission([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string permission);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 453, Column 29 in SDL_system.h")]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_AndroidShowToast")]
         public unsafe partial int AndroidShowToast([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* message, int duration, int gravity, int xoffset, int yoffset);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 453, Column 29 in SDL_system.h")]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_AndroidShowToast")]
         public partial int AndroidShowToast([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte message, int duration, int gravity, int xoffset, int yoffset);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 453, Column 29 in SDL_system.h")]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_AndroidShowToast")]
         public partial int AndroidShowToast([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string message, int duration, int gravity, int xoffset, int yoffset);
 
@@ -14729,8 +14796,9 @@ namespace Silk.NET.SDL
         public partial int AndroidSendMessage(uint command, int param);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 536, Column 41 in SDL_system.h")]
+        [NativeName("Src", "Line 414, Column 41 in build/submodules/SDL/include\\SDL_system.h")]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_WinRTGetFSPathUNICODE")]
         public unsafe partial char* WinRTGetFSPathUNICODE(WinRTPath pathType);
 
@@ -14738,12 +14806,14 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 536, Column 41 in SDL_system.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_WinRTGetFSPathUNICODE")]
         public partial string WinRTGetFSPathUNICODES(WinRTPath pathType);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 559, Column 38 in SDL_system.h")]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_WinRTGetFSPathUTF8")]
         public unsafe partial byte* WinRTGetFSPathUTF8(WinRTPath pathType);
 
@@ -14751,12 +14821,14 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 559, Column 38 in SDL_system.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_WinRTGetFSPathUTF8")]
         public partial string WinRTGetFSPathUTF8S(WinRTPath pathType);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 568, Column 48 in SDL_system.h")]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_WinRTGetDeviceFamily")]
         public partial WinRTDeviceFamily WinRTGetDeviceFamily();
 
@@ -14796,7 +14868,8 @@ namespace Silk.NET.SDL
         public partial void OnApplicationDidBecomeActive();
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 591, Column 30 in SDL_system.h")]
+        [NativeName("Src", "Line 591, Column 30 in build/submodules/SDL/include\\SDL_system.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_OnApplicationDidChangeStatusBarOrientation")]
         public partial void OnApplicationDidChangeStatusBarOrientation();
 
@@ -15641,7 +15714,32 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 248, Column 29 in SDL_main.h")]
+        [NativeName("Src", "Line 160, Column 34 in SDL_vulkan.h")]
+        public unsafe SdlBool VulkanGetInstanceExtensions(ref Window window, uint* pCount, [Flow(FlowDirection.In)] string[] pNamesSa)
+        {
+            // StringArrayOverloader
+            var pNames = (byte**) SilkMarshal.StringArrayToPtr(pNamesSa);
+            var ret = VulkanGetInstanceExtensions(ref window, pCount, pNames);
+            SilkMarshal.CopyPtrToStringArray((nint) pNames, pNamesSa);
+            SilkMarshal.Free((nint) pNames);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 160, Column 34 in SDL_vulkan.h")]
+        public unsafe SdlBool VulkanGetInstanceExtensions(ref Window window, ref uint pCount, [Flow(FlowDirection.In)] string[] pNamesSa)
+        {
+            // StringArrayOverloader
+            var pNames = (byte**) SilkMarshal.StringArrayToPtr(pNamesSa);
+            var ret = VulkanGetInstanceExtensions(ref window, ref pCount, pNames);
+            SilkMarshal.CopyPtrToStringArray((nint) pNames, pNamesSa);
+            SilkMarshal.Free((nint) pNames);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 173, Column 29 in build/submodules/SDL/include\\SDL_main.h")]
+        [ExcludeFromOverride(2)]
         public unsafe int UIKitRunApp(int argc, string[] argvSa, PfnMainFunc mainFunction)
         {
             // StringArrayOverloader

@@ -7231,6 +7231,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 232, Column 29 in SDL_main.h")]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         public static unsafe int WinRTRunApp<T0>(this Sdl thisApi, PfnMainFunc mainFunction, Span<T0> reserved) where T0 : unmanaged
         {
             // SpanOverloader
@@ -11424,6 +11425,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 56, Column 30 in SDL_system.h")]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         public static unsafe void SetWindowsMessageHook<T0>(this Sdl thisApi, PfnWindowsMessageHook callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
@@ -11431,8 +11433,35 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 151, Column 34 in SDL_system.h")]
+        [NativeName("Src", "Line 91, Column 43 in build/submodules/SDL/include\\SDL_system.h")]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
+        public static unsafe IDirect3DDevice9* RenderGetD3D9Device(this Sdl thisApi, Span<Renderer> renderer)
+        {
+            // SpanOverloader
+            return thisApi.RenderGetD3D9Device(ref renderer.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 99, Column 39 in build/submodules/SDL/include\\SDL_system.h")]
+        public static unsafe Silk.NET.Core.Native.IUnknown* RenderGetD3D11Device(this Sdl thisApi, Span<Renderer> renderer)
+        {
+            // SpanOverloader
+            return thisApi.RenderGetD3D11Device(ref renderer.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 127, Column 39 in build/submodules/SDL/include\\SDL_system.h")]
+        public static unsafe Silk.NET.Core.Native.IUnknown* RenderGetD3D12Device(this Sdl thisApi, Span<Renderer> renderer)
+        {
+            // SpanOverloader
+            return thisApi.RenderGetD3D12Device(ref renderer.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 151, Column 34 in build/submodules/SDL/include\\SDL_system.h")]
+        [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         public static unsafe SdlBool DXGIGetOutputInfo(this Sdl thisApi, int displayIndex, int* adapterIndex, Span<int> outputIndex)
         {
             // SpanOverloader
@@ -11442,6 +11471,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 151, Column 34 in SDL_system.h")]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         public static unsafe SdlBool DXGIGetOutputInfo(this Sdl thisApi, int displayIndex, Span<int> adapterIndex, int* outputIndex)
         {
             // SpanOverloader
@@ -11451,6 +11481,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 151, Column 34 in SDL_system.h")]
         [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
         public static unsafe SdlBool DXGIGetOutputInfo(this Sdl thisApi, int displayIndex, Span<int> adapterIndex, Span<int> outputIndex)
         {
             // SpanOverloader
@@ -11458,7 +11489,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 225, Column 29 in SDL_system.h")]
+        [NativeName("Src", "Line 144, Column 29 in build/submodules/SDL/include\\SDL_system.h")]
         public static unsafe int IPhoneSetAnimationCallback<T0>(this Sdl thisApi, Window* window, int interval, PfnFreeFunc callback, Span<T0> callbackParam) where T0 : unmanaged
         {
             // SpanOverloader
@@ -11469,6 +11500,23 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 428, Column 34 in SDL_system.h")]
         [ExcludeFromOverride(0)]
         public static unsafe SdlBool AndroidRequestPermission(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> permission)
+        {
+            // SpanOverloader
+            return thisApi.IPhoneSetAnimationCallback(ref window.GetPinnableReference(), interval, callback, callbackParam);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 144, Column 29 in build/submodules/SDL/include\\SDL_system.h")]
+        public static unsafe int IPhoneSetAnimationCallback<T0>(this Sdl thisApi, Span<Window> window, int interval, PfnFreeFunc callback, Span<T0> callbackParam) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.IPhoneSetAnimationCallback(ref window.GetPinnableReference(), interval, callback, ref callbackParam.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 428, Column 34 in build/submodules/SDL/include\\SDL_system.h")]
+        [ExcludeFromOverride(0)]
+        public static unsafe SdlBool AndroidRequestPermission(this Sdl thisApi, Span<byte> permission)
         {
             // SpanOverloader
             return thisApi.AndroidRequestPermission(in permission.GetPinnableReference());

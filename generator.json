@@ -892,6 +892,25 @@
                         "SDL_UnregisterApp",
                         "SDL_WinRT.*",
                         "__debugbreak"
+                    ],
+                    "$override(2)": [
+                        "SDL_Android.*",
+                        "SDL_DXGI.*",
+                        "SDL_Direct3D9.*",
+                        "SDL_GetAndroidSDKVersion",
+                        "SDL_IsAndroidTV",
+                        "SDL_IsChromebook",
+                        "SDL_IsDeXMode",
+                        "SDL_OnApplicationDidChangeStatusBarOrientation",
+                        "SDL_RegisterApp",
+                        "SDL_RenderGetD3D11Device",
+                        "SDL_RenderGetD3D9Device",
+                        "SDL_SetWindowsMessageHook",
+                        "SDL_UIKitRunApp",
+                        "SDL_UnregisterApp",
+                        "SDL_WinRT.*",
+                        "SDL_iPhone.*",
+                        "__debugbreak"
                     ]
                 }
             },
