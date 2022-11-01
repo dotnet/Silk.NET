@@ -2021,14 +2021,16 @@
                     "-Wno-ignored-pragma-intrinsic",
                     "-Wno-nonportable-include-path",
                     "-Wno-pragma-pack",
-                    "-I$windowsSdkIncludes"
+                    "-I$windowsSdkIncludes",
+                    "-Ibuild/submodules/wgpu-native/ffi"
                 ],
                 "traverse": [
-                    "build/submodules/webgpu-headers/*.h"
+                    "build/submodules/webgpu-headers/*.h",
+                    "build/submodules/wgpu-native/*.h"
                 ],
                 "classes": {
                     "webgpu.h": "[Core]WebGPU",
-                    "wgpu.h": "[WGPU]WgpuSpecific"
+                    "wgpu.h": "[WGPU]Wgpu"
                 }
             },
             "exclude": [
@@ -2061,7 +2063,8 @@
             },
             "bakery": {
                 "profileNames": [
-                    "webgpu"
+                    "webgpu",
+                    "wgpu"
                 ]
             },
             "output": {
