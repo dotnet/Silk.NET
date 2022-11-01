@@ -1,7 +1,8 @@
 using Silk.NET.Core.Native;
 using Silk.NET.WebGPU;
 using Silk.NET.Windowing;
-using Buffer = Silk.NET.WebGPU.Buffer;
+
+namespace WebGPUTest;
 
 public static unsafe class Program
 {
@@ -9,8 +10,6 @@ public static unsafe class Program
     public static Device*  device;
     public static void Main(string[] args)
     {
-        var window = Window.Create(WindowOptions.Default);
-
         uint[] numbers       = { 1, 2, 3, 4 };
         var    numbersSize   = (uint) numbers.Length * sizeof(uint);
         var    numbersLength = (uint) numbers.Length;
@@ -125,10 +124,11 @@ fn main(@builtin(global_invocation_id) global_id: vec3<u32>) {
 
         var bindGroupLayout = wgpu.ComputePipelineGetBindGroupLayout(computePipeline, 0);
 
-        var bindGroupDescriptor = new BindGroupDescriptor();
-
-        bindGroupDescriptor.Label  = (byte*) SilkMarshal.StringToPtr("Bind Group"); //TODO: free this
-        bindGroupDescriptor.Layout = bindGroupLayout;
+        var bindGroupDescriptor = new BindGroupDescriptor
+        {
+            Label  = (byte*) SilkMarshal.StringToPtr("Bind Group"), //TODO: free this
+            Layout = bindGroupLayout
+        };
 
         var entries = stackalloc BindGroupEntry[1];
         entries->Binding = 0;
