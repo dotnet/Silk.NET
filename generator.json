@@ -2000,7 +2000,8 @@
         {
             "profileName": "webgpu",
             "sources": [
-                "build/submodules/webgpu-headers/webgpu.h"
+                "build/submodules/webgpu-headers/webgpu.h",
+                "build/submodules/wgpu-native/ffi/wgpu.h"
             ],
             "mode": "Clang",
             "cacheDir": "build/cache",
@@ -2026,7 +2027,8 @@
                     "build/submodules/webgpu-headers/*.h"
                 ],
                 "classes": {
-                    "webgpu.h": "[Core]WebGPU"
+                    "webgpu.h": "[Core]WebGPU",
+                    "wgpu.h": "[WGPU]WgpuSpecific"
                 }
             },
             "exclude": [

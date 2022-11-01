@@ -208,7 +208,9 @@ namespace Silk.NET.BuildTools.Cpp
             var project = profile.Projects[projectName] = new Project
             {
                 IsRoot = projectName == "Core",
-                Namespace = projectName == "Core" ? task.Namespace : $"{task.ExtensionsNamespace}.{projectName}",
+                Namespace = projectName == "Core"
+                        ? string.Empty
+                        : $".{projectName}",
                 ComRefs = task.ClangOpts.ComRefs ?? new HashSet<string>()
             };
 
