@@ -20,18 +20,28 @@ namespace Silk.NET.WebGPU
              return new(CreateDefaultContext(new WebGPULibraryNameContainer().GetLibraryName()));
         }
 
-        public bool TryGetExtension<T>(out T ext)
+        [Obsolete("Use TryGetDeviceExtension!")]
+        public override bool IsExtensionPresent(string name) 
+        {
+            throw new NotSupportedException();
+        }
+
+        public unsafe bool TryGetDeviceExtension<T>(Device* device, out T ext)
             where T:NativeExtension<WebGPU>
         {
-             ext = IsExtensionPresent(GetExtensionAttribute(typeof(T)).Name)
-                 ? (T) Activator.CreateInstance(typeof(T), Context)
+             ext = IsDeviceExtensionPresent(device, GetExtensionAttribute(typeof(T)).Name)
+                 ? (T) Activator.CreateInstance(typeof(T), new LamdaNativeContext(str => (nint) this.GetProcAddress(device, str).Handle))
                  : null;
              return ext is not null;
         }
 
-        public override bool IsExtensionPresent(string extension)
+        public unsafe bool IsDeviceExtensionPresent(Device* device, string extension)
         {
-            throw new NotImplementedException();
+            return extension switch
+            {
+                "wgpu.h" => this.GetProcAddress(device, "wgpuBufferDrop").Handle != null,
+                _ => false
+            };
         }
     }
 }
