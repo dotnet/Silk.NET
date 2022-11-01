@@ -17,7 +17,7 @@ namespace Silk.NET.SDL
             //Sdl.InitAudio |
             Sdl.InitVideo |
             Sdl.InitJoystick |
-            Sdl.InitHaptic |
+            // Sdl.InitHaptic |
             Sdl.InitGamecontroller |
             Sdl.InitEvents;
         //Sdl.InitSensor |

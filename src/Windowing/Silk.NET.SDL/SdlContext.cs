@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using System.Runtime.InteropServices;
 using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Loader;
 using Silk.NET.Maths;
@@ -65,13 +66,14 @@ namespace Silk.NET.SDL
         /// <inheritdoc cref="IGLContext" />
         public void Create(params (GLattr Attribute, int Value)[] attributes)
         {
-            foreach (var (attribute, value) in attributes)
-            {
-                if (_sdl.GLSetAttribute(attribute, value) != 0)
+            if (!RuntimeInformation.IsOSPlatform(OSPlatform.Create("BROWSER")))
+                foreach (var (attribute, value) in attributes)
                 {
-                    _sdl.ThrowError();
+                    if (_sdl.GLSetAttribute(attribute, value) != 0)
+                    {
+                        _sdl.ThrowError();
+                    }
                 }
-            }
 
             _ctx = _sdl.GLCreateContext(Window);
             if (_ctx == null)
