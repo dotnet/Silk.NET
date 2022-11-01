@@ -113,19 +113,95 @@ fn main(@builtin(global_invocation_id) global_id: vec3<u32>) {
 
         var computePipelineDescriptor = new ComputePipelineDescriptor
         {
-            Label = (byte*) SilkMarshal.StringToPtr("Compute Pipeline"), //TODO: free this
+            Label  = (byte*) SilkMarshal.StringToPtr("Compute Pipeline"), //TODO: free this
             Layout = null,
             Compute = new ProgrammableStageDescriptor
             {
-                Module = shader,
+                Module     = shader,
                 EntryPoint = (byte*) SilkMarshal.StringToPtr("main") //TODO: free this
             }
         };
         var computePipeline = wgpu.DeviceCreateComputePipeline(device, ref computePipelineDescriptor);
 
-        window.Load   += () => {};
-        window.Update += _ => {};
-        window.Render += _ => {};
+        var bindGroupLayout = wgpu.ComputePipelineGetBindGroupLayout(computePipeline, 0);
+
+        var bindGroupDescriptor = new BindGroupDescriptor();
+
+        bindGroupDescriptor.Label  = (byte*) SilkMarshal.StringToPtr("Bind Group"); //TODO: free this
+        bindGroupDescriptor.Layout = bindGroupLayout;
+
+        var entries = stackalloc BindGroupEntry[1];
+        entries->Binding = 0;
+        entries->Buffer  = storageBuffer;
+        entries->Offset  = 0;
+        entries->Size    = numbersSize;
+
+        bindGroupDescriptor.Entries    = entries;
+        bindGroupDescriptor.EntryCount = 1;
+
+        var bindGroup = wgpu.DeviceCreateBindGroup(device, ref bindGroupDescriptor);
+
+        var commandEncoderDescriptor = new CommandEncoderDescriptor
+        {
+            Label = (byte*) SilkMarshal.StringToPtr("Command Encoder") //TODO: free this 
+        };
+        var encoder = wgpu.DeviceCreateCommandEncoder(device, ref commandEncoderDescriptor);
+
+        var computePassDescriptor = new ComputePassDescriptor
+        {
+            Label = (byte*) SilkMarshal.StringToPtr("Compute Pass") //TODO: free this  
+        };
+        var computePass = wgpu.CommandEncoderBeginComputePass(encoder, ref computePassDescriptor);
+
+        wgpu.ComputePassEncoderSetPipeline(computePass, computePipeline);
+        wgpu.ComputePassEncoderSetBindGroup(computePass, 0, bindGroup, 0, null);
+        wgpu.ComputePassEncoderDispatchWorkgroups(computePass, numbersLength, 1, 1);
+        wgpu.ComputePassEncoderEnd(computePass);
+        wgpu.CommandEncoderCopyBufferToBuffer
+        (
+            encoder, storageBuffer, 0, stagingBuffer,
+            0, numbersSize
+        );
+
+        var queue = wgpu.DeviceGetQueue(device);
+        var commandBufferDescriptor = new CommandBufferDescriptor
+        {
+            Label = (byte*) SilkMarshal.StringToPtr("Command Buffer") //TODO: free this  
+        };
+        var cmdBuffer = wgpu.CommandEncoderFinish(encoder, ref commandBufferDescriptor);
+        
+        fixed(uint* numberPtr = numbers)
+            wgpu.QueueWriteBuffer(queue, storageBuffer, 0, numberPtr, numbersSize);
+
+        wgpu.QueueSubmit(queue, 1, ref cmdBuffer);
+
+        var wait = true;
+        wgpu.BufferMapAsync(stagingBuffer, (uint)MapMode.Read, 0, numbersSize, new PfnBufferMapCallback(
+                                (arg0, data) =>
+                                {
+                                    Console.WriteLine($"status: {arg0}");
+                                    
+                                    var times = (uint*) wgpu.BufferGetMappedRange(stagingBuffer, 0, numbersSize);;
+
+                                    Console.WriteLine($"Times: [{times[0]}, {times[1]}, {times[2]}, {times[3]}]");
+
+                                    wait = false;
+                                }), null);
+        
+        //Wait for the buffer to be mapped
+        while (wait)
+        {
+            Thread.Sleep(10000);
+        }
+
+        wgpu.BufferUnmap(stagingBuffer);
+
+        ;
+    }
+    
+    private static void ReadBufferMap(BufferMapAsyncStatus arg0, void* arg1)
+    {
+        
     }
 
     private static void RequestDeviceCallback(RequestDeviceStatus arg0, Device* received, byte* arg2, void* arg3)
