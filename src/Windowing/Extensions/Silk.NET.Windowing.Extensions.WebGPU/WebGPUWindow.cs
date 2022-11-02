@@ -89,13 +89,13 @@ public static class WebGPUWindow
             {
                 Chain = new ChainedStruct
                 {
-                    Next  = null,
+                    Next = null,
                     SType = SType.SurfaceDescriptorFromAndroidNativeWindow
                 },
                 Window = (void*) window.Native.Android.Value.Window
             };
 
-            descriptor.NextInChain = (ChainedStruct*) (&androidDescriptor); 
+            descriptor.NextInChain = (ChainedStruct*) (&androidDescriptor);
         }
         else
         {
