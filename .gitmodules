@@ -25,3 +25,6 @@
 [submodule "build/submodules/wgpu-native"]
 	path = build/submodules/wgpu-native
 	url = https://github.com/gfx-rs/wgpu-native
+[submodule "build/submodules/dawn"]
+	path = build/submodules/dawn
+	url = https://github.com/Beyley/dawn

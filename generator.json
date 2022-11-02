@@ -1867,7 +1867,8 @@
             "profileName": "webgpu",
             "sources": [
                 "build/submodules/webgpu-headers/webgpu.h",
-                "build/submodules/wgpu-native/ffi/wgpu.h"
+                "build/submodules/wgpu-native/ffi/wgpu.h",
+                "build/submodules/dawn/out/Debug/gen/include/dawn/dawn-webgpu.h"
             ],
             "mode": "Clang",
             "cacheDir": "build/cache",
@@ -1896,7 +1897,8 @@
                 ],
                 "classes": {
                     "webgpu.h": "[Core]WebGPU",
-                    "wgpu.h": "[WGPU]Wgpu"
+                    "wgpu.h": "[WGPU]Wgpu",
+                    "dawn-webgpu.h": "[Dawn]Dawn"
                 }
             },
             "exclude": [
@@ -1930,7 +1932,8 @@
             "bakery": {
                 "profileNames": [
                     "webgpu",
-                    "wgpu"
+                    "wgpu",
+                    "dawn-webgpu"
                 ]
             },
             "output": {
