@@ -17,7 +17,7 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 namespace Silk.NET.WebGPU.Extensions.Dawn
 {
     [Extension("dawn-webgpu.h")]
-    public unsafe partial class Dawn : NativeExtension<Dawn>
+    public unsafe partial class Dawn : NativeExtension<WebGPU>
     {
         public const string ExtensionName = "dawn-webgpu.h";
         /// <summary>To be documented.</summary>

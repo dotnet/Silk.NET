@@ -202,8 +202,12 @@ namespace Silk.NET.BuildTools.Cpp
             var destInfo = task.ClangOpts.ClassMappings[fileName];
             var indexOfOpenSqBracket = destInfo.IndexOf('[');
             var indexOfCloseSqBracket = destInfo.LastIndexOf(']');
-            var projectName = destInfo.Substring
-                (indexOfOpenSqBracket + 1, indexOfCloseSqBracket - indexOfOpenSqBracket - 1);
+            var splitProjectName = destInfo.Substring
+                (indexOfOpenSqBracket + 1, indexOfCloseSqBracket - indexOfOpenSqBracket - 1).Split(':');
+            var projectName = splitProjectName[0];
+            
+            var nativeApiSetName = splitProjectName.Length > 1 ? splitProjectName[1] : projectName;
+
             var className = destInfo.Substring(indexOfCloseSqBracket + 1);
             var project = profile.Projects[projectName] = new Project
             {
@@ -211,6 +215,7 @@ namespace Silk.NET.BuildTools.Cpp
                 Namespace = projectName == "Core"
                         ? string.Empty
                         : $".{projectName}",
+                NativeApiSetName = nativeApiSetName,
                 ComRefs = task.ClangOpts.ComRefs ?? new HashSet<string>()
             };
 

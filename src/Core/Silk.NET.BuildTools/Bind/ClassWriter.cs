@@ -319,7 +319,7 @@ namespace Silk.NET.BuildTools.Bind
                         sw.Write($"    public unsafe partial class {name}");
                         if (i.Functions.Any())
                         {
-                            sw.WriteLine($" : NativeExtension<{@class.ClassName}>");
+                            sw.WriteLine($" : NativeExtension<{project.NativeApiSetName}>");
                         }
                         else
                         {
