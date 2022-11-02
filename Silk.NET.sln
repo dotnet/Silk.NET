@@ -516,6 +516,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebGPUTriangle", "src\Lab\E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Windowing.Extensions.WebGPU", "src\Windowing\Extensions\Silk.NET.Windowing.Extensions.WebGPU\Silk.NET.Windowing.Extensions.WebGPU.csproj", "{A3F91943-A2DE-466A-BE61-EE0DACD1DD00}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.WebGPU.Extensions.Dawn", "src\WebGPU\Extensions\Silk.NET.WebGPU.Extensions.Dawn\Silk.NET.WebGPU.Extensions.Dawn.csproj", "{3DADBCD8-5C5E-487C-8616-55A56BC351EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -3105,6 +3107,18 @@ Global
 		{A3F91943-A2DE-466A-BE61-EE0DACD1DD00}.Release|x64.Build.0 = Release|Any CPU
 		{A3F91943-A2DE-466A-BE61-EE0DACD1DD00}.Release|x86.ActiveCfg = Release|Any CPU
 		{A3F91943-A2DE-466A-BE61-EE0DACD1DD00}.Release|x86.Build.0 = Release|Any CPU
+		{3DADBCD8-5C5E-487C-8616-55A56BC351EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DADBCD8-5C5E-487C-8616-55A56BC351EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DADBCD8-5C5E-487C-8616-55A56BC351EF}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3DADBCD8-5C5E-487C-8616-55A56BC351EF}.Debug|x64.Build.0 = Debug|Any CPU
+		{3DADBCD8-5C5E-487C-8616-55A56BC351EF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3DADBCD8-5C5E-487C-8616-55A56BC351EF}.Debug|x86.Build.0 = Debug|Any CPU
+		{3DADBCD8-5C5E-487C-8616-55A56BC351EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DADBCD8-5C5E-487C-8616-55A56BC351EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DADBCD8-5C5E-487C-8616-55A56BC351EF}.Release|x64.ActiveCfg = Release|Any CPU
+		{3DADBCD8-5C5E-487C-8616-55A56BC351EF}.Release|x64.Build.0 = Release|Any CPU
+		{3DADBCD8-5C5E-487C-8616-55A56BC351EF}.Release|x86.ActiveCfg = Release|Any CPU
+		{3DADBCD8-5C5E-487C-8616-55A56BC351EF}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -3355,6 +3369,7 @@ Global
 		{C66E285B-4DED-46FD-95A9-7B376C680412} = {D218E3C8-44C7-472F-B147-3C9DA8B0C2EC}
 		{1F16CA6E-9A7E-452E-BE37-1201E506B661} = {39B598E9-44BA-4A61-A1BB-7C543734DBA6}
 		{A3F91943-A2DE-466A-BE61-EE0DACD1DD00} = {3501BAD6-406A-49BC-BE0E-5A49A3AAAE6A}
+		{3DADBCD8-5C5E-487C-8616-55A56BC351EF} = {D218E3C8-44C7-472F-B147-3C9DA8B0C2EC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F5273D7F-3334-48DF-94E3-41AE6816CD4D}
