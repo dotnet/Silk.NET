@@ -1,4 +1,7 @@
-﻿using System.Diagnostics;
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
+using System.Diagnostics;
 using Silk.NET.Core.Native;
 using Silk.NET.Maths;
 using Silk.NET.WebGPU;
@@ -12,17 +15,17 @@ namespace WebGPUTriangle;
 public static unsafe class Program
 {
     // ReSharper disable once InconsistentNaming
-    private static WebGPU         wgpu = null!;
-    private static WebGPUDisposal webGpuDisposal;
-    private static IWindow        _Window;
+    private static WebGPU wgpu = null!;
+    private static WebGPUDisposal? webGpuDisposal;
+    private static IWindow? _Window;
 
-    private static Surface*        _Surface;
-    private static Adapter*        _Adapter;
-    private static Device*         _Device;
-    private static ShaderModule*   _Shader;
+    private static Surface* _Surface;
+    private static Adapter* _Adapter;
+    private static Device* _Device;
+    private static ShaderModule* _Shader;
     private static RenderPipeline* _Pipeline;
-    private static SwapChain*      _SwapChain;
-    private static TextureFormat   _SwapChainFormat;
+    private static SwapChain* _SwapChain;
+    private static TextureFormat _SwapChainFormat;
 
     private const string SHADER = @"@vertex
 fn vs_main(@builtin(vertex_index) in_vertex_index: u32) -> @builtin(position) vec4<f32> {
@@ -40,20 +43,20 @@ fn fs_main() -> @location(0) vec4<f32> {
     {
         //Create window
         var options = WindowOptions.Default;
-        options.API              = GraphicsAPI.None;
-        options.Size             = new Vector2D<int>(800, 600);
-        options.FramesPerSecond  = 60;
+        options.API = GraphicsAPI.None;
+        options.Size = new Vector2D<int>(800, 600);
+        options.FramesPerSecond = 60;
         options.UpdatesPerSecond = 60;
-        options.Position         = new Vector2D<int>(0, 0);
-        options.Title            = "WebGPU Triangle";
-        options.IsVisible        = true;
+        options.Position = new Vector2D<int>(0, 0);
+        options.Title = "WebGPU Triangle";
+        options.IsVisible = true;
 
         _Window = Window.Create(WindowOptions.Default);
 
-        _Window.Load              += WindowOnLoad;
-        _Window.Closing           += WindowClosing;
-        _Window.Update            += WindowOnUpdate;
-        _Window.Render            += WindowOnRender;
+        _Window.Load += WindowOnLoad;
+        _Window.Closing += WindowClosing;
+        _Window.Update += WindowOnUpdate;
+        _Window.Render += WindowOnRender;
         _Window.FramebufferResize += FramebufferResize;
 
         _Window.Run();
@@ -98,7 +101,7 @@ fn fs_main() -> @location(0) vec4<f32> {
             var deviceDescriptor = new DeviceDescriptor
             {
                 RequiredLimits = requiredLimits,
-                DefaultQueue   = new QueueDescriptor()
+                DefaultQueue = new QueueDescriptor()
             };
 
             wgpu.AdapterRequestDevice
@@ -157,40 +160,40 @@ fn fs_main() -> @location(0) vec4<f32> {
 
             var colorTargetState = new ColorTargetState
             {
-                Format    = _SwapChainFormat,
-                Blend     = &blendState,
+                Format = _SwapChainFormat,
+                Blend = &blendState,
                 WriteMask = (uint) ColorWriteMask.All
             };
 
             var fragmentState = new FragmentState
             {
-                Module      = _Shader,
+                Module = _Shader,
                 TargetCount = 1,
-                Targets     = &colorTargetState,
-                EntryPoint  = (byte*) SilkMarshal.StringToPtr("fs_main")
+                Targets = &colorTargetState,
+                EntryPoint = (byte*) SilkMarshal.StringToPtr("fs_main")
             };
 
             var renderPipelineDescriptor = new RenderPipelineDescriptor
             {
                 Vertex = new VertexState
                 {
-                    Module     = _Shader,
+                    Module = _Shader,
                     EntryPoint = (byte*) SilkMarshal.StringToPtr("vs_main"),
                 },
                 Primitive = new PrimitiveState
                 {
-                    Topology         = PrimitiveTopology.TriangleList,
+                    Topology = PrimitiveTopology.TriangleList,
                     StripIndexFormat = IndexFormat.Undefined,
-                    FrontFace        = FrontFace.Ccw,
-                    CullMode         = CullMode.None
+                    FrontFace = FrontFace.Ccw,
+                    CullMode = CullMode.None
                 },
                 Multisample = new MultisampleState
                 {
-                    Count                  = 1,
-                    Mask                   = ~0u,
+                    Count = 1,
+                    Mask = ~0u,
                     AlphaToCoverageEnabled = false
                 },
-                Fragment     = &fragmentState,
+                Fragment = &fragmentState,
                 DepthStencil = null
             };
 
@@ -201,7 +204,7 @@ fn fs_main() -> @location(0) vec4<f32> {
 
         CreateSwapchain();
     }
-    
+
     private static void WindowClosing()
     {
         webGpuDisposal.Dispose(_Shader);
@@ -209,7 +212,7 @@ fn fs_main() -> @location(0) vec4<f32> {
         webGpuDisposal.Dispose(_Device);
         webGpuDisposal.Dispose(_Adapter);
         webGpuDisposal.Dispose(_Surface);
-        
+
         wgpu.Dispose();
     }
 
@@ -217,17 +220,17 @@ fn fs_main() -> @location(0) vec4<f32> {
     {
         var swapChainDescriptor = new SwapChainDescriptor
         {
-            Usage       = (uint) TextureUsage.RenderAttachment,
-            Format      = _SwapChainFormat,
-            Width       = (uint) _Window.FramebufferSize.X,
-            Height      = (uint) _Window.FramebufferSize.Y,
+            Usage = (uint) TextureUsage.RenderAttachment,
+            Format = _SwapChainFormat,
+            Width = (uint) _Window.FramebufferSize.X,
+            Height = (uint) _Window.FramebufferSize.Y,
             PresentMode = PresentMode.Fifo
         };
 
         _SwapChain = wgpu.DeviceCreateSwapChain(_Device, _Surface, ref swapChainDescriptor);
     }
 
-    private static void WindowOnUpdate(double delta) {}
+    private static void WindowOnUpdate(double delta) { }
 
     private static void WindowOnRender(double delta)
     {
@@ -259,10 +262,10 @@ fn fs_main() -> @location(0) vec4<f32> {
 
         var colorAttachment = new RenderPassColorAttachment
         {
-            View          = nextTexture,
+            View = nextTexture,
             ResolveTarget = null,
-            LoadOp        = LoadOp.Clear,
-            StoreOp       = StoreOp.Store,
+            LoadOp = LoadOp.Clear,
+            StoreOp = StoreOp.Store,
             ClearValue = new Color
             {
                 R = 0,
@@ -271,16 +274,16 @@ fn fs_main() -> @location(0) vec4<f32> {
                 A = 1
             }
         };
-        
+
         var renderPassDescriptor = new RenderPassDescriptor
         {
             ColorAttachments = &colorAttachment,
             ColorAttachmentCount = 1,
             DepthStencilAttachment = null
         };
-        
+
         var renderPass = wgpu.CommandEncoderBeginRenderPass(encoder, ref renderPassDescriptor);
-        
+
         wgpu.RenderPassEncoderSetPipeline(renderPass, _Pipeline);
         wgpu.RenderPassEncoderDraw(renderPass, 3, 1, 0, 0);
         wgpu.RenderPassEncoderEnd(renderPass);
@@ -291,7 +294,7 @@ fn fs_main() -> @location(0) vec4<f32> {
         var commandBufferDescriptor = new CommandBufferDescriptor();
 
         var commandBuffer = wgpu.CommandEncoderFinish(encoder, ref commandBufferDescriptor);
-        
+
         wgpu.QueueSubmit(queue, 1, &commandBuffer);
         wgpu.SwapChainPresent(_SwapChain);
     }
