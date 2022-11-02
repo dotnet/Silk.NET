@@ -2,6 +2,7 @@
 using Silk.NET.Core.Native;
 using Silk.NET.Maths;
 using Silk.NET.WebGPU;
+using Silk.NET.WebGPU.Extensions.Disposal;
 using Silk.NET.WebGPU.Extensions.WGPU;
 using Silk.NET.Windowing;
 using Silk.NET.Windowing.Extensions.WebGPU;
@@ -11,9 +12,9 @@ namespace WebGPUTriangle;
 public static unsafe class Program
 {
     // ReSharper disable once InconsistentNaming
-    private static WebGPU  wgpu = null!;
-    private static Wgpu   wgpuSpecific = null!;
-    private static IWindow _Window;
+    private static WebGPU         wgpu = null!;
+    private static WebGPUDisposal webGpuDisposal;
+    private static IWindow        _Window;
 
     private static Surface*        _Surface;
     private static Adapter*        _Adapter;
@@ -67,6 +68,8 @@ fn fs_main() -> @location(0) vec4<f32> {
     {
         wgpu = WebGPU.GetApi();
 
+        webGpuDisposal = new WebGPUDisposal(wgpu);
+
         _Surface = WebGPUWindow.CreateSurface(wgpu, _Window);
 
         { //Get adapter
@@ -108,9 +111,6 @@ fn fs_main() -> @location(0) vec4<f32> {
 
             Console.WriteLine($"Got device {(nuint) _Device:X}");
         } //Get device
-
-        if (!wgpu.TryGetDeviceExtension(_Device, out wgpuSpecific))
-            throw new NotSupportedException("We do not support running under non-wgpu runtimes!");
 
         wgpu.DeviceSetUncapturedErrorCallback(_Device, new PfnErrorCallback(UncapturedError), null);
         wgpu.DeviceSetDeviceLostCallback(_Device, new PfnDeviceLostCallback(DeviceLost), null);
@@ -204,11 +204,11 @@ fn fs_main() -> @location(0) vec4<f32> {
     
     private static void WindowClosing()
     {
-        wgpuSpecific.ShaderModuleDrop(_Shader);
-        wgpuSpecific.RenderPipelineDrop(_Pipeline);
-        wgpuSpecific.DeviceDrop(_Device);
-        wgpuSpecific.AdapterDrop(_Adapter);
-        wgpuSpecific.SurfaceDrop(_Surface);
+        webGpuDisposal.Dispose(_Shader);
+        webGpuDisposal.Dispose(_Pipeline);
+        webGpuDisposal.Dispose(_Device);
+        webGpuDisposal.Dispose(_Adapter);
+        webGpuDisposal.Dispose(_Surface);
         
         wgpu.Dispose();
     }
@@ -284,7 +284,7 @@ fn fs_main() -> @location(0) vec4<f32> {
         wgpu.RenderPassEncoderSetPipeline(renderPass, _Pipeline);
         wgpu.RenderPassEncoderDraw(renderPass, 3, 1, 0, 0);
         wgpu.RenderPassEncoderEnd(renderPass);
-        wgpuSpecific.TextureViewDrop(nextTexture);
+        webGpuDisposal.Dispose(nextTexture);
 
         var queue = wgpu.DeviceGetQueue(_Device);
 
