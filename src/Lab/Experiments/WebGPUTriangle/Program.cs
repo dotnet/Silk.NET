@@ -50,12 +50,14 @@ fn fs_main() -> @location(0) vec4<f32> {
         _Window = Window.Create(WindowOptions.Default);
 
         _Window.Load              += WindowOnLoad;
+        _Window.Closing           += WindowClosing;
         _Window.Update            += WindowOnUpdate;
         _Window.Render            += WindowOnRender;
         _Window.FramebufferResize += FramebufferResize;
 
         _Window.Run();
     }
+
     private static void FramebufferResize(Vector2D<int> obj)
     {
         CreateSwapchain();
@@ -199,6 +201,17 @@ fn fs_main() -> @location(0) vec4<f32> {
 
         CreateSwapchain();
     }
+    
+    private static void WindowClosing()
+    {
+        wgpuSpecific.ShaderModuleDrop(_Shader);
+        wgpuSpecific.RenderPipelineDrop(_Pipeline);
+        wgpuSpecific.DeviceDrop(_Device);
+        wgpuSpecific.AdapterDrop(_Adapter);
+        wgpuSpecific.SurfaceDrop(_Surface);
+        
+        wgpu.Dispose();
+    }
 
     private static void CreateSwapchain()
     {
@@ -236,7 +249,7 @@ fn fs_main() -> @location(0) vec4<f32> {
 
         if (nextTexture == null)
         {
-            Console.WriteLine("wgpu.SwapChainGetCurrentTextureView() failed; giving up.\n");
+            Console.WriteLine("wgpu.SwapChainGetCurrentTextureView() failed after multiple attempts; giving up.\n");
             return;
         }
 
