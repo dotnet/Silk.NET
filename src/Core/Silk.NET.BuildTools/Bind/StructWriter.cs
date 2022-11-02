@@ -730,7 +730,8 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine();
             sw.WriteLine("#pragma warning disable 1591");
             sw.WriteLine();
-            sw.WriteLine($"namespace {state.Task.Namespace}{coreProject.Namespace}");
+            var ns = project.IsRoot ? state.Task.Namespace : state.Task.ExtensionsNamespace;
+            sw.WriteLine($"namespace {ns}{project.Namespace}");
             sw.WriteLine("{");
             sw.WriteLine($"    public unsafe readonly struct {pfnName} : IDisposable");
             sw.WriteLine("    {");

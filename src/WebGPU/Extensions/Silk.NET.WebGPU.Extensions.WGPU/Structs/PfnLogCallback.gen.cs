@@ -11,11 +11,10 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Loader;
-using Silk.NET.WebGPU.Extensions.WGPU;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.WebGPU
+namespace Silk.NET.WebGPU.Extensions.WGPU
 {
     public unsafe readonly struct PfnLogCallback : IDisposable
     {

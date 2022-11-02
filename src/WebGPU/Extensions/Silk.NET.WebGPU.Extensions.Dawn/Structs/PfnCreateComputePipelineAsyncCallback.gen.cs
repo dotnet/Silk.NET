@@ -14,7 +14,7 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.WebGPU
+namespace Silk.NET.WebGPU.Extensions.Dawn
 {
     public unsafe readonly struct PfnCreateComputePipelineAsyncCallback : IDisposable
     {
