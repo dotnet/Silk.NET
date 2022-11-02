@@ -40,6 +40,7 @@ namespace Silk.NET.WebGPU
             return extension switch
             {
                 "wgpu.h" => Context.TryGetProcAddress("wgpuBufferDrop", out _), //FIXME: Waiting on upstream wgpu-native fix to implement wgpuGetProcAddress
+                "dawn-webgpu.h" => Context.TryGetProcAddress("wgpuAdapterRelease", out _), 
                 _ => false
             };
         }
