@@ -60,21 +60,33 @@ namespace Silk.NET.BuildTools.Bind
 
             project.WriteProjectFile(folder, profile, task);
 
+            Project coreProject = profile.Projects["Core"];
+
             project.Structs.ForEach
             (
-                x => x.WriteStruct
-                (
-                    GetFileName(x.Name, ".gen.cs", folder, ProfileWriter.StructsSubfolder), profile, project, task
-                )
-            );
+                x =>
+                {
+                    if(coreProject != project && coreProject.Structs.Any(y => y.NativeName == x.NativeName))
+                        return;
+
+                    x.WriteStruct
+                                    (
+                                        GetFileName(x.Name, ".gen.cs", folder, ProfileWriter.StructsSubfolder), profile, project, task
+                                    );
+                });
 
             project.Enums.ForEach
             (
-                x => x.WriteEnum
-                (
-                    GetFileName(x.Name, ".gen.cs", folder, ProfileWriter.EnumsSubfolder), profile, project, task
-                )
-            );
+                x =>
+                {
+                    if(coreProject != project && coreProject.Enums.Any(y => y.NativeName == x.NativeName))
+                        return;
+
+                    x.WriteEnum
+                                    (
+                                        GetFileName(x.Name, ".gen.cs", folder, ProfileWriter.EnumsSubfolder), profile, project, task
+                                    );
+                });
 
             project.WriteMixedModeClasses(profile, folder, task);
         }
