@@ -17,6 +17,11 @@ namespace Silk.NET.BuildTools.Common
         public string Namespace { get; set; }
 
         /// <summary>
+        /// Gets or set the native API set name of the project.
+        /// </summary>
+        public string NativeApiSetName { get; set; }
+
+        /// <summary>
         /// Gets or sets a value indicating whether this project is the root project, or an extension.
         /// </summary>
         public bool IsRoot { get; set; }
