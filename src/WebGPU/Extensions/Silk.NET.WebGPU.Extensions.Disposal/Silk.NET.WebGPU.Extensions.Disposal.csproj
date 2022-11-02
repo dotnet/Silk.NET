@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Silk.NET.WebGPU\Silk.NET.WebGPU.csproj" />
+      <ProjectReference Include="..\Silk.NET.WebGPU.Extensions.Dawn\Silk.NET.WebGPU.Extensions.Dawn.csproj" />
+      <ProjectReference Include="..\Silk.NET.WebGPU.Extensions.WGPU\Silk.NET.WebGPU.Extensions.WGPU.csproj" />
+    </ItemGroup>
+
+</Project>
