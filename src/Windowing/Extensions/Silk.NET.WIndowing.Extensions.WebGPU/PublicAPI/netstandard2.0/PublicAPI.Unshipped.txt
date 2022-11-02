@@ -1,0 +1,2 @@
+#nullable enable
+Silk.NET.WIndowing.Extensions.WebGPU.WebGPUWindow
