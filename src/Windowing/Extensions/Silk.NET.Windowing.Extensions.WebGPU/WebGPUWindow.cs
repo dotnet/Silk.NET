@@ -83,6 +83,20 @@ public static class WebGPUWindow
 
             descriptor.NextInChain = (ChainedStruct*) (&win32Descriptor);
         }
+        else if (window.Native.Android != null)
+        {
+            var androidDescriptor = new SurfaceDescriptorFromAndroidNativeWindow
+            {
+                Chain = new ChainedStruct
+                {
+                    Next  = null,
+                    SType = SType.SurfaceDescriptorFromAndroidNativeWindow
+                },
+                Window = (void*) window.Native.Android.Value.Window
+            };
+
+            descriptor.NextInChain = (ChainedStruct*) (&androidDescriptor); 
+        }
         else
         {
             throw new NotSupportedException($"Your platform is not supported! {window.Native.Kind}");
