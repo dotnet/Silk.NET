@@ -22,7 +22,7 @@ namespace Silk.NET.WebGPU.Extensions.Disposal
         public void Dispose(TextureView* textureView)
         {
             wgpu?.TextureViewDrop(textureView);
-            dawn?.TextureViewRelease((Dawn.TextureView*) textureView);
+            dawn?.TextureViewRelease(textureView);
         }
     }
 }
