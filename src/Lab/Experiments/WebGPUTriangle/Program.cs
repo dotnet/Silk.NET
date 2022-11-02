@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using Silk.NET.WebGPU;
 using Silk.NET.Windowing;
+using Silk.NET.Windowing.Extensions.WebGPU;
 
 namespace WebGPUTriangle;
 
@@ -26,8 +27,8 @@ public static unsafe class Program
         void WindowOnLoad()
         {
             wgpu = WebGPU.GetApi();
-    
-            
+
+            surface = WebGPUWindow.CreateSurface(wgpu, window);
         }
 
         void WindowOnUpdate(double delta)
