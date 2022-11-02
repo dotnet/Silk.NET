@@ -107,8 +107,8 @@ fn fs_main() -> @location(0) vec4<f32> {
             Console.WriteLine($"Got device {(nuint) _Device:X}");
         } //Get device
 
-        // if (!wgpu.TryGetDeviceExtension(_Device, out wgpuSpecific)) TODO: figure out why wgpuGetProcAddr is not found in wgpu-native
-            // throw new NotSupportedException("We do not support running under non-wgpu runtimes!");
+        if (!wgpu.TryGetDeviceExtension(_Device, out wgpuSpecific))
+            throw new NotSupportedException("We do not support running under non-wgpu runtimes!");
 
         wgpu.DeviceSetUncapturedErrorCallback(_Device, new PfnErrorCallback(UncapturedError), null);
         wgpu.DeviceSetDeviceLostCallback(_Device, new PfnDeviceLostCallback(DeviceLost), null);
@@ -271,7 +271,7 @@ fn fs_main() -> @location(0) vec4<f32> {
         wgpu.RenderPassEncoderSetPipeline(renderPass, _Pipeline);
         wgpu.RenderPassEncoderDraw(renderPass, 3, 1, 0, 0);
         wgpu.RenderPassEncoderEnd(renderPass);
-        // wgpuSpecific.TextureViewDrop(nextTexture); TODO: readd this (im not sure what it does tbh [is it for memory freeing? am i fine without it?])
+        wgpuSpecific.TextureViewDrop(nextTexture);
 
         var queue = wgpu.DeviceGetQueue(_Device);
 

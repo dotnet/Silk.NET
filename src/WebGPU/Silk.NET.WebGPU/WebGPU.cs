@@ -30,7 +30,7 @@ namespace Silk.NET.WebGPU
             where T:NativeExtension<WebGPU>
         {
              ext = IsDeviceExtensionPresent(device, GetExtensionAttribute(typeof(T)).Name)
-                 ? (T) Activator.CreateInstance(typeof(T), new LamdaNativeContext(str => (nint) this.GetProcAddress(device, str).Handle))
+                 ? (T) Activator.CreateInstance(typeof(T), Context) //FIXME: Waiting on upstream wgpu-native fix to implement wgpuGetProcAddress
                  : null;
              return ext is not null;
         }
@@ -39,7 +39,7 @@ namespace Silk.NET.WebGPU
         {
             return extension switch
             {
-                "wgpu.h" => this.GetProcAddress(device, "wgpuBufferDrop").Handle != null,
+                "wgpu.h" => Context.TryGetProcAddress("wgpuBufferDrop", out _), //FIXME: Waiting on upstream wgpu-native fix to implement wgpuGetProcAddress
                 _ => false
             };
         }
