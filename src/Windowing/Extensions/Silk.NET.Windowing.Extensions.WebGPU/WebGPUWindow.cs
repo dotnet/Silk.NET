@@ -18,7 +18,7 @@ public static class WebGPUWindow
     /// <param name="window">The window to get the surface from</param>
     /// <returns>A newly created Surface*/</returns>
     /// <exception cref="NotSupportedException">Throws when an unsupported platform is detected.</exception>
-    public static unsafe Surface* CreateSurface(NET.WebGPU.WebGPU wgpu, IView window)
+    public static unsafe Surface* CreateSurface(NET.WebGPU.WebGPU wgpu, IView window, Instance* instance = null)
     {
         var descriptor = new SurfaceDescriptor();
 
@@ -102,6 +102,6 @@ public static class WebGPUWindow
             throw new NotSupportedException($"Your platform is not supported! {window.Native.Kind}");
         }
 
-        return wgpu.InstanceCreateSurface(null, ref descriptor);
+        return wgpu.InstanceCreateSurface(instance, ref descriptor);
     }
 }
