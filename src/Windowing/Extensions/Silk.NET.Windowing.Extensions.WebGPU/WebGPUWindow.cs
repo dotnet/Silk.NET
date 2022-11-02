@@ -3,7 +3,7 @@ using Silk.NET.Core.Contexts;
 using Silk.NET.WebGPU;
 using Silk.NET.Windowing;
 
-namespace Silk.NET.WIndowing.Extensions.WebGPU;
+namespace Silk.NET.Windowing.Extensions.WebGPU;
 
 public static class WebGPUWindow
 {

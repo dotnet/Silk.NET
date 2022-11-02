@@ -514,7 +514,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.WebGPU.Extensions.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebGPUTriangle", "src\Lab\Experiments\WebGPUTriangle\WebGPUTriangle.csproj", "{1F16CA6E-9A7E-452E-BE37-1201E506B661}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.WIndowing.Extensions.WebGPU", "src\Windowing\Extensions\Silk.NET.WIndowing.Extensions.WebGPU\Silk.NET.WIndowing.Extensions.WebGPU.csproj", "{A3F91943-A2DE-466A-BE61-EE0DACD1DD00}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Windowing.Extensions.WebGPU", "src\Windowing\Extensions\Silk.NET.Windowing.Extensions.WebGPU\Silk.NET.Windowing.Extensions.WebGPU.csproj", "{A3F91943-A2DE-466A-BE61-EE0DACD1DD00}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
