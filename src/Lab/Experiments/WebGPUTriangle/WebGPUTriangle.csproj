@@ -10,6 +10,7 @@
 
     <ItemGroup>
         <ProjectReference Include="..\..\..\WebGPU\Silk.NET.WebGPU\Silk.NET.WebGPU.csproj" />
+        <ProjectReference Include="..\..\..\Windowing\Extensions\Silk.NET.Windowing.Extensions.WebGPU\Silk.NET.Windowing.Extensions.WebGPU.csproj" />
         <ProjectReference Include="..\..\..\Windowing\Extensions\Silk.NET.Windowing.Extensions\Silk.NET.Windowing.Extensions.csproj" />
         <ProjectReference Include="..\..\..\Windowing\Silk.NET.GLFW\Silk.NET.GLFW.csproj" />
         <ProjectReference Include="..\..\..\Windowing\Silk.NET.Windowing.Common\Silk.NET.Windowing.Common.csproj" />
