@@ -330,16 +330,6 @@ namespace Silk.NET.BuildTools.Bind
                         sw.WriteLine($"        public const string ExtensionName = \"{key}\";");
                         foreach (var function in i.Functions)
                         {
-                            foreach(var a in profile.Projects) {
-                                Console.WriteLine($"{a.Key}:");
-                                a.Value.Classes.ForEach(x =>
-                                {
-                                    foreach(var b in x.NativeApis) {
-                                        Console.WriteLine($"    {b.Key}:{b.Value.Functions.Count}");
-                                    }
-                                });
-                            }
-
                             var coreProject = profile.Projects["Core"];
 
                             if(coreProject.Classes.Any(x => x.NativeApis.Any(x => x.Value.Functions.Any(x => x.NativeName == function.NativeName))))
