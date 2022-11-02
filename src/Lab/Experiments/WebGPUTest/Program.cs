@@ -3,6 +3,7 @@
 
 using Silk.NET.Core.Native;
 using Silk.NET.WebGPU;
+using Silk.NET.WebGPU.Extensions.WGPU;
 using Silk.NET.Windowing;
 
 namespace WebGPUTest;
@@ -18,6 +19,8 @@ public static unsafe class Program
         var numbersLength = (uint) numbers.Length;
 
         var wgpu = WebGPU.GetApi();
+
+        wgpu.TryGetDeviceExtension(null, out Wgpu wgpuSpecific);
 
         var requestAdapterOptions = new RequestAdapterOptions();
         wgpu.InstanceRequestAdapter(null, &requestAdapterOptions, new PfnRequestAdapterCallback(RequestAdapterCallback), null);
@@ -178,7 +181,6 @@ fn main(@builtin(global_invocation_id) global_id: vec3<u32>) {
 
         wgpu.QueueSubmit(queue, 1, ref cmdBuffer);
 
-        var wait = true;
         wgpu.BufferMapAsync(stagingBuffer, (uint) MapMode.Read, 0, numbersSize, new PfnBufferMapCallback(
                                 (arg0, data) =>
                                 {
@@ -187,19 +189,10 @@ fn main(@builtin(global_invocation_id) global_id: vec3<u32>) {
                                     var times = (uint*) wgpu.BufferGetMappedRange(stagingBuffer, 0, numbersSize); ;
 
                                     Console.WriteLine($"Times: [{times[0]}, {times[1]}, {times[2]}, {times[3]}]");
-
-                                    wait = false;
                                 }), null);
 
-        //Wait for the buffer to be mapped
-        while (wait)
-        {
-            Thread.Sleep(10000);
-        }
-
+        wgpuSpecific.DevicePoll(device, true, null);
         wgpu.BufferUnmap(stagingBuffer);
-
-        ;
     }
 
     private static void ReadBufferMap(BufferMapAsyncStatus arg0, void* arg1)
