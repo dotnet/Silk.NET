@@ -16,6 +16,7 @@ public static unsafe class Program
     private static Adapter*      adapter;
     private static Device*       device;
     private static ShaderModule* shader;
+    private static RenderPipeline* pipeline;
 
     private const string SHADER = @"@vertex
 fn vs_main(@builtin(vertex_index) in_vertex_index: u32) -> @builtin(position) vec4<f32> {
@@ -115,7 +116,72 @@ fn fs_main() -> @location(0) vec4<f32> {
             };
             
             shader = wgpu.DeviceCreateShaderModule(device, ref shaderModuleDescriptor);
+            
+            Console.WriteLine($"Created shader {(nuint)shader:X}");
         } //Load shader
+
+        { //Create pipeline
+            var swapChainFormat = wgpu.SurfaceGetPreferredFormat(surface, adapter);
+
+            var blendState = new BlendState
+            {
+                Color = new BlendComponent
+                {
+                    SrcFactor = BlendFactor.One,
+                    DstFactor = BlendFactor.Zero,
+                    Operation = BlendOperation.Add
+                },
+                Alpha = new BlendComponent
+                {
+                    SrcFactor = BlendFactor.One,
+                    DstFactor = BlendFactor.Zero,
+                    Operation = BlendOperation.Add 
+                }
+            };
+
+            var colorTargetState = new ColorTargetState
+            {
+                Format = swapChainFormat,
+                Blend = &blendState,
+                WriteMask = (uint) ColorWriteMask.All
+            };
+
+            var fragmentState = new FragmentState
+            {
+                Module      = shader,
+                TargetCount = 1,
+                Targets     = &colorTargetState,
+                EntryPoint  = (byte*) SilkMarshal.StringToPtr("fs_main")
+            };
+
+            var renderPipelineDescriptor = new RenderPipelineDescriptor
+            {
+                Vertex = new VertexState
+                {
+                    Module     = shader,
+                    EntryPoint = (byte*) SilkMarshal.StringToPtr("vs_main"),
+                },
+                Primitive = new PrimitiveState
+                {
+                    Topology         = PrimitiveTopology.TriangleList,
+                    StripIndexFormat = IndexFormat.Undefined,
+                    FrontFace        = FrontFace.Ccw,
+                    CullMode         = CullMode.None
+                },
+                Multisample = new MultisampleState
+                {
+                    Count = 1,
+                    Mask = ~0u,
+                    AlphaToCoverageEnabled = false
+                },
+                Fragment = &fragmentState,
+                DepthStencil = null
+            };
+
+            pipeline = wgpu.DeviceCreateRenderPipeline(device, ref renderPipelineDescriptor);
+            
+            Console.WriteLine($"Created pipeline {(nuint)pipeline:X}");
+        } //Create pipeline
     }
     
     private static void WindowOnUpdate(double delta) {}
