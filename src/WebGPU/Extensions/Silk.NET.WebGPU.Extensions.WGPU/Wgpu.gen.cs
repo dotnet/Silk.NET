@@ -17,7 +17,7 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 namespace Silk.NET.WebGPU.Extensions.WGPU
 {
     [Extension("wgpu.h")]
-    public unsafe partial class Wgpu : NativeExtension<Wgpu>
+    public unsafe partial class Wgpu : NativeExtension<WebGPU>
     {
         public const string ExtensionName = "wgpu.h";
         /// <summary>To be documented.</summary>
