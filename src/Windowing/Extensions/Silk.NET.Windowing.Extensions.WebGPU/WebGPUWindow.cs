@@ -7,7 +7,6 @@ using Silk.NET.WebGPU;
 using Silk.NET.Windowing;
 
 namespace Silk.NET.Windowing.Extensions.WebGPU;
-/// <inheritdoc/>
 
 public static class WebGPUWindow
 {
@@ -39,7 +38,7 @@ public static class WebGPUWindow
         }
         else if (view.Native.Cocoa != null)
         {
-            throw new NotSupportedException("WebGPU on MacOS is not supported at this time!)");
+            throw new PlatformNotSupportedException("WebGPU on MacOS is not supported at this time!");
 
             var cocoa = view.Native.Cocoa.Value;
 
@@ -99,7 +98,7 @@ public static class WebGPUWindow
         }
         else
         {
-            throw new NotSupportedException($"Your platform is not supported! {view.Native.Kind}");
+            throw new PlatformNotSupportedException($"Your platform is not supported! {view.Native.Kind}");
         }
 
         return wgpu.InstanceCreateSurface(instance, ref descriptor);
