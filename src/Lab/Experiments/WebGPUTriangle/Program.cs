@@ -242,7 +242,7 @@ fn fs_main() -> @location(0) vec4<f32> {
 
             if (attempt == 0 && nextTexture == null)
             {
-                Console.WriteLine("wgpu.SwapChainGetCurrentTextureView() failed; trying to create " + "a new swap chain...\n");
+                Console.WriteLine("wgpu.SwapChainGetCurrentTextureView() failed; trying to create a new swap chain...\n");
                 CreateSwapchain();
                 continue;
             }
