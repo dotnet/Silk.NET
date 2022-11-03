@@ -8,7 +8,6 @@ using Silk.NET.WebGPU;
 using Silk.NET.WebGPU.Extensions.Disposal;
 using Silk.NET.WebGPU.Extensions.WGPU;
 using Silk.NET.Windowing;
-using Silk.NET.Windowing.Extensions.WebGPU;
 
 namespace WebGPUTriangle;
 

@@ -1,4 +1,0 @@
-#nullable enable
-Silk.NET.WIndowing.Extensions.WebGPU.WebGPUWindow
-Silk.NET.Windowing.Extensions.WebGPU.WebGPUWindow
-~static Silk.NET.Windowing.Extensions.WebGPU.WebGPUWindow.CreateWebGPUSurface(this Silk.NET.Windowing.IView view, Silk.NET.WebGPU.WebGPU wgpu, Silk.NET.WebGPU.Instance* instance = null) -> Silk.NET.WebGPU.Surface*
