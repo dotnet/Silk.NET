@@ -2,7 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Collections.Generic;
-
+using System.Linq;
 using Silk.NET.BuildTools.Common.Functions;
 
 namespace Silk.NET.BuildTools.Common.Builders
@@ -36,6 +36,8 @@ namespace Silk.NET.BuildTools.Common.Builders
         
         private Function _newFunctionPointerSignature;
 
+        private List<Type> _newGenericParams;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="TypeSignatureBuilder" /> class.
         /// </summary>
@@ -53,6 +55,7 @@ namespace Silk.NET.BuildTools.Common.Builders
             _newOriginalClass = typeSignature.OriginalClass;
             _newIsGenericType = typeSignature.IsGenericTypeParameterReference;
             _newFunctionPointerSignature = typeSignature.FunctionPointerSignature;
+            _newGenericParams = typeSignature.GenericTypes;
         }
 
         /// <summary>
@@ -138,7 +141,8 @@ namespace Silk.NET.BuildTools.Common.Builders
                 OriginalName = _newOriginalName,
                 OriginalGroup = _newOriginalGroup,
                 OriginalClass = _newOriginalClass,
-                IsGenericTypeParameterReference = _newIsGenericType
+                IsGenericTypeParameterReference = _newIsGenericType,
+                GenericTypes = _newGenericParams
             };
         }
 
@@ -173,6 +177,7 @@ namespace Silk.NET.BuildTools.Common.Builders
         /// <returns>The builder, with the new generic types.</returns>
         public TypeSignatureBuilder WithGenericTypes(List<Type> parameters)
         {
+            _newGenericParams = parameters;
             return this;
         }
 
@@ -183,6 +188,7 @@ namespace Silk.NET.BuildTools.Common.Builders
         /// <returns>The builder, with the new generic types.</returns>
         public TypeSignatureBuilder WithGenericTypes(params Type[] parameters)
         {
+            _newGenericParams = parameters.ToList();
             return this;
         }
         // ReSharper restore UnusedParameter.Global

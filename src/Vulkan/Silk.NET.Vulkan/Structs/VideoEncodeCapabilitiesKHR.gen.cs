@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoEncodeCapabilitiesKHR")]
-    public unsafe partial struct VideoEncodeCapabilitiesKHR : IChainStart, IExtendsChain<VideoCapabilitiesKHR>
+    public unsafe partial struct VideoEncodeCapabilitiesKHR : IExtendsChain<VideoCapabilitiesKHR>
     {
         public VideoEncodeCapabilitiesKHR
         (
@@ -113,18 +113,6 @@ namespace Silk.NET.Vulkan
         {
             get => (BaseInStructure*) PNext;
             set => PNext = value;
-        }
-
-        /// <summary>
-        /// Convenience method to start a chain.
-        /// </summary>
-        /// <param name="capture">The newly created chain root</param>
-        /// <returns>A reference to the newly created chain.</returns>
-        public static unsafe ref VideoEncodeCapabilitiesKHR Chain(
-            out VideoEncodeCapabilitiesKHR capture)
-        {
-            capture = new VideoEncodeCapabilitiesKHR(StructureType.VideoEncodeCapabilitiesKhr);
-            return ref capture;
         }
     }
 }

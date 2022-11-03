@@ -227,6 +227,202 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
             ExtGetRenderbuffers(out renderbuffers.GetPinnableReference(), (int) renderbuffers.Length, out numRenderbuffers);
         }
 
+        public unsafe void* ExtGetBufferPointer([Flow(FlowDirection.In)] QCOM target)
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetBufferPointer(target, out void* silkRet);
+            return silkRet;
+        }
+
+        public unsafe int ExtGetBuffers([Count(Parameter = "maxBuffers"), Flow(FlowDirection.Out)] uint* buffers, [Flow(FlowDirection.In)] int maxBuffers)
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetBuffers(buffers, maxBuffers, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int ExtGetBuffers([Count(Parameter = "maxBuffers"), Flow(FlowDirection.Out)] out uint buffers, [Flow(FlowDirection.In)] int maxBuffers)
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetBuffers(out buffers, maxBuffers, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int ExtGetBuffers([Count(Parameter = "maxBuffers"), Flow(FlowDirection.Out)] Buffer* buffers, [Flow(FlowDirection.In)] int maxBuffers)
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetBuffers(buffers, maxBuffers, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int ExtGetBuffers([Count(Parameter = "maxBuffers"), Flow(FlowDirection.Out)] out Buffer buffers, [Flow(FlowDirection.In)] int maxBuffers)
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetBuffers(out buffers, maxBuffers, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int ExtGetFramebuffers([Count(Parameter = "maxFramebuffers"), Flow(FlowDirection.Out)] uint* framebuffers, [Flow(FlowDirection.In)] int maxFramebuffers)
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetFramebuffers(framebuffers, maxFramebuffers, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int ExtGetFramebuffers([Count(Parameter = "maxFramebuffers"), Flow(FlowDirection.Out)] out uint framebuffers, [Flow(FlowDirection.In)] int maxFramebuffers)
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetFramebuffers(out framebuffers, maxFramebuffers, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int ExtGetFramebuffers([Count(Parameter = "maxFramebuffers"), Flow(FlowDirection.Out)] Framebuffer* framebuffers, [Flow(FlowDirection.In)] int maxFramebuffers)
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetFramebuffers(framebuffers, maxFramebuffers, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int ExtGetFramebuffers([Count(Parameter = "maxFramebuffers"), Flow(FlowDirection.Out)] out Framebuffer framebuffers, [Flow(FlowDirection.In)] int maxFramebuffers)
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetFramebuffers(out framebuffers, maxFramebuffers, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int ExtGetRenderbuffers([Count(Parameter = "maxRenderbuffers"), Flow(FlowDirection.Out)] uint* renderbuffers, [Flow(FlowDirection.In)] int maxRenderbuffers)
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetRenderbuffers(renderbuffers, maxRenderbuffers, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int ExtGetRenderbuffers([Count(Parameter = "maxRenderbuffers"), Flow(FlowDirection.Out)] out uint renderbuffers, [Flow(FlowDirection.In)] int maxRenderbuffers)
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetRenderbuffers(out renderbuffers, maxRenderbuffers, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int ExtGetRenderbuffers([Count(Parameter = "maxRenderbuffers"), Flow(FlowDirection.Out)] Renderbuffer* renderbuffers, [Flow(FlowDirection.In)] int maxRenderbuffers)
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetRenderbuffers(renderbuffers, maxRenderbuffers, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int ExtGetRenderbuffers([Count(Parameter = "maxRenderbuffers"), Flow(FlowDirection.Out)] out Renderbuffer renderbuffers, [Flow(FlowDirection.In)] int maxRenderbuffers)
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetRenderbuffers(out renderbuffers, maxRenderbuffers, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int ExtGetTexLevelParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] QCOM face, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] QCOM pname)
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetTexLevelParameter(texture, face, level, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 ExtGetTexSubImage<T0>([Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] QCOM format, [Flow(FlowDirection.In)] QCOM type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetTexSubImage(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 ExtGetTexSubImage<T0>([Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] QCOM format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetTexSubImage(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 ExtGetTexSubImage<T0>([Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] QCOM type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetTexSubImage(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 ExtGetTexSubImage<T0>([Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetTexSubImage(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe int ExtGetTextures([Flow(FlowDirection.Out)] uint* textures, [Flow(FlowDirection.In)] int maxTextures)
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetTextures(textures, maxTextures, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int ExtGetTextures([Flow(FlowDirection.Out)] out uint textures, [Flow(FlowDirection.In)] int maxTextures)
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetTextures(out textures, maxTextures, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int ExtGetTextures([Flow(FlowDirection.Out)] Texture* textures, [Flow(FlowDirection.In)] int maxTextures)
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetTextures(textures, maxTextures, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int ExtGetTextures([Flow(FlowDirection.Out)] out Texture textures, [Flow(FlowDirection.In)] int maxTextures)
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetTextures(out textures, maxTextures, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int ExtGetBuffers([Count(Parameter = "maxBuffers"), Flow(FlowDirection.Out)] Span<uint> buffers)
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetBuffers(buffers, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int ExtGetBuffers([Count(Parameter = "maxBuffers"), Flow(FlowDirection.Out)] Span<Buffer> buffers)
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetBuffers(buffers, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int ExtGetFramebuffers([Count(Parameter = "maxFramebuffers"), Flow(FlowDirection.Out)] Span<uint> framebuffers)
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetFramebuffers(framebuffers, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int ExtGetFramebuffers([Count(Parameter = "maxFramebuffers"), Flow(FlowDirection.Out)] Span<Framebuffer> framebuffers)
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetFramebuffers(framebuffers, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int ExtGetRenderbuffers([Count(Parameter = "maxRenderbuffers"), Flow(FlowDirection.Out)] Span<uint> renderbuffers)
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetRenderbuffers(renderbuffers, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int ExtGetRenderbuffers([Count(Parameter = "maxRenderbuffers"), Flow(FlowDirection.Out)] Span<Renderbuffer> renderbuffers)
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetRenderbuffers(renderbuffers, out int silkRet);
+            return silkRet;
+        }
+
         public QComExtendedGet(INativeContext ctx)
             : base(ctx)
         {

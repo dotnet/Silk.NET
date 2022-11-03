@@ -83,6 +83,20 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         [NativeApi(EntryPoint = "glTexImage3DMultisample", Convention = CallingConvention.Winapi)]
         public partial void TexImage3DMultisample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] Boolean fixedsamplelocations);
 
+        public unsafe float GetMultisample([Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.In)] uint index)
+        {
+            // NonKhrReturnTypeOverloader
+            GetMultisample(pname, index, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetMultisample([Flow(FlowDirection.In)] GetMultisamplePNameNV pname, [Flow(FlowDirection.In)] uint index)
+        {
+            // NonKhrReturnTypeOverloader
+            GetMultisample(pname, index, out float silkRet);
+            return silkRet;
+        }
+
         public ArbTextureMultisample(INativeContext ctx)
             : base(ctx)
         {

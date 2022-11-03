@@ -368,6 +368,286 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         [NativeApi(EntryPoint = "glResetMinmaxEXT", Convention = CallingConvention.Winapi)]
         public partial void ResetMinmax([Flow(FlowDirection.In)] MinmaxTargetEXT target);
 
+        public unsafe T0 GetHistogram<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetHistogram(target, reset, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetHistogram<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetHistogram(target, reset, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetHistogram<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetHistogram(target, reset, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetHistogram<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetHistogram(target, reset, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetHistogram<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetHistogram(target, reset, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetHistogram<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetHistogram(target, reset, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetHistogram<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetHistogram(target, reset, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetHistogram<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetHistogram(target, reset, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetHistogram(target, reset, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetHistogram(target, reset, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetHistogram(target, reset, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetHistogram(target, reset, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetHistogram(target, reset, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetHistogram(target, reset, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetHistogram(target, reset, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetHistogram(target, reset, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetHistogramParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetHistogramParameter(target, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetHistogramParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] GetHistogramParameterPNameEXT pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetHistogramParameter(target, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetHistogramParameter([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] EXT pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetHistogramParameter(target, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetHistogramParameter([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] GetHistogramParameterPNameEXT pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetHistogramParameter(target, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetMinmax<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetMinmax(target, reset, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetMinmax<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetMinmax(target, reset, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetMinmax<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetMinmax(target, reset, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetMinmax<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetMinmax(target, reset, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetMinmax<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetMinmax(target, reset, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetMinmax<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetMinmax(target, reset, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetMinmax<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetMinmax(target, reset, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetMinmax<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetMinmax(target, reset, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetMinmax(target, reset, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetMinmax(target, reset, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetMinmax(target, reset, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetMinmax(target, reset, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetMinmax(target, reset, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetMinmax(target, reset, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetMinmax(target, reset, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetMinmax(target, reset, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetMinmaxParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetMinmaxParameter(target, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetMinmaxParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] GetMinmaxParameterPNameEXT pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetMinmaxParameter(target, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetMinmaxParameter([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] EXT pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetMinmaxParameter(target, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetMinmaxParameter([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] GetMinmaxParameterPNameEXT pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetMinmaxParameter(target, pname, out float silkRet);
+            return silkRet;
+        }
+
         public ExtHistogram(INativeContext ctx)
             : base(ctx)
         {

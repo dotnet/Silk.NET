@@ -982,6 +982,244 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.OES
             PrioritizeTexturesx((uint) priorities.Length, in textures.GetPinnableReference(), in priorities.GetPinnableReference());
         }
 
+        public unsafe int GetClipPlanex([Flow(FlowDirection.In)] OES plane)
+        {
+            // NonKhrReturnTypeOverloader
+            GetClipPlanex(plane, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetClipPlanex([Flow(FlowDirection.In)] ClipPlaneName plane)
+        {
+            // NonKhrReturnTypeOverloader
+            GetClipPlanex(plane, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetConvolutionParameterx([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetConvolutionParameterx(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetFixed([Flow(FlowDirection.In)] GetPName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetFixed(pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetHistogramParameterx([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetHistogramParameterx(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetHistogramParameterx([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] GetHistogramParameterPNameEXT pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetHistogramParameterx(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetHistogramParameterx([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] OES pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetHistogramParameterx(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetHistogramParameterx([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] GetHistogramParameterPNameEXT pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetHistogramParameterx(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetLightx([Flow(FlowDirection.In)] OES light, [Flow(FlowDirection.In)] OES pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetLightx(light, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetLightx([Flow(FlowDirection.In)] OES light, [Flow(FlowDirection.In)] LightParameter pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetLightx(light, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetLightx([Flow(FlowDirection.In)] LightName light, [Flow(FlowDirection.In)] OES pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetLightx(light, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetLightx([Flow(FlowDirection.In)] LightName light, [Flow(FlowDirection.In)] LightParameter pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetLightx(light, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetMapx([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES query)
+        {
+            // NonKhrReturnTypeOverloader
+            GetMapx(target, query, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetMapx([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] GetMapQuery query)
+        {
+            // NonKhrReturnTypeOverloader
+            GetMapx(target, query, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetMapx([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] OES query)
+        {
+            // NonKhrReturnTypeOverloader
+            GetMapx(target, query, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetMapx([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] GetMapQuery query)
+        {
+            // NonKhrReturnTypeOverloader
+            GetMapx(target, query, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetPixelMapx([Flow(FlowDirection.In)] OES map, [Flow(FlowDirection.In)] int size)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPixelMapx(map, size, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetPixelMapx([Flow(FlowDirection.In)] PixelMap map, [Flow(FlowDirection.In)] int size)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPixelMapx(map, size, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetTexEnvx([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTexEnvx(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetTexEnvx([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] TextureEnvParameter pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTexEnvx(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetTexEnvx([Flow(FlowDirection.In)] TextureEnvTarget target, [Flow(FlowDirection.In)] OES pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTexEnvx(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetTexEnvx([Flow(FlowDirection.In)] TextureEnvTarget target, [Flow(FlowDirection.In)] TextureEnvParameter pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTexEnvx(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetTexGenx([Flow(FlowDirection.In)] OES coord, [Flow(FlowDirection.In)] OES pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTexGenx(coord, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetTexGenx([Flow(FlowDirection.In)] OES coord, [Flow(FlowDirection.In)] TextureGenParameter pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTexGenx(coord, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetTexGenx([Flow(FlowDirection.In)] TextureCoordName coord, [Flow(FlowDirection.In)] OES pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTexGenx(coord, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetTexGenx([Flow(FlowDirection.In)] TextureCoordName coord, [Flow(FlowDirection.In)] TextureGenParameter pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTexGenx(coord, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetTexLevelParameterx([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] OES pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTexLevelParameterx(target, level, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetTexLevelParameterx([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GetTextureParameter pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTexLevelParameterx(target, level, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetTexLevelParameterx([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] OES pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTexLevelParameterx(target, level, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetTexLevelParameterx([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GetTextureParameter pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTexLevelParameterx(target, level, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetTexParameterx([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTexParameterx(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetTexParameterx([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] GetTextureParameter pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTexParameterx(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetTexParameterx([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] OES pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTexParameterx(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetTexParameterx([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GetTextureParameter pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTexParameterx(target, pname, out int silkRet);
+            return silkRet;
+        }
+
         public OesFixedPoint(INativeContext ctx)
             : base(ctx)
         {

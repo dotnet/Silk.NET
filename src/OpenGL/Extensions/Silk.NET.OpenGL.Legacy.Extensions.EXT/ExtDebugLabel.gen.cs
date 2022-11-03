@@ -71,6 +71,20 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             GetObjectLabel(type, @object, (uint) label.Length, out length, out label.GetPinnableReference());
         }
 
+        public unsafe byte GetObjectLabel([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetObjectLabel(type, @object, bufSize, length, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetObjectLabel([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetObjectLabel(type, @object, bufSize, out length, out byte silkRet);
+            return silkRet;
+        }
+
         public ExtDebugLabel(INativeContext ctx)
             : base(ctx)
         {

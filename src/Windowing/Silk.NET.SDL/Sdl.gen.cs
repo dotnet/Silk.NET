@@ -7090,6 +7090,10 @@ namespace Silk.NET.SDL
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetWindowTitle")]
         public partial string GetWindowTitleS(ref Window window);
+        
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "SDL_SetWindowAlwaysOnTop")]
+        public unsafe partial void SetWindowAlwaysOnTop(Window* window, SdlBool onTop);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 777, Column 30 in build/submodules/SDL/include\\SDL_video.h")]

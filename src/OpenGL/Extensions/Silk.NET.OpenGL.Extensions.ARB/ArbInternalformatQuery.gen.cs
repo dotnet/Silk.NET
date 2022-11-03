@@ -116,6 +116,62 @@ namespace Silk.NET.OpenGL.Extensions.ARB
             GetInternalformat(target, internalformat, pname, (uint) @params.Length, out @params.GetPinnableReference());
         }
 
+        public unsafe int GetInternalformat([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.In)] uint count)
+        {
+            // NonKhrReturnTypeOverloader
+            GetInternalformat(target, internalformat, pname, count, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetInternalformat([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname, [Flow(FlowDirection.In)] uint count)
+        {
+            // NonKhrReturnTypeOverloader
+            GetInternalformat(target, internalformat, pname, count, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetInternalformat([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.In)] uint count)
+        {
+            // NonKhrReturnTypeOverloader
+            GetInternalformat(target, internalformat, pname, count, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetInternalformat([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname, [Flow(FlowDirection.In)] uint count)
+        {
+            // NonKhrReturnTypeOverloader
+            GetInternalformat(target, internalformat, pname, count, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.In)] uint count)
+        {
+            // NonKhrReturnTypeOverloader
+            GetInternalformat(target, internalformat, pname, count, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname, [Flow(FlowDirection.In)] uint count)
+        {
+            // NonKhrReturnTypeOverloader
+            GetInternalformat(target, internalformat, pname, count, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.In)] uint count)
+        {
+            // NonKhrReturnTypeOverloader
+            GetInternalformat(target, internalformat, pname, count, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname, [Flow(FlowDirection.In)] uint count)
+        {
+            // NonKhrReturnTypeOverloader
+            GetInternalformat(target, internalformat, pname, count, out int silkRet);
+            return silkRet;
+        }
+
         public ArbInternalformatQuery(INativeContext ctx)
             : base(ctx)
         {

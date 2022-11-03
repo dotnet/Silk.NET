@@ -18,9 +18,12 @@ namespace Silk.NET.Direct3D11
 {
     [Guid("11ec5a5f-51dc-4945-ab34-6e8c21300ea5")]
     [NativeName("Name", "ID3D11VideoProcessorInputView")]
-    public unsafe partial struct ID3D11VideoProcessorInputView
+    public unsafe partial struct ID3D11VideoProcessorInputView : IComVtbl<ID3D11VideoProcessorInputView>, IComVtbl<ID3D11View>, IComVtbl<ID3D11DeviceChild>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("11ec5a5f-51dc-4945-ab34-6e8c21300ea5");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator ID3D11View(ID3D11VideoProcessorInputView val)
             => Unsafe.As<ID3D11VideoProcessorInputView, ID3D11View>(ref val);
@@ -52,7 +55,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoProcessorInputView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -63,7 +66,7 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -75,7 +78,7 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -89,7 +92,7 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -100,7 +103,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoProcessorInputView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -109,7 +112,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoProcessorInputView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -117,7 +120,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void GetDevice(ID3D11Device** ppDevice)
         {
             var @this = (ID3D11VideoProcessorInputView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, ID3D11Device**, void>)LpVtbl[3])(@this, ppDevice);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, ID3D11Device**, void>)@this->LpVtbl[3])(@this, ppDevice);
         }
 
         /// <summary>To be documented.</summary>
@@ -126,7 +129,7 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoProcessorInputView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Device** ppDevicePtr = &ppDevice)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, ID3D11Device**, void>)LpVtbl[3])(@this, ppDevicePtr);
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, ID3D11Device**, void>)@this->LpVtbl[3])(@this, ppDevicePtr);
             }
         }
 
@@ -135,7 +138,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoProcessorInputView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSize, pData);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, Guid*, uint*, void*, int>)@this->LpVtbl[4])(@this, guid, pDataSize, pData);
             return ret;
         }
 
@@ -146,7 +149,7 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSize, pDataPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, Guid*, uint*, void*, int>)@this->LpVtbl[4])(@this, guid, pDataSize, pDataPtr);
             }
             return ret;
         }
@@ -158,7 +161,7 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (uint* pDataSizePtr = &pDataSize)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSizePtr, pData);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, Guid*, uint*, void*, int>)@this->LpVtbl[4])(@this, guid, pDataSizePtr, pData);
             }
             return ret;
         }
@@ -172,7 +175,7 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSizePtr, pDataPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, Guid*, uint*, void*, int>)@this->LpVtbl[4])(@this, guid, pDataSizePtr, pDataPtr);
                 }
             }
             return ret;
@@ -185,7 +188,7 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSize, pData);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, Guid*, uint*, void*, int>)@this->LpVtbl[4])(@this, guidPtr, pDataSize, pData);
             }
             return ret;
         }
@@ -199,7 +202,7 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSize, pDataPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, Guid*, uint*, void*, int>)@this->LpVtbl[4])(@this, guidPtr, pDataSize, pDataPtr);
                 }
             }
             return ret;
@@ -214,7 +217,7 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (uint* pDataSizePtr = &pDataSize)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSizePtr, pData);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, Guid*, uint*, void*, int>)@this->LpVtbl[4])(@this, guidPtr, pDataSizePtr, pData);
                 }
             }
             return ret;
@@ -231,7 +234,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (void* pDataPtr = &pData)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSizePtr, pDataPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, Guid*, uint*, void*, int>)@this->LpVtbl[4])(@this, guidPtr, pDataSizePtr, pDataPtr);
                     }
                 }
             }
@@ -243,7 +246,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoProcessorInputView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guid, DataSize, pData);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, Guid*, uint, void*, int>)@this->LpVtbl[5])(@this, guid, DataSize, pData);
             return ret;
         }
 
@@ -254,7 +257,7 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guid, DataSize, pDataPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, Guid*, uint, void*, int>)@this->LpVtbl[5])(@this, guid, DataSize, pDataPtr);
             }
             return ret;
         }
@@ -266,7 +269,7 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guidPtr, DataSize, pData);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, Guid*, uint, void*, int>)@this->LpVtbl[5])(@this, guidPtr, DataSize, pData);
             }
             return ret;
         }
@@ -280,7 +283,7 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guidPtr, DataSize, pDataPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, Guid*, uint, void*, int>)@this->LpVtbl[5])(@this, guidPtr, DataSize, pDataPtr);
                 }
             }
             return ret;
@@ -291,7 +294,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoProcessorInputView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guid, pData);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[6])(@this, guid, pData);
             return ret;
         }
 
@@ -302,7 +305,7 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guid, pDataPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[6])(@this, guid, pDataPtr);
             }
             return ret;
         }
@@ -314,7 +317,7 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pData);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[6])(@this, guidPtr, pData);
             }
             return ret;
         }
@@ -328,7 +331,7 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pDataPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[6])(@this, guidPtr, pDataPtr);
                 }
             }
             return ret;
@@ -338,7 +341,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void GetResource(ID3D11Resource** ppResource)
         {
             var @this = (ID3D11VideoProcessorInputView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, ID3D11Resource**, void>)LpVtbl[7])(@this, ppResource);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, ID3D11Resource**, void>)@this->LpVtbl[7])(@this, ppResource);
         }
 
         /// <summary>To be documented.</summary>
@@ -347,7 +350,7 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoProcessorInputView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Resource** ppResourcePtr = &ppResource)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, ID3D11Resource**, void>)LpVtbl[7])(@this, ppResourcePtr);
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, ID3D11Resource**, void>)@this->LpVtbl[7])(@this, ppResourcePtr);
             }
         }
 
@@ -355,7 +358,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void GetDesc(VideoProcessorInputViewDesc* pDesc)
         {
             var @this = (ID3D11VideoProcessorInputView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, VideoProcessorInputViewDesc*, void>)LpVtbl[8])(@this, pDesc);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, VideoProcessorInputViewDesc*, void>)@this->LpVtbl[8])(@this, pDesc);
         }
 
         /// <summary>To be documented.</summary>
@@ -364,8 +367,58 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoProcessorInputView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (VideoProcessorInputViewDesc* pDescPtr = &pDesc)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, VideoProcessorInputViewDesc*, void>)LpVtbl[8])(@this, pDescPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorInputView*, VideoProcessorInputViewDesc*, void>)@this->LpVtbl[8])(@this, pDescPtr);
             }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoProcessorInputView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void GetDevice<TI0>(ref ComPtr<TI0> ppDevice) where TI0 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoProcessorInputView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->GetDevice((ID3D11Device**) ppDevice.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SetPrivateDataInterface<TI0>(Guid* guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoProcessorInputView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetPrivateDataInterface(guid, (Silk.NET.Core.Native.IUnknown*) pData.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetPrivateDataInterface<TI0>(ref Guid guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoProcessorInputView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetPrivateDataInterface(ref guid, (Silk.NET.Core.Native.IUnknown*) pData.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void GetResource<TI0>(ref ComPtr<TI0> ppResource) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoProcessorInputView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->GetResource((ID3D11Resource**) ppResource.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoProcessorInputView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

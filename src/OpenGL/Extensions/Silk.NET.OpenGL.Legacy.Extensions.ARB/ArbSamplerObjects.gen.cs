@@ -197,6 +197,48 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             GenSamplers((uint) samplers.Length, out samplers.GetPinnableReference());
         }
 
+        public unsafe uint GenSamplers([Flow(FlowDirection.In)] uint count)
+        {
+            // NonKhrReturnTypeOverloader
+            GenSamplers(count, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetSamplerParameter(sampler, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetSamplerParameter(sampler, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterF pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetSamplerParameter(sampler, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetSamplerParameterI(sampler, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetSamplerParameterI(sampler, pname, out int silkRet);
+            return silkRet;
+        }
+
         public ArbSamplerObjects(INativeContext ctx)
             : base(ctx)
         {

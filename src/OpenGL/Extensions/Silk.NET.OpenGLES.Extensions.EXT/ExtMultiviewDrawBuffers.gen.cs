@@ -68,6 +68,20 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
             DrawBuffersIndexed((int) indices.Length, in location.GetPinnableReference(), in indices.GetPinnableReference());
         }
 
+        public unsafe int GetInteger([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index)
+        {
+            // NonKhrReturnTypeOverloader
+            GetInteger(target, index, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetInteger([Flow(FlowDirection.In)] GetPName target, [Flow(FlowDirection.In)] uint index)
+        {
+            // NonKhrReturnTypeOverloader
+            GetInteger(target, index, out int silkRet);
+            return silkRet;
+        }
+
         public ExtMultiviewDrawBuffers(INativeContext ctx)
             : base(ctx)
         {

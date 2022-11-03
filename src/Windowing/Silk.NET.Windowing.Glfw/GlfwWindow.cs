@@ -245,6 +245,11 @@ namespace Silk.NET.Windowing.Glfw
             }
         }
 
+        protected override bool CoreTopMost {
+            get => _glfw.GetWindowAttrib(_glfwWindow, WindowAttributeGetter.Floating);
+            set => _glfw.SetWindowAttrib(_glfwWindow, WindowAttributeSetter.Floating, value);
+        }
+
         protected override bool IsClosingSettable
         {
             set
@@ -337,16 +342,24 @@ namespace Silk.NET.Windowing.Glfw
             }
 
             // Set video mode (-1 = don't care)
+            
             _glfw.WindowHint(WindowHintInt.RefreshRate, opts.VideoMode.RefreshRate ?? -1);
             _glfw.WindowHint(WindowHintInt.DepthBits, opts.PreferredDepthBufferBits ?? -1);
             _glfw.WindowHint(WindowHintInt.StencilBits, opts.PreferredStencilBufferBits ?? -1);
-            _glfw.WindowHint(WindowHintInt.RedBits, opts.PreferredBitDepth?.X ?? -1);
+            
+            _glfw.WindowHint(WindowHintInt.RedBits,   opts.PreferredBitDepth?.X ?? -1);
             _glfw.WindowHint(WindowHintInt.GreenBits, opts.PreferredBitDepth?.Y ?? -1);
-            _glfw.WindowHint(WindowHintInt.BlueBits, opts.PreferredBitDepth?.Z ?? -1);
-            _glfw.WindowHint(WindowHintInt.AlphaBits, opts.PreferredBitDepth?.W ?? -1);
+            _glfw.WindowHint(WindowHintInt.BlueBits,  opts.PreferredBitDepth?.Z ?? -1);
+            if (opts.TransparentFramebuffer && (opts.PreferredBitDepth?.W ?? -1) != -1)
+            {
+                _glfw.WindowHint(WindowHintInt.AlphaBits, opts.PreferredBitDepth?.W ?? -1);
+            }
 
             // Set transparent framebuffer
             _glfw.WindowHint(WindowHintBool.TransparentFramebuffer, opts.TransparentFramebuffer);
+            
+            // Set topmost window
+            _glfw.WindowHint(WindowHintBool.Floating, opts.TopMost);
 
             // Set multisample samples
             _glfw.WindowHint(WindowHintInt.Samples, opts.Samples ?? GLFW.Glfw.DontCare);
@@ -712,6 +725,16 @@ namespace Silk.NET.Windowing.Glfw
                 _onFramebufferResize = null;
                 _onFileDrop = null;
                 _onFocusChanged = null;
+            }
+        }
+
+        public new bool TopMost
+        {
+            get => ExtendedOptionsCache.TopMost;
+            set
+            {
+                _glfw.SetWindowAttrib(_glfwWindow, WindowAttributeSetter.Floating, value);
+                ExtendedOptionsCache.TopMost = value;
             }
         }
 

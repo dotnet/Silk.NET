@@ -232,6 +232,41 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
             return ret;
         }
 
+        public unsafe uint CreateMemoryObjects([Flow(FlowDirection.In)] uint n)
+        {
+            // NonKhrReturnTypeOverloader
+            CreateMemoryObjects(n, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetMemoryObjectParameter([Flow(FlowDirection.In)] uint memoryObject, [Flow(FlowDirection.In)] EXT pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetMemoryObjectParameter(memoryObject, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetMemoryObjectParameter([Flow(FlowDirection.In)] uint memoryObject, [Flow(FlowDirection.In)] MemoryObjectParameterName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetMemoryObjectParameter(memoryObject, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetUnsignedByte([Flow(FlowDirection.In)] GetPName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetUnsignedByte(pname, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetUnsignedByte([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index)
+        {
+            // NonKhrReturnTypeOverloader
+            GetUnsignedByte(target, index, out byte silkRet);
+            return silkRet;
+        }
+
         public ExtMemoryObject(INativeContext ctx)
             : base(ctx)
         {

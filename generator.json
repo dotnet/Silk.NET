@@ -997,7 +997,12 @@
                     "dxgi1_6.h": "[Core]DXGI",
                     "dxgidebug.h": "[Core]DXGI",
                     "dxgiformat.h": "[Core]DXGI"
-                }
+                },
+                "comRefs": [
+                    "Silk.NET.Core.Native.ID3D10Blob",
+                    "Silk.NET.Core.Native.ID3DDestructionNotifier",
+                    "Silk.NET.Core.Native.ID3DInclude"
+                ]
             },
             "exclude": [
             ],
@@ -1173,7 +1178,14 @@
                     "d3d11shader.h": "[Core]D3D11",
                     "d3d11shadertracing.h": "[Core]D3D11",
                     "d3d11sdklayers.h": "[Core]D3D11"
-                }
+                },
+                "comRefs": [
+                    "Silk.NET.DXGI.IDXGIAdapter",
+                    "Silk.NET.DXGI.IDXGISwapChain",
+                    "Silk.NET.Core.Native.ID3D10Blob",
+                    "Silk.NET.Core.Native.ID3DDestructionNotifier",
+                    "Silk.NET.Core.Native.ID3DInclude"
+                ]
             },
             "exclude": [
                 "ID3D10Blob"
@@ -1257,7 +1269,14 @@
                     "d3d12shader.h": "[Core]D3D12",
                     "d3d12video.h": "[Core]D3D12",
                     "d3d12sdklayers.h": "[Core]D3D12"
-                }
+                },
+                "comRefs": [
+                    "Silk.NET.DXGI.IDXGIAdapter",
+                    "Silk.NET.DXGI.IDXGISwapChain",
+                    "Silk.NET.Core.Native.ID3D10Blob",
+                    "Silk.NET.Core.Native.ID3DDestructionNotifier",
+                    "Silk.NET.Core.Native.ID3DInclude"
+                ]
             },
             "exclude": [
                 "D3D12_RAYTRACING_AABB"
@@ -1332,7 +1351,14 @@
                 ],
                 "classes": {
                     "D3D9.h": "[Core]D3D9"
-                }
+                },
+                "comRefs": [
+                    "Silk.NET.DXGI.IDXGIAdapter",
+                    "Silk.NET.DXGI.IDXGISwapChain",
+                    "Silk.NET.Core.Native.ID3D10Blob",
+                    "Silk.NET.Core.Native.ID3DDestructionNotifier",
+                    "Silk.NET.Core.Native.ID3DInclude"
+                ]
             },
             "exclude": [
                 "__AnonymousRecord_d3d9types_L93_C9",
@@ -1385,7 +1411,9 @@
             "cacheKey": "dxc",
             "controlDescriptors": [
                 "convert-windows-only",
-                "no-csproj"
+                "no-csproj",
+                "COMMENT: the below is needed because D3DCompiler and Dxc are in the same project and will fight eachother otherwise",
+                "keep-unknown-gen-files"
             ],
             "prefix": "Dxc",
             "clang": {
@@ -1406,7 +1434,14 @@
                 ],
                 "classes": {
                     "DXC.h": "[Core]DXC"
-                }
+                },
+                "comRefs": [
+                    "Silk.NET.DXGI.IDXGIAdapter",
+                    "Silk.NET.DXGI.IDXGISwapChain",
+                    "Silk.NET.Core.Native.ID3D10Blob",
+                    "Silk.NET.Core.Native.ID3DDestructionNotifier",
+                    "Silk.NET.Core.Native.ID3DInclude"
+                ]
             },
             "exclude": [
             ],
@@ -1453,7 +1488,9 @@
             "cacheDir": "build/cache",
             "cacheKey": "d3dcompiler",
             "controlDescriptors": [
-                "convert-windows-only"
+                "convert-windows-only",
+                "COMMENT: the below is needed because D3DCompiler and Dxc are in the same project and will fight eachother otherwise",
+                "keep-unknown-gen-files"
             ],
             "prefix": "D3D",
             "clang": {
@@ -1473,7 +1510,14 @@
                 ],
                 "classes": {
                     "d3dcompiler.h": "[Core]D3DCompiler"
-                }
+                },
+                "comRefs": [
+                    "Silk.NET.DXGI.IDXGIAdapter",
+                    "Silk.NET.DXGI.IDXGISwapChain",
+                    "Silk.NET.Core.Native.ID3D10Blob",
+                    "Silk.NET.Core.Native.ID3DDestructionNotifier",
+                    "Silk.NET.Core.Native.ID3DInclude"
+                ]
             },
             "exclude": [
             ],

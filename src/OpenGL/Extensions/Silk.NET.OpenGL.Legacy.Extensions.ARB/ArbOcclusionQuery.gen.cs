@@ -146,6 +146,55 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             GenQueries((uint) ids.Length, out ids.GetPinnableReference());
         }
 
+        public unsafe uint GenQueries([Flow(FlowDirection.In)] uint n)
+        {
+            // NonKhrReturnTypeOverloader
+            GenQueries(n, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetQuery([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetQuery(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetQuery([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] QueryParameterName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetQuery(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetQuery([Flow(FlowDirection.In)] QueryTarget target, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetQuery(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetQuery([Flow(FlowDirection.In)] QueryTarget target, [Flow(FlowDirection.In)] QueryParameterName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetQuery(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetQueryObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetQueryObject(id, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetQueryObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] QueryObjectParameterName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetQueryObject(id, pname, out int silkRet);
+            return silkRet;
+        }
+
         public ArbOcclusionQuery(INativeContext ctx)
             : base(ctx)
         {

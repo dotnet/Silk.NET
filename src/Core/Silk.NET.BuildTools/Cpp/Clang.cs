@@ -208,13 +208,19 @@ namespace Silk.NET.BuildTools.Cpp
             var project = profile.Projects[projectName] = new Project
             {
                 IsRoot = projectName == "Core",
-                Namespace = projectName == "Core" ? task.Namespace : $"{task.ExtensionsNamespace}.{projectName}"
+                Namespace = projectName == "Core" ? task.Namespace : $"{task.ExtensionsNamespace}.{projectName}",
+                ComRefs = task.ClangOpts.ComRefs ?? new HashSet<string>()
             };
 
             if (projectName != "Core")
             {
                 // we need a core project even if we're not using it
-                profile.Projects["Core"] = new() { IsRoot = true, Namespace = task.Namespace };
+                profile.Projects["Core"] = new()
+                {
+                    IsRoot = true,
+                    Namespace = task.Namespace,
+                    ComRefs = task.ClangOpts.ComRefs ?? new HashSet<string>()
+                };
             }
 
             var @class = new Class
@@ -1245,11 +1251,6 @@ namespace Silk.NET.BuildTools.Cpp
                             );
                         }
 
-                        if (TryGetUuid(recordDecl, out var uuid))
-                        {
-                            attrs.Add(new Attribute { Name = "Guid", Arguments = new List<string> { $"\"{uuid}\"" } });
-                        }
-
                         Struct @struct;
                         structs.Add
                         (
@@ -1260,7 +1261,8 @@ namespace Silk.NET.BuildTools.Cpp
                                 NativeName = nativeName,
                                 ClangMetadata = new[] { recordDecl.Location.ToString() },
                                 Fields = ConvertAll(recordDecl, name).ToList(),
-                                Attributes = attrs
+                                Attributes = attrs,
+                                Uuid = TryGetUuid(recordDecl, out var uuid) ? uuid : null
                             }
                         );
 

@@ -16,7 +16,7 @@ namespace Silk.NET.BuildTools.Overloading
 {
     public class ReturnTypeOverloader : IComplexFunctionOverloader
     {
-        private static bool IsApplicable(Function function)
+        internal static bool IsApplicable(Function function)
         {
             // function is in its original form
             if (function.Kind != SignatureKind.Normal)
@@ -109,7 +109,7 @@ namespace Silk.NET.BuildTools.Overloading
 
             sb.AppendLine("// ReturnTypeOverloader");
             sb.AppendLine($"{newReturnType} ret = default;");
-            sb.Append($"{function.Name}(");
+            sb.Append($"{function.InvocationPrefix}{function.Name}(");
             sb.Append(string.Join(", ", strParams));
             sb.AppendLine(");");
             sb.AppendLine("return ret;");

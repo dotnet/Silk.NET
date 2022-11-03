@@ -155,6 +155,132 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
             ExtGetShaders(out shaders.GetPinnableReference(), (int) shaders.Length, out numShaders);
         }
 
+        public unsafe int ExtGetProgram([Count(Parameter = "maxPrograms"), Flow(FlowDirection.Out)] uint* programs, [Flow(FlowDirection.In)] int maxPrograms)
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetProgram(programs, maxPrograms, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int ExtGetProgram([Count(Parameter = "maxPrograms"), Flow(FlowDirection.Out)] out uint programs, [Flow(FlowDirection.In)] int maxPrograms)
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetProgram(out programs, maxPrograms, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int ExtGetProgram([Count(Parameter = "maxPrograms"), Flow(FlowDirection.Out)] Program* programs, [Flow(FlowDirection.In)] int maxPrograms)
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetProgram(programs, maxPrograms, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int ExtGetProgram([Count(Parameter = "maxPrograms"), Flow(FlowDirection.Out)] out Program programs, [Flow(FlowDirection.In)] int maxPrograms)
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetProgram(out programs, maxPrograms, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] QCOM shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out)] byte* source)
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetProgramBinarySource(program, shadertype, source, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] QCOM shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out)] out byte source)
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetProgramBinarySource(program, shadertype, out source, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] QCOM shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string source)
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetProgramBinarySource(program, shadertype, out source, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out)] byte* source)
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetProgramBinarySource(program, shadertype, source, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out)] out byte source)
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetProgramBinarySource(program, shadertype, out source, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string source)
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetProgramBinarySource(program, shadertype, out source, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int ExtGetShaders([Count(Parameter = "maxShaders"), Flow(FlowDirection.Out)] uint* shaders, [Flow(FlowDirection.In)] int maxShaders)
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetShaders(shaders, maxShaders, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int ExtGetShaders([Count(Parameter = "maxShaders"), Flow(FlowDirection.Out)] out uint shaders, [Flow(FlowDirection.In)] int maxShaders)
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetShaders(out shaders, maxShaders, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int ExtGetShaders([Count(Parameter = "maxShaders"), Flow(FlowDirection.Out)] Shader* shaders, [Flow(FlowDirection.In)] int maxShaders)
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetShaders(shaders, maxShaders, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int ExtGetShaders([Count(Parameter = "maxShaders"), Flow(FlowDirection.Out)] out Shader shaders, [Flow(FlowDirection.In)] int maxShaders)
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetShaders(out shaders, maxShaders, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int ExtGetProgram([Count(Parameter = "maxPrograms"), Flow(FlowDirection.Out)] Span<uint> programs)
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetProgram(programs, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int ExtGetProgram([Count(Parameter = "maxPrograms"), Flow(FlowDirection.Out)] Span<Program> programs)
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetProgram(programs, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int ExtGetShaders([Count(Parameter = "maxShaders"), Flow(FlowDirection.Out)] Span<uint> shaders)
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetShaders(shaders, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int ExtGetShaders([Count(Parameter = "maxShaders"), Flow(FlowDirection.Out)] Span<Shader> shaders)
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetShaders(shaders, out int silkRet);
+            return silkRet;
+        }
+
         public QComExtendedGet2(INativeContext ctx)
             : base(ctx)
         {

@@ -39,6 +39,12 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"Reserved7BitNV\"")]
         [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_RESERVED_7_BIT_NV")]
         BuildAccelerationStructureReserved7BitNV = 128,
+        [Obsolete("Deprecated in favour of \"ReservedBit9NV\"")]
+        [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_RESERVED_BIT_9_NV")]
+        BuildAccelerationStructureReservedBit9NV = 512,
+        [Obsolete("Deprecated in favour of \"ReservedBit10NV\"")]
+        [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_RESERVED_BIT_10_NV")]
+        BuildAccelerationStructureReservedBit10NV = 1024,
         [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_UPDATE_BIT_KHR")]
         AllowUpdateBitKhr = 1,
         [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_COMPACTION_BIT_KHR")]
@@ -55,5 +61,9 @@ namespace Silk.NET.Vulkan
         Reserved6BitNV = 64,
         [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_RESERVED_7_BIT_NV")]
         Reserved7BitNV = 128,
+        [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_RESERVED_BIT_9_NV")]
+        ReservedBit9NV = 512,
+        [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_RESERVED_BIT_10_NV")]
+        ReservedBit10NV = 1024,
     }
 }

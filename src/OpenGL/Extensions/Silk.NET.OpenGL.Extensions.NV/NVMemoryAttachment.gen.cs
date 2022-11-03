@@ -47,6 +47,13 @@ namespace Silk.NET.OpenGL.Extensions.NV
         [NativeApi(EntryPoint = "glTextureAttachMemoryNV", Convention = CallingConvention.Winapi)]
         public partial void TextureAttachMemory([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
+        public unsafe uint GetMemoryObjectDetachedResources([Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count)
+        {
+            // NonKhrReturnTypeOverloader
+            GetMemoryObjectDetachedResources(memory, pname, first, count, out uint silkRet);
+            return silkRet;
+        }
+
         public NVMemoryAttachment(INativeContext ctx)
             : base(ctx)
         {

@@ -44,6 +44,20 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         [NativeApi(EntryPoint = "glCullParameterfvEXT", Convention = CallingConvention.Winapi)]
         public partial void CullParameter([Flow(FlowDirection.In)] CullParameterEXT pname, [Count(Count = 4), Flow(FlowDirection.Out)] out float @params);
 
+        public unsafe double CullParameter([Flow(FlowDirection.In)] EXT pname)
+        {
+            // NonKhrReturnTypeOverloader
+            CullParameter(pname, out double silkRet);
+            return silkRet;
+        }
+
+        public unsafe double CullParameter([Flow(FlowDirection.In)] CullParameterEXT pname)
+        {
+            // NonKhrReturnTypeOverloader
+            CullParameter(pname, out double silkRet);
+            return silkRet;
+        }
+
         public ExtCullVertex(INativeContext ctx)
             : base(ctx)
         {

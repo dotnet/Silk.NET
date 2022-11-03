@@ -38,6 +38,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
             TextureRange(target, (uint) (pointer.Length * Unsafe.SizeOf<T0>()), in pointer.GetPinnableReference());
         }
 
+        public unsafe void* GetTexParameterPointer([Flow(FlowDirection.In)] APPLE target, [Flow(FlowDirection.In)] APPLE pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTexParameterPointer(target, pname, out void* silkRet);
+            return silkRet;
+        }
+
         public AppleTextureRange(INativeContext ctx)
             : base(ctx)
         {

@@ -164,6 +164,48 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         [NativeApi(EntryPoint = "glTexParameterIuivEXT", Convention = CallingConvention.Winapi)]
         public partial void TexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in uint @params);
 
+        public unsafe int GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] EXT pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetSamplerParameterI(sampler, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetSamplerParameterI(sampler, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetTexParameterI([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTexParameterI(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetTexParameterI([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] GetTextureParameter pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTexParameterI(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetTexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] EXT pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTexParameterI(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetTexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GetTextureParameter pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTexParameterI(target, pname, out int silkRet);
+            return silkRet;
+        }
+
         public ExtTextureBorderClamp(INativeContext ctx)
             : base(ctx)
         {

@@ -38,6 +38,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             ProgramSubroutineParameters(target, (uint) @params.Length, in @params.GetPinnableReference());
         }
 
+        public unsafe uint GetProgramSubroutineParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index)
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramSubroutineParameter(target, index, out uint silkRet);
+            return silkRet;
+        }
+
         public NVGpuProgram5(INativeContext ctx)
             : base(ctx)
         {

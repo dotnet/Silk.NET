@@ -68,6 +68,41 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
         [NativeApi(EntryPoint = "glNamedFramebufferSamplePositionsfvAMD", Convention = CallingConvention.Winapi)]
         public partial void NamedFramebufferSamplePositions([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint numsamples, [Flow(FlowDirection.In)] uint pixelindex, [Flow(FlowDirection.In)] in float values);
 
+        public unsafe float GetFramebufferParameter([Flow(FlowDirection.In)] AMD target, [Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] uint numsamples, [Flow(FlowDirection.In)] uint pixelindex, [Flow(FlowDirection.In)] uint size)
+        {
+            // NonKhrReturnTypeOverloader
+            GetFramebufferParameter(target, pname, numsamples, pixelindex, size, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetFramebufferParameter([Flow(FlowDirection.In)] AMD target, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Flow(FlowDirection.In)] uint numsamples, [Flow(FlowDirection.In)] uint pixelindex, [Flow(FlowDirection.In)] uint size)
+        {
+            // NonKhrReturnTypeOverloader
+            GetFramebufferParameter(target, pname, numsamples, pixelindex, size, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetFramebufferParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] uint numsamples, [Flow(FlowDirection.In)] uint pixelindex, [Flow(FlowDirection.In)] uint size)
+        {
+            // NonKhrReturnTypeOverloader
+            GetFramebufferParameter(target, pname, numsamples, pixelindex, size, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetFramebufferParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Flow(FlowDirection.In)] uint numsamples, [Flow(FlowDirection.In)] uint pixelindex, [Flow(FlowDirection.In)] uint size)
+        {
+            // NonKhrReturnTypeOverloader
+            GetFramebufferParameter(target, pname, numsamples, pixelindex, size, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetNamedFramebufferParameter([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] uint numsamples, [Flow(FlowDirection.In)] uint pixelindex, [Flow(FlowDirection.In)] uint size)
+        {
+            // NonKhrReturnTypeOverloader
+            GetNamedFramebufferParameter(framebuffer, pname, numsamples, pixelindex, size, out float silkRet);
+            return silkRet;
+        }
+
         public AmdFramebufferSamplePositions(INativeContext ctx)
             : base(ctx)
         {

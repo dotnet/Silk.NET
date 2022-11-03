@@ -38,6 +38,24 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         [NativeApi(EntryPoint = "vkGetImageSubresourceLayout2EXT", Convention = CallingConvention.Winapi)]
         public partial void GetImageSubresourceLayout2([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(FlowDirection.In)] in ImageSubresource2EXT pSubresource, [Count(Count = 0), Flow(FlowDirection.Out)] out SubresourceLayout2EXT pLayout);
 
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pLayout = new(StructureType.SubresourceLayout2Ext);")]
+        public unsafe SubresourceLayout2EXT GetImageSubresourceLayout2([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(FlowDirection.In)] ImageSubresource2EXT* pSubresource)
+        {
+            // NonKhrReturnTypeOverloader
+            GetImageSubresourceLayout2(device, image, pSubresource, out SubresourceLayout2EXT silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pLayout = new(StructureType.SubresourceLayout2Ext);")]
+        public unsafe SubresourceLayout2EXT GetImageSubresourceLayout2([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(FlowDirection.In)] in ImageSubresource2EXT pSubresource)
+        {
+            // NonKhrReturnTypeOverloader
+            GetImageSubresourceLayout2(device, image, in pSubresource, out SubresourceLayout2EXT silkRet);
+            return silkRet;
+        }
+
         public ExtImageCompressionControl(INativeContext ctx)
             : base(ctx)
         {

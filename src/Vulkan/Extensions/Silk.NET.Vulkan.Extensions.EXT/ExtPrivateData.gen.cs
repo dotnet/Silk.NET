@@ -72,6 +72,14 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         [NativeApi(EntryPoint = "vkSetPrivateDataEXT", Convention = CallingConvention.Winapi)]
         public partial Result SetPrivateData([Count(Count = 0)] Device device, [Count(Count = 0)] ObjectType objectType, [Count(Count = 0)] ulong objectHandle, [Count(Count = 0)] PrivateDataSlot privateDataSlot, [Count(Count = 0)] ulong data);
 
+        /// <summary>To be documented.</summary>
+        public unsafe ulong GetPrivateData([Count(Count = 0)] Device device, [Count(Count = 0)] ObjectType objectType, [Count(Count = 0)] ulong objectHandle, [Count(Count = 0)] PrivateDataSlot privateDataSlot)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPrivateData(device, objectType, objectHandle, privateDataSlot, out ulong silkRet);
+            return silkRet;
+        }
+
         public ExtPrivateData(INativeContext ctx)
             : base(ctx)
         {

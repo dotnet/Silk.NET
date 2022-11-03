@@ -65,6 +65,27 @@ namespace Silk.NET.OpenGLES.Extensions.NV
             CreateSemaphores((uint) semaphores.Length, out semaphores.GetPinnableReference());
         }
 
+        public unsafe uint CreateSemaphores([Flow(FlowDirection.In)] uint n)
+        {
+            // NonKhrReturnTypeOverloader
+            CreateSemaphores(n, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetSemaphoreParameter([Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] NV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetSemaphoreParameter(semaphore, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetSemaphoreParameter([Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] SemaphoreParameterName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetSemaphoreParameter(semaphore, pname, out int silkRet);
+            return silkRet;
+        }
+
         public NVTimelineSemaphore(INativeContext ctx)
             : base(ctx)
         {

@@ -254,6 +254,83 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             GetBufferSubData(target, offset, (nuint) (data.Length * Unsafe.SizeOf<T0>()), out data.GetPinnableReference());
         }
 
+        public unsafe uint GenBuffers([Flow(FlowDirection.In)] uint n)
+        {
+            // NonKhrReturnTypeOverloader
+            GenBuffers(n, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetBufferParameter([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetBufferParameter(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetBufferParameter([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] BufferPNameARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetBufferParameter(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetBufferParameter([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetBufferParameter(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetBufferParameter([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] BufferPNameARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetBufferParameter(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe void* GetBufferPointer([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetBufferPointer(target, pname, out void* silkRet);
+            return silkRet;
+        }
+
+        public unsafe void* GetBufferPointer([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] BufferPointerNameARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetBufferPointer(target, pname, out void* silkRet);
+            return silkRet;
+        }
+
+        public unsafe void* GetBufferPointer([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetBufferPointer(target, pname, out void* silkRet);
+            return silkRet;
+        }
+
+        public unsafe void* GetBufferPointer([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] BufferPointerNameARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetBufferPointer(target, pname, out void* silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetBufferSubData<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetBufferSubData(target, offset, size, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetBufferSubData<T0>([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetBufferSubData(target, offset, size, out T0 silkRet);
+            return silkRet;
+        }
+
         public ArbVertexBufferObject(INativeContext ctx)
             : base(ctx)
         {

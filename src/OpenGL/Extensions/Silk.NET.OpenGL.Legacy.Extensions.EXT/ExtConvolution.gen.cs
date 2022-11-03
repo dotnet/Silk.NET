@@ -788,6 +788,314 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         [NativeApi(EntryPoint = "glSeparableFilter2DEXT", Convention = CallingConvention.Winapi)]
         public partial void SeparableFilter2D<T0, T1>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type, width"), Flow(FlowDirection.In)] in T0 row, [Count(Computed = "target, format, type, height"), Flow(FlowDirection.In)] in T1 column) where T0 : unmanaged where T1 : unmanaged;
 
+        public unsafe T0 GetConvolutionFilter<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetConvolutionFilter(target, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetConvolutionFilter<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetConvolutionFilter(target, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetConvolutionFilter<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetConvolutionFilter(target, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetConvolutionFilter<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetConvolutionFilter(target, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetConvolutionFilter<T0>([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetConvolutionFilter(target, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetConvolutionFilter<T0>([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetConvolutionFilter(target, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetConvolutionFilter<T0>([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetConvolutionFilter(target, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetConvolutionFilter<T0>([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetConvolutionFilter(target, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetConvolutionParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetConvolutionParameter(target, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetConvolutionParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetConvolutionParameter(target, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetConvolutionParameter([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] EXT pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetConvolutionParameter(target, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetConvolutionParameter([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetConvolutionParameter(target, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetSeparableFilter<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* row, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* column) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetSeparableFilter(target, format, type, row, column, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetSeparableFilter<T0, T1>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* row, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetSeparableFilter(target, format, type, row, out column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetSeparableFilter<T0, T1>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 row, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetSeparableFilter(target, format, type, out row, column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T2 GetSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 row, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T1 column) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetSeparableFilter(target, format, type, out row, out column, out T2 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetSeparableFilter<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* row, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* column) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetSeparableFilter(target, format, type, row, column, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetSeparableFilter<T0, T1>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* row, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetSeparableFilter(target, format, type, row, out column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetSeparableFilter<T0, T1>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 row, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetSeparableFilter(target, format, type, out row, column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T2 GetSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 row, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T1 column) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetSeparableFilter(target, format, type, out row, out column, out T2 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetSeparableFilter<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* row, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* column) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetSeparableFilter(target, format, type, row, column, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetSeparableFilter<T0, T1>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* row, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetSeparableFilter(target, format, type, row, out column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetSeparableFilter<T0, T1>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 row, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetSeparableFilter(target, format, type, out row, column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T2 GetSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 row, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T1 column) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetSeparableFilter(target, format, type, out row, out column, out T2 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetSeparableFilter<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* row, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* column) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetSeparableFilter(target, format, type, row, column, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetSeparableFilter<T0, T1>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* row, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetSeparableFilter(target, format, type, row, out column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetSeparableFilter<T0, T1>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 row, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetSeparableFilter(target, format, type, out row, column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T2 GetSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 row, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T1 column) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetSeparableFilter(target, format, type, out row, out column, out T2 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* row, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* column) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetSeparableFilter(target, format, type, row, column, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* row, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetSeparableFilter(target, format, type, row, out column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 row, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetSeparableFilter(target, format, type, out row, column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T2 GetSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 row, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T1 column) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetSeparableFilter(target, format, type, out row, out column, out T2 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* row, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* column) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetSeparableFilter(target, format, type, row, column, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* row, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetSeparableFilter(target, format, type, row, out column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 row, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetSeparableFilter(target, format, type, out row, column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T2 GetSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 row, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T1 column) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetSeparableFilter(target, format, type, out row, out column, out T2 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* row, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* column) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetSeparableFilter(target, format, type, row, column, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* row, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetSeparableFilter(target, format, type, row, out column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 row, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetSeparableFilter(target, format, type, out row, column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T2 GetSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 row, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T1 column) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetSeparableFilter(target, format, type, out row, out column, out T2 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* row, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* column) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetSeparableFilter(target, format, type, row, column, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* row, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetSeparableFilter(target, format, type, row, out column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 row, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetSeparableFilter(target, format, type, out row, column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T2 GetSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 row, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T1 column) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetSeparableFilter(target, format, type, out row, out column, out T2 silkRet);
+            return silkRet;
+        }
+
         public ExtConvolution(INativeContext ctx)
             : base(ctx)
         {
