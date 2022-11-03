@@ -45,15 +45,19 @@ Proud to be an official project under the benevolent [.NET Foundation](https://d
 <h1 align="center">Features</h1>
 
 ### Performance
+
 Having poured lots of hours into examining generated C# code and its JIT assembly, you can count on us to deliver blazing fast bindings with negligible overhead induced by Silk.NET!
 
 ### Up-to-date
+
 With an efficient bindings regeneration mechanism, we are committed to ensuring our bindings reflect the latest specifications with frequent updates generated straight from the upstream sources.
 
 ### High-level utilities
+
 In addition to providing high-speed, direct, and transparent bindings, we provide high-level utilities and wrappers to maximise productivity in common workloads such as platform-agnostic abstractions around Windowing and Input, bringing your apps to a vast number of platforms without changing a single line!
 
 ### Good-to-go
+
 Silk.NET caters for anything you could need in swift development of multimedia, graphics, compute applications. Silk.NET is an all-in-one solution, complete with Graphics, Compute, Audio, Input, and Windowing.
 
 <!-- Begin exclude from NuGet readme. -->
