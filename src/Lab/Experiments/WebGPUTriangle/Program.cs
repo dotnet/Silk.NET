@@ -16,7 +16,7 @@ public static unsafe class Program
 {
     // ReSharper disable once InconsistentNaming
     private static WebGPU wgpu = null!;
-    private static WebGPUDisposal? webGpuDisposal;
+    private static WebGPUDisposal? webGpuDisposal = null!;
     private static IWindow? _Window;
 
     private static Surface* _Surface;
@@ -73,7 +73,7 @@ fn fs_main() -> @location(0) vec4<f32> {
 
         webGpuDisposal = new WebGPUDisposal(wgpu);
 
-        _Surface = WebGPUWindow.CreateSurface(wgpu, _Window);
+        _Surface = _Window.CreateWebGPUSurface(wgpu);
 
         { //Get adapter
             var requestAdapterOptions = new RequestAdapterOptions
