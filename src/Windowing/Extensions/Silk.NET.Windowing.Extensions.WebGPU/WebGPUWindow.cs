@@ -15,14 +15,14 @@ public static class WebGPUWindow
     /// Creates a WebGPU surface from a window.
     /// </summary>
     /// <param name="wgpu">A WebGPU instance</param>
-    /// <param name="window">The window to get the surface from</param>
+    /// <param name="view">The window to get the surface from</param>
     /// <returns>A newly created Surface*/</returns>
     /// <exception cref="NotSupportedException">Throws when an unsupported platform is detected.</exception>
-    public static unsafe Surface* CreateSurface(NET.WebGPU.WebGPU wgpu, IView window, Instance* instance = null)
+    public static unsafe Surface* CreateWebGPUSurface(this IView view, NET.WebGPU.WebGPU wgpu, Instance* instance = null)
     {
         var descriptor = new SurfaceDescriptor();
 
-        if (window.Native.X11 != null)
+        if (view.Native.X11 != null)
         {
             var xlibDescriptor = new SurfaceDescriptorFromXlibWindow
             {
@@ -31,17 +31,17 @@ public static class WebGPUWindow
                     Next = null,
                     SType = SType.SurfaceDescriptorFromXlibWindow
                 },
-                Display = (void*) window.Native.X11.Value.Display,
-                Window = (uint) window.Native.X11.Value.Window
+                Display = (void*) view.Native.X11.Value.Display,
+                Window = (uint) view.Native.X11.Value.Window
             };
 
             descriptor.NextInChain = (ChainedStruct*) (&xlibDescriptor);
         }
-        else if (window.Native.Cocoa != null)
+        else if (view.Native.Cocoa != null)
         {
             throw new NotSupportedException("WebGPU on MacOS is not supported at this time!)");
 
-            var cocoa = window.Native.Cocoa.Value;
+            var cocoa = view.Native.Cocoa.Value;
 
             var cocoaDescriptor = new SurfaceDescriptorFromMetalLayer
             {
@@ -53,7 +53,7 @@ public static class WebGPUWindow
                 Layer = null //TODO: Get the layer from the window
             };
         }
-        else if (window.Native.Wayland != null)
+        else if (view.Native.Wayland != null)
         {
             var waylandDescriptor = new SurfaceDescriptorFromWaylandSurface
             {
@@ -62,13 +62,13 @@ public static class WebGPUWindow
                     Next = null,
                     SType = SType.SurfaceDescriptorFromWaylandSurface
                 },
-                Display = (void*) window.Native.Wayland.Value.Display,
-                Surface = (void*) window.Native.Wayland.Value.Surface
+                Display = (void*) view.Native.Wayland.Value.Display,
+                Surface = (void*) view.Native.Wayland.Value.Surface
             };
 
             descriptor.NextInChain = (ChainedStruct*) (&waylandDescriptor);
         }
-        else if (window.Native.Win32 != null)
+        else if (view.Native.Win32 != null)
         {
             var win32Descriptor = new SurfaceDescriptorFromWindowsHWND
             {
@@ -77,13 +77,13 @@ public static class WebGPUWindow
                     Next = null,
                     SType = SType.SurfaceDescriptorFromWindowsHwnd
                 },
-                Hwnd = (void*) window.Native.Win32.Value.Hwnd,
-                Hinstance = (void*) window.Native.Win32.Value.HInstance
+                Hwnd = (void*) view.Native.Win32.Value.Hwnd,
+                Hinstance = (void*) view.Native.Win32.Value.HInstance
             };
 
             descriptor.NextInChain = (ChainedStruct*) (&win32Descriptor);
         }
-        else if (window.Native.Android != null)
+        else if (view.Native.Android != null)
         {
             var androidDescriptor = new SurfaceDescriptorFromAndroidNativeWindow
             {
@@ -92,14 +92,14 @@ public static class WebGPUWindow
                     Next = null,
                     SType = SType.SurfaceDescriptorFromAndroidNativeWindow
                 },
-                Window = (void*) window.Native.Android.Value.Window
+                Window = (void*) view.Native.Android.Value.Window
             };
 
             descriptor.NextInChain = (ChainedStruct*) (&androidDescriptor);
         }
         else
         {
-            throw new NotSupportedException($"Your platform is not supported! {window.Native.Kind}");
+            throw new NotSupportedException($"Your platform is not supported! {view.Native.Kind}");
         }
 
         return wgpu.InstanceCreateSurface(instance, ref descriptor);
