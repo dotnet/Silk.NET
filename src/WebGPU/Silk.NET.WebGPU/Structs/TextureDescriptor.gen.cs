@@ -23,7 +23,7 @@ namespace Silk.NET.WebGPU
         (
             ChainedStruct* nextInChain = null,
             byte* label = null,
-            uint? usage = null,
+            Silk.NET.WebGPU.TextureUsage? usage = null,
             TextureDimension? dimension = null,
             Extent3D? size = null,
             TextureFormat? format = null,
@@ -98,7 +98,7 @@ namespace Silk.NET.WebGPU
         [NativeName("Type", "WGPUTextureUsageFlags")]
         [NativeName("Type.Name", "WGPUTextureUsageFlags")]
         [NativeName("Name", "usage")]
-        public uint Usage;
+        public Silk.NET.WebGPU.TextureUsage Usage;
 
         [NativeName("Type", "WGPUTextureDimension")]
         [NativeName("Type.Name", "WGPUTextureDimension")]

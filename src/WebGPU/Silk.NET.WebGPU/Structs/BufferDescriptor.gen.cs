@@ -23,7 +23,7 @@ namespace Silk.NET.WebGPU
         (
             ChainedStruct* nextInChain = null,
             byte* label = null,
-            uint? usage = null,
+            Silk.NET.WebGPU.BufferUsage? usage = null,
             ulong? size = null,
             bool? mappedAtCreation = null
         ) : this()
@@ -68,7 +68,7 @@ namespace Silk.NET.WebGPU
         [NativeName("Type", "WGPUBufferUsageFlags")]
         [NativeName("Type.Name", "WGPUBufferUsageFlags")]
         [NativeName("Name", "usage")]
-        public uint Usage;
+        public Silk.NET.WebGPU.BufferUsage Usage;
 
         [NativeName("Type", "uint64_t")]
         [NativeName("Type.Name", "uint64_t")]

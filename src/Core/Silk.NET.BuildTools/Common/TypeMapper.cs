@@ -35,12 +35,12 @@ namespace Silk.NET.BuildTools.Common
         /// <param name="maps">The map to use.</param>
         /// <param name="og">The type to map.</param>
         /// <returns>The mapped type.</returns>
-        public static Type MapOne(IEnumerable<Dictionary<string, string>> maps, Type og)
+        public static Type MapOne(IEnumerable<Dictionary<string, string>> maps, Type og, string ogN = null)
         {
             var type = og;
             foreach (var map in maps)
             {
-                type = MapOne(map, type);
+                type = MapOne(map, type, ogN);
             }
 
             return type;
@@ -52,7 +52,7 @@ namespace Silk.NET.BuildTools.Common
         /// <param name="map">The map to use.</param>
         /// <param name="og">The type to map.</param>
         /// <returns>The mapped type.</returns>
-        public static Type MapOne(Dictionary<string, string> map, Type og)
+        public static Type MapOne(Dictionary<string, string> map, Type og, string ogN = null)
         {
             var type = og;
             if (map.ContainsKey(type.ToString()))
@@ -65,6 +65,10 @@ namespace Silk.NET.BuildTools.Common
             else if (map.ContainsKey(type.Name))
             {
                 type.Name = map[type.Name];
+            }
+            else if (ogN != null && map.ContainsKey(ogN)) 
+            {
+                type.Name = map[ogN];
             }
 
             if (og.FunctionPointerSignature is not null)
@@ -121,7 +125,7 @@ namespace Silk.NET.BuildTools.Common
             {
                 foreach (var field in @struct.Fields)
                 {
-                    field.Type = MapOne(map, field.Type);
+                    field.Type = MapOne(map, field.Type, field.NativeType);
                 }
 
                 for (var i = 0; i < @struct.ComBases.Count; i++)
