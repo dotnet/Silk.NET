@@ -100,18 +100,18 @@ fn main(@builtin(global_invocation_id) global_id: vec3<u32>) {
 
         var stagingBufferDescription = new BufferDescriptor
         {
-            Label = (byte*) SilkMarshal.StringToPtr("Staging Buffer"),  //TODO: free this
-            Usage = (uint) (BufferUsage.MapRead | BufferUsage.CopyDst), //TODO: make this the proper enum
-            Size = numbersSize,
+            Label            = (byte*) SilkMarshal.StringToPtr("Staging Buffer"), //TODO: free this
+            Usage            = BufferUsage.MapRead | BufferUsage.CopyDst, 
+            Size             = numbersSize,
             MappedAtCreation = false
         };
         var stagingBuffer = wgpu.DeviceCreateBuffer(device, ref stagingBufferDescription);
 
         var storageBufferDescription = new BufferDescriptor
         {
-            Label = (byte*) SilkMarshal.StringToPtr("Storage Buffer"),                        //TODO: free this
-            Usage = (uint) (BufferUsage.Storage | BufferUsage.CopyDst | BufferUsage.CopySrc), //TODO: make this the proper enum
-            Size = numbersSize,
+            Label            = (byte*) SilkMarshal.StringToPtr("Storage Buffer"), //TODO: free this
+            Usage            = BufferUsage.Storage | BufferUsage.CopyDst | BufferUsage.CopySrc,
+            Size             = numbersSize,
             MappedAtCreation = false
         };
         var storageBuffer = wgpu.DeviceCreateBuffer(device, ref storageBufferDescription);

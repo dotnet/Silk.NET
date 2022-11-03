@@ -162,7 +162,7 @@ fn fs_main() -> @location(0) vec4<f32> {
             {
                 Format = _SwapChainFormat,
                 Blend = &blendState,
-                WriteMask = (uint) ColorWriteMask.All
+                WriteMask = ColorWriteMask.All
             };
 
             var fragmentState = new FragmentState
@@ -220,7 +220,7 @@ fn fs_main() -> @location(0) vec4<f32> {
     {
         var swapChainDescriptor = new SwapChainDescriptor
         {
-            Usage = (uint) TextureUsage.RenderAttachment,
+            Usage = TextureUsage.RenderAttachment,
             Format = _SwapChainFormat,
             Width = (uint) _Window.FramebufferSize.X,
             Height = (uint) _Window.FramebufferSize.Y,
