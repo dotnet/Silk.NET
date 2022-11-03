@@ -23,7 +23,7 @@ namespace Silk.NET.WebGPU
         (
             ChainedStruct* nextInChain = null,
             uint? binding = null,
-            uint? visibility = null,
+            Silk.NET.WebGPU.ShaderStage? visibility = null,
             BufferBindingLayout? buffer = null,
             SamplerBindingLayout? sampler = null,
             TextureBindingLayout? texture = null,
@@ -80,7 +80,7 @@ namespace Silk.NET.WebGPU
         [NativeName("Type", "WGPUShaderStageFlags")]
         [NativeName("Type.Name", "WGPUShaderStageFlags")]
         [NativeName("Name", "visibility")]
-        public uint Visibility;
+        public Silk.NET.WebGPU.ShaderStage Visibility;
 
         [NativeName("Type", "WGPUBufferBindingLayout")]
         [NativeName("Type.Name", "WGPUBufferBindingLayout")]

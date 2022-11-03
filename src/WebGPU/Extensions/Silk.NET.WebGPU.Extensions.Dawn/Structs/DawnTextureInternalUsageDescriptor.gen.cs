@@ -22,7 +22,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         public DawnTextureInternalUsageDescriptor
         (
             ChainedStruct? chain = null,
-            uint? internalUsage = null
+            Silk.NET.WebGPU.TextureUsage? internalUsage = null
         ) : this()
         {
             if (chain is not null)
@@ -45,6 +45,6 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         [NativeName("Type", "WGPUTextureUsageFlags")]
         [NativeName("Type.Name", "WGPUTextureUsageFlags")]
         [NativeName("Name", "internalUsage")]
-        public uint InternalUsage;
+        public Silk.NET.WebGPU.TextureUsage InternalUsage;
     }
 }
