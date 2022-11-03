@@ -12,9 +12,15 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkSemaphoreTypeKHR")]
     public enum SemaphoreTypeKHR : int
     {
+        [Obsolete("Deprecated in favour of \"Binary\"")]
         [NativeName("Name", "VK_SEMAPHORE_TYPE_BINARY")]
         SemaphoreTypeBinary = 0,
+        [Obsolete("Deprecated in favour of \"Timeline\"")]
         [NativeName("Name", "VK_SEMAPHORE_TYPE_TIMELINE")]
         SemaphoreTypeTimeline = 1,
+        [NativeName("Name", "VK_SEMAPHORE_TYPE_BINARY")]
+        Binary = 0,
+        [NativeName("Name", "VK_SEMAPHORE_TYPE_TIMELINE")]
+        Timeline = 1,
     }
 }

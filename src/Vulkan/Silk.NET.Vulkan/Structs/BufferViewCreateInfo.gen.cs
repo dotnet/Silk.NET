@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBufferViewCreateInfo")]
-    public unsafe partial struct BufferViewCreateInfo
+    public unsafe partial struct BufferViewCreateInfo : IChainStart
     {
         public BufferViewCreateInfo
         (
@@ -101,5 +101,30 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkDeviceSize")]
         [NativeName("Name", "range")]
         public ulong Range;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.BufferViewCreateInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref BufferViewCreateInfo Chain(
+            out BufferViewCreateInfo capture)
+        {
+            capture = new BufferViewCreateInfo(StructureType.BufferViewCreateInfo);
+            return ref capture;
+        }
     }
 }

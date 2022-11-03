@@ -9,11 +9,16 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "VkSparseMemoryBindFlags")]
     public enum SparseMemoryBindFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"MetadataBit\"")]
         [NativeName("Name", "VK_SPARSE_MEMORY_BIND_METADATA_BIT")]
         SparseMemoryBindMetadataBit = 1,
+        [NativeName("Name", "VK_SPARSE_MEMORY_BIND_METADATA_BIT")]
+        MetadataBit = 1,
     }
 }

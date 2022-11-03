@@ -17,12 +17,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoDecodeH265SessionParametersAddInfoEXT")]
-    public unsafe partial struct VideoDecodeH265SessionParametersAddInfoEXT
+    public unsafe partial struct VideoDecodeH265SessionParametersAddInfoEXT : IExtendsChain<VideoSessionParametersUpdateInfoKHR>
     {
         public VideoDecodeH265SessionParametersAddInfoEXT
         (
             StructureType? sType = StructureType.VideoDecodeH265SessionParametersAddInfoExt,
             void* pNext = null,
+            uint? vpsStdCount = null,
+            Video.StdVideoH265VideoParameterSet* pVpsStd = null,
             uint? spsStdCount = null,
             Video.StdVideoH265SequenceParameterSet* pSpsStd = null,
             uint? ppsStdCount = null,
@@ -37,6 +39,16 @@ namespace Silk.NET.Vulkan
             if (pNext is not null)
             {
                 PNext = pNext;
+            }
+
+            if (vpsStdCount is not null)
+            {
+                VpsStdCount = vpsStdCount.Value;
+            }
+
+            if (pVpsStd is not null)
+            {
+                PVpsStd = pVpsStd;
             }
 
             if (spsStdCount is not null)
@@ -73,6 +85,16 @@ namespace Silk.NET.Vulkan
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "vpsStdCount")]
+        public uint VpsStdCount;
+/// <summary></summary>
+        [NativeName("Type", "StdVideoH265VideoParameterSet*")]
+        [NativeName("Type.Name", "StdVideoH265VideoParameterSet")]
+        [NativeName("Name", "pVpsStd")]
+        public Video.StdVideoH265VideoParameterSet* PVpsStd;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "spsStdCount")]
         public uint SpsStdCount;
 /// <summary></summary>
@@ -90,5 +112,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "StdVideoH265PictureParameterSet")]
         [NativeName("Name", "pPpsStd")]
         public Video.StdVideoH265PictureParameterSet* PPpsStd;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.VideoDecodeH265SessionParametersAddInfoExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

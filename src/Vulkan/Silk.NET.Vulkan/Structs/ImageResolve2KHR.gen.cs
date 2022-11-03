@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageResolve2KHR")]
-    public unsafe partial struct ImageResolve2KHR
+    [NativeName("AliasOf", "VkImageResolve2")]
+    public unsafe partial struct ImageResolve2KHR : IChainable
     {
         public ImageResolve2KHR
         (
-            StructureType? sType = StructureType.ImageResolve2Khr,
+            StructureType? sType = StructureType.ImageResolve2,
             void* pNext = null,
             ImageSubresourceLayers? srcSubresource = null,
             Offset3D? srcOffset = null,
@@ -101,5 +102,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkExtent3D")]
         [NativeName("Name", "extent")]
         public Extent3D Extent;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.ImageResolve2;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

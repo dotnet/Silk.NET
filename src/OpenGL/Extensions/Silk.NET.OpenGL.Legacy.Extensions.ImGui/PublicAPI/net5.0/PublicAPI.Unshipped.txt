@@ -1,0 +1,3 @@
+#nullable enable
+Silk.NET.OpenGL.Legacy.Extensions.ImGui.ImGuiController.Context -> System.IntPtr
+Silk.NET.OpenGL.Legacy.Extensions.ImGui.ImGuiController.MakeCurrent() -> void

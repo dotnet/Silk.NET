@@ -17,13 +17,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCommandBufferInheritanceRenderingInfoKHR")]
-    public unsafe partial struct CommandBufferInheritanceRenderingInfoKHR
+    [NativeName("AliasOf", "VkCommandBufferInheritanceRenderingInfo")]
+    public unsafe partial struct CommandBufferInheritanceRenderingInfoKHR : IExtendsChain<CommandBufferInheritanceInfo>
     {
         public CommandBufferInheritanceRenderingInfoKHR
         (
-            StructureType? sType = StructureType.CommandBufferInheritanceRenderingInfoKhr,
+            StructureType? sType = StructureType.CommandBufferInheritanceRenderingInfo,
             void* pNext = null,
-            RenderingFlagsKHR? flags = null,
+            RenderingFlags? flags = null,
             uint? viewMask = null,
             uint? colorAttachmentCount = null,
             Format* pColorAttachmentFormats = null,
@@ -89,10 +90,10 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "VkRenderingFlagsKHR")]
-        [NativeName("Type.Name", "VkRenderingFlagsKHR")]
+        [NativeName("Type", "VkRenderingFlags")]
+        [NativeName("Type.Name", "VkRenderingFlags")]
         [NativeName("Name", "flags")]
-        public RenderingFlagsKHR Flags;
+        public RenderingFlags Flags;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
@@ -123,5 +124,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkSampleCountFlagBits")]
         [NativeName("Name", "rasterizationSamples")]
         public SampleCountFlags RasterizationSamples;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.CommandBufferInheritanceRenderingInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

@@ -21,6 +21,7 @@ namespace Silk.NET.Vulkan.Video
     {
         public StdVideoH265SequenceParameterSetVui
         (
+            StdVideoH265SpsVuiFlags? flags = null,
             byte? aspectRatioIdc = null,
             ushort? sarWidth = null,
             ushort? sarHeight = null,
@@ -37,15 +38,19 @@ namespace Silk.NET.Vulkan.Video
             uint? vuiNumUnitsInTick = null,
             uint? vuiTimeScale = null,
             uint? vuiNumTicksPocDiffOneMinus1 = null,
-            StdVideoH265HrdParameters* hrdParameters = null,
+            StdVideoH265HrdParameters* pHrdParameters = null,
             ushort? minSpatialSegmentationIdc = null,
             byte? maxBytesPerPicDenom = null,
             byte? maxBitsPerMinCuDenom = null,
             byte? log2MaxMvLengthHorizontal = null,
-            byte? log2MaxMvLengthVertical = null,
-            StdVideoH265SpsVuiFlags? flags = null
+            byte? log2MaxMvLengthVertical = null
         ) : this()
         {
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
             if (aspectRatioIdc is not null)
             {
                 AspectRatioIdc = aspectRatioIdc.Value;
@@ -126,9 +131,9 @@ namespace Silk.NET.Vulkan.Video
                 VuiNumTicksPocDiffOneMinus1 = vuiNumTicksPocDiffOneMinus1.Value;
             }
 
-            if (hrdParameters is not null)
+            if (pHrdParameters is not null)
             {
-                HrdParameters = hrdParameters;
+                PHrdParameters = pHrdParameters;
             }
 
             if (minSpatialSegmentationIdc is not null)
@@ -155,13 +160,13 @@ namespace Silk.NET.Vulkan.Video
             {
                 Log2MaxMvLengthVertical = log2MaxMvLengthVertical.Value;
             }
-
-            if (flags is not null)
-            {
-                Flags = flags.Value;
-            }
         }
 
+
+        [NativeName("Type", "StdVideoH265SpsVuiFlags")]
+        [NativeName("Type.Name", "StdVideoH265SpsVuiFlags")]
+        [NativeName("Name", "flags")]
+        public StdVideoH265SpsVuiFlags Flags;
 
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
@@ -243,10 +248,10 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Name", "vui_num_ticks_poc_diff_one_minus1")]
         public uint VuiNumTicksPocDiffOneMinus1;
 
-        [NativeName("Type", "StdVideoH265HrdParameters *")]
-        [NativeName("Type.Name", "StdVideoH265HrdParameters *")]
-        [NativeName("Name", "hrd_parameters")]
-        public StdVideoH265HrdParameters* HrdParameters;
+        [NativeName("Type", "const StdVideoH265HrdParameters *")]
+        [NativeName("Type.Name", "const StdVideoH265HrdParameters *")]
+        [NativeName("Name", "pHrdParameters")]
+        public StdVideoH265HrdParameters* PHrdParameters;
 
         [NativeName("Type", "uint16_t")]
         [NativeName("Type.Name", "uint16_t")]
@@ -272,10 +277,5 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type.Name", "uint8_t")]
         [NativeName("Name", "log2_max_mv_length_vertical")]
         public byte Log2MaxMvLengthVertical;
-
-        [NativeName("Type", "StdVideoH265SpsVuiFlags")]
-        [NativeName("Type.Name", "StdVideoH265SpsVuiFlags")]
-        [NativeName("Name", "flags")]
-        public StdVideoH265SpsVuiFlags Flags;
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineCompilerControlCreateInfoAMD")]
-    public unsafe partial struct PipelineCompilerControlCreateInfoAMD
+    public unsafe partial struct PipelineCompilerControlCreateInfoAMD : IExtendsChain<GraphicsPipelineCreateInfo>, IExtendsChain<ComputePipelineCreateInfo>
     {
         public PipelineCompilerControlCreateInfoAMD
         (
@@ -57,5 +57,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkPipelineCompilerControlFlagsAMD")]
         [NativeName("Name", "compilerControlFlags")]
         public PipelineCompilerControlFlagsAMD CompilerControlFlags;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PipelineCompilerControlCreateInfoAmd;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

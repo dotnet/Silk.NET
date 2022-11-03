@@ -9,15 +9,26 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "VkIndirectCommandsLayoutUsageFlagsNV")]
     public enum IndirectCommandsLayoutUsageFlagsNV : int
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"ExplicitPreprocessBitNV\"")]
         [NativeName("Name", "VK_INDIRECT_COMMANDS_LAYOUT_USAGE_EXPLICIT_PREPROCESS_BIT_NV")]
         IndirectCommandsLayoutUsageExplicitPreprocessBitNV = 1,
+        [Obsolete("Deprecated in favour of \"IndexedSequencesBitNV\"")]
         [NativeName("Name", "VK_INDIRECT_COMMANDS_LAYOUT_USAGE_INDEXED_SEQUENCES_BIT_NV")]
         IndirectCommandsLayoutUsageIndexedSequencesBitNV = 2,
+        [Obsolete("Deprecated in favour of \"UnorderedSequencesBitNV\"")]
         [NativeName("Name", "VK_INDIRECT_COMMANDS_LAYOUT_USAGE_UNORDERED_SEQUENCES_BIT_NV")]
         IndirectCommandsLayoutUsageUnorderedSequencesBitNV = 4,
+        [NativeName("Name", "VK_INDIRECT_COMMANDS_LAYOUT_USAGE_EXPLICIT_PREPROCESS_BIT_NV")]
+        ExplicitPreprocessBitNV = 1,
+        [NativeName("Name", "VK_INDIRECT_COMMANDS_LAYOUT_USAGE_INDEXED_SEQUENCES_BIT_NV")]
+        IndexedSequencesBitNV = 2,
+        [NativeName("Name", "VK_INDIRECT_COMMANDS_LAYOUT_USAGE_UNORDERED_SEQUENCES_BIT_NV")]
+        UnorderedSequencesBitNV = 4,
     }
 }

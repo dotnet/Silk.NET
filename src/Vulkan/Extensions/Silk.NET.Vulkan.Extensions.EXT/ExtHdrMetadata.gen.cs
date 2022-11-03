@@ -21,19 +21,19 @@ namespace Silk.NET.Vulkan.Extensions.EXT
     {
         public const string ExtensionName = "VK_EXT_hdr_metadata";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkSetHdrMetadataEXT")]
+        [NativeApi(EntryPoint = "vkSetHdrMetadataEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void SetHdrMetadata([Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.In)] SwapchainKHR* pSwapchains, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.In)] HdrMetadataEXT* pMetadata);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkSetHdrMetadataEXT")]
+        [NativeApi(EntryPoint = "vkSetHdrMetadataEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void SetHdrMetadata([Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.In)] SwapchainKHR* pSwapchains, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.In)] in HdrMetadataEXT pMetadata);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkSetHdrMetadataEXT")]
+        [NativeApi(EntryPoint = "vkSetHdrMetadataEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void SetHdrMetadata([Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.In)] in SwapchainKHR pSwapchains, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.In)] HdrMetadataEXT* pMetadata);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkSetHdrMetadataEXT")]
+        [NativeApi(EntryPoint = "vkSetHdrMetadataEXT", Convention = CallingConvention.Winapi)]
         public partial void SetHdrMetadata([Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.In)] in SwapchainKHR pSwapchains, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.In)] in HdrMetadataEXT pMetadata);
 
         /// <summary>To be documented.</summary>

@@ -17,14 +17,13 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceVideoFormatInfoKHR")]
-    public unsafe partial struct PhysicalDeviceVideoFormatInfoKHR
+    public unsafe partial struct PhysicalDeviceVideoFormatInfoKHR : IChainStart
     {
         public PhysicalDeviceVideoFormatInfoKHR
         (
             StructureType? sType = StructureType.PhysicalDeviceVideoFormatInfoKhr,
             void* pNext = null,
-            ImageUsageFlags? imageUsage = null,
-            VideoProfilesKHR* pVideoProfiles = null
+            ImageUsageFlags? imageUsage = null
         ) : this()
         {
             if (sType is not null)
@@ -40,11 +39,6 @@ namespace Silk.NET.Vulkan
             if (imageUsage is not null)
             {
                 ImageUsage = imageUsage.Value;
-            }
-
-            if (pVideoProfiles is not null)
-            {
-                PVideoProfiles = pVideoProfiles;
             }
         }
 
@@ -63,10 +57,30 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkImageUsageFlags")]
         [NativeName("Name", "imageUsage")]
         public ImageUsageFlags ImageUsage;
-/// <summary></summary>
-        [NativeName("Type", "VkVideoProfilesKHR*")]
-        [NativeName("Type.Name", "VkVideoProfilesKHR")]
-        [NativeName("Name", "pVideoProfiles")]
-        public VideoProfilesKHR* PVideoProfiles;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceVideoFormatInfoKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref PhysicalDeviceVideoFormatInfoKHR Chain(
+            out PhysicalDeviceVideoFormatInfoKHR capture)
+        {
+            capture = new PhysicalDeviceVideoFormatInfoKHR(StructureType.PhysicalDeviceVideoFormatInfoKhr);
+            return ref capture;
+        }
     }
 }

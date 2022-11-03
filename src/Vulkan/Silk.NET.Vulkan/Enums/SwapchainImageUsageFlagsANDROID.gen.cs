@@ -9,11 +9,16 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "VkSwapchainImageUsageFlagsANDROID")]
     public enum SwapchainImageUsageFlagsANDROID : int
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"SharedBitAndroid\"")]
         [NativeName("Name", "VK_SWAPCHAIN_IMAGE_USAGE_SHARED_BIT_ANDROID")]
         SwapchainImageUsageSharedBitAndroid = 1,
+        [NativeName("Name", "VK_SWAPCHAIN_IMAGE_USAGE_SHARED_BIT_ANDROID")]
+        SharedBitAndroid = 1,
     }
 }

@@ -21,7 +21,7 @@ namespace Silk.NET.Vulkan.Extensions.AMD
     {
         public const string ExtensionName = "VK_AMD_display_native_hdr";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkSetLocalDimmingAMD")]
+        [NativeApi(EntryPoint = "vkSetLocalDimmingAMD", Convention = CallingConvention.Winapi)]
         public partial void SetLocalDimming([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapChain, [Count(Count = 0)] Bool32 localDimmingEnable);
 
         public AmdDisplayNativeHdr(INativeContext ctx)

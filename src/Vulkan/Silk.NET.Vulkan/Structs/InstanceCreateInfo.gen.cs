@@ -17,13 +17,13 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkInstanceCreateInfo")]
-    public unsafe partial struct InstanceCreateInfo
+    public unsafe partial struct InstanceCreateInfo : IChainStart
     {
         public InstanceCreateInfo
         (
             StructureType? sType = StructureType.InstanceCreateInfo,
             void* pNext = null,
-            uint? flags = null,
+            InstanceCreateFlags? flags = null,
             ApplicationInfo* pApplicationInfo = null,
             uint? enabledLayerCount = null,
             byte** ppEnabledLayerNames = null,
@@ -86,7 +86,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "VkInstanceCreateFlags")]
         [NativeName("Type.Name", "VkInstanceCreateFlags")]
         [NativeName("Name", "flags")]
-        public uint Flags;
+        public InstanceCreateFlags Flags;
 /// <summary></summary>
         [NativeName("Type", "VkApplicationInfo*")]
         [NativeName("Type.Name", "VkApplicationInfo")]
@@ -112,5 +112,30 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "char")]
         [NativeName("Name", "ppEnabledExtensionNames")]
         public byte** PpEnabledExtensionNames;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.InstanceCreateInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref InstanceCreateInfo Chain(
+            out InstanceCreateInfo capture)
+        {
+            capture = new InstanceCreateInfo(StructureType.InstanceCreateInfo);
+            return ref capture;
+        }
     }
 }

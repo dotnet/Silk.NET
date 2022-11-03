@@ -9,12 +9,21 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D12
 {
+    [Flags]
     [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC")]
     public enum VideoEncoderCodec : int
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"H264\"")]
         [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_H264")]
         VideoEncoderCodecH264 = 0x0,
+        [Obsolete("Deprecated in favour of \"Hevc\"")]
         [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_HEVC")]
         VideoEncoderCodecHevc = 0x1,
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_H264")]
+        H264 = 0x0,
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_HEVC")]
+        Hevc = 0x1,
     }
 }

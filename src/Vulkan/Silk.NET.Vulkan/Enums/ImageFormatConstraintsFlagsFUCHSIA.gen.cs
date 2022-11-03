@@ -9,9 +9,11 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "VkImageFormatConstraintsFlagsFUCHSIA")]
     public enum ImageFormatConstraintsFlagsFUCHSIA : int
     {
+        [NativeName("Name", "")]
+        None = 0,
     }
 }

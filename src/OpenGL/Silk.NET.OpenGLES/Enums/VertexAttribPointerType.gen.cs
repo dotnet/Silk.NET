@@ -42,6 +42,8 @@ namespace Silk.NET.OpenGLES
         UnsignedInt64NV = 0x140F,
         [NativeName("Name", "GL_UNSIGNED_INT_2_10_10_10_REV")]
         UnsignedInt2101010Rev = 0x8368,
+        [NativeName("Name", "GL_UNSIGNED_INT_2_10_10_10_REV_EXT")]
+        UnsignedInt2101010RevExt = 0x8368,
         [NativeName("Name", "GL_UNSIGNED_INT_10F_11F_11F_REV")]
         UnsignedInt10f11f11fRev = 0x8C3B,
         [NativeName("Name", "GL_INT_2_10_10_10_REV")]

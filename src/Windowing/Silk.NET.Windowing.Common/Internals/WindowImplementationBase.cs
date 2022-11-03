@@ -1,4 +1,4 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
+// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
@@ -31,6 +31,7 @@ namespace Silk.NET.Windowing.Internals
         protected abstract string CoreTitle { get; set; }
         protected abstract WindowState CoreWindowState { get; set; }
         protected abstract WindowBorder CoreWindowBorder { get; set; }
+        protected abstract bool CoreTopMost { get; set; }
         protected abstract bool IsClosingSettable { set; }
         protected abstract Vector2D<int> SizeSettable { set; }
         protected abstract Rectangle<int> CoreBorderSize { get; }
@@ -48,6 +49,7 @@ namespace Silk.NET.Windowing.Internals
         public abstract IWindowHost? Parent { get; }
         public abstract IGLContext? SharedContext { get; }
         public abstract IMonitor? Monitor { get; set; }
+        public abstract string? WindowClass { get; }
         public abstract void SetWindowIcon(ReadOnlySpan<RawImage> icons);
 
         // Cache updates for dervied classes
@@ -177,6 +179,21 @@ namespace Silk.NET.Windowing.Internals
 
         // Other property implementations
         public bool TransparentFramebuffer => ExtendedOptionsCache.TransparentFramebuffer;
+
+        public bool TopMost
+        {
+            get => IsInitialized ? ExtendedOptionsCache.TopMost = CoreTopMost : ExtendedOptionsCache.TopMost;
+            set
+            {
+                if (IsInitialized)
+                {
+                    CoreTopMost = value;
+                }
+
+                ExtendedOptionsCache.TopMost = value;
+            }
+        }
+
         public Rectangle<int> BorderSize => IsInitialized ? CoreBorderSize : default;
     }
 }

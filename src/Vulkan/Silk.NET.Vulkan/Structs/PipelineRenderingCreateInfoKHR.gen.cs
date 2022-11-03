@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineRenderingCreateInfoKHR")]
-    public unsafe partial struct PipelineRenderingCreateInfoKHR
+    [NativeName("AliasOf", "VkPipelineRenderingCreateInfo")]
+    public unsafe partial struct PipelineRenderingCreateInfoKHR : IExtendsChain<GraphicsPipelineCreateInfo>
     {
         public PipelineRenderingCreateInfoKHR
         (
-            StructureType? sType = StructureType.PipelineRenderingCreateInfoKhr,
+            StructureType? sType = StructureType.PipelineRenderingCreateInfo,
             void* pNext = null,
             uint? viewMask = null,
             uint? colorAttachmentCount = null,
@@ -101,5 +102,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkFormat")]
         [NativeName("Name", "stencilAttachmentFormat")]
         public Format StencilAttachmentFormat;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PipelineRenderingCreateInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

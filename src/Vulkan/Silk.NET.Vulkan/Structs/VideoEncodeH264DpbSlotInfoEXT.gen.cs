@@ -17,14 +17,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoEncodeH264DpbSlotInfoEXT")]
-    public unsafe partial struct VideoEncodeH264DpbSlotInfoEXT
+    public unsafe partial struct VideoEncodeH264DpbSlotInfoEXT : IChainable
     {
         public VideoEncodeH264DpbSlotInfoEXT
         (
             StructureType? sType = StructureType.VideoEncodeH264DpbSlotInfoExt,
             void* pNext = null,
             sbyte? slotIndex = null,
-            Video.StdVideoEncodeH264PictureInfo* pStdPictureInfo = null
+            Video.StdVideoEncodeH264ReferenceInfo* pStdReferenceInfo = null
         ) : this()
         {
             if (sType is not null)
@@ -42,9 +42,9 @@ namespace Silk.NET.Vulkan
                 SlotIndex = slotIndex.Value;
             }
 
-            if (pStdPictureInfo is not null)
+            if (pStdReferenceInfo is not null)
             {
-                PStdPictureInfo = pStdPictureInfo;
+                PStdReferenceInfo = pStdReferenceInfo;
             }
         }
 
@@ -64,9 +64,22 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "slotIndex")]
         public sbyte SlotIndex;
 /// <summary></summary>
-        [NativeName("Type", "StdVideoEncodeH264PictureInfo*")]
-        [NativeName("Type.Name", "StdVideoEncodeH264PictureInfo")]
-        [NativeName("Name", "pStdPictureInfo")]
-        public Video.StdVideoEncodeH264PictureInfo* PStdPictureInfo;
+        [NativeName("Type", "StdVideoEncodeH264ReferenceInfo*")]
+        [NativeName("Type.Name", "StdVideoEncodeH264ReferenceInfo")]
+        [NativeName("Name", "pStdReferenceInfo")]
+        public Video.StdVideoEncodeH264ReferenceInfo* PStdReferenceInfo;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.VideoEncodeH264DpbSlotInfoExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

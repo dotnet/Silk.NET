@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSurfaceFormat2KHR")]
-    public unsafe partial struct SurfaceFormat2KHR
+    public unsafe partial struct SurfaceFormat2KHR : IChainStart
     {
         public SurfaceFormat2KHR
         (
@@ -57,5 +57,30 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkSurfaceFormatKHR")]
         [NativeName("Name", "surfaceFormat")]
         public SurfaceFormatKHR SurfaceFormat;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.SurfaceFormat2Khr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref SurfaceFormat2KHR Chain(
+            out SurfaceFormat2KHR capture)
+        {
+            capture = new SurfaceFormat2KHR(StructureType.SurfaceFormat2Khr);
+            return ref capture;
+        }
     }
 }

@@ -20,41 +20,69 @@ namespace Silk.NET.OpenGLES.Extensions.MESA
     public unsafe partial class MesaFramebufferFlipY : NativeExtension<GL>
     {
         public const string ExtensionName = "MESA_framebuffer_flip_y";
-        [NativeApi(EntryPoint = "glFramebufferParameteriMESA")]
+        [NativeApi(EntryPoint = "glFramebufferParameteriMESA", Convention = CallingConvention.Winapi)]
         public partial void FramebufferParameter([Flow(FlowDirection.In)] MESA target, [Flow(FlowDirection.In)] MESA pname, [Flow(FlowDirection.In)] int param);
 
-        [NativeApi(EntryPoint = "glFramebufferParameteriMESA")]
+        [NativeApi(EntryPoint = "glFramebufferParameteriMESA", Convention = CallingConvention.Winapi)]
         public partial void FramebufferParameter([Flow(FlowDirection.In)] MESA target, [Flow(FlowDirection.In)] FramebufferParameterName pname, [Flow(FlowDirection.In)] int param);
 
-        [NativeApi(EntryPoint = "glFramebufferParameteriMESA")]
+        [NativeApi(EntryPoint = "glFramebufferParameteriMESA", Convention = CallingConvention.Winapi)]
         public partial void FramebufferParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] MESA pname, [Flow(FlowDirection.In)] int param);
 
-        [NativeApi(EntryPoint = "glFramebufferParameteriMESA")]
+        [NativeApi(EntryPoint = "glFramebufferParameteriMESA", Convention = CallingConvention.Winapi)]
         public partial void FramebufferParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferParameterName pname, [Flow(FlowDirection.In)] int param);
 
-        [NativeApi(EntryPoint = "glGetFramebufferParameterivMESA")]
+        [NativeApi(EntryPoint = "glGetFramebufferParameterivMESA", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetFramebufferParameter([Flow(FlowDirection.In)] MESA target, [Flow(FlowDirection.In)] MESA pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetFramebufferParameterivMESA")]
+        [NativeApi(EntryPoint = "glGetFramebufferParameterivMESA", Convention = CallingConvention.Winapi)]
         public partial void GetFramebufferParameter([Flow(FlowDirection.In)] MESA target, [Flow(FlowDirection.In)] MESA pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetFramebufferParameterivMESA")]
+        [NativeApi(EntryPoint = "glGetFramebufferParameterivMESA", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetFramebufferParameter([Flow(FlowDirection.In)] MESA target, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetFramebufferParameterivMESA")]
+        [NativeApi(EntryPoint = "glGetFramebufferParameterivMESA", Convention = CallingConvention.Winapi)]
         public partial void GetFramebufferParameter([Flow(FlowDirection.In)] MESA target, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetFramebufferParameterivMESA")]
+        [NativeApi(EntryPoint = "glGetFramebufferParameterivMESA", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetFramebufferParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] MESA pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetFramebufferParameterivMESA")]
+        [NativeApi(EntryPoint = "glGetFramebufferParameterivMESA", Convention = CallingConvention.Winapi)]
         public partial void GetFramebufferParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] MESA pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetFramebufferParameterivMESA")]
+        [NativeApi(EntryPoint = "glGetFramebufferParameterivMESA", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetFramebufferParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetFramebufferParameterivMESA")]
+        [NativeApi(EntryPoint = "glGetFramebufferParameterivMESA", Convention = CallingConvention.Winapi)]
         public partial void GetFramebufferParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+
+        public unsafe int GetFramebufferParameter([Flow(FlowDirection.In)] MESA target, [Flow(FlowDirection.In)] MESA pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetFramebufferParameter(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetFramebufferParameter([Flow(FlowDirection.In)] MESA target, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetFramebufferParameter(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetFramebufferParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] MESA pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetFramebufferParameter(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetFramebufferParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetFramebufferParameter(target, pname, out int silkRet);
+            return silkRet;
+        }
 
         public MesaFramebufferFlipY(INativeContext ctx)
             : base(ctx)

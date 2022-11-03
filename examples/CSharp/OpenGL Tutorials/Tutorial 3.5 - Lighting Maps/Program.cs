@@ -2,7 +2,6 @@ using Silk.NET.Input;
 using Silk.NET.OpenGL;
 using Silk.NET.Windowing;
 using System;
-using System.Drawing;
 using System.Linq;
 using System.Numerics;
 using Silk.NET.Maths;
@@ -177,7 +176,7 @@ namespace Tutorial
 
             //Bind the diffuse map and and set to use texture0.
             DiffuseMap.Bind(TextureUnit.Texture0);
-            //Bind the diffuse map and and set to use texture1.
+            //Bind the specular map and and set to use texture1.
             SpecularMap.Bind(TextureUnit.Texture1);
 
             //Setup the coordinate systems for our view

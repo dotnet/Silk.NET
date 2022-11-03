@@ -37,6 +37,11 @@ namespace Silk.NET.BuildTools.Common
         public List<Class> Classes { get; set; } = new List<Class>();
 
         /// <summary>
+        /// Gets or sets the references to external COM interfaces.
+        /// </summary>
+        public HashSet<string> ComRefs { get; set; } = new();
+
+        /// <summary>
         /// Gets the full project name of this project, given the profile's root namespace.
         /// </summary>
         /// <returns>The full project name.</returns>

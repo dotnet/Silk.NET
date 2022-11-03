@@ -14,6 +14,7 @@ namespace Silk.NET.OpenGL.Legacy
     {
         [NativeName("Name", "GL_SAMPLES")]
         Samples = 0x80A9,
+        [System.Obsolete]
         [NativeName("Name", "GL_GENERATE_MIPMAP")]
         GenerateMipmap = 0x8191,
         [NativeName("Name", "GL_INTERNALFORMAT_SUPPORTED")]
@@ -148,6 +149,8 @@ namespace Silk.NET.OpenGL.Legacy
         ViewCompatibilityClass = 0x82B6,
         [NativeName("Name", "GL_TEXTURE_COMPRESSED")]
         TextureCompressed = 0x86A1,
+        [NativeName("Name", "GL_NUM_SURFACE_COMPRESSION_FIXED_RATES_EXT")]
+        NumSurfaceCompressionFixedRatesExt = 0x8F6E,
         [NativeName("Name", "GL_IMAGE_FORMAT_COMPATIBILITY_TYPE")]
         ImageFormatCompatibilityType = 0x90C7,
         [NativeName("Name", "GL_CLEAR_TEXTURE")]

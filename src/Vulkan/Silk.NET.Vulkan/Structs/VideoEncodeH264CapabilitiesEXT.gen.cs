@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoEncodeH264CapabilitiesEXT")]
-    public unsafe partial struct VideoEncodeH264CapabilitiesEXT
+    public unsafe partial struct VideoEncodeH264CapabilitiesEXT : IExtendsChain<VideoCapabilitiesKHR>
     {
         public VideoEncodeH264CapabilitiesEXT
         (
@@ -26,14 +26,14 @@ namespace Silk.NET.Vulkan
             VideoEncodeH264CapabilityFlagsEXT? flags = null,
             VideoEncodeH264InputModeFlagsEXT? inputModeFlags = null,
             VideoEncodeH264OutputModeFlagsEXT? outputModeFlags = null,
-            Extent2D? minPictureSizeInMbs = null,
-            Extent2D? maxPictureSizeInMbs = null,
-            Extent2D? inputImageDataAlignment = null,
-            byte? maxNumL0ReferenceForP = null,
-            byte? maxNumL0ReferenceForB = null,
-            byte? maxNumL1Reference = null,
-            byte? qualityLevelCount = null,
-            ExtensionProperties? stdExtensionVersion = null
+            byte? maxPPictureL0ReferenceCount = null,
+            byte? maxBPictureL0ReferenceCount = null,
+            byte? maxL1ReferenceCount = null,
+            Bool32? motionVectorsOverPicBoundariesFlag = null,
+            uint? maxBytesPerPicDenom = null,
+            uint? maxBitsPerMbDenom = null,
+            uint? log2MaxMvLengthHorizontal = null,
+            uint? log2MaxMvLengthVertical = null
         ) : this()
         {
             if (sType is not null)
@@ -61,44 +61,44 @@ namespace Silk.NET.Vulkan
                 OutputModeFlags = outputModeFlags.Value;
             }
 
-            if (minPictureSizeInMbs is not null)
+            if (maxPPictureL0ReferenceCount is not null)
             {
-                MinPictureSizeInMbs = minPictureSizeInMbs.Value;
+                MaxPPictureL0ReferenceCount = maxPPictureL0ReferenceCount.Value;
             }
 
-            if (maxPictureSizeInMbs is not null)
+            if (maxBPictureL0ReferenceCount is not null)
             {
-                MaxPictureSizeInMbs = maxPictureSizeInMbs.Value;
+                MaxBPictureL0ReferenceCount = maxBPictureL0ReferenceCount.Value;
             }
 
-            if (inputImageDataAlignment is not null)
+            if (maxL1ReferenceCount is not null)
             {
-                InputImageDataAlignment = inputImageDataAlignment.Value;
+                MaxL1ReferenceCount = maxL1ReferenceCount.Value;
             }
 
-            if (maxNumL0ReferenceForP is not null)
+            if (motionVectorsOverPicBoundariesFlag is not null)
             {
-                MaxNumL0ReferenceForP = maxNumL0ReferenceForP.Value;
+                MotionVectorsOverPicBoundariesFlag = motionVectorsOverPicBoundariesFlag.Value;
             }
 
-            if (maxNumL0ReferenceForB is not null)
+            if (maxBytesPerPicDenom is not null)
             {
-                MaxNumL0ReferenceForB = maxNumL0ReferenceForB.Value;
+                MaxBytesPerPicDenom = maxBytesPerPicDenom.Value;
             }
 
-            if (maxNumL1Reference is not null)
+            if (maxBitsPerMbDenom is not null)
             {
-                MaxNumL1Reference = maxNumL1Reference.Value;
+                MaxBitsPerMbDenom = maxBitsPerMbDenom.Value;
             }
 
-            if (qualityLevelCount is not null)
+            if (log2MaxMvLengthHorizontal is not null)
             {
-                QualityLevelCount = qualityLevelCount.Value;
+                Log2MaxMvLengthHorizontal = log2MaxMvLengthHorizontal.Value;
             }
 
-            if (stdExtensionVersion is not null)
+            if (log2MaxMvLengthVertical is not null)
             {
-                StdExtensionVersion = stdExtensionVersion.Value;
+                Log2MaxMvLengthVertical = log2MaxMvLengthVertical.Value;
             }
         }
 
@@ -128,44 +128,57 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "outputModeFlags")]
         public VideoEncodeH264OutputModeFlagsEXT OutputModeFlags;
 /// <summary></summary>
-        [NativeName("Type", "VkExtent2D")]
-        [NativeName("Type.Name", "VkExtent2D")]
-        [NativeName("Name", "minPictureSizeInMbs")]
-        public Extent2D MinPictureSizeInMbs;
-/// <summary></summary>
-        [NativeName("Type", "VkExtent2D")]
-        [NativeName("Type.Name", "VkExtent2D")]
-        [NativeName("Name", "maxPictureSizeInMbs")]
-        public Extent2D MaxPictureSizeInMbs;
-/// <summary></summary>
-        [NativeName("Type", "VkExtent2D")]
-        [NativeName("Type.Name", "VkExtent2D")]
-        [NativeName("Name", "inputImageDataAlignment")]
-        public Extent2D InputImageDataAlignment;
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "maxPPictureL0ReferenceCount")]
+        public byte MaxPPictureL0ReferenceCount;
 /// <summary></summary>
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "maxNumL0ReferenceForP")]
-        public byte MaxNumL0ReferenceForP;
+        [NativeName("Name", "maxBPictureL0ReferenceCount")]
+        public byte MaxBPictureL0ReferenceCount;
 /// <summary></summary>
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "maxNumL0ReferenceForB")]
-        public byte MaxNumL0ReferenceForB;
+        [NativeName("Name", "maxL1ReferenceCount")]
+        public byte MaxL1ReferenceCount;
 /// <summary></summary>
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "maxNumL1Reference")]
-        public byte MaxNumL1Reference;
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "motionVectorsOverPicBoundariesFlag")]
+        public Bool32 MotionVectorsOverPicBoundariesFlag;
 /// <summary></summary>
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "qualityLevelCount")]
-        public byte QualityLevelCount;
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxBytesPerPicDenom")]
+        public uint MaxBytesPerPicDenom;
 /// <summary></summary>
-        [NativeName("Type", "VkExtensionProperties")]
-        [NativeName("Type.Name", "VkExtensionProperties")]
-        [NativeName("Name", "stdExtensionVersion")]
-        public ExtensionProperties StdExtensionVersion;
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxBitsPerMbDenom")]
+        public uint MaxBitsPerMbDenom;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "log2MaxMvLengthHorizontal")]
+        public uint Log2MaxMvLengthHorizontal;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "log2MaxMvLengthVertical")]
+        public uint Log2MaxMvLengthVertical;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.VideoEncodeH264CapabilitiesExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

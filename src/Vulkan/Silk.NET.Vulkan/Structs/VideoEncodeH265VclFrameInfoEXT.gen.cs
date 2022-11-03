@@ -17,15 +17,15 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoEncodeH265VclFrameInfoEXT")]
-    public unsafe partial struct VideoEncodeH265VclFrameInfoEXT
+    public unsafe partial struct VideoEncodeH265VclFrameInfoEXT : IExtendsChain<VideoEncodeInfoKHR>
     {
         public VideoEncodeH265VclFrameInfoEXT
         (
             StructureType? sType = StructureType.VideoEncodeH265VclFrameInfoExt,
             void* pNext = null,
             VideoEncodeH265ReferenceListsEXT* pReferenceFinalLists = null,
-            uint? naluSliceEntryCount = null,
-            VideoEncodeH265NaluSliceEXT* pNaluSliceEntries = null,
+            uint? naluSliceSegmentEntryCount = null,
+            VideoEncodeH265NaluSliceSegmentEXT* pNaluSliceSegmentEntries = null,
             Video.StdVideoEncodeH265PictureInfo* pCurrentPictureInfo = null
         ) : this()
         {
@@ -44,14 +44,14 @@ namespace Silk.NET.Vulkan
                 PReferenceFinalLists = pReferenceFinalLists;
             }
 
-            if (naluSliceEntryCount is not null)
+            if (naluSliceSegmentEntryCount is not null)
             {
-                NaluSliceEntryCount = naluSliceEntryCount.Value;
+                NaluSliceSegmentEntryCount = naluSliceSegmentEntryCount.Value;
             }
 
-            if (pNaluSliceEntries is not null)
+            if (pNaluSliceSegmentEntries is not null)
             {
-                PNaluSliceEntries = pNaluSliceEntries;
+                PNaluSliceSegmentEntries = pNaluSliceSegmentEntries;
             }
 
             if (pCurrentPictureInfo is not null)
@@ -78,17 +78,30 @@ namespace Silk.NET.Vulkan
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "naluSliceEntryCount")]
-        public uint NaluSliceEntryCount;
+        [NativeName("Name", "naluSliceSegmentEntryCount")]
+        public uint NaluSliceSegmentEntryCount;
 /// <summary></summary>
-        [NativeName("Type", "VkVideoEncodeH265NaluSliceEXT*")]
-        [NativeName("Type.Name", "VkVideoEncodeH265NaluSliceEXT")]
-        [NativeName("Name", "pNaluSliceEntries")]
-        public VideoEncodeH265NaluSliceEXT* PNaluSliceEntries;
+        [NativeName("Type", "VkVideoEncodeH265NaluSliceSegmentEXT*")]
+        [NativeName("Type.Name", "VkVideoEncodeH265NaluSliceSegmentEXT")]
+        [NativeName("Name", "pNaluSliceSegmentEntries")]
+        public VideoEncodeH265NaluSliceSegmentEXT* PNaluSliceSegmentEntries;
 /// <summary></summary>
         [NativeName("Type", "StdVideoEncodeH265PictureInfo*")]
         [NativeName("Type.Name", "StdVideoEncodeH265PictureInfo")]
         [NativeName("Name", "pCurrentPictureInfo")]
         public Video.StdVideoEncodeH265PictureInfo* PCurrentPictureInfo;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.VideoEncodeH265VclFrameInfoExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceDynamicRenderingFeaturesKHR")]
-    public unsafe partial struct PhysicalDeviceDynamicRenderingFeaturesKHR
+    [NativeName("AliasOf", "VkPhysicalDeviceDynamicRenderingFeatures")]
+    public unsafe partial struct PhysicalDeviceDynamicRenderingFeaturesKHR : IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2KHR>, IExtendsChain<DeviceCreateInfo>
     {
         public PhysicalDeviceDynamicRenderingFeaturesKHR
         (
-            StructureType? sType = StructureType.PhysicalDeviceDynamicRenderingFeaturesKhr,
+            StructureType? sType = StructureType.PhysicalDeviceDynamicRenderingFeatures,
             void* pNext = null,
             Bool32? dynamicRendering = null
         ) : this()
@@ -57,5 +58,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "dynamicRendering")]
         public Bool32 DynamicRendering;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceDynamicRenderingFeatures;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

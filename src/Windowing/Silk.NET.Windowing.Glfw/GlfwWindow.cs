@@ -36,6 +36,7 @@ namespace Silk.NET.Windowing.Glfw
         private Vector2D<int> _nonFullscreenSize;
         private string _localTitleCache; // glfw doesn't let us get the window title.
         private GlfwContext? _glContext;
+        private string _windowClass;
 
         public GlfwWindow(WindowOptions optionsCache, GlfwWindow? parent, GlfwMonitor? monitor) : base(optionsCache)
         {
@@ -244,6 +245,11 @@ namespace Silk.NET.Windowing.Glfw
             }
         }
 
+        protected override bool CoreTopMost {
+            get => _glfw.GetWindowAttrib(_glfwWindow, WindowAttributeGetter.Floating);
+            set => _glfw.SetWindowAttrib(_glfwWindow, WindowAttributeSetter.Floating, value);
+        }
+
         protected override bool IsClosingSettable
         {
             set
@@ -289,6 +295,10 @@ namespace Silk.NET.Windowing.Glfw
                     break;
             }
 
+            // Set window class.
+            _windowClass = opts.WindowClass ?? Window.DefaultWindowClass;
+            _glfw.WindowHintString((int)WindowHintString.X11ClassName, _windowClass);
+
             // Set window API.
             switch (opts.API.API)
             {
@@ -321,24 +331,35 @@ namespace Silk.NET.Windowing.Glfw
                 _glfw.WindowHint(WindowHintBool.OpenGLDebugContext, true);
             }
 
-            // Set API profile
-            _glfw.WindowHint
-            (
-                WindowHintOpenGlProfile.OpenGlProfile,
-                opts.API.Profile == ContextProfile.Core ? OpenGlProfile.Core : OpenGlProfile.Compat
-            );
+            if ((opts.API.Version.MajorVersion == 3 && opts.API.Version.MinorVersion >= 2) || opts.API.Version.MajorVersion > 3)
+            {
+                // Set API profile
+                _glfw.WindowHint
+                (
+                    WindowHintOpenGlProfile.OpenGlProfile,
+                    opts.API.Profile == ContextProfile.Core ? OpenGlProfile.Core : OpenGlProfile.Compat
+                );
+            }
 
             // Set video mode (-1 = don't care)
+            
             _glfw.WindowHint(WindowHintInt.RefreshRate, opts.VideoMode.RefreshRate ?? -1);
             _glfw.WindowHint(WindowHintInt.DepthBits, opts.PreferredDepthBufferBits ?? -1);
             _glfw.WindowHint(WindowHintInt.StencilBits, opts.PreferredStencilBufferBits ?? -1);
-            _glfw.WindowHint(WindowHintInt.RedBits, opts.PreferredBitDepth?.X ?? -1);
+            
+            _glfw.WindowHint(WindowHintInt.RedBits,   opts.PreferredBitDepth?.X ?? -1);
             _glfw.WindowHint(WindowHintInt.GreenBits, opts.PreferredBitDepth?.Y ?? -1);
-            _glfw.WindowHint(WindowHintInt.BlueBits, opts.PreferredBitDepth?.Z ?? -1);
-            _glfw.WindowHint(WindowHintInt.AlphaBits, opts.PreferredBitDepth?.W ?? -1);
+            _glfw.WindowHint(WindowHintInt.BlueBits,  opts.PreferredBitDepth?.Z ?? -1);
+            if (opts.TransparentFramebuffer && (opts.PreferredBitDepth?.W ?? -1) != -1)
+            {
+                _glfw.WindowHint(WindowHintInt.AlphaBits, opts.PreferredBitDepth?.W ?? -1);
+            }
 
             // Set transparent framebuffer
             _glfw.WindowHint(WindowHintBool.TransparentFramebuffer, opts.TransparentFramebuffer);
+            
+            // Set topmost window
+            _glfw.WindowHint(WindowHintBool.Floating, opts.TopMost);
 
             // Set multisample samples
             _glfw.WindowHint(WindowHintInt.Samples, opts.Samples ?? GLFW.Glfw.DontCare);
@@ -361,14 +382,13 @@ namespace Silk.NET.Windowing.Glfw
             if (opts.IsVisible)
             {
                 _glfw.ShowWindow(_glfwWindow);
+                CoreWindowState = opts.WindowState;
             }
             else
             {
                 _glfw.HideWindow(_glfwWindow);
             }
             
-            CoreWindowState = opts.WindowState;
-
             if (opts.API.API == ContextAPI.OpenGL || opts.API.API == ContextAPI.OpenGLES)
             {
                 _glfw.MakeContextCurrent(_glfwWindow);
@@ -418,6 +438,7 @@ namespace Silk.NET.Windowing.Glfw
 
         public override IWindowHost? Parent => (IWindowHost?) _parent ?? Monitor;
         public override IGLContext? SharedContext { get; }
+        public override string? WindowClass => _windowClass;
 
 
         public override IMonitor? Monitor
@@ -695,6 +716,25 @@ namespace Silk.NET.Windowing.Glfw
                 _glfw.GcUtility.Unpin(_onFramebufferResize);
                 _glfw.GcUtility.Unpin(_onFileDrop);
                 _glfw.GcUtility.Unpin(_onFocusChanged);
+
+                _onClosing = null;
+                _onMaximized = null;
+                _onMinimized = null;
+                _onMove = null;
+                _onResize = null;
+                _onFramebufferResize = null;
+                _onFileDrop = null;
+                _onFocusChanged = null;
+            }
+        }
+
+        public new bool TopMost
+        {
+            get => ExtendedOptionsCache.TopMost;
+            set
+            {
+                _glfw.SetWindowAttrib(_glfwWindow, WindowAttributeSetter.Floating, value);
+                ExtendedOptionsCache.TopMost = value;
             }
         }
 

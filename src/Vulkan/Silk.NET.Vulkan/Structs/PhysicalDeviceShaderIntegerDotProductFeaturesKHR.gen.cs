@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceShaderIntegerDotProductFeaturesKHR")]
-    public unsafe partial struct PhysicalDeviceShaderIntegerDotProductFeaturesKHR
+    [NativeName("AliasOf", "VkPhysicalDeviceShaderIntegerDotProductFeatures")]
+    public unsafe partial struct PhysicalDeviceShaderIntegerDotProductFeaturesKHR : IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2KHR>, IExtendsChain<DeviceCreateInfo>
     {
         public PhysicalDeviceShaderIntegerDotProductFeaturesKHR
         (
-            StructureType? sType = StructureType.PhysicalDeviceShaderIntegerDotProductFeaturesKhr,
+            StructureType? sType = StructureType.PhysicalDeviceShaderIntegerDotProductFeatures,
             void* pNext = null,
             Bool32? shaderIntegerDotProduct = null
         ) : this()
@@ -57,5 +58,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "shaderIntegerDotProduct")]
         public Bool32 ShaderIntegerDotProduct;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceShaderIntegerDotProductFeatures;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

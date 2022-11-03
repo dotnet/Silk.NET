@@ -9,11 +9,21 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "VkEventCreateFlags")]
     public enum EventCreateFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"DeviceOnlyBitKhr\"")]
         [NativeName("Name", "VK_EVENT_CREATE_DEVICE_ONLY_BIT_KHR")]
         EventCreateDeviceOnlyBitKhr = 1,
+        [Obsolete("Deprecated in favour of \"DeviceOnlyBit\"")]
+        [NativeName("Name", "VK_EVENT_CREATE_DEVICE_ONLY_BIT")]
+        EventCreateDeviceOnlyBit = 1,
+        [NativeName("Name", "VK_EVENT_CREATE_DEVICE_ONLY_BIT_KHR")]
+        DeviceOnlyBitKhr = 1,
+        [NativeName("Name", "VK_EVENT_CREATE_DEVICE_ONLY_BIT")]
+        DeviceOnlyBit = 1,
     }
 }

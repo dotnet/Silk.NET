@@ -9,15 +9,26 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenXR
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "XrCompositionLayerFlags")]
     public enum CompositionLayerFlags : long
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"CorrectChromaticAberrationBit\"")]
         [NativeName("Name", "XR_COMPOSITION_LAYER_CORRECT_CHROMATIC_ABERRATION_BIT")]
         CompositionLayerCorrectChromaticAberrationBit = 1,
+        [Obsolete("Deprecated in favour of \"BlendTextureSourceAlphaBit\"")]
         [NativeName("Name", "XR_COMPOSITION_LAYER_BLEND_TEXTURE_SOURCE_ALPHA_BIT")]
         CompositionLayerBlendTextureSourceAlphaBit = 2,
+        [Obsolete("Deprecated in favour of \"UnpremultipliedAlphaBit\"")]
         [NativeName("Name", "XR_COMPOSITION_LAYER_UNPREMULTIPLIED_ALPHA_BIT")]
         CompositionLayerUnpremultipliedAlphaBit = 4,
+        [NativeName("Name", "XR_COMPOSITION_LAYER_CORRECT_CHROMATIC_ABERRATION_BIT")]
+        CorrectChromaticAberrationBit = 1,
+        [NativeName("Name", "XR_COMPOSITION_LAYER_BLEND_TEXTURE_SOURCE_ALPHA_BIT")]
+        BlendTextureSourceAlphaBit = 2,
+        [NativeName("Name", "XR_COMPOSITION_LAYER_UNPREMULTIPLIED_ALPHA_BIT")]
+        UnpremultipliedAlphaBit = 4,
     }
 }

@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Core.Native
 {
+    [Flags]
     [NativeName("Name", "_D3D_CBUFFER_TYPE")]
     public enum D3DCBufferType : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D_CT_CBUFFER")]
         D3DCTCbuffer = 0x0,
         [NativeName("Name", "D3D_CT_TBUFFER")]

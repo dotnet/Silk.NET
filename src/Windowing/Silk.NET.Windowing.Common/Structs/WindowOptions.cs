@@ -1,7 +1,5 @@
-// This file is part of Silk.NET.
-//
-// You may modify and distribute Silk.NET under the terms
-// of the MIT license. See the LICENSE file for details.
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
 using System.IO;
@@ -41,6 +39,9 @@ namespace Silk.NET.Windowing
             PreferredStencilBufferBits = opts.PreferredStencilBufferBits;
             PreferredBitDepth = opts.PreferredBitDepth;
             Samples = opts.Samples;
+            WindowClass = null;
+            IsContextControlDisabled = opts.IsContextControlDisabled;
+            TopMost = false;
         }
 
         /// <inheritdoc />
@@ -51,6 +52,9 @@ namespace Silk.NET.Windowing
 
         /// <inheritdoc />
         public bool IsEventDriven { get; set; }
+
+        /// <inheritdoc />
+        public bool IsContextControlDisabled { get; set; }
 
         /// <inheritdoc />
         public VideoMode VideoMode { get; set; }
@@ -98,7 +102,13 @@ namespace Silk.NET.Windowing
         public bool TransparentFramebuffer { get; set; }
 
         /// <inheritdoc />
-        public IGLContext? SharedContext { get; }
+        public bool TopMost { get; set; }
+
+        /// <inheritdoc />
+        public IGLContext? SharedContext { get; set; }
+
+        /// <inheritdoc />
+        public string? WindowClass { get; set; }
 
         /// <summary>
         /// Creates a new WindowOptions struct.
@@ -121,9 +131,12 @@ namespace Silk.NET.Windowing
             int? preferredStencilBufferBits = null,
             Vector4D<int>? preferredBitDepth = null,
             bool transparentFramebuffer = false,
+            bool topMost = false,
             bool isEventDriven = false,
             IGLContext? sharedContext = null,
-            int? samples = null
+            int? samples = null,
+            string? windowClass = null,
+            bool isContextControlDisabled = false
         )
         {
             IsVisible = isVisible;
@@ -139,6 +152,7 @@ namespace Silk.NET.Windowing
             VideoMode = videoMode;
             PreferredDepthBufferBits = preferredDepthBufferBits;
             TransparentFramebuffer = transparentFramebuffer;
+            TopMost = topMost;
             IsEventDriven = isEventDriven;
             VSync = isVSync;
             SharedContext = sharedContext;
@@ -146,6 +160,8 @@ namespace Silk.NET.Windowing
             PreferredStencilBufferBits = preferredStencilBufferBits;
             PreferredBitDepth = preferredBitDepth;
             Samples = samples;
+            WindowClass = windowClass;
+            IsContextControlDisabled = isContextControlDisabled;
         }
 
         static WindowOptions()

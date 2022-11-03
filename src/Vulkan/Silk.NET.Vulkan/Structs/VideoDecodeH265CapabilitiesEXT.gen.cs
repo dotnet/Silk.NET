@@ -17,14 +17,13 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoDecodeH265CapabilitiesEXT")]
-    public unsafe partial struct VideoDecodeH265CapabilitiesEXT
+    public unsafe partial struct VideoDecodeH265CapabilitiesEXT : IExtendsChain<VideoCapabilitiesKHR>
     {
         public VideoDecodeH265CapabilitiesEXT
         (
             StructureType? sType = StructureType.VideoDecodeH265CapabilitiesExt,
             void* pNext = null,
-            uint? maxLevel = null,
-            ExtensionProperties? stdExtensionVersion = null
+            Video.StdVideoH265Level? maxLevel = null
         ) : this()
         {
             if (sType is not null)
@@ -41,11 +40,6 @@ namespace Silk.NET.Vulkan
             {
                 MaxLevel = maxLevel.Value;
             }
-
-            if (stdExtensionVersion is not null)
-            {
-                StdExtensionVersion = stdExtensionVersion.Value;
-            }
         }
 
 /// <summary></summary>
@@ -59,14 +53,22 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Type", "StdVideoH265Level")]
+        [NativeName("Type.Name", "StdVideoH265Level")]
         [NativeName("Name", "maxLevel")]
-        public uint MaxLevel;
-/// <summary></summary>
-        [NativeName("Type", "VkExtensionProperties")]
-        [NativeName("Type.Name", "VkExtensionProperties")]
-        [NativeName("Name", "stdExtensionVersion")]
-        public ExtensionProperties StdExtensionVersion;
+        public Video.StdVideoH265Level MaxLevel;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.VideoDecodeH265CapabilitiesExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

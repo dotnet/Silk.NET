@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeviceBufferMemoryRequirementsKHR")]
-    public unsafe partial struct DeviceBufferMemoryRequirementsKHR
+    [NativeName("AliasOf", "VkDeviceBufferMemoryRequirements")]
+    public unsafe partial struct DeviceBufferMemoryRequirementsKHR : IChainable
     {
         public DeviceBufferMemoryRequirementsKHR
         (
-            StructureType? sType = StructureType.DeviceBufferMemoryRequirementsKhr,
+            StructureType? sType = StructureType.DeviceBufferMemoryRequirements,
             void* pNext = null,
             BufferCreateInfo* pCreateInfo = null
         ) : this()
@@ -57,5 +58,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBufferCreateInfo")]
         [NativeName("Name", "pCreateInfo")]
         public BufferCreateInfo* PCreateInfo;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.DeviceBufferMemoryRequirements;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

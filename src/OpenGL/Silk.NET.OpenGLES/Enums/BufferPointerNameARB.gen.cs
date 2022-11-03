@@ -12,9 +12,15 @@ namespace Silk.NET.OpenGLES
     [NativeName("Name", "BufferPointerNameARB")]
     public enum BufferPointerNameARB : int
     {
+        [Obsolete("Deprecated in favour of \"Pointer\"")]
         [NativeName("Name", "GL_BUFFER_MAP_POINTER")]
         BufferMapPointer = 0x88BD,
+        [Obsolete("Deprecated in favour of \"PointerArb\"")]
         [NativeName("Name", "GL_BUFFER_MAP_POINTER_ARB")]
         BufferMapPointerArb = 0x88BD,
+        [NativeName("Name", "GL_BUFFER_MAP_POINTER")]
+        Pointer = 0x88BD,
+        [NativeName("Name", "GL_BUFFER_MAP_POINTER_ARB")]
+        PointerArb = 0x88BD,
     }
 }

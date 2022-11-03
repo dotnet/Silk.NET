@@ -9,9 +9,11 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenXR
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "XrVulkanInstanceCreateFlagsKHR")]
     public enum VulkanInstanceCreateFlagsKHR : long
     {
+        [NativeName("Name", "")]
+        None = 0,
     }
 }

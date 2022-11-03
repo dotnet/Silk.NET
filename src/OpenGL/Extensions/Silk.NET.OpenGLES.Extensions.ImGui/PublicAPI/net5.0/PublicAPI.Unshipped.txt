@@ -1,0 +1,3 @@
+#nullable enable
+Silk.NET.OpenGLES.Extensions.ImGui.ImGuiController.Context -> System.IntPtr
+Silk.NET.OpenGLES.Extensions.ImGui.ImGuiController.MakeCurrent() -> void

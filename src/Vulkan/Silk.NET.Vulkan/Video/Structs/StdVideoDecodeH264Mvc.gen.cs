@@ -53,8 +53,8 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Name", "mvcElementCount")]
         public uint MvcElementCount;
 
-        [NativeName("Type", "StdVideoDecodeH264MvcElement *")]
-        [NativeName("Type.Name", "StdVideoDecodeH264MvcElement *")]
+        [NativeName("Type", "const StdVideoDecodeH264MvcElement *")]
+        [NativeName("Type.Name", "const StdVideoDecodeH264MvcElement *")]
         [NativeName("Name", "pMvcElements")]
         public StdVideoDecodeH264MvcElement* PMvcElements;
     }

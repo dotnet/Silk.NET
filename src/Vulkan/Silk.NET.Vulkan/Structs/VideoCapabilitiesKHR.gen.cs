@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoCapabilitiesKHR")]
-    public unsafe partial struct VideoCapabilitiesKHR
+    public unsafe partial struct VideoCapabilitiesKHR : IChainStart
     {
         public VideoCapabilitiesKHR
         (
@@ -30,7 +30,8 @@ namespace Silk.NET.Vulkan
             Extent2D? minExtent = null,
             Extent2D? maxExtent = null,
             uint? maxReferencePicturesSlotsCount = null,
-            uint? maxReferencePicturesActiveCount = null
+            uint? maxReferencePicturesActiveCount = null,
+            ExtensionProperties? stdHeaderVersion = null
         ) : this()
         {
             if (sType is not null)
@@ -81,6 +82,11 @@ namespace Silk.NET.Vulkan
             if (maxReferencePicturesActiveCount is not null)
             {
                 MaxReferencePicturesActiveCount = maxReferencePicturesActiveCount.Value;
+            }
+
+            if (stdHeaderVersion is not null)
+            {
+                StdHeaderVersion = stdHeaderVersion.Value;
             }
         }
 
@@ -134,5 +140,35 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "maxReferencePicturesActiveCount")]
         public uint MaxReferencePicturesActiveCount;
+/// <summary></summary>
+        [NativeName("Type", "VkExtensionProperties")]
+        [NativeName("Type.Name", "VkExtensionProperties")]
+        [NativeName("Name", "stdHeaderVersion")]
+        public ExtensionProperties StdHeaderVersion;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.VideoCapabilitiesKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref VideoCapabilitiesKHR Chain(
+            out VideoCapabilitiesKHR capture)
+        {
+            capture = new VideoCapabilitiesKHR(StructureType.VideoCapabilitiesKhr);
+            return ref capture;
+        }
     }
 }

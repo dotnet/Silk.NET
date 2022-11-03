@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDrmFormatModifierPropertiesList2EXT")]
-    public unsafe partial struct DrmFormatModifierPropertiesList2EXT
+    public unsafe partial struct DrmFormatModifierPropertiesList2EXT : IExtendsChain<FormatProperties2>, IExtendsChain<FormatProperties2KHR>
     {
         public DrmFormatModifierPropertiesList2EXT
         (
@@ -68,5 +68,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkDrmFormatModifierProperties2EXT")]
         [NativeName("Name", "pDrmFormatModifierProperties")]
         public DrmFormatModifierProperties2EXT* PDrmFormatModifierProperties;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.DrmFormatModifierPropertiesList2Ext;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

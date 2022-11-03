@@ -17,15 +17,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoDecodeH264CapabilitiesEXT")]
-    public unsafe partial struct VideoDecodeH264CapabilitiesEXT
+    public unsafe partial struct VideoDecodeH264CapabilitiesEXT : IExtendsChain<VideoCapabilitiesKHR>
     {
         public VideoDecodeH264CapabilitiesEXT
         (
             StructureType? sType = StructureType.VideoDecodeH264CapabilitiesExt,
             void* pNext = null,
-            uint? maxLevel = null,
-            Offset2D? fieldOffsetGranularity = null,
-            ExtensionProperties? stdExtensionVersion = null
+            Video.StdVideoH264Level? maxLevel = null,
+            Offset2D? fieldOffsetGranularity = null
         ) : this()
         {
             if (sType is not null)
@@ -47,11 +46,6 @@ namespace Silk.NET.Vulkan
             {
                 FieldOffsetGranularity = fieldOffsetGranularity.Value;
             }
-
-            if (stdExtensionVersion is not null)
-            {
-                StdExtensionVersion = stdExtensionVersion.Value;
-            }
         }
 
 /// <summary></summary>
@@ -65,19 +59,27 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Type", "StdVideoH264Level")]
+        [NativeName("Type.Name", "StdVideoH264Level")]
         [NativeName("Name", "maxLevel")]
-        public uint MaxLevel;
+        public Video.StdVideoH264Level MaxLevel;
 /// <summary></summary>
         [NativeName("Type", "VkOffset2D")]
         [NativeName("Type.Name", "VkOffset2D")]
         [NativeName("Name", "fieldOffsetGranularity")]
         public Offset2D FieldOffsetGranularity;
-/// <summary></summary>
-        [NativeName("Type", "VkExtensionProperties")]
-        [NativeName("Type.Name", "VkExtensionProperties")]
-        [NativeName("Name", "stdExtensionVersion")]
-        public ExtensionProperties StdExtensionVersion;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.VideoDecodeH264CapabilitiesExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

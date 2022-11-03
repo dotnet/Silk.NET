@@ -9,11 +9,16 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenXR
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "XrTriangleMeshFlagsFB")]
     public enum TriangleMeshFlagsFB : long
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"MutableBitFB\"")]
         [NativeName("Name", "XR_TRIANGLE_MESH_MUTABLE_BIT_FB")]
         TriangleMeshMutableBitFB = 1,
+        [NativeName("Name", "XR_TRIANGLE_MESH_MUTABLE_BIT_FB")]
+        MutableBitFB = 1,
     }
 }

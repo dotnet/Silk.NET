@@ -20,25 +20,25 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
     public unsafe partial class NVDrawVulkanImage : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_draw_vulkan_image";
-        [NativeApi(EntryPoint = "glDrawVkImageNV")]
+        [NativeApi(EntryPoint = "glDrawVkImageNV", Convention = CallingConvention.Winapi)]
         public partial void DrawVkImage([Flow(FlowDirection.In)] ulong vkImage, [Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] float x0, [Flow(FlowDirection.In)] float y0, [Flow(FlowDirection.In)] float x1, [Flow(FlowDirection.In)] float y1, [Flow(FlowDirection.In)] float z, [Flow(FlowDirection.In)] float s0, [Flow(FlowDirection.In)] float t0, [Flow(FlowDirection.In)] float s1, [Flow(FlowDirection.In)] float t1);
 
-        [NativeApi(EntryPoint = "glGetVkProcAddrNV")]
+        [NativeApi(EntryPoint = "glGetVkProcAddrNV", Convention = CallingConvention.Winapi)]
         public unsafe partial nint GetVkProcAddr([Count(Computed = "name"), Flow(FlowDirection.In)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetVkProcAddrNV")]
+        [NativeApi(EntryPoint = "glGetVkProcAddrNV", Convention = CallingConvention.Winapi)]
         public partial nint GetVkProcAddr([Count(Computed = "name"), Flow(FlowDirection.In)] in byte name);
 
-        [NativeApi(EntryPoint = "glGetVkProcAddrNV")]
+        [NativeApi(EntryPoint = "glGetVkProcAddrNV", Convention = CallingConvention.Winapi)]
         public partial nint GetVkProcAddr([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name);
 
-        [NativeApi(EntryPoint = "glSignalVkFenceNV")]
+        [NativeApi(EntryPoint = "glSignalVkFenceNV", Convention = CallingConvention.Winapi)]
         public partial void SignalVkFence([Flow(FlowDirection.In)] ulong vkFence);
 
-        [NativeApi(EntryPoint = "glSignalVkSemaphoreNV")]
+        [NativeApi(EntryPoint = "glSignalVkSemaphoreNV", Convention = CallingConvention.Winapi)]
         public partial void SignalVkSemaphore([Flow(FlowDirection.In)] ulong vkSemaphore);
 
-        [NativeApi(EntryPoint = "glWaitVkSemaphoreNV")]
+        [NativeApi(EntryPoint = "glWaitVkSemaphoreNV", Convention = CallingConvention.Winapi)]
         public partial void WaitVkSemaphore([Flow(FlowDirection.In)] ulong vkSemaphore);
 
         public NVDrawVulkanImage(INativeContext ctx)

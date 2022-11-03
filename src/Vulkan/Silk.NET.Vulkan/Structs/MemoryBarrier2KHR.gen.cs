@@ -17,16 +17,17 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMemoryBarrier2KHR")]
-    public unsafe partial struct MemoryBarrier2KHR
+    [NativeName("AliasOf", "VkMemoryBarrier2")]
+    public unsafe partial struct MemoryBarrier2KHR : IExtendsChain<SubpassDependency2>, IExtendsChain<SubpassDependency2KHR>
     {
         public MemoryBarrier2KHR
         (
-            StructureType? sType = StructureType.MemoryBarrier2Khr,
+            StructureType? sType = StructureType.MemoryBarrier2,
             void* pNext = null,
-            PipelineStageFlags2KHR? srcStageMask = null,
-            AccessFlags2KHR? srcAccessMask = null,
-            PipelineStageFlags2KHR? dstStageMask = null,
-            AccessFlags2KHR? dstAccessMask = null
+            PipelineStageFlags2? srcStageMask = null,
+            AccessFlags2? srcAccessMask = null,
+            PipelineStageFlags2? dstStageMask = null,
+            AccessFlags2? dstAccessMask = null
         ) : this()
         {
             if (sType is not null)
@@ -71,24 +72,37 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "VkPipelineStageFlags2KHR")]
-        [NativeName("Type.Name", "VkPipelineStageFlags2KHR")]
+        [NativeName("Type", "VkPipelineStageFlags2")]
+        [NativeName("Type.Name", "VkPipelineStageFlags2")]
         [NativeName("Name", "srcStageMask")]
-        public PipelineStageFlags2KHR SrcStageMask;
+        public PipelineStageFlags2 SrcStageMask;
 /// <summary></summary>
-        [NativeName("Type", "VkAccessFlags2KHR")]
-        [NativeName("Type.Name", "VkAccessFlags2KHR")]
+        [NativeName("Type", "VkAccessFlags2")]
+        [NativeName("Type.Name", "VkAccessFlags2")]
         [NativeName("Name", "srcAccessMask")]
-        public AccessFlags2KHR SrcAccessMask;
+        public AccessFlags2 SrcAccessMask;
 /// <summary></summary>
-        [NativeName("Type", "VkPipelineStageFlags2KHR")]
-        [NativeName("Type.Name", "VkPipelineStageFlags2KHR")]
+        [NativeName("Type", "VkPipelineStageFlags2")]
+        [NativeName("Type.Name", "VkPipelineStageFlags2")]
         [NativeName("Name", "dstStageMask")]
-        public PipelineStageFlags2KHR DstStageMask;
+        public PipelineStageFlags2 DstStageMask;
 /// <summary></summary>
-        [NativeName("Type", "VkAccessFlags2KHR")]
-        [NativeName("Type.Name", "VkAccessFlags2KHR")]
+        [NativeName("Type", "VkAccessFlags2")]
+        [NativeName("Type.Name", "VkAccessFlags2")]
         [NativeName("Name", "dstAccessMask")]
-        public AccessFlags2KHR DstAccessMask;
+        public AccessFlags2 DstAccessMask;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.MemoryBarrier2;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

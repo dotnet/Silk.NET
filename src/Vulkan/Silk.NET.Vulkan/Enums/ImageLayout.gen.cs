@@ -68,6 +68,8 @@ namespace Silk.NET.Vulkan
         ReadOnlyOptimalKhr = 1000314000,
         [NativeName("Name", "VK_IMAGE_LAYOUT_ATTACHMENT_OPTIMAL_KHR")]
         AttachmentOptimalKhr = 1000314001,
+        [NativeName("Name", "VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT")]
+        AttachmentFeedbackLoopOptimalExt = 1000339000,
         [NativeName("Name", "VK_IMAGE_LAYOUT_DEPTH_READ_ONLY_STENCIL_ATTACHMENT_OPTIMAL")]
         DepthReadOnlyStencilAttachmentOptimal = 1000117000,
         [NativeName("Name", "VK_IMAGE_LAYOUT_DEPTH_ATTACHMENT_STENCIL_READ_ONLY_OPTIMAL")]
@@ -80,5 +82,9 @@ namespace Silk.NET.Vulkan
         StencilAttachmentOptimal = 1000241002,
         [NativeName("Name", "VK_IMAGE_LAYOUT_STENCIL_READ_ONLY_OPTIMAL")]
         StencilReadOnlyOptimal = 1000241003,
+        [NativeName("Name", "VK_IMAGE_LAYOUT_READ_ONLY_OPTIMAL")]
+        ReadOnlyOptimal = 1000314000,
+        [NativeName("Name", "VK_IMAGE_LAYOUT_ATTACHMENT_OPTIMAL")]
+        AttachmentOptimal = 1000314001,
     }
 }

@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDevicePrivateDataCreateInfoEXT")]
-    public unsafe partial struct DevicePrivateDataCreateInfoEXT
+    [NativeName("AliasOf", "VkDevicePrivateDataCreateInfo")]
+    public unsafe partial struct DevicePrivateDataCreateInfoEXT : IExtendsChain<DeviceCreateInfo>
     {
         public DevicePrivateDataCreateInfoEXT
         (
-            StructureType? sType = StructureType.DevicePrivateDataCreateInfoExt,
+            StructureType? sType = StructureType.DevicePrivateDataCreateInfo,
             void* pNext = null,
             uint? privateDataSlotRequestCount = null
         ) : this()
@@ -57,5 +58,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "privateDataSlotRequestCount")]
         public uint PrivateDataSlotRequestCount;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.DevicePrivateDataCreateInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

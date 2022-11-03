@@ -17,17 +17,18 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCopyImageToBufferInfo2KHR")]
-    public unsafe partial struct CopyImageToBufferInfo2KHR
+    [NativeName("AliasOf", "VkCopyImageToBufferInfo2")]
+    public unsafe partial struct CopyImageToBufferInfo2KHR : IChainable
     {
         public CopyImageToBufferInfo2KHR
         (
-            StructureType? sType = StructureType.CopyImageToBufferInfo2Khr,
+            StructureType? sType = StructureType.CopyImageToBufferInfo2,
             void* pNext = null,
             Image? srcImage = null,
             ImageLayout? srcImageLayout = null,
             Buffer? dstBuffer = null,
             uint? regionCount = null,
-            BufferImageCopy2KHR* pRegions = null
+            BufferImageCopy2* pRegions = null
         ) : this()
         {
             if (sType is not null)
@@ -97,9 +98,22 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "regionCount")]
         public uint RegionCount;
 /// <summary></summary>
-        [NativeName("Type", "VkBufferImageCopy2KHR*")]
-        [NativeName("Type.Name", "VkBufferImageCopy2KHR")]
+        [NativeName("Type", "VkBufferImageCopy2*")]
+        [NativeName("Type.Name", "VkBufferImageCopy2")]
         [NativeName("Name", "pRegions")]
-        public BufferImageCopy2KHR* PRegions;
+        public BufferImageCopy2* PRegions;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.CopyImageToBufferInfo2;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

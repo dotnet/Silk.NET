@@ -22,9 +22,8 @@ namespace Silk.NET.Vulkan.Video
         public StdVideoEncodeH264SliceHeader
         (
             StdVideoEncodeH264SliceHeaderFlags? flags = null,
+            uint? firstMbInSlice = null,
             StdVideoH264SliceType? sliceType = null,
-            byte? seqParameterSetId = null,
-            byte? picParameterSetId = null,
             ushort? idrPicId = null,
             byte? numRefIdxL0ActiveMinus1 = null,
             byte? numRefIdxL1ActiveMinus1 = null,
@@ -32,7 +31,7 @@ namespace Silk.NET.Vulkan.Video
             StdVideoH264DisableDeblockingFilterIdc? disableDeblockingFilterIdc = null,
             byte? sliceAlphaC0OffsetDiv2 = null,
             byte? sliceBetaOffsetDiv2 = null,
-            StdVideoEncodeH264RefMemMgmtCtrlOperations* pMemMgmtCtrlOperations = null
+            StdVideoEncodeH264WeightTable* pWeightTable = null
         ) : this()
         {
             if (flags is not null)
@@ -40,19 +39,14 @@ namespace Silk.NET.Vulkan.Video
                 Flags = flags.Value;
             }
 
+            if (firstMbInSlice is not null)
+            {
+                FirstMbInSlice = firstMbInSlice.Value;
+            }
+
             if (sliceType is not null)
             {
                 SliceType = sliceType.Value;
-            }
-
-            if (seqParameterSetId is not null)
-            {
-                SeqParameterSetId = seqParameterSetId.Value;
-            }
-
-            if (picParameterSetId is not null)
-            {
-                PicParameterSetId = picParameterSetId.Value;
             }
 
             if (idrPicId is not null)
@@ -90,9 +84,9 @@ namespace Silk.NET.Vulkan.Video
                 SliceBetaOffsetDiv2 = sliceBetaOffsetDiv2.Value;
             }
 
-            if (pMemMgmtCtrlOperations is not null)
+            if (pWeightTable is not null)
             {
-                PMemMgmtCtrlOperations = pMemMgmtCtrlOperations;
+                PWeightTable = pWeightTable;
             }
         }
 
@@ -102,20 +96,15 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Name", "flags")]
         public StdVideoEncodeH264SliceHeaderFlags Flags;
 
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "first_mb_in_slice")]
+        public uint FirstMbInSlice;
+
         [NativeName("Type", "StdVideoH264SliceType")]
         [NativeName("Type.Name", "StdVideoH264SliceType")]
         [NativeName("Name", "slice_type")]
         public StdVideoH264SliceType SliceType;
-
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "seq_parameter_set_id")]
-        public byte SeqParameterSetId;
-
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "pic_parameter_set_id")]
-        public byte PicParameterSetId;
 
         [NativeName("Type", "uint16_t")]
         [NativeName("Type.Name", "uint16_t")]
@@ -152,9 +141,9 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Name", "slice_beta_offset_div2")]
         public byte SliceBetaOffsetDiv2;
 
-        [NativeName("Type", "StdVideoEncodeH264RefMemMgmtCtrlOperations *")]
-        [NativeName("Type.Name", "StdVideoEncodeH264RefMemMgmtCtrlOperations *")]
-        [NativeName("Name", "pMemMgmtCtrlOperations")]
-        public StdVideoEncodeH264RefMemMgmtCtrlOperations* PMemMgmtCtrlOperations;
+        [NativeName("Type", "const StdVideoEncodeH264WeightTable *")]
+        [NativeName("Type.Name", "const StdVideoEncodeH264WeightTable *")]
+        [NativeName("Name", "pWeightTable")]
+        public StdVideoEncodeH264WeightTable* PWeightTable;
     }
 }

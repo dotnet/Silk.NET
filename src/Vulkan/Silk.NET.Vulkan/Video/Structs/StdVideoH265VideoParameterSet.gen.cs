@@ -21,16 +21,21 @@ namespace Silk.NET.Vulkan.Video
     {
         public StdVideoH265VideoParameterSet
         (
+            StdVideoH265VpsFlags? flags = null,
             byte? vpsVideoParameterSetId = null,
             byte? vpsMaxSubLayersMinus1 = null,
             uint? vpsNumUnitsInTick = null,
             uint? vpsTimeScale = null,
             uint? vpsNumTicksPocDiffOneMinus1 = null,
             StdVideoH265DecPicBufMgr* pDecPicBufMgr = null,
-            StdVideoH265HrdParameters* hrdParameters = null,
-            StdVideoH265VpsFlags? flags = null
+            StdVideoH265HrdParameters* pHrdParameters = null
         ) : this()
         {
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
             if (vpsVideoParameterSetId is not null)
             {
                 VpsVideoParameterSetId = vpsVideoParameterSetId.Value;
@@ -61,17 +66,17 @@ namespace Silk.NET.Vulkan.Video
                 PDecPicBufMgr = pDecPicBufMgr;
             }
 
-            if (hrdParameters is not null)
+            if (pHrdParameters is not null)
             {
-                HrdParameters = hrdParameters;
-            }
-
-            if (flags is not null)
-            {
-                Flags = flags.Value;
+                PHrdParameters = pHrdParameters;
             }
         }
 
+
+        [NativeName("Type", "StdVideoH265VpsFlags")]
+        [NativeName("Type.Name", "StdVideoH265VpsFlags")]
+        [NativeName("Name", "flags")]
+        public StdVideoH265VpsFlags Flags;
 
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
@@ -98,19 +103,14 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Name", "vps_num_ticks_poc_diff_one_minus1")]
         public uint VpsNumTicksPocDiffOneMinus1;
 
-        [NativeName("Type", "StdVideoH265DecPicBufMgr *")]
-        [NativeName("Type.Name", "StdVideoH265DecPicBufMgr *")]
+        [NativeName("Type", "const StdVideoH265DecPicBufMgr *")]
+        [NativeName("Type.Name", "const StdVideoH265DecPicBufMgr *")]
         [NativeName("Name", "pDecPicBufMgr")]
         public StdVideoH265DecPicBufMgr* PDecPicBufMgr;
 
-        [NativeName("Type", "StdVideoH265HrdParameters *")]
-        [NativeName("Type.Name", "StdVideoH265HrdParameters *")]
-        [NativeName("Name", "hrd_parameters")]
-        public StdVideoH265HrdParameters* HrdParameters;
-
-        [NativeName("Type", "StdVideoH265VpsFlags")]
-        [NativeName("Type.Name", "StdVideoH265VpsFlags")]
-        [NativeName("Name", "flags")]
-        public StdVideoH265VpsFlags Flags;
+        [NativeName("Type", "const StdVideoH265HrdParameters *")]
+        [NativeName("Type.Name", "const StdVideoH265HrdParameters *")]
+        [NativeName("Name", "pHrdParameters")]
+        public StdVideoH265HrdParameters* PHrdParameters;
     }
 }

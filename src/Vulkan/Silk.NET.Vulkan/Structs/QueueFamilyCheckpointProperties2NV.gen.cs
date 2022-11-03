@@ -17,13 +17,13 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkQueueFamilyCheckpointProperties2NV")]
-    public unsafe partial struct QueueFamilyCheckpointProperties2NV
+    public unsafe partial struct QueueFamilyCheckpointProperties2NV : IExtendsChain<QueueFamilyProperties2>, IExtendsChain<QueueFamilyProperties2KHR>
     {
         public QueueFamilyCheckpointProperties2NV
         (
             StructureType? sType = StructureType.QueueFamilyCheckpointProperties2NV,
             void* pNext = null,
-            PipelineStageFlags2KHR? checkpointExecutionStageMask = null
+            PipelineStageFlags2? checkpointExecutionStageMask = null
         ) : this()
         {
             if (sType is not null)
@@ -53,9 +53,22 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "VkPipelineStageFlags2KHR")]
-        [NativeName("Type.Name", "VkPipelineStageFlags2KHR")]
+        [NativeName("Type", "VkPipelineStageFlags2")]
+        [NativeName("Type.Name", "VkPipelineStageFlags2")]
         [NativeName("Name", "checkpointExecutionStageMask")]
-        public PipelineStageFlags2KHR CheckpointExecutionStageMask;
+        public PipelineStageFlags2 CheckpointExecutionStageMask;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.QueueFamilyCheckpointProperties2NV;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

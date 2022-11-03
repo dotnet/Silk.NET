@@ -78,7 +78,7 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// <summary>
         /// Gets or sets the calling convention of this function.
         /// </summary>
-        public CallingConvention Convention { get; set; } = CallingConvention.Cdecl;
+        public CallingConvention Convention { get; set; } = CallingConvention.Winapi;
 
         /// <summary>
         /// The accessibility modifier to add to this function's declaration.
@@ -100,6 +100,11 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// members.
         /// </summary>
         public bool IsReadOnly { get; set; }
+
+        /// <summary>
+        /// Prefix to invocations of this function e.g. "@this->". May be null.
+        /// </summary>
+        public string? InvocationPrefix { get; set; }
 
         /// <inheritdoc />
         public override string ToString()

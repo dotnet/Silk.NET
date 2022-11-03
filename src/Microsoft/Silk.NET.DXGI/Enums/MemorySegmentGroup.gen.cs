@@ -9,12 +9,21 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DXGI
 {
+    [Flags]
     [NativeName("Name", "DXGI_MEMORY_SEGMENT_GROUP")]
     public enum MemorySegmentGroup : int
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"Local\"")]
         [NativeName("Name", "DXGI_MEMORY_SEGMENT_GROUP_LOCAL")]
         MemorySegmentGroupLocal = 0x0,
+        [Obsolete("Deprecated in favour of \"NonLocal\"")]
         [NativeName("Name", "DXGI_MEMORY_SEGMENT_GROUP_NON_LOCAL")]
         MemorySegmentGroupNonLocal = 0x1,
+        [NativeName("Name", "DXGI_MEMORY_SEGMENT_GROUP_LOCAL")]
+        Local = 0x0,
+        [NativeName("Name", "DXGI_MEMORY_SEGMENT_GROUP_NON_LOCAL")]
+        NonLocal = 0x1,
     }
 }

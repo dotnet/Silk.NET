@@ -21,6 +21,7 @@ namespace Silk.NET.Vulkan.Video
     {
         public StdVideoH264SequenceParameterSet
         (
+            StdVideoH264SpsFlags? flags = null,
             StdVideoH264ProfileIdc? profileIdc = null,
             StdVideoH264Level? levelIdc = null,
             byte? seqParameterSetId = null,
@@ -40,11 +41,16 @@ namespace Silk.NET.Vulkan.Video
             uint? frameCropRightOffset = null,
             uint? frameCropTopOffset = null,
             uint? frameCropBottomOffset = null,
-            StdVideoH264SpsFlags? flags = null,
+            int* pOffsetForRefFrame = null,
             StdVideoH264ScalingLists* pScalingLists = null,
             StdVideoH264SequenceParameterSetVui* pSequenceParameterSetVui = null
         ) : this()
         {
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
             if (profileIdc is not null)
             {
                 ProfileIdc = profileIdc.Value;
@@ -140,9 +146,9 @@ namespace Silk.NET.Vulkan.Video
                 FrameCropBottomOffset = frameCropBottomOffset.Value;
             }
 
-            if (flags is not null)
+            if (pOffsetForRefFrame is not null)
             {
-                Flags = flags.Value;
+                POffsetForRefFrame = pOffsetForRefFrame;
             }
 
             if (pScalingLists is not null)
@@ -156,6 +162,11 @@ namespace Silk.NET.Vulkan.Video
             }
         }
 
+
+        [NativeName("Type", "StdVideoH264SpsFlags")]
+        [NativeName("Type.Name", "StdVideoH264SpsFlags")]
+        [NativeName("Name", "flags")]
+        public StdVideoH264SpsFlags Flags;
 
         [NativeName("Type", "StdVideoH264ProfileIdc")]
         [NativeName("Type.Name", "StdVideoH264ProfileIdc")]
@@ -252,22 +263,18 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Name", "frame_crop_bottom_offset")]
         public uint FrameCropBottomOffset;
 
-        [NativeName("Type", "StdVideoH264SpsFlags")]
-        [NativeName("Type.Name", "StdVideoH264SpsFlags")]
-        [NativeName("Name", "flags")]
-        public StdVideoH264SpsFlags Flags;
-        [NativeName("Type", "int32_t [255]")]
-        [NativeName("Type.Name", "int32_t [255]")]
-        [NativeName("Name", "offset_for_ref_frame")]
-        public fixed int OffsetForRefFrame[255];
+        [NativeName("Type", "const int32_t *")]
+        [NativeName("Type.Name", "const int32_t *")]
+        [NativeName("Name", "pOffsetForRefFrame")]
+        public int* POffsetForRefFrame;
 
-        [NativeName("Type", "StdVideoH264ScalingLists *")]
-        [NativeName("Type.Name", "StdVideoH264ScalingLists *")]
+        [NativeName("Type", "const StdVideoH264ScalingLists *")]
+        [NativeName("Type.Name", "const StdVideoH264ScalingLists *")]
         [NativeName("Name", "pScalingLists")]
         public StdVideoH264ScalingLists* PScalingLists;
 
-        [NativeName("Type", "StdVideoH264SequenceParameterSetVui *")]
-        [NativeName("Type.Name", "StdVideoH264SequenceParameterSetVui *")]
+        [NativeName("Type", "const StdVideoH264SequenceParameterSetVui *")]
+        [NativeName("Type.Name", "const StdVideoH264SequenceParameterSetVui *")]
         [NativeName("Name", "pSequenceParameterSetVui")]
         public StdVideoH264SequenceParameterSetVui* PSequenceParameterSetVui;
     }

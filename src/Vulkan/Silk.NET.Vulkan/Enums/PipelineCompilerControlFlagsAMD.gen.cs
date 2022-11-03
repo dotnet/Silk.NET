@@ -9,9 +9,11 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "VkPipelineCompilerControlFlagsAMD")]
     public enum PipelineCompilerControlFlagsAMD : int
     {
+        [NativeName("Name", "")]
+        None = 0,
     }
 }

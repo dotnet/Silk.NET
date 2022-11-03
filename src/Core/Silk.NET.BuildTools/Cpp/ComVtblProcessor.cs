@@ -17,22 +17,46 @@ namespace Silk.NET.BuildTools.Cpp
 {
     public static class ComVtblProcessor
     {
-        public static IEnumerable<ImplementedFunction> GetHelperFunctions(Struct @struct, Project core)
+        public static IEnumerable<ImplementedFunction> GetHelperFunctions
+        (
+            Struct @struct,
+            Profile profile,
+            bool thisInScope = false,
+            string vtbl = "LpVtbl"
+        )
         {
             var sb = new StringBuilder();
-            foreach (var vtblFunction in GetWithVariants(@struct.Vtbl, core))
+            var all = GetWithVariants(@struct.Vtbl, profile).ToList();
+            foreach (var vtblFunction in all)
             {
                 sb.Clear();
-                Implement(sb, vtblFunction.New, @struct, vtblFunction.Original.VtblIndex);
+                Implement(sb, vtblFunction.New, @struct, vtblFunction.Original.VtblIndex, false, thisInScope);
                 vtblFunction.New.IsReadOnly = true;
+                vtblFunction.New.InvocationPrefix = "@this->";
                 yield return new ImplementedFunction(vtblFunction.New, sb, vtblFunction.Original);
+            }
+
+            foreach (var complex in Overloader.GetOverloads(all.Select(x => x.New), profile.Projects["Core"], null))
+            {
+                if (!thisInScope)
+                {
+                    complex.Body = Enumerable.Repeat
+                    (
+                        $"var @this = ({@struct.Name}*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));",
+                        1
+                    )
+                    .Concat(complex.Body)
+                    .ToArray();
+                }
+            
+                yield return complex;
             }
         }
 
         public static IEnumerable<(Function Original, Function New)> GetWithVariants
         (
             IEnumerable<Function> functions,
-            Project core
+            Profile profile
         )
         {
             var enumerable = GetOriginals(functions);
@@ -44,7 +68,7 @@ namespace Silk.NET.BuildTools.Cpp
             foreach (var overload in enumerable)
             {
                 foreach (var final in SimpleReturnOverloader.GetWithOverloads
-                    (overload.New, core, Overloader.ReturnOverloaders))
+                    (overload.New, profile, Overloader.ReturnOverloaders))
                 {
                     yield return (overload.Original, final);
                 }
@@ -64,7 +88,7 @@ namespace Silk.NET.BuildTools.Cpp
                 foreach (var function in functions)
                 {
                     foreach (var overload in SimpleParameterOverloader.GetWithOverloads
-                        (function.Item2, core, overloaders))
+                        (function.Item2, profile, overloaders))
                     {
                         yield return (function.Item1, overload);
                     }
@@ -72,7 +96,15 @@ namespace Silk.NET.BuildTools.Cpp
             }
         }
 
-        public static void Implement(StringBuilder sb, Function function, Struct parent, int index, bool retDeref = false)
+        public static void Implement
+        (
+            StringBuilder sb,
+            Function function,
+            Struct parent,
+            int index,
+            bool retDeref = false,
+            bool thisInScope = false
+        )
         {
             if (function.Attributes.IsBuildToolsIntrinsic(out var args) && args[0] == "$CPPRETFIXUP")
             {
@@ -95,13 +127,16 @@ namespace Silk.NET.BuildTools.Cpp
                             }
                         ).ToArray()
                     ).Build();
-                Implement(sb, fixedUpFunction, parent, index, true);
+                Implement(sb, fixedUpFunction, parent, index, true, thisInScope);
                 function.Attributes.RemoveAll(x => x.Name == "BuildToolsIntrinsic");
                 return;
             }
             
             var ind = "";
-            sb.AppendLine($"var @this = ({parent.Name}*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));");
+            if (!thisInScope)
+            {
+                sb.AppendLine($"var @this = ({parent.Name}*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));");
+            }
 
             var epilogue = new List<Action>();
             var parameterInvocations = new List<(Type Type, string Parameter)>
@@ -188,23 +223,14 @@ namespace Silk.NET.BuildTools.Cpp
                 }
             }
 
-            if (function.ReturnType.ToString() != "void")
-            {
-                sb.Append(ind + "ret = ");
-            }
-            else
-            {
-                sb.Append(ind);
-            }
-
             var conv = function.Convention switch
             {
-                CallingConvention.Winapi => throw new NotImplementedException(),
+                CallingConvention.Winapi => string.Empty,
                 CallingConvention.Cdecl => "Cdecl",
                 CallingConvention.StdCall => "Stdcall",
                 CallingConvention.ThisCall => "Thiscall",
                 CallingConvention.FastCall => "Fastcall",
-                _ => "Cdecl"
+                _ => string.Empty
             };
 
             var fnPtrSig = string.Join(", ", parameterInvocations.Select(x => x.Type.ToString()));
@@ -214,9 +240,27 @@ namespace Silk.NET.BuildTools.Cpp
             }
 
             fnPtrSig += function.ReturnType;
-            sb.Append($"((delegate* unmanaged[{conv}]<{fnPtrSig}>)");
-            sb.Append($"LpVtbl[{index}])");
-            sb.AppendLine("(" + string.Join(", ", parameterInvocations.Select(x => x.Parameter)) + ");");
+            var fnPtrPre = function.ReturnType.ToString() != "void" ? $"{ind}ret = " : ind;
+            var fnPtrInv = $"@this->LpVtbl[{index}])({string.Join(", ", parameterInvocations.Select(x => x.Parameter))});";
+            if (conv == string.Empty)
+            {
+                sb.AppendLine("#if NET5_0_OR_GREATER");
+                sb.AppendLine($"{fnPtrPre}((delegate* unmanaged<{fnPtrSig}>){fnPtrInv}");
+                sb.AppendLine("#else");
+                sb.AppendLine($"{ind}if (SilkMarshal.IsWinapiStdcall)");
+                sb.AppendLine($"{ind}{{");
+                sb.AppendLine($"    {fnPtrPre}((delegate* unmanaged[Stdcall]<{fnPtrSig}>){fnPtrInv}");
+                sb.AppendLine($"{ind}}}");
+                sb.AppendLine($"{ind}else");
+                sb.AppendLine($"{ind}{{");
+                sb.AppendLine($"    {fnPtrPre}((delegate* unmanaged[Cdecl]<{fnPtrSig}>){fnPtrInv}");
+                sb.AppendLine($"{ind}}}");
+                sb.AppendLine("#endif");
+            }
+            else
+            {
+                sb.AppendLine($"{fnPtrPre}((delegate* unmanaged[{conv}]<{fnPtrSig}>){fnPtrInv}");
+            }
 
             for (var i = epilogue.Count - 1; i >= 0; i--)
             {

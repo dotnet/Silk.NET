@@ -20,16 +20,16 @@ namespace Silk.NET.OpenGL.Extensions.ARB
     public unsafe partial class ArbTextureBufferObject : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_texture_buffer_object";
-        [NativeApi(EntryPoint = "glTexBufferARB")]
+        [NativeApi(EntryPoint = "glTexBufferARB", Convention = CallingConvention.Winapi)]
         public partial void TexBuffer([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] uint buffer);
 
-        [NativeApi(EntryPoint = "glTexBufferARB")]
+        [NativeApi(EntryPoint = "glTexBufferARB", Convention = CallingConvention.Winapi)]
         public partial void TexBuffer([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint buffer);
 
-        [NativeApi(EntryPoint = "glTexBufferARB")]
+        [NativeApi(EntryPoint = "glTexBufferARB", Convention = CallingConvention.Winapi)]
         public partial void TexBuffer([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] uint buffer);
 
-        [NativeApi(EntryPoint = "glTexBufferARB")]
+        [NativeApi(EntryPoint = "glTexBufferARB", Convention = CallingConvention.Winapi)]
         public partial void TexBuffer([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint buffer);
 
         public ArbTextureBufferObject(INativeContext ctx)

@@ -16,7 +16,6 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Assimp
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
     [NativeName("Name", "aiUVTransform")]
     public unsafe partial struct UVTransform
     {

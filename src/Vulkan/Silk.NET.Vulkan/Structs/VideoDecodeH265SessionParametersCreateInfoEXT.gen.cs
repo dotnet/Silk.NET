@@ -17,12 +17,13 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoDecodeH265SessionParametersCreateInfoEXT")]
-    public unsafe partial struct VideoDecodeH265SessionParametersCreateInfoEXT
+    public unsafe partial struct VideoDecodeH265SessionParametersCreateInfoEXT : IExtendsChain<VideoSessionParametersCreateInfoKHR>
     {
         public VideoDecodeH265SessionParametersCreateInfoEXT
         (
             StructureType? sType = StructureType.VideoDecodeH265SessionParametersCreateInfoExt,
             void* pNext = null,
+            uint? maxVpsStdCount = null,
             uint? maxSpsStdCount = null,
             uint? maxPpsStdCount = null,
             VideoDecodeH265SessionParametersAddInfoEXT* pParametersAddInfo = null
@@ -36,6 +37,11 @@ namespace Silk.NET.Vulkan
             if (pNext is not null)
             {
                 PNext = pNext;
+            }
+
+            if (maxVpsStdCount is not null)
+            {
+                MaxVpsStdCount = maxVpsStdCount.Value;
             }
 
             if (maxSpsStdCount is not null)
@@ -67,6 +73,11 @@ namespace Silk.NET.Vulkan
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxVpsStdCount")]
+        public uint MaxVpsStdCount;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "maxSpsStdCount")]
         public uint MaxSpsStdCount;
 /// <summary></summary>
@@ -79,5 +90,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkVideoDecodeH265SessionParametersAddInfoEXT")]
         [NativeName("Name", "pParametersAddInfo")]
         public VideoDecodeH265SessionParametersAddInfoEXT* PParametersAddInfo;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.VideoDecodeH265SessionParametersCreateInfoExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

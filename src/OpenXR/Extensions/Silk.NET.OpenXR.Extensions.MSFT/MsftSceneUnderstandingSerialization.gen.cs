@@ -21,59 +21,59 @@ namespace Silk.NET.OpenXR.Extensions.MSFT
     {
         public const string ExtensionName = "XR_MSFT_scene_understanding_serialization";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrDeserializeSceneMSFT")]
+        [NativeApi(EntryPoint = "xrDeserializeSceneMSFT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result DeserializeSceneMsft([Count(Count = 0)] SceneObserverMSFT sceneObserver, [Count(Count = 0), Flow(FlowDirection.In)] SceneDeserializeInfoMSFT* deserializeInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrDeserializeSceneMSFT")]
+        [NativeApi(EntryPoint = "xrDeserializeSceneMSFT", Convention = CallingConvention.Winapi)]
         public partial Result DeserializeSceneMsft([Count(Count = 0)] SceneObserverMSFT sceneObserver, [Count(Count = 0), Flow(FlowDirection.In)] in SceneDeserializeInfoMSFT deserializeInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT")]
+        [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetSerializedSceneFragmentDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] SerializedSceneFragmentDataGetInfoMSFT* getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] uint* readOutput, [Count(Parameter = "countInput")] byte* buffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT")]
+        [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetSerializedSceneFragmentDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] SerializedSceneFragmentDataGetInfoMSFT* getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] uint* readOutput, [Count(Parameter = "countInput")] ref byte buffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT")]
+        [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetSerializedSceneFragmentDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] SerializedSceneFragmentDataGetInfoMSFT* getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] uint* readOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT")]
+        [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetSerializedSceneFragmentDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] SerializedSceneFragmentDataGetInfoMSFT* getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] ref uint readOutput, [Count(Parameter = "countInput")] byte* buffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT")]
+        [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetSerializedSceneFragmentDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] SerializedSceneFragmentDataGetInfoMSFT* getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] ref uint readOutput, [Count(Parameter = "countInput")] ref byte buffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT")]
+        [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetSerializedSceneFragmentDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] SerializedSceneFragmentDataGetInfoMSFT* getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] ref uint readOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT")]
+        [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetSerializedSceneFragmentDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] in SerializedSceneFragmentDataGetInfoMSFT getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] uint* readOutput, [Count(Parameter = "countInput")] byte* buffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT")]
+        [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetSerializedSceneFragmentDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] in SerializedSceneFragmentDataGetInfoMSFT getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] uint* readOutput, [Count(Parameter = "countInput")] ref byte buffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT")]
+        [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetSerializedSceneFragmentDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] in SerializedSceneFragmentDataGetInfoMSFT getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] uint* readOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT")]
+        [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetSerializedSceneFragmentDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] in SerializedSceneFragmentDataGetInfoMSFT getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] ref uint readOutput, [Count(Parameter = "countInput")] byte* buffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT")]
+        [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT", Convention = CallingConvention.Winapi)]
         public partial Result GetSerializedSceneFragmentDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] in SerializedSceneFragmentDataGetInfoMSFT getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] ref uint readOutput, [Count(Parameter = "countInput")] ref byte buffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT")]
+        [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT", Convention = CallingConvention.Winapi)]
         public partial Result GetSerializedSceneFragmentDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] in SerializedSceneFragmentDataGetInfoMSFT getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] ref uint readOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer);
 
         /// <summary>To be documented.</summary>

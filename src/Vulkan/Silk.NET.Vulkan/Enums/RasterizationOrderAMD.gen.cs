@@ -12,9 +12,15 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkRasterizationOrderAMD")]
     public enum RasterizationOrderAMD : int
     {
+        [Obsolete("Deprecated in favour of \"StrictAmd\"")]
         [NativeName("Name", "VK_RASTERIZATION_ORDER_STRICT_AMD")]
         RasterizationOrderStrictAmd = 0,
+        [Obsolete("Deprecated in favour of \"RelaxedAmd\"")]
         [NativeName("Name", "VK_RASTERIZATION_ORDER_RELAXED_AMD")]
         RasterizationOrderRelaxedAmd = 1,
+        [NativeName("Name", "VK_RASTERIZATION_ORDER_STRICT_AMD")]
+        StrictAmd = 0,
+        [NativeName("Name", "VK_RASTERIZATION_ORDER_RELAXED_AMD")]
+        RelaxedAmd = 1,
     }
 }

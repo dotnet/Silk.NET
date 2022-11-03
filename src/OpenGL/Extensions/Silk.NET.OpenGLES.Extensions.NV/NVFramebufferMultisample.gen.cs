@@ -20,16 +20,16 @@ namespace Silk.NET.OpenGLES.Extensions.NV
     public unsafe partial class NVFramebufferMultisample : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_framebuffer_multisample";
-        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleNV")]
+        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleNV", Convention = CallingConvention.Winapi)]
         public partial void RenderbufferStorageMultisample([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] NV internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
-        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleNV")]
+        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleNV", Convention = CallingConvention.Winapi)]
         public partial void RenderbufferStorageMultisample([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
-        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleNV")]
+        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleNV", Convention = CallingConvention.Winapi)]
         public partial void RenderbufferStorageMultisample([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] NV internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
-        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleNV")]
+        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleNV", Convention = CallingConvention.Winapi)]
         public partial void RenderbufferStorageMultisample([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
         public NVFramebufferMultisample(INativeContext ctx)

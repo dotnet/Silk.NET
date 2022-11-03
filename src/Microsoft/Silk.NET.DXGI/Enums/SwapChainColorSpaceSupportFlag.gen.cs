@@ -9,12 +9,21 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DXGI
 {
+    [Flags]
     [NativeName("Name", "DXGI_SWAP_CHAIN_COLOR_SPACE_SUPPORT_FLAG")]
     public enum SwapChainColorSpaceSupportFlag : int
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"Present\"")]
         [NativeName("Name", "DXGI_SWAP_CHAIN_COLOR_SPACE_SUPPORT_FLAG_PRESENT")]
         SwapChainColorSpaceSupportFlagPresent = 0x1,
+        [Obsolete("Deprecated in favour of \"OverlayPresent\"")]
         [NativeName("Name", "DXGI_SWAP_CHAIN_COLOR_SPACE_SUPPORT_FLAG_OVERLAY_PRESENT")]
         SwapChainColorSpaceSupportFlagOverlayPresent = 0x2,
+        [NativeName("Name", "DXGI_SWAP_CHAIN_COLOR_SPACE_SUPPORT_FLAG_PRESENT")]
+        Present = 0x1,
+        [NativeName("Name", "DXGI_SWAP_CHAIN_COLOR_SPACE_SUPPORT_FLAG_OVERLAY_PRESENT")]
+        OverlayPresent = 0x2,
     }
 }

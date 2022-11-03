@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkWriteDescriptorSetInlineUniformBlockEXT")]
-    public unsafe partial struct WriteDescriptorSetInlineUniformBlockEXT
+    [NativeName("AliasOf", "VkWriteDescriptorSetInlineUniformBlock")]
+    public unsafe partial struct WriteDescriptorSetInlineUniformBlockEXT : IExtendsChain<WriteDescriptorSet>
     {
         public WriteDescriptorSetInlineUniformBlockEXT
         (
-            StructureType? sType = StructureType.WriteDescriptorSetInlineUniformBlockExt,
+            StructureType? sType = StructureType.WriteDescriptorSetInlineUniformBlock,
             void* pNext = null,
             uint? dataSize = null,
             void* pData = null
@@ -68,5 +69,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "void")]
         [NativeName("Name", "pData")]
         public void* PData;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.WriteDescriptorSetInlineUniformBlock;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

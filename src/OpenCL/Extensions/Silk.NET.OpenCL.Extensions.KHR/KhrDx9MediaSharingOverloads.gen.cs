@@ -16,19 +16,40 @@ namespace Silk.NET.OpenCL.Extensions.KHR
 {
     public static class KhrDx9MediaSharingOverloads
     {
-        public static unsafe nint CreateFromDX9MediaSurface(this KhrDx9MediaSharing thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.In)] uint adapter_type, [Flow(FlowDirection.Out)] void* surface_info, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        public static unsafe nint CreateFromDX9MediaSurface(this KhrDx9MediaSharing thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] uint adapter_type, [Flow(FlowDirection.Out)] void* surface_info, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
             return thisApi.CreateFromDX9MediaSurface(context, flags, adapter_type, surface_info, plane, out errcode_ret.GetPinnableReference());
         }
 
-        public static unsafe nint CreateFromDX9MediaSurface<T0>(this KhrDx9MediaSharing thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.In)] uint adapter_type, [Flow(FlowDirection.Out)] Span<T0> surface_info, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
+        public static unsafe nint CreateFromDX9MediaSurface<T0>(this KhrDx9MediaSharing thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] uint adapter_type, [Flow(FlowDirection.Out)] Span<T0> surface_info, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CreateFromDX9MediaSurface(context, flags, adapter_type, out surface_info.GetPinnableReference(), plane, errcode_ret);
         }
 
-        public static unsafe nint CreateFromDX9MediaSurface<T0>(this KhrDx9MediaSharing thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.In)] uint adapter_type, [Flow(FlowDirection.Out)] Span<T0> surface_info, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        public static unsafe nint CreateFromDX9MediaSurface<T0>(this KhrDx9MediaSharing thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] uint adapter_type, [Flow(FlowDirection.Out)] Span<T0> surface_info, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateFromDX9MediaSurface(context, flags, adapter_type, out surface_info.GetPinnableReference(), plane, out errcode_ret.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateFromDX9MediaSurface(this KhrDx9MediaSharing thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] uint adapter_type, [Flow(FlowDirection.Out)] void* surface_info, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateFromDX9MediaSurface(context, flags, adapter_type, surface_info, plane, out errcode_ret.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateFromDX9MediaSurface<T0>(this KhrDx9MediaSharing thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] uint adapter_type, [Flow(FlowDirection.Out)] Span<T0> surface_info, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateFromDX9MediaSurface(context, flags, adapter_type, out surface_info.GetPinnableReference(), plane, errcode_ret);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateFromDX9MediaSurface<T0>(this KhrDx9MediaSharing thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] uint adapter_type, [Flow(FlowDirection.Out)] Span<T0> surface_info, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CreateFromDX9MediaSurface(context, flags, adapter_type, out surface_info.GetPinnableReference(), plane, out errcode_ret.GetPinnableReference());

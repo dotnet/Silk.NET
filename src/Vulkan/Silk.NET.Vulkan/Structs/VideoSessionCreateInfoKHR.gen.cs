@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoSessionCreateInfoKHR")]
-    public unsafe partial struct VideoSessionCreateInfoKHR
+    public unsafe partial struct VideoSessionCreateInfoKHR : IChainable
     {
         public VideoSessionCreateInfoKHR
         (
@@ -30,7 +30,8 @@ namespace Silk.NET.Vulkan
             Extent2D? maxCodedExtent = null,
             Format? referencePicturesFormat = null,
             uint? maxReferencePicturesSlotsCount = null,
-            uint? maxReferencePicturesActiveCount = null
+            uint? maxReferencePicturesActiveCount = null,
+            ExtensionProperties* pStdHeaderVersion = null
         ) : this()
         {
             if (sType is not null)
@@ -81,6 +82,11 @@ namespace Silk.NET.Vulkan
             if (maxReferencePicturesActiveCount is not null)
             {
                 MaxReferencePicturesActiveCount = maxReferencePicturesActiveCount.Value;
+            }
+
+            if (pStdHeaderVersion is not null)
+            {
+                PStdHeaderVersion = pStdHeaderVersion;
             }
         }
 
@@ -134,5 +140,23 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "maxReferencePicturesActiveCount")]
         public uint MaxReferencePicturesActiveCount;
+/// <summary></summary>
+        [NativeName("Type", "VkExtensionProperties*")]
+        [NativeName("Type.Name", "VkExtensionProperties")]
+        [NativeName("Name", "pStdHeaderVersion")]
+        public ExtensionProperties* PStdHeaderVersion;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.VideoSessionCreateInfoKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

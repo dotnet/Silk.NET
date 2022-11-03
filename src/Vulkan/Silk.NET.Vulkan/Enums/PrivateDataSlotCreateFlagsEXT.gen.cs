@@ -9,9 +9,11 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "VkPrivateDataSlotCreateFlagsEXT")]
     public enum PrivateDataSlotCreateFlagsEXT : int
     {
+        [NativeName("Name", "")]
+        None = 0,
     }
 }

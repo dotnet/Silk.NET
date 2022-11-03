@@ -17,18 +17,19 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkResolveImageInfo2KHR")]
-    public unsafe partial struct ResolveImageInfo2KHR
+    [NativeName("AliasOf", "VkResolveImageInfo2")]
+    public unsafe partial struct ResolveImageInfo2KHR : IChainable
     {
         public ResolveImageInfo2KHR
         (
-            StructureType? sType = StructureType.ResolveImageInfo2Khr,
+            StructureType? sType = StructureType.ResolveImageInfo2,
             void* pNext = null,
             Image? srcImage = null,
             ImageLayout? srcImageLayout = null,
             Image? dstImage = null,
             ImageLayout? dstImageLayout = null,
             uint? regionCount = null,
-            ImageResolve2KHR* pRegions = null
+            ImageResolve2* pRegions = null
         ) : this()
         {
             if (sType is not null)
@@ -108,9 +109,22 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "regionCount")]
         public uint RegionCount;
 /// <summary></summary>
-        [NativeName("Type", "VkImageResolve2KHR*")]
-        [NativeName("Type.Name", "VkImageResolve2KHR")]
+        [NativeName("Type", "VkImageResolve2*")]
+        [NativeName("Type.Name", "VkImageResolve2")]
         [NativeName("Name", "pRegions")]
-        public ImageResolve2KHR* PRegions;
+        public ImageResolve2* PRegions;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.ResolveImageInfo2;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

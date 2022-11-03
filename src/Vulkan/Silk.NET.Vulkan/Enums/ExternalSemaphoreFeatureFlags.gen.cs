@@ -9,13 +9,21 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "VkExternalSemaphoreFeatureFlags")]
     public enum ExternalSemaphoreFeatureFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"ExportableBit\"")]
         [NativeName("Name", "VK_EXTERNAL_SEMAPHORE_FEATURE_EXPORTABLE_BIT")]
         ExternalSemaphoreFeatureExportableBit = 1,
+        [Obsolete("Deprecated in favour of \"ImportableBit\"")]
         [NativeName("Name", "VK_EXTERNAL_SEMAPHORE_FEATURE_IMPORTABLE_BIT")]
         ExternalSemaphoreFeatureImportableBit = 2,
+        [NativeName("Name", "VK_EXTERNAL_SEMAPHORE_FEATURE_EXPORTABLE_BIT")]
+        ExportableBit = 1,
+        [NativeName("Name", "VK_EXTERNAL_SEMAPHORE_FEATURE_IMPORTABLE_BIT")]
+        ImportableBit = 2,
     }
 }

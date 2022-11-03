@@ -21,6 +21,7 @@ namespace Silk.NET.Vulkan.Video
     {
         public StdVideoH264SequenceParameterSetVui
         (
+            StdVideoH264SpsVuiFlags? flags = null,
             StdVideoH264AspectRatioIdc? aspectRatioIdc = null,
             ushort? sarWidth = null,
             ushort? sarHeight = null,
@@ -30,12 +31,16 @@ namespace Silk.NET.Vulkan.Video
             byte? matrixCoefficients = null,
             uint? numUnitsInTick = null,
             uint? timeScale = null,
-            StdVideoH264HrdParameters? hrdParameters = null,
-            byte? numReorderFrames = null,
-            byte? maxDecFrameBuffering = null,
-            StdVideoH264SpsVuiFlags? flags = null
+            StdVideoH264HrdParameters* pHrdParameters = null,
+            byte? maxNumReorderFrames = null,
+            byte? maxDecFrameBuffering = null
         ) : this()
         {
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
             if (aspectRatioIdc is not null)
             {
                 AspectRatioIdc = aspectRatioIdc.Value;
@@ -81,27 +86,27 @@ namespace Silk.NET.Vulkan.Video
                 TimeScale = timeScale.Value;
             }
 
-            if (hrdParameters is not null)
+            if (pHrdParameters is not null)
             {
-                HrdParameters = hrdParameters.Value;
+                PHrdParameters = pHrdParameters;
             }
 
-            if (numReorderFrames is not null)
+            if (maxNumReorderFrames is not null)
             {
-                NumReorderFrames = numReorderFrames.Value;
+                MaxNumReorderFrames = maxNumReorderFrames.Value;
             }
 
             if (maxDecFrameBuffering is not null)
             {
                 MaxDecFrameBuffering = maxDecFrameBuffering.Value;
             }
-
-            if (flags is not null)
-            {
-                Flags = flags.Value;
-            }
         }
 
+
+        [NativeName("Type", "StdVideoH264SpsVuiFlags")]
+        [NativeName("Type.Name", "StdVideoH264SpsVuiFlags")]
+        [NativeName("Name", "flags")]
+        public StdVideoH264SpsVuiFlags Flags;
 
         [NativeName("Type", "StdVideoH264AspectRatioIdc")]
         [NativeName("Type.Name", "StdVideoH264AspectRatioIdc")]
@@ -148,24 +153,19 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Name", "time_scale")]
         public uint TimeScale;
 
-        [NativeName("Type", "StdVideoH264HrdParameters")]
-        [NativeName("Type.Name", "StdVideoH264HrdParameters")]
-        [NativeName("Name", "hrd_parameters")]
-        public StdVideoH264HrdParameters HrdParameters;
+        [NativeName("Type", "const StdVideoH264HrdParameters *")]
+        [NativeName("Type.Name", "const StdVideoH264HrdParameters *")]
+        [NativeName("Name", "pHrdParameters")]
+        public StdVideoH264HrdParameters* PHrdParameters;
 
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "num_reorder_frames")]
-        public byte NumReorderFrames;
+        [NativeName("Name", "max_num_reorder_frames")]
+        public byte MaxNumReorderFrames;
 
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
         [NativeName("Name", "max_dec_frame_buffering")]
         public byte MaxDecFrameBuffering;
-
-        [NativeName("Type", "StdVideoH264SpsVuiFlags")]
-        [NativeName("Type.Name", "StdVideoH264SpsVuiFlags")]
-        [NativeName("Name", "flags")]
-        public StdVideoH264SpsVuiFlags Flags;
     }
 }

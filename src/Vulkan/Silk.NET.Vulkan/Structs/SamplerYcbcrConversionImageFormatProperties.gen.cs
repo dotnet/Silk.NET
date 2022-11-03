@@ -17,7 +17,8 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSamplerYcbcrConversionImageFormatProperties")]
-    public unsafe partial struct SamplerYcbcrConversionImageFormatProperties
+    [NativeName("Aliases", "VkSamplerYcbcrConversionImageFormatPropertiesKHR")]
+    public unsafe partial struct SamplerYcbcrConversionImageFormatProperties : IExtendsChain<ImageFormatProperties2>, IExtendsChain<ImageFormatProperties2KHR>
     {
         public SamplerYcbcrConversionImageFormatProperties
         (
@@ -57,5 +58,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "combinedImageSamplerDescriptorCount")]
         public uint CombinedImageSamplerDescriptorCount;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.SamplerYcbcrConversionImageFormatProperties;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

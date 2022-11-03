@@ -9,17 +9,31 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "VkPerformanceCounterDescriptionFlagsKHR")]
     public enum PerformanceCounterDescriptionFlagsKHR : int
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"PerformanceImpactingBitKhr\"")]
         [NativeName("Name", "VK_PERFORMANCE_COUNTER_DESCRIPTION_PERFORMANCE_IMPACTING_BIT_KHR")]
         PerformanceCounterDescriptionPerformanceImpactingBitKhr = 1,
+        [Obsolete("Deprecated in favour of \"PerformanceImpactingKhr\"")]
         [NativeName("Name", "VK_PERFORMANCE_COUNTER_DESCRIPTION_PERFORMANCE_IMPACTING_KHR")]
         PerformanceCounterDescriptionPerformanceImpactingKhr = 1,
+        [Obsolete("Deprecated in favour of \"ConcurrentlyImpactedBitKhr\"")]
         [NativeName("Name", "VK_PERFORMANCE_COUNTER_DESCRIPTION_CONCURRENTLY_IMPACTED_BIT_KHR")]
         PerformanceCounterDescriptionConcurrentlyImpactedBitKhr = 2,
+        [Obsolete("Deprecated in favour of \"ConcurrentlyImpactedKhr\"")]
         [NativeName("Name", "VK_PERFORMANCE_COUNTER_DESCRIPTION_CONCURRENTLY_IMPACTED_KHR")]
         PerformanceCounterDescriptionConcurrentlyImpactedKhr = 2,
+        [NativeName("Name", "VK_PERFORMANCE_COUNTER_DESCRIPTION_PERFORMANCE_IMPACTING_BIT_KHR")]
+        PerformanceImpactingBitKhr = 1,
+        [NativeName("Name", "VK_PERFORMANCE_COUNTER_DESCRIPTION_PERFORMANCE_IMPACTING_KHR")]
+        PerformanceImpactingKhr = 1,
+        [NativeName("Name", "VK_PERFORMANCE_COUNTER_DESCRIPTION_CONCURRENTLY_IMPACTED_BIT_KHR")]
+        ConcurrentlyImpactedBitKhr = 2,
+        [NativeName("Name", "VK_PERFORMANCE_COUNTER_DESCRIPTION_CONCURRENTLY_IMPACTED_KHR")]
+        ConcurrentlyImpactedKhr = 2,
     }
 }

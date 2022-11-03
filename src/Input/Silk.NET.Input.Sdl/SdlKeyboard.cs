@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Silk.NET.Input.Internals;
 using Silk.NET.SDL;
 
 namespace Silk.NET.Input.Sdl
@@ -23,6 +22,11 @@ namespace Silk.NET.Input.Sdl
 
         public IReadOnlyList<Key> SupportedKeys { get; } =
             _keyMap.Values.Where(static x => x != Key.Unknown).Distinct().ToArray();
+        public string ClipboardText
+        {
+            get => _ctx.Sdl.GetClipboardTextS();
+            set => _ctx.Sdl.SetClipboardText(value);
+        }
         public bool IsKeyPressed(Key key) => _keysDown.Contains(key);
         public event Action<IKeyboard, Key, int>? KeyDown;
         public event Action<IKeyboard, Key, int>? KeyUp;
@@ -36,20 +40,40 @@ namespace Silk.NET.Input.Sdl
             {
                 case EventType.Keydown:
                 {
-                    if (@event.Key.Repeat != 1 && _keyMap.TryGetValue((KeyCode) @event.Key.Keysym.Sym, out var key))
+                    if (@event.Key.Repeat != 1)
                     {
-                        _keysDown.Add(key);
-                        KeyDown?.Invoke(this, key, (int) @event.Key.Keysym.Scancode);
+                        Key keyDown;
+                        if (_keyMap.TryGetValue(@event.Key.Keysym.Scancode, out var key))
+                        {
+                            keyDown = key;
+                            _keysDown.Add(keyDown);
+                        }
+                        else
+                        {
+                            keyDown = Key.Unknown;
+                        }
+
+                        KeyDown?.Invoke(this, keyDown, (int) @event.Key.Keysym.Scancode);
                     }
 
                     break;
                 }
                 case EventType.Keyup:
                 {
-                    if (@event.Key.Repeat != 1 && _keyMap.TryGetValue((KeyCode) @event.Key.Keysym.Sym, out var key))
+                    if (@event.Key.Repeat != 1)
                     {
-                        _keysDown.Remove(key);
-                        KeyUp?.Invoke(this, key, (int) @event.Key.Keysym.Scancode);
+                        Key keyUp;
+                        if (_keyMap.TryGetValue(@event.Key.Keysym.Scancode, out var key))
+                        {
+                            keyUp = key;
+                            _keysDown.Remove(keyUp);
+                        }
+                        else
+                        {
+                            keyUp = Key.Unknown;
+                        }
+
+                        KeyUp?.Invoke(this, keyUp, (int) @event.Key.Keysym.Scancode);
                     }
 
                     break;
@@ -60,13 +84,16 @@ namespace Silk.NET.Input.Sdl
                 }
                 case EventType.Textinput:
                 {
-                    var chars = stackalloc char[32];
-                    Encoding.UTF8.GetChars(&@event.Text.Text[0], 32, chars, 32);
-                    int i = 0;
-                    // run the KeyChar event until we get a null terminator
-                    while (chars[i] != default)
+                    if (KeyChar is not null)
                     {
-                        KeyChar?.Invoke(this, chars[i++]);
+                        var chars = stackalloc char[32];
+                        Encoding.UTF8.GetChars(&@event.Text.Text[0], 32, chars, 32);
+                            
+                        // run the KeyChar event until we get a null terminator or run out of buffer
+                        for (int i = 0; i < 32 && chars[i] != '\0'; i++)
+                        {
+                            KeyChar.Invoke(this, chars[i]);
+                        }
                     }
 
                     break;

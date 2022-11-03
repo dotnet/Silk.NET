@@ -20,58 +20,58 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
     public unsafe partial class ExtBaseInstance : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_base_instance";
-        [NativeApi(EntryPoint = "glDrawArraysInstancedBaseInstanceEXT")]
+        [NativeApi(EntryPoint = "glDrawArraysInstancedBaseInstanceEXT", Convention = CallingConvention.Winapi)]
         public partial void DrawArraysInstancedBaseInstance([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] uint baseinstance);
 
-        [NativeApi(EntryPoint = "glDrawArraysInstancedBaseInstanceEXT")]
+        [NativeApi(EntryPoint = "glDrawArraysInstancedBaseInstanceEXT", Convention = CallingConvention.Winapi)]
         public partial void DrawArraysInstancedBaseInstance([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] uint baseinstance);
 
-        [NativeApi(EntryPoint = "glDrawElementsInstancedBaseInstanceEXT")]
+        [NativeApi(EntryPoint = "glDrawElementsInstancedBaseInstanceEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawElementsInstancedBaseInstance([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] EXT type, [Count(Parameter = "count"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] uint baseinstance);
 
-        [NativeApi(EntryPoint = "glDrawElementsInstancedBaseInstanceEXT")]
+        [NativeApi(EntryPoint = "glDrawElementsInstancedBaseInstanceEXT", Convention = CallingConvention.Winapi)]
         public partial void DrawElementsInstancedBaseInstance<T0>([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] EXT type, [Count(Parameter = "count"), Flow(FlowDirection.In)] in T0 indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] uint baseinstance) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glDrawElementsInstancedBaseInstanceEXT")]
+        [NativeApi(EntryPoint = "glDrawElementsInstancedBaseInstanceEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawElementsInstancedBaseInstance([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] PrimitiveType type, [Count(Parameter = "count"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] uint baseinstance);
 
-        [NativeApi(EntryPoint = "glDrawElementsInstancedBaseInstanceEXT")]
+        [NativeApi(EntryPoint = "glDrawElementsInstancedBaseInstanceEXT", Convention = CallingConvention.Winapi)]
         public partial void DrawElementsInstancedBaseInstance<T0>([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] PrimitiveType type, [Count(Parameter = "count"), Flow(FlowDirection.In)] in T0 indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] uint baseinstance) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glDrawElementsInstancedBaseInstanceEXT")]
+        [NativeApi(EntryPoint = "glDrawElementsInstancedBaseInstanceEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawElementsInstancedBaseInstance([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] EXT type, [Count(Parameter = "count"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] uint baseinstance);
 
-        [NativeApi(EntryPoint = "glDrawElementsInstancedBaseInstanceEXT")]
+        [NativeApi(EntryPoint = "glDrawElementsInstancedBaseInstanceEXT", Convention = CallingConvention.Winapi)]
         public partial void DrawElementsInstancedBaseInstance<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] EXT type, [Count(Parameter = "count"), Flow(FlowDirection.In)] in T0 indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] uint baseinstance) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glDrawElementsInstancedBaseInstanceEXT")]
+        [NativeApi(EntryPoint = "glDrawElementsInstancedBaseInstanceEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawElementsInstancedBaseInstance([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] PrimitiveType type, [Count(Parameter = "count"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] uint baseinstance);
 
-        [NativeApi(EntryPoint = "glDrawElementsInstancedBaseInstanceEXT")]
+        [NativeApi(EntryPoint = "glDrawElementsInstancedBaseInstanceEXT", Convention = CallingConvention.Winapi)]
         public partial void DrawElementsInstancedBaseInstance<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] PrimitiveType type, [Count(Parameter = "count"), Flow(FlowDirection.In)] in T0 indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] uint baseinstance) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glDrawElementsInstancedBaseVertexBaseInstanceEXT")]
+        [NativeApi(EntryPoint = "glDrawElementsInstancedBaseVertexBaseInstanceEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawElementsInstancedBaseVertexBaseInstance([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] EXT type, [Count(Parameter = "count"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex, [Flow(FlowDirection.In)] uint baseinstance);
 
-        [NativeApi(EntryPoint = "glDrawElementsInstancedBaseVertexBaseInstanceEXT")]
+        [NativeApi(EntryPoint = "glDrawElementsInstancedBaseVertexBaseInstanceEXT", Convention = CallingConvention.Winapi)]
         public partial void DrawElementsInstancedBaseVertexBaseInstance<T0>([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] EXT type, [Count(Parameter = "count"), Flow(FlowDirection.In)] in T0 indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex, [Flow(FlowDirection.In)] uint baseinstance) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glDrawElementsInstancedBaseVertexBaseInstanceEXT")]
+        [NativeApi(EntryPoint = "glDrawElementsInstancedBaseVertexBaseInstanceEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawElementsInstancedBaseVertexBaseInstance([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "count"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex, [Flow(FlowDirection.In)] uint baseinstance);
 
-        [NativeApi(EntryPoint = "glDrawElementsInstancedBaseVertexBaseInstanceEXT")]
+        [NativeApi(EntryPoint = "glDrawElementsInstancedBaseVertexBaseInstanceEXT", Convention = CallingConvention.Winapi)]
         public partial void DrawElementsInstancedBaseVertexBaseInstance<T0>([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "count"), Flow(FlowDirection.In)] in T0 indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex, [Flow(FlowDirection.In)] uint baseinstance) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glDrawElementsInstancedBaseVertexBaseInstanceEXT")]
+        [NativeApi(EntryPoint = "glDrawElementsInstancedBaseVertexBaseInstanceEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawElementsInstancedBaseVertexBaseInstance([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] EXT type, [Count(Parameter = "count"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex, [Flow(FlowDirection.In)] uint baseinstance);
 
-        [NativeApi(EntryPoint = "glDrawElementsInstancedBaseVertexBaseInstanceEXT")]
+        [NativeApi(EntryPoint = "glDrawElementsInstancedBaseVertexBaseInstanceEXT", Convention = CallingConvention.Winapi)]
         public partial void DrawElementsInstancedBaseVertexBaseInstance<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] EXT type, [Count(Parameter = "count"), Flow(FlowDirection.In)] in T0 indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex, [Flow(FlowDirection.In)] uint baseinstance) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glDrawElementsInstancedBaseVertexBaseInstanceEXT")]
+        [NativeApi(EntryPoint = "glDrawElementsInstancedBaseVertexBaseInstanceEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawElementsInstancedBaseVertexBaseInstance([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "count"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex, [Flow(FlowDirection.In)] uint baseinstance);
 
-        [NativeApi(EntryPoint = "glDrawElementsInstancedBaseVertexBaseInstanceEXT")]
+        [NativeApi(EntryPoint = "glDrawElementsInstancedBaseVertexBaseInstanceEXT", Convention = CallingConvention.Winapi)]
         public partial void DrawElementsInstancedBaseVertexBaseInstance<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "count"), Flow(FlowDirection.In)] in T0 indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex, [Flow(FlowDirection.In)] uint baseinstance) where T0 : unmanaged;
 
         public unsafe void DrawElementsInstancedBaseInstance<T0>([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] EXT type, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] uint baseinstance) where T0 : unmanaged

@@ -10,10 +10,10 @@ namespace Silk.NET.BuildTools.Overloading
 {
     public class ClassOverloader : ISimpleParameterOverloader
     {
-        public bool TryGetParameterVariant(Parameter parameter, out Parameter variant, Project core)
+        public bool TryGetParameterVariant(Parameter parameter, out Parameter variant, Profile profile)
         {
             Struct s;
-            if (parameter.Type.OriginalClass is null || (s = core.Structs.FirstOrDefault
+            if (parameter.Type.OriginalClass is null || (s = profile.Projects["Core"].Structs.FirstOrDefault
                 (x => x.NativeName == parameter.Type.OriginalClass)) is null)
             {
                 variant = null;

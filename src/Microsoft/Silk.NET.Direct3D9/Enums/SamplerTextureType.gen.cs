@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D9
 {
+    [Flags]
     [NativeName("Name", "_D3DSAMPLER_TEXTURE_TYPE")]
     public enum SamplerTextureType : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3DSTT_UNKNOWN")]
         SttUnknown = 0x0,
         [NativeName("Name", "D3DSTT_2D")]

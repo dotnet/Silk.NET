@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoEncodeInfoKHR")]
-    public unsafe partial struct VideoEncodeInfoKHR
+    public unsafe partial struct VideoEncodeInfoKHR : IChainStart
     {
         public VideoEncodeInfoKHR
         (
@@ -25,14 +25,14 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             VideoEncodeFlagsKHR? flags = null,
             uint? qualityLevel = null,
-            Extent2D? codedExtent = null,
             Buffer? dstBitstreamBuffer = null,
             ulong? dstBitstreamBufferOffset = null,
             ulong? dstBitstreamBufferMaxRange = null,
             VideoPictureResourceKHR? srcPictureResource = null,
             VideoReferenceSlotKHR* pSetupReferenceSlot = null,
             uint? referenceSlotCount = null,
-            VideoReferenceSlotKHR* pReferenceSlots = null
+            VideoReferenceSlotKHR* pReferenceSlots = null,
+            uint? precedingExternallyEncodedBytes = null
         ) : this()
         {
             if (sType is not null)
@@ -53,11 +53,6 @@ namespace Silk.NET.Vulkan
             if (qualityLevel is not null)
             {
                 QualityLevel = qualityLevel.Value;
-            }
-
-            if (codedExtent is not null)
-            {
-                CodedExtent = codedExtent.Value;
             }
 
             if (dstBitstreamBuffer is not null)
@@ -94,6 +89,11 @@ namespace Silk.NET.Vulkan
             {
                 PReferenceSlots = pReferenceSlots;
             }
+
+            if (precedingExternallyEncodedBytes is not null)
+            {
+                PrecedingExternallyEncodedBytes = precedingExternallyEncodedBytes.Value;
+            }
         }
 
 /// <summary></summary>
@@ -116,11 +116,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "qualityLevel")]
         public uint QualityLevel;
-/// <summary></summary>
-        [NativeName("Type", "VkExtent2D")]
-        [NativeName("Type.Name", "VkExtent2D")]
-        [NativeName("Name", "codedExtent")]
-        public Extent2D CodedExtent;
 /// <summary></summary>
         [NativeName("Type", "VkBuffer")]
         [NativeName("Type.Name", "VkBuffer")]
@@ -156,5 +151,35 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkVideoReferenceSlotKHR")]
         [NativeName("Name", "pReferenceSlots")]
         public VideoReferenceSlotKHR* PReferenceSlots;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "precedingExternallyEncodedBytes")]
+        public uint PrecedingExternallyEncodedBytes;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.VideoEncodeInfoKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref VideoEncodeInfoKHR Chain(
+            out VideoEncodeInfoKHR capture)
+        {
+            capture = new VideoEncodeInfoKHR(StructureType.VideoEncodeInfoKhr);
+            return ref capture;
+        }
     }
 }

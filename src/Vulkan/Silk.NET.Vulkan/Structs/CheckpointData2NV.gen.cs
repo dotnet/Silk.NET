@@ -17,13 +17,13 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCheckpointData2NV")]
-    public unsafe partial struct CheckpointData2NV
+    public unsafe partial struct CheckpointData2NV : IChainable
     {
         public CheckpointData2NV
         (
             StructureType? sType = StructureType.CheckpointData2NV,
             void* pNext = null,
-            PipelineStageFlags2KHR? stage = null,
+            PipelineStageFlags2? stage = null,
             void* pCheckpointMarker = null
         ) : this()
         {
@@ -59,14 +59,27 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "VkPipelineStageFlags2KHR")]
-        [NativeName("Type.Name", "VkPipelineStageFlags2KHR")]
+        [NativeName("Type", "VkPipelineStageFlags2")]
+        [NativeName("Type.Name", "VkPipelineStageFlags2")]
         [NativeName("Name", "stage")]
-        public PipelineStageFlags2KHR Stage;
+        public PipelineStageFlags2 Stage;
 /// <summary></summary>
         [NativeName("Type", "void*")]
         [NativeName("Type.Name", "void")]
         [NativeName("Name", "pCheckpointMarker")]
         public void* PCheckpointMarker;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.CheckpointData2NV;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

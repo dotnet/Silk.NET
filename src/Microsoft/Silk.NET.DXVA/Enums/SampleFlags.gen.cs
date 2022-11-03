@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DXVA
 {
+    [Flags]
     [NativeName("Name", "_DXVA_SampleFlags")]
     public enum SampleFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "DXVA_SampleFlagsMask")]
         SampleFlagsMask = 0xF,
         [NativeName("Name", "DXVA_SampleFlag_Palette_Changed")]

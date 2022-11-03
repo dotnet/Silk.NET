@@ -9,11 +9,16 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "VkQueryControlFlags")]
     public enum QueryControlFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"PreciseBit\"")]
         [NativeName("Name", "VK_QUERY_CONTROL_PRECISE_BIT")]
         QueryControlPreciseBit = 1,
+        [NativeName("Name", "VK_QUERY_CONTROL_PRECISE_BIT")]
+        PreciseBit = 1,
     }
 }

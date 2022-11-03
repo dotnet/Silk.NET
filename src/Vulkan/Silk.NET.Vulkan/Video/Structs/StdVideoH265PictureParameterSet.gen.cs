@@ -21,6 +21,7 @@ namespace Silk.NET.Vulkan.Video
     {
         public StdVideoH265PictureParameterSet
         (
+            StdVideoH265PpsFlags? flags = null,
             byte? ppsPicParameterSetId = null,
             byte? ppsSeqParameterSetId = null,
             byte? numExtraSliceHeaderBits = null,
@@ -35,7 +36,6 @@ namespace Silk.NET.Vulkan.Video
             byte? ppsBetaOffsetDiv2 = null,
             byte? ppsTcOffsetDiv2 = null,
             byte? log2ParallelMergeLevelMinus2 = null,
-            StdVideoH265PpsFlags? flags = null,
             StdVideoH265ScalingLists* pScalingLists = null,
             byte? log2MaxTransformSkipBlockSizeMinus2 = null,
             byte? diffCuChromaQpOffsetDepth = null,
@@ -51,6 +51,11 @@ namespace Silk.NET.Vulkan.Video
             StdVideoH265PredictorPaletteEntries* pPredictorPaletteEntries = null
         ) : this()
         {
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
             if (ppsPicParameterSetId is not null)
             {
                 PpsPicParameterSetId = ppsPicParameterSetId.Value;
@@ -121,11 +126,6 @@ namespace Silk.NET.Vulkan.Video
                 Log2ParallelMergeLevelMinus2 = log2ParallelMergeLevelMinus2.Value;
             }
 
-            if (flags is not null)
-            {
-                Flags = flags.Value;
-            }
-
             if (pScalingLists is not null)
             {
                 PScalingLists = pScalingLists;
@@ -192,6 +192,11 @@ namespace Silk.NET.Vulkan.Video
             }
         }
 
+
+        [NativeName("Type", "StdVideoH265PpsFlags")]
+        [NativeName("Type.Name", "StdVideoH265PpsFlags")]
+        [NativeName("Name", "flags")]
+        public StdVideoH265PpsFlags Flags;
 
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
@@ -271,13 +276,8 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Name", "log2_parallel_merge_level_minus2")]
         public byte Log2ParallelMergeLevelMinus2;
 
-        [NativeName("Type", "StdVideoH265PpsFlags")]
-        [NativeName("Type.Name", "StdVideoH265PpsFlags")]
-        [NativeName("Name", "flags")]
-        public StdVideoH265PpsFlags Flags;
-
-        [NativeName("Type", "StdVideoH265ScalingLists *")]
-        [NativeName("Type.Name", "StdVideoH265ScalingLists *")]
+        [NativeName("Type", "const StdVideoH265ScalingLists *")]
+        [NativeName("Type.Name", "const StdVideoH265ScalingLists *")]
         [NativeName("Name", "pScalingLists")]
         public StdVideoH265ScalingLists* PScalingLists;
 
@@ -344,8 +344,8 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Name", "chroma_bit_depth_entry_minus8")]
         public byte ChromaBitDepthEntryMinus8;
 
-        [NativeName("Type", "StdVideoH265PredictorPaletteEntries *")]
-        [NativeName("Type.Name", "StdVideoH265PredictorPaletteEntries *")]
+        [NativeName("Type", "const StdVideoH265PredictorPaletteEntries *")]
+        [NativeName("Type.Name", "const StdVideoH265PredictorPaletteEntries *")]
         [NativeName("Name", "pPredictorPaletteEntries")]
         public StdVideoH265PredictorPaletteEntries* PPredictorPaletteEntries;
     }

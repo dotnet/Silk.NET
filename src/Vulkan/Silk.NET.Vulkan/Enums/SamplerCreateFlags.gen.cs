@@ -9,17 +9,36 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "VkSamplerCreateFlags")]
     public enum SamplerCreateFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"SubsampledBitExt\"")]
         [NativeName("Name", "VK_SAMPLER_CREATE_SUBSAMPLED_BIT_EXT")]
         SamplerCreateSubsampledBitExt = 1,
+        [Obsolete("Deprecated in favour of \"SubsampledCoarseReconstructionBitExt\"")]
         [NativeName("Name", "VK_SAMPLER_CREATE_SUBSAMPLED_COARSE_RECONSTRUCTION_BIT_EXT")]
         SamplerCreateSubsampledCoarseReconstructionBitExt = 2,
+        [Obsolete("Deprecated in favour of \"Reserved3BitAmd\"")]
         [NativeName("Name", "VK_SAMPLER_CREATE_RESERVED_3_BIT_AMD")]
         SamplerCreateReserved3BitAmd = 8,
-        [NativeName("Name", "VK_SAMPLER_CREATE_RESERVED_2_BIT_EXT")]
-        SamplerCreateReserved2BitExt = 4,
+        [Obsolete("Deprecated in favour of \"NonSeamlessCubeMapBitExt\"")]
+        [NativeName("Name", "VK_SAMPLER_CREATE_NON_SEAMLESS_CUBE_MAP_BIT_EXT")]
+        SamplerCreateNonSeamlessCubeMapBitExt = 4,
+        [Obsolete("Deprecated in favour of \"ImageProcessingBitQCom\"")]
+        [NativeName("Name", "VK_SAMPLER_CREATE_IMAGE_PROCESSING_BIT_QCOM")]
+        SamplerCreateImageProcessingBitQCom = 16,
+        [NativeName("Name", "VK_SAMPLER_CREATE_SUBSAMPLED_BIT_EXT")]
+        SubsampledBitExt = 1,
+        [NativeName("Name", "VK_SAMPLER_CREATE_SUBSAMPLED_COARSE_RECONSTRUCTION_BIT_EXT")]
+        SubsampledCoarseReconstructionBitExt = 2,
+        [NativeName("Name", "VK_SAMPLER_CREATE_RESERVED_3_BIT_AMD")]
+        Reserved3BitAmd = 8,
+        [NativeName("Name", "VK_SAMPLER_CREATE_NON_SEAMLESS_CUBE_MAP_BIT_EXT")]
+        NonSeamlessCubeMapBitExt = 4,
+        [NativeName("Name", "VK_SAMPLER_CREATE_IMAGE_PROCESSING_BIT_QCOM")]
+        ImageProcessingBitQCom = 16,
     }
 }

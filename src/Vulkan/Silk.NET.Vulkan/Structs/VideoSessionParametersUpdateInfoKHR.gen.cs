@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoSessionParametersUpdateInfoKHR")]
-    public unsafe partial struct VideoSessionParametersUpdateInfoKHR
+    public unsafe partial struct VideoSessionParametersUpdateInfoKHR : IChainStart
     {
         public VideoSessionParametersUpdateInfoKHR
         (
@@ -57,5 +57,30 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "updateSequenceCount")]
         public uint UpdateSequenceCount;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.VideoSessionParametersUpdateInfoKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref VideoSessionParametersUpdateInfoKHR Chain(
+            out VideoSessionParametersUpdateInfoKHR capture)
+        {
+            capture = new VideoSessionParametersUpdateInfoKHR(StructureType.VideoSessionParametersUpdateInfoKhr);
+            return ref capture;
+        }
     }
 }

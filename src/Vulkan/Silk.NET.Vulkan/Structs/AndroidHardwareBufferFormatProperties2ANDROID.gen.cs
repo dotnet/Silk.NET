@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAndroidHardwareBufferFormatProperties2ANDROID")]
-    public unsafe partial struct AndroidHardwareBufferFormatProperties2ANDROID
+    public unsafe partial struct AndroidHardwareBufferFormatProperties2ANDROID : IExtendsChain<AndroidHardwareBufferPropertiesANDROID>
     {
         public AndroidHardwareBufferFormatProperties2ANDROID
         (
@@ -25,7 +25,7 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             Format? format = null,
             ulong? externalFormat = null,
-            FormatFeatureFlags2KHR? formatFeatures = null,
+            FormatFeatureFlags2? formatFeatures = null,
             ComponentMapping? samplerYcbcrConversionComponents = null,
             SamplerYcbcrModelConversion? suggestedYcbcrModel = null,
             SamplerYcbcrRange? suggestedYcbcrRange = null,
@@ -105,10 +105,10 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "externalFormat")]
         public ulong ExternalFormat;
 /// <summary></summary>
-        [NativeName("Type", "VkFormatFeatureFlags2KHR")]
-        [NativeName("Type.Name", "VkFormatFeatureFlags2KHR")]
+        [NativeName("Type", "VkFormatFeatureFlags2")]
+        [NativeName("Type.Name", "VkFormatFeatureFlags2")]
         [NativeName("Name", "formatFeatures")]
-        public FormatFeatureFlags2KHR FormatFeatures;
+        public FormatFeatureFlags2 FormatFeatures;
 /// <summary></summary>
         [NativeName("Type", "VkComponentMapping")]
         [NativeName("Type.Name", "VkComponentMapping")]
@@ -134,5 +134,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkChromaLocation")]
         [NativeName("Name", "suggestedYChromaOffset")]
         public ChromaLocation SuggestedYChromaOffset;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.AndroidHardwareBufferFormatProperties2Android;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

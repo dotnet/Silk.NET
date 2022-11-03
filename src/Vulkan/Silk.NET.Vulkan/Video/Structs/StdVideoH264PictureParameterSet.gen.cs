@@ -21,19 +21,24 @@ namespace Silk.NET.Vulkan.Video
     {
         public StdVideoH264PictureParameterSet
         (
+            StdVideoH264PpsFlags? flags = null,
             byte? seqParameterSetId = null,
             byte? picParameterSetId = null,
             byte? numRefIdxL0DefaultActiveMinus1 = null,
             byte? numRefIdxL1DefaultActiveMinus1 = null,
-            StdVideoH264WeightedBiPredIdc? weightedBipredIdc = null,
+            StdVideoH264WeightedBipredIdc? weightedBipredIdc = null,
             byte? picInitQpMinus26 = null,
             byte? picInitQsMinus26 = null,
             byte? chromaQpIndexOffset = null,
             byte? secondChromaQpIndexOffset = null,
-            StdVideoH264PpsFlags? flags = null,
             StdVideoH264ScalingLists* pScalingLists = null
         ) : this()
         {
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
             if (seqParameterSetId is not null)
             {
                 SeqParameterSetId = seqParameterSetId.Value;
@@ -79,17 +84,17 @@ namespace Silk.NET.Vulkan.Video
                 SecondChromaQpIndexOffset = secondChromaQpIndexOffset.Value;
             }
 
-            if (flags is not null)
-            {
-                Flags = flags.Value;
-            }
-
             if (pScalingLists is not null)
             {
                 PScalingLists = pScalingLists;
             }
         }
 
+
+        [NativeName("Type", "StdVideoH264PpsFlags")]
+        [NativeName("Type.Name", "StdVideoH264PpsFlags")]
+        [NativeName("Name", "flags")]
+        public StdVideoH264PpsFlags Flags;
 
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
@@ -111,10 +116,10 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Name", "num_ref_idx_l1_default_active_minus1")]
         public byte NumRefIdxL1DefaultActiveMinus1;
 
-        [NativeName("Type", "StdVideoH264WeightedBiPredIdc")]
-        [NativeName("Type.Name", "StdVideoH264WeightedBiPredIdc")]
+        [NativeName("Type", "StdVideoH264WeightedBipredIdc")]
+        [NativeName("Type.Name", "StdVideoH264WeightedBipredIdc")]
         [NativeName("Name", "weighted_bipred_idc")]
-        public StdVideoH264WeightedBiPredIdc WeightedBipredIdc;
+        public StdVideoH264WeightedBipredIdc WeightedBipredIdc;
 
         [NativeName("Type", "int8_t")]
         [NativeName("Type.Name", "int8_t")]
@@ -136,13 +141,8 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Name", "second_chroma_qp_index_offset")]
         public byte SecondChromaQpIndexOffset;
 
-        [NativeName("Type", "StdVideoH264PpsFlags")]
-        [NativeName("Type.Name", "StdVideoH264PpsFlags")]
-        [NativeName("Name", "flags")]
-        public StdVideoH264PpsFlags Flags;
-
-        [NativeName("Type", "StdVideoH264ScalingLists *")]
-        [NativeName("Type.Name", "StdVideoH264ScalingLists *")]
+        [NativeName("Type", "const StdVideoH264ScalingLists *")]
+        [NativeName("Type.Name", "const StdVideoH264ScalingLists *")]
         [NativeName("Name", "pScalingLists")]
         public StdVideoH264ScalingLists* PScalingLists;
     }
