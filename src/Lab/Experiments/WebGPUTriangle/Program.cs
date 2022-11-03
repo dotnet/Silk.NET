@@ -16,7 +16,7 @@ public static unsafe class Program
 {
     // ReSharper disable once InconsistentNaming
     private static WebGPU wgpu = null!;
-    private static WebGPUDisposal? webGpuDisposal = null!;
+    private static WebGPUDisposal _WebGpuDisposal = null!;
     private static IWindow? _Window;
 
     private static Surface* _Surface;
@@ -71,7 +71,7 @@ fn fs_main() -> @location(0) vec4<f32> {
     {
         wgpu = WebGPU.GetApi();
 
-        webGpuDisposal = new WebGPUDisposal(wgpu);
+        _WebGpuDisposal = new WebGPUDisposal(wgpu);
 
         _Surface = _Window.CreateWebGPUSurface(wgpu);
 
@@ -207,11 +207,11 @@ fn fs_main() -> @location(0) vec4<f32> {
 
     private static void WindowClosing()
     {
-        webGpuDisposal.Dispose(_Shader);
-        webGpuDisposal.Dispose(_Pipeline);
-        webGpuDisposal.Dispose(_Device);
-        webGpuDisposal.Dispose(_Adapter);
-        webGpuDisposal.Dispose(_Surface);
+        _WebGpuDisposal.Dispose(_Shader);
+        _WebGpuDisposal.Dispose(_Pipeline);
+        _WebGpuDisposal.Dispose(_Device);
+        _WebGpuDisposal.Dispose(_Adapter);
+        _WebGpuDisposal.Dispose(_Surface);
 
         wgpu.Dispose();
     }
@@ -287,7 +287,7 @@ fn fs_main() -> @location(0) vec4<f32> {
         wgpu.RenderPassEncoderSetPipeline(renderPass, _Pipeline);
         wgpu.RenderPassEncoderDraw(renderPass, 3, 1, 0, 0);
         wgpu.RenderPassEncoderEnd(renderPass);
-        webGpuDisposal.Dispose(nextTexture);
+        _WebGpuDisposal.Dispose(nextTexture);
 
         var queue = wgpu.DeviceGetQueue(_Device);
 
