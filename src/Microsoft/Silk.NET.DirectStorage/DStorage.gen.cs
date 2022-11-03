@@ -33,37 +33,37 @@ namespace Silk.NET.DirectStorage
         public const int RequestMaxName = unchecked((int) 0x40);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 893, Column 16 in C:\\Users\\perks\\AppData\\Local\\Temp\\<...>\\native\\include\\dstorage.h")]
+        [NativeName("Src", "Line 893, Column 16 in C:\\Users\\Administrator\\AppData\\Local\\Temp\\<...>\\native\\include\\dstorage.h")]
         [NativeApi(EntryPoint = "DStorageSetConfiguration", Convention = CallingConvention.StdCall)]
         public unsafe partial int SetConfiguration([Flow(FlowDirection.In)] Configuration* configuration);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 893, Column 16 in C:\\Users\\perks\\AppData\\Local\\Temp\\<...>\\native\\include\\dstorage.h")]
+        [NativeName("Src", "Line 893, Column 16 in C:\\Users\\Administrator\\AppData\\Local\\Temp\\<...>\\native\\include\\dstorage.h")]
         [NativeApi(EntryPoint = "DStorageSetConfiguration", Convention = CallingConvention.StdCall)]
         public partial int SetConfiguration([Flow(FlowDirection.In)] in Configuration configuration);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 903, Column 16 in C:\\Users\\perks\\AppData\\Local\\Temp\\<...>\\native\\include\\dstorage.h")]
+        [NativeName("Src", "Line 903, Column 16 in C:\\Users\\Administrator\\AppData\\Local\\Temp\\<...>\\native\\include\\dstorage.h")]
         [NativeApi(EntryPoint = "DStorageGetFactory", Convention = CallingConvention.StdCall)]
         public unsafe partial int GetFactory(Guid* riid, void** ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 903, Column 16 in C:\\Users\\perks\\AppData\\Local\\Temp\\<...>\\native\\include\\dstorage.h")]
+        [NativeName("Src", "Line 903, Column 16 in C:\\Users\\Administrator\\AppData\\Local\\Temp\\<...>\\native\\include\\dstorage.h")]
         [NativeApi(EntryPoint = "DStorageGetFactory", Convention = CallingConvention.StdCall)]
         public unsafe partial int GetFactory(Guid* riid, ref void* ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 903, Column 16 in C:\\Users\\perks\\AppData\\Local\\Temp\\<...>\\native\\include\\dstorage.h")]
+        [NativeName("Src", "Line 903, Column 16 in C:\\Users\\Administrator\\AppData\\Local\\Temp\\<...>\\native\\include\\dstorage.h")]
         [NativeApi(EntryPoint = "DStorageGetFactory", Convention = CallingConvention.StdCall)]
         public unsafe partial int GetFactory(ref Guid riid, void** ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 903, Column 16 in C:\\Users\\perks\\AppData\\Local\\Temp\\<...>\\native\\include\\dstorage.h")]
+        [NativeName("Src", "Line 903, Column 16 in C:\\Users\\Administrator\\AppData\\Local\\Temp\\<...>\\native\\include\\dstorage.h")]
         [NativeApi(EntryPoint = "DStorageGetFactory", Convention = CallingConvention.StdCall)]
         public unsafe partial int GetFactory(ref Guid riid, ref void* ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 903, Column 16 in C:\\Users\\perks\\AppData\\Local\\Temp\\<...>\\native\\include\\dstorage.h")]
+        [NativeName("Src", "Line 903, Column 16 in C:\\Users\\Administrator\\AppData\\Local\\Temp\\<...>\\native\\include\\dstorage.h")]
         public unsafe int GetFactory<TI0>(out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
         {
             // ComPtrOverloader
@@ -72,7 +72,7 @@ namespace Silk.NET.DirectStorage
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 903, Column 16 in C:\\Users\\perks\\AppData\\Local\\Temp\\<...>\\native\\include\\dstorage.h")]
+        [NativeName("Src", "Line 903, Column 16 in C:\\Users\\Administrator\\AppData\\Local\\Temp\\<...>\\native\\include\\dstorage.h")]
         public unsafe ComPtr<TI0> GetFactory<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
         {
             // NonKhrReturnTypeOverloader

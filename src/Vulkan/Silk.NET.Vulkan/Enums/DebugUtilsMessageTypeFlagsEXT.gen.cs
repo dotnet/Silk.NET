@@ -24,11 +24,16 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"PerformanceBitExt\"")]
         [NativeName("Name", "VK_DEBUG_UTILS_MESSAGE_TYPE_PERFORMANCE_BIT_EXT")]
         DebugUtilsMessageTypePerformanceBitExt = 4,
+        [Obsolete("Deprecated in favour of \"DeviceAddressBindingBitExt\"")]
+        [NativeName("Name", "VK_DEBUG_UTILS_MESSAGE_TYPE_DEVICE_ADDRESS_BINDING_BIT_EXT")]
+        DebugUtilsMessageTypeDeviceAddressBindingBitExt = 8,
         [NativeName("Name", "VK_DEBUG_UTILS_MESSAGE_TYPE_GENERAL_BIT_EXT")]
         GeneralBitExt = 1,
         [NativeName("Name", "VK_DEBUG_UTILS_MESSAGE_TYPE_VALIDATION_BIT_EXT")]
         ValidationBitExt = 2,
         [NativeName("Name", "VK_DEBUG_UTILS_MESSAGE_TYPE_PERFORMANCE_BIT_EXT")]
         PerformanceBitExt = 4,
+        [NativeName("Name", "VK_DEBUG_UTILS_MESSAGE_TYPE_DEVICE_ADDRESS_BINDING_BIT_EXT")]
+        DeviceAddressBindingBitExt = 8,
     }
 }

@@ -418,7 +418,9 @@
                     "StdVideoEncodeH264RefMemMgmtCtrlOperations": "Video.StdVideoEncodeH264RefMemMgmtCtrlOperations",
                     "StdVideoEncodeH264ReferenceInfo": "Video.StdVideoEncodeH264ReferenceInfo",
                     "StdVideoH264Level": "Video.StdVideoH264Level",
-                    "StdVideoH265Level": "Video.StdVideoH265Level"
+                    "StdVideoH265Level": "Video.StdVideoH265Level",
+                    "StdVideoH264LevelIdc": "Video.StdVideoH264LevelIdc",
+                    "StdVideoH265LevelIdc": "Video.StdVideoH265LevelIdc"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json"
