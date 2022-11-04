@@ -86,14 +86,11 @@ Now, the window options struct contains *a lot* of parameters. Fortunately for u
 In your `Main` method, add the following:
 
 ```cs
-WindowOptions options = WindowOptions.Default;
-```
-
-We'd still like to change a few of these options for our application, though, so go ahead and add the following underneath that line:
-
-```cs
-options.Size = new Vector2D<int>(800, 600);
-options.Title = "My first Silk.NET application!";
+WindowOptions options = WindowOptions.Default with
+{
+    Size = new Vector2D<int>(800, 600),
+    Title = "My first Silk.NET application!"
+};
 ```
 
 What these do should be fairly obvious but we'll go over them anyway:
@@ -213,7 +210,7 @@ And that's it! You should now be able to press the escape key and the window wil
 
 ## Wrapping up
 You've just completed your first Silk.NET tutorial! Here's some next steps you can take:
-* Move on to the next tutorial, where you'll learn how to create a GL context and display a quad on the screen.
+* Move on to the [next tutorial](2-hello-quad.html), where you'll learn how to create a GL context and display a quad on the screen.
 * Join the [Discord server](https://discord.gg/DTHHXRt), where you can ask questions, show your stuff, and chat with everyone there.
 
 Something isn't working? Compare it with the final result!
