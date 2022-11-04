@@ -109,7 +109,7 @@ namespace Silk.NET.BuildTools.Cpp
             }
         }
 
-        public static unsafe Profile GenerateProfile(string fileName, Stream input, BindTask task)
+        public static unsafe Profile GenerateProfile(string fileName, Stream input, BindTask task, Profile? coreProfile)
         {
             Console.WriteLine($"clangsharp {typeof(Attr).Assembly.GetName().Version} for {clang.getClangVersion()}");
             var profile = new Profile
@@ -202,11 +202,11 @@ namespace Silk.NET.BuildTools.Cpp
             var destInfo = task.ClangOpts.ClassMappings[fileName];
             var indexOfOpenSqBracket = destInfo.IndexOf('[');
             var indexOfCloseSqBracket = destInfo.LastIndexOf(']');
-            var splitProjectName = destInfo.Substring
-                (indexOfOpenSqBracket + 1, indexOfCloseSqBracket - indexOfOpenSqBracket - 1).Split(':');
-            var projectName = splitProjectName[0];
-            
-            var nativeApiSetName = splitProjectName.Length > 1 ? splitProjectName[1] : projectName;
+            var projectName = destInfo.Substring
+                (indexOfOpenSqBracket + 1, indexOfCloseSqBracket - indexOfOpenSqBracket - 1);
+
+            if(projectName != "Core" && coreProfile == null) 
+                throw new InvalidOperationException("The core profile/source file must come first!");
 
             var className = destInfo.Substring(indexOfCloseSqBracket + 1);
             var project = profile.Projects[projectName] = new Project
@@ -215,8 +215,8 @@ namespace Silk.NET.BuildTools.Cpp
                 Namespace = projectName == "Core"
                         ? string.Empty
                         : $".{projectName}",
-                NativeApiSetName = nativeApiSetName,
-                ComRefs = task.ClangOpts.ComRefs ?? new HashSet<string>()
+                ComRefs = task.ClangOpts.ComRefs ?? new HashSet<string>(),
+                ClassName = className
             };
 
             if (projectName != "Core")
@@ -232,7 +232,7 @@ namespace Silk.NET.BuildTools.Cpp
 
             var @class = new Class
             {
-                ClassName = className,
+                ClassName = project.IsRoot ? className : coreProfile?.Projects["Core"].ClassName,
                 Constants = constants,
                 NativeApis = { [fileName] = new NativeApiSet { Name = "I" + className, Functions = functions } }
             };

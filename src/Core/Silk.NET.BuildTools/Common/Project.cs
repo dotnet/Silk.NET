@@ -12,14 +12,14 @@ namespace Silk.NET.BuildTools.Common
     public class Project
     {
         /// <summary>
+        /// Gets or sets the class name of the project
+        /// </summary>
+        public string ClassName;
+
+        /// <summary>
         /// Gets or sets the root namespace of this project. This is also used as the assembly name.
         /// </summary>
         public string Namespace { get; set; }
-
-        /// <summary>
-        /// Gets or set the native API set name of the project.
-        /// </summary>
-        public string NativeApiSetName { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether this project is the root project, or an extension.

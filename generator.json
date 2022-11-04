@@ -2031,8 +2031,8 @@
                 ],
                 "classes": {
                     "webgpu.h": "[Core]WebGPU",
-                    "wgpu.h": "[WGPU:WebGPU]Wgpu",
-                    "dawn-webgpu.h": "[Dawn:WebGPU]Dawn"
+                    "wgpu.h": "[WGPU]Wgpu",
+                    "dawn-webgpu.h": "[Dawn]Dawn"
                 }
             },
             "exclude": [
