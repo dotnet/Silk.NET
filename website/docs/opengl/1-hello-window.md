@@ -63,6 +63,8 @@ dotnet add package Silk.NET.Input
 dotnet add package Silk.NET.OpenGL
 ```
 
+Or, if you're using Visual Studio, you can use the NuGet Package Manager by right-clicking on your project in the solution explorer and selecting "Manage NuGet Packages...".
+
 ## Creating a Window
 The first thing we need before we can even think about rendering some graphics is a window to render to.
 
@@ -148,7 +150,7 @@ private static void OnRender(double dt) { }
 These are the methods that will power our main application. For this tutorial, we'll only be using `OnLoad`, but it's helpful to have all three.
 
 > [!Note]
-> The `dt` parameter (which you will often see labelled as `obj`), is the **delta time**, which is the amount of time, in seconds, that has passed since the last frame. Using delta time is key for framerate-independent actions, such as movement.
+> The `dt` parameter (which your IDE will often name it as `obj`), is the **delta time**, which is the amount of time, in seconds, that has passed since the last frame. Using delta time is key for framerate-independent actions, such as movement.
 
 Next, we need to subscribe to these events. Add the following code to your `Main` method, just after you call `Window.Create()`:
 
@@ -160,7 +162,7 @@ _window.Render += OnRender;
 
 Launch your program again and you will see that... nothing has changed. Good! That means it's working correctly. Try adding some logs in the load, update, and render methods to see exactly when they are called.
 
-![Loading, Updating & Rendering](../../images/opengl/chapter1/loading-rendering.png)
+<img src="../../images/opengl/chapter1/loading-rendering.png" title="Load, update, and render demo." alt="Load, update, and render demo" style="width: 100px" />
 
 We're now ready to handle some input!
 
@@ -191,7 +193,7 @@ for (int i = 0; i < input.Keyboards.Count; i++)
     input.Keyboards[i].KeyDown += KeyDown;
 ```
 
-The input context supports multiple keyboards connected to the host device. We want to handle when the escape key is pressed on any connected keyboard, so we subscribe to the event for every keyboard that is connected.
+Sometimes, an input context supports multiple keyboards connected to the host device. In those cases, we want to handle when the escape key is pressed on any connected keyboard, so we subscribe to the event for every keyboard that is connected.
 
 We've now subcribed to the event, try adding some logs in your `KeyDown` method and see what results you get.
 
@@ -244,15 +246,23 @@ public class Program
 
     private static void OnLoad()
     {
+        Console.WriteLine("Load!");
+
         IInputContext input = _window.CreateInput();
         for (int i = 0; i < input.Keyboards.Count; i++)
             input.Keyboards[i].KeyDown += KeyDown;
     }
 
-    // These two methods are unused for this tutorial.
-    private static void OnUpdate(double dt) { }
+    // These two methods are unused for this tutorial, aside from the logging we added earlier.
+    private static void OnUpdate(double dt)
+    {
+        Console.WriteLine("Update!");
+    }
 
-    private static void OnRender(double dt) { }
+    private static void OnRender(double dt)
+    {
+        Console.WriteLine("Render!");
+    }
 
     private static void KeyDown(IKeyboard keyboard, Key key, int keyCode)
     {
