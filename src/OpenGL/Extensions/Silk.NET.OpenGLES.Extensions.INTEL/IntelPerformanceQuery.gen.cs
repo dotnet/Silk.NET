@@ -1085,6 +1085,150 @@ namespace Silk.NET.OpenGLES.Extensions.INTEL
         [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
         public partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] out uint capsMask);
 
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] out PerformanceQueryCapsMaskINTEL capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] out PerformanceQueryCapsMaskINTEL capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] out PerformanceQueryCapsMaskINTEL capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] out PerformanceQueryCapsMaskINTEL capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] out PerformanceQueryCapsMaskINTEL capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] out PerformanceQueryCapsMaskINTEL capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] out PerformanceQueryCapsMaskINTEL capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] out PerformanceQueryCapsMaskINTEL capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] out byte queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] out byte queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] out PerformanceQueryCapsMaskINTEL capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] out byte queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] out byte queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] out PerformanceQueryCapsMaskINTEL capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] out byte queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] out byte queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] out PerformanceQueryCapsMaskINTEL capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] out byte queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] out byte queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] out PerformanceQueryCapsMaskINTEL capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] out byte queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] out byte queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] out PerformanceQueryCapsMaskINTEL capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] out byte queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] out byte queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] out PerformanceQueryCapsMaskINTEL capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] out byte queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] out byte queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] out PerformanceQueryCapsMaskINTEL capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] out byte queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] out byte queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] out PerformanceQueryCapsMaskINTEL capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] out PerformanceQueryCapsMaskINTEL capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] out PerformanceQueryCapsMaskINTEL capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] out PerformanceQueryCapsMaskINTEL capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] out PerformanceQueryCapsMaskINTEL capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] out PerformanceQueryCapsMaskINTEL capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] out PerformanceQueryCapsMaskINTEL capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] out PerformanceQueryCapsMaskINTEL capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
+        public partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] out PerformanceQueryCapsMaskINTEL capsMask);
+
         public unsafe uint CreatePerfQuery()
         {
             const uint queryId = 1;
@@ -2842,6 +2986,198 @@ namespace Silk.NET.OpenGLES.Extensions.INTEL
         }
 
         public unsafe void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<string> queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] out uint capsMask)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfQueryInfo(queryId, (uint) queryName.Length, out queryName.GetPinnableReference(), out dataSize, out noCounters, out noInstances, out capsMask);
+        }
+
+        public unsafe void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<byte> queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfQueryInfo(queryId, (uint) queryName.Length, out queryName.GetPinnableReference(), dataSize, noCounters, noInstances, capsMask);
+        }
+
+        public unsafe void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<byte> queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] out PerformanceQueryCapsMaskINTEL capsMask)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfQueryInfo(queryId, (uint) queryName.Length, out queryName.GetPinnableReference(), dataSize, noCounters, noInstances, out capsMask);
+        }
+
+        public unsafe void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<byte> queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfQueryInfo(queryId, (uint) queryName.Length, out queryName.GetPinnableReference(), dataSize, noCounters, out noInstances, capsMask);
+        }
+
+        public unsafe void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<byte> queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] out PerformanceQueryCapsMaskINTEL capsMask)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfQueryInfo(queryId, (uint) queryName.Length, out queryName.GetPinnableReference(), dataSize, noCounters, out noInstances, out capsMask);
+        }
+
+        public unsafe void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<byte> queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfQueryInfo(queryId, (uint) queryName.Length, out queryName.GetPinnableReference(), dataSize, out noCounters, noInstances, capsMask);
+        }
+
+        public unsafe void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<byte> queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] out PerformanceQueryCapsMaskINTEL capsMask)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfQueryInfo(queryId, (uint) queryName.Length, out queryName.GetPinnableReference(), dataSize, out noCounters, noInstances, out capsMask);
+        }
+
+        public unsafe void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<byte> queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfQueryInfo(queryId, (uint) queryName.Length, out queryName.GetPinnableReference(), dataSize, out noCounters, out noInstances, capsMask);
+        }
+
+        public unsafe void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<byte> queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] out PerformanceQueryCapsMaskINTEL capsMask)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfQueryInfo(queryId, (uint) queryName.Length, out queryName.GetPinnableReference(), dataSize, out noCounters, out noInstances, out capsMask);
+        }
+
+        public unsafe void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<byte> queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfQueryInfo(queryId, (uint) queryName.Length, out queryName.GetPinnableReference(), out dataSize, noCounters, noInstances, capsMask);
+        }
+
+        public unsafe void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<byte> queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] out PerformanceQueryCapsMaskINTEL capsMask)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfQueryInfo(queryId, (uint) queryName.Length, out queryName.GetPinnableReference(), out dataSize, noCounters, noInstances, out capsMask);
+        }
+
+        public unsafe void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<byte> queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfQueryInfo(queryId, (uint) queryName.Length, out queryName.GetPinnableReference(), out dataSize, noCounters, out noInstances, capsMask);
+        }
+
+        public unsafe void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<byte> queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] out PerformanceQueryCapsMaskINTEL capsMask)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfQueryInfo(queryId, (uint) queryName.Length, out queryName.GetPinnableReference(), out dataSize, noCounters, out noInstances, out capsMask);
+        }
+
+        public unsafe void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<byte> queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfQueryInfo(queryId, (uint) queryName.Length, out queryName.GetPinnableReference(), out dataSize, out noCounters, noInstances, capsMask);
+        }
+
+        public unsafe void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<byte> queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] out PerformanceQueryCapsMaskINTEL capsMask)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfQueryInfo(queryId, (uint) queryName.Length, out queryName.GetPinnableReference(), out dataSize, out noCounters, noInstances, out capsMask);
+        }
+
+        public unsafe void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<byte> queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfQueryInfo(queryId, (uint) queryName.Length, out queryName.GetPinnableReference(), out dataSize, out noCounters, out noInstances, capsMask);
+        }
+
+        public unsafe void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<byte> queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] out PerformanceQueryCapsMaskINTEL capsMask)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfQueryInfo(queryId, (uint) queryName.Length, out queryName.GetPinnableReference(), out dataSize, out noCounters, out noInstances, out capsMask);
+        }
+
+        public unsafe void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<string> queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfQueryInfo(queryId, (uint) queryName.Length, out queryName.GetPinnableReference(), dataSize, noCounters, noInstances, capsMask);
+        }
+
+        public unsafe void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<string> queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] out PerformanceQueryCapsMaskINTEL capsMask)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfQueryInfo(queryId, (uint) queryName.Length, out queryName.GetPinnableReference(), dataSize, noCounters, noInstances, out capsMask);
+        }
+
+        public unsafe void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<string> queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfQueryInfo(queryId, (uint) queryName.Length, out queryName.GetPinnableReference(), dataSize, noCounters, out noInstances, capsMask);
+        }
+
+        public unsafe void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<string> queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] out PerformanceQueryCapsMaskINTEL capsMask)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfQueryInfo(queryId, (uint) queryName.Length, out queryName.GetPinnableReference(), dataSize, noCounters, out noInstances, out capsMask);
+        }
+
+        public unsafe void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<string> queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfQueryInfo(queryId, (uint) queryName.Length, out queryName.GetPinnableReference(), dataSize, out noCounters, noInstances, capsMask);
+        }
+
+        public unsafe void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<string> queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] out PerformanceQueryCapsMaskINTEL capsMask)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfQueryInfo(queryId, (uint) queryName.Length, out queryName.GetPinnableReference(), dataSize, out noCounters, noInstances, out capsMask);
+        }
+
+        public unsafe void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<string> queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfQueryInfo(queryId, (uint) queryName.Length, out queryName.GetPinnableReference(), dataSize, out noCounters, out noInstances, capsMask);
+        }
+
+        public unsafe void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<string> queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] out PerformanceQueryCapsMaskINTEL capsMask)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfQueryInfo(queryId, (uint) queryName.Length, out queryName.GetPinnableReference(), dataSize, out noCounters, out noInstances, out capsMask);
+        }
+
+        public unsafe void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<string> queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfQueryInfo(queryId, (uint) queryName.Length, out queryName.GetPinnableReference(), out dataSize, noCounters, noInstances, capsMask);
+        }
+
+        public unsafe void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<string> queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] out PerformanceQueryCapsMaskINTEL capsMask)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfQueryInfo(queryId, (uint) queryName.Length, out queryName.GetPinnableReference(), out dataSize, noCounters, noInstances, out capsMask);
+        }
+
+        public unsafe void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<string> queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfQueryInfo(queryId, (uint) queryName.Length, out queryName.GetPinnableReference(), out dataSize, noCounters, out noInstances, capsMask);
+        }
+
+        public unsafe void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<string> queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] out PerformanceQueryCapsMaskINTEL capsMask)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfQueryInfo(queryId, (uint) queryName.Length, out queryName.GetPinnableReference(), out dataSize, noCounters, out noInstances, out capsMask);
+        }
+
+        public unsafe void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<string> queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfQueryInfo(queryId, (uint) queryName.Length, out queryName.GetPinnableReference(), out dataSize, out noCounters, noInstances, capsMask);
+        }
+
+        public unsafe void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<string> queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] out PerformanceQueryCapsMaskINTEL capsMask)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfQueryInfo(queryId, (uint) queryName.Length, out queryName.GetPinnableReference(), out dataSize, out noCounters, noInstances, out capsMask);
+        }
+
+        public unsafe void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<string> queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] PerformanceQueryCapsMaskINTEL* capsMask)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfQueryInfo(queryId, (uint) queryName.Length, out queryName.GetPinnableReference(), out dataSize, out noCounters, out noInstances, capsMask);
+        }
+
+        public unsafe void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<string> queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] out PerformanceQueryCapsMaskINTEL capsMask)
         {
             // ImplicitCountSpanOverloader
             GetPerfQueryInfo(queryId, (uint) queryName.Length, out queryName.GetPinnableReference(), out dataSize, out noCounters, out noInstances, out capsMask);

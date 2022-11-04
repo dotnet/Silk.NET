@@ -9725,16 +9725,16 @@ namespace Silk.NET.OpenGL
         public partial void StencilFuncSeparate([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] StencilFunction func, [Flow(FlowDirection.In)] int @ref, [Flow(FlowDirection.In)] uint mask);
 
         [NativeApi(EntryPoint = "glStencilFuncSeparate", Convention = CallingConvention.Winapi)]
-        public partial void StencilFuncSeparate([Flow(FlowDirection.In)] StencilFaceDirection face, [Flow(FlowDirection.In)] GLEnum func, [Flow(FlowDirection.In)] int @ref, [Flow(FlowDirection.In)] uint mask);
+        public partial void StencilFuncSeparate([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] GLEnum func, [Flow(FlowDirection.In)] int @ref, [Flow(FlowDirection.In)] uint mask);
 
         [NativeApi(EntryPoint = "glStencilFuncSeparate", Convention = CallingConvention.Winapi)]
-        public partial void StencilFuncSeparate([Flow(FlowDirection.In)] StencilFaceDirection face, [Flow(FlowDirection.In)] StencilFunction func, [Flow(FlowDirection.In)] int @ref, [Flow(FlowDirection.In)] uint mask);
+        public partial void StencilFuncSeparate([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] StencilFunction func, [Flow(FlowDirection.In)] int @ref, [Flow(FlowDirection.In)] uint mask);
 
         [NativeApi(EntryPoint = "glStencilMaskSeparate", Convention = CallingConvention.Winapi)]
         public partial void StencilMaskSeparate([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] uint mask);
 
         [NativeApi(EntryPoint = "glStencilMaskSeparate", Convention = CallingConvention.Winapi)]
-        public partial void StencilMaskSeparate([Flow(FlowDirection.In)] StencilFaceDirection face, [Flow(FlowDirection.In)] uint mask);
+        public partial void StencilMaskSeparate([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] uint mask);
 
         [NativeApi(EntryPoint = "glStencilOpSeparate", Convention = CallingConvention.Winapi)]
         public partial void StencilOpSeparate([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] GLEnum sfail, [Flow(FlowDirection.In)] GLEnum dpfail, [Flow(FlowDirection.In)] GLEnum dppass);
@@ -9761,28 +9761,28 @@ namespace Silk.NET.OpenGL
         public partial void StencilOpSeparate([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] StencilOp sfail, [Flow(FlowDirection.In)] StencilOp dpfail, [Flow(FlowDirection.In)] StencilOp dppass);
 
         [NativeApi(EntryPoint = "glStencilOpSeparate", Convention = CallingConvention.Winapi)]
-        public partial void StencilOpSeparate([Flow(FlowDirection.In)] StencilFaceDirection face, [Flow(FlowDirection.In)] GLEnum sfail, [Flow(FlowDirection.In)] GLEnum dpfail, [Flow(FlowDirection.In)] GLEnum dppass);
+        public partial void StencilOpSeparate([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] GLEnum sfail, [Flow(FlowDirection.In)] GLEnum dpfail, [Flow(FlowDirection.In)] GLEnum dppass);
 
         [NativeApi(EntryPoint = "glStencilOpSeparate", Convention = CallingConvention.Winapi)]
-        public partial void StencilOpSeparate([Flow(FlowDirection.In)] StencilFaceDirection face, [Flow(FlowDirection.In)] GLEnum sfail, [Flow(FlowDirection.In)] GLEnum dpfail, [Flow(FlowDirection.In)] StencilOp dppass);
+        public partial void StencilOpSeparate([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] GLEnum sfail, [Flow(FlowDirection.In)] GLEnum dpfail, [Flow(FlowDirection.In)] StencilOp dppass);
 
         [NativeApi(EntryPoint = "glStencilOpSeparate", Convention = CallingConvention.Winapi)]
-        public partial void StencilOpSeparate([Flow(FlowDirection.In)] StencilFaceDirection face, [Flow(FlowDirection.In)] GLEnum sfail, [Flow(FlowDirection.In)] StencilOp dpfail, [Flow(FlowDirection.In)] GLEnum dppass);
+        public partial void StencilOpSeparate([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] GLEnum sfail, [Flow(FlowDirection.In)] StencilOp dpfail, [Flow(FlowDirection.In)] GLEnum dppass);
 
         [NativeApi(EntryPoint = "glStencilOpSeparate", Convention = CallingConvention.Winapi)]
-        public partial void StencilOpSeparate([Flow(FlowDirection.In)] StencilFaceDirection face, [Flow(FlowDirection.In)] GLEnum sfail, [Flow(FlowDirection.In)] StencilOp dpfail, [Flow(FlowDirection.In)] StencilOp dppass);
+        public partial void StencilOpSeparate([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] GLEnum sfail, [Flow(FlowDirection.In)] StencilOp dpfail, [Flow(FlowDirection.In)] StencilOp dppass);
 
         [NativeApi(EntryPoint = "glStencilOpSeparate", Convention = CallingConvention.Winapi)]
-        public partial void StencilOpSeparate([Flow(FlowDirection.In)] StencilFaceDirection face, [Flow(FlowDirection.In)] StencilOp sfail, [Flow(FlowDirection.In)] GLEnum dpfail, [Flow(FlowDirection.In)] GLEnum dppass);
+        public partial void StencilOpSeparate([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] StencilOp sfail, [Flow(FlowDirection.In)] GLEnum dpfail, [Flow(FlowDirection.In)] GLEnum dppass);
 
         [NativeApi(EntryPoint = "glStencilOpSeparate", Convention = CallingConvention.Winapi)]
-        public partial void StencilOpSeparate([Flow(FlowDirection.In)] StencilFaceDirection face, [Flow(FlowDirection.In)] StencilOp sfail, [Flow(FlowDirection.In)] GLEnum dpfail, [Flow(FlowDirection.In)] StencilOp dppass);
+        public partial void StencilOpSeparate([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] StencilOp sfail, [Flow(FlowDirection.In)] GLEnum dpfail, [Flow(FlowDirection.In)] StencilOp dppass);
 
         [NativeApi(EntryPoint = "glStencilOpSeparate", Convention = CallingConvention.Winapi)]
-        public partial void StencilOpSeparate([Flow(FlowDirection.In)] StencilFaceDirection face, [Flow(FlowDirection.In)] StencilOp sfail, [Flow(FlowDirection.In)] StencilOp dpfail, [Flow(FlowDirection.In)] GLEnum dppass);
+        public partial void StencilOpSeparate([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] StencilOp sfail, [Flow(FlowDirection.In)] StencilOp dpfail, [Flow(FlowDirection.In)] GLEnum dppass);
 
         [NativeApi(EntryPoint = "glStencilOpSeparate", Convention = CallingConvention.Winapi)]
-        public partial void StencilOpSeparate([Flow(FlowDirection.In)] StencilFaceDirection face, [Flow(FlowDirection.In)] StencilOp sfail, [Flow(FlowDirection.In)] StencilOp dpfail, [Flow(FlowDirection.In)] StencilOp dppass);
+        public partial void StencilOpSeparate([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] StencilOp sfail, [Flow(FlowDirection.In)] StencilOp dpfail, [Flow(FlowDirection.In)] StencilOp dppass);
 
         [NativeApi(EntryPoint = "glUniform1f", Convention = CallingConvention.Winapi)]
         public partial void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] float v0);
@@ -11111,7 +11111,7 @@ namespace Silk.NET.OpenGL
         public partial void CullFace([Flow(FlowDirection.In)] GLEnum mode);
 
         [NativeApi(EntryPoint = "glCullFace", Convention = CallingConvention.Winapi)]
-        public partial void CullFace([Flow(FlowDirection.In)] CullFaceMode mode);
+        public partial void CullFace([Flow(FlowDirection.In)] TriangleFace mode);
 
         [NativeApi(EntryPoint = "glDepthFunc", Convention = CallingConvention.Winapi)]
         public partial void DepthFunc([Flow(FlowDirection.In)] GLEnum func);
@@ -11428,10 +11428,10 @@ namespace Silk.NET.OpenGL
         public partial void PolygonMode([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] PolygonMode mode);
 
         [NativeApi(EntryPoint = "glPolygonMode", Convention = CallingConvention.Winapi)]
-        public partial void PolygonMode([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] GLEnum mode);
+        public partial void PolygonMode([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] GLEnum mode);
 
         [NativeApi(EntryPoint = "glPolygonMode", Convention = CallingConvention.Winapi)]
-        public partial void PolygonMode([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] PolygonMode mode);
+        public partial void PolygonMode([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] PolygonMode mode);
 
         [NativeApi(EntryPoint = "glReadBuffer", Convention = CallingConvention.Winapi)]
         public partial void ReadBuffer([Flow(FlowDirection.In)] GLEnum src);

@@ -123,10 +123,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         public partial void ColorTableParameter([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
 
         [NativeApi(EntryPoint = "glColorTableParameterfvSGI", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ColorTableParameter([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] ColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        public unsafe partial void ColorTableParameter([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] ColorTableParameterPName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
         [NativeApi(EntryPoint = "glColorTableParameterfvSGI", Convention = CallingConvention.Winapi)]
-        public partial void ColorTableParameter([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] ColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
+        public partial void ColorTableParameter([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] ColorTableParameterPName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
 
         [NativeApi(EntryPoint = "glColorTableParameterfvSGI", Convention = CallingConvention.Winapi)]
         public unsafe partial void ColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] SGI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
@@ -135,10 +135,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         public partial void ColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] SGI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
 
         [NativeApi(EntryPoint = "glColorTableParameterfvSGI", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] ColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        public unsafe partial void ColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] ColorTableParameterPName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
         [NativeApi(EntryPoint = "glColorTableParameterfvSGI", Convention = CallingConvention.Winapi)]
-        public partial void ColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] ColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
+        public partial void ColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] ColorTableParameterPName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
 
         [NativeApi(EntryPoint = "glColorTableParameterivSGI", Convention = CallingConvention.Winapi)]
         public unsafe partial void ColorTableParameter([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
@@ -147,10 +147,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         public partial void ColorTableParameter([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
 
         [NativeApi(EntryPoint = "glColorTableParameterivSGI", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ColorTableParameter([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] ColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void ColorTableParameter([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] ColorTableParameterPName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glColorTableParameterivSGI", Convention = CallingConvention.Winapi)]
-        public partial void ColorTableParameter([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] ColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
+        public partial void ColorTableParameter([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] ColorTableParameterPName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
 
         [NativeApi(EntryPoint = "glColorTableParameterivSGI", Convention = CallingConvention.Winapi)]
         public unsafe partial void ColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] SGI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
@@ -159,10 +159,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         public partial void ColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] SGI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
 
         [NativeApi(EntryPoint = "glColorTableParameterivSGI", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] ColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void ColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] ColorTableParameterPName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glColorTableParameterivSGI", Convention = CallingConvention.Winapi)]
-        public partial void ColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] ColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
+        public partial void ColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] ColorTableParameterPName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
 
         [NativeApi(EntryPoint = "glCopyColorTableSGI", Convention = CallingConvention.Winapi)]
         public partial void CopyColorTable([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI internalformat, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width);
@@ -231,10 +231,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         public partial void GetColorTableParameter([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
         [NativeApi(EntryPoint = "glGetColorTableParameterfvSGI", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetColorTableParameter([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] GetColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetColorTableParameter([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] ColorTableParameterPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
         [NativeApi(EntryPoint = "glGetColorTableParameterfvSGI", Convention = CallingConvention.Winapi)]
-        public partial void GetColorTableParameter([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] GetColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+        public partial void GetColorTableParameter([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] ColorTableParameterPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
         [NativeApi(EntryPoint = "glGetColorTableParameterfvSGI", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] SGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
@@ -243,10 +243,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         public partial void GetColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] SGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
         [NativeApi(EntryPoint = "glGetColorTableParameterfvSGI", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] GetColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] ColorTableParameterPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
         [NativeApi(EntryPoint = "glGetColorTableParameterfvSGI", Convention = CallingConvention.Winapi)]
-        public partial void GetColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] GetColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+        public partial void GetColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] ColorTableParameterPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
         [NativeApi(EntryPoint = "glGetColorTableParameterivSGI", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetColorTableParameter([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
@@ -255,10 +255,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         public partial void GetColorTableParameter([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetColorTableParameterivSGI", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetColorTableParameter([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] GetColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetColorTableParameter([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] ColorTableParameterPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetColorTableParameterivSGI", Convention = CallingConvention.Winapi)]
-        public partial void GetColorTableParameter([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] GetColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        public partial void GetColorTableParameter([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] ColorTableParameterPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetColorTableParameterivSGI", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] SGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
@@ -267,10 +267,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         public partial void GetColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] SGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetColorTableParameterivSGI", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] GetColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] ColorTableParameterPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetColorTableParameterivSGI", Convention = CallingConvention.Winapi)]
-        public partial void GetColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] GetColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        public partial void GetColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] ColorTableParameterPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
         public unsafe T0 GetColorTable<T0>([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI format, [Flow(FlowDirection.In)] SGI type) where T0 : unmanaged
         {
@@ -335,7 +335,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
             return silkRet;
         }
 
-        public unsafe float GetColorTableParameter([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] GetColorTableParameterPNameSGI pname)
+        public unsafe float GetColorTableParameter([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] ColorTableParameterPName pname)
         {
             // NonKhrReturnTypeOverloader
             GetColorTableParameter(target, pname, out float silkRet);
@@ -349,7 +349,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
             return silkRet;
         }
 
-        public unsafe float GetColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] GetColorTableParameterPNameSGI pname)
+        public unsafe float GetColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] ColorTableParameterPName pname)
         {
             // NonKhrReturnTypeOverloader
             GetColorTableParameter(target, pname, out float silkRet);

@@ -245,6 +245,11 @@ namespace Silk.NET.Windowing.Glfw
             }
         }
 
+        protected override bool CoreTopMost {
+            get => _glfw.GetWindowAttrib(_glfwWindow, WindowAttributeGetter.Floating);
+            set => _glfw.SetWindowAttrib(_glfwWindow, WindowAttributeSetter.Floating, value);
+        }
+
         protected override bool IsClosingSettable
         {
             set
@@ -352,6 +357,9 @@ namespace Silk.NET.Windowing.Glfw
 
             // Set transparent framebuffer
             _glfw.WindowHint(WindowHintBool.TransparentFramebuffer, opts.TransparentFramebuffer);
+            
+            // Set topmost window
+            _glfw.WindowHint(WindowHintBool.Floating, opts.TopMost);
 
             // Set multisample samples
             _glfw.WindowHint(WindowHintInt.Samples, opts.Samples ?? GLFW.Glfw.DontCare);
@@ -717,6 +725,16 @@ namespace Silk.NET.Windowing.Glfw
                 _onFramebufferResize = null;
                 _onFileDrop = null;
                 _onFocusChanged = null;
+            }
+        }
+
+        public new bool TopMost
+        {
+            get => ExtendedOptionsCache.TopMost;
+            set
+            {
+                _glfw.SetWindowAttrib(_glfwWindow, WindowAttributeSetter.Floating, value);
+                ExtendedOptionsCache.TopMost = value;
             }
         }
 

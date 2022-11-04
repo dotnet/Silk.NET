@@ -210,6 +210,16 @@ namespace Silk.NET.Windowing.Sdl
         }
 
         public bool TransparentFramebuffer => false; // doesn't look like SDL doesn't support this
+        
+        public bool TopMost
+        {
+            get => _extendedOptionsCache.TopMost;
+            set
+            {
+                Sdl.SetWindowAlwaysOnTop(SdlWindow, value ? SdlBool.True : SdlBool.False);
+                _extendedOptionsCache.TopMost = value;
+            }
+        }
 
         public IGLContext? SharedContext => _extendedOptionsCache.SharedContext;
 

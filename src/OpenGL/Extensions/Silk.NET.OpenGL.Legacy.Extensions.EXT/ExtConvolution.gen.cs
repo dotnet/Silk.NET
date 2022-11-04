@@ -216,13 +216,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void ConvolutionParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname, [Flow(FlowDirection.In)] float @params);
 
         [NativeApi(EntryPoint = "glConvolutionParameterfEXT", Convention = CallingConvention.Winapi)]
-        public partial void ConvolutionParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname, [Flow(FlowDirection.In)] float @params);
+        public partial void ConvolutionParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] ConvolutionParameter pname, [Flow(FlowDirection.In)] float @params);
 
         [NativeApi(EntryPoint = "glConvolutionParameterfEXT", Convention = CallingConvention.Winapi)]
         public partial void ConvolutionParameter([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] EXT pname, [Flow(FlowDirection.In)] float @params);
 
         [NativeApi(EntryPoint = "glConvolutionParameterfEXT", Convention = CallingConvention.Winapi)]
-        public partial void ConvolutionParameter([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname, [Flow(FlowDirection.In)] float @params);
+        public partial void ConvolutionParameter([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] ConvolutionParameter pname, [Flow(FlowDirection.In)] float @params);
 
         [NativeApi(EntryPoint = "glConvolutionParameterfvEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void ConvolutionParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
@@ -231,10 +231,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void ConvolutionParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
 
         [NativeApi(EntryPoint = "glConvolutionParameterfvEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ConvolutionParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        public unsafe partial void ConvolutionParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] ConvolutionParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
         [NativeApi(EntryPoint = "glConvolutionParameterfvEXT", Convention = CallingConvention.Winapi)]
-        public partial void ConvolutionParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
+        public partial void ConvolutionParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] ConvolutionParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
 
         [NativeApi(EntryPoint = "glConvolutionParameterfvEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void ConvolutionParameter([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
@@ -243,22 +243,22 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void ConvolutionParameter([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
 
         [NativeApi(EntryPoint = "glConvolutionParameterfvEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ConvolutionParameter([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        public unsafe partial void ConvolutionParameter([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] ConvolutionParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
         [NativeApi(EntryPoint = "glConvolutionParameterfvEXT", Convention = CallingConvention.Winapi)]
-        public partial void ConvolutionParameter([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
+        public partial void ConvolutionParameter([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] ConvolutionParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
 
         [NativeApi(EntryPoint = "glConvolutionParameteriEXT", Convention = CallingConvention.Winapi)]
         public partial void ConvolutionParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname, [Flow(FlowDirection.In)] int @params);
 
         [NativeApi(EntryPoint = "glConvolutionParameteriEXT", Convention = CallingConvention.Winapi)]
-        public partial void ConvolutionParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname, [Flow(FlowDirection.In)] int @params);
+        public partial void ConvolutionParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] ConvolutionParameter pname, [Flow(FlowDirection.In)] int @params);
 
         [NativeApi(EntryPoint = "glConvolutionParameteriEXT", Convention = CallingConvention.Winapi)]
         public partial void ConvolutionParameter([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] EXT pname, [Flow(FlowDirection.In)] int @params);
 
         [NativeApi(EntryPoint = "glConvolutionParameteriEXT", Convention = CallingConvention.Winapi)]
-        public partial void ConvolutionParameter([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname, [Flow(FlowDirection.In)] int @params);
+        public partial void ConvolutionParameter([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] ConvolutionParameter pname, [Flow(FlowDirection.In)] int @params);
 
         [NativeApi(EntryPoint = "glConvolutionParameterivEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void ConvolutionParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
@@ -267,10 +267,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void ConvolutionParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
 
         [NativeApi(EntryPoint = "glConvolutionParameterivEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ConvolutionParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void ConvolutionParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] ConvolutionParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glConvolutionParameterivEXT", Convention = CallingConvention.Winapi)]
-        public partial void ConvolutionParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
+        public partial void ConvolutionParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] ConvolutionParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
 
         [NativeApi(EntryPoint = "glConvolutionParameterivEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void ConvolutionParameter([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
@@ -279,10 +279,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void ConvolutionParameter([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
 
         [NativeApi(EntryPoint = "glConvolutionParameterivEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ConvolutionParameter([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void ConvolutionParameter([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] ConvolutionParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glConvolutionParameterivEXT", Convention = CallingConvention.Winapi)]
-        public partial void ConvolutionParameter([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
+        public partial void ConvolutionParameter([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] ConvolutionParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
 
         [NativeApi(EntryPoint = "glCopyConvolutionFilter1DEXT", Convention = CallingConvention.Winapi)]
         public partial void CopyConvolutionFilter1D([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT internalformat, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width);
@@ -363,10 +363,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void GetConvolutionParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
         [NativeApi(EntryPoint = "glGetConvolutionParameterfvEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetConvolutionParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetConvolutionParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] ConvolutionParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
         [NativeApi(EntryPoint = "glGetConvolutionParameterfvEXT", Convention = CallingConvention.Winapi)]
-        public partial void GetConvolutionParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+        public partial void GetConvolutionParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] ConvolutionParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
         [NativeApi(EntryPoint = "glGetConvolutionParameterfvEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetConvolutionParameter([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
@@ -375,10 +375,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void GetConvolutionParameter([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
         [NativeApi(EntryPoint = "glGetConvolutionParameterfvEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetConvolutionParameter([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetConvolutionParameter([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] ConvolutionParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
         [NativeApi(EntryPoint = "glGetConvolutionParameterfvEXT", Convention = CallingConvention.Winapi)]
-        public partial void GetConvolutionParameter([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+        public partial void GetConvolutionParameter([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] ConvolutionParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
         [NativeApi(EntryPoint = "glGetConvolutionParameterivEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetConvolutionParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
@@ -387,10 +387,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void GetConvolutionParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetConvolutionParameterivEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetConvolutionParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetConvolutionParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] ConvolutionParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetConvolutionParameterivEXT", Convention = CallingConvention.Winapi)]
-        public partial void GetConvolutionParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        public partial void GetConvolutionParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] ConvolutionParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetConvolutionParameterivEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetConvolutionParameter([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
@@ -399,10 +399,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void GetConvolutionParameter([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetConvolutionParameterivEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetConvolutionParameter([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetConvolutionParameter([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] ConvolutionParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetConvolutionParameterivEXT", Convention = CallingConvention.Winapi)]
-        public partial void GetConvolutionParameter([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        public partial void GetConvolutionParameter([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] ConvolutionParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetSeparableFilterEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetSeparableFilter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* row, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* column, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* span);
@@ -851,7 +851,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             return silkRet;
         }
 
-        public unsafe float GetConvolutionParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname)
+        public unsafe float GetConvolutionParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] ConvolutionParameter pname)
         {
             // NonKhrReturnTypeOverloader
             GetConvolutionParameter(target, pname, out float silkRet);
@@ -865,7 +865,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             return silkRet;
         }
 
-        public unsafe float GetConvolutionParameter([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname)
+        public unsafe float GetConvolutionParameter([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] ConvolutionParameter pname)
         {
             // NonKhrReturnTypeOverloader
             GetConvolutionParameter(target, pname, out float silkRet);

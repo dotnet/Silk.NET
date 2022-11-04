@@ -39,10 +39,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void TextureMaterial([Flow(FlowDirection.In)] EXT face, [Flow(FlowDirection.In)] MaterialParameter mode);
 
         [NativeApi(EntryPoint = "glTextureMaterialEXT", Convention = CallingConvention.Winapi)]
-        public partial void TextureMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] EXT mode);
+        public partial void TextureMaterial([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] EXT mode);
 
         [NativeApi(EntryPoint = "glTextureMaterialEXT", Convention = CallingConvention.Winapi)]
-        public partial void TextureMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter mode);
+        public partial void TextureMaterial([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] MaterialParameter mode);
 
         public ExtLightTexture(INativeContext ctx)
             : base(ctx)

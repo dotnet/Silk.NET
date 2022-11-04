@@ -32,7 +32,9 @@ namespace Silk.NET.Vulkan.Video
             uint? numRefIdxActiveOverrideFlag = null,
             uint? mvdL1ZeroFlag = null,
             uint? cabacInitFlag = null,
-            uint? sliceDeblockingFilterDisableFlag = null,
+            uint? cuChromaQpOffsetEnabledFlag = null,
+            uint? deblockingFilterOverrideFlag = null,
+            uint? sliceDeblockingFilterDisabledFlag = null,
             uint? collocatedFromL0Flag = null,
             uint? sliceLoopFilterAcrossSlicesEnabledFlag = null
         ) : this()
@@ -92,9 +94,19 @@ namespace Silk.NET.Vulkan.Video
                 CabacInitFlag = cabacInitFlag.Value;
             }
 
-            if (sliceDeblockingFilterDisableFlag is not null)
+            if (cuChromaQpOffsetEnabledFlag is not null)
             {
-                SliceDeblockingFilterDisableFlag = sliceDeblockingFilterDisableFlag.Value;
+                CuChromaQpOffsetEnabledFlag = cuChromaQpOffsetEnabledFlag.Value;
+            }
+
+            if (deblockingFilterOverrideFlag is not null)
+            {
+                DeblockingFilterOverrideFlag = deblockingFilterOverrideFlag.Value;
+            }
+
+            if (sliceDeblockingFilterDisabledFlag is not null)
+            {
+                SliceDeblockingFilterDisabledFlag = sliceDeblockingFilterDisabledFlag.Value;
             }
 
             if (collocatedFromL0Flag is not null)
@@ -199,7 +211,7 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 10)) | (uint)(((uint)(value) & 0x1u) << 10));
         }
 
-        public uint SliceDeblockingFilterDisableFlag
+        public uint CuChromaQpOffsetEnabledFlag
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 11) & 0x1u);
@@ -207,7 +219,7 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 11)) | (uint)(((uint)(value) & 0x1u) << 11));
         }
 
-        public uint CollocatedFromL0Flag
+        public uint DeblockingFilterOverrideFlag
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 12) & 0x1u);
@@ -215,12 +227,28 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 12)) | (uint)(((uint)(value) & 0x1u) << 12));
         }
 
-        public uint SliceLoopFilterAcrossSlicesEnabledFlag
+        public uint SliceDeblockingFilterDisabledFlag
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 13) & 0x1u);
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 13)) | (uint)(((uint)(value) & 0x1u) << 13));
+        }
+
+        public uint CollocatedFromL0Flag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 14) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 14)) | (uint)(((uint)(value) & 0x1u) << 14));
+        }
+
+        public uint SliceLoopFilterAcrossSlicesEnabledFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 15) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 15)) | (uint)(((uint)(value) & 0x1u) << 15));
         }
     }
 }
