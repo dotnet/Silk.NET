@@ -23,24 +23,26 @@ namespace Silk.NET.Vulkan.Video
         (
             StdVideoH264SpsFlags? flags = null,
             StdVideoH264ProfileIdc? profileIdc = null,
-            StdVideoH264Level? levelIdc = null,
-            byte? seqParameterSetId = null,
+            StdVideoH264LevelIdc? levelIdc = null,
             StdVideoH264ChromaFormatIdc? chromaFormatIdc = null,
+            byte? seqParameterSetId = null,
             byte? bitDepthLumaMinus8 = null,
             byte? bitDepthChromaMinus8 = null,
             byte? log2MaxFrameNumMinus4 = null,
             StdVideoH264PocType? picOrderCntType = null,
-            byte? log2MaxPicOrderCntLsbMinus4 = null,
             int? offsetForNonRefPic = null,
             int? offsetForTopToBottomField = null,
+            byte? log2MaxPicOrderCntLsbMinus4 = null,
             byte? numRefFramesInPicOrderCntCycle = null,
             byte? maxNumRefFrames = null,
+            byte? reserved1 = null,
             uint? picWidthInMbsMinus1 = null,
             uint? picHeightInMapUnitsMinus1 = null,
             uint? frameCropLeftOffset = null,
             uint? frameCropRightOffset = null,
             uint? frameCropTopOffset = null,
             uint? frameCropBottomOffset = null,
+            uint? reserved2 = null,
             int* pOffsetForRefFrame = null,
             StdVideoH264ScalingLists* pScalingLists = null,
             StdVideoH264SequenceParameterSetVui* pSequenceParameterSetVui = null
@@ -61,14 +63,14 @@ namespace Silk.NET.Vulkan.Video
                 LevelIdc = levelIdc.Value;
             }
 
-            if (seqParameterSetId is not null)
-            {
-                SeqParameterSetId = seqParameterSetId.Value;
-            }
-
             if (chromaFormatIdc is not null)
             {
                 ChromaFormatIdc = chromaFormatIdc.Value;
+            }
+
+            if (seqParameterSetId is not null)
+            {
+                SeqParameterSetId = seqParameterSetId.Value;
             }
 
             if (bitDepthLumaMinus8 is not null)
@@ -91,11 +93,6 @@ namespace Silk.NET.Vulkan.Video
                 PicOrderCntType = picOrderCntType.Value;
             }
 
-            if (log2MaxPicOrderCntLsbMinus4 is not null)
-            {
-                Log2MaxPicOrderCntLsbMinus4 = log2MaxPicOrderCntLsbMinus4.Value;
-            }
-
             if (offsetForNonRefPic is not null)
             {
                 OffsetForNonRefPic = offsetForNonRefPic.Value;
@@ -106,6 +103,11 @@ namespace Silk.NET.Vulkan.Video
                 OffsetForTopToBottomField = offsetForTopToBottomField.Value;
             }
 
+            if (log2MaxPicOrderCntLsbMinus4 is not null)
+            {
+                Log2MaxPicOrderCntLsbMinus4 = log2MaxPicOrderCntLsbMinus4.Value;
+            }
+
             if (numRefFramesInPicOrderCntCycle is not null)
             {
                 NumRefFramesInPicOrderCntCycle = numRefFramesInPicOrderCntCycle.Value;
@@ -114,6 +116,11 @@ namespace Silk.NET.Vulkan.Video
             if (maxNumRefFrames is not null)
             {
                 MaxNumRefFrames = maxNumRefFrames.Value;
+            }
+
+            if (reserved1 is not null)
+            {
+                Reserved1 = reserved1.Value;
             }
 
             if (picWidthInMbsMinus1 is not null)
@@ -146,6 +153,11 @@ namespace Silk.NET.Vulkan.Video
                 FrameCropBottomOffset = frameCropBottomOffset.Value;
             }
 
+            if (reserved2 is not null)
+            {
+                Reserved2 = reserved2.Value;
+            }
+
             if (pOffsetForRefFrame is not null)
             {
                 POffsetForRefFrame = pOffsetForRefFrame;
@@ -173,20 +185,20 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Name", "profile_idc")]
         public StdVideoH264ProfileIdc ProfileIdc;
 
-        [NativeName("Type", "StdVideoH264Level")]
-        [NativeName("Type.Name", "StdVideoH264Level")]
+        [NativeName("Type", "StdVideoH264LevelIdc")]
+        [NativeName("Type.Name", "StdVideoH264LevelIdc")]
         [NativeName("Name", "level_idc")]
-        public StdVideoH264Level LevelIdc;
-
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "seq_parameter_set_id")]
-        public byte SeqParameterSetId;
+        public StdVideoH264LevelIdc LevelIdc;
 
         [NativeName("Type", "StdVideoH264ChromaFormatIdc")]
         [NativeName("Type.Name", "StdVideoH264ChromaFormatIdc")]
         [NativeName("Name", "chroma_format_idc")]
         public StdVideoH264ChromaFormatIdc ChromaFormatIdc;
+
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "seq_parameter_set_id")]
+        public byte SeqParameterSetId;
 
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
@@ -208,11 +220,6 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Name", "pic_order_cnt_type")]
         public StdVideoH264PocType PicOrderCntType;
 
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "log2_max_pic_order_cnt_lsb_minus4")]
-        public byte Log2MaxPicOrderCntLsbMinus4;
-
         [NativeName("Type", "int32_t")]
         [NativeName("Type.Name", "int32_t")]
         [NativeName("Name", "offset_for_non_ref_pic")]
@@ -225,6 +232,11 @@ namespace Silk.NET.Vulkan.Video
 
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "log2_max_pic_order_cnt_lsb_minus4")]
+        public byte Log2MaxPicOrderCntLsbMinus4;
+
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
         [NativeName("Name", "num_ref_frames_in_pic_order_cnt_cycle")]
         public byte NumRefFramesInPicOrderCntCycle;
 
@@ -232,6 +244,11 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type.Name", "uint8_t")]
         [NativeName("Name", "max_num_ref_frames")]
         public byte MaxNumRefFrames;
+
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "reserved1")]
+        public byte Reserved1;
 
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
@@ -262,6 +279,11 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "frame_crop_bottom_offset")]
         public uint FrameCropBottomOffset;
+
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "reserved2")]
+        public uint Reserved2;
 
         [NativeName("Type", "const int32_t *")]
         [NativeName("Type.Name", "const int32_t *")]

@@ -364,6 +364,8 @@ namespace Silk.NET.OpenCL
         SchedulingControlsCapabilitiesArm = 0x41E4,
         [NativeName("Name", "CL_DEVICE_SUPPORTED_REGISTER_ALLOCATIONS_ARM")]
         SupportedRegisterAllocationsArm = 0x41EB,
+        [NativeName("Name", "CL_DEVICE_MAX_WARP_COUNT_ARM")]
+        MaxWarpCountArm = 0x41EA,
         [NativeName("Name", "CL_DEVICE_CXX_FOR_OPENCL_NUMERIC_VERSION_EXT")]
         CxxForOpenclNumericVersionExt = 0x4230,
         [NativeName("Name", "CL_DEVICE_NUMERIC_VERSION_KHR")]
@@ -420,5 +422,9 @@ namespace Silk.NET.OpenCL
         DoubleFPAtomicCapabilitiesExt = 0x4232,
         [NativeName("Name", "CL_DEVICE_HALF_FP_ATOMIC_CAPABILITIES_EXT")]
         HalfFPAtomicCapabilitiesExt = 0x4233,
+        [NativeName("Name", "CL_DEVICE_JOB_SLOTS_ARM")]
+        JobSlotsArm = 0x41E0,
+        [NativeName("Name", "CL_DEVICE_MUTABLE_DISPATCH_CAPABILITIES_KHR")]
+        MutableDispatchCapabilitiesKhr = 0x12B0,
     }
 }

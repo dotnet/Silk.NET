@@ -100,13 +100,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
             thisApi.FragmentMaterial(face, pname, in @params.GetPinnableReference());
         }
 
-        public static unsafe void FragmentMaterial(this SgixFragmentLighting thisApi, [Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+        public static unsafe void FragmentMaterial(this SgixFragmentLighting thisApi, [Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
         {
             // SpanOverloader
             thisApi.FragmentMaterial(face, pname, in @params.GetPinnableReference());
         }
 
-        public static unsafe void FragmentMaterial(this SgixFragmentLighting thisApi, [Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+        public static unsafe void FragmentMaterial(this SgixFragmentLighting thisApi, [Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
         {
             // SpanOverloader
             thisApi.FragmentMaterial(face, pname, in @params.GetPinnableReference());
@@ -124,13 +124,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
             thisApi.FragmentMaterial(face, pname, in @params.GetPinnableReference());
         }
 
-        public static unsafe void FragmentMaterial(this SgixFragmentLighting thisApi, [Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
+        public static unsafe void FragmentMaterial(this SgixFragmentLighting thisApi, [Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
         {
             // SpanOverloader
             thisApi.FragmentMaterial(face, pname, in @params.GetPinnableReference());
         }
 
-        public static unsafe void FragmentMaterial(this SgixFragmentLighting thisApi, [Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
+        public static unsafe void FragmentMaterial(this SgixFragmentLighting thisApi, [Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
         {
             // SpanOverloader
             thisApi.FragmentMaterial(face, pname, in @params.GetPinnableReference());
@@ -196,13 +196,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
             thisApi.GetFragmentMaterial(face, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetFragmentMaterial(this SgixFragmentLighting thisApi, [Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetFragmentMaterial(this SgixFragmentLighting thisApi, [Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetFragmentMaterial(face, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetFragmentMaterial(this SgixFragmentLighting thisApi, [Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetFragmentMaterial(this SgixFragmentLighting thisApi, [Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetFragmentMaterial(face, pname, out @params.GetPinnableReference());
@@ -220,13 +220,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
             thisApi.GetFragmentMaterial(face, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetFragmentMaterial(this SgixFragmentLighting thisApi, [Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetFragmentMaterial(this SgixFragmentLighting thisApi, [Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetFragmentMaterial(face, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetFragmentMaterial(this SgixFragmentLighting thisApi, [Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetFragmentMaterial(this SgixFragmentLighting thisApi, [Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetFragmentMaterial(face, pname, out @params.GetPinnableReference());

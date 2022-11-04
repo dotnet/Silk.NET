@@ -246,7 +246,7 @@ namespace Silk.NET.BuildTools.Common.Functions
                 }
                 else if (parameter.Count.IsComputed)
                 {
-                    var parameterList = string.Join(", ", parameter.Count.ComputedFromNames);
+                    var parameterList = string.Join(", ", parameter.Count.ComputedFromNames).Replace("\\", "\\\\");
                     attributes.Add($"Count(Computed = \"{parameterList}\")");
                 }
                 else if (parameter.Count.IsReference)

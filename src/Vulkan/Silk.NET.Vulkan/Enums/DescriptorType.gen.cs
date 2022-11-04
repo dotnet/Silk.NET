@@ -46,6 +46,8 @@ namespace Silk.NET.Vulkan
         SampleWeightImageQCom = 1000440000,
         [NativeName("Name", "VK_DESCRIPTOR_TYPE_BLOCK_MATCH_IMAGE_QCOM")]
         BlockMatchImageQCom = 1000440001,
+        [NativeName("Name", "VK_DESCRIPTOR_TYPE_MUTABLE_EXT")]
+        MutableExt = 1000351000,
         [NativeName("Name", "VK_DESCRIPTOR_TYPE_INLINE_UNIFORM_BLOCK")]
         InlineUniformBlock = 1000138000,
     }

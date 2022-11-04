@@ -45,8 +45,8 @@ namespace Silk.NET.Core.Win32Extras
         public uint Version;
 
         [FieldOffset(0)]
-        [NativeName("Type", "struct (unnamed struct at D:/Windows Kits/10/Include/10.0.22621.0/shared\\evntrace.h:1121:9)")]
-        [NativeName("Type.Name", "struct (unnamed struct at D:/Windows Kits/10/Include/10.0.22621.0/shared\\evntrace.h:1121:9)")]
+        [NativeName("Type", "struct (unnamed struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared\\evntrace.h:1121:9)")]
+        [NativeName("Type.Name", "struct (unnamed struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared\\evntrace.h:1121:9)")]
         [NativeName("Name", "VersionDetail")]
         public TraceLogfileHeader64Union1VersionDetail VersionDetail;
     }

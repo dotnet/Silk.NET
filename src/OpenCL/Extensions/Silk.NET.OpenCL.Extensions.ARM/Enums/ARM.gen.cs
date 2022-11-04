@@ -61,6 +61,14 @@ namespace Silk.NET.OpenCL.Extensions.ARM
         RegisterAllocation = 0x10,
         [NativeName("Name", "CL_DEVICE_SCHEDULING_REGISTER_ALLOCATION_ARM")]
         DeviceSchedulingRegisterAllocationArm = 0x10,
+        [NativeName("Name", "CL_DEVICE_SCHEDULING_WARP_THROTTLING_ARM")]
+        WarpThrottling = 0x20,
+        [NativeName("Name", "CL_DEVICE_SCHEDULING_WARP_THROTTLING_ARM")]
+        DeviceSchedulingWarpThrottlingArm = 0x20,
+        [NativeName("Name", "CL_DEVICE_SCHEDULING_COMPUTE_UNIT_BATCH_QUEUE_SIZE_ARM")]
+        ComputeUnitBatchQueueSize = 0x40,
+        [NativeName("Name", "CL_DEVICE_SCHEDULING_COMPUTE_UNIT_BATCH_QUEUE_SIZE_ARM")]
+        DeviceSchedulingComputeUnitBatchQueueSizeArm = 0x40,
         [NativeName("Name", "CL_DEVICE_SVM_COARSE_GRAIN_BUFFER_ARM")]
         CoarseGrainBuffer = 0x1,
         [NativeName("Name", "CL_DEVICE_SVM_COARSE_GRAIN_BUFFER_ARM")]
@@ -159,10 +167,18 @@ namespace Silk.NET.OpenCL.Extensions.ARM
         SupportedRegisterAllocationsArm = 0x41EB,
         [NativeName("Name", "CL_DEVICE_SUPPORTED_REGISTER_ALLOCATIONS_ARM")]
         DeviceSupportedRegisterAllocationsArm = 0x41EB,
+        [NativeName("Name", "CL_DEVICE_MAX_WARP_COUNT_ARM")]
+        MaxWarpCountArm = 0x41EA,
+        [NativeName("Name", "CL_DEVICE_MAX_WARP_COUNT_ARM")]
+        DeviceMaxWarpCountArm = 0x41EA,
         [NativeName("Name", "CL_DEVICE_CONTROLLED_TERMINATION_CAPABILITIES_ARM")]
         ControlledTerminationCapabilitiesArm = 0x41EE,
         [NativeName("Name", "CL_DEVICE_CONTROLLED_TERMINATION_CAPABILITIES_ARM")]
         DeviceControlledTerminationCapabilitiesArm = 0x41EE,
+        [NativeName("Name", "CL_DEVICE_JOB_SLOTS_ARM")]
+        JobSlotsArm = 0x41E0,
+        [NativeName("Name", "CL_DEVICE_JOB_SLOTS_ARM")]
+        DeviceJobSlotsArm = 0x41E0,
         [NativeName("Name", "CL_COMMAND_TERMINATED_ITSELF_WITH_FAILURE_ARM")]
         CommandTerminatedItselfWithFailureArm = unchecked((int) 0xFFFFFFFFFFFFFBAC),
         [NativeName("Name", "CL_EVENT_COMMAND_TERMINATION_REASON_ARM")]
@@ -177,6 +193,16 @@ namespace Silk.NET.OpenCL.Extensions.ARM
         WorkgroupBatchSizeModifierArm = 0x41E6,
         [NativeName("Name", "CL_KERNEL_EXEC_INFO_WORKGROUP_BATCH_SIZE_MODIFIER_ARM")]
         KernelExecInfoWorkgroupBatchSizeModifierArm = 0x41E6,
+        [NativeName("Name", "CL_KERNEL_EXEC_INFO_WARP_COUNT_LIMIT_ARM")]
+        WarpCountLimitArm = 0x41E8,
+        [NativeName("Name", "CL_KERNEL_EXEC_INFO_WARP_COUNT_LIMIT_ARM")]
+        KernelExecInfoWarpCountLimitArm = 0x41E8,
+        [NativeName("Name", "CL_KERNEL_EXEC_INFO_COMPUTE_UNIT_MAX_QUEUED_BATCHES_ARM")]
+        ComputeUnitMaxQueuedBatchesArm = 0x41F1,
+        [NativeName("Name", "CL_KERNEL_EXEC_INFO_COMPUTE_UNIT_MAX_QUEUED_BATCHES_ARM")]
+        KernelExecInfoComputeUnitMaxQueuedBatchesArm = 0x41F1,
+        [NativeName("Name", "CL_KERNEL_MAX_WARP_COUNT_ARM")]
+        KernelMaxWarpCountArm = 0x41E9,
         [NativeName("Name", "CL_MEM_PROTECTED_ALLOC_ARM")]
         ProtectedAllocArm = unchecked((int) 0x1000000000),
         [NativeName("Name", "CL_MEM_PROTECTED_ALLOC_ARM")]
@@ -193,6 +219,10 @@ namespace Silk.NET.OpenCL.Extensions.ARM
         DeferredFlushArm = 0x41EC,
         [NativeName("Name", "CL_QUEUE_DEFERRED_FLUSH_ARM")]
         QueueDeferredFlushArm = 0x41EC,
+        [NativeName("Name", "CL_QUEUE_JOB_SLOT_ARM")]
+        JobSlotArm = 0x41E1,
+        [NativeName("Name", "CL_QUEUE_JOB_SLOT_ARM")]
+        QueueJobSlotArm = 0x41E1,
         [NativeName("Name", "CL_PRINTF_CALLBACK_ARM")]
         ContextPrintfCallbackArm = 0x40B0,
         [NativeName("Name", "CL_PRINTF_BUFFERSIZE_ARM")]

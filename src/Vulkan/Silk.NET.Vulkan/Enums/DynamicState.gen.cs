@@ -86,6 +86,68 @@ namespace Silk.NET.Vulkan
         PrimitiveRestartEnableExt = 1000377004,
         [NativeName("Name", "VK_DYNAMIC_STATE_COLOR_WRITE_ENABLE_EXT")]
         ColorWriteEnableExt = 1000381000,
+        [NativeName("Name", "VK_DYNAMIC_STATE_TESSELLATION_DOMAIN_ORIGIN_EXT")]
+        TessellationDomainOriginExt = 1000455002,
+        [NativeName("Name", "VK_DYNAMIC_STATE_DEPTH_CLAMP_ENABLE_EXT")]
+        DepthClampEnableExt = 1000455003,
+        [NativeName("Name", "VK_DYNAMIC_STATE_POLYGON_MODE_EXT")]
+        PolygonModeExt = 1000455004,
+        [NativeName("Name", "VK_DYNAMIC_STATE_RASTERIZATION_SAMPLES_EXT")]
+        RasterizationSamplesExt = 1000455005,
+        [NativeName("Name", "VK_DYNAMIC_STATE_SAMPLE_MASK_EXT")]
+        SampleMaskExt = 1000455006,
+        [NativeName("Name", "VK_DYNAMIC_STATE_ALPHA_TO_COVERAGE_ENABLE_EXT")]
+        AlphaToCoverageEnableExt = 1000455007,
+        [NativeName("Name", "VK_DYNAMIC_STATE_ALPHA_TO_ONE_ENABLE_EXT")]
+        AlphaToOneEnableExt = 1000455008,
+        [NativeName("Name", "VK_DYNAMIC_STATE_LOGIC_OP_ENABLE_EXT")]
+        LogicOpEnableExt = 1000455009,
+        [NativeName("Name", "VK_DYNAMIC_STATE_COLOR_BLEND_ENABLE_EXT")]
+        ColorBlendEnableExt = 1000455010,
+        [NativeName("Name", "VK_DYNAMIC_STATE_COLOR_BLEND_EQUATION_EXT")]
+        ColorBlendEquationExt = 1000455011,
+        [NativeName("Name", "VK_DYNAMIC_STATE_COLOR_WRITE_MASK_EXT")]
+        ColorWriteMaskExt = 1000455012,
+        [NativeName("Name", "VK_DYNAMIC_STATE_RASTERIZATION_STREAM_EXT")]
+        RasterizationStreamExt = 1000455013,
+        [NativeName("Name", "VK_DYNAMIC_STATE_CONSERVATIVE_RASTERIZATION_MODE_EXT")]
+        ConservativeRasterizationModeExt = 1000455014,
+        [NativeName("Name", "VK_DYNAMIC_STATE_EXTRA_PRIMITIVE_OVERESTIMATION_SIZE_EXT")]
+        ExtraPrimitiveOverestimationSizeExt = 1000455015,
+        [NativeName("Name", "VK_DYNAMIC_STATE_DEPTH_CLIP_ENABLE_EXT")]
+        DepthClipEnableExt = 1000455016,
+        [NativeName("Name", "VK_DYNAMIC_STATE_SAMPLE_LOCATIONS_ENABLE_EXT")]
+        SampleLocationsEnableExt = 1000455017,
+        [NativeName("Name", "VK_DYNAMIC_STATE_COLOR_BLEND_ADVANCED_EXT")]
+        ColorBlendAdvancedExt = 1000455018,
+        [NativeName("Name", "VK_DYNAMIC_STATE_PROVOKING_VERTEX_MODE_EXT")]
+        ProvokingVertexModeExt = 1000455019,
+        [NativeName("Name", "VK_DYNAMIC_STATE_LINE_RASTERIZATION_MODE_EXT")]
+        LineRasterizationModeExt = 1000455020,
+        [NativeName("Name", "VK_DYNAMIC_STATE_LINE_STIPPLE_ENABLE_EXT")]
+        LineStippleEnableExt = 1000455021,
+        [NativeName("Name", "VK_DYNAMIC_STATE_DEPTH_CLIP_NEGATIVE_ONE_TO_ONE_EXT")]
+        DepthClipNegativeOneToOneExt = 1000455022,
+        [NativeName("Name", "VK_DYNAMIC_STATE_VIEWPORT_W_SCALING_ENABLE_NV")]
+        ViewportWScalingEnableNV = 1000455023,
+        [NativeName("Name", "VK_DYNAMIC_STATE_VIEWPORT_SWIZZLE_NV")]
+        ViewportSwizzleNV = 1000455024,
+        [NativeName("Name", "VK_DYNAMIC_STATE_COVERAGE_TO_COLOR_ENABLE_NV")]
+        CoverageToColorEnableNV = 1000455025,
+        [NativeName("Name", "VK_DYNAMIC_STATE_COVERAGE_TO_COLOR_LOCATION_NV")]
+        CoverageToColorLocationNV = 1000455026,
+        [NativeName("Name", "VK_DYNAMIC_STATE_COVERAGE_MODULATION_MODE_NV")]
+        CoverageModulationModeNV = 1000455027,
+        [NativeName("Name", "VK_DYNAMIC_STATE_COVERAGE_MODULATION_TABLE_ENABLE_NV")]
+        CoverageModulationTableEnableNV = 1000455028,
+        [NativeName("Name", "VK_DYNAMIC_STATE_COVERAGE_MODULATION_TABLE_NV")]
+        CoverageModulationTableNV = 1000455029,
+        [NativeName("Name", "VK_DYNAMIC_STATE_SHADING_RATE_IMAGE_ENABLE_NV")]
+        ShadingRateImageEnableNV = 1000455030,
+        [NativeName("Name", "VK_DYNAMIC_STATE_REPRESENTATIVE_FRAGMENT_TEST_ENABLE_NV")]
+        RepresentativeFragmentTestEnableNV = 1000455031,
+        [NativeName("Name", "VK_DYNAMIC_STATE_COVERAGE_REDUCTION_MODE_NV")]
+        CoverageReductionModeNV = 1000455032,
         [NativeName("Name", "VK_DYNAMIC_STATE_CULL_MODE")]
         CullMode = 1000267000,
         [NativeName("Name", "VK_DYNAMIC_STATE_FRONT_FACE")]

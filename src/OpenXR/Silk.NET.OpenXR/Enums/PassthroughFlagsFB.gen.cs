@@ -18,7 +18,12 @@ namespace Silk.NET.OpenXR
         [Obsolete("Deprecated in favour of \"IsRunningATCreationBitFB\"")]
         [NativeName("Name", "XR_PASSTHROUGH_IS_RUNNING_AT_CREATION_BIT_FB")]
         PassthroughIsRunningATCreationBitFB = 1,
+        [Obsolete("Deprecated in favour of \"LayerDepthBitFB\"")]
+        [NativeName("Name", "XR_PASSTHROUGH_LAYER_DEPTH_BIT_FB")]
+        PassthroughLayerDepthBitFB = 2,
         [NativeName("Name", "XR_PASSTHROUGH_IS_RUNNING_AT_CREATION_BIT_FB")]
         IsRunningATCreationBitFB = 1,
+        [NativeName("Name", "XR_PASSTHROUGH_LAYER_DEPTH_BIT_FB")]
+        LayerDepthBitFB = 2,
     }
 }
