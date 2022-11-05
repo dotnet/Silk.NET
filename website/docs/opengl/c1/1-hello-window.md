@@ -124,7 +124,7 @@ _window.Run();
 
 And that's it! Run the program and you should hopefully see a window.
 
-![Window](../../images/opengl/chapter1/window1.png)
+![Window](../../../images/opengl/chapter1/window1.png)
 
 ## Window Events
 The window we've just created has several events we can subscribe to, such as loading and rendering, which are key for your program to work properly.
@@ -159,7 +159,7 @@ _window.Render += OnRender;
 
 Launch your program again and you will see that... nothing has changed. Good! That means it's working correctly. Try adding some logs in the load, update, and render methods to see exactly when they are called.
 
-<img src="../../images/opengl/chapter1/loading-rendering.png" title="Load, update, and render demo." alt="Load, update, and render demo" style="width: 100px" />
+<img src="../../../images/opengl/chapter1/loading-rendering.png" title="Load, update, and render demo." alt="Load, update, and render demo" style="width: 100px" />
 
 We're now ready to handle some input!
 
