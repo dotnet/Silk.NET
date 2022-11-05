@@ -90,6 +90,8 @@ public static class Program
             )
             .AddShortcode<FancyImageShortCode>("FancyImage")
             .AddShortcode<CaptionShortCode>("Caption")
+            .AddShortcode<InfoShortCode>("Info")
+            .AddShortcode<WarningShortCode>("Warning")
             .RunAsync();
     }
 }

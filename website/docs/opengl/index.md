@@ -4,7 +4,8 @@
         "Name": "OpenGL Tutorials",
         "Url": "index.html",
         "Children": [
-            {"Url": "::1-hello-window.md"}
+            {"Url": "::c1/1-hello-window.md"},
+            {"Url": "::c1/2-hello-quad.md"}
         ],
         "Metadata": {
             "theme.silk.nav.big_dropdown.icon.class": "icon icon-shape bg-gradient-primary rounded-circle text-white",

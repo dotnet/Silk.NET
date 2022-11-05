@@ -13,8 +13,7 @@
 ---
 
 # 1.2 - Hello Quad
-> [!Note]
-> You can view the source code for this tutorial [here.](https://github.com/dotnet/Silk.NET/blob/main/examples/CSharp/OpenGL%20Tutorials/Tutorial%201.2%20-%20Hello%20quad/Program.cs) This tutorial builds on the previous tutorial. If you haven't read it, you can do so [here.](1-hello-window.html)
+<?# Info "You can view the source code for this tutorial [here.](https://github.com/dotnet/Silk.NET/blob/main/examples/CSharp/OpenGL%20Tutorials/Tutorial%201.2%20-%20Hello%20quad/Program.cs) This tutorial builds on the previous tutorial. If you haven't read it, you can do so [here.](1-hello-window.html)" /?>
 
 Let's draw something on-screen! In this tutorial, you'll learn:
 
@@ -49,8 +48,7 @@ _gl = GL.GetApi(_window);
 
 What are we doing here? Silk.NET requires you to keep a **reference** to the OpenGL API. If you've used or seen OpenGL in C, you'll notice that this is different to the way that it is done there. This is done so that you can more easily keep track of multiple contexts. If you don't know what that is, don't worry about it for now, we won't be using it in these tutorials.
 
-> [!Warning]
-> You may think you can call `GL.GetApi()` in each class that uses OpenGL, but you can't. `GetApi()` returns a **new** instance of the OpenGL API, and you are instead expected to pass around the existing GL reference. In essence, unless you are creating multiple contexts, you should only call `GL.GetApi()` **once** per application.
+<?# Warning "You may think you can call `GL.GetApi()` in each class that uses OpenGL, but you can't. `GetApi()` returns a **new** instance of the OpenGL API, and you are instead expected to pass around the existing GL reference. In essence, unless you are creating multiple contexts, you should only call `GL.GetApi()` **once** per application." /?>
 
 Now, run your application again. If all is good, you should see no change. Awesome! Let's do our first steps in OpenGL: Clearing the window.
 
@@ -94,10 +92,18 @@ Run your application again, and you should see a lovely sky blue window!
 
 ![Sky blue window](../../../images/opengl/chapter1/cornflower-window.png)
 
-Congrats! You've done your first thing in OpenGL!
+Congrats! You've done your first thing in OpenGL! Didn't work? Check the [source code](sources/2.2-clear-window.txt) for this section here.
 
 But - how does OpenGL know to color the window blue? Sure, we've told it we want blue - but we only did that once... How does it know to keep using blue?
 
 Well, this is because OpenGL is a **state machine**.
 
 ## OpenGL: The state machine
+Before we can continue further, you'll have to get used to the concept that OpenGL is a **state machine**. It's really hard to understand OpenGL if you don't understand this, so read closely.
+
+### What is a state machine?
+At its core, a state machine holds... state. You set the state of something, and it retains that state until you change it.
+
+This is exactly how OpenGL works. Once you set something, it will remain set until you change it. This counts for everything in OpenGL. Clear color, binding objects, etc etc, everything goes through the state machine. You can *manipulate* the current state, however you have to be wary at all times of what part of the state you are changing. Change the wrong thing and suddenly you program might not work!
+
+So, this explains why 
