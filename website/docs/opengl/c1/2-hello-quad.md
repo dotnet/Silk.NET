@@ -43,12 +43,12 @@ private static GL _gl;
 Finally, in your `OnLoad` method, add the following:
 
 ```cs
-_gl = GL.GetApi(_window);
+_gl = _window.CreateOpenGL();
 ```
 
 What are we doing here? Silk.NET requires you to keep a **reference** to the OpenGL API. If you've used or seen OpenGL in C, you'll notice that this is different to the way that it is done there. This is done so that you can more easily keep track of multiple contexts. If you don't know what that is, don't worry about it for now, we won't be using it in these tutorials.
 
-<?# Warning "You may think you can call `GL.GetApi()` in each class that uses OpenGL, but you can't. `GetApi()` returns a **new** instance of the OpenGL API, and you are instead expected to pass around the existing GL reference. In essence, unless you are creating multiple contexts, you should only call `GL.GetApi()` **once** per application." /?>
+<?# Info "If you take a look at the source in the Silk.NET samples repository, you will notice that it uses `_gl = GL.GetApi(_window)`. This is another way to get the GL API, however when using Silk.NET windowing, it's recommended that you use `_window.CreateOpenGL()` instead." /?>
 
 Now, run your application again. If all is good, you should see no change. Awesome! Let's do our first steps in OpenGL: Clearing the window.
 
@@ -92,7 +92,7 @@ Run your application again, and you should see a lovely sky blue window!
 
 ![Sky blue window](../../../images/opengl/chapter1/cornflower-window.png)
 
-Congrats! You've done your first thing in OpenGL! Didn't work? Check the [source code](sources/2.2-clear-window.txt) for this section here.
+Congrats! You've done your first thing in OpenGL! Didn't work? Check the [source code](../sources/1.2.2-clear-window.html) for this section here.
 
 But - how does OpenGL know to color the window blue? Sure, we've told it we want blue - but we only did that once... How does it know to keep using blue?
 
@@ -106,4 +106,35 @@ At its core, a state machine holds... state. You set the state of something, and
 
 This is exactly how OpenGL works. Once you set something, it will remain set until you change it. This counts for everything in OpenGL. Clear color, binding objects, etc etc, everything goes through the state machine. You can *manipulate* the current state, however you have to be wary at all times of what part of the state you are changing. Change the wrong thing and suddenly you program might not work!
 
-So, this explains why 
+So, this explains why clearing the window works. You set the clear color, and it remains *as* the clear color until you change it.
+
+Now that we've got that, let's move on!
+
+## Vertex Array Objects (VAOs)
+A unique feature that modern OpenGL has is what is known as a Vertex Array Object, or VAO. It stores the state of various parameters, such as which buffers you wish to use, and the shader inputs.
+
+This is a required feature of modern OpenGL. You **must** have a VAO bound, otherwise your application won't work.
+
+Let's create the VAO!
+
+At the top of your class, add the following:
+
+```cs
+private static uint _vao;
+```
+
+Then, in your `OnLoad` method, add:
+
+```cs
+_vao = _gl.GenVertexArray();
+_gl.BindVertexArray(_vao);
+```
+
+What's going on here? First, we generate the VAO. Then, before we can use, or update it, we need to **bind** it.
+
+Binding is a term you will hear a lot with OpenGL, and in these tutorials too. Binding essentially means updating the current OpenGL state with the given object. So, in this example, when we bind the VAO, we update OpenGL's state so that the VAO we are currently using is now the VAO we have just created. If you don't bind an object before updating/using it, you will use or update the previously bound object instead, which can cause problems and headaches later.
+
+We're now ready to give the VAO some data. But first, we need a **vertex buffer**.
+
+## Vertex Buffer Objects (VBOs)
+Here is the part where we actually give the GPU some data it can work with. 
