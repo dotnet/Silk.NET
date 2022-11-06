@@ -5,7 +5,10 @@ using Silk.NET.WebGPU;
 using Silk.NET.WebGPU.Extensions.Disposal;
 using Silk.NET.WebGPU.Extensions.WGPU;
 using Silk.NET.Windowing;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.PixelFormats;
 using Buffer = Silk.NET.WebGPU.Buffer;
+using Color = Silk.NET.WebGPU.Color;
 
 namespace WebGPUTexturedQuad;
 
@@ -23,7 +26,7 @@ public static unsafe class WebGPUTexturedQuad
         public Vector2 Position;
         public Vector2 TexCoord;
     }
-    
+
     // ReSharper disable once InconsistentNaming
     private static WebGPU         wgpu            = null!;
     private static WebGPUDisposal _WebGpuDisposal = null!;
@@ -40,9 +43,17 @@ public static unsafe class WebGPUTexturedQuad
     private static Buffer* _VertexBuffer;
     private static ulong   _VertexBufferSize;
 
+    private static Texture*     _Texture;
+    private static TextureView* _TextureView;
+    private static Sampler*     _Sampler;
+    
+    private static BindGroup*   _BindGroup;
+
     private const string SHADER = @"
 struct VertexOutputs {
+    //The position of the vertex
     @builtin(position) position: vec4<f32>,
+    //The texture cooridnate of the vertex
     @location(0) tex_coord: vec2<f32>
 }
 
@@ -63,9 +74,14 @@ fn vs_main(
     return output;
 }
 
+//The texture we're sampling
+@group(0) @binding(0) var t: texture_2d<f32>;
+//The sampler we're using to sample the texture
+@group(0) @binding(1) var s: sampler;
+
 @fragment
 fn fs_main(input: FragmentInputs) -> @location(0) vec4<f32> {
-    return vec4<f32>(input.tex_coord.x, input.tex_coord.y, input.tex_coord.x, input.tex_coord.y);
+    return textureSample(t, s, input.tex_coord);
 }";
 
     public static void Main(string[] args)
@@ -183,8 +199,8 @@ fn fs_main(input: FragmentInputs) -> @location(0) vec4<f32> {
         };
         vertexAttributes[1] = new VertexAttribute
         {
-            Format = VertexFormat.Float32x2,
-            Offset = (ulong) sizeof(Vector2),
+            Format         = VertexFormat.Float32x2,
+            Offset         = (ulong) sizeof(Vector2),
             ShaderLocation = 1
         };
 
@@ -192,8 +208,8 @@ fn fs_main(input: FragmentInputs) -> @location(0) vec4<f32> {
         {
             Attributes     = vertexAttributes,
             AttributeCount = 2,
-            StepMode       = VertexStepMode.Vertex, 
-            ArrayStride = (ulong) sizeof(Vertex)
+            StepMode       = VertexStepMode.Vertex,
+            ArrayStride    = (ulong) sizeof(Vertex)
         };
         //Create vertex buffer layout
 
@@ -202,14 +218,14 @@ fn fs_main(input: FragmentInputs) -> @location(0) vec4<f32> {
             {
                 Color = new BlendComponent
                 {
-                    SrcFactor = BlendFactor.One,
-                    DstFactor = BlendFactor.Zero,
-                    Operation = BlendOperation.Add
+                    SrcFactor = BlendFactor.SrcAlpha,
+                    DstFactor = BlendFactor.OneMinusSrcAlpha,
+                    Operation = BlendOperation.None
                 },
                 Alpha = new BlendComponent
                 {
                     SrcFactor = BlendFactor.One,
-                    DstFactor = BlendFactor.Zero,
+                    DstFactor = BlendFactor.OneMinusSrcAlpha,
                     Operation = BlendOperation.Add
                 }
             };
@@ -275,12 +291,12 @@ fn fs_main(input: FragmentInputs) -> @location(0) vec4<f32> {
             var data = stackalloc Vertex[6];
 
             //Fill data with a quad with a CCW front face
-            data[0] = new Vertex(new Vector2(-0.5f, -0.5f), new Vector2(-1f, -1f)); //Top left
-            data[1] = new Vertex(new Vector2(0.5f, -0.5f), new Vector2(1f, -1f));   //Top right
-            data[2] = new Vertex(new Vector2(0.5f, 0.5f), new Vector2(1f, 1f));     //Bottom right
-            data[3] = new Vertex(new Vector2(-0.5f, -0.5f), new Vector2(-1f, -1f)); //Top left
-            data[4] = new Vertex(new Vector2(0.5f, 0.5f), new Vector2(1f, 1f));     //Bottom right
-            data[5] = new Vertex(new Vector2(-0.5f, 0.5f), new Vector2(-1f, 1f));   //Bottom left
+            data[0] = new Vertex(new Vector2(-0.5f, -0.5f), new Vector2(0, 1)); //Top left
+            data[1] = new Vertex(new Vector2(0.5f, -0.5f), new Vector2(1, 1));   //Top right
+            data[2] = new Vertex(new Vector2(0.5f, 0.5f), new Vector2(1, 0));     //Bottom right
+            data[3] = new Vertex(new Vector2(-0.5f, -0.5f), new Vector2(0, 1)); //Top left
+            data[4] = new Vertex(new Vector2(0.5f, 0.5f), new Vector2(1, 0));     //Bottom right
+            data[5] = new Vertex(new Vector2(-0.5f, 0.5f), new Vector2(0, 0));   //Bottom left
 
             //Write the data to the buffer
             wgpu.QueueWriteBuffer(queue, _VertexBuffer, 0, data, (nuint) _VertexBufferSize);
@@ -297,6 +313,150 @@ fn fs_main(input: FragmentInputs) -> @location(0) vec4<f32> {
 
             wgpu.QueueSubmit(queue, 1, &commandBuffer);
         } //Create vertex buffer
+
+        { //Create texture and texture view
+            var image = Image.Load<Rgba32>("silk.png");
+
+            var viewFormat = TextureFormat.Rgba8Unorm;
+
+            var descriptor = new TextureDescriptor
+            {
+                Size            = new Extent3D((uint) image.Width, (uint) image.Height, 1),
+                Format          = TextureFormat.Rgba8Unorm,
+                Usage           = TextureUsage.CopyDst | TextureUsage.TextureBinding,
+                MipLevelCount   = 1,
+                SampleCount     = 1,
+                Dimension       = TextureDimension.TextureDimension2D,
+                ViewFormats     = &viewFormat,
+                ViewFormatCount = 1
+            };
+
+            _Texture = wgpu.DeviceCreateTexture(_Device, ref descriptor);
+
+            var viewDescriptor = new TextureViewDescriptor
+            {
+                Format          = TextureFormat.Rgba8Unorm,
+                Dimension       = TextureViewDimension.TextureViewDimension2D,
+                Aspect          = TextureAspect.None,
+                MipLevelCount   = 1,
+                ArrayLayerCount = 1,
+                BaseArrayLayer  = 0,
+                BaseMipLevel    = 0
+            };
+
+            _TextureView = wgpu.TextureCreateView(_Texture, ref viewDescriptor);
+
+            var queue = wgpu.DeviceGetQueue(_Device);
+            
+            var commandEncoderDescriptor = new CommandEncoderDescriptor();
+            
+            var commandEncoder = wgpu.DeviceCreateCommandEncoder(_Device, ref commandEncoderDescriptor);
+
+            image.ProcessPixelRows(
+                x =>
+                {
+                    for (var i = 0; i < x.Height; i++)
+                    {
+                        var imageRow = x.GetRowSpan(i);
+
+                        var imageCopyTexture = new ImageCopyTexture
+                        {
+                            Texture  = _Texture,
+                            Aspect   = TextureAspect.None,
+                            MipLevel = 0,
+                            Origin   = new Origin3D(0, (uint) i, 0)
+                        };
+                        
+                        var layout = new TextureDataLayout
+                        {
+                            BytesPerRow = (uint) (x.Width * sizeof(Rgba32)),
+                            RowsPerImage = (uint) x.Height
+                        };
+                        // layout.Offset = layout.BytesPerRow * (uint) i;
+
+                        var extent = new Extent3D
+                        {
+                            Width              = (uint) x.Width,
+                            Height             = 1,
+                            DepthOrArrayLayers = 1
+                        };
+
+                        fixed(void* dataPtr = imageRow)
+                            wgpu.QueueWriteTexture(queue, ref imageCopyTexture, dataPtr, (nuint)(sizeof(Rgba32) * imageRow.Length), ref layout, ref extent);
+                    }
+                });
+            
+            var commandBufferDescriptor = new CommandBufferDescriptor();
+            
+            var commandBuffer = wgpu.CommandEncoderFinish(commandEncoder, ref commandBufferDescriptor);
+            
+            wgpu.QueueSubmit(queue, 1, &commandBuffer);
+        } //Create texture and texture view
+
+        { //Create sampler
+            var descriptor = new SamplerDescriptor
+            {
+                Compare = CompareFunction.Undefined,
+                MipmapFilter = MipmapFilterMode.Linear,
+                MagFilter = FilterMode.Linear,
+                MinFilter = FilterMode.Linear
+            };
+
+            _Sampler = wgpu.DeviceCreateSampler(_Device, ref descriptor);
+        } //Create sampler
+
+        { //Create bind group
+            var entries = stackalloc BindGroupLayoutEntry[2];
+            entries[0] = new BindGroupLayoutEntry
+            {
+                Binding = 0, 
+                Texture = new TextureBindingLayout
+                {
+                    Multisampled = false, 
+                    SampleType = TextureSampleType.Float, 
+                    ViewDimension = TextureViewDimension.TextureViewDimension2D
+                }, 
+                Visibility = ShaderStage.Fragment
+            };
+            entries[1] = new BindGroupLayoutEntry
+            {
+                Binding = 1,
+                Sampler = new SamplerBindingLayout
+                {
+                    Type = SamplerBindingType.Filtering
+                }, 
+                Visibility = ShaderStage.Fragment
+            };
+            
+            var layoutDescriptor = new BindGroupLayoutDescriptor
+            {
+                Entries = entries,
+                EntryCount = 2
+            };
+
+            var bindGroupLayout = wgpu.DeviceCreateBindGroupLayout(_Device, ref layoutDescriptor);
+
+            var bindGroupEntries = stackalloc BindGroupEntry[2];
+            bindGroupEntries[0] = new BindGroupEntry
+            {
+                Binding = 0, 
+                TextureView = _TextureView
+            };
+            bindGroupEntries[1] = new BindGroupEntry
+            {
+                Binding = 1,
+                Sampler = _Sampler
+            };
+
+            var descriptor = new BindGroupDescriptor
+            {
+                Entries = bindGroupEntries,
+                EntryCount = 2,
+                Layout = bindGroupLayout
+            };
+
+            _BindGroup = wgpu.DeviceCreateBindGroup(_Device, ref descriptor);
+        } //Create bind group
 
         CreateSwapchain();
     }
@@ -354,6 +514,7 @@ fn fs_main(input: FragmentInputs) -> @location(0) vec4<f32> {
         var renderPass = wgpu.CommandEncoderBeginRenderPass(encoder, ref renderPassDescriptor);
 
         wgpu.RenderPassEncoderSetPipeline(renderPass, _Pipeline);
+        wgpu.RenderPassEncoderSetBindGroup(renderPass, 0, _BindGroup, 0, null);
         wgpu.RenderPassEncoderSetVertexBuffer(renderPass, 0, _VertexBuffer, 0, _VertexBufferSize);
         wgpu.RenderPassEncoderDraw(renderPass, 6, 1, 0, 0);
 

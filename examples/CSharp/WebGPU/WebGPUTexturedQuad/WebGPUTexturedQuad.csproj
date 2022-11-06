@@ -18,4 +18,14 @@
       <ProjectReference Include="..\..\..\..\src\Windowing\Silk.NET.Windowing.Glfw\Silk.NET.Windowing.Glfw.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Include="silk.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="SixLabors.ImageSharp" Version="2.1.3" />
+    </ItemGroup>
+
 </Project>
