@@ -222,8 +222,8 @@ namespace Silk.NET.BuildTools
                     {
                         var createdProfile = Clang.GenerateProfile(Path.GetFileName(src), File.OpenRead(GetPath(src)), task, coreProfile);
 
-                        //If the created profile contains a root project, then its likely the core profile
-                        if(createdProfile.Projects.Any(x => x.Value.IsRoot))
+                        //If the created profile contains a root project with classes, then its likely the core profile
+                        if(createdProfile.Projects.Any(x => x.Value.IsRoot && x.Value.Classes?.Count != 0))
                         {
                             coreProfile ??= createdProfile;
                         }
