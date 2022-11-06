@@ -70,9 +70,9 @@ namespace Silk.NET.BuildTools.Bind
                         return;
 
                     x.WriteStruct
-                                    (
-                                        GetFileName(x.Name, ".gen.cs", folder, ProfileWriter.StructsSubfolder), profile, project, task
-                                    );
+                    (
+                        GetFileName(x.Name, ".gen.cs", folder, ProfileWriter.StructsSubfolder), profile, project, task
+                    );
                 });
 
             project.Enums.ForEach
@@ -83,9 +83,9 @@ namespace Silk.NET.BuildTools.Bind
                         return;
 
                     x.WriteEnum
-                                    (
-                                        GetFileName(x.Name, ".gen.cs", folder, ProfileWriter.EnumsSubfolder), profile, project, task
-                                    );
+                    (
+                        GetFileName(x.Name, ".gen.cs", folder, ProfileWriter.EnumsSubfolder), profile, project, task
+                    );
                 });
 
             project.WriteMixedModeClasses(profile, folder, task);
