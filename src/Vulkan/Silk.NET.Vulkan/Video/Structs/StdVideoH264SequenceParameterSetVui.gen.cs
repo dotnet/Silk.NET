@@ -26,14 +26,17 @@ namespace Silk.NET.Vulkan.Video
             ushort? sarWidth = null,
             ushort? sarHeight = null,
             byte? videoFormat = null,
-            byte? colorPrimaries = null,
+            byte? colourPrimaries = null,
             byte? transferCharacteristics = null,
             byte? matrixCoefficients = null,
             uint? numUnitsInTick = null,
             uint? timeScale = null,
-            StdVideoH264HrdParameters* pHrdParameters = null,
             byte? maxNumReorderFrames = null,
-            byte? maxDecFrameBuffering = null
+            byte? maxDecFrameBuffering = null,
+            byte? chromaSampleLocTypeTopField = null,
+            byte? chromaSampleLocTypeBottomField = null,
+            uint? reserved1 = null,
+            StdVideoH264HrdParameters* pHrdParameters = null
         ) : this()
         {
             if (flags is not null)
@@ -61,9 +64,9 @@ namespace Silk.NET.Vulkan.Video
                 VideoFormat = videoFormat.Value;
             }
 
-            if (colorPrimaries is not null)
+            if (colourPrimaries is not null)
             {
-                ColorPrimaries = colorPrimaries.Value;
+                ColourPrimaries = colourPrimaries.Value;
             }
 
             if (transferCharacteristics is not null)
@@ -86,11 +89,6 @@ namespace Silk.NET.Vulkan.Video
                 TimeScale = timeScale.Value;
             }
 
-            if (pHrdParameters is not null)
-            {
-                PHrdParameters = pHrdParameters;
-            }
-
             if (maxNumReorderFrames is not null)
             {
                 MaxNumReorderFrames = maxNumReorderFrames.Value;
@@ -99,6 +97,26 @@ namespace Silk.NET.Vulkan.Video
             if (maxDecFrameBuffering is not null)
             {
                 MaxDecFrameBuffering = maxDecFrameBuffering.Value;
+            }
+
+            if (chromaSampleLocTypeTopField is not null)
+            {
+                ChromaSampleLocTypeTopField = chromaSampleLocTypeTopField.Value;
+            }
+
+            if (chromaSampleLocTypeBottomField is not null)
+            {
+                ChromaSampleLocTypeBottomField = chromaSampleLocTypeBottomField.Value;
+            }
+
+            if (reserved1 is not null)
+            {
+                Reserved1 = reserved1.Value;
+            }
+
+            if (pHrdParameters is not null)
+            {
+                PHrdParameters = pHrdParameters;
             }
         }
 
@@ -130,8 +148,8 @@ namespace Silk.NET.Vulkan.Video
 
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "color_primaries")]
-        public byte ColorPrimaries;
+        [NativeName("Name", "colour_primaries")]
+        public byte ColourPrimaries;
 
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
@@ -153,11 +171,6 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Name", "time_scale")]
         public uint TimeScale;
 
-        [NativeName("Type", "const StdVideoH264HrdParameters *")]
-        [NativeName("Type.Name", "const StdVideoH264HrdParameters *")]
-        [NativeName("Name", "pHrdParameters")]
-        public StdVideoH264HrdParameters* PHrdParameters;
-
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
         [NativeName("Name", "max_num_reorder_frames")]
@@ -167,5 +180,25 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type.Name", "uint8_t")]
         [NativeName("Name", "max_dec_frame_buffering")]
         public byte MaxDecFrameBuffering;
+
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "chroma_sample_loc_type_top_field")]
+        public byte ChromaSampleLocTypeTopField;
+
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "chroma_sample_loc_type_bottom_field")]
+        public byte ChromaSampleLocTypeBottomField;
+
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "reserved1")]
+        public uint Reserved1;
+
+        [NativeName("Type", "const StdVideoH264HrdParameters *")]
+        [NativeName("Type.Name", "const StdVideoH264HrdParameters *")]
+        [NativeName("Name", "pHrdParameters")]
+        public StdVideoH264HrdParameters* PHrdParameters;
     }
 }

@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
-    [NativeName("AnonymousName", "__AnonymousEnum_SDL_video_L153_C9")]
+    [NativeName("AnonymousName", "__AnonymousEnum_SDL_video_L154_C9")]
     [NativeName("Name", "SDL_WindowEventID")]
     public enum WindowEventID : int
     {
@@ -64,6 +64,12 @@ namespace Silk.NET.SDL
         [Obsolete("Deprecated in favour of \"HitTest\"")]
         [NativeName("Name", "SDL_WINDOWEVENT_HIT_TEST")]
         WindoweventHitTest = 0x10,
+        [Obsolete("Deprecated in favour of \"IccprofChanged\"")]
+        [NativeName("Name", "SDL_WINDOWEVENT_ICCPROF_CHANGED")]
+        WindoweventIccprofChanged = 0x11,
+        [Obsolete("Deprecated in favour of \"DisplayChanged\"")]
+        [NativeName("Name", "SDL_WINDOWEVENT_DISPLAY_CHANGED")]
+        WindoweventDisplayChanged = 0x12,
         [NativeName("Name", "SDL_WINDOWEVENT_NONE")]
         None = 0x0,
         [NativeName("Name", "SDL_WINDOWEVENT_SHOWN")]
@@ -98,5 +104,9 @@ namespace Silk.NET.SDL
         TakeFocus = 0xF,
         [NativeName("Name", "SDL_WINDOWEVENT_HIT_TEST")]
         HitTest = 0x10,
+        [NativeName("Name", "SDL_WINDOWEVENT_ICCPROF_CHANGED")]
+        IccprofChanged = 0x11,
+        [NativeName("Name", "SDL_WINDOWEVENT_DISPLAY_CHANGED")]
+        DisplayChanged = 0x12,
     }
 }
