@@ -202,15 +202,28 @@ namespace Silk.NET.BuildTools.Cpp
             var destInfo = task.ClangOpts.ClassMappings[fileName];
             var indexOfOpenSqBracket = destInfo.IndexOf('[');
             var indexOfCloseSqBracket = destInfo.LastIndexOf(']');
-            var projectName = destInfo.Substring
-                (indexOfOpenSqBracket + 1, indexOfCloseSqBracket - indexOfOpenSqBracket - 1);
+            var projectNameSplit = destInfo.Substring
+                (indexOfOpenSqBracket + 1, indexOfCloseSqBracket - indexOfOpenSqBracket - 1).Split(':');
+
+            if (projectNameSplit.Length == 0) 
+            {
+                throw new ArgumentException("Missing project name!");
+            }
+
+            if (projectNameSplit.Length > 2)
+            {
+                throw new ArgumentException("Too many splits in the project name!");
+            }
+
+            var projectName = projectNameSplit[0];
 
             if(projectName != "Core" && coreProfile == null) 
             {
                 throw new InvalidOperationException("The core profile/source file must come first!");
             }
 
-            var className = destInfo.Substring(indexOfCloseSqBracket + 1);
+            var nativeApiSetName = destInfo.Substring(indexOfCloseSqBracket + 1);
+            var className = projectNameSplit.Length > 1 ? projectNameSplit[1] : coreProfile?.Projects["Core"].Classes[0].ClassName ?? nativeApiSetName;
             var project = profile.Projects[projectName] = new Project
             {
                 IsRoot = projectName == "Core",
@@ -233,9 +246,9 @@ namespace Silk.NET.BuildTools.Cpp
 
             var @class = new Class
             {
-                ClassName = project.IsRoot ? className : coreProfile?.Projects["Core"].Classes[0].ClassName,
+                ClassName = className,
                 Constants = constants,
-                NativeApis = { [fileName] = new NativeApiSet { Name = "I" + className, Functions = functions } }
+                NativeApis = { [fileName] = new NativeApiSet { Name = "I" + nativeApiSetName, Functions = functions } }
             };
             project.Structs = structs;
             project.Enums = enums;
