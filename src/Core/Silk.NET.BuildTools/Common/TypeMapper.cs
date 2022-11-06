@@ -55,20 +55,20 @@ namespace Silk.NET.BuildTools.Common
         public static Type MapOne(Dictionary<string, string> map, Type og, string ogN = null)
         {
             var type = og;
-            if (map.ContainsKey(type.ToString()))
+            if (map.TryGetValue(type.ToString(), out var mapped))
             {
                 type = ParseTypeSignature
                 (
-                    map[type.ToString()], type.OriginalName, type.OriginalGroup
+                    mapped, type.OriginalName, type.OriginalGroup
                 );
             }
-            else if (map.ContainsKey(type.Name))
+            else if (map.TryGetValue(type.Name, out mapped))
             {
-                type.Name = map[type.Name];
+                type.Name = mapped;
             }
-            else if (ogN != null && map.ContainsKey(ogN)) 
+            else if (ogN != null && map.TryGetValue(ogN, out mapped)) 
             {
-                type.Name = map[ogN];
+                type.Name = mapped;
             }
 
             if (og.FunctionPointerSignature is not null)
