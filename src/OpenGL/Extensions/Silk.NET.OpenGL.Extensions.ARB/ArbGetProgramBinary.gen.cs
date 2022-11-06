@@ -86,6 +86,34 @@ namespace Silk.NET.OpenGL.Extensions.ARB
             ProgramBinary(program, binaryFormat, in binary.GetPinnableReference(), (uint) (binary.Length * Unsafe.SizeOf<T0>()));
         }
 
+        public unsafe T0 GetProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* binaryFormat) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramBinary(program, bufSize, length, binaryFormat, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out ARB binaryFormat) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramBinary(program, bufSize, length, out binaryFormat, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* binaryFormat) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramBinary(program, bufSize, out length, binaryFormat, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out ARB binaryFormat) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramBinary(program, bufSize, out length, out binaryFormat, out T0 silkRet);
+            return silkRet;
+        }
+
         public ArbGetProgramBinary(INativeContext ctx)
             : base(ctx)
         {

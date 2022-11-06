@@ -24,8 +24,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.VideoDecodeH265PictureInfoExt,
             void* pNext = null,
             Video.StdVideoDecodeH265PictureInfo* pStdPictureInfo = null,
-            uint? slicesCount = null,
-            uint* pSlicesDataOffsets = null
+            uint? sliceCount = null,
+            uint* pSliceOffsets = null
         ) : this()
         {
             if (sType is not null)
@@ -43,14 +43,14 @@ namespace Silk.NET.Vulkan
                 PStdPictureInfo = pStdPictureInfo;
             }
 
-            if (slicesCount is not null)
+            if (sliceCount is not null)
             {
-                SlicesCount = slicesCount.Value;
+                SliceCount = sliceCount.Value;
             }
 
-            if (pSlicesDataOffsets is not null)
+            if (pSliceOffsets is not null)
             {
-                PSlicesDataOffsets = pSlicesDataOffsets;
+                PSliceOffsets = pSliceOffsets;
             }
         }
 
@@ -72,13 +72,13 @@ namespace Silk.NET.Vulkan
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "slicesCount")]
-        public uint SlicesCount;
+        [NativeName("Name", "sliceCount")]
+        public uint SliceCount;
 /// <summary></summary>
         [NativeName("Type", "uint32_t*")]
         [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "pSlicesDataOffsets")]
-        public uint* PSlicesDataOffsets;
+        [NativeName("Name", "pSliceOffsets")]
+        public uint* PSliceOffsets;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

@@ -23,14 +23,14 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.VideoCapabilitiesKhr,
             void* pNext = null,
-            VideoCapabilityFlagsKHR? capabilityFlags = null,
+            VideoCapabilityFlagsKHR? flags = null,
             ulong? minBitstreamBufferOffsetAlignment = null,
             ulong? minBitstreamBufferSizeAlignment = null,
-            Extent2D? videoPictureExtentGranularity = null,
-            Extent2D? minExtent = null,
-            Extent2D? maxExtent = null,
-            uint? maxReferencePicturesSlotsCount = null,
-            uint? maxReferencePicturesActiveCount = null,
+            Extent2D? pictureAccessGranularity = null,
+            Extent2D? minCodedExtent = null,
+            Extent2D? maxCodedExtent = null,
+            uint? maxDpbSlots = null,
+            uint? maxActiveReferencePictures = null,
             ExtensionProperties? stdHeaderVersion = null
         ) : this()
         {
@@ -44,9 +44,9 @@ namespace Silk.NET.Vulkan
                 PNext = pNext;
             }
 
-            if (capabilityFlags is not null)
+            if (flags is not null)
             {
-                CapabilityFlags = capabilityFlags.Value;
+                Flags = flags.Value;
             }
 
             if (minBitstreamBufferOffsetAlignment is not null)
@@ -59,29 +59,29 @@ namespace Silk.NET.Vulkan
                 MinBitstreamBufferSizeAlignment = minBitstreamBufferSizeAlignment.Value;
             }
 
-            if (videoPictureExtentGranularity is not null)
+            if (pictureAccessGranularity is not null)
             {
-                VideoPictureExtentGranularity = videoPictureExtentGranularity.Value;
+                PictureAccessGranularity = pictureAccessGranularity.Value;
             }
 
-            if (minExtent is not null)
+            if (minCodedExtent is not null)
             {
-                MinExtent = minExtent.Value;
+                MinCodedExtent = minCodedExtent.Value;
             }
 
-            if (maxExtent is not null)
+            if (maxCodedExtent is not null)
             {
-                MaxExtent = maxExtent.Value;
+                MaxCodedExtent = maxCodedExtent.Value;
             }
 
-            if (maxReferencePicturesSlotsCount is not null)
+            if (maxDpbSlots is not null)
             {
-                MaxReferencePicturesSlotsCount = maxReferencePicturesSlotsCount.Value;
+                MaxDpbSlots = maxDpbSlots.Value;
             }
 
-            if (maxReferencePicturesActiveCount is not null)
+            if (maxActiveReferencePictures is not null)
             {
-                MaxReferencePicturesActiveCount = maxReferencePicturesActiveCount.Value;
+                MaxActiveReferencePictures = maxActiveReferencePictures.Value;
             }
 
             if (stdHeaderVersion is not null)
@@ -103,8 +103,8 @@ namespace Silk.NET.Vulkan
 /// <summary></summary>
         [NativeName("Type", "VkVideoCapabilityFlagsKHR")]
         [NativeName("Type.Name", "VkVideoCapabilityFlagsKHR")]
-        [NativeName("Name", "capabilityFlags")]
-        public VideoCapabilityFlagsKHR CapabilityFlags;
+        [NativeName("Name", "flags")]
+        public VideoCapabilityFlagsKHR Flags;
 /// <summary></summary>
         [NativeName("Type", "VkDeviceSize")]
         [NativeName("Type.Name", "VkDeviceSize")]
@@ -118,28 +118,28 @@ namespace Silk.NET.Vulkan
 /// <summary></summary>
         [NativeName("Type", "VkExtent2D")]
         [NativeName("Type.Name", "VkExtent2D")]
-        [NativeName("Name", "videoPictureExtentGranularity")]
-        public Extent2D VideoPictureExtentGranularity;
+        [NativeName("Name", "pictureAccessGranularity")]
+        public Extent2D PictureAccessGranularity;
 /// <summary></summary>
         [NativeName("Type", "VkExtent2D")]
         [NativeName("Type.Name", "VkExtent2D")]
-        [NativeName("Name", "minExtent")]
-        public Extent2D MinExtent;
+        [NativeName("Name", "minCodedExtent")]
+        public Extent2D MinCodedExtent;
 /// <summary></summary>
         [NativeName("Type", "VkExtent2D")]
         [NativeName("Type.Name", "VkExtent2D")]
-        [NativeName("Name", "maxExtent")]
-        public Extent2D MaxExtent;
+        [NativeName("Name", "maxCodedExtent")]
+        public Extent2D MaxCodedExtent;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxReferencePicturesSlotsCount")]
-        public uint MaxReferencePicturesSlotsCount;
+        [NativeName("Name", "maxDpbSlots")]
+        public uint MaxDpbSlots;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxReferencePicturesActiveCount")]
-        public uint MaxReferencePicturesActiveCount;
+        [NativeName("Name", "maxActiveReferencePictures")]
+        public uint MaxActiveReferencePictures;
 /// <summary></summary>
         [NativeName("Type", "VkExtensionProperties")]
         [NativeName("Type.Name", "VkExtensionProperties")]

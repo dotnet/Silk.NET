@@ -18,9 +18,12 @@ namespace Silk.NET.Core.Win32Extras
 {
     [Guid("00000017-0000-0000-c000-000000000046")]
     [NativeName("Name", "IActivationFilter")]
-    public unsafe partial struct IActivationFilter
+    public unsafe partial struct IActivationFilter : IComVtbl<IActivationFilter>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("00000017-0000-0000-c000-000000000046");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator Silk.NET.Core.Native.IUnknown(IActivationFilter val)
             => Unsafe.As<IActivationFilter, Silk.NET.Core.Native.IUnknown>(ref val);
@@ -46,7 +49,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IActivationFilter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IActivationFilter*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Cdecl]<IActivationFilter*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -57,7 +60,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IActivationFilter*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IActivationFilter*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -69,7 +72,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IActivationFilter*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Cdecl]<IActivationFilter*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -83,7 +86,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IActivationFilter*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IActivationFilter*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -94,7 +97,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IActivationFilter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IActivationFilter*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<IActivationFilter*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -103,7 +106,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IActivationFilter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IActivationFilter*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<IActivationFilter*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -112,7 +115,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IActivationFilter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IActivationFilter*, uint, Guid*, Guid*, int>)LpVtbl[3])(@this, dwActivationType, rclsid, pReplacementClsId);
+            ret = ((delegate* unmanaged[Cdecl]<IActivationFilter*, uint, Guid*, Guid*, int>)@this->LpVtbl[3])(@this, dwActivationType, rclsid, pReplacementClsId);
             return ret;
         }
 
@@ -123,7 +126,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (Guid* pReplacementClsIdPtr = &pReplacementClsId)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IActivationFilter*, uint, Guid*, Guid*, int>)LpVtbl[3])(@this, dwActivationType, rclsid, pReplacementClsIdPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IActivationFilter*, uint, Guid*, Guid*, int>)@this->LpVtbl[3])(@this, dwActivationType, rclsid, pReplacementClsIdPtr);
             }
             return ret;
         }
@@ -135,7 +138,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (Guid* rclsidPtr = &rclsid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IActivationFilter*, uint, Guid*, Guid*, int>)LpVtbl[3])(@this, dwActivationType, rclsidPtr, pReplacementClsId);
+                ret = ((delegate* unmanaged[Cdecl]<IActivationFilter*, uint, Guid*, Guid*, int>)@this->LpVtbl[3])(@this, dwActivationType, rclsidPtr, pReplacementClsId);
             }
             return ret;
         }
@@ -149,10 +152,28 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (Guid* pReplacementClsIdPtr = &pReplacementClsId)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IActivationFilter*, uint, Guid*, Guid*, int>)LpVtbl[3])(@this, dwActivationType, rclsidPtr, pReplacementClsIdPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IActivationFilter*, uint, Guid*, Guid*, int>)@this->LpVtbl[3])(@this, dwActivationType, rclsidPtr, pReplacementClsIdPtr);
                 }
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IActivationFilter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IActivationFilter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

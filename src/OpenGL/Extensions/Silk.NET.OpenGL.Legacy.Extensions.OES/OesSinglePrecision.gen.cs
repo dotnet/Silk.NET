@@ -56,6 +56,20 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.OES
         [NativeApi(EntryPoint = "glOrthofOES", Convention = CallingConvention.Winapi)]
         public partial void Ortho([Flow(FlowDirection.In)] float l, [Flow(FlowDirection.In)] float r, [Flow(FlowDirection.In)] float b, [Flow(FlowDirection.In)] float t, [Flow(FlowDirection.In)] float n, [Flow(FlowDirection.In)] float f);
 
+        public unsafe float GetClipPlane([Flow(FlowDirection.In)] OES plane)
+        {
+            // NonKhrReturnTypeOverloader
+            GetClipPlane(plane, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetClipPlane([Flow(FlowDirection.In)] ClipPlaneName plane)
+        {
+            // NonKhrReturnTypeOverloader
+            GetClipPlane(plane, out float silkRet);
+            return silkRet;
+        }
+
         public OesSinglePrecision(INativeContext ctx)
             : base(ctx)
         {

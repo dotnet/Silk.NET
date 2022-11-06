@@ -821,6 +821,125 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             VertexAttribs4(index, (uint) v.Length, in v.GetPinnableReference());
         }
 
+        public unsafe uint GenProgram([Flow(FlowDirection.In)] uint n)
+        {
+            // NonKhrReturnTypeOverloader
+            GenProgram(n, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetProgram([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] NV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgram(id, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetProgram([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] VertexAttribEnumNV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgram(id, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe double GetProgramParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramParameter(target, index, pname, out double silkRet);
+            return silkRet;
+        }
+
+        public unsafe double GetProgramParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribEnumNV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramParameter(target, index, pname, out double silkRet);
+            return silkRet;
+        }
+
+        public unsafe double GetProgramParameter([Flow(FlowDirection.In)] VertexAttribEnumNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramParameter(target, index, pname, out double silkRet);
+            return silkRet;
+        }
+
+        public unsafe double GetProgramParameter([Flow(FlowDirection.In)] VertexAttribEnumNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribEnumNV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramParameter(target, index, pname, out double silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetProgramString([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] NV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramString(id, pname, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetProgramString([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] VertexAttribEnumNV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramString(id, pname, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetTrackMatrix([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint address, [Flow(FlowDirection.In)] NV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTrackMatrix(target, address, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetTrackMatrix([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint address, [Flow(FlowDirection.In)] VertexAttribEnumNV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTrackMatrix(target, address, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetTrackMatrix([Flow(FlowDirection.In)] VertexAttribEnumNV target, [Flow(FlowDirection.In)] uint address, [Flow(FlowDirection.In)] NV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTrackMatrix(target, address, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetTrackMatrix([Flow(FlowDirection.In)] VertexAttribEnumNV target, [Flow(FlowDirection.In)] uint address, [Flow(FlowDirection.In)] VertexAttribEnumNV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTrackMatrix(target, address, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe double GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetVertexAttrib(index, pname, out double silkRet);
+            return silkRet;
+        }
+
+        public unsafe double GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribEnumNV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetVertexAttrib(index, pname, out double silkRet);
+            return silkRet;
+        }
+
+        public unsafe void* GetVertexAttribPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetVertexAttribPointer(index, pname, out void* silkRet);
+            return silkRet;
+        }
+
+        public unsafe void* GetVertexAttribPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribEnumNV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetVertexAttribPointer(index, pname, out void* silkRet);
+            return silkRet;
+        }
+
         public NVVertexProgram(INativeContext ctx)
             : base(ctx)
         {

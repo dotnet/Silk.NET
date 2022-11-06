@@ -15,9 +15,9 @@ namespace Silk.NET.Vulkan
     {
         [NativeName("Name", "")]
         None = 0,
-        [Obsolete("Deprecated in favour of \"InvalidBitKhr\"")]
-        [NativeName("Name", "VK_VIDEO_CODEC_OPERATION_INVALID_BIT_KHR")]
-        VideoCodecOperationInvalidBitKhr = 0,
+        [Obsolete("Deprecated in favour of \"NoneKhr\"")]
+        [NativeName("Name", "VK_VIDEO_CODEC_OPERATION_NONE_KHR")]
+        VideoCodecOperationNoneKhr = 0,
         [Obsolete("Deprecated in favour of \"EncodeH264BitExt\"")]
         [NativeName("Name", "VK_VIDEO_CODEC_OPERATION_ENCODE_H264_BIT_EXT")]
         VideoCodecOperationEncodeH264BitExt = 65536,
@@ -30,8 +30,8 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"DecodeH265BitExt\"")]
         [NativeName("Name", "VK_VIDEO_CODEC_OPERATION_DECODE_H265_BIT_EXT")]
         VideoCodecOperationDecodeH265BitExt = 2,
-        [NativeName("Name", "VK_VIDEO_CODEC_OPERATION_INVALID_BIT_KHR")]
-        InvalidBitKhr = 0,
+        [NativeName("Name", "VK_VIDEO_CODEC_OPERATION_NONE_KHR")]
+        NoneKhr = 0,
         [NativeName("Name", "VK_VIDEO_CODEC_OPERATION_ENCODE_H264_BIT_EXT")]
         EncodeH264BitExt = 65536,
         [NativeName("Name", "VK_VIDEO_CODEC_OPERATION_ENCODE_H265_BIT_EXT")]

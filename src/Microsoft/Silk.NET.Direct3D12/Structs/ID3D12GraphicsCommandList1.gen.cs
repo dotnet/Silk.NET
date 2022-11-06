@@ -18,9 +18,12 @@ namespace Silk.NET.Direct3D12
 {
     [Guid("553103fb-1fe7-4557-bb38-946d7d0e7ca7")]
     [NativeName("Name", "ID3D12GraphicsCommandList1")]
-    public unsafe partial struct ID3D12GraphicsCommandList1
+    public unsafe partial struct ID3D12GraphicsCommandList1 : IComVtbl<ID3D12GraphicsCommandList1>, IComVtbl<ID3D12GraphicsCommandList>, IComVtbl<ID3D12CommandList>, IComVtbl<ID3D12DeviceChild>, IComVtbl<ID3D12Object>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("553103fb-1fe7-4557-bb38-946d7d0e7ca7");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator ID3D12GraphicsCommandList(ID3D12GraphicsCommandList1 val)
             => Unsafe.As<ID3D12GraphicsCommandList1, ID3D12GraphicsCommandList>(ref val);
@@ -58,7 +61,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -69,7 +72,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -81,7 +84,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -95,7 +98,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -106,7 +109,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -115,7 +118,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -124,7 +127,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guid, pDataSize, pData);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guid, pDataSize, pData);
             return ret;
         }
 
@@ -135,7 +138,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guid, pDataSize, pDataPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guid, pDataSize, pDataPtr);
             }
             return ret;
         }
@@ -147,7 +150,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (uint* pDataSizePtr = &pDataSize)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guid, pDataSizePtr, pData);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guid, pDataSizePtr, pData);
             }
             return ret;
         }
@@ -161,7 +164,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guid, pDataSizePtr, pDataPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guid, pDataSizePtr, pDataPtr);
                 }
             }
             return ret;
@@ -174,7 +177,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guidPtr, pDataSize, pData);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guidPtr, pDataSize, pData);
             }
             return ret;
         }
@@ -188,7 +191,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guidPtr, pDataSize, pDataPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guidPtr, pDataSize, pDataPtr);
                 }
             }
             return ret;
@@ -203,7 +206,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (uint* pDataSizePtr = &pDataSize)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guidPtr, pDataSizePtr, pData);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guidPtr, pDataSizePtr, pData);
                 }
             }
             return ret;
@@ -220,7 +223,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (void* pDataPtr = &pData)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guidPtr, pDataSizePtr, pDataPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guidPtr, pDataSizePtr, pDataPtr);
                     }
                 }
             }
@@ -232,7 +235,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, uint, void*, int>)LpVtbl[4])(@this, guid, DataSize, pData);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, uint, void*, int>)@this->LpVtbl[4])(@this, guid, DataSize, pData);
             return ret;
         }
 
@@ -243,7 +246,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, uint, void*, int>)LpVtbl[4])(@this, guid, DataSize, pDataPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, uint, void*, int>)@this->LpVtbl[4])(@this, guid, DataSize, pDataPtr);
             }
             return ret;
         }
@@ -255,7 +258,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, uint, void*, int>)LpVtbl[4])(@this, guidPtr, DataSize, pData);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, uint, void*, int>)@this->LpVtbl[4])(@this, guidPtr, DataSize, pData);
             }
             return ret;
         }
@@ -269,7 +272,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, uint, void*, int>)LpVtbl[4])(@this, guidPtr, DataSize, pDataPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, uint, void*, int>)@this->LpVtbl[4])(@this, guidPtr, DataSize, pDataPtr);
                 }
             }
             return ret;
@@ -280,7 +283,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guid, pData);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[5])(@this, guid, pData);
             return ret;
         }
 
@@ -291,7 +294,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guid, pDataPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[5])(@this, guid, pDataPtr);
             }
             return ret;
         }
@@ -303,7 +306,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guidPtr, pData);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[5])(@this, guidPtr, pData);
             }
             return ret;
         }
@@ -317,7 +320,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guidPtr, pDataPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[5])(@this, guidPtr, pDataPtr);
                 }
             }
             return ret;
@@ -328,7 +331,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, char*, int>)LpVtbl[6])(@this, Name);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, char*, int>)@this->LpVtbl[6])(@this, Name);
             return ret;
         }
 
@@ -339,7 +342,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (char* NamePtr = &Name)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, char*, int>)LpVtbl[6])(@this, NamePtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, char*, int>)@this->LpVtbl[6])(@this, NamePtr);
             }
             return ret;
         }
@@ -350,7 +353,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var NamePtr = (byte*) SilkMarshal.StringToPtr(Name, NativeStringEncoding.LPWStr);
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, byte*, int>)LpVtbl[6])(@this, NamePtr);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, byte*, int>)@this->LpVtbl[6])(@this, NamePtr);
             SilkMarshal.Free((nint)NamePtr);
             return ret;
         }
@@ -360,7 +363,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, void**, int>)LpVtbl[7])(@this, riid, ppvDevice);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, void**, int>)@this->LpVtbl[7])(@this, riid, ppvDevice);
             return ret;
         }
 
@@ -371,7 +374,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (void** ppvDevicePtr = &ppvDevice)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, void**, int>)LpVtbl[7])(@this, riid, ppvDevicePtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, void**, int>)@this->LpVtbl[7])(@this, riid, ppvDevicePtr);
             }
             return ret;
         }
@@ -383,7 +386,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, void**, int>)LpVtbl[7])(@this, riidPtr, ppvDevice);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, void**, int>)@this->LpVtbl[7])(@this, riidPtr, ppvDevice);
             }
             return ret;
         }
@@ -397,7 +400,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void** ppvDevicePtr = &ppvDevice)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, void**, int>)LpVtbl[7])(@this, riidPtr, ppvDevicePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Guid*, void**, int>)@this->LpVtbl[7])(@this, riidPtr, ppvDevicePtr);
                 }
             }
             return ret;
@@ -408,7 +411,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             CommandListType ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, CommandListType>)LpVtbl[8])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, CommandListType>)@this->LpVtbl[8])(@this);
             return ret;
         }
 
@@ -417,7 +420,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, int>)LpVtbl[9])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, int>)@this->LpVtbl[9])(@this);
             return ret;
         }
 
@@ -426,7 +429,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12CommandAllocator*, ID3D12PipelineState*, int>)LpVtbl[10])(@this, pAllocator, pInitialState);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12CommandAllocator*, ID3D12PipelineState*, int>)@this->LpVtbl[10])(@this, pAllocator, pInitialState);
             return ret;
         }
 
@@ -437,7 +440,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (ID3D12PipelineState* pInitialStatePtr = &pInitialState)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12CommandAllocator*, ID3D12PipelineState*, int>)LpVtbl[10])(@this, pAllocator, pInitialStatePtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12CommandAllocator*, ID3D12PipelineState*, int>)@this->LpVtbl[10])(@this, pAllocator, pInitialStatePtr);
             }
             return ret;
         }
@@ -449,7 +452,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (ID3D12CommandAllocator* pAllocatorPtr = &pAllocator)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12CommandAllocator*, ID3D12PipelineState*, int>)LpVtbl[10])(@this, pAllocatorPtr, pInitialState);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12CommandAllocator*, ID3D12PipelineState*, int>)@this->LpVtbl[10])(@this, pAllocatorPtr, pInitialState);
             }
             return ret;
         }
@@ -463,7 +466,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (ID3D12PipelineState* pInitialStatePtr = &pInitialState)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12CommandAllocator*, ID3D12PipelineState*, int>)LpVtbl[10])(@this, pAllocatorPtr, pInitialStatePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12CommandAllocator*, ID3D12PipelineState*, int>)@this->LpVtbl[10])(@this, pAllocatorPtr, pInitialStatePtr);
                 }
             }
             return ret;
@@ -473,7 +476,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void ClearState(ID3D12PipelineState* pPipelineState)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12PipelineState*, void>)LpVtbl[11])(@this, pPipelineState);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12PipelineState*, void>)@this->LpVtbl[11])(@this, pPipelineState);
         }
 
         /// <summary>To be documented.</summary>
@@ -482,7 +485,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12PipelineState* pPipelineStatePtr = &pPipelineState)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12PipelineState*, void>)LpVtbl[11])(@this, pPipelineStatePtr);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12PipelineState*, void>)@this->LpVtbl[11])(@this, pPipelineStatePtr);
             }
         }
 
@@ -490,28 +493,28 @@ namespace Silk.NET.Direct3D12
         public readonly void DrawInstanced(uint VertexCountPerInstance, uint InstanceCount, uint StartVertexLocation, uint StartInstanceLocation)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, uint, uint, uint, void>)LpVtbl[12])(@this, VertexCountPerInstance, InstanceCount, StartVertexLocation, StartInstanceLocation);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, uint, uint, uint, void>)@this->LpVtbl[12])(@this, VertexCountPerInstance, InstanceCount, StartVertexLocation, StartInstanceLocation);
         }
 
         /// <summary>To be documented.</summary>
         public readonly void DrawIndexedInstanced(uint IndexCountPerInstance, uint InstanceCount, uint StartIndexLocation, int BaseVertexLocation, uint StartInstanceLocation)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, uint, uint, int, uint, void>)LpVtbl[13])(@this, IndexCountPerInstance, InstanceCount, StartIndexLocation, BaseVertexLocation, StartInstanceLocation);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, uint, uint, int, uint, void>)@this->LpVtbl[13])(@this, IndexCountPerInstance, InstanceCount, StartIndexLocation, BaseVertexLocation, StartInstanceLocation);
         }
 
         /// <summary>To be documented.</summary>
         public readonly void Dispatch(uint ThreadGroupCountX, uint ThreadGroupCountY, uint ThreadGroupCountZ)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, uint, uint, void>)LpVtbl[14])(@this, ThreadGroupCountX, ThreadGroupCountY, ThreadGroupCountZ);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, uint, uint, void>)@this->LpVtbl[14])(@this, ThreadGroupCountX, ThreadGroupCountY, ThreadGroupCountZ);
         }
 
         /// <summary>To be documented.</summary>
         public readonly unsafe void CopyBufferRegion(ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, ulong NumBytes)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, ulong, void>)LpVtbl[15])(@this, pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, NumBytes);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, ulong, void>)@this->LpVtbl[15])(@this, pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, NumBytes);
         }
 
         /// <summary>To be documented.</summary>
@@ -520,7 +523,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pSrcBufferPtr = &pSrcBuffer)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, ulong, void>)LpVtbl[15])(@this, pDstBuffer, DstOffset, pSrcBufferPtr, SrcOffset, NumBytes);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, ulong, void>)@this->LpVtbl[15])(@this, pDstBuffer, DstOffset, pSrcBufferPtr, SrcOffset, NumBytes);
             }
         }
 
@@ -530,7 +533,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, ulong, void>)LpVtbl[15])(@this, pDstBufferPtr, DstOffset, pSrcBuffer, SrcOffset, NumBytes);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, ulong, void>)@this->LpVtbl[15])(@this, pDstBufferPtr, DstOffset, pSrcBuffer, SrcOffset, NumBytes);
             }
         }
 
@@ -542,7 +545,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (ID3D12Resource* pSrcBufferPtr = &pSrcBuffer)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, ulong, void>)LpVtbl[15])(@this, pDstBufferPtr, DstOffset, pSrcBufferPtr, SrcOffset, NumBytes);
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, ulong, void>)@this->LpVtbl[15])(@this, pDstBufferPtr, DstOffset, pSrcBufferPtr, SrcOffset, NumBytes);
                 }
             }
         }
@@ -551,7 +554,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void CopyTextureRegion(TextureCopyLocation* pDst, uint DstX, uint DstY, uint DstZ, TextureCopyLocation* pSrc, Box* pSrcBox)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)LpVtbl[16])(@this, pDst, DstX, DstY, DstZ, pSrc, pSrcBox);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)@this->LpVtbl[16])(@this, pDst, DstX, DstY, DstZ, pSrc, pSrcBox);
         }
 
         /// <summary>To be documented.</summary>
@@ -560,7 +563,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Box* pSrcBoxPtr = &pSrcBox)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)LpVtbl[16])(@this, pDst, DstX, DstY, DstZ, pSrc, pSrcBoxPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)@this->LpVtbl[16])(@this, pDst, DstX, DstY, DstZ, pSrc, pSrcBoxPtr);
             }
         }
 
@@ -570,7 +573,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (TextureCopyLocation* pSrcPtr = &pSrc)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)LpVtbl[16])(@this, pDst, DstX, DstY, DstZ, pSrcPtr, pSrcBox);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)@this->LpVtbl[16])(@this, pDst, DstX, DstY, DstZ, pSrcPtr, pSrcBox);
             }
         }
 
@@ -582,7 +585,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (Box* pSrcBoxPtr = &pSrcBox)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)LpVtbl[16])(@this, pDst, DstX, DstY, DstZ, pSrcPtr, pSrcBoxPtr);
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)@this->LpVtbl[16])(@this, pDst, DstX, DstY, DstZ, pSrcPtr, pSrcBoxPtr);
                 }
             }
         }
@@ -593,7 +596,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (TextureCopyLocation* pDstPtr = &pDst)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)LpVtbl[16])(@this, pDstPtr, DstX, DstY, DstZ, pSrc, pSrcBox);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)@this->LpVtbl[16])(@this, pDstPtr, DstX, DstY, DstZ, pSrc, pSrcBox);
             }
         }
 
@@ -605,7 +608,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (Box* pSrcBoxPtr = &pSrcBox)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)LpVtbl[16])(@this, pDstPtr, DstX, DstY, DstZ, pSrc, pSrcBoxPtr);
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)@this->LpVtbl[16])(@this, pDstPtr, DstX, DstY, DstZ, pSrc, pSrcBoxPtr);
                 }
             }
         }
@@ -618,7 +621,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (TextureCopyLocation* pSrcPtr = &pSrc)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)LpVtbl[16])(@this, pDstPtr, DstX, DstY, DstZ, pSrcPtr, pSrcBox);
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)@this->LpVtbl[16])(@this, pDstPtr, DstX, DstY, DstZ, pSrcPtr, pSrcBox);
                 }
             }
         }
@@ -633,7 +636,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (Box* pSrcBoxPtr = &pSrcBox)
                     {
-                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)LpVtbl[16])(@this, pDstPtr, DstX, DstY, DstZ, pSrcPtr, pSrcBoxPtr);
+                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)@this->LpVtbl[16])(@this, pDstPtr, DstX, DstY, DstZ, pSrcPtr, pSrcBoxPtr);
                     }
                 }
             }
@@ -643,7 +646,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void CopyResource(ID3D12Resource* pDstResource, ID3D12Resource* pSrcResource)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ID3D12Resource*, void>)LpVtbl[17])(@this, pDstResource, pSrcResource);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ID3D12Resource*, void>)@this->LpVtbl[17])(@this, pDstResource, pSrcResource);
         }
 
         /// <summary>To be documented.</summary>
@@ -652,7 +655,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pSrcResourcePtr = &pSrcResource)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ID3D12Resource*, void>)LpVtbl[17])(@this, pDstResource, pSrcResourcePtr);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ID3D12Resource*, void>)@this->LpVtbl[17])(@this, pDstResource, pSrcResourcePtr);
             }
         }
 
@@ -662,7 +665,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pDstResourcePtr = &pDstResource)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ID3D12Resource*, void>)LpVtbl[17])(@this, pDstResourcePtr, pSrcResource);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ID3D12Resource*, void>)@this->LpVtbl[17])(@this, pDstResourcePtr, pSrcResource);
             }
         }
 
@@ -674,7 +677,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (ID3D12Resource* pSrcResourcePtr = &pSrcResource)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ID3D12Resource*, void>)LpVtbl[17])(@this, pDstResourcePtr, pSrcResourcePtr);
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ID3D12Resource*, void>)@this->LpVtbl[17])(@this, pDstResourcePtr, pSrcResourcePtr);
                 }
             }
         }
@@ -683,7 +686,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void CopyTiles(ID3D12Resource* pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinate, pTileRegionSize, pBuffer, BufferStartOffsetInBytes, Flags);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)@this->LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinate, pTileRegionSize, pBuffer, BufferStartOffsetInBytes, Flags);
         }
 
         /// <summary>To be documented.</summary>
@@ -692,7 +695,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pBufferPtr = &pBuffer)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinate, pTileRegionSize, pBufferPtr, BufferStartOffsetInBytes, Flags);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)@this->LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinate, pTileRegionSize, pBufferPtr, BufferStartOffsetInBytes, Flags);
             }
         }
 
@@ -702,7 +705,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (TileRegionSize* pTileRegionSizePtr = &pTileRegionSize)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinate, pTileRegionSizePtr, pBuffer, BufferStartOffsetInBytes, Flags);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)@this->LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinate, pTileRegionSizePtr, pBuffer, BufferStartOffsetInBytes, Flags);
             }
         }
 
@@ -714,7 +717,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (ID3D12Resource* pBufferPtr = &pBuffer)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinate, pTileRegionSizePtr, pBufferPtr, BufferStartOffsetInBytes, Flags);
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)@this->LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinate, pTileRegionSizePtr, pBufferPtr, BufferStartOffsetInBytes, Flags);
                 }
             }
         }
@@ -725,7 +728,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (TiledResourceCoordinate* pTileRegionStartCoordinatePtr = &pTileRegionStartCoordinate)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinatePtr, pTileRegionSize, pBuffer, BufferStartOffsetInBytes, Flags);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)@this->LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinatePtr, pTileRegionSize, pBuffer, BufferStartOffsetInBytes, Flags);
             }
         }
 
@@ -737,7 +740,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (ID3D12Resource* pBufferPtr = &pBuffer)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinatePtr, pTileRegionSize, pBufferPtr, BufferStartOffsetInBytes, Flags);
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)@this->LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinatePtr, pTileRegionSize, pBufferPtr, BufferStartOffsetInBytes, Flags);
                 }
             }
         }
@@ -750,7 +753,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (TileRegionSize* pTileRegionSizePtr = &pTileRegionSize)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinatePtr, pTileRegionSizePtr, pBuffer, BufferStartOffsetInBytes, Flags);
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)@this->LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinatePtr, pTileRegionSizePtr, pBuffer, BufferStartOffsetInBytes, Flags);
                 }
             }
         }
@@ -765,7 +768,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (ID3D12Resource* pBufferPtr = &pBuffer)
                     {
-                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinatePtr, pTileRegionSizePtr, pBufferPtr, BufferStartOffsetInBytes, Flags);
+                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)@this->LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinatePtr, pTileRegionSizePtr, pBufferPtr, BufferStartOffsetInBytes, Flags);
                     }
                 }
             }
@@ -777,7 +780,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pTiledResourcePtr = &pTiledResource)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinate, pTileRegionSize, pBuffer, BufferStartOffsetInBytes, Flags);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)@this->LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinate, pTileRegionSize, pBuffer, BufferStartOffsetInBytes, Flags);
             }
         }
 
@@ -789,7 +792,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (ID3D12Resource* pBufferPtr = &pBuffer)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinate, pTileRegionSize, pBufferPtr, BufferStartOffsetInBytes, Flags);
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)@this->LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinate, pTileRegionSize, pBufferPtr, BufferStartOffsetInBytes, Flags);
                 }
             }
         }
@@ -802,7 +805,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (TileRegionSize* pTileRegionSizePtr = &pTileRegionSize)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinate, pTileRegionSizePtr, pBuffer, BufferStartOffsetInBytes, Flags);
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)@this->LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinate, pTileRegionSizePtr, pBuffer, BufferStartOffsetInBytes, Flags);
                 }
             }
         }
@@ -817,7 +820,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (ID3D12Resource* pBufferPtr = &pBuffer)
                     {
-                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinate, pTileRegionSizePtr, pBufferPtr, BufferStartOffsetInBytes, Flags);
+                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)@this->LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinate, pTileRegionSizePtr, pBufferPtr, BufferStartOffsetInBytes, Flags);
                     }
                 }
             }
@@ -831,7 +834,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (TiledResourceCoordinate* pTileRegionStartCoordinatePtr = &pTileRegionStartCoordinate)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinatePtr, pTileRegionSize, pBuffer, BufferStartOffsetInBytes, Flags);
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)@this->LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinatePtr, pTileRegionSize, pBuffer, BufferStartOffsetInBytes, Flags);
                 }
             }
         }
@@ -846,7 +849,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (ID3D12Resource* pBufferPtr = &pBuffer)
                     {
-                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinatePtr, pTileRegionSize, pBufferPtr, BufferStartOffsetInBytes, Flags);
+                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)@this->LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinatePtr, pTileRegionSize, pBufferPtr, BufferStartOffsetInBytes, Flags);
                     }
                 }
             }
@@ -862,7 +865,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (TileRegionSize* pTileRegionSizePtr = &pTileRegionSize)
                     {
-                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinatePtr, pTileRegionSizePtr, pBuffer, BufferStartOffsetInBytes, Flags);
+                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)@this->LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinatePtr, pTileRegionSizePtr, pBuffer, BufferStartOffsetInBytes, Flags);
                     }
                 }
             }
@@ -880,7 +883,7 @@ namespace Silk.NET.Direct3D12
                     {
                         fixed (ID3D12Resource* pBufferPtr = &pBuffer)
                         {
-                            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinatePtr, pTileRegionSizePtr, pBufferPtr, BufferStartOffsetInBytes, Flags);
+                            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)@this->LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinatePtr, pTileRegionSizePtr, pBufferPtr, BufferStartOffsetInBytes, Flags);
                         }
                     }
                 }
@@ -891,7 +894,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void ResolveSubresource(ID3D12Resource* pDstResource, uint DstSubresource, ID3D12Resource* pSrcResource, uint SrcSubresource, Silk.NET.DXGI.Format Format)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, uint, ID3D12Resource*, uint, Silk.NET.DXGI.Format, void>)LpVtbl[19])(@this, pDstResource, DstSubresource, pSrcResource, SrcSubresource, Format);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, uint, ID3D12Resource*, uint, Silk.NET.DXGI.Format, void>)@this->LpVtbl[19])(@this, pDstResource, DstSubresource, pSrcResource, SrcSubresource, Format);
         }
 
         /// <summary>To be documented.</summary>
@@ -900,7 +903,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pSrcResourcePtr = &pSrcResource)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, uint, ID3D12Resource*, uint, Silk.NET.DXGI.Format, void>)LpVtbl[19])(@this, pDstResource, DstSubresource, pSrcResourcePtr, SrcSubresource, Format);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, uint, ID3D12Resource*, uint, Silk.NET.DXGI.Format, void>)@this->LpVtbl[19])(@this, pDstResource, DstSubresource, pSrcResourcePtr, SrcSubresource, Format);
             }
         }
 
@@ -910,7 +913,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pDstResourcePtr = &pDstResource)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, uint, ID3D12Resource*, uint, Silk.NET.DXGI.Format, void>)LpVtbl[19])(@this, pDstResourcePtr, DstSubresource, pSrcResource, SrcSubresource, Format);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, uint, ID3D12Resource*, uint, Silk.NET.DXGI.Format, void>)@this->LpVtbl[19])(@this, pDstResourcePtr, DstSubresource, pSrcResource, SrcSubresource, Format);
             }
         }
 
@@ -922,7 +925,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (ID3D12Resource* pSrcResourcePtr = &pSrcResource)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, uint, ID3D12Resource*, uint, Silk.NET.DXGI.Format, void>)LpVtbl[19])(@this, pDstResourcePtr, DstSubresource, pSrcResourcePtr, SrcSubresource, Format);
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, uint, ID3D12Resource*, uint, Silk.NET.DXGI.Format, void>)@this->LpVtbl[19])(@this, pDstResourcePtr, DstSubresource, pSrcResourcePtr, SrcSubresource, Format);
                 }
             }
         }
@@ -931,14 +934,14 @@ namespace Silk.NET.Direct3D12
         public readonly void IASetPrimitiveTopology(Silk.NET.Core.Native.D3DPrimitiveTopology PrimitiveTopology)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Silk.NET.Core.Native.D3DPrimitiveTopology, void>)LpVtbl[20])(@this, PrimitiveTopology);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, Silk.NET.Core.Native.D3DPrimitiveTopology, void>)@this->LpVtbl[20])(@this, PrimitiveTopology);
         }
 
         /// <summary>To be documented.</summary>
         public readonly unsafe void RSSetViewports(uint NumViewports, Viewport* pViewports)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, Viewport*, void>)LpVtbl[21])(@this, NumViewports, pViewports);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, Viewport*, void>)@this->LpVtbl[21])(@this, NumViewports, pViewports);
         }
 
         /// <summary>To be documented.</summary>
@@ -947,7 +950,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Viewport* pViewportsPtr = &pViewports)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, Viewport*, void>)LpVtbl[21])(@this, NumViewports, pViewportsPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, Viewport*, void>)@this->LpVtbl[21])(@this, NumViewports, pViewportsPtr);
             }
         }
 
@@ -955,7 +958,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void RSSetScissorRects(uint NumRects, Silk.NET.Maths.Box2D<int>* pRects)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, Silk.NET.Maths.Box2D<int>*, void>)LpVtbl[22])(@this, NumRects, pRects);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[22])(@this, NumRects, pRects);
         }
 
         /// <summary>To be documented.</summary>
@@ -964,7 +967,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, Silk.NET.Maths.Box2D<int>*, void>)LpVtbl[22])(@this, NumRects, pRectsPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[22])(@this, NumRects, pRectsPtr);
             }
         }
 
@@ -972,7 +975,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void OMSetBlendFactor([Count(Count = 4)] float* BlendFactor)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, float*, void>)LpVtbl[23])(@this, BlendFactor);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, float*, void>)@this->LpVtbl[23])(@this, BlendFactor);
         }
 
         /// <summary>To be documented.</summary>
@@ -981,7 +984,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (float* BlendFactorPtr = &BlendFactor)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, float*, void>)LpVtbl[23])(@this, BlendFactorPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, float*, void>)@this->LpVtbl[23])(@this, BlendFactorPtr);
             }
         }
 
@@ -989,14 +992,14 @@ namespace Silk.NET.Direct3D12
         public readonly void OMSetStencilRef(uint StencilRef)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, void>)LpVtbl[24])(@this, StencilRef);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, void>)@this->LpVtbl[24])(@this, StencilRef);
         }
 
         /// <summary>To be documented.</summary>
         public readonly unsafe void SetPipelineState(ID3D12PipelineState* pPipelineState)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12PipelineState*, void>)LpVtbl[25])(@this, pPipelineState);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12PipelineState*, void>)@this->LpVtbl[25])(@this, pPipelineState);
         }
 
         /// <summary>To be documented.</summary>
@@ -1005,7 +1008,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12PipelineState* pPipelineStatePtr = &pPipelineState)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12PipelineState*, void>)LpVtbl[25])(@this, pPipelineStatePtr);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12PipelineState*, void>)@this->LpVtbl[25])(@this, pPipelineStatePtr);
             }
         }
 
@@ -1013,7 +1016,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void ResourceBarrier(uint NumBarriers, ResourceBarrier* pBarriers)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, ResourceBarrier*, void>)LpVtbl[26])(@this, NumBarriers, pBarriers);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, ResourceBarrier*, void>)@this->LpVtbl[26])(@this, NumBarriers, pBarriers);
         }
 
         /// <summary>To be documented.</summary>
@@ -1022,7 +1025,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ResourceBarrier* pBarriersPtr = &pBarriers)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, ResourceBarrier*, void>)LpVtbl[26])(@this, NumBarriers, pBarriersPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, ResourceBarrier*, void>)@this->LpVtbl[26])(@this, NumBarriers, pBarriersPtr);
             }
         }
 
@@ -1030,7 +1033,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void ExecuteBundle(ID3D12GraphicsCommandList* pCommandList)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12GraphicsCommandList*, void>)LpVtbl[27])(@this, pCommandList);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12GraphicsCommandList*, void>)@this->LpVtbl[27])(@this, pCommandList);
         }
 
         /// <summary>To be documented.</summary>
@@ -1039,7 +1042,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12GraphicsCommandList* pCommandListPtr = &pCommandList)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12GraphicsCommandList*, void>)LpVtbl[27])(@this, pCommandListPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12GraphicsCommandList*, void>)@this->LpVtbl[27])(@this, pCommandListPtr);
             }
         }
 
@@ -1047,7 +1050,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void SetDescriptorHeaps(uint NumDescriptorHeaps, ID3D12DescriptorHeap** ppDescriptorHeaps)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, ID3D12DescriptorHeap**, void>)LpVtbl[28])(@this, NumDescriptorHeaps, ppDescriptorHeaps);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, ID3D12DescriptorHeap**, void>)@this->LpVtbl[28])(@this, NumDescriptorHeaps, ppDescriptorHeaps);
         }
 
         /// <summary>To be documented.</summary>
@@ -1056,7 +1059,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12DescriptorHeap** ppDescriptorHeapsPtr = &ppDescriptorHeaps)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, ID3D12DescriptorHeap**, void>)LpVtbl[28])(@this, NumDescriptorHeaps, ppDescriptorHeapsPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, ID3D12DescriptorHeap**, void>)@this->LpVtbl[28])(@this, NumDescriptorHeaps, ppDescriptorHeapsPtr);
             }
         }
 
@@ -1064,7 +1067,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void SetComputeRootSignature(ID3D12RootSignature* pRootSignature)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12RootSignature*, void>)LpVtbl[29])(@this, pRootSignature);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12RootSignature*, void>)@this->LpVtbl[29])(@this, pRootSignature);
         }
 
         /// <summary>To be documented.</summary>
@@ -1073,7 +1076,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12RootSignature* pRootSignaturePtr = &pRootSignature)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12RootSignature*, void>)LpVtbl[29])(@this, pRootSignaturePtr);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12RootSignature*, void>)@this->LpVtbl[29])(@this, pRootSignaturePtr);
             }
         }
 
@@ -1081,7 +1084,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void SetGraphicsRootSignature(ID3D12RootSignature* pRootSignature)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12RootSignature*, void>)LpVtbl[30])(@this, pRootSignature);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12RootSignature*, void>)@this->LpVtbl[30])(@this, pRootSignature);
         }
 
         /// <summary>To be documented.</summary>
@@ -1090,7 +1093,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12RootSignature* pRootSignaturePtr = &pRootSignature)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12RootSignature*, void>)LpVtbl[30])(@this, pRootSignaturePtr);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12RootSignature*, void>)@this->LpVtbl[30])(@this, pRootSignaturePtr);
             }
         }
 
@@ -1098,35 +1101,35 @@ namespace Silk.NET.Direct3D12
         public readonly void SetComputeRootDescriptorTable(uint RootParameterIndex, GpuDescriptorHandle BaseDescriptor)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, GpuDescriptorHandle, void>)LpVtbl[31])(@this, RootParameterIndex, BaseDescriptor);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, GpuDescriptorHandle, void>)@this->LpVtbl[31])(@this, RootParameterIndex, BaseDescriptor);
         }
 
         /// <summary>To be documented.</summary>
         public readonly void SetGraphicsRootDescriptorTable(uint RootParameterIndex, GpuDescriptorHandle BaseDescriptor)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, GpuDescriptorHandle, void>)LpVtbl[32])(@this, RootParameterIndex, BaseDescriptor);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, GpuDescriptorHandle, void>)@this->LpVtbl[32])(@this, RootParameterIndex, BaseDescriptor);
         }
 
         /// <summary>To be documented.</summary>
         public readonly void SetComputeRoot32BitConstant(uint RootParameterIndex, uint SrcData, uint DestOffsetIn32BitValues)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, uint, uint, void>)LpVtbl[33])(@this, RootParameterIndex, SrcData, DestOffsetIn32BitValues);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, uint, uint, void>)@this->LpVtbl[33])(@this, RootParameterIndex, SrcData, DestOffsetIn32BitValues);
         }
 
         /// <summary>To be documented.</summary>
         public readonly void SetGraphicsRoot32BitConstant(uint RootParameterIndex, uint SrcData, uint DestOffsetIn32BitValues)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, uint, uint, void>)LpVtbl[34])(@this, RootParameterIndex, SrcData, DestOffsetIn32BitValues);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, uint, uint, void>)@this->LpVtbl[34])(@this, RootParameterIndex, SrcData, DestOffsetIn32BitValues);
         }
 
         /// <summary>To be documented.</summary>
         public readonly unsafe void SetComputeRoot32BitConstants(uint RootParameterIndex, uint Num32BitValuesToSet, void* pSrcData, uint DestOffsetIn32BitValues)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, uint, void*, uint, void>)LpVtbl[35])(@this, RootParameterIndex, Num32BitValuesToSet, pSrcData, DestOffsetIn32BitValues);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, uint, void*, uint, void>)@this->LpVtbl[35])(@this, RootParameterIndex, Num32BitValuesToSet, pSrcData, DestOffsetIn32BitValues);
         }
 
         /// <summary>To be documented.</summary>
@@ -1135,7 +1138,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (void* pSrcDataPtr = &pSrcData)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, uint, void*, uint, void>)LpVtbl[35])(@this, RootParameterIndex, Num32BitValuesToSet, pSrcDataPtr, DestOffsetIn32BitValues);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, uint, void*, uint, void>)@this->LpVtbl[35])(@this, RootParameterIndex, Num32BitValuesToSet, pSrcDataPtr, DestOffsetIn32BitValues);
             }
         }
 
@@ -1143,7 +1146,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void SetGraphicsRoot32BitConstants(uint RootParameterIndex, uint Num32BitValuesToSet, void* pSrcData, uint DestOffsetIn32BitValues)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, uint, void*, uint, void>)LpVtbl[36])(@this, RootParameterIndex, Num32BitValuesToSet, pSrcData, DestOffsetIn32BitValues);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, uint, void*, uint, void>)@this->LpVtbl[36])(@this, RootParameterIndex, Num32BitValuesToSet, pSrcData, DestOffsetIn32BitValues);
         }
 
         /// <summary>To be documented.</summary>
@@ -1152,7 +1155,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (void* pSrcDataPtr = &pSrcData)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, uint, void*, uint, void>)LpVtbl[36])(@this, RootParameterIndex, Num32BitValuesToSet, pSrcDataPtr, DestOffsetIn32BitValues);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, uint, void*, uint, void>)@this->LpVtbl[36])(@this, RootParameterIndex, Num32BitValuesToSet, pSrcDataPtr, DestOffsetIn32BitValues);
             }
         }
 
@@ -1160,49 +1163,49 @@ namespace Silk.NET.Direct3D12
         public readonly void SetComputeRootConstantBufferView(uint RootParameterIndex, ulong BufferLocation)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, ulong, void>)LpVtbl[37])(@this, RootParameterIndex, BufferLocation);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, ulong, void>)@this->LpVtbl[37])(@this, RootParameterIndex, BufferLocation);
         }
 
         /// <summary>To be documented.</summary>
         public readonly void SetGraphicsRootConstantBufferView(uint RootParameterIndex, ulong BufferLocation)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, ulong, void>)LpVtbl[38])(@this, RootParameterIndex, BufferLocation);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, ulong, void>)@this->LpVtbl[38])(@this, RootParameterIndex, BufferLocation);
         }
 
         /// <summary>To be documented.</summary>
         public readonly void SetComputeRootShaderResourceView(uint RootParameterIndex, ulong BufferLocation)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, ulong, void>)LpVtbl[39])(@this, RootParameterIndex, BufferLocation);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, ulong, void>)@this->LpVtbl[39])(@this, RootParameterIndex, BufferLocation);
         }
 
         /// <summary>To be documented.</summary>
         public readonly void SetGraphicsRootShaderResourceView(uint RootParameterIndex, ulong BufferLocation)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, ulong, void>)LpVtbl[40])(@this, RootParameterIndex, BufferLocation);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, ulong, void>)@this->LpVtbl[40])(@this, RootParameterIndex, BufferLocation);
         }
 
         /// <summary>To be documented.</summary>
         public readonly void SetComputeRootUnorderedAccessView(uint RootParameterIndex, ulong BufferLocation)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, ulong, void>)LpVtbl[41])(@this, RootParameterIndex, BufferLocation);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, ulong, void>)@this->LpVtbl[41])(@this, RootParameterIndex, BufferLocation);
         }
 
         /// <summary>To be documented.</summary>
         public readonly void SetGraphicsRootUnorderedAccessView(uint RootParameterIndex, ulong BufferLocation)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, ulong, void>)LpVtbl[42])(@this, RootParameterIndex, BufferLocation);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, ulong, void>)@this->LpVtbl[42])(@this, RootParameterIndex, BufferLocation);
         }
 
         /// <summary>To be documented.</summary>
         public readonly unsafe void IASetIndexBuffer(IndexBufferView* pView)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, IndexBufferView*, void>)LpVtbl[43])(@this, pView);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, IndexBufferView*, void>)@this->LpVtbl[43])(@this, pView);
         }
 
         /// <summary>To be documented.</summary>
@@ -1211,7 +1214,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (IndexBufferView* pViewPtr = &pView)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, IndexBufferView*, void>)LpVtbl[43])(@this, pViewPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, IndexBufferView*, void>)@this->LpVtbl[43])(@this, pViewPtr);
             }
         }
 
@@ -1219,7 +1222,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void IASetVertexBuffers(uint StartSlot, uint NumViews, VertexBufferView* pViews)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, uint, VertexBufferView*, void>)LpVtbl[44])(@this, StartSlot, NumViews, pViews);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, uint, VertexBufferView*, void>)@this->LpVtbl[44])(@this, StartSlot, NumViews, pViews);
         }
 
         /// <summary>To be documented.</summary>
@@ -1228,7 +1231,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (VertexBufferView* pViewsPtr = &pViews)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, uint, VertexBufferView*, void>)LpVtbl[44])(@this, StartSlot, NumViews, pViewsPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, uint, VertexBufferView*, void>)@this->LpVtbl[44])(@this, StartSlot, NumViews, pViewsPtr);
             }
         }
 
@@ -1236,7 +1239,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void SOSetTargets(uint StartSlot, uint NumViews, StreamOutputBufferView* pViews)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, uint, StreamOutputBufferView*, void>)LpVtbl[45])(@this, StartSlot, NumViews, pViews);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, uint, StreamOutputBufferView*, void>)@this->LpVtbl[45])(@this, StartSlot, NumViews, pViews);
         }
 
         /// <summary>To be documented.</summary>
@@ -1245,7 +1248,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (StreamOutputBufferView* pViewsPtr = &pViews)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, uint, StreamOutputBufferView*, void>)LpVtbl[45])(@this, StartSlot, NumViews, pViewsPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, uint, StreamOutputBufferView*, void>)@this->LpVtbl[45])(@this, StartSlot, NumViews, pViewsPtr);
             }
         }
 
@@ -1253,7 +1256,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void OMSetRenderTargets(uint NumRenderTargetDescriptors, CpuDescriptorHandle* pRenderTargetDescriptors, int RTsSingleHandleToDescriptorRange, CpuDescriptorHandle* pDepthStencilDescriptor)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, CpuDescriptorHandle*, int, CpuDescriptorHandle*, void>)LpVtbl[46])(@this, NumRenderTargetDescriptors, pRenderTargetDescriptors, RTsSingleHandleToDescriptorRange, pDepthStencilDescriptor);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, CpuDescriptorHandle*, int, CpuDescriptorHandle*, void>)@this->LpVtbl[46])(@this, NumRenderTargetDescriptors, pRenderTargetDescriptors, RTsSingleHandleToDescriptorRange, pDepthStencilDescriptor);
         }
 
         /// <summary>To be documented.</summary>
@@ -1262,7 +1265,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (CpuDescriptorHandle* pDepthStencilDescriptorPtr = &pDepthStencilDescriptor)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, CpuDescriptorHandle*, int, CpuDescriptorHandle*, void>)LpVtbl[46])(@this, NumRenderTargetDescriptors, pRenderTargetDescriptors, RTsSingleHandleToDescriptorRange, pDepthStencilDescriptorPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, CpuDescriptorHandle*, int, CpuDescriptorHandle*, void>)@this->LpVtbl[46])(@this, NumRenderTargetDescriptors, pRenderTargetDescriptors, RTsSingleHandleToDescriptorRange, pDepthStencilDescriptorPtr);
             }
         }
 
@@ -1272,7 +1275,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (CpuDescriptorHandle* pRenderTargetDescriptorsPtr = &pRenderTargetDescriptors)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, CpuDescriptorHandle*, int, CpuDescriptorHandle*, void>)LpVtbl[46])(@this, NumRenderTargetDescriptors, pRenderTargetDescriptorsPtr, RTsSingleHandleToDescriptorRange, pDepthStencilDescriptor);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, CpuDescriptorHandle*, int, CpuDescriptorHandle*, void>)@this->LpVtbl[46])(@this, NumRenderTargetDescriptors, pRenderTargetDescriptorsPtr, RTsSingleHandleToDescriptorRange, pDepthStencilDescriptor);
             }
         }
 
@@ -1284,7 +1287,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (CpuDescriptorHandle* pDepthStencilDescriptorPtr = &pDepthStencilDescriptor)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, CpuDescriptorHandle*, int, CpuDescriptorHandle*, void>)LpVtbl[46])(@this, NumRenderTargetDescriptors, pRenderTargetDescriptorsPtr, RTsSingleHandleToDescriptorRange, pDepthStencilDescriptorPtr);
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, CpuDescriptorHandle*, int, CpuDescriptorHandle*, void>)@this->LpVtbl[46])(@this, NumRenderTargetDescriptors, pRenderTargetDescriptorsPtr, RTsSingleHandleToDescriptorRange, pDepthStencilDescriptorPtr);
                 }
             }
         }
@@ -1293,7 +1296,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void ClearDepthStencilView(CpuDescriptorHandle DepthStencilView, ClearFlags ClearFlags, float Depth, byte Stencil, uint NumRects, Silk.NET.Maths.Box2D<int>* pRects)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, CpuDescriptorHandle, ClearFlags, float, byte, uint, Silk.NET.Maths.Box2D<int>*, void>)LpVtbl[47])(@this, DepthStencilView, ClearFlags, Depth, Stencil, NumRects, pRects);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, CpuDescriptorHandle, ClearFlags, float, byte, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[47])(@this, DepthStencilView, ClearFlags, Depth, Stencil, NumRects, pRects);
         }
 
         /// <summary>To be documented.</summary>
@@ -1302,7 +1305,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, CpuDescriptorHandle, ClearFlags, float, byte, uint, Silk.NET.Maths.Box2D<int>*, void>)LpVtbl[47])(@this, DepthStencilView, ClearFlags, Depth, Stencil, NumRects, pRectsPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, CpuDescriptorHandle, ClearFlags, float, byte, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[47])(@this, DepthStencilView, ClearFlags, Depth, Stencil, NumRects, pRectsPtr);
             }
         }
 
@@ -1310,7 +1313,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void ClearRenderTargetView(CpuDescriptorHandle RenderTargetView, [Count(Count = 4)] float* ColorRGBA, uint NumRects, Silk.NET.Maths.Box2D<int>* pRects)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, CpuDescriptorHandle, float*, uint, Silk.NET.Maths.Box2D<int>*, void>)LpVtbl[48])(@this, RenderTargetView, ColorRGBA, NumRects, pRects);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, CpuDescriptorHandle, float*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[48])(@this, RenderTargetView, ColorRGBA, NumRects, pRects);
         }
 
         /// <summary>To be documented.</summary>
@@ -1319,7 +1322,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, CpuDescriptorHandle, float*, uint, Silk.NET.Maths.Box2D<int>*, void>)LpVtbl[48])(@this, RenderTargetView, ColorRGBA, NumRects, pRectsPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, CpuDescriptorHandle, float*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[48])(@this, RenderTargetView, ColorRGBA, NumRects, pRectsPtr);
             }
         }
 
@@ -1329,7 +1332,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (float* ColorRGBAPtr = &ColorRGBA)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, CpuDescriptorHandle, float*, uint, Silk.NET.Maths.Box2D<int>*, void>)LpVtbl[48])(@this, RenderTargetView, ColorRGBAPtr, NumRects, pRects);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, CpuDescriptorHandle, float*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[48])(@this, RenderTargetView, ColorRGBAPtr, NumRects, pRects);
             }
         }
 
@@ -1341,7 +1344,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, CpuDescriptorHandle, float*, uint, Silk.NET.Maths.Box2D<int>*, void>)LpVtbl[48])(@this, RenderTargetView, ColorRGBAPtr, NumRects, pRectsPtr);
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, CpuDescriptorHandle, float*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[48])(@this, RenderTargetView, ColorRGBAPtr, NumRects, pRectsPtr);
                 }
             }
         }
@@ -1350,7 +1353,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] uint* Values, uint NumRects, Silk.NET.Maths.Box2D<int>* pRects)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Box2D<int>*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, pRects);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, pRects);
         }
 
         /// <summary>To be documented.</summary>
@@ -1359,7 +1362,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Box2D<int>*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, pRectsPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, pRectsPtr);
             }
         }
 
@@ -1369,7 +1372,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* ValuesPtr = &Values)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Box2D<int>*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, ValuesPtr, NumRects, pRects);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, ValuesPtr, NumRects, pRects);
             }
         }
 
@@ -1381,7 +1384,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Box2D<int>*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, ValuesPtr, NumRects, pRectsPtr);
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, ValuesPtr, NumRects, pRectsPtr);
                 }
             }
         }
@@ -1392,7 +1395,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pResourcePtr = &pResource)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Box2D<int>*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, Values, NumRects, pRects);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, Values, NumRects, pRects);
             }
         }
 
@@ -1404,7 +1407,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Box2D<int>*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, Values, NumRects, pRectsPtr);
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, Values, NumRects, pRectsPtr);
                 }
             }
         }
@@ -1417,7 +1420,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (uint* ValuesPtr = &Values)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Box2D<int>*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, ValuesPtr, NumRects, pRects);
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, ValuesPtr, NumRects, pRects);
                 }
             }
         }
@@ -1432,7 +1435,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
                     {
-                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Box2D<int>*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, ValuesPtr, NumRects, pRectsPtr);
+                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, ValuesPtr, NumRects, pRectsPtr);
                     }
                 }
             }
@@ -1442,7 +1445,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] float* Values, uint NumRects, Silk.NET.Maths.Box2D<int>* pRects)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Box2D<int>*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, pRects);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, pRects);
         }
 
         /// <summary>To be documented.</summary>
@@ -1451,7 +1454,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Box2D<int>*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, pRectsPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, pRectsPtr);
             }
         }
 
@@ -1461,7 +1464,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (float* ValuesPtr = &Values)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Box2D<int>*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, ValuesPtr, NumRects, pRects);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, ValuesPtr, NumRects, pRects);
             }
         }
 
@@ -1473,7 +1476,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Box2D<int>*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, ValuesPtr, NumRects, pRectsPtr);
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, ValuesPtr, NumRects, pRectsPtr);
                 }
             }
         }
@@ -1484,7 +1487,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pResourcePtr = &pResource)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Box2D<int>*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, Values, NumRects, pRects);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, Values, NumRects, pRects);
             }
         }
 
@@ -1496,7 +1499,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Box2D<int>*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, Values, NumRects, pRectsPtr);
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, Values, NumRects, pRectsPtr);
                 }
             }
         }
@@ -1509,7 +1512,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (float* ValuesPtr = &Values)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Box2D<int>*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, ValuesPtr, NumRects, pRects);
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, ValuesPtr, NumRects, pRects);
                 }
             }
         }
@@ -1524,7 +1527,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
                     {
-                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Box2D<int>*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, ValuesPtr, NumRects, pRectsPtr);
+                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, ValuesPtr, NumRects, pRectsPtr);
                     }
                 }
             }
@@ -1534,7 +1537,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void DiscardResource(ID3D12Resource* pResource, DiscardRegion* pRegion)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, DiscardRegion*, void>)LpVtbl[51])(@this, pResource, pRegion);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, DiscardRegion*, void>)@this->LpVtbl[51])(@this, pResource, pRegion);
         }
 
         /// <summary>To be documented.</summary>
@@ -1543,7 +1546,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (DiscardRegion* pRegionPtr = &pRegion)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, DiscardRegion*, void>)LpVtbl[51])(@this, pResource, pRegionPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, DiscardRegion*, void>)@this->LpVtbl[51])(@this, pResource, pRegionPtr);
             }
         }
 
@@ -1553,7 +1556,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pResourcePtr = &pResource)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, DiscardRegion*, void>)LpVtbl[51])(@this, pResourcePtr, pRegion);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, DiscardRegion*, void>)@this->LpVtbl[51])(@this, pResourcePtr, pRegion);
             }
         }
 
@@ -1565,7 +1568,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (DiscardRegion* pRegionPtr = &pRegion)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, DiscardRegion*, void>)LpVtbl[51])(@this, pResourcePtr, pRegionPtr);
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, DiscardRegion*, void>)@this->LpVtbl[51])(@this, pResourcePtr, pRegionPtr);
                 }
             }
         }
@@ -1574,7 +1577,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void BeginQuery(ID3D12QueryHeap* pQueryHeap, QueryType Type, uint Index)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12QueryHeap*, QueryType, uint, void>)LpVtbl[52])(@this, pQueryHeap, Type, Index);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12QueryHeap*, QueryType, uint, void>)@this->LpVtbl[52])(@this, pQueryHeap, Type, Index);
         }
 
         /// <summary>To be documented.</summary>
@@ -1583,7 +1586,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12QueryHeap* pQueryHeapPtr = &pQueryHeap)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12QueryHeap*, QueryType, uint, void>)LpVtbl[52])(@this, pQueryHeapPtr, Type, Index);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12QueryHeap*, QueryType, uint, void>)@this->LpVtbl[52])(@this, pQueryHeapPtr, Type, Index);
             }
         }
 
@@ -1591,7 +1594,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void EndQuery(ID3D12QueryHeap* pQueryHeap, QueryType Type, uint Index)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12QueryHeap*, QueryType, uint, void>)LpVtbl[53])(@this, pQueryHeap, Type, Index);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12QueryHeap*, QueryType, uint, void>)@this->LpVtbl[53])(@this, pQueryHeap, Type, Index);
         }
 
         /// <summary>To be documented.</summary>
@@ -1600,7 +1603,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12QueryHeap* pQueryHeapPtr = &pQueryHeap)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12QueryHeap*, QueryType, uint, void>)LpVtbl[53])(@this, pQueryHeapPtr, Type, Index);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12QueryHeap*, QueryType, uint, void>)@this->LpVtbl[53])(@this, pQueryHeapPtr, Type, Index);
             }
         }
 
@@ -1608,7 +1611,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void ResolveQueryData(ID3D12QueryHeap* pQueryHeap, QueryType Type, uint StartIndex, uint NumQueries, ID3D12Resource* pDestinationBuffer, ulong AlignedDestinationBufferOffset)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12QueryHeap*, QueryType, uint, uint, ID3D12Resource*, ulong, void>)LpVtbl[54])(@this, pQueryHeap, Type, StartIndex, NumQueries, pDestinationBuffer, AlignedDestinationBufferOffset);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12QueryHeap*, QueryType, uint, uint, ID3D12Resource*, ulong, void>)@this->LpVtbl[54])(@this, pQueryHeap, Type, StartIndex, NumQueries, pDestinationBuffer, AlignedDestinationBufferOffset);
         }
 
         /// <summary>To be documented.</summary>
@@ -1617,7 +1620,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pDestinationBufferPtr = &pDestinationBuffer)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12QueryHeap*, QueryType, uint, uint, ID3D12Resource*, ulong, void>)LpVtbl[54])(@this, pQueryHeap, Type, StartIndex, NumQueries, pDestinationBufferPtr, AlignedDestinationBufferOffset);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12QueryHeap*, QueryType, uint, uint, ID3D12Resource*, ulong, void>)@this->LpVtbl[54])(@this, pQueryHeap, Type, StartIndex, NumQueries, pDestinationBufferPtr, AlignedDestinationBufferOffset);
             }
         }
 
@@ -1627,7 +1630,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12QueryHeap* pQueryHeapPtr = &pQueryHeap)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12QueryHeap*, QueryType, uint, uint, ID3D12Resource*, ulong, void>)LpVtbl[54])(@this, pQueryHeapPtr, Type, StartIndex, NumQueries, pDestinationBuffer, AlignedDestinationBufferOffset);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12QueryHeap*, QueryType, uint, uint, ID3D12Resource*, ulong, void>)@this->LpVtbl[54])(@this, pQueryHeapPtr, Type, StartIndex, NumQueries, pDestinationBuffer, AlignedDestinationBufferOffset);
             }
         }
 
@@ -1639,7 +1642,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (ID3D12Resource* pDestinationBufferPtr = &pDestinationBuffer)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12QueryHeap*, QueryType, uint, uint, ID3D12Resource*, ulong, void>)LpVtbl[54])(@this, pQueryHeapPtr, Type, StartIndex, NumQueries, pDestinationBufferPtr, AlignedDestinationBufferOffset);
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12QueryHeap*, QueryType, uint, uint, ID3D12Resource*, ulong, void>)@this->LpVtbl[54])(@this, pQueryHeapPtr, Type, StartIndex, NumQueries, pDestinationBufferPtr, AlignedDestinationBufferOffset);
                 }
             }
         }
@@ -1648,7 +1651,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void SetPredication(ID3D12Resource* pBuffer, ulong AlignedBufferOffset, PredicationOp Operation)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, PredicationOp, void>)LpVtbl[55])(@this, pBuffer, AlignedBufferOffset, Operation);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, PredicationOp, void>)@this->LpVtbl[55])(@this, pBuffer, AlignedBufferOffset, Operation);
         }
 
         /// <summary>To be documented.</summary>
@@ -1657,7 +1660,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pBufferPtr = &pBuffer)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, PredicationOp, void>)LpVtbl[55])(@this, pBufferPtr, AlignedBufferOffset, Operation);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, PredicationOp, void>)@this->LpVtbl[55])(@this, pBufferPtr, AlignedBufferOffset, Operation);
             }
         }
 
@@ -1665,7 +1668,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void SetMarker(uint Metadata, void* pData, uint Size)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, void*, uint, void>)LpVtbl[56])(@this, Metadata, pData, Size);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, void*, uint, void>)@this->LpVtbl[56])(@this, Metadata, pData, Size);
         }
 
         /// <summary>To be documented.</summary>
@@ -1674,7 +1677,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (void* pDataPtr = &pData)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, void*, uint, void>)LpVtbl[56])(@this, Metadata, pDataPtr, Size);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, void*, uint, void>)@this->LpVtbl[56])(@this, Metadata, pDataPtr, Size);
             }
         }
 
@@ -1682,7 +1685,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void BeginEvent(uint Metadata, void* pData, uint Size)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, void*, uint, void>)LpVtbl[57])(@this, Metadata, pData, Size);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, void*, uint, void>)@this->LpVtbl[57])(@this, Metadata, pData, Size);
         }
 
         /// <summary>To be documented.</summary>
@@ -1691,7 +1694,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (void* pDataPtr = &pData)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, void*, uint, void>)LpVtbl[57])(@this, Metadata, pDataPtr, Size);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, void*, uint, void>)@this->LpVtbl[57])(@this, Metadata, pDataPtr, Size);
             }
         }
 
@@ -1699,14 +1702,14 @@ namespace Silk.NET.Direct3D12
         public readonly void EndEvent()
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, void>)LpVtbl[58])(@this);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, void>)@this->LpVtbl[58])(@this);
         }
 
         /// <summary>To be documented.</summary>
         public readonly unsafe void ExecuteIndirect(ID3D12CommandSignature* pCommandSignature, uint MaxCommandCount, ID3D12Resource* pArgumentBuffer, ulong ArgumentBufferOffset, ID3D12Resource* pCountBuffer, ulong CountBufferOffset)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)LpVtbl[59])(@this, pCommandSignature, MaxCommandCount, pArgumentBuffer, ArgumentBufferOffset, pCountBuffer, CountBufferOffset);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)@this->LpVtbl[59])(@this, pCommandSignature, MaxCommandCount, pArgumentBuffer, ArgumentBufferOffset, pCountBuffer, CountBufferOffset);
         }
 
         /// <summary>To be documented.</summary>
@@ -1715,7 +1718,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pCountBufferPtr = &pCountBuffer)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)LpVtbl[59])(@this, pCommandSignature, MaxCommandCount, pArgumentBuffer, ArgumentBufferOffset, pCountBufferPtr, CountBufferOffset);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)@this->LpVtbl[59])(@this, pCommandSignature, MaxCommandCount, pArgumentBuffer, ArgumentBufferOffset, pCountBufferPtr, CountBufferOffset);
             }
         }
 
@@ -1725,7 +1728,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pArgumentBufferPtr = &pArgumentBuffer)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)LpVtbl[59])(@this, pCommandSignature, MaxCommandCount, pArgumentBufferPtr, ArgumentBufferOffset, pCountBuffer, CountBufferOffset);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)@this->LpVtbl[59])(@this, pCommandSignature, MaxCommandCount, pArgumentBufferPtr, ArgumentBufferOffset, pCountBuffer, CountBufferOffset);
             }
         }
 
@@ -1737,7 +1740,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (ID3D12Resource* pCountBufferPtr = &pCountBuffer)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)LpVtbl[59])(@this, pCommandSignature, MaxCommandCount, pArgumentBufferPtr, ArgumentBufferOffset, pCountBufferPtr, CountBufferOffset);
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)@this->LpVtbl[59])(@this, pCommandSignature, MaxCommandCount, pArgumentBufferPtr, ArgumentBufferOffset, pCountBufferPtr, CountBufferOffset);
                 }
             }
         }
@@ -1748,7 +1751,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12CommandSignature* pCommandSignaturePtr = &pCommandSignature)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)LpVtbl[59])(@this, pCommandSignaturePtr, MaxCommandCount, pArgumentBuffer, ArgumentBufferOffset, pCountBuffer, CountBufferOffset);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)@this->LpVtbl[59])(@this, pCommandSignaturePtr, MaxCommandCount, pArgumentBuffer, ArgumentBufferOffset, pCountBuffer, CountBufferOffset);
             }
         }
 
@@ -1760,7 +1763,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (ID3D12Resource* pCountBufferPtr = &pCountBuffer)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)LpVtbl[59])(@this, pCommandSignaturePtr, MaxCommandCount, pArgumentBuffer, ArgumentBufferOffset, pCountBufferPtr, CountBufferOffset);
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)@this->LpVtbl[59])(@this, pCommandSignaturePtr, MaxCommandCount, pArgumentBuffer, ArgumentBufferOffset, pCountBufferPtr, CountBufferOffset);
                 }
             }
         }
@@ -1773,7 +1776,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (ID3D12Resource* pArgumentBufferPtr = &pArgumentBuffer)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)LpVtbl[59])(@this, pCommandSignaturePtr, MaxCommandCount, pArgumentBufferPtr, ArgumentBufferOffset, pCountBuffer, CountBufferOffset);
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)@this->LpVtbl[59])(@this, pCommandSignaturePtr, MaxCommandCount, pArgumentBufferPtr, ArgumentBufferOffset, pCountBuffer, CountBufferOffset);
                 }
             }
         }
@@ -1788,7 +1791,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (ID3D12Resource* pCountBufferPtr = &pCountBuffer)
                     {
-                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)LpVtbl[59])(@this, pCommandSignaturePtr, MaxCommandCount, pArgumentBufferPtr, ArgumentBufferOffset, pCountBufferPtr, CountBufferOffset);
+                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)@this->LpVtbl[59])(@this, pCommandSignaturePtr, MaxCommandCount, pArgumentBufferPtr, ArgumentBufferOffset, pCountBufferPtr, CountBufferOffset);
                     }
                 }
             }
@@ -1798,7 +1801,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void AtomicCopyBufferUINT(ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, ID3D12Resource** ppDependentResources, SubresourceRangeUint64* pDependentSubresourceRanges)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[60])(@this, pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRanges);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)@this->LpVtbl[60])(@this, pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRanges);
         }
 
         /// <summary>To be documented.</summary>
@@ -1807,7 +1810,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (SubresourceRangeUint64* pDependentSubresourceRangesPtr = &pDependentSubresourceRanges)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[60])(@this, pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRangesPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)@this->LpVtbl[60])(@this, pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRangesPtr);
             }
         }
 
@@ -1817,7 +1820,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource** ppDependentResourcesPtr = &ppDependentResources)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[60])(@this, pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRanges);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)@this->LpVtbl[60])(@this, pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRanges);
             }
         }
 
@@ -1829,7 +1832,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (SubresourceRangeUint64* pDependentSubresourceRangesPtr = &pDependentSubresourceRanges)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[60])(@this, pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRangesPtr);
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)@this->LpVtbl[60])(@this, pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRangesPtr);
                 }
             }
         }
@@ -1840,7 +1843,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pSrcBufferPtr = &pSrcBuffer)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[60])(@this, pDstBuffer, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRanges);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)@this->LpVtbl[60])(@this, pDstBuffer, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRanges);
             }
         }
 
@@ -1852,7 +1855,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (SubresourceRangeUint64* pDependentSubresourceRangesPtr = &pDependentSubresourceRanges)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[60])(@this, pDstBuffer, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRangesPtr);
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)@this->LpVtbl[60])(@this, pDstBuffer, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRangesPtr);
                 }
             }
         }
@@ -1865,7 +1868,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (ID3D12Resource** ppDependentResourcesPtr = &ppDependentResources)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[60])(@this, pDstBuffer, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRanges);
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)@this->LpVtbl[60])(@this, pDstBuffer, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRanges);
                 }
             }
         }
@@ -1880,7 +1883,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (SubresourceRangeUint64* pDependentSubresourceRangesPtr = &pDependentSubresourceRanges)
                     {
-                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[60])(@this, pDstBuffer, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRangesPtr);
+                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)@this->LpVtbl[60])(@this, pDstBuffer, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRangesPtr);
                     }
                 }
             }
@@ -1892,7 +1895,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[60])(@this, pDstBufferPtr, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRanges);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)@this->LpVtbl[60])(@this, pDstBufferPtr, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRanges);
             }
         }
 
@@ -1904,7 +1907,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (SubresourceRangeUint64* pDependentSubresourceRangesPtr = &pDependentSubresourceRanges)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[60])(@this, pDstBufferPtr, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRangesPtr);
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)@this->LpVtbl[60])(@this, pDstBufferPtr, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRangesPtr);
                 }
             }
         }
@@ -1917,7 +1920,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (ID3D12Resource** ppDependentResourcesPtr = &ppDependentResources)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[60])(@this, pDstBufferPtr, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRanges);
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)@this->LpVtbl[60])(@this, pDstBufferPtr, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRanges);
                 }
             }
         }
@@ -1932,7 +1935,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (SubresourceRangeUint64* pDependentSubresourceRangesPtr = &pDependentSubresourceRanges)
                     {
-                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[60])(@this, pDstBufferPtr, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRangesPtr);
+                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)@this->LpVtbl[60])(@this, pDstBufferPtr, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRangesPtr);
                     }
                 }
             }
@@ -1946,7 +1949,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (ID3D12Resource* pSrcBufferPtr = &pSrcBuffer)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[60])(@this, pDstBufferPtr, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRanges);
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)@this->LpVtbl[60])(@this, pDstBufferPtr, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRanges);
                 }
             }
         }
@@ -1961,7 +1964,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (SubresourceRangeUint64* pDependentSubresourceRangesPtr = &pDependentSubresourceRanges)
                     {
-                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[60])(@this, pDstBufferPtr, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRangesPtr);
+                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)@this->LpVtbl[60])(@this, pDstBufferPtr, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRangesPtr);
                     }
                 }
             }
@@ -1977,7 +1980,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (ID3D12Resource** ppDependentResourcesPtr = &ppDependentResources)
                     {
-                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[60])(@this, pDstBufferPtr, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRanges);
+                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)@this->LpVtbl[60])(@this, pDstBufferPtr, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRanges);
                     }
                 }
             }
@@ -1995,7 +1998,7 @@ namespace Silk.NET.Direct3D12
                     {
                         fixed (SubresourceRangeUint64* pDependentSubresourceRangesPtr = &pDependentSubresourceRanges)
                         {
-                            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[60])(@this, pDstBufferPtr, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRangesPtr);
+                            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)@this->LpVtbl[60])(@this, pDstBufferPtr, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRangesPtr);
                         }
                     }
                 }
@@ -2006,7 +2009,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void AtomicCopyBufferUINT64(ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, ID3D12Resource** ppDependentResources, SubresourceRangeUint64* pDependentSubresourceRanges)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[61])(@this, pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRanges);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)@this->LpVtbl[61])(@this, pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRanges);
         }
 
         /// <summary>To be documented.</summary>
@@ -2015,7 +2018,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (SubresourceRangeUint64* pDependentSubresourceRangesPtr = &pDependentSubresourceRanges)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[61])(@this, pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRangesPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)@this->LpVtbl[61])(@this, pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRangesPtr);
             }
         }
 
@@ -2025,7 +2028,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource** ppDependentResourcesPtr = &ppDependentResources)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[61])(@this, pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRanges);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)@this->LpVtbl[61])(@this, pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRanges);
             }
         }
 
@@ -2037,7 +2040,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (SubresourceRangeUint64* pDependentSubresourceRangesPtr = &pDependentSubresourceRanges)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[61])(@this, pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRangesPtr);
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)@this->LpVtbl[61])(@this, pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRangesPtr);
                 }
             }
         }
@@ -2048,7 +2051,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pSrcBufferPtr = &pSrcBuffer)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[61])(@this, pDstBuffer, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRanges);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)@this->LpVtbl[61])(@this, pDstBuffer, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRanges);
             }
         }
 
@@ -2060,7 +2063,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (SubresourceRangeUint64* pDependentSubresourceRangesPtr = &pDependentSubresourceRanges)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[61])(@this, pDstBuffer, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRangesPtr);
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)@this->LpVtbl[61])(@this, pDstBuffer, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRangesPtr);
                 }
             }
         }
@@ -2073,7 +2076,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (ID3D12Resource** ppDependentResourcesPtr = &ppDependentResources)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[61])(@this, pDstBuffer, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRanges);
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)@this->LpVtbl[61])(@this, pDstBuffer, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRanges);
                 }
             }
         }
@@ -2088,7 +2091,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (SubresourceRangeUint64* pDependentSubresourceRangesPtr = &pDependentSubresourceRanges)
                     {
-                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[61])(@this, pDstBuffer, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRangesPtr);
+                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)@this->LpVtbl[61])(@this, pDstBuffer, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRangesPtr);
                     }
                 }
             }
@@ -2100,7 +2103,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[61])(@this, pDstBufferPtr, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRanges);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)@this->LpVtbl[61])(@this, pDstBufferPtr, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRanges);
             }
         }
 
@@ -2112,7 +2115,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (SubresourceRangeUint64* pDependentSubresourceRangesPtr = &pDependentSubresourceRanges)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[61])(@this, pDstBufferPtr, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRangesPtr);
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)@this->LpVtbl[61])(@this, pDstBufferPtr, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRangesPtr);
                 }
             }
         }
@@ -2125,7 +2128,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (ID3D12Resource** ppDependentResourcesPtr = &ppDependentResources)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[61])(@this, pDstBufferPtr, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRanges);
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)@this->LpVtbl[61])(@this, pDstBufferPtr, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRanges);
                 }
             }
         }
@@ -2140,7 +2143,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (SubresourceRangeUint64* pDependentSubresourceRangesPtr = &pDependentSubresourceRanges)
                     {
-                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[61])(@this, pDstBufferPtr, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRangesPtr);
+                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)@this->LpVtbl[61])(@this, pDstBufferPtr, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRangesPtr);
                     }
                 }
             }
@@ -2154,7 +2157,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (ID3D12Resource* pSrcBufferPtr = &pSrcBuffer)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[61])(@this, pDstBufferPtr, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRanges);
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)@this->LpVtbl[61])(@this, pDstBufferPtr, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRanges);
                 }
             }
         }
@@ -2169,7 +2172,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (SubresourceRangeUint64* pDependentSubresourceRangesPtr = &pDependentSubresourceRanges)
                     {
-                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[61])(@this, pDstBufferPtr, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRangesPtr);
+                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)@this->LpVtbl[61])(@this, pDstBufferPtr, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRangesPtr);
                     }
                 }
             }
@@ -2185,7 +2188,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (ID3D12Resource** ppDependentResourcesPtr = &ppDependentResources)
                     {
-                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[61])(@this, pDstBufferPtr, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRanges);
+                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)@this->LpVtbl[61])(@this, pDstBufferPtr, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRanges);
                     }
                 }
             }
@@ -2203,7 +2206,7 @@ namespace Silk.NET.Direct3D12
                     {
                         fixed (SubresourceRangeUint64* pDependentSubresourceRangesPtr = &pDependentSubresourceRanges)
                         {
-                            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[61])(@this, pDstBufferPtr, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRangesPtr);
+                            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)@this->LpVtbl[61])(@this, pDstBufferPtr, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRangesPtr);
                         }
                     }
                 }
@@ -2214,14 +2217,14 @@ namespace Silk.NET.Direct3D12
         public readonly void OMSetDepthBounds(float Min, float Max)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, float, float, void>)LpVtbl[62])(@this, Min, Max);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, float, float, void>)@this->LpVtbl[62])(@this, Min, Max);
         }
 
         /// <summary>To be documented.</summary>
         public readonly unsafe void SetSamplePositions(uint NumSamplesPerPixel, uint NumPixels, SamplePosition* pSamplePositions)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, uint, SamplePosition*, void>)LpVtbl[63])(@this, NumSamplesPerPixel, NumPixels, pSamplePositions);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, uint, SamplePosition*, void>)@this->LpVtbl[63])(@this, NumSamplesPerPixel, NumPixels, pSamplePositions);
         }
 
         /// <summary>To be documented.</summary>
@@ -2230,7 +2233,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (SamplePosition* pSamplePositionsPtr = &pSamplePositions)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, uint, SamplePosition*, void>)LpVtbl[63])(@this, NumSamplesPerPixel, NumPixels, pSamplePositionsPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, uint, SamplePosition*, void>)@this->LpVtbl[63])(@this, NumSamplesPerPixel, NumPixels, pSamplePositionsPtr);
             }
         }
 
@@ -2238,7 +2241,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void ResolveSubresourceRegion(ID3D12Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, ID3D12Resource* pSrcResource, uint SrcSubresource, Silk.NET.Maths.Box2D<int>* pSrcRect, Silk.NET.DXGI.Format Format, ResolveMode ResolveMode)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, uint, uint, uint, ID3D12Resource*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.DXGI.Format, ResolveMode, void>)LpVtbl[64])(@this, pDstResource, DstSubresource, DstX, DstY, pSrcResource, SrcSubresource, pSrcRect, Format, ResolveMode);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, uint, uint, uint, ID3D12Resource*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.DXGI.Format, ResolveMode, void>)@this->LpVtbl[64])(@this, pDstResource, DstSubresource, DstX, DstY, pSrcResource, SrcSubresource, pSrcRect, Format, ResolveMode);
         }
 
         /// <summary>To be documented.</summary>
@@ -2247,7 +2250,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Box2D<int>* pSrcRectPtr = &pSrcRect)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, uint, uint, uint, ID3D12Resource*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.DXGI.Format, ResolveMode, void>)LpVtbl[64])(@this, pDstResource, DstSubresource, DstX, DstY, pSrcResource, SrcSubresource, pSrcRectPtr, Format, ResolveMode);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, uint, uint, uint, ID3D12Resource*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.DXGI.Format, ResolveMode, void>)@this->LpVtbl[64])(@this, pDstResource, DstSubresource, DstX, DstY, pSrcResource, SrcSubresource, pSrcRectPtr, Format, ResolveMode);
             }
         }
 
@@ -2257,7 +2260,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pSrcResourcePtr = &pSrcResource)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, uint, uint, uint, ID3D12Resource*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.DXGI.Format, ResolveMode, void>)LpVtbl[64])(@this, pDstResource, DstSubresource, DstX, DstY, pSrcResourcePtr, SrcSubresource, pSrcRect, Format, ResolveMode);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, uint, uint, uint, ID3D12Resource*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.DXGI.Format, ResolveMode, void>)@this->LpVtbl[64])(@this, pDstResource, DstSubresource, DstX, DstY, pSrcResourcePtr, SrcSubresource, pSrcRect, Format, ResolveMode);
             }
         }
 
@@ -2269,7 +2272,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (Silk.NET.Maths.Box2D<int>* pSrcRectPtr = &pSrcRect)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, uint, uint, uint, ID3D12Resource*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.DXGI.Format, ResolveMode, void>)LpVtbl[64])(@this, pDstResource, DstSubresource, DstX, DstY, pSrcResourcePtr, SrcSubresource, pSrcRectPtr, Format, ResolveMode);
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, uint, uint, uint, ID3D12Resource*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.DXGI.Format, ResolveMode, void>)@this->LpVtbl[64])(@this, pDstResource, DstSubresource, DstX, DstY, pSrcResourcePtr, SrcSubresource, pSrcRectPtr, Format, ResolveMode);
                 }
             }
         }
@@ -2280,7 +2283,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pDstResourcePtr = &pDstResource)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, uint, uint, uint, ID3D12Resource*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.DXGI.Format, ResolveMode, void>)LpVtbl[64])(@this, pDstResourcePtr, DstSubresource, DstX, DstY, pSrcResource, SrcSubresource, pSrcRect, Format, ResolveMode);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, uint, uint, uint, ID3D12Resource*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.DXGI.Format, ResolveMode, void>)@this->LpVtbl[64])(@this, pDstResourcePtr, DstSubresource, DstX, DstY, pSrcResource, SrcSubresource, pSrcRect, Format, ResolveMode);
             }
         }
 
@@ -2292,7 +2295,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (Silk.NET.Maths.Box2D<int>* pSrcRectPtr = &pSrcRect)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, uint, uint, uint, ID3D12Resource*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.DXGI.Format, ResolveMode, void>)LpVtbl[64])(@this, pDstResourcePtr, DstSubresource, DstX, DstY, pSrcResource, SrcSubresource, pSrcRectPtr, Format, ResolveMode);
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, uint, uint, uint, ID3D12Resource*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.DXGI.Format, ResolveMode, void>)@this->LpVtbl[64])(@this, pDstResourcePtr, DstSubresource, DstX, DstY, pSrcResource, SrcSubresource, pSrcRectPtr, Format, ResolveMode);
                 }
             }
         }
@@ -2305,7 +2308,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (ID3D12Resource* pSrcResourcePtr = &pSrcResource)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, uint, uint, uint, ID3D12Resource*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.DXGI.Format, ResolveMode, void>)LpVtbl[64])(@this, pDstResourcePtr, DstSubresource, DstX, DstY, pSrcResourcePtr, SrcSubresource, pSrcRect, Format, ResolveMode);
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, uint, uint, uint, ID3D12Resource*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.DXGI.Format, ResolveMode, void>)@this->LpVtbl[64])(@this, pDstResourcePtr, DstSubresource, DstX, DstY, pSrcResourcePtr, SrcSubresource, pSrcRect, Format, ResolveMode);
                 }
             }
         }
@@ -2320,7 +2323,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (Silk.NET.Maths.Box2D<int>* pSrcRectPtr = &pSrcRect)
                     {
-                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, uint, uint, uint, ID3D12Resource*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.DXGI.Format, ResolveMode, void>)LpVtbl[64])(@this, pDstResourcePtr, DstSubresource, DstX, DstY, pSrcResourcePtr, SrcSubresource, pSrcRectPtr, Format, ResolveMode);
+                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, ID3D12Resource*, uint, uint, uint, ID3D12Resource*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.DXGI.Format, ResolveMode, void>)@this->LpVtbl[64])(@this, pDstResourcePtr, DstSubresource, DstX, DstY, pSrcResourcePtr, SrcSubresource, pSrcRectPtr, Format, ResolveMode);
                     }
                 }
             }
@@ -2330,7 +2333,755 @@ namespace Silk.NET.Direct3D12
         public readonly void SetViewInstanceMask(uint Mask)
         {
             var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, void>)LpVtbl[65])(@this, Mask);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList1*, uint, void>)@this->LpVtbl[65])(@this, Mask);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SetPrivateDataInterface<TI0>(Guid* guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetPrivateDataInterface(guid, (Silk.NET.Core.Native.IUnknown*) pData.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetPrivateDataInterface<TI0>(ref Guid guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetPrivateDataInterface(ref guid, (Silk.NET.Core.Native.IUnknown*) pData.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetDevice<TI0>(out ComPtr<TI0> ppvDevice) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvDevice = default;
+            return @this->GetDevice(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvDevice.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int Reset<TI0, TI1>(ComPtr<TI0> pAllocator, ComPtr<TI1> pInitialState) where TI0 : unmanaged, IComVtbl<ID3D12CommandAllocator>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12PipelineState>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Reset((ID3D12CommandAllocator*) pAllocator.Handle, (ID3D12PipelineState*) pInitialState.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int Reset<TI0>(ComPtr<TI0> pAllocator, ref ID3D12PipelineState pInitialState) where TI0 : unmanaged, IComVtbl<ID3D12CommandAllocator>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Reset((ID3D12CommandAllocator*) pAllocator.Handle, ref pInitialState);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int Reset<TI0>(ref ID3D12CommandAllocator pAllocator, ComPtr<TI0> pInitialState) where TI0 : unmanaged, IComVtbl<ID3D12PipelineState>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Reset(ref pAllocator, (ID3D12PipelineState*) pInitialState.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ClearState<TI0>(ComPtr<TI0> pPipelineState) where TI0 : unmanaged, IComVtbl<ID3D12PipelineState>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ClearState((ID3D12PipelineState*) pPipelineState.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void CopyBufferRegion<TI0, TI1>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ComPtr<TI1> pSrcBuffer, ulong SrcOffset, ulong NumBytes) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyBufferRegion((ID3D12Resource*) pDstBuffer.Handle, DstOffset, (ID3D12Resource*) pSrcBuffer.Handle, SrcOffset, NumBytes);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void CopyBufferRegion<TI0>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, ulong NumBytes) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyBufferRegion((ID3D12Resource*) pDstBuffer.Handle, DstOffset, ref pSrcBuffer, SrcOffset, NumBytes);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void CopyBufferRegion<TI0>(ref ID3D12Resource pDstBuffer, ulong DstOffset, ComPtr<TI0> pSrcBuffer, ulong SrcOffset, ulong NumBytes) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyBufferRegion(ref pDstBuffer, DstOffset, (ID3D12Resource*) pSrcBuffer.Handle, SrcOffset, NumBytes);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void CopyResource<TI0, TI1>(ComPtr<TI0> pDstResource, ComPtr<TI1> pSrcResource) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyResource((ID3D12Resource*) pDstResource.Handle, (ID3D12Resource*) pSrcResource.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void CopyResource<TI0>(ComPtr<TI0> pDstResource, ref ID3D12Resource pSrcResource) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyResource((ID3D12Resource*) pDstResource.Handle, ref pSrcResource);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void CopyResource<TI0>(ref ID3D12Resource pDstResource, ComPtr<TI0> pSrcResource) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyResource(ref pDstResource, (ID3D12Resource*) pSrcResource.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopyTiles<TI0, TI1>(ComPtr<TI0> pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTiles((ID3D12Resource*) pTiledResource.Handle, pTileRegionStartCoordinate, pTileRegionSize, (ID3D12Resource*) pBuffer.Handle, BufferStartOffsetInBytes, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopyTiles<TI0>(ComPtr<TI0> pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTiles((ID3D12Resource*) pTiledResource.Handle, pTileRegionStartCoordinate, pTileRegionSize, ref pBuffer, BufferStartOffsetInBytes, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopyTiles<TI0, TI1>(ComPtr<TI0> pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, ref TileRegionSize pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTiles((ID3D12Resource*) pTiledResource.Handle, pTileRegionStartCoordinate, ref pTileRegionSize, (ID3D12Resource*) pBuffer.Handle, BufferStartOffsetInBytes, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopyTiles<TI0>(ComPtr<TI0> pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, ref TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTiles((ID3D12Resource*) pTiledResource.Handle, pTileRegionStartCoordinate, ref pTileRegionSize, ref pBuffer, BufferStartOffsetInBytes, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopyTiles<TI0, TI1>(ComPtr<TI0> pTiledResource, ref TiledResourceCoordinate pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTiles((ID3D12Resource*) pTiledResource.Handle, ref pTileRegionStartCoordinate, pTileRegionSize, (ID3D12Resource*) pBuffer.Handle, BufferStartOffsetInBytes, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopyTiles<TI0>(ComPtr<TI0> pTiledResource, ref TiledResourceCoordinate pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTiles((ID3D12Resource*) pTiledResource.Handle, ref pTileRegionStartCoordinate, pTileRegionSize, ref pBuffer, BufferStartOffsetInBytes, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void CopyTiles<TI0, TI1>(ComPtr<TI0> pTiledResource, ref TiledResourceCoordinate pTileRegionStartCoordinate, ref TileRegionSize pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTiles((ID3D12Resource*) pTiledResource.Handle, ref pTileRegionStartCoordinate, ref pTileRegionSize, (ID3D12Resource*) pBuffer.Handle, BufferStartOffsetInBytes, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void CopyTiles<TI0>(ComPtr<TI0> pTiledResource, ref TiledResourceCoordinate pTileRegionStartCoordinate, ref TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTiles((ID3D12Resource*) pTiledResource.Handle, ref pTileRegionStartCoordinate, ref pTileRegionSize, ref pBuffer, BufferStartOffsetInBytes, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopyTiles<TI0>(ref ID3D12Resource pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTiles(ref pTiledResource, pTileRegionStartCoordinate, pTileRegionSize, (ID3D12Resource*) pBuffer.Handle, BufferStartOffsetInBytes, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopyTiles<TI0>(ref ID3D12Resource pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, ref TileRegionSize pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTiles(ref pTiledResource, pTileRegionStartCoordinate, ref pTileRegionSize, (ID3D12Resource*) pBuffer.Handle, BufferStartOffsetInBytes, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopyTiles<TI0>(ref ID3D12Resource pTiledResource, ref TiledResourceCoordinate pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTiles(ref pTiledResource, ref pTileRegionStartCoordinate, pTileRegionSize, (ID3D12Resource*) pBuffer.Handle, BufferStartOffsetInBytes, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void CopyTiles<TI0>(ref ID3D12Resource pTiledResource, ref TiledResourceCoordinate pTileRegionStartCoordinate, ref TileRegionSize pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTiles(ref pTiledResource, ref pTileRegionStartCoordinate, ref pTileRegionSize, (ID3D12Resource*) pBuffer.Handle, BufferStartOffsetInBytes, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ResolveSubresource<TI0, TI1>(ComPtr<TI0> pDstResource, uint DstSubresource, ComPtr<TI1> pSrcResource, uint SrcSubresource, Silk.NET.DXGI.Format Format) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ResolveSubresource((ID3D12Resource*) pDstResource.Handle, DstSubresource, (ID3D12Resource*) pSrcResource.Handle, SrcSubresource, Format);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ResolveSubresource<TI0>(ComPtr<TI0> pDstResource, uint DstSubresource, ref ID3D12Resource pSrcResource, uint SrcSubresource, Silk.NET.DXGI.Format Format) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ResolveSubresource((ID3D12Resource*) pDstResource.Handle, DstSubresource, ref pSrcResource, SrcSubresource, Format);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ResolveSubresource<TI0>(ref ID3D12Resource pDstResource, uint DstSubresource, ComPtr<TI0> pSrcResource, uint SrcSubresource, Silk.NET.DXGI.Format Format) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ResolveSubresource(ref pDstResource, DstSubresource, (ID3D12Resource*) pSrcResource.Handle, SrcSubresource, Format);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void SetPipelineState<TI0>(ComPtr<TI0> pPipelineState) where TI0 : unmanaged, IComVtbl<ID3D12PipelineState>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->SetPipelineState((ID3D12PipelineState*) pPipelineState.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ExecuteBundle<TI0>(ComPtr<TI0> pCommandList) where TI0 : unmanaged, IComVtbl<ID3D12GraphicsCommandList>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ExecuteBundle((ID3D12GraphicsCommandList*) pCommandList.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void SetDescriptorHeaps<TI0>(uint NumDescriptorHeaps, ref ComPtr<TI0> ppDescriptorHeaps) where TI0 : unmanaged, IComVtbl<ID3D12DescriptorHeap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->SetDescriptorHeaps(NumDescriptorHeaps, (ID3D12DescriptorHeap**) ppDescriptorHeaps.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void SetComputeRootSignature<TI0>(ComPtr<TI0> pRootSignature) where TI0 : unmanaged, IComVtbl<ID3D12RootSignature>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->SetComputeRootSignature((ID3D12RootSignature*) pRootSignature.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void SetGraphicsRootSignature<TI0>(ComPtr<TI0> pRootSignature) where TI0 : unmanaged, IComVtbl<ID3D12RootSignature>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->SetGraphicsRootSignature((ID3D12RootSignature*) pRootSignature.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ClearUnorderedAccessViewUint<TI0>(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] uint* Values, uint NumRects, Silk.NET.Maths.Box2D<int>* pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ClearUnorderedAccessViewUint(ViewGPUHandleInCurrentHeap, ViewCPUHandle, (ID3D12Resource*) pResource.Handle, Values, NumRects, pRects);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ClearUnorderedAccessViewUint<TI0>(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] uint* Values, uint NumRects, ref Silk.NET.Maths.Box2D<int> pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ClearUnorderedAccessViewUint(ViewGPUHandleInCurrentHeap, ViewCPUHandle, (ID3D12Resource*) pResource.Handle, Values, NumRects, ref pRects);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ClearUnorderedAccessViewUint<TI0>(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] ref uint Values, uint NumRects, Silk.NET.Maths.Box2D<int>* pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ClearUnorderedAccessViewUint(ViewGPUHandleInCurrentHeap, ViewCPUHandle, (ID3D12Resource*) pResource.Handle, ref Values, NumRects, pRects);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ClearUnorderedAccessViewUint<TI0>(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] ref uint Values, uint NumRects, ref Silk.NET.Maths.Box2D<int> pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ClearUnorderedAccessViewUint(ViewGPUHandleInCurrentHeap, ViewCPUHandle, (ID3D12Resource*) pResource.Handle, ref Values, NumRects, ref pRects);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ClearUnorderedAccessViewFloat<TI0>(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] float* Values, uint NumRects, Silk.NET.Maths.Box2D<int>* pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ClearUnorderedAccessViewFloat(ViewGPUHandleInCurrentHeap, ViewCPUHandle, (ID3D12Resource*) pResource.Handle, Values, NumRects, pRects);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ClearUnorderedAccessViewFloat<TI0>(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] float* Values, uint NumRects, ref Silk.NET.Maths.Box2D<int> pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ClearUnorderedAccessViewFloat(ViewGPUHandleInCurrentHeap, ViewCPUHandle, (ID3D12Resource*) pResource.Handle, Values, NumRects, ref pRects);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ClearUnorderedAccessViewFloat<TI0>(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] ref float Values, uint NumRects, Silk.NET.Maths.Box2D<int>* pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ClearUnorderedAccessViewFloat(ViewGPUHandleInCurrentHeap, ViewCPUHandle, (ID3D12Resource*) pResource.Handle, ref Values, NumRects, pRects);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ClearUnorderedAccessViewFloat<TI0>(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] ref float Values, uint NumRects, ref Silk.NET.Maths.Box2D<int> pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ClearUnorderedAccessViewFloat(ViewGPUHandleInCurrentHeap, ViewCPUHandle, (ID3D12Resource*) pResource.Handle, ref Values, NumRects, ref pRects);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DiscardResource<TI0>(ComPtr<TI0> pResource, DiscardRegion* pRegion) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DiscardResource((ID3D12Resource*) pResource.Handle, pRegion);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void DiscardResource<TI0>(ComPtr<TI0> pResource, ref DiscardRegion pRegion) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DiscardResource((ID3D12Resource*) pResource.Handle, ref pRegion);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void BeginQuery<TI0>(ComPtr<TI0> pQueryHeap, QueryType Type, uint Index) where TI0 : unmanaged, IComVtbl<ID3D12QueryHeap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->BeginQuery((ID3D12QueryHeap*) pQueryHeap.Handle, Type, Index);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void EndQuery<TI0>(ComPtr<TI0> pQueryHeap, QueryType Type, uint Index) where TI0 : unmanaged, IComVtbl<ID3D12QueryHeap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->EndQuery((ID3D12QueryHeap*) pQueryHeap.Handle, Type, Index);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ResolveQueryData<TI0, TI1>(ComPtr<TI0> pQueryHeap, QueryType Type, uint StartIndex, uint NumQueries, ComPtr<TI1> pDestinationBuffer, ulong AlignedDestinationBufferOffset) where TI0 : unmanaged, IComVtbl<ID3D12QueryHeap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ResolveQueryData((ID3D12QueryHeap*) pQueryHeap.Handle, Type, StartIndex, NumQueries, (ID3D12Resource*) pDestinationBuffer.Handle, AlignedDestinationBufferOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ResolveQueryData<TI0>(ComPtr<TI0> pQueryHeap, QueryType Type, uint StartIndex, uint NumQueries, ref ID3D12Resource pDestinationBuffer, ulong AlignedDestinationBufferOffset) where TI0 : unmanaged, IComVtbl<ID3D12QueryHeap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ResolveQueryData((ID3D12QueryHeap*) pQueryHeap.Handle, Type, StartIndex, NumQueries, ref pDestinationBuffer, AlignedDestinationBufferOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ResolveQueryData<TI0>(ref ID3D12QueryHeap pQueryHeap, QueryType Type, uint StartIndex, uint NumQueries, ComPtr<TI0> pDestinationBuffer, ulong AlignedDestinationBufferOffset) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ResolveQueryData(ref pQueryHeap, Type, StartIndex, NumQueries, (ID3D12Resource*) pDestinationBuffer.Handle, AlignedDestinationBufferOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void SetPredication<TI0>(ComPtr<TI0> pBuffer, ulong AlignedBufferOffset, PredicationOp Operation) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->SetPredication((ID3D12Resource*) pBuffer.Handle, AlignedBufferOffset, Operation);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ExecuteIndirect<TI0, TI1, TI2>(ComPtr<TI0> pCommandSignature, uint MaxCommandCount, ComPtr<TI1> pArgumentBuffer, ulong ArgumentBufferOffset, ComPtr<TI2> pCountBuffer, ulong CountBufferOffset) where TI0 : unmanaged, IComVtbl<ID3D12CommandSignature>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI2>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ExecuteIndirect((ID3D12CommandSignature*) pCommandSignature.Handle, MaxCommandCount, (ID3D12Resource*) pArgumentBuffer.Handle, ArgumentBufferOffset, (ID3D12Resource*) pCountBuffer.Handle, CountBufferOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ExecuteIndirect<TI0, TI1>(ComPtr<TI0> pCommandSignature, uint MaxCommandCount, ComPtr<TI1> pArgumentBuffer, ulong ArgumentBufferOffset, ref ID3D12Resource pCountBuffer, ulong CountBufferOffset) where TI0 : unmanaged, IComVtbl<ID3D12CommandSignature>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ExecuteIndirect((ID3D12CommandSignature*) pCommandSignature.Handle, MaxCommandCount, (ID3D12Resource*) pArgumentBuffer.Handle, ArgumentBufferOffset, ref pCountBuffer, CountBufferOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ExecuteIndirect<TI0, TI1>(ComPtr<TI0> pCommandSignature, uint MaxCommandCount, ref ID3D12Resource pArgumentBuffer, ulong ArgumentBufferOffset, ComPtr<TI1> pCountBuffer, ulong CountBufferOffset) where TI0 : unmanaged, IComVtbl<ID3D12CommandSignature>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ExecuteIndirect((ID3D12CommandSignature*) pCommandSignature.Handle, MaxCommandCount, ref pArgumentBuffer, ArgumentBufferOffset, (ID3D12Resource*) pCountBuffer.Handle, CountBufferOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ExecuteIndirect<TI0>(ComPtr<TI0> pCommandSignature, uint MaxCommandCount, ref ID3D12Resource pArgumentBuffer, ulong ArgumentBufferOffset, ref ID3D12Resource pCountBuffer, ulong CountBufferOffset) where TI0 : unmanaged, IComVtbl<ID3D12CommandSignature>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ExecuteIndirect((ID3D12CommandSignature*) pCommandSignature.Handle, MaxCommandCount, ref pArgumentBuffer, ArgumentBufferOffset, ref pCountBuffer, CountBufferOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ExecuteIndirect<TI0, TI1>(ref ID3D12CommandSignature pCommandSignature, uint MaxCommandCount, ComPtr<TI0> pArgumentBuffer, ulong ArgumentBufferOffset, ComPtr<TI1> pCountBuffer, ulong CountBufferOffset) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ExecuteIndirect(ref pCommandSignature, MaxCommandCount, (ID3D12Resource*) pArgumentBuffer.Handle, ArgumentBufferOffset, (ID3D12Resource*) pCountBuffer.Handle, CountBufferOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ExecuteIndirect<TI0>(ref ID3D12CommandSignature pCommandSignature, uint MaxCommandCount, ComPtr<TI0> pArgumentBuffer, ulong ArgumentBufferOffset, ref ID3D12Resource pCountBuffer, ulong CountBufferOffset) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ExecuteIndirect(ref pCommandSignature, MaxCommandCount, (ID3D12Resource*) pArgumentBuffer.Handle, ArgumentBufferOffset, ref pCountBuffer, CountBufferOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ExecuteIndirect<TI0>(ref ID3D12CommandSignature pCommandSignature, uint MaxCommandCount, ref ID3D12Resource pArgumentBuffer, ulong ArgumentBufferOffset, ComPtr<TI0> pCountBuffer, ulong CountBufferOffset) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ExecuteIndirect(ref pCommandSignature, MaxCommandCount, ref pArgumentBuffer, ArgumentBufferOffset, (ID3D12Resource*) pCountBuffer.Handle, CountBufferOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT<TI0, TI1, TI2>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ComPtr<TI1> pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ComPtr<TI2> ppDependentResources, SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI2>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->AtomicCopyBufferUINT((ID3D12Resource*) pDstBuffer.Handle, DstOffset, (ID3D12Resource*) pSrcBuffer.Handle, SrcOffset, Dependencies, (ID3D12Resource**) ppDependentResources.GetAddressOf(), pDependentSubresourceRanges);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void AtomicCopyBufferUINT<TI0, TI1, TI2>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ComPtr<TI1> pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ComPtr<TI2> ppDependentResources, ref SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI2>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->AtomicCopyBufferUINT((ID3D12Resource*) pDstBuffer.Handle, DstOffset, (ID3D12Resource*) pSrcBuffer.Handle, SrcOffset, Dependencies, (ID3D12Resource**) ppDependentResources.GetAddressOf(), ref pDependentSubresourceRanges);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT<TI0, TI1>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ComPtr<TI1> pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ID3D12Resource* ppDependentResources, SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->AtomicCopyBufferUINT((ID3D12Resource*) pDstBuffer.Handle, DstOffset, (ID3D12Resource*) pSrcBuffer.Handle, SrcOffset, Dependencies, ref ppDependentResources, pDependentSubresourceRanges);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT<TI0, TI1>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ComPtr<TI1> pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ID3D12Resource* ppDependentResources, ref SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->AtomicCopyBufferUINT((ID3D12Resource*) pDstBuffer.Handle, DstOffset, (ID3D12Resource*) pSrcBuffer.Handle, SrcOffset, Dependencies, ref ppDependentResources, ref pDependentSubresourceRanges);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT<TI0, TI1>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ComPtr<TI1> ppDependentResources, SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->AtomicCopyBufferUINT((ID3D12Resource*) pDstBuffer.Handle, DstOffset, ref pSrcBuffer, SrcOffset, Dependencies, (ID3D12Resource**) ppDependentResources.GetAddressOf(), pDependentSubresourceRanges);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void AtomicCopyBufferUINT<TI0, TI1>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ComPtr<TI1> ppDependentResources, ref SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->AtomicCopyBufferUINT((ID3D12Resource*) pDstBuffer.Handle, DstOffset, ref pSrcBuffer, SrcOffset, Dependencies, (ID3D12Resource**) ppDependentResources.GetAddressOf(), ref pDependentSubresourceRanges);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT<TI0>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ID3D12Resource* ppDependentResources, SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->AtomicCopyBufferUINT((ID3D12Resource*) pDstBuffer.Handle, DstOffset, ref pSrcBuffer, SrcOffset, Dependencies, ref ppDependentResources, pDependentSubresourceRanges);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT<TI0>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ID3D12Resource* ppDependentResources, ref SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->AtomicCopyBufferUINT((ID3D12Resource*) pDstBuffer.Handle, DstOffset, ref pSrcBuffer, SrcOffset, Dependencies, ref ppDependentResources, ref pDependentSubresourceRanges);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT<TI0, TI1>(ref ID3D12Resource pDstBuffer, ulong DstOffset, ComPtr<TI0> pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ComPtr<TI1> ppDependentResources, SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->AtomicCopyBufferUINT(ref pDstBuffer, DstOffset, (ID3D12Resource*) pSrcBuffer.Handle, SrcOffset, Dependencies, (ID3D12Resource**) ppDependentResources.GetAddressOf(), pDependentSubresourceRanges);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void AtomicCopyBufferUINT<TI0, TI1>(ref ID3D12Resource pDstBuffer, ulong DstOffset, ComPtr<TI0> pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ComPtr<TI1> ppDependentResources, ref SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->AtomicCopyBufferUINT(ref pDstBuffer, DstOffset, (ID3D12Resource*) pSrcBuffer.Handle, SrcOffset, Dependencies, (ID3D12Resource**) ppDependentResources.GetAddressOf(), ref pDependentSubresourceRanges);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT<TI0>(ref ID3D12Resource pDstBuffer, ulong DstOffset, ComPtr<TI0> pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ID3D12Resource* ppDependentResources, SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->AtomicCopyBufferUINT(ref pDstBuffer, DstOffset, (ID3D12Resource*) pSrcBuffer.Handle, SrcOffset, Dependencies, ref ppDependentResources, pDependentSubresourceRanges);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT<TI0>(ref ID3D12Resource pDstBuffer, ulong DstOffset, ComPtr<TI0> pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ID3D12Resource* ppDependentResources, ref SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->AtomicCopyBufferUINT(ref pDstBuffer, DstOffset, (ID3D12Resource*) pSrcBuffer.Handle, SrcOffset, Dependencies, ref ppDependentResources, ref pDependentSubresourceRanges);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT<TI0>(ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ComPtr<TI0> ppDependentResources, SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->AtomicCopyBufferUINT(ref pDstBuffer, DstOffset, ref pSrcBuffer, SrcOffset, Dependencies, (ID3D12Resource**) ppDependentResources.GetAddressOf(), pDependentSubresourceRanges);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void AtomicCopyBufferUINT<TI0>(ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ComPtr<TI0> ppDependentResources, ref SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->AtomicCopyBufferUINT(ref pDstBuffer, DstOffset, ref pSrcBuffer, SrcOffset, Dependencies, (ID3D12Resource**) ppDependentResources.GetAddressOf(), ref pDependentSubresourceRanges);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT64<TI0, TI1, TI2>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ComPtr<TI1> pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ComPtr<TI2> ppDependentResources, SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI2>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->AtomicCopyBufferUINT64((ID3D12Resource*) pDstBuffer.Handle, DstOffset, (ID3D12Resource*) pSrcBuffer.Handle, SrcOffset, Dependencies, (ID3D12Resource**) ppDependentResources.GetAddressOf(), pDependentSubresourceRanges);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void AtomicCopyBufferUINT64<TI0, TI1, TI2>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ComPtr<TI1> pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ComPtr<TI2> ppDependentResources, ref SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI2>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->AtomicCopyBufferUINT64((ID3D12Resource*) pDstBuffer.Handle, DstOffset, (ID3D12Resource*) pSrcBuffer.Handle, SrcOffset, Dependencies, (ID3D12Resource**) ppDependentResources.GetAddressOf(), ref pDependentSubresourceRanges);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT64<TI0, TI1>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ComPtr<TI1> pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ID3D12Resource* ppDependentResources, SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->AtomicCopyBufferUINT64((ID3D12Resource*) pDstBuffer.Handle, DstOffset, (ID3D12Resource*) pSrcBuffer.Handle, SrcOffset, Dependencies, ref ppDependentResources, pDependentSubresourceRanges);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT64<TI0, TI1>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ComPtr<TI1> pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ID3D12Resource* ppDependentResources, ref SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->AtomicCopyBufferUINT64((ID3D12Resource*) pDstBuffer.Handle, DstOffset, (ID3D12Resource*) pSrcBuffer.Handle, SrcOffset, Dependencies, ref ppDependentResources, ref pDependentSubresourceRanges);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT64<TI0, TI1>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ComPtr<TI1> ppDependentResources, SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->AtomicCopyBufferUINT64((ID3D12Resource*) pDstBuffer.Handle, DstOffset, ref pSrcBuffer, SrcOffset, Dependencies, (ID3D12Resource**) ppDependentResources.GetAddressOf(), pDependentSubresourceRanges);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void AtomicCopyBufferUINT64<TI0, TI1>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ComPtr<TI1> ppDependentResources, ref SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->AtomicCopyBufferUINT64((ID3D12Resource*) pDstBuffer.Handle, DstOffset, ref pSrcBuffer, SrcOffset, Dependencies, (ID3D12Resource**) ppDependentResources.GetAddressOf(), ref pDependentSubresourceRanges);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT64<TI0>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ID3D12Resource* ppDependentResources, SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->AtomicCopyBufferUINT64((ID3D12Resource*) pDstBuffer.Handle, DstOffset, ref pSrcBuffer, SrcOffset, Dependencies, ref ppDependentResources, pDependentSubresourceRanges);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT64<TI0>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ID3D12Resource* ppDependentResources, ref SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->AtomicCopyBufferUINT64((ID3D12Resource*) pDstBuffer.Handle, DstOffset, ref pSrcBuffer, SrcOffset, Dependencies, ref ppDependentResources, ref pDependentSubresourceRanges);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT64<TI0, TI1>(ref ID3D12Resource pDstBuffer, ulong DstOffset, ComPtr<TI0> pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ComPtr<TI1> ppDependentResources, SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->AtomicCopyBufferUINT64(ref pDstBuffer, DstOffset, (ID3D12Resource*) pSrcBuffer.Handle, SrcOffset, Dependencies, (ID3D12Resource**) ppDependentResources.GetAddressOf(), pDependentSubresourceRanges);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void AtomicCopyBufferUINT64<TI0, TI1>(ref ID3D12Resource pDstBuffer, ulong DstOffset, ComPtr<TI0> pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ComPtr<TI1> ppDependentResources, ref SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->AtomicCopyBufferUINT64(ref pDstBuffer, DstOffset, (ID3D12Resource*) pSrcBuffer.Handle, SrcOffset, Dependencies, (ID3D12Resource**) ppDependentResources.GetAddressOf(), ref pDependentSubresourceRanges);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT64<TI0>(ref ID3D12Resource pDstBuffer, ulong DstOffset, ComPtr<TI0> pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ID3D12Resource* ppDependentResources, SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->AtomicCopyBufferUINT64(ref pDstBuffer, DstOffset, (ID3D12Resource*) pSrcBuffer.Handle, SrcOffset, Dependencies, ref ppDependentResources, pDependentSubresourceRanges);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT64<TI0>(ref ID3D12Resource pDstBuffer, ulong DstOffset, ComPtr<TI0> pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ID3D12Resource* ppDependentResources, ref SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->AtomicCopyBufferUINT64(ref pDstBuffer, DstOffset, (ID3D12Resource*) pSrcBuffer.Handle, SrcOffset, Dependencies, ref ppDependentResources, ref pDependentSubresourceRanges);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT64<TI0>(ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ComPtr<TI0> ppDependentResources, SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->AtomicCopyBufferUINT64(ref pDstBuffer, DstOffset, ref pSrcBuffer, SrcOffset, Dependencies, (ID3D12Resource**) ppDependentResources.GetAddressOf(), pDependentSubresourceRanges);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void AtomicCopyBufferUINT64<TI0>(ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ComPtr<TI0> ppDependentResources, ref SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->AtomicCopyBufferUINT64(ref pDstBuffer, DstOffset, ref pSrcBuffer, SrcOffset, Dependencies, (ID3D12Resource**) ppDependentResources.GetAddressOf(), ref pDependentSubresourceRanges);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ResolveSubresourceRegion<TI0, TI1>(ComPtr<TI0> pDstResource, uint DstSubresource, uint DstX, uint DstY, ComPtr<TI1> pSrcResource, uint SrcSubresource, Silk.NET.Maths.Box2D<int>* pSrcRect, Silk.NET.DXGI.Format Format, ResolveMode ResolveMode) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ResolveSubresourceRegion((ID3D12Resource*) pDstResource.Handle, DstSubresource, DstX, DstY, (ID3D12Resource*) pSrcResource.Handle, SrcSubresource, pSrcRect, Format, ResolveMode);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ResolveSubresourceRegion<TI0, TI1>(ComPtr<TI0> pDstResource, uint DstSubresource, uint DstX, uint DstY, ComPtr<TI1> pSrcResource, uint SrcSubresource, ref Silk.NET.Maths.Box2D<int> pSrcRect, Silk.NET.DXGI.Format Format, ResolveMode ResolveMode) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ResolveSubresourceRegion((ID3D12Resource*) pDstResource.Handle, DstSubresource, DstX, DstY, (ID3D12Resource*) pSrcResource.Handle, SrcSubresource, ref pSrcRect, Format, ResolveMode);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ResolveSubresourceRegion<TI0>(ComPtr<TI0> pDstResource, uint DstSubresource, uint DstX, uint DstY, ref ID3D12Resource pSrcResource, uint SrcSubresource, Silk.NET.Maths.Box2D<int>* pSrcRect, Silk.NET.DXGI.Format Format, ResolveMode ResolveMode) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ResolveSubresourceRegion((ID3D12Resource*) pDstResource.Handle, DstSubresource, DstX, DstY, ref pSrcResource, SrcSubresource, pSrcRect, Format, ResolveMode);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ResolveSubresourceRegion<TI0>(ComPtr<TI0> pDstResource, uint DstSubresource, uint DstX, uint DstY, ref ID3D12Resource pSrcResource, uint SrcSubresource, ref Silk.NET.Maths.Box2D<int> pSrcRect, Silk.NET.DXGI.Format Format, ResolveMode ResolveMode) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ResolveSubresourceRegion((ID3D12Resource*) pDstResource.Handle, DstSubresource, DstX, DstY, ref pSrcResource, SrcSubresource, ref pSrcRect, Format, ResolveMode);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ResolveSubresourceRegion<TI0>(ref ID3D12Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, ComPtr<TI0> pSrcResource, uint SrcSubresource, Silk.NET.Maths.Box2D<int>* pSrcRect, Silk.NET.DXGI.Format Format, ResolveMode ResolveMode) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ResolveSubresourceRegion(ref pDstResource, DstSubresource, DstX, DstY, (ID3D12Resource*) pSrcResource.Handle, SrcSubresource, pSrcRect, Format, ResolveMode);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ResolveSubresourceRegion<TI0>(ref ID3D12Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, ComPtr<TI0> pSrcResource, uint SrcSubresource, ref Silk.NET.Maths.Box2D<int> pSrcRect, Silk.NET.DXGI.Format Format, ResolveMode ResolveMode) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ResolveSubresourceRegion(ref pDstResource, DstSubresource, DstX, DstY, (ID3D12Resource*) pSrcResource.Handle, SrcSubresource, ref pSrcRect, Format, ResolveMode);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> GetDevice<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->GetDevice(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

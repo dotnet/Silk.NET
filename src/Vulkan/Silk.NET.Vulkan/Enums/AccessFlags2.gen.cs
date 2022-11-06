@@ -145,6 +145,9 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"VideoDecodeWriteBitKhr\"")]
         [NativeName("Name", "VK_ACCESS_2_VIDEO_DECODE_WRITE_BIT_KHR")]
         Access2VideoDecodeWriteBitKhr = 68719476736,
+        [Obsolete("Deprecated in favour of \"Reserved46BitExt\"")]
+        [NativeName("Name", "VK_ACCESS_2_RESERVED_46_BIT_EXT")]
+        Access2Reserved46BitExt = 70368744177664,
         [Obsolete("Deprecated in favour of \"VideoEncodeReadBitKhr\"")]
         [NativeName("Name", "VK_ACCESS_2_VIDEO_ENCODE_READ_BIT_KHR")]
         Access2VideoEncodeReadBitKhr = 137438953472,
@@ -202,18 +205,18 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"ShaderBindingTableReadBitKhr\"")]
         [NativeName("Name", "VK_ACCESS_2_SHADER_BINDING_TABLE_READ_BIT_KHR")]
         Access2ShaderBindingTableReadBitKhr = 1099511627776,
-        [Obsolete("Deprecated in favour of \"Reserved44BitNV\"")]
-        [NativeName("Name", "VK_ACCESS_2_RESERVED_44_BIT_NV")]
-        Access2Reserved44BitNV = 17592186044416,
-        [Obsolete("Deprecated in favour of \"Reserved45BitNV\"")]
-        [NativeName("Name", "VK_ACCESS_2_RESERVED_45_BIT_NV")]
-        Access2Reserved45BitNV = 35184372088832,
-        [Obsolete("Deprecated in favour of \"Reserved42BitNV\"")]
-        [NativeName("Name", "VK_ACCESS_2_RESERVED_42_BIT_NV")]
-        Access2Reserved42BitNV = 4398046511104,
-        [Obsolete("Deprecated in favour of \"Reserved43BitNV\"")]
-        [NativeName("Name", "VK_ACCESS_2_RESERVED_43_BIT_NV")]
-        Access2Reserved43BitNV = 8796093022208,
+        [Obsolete("Deprecated in favour of \"MicromapReadBitExt\"")]
+        [NativeName("Name", "VK_ACCESS_2_MICROMAP_READ_BIT_EXT")]
+        Access2MicromapReadBitExt = 17592186044416,
+        [Obsolete("Deprecated in favour of \"MicromapWriteBitExt\"")]
+        [NativeName("Name", "VK_ACCESS_2_MICROMAP_WRITE_BIT_EXT")]
+        Access2MicromapWriteBitExt = 35184372088832,
+        [Obsolete("Deprecated in favour of \"OpticalFlowReadBitNV\"")]
+        [NativeName("Name", "VK_ACCESS_2_OPTICAL_FLOW_READ_BIT_NV")]
+        Access2OpticalFlowReadBitNV = 4398046511104,
+        [Obsolete("Deprecated in favour of \"OpticalFlowWriteBitNV\"")]
+        [NativeName("Name", "VK_ACCESS_2_OPTICAL_FLOW_WRITE_BIT_NV")]
+        Access2OpticalFlowWriteBitNV = 8796093022208,
         [NativeName("Name", "VK_ACCESS_2_NONE")]
         None = 0,
         [NativeName("Name", "VK_ACCESS_2_NONE_KHR")]
@@ -302,6 +305,8 @@ namespace Silk.NET.Vulkan
         VideoDecodeReadBitKhr = 34359738368,
         [NativeName("Name", "VK_ACCESS_2_VIDEO_DECODE_WRITE_BIT_KHR")]
         VideoDecodeWriteBitKhr = 68719476736,
+        [NativeName("Name", "VK_ACCESS_2_RESERVED_46_BIT_EXT")]
+        Reserved46BitExt = 70368744177664,
         [NativeName("Name", "VK_ACCESS_2_VIDEO_ENCODE_READ_BIT_KHR")]
         VideoEncodeReadBitKhr = 137438953472,
         [NativeName("Name", "VK_ACCESS_2_VIDEO_ENCODE_WRITE_BIT_KHR")]
@@ -340,13 +345,13 @@ namespace Silk.NET.Vulkan
         InvocationMaskReadBitHuawei = 549755813888,
         [NativeName("Name", "VK_ACCESS_2_SHADER_BINDING_TABLE_READ_BIT_KHR")]
         ShaderBindingTableReadBitKhr = 1099511627776,
-        [NativeName("Name", "VK_ACCESS_2_RESERVED_44_BIT_NV")]
-        Reserved44BitNV = 17592186044416,
-        [NativeName("Name", "VK_ACCESS_2_RESERVED_45_BIT_NV")]
-        Reserved45BitNV = 35184372088832,
-        [NativeName("Name", "VK_ACCESS_2_RESERVED_42_BIT_NV")]
-        Reserved42BitNV = 4398046511104,
-        [NativeName("Name", "VK_ACCESS_2_RESERVED_43_BIT_NV")]
-        Reserved43BitNV = 8796093022208,
+        [NativeName("Name", "VK_ACCESS_2_MICROMAP_READ_BIT_EXT")]
+        MicromapReadBitExt = 17592186044416,
+        [NativeName("Name", "VK_ACCESS_2_MICROMAP_WRITE_BIT_EXT")]
+        MicromapWriteBitExt = 35184372088832,
+        [NativeName("Name", "VK_ACCESS_2_OPTICAL_FLOW_READ_BIT_NV")]
+        OpticalFlowReadBitNV = 4398046511104,
+        [NativeName("Name", "VK_ACCESS_2_OPTICAL_FLOW_WRITE_BIT_NV")]
+        OpticalFlowWriteBitNV = 8796093022208,
     }
 }

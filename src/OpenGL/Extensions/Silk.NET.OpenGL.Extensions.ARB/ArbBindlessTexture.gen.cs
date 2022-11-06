@@ -107,6 +107,20 @@ namespace Silk.NET.OpenGL.Extensions.ARB
             UniformHandle(location, (uint) value.Length, in value.GetPinnableReference());
         }
 
+        public unsafe ulong GetVertexAttribL([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetVertexAttribL(index, pname, out ulong silkRet);
+            return silkRet;
+        }
+
+        public unsafe ulong GetVertexAttribL([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribEnum pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetVertexAttribL(index, pname, out ulong silkRet);
+            return silkRet;
+        }
+
         public ArbBindlessTexture(INativeContext ctx)
             : base(ctx)
         {

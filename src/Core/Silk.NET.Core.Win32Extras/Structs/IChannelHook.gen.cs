@@ -18,9 +18,12 @@ namespace Silk.NET.Core.Win32Extras
 {
     [Guid("1008c4a0-7613-11cf-9af1-0020af6e72f4")]
     [NativeName("Name", "IChannelHook")]
-    public unsafe partial struct IChannelHook
+    public unsafe partial struct IChannelHook : IComVtbl<IChannelHook>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("1008c4a0-7613-11cf-9af1-0020af6e72f4");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator Silk.NET.Core.Native.IUnknown(IChannelHook val)
             => Unsafe.As<IChannelHook, Silk.NET.Core.Native.IUnknown>(ref val);
@@ -46,7 +49,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -57,7 +60,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -69,7 +72,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -83,7 +86,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -94,7 +97,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IChannelHook*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<IChannelHook*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -103,7 +106,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IChannelHook*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<IChannelHook*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -111,7 +114,7 @@ namespace Silk.NET.Core.Win32Extras
         public readonly unsafe void ClientGetSize(Guid* uExtent, Guid* riid, uint* pDataSize)
         {
             var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void>)LpVtbl[3])(@this, uExtent, riid, pDataSize);
+            ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void>)@this->LpVtbl[3])(@this, uExtent, riid, pDataSize);
         }
 
         /// <summary>To be documented.</summary>
@@ -120,7 +123,7 @@ namespace Silk.NET.Core.Win32Extras
             var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* pDataSizePtr = &pDataSize)
             {
-                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void>)LpVtbl[3])(@this, uExtent, riid, pDataSizePtr);
+                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void>)@this->LpVtbl[3])(@this, uExtent, riid, pDataSizePtr);
             }
         }
 
@@ -130,7 +133,7 @@ namespace Silk.NET.Core.Win32Extras
             var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Guid* riidPtr = &riid)
             {
-                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void>)LpVtbl[3])(@this, uExtent, riidPtr, pDataSize);
+                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void>)@this->LpVtbl[3])(@this, uExtent, riidPtr, pDataSize);
             }
         }
 
@@ -142,7 +145,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pDataSizePtr = &pDataSize)
                 {
-                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void>)LpVtbl[3])(@this, uExtent, riidPtr, pDataSizePtr);
+                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void>)@this->LpVtbl[3])(@this, uExtent, riidPtr, pDataSizePtr);
                 }
             }
         }
@@ -153,7 +156,7 @@ namespace Silk.NET.Core.Win32Extras
             var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Guid* uExtentPtr = &uExtent)
             {
-                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void>)LpVtbl[3])(@this, uExtentPtr, riid, pDataSize);
+                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void>)@this->LpVtbl[3])(@this, uExtentPtr, riid, pDataSize);
             }
         }
 
@@ -165,7 +168,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pDataSizePtr = &pDataSize)
                 {
-                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void>)LpVtbl[3])(@this, uExtentPtr, riid, pDataSizePtr);
+                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void>)@this->LpVtbl[3])(@this, uExtentPtr, riid, pDataSizePtr);
                 }
             }
         }
@@ -178,7 +181,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (Guid* riidPtr = &riid)
                 {
-                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void>)LpVtbl[3])(@this, uExtentPtr, riidPtr, pDataSize);
+                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void>)@this->LpVtbl[3])(@this, uExtentPtr, riidPtr, pDataSize);
                 }
             }
         }
@@ -193,7 +196,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (uint* pDataSizePtr = &pDataSize)
                     {
-                        ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void>)LpVtbl[3])(@this, uExtentPtr, riidPtr, pDataSizePtr);
+                        ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void>)@this->LpVtbl[3])(@this, uExtentPtr, riidPtr, pDataSizePtr);
                     }
                 }
             }
@@ -203,7 +206,7 @@ namespace Silk.NET.Core.Win32Extras
         public readonly unsafe void ClientFillBuffer(Guid* uExtent, Guid* riid, uint* pDataSize, void* pDataBuffer)
         {
             var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, void>)LpVtbl[4])(@this, uExtent, riid, pDataSize, pDataBuffer);
+            ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, void>)@this->LpVtbl[4])(@this, uExtent, riid, pDataSize, pDataBuffer);
         }
 
         /// <summary>To be documented.</summary>
@@ -212,7 +215,7 @@ namespace Silk.NET.Core.Win32Extras
             var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (void* pDataBufferPtr = &pDataBuffer)
             {
-                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, void>)LpVtbl[4])(@this, uExtent, riid, pDataSize, pDataBufferPtr);
+                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, void>)@this->LpVtbl[4])(@this, uExtent, riid, pDataSize, pDataBufferPtr);
             }
         }
 
@@ -222,7 +225,7 @@ namespace Silk.NET.Core.Win32Extras
             var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* pDataSizePtr = &pDataSize)
             {
-                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, void>)LpVtbl[4])(@this, uExtent, riid, pDataSizePtr, pDataBuffer);
+                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, void>)@this->LpVtbl[4])(@this, uExtent, riid, pDataSizePtr, pDataBuffer);
             }
         }
 
@@ -234,7 +237,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (void* pDataBufferPtr = &pDataBuffer)
                 {
-                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, void>)LpVtbl[4])(@this, uExtent, riid, pDataSizePtr, pDataBufferPtr);
+                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, void>)@this->LpVtbl[4])(@this, uExtent, riid, pDataSizePtr, pDataBufferPtr);
                 }
             }
         }
@@ -245,7 +248,7 @@ namespace Silk.NET.Core.Win32Extras
             var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Guid* riidPtr = &riid)
             {
-                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, void>)LpVtbl[4])(@this, uExtent, riidPtr, pDataSize, pDataBuffer);
+                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, void>)@this->LpVtbl[4])(@this, uExtent, riidPtr, pDataSize, pDataBuffer);
             }
         }
 
@@ -257,7 +260,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (void* pDataBufferPtr = &pDataBuffer)
                 {
-                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, void>)LpVtbl[4])(@this, uExtent, riidPtr, pDataSize, pDataBufferPtr);
+                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, void>)@this->LpVtbl[4])(@this, uExtent, riidPtr, pDataSize, pDataBufferPtr);
                 }
             }
         }
@@ -270,7 +273,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pDataSizePtr = &pDataSize)
                 {
-                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, void>)LpVtbl[4])(@this, uExtent, riidPtr, pDataSizePtr, pDataBuffer);
+                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, void>)@this->LpVtbl[4])(@this, uExtent, riidPtr, pDataSizePtr, pDataBuffer);
                 }
             }
         }
@@ -285,7 +288,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (void* pDataBufferPtr = &pDataBuffer)
                     {
-                        ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, void>)LpVtbl[4])(@this, uExtent, riidPtr, pDataSizePtr, pDataBufferPtr);
+                        ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, void>)@this->LpVtbl[4])(@this, uExtent, riidPtr, pDataSizePtr, pDataBufferPtr);
                     }
                 }
             }
@@ -297,7 +300,7 @@ namespace Silk.NET.Core.Win32Extras
             var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Guid* uExtentPtr = &uExtent)
             {
-                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, void>)LpVtbl[4])(@this, uExtentPtr, riid, pDataSize, pDataBuffer);
+                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, void>)@this->LpVtbl[4])(@this, uExtentPtr, riid, pDataSize, pDataBuffer);
             }
         }
 
@@ -309,7 +312,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (void* pDataBufferPtr = &pDataBuffer)
                 {
-                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, void>)LpVtbl[4])(@this, uExtentPtr, riid, pDataSize, pDataBufferPtr);
+                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, void>)@this->LpVtbl[4])(@this, uExtentPtr, riid, pDataSize, pDataBufferPtr);
                 }
             }
         }
@@ -322,7 +325,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pDataSizePtr = &pDataSize)
                 {
-                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, void>)LpVtbl[4])(@this, uExtentPtr, riid, pDataSizePtr, pDataBuffer);
+                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, void>)@this->LpVtbl[4])(@this, uExtentPtr, riid, pDataSizePtr, pDataBuffer);
                 }
             }
         }
@@ -337,7 +340,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (void* pDataBufferPtr = &pDataBuffer)
                     {
-                        ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, void>)LpVtbl[4])(@this, uExtentPtr, riid, pDataSizePtr, pDataBufferPtr);
+                        ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, void>)@this->LpVtbl[4])(@this, uExtentPtr, riid, pDataSizePtr, pDataBufferPtr);
                     }
                 }
             }
@@ -351,7 +354,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (Guid* riidPtr = &riid)
                 {
-                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, void>)LpVtbl[4])(@this, uExtentPtr, riidPtr, pDataSize, pDataBuffer);
+                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, void>)@this->LpVtbl[4])(@this, uExtentPtr, riidPtr, pDataSize, pDataBuffer);
                 }
             }
         }
@@ -366,7 +369,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (void* pDataBufferPtr = &pDataBuffer)
                     {
-                        ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, void>)LpVtbl[4])(@this, uExtentPtr, riidPtr, pDataSize, pDataBufferPtr);
+                        ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, void>)@this->LpVtbl[4])(@this, uExtentPtr, riidPtr, pDataSize, pDataBufferPtr);
                     }
                 }
             }
@@ -382,7 +385,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (uint* pDataSizePtr = &pDataSize)
                     {
-                        ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, void>)LpVtbl[4])(@this, uExtentPtr, riidPtr, pDataSizePtr, pDataBuffer);
+                        ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, void>)@this->LpVtbl[4])(@this, uExtentPtr, riidPtr, pDataSizePtr, pDataBuffer);
                     }
                 }
             }
@@ -400,7 +403,7 @@ namespace Silk.NET.Core.Win32Extras
                     {
                         fixed (void* pDataBufferPtr = &pDataBuffer)
                         {
-                            ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, void>)LpVtbl[4])(@this, uExtentPtr, riidPtr, pDataSizePtr, pDataBufferPtr);
+                            ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, void>)@this->LpVtbl[4])(@this, uExtentPtr, riidPtr, pDataSizePtr, pDataBufferPtr);
                         }
                     }
                 }
@@ -411,7 +414,7 @@ namespace Silk.NET.Core.Win32Extras
         public readonly unsafe void ClientNotify(Guid* uExtent, Guid* riid, uint cbDataSize, void* pDataBuffer, uint lDataRep, int hrFault)
         {
             var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, int, void>)LpVtbl[5])(@this, uExtent, riid, cbDataSize, pDataBuffer, lDataRep, hrFault);
+            ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, int, void>)@this->LpVtbl[5])(@this, uExtent, riid, cbDataSize, pDataBuffer, lDataRep, hrFault);
         }
 
         /// <summary>To be documented.</summary>
@@ -420,7 +423,7 @@ namespace Silk.NET.Core.Win32Extras
             var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (void* pDataBufferPtr = &pDataBuffer)
             {
-                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, int, void>)LpVtbl[5])(@this, uExtent, riid, cbDataSize, pDataBufferPtr, lDataRep, hrFault);
+                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, int, void>)@this->LpVtbl[5])(@this, uExtent, riid, cbDataSize, pDataBufferPtr, lDataRep, hrFault);
             }
         }
 
@@ -430,7 +433,7 @@ namespace Silk.NET.Core.Win32Extras
             var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Guid* riidPtr = &riid)
             {
-                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, int, void>)LpVtbl[5])(@this, uExtent, riidPtr, cbDataSize, pDataBuffer, lDataRep, hrFault);
+                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, int, void>)@this->LpVtbl[5])(@this, uExtent, riidPtr, cbDataSize, pDataBuffer, lDataRep, hrFault);
             }
         }
 
@@ -442,7 +445,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (void* pDataBufferPtr = &pDataBuffer)
                 {
-                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, int, void>)LpVtbl[5])(@this, uExtent, riidPtr, cbDataSize, pDataBufferPtr, lDataRep, hrFault);
+                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, int, void>)@this->LpVtbl[5])(@this, uExtent, riidPtr, cbDataSize, pDataBufferPtr, lDataRep, hrFault);
                 }
             }
         }
@@ -453,7 +456,7 @@ namespace Silk.NET.Core.Win32Extras
             var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Guid* uExtentPtr = &uExtent)
             {
-                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, int, void>)LpVtbl[5])(@this, uExtentPtr, riid, cbDataSize, pDataBuffer, lDataRep, hrFault);
+                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, int, void>)@this->LpVtbl[5])(@this, uExtentPtr, riid, cbDataSize, pDataBuffer, lDataRep, hrFault);
             }
         }
 
@@ -465,7 +468,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (void* pDataBufferPtr = &pDataBuffer)
                 {
-                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, int, void>)LpVtbl[5])(@this, uExtentPtr, riid, cbDataSize, pDataBufferPtr, lDataRep, hrFault);
+                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, int, void>)@this->LpVtbl[5])(@this, uExtentPtr, riid, cbDataSize, pDataBufferPtr, lDataRep, hrFault);
                 }
             }
         }
@@ -478,7 +481,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (Guid* riidPtr = &riid)
                 {
-                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, int, void>)LpVtbl[5])(@this, uExtentPtr, riidPtr, cbDataSize, pDataBuffer, lDataRep, hrFault);
+                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, int, void>)@this->LpVtbl[5])(@this, uExtentPtr, riidPtr, cbDataSize, pDataBuffer, lDataRep, hrFault);
                 }
             }
         }
@@ -493,7 +496,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (void* pDataBufferPtr = &pDataBuffer)
                     {
-                        ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, int, void>)LpVtbl[5])(@this, uExtentPtr, riidPtr, cbDataSize, pDataBufferPtr, lDataRep, hrFault);
+                        ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, int, void>)@this->LpVtbl[5])(@this, uExtentPtr, riidPtr, cbDataSize, pDataBufferPtr, lDataRep, hrFault);
                     }
                 }
             }
@@ -503,7 +506,7 @@ namespace Silk.NET.Core.Win32Extras
         public readonly unsafe void ServerNotify(Guid* uExtent, Guid* riid, uint cbDataSize, void* pDataBuffer, uint lDataRep)
         {
             var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, void>)LpVtbl[6])(@this, uExtent, riid, cbDataSize, pDataBuffer, lDataRep);
+            ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, void>)@this->LpVtbl[6])(@this, uExtent, riid, cbDataSize, pDataBuffer, lDataRep);
         }
 
         /// <summary>To be documented.</summary>
@@ -512,7 +515,7 @@ namespace Silk.NET.Core.Win32Extras
             var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (void* pDataBufferPtr = &pDataBuffer)
             {
-                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, void>)LpVtbl[6])(@this, uExtent, riid, cbDataSize, pDataBufferPtr, lDataRep);
+                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, void>)@this->LpVtbl[6])(@this, uExtent, riid, cbDataSize, pDataBufferPtr, lDataRep);
             }
         }
 
@@ -522,7 +525,7 @@ namespace Silk.NET.Core.Win32Extras
             var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Guid* riidPtr = &riid)
             {
-                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, void>)LpVtbl[6])(@this, uExtent, riidPtr, cbDataSize, pDataBuffer, lDataRep);
+                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, void>)@this->LpVtbl[6])(@this, uExtent, riidPtr, cbDataSize, pDataBuffer, lDataRep);
             }
         }
 
@@ -534,7 +537,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (void* pDataBufferPtr = &pDataBuffer)
                 {
-                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, void>)LpVtbl[6])(@this, uExtent, riidPtr, cbDataSize, pDataBufferPtr, lDataRep);
+                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, void>)@this->LpVtbl[6])(@this, uExtent, riidPtr, cbDataSize, pDataBufferPtr, lDataRep);
                 }
             }
         }
@@ -545,7 +548,7 @@ namespace Silk.NET.Core.Win32Extras
             var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Guid* uExtentPtr = &uExtent)
             {
-                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, void>)LpVtbl[6])(@this, uExtentPtr, riid, cbDataSize, pDataBuffer, lDataRep);
+                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, void>)@this->LpVtbl[6])(@this, uExtentPtr, riid, cbDataSize, pDataBuffer, lDataRep);
             }
         }
 
@@ -557,7 +560,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (void* pDataBufferPtr = &pDataBuffer)
                 {
-                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, void>)LpVtbl[6])(@this, uExtentPtr, riid, cbDataSize, pDataBufferPtr, lDataRep);
+                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, void>)@this->LpVtbl[6])(@this, uExtentPtr, riid, cbDataSize, pDataBufferPtr, lDataRep);
                 }
             }
         }
@@ -570,7 +573,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (Guid* riidPtr = &riid)
                 {
-                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, void>)LpVtbl[6])(@this, uExtentPtr, riidPtr, cbDataSize, pDataBuffer, lDataRep);
+                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, void>)@this->LpVtbl[6])(@this, uExtentPtr, riidPtr, cbDataSize, pDataBuffer, lDataRep);
                 }
             }
         }
@@ -585,7 +588,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (void* pDataBufferPtr = &pDataBuffer)
                     {
-                        ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, void>)LpVtbl[6])(@this, uExtentPtr, riidPtr, cbDataSize, pDataBufferPtr, lDataRep);
+                        ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, void>)@this->LpVtbl[6])(@this, uExtentPtr, riidPtr, cbDataSize, pDataBufferPtr, lDataRep);
                     }
                 }
             }
@@ -595,7 +598,7 @@ namespace Silk.NET.Core.Win32Extras
         public readonly unsafe void ServerGetSize(Guid* uExtent, Guid* riid, int hrFault, uint* pDataSize)
         {
             var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, int, uint*, void>)LpVtbl[7])(@this, uExtent, riid, hrFault, pDataSize);
+            ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, int, uint*, void>)@this->LpVtbl[7])(@this, uExtent, riid, hrFault, pDataSize);
         }
 
         /// <summary>To be documented.</summary>
@@ -604,7 +607,7 @@ namespace Silk.NET.Core.Win32Extras
             var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* pDataSizePtr = &pDataSize)
             {
-                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, int, uint*, void>)LpVtbl[7])(@this, uExtent, riid, hrFault, pDataSizePtr);
+                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, int, uint*, void>)@this->LpVtbl[7])(@this, uExtent, riid, hrFault, pDataSizePtr);
             }
         }
 
@@ -614,7 +617,7 @@ namespace Silk.NET.Core.Win32Extras
             var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Guid* riidPtr = &riid)
             {
-                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, int, uint*, void>)LpVtbl[7])(@this, uExtent, riidPtr, hrFault, pDataSize);
+                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, int, uint*, void>)@this->LpVtbl[7])(@this, uExtent, riidPtr, hrFault, pDataSize);
             }
         }
 
@@ -626,7 +629,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pDataSizePtr = &pDataSize)
                 {
-                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, int, uint*, void>)LpVtbl[7])(@this, uExtent, riidPtr, hrFault, pDataSizePtr);
+                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, int, uint*, void>)@this->LpVtbl[7])(@this, uExtent, riidPtr, hrFault, pDataSizePtr);
                 }
             }
         }
@@ -637,7 +640,7 @@ namespace Silk.NET.Core.Win32Extras
             var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Guid* uExtentPtr = &uExtent)
             {
-                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, int, uint*, void>)LpVtbl[7])(@this, uExtentPtr, riid, hrFault, pDataSize);
+                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, int, uint*, void>)@this->LpVtbl[7])(@this, uExtentPtr, riid, hrFault, pDataSize);
             }
         }
 
@@ -649,7 +652,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pDataSizePtr = &pDataSize)
                 {
-                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, int, uint*, void>)LpVtbl[7])(@this, uExtentPtr, riid, hrFault, pDataSizePtr);
+                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, int, uint*, void>)@this->LpVtbl[7])(@this, uExtentPtr, riid, hrFault, pDataSizePtr);
                 }
             }
         }
@@ -662,7 +665,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (Guid* riidPtr = &riid)
                 {
-                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, int, uint*, void>)LpVtbl[7])(@this, uExtentPtr, riidPtr, hrFault, pDataSize);
+                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, int, uint*, void>)@this->LpVtbl[7])(@this, uExtentPtr, riidPtr, hrFault, pDataSize);
                 }
             }
         }
@@ -677,7 +680,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (uint* pDataSizePtr = &pDataSize)
                     {
-                        ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, int, uint*, void>)LpVtbl[7])(@this, uExtentPtr, riidPtr, hrFault, pDataSizePtr);
+                        ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, int, uint*, void>)@this->LpVtbl[7])(@this, uExtentPtr, riidPtr, hrFault, pDataSizePtr);
                     }
                 }
             }
@@ -687,7 +690,7 @@ namespace Silk.NET.Core.Win32Extras
         public readonly unsafe void ServerFillBuffer(Guid* uExtent, Guid* riid, uint* pDataSize, void* pDataBuffer, int hrFault)
         {
             var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, int, void>)LpVtbl[8])(@this, uExtent, riid, pDataSize, pDataBuffer, hrFault);
+            ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, int, void>)@this->LpVtbl[8])(@this, uExtent, riid, pDataSize, pDataBuffer, hrFault);
         }
 
         /// <summary>To be documented.</summary>
@@ -696,7 +699,7 @@ namespace Silk.NET.Core.Win32Extras
             var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (void* pDataBufferPtr = &pDataBuffer)
             {
-                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, int, void>)LpVtbl[8])(@this, uExtent, riid, pDataSize, pDataBufferPtr, hrFault);
+                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, int, void>)@this->LpVtbl[8])(@this, uExtent, riid, pDataSize, pDataBufferPtr, hrFault);
             }
         }
 
@@ -706,7 +709,7 @@ namespace Silk.NET.Core.Win32Extras
             var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* pDataSizePtr = &pDataSize)
             {
-                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, int, void>)LpVtbl[8])(@this, uExtent, riid, pDataSizePtr, pDataBuffer, hrFault);
+                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, int, void>)@this->LpVtbl[8])(@this, uExtent, riid, pDataSizePtr, pDataBuffer, hrFault);
             }
         }
 
@@ -718,7 +721,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (void* pDataBufferPtr = &pDataBuffer)
                 {
-                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, int, void>)LpVtbl[8])(@this, uExtent, riid, pDataSizePtr, pDataBufferPtr, hrFault);
+                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, int, void>)@this->LpVtbl[8])(@this, uExtent, riid, pDataSizePtr, pDataBufferPtr, hrFault);
                 }
             }
         }
@@ -729,7 +732,7 @@ namespace Silk.NET.Core.Win32Extras
             var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Guid* riidPtr = &riid)
             {
-                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, int, void>)LpVtbl[8])(@this, uExtent, riidPtr, pDataSize, pDataBuffer, hrFault);
+                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, int, void>)@this->LpVtbl[8])(@this, uExtent, riidPtr, pDataSize, pDataBuffer, hrFault);
             }
         }
 
@@ -741,7 +744,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (void* pDataBufferPtr = &pDataBuffer)
                 {
-                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, int, void>)LpVtbl[8])(@this, uExtent, riidPtr, pDataSize, pDataBufferPtr, hrFault);
+                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, int, void>)@this->LpVtbl[8])(@this, uExtent, riidPtr, pDataSize, pDataBufferPtr, hrFault);
                 }
             }
         }
@@ -754,7 +757,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pDataSizePtr = &pDataSize)
                 {
-                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, int, void>)LpVtbl[8])(@this, uExtent, riidPtr, pDataSizePtr, pDataBuffer, hrFault);
+                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, int, void>)@this->LpVtbl[8])(@this, uExtent, riidPtr, pDataSizePtr, pDataBuffer, hrFault);
                 }
             }
         }
@@ -769,7 +772,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (void* pDataBufferPtr = &pDataBuffer)
                     {
-                        ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, int, void>)LpVtbl[8])(@this, uExtent, riidPtr, pDataSizePtr, pDataBufferPtr, hrFault);
+                        ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, int, void>)@this->LpVtbl[8])(@this, uExtent, riidPtr, pDataSizePtr, pDataBufferPtr, hrFault);
                     }
                 }
             }
@@ -781,7 +784,7 @@ namespace Silk.NET.Core.Win32Extras
             var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Guid* uExtentPtr = &uExtent)
             {
-                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, int, void>)LpVtbl[8])(@this, uExtentPtr, riid, pDataSize, pDataBuffer, hrFault);
+                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, int, void>)@this->LpVtbl[8])(@this, uExtentPtr, riid, pDataSize, pDataBuffer, hrFault);
             }
         }
 
@@ -793,7 +796,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (void* pDataBufferPtr = &pDataBuffer)
                 {
-                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, int, void>)LpVtbl[8])(@this, uExtentPtr, riid, pDataSize, pDataBufferPtr, hrFault);
+                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, int, void>)@this->LpVtbl[8])(@this, uExtentPtr, riid, pDataSize, pDataBufferPtr, hrFault);
                 }
             }
         }
@@ -806,7 +809,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pDataSizePtr = &pDataSize)
                 {
-                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, int, void>)LpVtbl[8])(@this, uExtentPtr, riid, pDataSizePtr, pDataBuffer, hrFault);
+                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, int, void>)@this->LpVtbl[8])(@this, uExtentPtr, riid, pDataSizePtr, pDataBuffer, hrFault);
                 }
             }
         }
@@ -821,7 +824,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (void* pDataBufferPtr = &pDataBuffer)
                     {
-                        ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, int, void>)LpVtbl[8])(@this, uExtentPtr, riid, pDataSizePtr, pDataBufferPtr, hrFault);
+                        ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, int, void>)@this->LpVtbl[8])(@this, uExtentPtr, riid, pDataSizePtr, pDataBufferPtr, hrFault);
                     }
                 }
             }
@@ -835,7 +838,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (Guid* riidPtr = &riid)
                 {
-                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, int, void>)LpVtbl[8])(@this, uExtentPtr, riidPtr, pDataSize, pDataBuffer, hrFault);
+                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, int, void>)@this->LpVtbl[8])(@this, uExtentPtr, riidPtr, pDataSize, pDataBuffer, hrFault);
                 }
             }
         }
@@ -850,7 +853,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (void* pDataBufferPtr = &pDataBuffer)
                     {
-                        ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, int, void>)LpVtbl[8])(@this, uExtentPtr, riidPtr, pDataSize, pDataBufferPtr, hrFault);
+                        ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, int, void>)@this->LpVtbl[8])(@this, uExtentPtr, riidPtr, pDataSize, pDataBufferPtr, hrFault);
                     }
                 }
             }
@@ -866,7 +869,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (uint* pDataSizePtr = &pDataSize)
                     {
-                        ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, int, void>)LpVtbl[8])(@this, uExtentPtr, riidPtr, pDataSizePtr, pDataBuffer, hrFault);
+                        ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, int, void>)@this->LpVtbl[8])(@this, uExtentPtr, riidPtr, pDataSizePtr, pDataBuffer, hrFault);
                     }
                 }
             }
@@ -884,11 +887,29 @@ namespace Silk.NET.Core.Win32Extras
                     {
                         fixed (void* pDataBufferPtr = &pDataBuffer)
                         {
-                            ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, int, void>)LpVtbl[8])(@this, uExtentPtr, riidPtr, pDataSizePtr, pDataBufferPtr, hrFault);
+                            ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, int, void>)@this->LpVtbl[8])(@this, uExtentPtr, riidPtr, pDataSizePtr, pDataBufferPtr, hrFault);
                         }
                     }
                 }
             }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

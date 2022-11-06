@@ -104,6 +104,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         [NativeApi(EntryPoint = "glPixelTransformParameterfvEXT", Convention = CallingConvention.Winapi)]
         public partial void PixelTransformParameter([Flow(FlowDirection.In)] PixelTransformTargetEXT target, [Flow(FlowDirection.In)] PixelTransformPNameEXT pname, [Count(Count = 1), Flow(FlowDirection.In)] in float @params);
 
+        public unsafe int GetPixelTransformParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPixelTransformParameter(target, pname, out int silkRet);
+            return silkRet;
+        }
+
         public ExtPixelTransform(INativeContext ctx)
             : base(ctx)
         {

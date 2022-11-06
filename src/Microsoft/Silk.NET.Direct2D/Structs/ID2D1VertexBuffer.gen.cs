@@ -18,9 +18,12 @@ namespace Silk.NET.Direct2D
 {
     [Guid("9b8b1336-00a5-4668-92b7-ced5d8bf9b7b")]
     [NativeName("Name", "ID2D1VertexBuffer")]
-    public unsafe partial struct ID2D1VertexBuffer
+    public unsafe partial struct ID2D1VertexBuffer : IComVtbl<ID2D1VertexBuffer>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("9b8b1336-00a5-4668-92b7-ced5d8bf9b7b");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator Silk.NET.Core.Native.IUnknown(ID2D1VertexBuffer val)
             => Unsafe.As<ID2D1VertexBuffer, Silk.NET.Core.Native.IUnknown>(ref val);
@@ -46,7 +49,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1VertexBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1VertexBuffer*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1VertexBuffer*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -57,7 +60,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1VertexBuffer*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1VertexBuffer*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -69,7 +72,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1VertexBuffer*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1VertexBuffer*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -83,7 +86,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1VertexBuffer*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1VertexBuffer*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -94,7 +97,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1VertexBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1VertexBuffer*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1VertexBuffer*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -103,7 +106,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1VertexBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1VertexBuffer*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1VertexBuffer*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -112,7 +115,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1VertexBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1VertexBuffer*, byte**, uint, int>)LpVtbl[3])(@this, data, bufferSize);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1VertexBuffer*, byte**, uint, int>)@this->LpVtbl[3])(@this, data, bufferSize);
             return ret;
         }
 
@@ -123,7 +126,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (byte** dataPtr = &data)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1VertexBuffer*, byte**, uint, int>)LpVtbl[3])(@this, dataPtr, bufferSize);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1VertexBuffer*, byte**, uint, int>)@this->LpVtbl[3])(@this, dataPtr, bufferSize);
             }
             return ret;
         }
@@ -133,8 +136,38 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1VertexBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1VertexBuffer*, int>)LpVtbl[4])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1VertexBuffer*, int>)@this->LpVtbl[4])(@this);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID2D1VertexBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int Map(string[] dataSa, uint bufferSize)
+        {
+            var @this = (ID2D1VertexBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var data = (byte**) SilkMarshal.StringArrayToPtr(dataSa);
+            var ret = @this->Map(data, bufferSize);
+            SilkMarshal.CopyPtrToStringArray((nint) data, dataSa);
+            SilkMarshal.Free((nint) data);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID2D1VertexBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

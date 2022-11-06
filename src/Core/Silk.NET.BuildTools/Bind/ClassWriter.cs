@@ -447,6 +447,7 @@ namespace Silk.NET.BuildTools.Bind
                         sw.WriteLine("}");
                         sw.WriteLine();
                         sw.Flush();
+                        sw.Dispose();
                         FinishOverloadsFile(swOverloads);
                     }
                 }

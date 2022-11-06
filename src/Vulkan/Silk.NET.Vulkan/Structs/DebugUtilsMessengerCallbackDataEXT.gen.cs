@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDebugUtilsMessengerCallbackDataEXT")]
-    public unsafe partial struct DebugUtilsMessengerCallbackDataEXT : IChainable
+    public unsafe partial struct DebugUtilsMessengerCallbackDataEXT : IChainStart
     {
         public DebugUtilsMessengerCallbackDataEXT
         (
@@ -168,6 +168,18 @@ namespace Silk.NET.Vulkan
         {
             get => (BaseInStructure*) PNext;
             set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref DebugUtilsMessengerCallbackDataEXT Chain(
+            out DebugUtilsMessengerCallbackDataEXT capture)
+        {
+            capture = new DebugUtilsMessengerCallbackDataEXT(StructureType.DebugUtilsMessengerCallbackDataExt);
+            return ref capture;
         }
     }
 }

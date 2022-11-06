@@ -18,9 +18,12 @@ namespace Silk.NET.Core.Win32Extras
 {
     [Guid("0c733a30-2a1c-11ce-ade5-00aa0044773d")]
     [NativeName("Name", "ISequentialStream")]
-    public unsafe partial struct ISequentialStream
+    public unsafe partial struct ISequentialStream : IComVtbl<ISequentialStream>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("0c733a30-2a1c-11ce-ade5-00aa0044773d");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator Silk.NET.Core.Native.IUnknown(ISequentialStream val)
             => Unsafe.As<ISequentialStream, Silk.NET.Core.Native.IUnknown>(ref val);
@@ -46,7 +49,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (ISequentialStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ISequentialStream*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Cdecl]<ISequentialStream*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -57,7 +60,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ISequentialStream*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Cdecl]<ISequentialStream*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -69,7 +72,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ISequentialStream*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Cdecl]<ISequentialStream*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -83,7 +86,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ISequentialStream*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ISequentialStream*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -94,7 +97,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (ISequentialStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ISequentialStream*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<ISequentialStream*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -103,7 +106,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (ISequentialStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ISequentialStream*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<ISequentialStream*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -112,7 +115,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (ISequentialStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ISequentialStream*, void*, uint, uint*, int>)LpVtbl[3])(@this, pv, cb, pcbRead);
+            ret = ((delegate* unmanaged[Cdecl]<ISequentialStream*, void*, uint, uint*, int>)@this->LpVtbl[3])(@this, pv, cb, pcbRead);
             return ret;
         }
 
@@ -123,7 +126,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (uint* pcbReadPtr = &pcbRead)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ISequentialStream*, void*, uint, uint*, int>)LpVtbl[3])(@this, pv, cb, pcbReadPtr);
+                ret = ((delegate* unmanaged[Cdecl]<ISequentialStream*, void*, uint, uint*, int>)@this->LpVtbl[3])(@this, pv, cb, pcbReadPtr);
             }
             return ret;
         }
@@ -135,7 +138,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (void* pvPtr = &pv)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ISequentialStream*, void*, uint, uint*, int>)LpVtbl[3])(@this, pvPtr, cb, pcbRead);
+                ret = ((delegate* unmanaged[Cdecl]<ISequentialStream*, void*, uint, uint*, int>)@this->LpVtbl[3])(@this, pvPtr, cb, pcbRead);
             }
             return ret;
         }
@@ -149,7 +152,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pcbReadPtr = &pcbRead)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ISequentialStream*, void*, uint, uint*, int>)LpVtbl[3])(@this, pvPtr, cb, pcbReadPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ISequentialStream*, void*, uint, uint*, int>)@this->LpVtbl[3])(@this, pvPtr, cb, pcbReadPtr);
                 }
             }
             return ret;
@@ -160,7 +163,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (ISequentialStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ISequentialStream*, void*, uint, uint*, int>)LpVtbl[4])(@this, pv, cb, pcbWritten);
+            ret = ((delegate* unmanaged[Cdecl]<ISequentialStream*, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, pv, cb, pcbWritten);
             return ret;
         }
 
@@ -171,7 +174,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (uint* pcbWrittenPtr = &pcbWritten)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ISequentialStream*, void*, uint, uint*, int>)LpVtbl[4])(@this, pv, cb, pcbWrittenPtr);
+                ret = ((delegate* unmanaged[Cdecl]<ISequentialStream*, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, pv, cb, pcbWrittenPtr);
             }
             return ret;
         }
@@ -183,7 +186,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (void* pvPtr = &pv)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ISequentialStream*, void*, uint, uint*, int>)LpVtbl[4])(@this, pvPtr, cb, pcbWritten);
+                ret = ((delegate* unmanaged[Cdecl]<ISequentialStream*, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, pvPtr, cb, pcbWritten);
             }
             return ret;
         }
@@ -197,10 +200,28 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pcbWrittenPtr = &pcbWritten)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ISequentialStream*, void*, uint, uint*, int>)LpVtbl[4])(@this, pvPtr, cb, pcbWrittenPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ISequentialStream*, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, pvPtr, cb, pcbWrittenPtr);
                 }
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ISequentialStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ISequentialStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

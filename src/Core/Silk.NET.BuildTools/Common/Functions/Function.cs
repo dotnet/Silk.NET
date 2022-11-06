@@ -101,6 +101,11 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// </summary>
         public bool IsReadOnly { get; set; }
 
+        /// <summary>
+        /// Prefix to invocations of this function e.g. "@this->". May be null.
+        /// </summary>
+        public string? InvocationPrefix { get; set; }
+
         /// <inheritdoc />
         public override string ToString()
         {
@@ -249,7 +254,7 @@ namespace Silk.NET.BuildTools.Common.Functions
                     }
                     else if (parameter.Count.IsComputed)
                     {
-                        var parameterList = string.Join(", ", parameter.Count.ComputedFromNames);
+                        var parameterList = string.Join(", ", parameter.Count.ComputedFromNames).Replace("\\", "\\\\");
                         attributes.Add($"Count(Computed = \"{parameterList}\")");
                     }
                     else if (parameter.Count.IsReference)

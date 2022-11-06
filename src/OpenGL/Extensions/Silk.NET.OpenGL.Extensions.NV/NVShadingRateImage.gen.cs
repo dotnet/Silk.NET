@@ -62,6 +62,20 @@ namespace Silk.NET.OpenGL.Extensions.NV
             ShadingRateImagePalette(viewport, first, (uint) rates.Length, in rates.GetPinnableReference());
         }
 
+        public unsafe NV GetShadingRateImagePalette([Flow(FlowDirection.In)] uint viewport, [Flow(FlowDirection.In)] uint entry)
+        {
+            // NonKhrReturnTypeOverloader
+            GetShadingRateImagePalette(viewport, entry, out NV silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetShadingRateSampleLocation([Flow(FlowDirection.In)] NV rate, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] uint index)
+        {
+            // NonKhrReturnTypeOverloader
+            GetShadingRateSampleLocation(rate, samples, index, out int silkRet);
+            return silkRet;
+        }
+
         public NVShadingRateImage(INativeContext ctx)
             : base(ctx)
         {

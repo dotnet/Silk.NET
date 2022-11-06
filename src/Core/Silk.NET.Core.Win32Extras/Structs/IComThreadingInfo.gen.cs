@@ -18,9 +18,12 @@ namespace Silk.NET.Core.Win32Extras
 {
     [Guid("000001ce-0000-0000-c000-000000000046")]
     [NativeName("Name", "IComThreadingInfo")]
-    public unsafe partial struct IComThreadingInfo
+    public unsafe partial struct IComThreadingInfo : IComVtbl<IComThreadingInfo>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("000001ce-0000-0000-c000-000000000046");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator Silk.NET.Core.Native.IUnknown(IComThreadingInfo val)
             => Unsafe.As<IComThreadingInfo, Silk.NET.Core.Native.IUnknown>(ref val);
@@ -46,7 +49,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IComThreadingInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IComThreadingInfo*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Cdecl]<IComThreadingInfo*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -57,7 +60,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IComThreadingInfo*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IComThreadingInfo*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -69,7 +72,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IComThreadingInfo*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Cdecl]<IComThreadingInfo*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -83,7 +86,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IComThreadingInfo*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IComThreadingInfo*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -94,7 +97,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IComThreadingInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IComThreadingInfo*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<IComThreadingInfo*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -103,7 +106,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IComThreadingInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IComThreadingInfo*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<IComThreadingInfo*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -112,7 +115,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IComThreadingInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IComThreadingInfo*, Apttype*, int>)LpVtbl[3])(@this, pAptType);
+            ret = ((delegate* unmanaged[Cdecl]<IComThreadingInfo*, Apttype*, int>)@this->LpVtbl[3])(@this, pAptType);
             return ret;
         }
 
@@ -123,7 +126,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (Apttype* pAptTypePtr = &pAptType)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IComThreadingInfo*, Apttype*, int>)LpVtbl[3])(@this, pAptTypePtr);
+                ret = ((delegate* unmanaged[Cdecl]<IComThreadingInfo*, Apttype*, int>)@this->LpVtbl[3])(@this, pAptTypePtr);
             }
             return ret;
         }
@@ -133,7 +136,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IComThreadingInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IComThreadingInfo*, Thdtype*, int>)LpVtbl[4])(@this, pThreadType);
+            ret = ((delegate* unmanaged[Cdecl]<IComThreadingInfo*, Thdtype*, int>)@this->LpVtbl[4])(@this, pThreadType);
             return ret;
         }
 
@@ -144,7 +147,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (Thdtype* pThreadTypePtr = &pThreadType)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IComThreadingInfo*, Thdtype*, int>)LpVtbl[4])(@this, pThreadTypePtr);
+                ret = ((delegate* unmanaged[Cdecl]<IComThreadingInfo*, Thdtype*, int>)@this->LpVtbl[4])(@this, pThreadTypePtr);
             }
             return ret;
         }
@@ -154,7 +157,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IComThreadingInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IComThreadingInfo*, Guid*, int>)LpVtbl[5])(@this, pguidLogicalThreadId);
+            ret = ((delegate* unmanaged[Cdecl]<IComThreadingInfo*, Guid*, int>)@this->LpVtbl[5])(@this, pguidLogicalThreadId);
             return ret;
         }
 
@@ -165,7 +168,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (Guid* pguidLogicalThreadIdPtr = &pguidLogicalThreadId)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IComThreadingInfo*, Guid*, int>)LpVtbl[5])(@this, pguidLogicalThreadIdPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IComThreadingInfo*, Guid*, int>)@this->LpVtbl[5])(@this, pguidLogicalThreadIdPtr);
             }
             return ret;
         }
@@ -175,7 +178,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IComThreadingInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IComThreadingInfo*, Guid*, int>)LpVtbl[6])(@this, rguid);
+            ret = ((delegate* unmanaged[Cdecl]<IComThreadingInfo*, Guid*, int>)@this->LpVtbl[6])(@this, rguid);
             return ret;
         }
 
@@ -186,9 +189,27 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (Guid* rguidPtr = &rguid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IComThreadingInfo*, Guid*, int>)LpVtbl[6])(@this, rguidPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IComThreadingInfo*, Guid*, int>)@this->LpVtbl[6])(@this, rguidPtr);
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IComThreadingInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IComThreadingInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

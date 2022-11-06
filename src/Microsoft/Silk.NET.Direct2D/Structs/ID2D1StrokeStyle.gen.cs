@@ -18,9 +18,12 @@ namespace Silk.NET.Direct2D
 {
     [Guid("2cd9069d-12e2-11dc-9fed-001143a055f9")]
     [NativeName("Name", "ID2D1StrokeStyle")]
-    public unsafe partial struct ID2D1StrokeStyle
+    public unsafe partial struct ID2D1StrokeStyle : IComVtbl<ID2D1StrokeStyle>, IComVtbl<ID2D1Resource>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("2cd9069d-12e2-11dc-9fed-001143a055f9");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator ID2D1Resource(ID2D1StrokeStyle val)
             => Unsafe.As<ID2D1StrokeStyle, ID2D1Resource>(ref val);
@@ -49,7 +52,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1StrokeStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1StrokeStyle*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1StrokeStyle*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -60,7 +63,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1StrokeStyle*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1StrokeStyle*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -72,7 +75,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1StrokeStyle*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1StrokeStyle*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -86,7 +89,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1StrokeStyle*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1StrokeStyle*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -97,7 +100,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1StrokeStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1StrokeStyle*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1StrokeStyle*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -106,7 +109,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1StrokeStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1StrokeStyle*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1StrokeStyle*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -114,7 +117,7 @@ namespace Silk.NET.Direct2D
         public readonly unsafe void GetFactory(ID2D1Factory** factory)
         {
             var @this = (ID2D1StrokeStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1StrokeStyle*, ID2D1Factory**, void>)LpVtbl[3])(@this, factory);
+            ((delegate* unmanaged[Stdcall]<ID2D1StrokeStyle*, ID2D1Factory**, void>)@this->LpVtbl[3])(@this, factory);
         }
 
         /// <summary>To be documented.</summary>
@@ -123,7 +126,7 @@ namespace Silk.NET.Direct2D
             var @this = (ID2D1StrokeStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Factory** factoryPtr = &factory)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1StrokeStyle*, ID2D1Factory**, void>)LpVtbl[3])(@this, factoryPtr);
+                ((delegate* unmanaged[Stdcall]<ID2D1StrokeStyle*, ID2D1Factory**, void>)@this->LpVtbl[3])(@this, factoryPtr);
             }
         }
 
@@ -132,7 +135,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1StrokeStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             CapStyle ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1StrokeStyle*, CapStyle>)LpVtbl[4])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1StrokeStyle*, CapStyle>)@this->LpVtbl[4])(@this);
             return ret;
         }
 
@@ -141,7 +144,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1StrokeStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             CapStyle ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1StrokeStyle*, CapStyle>)LpVtbl[5])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1StrokeStyle*, CapStyle>)@this->LpVtbl[5])(@this);
             return ret;
         }
 
@@ -150,7 +153,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1StrokeStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             CapStyle ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1StrokeStyle*, CapStyle>)LpVtbl[6])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1StrokeStyle*, CapStyle>)@this->LpVtbl[6])(@this);
             return ret;
         }
 
@@ -159,7 +162,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1StrokeStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             float ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1StrokeStyle*, float>)LpVtbl[7])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1StrokeStyle*, float>)@this->LpVtbl[7])(@this);
             return ret;
         }
 
@@ -168,7 +171,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1StrokeStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             LineJoin ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1StrokeStyle*, LineJoin>)LpVtbl[8])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1StrokeStyle*, LineJoin>)@this->LpVtbl[8])(@this);
             return ret;
         }
 
@@ -177,7 +180,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1StrokeStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             float ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1StrokeStyle*, float>)LpVtbl[9])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1StrokeStyle*, float>)@this->LpVtbl[9])(@this);
             return ret;
         }
 
@@ -186,7 +189,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1StrokeStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             DashStyle ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1StrokeStyle*, DashStyle>)LpVtbl[10])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1StrokeStyle*, DashStyle>)@this->LpVtbl[10])(@this);
             return ret;
         }
 
@@ -195,7 +198,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1StrokeStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1StrokeStyle*, uint>)LpVtbl[11])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1StrokeStyle*, uint>)@this->LpVtbl[11])(@this);
             return ret;
         }
 
@@ -203,7 +206,7 @@ namespace Silk.NET.Direct2D
         public readonly unsafe void GetDashes(float* dashes, uint dashesCount)
         {
             var @this = (ID2D1StrokeStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1StrokeStyle*, float*, uint, void>)LpVtbl[12])(@this, dashes, dashesCount);
+            ((delegate* unmanaged[Stdcall]<ID2D1StrokeStyle*, float*, uint, void>)@this->LpVtbl[12])(@this, dashes, dashesCount);
         }
 
         /// <summary>To be documented.</summary>
@@ -212,8 +215,34 @@ namespace Silk.NET.Direct2D
             var @this = (ID2D1StrokeStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (float* dashesPtr = &dashes)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1StrokeStyle*, float*, uint, void>)LpVtbl[12])(@this, dashesPtr, dashesCount);
+                ((delegate* unmanaged[Stdcall]<ID2D1StrokeStyle*, float*, uint, void>)@this->LpVtbl[12])(@this, dashesPtr, dashesCount);
             }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID2D1StrokeStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void GetFactory<TI0>(ref ComPtr<TI0> factory) where TI0 : unmanaged, IComVtbl<ID2D1Factory>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1StrokeStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->GetFactory((ID2D1Factory**) factory.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID2D1StrokeStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

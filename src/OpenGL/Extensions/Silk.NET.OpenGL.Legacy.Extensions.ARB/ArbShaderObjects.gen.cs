@@ -200,6 +200,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         [NativeApi(EntryPoint = "glGetHandleARB", Convention = CallingConvention.Winapi)]
         public partial uint GetHandle([Flow(FlowDirection.In)] ARB pname);
 
+        [NativeApi(EntryPoint = "glGetHandleARB", Convention = CallingConvention.Winapi)]
+        public partial uint GetHandle([Flow(FlowDirection.In)] ContainerType pname);
+
         [NativeApi(EntryPoint = "glGetInfoLogARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetInfoLog([Flow(FlowDirection.In)] uint obj, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* infoLog);
 
@@ -762,6 +765,174 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         {
             // ImplicitCountSpanOverloader
             UniformMatrix4(location, (uint) value.Length, transpose, in value.GetPinnableReference());
+        }
+
+        public unsafe byte GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveUniform(programObj, index, maxLength, length, size, type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] out ARB type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveUniform(programObj, index, maxLength, length, size, out type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveUniform(programObj, index, maxLength, length, out size, type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] out ARB type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveUniform(programObj, index, maxLength, length, out size, out type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveUniform(programObj, index, maxLength, out length, size, type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] out ARB type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveUniform(programObj, index, maxLength, out length, size, out type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveUniform(programObj, index, maxLength, out length, out size, type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] out ARB type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveUniform(programObj, index, maxLength, out length, out size, out type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] UniformType* type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveUniform(programObj, index, maxLength, length, size, type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] out UniformType type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveUniform(programObj, index, maxLength, length, size, out type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] UniformType* type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveUniform(programObj, index, maxLength, length, out size, type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] out UniformType type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveUniform(programObj, index, maxLength, length, out size, out type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] UniformType* type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveUniform(programObj, index, maxLength, out length, size, type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] out UniformType type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveUniform(programObj, index, maxLength, out length, size, out type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] UniformType* type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveUniform(programObj, index, maxLength, out length, out size, type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] out UniformType type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveUniform(programObj, index, maxLength, out length, out size, out type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe uint GetAttachedObjects([Flow(FlowDirection.In)] uint containerObj, [Flow(FlowDirection.In)] uint maxCount, [Count(Count = 1), Flow(FlowDirection.Out)] uint* count)
+        {
+            // NonKhrReturnTypeOverloader
+            GetAttachedObjects(containerObj, maxCount, count, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe uint GetAttachedObjects([Flow(FlowDirection.In)] uint containerObj, [Flow(FlowDirection.In)] uint maxCount, [Count(Count = 1), Flow(FlowDirection.Out)] out uint count)
+        {
+            // NonKhrReturnTypeOverloader
+            GetAttachedObjects(containerObj, maxCount, out count, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetInfoLog([Flow(FlowDirection.In)] uint obj, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetInfoLog(obj, maxLength, length, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetInfoLog([Flow(FlowDirection.In)] uint obj, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetInfoLog(obj, maxLength, out length, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetObjectParameter([Flow(FlowDirection.In)] uint obj, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetObjectParameter(obj, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetShaderSource([Flow(FlowDirection.In)] uint obj, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetShaderSource(obj, maxLength, length, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetShaderSource([Flow(FlowDirection.In)] uint obj, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetShaderSource(obj, maxLength, out length, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] int location)
+        {
+            // NonKhrReturnTypeOverloader
+            GetUniform(programObj, location, out float silkRet);
+            return silkRet;
         }
 
         public ArbShaderObjects(INativeContext ctx)

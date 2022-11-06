@@ -24,7 +24,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void ActiveStencilFace([Flow(FlowDirection.In)] EXT face);
 
         [NativeApi(EntryPoint = "glActiveStencilFaceEXT", Convention = CallingConvention.Winapi)]
-        public partial void ActiveStencilFace([Flow(FlowDirection.In)] StencilFaceDirection face);
+        public partial void ActiveStencilFace([Flow(FlowDirection.In)] TriangleFace face);
 
         public ExtStencilTwoSide(INativeContext ctx)
             : base(ctx)

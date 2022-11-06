@@ -18,9 +18,12 @@ namespace Silk.NET.Direct2D
 {
     [Guid("4dc583bf-3a10-438a-8722-e9765224f1f1")]
     [NativeName("Name", "ID2D1SpriteBatch")]
-    public unsafe partial struct ID2D1SpriteBatch
+    public unsafe partial struct ID2D1SpriteBatch : IComVtbl<ID2D1SpriteBatch>, IComVtbl<ID2D1Resource>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("4dc583bf-3a10-438a-8722-e9765224f1f1");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator ID2D1Resource(ID2D1SpriteBatch val)
             => Unsafe.As<ID2D1SpriteBatch, ID2D1Resource>(ref val);
@@ -49,7 +52,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -60,7 +63,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -72,7 +75,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -86,7 +89,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -97,7 +100,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -106,7 +109,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -114,7 +117,7 @@ namespace Silk.NET.Direct2D
         public readonly unsafe void GetFactory(ID2D1Factory** factory)
         {
             var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, ID2D1Factory**, void>)LpVtbl[3])(@this, factory);
+            ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, ID2D1Factory**, void>)@this->LpVtbl[3])(@this, factory);
         }
 
         /// <summary>To be documented.</summary>
@@ -123,7 +126,7 @@ namespace Silk.NET.Direct2D
             var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Factory** factoryPtr = &factory)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, ID2D1Factory**, void>)LpVtbl[3])(@this, factoryPtr);
+                ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, ID2D1Factory**, void>)@this->LpVtbl[3])(@this, factoryPtr);
             }
         }
 
@@ -132,7 +135,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)LpVtbl[4])(@this, spriteCount, destinationRectangles, sourceRectangles, colors, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)@this->LpVtbl[4])(@this, spriteCount, destinationRectangles, sourceRectangles, colors, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
             return ret;
         }
 
@@ -143,7 +146,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Maths.Matrix3X2<float>* transformsPtr = &transforms)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)LpVtbl[4])(@this, spriteCount, destinationRectangles, sourceRectangles, colors, transformsPtr, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)@this->LpVtbl[4])(@this, spriteCount, destinationRectangles, sourceRectangles, colors, transformsPtr, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
             }
             return ret;
         }
@@ -155,7 +158,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.DXGI.D3Dcolorvalue* colorsPtr = &colors)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)LpVtbl[4])(@this, spriteCount, destinationRectangles, sourceRectangles, colorsPtr, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)@this->LpVtbl[4])(@this, spriteCount, destinationRectangles, sourceRectangles, colorsPtr, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
             }
             return ret;
         }
@@ -169,7 +172,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (Silk.NET.Maths.Matrix3X2<float>* transformsPtr = &transforms)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)LpVtbl[4])(@this, spriteCount, destinationRectangles, sourceRectangles, colorsPtr, transformsPtr, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)@this->LpVtbl[4])(@this, spriteCount, destinationRectangles, sourceRectangles, colorsPtr, transformsPtr, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
                 }
             }
             return ret;
@@ -182,7 +185,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Maths.Box2D<uint>* sourceRectanglesPtr = &sourceRectangles)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)LpVtbl[4])(@this, spriteCount, destinationRectangles, sourceRectanglesPtr, colors, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)@this->LpVtbl[4])(@this, spriteCount, destinationRectangles, sourceRectanglesPtr, colors, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
             }
             return ret;
         }
@@ -196,7 +199,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (Silk.NET.Maths.Matrix3X2<float>* transformsPtr = &transforms)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)LpVtbl[4])(@this, spriteCount, destinationRectangles, sourceRectanglesPtr, colors, transformsPtr, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)@this->LpVtbl[4])(@this, spriteCount, destinationRectangles, sourceRectanglesPtr, colors, transformsPtr, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
                 }
             }
             return ret;
@@ -211,7 +214,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (Silk.NET.DXGI.D3Dcolorvalue* colorsPtr = &colors)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)LpVtbl[4])(@this, spriteCount, destinationRectangles, sourceRectanglesPtr, colorsPtr, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)@this->LpVtbl[4])(@this, spriteCount, destinationRectangles, sourceRectanglesPtr, colorsPtr, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
                 }
             }
             return ret;
@@ -228,7 +231,7 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (Silk.NET.Maths.Matrix3X2<float>* transformsPtr = &transforms)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)LpVtbl[4])(@this, spriteCount, destinationRectangles, sourceRectanglesPtr, colorsPtr, transformsPtr, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)@this->LpVtbl[4])(@this, spriteCount, destinationRectangles, sourceRectanglesPtr, colorsPtr, transformsPtr, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
                     }
                 }
             }
@@ -242,7 +245,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Maths.Box2D<float>* destinationRectanglesPtr = &destinationRectangles)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)LpVtbl[4])(@this, spriteCount, destinationRectanglesPtr, sourceRectangles, colors, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)@this->LpVtbl[4])(@this, spriteCount, destinationRectanglesPtr, sourceRectangles, colors, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
             }
             return ret;
         }
@@ -256,7 +259,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (Silk.NET.Maths.Matrix3X2<float>* transformsPtr = &transforms)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)LpVtbl[4])(@this, spriteCount, destinationRectanglesPtr, sourceRectangles, colors, transformsPtr, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)@this->LpVtbl[4])(@this, spriteCount, destinationRectanglesPtr, sourceRectangles, colors, transformsPtr, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
                 }
             }
             return ret;
@@ -271,7 +274,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (Silk.NET.DXGI.D3Dcolorvalue* colorsPtr = &colors)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)LpVtbl[4])(@this, spriteCount, destinationRectanglesPtr, sourceRectangles, colorsPtr, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)@this->LpVtbl[4])(@this, spriteCount, destinationRectanglesPtr, sourceRectangles, colorsPtr, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
                 }
             }
             return ret;
@@ -288,7 +291,7 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (Silk.NET.Maths.Matrix3X2<float>* transformsPtr = &transforms)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)LpVtbl[4])(@this, spriteCount, destinationRectanglesPtr, sourceRectangles, colorsPtr, transformsPtr, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)@this->LpVtbl[4])(@this, spriteCount, destinationRectanglesPtr, sourceRectangles, colorsPtr, transformsPtr, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
                     }
                 }
             }
@@ -304,7 +307,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (Silk.NET.Maths.Box2D<uint>* sourceRectanglesPtr = &sourceRectangles)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)LpVtbl[4])(@this, spriteCount, destinationRectanglesPtr, sourceRectanglesPtr, colors, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)@this->LpVtbl[4])(@this, spriteCount, destinationRectanglesPtr, sourceRectanglesPtr, colors, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
                 }
             }
             return ret;
@@ -321,7 +324,7 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (Silk.NET.Maths.Matrix3X2<float>* transformsPtr = &transforms)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)LpVtbl[4])(@this, spriteCount, destinationRectanglesPtr, sourceRectanglesPtr, colors, transformsPtr, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)@this->LpVtbl[4])(@this, spriteCount, destinationRectanglesPtr, sourceRectanglesPtr, colors, transformsPtr, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
                     }
                 }
             }
@@ -339,7 +342,7 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (Silk.NET.DXGI.D3Dcolorvalue* colorsPtr = &colors)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)LpVtbl[4])(@this, spriteCount, destinationRectanglesPtr, sourceRectanglesPtr, colorsPtr, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)@this->LpVtbl[4])(@this, spriteCount, destinationRectanglesPtr, sourceRectanglesPtr, colorsPtr, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
                     }
                 }
             }
@@ -359,7 +362,7 @@ namespace Silk.NET.Direct2D
                     {
                         fixed (Silk.NET.Maths.Matrix3X2<float>* transformsPtr = &transforms)
                         {
-                            ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)LpVtbl[4])(@this, spriteCount, destinationRectanglesPtr, sourceRectanglesPtr, colorsPtr, transformsPtr, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+                            ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)@this->LpVtbl[4])(@this, spriteCount, destinationRectanglesPtr, sourceRectanglesPtr, colorsPtr, transformsPtr, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
                         }
                     }
                 }
@@ -372,7 +375,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)LpVtbl[5])(@this, startIndex, spriteCount, destinationRectangles, sourceRectangles, colors, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)@this->LpVtbl[5])(@this, startIndex, spriteCount, destinationRectangles, sourceRectangles, colors, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
             return ret;
         }
 
@@ -383,7 +386,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Maths.Matrix3X2<float>* transformsPtr = &transforms)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)LpVtbl[5])(@this, startIndex, spriteCount, destinationRectangles, sourceRectangles, colors, transformsPtr, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)@this->LpVtbl[5])(@this, startIndex, spriteCount, destinationRectangles, sourceRectangles, colors, transformsPtr, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
             }
             return ret;
         }
@@ -395,7 +398,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.DXGI.D3Dcolorvalue* colorsPtr = &colors)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)LpVtbl[5])(@this, startIndex, spriteCount, destinationRectangles, sourceRectangles, colorsPtr, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)@this->LpVtbl[5])(@this, startIndex, spriteCount, destinationRectangles, sourceRectangles, colorsPtr, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
             }
             return ret;
         }
@@ -409,7 +412,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (Silk.NET.Maths.Matrix3X2<float>* transformsPtr = &transforms)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)LpVtbl[5])(@this, startIndex, spriteCount, destinationRectangles, sourceRectangles, colorsPtr, transformsPtr, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)@this->LpVtbl[5])(@this, startIndex, spriteCount, destinationRectangles, sourceRectangles, colorsPtr, transformsPtr, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
                 }
             }
             return ret;
@@ -422,7 +425,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Maths.Box2D<uint>* sourceRectanglesPtr = &sourceRectangles)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)LpVtbl[5])(@this, startIndex, spriteCount, destinationRectangles, sourceRectanglesPtr, colors, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)@this->LpVtbl[5])(@this, startIndex, spriteCount, destinationRectangles, sourceRectanglesPtr, colors, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
             }
             return ret;
         }
@@ -436,7 +439,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (Silk.NET.Maths.Matrix3X2<float>* transformsPtr = &transforms)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)LpVtbl[5])(@this, startIndex, spriteCount, destinationRectangles, sourceRectanglesPtr, colors, transformsPtr, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)@this->LpVtbl[5])(@this, startIndex, spriteCount, destinationRectangles, sourceRectanglesPtr, colors, transformsPtr, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
                 }
             }
             return ret;
@@ -451,7 +454,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (Silk.NET.DXGI.D3Dcolorvalue* colorsPtr = &colors)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)LpVtbl[5])(@this, startIndex, spriteCount, destinationRectangles, sourceRectanglesPtr, colorsPtr, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)@this->LpVtbl[5])(@this, startIndex, spriteCount, destinationRectangles, sourceRectanglesPtr, colorsPtr, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
                 }
             }
             return ret;
@@ -468,7 +471,7 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (Silk.NET.Maths.Matrix3X2<float>* transformsPtr = &transforms)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)LpVtbl[5])(@this, startIndex, spriteCount, destinationRectangles, sourceRectanglesPtr, colorsPtr, transformsPtr, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)@this->LpVtbl[5])(@this, startIndex, spriteCount, destinationRectangles, sourceRectanglesPtr, colorsPtr, transformsPtr, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
                     }
                 }
             }
@@ -482,7 +485,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Maths.Box2D<float>* destinationRectanglesPtr = &destinationRectangles)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)LpVtbl[5])(@this, startIndex, spriteCount, destinationRectanglesPtr, sourceRectangles, colors, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)@this->LpVtbl[5])(@this, startIndex, spriteCount, destinationRectanglesPtr, sourceRectangles, colors, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
             }
             return ret;
         }
@@ -496,7 +499,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (Silk.NET.Maths.Matrix3X2<float>* transformsPtr = &transforms)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)LpVtbl[5])(@this, startIndex, spriteCount, destinationRectanglesPtr, sourceRectangles, colors, transformsPtr, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)@this->LpVtbl[5])(@this, startIndex, spriteCount, destinationRectanglesPtr, sourceRectangles, colors, transformsPtr, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
                 }
             }
             return ret;
@@ -511,7 +514,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (Silk.NET.DXGI.D3Dcolorvalue* colorsPtr = &colors)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)LpVtbl[5])(@this, startIndex, spriteCount, destinationRectanglesPtr, sourceRectangles, colorsPtr, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)@this->LpVtbl[5])(@this, startIndex, spriteCount, destinationRectanglesPtr, sourceRectangles, colorsPtr, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
                 }
             }
             return ret;
@@ -528,7 +531,7 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (Silk.NET.Maths.Matrix3X2<float>* transformsPtr = &transforms)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)LpVtbl[5])(@this, startIndex, spriteCount, destinationRectanglesPtr, sourceRectangles, colorsPtr, transformsPtr, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)@this->LpVtbl[5])(@this, startIndex, spriteCount, destinationRectanglesPtr, sourceRectangles, colorsPtr, transformsPtr, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
                     }
                 }
             }
@@ -544,7 +547,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (Silk.NET.Maths.Box2D<uint>* sourceRectanglesPtr = &sourceRectangles)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)LpVtbl[5])(@this, startIndex, spriteCount, destinationRectanglesPtr, sourceRectanglesPtr, colors, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)@this->LpVtbl[5])(@this, startIndex, spriteCount, destinationRectanglesPtr, sourceRectanglesPtr, colors, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
                 }
             }
             return ret;
@@ -561,7 +564,7 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (Silk.NET.Maths.Matrix3X2<float>* transformsPtr = &transforms)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)LpVtbl[5])(@this, startIndex, spriteCount, destinationRectanglesPtr, sourceRectanglesPtr, colors, transformsPtr, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)@this->LpVtbl[5])(@this, startIndex, spriteCount, destinationRectanglesPtr, sourceRectanglesPtr, colors, transformsPtr, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
                     }
                 }
             }
@@ -579,7 +582,7 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (Silk.NET.DXGI.D3Dcolorvalue* colorsPtr = &colors)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)LpVtbl[5])(@this, startIndex, spriteCount, destinationRectanglesPtr, sourceRectanglesPtr, colorsPtr, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)@this->LpVtbl[5])(@this, startIndex, spriteCount, destinationRectanglesPtr, sourceRectanglesPtr, colorsPtr, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
                     }
                 }
             }
@@ -599,7 +602,7 @@ namespace Silk.NET.Direct2D
                     {
                         fixed (Silk.NET.Maths.Matrix3X2<float>* transformsPtr = &transforms)
                         {
-                            ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)LpVtbl[5])(@this, startIndex, spriteCount, destinationRectanglesPtr, sourceRectanglesPtr, colorsPtr, transformsPtr, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+                            ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, uint, uint, uint, uint, int>)@this->LpVtbl[5])(@this, startIndex, spriteCount, destinationRectanglesPtr, sourceRectanglesPtr, colorsPtr, transformsPtr, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
                         }
                     }
                 }
@@ -612,7 +615,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, int>)LpVtbl[6])(@this, startIndex, spriteCount, destinationRectangles, sourceRectangles, colors, transforms);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, int>)@this->LpVtbl[6])(@this, startIndex, spriteCount, destinationRectangles, sourceRectangles, colors, transforms);
             return ret;
         }
 
@@ -623,7 +626,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Maths.Matrix3X2<float>* transformsPtr = &transforms)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, int>)LpVtbl[6])(@this, startIndex, spriteCount, destinationRectangles, sourceRectangles, colors, transformsPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, int>)@this->LpVtbl[6])(@this, startIndex, spriteCount, destinationRectangles, sourceRectangles, colors, transformsPtr);
             }
             return ret;
         }
@@ -635,7 +638,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.DXGI.D3Dcolorvalue* colorsPtr = &colors)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, int>)LpVtbl[6])(@this, startIndex, spriteCount, destinationRectangles, sourceRectangles, colorsPtr, transforms);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, int>)@this->LpVtbl[6])(@this, startIndex, spriteCount, destinationRectangles, sourceRectangles, colorsPtr, transforms);
             }
             return ret;
         }
@@ -649,7 +652,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (Silk.NET.Maths.Matrix3X2<float>* transformsPtr = &transforms)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, int>)LpVtbl[6])(@this, startIndex, spriteCount, destinationRectangles, sourceRectangles, colorsPtr, transformsPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, int>)@this->LpVtbl[6])(@this, startIndex, spriteCount, destinationRectangles, sourceRectangles, colorsPtr, transformsPtr);
                 }
             }
             return ret;
@@ -662,7 +665,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Maths.Box2D<uint>* sourceRectanglesPtr = &sourceRectangles)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, int>)LpVtbl[6])(@this, startIndex, spriteCount, destinationRectangles, sourceRectanglesPtr, colors, transforms);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, int>)@this->LpVtbl[6])(@this, startIndex, spriteCount, destinationRectangles, sourceRectanglesPtr, colors, transforms);
             }
             return ret;
         }
@@ -676,7 +679,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (Silk.NET.Maths.Matrix3X2<float>* transformsPtr = &transforms)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, int>)LpVtbl[6])(@this, startIndex, spriteCount, destinationRectangles, sourceRectanglesPtr, colors, transformsPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, int>)@this->LpVtbl[6])(@this, startIndex, spriteCount, destinationRectangles, sourceRectanglesPtr, colors, transformsPtr);
                 }
             }
             return ret;
@@ -691,7 +694,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (Silk.NET.DXGI.D3Dcolorvalue* colorsPtr = &colors)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, int>)LpVtbl[6])(@this, startIndex, spriteCount, destinationRectangles, sourceRectanglesPtr, colorsPtr, transforms);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, int>)@this->LpVtbl[6])(@this, startIndex, spriteCount, destinationRectangles, sourceRectanglesPtr, colorsPtr, transforms);
                 }
             }
             return ret;
@@ -708,7 +711,7 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (Silk.NET.Maths.Matrix3X2<float>* transformsPtr = &transforms)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, int>)LpVtbl[6])(@this, startIndex, spriteCount, destinationRectangles, sourceRectanglesPtr, colorsPtr, transformsPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, int>)@this->LpVtbl[6])(@this, startIndex, spriteCount, destinationRectangles, sourceRectanglesPtr, colorsPtr, transformsPtr);
                     }
                 }
             }
@@ -722,7 +725,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Maths.Box2D<float>* destinationRectanglesPtr = &destinationRectangles)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, int>)LpVtbl[6])(@this, startIndex, spriteCount, destinationRectanglesPtr, sourceRectangles, colors, transforms);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, int>)@this->LpVtbl[6])(@this, startIndex, spriteCount, destinationRectanglesPtr, sourceRectangles, colors, transforms);
             }
             return ret;
         }
@@ -736,7 +739,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (Silk.NET.Maths.Matrix3X2<float>* transformsPtr = &transforms)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, int>)LpVtbl[6])(@this, startIndex, spriteCount, destinationRectanglesPtr, sourceRectangles, colors, transformsPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, int>)@this->LpVtbl[6])(@this, startIndex, spriteCount, destinationRectanglesPtr, sourceRectangles, colors, transformsPtr);
                 }
             }
             return ret;
@@ -751,7 +754,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (Silk.NET.DXGI.D3Dcolorvalue* colorsPtr = &colors)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, int>)LpVtbl[6])(@this, startIndex, spriteCount, destinationRectanglesPtr, sourceRectangles, colorsPtr, transforms);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, int>)@this->LpVtbl[6])(@this, startIndex, spriteCount, destinationRectanglesPtr, sourceRectangles, colorsPtr, transforms);
                 }
             }
             return ret;
@@ -768,7 +771,7 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (Silk.NET.Maths.Matrix3X2<float>* transformsPtr = &transforms)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, int>)LpVtbl[6])(@this, startIndex, spriteCount, destinationRectanglesPtr, sourceRectangles, colorsPtr, transformsPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, int>)@this->LpVtbl[6])(@this, startIndex, spriteCount, destinationRectanglesPtr, sourceRectangles, colorsPtr, transformsPtr);
                     }
                 }
             }
@@ -784,7 +787,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (Silk.NET.Maths.Box2D<uint>* sourceRectanglesPtr = &sourceRectangles)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, int>)LpVtbl[6])(@this, startIndex, spriteCount, destinationRectanglesPtr, sourceRectanglesPtr, colors, transforms);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, int>)@this->LpVtbl[6])(@this, startIndex, spriteCount, destinationRectanglesPtr, sourceRectanglesPtr, colors, transforms);
                 }
             }
             return ret;
@@ -801,7 +804,7 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (Silk.NET.Maths.Matrix3X2<float>* transformsPtr = &transforms)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, int>)LpVtbl[6])(@this, startIndex, spriteCount, destinationRectanglesPtr, sourceRectanglesPtr, colors, transformsPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, int>)@this->LpVtbl[6])(@this, startIndex, spriteCount, destinationRectanglesPtr, sourceRectanglesPtr, colors, transformsPtr);
                     }
                 }
             }
@@ -819,7 +822,7 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (Silk.NET.DXGI.D3Dcolorvalue* colorsPtr = &colors)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, int>)LpVtbl[6])(@this, startIndex, spriteCount, destinationRectanglesPtr, sourceRectanglesPtr, colorsPtr, transforms);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, int>)@this->LpVtbl[6])(@this, startIndex, spriteCount, destinationRectanglesPtr, sourceRectanglesPtr, colorsPtr, transforms);
                     }
                 }
             }
@@ -839,7 +842,7 @@ namespace Silk.NET.Direct2D
                     {
                         fixed (Silk.NET.Maths.Matrix3X2<float>* transformsPtr = &transforms)
                         {
-                            ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, int>)LpVtbl[6])(@this, startIndex, spriteCount, destinationRectanglesPtr, sourceRectanglesPtr, colorsPtr, transformsPtr);
+                            ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint, uint, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<uint>*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.Maths.Matrix3X2<float>*, int>)@this->LpVtbl[6])(@this, startIndex, spriteCount, destinationRectanglesPtr, sourceRectanglesPtr, colorsPtr, transformsPtr);
                         }
                     }
                 }
@@ -852,7 +855,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint>)LpVtbl[7])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, uint>)@this->LpVtbl[7])(@this);
             return ret;
         }
 
@@ -860,7 +863,33 @@ namespace Silk.NET.Direct2D
         public readonly void Clear()
         {
             var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, void>)LpVtbl[8])(@this);
+            ((delegate* unmanaged[Stdcall]<ID2D1SpriteBatch*, void>)@this->LpVtbl[8])(@this);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void GetFactory<TI0>(ref ComPtr<TI0> factory) where TI0 : unmanaged, IComVtbl<ID2D1Factory>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->GetFactory((ID2D1Factory**) factory.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

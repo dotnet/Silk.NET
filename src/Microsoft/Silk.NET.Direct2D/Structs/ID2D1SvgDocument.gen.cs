@@ -18,9 +18,12 @@ namespace Silk.NET.Direct2D
 {
     [Guid("86b88e4d-afa4-4d7b-88e4-68a51c4a0aec")]
     [NativeName("Name", "ID2D1SvgDocument")]
-    public unsafe partial struct ID2D1SvgDocument
+    public unsafe partial struct ID2D1SvgDocument : IComVtbl<ID2D1SvgDocument>, IComVtbl<ID2D1Resource>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("86b88e4d-afa4-4d7b-88e4-68a51c4a0aec");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator ID2D1Resource(ID2D1SvgDocument val)
             => Unsafe.As<ID2D1SvgDocument, ID2D1Resource>(ref val);
@@ -49,7 +52,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -60,7 +63,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -72,7 +75,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -86,7 +89,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -97,7 +100,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -106,7 +109,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -114,7 +117,7 @@ namespace Silk.NET.Direct2D
         public readonly unsafe void GetFactory(ID2D1Factory** factory)
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, ID2D1Factory**, void>)LpVtbl[3])(@this, factory);
+            ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, ID2D1Factory**, void>)@this->LpVtbl[3])(@this, factory);
         }
 
         /// <summary>To be documented.</summary>
@@ -123,7 +126,7 @@ namespace Silk.NET.Direct2D
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Factory** factoryPtr = &factory)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, ID2D1Factory**, void>)LpVtbl[3])(@this, factoryPtr);
+                ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, ID2D1Factory**, void>)@this->LpVtbl[3])(@this, factoryPtr);
             }
         }
 
@@ -132,7 +135,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Silk.NET.Maths.Vector2D<float>, int>)LpVtbl[4])(@this, viewportSize);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Silk.NET.Maths.Vector2D<float>, int>)@this->LpVtbl[4])(@this, viewportSize);
             return ret;
         }
 
@@ -143,7 +146,7 @@ namespace Silk.NET.Direct2D
             var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             Silk.NET.Maths.Vector2D<float>* ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<float>*>)LpVtbl[5])(@this, pSilkDotNetReturnFixupResult);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<float>*>)@this->LpVtbl[5])(@this, pSilkDotNetReturnFixupResult);
             return *ret;
         }
 
@@ -152,7 +155,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, ID2D1SvgElement*, int>)LpVtbl[6])(@this, root);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, ID2D1SvgElement*, int>)@this->LpVtbl[6])(@this, root);
             return ret;
         }
 
@@ -163,7 +166,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (ID2D1SvgElement* rootPtr = &root)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, ID2D1SvgElement*, int>)LpVtbl[6])(@this, rootPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, ID2D1SvgElement*, int>)@this->LpVtbl[6])(@this, rootPtr);
             }
             return ret;
         }
@@ -172,7 +175,7 @@ namespace Silk.NET.Direct2D
         public readonly unsafe void GetRoot(ID2D1SvgElement** root)
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, ID2D1SvgElement**, void>)LpVtbl[7])(@this, root);
+            ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, ID2D1SvgElement**, void>)@this->LpVtbl[7])(@this, root);
         }
 
         /// <summary>To be documented.</summary>
@@ -181,7 +184,7 @@ namespace Silk.NET.Direct2D
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1SvgElement** rootPtr = &root)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, ID2D1SvgElement**, void>)LpVtbl[7])(@this, rootPtr);
+                ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, ID2D1SvgElement**, void>)@this->LpVtbl[7])(@this, rootPtr);
             }
         }
 
@@ -190,7 +193,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, char*, ID2D1SvgElement**, int>)LpVtbl[8])(@this, id, svgElement);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, char*, ID2D1SvgElement**, int>)@this->LpVtbl[8])(@this, id, svgElement);
             return ret;
         }
 
@@ -201,7 +204,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (ID2D1SvgElement** svgElementPtr = &svgElement)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, char*, ID2D1SvgElement**, int>)LpVtbl[8])(@this, id, svgElementPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, char*, ID2D1SvgElement**, int>)@this->LpVtbl[8])(@this, id, svgElementPtr);
             }
             return ret;
         }
@@ -213,7 +216,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (char* idPtr = &id)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, char*, ID2D1SvgElement**, int>)LpVtbl[8])(@this, idPtr, svgElement);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, char*, ID2D1SvgElement**, int>)@this->LpVtbl[8])(@this, idPtr, svgElement);
             }
             return ret;
         }
@@ -227,7 +230,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (ID2D1SvgElement** svgElementPtr = &svgElement)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, char*, ID2D1SvgElement**, int>)LpVtbl[8])(@this, idPtr, svgElementPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, char*, ID2D1SvgElement**, int>)@this->LpVtbl[8])(@this, idPtr, svgElementPtr);
                 }
             }
             return ret;
@@ -239,7 +242,7 @@ namespace Silk.NET.Direct2D
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var idPtr = (byte*) SilkMarshal.StringToPtr(id, NativeStringEncoding.UTF8);
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, byte*, ID2D1SvgElement**, int>)LpVtbl[8])(@this, idPtr, svgElement);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, byte*, ID2D1SvgElement**, int>)@this->LpVtbl[8])(@this, idPtr, svgElement);
             SilkMarshal.Free((nint)idPtr);
             return ret;
         }
@@ -252,7 +255,7 @@ namespace Silk.NET.Direct2D
             var idPtr = (byte*) SilkMarshal.StringToPtr(id, NativeStringEncoding.UTF8);
             fixed (ID2D1SvgElement** svgElementPtr = &svgElement)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, byte*, ID2D1SvgElement**, int>)LpVtbl[8])(@this, idPtr, svgElementPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, byte*, ID2D1SvgElement**, int>)@this->LpVtbl[8])(@this, idPtr, svgElementPtr);
             }
             SilkMarshal.Free((nint)idPtr);
             return ret;
@@ -263,7 +266,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Silk.NET.Core.Win32Extras.IStream*, ID2D1SvgElement*, int>)LpVtbl[9])(@this, outputXmlStream, subtree);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Silk.NET.Core.Win32Extras.IStream*, ID2D1SvgElement*, int>)@this->LpVtbl[9])(@this, outputXmlStream, subtree);
             return ret;
         }
 
@@ -274,7 +277,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (ID2D1SvgElement* subtreePtr = &subtree)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Silk.NET.Core.Win32Extras.IStream*, ID2D1SvgElement*, int>)LpVtbl[9])(@this, outputXmlStream, subtreePtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Silk.NET.Core.Win32Extras.IStream*, ID2D1SvgElement*, int>)@this->LpVtbl[9])(@this, outputXmlStream, subtreePtr);
             }
             return ret;
         }
@@ -286,7 +289,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Core.Win32Extras.IStream* outputXmlStreamPtr = &outputXmlStream)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Silk.NET.Core.Win32Extras.IStream*, ID2D1SvgElement*, int>)LpVtbl[9])(@this, outputXmlStreamPtr, subtree);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Silk.NET.Core.Win32Extras.IStream*, ID2D1SvgElement*, int>)@this->LpVtbl[9])(@this, outputXmlStreamPtr, subtree);
             }
             return ret;
         }
@@ -300,7 +303,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (ID2D1SvgElement* subtreePtr = &subtree)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Silk.NET.Core.Win32Extras.IStream*, ID2D1SvgElement*, int>)LpVtbl[9])(@this, outputXmlStreamPtr, subtreePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Silk.NET.Core.Win32Extras.IStream*, ID2D1SvgElement*, int>)@this->LpVtbl[9])(@this, outputXmlStreamPtr, subtreePtr);
                 }
             }
             return ret;
@@ -311,7 +314,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Silk.NET.Core.Win32Extras.IStream*, ID2D1SvgElement**, int>)LpVtbl[10])(@this, inputXmlStream, subtree);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Silk.NET.Core.Win32Extras.IStream*, ID2D1SvgElement**, int>)@this->LpVtbl[10])(@this, inputXmlStream, subtree);
             return ret;
         }
 
@@ -322,7 +325,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (ID2D1SvgElement** subtreePtr = &subtree)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Silk.NET.Core.Win32Extras.IStream*, ID2D1SvgElement**, int>)LpVtbl[10])(@this, inputXmlStream, subtreePtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Silk.NET.Core.Win32Extras.IStream*, ID2D1SvgElement**, int>)@this->LpVtbl[10])(@this, inputXmlStream, subtreePtr);
             }
             return ret;
         }
@@ -334,7 +337,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Core.Win32Extras.IStream* inputXmlStreamPtr = &inputXmlStream)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Silk.NET.Core.Win32Extras.IStream*, ID2D1SvgElement**, int>)LpVtbl[10])(@this, inputXmlStreamPtr, subtree);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Silk.NET.Core.Win32Extras.IStream*, ID2D1SvgElement**, int>)@this->LpVtbl[10])(@this, inputXmlStreamPtr, subtree);
             }
             return ret;
         }
@@ -348,7 +351,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (ID2D1SvgElement** subtreePtr = &subtree)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Silk.NET.Core.Win32Extras.IStream*, ID2D1SvgElement**, int>)LpVtbl[10])(@this, inputXmlStreamPtr, subtreePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Silk.NET.Core.Win32Extras.IStream*, ID2D1SvgElement**, int>)@this->LpVtbl[10])(@this, inputXmlStreamPtr, subtreePtr);
                 }
             }
             return ret;
@@ -359,7 +362,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, SvgPaintType, Silk.NET.DXGI.D3Dcolorvalue*, char*, ID2D1SvgPaint**, int>)LpVtbl[11])(@this, paintType, color, id, paint);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, SvgPaintType, Silk.NET.DXGI.D3Dcolorvalue*, char*, ID2D1SvgPaint**, int>)@this->LpVtbl[11])(@this, paintType, color, id, paint);
             return ret;
         }
 
@@ -370,7 +373,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (ID2D1SvgPaint** paintPtr = &paint)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, SvgPaintType, Silk.NET.DXGI.D3Dcolorvalue*, char*, ID2D1SvgPaint**, int>)LpVtbl[11])(@this, paintType, color, id, paintPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, SvgPaintType, Silk.NET.DXGI.D3Dcolorvalue*, char*, ID2D1SvgPaint**, int>)@this->LpVtbl[11])(@this, paintType, color, id, paintPtr);
             }
             return ret;
         }
@@ -382,7 +385,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (char* idPtr = &id)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, SvgPaintType, Silk.NET.DXGI.D3Dcolorvalue*, char*, ID2D1SvgPaint**, int>)LpVtbl[11])(@this, paintType, color, idPtr, paint);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, SvgPaintType, Silk.NET.DXGI.D3Dcolorvalue*, char*, ID2D1SvgPaint**, int>)@this->LpVtbl[11])(@this, paintType, color, idPtr, paint);
             }
             return ret;
         }
@@ -396,7 +399,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (ID2D1SvgPaint** paintPtr = &paint)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, SvgPaintType, Silk.NET.DXGI.D3Dcolorvalue*, char*, ID2D1SvgPaint**, int>)LpVtbl[11])(@this, paintType, color, idPtr, paintPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, SvgPaintType, Silk.NET.DXGI.D3Dcolorvalue*, char*, ID2D1SvgPaint**, int>)@this->LpVtbl[11])(@this, paintType, color, idPtr, paintPtr);
                 }
             }
             return ret;
@@ -408,7 +411,7 @@ namespace Silk.NET.Direct2D
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var idPtr = (byte*) SilkMarshal.StringToPtr(id, NativeStringEncoding.UTF8);
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, SvgPaintType, Silk.NET.DXGI.D3Dcolorvalue*, byte*, ID2D1SvgPaint**, int>)LpVtbl[11])(@this, paintType, color, idPtr, paint);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, SvgPaintType, Silk.NET.DXGI.D3Dcolorvalue*, byte*, ID2D1SvgPaint**, int>)@this->LpVtbl[11])(@this, paintType, color, idPtr, paint);
             SilkMarshal.Free((nint)idPtr);
             return ret;
         }
@@ -421,7 +424,7 @@ namespace Silk.NET.Direct2D
             var idPtr = (byte*) SilkMarshal.StringToPtr(id, NativeStringEncoding.UTF8);
             fixed (ID2D1SvgPaint** paintPtr = &paint)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, SvgPaintType, Silk.NET.DXGI.D3Dcolorvalue*, byte*, ID2D1SvgPaint**, int>)LpVtbl[11])(@this, paintType, color, idPtr, paintPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, SvgPaintType, Silk.NET.DXGI.D3Dcolorvalue*, byte*, ID2D1SvgPaint**, int>)@this->LpVtbl[11])(@this, paintType, color, idPtr, paintPtr);
             }
             SilkMarshal.Free((nint)idPtr);
             return ret;
@@ -434,7 +437,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.DXGI.D3Dcolorvalue* colorPtr = &color)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, SvgPaintType, Silk.NET.DXGI.D3Dcolorvalue*, char*, ID2D1SvgPaint**, int>)LpVtbl[11])(@this, paintType, colorPtr, id, paint);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, SvgPaintType, Silk.NET.DXGI.D3Dcolorvalue*, char*, ID2D1SvgPaint**, int>)@this->LpVtbl[11])(@this, paintType, colorPtr, id, paint);
             }
             return ret;
         }
@@ -448,7 +451,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (ID2D1SvgPaint** paintPtr = &paint)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, SvgPaintType, Silk.NET.DXGI.D3Dcolorvalue*, char*, ID2D1SvgPaint**, int>)LpVtbl[11])(@this, paintType, colorPtr, id, paintPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, SvgPaintType, Silk.NET.DXGI.D3Dcolorvalue*, char*, ID2D1SvgPaint**, int>)@this->LpVtbl[11])(@this, paintType, colorPtr, id, paintPtr);
                 }
             }
             return ret;
@@ -463,7 +466,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (char* idPtr = &id)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, SvgPaintType, Silk.NET.DXGI.D3Dcolorvalue*, char*, ID2D1SvgPaint**, int>)LpVtbl[11])(@this, paintType, colorPtr, idPtr, paint);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, SvgPaintType, Silk.NET.DXGI.D3Dcolorvalue*, char*, ID2D1SvgPaint**, int>)@this->LpVtbl[11])(@this, paintType, colorPtr, idPtr, paint);
                 }
             }
             return ret;
@@ -480,7 +483,7 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (ID2D1SvgPaint** paintPtr = &paint)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, SvgPaintType, Silk.NET.DXGI.D3Dcolorvalue*, char*, ID2D1SvgPaint**, int>)LpVtbl[11])(@this, paintType, colorPtr, idPtr, paintPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, SvgPaintType, Silk.NET.DXGI.D3Dcolorvalue*, char*, ID2D1SvgPaint**, int>)@this->LpVtbl[11])(@this, paintType, colorPtr, idPtr, paintPtr);
                     }
                 }
             }
@@ -495,7 +498,7 @@ namespace Silk.NET.Direct2D
             fixed (Silk.NET.DXGI.D3Dcolorvalue* colorPtr = &color)
             {
             var idPtr = (byte*) SilkMarshal.StringToPtr(id, NativeStringEncoding.UTF8);
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, SvgPaintType, Silk.NET.DXGI.D3Dcolorvalue*, byte*, ID2D1SvgPaint**, int>)LpVtbl[11])(@this, paintType, colorPtr, idPtr, paint);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, SvgPaintType, Silk.NET.DXGI.D3Dcolorvalue*, byte*, ID2D1SvgPaint**, int>)@this->LpVtbl[11])(@this, paintType, colorPtr, idPtr, paint);
             SilkMarshal.Free((nint)idPtr);
             }
             return ret;
@@ -511,7 +514,7 @@ namespace Silk.NET.Direct2D
             var idPtr = (byte*) SilkMarshal.StringToPtr(id, NativeStringEncoding.UTF8);
                 fixed (ID2D1SvgPaint** paintPtr = &paint)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, SvgPaintType, Silk.NET.DXGI.D3Dcolorvalue*, byte*, ID2D1SvgPaint**, int>)LpVtbl[11])(@this, paintType, colorPtr, idPtr, paintPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, SvgPaintType, Silk.NET.DXGI.D3Dcolorvalue*, byte*, ID2D1SvgPaint**, int>)@this->LpVtbl[11])(@this, paintType, colorPtr, idPtr, paintPtr);
                 }
             SilkMarshal.Free((nint)idPtr);
             }
@@ -523,7 +526,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, SvgLength*, uint, ID2D1SvgStrokeDashArray**, int>)LpVtbl[12])(@this, dashes, dashesCount, strokeDashArray);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, SvgLength*, uint, ID2D1SvgStrokeDashArray**, int>)@this->LpVtbl[12])(@this, dashes, dashesCount, strokeDashArray);
             return ret;
         }
 
@@ -534,7 +537,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (ID2D1SvgStrokeDashArray** strokeDashArrayPtr = &strokeDashArray)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, SvgLength*, uint, ID2D1SvgStrokeDashArray**, int>)LpVtbl[12])(@this, dashes, dashesCount, strokeDashArrayPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, SvgLength*, uint, ID2D1SvgStrokeDashArray**, int>)@this->LpVtbl[12])(@this, dashes, dashesCount, strokeDashArrayPtr);
             }
             return ret;
         }
@@ -546,7 +549,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (SvgLength* dashesPtr = &dashes)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, SvgLength*, uint, ID2D1SvgStrokeDashArray**, int>)LpVtbl[12])(@this, dashesPtr, dashesCount, strokeDashArray);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, SvgLength*, uint, ID2D1SvgStrokeDashArray**, int>)@this->LpVtbl[12])(@this, dashesPtr, dashesCount, strokeDashArray);
             }
             return ret;
         }
@@ -560,7 +563,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (ID2D1SvgStrokeDashArray** strokeDashArrayPtr = &strokeDashArray)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, SvgLength*, uint, ID2D1SvgStrokeDashArray**, int>)LpVtbl[12])(@this, dashesPtr, dashesCount, strokeDashArrayPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, SvgLength*, uint, ID2D1SvgStrokeDashArray**, int>)@this->LpVtbl[12])(@this, dashesPtr, dashesCount, strokeDashArrayPtr);
                 }
             }
             return ret;
@@ -571,7 +574,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Silk.NET.Maths.Vector2D<float>*, uint, ID2D1SvgPointCollection**, int>)LpVtbl[13])(@this, points, pointsCount, pointCollection);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Silk.NET.Maths.Vector2D<float>*, uint, ID2D1SvgPointCollection**, int>)@this->LpVtbl[13])(@this, points, pointsCount, pointCollection);
             return ret;
         }
 
@@ -582,7 +585,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (ID2D1SvgPointCollection** pointCollectionPtr = &pointCollection)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Silk.NET.Maths.Vector2D<float>*, uint, ID2D1SvgPointCollection**, int>)LpVtbl[13])(@this, points, pointsCount, pointCollectionPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Silk.NET.Maths.Vector2D<float>*, uint, ID2D1SvgPointCollection**, int>)@this->LpVtbl[13])(@this, points, pointsCount, pointCollectionPtr);
             }
             return ret;
         }
@@ -594,7 +597,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Maths.Vector2D<float>* pointsPtr = &points)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Silk.NET.Maths.Vector2D<float>*, uint, ID2D1SvgPointCollection**, int>)LpVtbl[13])(@this, pointsPtr, pointsCount, pointCollection);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Silk.NET.Maths.Vector2D<float>*, uint, ID2D1SvgPointCollection**, int>)@this->LpVtbl[13])(@this, pointsPtr, pointsCount, pointCollection);
             }
             return ret;
         }
@@ -608,7 +611,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (ID2D1SvgPointCollection** pointCollectionPtr = &pointCollection)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Silk.NET.Maths.Vector2D<float>*, uint, ID2D1SvgPointCollection**, int>)LpVtbl[13])(@this, pointsPtr, pointsCount, pointCollectionPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, Silk.NET.Maths.Vector2D<float>*, uint, ID2D1SvgPointCollection**, int>)@this->LpVtbl[13])(@this, pointsPtr, pointsCount, pointCollectionPtr);
                 }
             }
             return ret;
@@ -619,7 +622,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, float*, uint, SvgPathCommand*, uint, ID2D1SvgPathData**, int>)LpVtbl[14])(@this, segmentData, segmentDataCount, commands, commandsCount, pathData);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, float*, uint, SvgPathCommand*, uint, ID2D1SvgPathData**, int>)@this->LpVtbl[14])(@this, segmentData, segmentDataCount, commands, commandsCount, pathData);
             return ret;
         }
 
@@ -630,7 +633,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (ID2D1SvgPathData** pathDataPtr = &pathData)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, float*, uint, SvgPathCommand*, uint, ID2D1SvgPathData**, int>)LpVtbl[14])(@this, segmentData, segmentDataCount, commands, commandsCount, pathDataPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, float*, uint, SvgPathCommand*, uint, ID2D1SvgPathData**, int>)@this->LpVtbl[14])(@this, segmentData, segmentDataCount, commands, commandsCount, pathDataPtr);
             }
             return ret;
         }
@@ -642,7 +645,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (SvgPathCommand* commandsPtr = &commands)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, float*, uint, SvgPathCommand*, uint, ID2D1SvgPathData**, int>)LpVtbl[14])(@this, segmentData, segmentDataCount, commandsPtr, commandsCount, pathData);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, float*, uint, SvgPathCommand*, uint, ID2D1SvgPathData**, int>)@this->LpVtbl[14])(@this, segmentData, segmentDataCount, commandsPtr, commandsCount, pathData);
             }
             return ret;
         }
@@ -656,7 +659,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (ID2D1SvgPathData** pathDataPtr = &pathData)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, float*, uint, SvgPathCommand*, uint, ID2D1SvgPathData**, int>)LpVtbl[14])(@this, segmentData, segmentDataCount, commandsPtr, commandsCount, pathDataPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, float*, uint, SvgPathCommand*, uint, ID2D1SvgPathData**, int>)@this->LpVtbl[14])(@this, segmentData, segmentDataCount, commandsPtr, commandsCount, pathDataPtr);
                 }
             }
             return ret;
@@ -669,7 +672,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (float* segmentDataPtr = &segmentData)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, float*, uint, SvgPathCommand*, uint, ID2D1SvgPathData**, int>)LpVtbl[14])(@this, segmentDataPtr, segmentDataCount, commands, commandsCount, pathData);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, float*, uint, SvgPathCommand*, uint, ID2D1SvgPathData**, int>)@this->LpVtbl[14])(@this, segmentDataPtr, segmentDataCount, commands, commandsCount, pathData);
             }
             return ret;
         }
@@ -683,7 +686,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (ID2D1SvgPathData** pathDataPtr = &pathData)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, float*, uint, SvgPathCommand*, uint, ID2D1SvgPathData**, int>)LpVtbl[14])(@this, segmentDataPtr, segmentDataCount, commands, commandsCount, pathDataPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, float*, uint, SvgPathCommand*, uint, ID2D1SvgPathData**, int>)@this->LpVtbl[14])(@this, segmentDataPtr, segmentDataCount, commands, commandsCount, pathDataPtr);
                 }
             }
             return ret;
@@ -698,7 +701,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (SvgPathCommand* commandsPtr = &commands)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, float*, uint, SvgPathCommand*, uint, ID2D1SvgPathData**, int>)LpVtbl[14])(@this, segmentDataPtr, segmentDataCount, commandsPtr, commandsCount, pathData);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, float*, uint, SvgPathCommand*, uint, ID2D1SvgPathData**, int>)@this->LpVtbl[14])(@this, segmentDataPtr, segmentDataCount, commandsPtr, commandsCount, pathData);
                 }
             }
             return ret;
@@ -715,11 +718,221 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (ID2D1SvgPathData** pathDataPtr = &pathData)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, float*, uint, SvgPathCommand*, uint, ID2D1SvgPathData**, int>)LpVtbl[14])(@this, segmentDataPtr, segmentDataCount, commandsPtr, commandsCount, pathDataPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgDocument*, float*, uint, SvgPathCommand*, uint, ID2D1SvgPathData**, int>)@this->LpVtbl[14])(@this, segmentDataPtr, segmentDataCount, commandsPtr, commandsCount, pathDataPtr);
                     }
                 }
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void GetFactory<TI0>(ref ComPtr<TI0> factory) where TI0 : unmanaged, IComVtbl<ID2D1Factory>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->GetFactory((ID2D1Factory**) factory.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetRoot<TI0>(ComPtr<TI0> root) where TI0 : unmanaged, IComVtbl<ID2D1SvgElement>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetRoot((ID2D1SvgElement*) root.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void GetRoot<TI0>(ref ComPtr<TI0> root) where TI0 : unmanaged, IComVtbl<ID2D1SvgElement>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->GetRoot((ID2D1SvgElement**) root.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int FindElementById<TI0>(char* id, ref ComPtr<TI0> svgElement) where TI0 : unmanaged, IComVtbl<ID2D1SvgElement>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->FindElementById(id, (ID2D1SvgElement**) svgElement.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int FindElementById<TI0>(ref char id, ref ComPtr<TI0> svgElement) where TI0 : unmanaged, IComVtbl<ID2D1SvgElement>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->FindElementById(ref id, (ID2D1SvgElement**) svgElement.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int FindElementById<TI0>([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string id, ref ComPtr<TI0> svgElement) where TI0 : unmanaged, IComVtbl<ID2D1SvgElement>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->FindElementById(id, (ID2D1SvgElement**) svgElement.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Serialize<TI0>(Silk.NET.Core.Win32Extras.IStream* outputXmlStream, ComPtr<TI0> subtree) where TI0 : unmanaged, IComVtbl<ID2D1SvgElement>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Serialize(outputXmlStream, (ID2D1SvgElement*) subtree.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int Serialize<TI0>(ref Silk.NET.Core.Win32Extras.IStream outputXmlStream, ComPtr<TI0> subtree) where TI0 : unmanaged, IComVtbl<ID2D1SvgElement>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Serialize(ref outputXmlStream, (ID2D1SvgElement*) subtree.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Deserialize<TI0>(Silk.NET.Core.Win32Extras.IStream* inputXmlStream, ref ComPtr<TI0> subtree) where TI0 : unmanaged, IComVtbl<ID2D1SvgElement>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Deserialize(inputXmlStream, (ID2D1SvgElement**) subtree.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int Deserialize<TI0>(ref Silk.NET.Core.Win32Extras.IStream inputXmlStream, ref ComPtr<TI0> subtree) where TI0 : unmanaged, IComVtbl<ID2D1SvgElement>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Deserialize(ref inputXmlStream, (ID2D1SvgElement**) subtree.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePaint<TI0>(SvgPaintType paintType, Silk.NET.DXGI.D3Dcolorvalue* color, char* id, ref ComPtr<TI0> paint) where TI0 : unmanaged, IComVtbl<ID2D1SvgPaint>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreatePaint(paintType, color, id, (ID2D1SvgPaint**) paint.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePaint<TI0>(SvgPaintType paintType, Silk.NET.DXGI.D3Dcolorvalue* color, ref char id, ref ComPtr<TI0> paint) where TI0 : unmanaged, IComVtbl<ID2D1SvgPaint>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreatePaint(paintType, color, ref id, (ID2D1SvgPaint**) paint.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePaint<TI0>(SvgPaintType paintType, Silk.NET.DXGI.D3Dcolorvalue* color, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string id, ref ComPtr<TI0> paint) where TI0 : unmanaged, IComVtbl<ID2D1SvgPaint>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreatePaint(paintType, color, id, (ID2D1SvgPaint**) paint.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePaint<TI0>(SvgPaintType paintType, ref Silk.NET.DXGI.D3Dcolorvalue color, char* id, ref ComPtr<TI0> paint) where TI0 : unmanaged, IComVtbl<ID2D1SvgPaint>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreatePaint(paintType, ref color, id, (ID2D1SvgPaint**) paint.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreatePaint<TI0>(SvgPaintType paintType, ref Silk.NET.DXGI.D3Dcolorvalue color, ref char id, ref ComPtr<TI0> paint) where TI0 : unmanaged, IComVtbl<ID2D1SvgPaint>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreatePaint(paintType, ref color, ref id, (ID2D1SvgPaint**) paint.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreatePaint<TI0>(SvgPaintType paintType, ref Silk.NET.DXGI.D3Dcolorvalue color, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string id, ref ComPtr<TI0> paint) where TI0 : unmanaged, IComVtbl<ID2D1SvgPaint>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreatePaint(paintType, ref color, id, (ID2D1SvgPaint**) paint.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateStrokeDashArray<TI0>(SvgLength* dashes, uint dashesCount, ref ComPtr<TI0> strokeDashArray) where TI0 : unmanaged, IComVtbl<ID2D1SvgStrokeDashArray>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateStrokeDashArray(dashes, dashesCount, (ID2D1SvgStrokeDashArray**) strokeDashArray.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateStrokeDashArray<TI0>(ref SvgLength dashes, uint dashesCount, ref ComPtr<TI0> strokeDashArray) where TI0 : unmanaged, IComVtbl<ID2D1SvgStrokeDashArray>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateStrokeDashArray(ref dashes, dashesCount, (ID2D1SvgStrokeDashArray**) strokeDashArray.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePointCollection<TI0>(Silk.NET.Maths.Vector2D<float>* points, uint pointsCount, ref ComPtr<TI0> pointCollection) where TI0 : unmanaged, IComVtbl<ID2D1SvgPointCollection>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreatePointCollection(points, pointsCount, (ID2D1SvgPointCollection**) pointCollection.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreatePointCollection<TI0>(ref Silk.NET.Maths.Vector2D<float> points, uint pointsCount, ref ComPtr<TI0> pointCollection) where TI0 : unmanaged, IComVtbl<ID2D1SvgPointCollection>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreatePointCollection(ref points, pointsCount, (ID2D1SvgPointCollection**) pointCollection.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePathData<TI0>(float* segmentData, uint segmentDataCount, SvgPathCommand* commands, uint commandsCount, ref ComPtr<TI0> pathData) where TI0 : unmanaged, IComVtbl<ID2D1SvgPathData>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreatePathData(segmentData, segmentDataCount, commands, commandsCount, (ID2D1SvgPathData**) pathData.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePathData<TI0>(float* segmentData, uint segmentDataCount, ref SvgPathCommand commands, uint commandsCount, ref ComPtr<TI0> pathData) where TI0 : unmanaged, IComVtbl<ID2D1SvgPathData>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreatePathData(segmentData, segmentDataCount, ref commands, commandsCount, (ID2D1SvgPathData**) pathData.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePathData<TI0>(ref float segmentData, uint segmentDataCount, SvgPathCommand* commands, uint commandsCount, ref ComPtr<TI0> pathData) where TI0 : unmanaged, IComVtbl<ID2D1SvgPathData>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreatePathData(ref segmentData, segmentDataCount, commands, commandsCount, (ID2D1SvgPathData**) pathData.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreatePathData<TI0>(ref float segmentData, uint segmentDataCount, ref SvgPathCommand commands, uint commandsCount, ref ComPtr<TI0> pathData) where TI0 : unmanaged, IComVtbl<ID2D1SvgPathData>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreatePathData(ref segmentData, segmentDataCount, ref commands, commandsCount, (ID2D1SvgPathData**) pathData.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

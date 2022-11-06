@@ -36,6 +36,9 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"DrawTasksNV\"")]
         [NativeName("Name", "VK_INDIRECT_COMMANDS_TOKEN_TYPE_DRAW_TASKS_NV")]
         IndirectCommandsTokenTypeDrawTasksNV = 7,
+        [Obsolete("Deprecated in favour of \"DrawMeshTasksNV\"")]
+        [NativeName("Name", "VK_INDIRECT_COMMANDS_TOKEN_TYPE_DRAW_MESH_TASKS_NV")]
+        IndirectCommandsTokenTypeDrawMeshTasksNV = 1000328000,
         [NativeName("Name", "VK_INDIRECT_COMMANDS_TOKEN_TYPE_SHADER_GROUP_NV")]
         ShaderGroupNV = 0,
         [NativeName("Name", "VK_INDIRECT_COMMANDS_TOKEN_TYPE_STATE_FLAGS_NV")]
@@ -52,5 +55,7 @@ namespace Silk.NET.Vulkan
         DrawNV = 6,
         [NativeName("Name", "VK_INDIRECT_COMMANDS_TOKEN_TYPE_DRAW_TASKS_NV")]
         DrawTasksNV = 7,
+        [NativeName("Name", "VK_INDIRECT_COMMANDS_TOKEN_TYPE_DRAW_MESH_TASKS_NV")]
+        DrawMeshTasksNV = 1000328000,
     }
 }

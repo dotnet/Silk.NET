@@ -18,9 +18,12 @@ namespace Silk.NET.Core.Win32Extras
 {
     [Guid("d8f2f5e6-6102-4863-9f26-389a4676efde")]
     [NativeName("Name", "IMarshalingStream")]
-    public unsafe partial struct IMarshalingStream
+    public unsafe partial struct IMarshalingStream : IComVtbl<IMarshalingStream>, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<ISequentialStream>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("d8f2f5e6-6102-4863-9f26-389a4676efde");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator Silk.NET.Core.Win32Extras.IStream(IMarshalingStream val)
             => Unsafe.As<IMarshalingStream, Silk.NET.Core.Win32Extras.IStream>(ref val);
@@ -52,7 +55,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IMarshalingStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -63,7 +66,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -75,7 +78,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -89,7 +92,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -100,7 +103,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IMarshalingStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -109,7 +112,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IMarshalingStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -118,7 +121,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IMarshalingStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, void*, uint, uint*, int>)LpVtbl[3])(@this, pv, cb, pcbRead);
+            ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, void*, uint, uint*, int>)@this->LpVtbl[3])(@this, pv, cb, pcbRead);
             return ret;
         }
 
@@ -129,7 +132,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (uint* pcbReadPtr = &pcbRead)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, void*, uint, uint*, int>)LpVtbl[3])(@this, pv, cb, pcbReadPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, void*, uint, uint*, int>)@this->LpVtbl[3])(@this, pv, cb, pcbReadPtr);
             }
             return ret;
         }
@@ -141,7 +144,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (void* pvPtr = &pv)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, void*, uint, uint*, int>)LpVtbl[3])(@this, pvPtr, cb, pcbRead);
+                ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, void*, uint, uint*, int>)@this->LpVtbl[3])(@this, pvPtr, cb, pcbRead);
             }
             return ret;
         }
@@ -155,7 +158,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pcbReadPtr = &pcbRead)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, void*, uint, uint*, int>)LpVtbl[3])(@this, pvPtr, cb, pcbReadPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, void*, uint, uint*, int>)@this->LpVtbl[3])(@this, pvPtr, cb, pcbReadPtr);
                 }
             }
             return ret;
@@ -166,7 +169,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IMarshalingStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, void*, uint, uint*, int>)LpVtbl[4])(@this, pv, cb, pcbWritten);
+            ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, pv, cb, pcbWritten);
             return ret;
         }
 
@@ -177,7 +180,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (uint* pcbWrittenPtr = &pcbWritten)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, void*, uint, uint*, int>)LpVtbl[4])(@this, pv, cb, pcbWrittenPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, pv, cb, pcbWrittenPtr);
             }
             return ret;
         }
@@ -189,7 +192,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (void* pvPtr = &pv)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, void*, uint, uint*, int>)LpVtbl[4])(@this, pvPtr, cb, pcbWritten);
+                ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, pvPtr, cb, pcbWritten);
             }
             return ret;
         }
@@ -203,7 +206,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pcbWrittenPtr = &pcbWritten)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, void*, uint, uint*, int>)LpVtbl[4])(@this, pvPtr, cb, pcbWrittenPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, pvPtr, cb, pcbWrittenPtr);
                 }
             }
             return ret;
@@ -214,7 +217,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IMarshalingStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, long, uint, ulong*, int>)LpVtbl[5])(@this, dlibMove, dwOrigin, plibNewPosition);
+            ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, long, uint, ulong*, int>)@this->LpVtbl[5])(@this, dlibMove, dwOrigin, plibNewPosition);
             return ret;
         }
 
@@ -225,7 +228,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (ulong* plibNewPositionPtr = &plibNewPosition)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, long, uint, ulong*, int>)LpVtbl[5])(@this, dlibMove, dwOrigin, plibNewPositionPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, long, uint, ulong*, int>)@this->LpVtbl[5])(@this, dlibMove, dwOrigin, plibNewPositionPtr);
             }
             return ret;
         }
@@ -235,7 +238,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IMarshalingStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, ulong, int>)LpVtbl[6])(@this, libNewSize);
+            ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, ulong, int>)@this->LpVtbl[6])(@this, libNewSize);
             return ret;
         }
 
@@ -244,7 +247,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IMarshalingStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, Silk.NET.Core.Win32Extras.IStream*, ulong, ulong*, ulong*, int>)LpVtbl[7])(@this, pstm, cb, pcbRead, pcbWritten);
+            ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, Silk.NET.Core.Win32Extras.IStream*, ulong, ulong*, ulong*, int>)@this->LpVtbl[7])(@this, pstm, cb, pcbRead, pcbWritten);
             return ret;
         }
 
@@ -255,7 +258,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (ulong* pcbWrittenPtr = &pcbWritten)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, Silk.NET.Core.Win32Extras.IStream*, ulong, ulong*, ulong*, int>)LpVtbl[7])(@this, pstm, cb, pcbRead, pcbWrittenPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, Silk.NET.Core.Win32Extras.IStream*, ulong, ulong*, ulong*, int>)@this->LpVtbl[7])(@this, pstm, cb, pcbRead, pcbWrittenPtr);
             }
             return ret;
         }
@@ -267,7 +270,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (ulong* pcbReadPtr = &pcbRead)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, Silk.NET.Core.Win32Extras.IStream*, ulong, ulong*, ulong*, int>)LpVtbl[7])(@this, pstm, cb, pcbReadPtr, pcbWritten);
+                ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, Silk.NET.Core.Win32Extras.IStream*, ulong, ulong*, ulong*, int>)@this->LpVtbl[7])(@this, pstm, cb, pcbReadPtr, pcbWritten);
             }
             return ret;
         }
@@ -281,7 +284,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (ulong* pcbWrittenPtr = &pcbWritten)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, Silk.NET.Core.Win32Extras.IStream*, ulong, ulong*, ulong*, int>)LpVtbl[7])(@this, pstm, cb, pcbReadPtr, pcbWrittenPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, Silk.NET.Core.Win32Extras.IStream*, ulong, ulong*, ulong*, int>)@this->LpVtbl[7])(@this, pstm, cb, pcbReadPtr, pcbWrittenPtr);
                 }
             }
             return ret;
@@ -294,7 +297,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (Silk.NET.Core.Win32Extras.IStream* pstmPtr = &pstm)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, Silk.NET.Core.Win32Extras.IStream*, ulong, ulong*, ulong*, int>)LpVtbl[7])(@this, pstmPtr, cb, pcbRead, pcbWritten);
+                ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, Silk.NET.Core.Win32Extras.IStream*, ulong, ulong*, ulong*, int>)@this->LpVtbl[7])(@this, pstmPtr, cb, pcbRead, pcbWritten);
             }
             return ret;
         }
@@ -308,7 +311,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (ulong* pcbWrittenPtr = &pcbWritten)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, Silk.NET.Core.Win32Extras.IStream*, ulong, ulong*, ulong*, int>)LpVtbl[7])(@this, pstmPtr, cb, pcbRead, pcbWrittenPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, Silk.NET.Core.Win32Extras.IStream*, ulong, ulong*, ulong*, int>)@this->LpVtbl[7])(@this, pstmPtr, cb, pcbRead, pcbWrittenPtr);
                 }
             }
             return ret;
@@ -323,7 +326,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (ulong* pcbReadPtr = &pcbRead)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, Silk.NET.Core.Win32Extras.IStream*, ulong, ulong*, ulong*, int>)LpVtbl[7])(@this, pstmPtr, cb, pcbReadPtr, pcbWritten);
+                    ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, Silk.NET.Core.Win32Extras.IStream*, ulong, ulong*, ulong*, int>)@this->LpVtbl[7])(@this, pstmPtr, cb, pcbReadPtr, pcbWritten);
                 }
             }
             return ret;
@@ -340,7 +343,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (ulong* pcbWrittenPtr = &pcbWritten)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, Silk.NET.Core.Win32Extras.IStream*, ulong, ulong*, ulong*, int>)LpVtbl[7])(@this, pstmPtr, cb, pcbReadPtr, pcbWrittenPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, Silk.NET.Core.Win32Extras.IStream*, ulong, ulong*, ulong*, int>)@this->LpVtbl[7])(@this, pstmPtr, cb, pcbReadPtr, pcbWrittenPtr);
                     }
                 }
             }
@@ -352,7 +355,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IMarshalingStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, uint, int>)LpVtbl[8])(@this, grfCommitFlags);
+            ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, uint, int>)@this->LpVtbl[8])(@this, grfCommitFlags);
             return ret;
         }
 
@@ -361,7 +364,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IMarshalingStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, int>)LpVtbl[9])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, int>)@this->LpVtbl[9])(@this);
             return ret;
         }
 
@@ -370,7 +373,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IMarshalingStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, ulong, ulong, uint, int>)LpVtbl[10])(@this, libOffset, cb, dwLockType);
+            ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, ulong, ulong, uint, int>)@this->LpVtbl[10])(@this, libOffset, cb, dwLockType);
             return ret;
         }
 
@@ -379,7 +382,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IMarshalingStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, ulong, ulong, uint, int>)LpVtbl[11])(@this, libOffset, cb, dwLockType);
+            ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, ulong, ulong, uint, int>)@this->LpVtbl[11])(@this, libOffset, cb, dwLockType);
             return ret;
         }
 
@@ -388,7 +391,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IMarshalingStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, TagSTATSTG*, uint, int>)LpVtbl[12])(@this, pstatstg, grfStatFlag);
+            ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, TagSTATSTG*, uint, int>)@this->LpVtbl[12])(@this, pstatstg, grfStatFlag);
             return ret;
         }
 
@@ -399,7 +402,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (TagSTATSTG* pstatstgPtr = &pstatstg)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, TagSTATSTG*, uint, int>)LpVtbl[12])(@this, pstatstgPtr, grfStatFlag);
+                ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, TagSTATSTG*, uint, int>)@this->LpVtbl[12])(@this, pstatstgPtr, grfStatFlag);
             }
             return ret;
         }
@@ -409,7 +412,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IMarshalingStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, Silk.NET.Core.Win32Extras.IStream**, int>)LpVtbl[13])(@this, ppstm);
+            ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, Silk.NET.Core.Win32Extras.IStream**, int>)@this->LpVtbl[13])(@this, ppstm);
             return ret;
         }
 
@@ -420,7 +423,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (Silk.NET.Core.Win32Extras.IStream** ppstmPtr = &ppstm)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, Silk.NET.Core.Win32Extras.IStream**, int>)LpVtbl[13])(@this, ppstmPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, Silk.NET.Core.Win32Extras.IStream**, int>)@this->LpVtbl[13])(@this, ppstmPtr);
             }
             return ret;
         }
@@ -430,7 +433,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IMarshalingStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, COMarshalingContextAttributes, nuint*, int>)LpVtbl[14])(@this, attribute, pAttributeValue);
+            ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, COMarshalingContextAttributes, nuint*, int>)@this->LpVtbl[14])(@this, attribute, pAttributeValue);
             return ret;
         }
 
@@ -441,9 +444,67 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (nuint* pAttributeValuePtr = &pAttributeValue)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, COMarshalingContextAttributes, nuint*, int>)LpVtbl[14])(@this, attribute, pAttributeValuePtr);
+                ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, COMarshalingContextAttributes, nuint*, int>)@this->LpVtbl[14])(@this, attribute, pAttributeValuePtr);
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IMarshalingStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CopyTo<TI0>(ComPtr<TI0> pstm, ulong cb, ulong* pcbRead, ulong* pcbWritten) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+        {
+            var @this = (IMarshalingStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CopyTo((Silk.NET.Core.Win32Extras.IStream*) pstm.Handle, cb, pcbRead, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CopyTo<TI0>(ComPtr<TI0> pstm, ulong cb, ulong* pcbRead, ref ulong pcbWritten) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+        {
+            var @this = (IMarshalingStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CopyTo((Silk.NET.Core.Win32Extras.IStream*) pstm.Handle, cb, pcbRead, ref pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CopyTo<TI0>(ComPtr<TI0> pstm, ulong cb, ref ulong pcbRead, ulong* pcbWritten) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+        {
+            var @this = (IMarshalingStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CopyTo((Silk.NET.Core.Win32Extras.IStream*) pstm.Handle, cb, ref pcbRead, pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CopyTo<TI0>(ComPtr<TI0> pstm, ulong cb, ref ulong pcbRead, ref ulong pcbWritten) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+        {
+            var @this = (IMarshalingStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CopyTo((Silk.NET.Core.Win32Extras.IStream*) pstm.Handle, cb, ref pcbRead, ref pcbWritten);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int Clone<TI0>(ref ComPtr<TI0> ppstm) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+        {
+            var @this = (IMarshalingStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Clone((Silk.NET.Core.Win32Extras.IStream**) ppstm.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IMarshalingStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

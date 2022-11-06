@@ -95,6 +95,41 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
             ReadnPixels(x, y, width, height, format, type, (uint) (data.Length * Unsafe.SizeOf<T0>()), out data.GetPinnableReference());
         }
 
+        public unsafe float GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize)
+        {
+            // NonKhrReturnTypeOverloader
+            GetnUniform(program, location, bufSize, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 ReadnPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            ReadnPixels(x, y, width, height, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 ReadnPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            ReadnPixels(x, y, width, height, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 ReadnPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            ReadnPixels(x, y, width, height, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 ReadnPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            ReadnPixels(x, y, width, height, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
         public ExtRobustness(INativeContext ctx)
             : base(ctx)
         {

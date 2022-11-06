@@ -9033,7 +9033,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2005, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2005, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IEnumUnknownRemoteNextProxy(this Windows thisApi, IEnumUnknown* This, uint celt, Silk.NET.Core.Native.IUnknown** rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
@@ -9041,7 +9041,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2005, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2005, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IEnumUnknownRemoteNextProxy(this Windows thisApi, IEnumUnknown* This, uint celt, ref Silk.NET.Core.Native.IUnknown* rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
@@ -9049,7 +9049,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2005, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2005, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IEnumUnknownRemoteNextProxy(this Windows thisApi, Span<IEnumUnknown> This, uint celt, Silk.NET.Core.Native.IUnknown** rgelt, uint* pceltFetched)
         {
             // SpanOverloader
@@ -9057,7 +9057,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2005, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2005, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IEnumUnknownRemoteNextProxy(this Windows thisApi, Span<IEnumUnknown> This, uint celt, Silk.NET.Core.Native.IUnknown** rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
@@ -9065,7 +9065,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2005, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2005, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IEnumUnknownRemoteNextProxy(this Windows thisApi, Span<IEnumUnknown> This, uint celt, ref Silk.NET.Core.Native.IUnknown* rgelt, uint* pceltFetched)
         {
             // SpanOverloader
@@ -9073,7 +9073,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2005, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2005, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IEnumUnknownRemoteNextProxy(this Windows thisApi, Span<IEnumUnknown> This, uint celt, ref Silk.NET.Core.Native.IUnknown* rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
@@ -9081,7 +9081,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2012, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2012, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IEnumUnknownRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -9089,7 +9089,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2012, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2012, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IEnumUnknownRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -9097,7 +9097,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2012, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2012, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IEnumUnknownRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -9105,7 +9105,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2012, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2012, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IEnumUnknownRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -9113,7 +9113,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2012, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2012, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IEnumUnknownRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -9121,7 +9121,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2012, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2012, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IEnumUnknownRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -9129,7 +9129,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2012, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2012, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IEnumUnknownRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -9137,7 +9137,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2012, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2012, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IEnumUnknownRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -9145,7 +9145,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2012, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2012, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IEnumUnknownRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -9153,7 +9153,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2012, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2012, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IEnumUnknownRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -9161,7 +9161,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2012, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2012, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IEnumUnknownRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -9169,7 +9169,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2012, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2012, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IEnumUnknownRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -9177,7 +9177,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2012, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2012, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IEnumUnknownRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -9185,7 +9185,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2012, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2012, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IEnumUnknownRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -9193,7 +9193,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2012, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2012, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IEnumUnknownRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -9201,7 +9201,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2144, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2144, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IEnumStringRemoteNextProxy(this Windows thisApi, IEnumString* This, uint celt, char** rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
@@ -9209,7 +9209,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2144, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2144, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IEnumStringRemoteNextProxy(this Windows thisApi, IEnumString* This, uint celt, ref char* rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
@@ -9217,7 +9217,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2144, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2144, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IEnumStringRemoteNextProxy(this Windows thisApi, Span<IEnumString> This, uint celt, char** rgelt, uint* pceltFetched)
         {
             // SpanOverloader
@@ -9225,7 +9225,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2144, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2144, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IEnumStringRemoteNextProxy(this Windows thisApi, Span<IEnumString> This, uint celt, char** rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
@@ -9233,7 +9233,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2144, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2144, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IEnumStringRemoteNextProxy(this Windows thisApi, Span<IEnumString> This, uint celt, ref char* rgelt, uint* pceltFetched)
         {
             // SpanOverloader
@@ -9241,7 +9241,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2144, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2144, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IEnumStringRemoteNextProxy(this Windows thisApi, Span<IEnumString> This, uint celt, ref char* rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
@@ -9249,7 +9249,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2151, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2151, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IEnumStringRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -9257,7 +9257,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2151, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2151, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IEnumStringRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -9265,7 +9265,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2151, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2151, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IEnumStringRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -9273,7 +9273,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2151, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2151, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IEnumStringRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -9281,7 +9281,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2151, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2151, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IEnumStringRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -9289,7 +9289,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2151, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2151, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IEnumStringRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -9297,7 +9297,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2151, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2151, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IEnumStringRemoteNextStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -9305,7 +9305,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2151, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2151, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IEnumStringRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -9313,7 +9313,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2151, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2151, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IEnumStringRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -9321,7 +9321,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2151, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2151, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IEnumStringRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -9329,7 +9329,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2151, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2151, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IEnumStringRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -9337,7 +9337,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2151, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2151, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IEnumStringRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -9345,7 +9345,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2151, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2151, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IEnumStringRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -9353,7 +9353,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2151, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2151, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IEnumStringRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -9361,7 +9361,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2151, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2151, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IEnumStringRemoteNextStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -9369,7 +9369,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2273, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2273, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamRemoteReadProxy(this Windows thisApi, ISequentialStream* This, byte* pv, uint cb, Span<uint> pcbRead)
         {
             // SpanOverloader
@@ -9377,7 +9377,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2273, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2273, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamRemoteReadProxy(this Windows thisApi, ISequentialStream* This, Span<byte> pv, uint cb, uint* pcbRead)
         {
             // SpanOverloader
@@ -9385,7 +9385,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2273, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2273, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamRemoteReadProxy(this Windows thisApi, ISequentialStream* This, Span<byte> pv, uint cb, Span<uint> pcbRead)
         {
             // SpanOverloader
@@ -9393,7 +9393,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2273, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2273, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamRemoteReadProxy(this Windows thisApi, ISequentialStream* This, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, Span<uint> pcbRead)
         {
             // SpanOverloader
@@ -9401,7 +9401,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2273, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2273, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamRemoteReadProxy(this Windows thisApi, Span<ISequentialStream> This, byte* pv, uint cb, uint* pcbRead)
         {
             // SpanOverloader
@@ -9409,7 +9409,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2273, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2273, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamRemoteReadProxy(this Windows thisApi, Span<ISequentialStream> This, byte* pv, uint cb, Span<uint> pcbRead)
         {
             // SpanOverloader
@@ -9417,7 +9417,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2273, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2273, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamRemoteReadProxy(this Windows thisApi, Span<ISequentialStream> This, Span<byte> pv, uint cb, uint* pcbRead)
         {
             // SpanOverloader
@@ -9425,7 +9425,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2273, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2273, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamRemoteReadProxy(this Windows thisApi, Span<ISequentialStream> This, Span<byte> pv, uint cb, Span<uint> pcbRead)
         {
             // SpanOverloader
@@ -9433,7 +9433,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2273, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2273, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamRemoteReadProxy(this Windows thisApi, Span<ISequentialStream> This, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, uint* pcbRead)
         {
             // SpanOverloader
@@ -9441,7 +9441,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2273, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2273, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamRemoteReadProxy(this Windows thisApi, Span<ISequentialStream> This, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, Span<uint> pcbRead)
         {
             // SpanOverloader
@@ -9449,7 +9449,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2280, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2280, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void ISequentialStreamRemoteReadStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -9457,7 +9457,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2280, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2280, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void ISequentialStreamRemoteReadStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -9465,7 +9465,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2280, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2280, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void ISequentialStreamRemoteReadStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -9473,7 +9473,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2280, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2280, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void ISequentialStreamRemoteReadStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -9481,7 +9481,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2280, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2280, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void ISequentialStreamRemoteReadStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -9489,7 +9489,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2280, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2280, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void ISequentialStreamRemoteReadStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -9497,7 +9497,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2280, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2280, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void ISequentialStreamRemoteReadStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -9505,7 +9505,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2280, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2280, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void ISequentialStreamRemoteReadStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -9513,7 +9513,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2280, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2280, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void ISequentialStreamRemoteReadStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -9521,7 +9521,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2280, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2280, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void ISequentialStreamRemoteReadStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -9529,7 +9529,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2280, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2280, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void ISequentialStreamRemoteReadStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -9537,7 +9537,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2280, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2280, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void ISequentialStreamRemoteReadStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -9545,7 +9545,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2280, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2280, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void ISequentialStreamRemoteReadStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -9553,7 +9553,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2280, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2280, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void ISequentialStreamRemoteReadStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -9561,7 +9561,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2280, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2280, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void ISequentialStreamRemoteReadStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -9569,7 +9569,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2287, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2287, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamRemoteWriteProxy(this Windows thisApi, ISequentialStream* This, byte* pv, uint cb, Span<uint> pcbWritten)
         {
             // SpanOverloader
@@ -9577,7 +9577,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2287, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2287, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamRemoteWriteProxy(this Windows thisApi, ISequentialStream* This, Span<byte> pv, uint cb, uint* pcbWritten)
         {
             // SpanOverloader
@@ -9585,7 +9585,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2287, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2287, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamRemoteWriteProxy(this Windows thisApi, ISequentialStream* This, Span<byte> pv, uint cb, Span<uint> pcbWritten)
         {
             // SpanOverloader
@@ -9593,7 +9593,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2287, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2287, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamRemoteWriteProxy(this Windows thisApi, ISequentialStream* This, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, Span<uint> pcbWritten)
         {
             // SpanOverloader
@@ -9601,7 +9601,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2287, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2287, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamRemoteWriteProxy(this Windows thisApi, Span<ISequentialStream> This, byte* pv, uint cb, uint* pcbWritten)
         {
             // SpanOverloader
@@ -9609,7 +9609,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2287, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2287, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamRemoteWriteProxy(this Windows thisApi, Span<ISequentialStream> This, byte* pv, uint cb, Span<uint> pcbWritten)
         {
             // SpanOverloader
@@ -9617,7 +9617,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2287, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2287, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamRemoteWriteProxy(this Windows thisApi, Span<ISequentialStream> This, Span<byte> pv, uint cb, uint* pcbWritten)
         {
             // SpanOverloader
@@ -9625,7 +9625,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2287, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2287, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamRemoteWriteProxy(this Windows thisApi, Span<ISequentialStream> This, Span<byte> pv, uint cb, Span<uint> pcbWritten)
         {
             // SpanOverloader
@@ -9633,7 +9633,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2287, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2287, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamRemoteWriteProxy(this Windows thisApi, Span<ISequentialStream> This, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, uint* pcbWritten)
         {
             // SpanOverloader
@@ -9641,7 +9641,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2287, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2287, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamRemoteWriteProxy(this Windows thisApi, Span<ISequentialStream> This, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, Span<uint> pcbWritten)
         {
             // SpanOverloader
@@ -9649,7 +9649,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2294, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2294, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void ISequentialStreamRemoteWriteStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -9657,7 +9657,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2294, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2294, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void ISequentialStreamRemoteWriteStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -9665,7 +9665,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2294, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2294, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void ISequentialStreamRemoteWriteStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -9673,7 +9673,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2294, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2294, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void ISequentialStreamRemoteWriteStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -9681,7 +9681,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2294, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2294, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void ISequentialStreamRemoteWriteStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -9689,7 +9689,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2294, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2294, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void ISequentialStreamRemoteWriteStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -9697,7 +9697,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2294, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2294, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void ISequentialStreamRemoteWriteStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -9705,7 +9705,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2294, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2294, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void ISequentialStreamRemoteWriteStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -9713,7 +9713,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2294, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2294, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void ISequentialStreamRemoteWriteStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -9721,7 +9721,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2294, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2294, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void ISequentialStreamRemoteWriteStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -9729,7 +9729,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2294, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2294, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void ISequentialStreamRemoteWriteStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -9737,7 +9737,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2294, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2294, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void ISequentialStreamRemoteWriteStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -9745,7 +9745,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2294, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2294, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void ISequentialStreamRemoteWriteStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -9753,7 +9753,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2294, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2294, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void ISequentialStreamRemoteWriteStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -9761,7 +9761,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2294, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2294, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void ISequentialStreamRemoteWriteStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -9769,7 +9769,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2568, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2568, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamRemoteSeekProxy(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, long dlibMove, uint dwOrigin, Span<ulong> plibNewPosition)
         {
             // SpanOverloader
@@ -9777,7 +9777,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2568, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2568, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamRemoteSeekProxy(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, long dlibMove, uint dwOrigin, ulong* plibNewPosition)
         {
             // SpanOverloader
@@ -9785,7 +9785,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2568, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2568, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamRemoteSeekProxy(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, long dlibMove, uint dwOrigin, Span<ulong> plibNewPosition)
         {
             // SpanOverloader
@@ -9793,7 +9793,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2575, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2575, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IStreamRemoteSeekStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -9801,7 +9801,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2575, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2575, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IStreamRemoteSeekStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -9809,7 +9809,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2575, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2575, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IStreamRemoteSeekStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -9817,7 +9817,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2575, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2575, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IStreamRemoteSeekStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -9825,7 +9825,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2575, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2575, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IStreamRemoteSeekStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -9833,7 +9833,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2575, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2575, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IStreamRemoteSeekStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -9841,7 +9841,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2575, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2575, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IStreamRemoteSeekStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -9849,7 +9849,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2575, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2575, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IStreamRemoteSeekStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -9857,7 +9857,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2575, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2575, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IStreamRemoteSeekStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -9865,7 +9865,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2575, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2575, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IStreamRemoteSeekStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -9873,7 +9873,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2575, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2575, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IStreamRemoteSeekStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -9881,7 +9881,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2575, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2575, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IStreamRemoteSeekStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -9889,7 +9889,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2575, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2575, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IStreamRemoteSeekStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -9897,7 +9897,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2575, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2575, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IStreamRemoteSeekStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -9905,7 +9905,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2575, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2575, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IStreamRemoteSeekStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -9913,7 +9913,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2582, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2582, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamRemoteCopyToProxy(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, Silk.NET.Core.Win32Extras.IStream* pstm, ulong cb, ulong* pcbRead, Span<ulong> pcbWritten)
         {
             // SpanOverloader
@@ -9921,7 +9921,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2582, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2582, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamRemoteCopyToProxy(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, Silk.NET.Core.Win32Extras.IStream* pstm, ulong cb, Span<ulong> pcbRead, ulong* pcbWritten)
         {
             // SpanOverloader
@@ -9929,7 +9929,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2582, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2582, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamRemoteCopyToProxy(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, Silk.NET.Core.Win32Extras.IStream* pstm, ulong cb, Span<ulong> pcbRead, Span<ulong> pcbWritten)
         {
             // SpanOverloader
@@ -9937,7 +9937,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2582, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2582, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamRemoteCopyToProxy(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, ulong* pcbRead, ulong* pcbWritten)
         {
             // SpanOverloader
@@ -9945,7 +9945,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2582, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2582, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamRemoteCopyToProxy(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, ulong* pcbRead, Span<ulong> pcbWritten)
         {
             // SpanOverloader
@@ -9953,7 +9953,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2582, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2582, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamRemoteCopyToProxy(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, Span<ulong> pcbRead, ulong* pcbWritten)
         {
             // SpanOverloader
@@ -9961,7 +9961,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2582, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2582, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamRemoteCopyToProxy(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, Span<ulong> pcbRead, Span<ulong> pcbWritten)
         {
             // SpanOverloader
@@ -9969,7 +9969,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2582, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2582, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamRemoteCopyToProxy(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Silk.NET.Core.Win32Extras.IStream* pstm, ulong cb, ulong* pcbRead, ulong* pcbWritten)
         {
             // SpanOverloader
@@ -9977,7 +9977,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2582, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2582, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamRemoteCopyToProxy(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Silk.NET.Core.Win32Extras.IStream* pstm, ulong cb, ulong* pcbRead, Span<ulong> pcbWritten)
         {
             // SpanOverloader
@@ -9985,7 +9985,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2582, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2582, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamRemoteCopyToProxy(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Silk.NET.Core.Win32Extras.IStream* pstm, ulong cb, Span<ulong> pcbRead, ulong* pcbWritten)
         {
             // SpanOverloader
@@ -9993,7 +9993,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2582, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2582, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamRemoteCopyToProxy(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Silk.NET.Core.Win32Extras.IStream* pstm, ulong cb, Span<ulong> pcbRead, Span<ulong> pcbWritten)
         {
             // SpanOverloader
@@ -10001,7 +10001,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2582, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2582, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamRemoteCopyToProxy(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, ulong* pcbRead, ulong* pcbWritten)
         {
             // SpanOverloader
@@ -10009,7 +10009,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2582, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2582, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamRemoteCopyToProxy(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, ulong* pcbRead, Span<ulong> pcbWritten)
         {
             // SpanOverloader
@@ -10017,7 +10017,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2582, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2582, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamRemoteCopyToProxy(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, Span<ulong> pcbRead, ulong* pcbWritten)
         {
             // SpanOverloader
@@ -10025,7 +10025,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2582, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2582, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamRemoteCopyToProxy(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, Span<ulong> pcbRead, Span<ulong> pcbWritten)
         {
             // SpanOverloader
@@ -10033,7 +10033,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2590, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2590, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IStreamRemoteCopyToStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -10041,7 +10041,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2590, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2590, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IStreamRemoteCopyToStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -10049,7 +10049,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2590, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2590, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IStreamRemoteCopyToStub(this Windows thisApi, IRpcStubBuffer* This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -10057,7 +10057,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2590, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2590, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IStreamRemoteCopyToStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -10065,7 +10065,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2590, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2590, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IStreamRemoteCopyToStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -10073,7 +10073,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2590, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2590, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IStreamRemoteCopyToStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -10081,7 +10081,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2590, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2590, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IStreamRemoteCopyToStub(this Windows thisApi, IRpcStubBuffer* This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -10089,7 +10089,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2590, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2590, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IStreamRemoteCopyToStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -10097,7 +10097,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2590, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2590, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IStreamRemoteCopyToStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -10105,7 +10105,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2590, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2590, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IStreamRemoteCopyToStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -10113,7 +10113,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2590, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2590, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IStreamRemoteCopyToStub(this Windows thisApi, Span<IRpcStubBuffer> This, IRpcChannelBuffer* _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -10121,7 +10121,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2590, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2590, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IStreamRemoteCopyToStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -10129,7 +10129,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2590, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2590, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IStreamRemoteCopyToStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, RPCMessage* _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -10137,7 +10137,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2590, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2590, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IStreamRemoteCopyToStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, uint* _pdwStubPhase)
         {
             // SpanOverloader
@@ -10145,7 +10145,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2590, Column 17 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 2590, Column 17 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe void IStreamRemoteCopyToStub(this Windows thisApi, Span<IRpcStubBuffer> This, Span<IRpcChannelBuffer> _pRpcChannelBuffer, Span<RPCMessage> _pRpcMessage, Span<uint> _pdwStubPhase)
         {
             // SpanOverloader
@@ -10153,7 +10153,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8449, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8449, Column 41 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IEnumUnknownNextProxy(this Windows thisApi, IEnumUnknown* This, uint celt, Silk.NET.Core.Native.IUnknown** rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
@@ -10161,7 +10161,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8449, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8449, Column 41 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IEnumUnknownNextProxy(this Windows thisApi, IEnumUnknown* This, uint celt, ref Silk.NET.Core.Native.IUnknown* rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
@@ -10169,7 +10169,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8449, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8449, Column 41 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IEnumUnknownNextProxy(this Windows thisApi, Span<IEnumUnknown> This, uint celt, Silk.NET.Core.Native.IUnknown** rgelt, uint* pceltFetched)
         {
             // SpanOverloader
@@ -10177,7 +10177,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8449, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8449, Column 41 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IEnumUnknownNextProxy(this Windows thisApi, Span<IEnumUnknown> This, uint celt, Silk.NET.Core.Native.IUnknown** rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
@@ -10185,7 +10185,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8449, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8449, Column 41 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IEnumUnknownNextProxy(this Windows thisApi, Span<IEnumUnknown> This, uint celt, ref Silk.NET.Core.Native.IUnknown* rgelt, uint* pceltFetched)
         {
             // SpanOverloader
@@ -10193,7 +10193,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8449, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8449, Column 41 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IEnumUnknownNextProxy(this Windows thisApi, Span<IEnumUnknown> This, uint celt, ref Silk.NET.Core.Native.IUnknown* rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
@@ -10201,7 +10201,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8459, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8459, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IEnumUnknownNextStub(this Windows thisApi, IEnumUnknown* This, uint celt, Silk.NET.Core.Native.IUnknown** rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
@@ -10209,7 +10209,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8459, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8459, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IEnumUnknownNextStub(this Windows thisApi, IEnumUnknown* This, uint celt, ref Silk.NET.Core.Native.IUnknown* rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
@@ -10217,7 +10217,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8459, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8459, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IEnumUnknownNextStub(this Windows thisApi, Span<IEnumUnknown> This, uint celt, Silk.NET.Core.Native.IUnknown** rgelt, uint* pceltFetched)
         {
             // SpanOverloader
@@ -10225,7 +10225,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8459, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8459, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IEnumUnknownNextStub(this Windows thisApi, Span<IEnumUnknown> This, uint celt, Silk.NET.Core.Native.IUnknown** rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
@@ -10233,7 +10233,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8459, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8459, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IEnumUnknownNextStub(this Windows thisApi, Span<IEnumUnknown> This, uint celt, ref Silk.NET.Core.Native.IUnknown* rgelt, uint* pceltFetched)
         {
             // SpanOverloader
@@ -10241,7 +10241,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8459, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8459, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IEnumUnknownNextStub(this Windows thisApi, Span<IEnumUnknown> This, uint celt, ref Silk.NET.Core.Native.IUnknown* rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
@@ -10249,7 +10249,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8465, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8465, Column 41 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IEnumStringNextProxy(this Windows thisApi, IEnumString* This, uint celt, char** rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
@@ -10257,7 +10257,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8465, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8465, Column 41 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IEnumStringNextProxy(this Windows thisApi, IEnumString* This, uint celt, ref char* rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
@@ -10265,7 +10265,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8465, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8465, Column 41 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IEnumStringNextProxy(this Windows thisApi, Span<IEnumString> This, uint celt, char** rgelt, uint* pceltFetched)
         {
             // SpanOverloader
@@ -10273,7 +10273,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8465, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8465, Column 41 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IEnumStringNextProxy(this Windows thisApi, Span<IEnumString> This, uint celt, char** rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
@@ -10281,7 +10281,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8465, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8465, Column 41 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IEnumStringNextProxy(this Windows thisApi, Span<IEnumString> This, uint celt, ref char* rgelt, uint* pceltFetched)
         {
             // SpanOverloader
@@ -10289,7 +10289,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8465, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8465, Column 41 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IEnumStringNextProxy(this Windows thisApi, Span<IEnumString> This, uint celt, ref char* rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
@@ -10297,7 +10297,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8474, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8474, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IEnumStringNextStub(this Windows thisApi, IEnumString* This, uint celt, char** rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
@@ -10305,7 +10305,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8474, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8474, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IEnumStringNextStub(this Windows thisApi, IEnumString* This, uint celt, ref char* rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
@@ -10313,7 +10313,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8474, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8474, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IEnumStringNextStub(this Windows thisApi, Span<IEnumString> This, uint celt, char** rgelt, uint* pceltFetched)
         {
             // SpanOverloader
@@ -10321,7 +10321,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8474, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8474, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IEnumStringNextStub(this Windows thisApi, Span<IEnumString> This, uint celt, char** rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
@@ -10329,7 +10329,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8474, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8474, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IEnumStringNextStub(this Windows thisApi, Span<IEnumString> This, uint celt, ref char* rgelt, uint* pceltFetched)
         {
             // SpanOverloader
@@ -10337,7 +10337,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8474, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8474, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IEnumStringNextStub(this Windows thisApi, Span<IEnumString> This, uint celt, ref char* rgelt, Span<uint> pceltFetched)
         {
             // SpanOverloader
@@ -10345,7 +10345,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8480, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8480, Column 41 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamReadProxy(this Windows thisApi, ISequentialStream* This, void* pv, uint cb, Span<uint> pcbRead)
         {
             // SpanOverloader
@@ -10353,7 +10353,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8480, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8480, Column 41 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamReadProxy<T0>(this Windows thisApi, ISequentialStream* This, Span<T0> pv, uint cb, uint* pcbRead) where T0 : unmanaged
         {
             // SpanOverloader
@@ -10361,7 +10361,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8480, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8480, Column 41 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamReadProxy<T0>(this Windows thisApi, ISequentialStream* This, Span<T0> pv, uint cb, Span<uint> pcbRead) where T0 : unmanaged
         {
             // SpanOverloader
@@ -10369,7 +10369,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8480, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8480, Column 41 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamReadProxy(this Windows thisApi, Span<ISequentialStream> This, void* pv, uint cb, uint* pcbRead)
         {
             // SpanOverloader
@@ -10377,7 +10377,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8480, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8480, Column 41 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamReadProxy(this Windows thisApi, Span<ISequentialStream> This, void* pv, uint cb, Span<uint> pcbRead)
         {
             // SpanOverloader
@@ -10385,7 +10385,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8480, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8480, Column 41 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamReadProxy<T0>(this Windows thisApi, Span<ISequentialStream> This, Span<T0> pv, uint cb, uint* pcbRead) where T0 : unmanaged
         {
             // SpanOverloader
@@ -10393,7 +10393,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8480, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8480, Column 41 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamReadProxy<T0>(this Windows thisApi, Span<ISequentialStream> This, Span<T0> pv, uint cb, Span<uint> pcbRead) where T0 : unmanaged
         {
             // SpanOverloader
@@ -10401,7 +10401,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8490, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8490, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamReadStub(this Windows thisApi, ISequentialStream* This, byte* pv, uint cb, Span<uint> pcbRead)
         {
             // SpanOverloader
@@ -10409,7 +10409,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8490, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8490, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamReadStub(this Windows thisApi, ISequentialStream* This, Span<byte> pv, uint cb, uint* pcbRead)
         {
             // SpanOverloader
@@ -10417,7 +10417,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8490, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8490, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamReadStub(this Windows thisApi, ISequentialStream* This, Span<byte> pv, uint cb, Span<uint> pcbRead)
         {
             // SpanOverloader
@@ -10425,7 +10425,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8490, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8490, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamReadStub(this Windows thisApi, ISequentialStream* This, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, Span<uint> pcbRead)
         {
             // SpanOverloader
@@ -10433,7 +10433,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8490, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8490, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamReadStub(this Windows thisApi, Span<ISequentialStream> This, byte* pv, uint cb, uint* pcbRead)
         {
             // SpanOverloader
@@ -10441,7 +10441,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8490, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8490, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamReadStub(this Windows thisApi, Span<ISequentialStream> This, byte* pv, uint cb, Span<uint> pcbRead)
         {
             // SpanOverloader
@@ -10449,7 +10449,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8490, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8490, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamReadStub(this Windows thisApi, Span<ISequentialStream> This, Span<byte> pv, uint cb, uint* pcbRead)
         {
             // SpanOverloader
@@ -10457,7 +10457,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8490, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8490, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamReadStub(this Windows thisApi, Span<ISequentialStream> This, Span<byte> pv, uint cb, Span<uint> pcbRead)
         {
             // SpanOverloader
@@ -10465,7 +10465,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8490, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8490, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamReadStub(this Windows thisApi, Span<ISequentialStream> This, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, uint* pcbRead)
         {
             // SpanOverloader
@@ -10473,7 +10473,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8490, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8490, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamReadStub(this Windows thisApi, Span<ISequentialStream> This, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, Span<uint> pcbRead)
         {
             // SpanOverloader
@@ -10481,7 +10481,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8496, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8496, Column 41 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamWriteProxy(this Windows thisApi, ISequentialStream* This, void* pv, uint cb, Span<uint> pcbWritten)
         {
             // SpanOverloader
@@ -10489,7 +10489,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8496, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8496, Column 41 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamWriteProxy<T0>(this Windows thisApi, ISequentialStream* This, Span<T0> pv, uint cb, uint* pcbWritten) where T0 : unmanaged
         {
             // SpanOverloader
@@ -10497,7 +10497,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8496, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8496, Column 41 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamWriteProxy<T0>(this Windows thisApi, ISequentialStream* This, Span<T0> pv, uint cb, Span<uint> pcbWritten) where T0 : unmanaged
         {
             // SpanOverloader
@@ -10505,7 +10505,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8496, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8496, Column 41 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamWriteProxy(this Windows thisApi, Span<ISequentialStream> This, void* pv, uint cb, uint* pcbWritten)
         {
             // SpanOverloader
@@ -10513,7 +10513,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8496, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8496, Column 41 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamWriteProxy(this Windows thisApi, Span<ISequentialStream> This, void* pv, uint cb, Span<uint> pcbWritten)
         {
             // SpanOverloader
@@ -10521,7 +10521,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8496, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8496, Column 41 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamWriteProxy<T0>(this Windows thisApi, Span<ISequentialStream> This, Span<T0> pv, uint cb, uint* pcbWritten) where T0 : unmanaged
         {
             // SpanOverloader
@@ -10529,7 +10529,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8496, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8496, Column 41 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamWriteProxy<T0>(this Windows thisApi, Span<ISequentialStream> This, Span<T0> pv, uint cb, Span<uint> pcbWritten) where T0 : unmanaged
         {
             // SpanOverloader
@@ -10537,7 +10537,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8506, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8506, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamWriteStub(this Windows thisApi, ISequentialStream* This, byte* pv, uint cb, Span<uint> pcbWritten)
         {
             // SpanOverloader
@@ -10545,7 +10545,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8506, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8506, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamWriteStub(this Windows thisApi, ISequentialStream* This, Span<byte> pv, uint cb, uint* pcbWritten)
         {
             // SpanOverloader
@@ -10553,7 +10553,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8506, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8506, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamWriteStub(this Windows thisApi, ISequentialStream* This, Span<byte> pv, uint cb, Span<uint> pcbWritten)
         {
             // SpanOverloader
@@ -10561,7 +10561,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8506, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8506, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamWriteStub(this Windows thisApi, ISequentialStream* This, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, Span<uint> pcbWritten)
         {
             // SpanOverloader
@@ -10569,7 +10569,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8506, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8506, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamWriteStub(this Windows thisApi, Span<ISequentialStream> This, byte* pv, uint cb, uint* pcbWritten)
         {
             // SpanOverloader
@@ -10577,7 +10577,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8506, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8506, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamWriteStub(this Windows thisApi, Span<ISequentialStream> This, byte* pv, uint cb, Span<uint> pcbWritten)
         {
             // SpanOverloader
@@ -10585,7 +10585,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8506, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8506, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamWriteStub(this Windows thisApi, Span<ISequentialStream> This, Span<byte> pv, uint cb, uint* pcbWritten)
         {
             // SpanOverloader
@@ -10593,7 +10593,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8506, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8506, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamWriteStub(this Windows thisApi, Span<ISequentialStream> This, Span<byte> pv, uint cb, Span<uint> pcbWritten)
         {
             // SpanOverloader
@@ -10601,7 +10601,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8506, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8506, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamWriteStub(this Windows thisApi, Span<ISequentialStream> This, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, uint* pcbWritten)
         {
             // SpanOverloader
@@ -10609,7 +10609,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8506, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8506, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int ISequentialStreamWriteStub(this Windows thisApi, Span<ISequentialStream> This, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pv, uint cb, Span<uint> pcbWritten)
         {
             // SpanOverloader
@@ -10617,7 +10617,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8512, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8512, Column 41 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamSeekProxy(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, long dlibMove, uint dwOrigin, Span<ulong> plibNewPosition)
         {
             // SpanOverloader
@@ -10625,7 +10625,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8512, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8512, Column 41 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamSeekProxy(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, long dlibMove, uint dwOrigin, ulong* plibNewPosition)
         {
             // SpanOverloader
@@ -10633,7 +10633,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8512, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8512, Column 41 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamSeekProxy(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, long dlibMove, uint dwOrigin, Span<ulong> plibNewPosition)
         {
             // SpanOverloader
@@ -10641,7 +10641,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8520, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8520, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamSeekStub(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, long dlibMove, uint dwOrigin, Span<ulong> plibNewPosition)
         {
             // SpanOverloader
@@ -10649,7 +10649,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8520, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8520, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamSeekStub(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, long dlibMove, uint dwOrigin, ulong* plibNewPosition)
         {
             // SpanOverloader
@@ -10657,7 +10657,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8520, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8520, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamSeekStub(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, long dlibMove, uint dwOrigin, Span<ulong> plibNewPosition)
         {
             // SpanOverloader
@@ -10665,7 +10665,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8526, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8526, Column 41 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamCopyToProxy(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, Silk.NET.Core.Win32Extras.IStream* pstm, ulong cb, ulong* pcbRead, Span<ulong> pcbWritten)
         {
             // SpanOverloader
@@ -10673,7 +10673,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8526, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8526, Column 41 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamCopyToProxy(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, Silk.NET.Core.Win32Extras.IStream* pstm, ulong cb, Span<ulong> pcbRead, ulong* pcbWritten)
         {
             // SpanOverloader
@@ -10681,7 +10681,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8526, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8526, Column 41 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamCopyToProxy(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, Silk.NET.Core.Win32Extras.IStream* pstm, ulong cb, Span<ulong> pcbRead, Span<ulong> pcbWritten)
         {
             // SpanOverloader
@@ -10689,7 +10689,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8526, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8526, Column 41 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamCopyToProxy(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, ulong* pcbRead, ulong* pcbWritten)
         {
             // SpanOverloader
@@ -10697,7 +10697,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8526, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8526, Column 41 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamCopyToProxy(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, ulong* pcbRead, Span<ulong> pcbWritten)
         {
             // SpanOverloader
@@ -10705,7 +10705,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8526, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8526, Column 41 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamCopyToProxy(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, Span<ulong> pcbRead, ulong* pcbWritten)
         {
             // SpanOverloader
@@ -10713,7 +10713,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8526, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8526, Column 41 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamCopyToProxy(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, Span<ulong> pcbRead, Span<ulong> pcbWritten)
         {
             // SpanOverloader
@@ -10721,7 +10721,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8526, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8526, Column 41 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamCopyToProxy(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Silk.NET.Core.Win32Extras.IStream* pstm, ulong cb, ulong* pcbRead, ulong* pcbWritten)
         {
             // SpanOverloader
@@ -10729,7 +10729,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8526, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8526, Column 41 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamCopyToProxy(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Silk.NET.Core.Win32Extras.IStream* pstm, ulong cb, ulong* pcbRead, Span<ulong> pcbWritten)
         {
             // SpanOverloader
@@ -10737,7 +10737,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8526, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8526, Column 41 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamCopyToProxy(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Silk.NET.Core.Win32Extras.IStream* pstm, ulong cb, Span<ulong> pcbRead, ulong* pcbWritten)
         {
             // SpanOverloader
@@ -10745,7 +10745,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8526, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8526, Column 41 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamCopyToProxy(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Silk.NET.Core.Win32Extras.IStream* pstm, ulong cb, Span<ulong> pcbRead, Span<ulong> pcbWritten)
         {
             // SpanOverloader
@@ -10753,7 +10753,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8526, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8526, Column 41 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamCopyToProxy(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, ulong* pcbRead, ulong* pcbWritten)
         {
             // SpanOverloader
@@ -10761,7 +10761,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8526, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8526, Column 41 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamCopyToProxy(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, ulong* pcbRead, Span<ulong> pcbWritten)
         {
             // SpanOverloader
@@ -10769,7 +10769,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8526, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8526, Column 41 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamCopyToProxy(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, Span<ulong> pcbRead, ulong* pcbWritten)
         {
             // SpanOverloader
@@ -10777,7 +10777,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8526, Column 41 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8526, Column 41 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamCopyToProxy(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, Span<ulong> pcbRead, Span<ulong> pcbWritten)
         {
             // SpanOverloader
@@ -10785,7 +10785,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8537, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8537, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamCopyToStub(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, Silk.NET.Core.Win32Extras.IStream* pstm, ulong cb, ulong* pcbRead, Span<ulong> pcbWritten)
         {
             // SpanOverloader
@@ -10793,7 +10793,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8537, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8537, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamCopyToStub(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, Silk.NET.Core.Win32Extras.IStream* pstm, ulong cb, Span<ulong> pcbRead, ulong* pcbWritten)
         {
             // SpanOverloader
@@ -10801,7 +10801,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8537, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8537, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamCopyToStub(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, Silk.NET.Core.Win32Extras.IStream* pstm, ulong cb, Span<ulong> pcbRead, Span<ulong> pcbWritten)
         {
             // SpanOverloader
@@ -10809,7 +10809,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8537, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8537, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamCopyToStub(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, ulong* pcbRead, ulong* pcbWritten)
         {
             // SpanOverloader
@@ -10817,7 +10817,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8537, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8537, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamCopyToStub(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, ulong* pcbRead, Span<ulong> pcbWritten)
         {
             // SpanOverloader
@@ -10825,7 +10825,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8537, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8537, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamCopyToStub(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, Span<ulong> pcbRead, ulong* pcbWritten)
         {
             // SpanOverloader
@@ -10833,7 +10833,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8537, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8537, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamCopyToStub(this Windows thisApi, Silk.NET.Core.Win32Extras.IStream* This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, Span<ulong> pcbRead, Span<ulong> pcbWritten)
         {
             // SpanOverloader
@@ -10841,7 +10841,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8537, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8537, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamCopyToStub(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Silk.NET.Core.Win32Extras.IStream* pstm, ulong cb, ulong* pcbRead, ulong* pcbWritten)
         {
             // SpanOverloader
@@ -10849,7 +10849,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8537, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8537, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamCopyToStub(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Silk.NET.Core.Win32Extras.IStream* pstm, ulong cb, ulong* pcbRead, Span<ulong> pcbWritten)
         {
             // SpanOverloader
@@ -10857,7 +10857,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8537, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8537, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamCopyToStub(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Silk.NET.Core.Win32Extras.IStream* pstm, ulong cb, Span<ulong> pcbRead, ulong* pcbWritten)
         {
             // SpanOverloader
@@ -10865,7 +10865,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8537, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8537, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamCopyToStub(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Silk.NET.Core.Win32Extras.IStream* pstm, ulong cb, Span<ulong> pcbRead, Span<ulong> pcbWritten)
         {
             // SpanOverloader
@@ -10873,7 +10873,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8537, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8537, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamCopyToStub(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, ulong* pcbRead, ulong* pcbWritten)
         {
             // SpanOverloader
@@ -10881,7 +10881,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8537, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8537, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamCopyToStub(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, ulong* pcbRead, Span<ulong> pcbWritten)
         {
             // SpanOverloader
@@ -10889,7 +10889,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8537, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8537, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamCopyToStub(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, Span<ulong> pcbRead, ulong* pcbWritten)
         {
             // SpanOverloader
@@ -10897,7 +10897,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8537, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
+        [NativeName("Src", "Line 8537, Column 43 in D:/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]
         public static unsafe int IStreamCopyToStub(this Windows thisApi, Span<Silk.NET.Core.Win32Extras.IStream> This, Span<Silk.NET.Core.Win32Extras.IStream> pstm, ulong cb, Span<ulong> pcbRead, Span<ulong> pcbWritten)
         {
             // SpanOverloader
@@ -10905,7 +10905,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1671, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared\\evntrace.h")]
+        [NativeName("Src", "Line 1671, Column 1 in D:/Windows Kits/10/Include/10.0.22621.0/shared\\evntrace.h")]
         public static unsafe uint StartTraceW(this Windows thisApi, ulong* TraceHandle, char* InstanceName, Span<EventTraceProperties> Properties)
         {
             // SpanOverloader

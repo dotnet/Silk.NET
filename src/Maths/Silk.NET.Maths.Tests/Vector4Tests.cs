@@ -27,7 +27,7 @@ namespace Silk.NET.Maths.Tests
             Assert.Throws<NullReferenceException>(() => v1.CopyTo(null, 0));
             Assert.Throws<ArgumentOutOfRangeException>(() => v1.CopyTo(a, -1));
             Assert.Throws<ArgumentOutOfRangeException>(() => v1.CopyTo(a, a.Length));
-            Assert.Throws<ArgumentException>(null, () => v1.CopyTo(a, a.Length - 2));
+            Assert.Throws<ArgumentException>(() => v1.CopyTo(a, a.Length - 2));
 
             v1.CopyTo(a, 1);
             v1.CopyTo(b);

@@ -80,6 +80,34 @@ namespace Silk.NET.OpenGLES.Extensions.OES
             ProgramBinary(program, binaryFormat, in binary.GetPinnableReference(), (int) (binary.Length * Unsafe.SizeOf<T0>()));
         }
 
+        public unsafe T0 GetProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] OES* binaryFormat) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramBinary(program, bufSize, length, binaryFormat, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out OES binaryFormat) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramBinary(program, bufSize, length, out binaryFormat, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] OES* binaryFormat) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramBinary(program, bufSize, out length, binaryFormat, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out OES binaryFormat) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramBinary(program, bufSize, out length, out binaryFormat, out T0 silkRet);
+            return silkRet;
+        }
+
         public OesGetProgramBinary(INativeContext ctx)
             : base(ctx)
         {

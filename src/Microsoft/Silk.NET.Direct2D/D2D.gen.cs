@@ -245,6 +245,70 @@ namespace Silk.NET.Direct2D
         [NativeApi(EntryPoint = "D2D1InvertMatrix", Convention = CallingConvention.StdCall)]
         public partial int D2D1InvertMatrix(ref Silk.NET.Maths.Matrix3X2<float> matrix);
 
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2449, Column 5 in d2d1_1.h")]
+        public unsafe int D2D1CreateDevice<TI0>(Silk.NET.DXGI.IDXGIDevice* dxgiDevice, CreationProperties* creationProperties, ref ComPtr<TI0> d2dDevice) where TI0 : unmanaged, IComVtbl<ID2D1Device>, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            return D2D1CreateDevice(dxgiDevice, creationProperties, (ID2D1Device**) d2dDevice.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2449, Column 5 in d2d1_1.h")]
+        public unsafe int D2D1CreateDevice<TI0>(Silk.NET.DXGI.IDXGIDevice* dxgiDevice, ref CreationProperties creationProperties, ref ComPtr<TI0> d2dDevice) where TI0 : unmanaged, IComVtbl<ID2D1Device>, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            return D2D1CreateDevice(dxgiDevice, ref creationProperties, (ID2D1Device**) d2dDevice.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2449, Column 5 in d2d1_1.h")]
+        public unsafe int D2D1CreateDevice<TI0>(ref Silk.NET.DXGI.IDXGIDevice dxgiDevice, CreationProperties* creationProperties, ref ComPtr<TI0> d2dDevice) where TI0 : unmanaged, IComVtbl<ID2D1Device>, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            return D2D1CreateDevice(ref dxgiDevice, creationProperties, (ID2D1Device**) d2dDevice.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2449, Column 5 in d2d1_1.h")]
+        public unsafe int D2D1CreateDevice<TI0>(ref Silk.NET.DXGI.IDXGIDevice dxgiDevice, ref CreationProperties creationProperties, ref ComPtr<TI0> d2dDevice) where TI0 : unmanaged, IComVtbl<ID2D1Device>, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            return D2D1CreateDevice(ref dxgiDevice, ref creationProperties, (ID2D1Device**) d2dDevice.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2456, Column 5 in d2d1_1.h")]
+        public unsafe int D2D1CreateDeviceContext<TI0>(Silk.NET.DXGI.IDXGISurface* dxgiSurface, CreationProperties* creationProperties, ref ComPtr<TI0> d2dDeviceContext) where TI0 : unmanaged, IComVtbl<ID2D1DeviceContext>, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            return D2D1CreateDeviceContext(dxgiSurface, creationProperties, (ID2D1DeviceContext**) d2dDeviceContext.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2456, Column 5 in d2d1_1.h")]
+        public unsafe int D2D1CreateDeviceContext<TI0>(Silk.NET.DXGI.IDXGISurface* dxgiSurface, ref CreationProperties creationProperties, ref ComPtr<TI0> d2dDeviceContext) where TI0 : unmanaged, IComVtbl<ID2D1DeviceContext>, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            return D2D1CreateDeviceContext(dxgiSurface, ref creationProperties, (ID2D1DeviceContext**) d2dDeviceContext.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2456, Column 5 in d2d1_1.h")]
+        public unsafe int D2D1CreateDeviceContext<TI0>(ref Silk.NET.DXGI.IDXGISurface dxgiSurface, CreationProperties* creationProperties, ref ComPtr<TI0> d2dDeviceContext) where TI0 : unmanaged, IComVtbl<ID2D1DeviceContext>, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            return D2D1CreateDeviceContext(ref dxgiSurface, creationProperties, (ID2D1DeviceContext**) d2dDeviceContext.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2456, Column 5 in d2d1_1.h")]
+        public unsafe int D2D1CreateDeviceContext<TI0>(ref Silk.NET.DXGI.IDXGISurface dxgiSurface, ref CreationProperties creationProperties, ref ComPtr<TI0> d2dDeviceContext) where TI0 : unmanaged, IComVtbl<ID2D1DeviceContext>, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            return D2D1CreateDeviceContext(ref dxgiSurface, ref creationProperties, (ID2D1DeviceContext**) d2dDeviceContext.GetAddressOf());
+        }
+
 
         public D2D(INativeContext ctx)
             : base(ctx)

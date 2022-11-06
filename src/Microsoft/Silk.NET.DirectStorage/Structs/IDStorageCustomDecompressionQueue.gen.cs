@@ -18,9 +18,12 @@ namespace Silk.NET.DirectStorage
 {
     [Guid("97179b2f-2c21-49ca-8291-4e1bf4a160df")]
     [NativeName("Name", "IDStorageCustomDecompressionQueue")]
-    public unsafe partial struct IDStorageCustomDecompressionQueue
+    public unsafe partial struct IDStorageCustomDecompressionQueue : IComVtbl<IDStorageCustomDecompressionQueue>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("97179b2f-2c21-49ca-8291-4e1bf4a160df");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDStorageCustomDecompressionQueue val)
             => Unsafe.As<IDStorageCustomDecompressionQueue, Silk.NET.Core.Native.IUnknown>(ref val);
@@ -46,7 +49,7 @@ namespace Silk.NET.DirectStorage
         {
             var @this = (IDStorageCustomDecompressionQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDStorageCustomDecompressionQueue*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Stdcall]<IDStorageCustomDecompressionQueue*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -57,7 +60,7 @@ namespace Silk.NET.DirectStorage
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDStorageCustomDecompressionQueue*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDStorageCustomDecompressionQueue*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -69,7 +72,7 @@ namespace Silk.NET.DirectStorage
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDStorageCustomDecompressionQueue*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Stdcall]<IDStorageCustomDecompressionQueue*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -83,7 +86,7 @@ namespace Silk.NET.DirectStorage
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDStorageCustomDecompressionQueue*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDStorageCustomDecompressionQueue*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -94,7 +97,7 @@ namespace Silk.NET.DirectStorage
         {
             var @this = (IDStorageCustomDecompressionQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDStorageCustomDecompressionQueue*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDStorageCustomDecompressionQueue*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -103,7 +106,7 @@ namespace Silk.NET.DirectStorage
         {
             var @this = (IDStorageCustomDecompressionQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDStorageCustomDecompressionQueue*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDStorageCustomDecompressionQueue*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -112,7 +115,7 @@ namespace Silk.NET.DirectStorage
         {
             var @this = (IDStorageCustomDecompressionQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             void* ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDStorageCustomDecompressionQueue*, void*>)LpVtbl[3])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDStorageCustomDecompressionQueue*, void*>)@this->LpVtbl[3])(@this);
             return ret;
         }
 
@@ -121,7 +124,7 @@ namespace Silk.NET.DirectStorage
         {
             var @this = (IDStorageCustomDecompressionQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDStorageCustomDecompressionQueue*, uint, CustomDecompressionRequest*, uint*, int>)LpVtbl[4])(@this, maxRequests, requests, numRequests);
+            ret = ((delegate* unmanaged[Stdcall]<IDStorageCustomDecompressionQueue*, uint, CustomDecompressionRequest*, uint*, int>)@this->LpVtbl[4])(@this, maxRequests, requests, numRequests);
             return ret;
         }
 
@@ -132,7 +135,7 @@ namespace Silk.NET.DirectStorage
             int ret = default;
             fixed (uint* numRequestsPtr = &numRequests)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDStorageCustomDecompressionQueue*, uint, CustomDecompressionRequest*, uint*, int>)LpVtbl[4])(@this, maxRequests, requests, numRequestsPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDStorageCustomDecompressionQueue*, uint, CustomDecompressionRequest*, uint*, int>)@this->LpVtbl[4])(@this, maxRequests, requests, numRequestsPtr);
             }
             return ret;
         }
@@ -144,7 +147,7 @@ namespace Silk.NET.DirectStorage
             int ret = default;
             fixed (CustomDecompressionRequest* requestsPtr = &requests)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDStorageCustomDecompressionQueue*, uint, CustomDecompressionRequest*, uint*, int>)LpVtbl[4])(@this, maxRequests, requestsPtr, numRequests);
+                ret = ((delegate* unmanaged[Stdcall]<IDStorageCustomDecompressionQueue*, uint, CustomDecompressionRequest*, uint*, int>)@this->LpVtbl[4])(@this, maxRequests, requestsPtr, numRequests);
             }
             return ret;
         }
@@ -158,7 +161,7 @@ namespace Silk.NET.DirectStorage
             {
                 fixed (uint* numRequestsPtr = &numRequests)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDStorageCustomDecompressionQueue*, uint, CustomDecompressionRequest*, uint*, int>)LpVtbl[4])(@this, maxRequests, requestsPtr, numRequestsPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDStorageCustomDecompressionQueue*, uint, CustomDecompressionRequest*, uint*, int>)@this->LpVtbl[4])(@this, maxRequests, requestsPtr, numRequestsPtr);
                 }
             }
             return ret;
@@ -169,7 +172,7 @@ namespace Silk.NET.DirectStorage
         {
             var @this = (IDStorageCustomDecompressionQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDStorageCustomDecompressionQueue*, uint, CustomDecompressionResult*, int>)LpVtbl[5])(@this, numResults, results);
+            ret = ((delegate* unmanaged[Stdcall]<IDStorageCustomDecompressionQueue*, uint, CustomDecompressionResult*, int>)@this->LpVtbl[5])(@this, numResults, results);
             return ret;
         }
 
@@ -180,9 +183,27 @@ namespace Silk.NET.DirectStorage
             int ret = default;
             fixed (CustomDecompressionResult* resultsPtr = &results)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDStorageCustomDecompressionQueue*, uint, CustomDecompressionResult*, int>)LpVtbl[5])(@this, numResults, resultsPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDStorageCustomDecompressionQueue*, uint, CustomDecompressionResult*, int>)@this->LpVtbl[5])(@this, numResults, resultsPtr);
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDStorageCustomDecompressionQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDStorageCustomDecompressionQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

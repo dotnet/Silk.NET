@@ -18,9 +18,12 @@ namespace Silk.NET.Direct2D
 {
     [Guid("1ab42875-c57f-4be9-bd85-9cd78d6f55ee")]
     [NativeName("Name", "ID2D1ColorContext1")]
-    public unsafe partial struct ID2D1ColorContext1
+    public unsafe partial struct ID2D1ColorContext1 : IComVtbl<ID2D1ColorContext1>, IComVtbl<ID2D1ColorContext>, IComVtbl<ID2D1Resource>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("1ab42875-c57f-4be9-bd85-9cd78d6f55ee");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator ID2D1ColorContext(ID2D1ColorContext1 val)
             => Unsafe.As<ID2D1ColorContext1, ID2D1ColorContext>(ref val);
@@ -52,7 +55,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1ColorContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1ColorContext1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1ColorContext1*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -63,7 +66,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1ColorContext1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1ColorContext1*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -75,7 +78,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1ColorContext1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1ColorContext1*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -89,7 +92,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ColorContext1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ColorContext1*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -100,7 +103,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1ColorContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1ColorContext1*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1ColorContext1*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -109,7 +112,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1ColorContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1ColorContext1*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1ColorContext1*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -117,7 +120,7 @@ namespace Silk.NET.Direct2D
         public readonly unsafe void GetFactory(ID2D1Factory** factory)
         {
             var @this = (ID2D1ColorContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1ColorContext1*, ID2D1Factory**, void>)LpVtbl[3])(@this, factory);
+            ((delegate* unmanaged[Stdcall]<ID2D1ColorContext1*, ID2D1Factory**, void>)@this->LpVtbl[3])(@this, factory);
         }
 
         /// <summary>To be documented.</summary>
@@ -126,7 +129,7 @@ namespace Silk.NET.Direct2D
             var @this = (ID2D1ColorContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Factory** factoryPtr = &factory)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1ColorContext1*, ID2D1Factory**, void>)LpVtbl[3])(@this, factoryPtr);
+                ((delegate* unmanaged[Stdcall]<ID2D1ColorContext1*, ID2D1Factory**, void>)@this->LpVtbl[3])(@this, factoryPtr);
             }
         }
 
@@ -135,7 +138,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1ColorContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ColorSpace ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1ColorContext1*, ColorSpace>)LpVtbl[4])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1ColorContext1*, ColorSpace>)@this->LpVtbl[4])(@this);
             return ret;
         }
 
@@ -144,7 +147,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1ColorContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1ColorContext1*, uint>)LpVtbl[5])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1ColorContext1*, uint>)@this->LpVtbl[5])(@this);
             return ret;
         }
 
@@ -153,7 +156,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1ColorContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1ColorContext1*, byte*, uint, int>)LpVtbl[6])(@this, profile, profileSize);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1ColorContext1*, byte*, uint, int>)@this->LpVtbl[6])(@this, profile, profileSize);
             return ret;
         }
 
@@ -164,7 +167,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (byte* profilePtr = &profile)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1ColorContext1*, byte*, uint, int>)LpVtbl[6])(@this, profilePtr, profileSize);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1ColorContext1*, byte*, uint, int>)@this->LpVtbl[6])(@this, profilePtr, profileSize);
             }
             return ret;
         }
@@ -175,7 +178,7 @@ namespace Silk.NET.Direct2D
             var @this = (ID2D1ColorContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var profilePtr = (byte*) SilkMarshal.StringToPtr(profile, NativeStringEncoding.UTF8);
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1ColorContext1*, byte*, uint, int>)LpVtbl[6])(@this, profilePtr, profileSize);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1ColorContext1*, byte*, uint, int>)@this->LpVtbl[6])(@this, profilePtr, profileSize);
             SilkMarshal.Free((nint)profilePtr);
             return ret;
         }
@@ -185,7 +188,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1ColorContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ColorContextType ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1ColorContext1*, ColorContextType>)LpVtbl[7])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1ColorContext1*, ColorContextType>)@this->LpVtbl[7])(@this);
             return ret;
         }
 
@@ -194,7 +197,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1ColorContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             Silk.NET.DXGI.ColorSpaceType ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1ColorContext1*, Silk.NET.DXGI.ColorSpaceType>)LpVtbl[8])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1ColorContext1*, Silk.NET.DXGI.ColorSpaceType>)@this->LpVtbl[8])(@this);
             return ret;
         }
 
@@ -203,7 +206,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1ColorContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1ColorContext1*, SimpleColorProfile*, int>)LpVtbl[9])(@this, simpleProfile);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1ColorContext1*, SimpleColorProfile*, int>)@this->LpVtbl[9])(@this, simpleProfile);
             return ret;
         }
 
@@ -214,9 +217,35 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (SimpleColorProfile* simpleProfilePtr = &simpleProfile)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1ColorContext1*, SimpleColorProfile*, int>)LpVtbl[9])(@this, simpleProfilePtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1ColorContext1*, SimpleColorProfile*, int>)@this->LpVtbl[9])(@this, simpleProfilePtr);
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID2D1ColorContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void GetFactory<TI0>(ref ComPtr<TI0> factory) where TI0 : unmanaged, IComVtbl<ID2D1Factory>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1ColorContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->GetFactory((ID2D1Factory**) factory.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID2D1ColorContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

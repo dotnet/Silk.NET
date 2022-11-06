@@ -41,6 +41,20 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         [NativeApi(EntryPoint = "glTexRenderbufferNV", Convention = CallingConvention.Winapi)]
         public partial void TexRenderbuffer([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint renderbuffer);
 
+        public unsafe float GetMultisample([Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] uint index)
+        {
+            // NonKhrReturnTypeOverloader
+            GetMultisample(pname, index, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetMultisample([Flow(FlowDirection.In)] GetMultisamplePNameNV pname, [Flow(FlowDirection.In)] uint index)
+        {
+            // NonKhrReturnTypeOverloader
+            GetMultisample(pname, index, out float silkRet);
+            return silkRet;
+        }
+
         public NVExplicitMultisample(INativeContext ctx)
             : base(ctx)
         {

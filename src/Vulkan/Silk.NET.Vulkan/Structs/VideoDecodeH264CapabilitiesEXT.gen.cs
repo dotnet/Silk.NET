@@ -23,7 +23,7 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.VideoDecodeH264CapabilitiesExt,
             void* pNext = null,
-            Video.StdVideoH264Level? maxLevel = null,
+            Video.StdVideoH264LevelIdc? maxLevelIdc = null,
             Offset2D? fieldOffsetGranularity = null
         ) : this()
         {
@@ -37,9 +37,9 @@ namespace Silk.NET.Vulkan
                 PNext = pNext;
             }
 
-            if (maxLevel is not null)
+            if (maxLevelIdc is not null)
             {
-                MaxLevel = maxLevel.Value;
+                MaxLevelIdc = maxLevelIdc.Value;
             }
 
             if (fieldOffsetGranularity is not null)
@@ -59,10 +59,10 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "StdVideoH264Level")]
-        [NativeName("Type.Name", "StdVideoH264Level")]
-        [NativeName("Name", "maxLevel")]
-        public Video.StdVideoH264Level MaxLevel;
+        [NativeName("Type", "StdVideoH264LevelIdc")]
+        [NativeName("Type.Name", "StdVideoH264LevelIdc")]
+        [NativeName("Name", "maxLevelIdc")]
+        public Video.StdVideoH264LevelIdc MaxLevelIdc;
 /// <summary></summary>
         [NativeName("Type", "VkOffset2D")]
         [NativeName("Type.Name", "VkOffset2D")]

@@ -18,9 +18,12 @@ namespace Silk.NET.Direct2D
 {
     [Guid("2cd906ab-12e2-11dc-9fed-001143a055f9")]
     [NativeName("Name", "ID2D1LinearGradientBrush")]
-    public unsafe partial struct ID2D1LinearGradientBrush
+    public unsafe partial struct ID2D1LinearGradientBrush : IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<ID2D1Brush>, IComVtbl<ID2D1Resource>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("2cd906ab-12e2-11dc-9fed-001143a055f9");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator ID2D1Brush(ID2D1LinearGradientBrush val)
             => Unsafe.As<ID2D1LinearGradientBrush, ID2D1Brush>(ref val);
@@ -52,7 +55,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1LinearGradientBrush*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -63,7 +66,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -75,7 +78,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -89,7 +92,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -100,7 +103,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1LinearGradientBrush*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -109,7 +112,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1LinearGradientBrush*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -117,7 +120,7 @@ namespace Silk.NET.Direct2D
         public readonly unsafe void GetFactory(ID2D1Factory** factory)
         {
             var @this = (ID2D1LinearGradientBrush*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, ID2D1Factory**, void>)LpVtbl[3])(@this, factory);
+            ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, ID2D1Factory**, void>)@this->LpVtbl[3])(@this, factory);
         }
 
         /// <summary>To be documented.</summary>
@@ -126,7 +129,7 @@ namespace Silk.NET.Direct2D
             var @this = (ID2D1LinearGradientBrush*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Factory** factoryPtr = &factory)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, ID2D1Factory**, void>)LpVtbl[3])(@this, factoryPtr);
+                ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, ID2D1Factory**, void>)@this->LpVtbl[3])(@this, factoryPtr);
             }
         }
 
@@ -134,14 +137,14 @@ namespace Silk.NET.Direct2D
         public readonly void SetOpacity(float opacity)
         {
             var @this = (ID2D1LinearGradientBrush*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, float, void>)LpVtbl[4])(@this, opacity);
+            ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, float, void>)@this->LpVtbl[4])(@this, opacity);
         }
 
         /// <summary>To be documented.</summary>
         public readonly unsafe void SetTransform(Silk.NET.Maths.Matrix3X2<float>* transform)
         {
             var @this = (ID2D1LinearGradientBrush*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, Silk.NET.Maths.Matrix3X2<float>*, void>)LpVtbl[5])(@this, transform);
+            ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, Silk.NET.Maths.Matrix3X2<float>*, void>)@this->LpVtbl[5])(@this, transform);
         }
 
         /// <summary>To be documented.</summary>
@@ -150,7 +153,7 @@ namespace Silk.NET.Direct2D
             var @this = (ID2D1LinearGradientBrush*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Matrix3X2<float>* transformPtr = &transform)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, Silk.NET.Maths.Matrix3X2<float>*, void>)LpVtbl[5])(@this, transformPtr);
+                ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, Silk.NET.Maths.Matrix3X2<float>*, void>)@this->LpVtbl[5])(@this, transformPtr);
             }
         }
 
@@ -159,7 +162,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1LinearGradientBrush*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             float ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, float>)LpVtbl[6])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, float>)@this->LpVtbl[6])(@this);
             return ret;
         }
 
@@ -167,7 +170,7 @@ namespace Silk.NET.Direct2D
         public readonly unsafe void GetTransform(Silk.NET.Maths.Matrix3X2<float>* transform)
         {
             var @this = (ID2D1LinearGradientBrush*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, Silk.NET.Maths.Matrix3X2<float>*, void>)LpVtbl[7])(@this, transform);
+            ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, Silk.NET.Maths.Matrix3X2<float>*, void>)@this->LpVtbl[7])(@this, transform);
         }
 
         /// <summary>To be documented.</summary>
@@ -176,7 +179,7 @@ namespace Silk.NET.Direct2D
             var @this = (ID2D1LinearGradientBrush*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Matrix3X2<float>* transformPtr = &transform)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, Silk.NET.Maths.Matrix3X2<float>*, void>)LpVtbl[7])(@this, transformPtr);
+                ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, Silk.NET.Maths.Matrix3X2<float>*, void>)@this->LpVtbl[7])(@this, transformPtr);
             }
         }
 
@@ -184,14 +187,14 @@ namespace Silk.NET.Direct2D
         public readonly void SetStartPoint(Silk.NET.Maths.Vector2D<float> startPoint)
         {
             var @this = (ID2D1LinearGradientBrush*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, Silk.NET.Maths.Vector2D<float>, void>)LpVtbl[8])(@this, startPoint);
+            ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, Silk.NET.Maths.Vector2D<float>, void>)@this->LpVtbl[8])(@this, startPoint);
         }
 
         /// <summary>To be documented.</summary>
         public readonly void SetEndPoint(Silk.NET.Maths.Vector2D<float> endPoint)
         {
             var @this = (ID2D1LinearGradientBrush*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, Silk.NET.Maths.Vector2D<float>, void>)LpVtbl[9])(@this, endPoint);
+            ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, Silk.NET.Maths.Vector2D<float>, void>)@this->LpVtbl[9])(@this, endPoint);
         }
 
         /// <summary>To be documented.</summary>
@@ -201,7 +204,7 @@ namespace Silk.NET.Direct2D
             var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
             var @this = (ID2D1LinearGradientBrush*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             Silk.NET.Maths.Vector2D<float>* ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<float>*>)LpVtbl[10])(@this, pSilkDotNetReturnFixupResult);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<float>*>)@this->LpVtbl[10])(@this, pSilkDotNetReturnFixupResult);
             return *ret;
         }
 
@@ -212,7 +215,7 @@ namespace Silk.NET.Direct2D
             var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
             var @this = (ID2D1LinearGradientBrush*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             Silk.NET.Maths.Vector2D<float>* ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<float>*>)LpVtbl[11])(@this, pSilkDotNetReturnFixupResult);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<float>*>)@this->LpVtbl[11])(@this, pSilkDotNetReturnFixupResult);
             return *ret;
         }
 
@@ -220,7 +223,7 @@ namespace Silk.NET.Direct2D
         public readonly unsafe void GetGradientStopCollection(ID2D1GradientStopCollection** gradientStopCollection)
         {
             var @this = (ID2D1LinearGradientBrush*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, ID2D1GradientStopCollection**, void>)LpVtbl[12])(@this, gradientStopCollection);
+            ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, ID2D1GradientStopCollection**, void>)@this->LpVtbl[12])(@this, gradientStopCollection);
         }
 
         /// <summary>To be documented.</summary>
@@ -229,8 +232,42 @@ namespace Silk.NET.Direct2D
             var @this = (ID2D1LinearGradientBrush*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1GradientStopCollection** gradientStopCollectionPtr = &gradientStopCollection)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, ID2D1GradientStopCollection**, void>)LpVtbl[12])(@this, gradientStopCollectionPtr);
+                ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, ID2D1GradientStopCollection**, void>)@this->LpVtbl[12])(@this, gradientStopCollectionPtr);
             }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID2D1LinearGradientBrush*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void GetFactory<TI0>(ref ComPtr<TI0> factory) where TI0 : unmanaged, IComVtbl<ID2D1Factory>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1LinearGradientBrush*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->GetFactory((ID2D1Factory**) factory.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void GetGradientStopCollection<TI0>(ref ComPtr<TI0> gradientStopCollection) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1LinearGradientBrush*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->GetGradientStopCollection((ID2D1GradientStopCollection**) gradientStopCollection.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID2D1LinearGradientBrush*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

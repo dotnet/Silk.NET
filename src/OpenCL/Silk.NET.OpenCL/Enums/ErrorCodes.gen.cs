@@ -216,5 +216,7 @@ namespace Silk.NET.OpenCL
         InvalidSyncPointWaitListKhr = unchecked((int) 0xFFFFFFFFFFFFFB8D),
         [NativeName("Name", "CL_INCOMPATIBLE_COMMAND_QUEUE_KHR")]
         IncompatibleCommandQueueKhr = unchecked((int) 0xFFFFFFFFFFFFFB8C),
+        [NativeName("Name", "CL_INVALID_MUTABLE_COMMAND_KHR")]
+        InvalidMutableCommandKhr = unchecked((int) 0xFFFFFFFFFFFFFB8B),
     }
 }

@@ -18,9 +18,12 @@ namespace Silk.NET.Core.Win32Extras
 {
     [Guid("0000013e-0000-0000-c000-000000000046")]
     [NativeName("Name", "IServerSecurity")]
-    public unsafe partial struct IServerSecurity
+    public unsafe partial struct IServerSecurity : IComVtbl<IServerSecurity>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("0000013e-0000-0000-c000-000000000046");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator Silk.NET.Core.Native.IUnknown(IServerSecurity val)
             => Unsafe.As<IServerSecurity, Silk.NET.Core.Native.IUnknown>(ref val);
@@ -46,7 +49,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -57,7 +60,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -69,7 +72,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -83,7 +86,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -94,7 +97,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -103,7 +106,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -112,7 +115,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevel, pPrivs, pCapabilities);
+            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevel, pPrivs, pCapabilities);
             return ret;
         }
 
@@ -123,7 +126,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (uint* pCapabilitiesPtr = &pCapabilities)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevel, pPrivs, pCapabilitiesPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevel, pPrivs, pCapabilitiesPtr);
             }
             return ret;
         }
@@ -135,7 +138,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (void** pPrivsPtr = &pPrivs)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevel, pPrivsPtr, pCapabilities);
+                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevel, pPrivsPtr, pCapabilities);
             }
             return ret;
         }
@@ -149,7 +152,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pCapabilitiesPtr = &pCapabilities)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevel, pPrivsPtr, pCapabilitiesPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevel, pPrivsPtr, pCapabilitiesPtr);
                 }
             }
             return ret;
@@ -162,7 +165,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (uint* pImpLevelPtr = &pImpLevel)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevelPtr, pPrivs, pCapabilities);
+                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevelPtr, pPrivs, pCapabilities);
             }
             return ret;
         }
@@ -176,7 +179,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pCapabilitiesPtr = &pCapabilities)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevelPtr, pPrivs, pCapabilitiesPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevelPtr, pPrivs, pCapabilitiesPtr);
                 }
             }
             return ret;
@@ -191,7 +194,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (void** pPrivsPtr = &pPrivs)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevelPtr, pPrivsPtr, pCapabilities);
+                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevelPtr, pPrivsPtr, pCapabilities);
                 }
             }
             return ret;
@@ -208,7 +211,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (uint* pCapabilitiesPtr = &pCapabilities)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevelPtr, pPrivsPtr, pCapabilitiesPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevelPtr, pPrivsPtr, pCapabilitiesPtr);
                     }
                 }
             }
@@ -222,7 +225,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (uint* pAuthnLevelPtr = &pAuthnLevel)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevelPtr, pImpLevel, pPrivs, pCapabilities);
+                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevelPtr, pImpLevel, pPrivs, pCapabilities);
             }
             return ret;
         }
@@ -236,7 +239,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pCapabilitiesPtr = &pCapabilities)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevelPtr, pImpLevel, pPrivs, pCapabilitiesPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevelPtr, pImpLevel, pPrivs, pCapabilitiesPtr);
                 }
             }
             return ret;
@@ -251,7 +254,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (void** pPrivsPtr = &pPrivs)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevelPtr, pImpLevel, pPrivsPtr, pCapabilities);
+                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevelPtr, pImpLevel, pPrivsPtr, pCapabilities);
                 }
             }
             return ret;
@@ -268,7 +271,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (uint* pCapabilitiesPtr = &pCapabilities)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevelPtr, pImpLevel, pPrivsPtr, pCapabilitiesPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevelPtr, pImpLevel, pPrivsPtr, pCapabilitiesPtr);
                     }
                 }
             }
@@ -284,7 +287,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pImpLevelPtr = &pImpLevel)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevelPtr, pImpLevelPtr, pPrivs, pCapabilities);
+                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevelPtr, pImpLevelPtr, pPrivs, pCapabilities);
                 }
             }
             return ret;
@@ -301,7 +304,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (uint* pCapabilitiesPtr = &pCapabilities)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevelPtr, pImpLevelPtr, pPrivs, pCapabilitiesPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevelPtr, pImpLevelPtr, pPrivs, pCapabilitiesPtr);
                     }
                 }
             }
@@ -319,7 +322,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (void** pPrivsPtr = &pPrivs)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevelPtr, pImpLevelPtr, pPrivsPtr, pCapabilities);
+                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevelPtr, pImpLevelPtr, pPrivsPtr, pCapabilities);
                     }
                 }
             }
@@ -339,7 +342,7 @@ namespace Silk.NET.Core.Win32Extras
                     {
                         fixed (uint* pCapabilitiesPtr = &pCapabilities)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevelPtr, pImpLevelPtr, pPrivsPtr, pCapabilitiesPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevelPtr, pImpLevelPtr, pPrivsPtr, pCapabilitiesPtr);
                         }
                     }
                 }
@@ -354,7 +357,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (char** pServerPrincNamePtr = &pServerPrincName)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincNamePtr, pAuthnLevel, pImpLevel, pPrivs, pCapabilities);
+                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincNamePtr, pAuthnLevel, pImpLevel, pPrivs, pCapabilities);
             }
             return ret;
         }
@@ -368,7 +371,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pCapabilitiesPtr = &pCapabilities)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincNamePtr, pAuthnLevel, pImpLevel, pPrivs, pCapabilitiesPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincNamePtr, pAuthnLevel, pImpLevel, pPrivs, pCapabilitiesPtr);
                 }
             }
             return ret;
@@ -383,7 +386,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (void** pPrivsPtr = &pPrivs)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincNamePtr, pAuthnLevel, pImpLevel, pPrivsPtr, pCapabilities);
+                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincNamePtr, pAuthnLevel, pImpLevel, pPrivsPtr, pCapabilities);
                 }
             }
             return ret;
@@ -400,7 +403,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (uint* pCapabilitiesPtr = &pCapabilities)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincNamePtr, pAuthnLevel, pImpLevel, pPrivsPtr, pCapabilitiesPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincNamePtr, pAuthnLevel, pImpLevel, pPrivsPtr, pCapabilitiesPtr);
                     }
                 }
             }
@@ -416,7 +419,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pImpLevelPtr = &pImpLevel)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincNamePtr, pAuthnLevel, pImpLevelPtr, pPrivs, pCapabilities);
+                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincNamePtr, pAuthnLevel, pImpLevelPtr, pPrivs, pCapabilities);
                 }
             }
             return ret;
@@ -433,7 +436,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (uint* pCapabilitiesPtr = &pCapabilities)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincNamePtr, pAuthnLevel, pImpLevelPtr, pPrivs, pCapabilitiesPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincNamePtr, pAuthnLevel, pImpLevelPtr, pPrivs, pCapabilitiesPtr);
                     }
                 }
             }
@@ -451,7 +454,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (void** pPrivsPtr = &pPrivs)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincNamePtr, pAuthnLevel, pImpLevelPtr, pPrivsPtr, pCapabilities);
+                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincNamePtr, pAuthnLevel, pImpLevelPtr, pPrivsPtr, pCapabilities);
                     }
                 }
             }
@@ -471,7 +474,7 @@ namespace Silk.NET.Core.Win32Extras
                     {
                         fixed (uint* pCapabilitiesPtr = &pCapabilities)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincNamePtr, pAuthnLevel, pImpLevelPtr, pPrivsPtr, pCapabilitiesPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincNamePtr, pAuthnLevel, pImpLevelPtr, pPrivsPtr, pCapabilitiesPtr);
                         }
                     }
                 }
@@ -488,7 +491,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pAuthnLevelPtr = &pAuthnLevel)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevel, pPrivs, pCapabilities);
+                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevel, pPrivs, pCapabilities);
                 }
             }
             return ret;
@@ -505,7 +508,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (uint* pCapabilitiesPtr = &pCapabilities)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevel, pPrivs, pCapabilitiesPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevel, pPrivs, pCapabilitiesPtr);
                     }
                 }
             }
@@ -523,7 +526,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (void** pPrivsPtr = &pPrivs)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevel, pPrivsPtr, pCapabilities);
+                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevel, pPrivsPtr, pCapabilities);
                     }
                 }
             }
@@ -543,7 +546,7 @@ namespace Silk.NET.Core.Win32Extras
                     {
                         fixed (uint* pCapabilitiesPtr = &pCapabilities)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevel, pPrivsPtr, pCapabilitiesPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevel, pPrivsPtr, pCapabilitiesPtr);
                         }
                     }
                 }
@@ -562,7 +565,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (uint* pImpLevelPtr = &pImpLevel)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevelPtr, pPrivs, pCapabilities);
+                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevelPtr, pPrivs, pCapabilities);
                     }
                 }
             }
@@ -582,7 +585,7 @@ namespace Silk.NET.Core.Win32Extras
                     {
                         fixed (uint* pCapabilitiesPtr = &pCapabilities)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevelPtr, pPrivs, pCapabilitiesPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevelPtr, pPrivs, pCapabilitiesPtr);
                         }
                     }
                 }
@@ -603,7 +606,7 @@ namespace Silk.NET.Core.Win32Extras
                     {
                         fixed (void** pPrivsPtr = &pPrivs)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevelPtr, pPrivsPtr, pCapabilities);
+                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevelPtr, pPrivsPtr, pCapabilities);
                         }
                     }
                 }
@@ -626,7 +629,7 @@ namespace Silk.NET.Core.Win32Extras
                         {
                             fixed (uint* pCapabilitiesPtr = &pCapabilities)
                             {
-                                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevelPtr, pPrivsPtr, pCapabilitiesPtr);
+                                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvc, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevelPtr, pPrivsPtr, pCapabilitiesPtr);
                             }
                         }
                     }
@@ -642,7 +645,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (uint* pAuthzSvcPtr = &pAuthzSvc)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincName, pAuthnLevel, pImpLevel, pPrivs, pCapabilities);
+                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincName, pAuthnLevel, pImpLevel, pPrivs, pCapabilities);
             }
             return ret;
         }
@@ -656,7 +659,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pCapabilitiesPtr = &pCapabilities)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincName, pAuthnLevel, pImpLevel, pPrivs, pCapabilitiesPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincName, pAuthnLevel, pImpLevel, pPrivs, pCapabilitiesPtr);
                 }
             }
             return ret;
@@ -671,7 +674,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (void** pPrivsPtr = &pPrivs)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincName, pAuthnLevel, pImpLevel, pPrivsPtr, pCapabilities);
+                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincName, pAuthnLevel, pImpLevel, pPrivsPtr, pCapabilities);
                 }
             }
             return ret;
@@ -688,7 +691,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (uint* pCapabilitiesPtr = &pCapabilities)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincName, pAuthnLevel, pImpLevel, pPrivsPtr, pCapabilitiesPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincName, pAuthnLevel, pImpLevel, pPrivsPtr, pCapabilitiesPtr);
                     }
                 }
             }
@@ -704,7 +707,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pImpLevelPtr = &pImpLevel)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincName, pAuthnLevel, pImpLevelPtr, pPrivs, pCapabilities);
+                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincName, pAuthnLevel, pImpLevelPtr, pPrivs, pCapabilities);
                 }
             }
             return ret;
@@ -721,7 +724,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (uint* pCapabilitiesPtr = &pCapabilities)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincName, pAuthnLevel, pImpLevelPtr, pPrivs, pCapabilitiesPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincName, pAuthnLevel, pImpLevelPtr, pPrivs, pCapabilitiesPtr);
                     }
                 }
             }
@@ -739,7 +742,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (void** pPrivsPtr = &pPrivs)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincName, pAuthnLevel, pImpLevelPtr, pPrivsPtr, pCapabilities);
+                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincName, pAuthnLevel, pImpLevelPtr, pPrivsPtr, pCapabilities);
                     }
                 }
             }
@@ -759,7 +762,7 @@ namespace Silk.NET.Core.Win32Extras
                     {
                         fixed (uint* pCapabilitiesPtr = &pCapabilities)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincName, pAuthnLevel, pImpLevelPtr, pPrivsPtr, pCapabilitiesPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincName, pAuthnLevel, pImpLevelPtr, pPrivsPtr, pCapabilitiesPtr);
                         }
                     }
                 }
@@ -776,7 +779,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pAuthnLevelPtr = &pAuthnLevel)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincName, pAuthnLevelPtr, pImpLevel, pPrivs, pCapabilities);
+                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincName, pAuthnLevelPtr, pImpLevel, pPrivs, pCapabilities);
                 }
             }
             return ret;
@@ -793,7 +796,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (uint* pCapabilitiesPtr = &pCapabilities)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincName, pAuthnLevelPtr, pImpLevel, pPrivs, pCapabilitiesPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincName, pAuthnLevelPtr, pImpLevel, pPrivs, pCapabilitiesPtr);
                     }
                 }
             }
@@ -811,7 +814,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (void** pPrivsPtr = &pPrivs)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincName, pAuthnLevelPtr, pImpLevel, pPrivsPtr, pCapabilities);
+                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincName, pAuthnLevelPtr, pImpLevel, pPrivsPtr, pCapabilities);
                     }
                 }
             }
@@ -831,7 +834,7 @@ namespace Silk.NET.Core.Win32Extras
                     {
                         fixed (uint* pCapabilitiesPtr = &pCapabilities)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincName, pAuthnLevelPtr, pImpLevel, pPrivsPtr, pCapabilitiesPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincName, pAuthnLevelPtr, pImpLevel, pPrivsPtr, pCapabilitiesPtr);
                         }
                     }
                 }
@@ -850,7 +853,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (uint* pImpLevelPtr = &pImpLevel)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincName, pAuthnLevelPtr, pImpLevelPtr, pPrivs, pCapabilities);
+                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincName, pAuthnLevelPtr, pImpLevelPtr, pPrivs, pCapabilities);
                     }
                 }
             }
@@ -870,7 +873,7 @@ namespace Silk.NET.Core.Win32Extras
                     {
                         fixed (uint* pCapabilitiesPtr = &pCapabilities)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincName, pAuthnLevelPtr, pImpLevelPtr, pPrivs, pCapabilitiesPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincName, pAuthnLevelPtr, pImpLevelPtr, pPrivs, pCapabilitiesPtr);
                         }
                     }
                 }
@@ -891,7 +894,7 @@ namespace Silk.NET.Core.Win32Extras
                     {
                         fixed (void** pPrivsPtr = &pPrivs)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincName, pAuthnLevelPtr, pImpLevelPtr, pPrivsPtr, pCapabilities);
+                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincName, pAuthnLevelPtr, pImpLevelPtr, pPrivsPtr, pCapabilities);
                         }
                     }
                 }
@@ -914,7 +917,7 @@ namespace Silk.NET.Core.Win32Extras
                         {
                             fixed (uint* pCapabilitiesPtr = &pCapabilities)
                             {
-                                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincName, pAuthnLevelPtr, pImpLevelPtr, pPrivsPtr, pCapabilitiesPtr);
+                                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincName, pAuthnLevelPtr, pImpLevelPtr, pPrivsPtr, pCapabilitiesPtr);
                             }
                         }
                     }
@@ -932,7 +935,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (char** pServerPrincNamePtr = &pServerPrincName)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevel, pImpLevel, pPrivs, pCapabilities);
+                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevel, pImpLevel, pPrivs, pCapabilities);
                 }
             }
             return ret;
@@ -949,7 +952,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (uint* pCapabilitiesPtr = &pCapabilities)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevel, pImpLevel, pPrivs, pCapabilitiesPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevel, pImpLevel, pPrivs, pCapabilitiesPtr);
                     }
                 }
             }
@@ -967,7 +970,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (void** pPrivsPtr = &pPrivs)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevel, pImpLevel, pPrivsPtr, pCapabilities);
+                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevel, pImpLevel, pPrivsPtr, pCapabilities);
                     }
                 }
             }
@@ -987,7 +990,7 @@ namespace Silk.NET.Core.Win32Extras
                     {
                         fixed (uint* pCapabilitiesPtr = &pCapabilities)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevel, pImpLevel, pPrivsPtr, pCapabilitiesPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevel, pImpLevel, pPrivsPtr, pCapabilitiesPtr);
                         }
                     }
                 }
@@ -1006,7 +1009,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (uint* pImpLevelPtr = &pImpLevel)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevel, pImpLevelPtr, pPrivs, pCapabilities);
+                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevel, pImpLevelPtr, pPrivs, pCapabilities);
                     }
                 }
             }
@@ -1026,7 +1029,7 @@ namespace Silk.NET.Core.Win32Extras
                     {
                         fixed (uint* pCapabilitiesPtr = &pCapabilities)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevel, pImpLevelPtr, pPrivs, pCapabilitiesPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevel, pImpLevelPtr, pPrivs, pCapabilitiesPtr);
                         }
                     }
                 }
@@ -1047,7 +1050,7 @@ namespace Silk.NET.Core.Win32Extras
                     {
                         fixed (void** pPrivsPtr = &pPrivs)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevel, pImpLevelPtr, pPrivsPtr, pCapabilities);
+                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevel, pImpLevelPtr, pPrivsPtr, pCapabilities);
                         }
                     }
                 }
@@ -1070,7 +1073,7 @@ namespace Silk.NET.Core.Win32Extras
                         {
                             fixed (uint* pCapabilitiesPtr = &pCapabilities)
                             {
-                                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevel, pImpLevelPtr, pPrivsPtr, pCapabilitiesPtr);
+                                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevel, pImpLevelPtr, pPrivsPtr, pCapabilitiesPtr);
                             }
                         }
                     }
@@ -1090,7 +1093,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (uint* pAuthnLevelPtr = &pAuthnLevel)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevel, pPrivs, pCapabilities);
+                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevel, pPrivs, pCapabilities);
                     }
                 }
             }
@@ -1110,7 +1113,7 @@ namespace Silk.NET.Core.Win32Extras
                     {
                         fixed (uint* pCapabilitiesPtr = &pCapabilities)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevel, pPrivs, pCapabilitiesPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevel, pPrivs, pCapabilitiesPtr);
                         }
                     }
                 }
@@ -1131,7 +1134,7 @@ namespace Silk.NET.Core.Win32Extras
                     {
                         fixed (void** pPrivsPtr = &pPrivs)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevel, pPrivsPtr, pCapabilities);
+                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevel, pPrivsPtr, pCapabilities);
                         }
                     }
                 }
@@ -1154,7 +1157,7 @@ namespace Silk.NET.Core.Win32Extras
                         {
                             fixed (uint* pCapabilitiesPtr = &pCapabilities)
                             {
-                                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevel, pPrivsPtr, pCapabilitiesPtr);
+                                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevel, pPrivsPtr, pCapabilitiesPtr);
                             }
                         }
                     }
@@ -1176,7 +1179,7 @@ namespace Silk.NET.Core.Win32Extras
                     {
                         fixed (uint* pImpLevelPtr = &pImpLevel)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevelPtr, pPrivs, pCapabilities);
+                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevelPtr, pPrivs, pCapabilities);
                         }
                     }
                 }
@@ -1199,7 +1202,7 @@ namespace Silk.NET.Core.Win32Extras
                         {
                             fixed (uint* pCapabilitiesPtr = &pCapabilities)
                             {
-                                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevelPtr, pPrivs, pCapabilitiesPtr);
+                                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevelPtr, pPrivs, pCapabilitiesPtr);
                             }
                         }
                     }
@@ -1223,7 +1226,7 @@ namespace Silk.NET.Core.Win32Extras
                         {
                             fixed (void** pPrivsPtr = &pPrivs)
                             {
-                                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevelPtr, pPrivsPtr, pCapabilities);
+                                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevelPtr, pPrivsPtr, pCapabilities);
                             }
                         }
                     }
@@ -1249,7 +1252,7 @@ namespace Silk.NET.Core.Win32Extras
                             {
                                 fixed (uint* pCapabilitiesPtr = &pCapabilities)
                                 {
-                                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevelPtr, pPrivsPtr, pCapabilitiesPtr);
+                                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvc, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevelPtr, pPrivsPtr, pCapabilitiesPtr);
                                 }
                             }
                         }
@@ -1266,7 +1269,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (uint* pAuthnSvcPtr = &pAuthnSvc)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevel, pPrivs, pCapabilities);
+                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevel, pPrivs, pCapabilities);
             }
             return ret;
         }
@@ -1280,7 +1283,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pCapabilitiesPtr = &pCapabilities)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevel, pPrivs, pCapabilitiesPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevel, pPrivs, pCapabilitiesPtr);
                 }
             }
             return ret;
@@ -1295,7 +1298,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (void** pPrivsPtr = &pPrivs)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevel, pPrivsPtr, pCapabilities);
+                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevel, pPrivsPtr, pCapabilities);
                 }
             }
             return ret;
@@ -1312,7 +1315,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (uint* pCapabilitiesPtr = &pCapabilities)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevel, pPrivsPtr, pCapabilitiesPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevel, pPrivsPtr, pCapabilitiesPtr);
                     }
                 }
             }
@@ -1328,7 +1331,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pImpLevelPtr = &pImpLevel)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevelPtr, pPrivs, pCapabilities);
+                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevelPtr, pPrivs, pCapabilities);
                 }
             }
             return ret;
@@ -1345,7 +1348,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (uint* pCapabilitiesPtr = &pCapabilities)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevelPtr, pPrivs, pCapabilitiesPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevelPtr, pPrivs, pCapabilitiesPtr);
                     }
                 }
             }
@@ -1363,7 +1366,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (void** pPrivsPtr = &pPrivs)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevelPtr, pPrivsPtr, pCapabilities);
+                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevelPtr, pPrivsPtr, pCapabilities);
                     }
                 }
             }
@@ -1383,7 +1386,7 @@ namespace Silk.NET.Core.Win32Extras
                     {
                         fixed (uint* pCapabilitiesPtr = &pCapabilities)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevelPtr, pPrivsPtr, pCapabilitiesPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevelPtr, pPrivsPtr, pCapabilitiesPtr);
                         }
                     }
                 }
@@ -1400,7 +1403,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pAuthnLevelPtr = &pAuthnLevel)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincName, pAuthnLevelPtr, pImpLevel, pPrivs, pCapabilities);
+                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincName, pAuthnLevelPtr, pImpLevel, pPrivs, pCapabilities);
                 }
             }
             return ret;
@@ -1417,7 +1420,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (uint* pCapabilitiesPtr = &pCapabilities)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincName, pAuthnLevelPtr, pImpLevel, pPrivs, pCapabilitiesPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincName, pAuthnLevelPtr, pImpLevel, pPrivs, pCapabilitiesPtr);
                     }
                 }
             }
@@ -1435,7 +1438,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (void** pPrivsPtr = &pPrivs)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincName, pAuthnLevelPtr, pImpLevel, pPrivsPtr, pCapabilities);
+                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincName, pAuthnLevelPtr, pImpLevel, pPrivsPtr, pCapabilities);
                     }
                 }
             }
@@ -1455,7 +1458,7 @@ namespace Silk.NET.Core.Win32Extras
                     {
                         fixed (uint* pCapabilitiesPtr = &pCapabilities)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincName, pAuthnLevelPtr, pImpLevel, pPrivsPtr, pCapabilitiesPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincName, pAuthnLevelPtr, pImpLevel, pPrivsPtr, pCapabilitiesPtr);
                         }
                     }
                 }
@@ -1474,7 +1477,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (uint* pImpLevelPtr = &pImpLevel)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincName, pAuthnLevelPtr, pImpLevelPtr, pPrivs, pCapabilities);
+                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincName, pAuthnLevelPtr, pImpLevelPtr, pPrivs, pCapabilities);
                     }
                 }
             }
@@ -1494,7 +1497,7 @@ namespace Silk.NET.Core.Win32Extras
                     {
                         fixed (uint* pCapabilitiesPtr = &pCapabilities)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincName, pAuthnLevelPtr, pImpLevelPtr, pPrivs, pCapabilitiesPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincName, pAuthnLevelPtr, pImpLevelPtr, pPrivs, pCapabilitiesPtr);
                         }
                     }
                 }
@@ -1515,7 +1518,7 @@ namespace Silk.NET.Core.Win32Extras
                     {
                         fixed (void** pPrivsPtr = &pPrivs)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincName, pAuthnLevelPtr, pImpLevelPtr, pPrivsPtr, pCapabilities);
+                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincName, pAuthnLevelPtr, pImpLevelPtr, pPrivsPtr, pCapabilities);
                         }
                     }
                 }
@@ -1538,7 +1541,7 @@ namespace Silk.NET.Core.Win32Extras
                         {
                             fixed (uint* pCapabilitiesPtr = &pCapabilities)
                             {
-                                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincName, pAuthnLevelPtr, pImpLevelPtr, pPrivsPtr, pCapabilitiesPtr);
+                                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincName, pAuthnLevelPtr, pImpLevelPtr, pPrivsPtr, pCapabilitiesPtr);
                             }
                         }
                     }
@@ -1556,7 +1559,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (char** pServerPrincNamePtr = &pServerPrincName)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincNamePtr, pAuthnLevel, pImpLevel, pPrivs, pCapabilities);
+                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincNamePtr, pAuthnLevel, pImpLevel, pPrivs, pCapabilities);
                 }
             }
             return ret;
@@ -1573,7 +1576,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (uint* pCapabilitiesPtr = &pCapabilities)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincNamePtr, pAuthnLevel, pImpLevel, pPrivs, pCapabilitiesPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincNamePtr, pAuthnLevel, pImpLevel, pPrivs, pCapabilitiesPtr);
                     }
                 }
             }
@@ -1591,7 +1594,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (void** pPrivsPtr = &pPrivs)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincNamePtr, pAuthnLevel, pImpLevel, pPrivsPtr, pCapabilities);
+                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincNamePtr, pAuthnLevel, pImpLevel, pPrivsPtr, pCapabilities);
                     }
                 }
             }
@@ -1611,7 +1614,7 @@ namespace Silk.NET.Core.Win32Extras
                     {
                         fixed (uint* pCapabilitiesPtr = &pCapabilities)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincNamePtr, pAuthnLevel, pImpLevel, pPrivsPtr, pCapabilitiesPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincNamePtr, pAuthnLevel, pImpLevel, pPrivsPtr, pCapabilitiesPtr);
                         }
                     }
                 }
@@ -1630,7 +1633,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (uint* pImpLevelPtr = &pImpLevel)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincNamePtr, pAuthnLevel, pImpLevelPtr, pPrivs, pCapabilities);
+                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincNamePtr, pAuthnLevel, pImpLevelPtr, pPrivs, pCapabilities);
                     }
                 }
             }
@@ -1650,7 +1653,7 @@ namespace Silk.NET.Core.Win32Extras
                     {
                         fixed (uint* pCapabilitiesPtr = &pCapabilities)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincNamePtr, pAuthnLevel, pImpLevelPtr, pPrivs, pCapabilitiesPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincNamePtr, pAuthnLevel, pImpLevelPtr, pPrivs, pCapabilitiesPtr);
                         }
                     }
                 }
@@ -1671,7 +1674,7 @@ namespace Silk.NET.Core.Win32Extras
                     {
                         fixed (void** pPrivsPtr = &pPrivs)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincNamePtr, pAuthnLevel, pImpLevelPtr, pPrivsPtr, pCapabilities);
+                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincNamePtr, pAuthnLevel, pImpLevelPtr, pPrivsPtr, pCapabilities);
                         }
                     }
                 }
@@ -1694,7 +1697,7 @@ namespace Silk.NET.Core.Win32Extras
                         {
                             fixed (uint* pCapabilitiesPtr = &pCapabilities)
                             {
-                                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincNamePtr, pAuthnLevel, pImpLevelPtr, pPrivsPtr, pCapabilitiesPtr);
+                                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincNamePtr, pAuthnLevel, pImpLevelPtr, pPrivsPtr, pCapabilitiesPtr);
                             }
                         }
                     }
@@ -1714,7 +1717,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (uint* pAuthnLevelPtr = &pAuthnLevel)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevel, pPrivs, pCapabilities);
+                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevel, pPrivs, pCapabilities);
                     }
                 }
             }
@@ -1734,7 +1737,7 @@ namespace Silk.NET.Core.Win32Extras
                     {
                         fixed (uint* pCapabilitiesPtr = &pCapabilities)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevel, pPrivs, pCapabilitiesPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevel, pPrivs, pCapabilitiesPtr);
                         }
                     }
                 }
@@ -1755,7 +1758,7 @@ namespace Silk.NET.Core.Win32Extras
                     {
                         fixed (void** pPrivsPtr = &pPrivs)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevel, pPrivsPtr, pCapabilities);
+                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevel, pPrivsPtr, pCapabilities);
                         }
                     }
                 }
@@ -1778,7 +1781,7 @@ namespace Silk.NET.Core.Win32Extras
                         {
                             fixed (uint* pCapabilitiesPtr = &pCapabilities)
                             {
-                                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevel, pPrivsPtr, pCapabilitiesPtr);
+                                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevel, pPrivsPtr, pCapabilitiesPtr);
                             }
                         }
                     }
@@ -1800,7 +1803,7 @@ namespace Silk.NET.Core.Win32Extras
                     {
                         fixed (uint* pImpLevelPtr = &pImpLevel)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevelPtr, pPrivs, pCapabilities);
+                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevelPtr, pPrivs, pCapabilities);
                         }
                     }
                 }
@@ -1823,7 +1826,7 @@ namespace Silk.NET.Core.Win32Extras
                         {
                             fixed (uint* pCapabilitiesPtr = &pCapabilities)
                             {
-                                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevelPtr, pPrivs, pCapabilitiesPtr);
+                                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevelPtr, pPrivs, pCapabilitiesPtr);
                             }
                         }
                     }
@@ -1847,7 +1850,7 @@ namespace Silk.NET.Core.Win32Extras
                         {
                             fixed (void** pPrivsPtr = &pPrivs)
                             {
-                                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevelPtr, pPrivsPtr, pCapabilities);
+                                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevelPtr, pPrivsPtr, pCapabilities);
                             }
                         }
                     }
@@ -1873,7 +1876,7 @@ namespace Silk.NET.Core.Win32Extras
                             {
                                 fixed (uint* pCapabilitiesPtr = &pCapabilities)
                                 {
-                                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevelPtr, pPrivsPtr, pCapabilitiesPtr);
+                                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvc, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevelPtr, pPrivsPtr, pCapabilitiesPtr);
                                 }
                             }
                         }
@@ -1892,7 +1895,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pAuthzSvcPtr = &pAuthzSvc)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincName, pAuthnLevel, pImpLevel, pPrivs, pCapabilities);
+                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincName, pAuthnLevel, pImpLevel, pPrivs, pCapabilities);
                 }
             }
             return ret;
@@ -1909,7 +1912,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (uint* pCapabilitiesPtr = &pCapabilities)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincName, pAuthnLevel, pImpLevel, pPrivs, pCapabilitiesPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincName, pAuthnLevel, pImpLevel, pPrivs, pCapabilitiesPtr);
                     }
                 }
             }
@@ -1927,7 +1930,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (void** pPrivsPtr = &pPrivs)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincName, pAuthnLevel, pImpLevel, pPrivsPtr, pCapabilities);
+                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincName, pAuthnLevel, pImpLevel, pPrivsPtr, pCapabilities);
                     }
                 }
             }
@@ -1947,7 +1950,7 @@ namespace Silk.NET.Core.Win32Extras
                     {
                         fixed (uint* pCapabilitiesPtr = &pCapabilities)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincName, pAuthnLevel, pImpLevel, pPrivsPtr, pCapabilitiesPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincName, pAuthnLevel, pImpLevel, pPrivsPtr, pCapabilitiesPtr);
                         }
                     }
                 }
@@ -1966,7 +1969,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (uint* pImpLevelPtr = &pImpLevel)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincName, pAuthnLevel, pImpLevelPtr, pPrivs, pCapabilities);
+                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincName, pAuthnLevel, pImpLevelPtr, pPrivs, pCapabilities);
                     }
                 }
             }
@@ -1986,7 +1989,7 @@ namespace Silk.NET.Core.Win32Extras
                     {
                         fixed (uint* pCapabilitiesPtr = &pCapabilities)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincName, pAuthnLevel, pImpLevelPtr, pPrivs, pCapabilitiesPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincName, pAuthnLevel, pImpLevelPtr, pPrivs, pCapabilitiesPtr);
                         }
                     }
                 }
@@ -2007,7 +2010,7 @@ namespace Silk.NET.Core.Win32Extras
                     {
                         fixed (void** pPrivsPtr = &pPrivs)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincName, pAuthnLevel, pImpLevelPtr, pPrivsPtr, pCapabilities);
+                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincName, pAuthnLevel, pImpLevelPtr, pPrivsPtr, pCapabilities);
                         }
                     }
                 }
@@ -2030,7 +2033,7 @@ namespace Silk.NET.Core.Win32Extras
                         {
                             fixed (uint* pCapabilitiesPtr = &pCapabilities)
                             {
-                                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincName, pAuthnLevel, pImpLevelPtr, pPrivsPtr, pCapabilitiesPtr);
+                                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincName, pAuthnLevel, pImpLevelPtr, pPrivsPtr, pCapabilitiesPtr);
                             }
                         }
                     }
@@ -2050,7 +2053,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (uint* pAuthnLevelPtr = &pAuthnLevel)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincName, pAuthnLevelPtr, pImpLevel, pPrivs, pCapabilities);
+                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincName, pAuthnLevelPtr, pImpLevel, pPrivs, pCapabilities);
                     }
                 }
             }
@@ -2070,7 +2073,7 @@ namespace Silk.NET.Core.Win32Extras
                     {
                         fixed (uint* pCapabilitiesPtr = &pCapabilities)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincName, pAuthnLevelPtr, pImpLevel, pPrivs, pCapabilitiesPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincName, pAuthnLevelPtr, pImpLevel, pPrivs, pCapabilitiesPtr);
                         }
                     }
                 }
@@ -2091,7 +2094,7 @@ namespace Silk.NET.Core.Win32Extras
                     {
                         fixed (void** pPrivsPtr = &pPrivs)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincName, pAuthnLevelPtr, pImpLevel, pPrivsPtr, pCapabilities);
+                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincName, pAuthnLevelPtr, pImpLevel, pPrivsPtr, pCapabilities);
                         }
                     }
                 }
@@ -2114,7 +2117,7 @@ namespace Silk.NET.Core.Win32Extras
                         {
                             fixed (uint* pCapabilitiesPtr = &pCapabilities)
                             {
-                                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincName, pAuthnLevelPtr, pImpLevel, pPrivsPtr, pCapabilitiesPtr);
+                                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincName, pAuthnLevelPtr, pImpLevel, pPrivsPtr, pCapabilitiesPtr);
                             }
                         }
                     }
@@ -2136,7 +2139,7 @@ namespace Silk.NET.Core.Win32Extras
                     {
                         fixed (uint* pImpLevelPtr = &pImpLevel)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincName, pAuthnLevelPtr, pImpLevelPtr, pPrivs, pCapabilities);
+                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincName, pAuthnLevelPtr, pImpLevelPtr, pPrivs, pCapabilities);
                         }
                     }
                 }
@@ -2159,7 +2162,7 @@ namespace Silk.NET.Core.Win32Extras
                         {
                             fixed (uint* pCapabilitiesPtr = &pCapabilities)
                             {
-                                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincName, pAuthnLevelPtr, pImpLevelPtr, pPrivs, pCapabilitiesPtr);
+                                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincName, pAuthnLevelPtr, pImpLevelPtr, pPrivs, pCapabilitiesPtr);
                             }
                         }
                     }
@@ -2183,7 +2186,7 @@ namespace Silk.NET.Core.Win32Extras
                         {
                             fixed (void** pPrivsPtr = &pPrivs)
                             {
-                                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincName, pAuthnLevelPtr, pImpLevelPtr, pPrivsPtr, pCapabilities);
+                                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincName, pAuthnLevelPtr, pImpLevelPtr, pPrivsPtr, pCapabilities);
                             }
                         }
                     }
@@ -2209,7 +2212,7 @@ namespace Silk.NET.Core.Win32Extras
                             {
                                 fixed (uint* pCapabilitiesPtr = &pCapabilities)
                                 {
-                                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincName, pAuthnLevelPtr, pImpLevelPtr, pPrivsPtr, pCapabilitiesPtr);
+                                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincName, pAuthnLevelPtr, pImpLevelPtr, pPrivsPtr, pCapabilitiesPtr);
                                 }
                             }
                         }
@@ -2230,7 +2233,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (char** pServerPrincNamePtr = &pServerPrincName)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevel, pImpLevel, pPrivs, pCapabilities);
+                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevel, pImpLevel, pPrivs, pCapabilities);
                     }
                 }
             }
@@ -2250,7 +2253,7 @@ namespace Silk.NET.Core.Win32Extras
                     {
                         fixed (uint* pCapabilitiesPtr = &pCapabilities)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevel, pImpLevel, pPrivs, pCapabilitiesPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevel, pImpLevel, pPrivs, pCapabilitiesPtr);
                         }
                     }
                 }
@@ -2271,7 +2274,7 @@ namespace Silk.NET.Core.Win32Extras
                     {
                         fixed (void** pPrivsPtr = &pPrivs)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevel, pImpLevel, pPrivsPtr, pCapabilities);
+                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevel, pImpLevel, pPrivsPtr, pCapabilities);
                         }
                     }
                 }
@@ -2294,7 +2297,7 @@ namespace Silk.NET.Core.Win32Extras
                         {
                             fixed (uint* pCapabilitiesPtr = &pCapabilities)
                             {
-                                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevel, pImpLevel, pPrivsPtr, pCapabilitiesPtr);
+                                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevel, pImpLevel, pPrivsPtr, pCapabilitiesPtr);
                             }
                         }
                     }
@@ -2316,7 +2319,7 @@ namespace Silk.NET.Core.Win32Extras
                     {
                         fixed (uint* pImpLevelPtr = &pImpLevel)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevel, pImpLevelPtr, pPrivs, pCapabilities);
+                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevel, pImpLevelPtr, pPrivs, pCapabilities);
                         }
                     }
                 }
@@ -2339,7 +2342,7 @@ namespace Silk.NET.Core.Win32Extras
                         {
                             fixed (uint* pCapabilitiesPtr = &pCapabilities)
                             {
-                                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevel, pImpLevelPtr, pPrivs, pCapabilitiesPtr);
+                                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevel, pImpLevelPtr, pPrivs, pCapabilitiesPtr);
                             }
                         }
                     }
@@ -2363,7 +2366,7 @@ namespace Silk.NET.Core.Win32Extras
                         {
                             fixed (void** pPrivsPtr = &pPrivs)
                             {
-                                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevel, pImpLevelPtr, pPrivsPtr, pCapabilities);
+                                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevel, pImpLevelPtr, pPrivsPtr, pCapabilities);
                             }
                         }
                     }
@@ -2389,7 +2392,7 @@ namespace Silk.NET.Core.Win32Extras
                             {
                                 fixed (uint* pCapabilitiesPtr = &pCapabilities)
                                 {
-                                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevel, pImpLevelPtr, pPrivsPtr, pCapabilitiesPtr);
+                                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevel, pImpLevelPtr, pPrivsPtr, pCapabilitiesPtr);
                                 }
                             }
                         }
@@ -2412,7 +2415,7 @@ namespace Silk.NET.Core.Win32Extras
                     {
                         fixed (uint* pAuthnLevelPtr = &pAuthnLevel)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevel, pPrivs, pCapabilities);
+                            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevel, pPrivs, pCapabilities);
                         }
                     }
                 }
@@ -2435,7 +2438,7 @@ namespace Silk.NET.Core.Win32Extras
                         {
                             fixed (uint* pCapabilitiesPtr = &pCapabilities)
                             {
-                                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevel, pPrivs, pCapabilitiesPtr);
+                                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevel, pPrivs, pCapabilitiesPtr);
                             }
                         }
                     }
@@ -2459,7 +2462,7 @@ namespace Silk.NET.Core.Win32Extras
                         {
                             fixed (void** pPrivsPtr = &pPrivs)
                             {
-                                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevel, pPrivsPtr, pCapabilities);
+                                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevel, pPrivsPtr, pCapabilities);
                             }
                         }
                     }
@@ -2485,7 +2488,7 @@ namespace Silk.NET.Core.Win32Extras
                             {
                                 fixed (uint* pCapabilitiesPtr = &pCapabilities)
                                 {
-                                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevel, pPrivsPtr, pCapabilitiesPtr);
+                                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevel, pPrivsPtr, pCapabilitiesPtr);
                                 }
                             }
                         }
@@ -2510,7 +2513,7 @@ namespace Silk.NET.Core.Win32Extras
                         {
                             fixed (uint* pImpLevelPtr = &pImpLevel)
                             {
-                                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevelPtr, pPrivs, pCapabilities);
+                                ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevelPtr, pPrivs, pCapabilities);
                             }
                         }
                     }
@@ -2536,7 +2539,7 @@ namespace Silk.NET.Core.Win32Extras
                             {
                                 fixed (uint* pCapabilitiesPtr = &pCapabilities)
                                 {
-                                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevelPtr, pPrivs, pCapabilitiesPtr);
+                                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevelPtr, pPrivs, pCapabilitiesPtr);
                                 }
                             }
                         }
@@ -2563,7 +2566,7 @@ namespace Silk.NET.Core.Win32Extras
                             {
                                 fixed (void** pPrivsPtr = &pPrivs)
                                 {
-                                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevelPtr, pPrivsPtr, pCapabilities);
+                                    ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevelPtr, pPrivsPtr, pCapabilities);
                                 }
                             }
                         }
@@ -2592,7 +2595,7 @@ namespace Silk.NET.Core.Win32Extras
                                 {
                                     fixed (uint* pCapabilitiesPtr = &pCapabilities)
                                     {
-                                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevelPtr, pPrivsPtr, pCapabilitiesPtr);
+                                        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)@this->LpVtbl[3])(@this, pAuthnSvcPtr, pAuthzSvcPtr, pServerPrincNamePtr, pAuthnLevelPtr, pImpLevelPtr, pPrivsPtr, pCapabilitiesPtr);
                                     }
                                 }
                             }
@@ -2608,7 +2611,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, int>)LpVtbl[4])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, int>)@this->LpVtbl[4])(@this);
             return ret;
         }
 
@@ -2617,7 +2620,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, int>)LpVtbl[5])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, int>)@this->LpVtbl[5])(@this);
             return ret;
         }
 
@@ -2626,8 +2629,794 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, int>)LpVtbl[6])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, int>)@this->LpVtbl[6])(@this);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(uint* pAuthnSvc, uint* pAuthzSvc, string[] pServerPrincNameSa, uint* pAuthnLevel, uint* pImpLevel, void** pPrivs, uint* pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevel, pPrivs, pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(uint* pAuthnSvc, uint* pAuthzSvc, string[] pServerPrincNameSa, uint* pAuthnLevel, uint* pImpLevel, void** pPrivs, ref uint pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevel, pPrivs, ref pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(uint* pAuthnSvc, uint* pAuthzSvc, string[] pServerPrincNameSa, uint* pAuthnLevel, uint* pImpLevel, ref void* pPrivs, uint* pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevel, ref pPrivs, pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(uint* pAuthnSvc, uint* pAuthzSvc, string[] pServerPrincNameSa, uint* pAuthnLevel, uint* pImpLevel, ref void* pPrivs, ref uint pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevel, ref pPrivs, ref pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(uint* pAuthnSvc, uint* pAuthzSvc, string[] pServerPrincNameSa, uint* pAuthnLevel, ref uint pImpLevel, void** pPrivs, uint* pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevel, ref pImpLevel, pPrivs, pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(uint* pAuthnSvc, uint* pAuthzSvc, string[] pServerPrincNameSa, uint* pAuthnLevel, ref uint pImpLevel, void** pPrivs, ref uint pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevel, ref pImpLevel, pPrivs, ref pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(uint* pAuthnSvc, uint* pAuthzSvc, string[] pServerPrincNameSa, uint* pAuthnLevel, ref uint pImpLevel, ref void* pPrivs, uint* pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevel, ref pImpLevel, ref pPrivs, pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(uint* pAuthnSvc, uint* pAuthzSvc, string[] pServerPrincNameSa, uint* pAuthnLevel, ref uint pImpLevel, ref void* pPrivs, ref uint pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevel, ref pImpLevel, ref pPrivs, ref pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(uint* pAuthnSvc, uint* pAuthzSvc, string[] pServerPrincNameSa, ref uint pAuthnLevel, uint* pImpLevel, void** pPrivs, uint* pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(pAuthnSvc, pAuthzSvc, pServerPrincName, ref pAuthnLevel, pImpLevel, pPrivs, pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(uint* pAuthnSvc, uint* pAuthzSvc, string[] pServerPrincNameSa, ref uint pAuthnLevel, uint* pImpLevel, void** pPrivs, ref uint pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(pAuthnSvc, pAuthzSvc, pServerPrincName, ref pAuthnLevel, pImpLevel, pPrivs, ref pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(uint* pAuthnSvc, uint* pAuthzSvc, string[] pServerPrincNameSa, ref uint pAuthnLevel, uint* pImpLevel, ref void* pPrivs, uint* pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(pAuthnSvc, pAuthzSvc, pServerPrincName, ref pAuthnLevel, pImpLevel, ref pPrivs, pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(uint* pAuthnSvc, uint* pAuthzSvc, string[] pServerPrincNameSa, ref uint pAuthnLevel, uint* pImpLevel, ref void* pPrivs, ref uint pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(pAuthnSvc, pAuthzSvc, pServerPrincName, ref pAuthnLevel, pImpLevel, ref pPrivs, ref pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(uint* pAuthnSvc, uint* pAuthzSvc, string[] pServerPrincNameSa, ref uint pAuthnLevel, ref uint pImpLevel, void** pPrivs, uint* pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(pAuthnSvc, pAuthzSvc, pServerPrincName, ref pAuthnLevel, ref pImpLevel, pPrivs, pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(uint* pAuthnSvc, uint* pAuthzSvc, string[] pServerPrincNameSa, ref uint pAuthnLevel, ref uint pImpLevel, void** pPrivs, ref uint pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(pAuthnSvc, pAuthzSvc, pServerPrincName, ref pAuthnLevel, ref pImpLevel, pPrivs, ref pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(uint* pAuthnSvc, uint* pAuthzSvc, string[] pServerPrincNameSa, ref uint pAuthnLevel, ref uint pImpLevel, ref void* pPrivs, uint* pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(pAuthnSvc, pAuthzSvc, pServerPrincName, ref pAuthnLevel, ref pImpLevel, ref pPrivs, pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(uint* pAuthnSvc, uint* pAuthzSvc, string[] pServerPrincNameSa, ref uint pAuthnLevel, ref uint pImpLevel, ref void* pPrivs, ref uint pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(pAuthnSvc, pAuthzSvc, pServerPrincName, ref pAuthnLevel, ref pImpLevel, ref pPrivs, ref pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(uint* pAuthnSvc, ref uint pAuthzSvc, string[] pServerPrincNameSa, uint* pAuthnLevel, uint* pImpLevel, void** pPrivs, uint* pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(pAuthnSvc, ref pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevel, pPrivs, pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(uint* pAuthnSvc, ref uint pAuthzSvc, string[] pServerPrincNameSa, uint* pAuthnLevel, uint* pImpLevel, void** pPrivs, ref uint pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(pAuthnSvc, ref pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevel, pPrivs, ref pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(uint* pAuthnSvc, ref uint pAuthzSvc, string[] pServerPrincNameSa, uint* pAuthnLevel, uint* pImpLevel, ref void* pPrivs, uint* pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(pAuthnSvc, ref pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevel, ref pPrivs, pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(uint* pAuthnSvc, ref uint pAuthzSvc, string[] pServerPrincNameSa, uint* pAuthnLevel, uint* pImpLevel, ref void* pPrivs, ref uint pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(pAuthnSvc, ref pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevel, ref pPrivs, ref pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(uint* pAuthnSvc, ref uint pAuthzSvc, string[] pServerPrincNameSa, uint* pAuthnLevel, ref uint pImpLevel, void** pPrivs, uint* pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(pAuthnSvc, ref pAuthzSvc, pServerPrincName, pAuthnLevel, ref pImpLevel, pPrivs, pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(uint* pAuthnSvc, ref uint pAuthzSvc, string[] pServerPrincNameSa, uint* pAuthnLevel, ref uint pImpLevel, void** pPrivs, ref uint pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(pAuthnSvc, ref pAuthzSvc, pServerPrincName, pAuthnLevel, ref pImpLevel, pPrivs, ref pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(uint* pAuthnSvc, ref uint pAuthzSvc, string[] pServerPrincNameSa, uint* pAuthnLevel, ref uint pImpLevel, ref void* pPrivs, uint* pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(pAuthnSvc, ref pAuthzSvc, pServerPrincName, pAuthnLevel, ref pImpLevel, ref pPrivs, pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(uint* pAuthnSvc, ref uint pAuthzSvc, string[] pServerPrincNameSa, uint* pAuthnLevel, ref uint pImpLevel, ref void* pPrivs, ref uint pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(pAuthnSvc, ref pAuthzSvc, pServerPrincName, pAuthnLevel, ref pImpLevel, ref pPrivs, ref pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(uint* pAuthnSvc, ref uint pAuthzSvc, string[] pServerPrincNameSa, ref uint pAuthnLevel, uint* pImpLevel, void** pPrivs, uint* pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(pAuthnSvc, ref pAuthzSvc, pServerPrincName, ref pAuthnLevel, pImpLevel, pPrivs, pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(uint* pAuthnSvc, ref uint pAuthzSvc, string[] pServerPrincNameSa, ref uint pAuthnLevel, uint* pImpLevel, void** pPrivs, ref uint pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(pAuthnSvc, ref pAuthzSvc, pServerPrincName, ref pAuthnLevel, pImpLevel, pPrivs, ref pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(uint* pAuthnSvc, ref uint pAuthzSvc, string[] pServerPrincNameSa, ref uint pAuthnLevel, uint* pImpLevel, ref void* pPrivs, uint* pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(pAuthnSvc, ref pAuthzSvc, pServerPrincName, ref pAuthnLevel, pImpLevel, ref pPrivs, pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(uint* pAuthnSvc, ref uint pAuthzSvc, string[] pServerPrincNameSa, ref uint pAuthnLevel, uint* pImpLevel, ref void* pPrivs, ref uint pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(pAuthnSvc, ref pAuthzSvc, pServerPrincName, ref pAuthnLevel, pImpLevel, ref pPrivs, ref pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(uint* pAuthnSvc, ref uint pAuthzSvc, string[] pServerPrincNameSa, ref uint pAuthnLevel, ref uint pImpLevel, void** pPrivs, uint* pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(pAuthnSvc, ref pAuthzSvc, pServerPrincName, ref pAuthnLevel, ref pImpLevel, pPrivs, pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(uint* pAuthnSvc, ref uint pAuthzSvc, string[] pServerPrincNameSa, ref uint pAuthnLevel, ref uint pImpLevel, void** pPrivs, ref uint pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(pAuthnSvc, ref pAuthzSvc, pServerPrincName, ref pAuthnLevel, ref pImpLevel, pPrivs, ref pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(uint* pAuthnSvc, ref uint pAuthzSvc, string[] pServerPrincNameSa, ref uint pAuthnLevel, ref uint pImpLevel, ref void* pPrivs, uint* pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(pAuthnSvc, ref pAuthzSvc, pServerPrincName, ref pAuthnLevel, ref pImpLevel, ref pPrivs, pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(uint* pAuthnSvc, ref uint pAuthzSvc, string[] pServerPrincNameSa, ref uint pAuthnLevel, ref uint pImpLevel, ref void* pPrivs, ref uint pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(pAuthnSvc, ref pAuthzSvc, pServerPrincName, ref pAuthnLevel, ref pImpLevel, ref pPrivs, ref pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(ref uint pAuthnSvc, uint* pAuthzSvc, string[] pServerPrincNameSa, uint* pAuthnLevel, uint* pImpLevel, void** pPrivs, uint* pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(ref pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevel, pPrivs, pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(ref uint pAuthnSvc, uint* pAuthzSvc, string[] pServerPrincNameSa, uint* pAuthnLevel, uint* pImpLevel, void** pPrivs, ref uint pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(ref pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevel, pPrivs, ref pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(ref uint pAuthnSvc, uint* pAuthzSvc, string[] pServerPrincNameSa, uint* pAuthnLevel, uint* pImpLevel, ref void* pPrivs, uint* pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(ref pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevel, ref pPrivs, pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(ref uint pAuthnSvc, uint* pAuthzSvc, string[] pServerPrincNameSa, uint* pAuthnLevel, uint* pImpLevel, ref void* pPrivs, ref uint pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(ref pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevel, ref pPrivs, ref pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(ref uint pAuthnSvc, uint* pAuthzSvc, string[] pServerPrincNameSa, uint* pAuthnLevel, ref uint pImpLevel, void** pPrivs, uint* pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(ref pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevel, ref pImpLevel, pPrivs, pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(ref uint pAuthnSvc, uint* pAuthzSvc, string[] pServerPrincNameSa, uint* pAuthnLevel, ref uint pImpLevel, void** pPrivs, ref uint pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(ref pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevel, ref pImpLevel, pPrivs, ref pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(ref uint pAuthnSvc, uint* pAuthzSvc, string[] pServerPrincNameSa, uint* pAuthnLevel, ref uint pImpLevel, ref void* pPrivs, uint* pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(ref pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevel, ref pImpLevel, ref pPrivs, pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(ref uint pAuthnSvc, uint* pAuthzSvc, string[] pServerPrincNameSa, uint* pAuthnLevel, ref uint pImpLevel, ref void* pPrivs, ref uint pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(ref pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevel, ref pImpLevel, ref pPrivs, ref pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(ref uint pAuthnSvc, uint* pAuthzSvc, string[] pServerPrincNameSa, ref uint pAuthnLevel, uint* pImpLevel, void** pPrivs, uint* pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(ref pAuthnSvc, pAuthzSvc, pServerPrincName, ref pAuthnLevel, pImpLevel, pPrivs, pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(ref uint pAuthnSvc, uint* pAuthzSvc, string[] pServerPrincNameSa, ref uint pAuthnLevel, uint* pImpLevel, void** pPrivs, ref uint pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(ref pAuthnSvc, pAuthzSvc, pServerPrincName, ref pAuthnLevel, pImpLevel, pPrivs, ref pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(ref uint pAuthnSvc, uint* pAuthzSvc, string[] pServerPrincNameSa, ref uint pAuthnLevel, uint* pImpLevel, ref void* pPrivs, uint* pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(ref pAuthnSvc, pAuthzSvc, pServerPrincName, ref pAuthnLevel, pImpLevel, ref pPrivs, pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(ref uint pAuthnSvc, uint* pAuthzSvc, string[] pServerPrincNameSa, ref uint pAuthnLevel, uint* pImpLevel, ref void* pPrivs, ref uint pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(ref pAuthnSvc, pAuthzSvc, pServerPrincName, ref pAuthnLevel, pImpLevel, ref pPrivs, ref pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(ref uint pAuthnSvc, uint* pAuthzSvc, string[] pServerPrincNameSa, ref uint pAuthnLevel, ref uint pImpLevel, void** pPrivs, uint* pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(ref pAuthnSvc, pAuthzSvc, pServerPrincName, ref pAuthnLevel, ref pImpLevel, pPrivs, pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(ref uint pAuthnSvc, uint* pAuthzSvc, string[] pServerPrincNameSa, ref uint pAuthnLevel, ref uint pImpLevel, void** pPrivs, ref uint pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(ref pAuthnSvc, pAuthzSvc, pServerPrincName, ref pAuthnLevel, ref pImpLevel, pPrivs, ref pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(ref uint pAuthnSvc, uint* pAuthzSvc, string[] pServerPrincNameSa, ref uint pAuthnLevel, ref uint pImpLevel, ref void* pPrivs, uint* pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(ref pAuthnSvc, pAuthzSvc, pServerPrincName, ref pAuthnLevel, ref pImpLevel, ref pPrivs, pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(ref uint pAuthnSvc, uint* pAuthzSvc, string[] pServerPrincNameSa, ref uint pAuthnLevel, ref uint pImpLevel, ref void* pPrivs, ref uint pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(ref pAuthnSvc, pAuthzSvc, pServerPrincName, ref pAuthnLevel, ref pImpLevel, ref pPrivs, ref pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(ref uint pAuthnSvc, ref uint pAuthzSvc, string[] pServerPrincNameSa, uint* pAuthnLevel, uint* pImpLevel, void** pPrivs, uint* pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(ref pAuthnSvc, ref pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevel, pPrivs, pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(ref uint pAuthnSvc, ref uint pAuthzSvc, string[] pServerPrincNameSa, uint* pAuthnLevel, uint* pImpLevel, void** pPrivs, ref uint pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(ref pAuthnSvc, ref pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevel, pPrivs, ref pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(ref uint pAuthnSvc, ref uint pAuthzSvc, string[] pServerPrincNameSa, uint* pAuthnLevel, uint* pImpLevel, ref void* pPrivs, uint* pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(ref pAuthnSvc, ref pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevel, ref pPrivs, pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(ref uint pAuthnSvc, ref uint pAuthzSvc, string[] pServerPrincNameSa, uint* pAuthnLevel, uint* pImpLevel, ref void* pPrivs, ref uint pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(ref pAuthnSvc, ref pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevel, ref pPrivs, ref pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(ref uint pAuthnSvc, ref uint pAuthzSvc, string[] pServerPrincNameSa, uint* pAuthnLevel, ref uint pImpLevel, void** pPrivs, uint* pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(ref pAuthnSvc, ref pAuthzSvc, pServerPrincName, pAuthnLevel, ref pImpLevel, pPrivs, pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(ref uint pAuthnSvc, ref uint pAuthzSvc, string[] pServerPrincNameSa, uint* pAuthnLevel, ref uint pImpLevel, void** pPrivs, ref uint pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(ref pAuthnSvc, ref pAuthzSvc, pServerPrincName, pAuthnLevel, ref pImpLevel, pPrivs, ref pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(ref uint pAuthnSvc, ref uint pAuthzSvc, string[] pServerPrincNameSa, uint* pAuthnLevel, ref uint pImpLevel, ref void* pPrivs, uint* pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(ref pAuthnSvc, ref pAuthzSvc, pServerPrincName, pAuthnLevel, ref pImpLevel, ref pPrivs, pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(ref uint pAuthnSvc, ref uint pAuthzSvc, string[] pServerPrincNameSa, uint* pAuthnLevel, ref uint pImpLevel, ref void* pPrivs, ref uint pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(ref pAuthnSvc, ref pAuthzSvc, pServerPrincName, pAuthnLevel, ref pImpLevel, ref pPrivs, ref pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(ref uint pAuthnSvc, ref uint pAuthzSvc, string[] pServerPrincNameSa, ref uint pAuthnLevel, uint* pImpLevel, void** pPrivs, uint* pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(ref pAuthnSvc, ref pAuthzSvc, pServerPrincName, ref pAuthnLevel, pImpLevel, pPrivs, pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(ref uint pAuthnSvc, ref uint pAuthzSvc, string[] pServerPrincNameSa, ref uint pAuthnLevel, uint* pImpLevel, void** pPrivs, ref uint pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(ref pAuthnSvc, ref pAuthzSvc, pServerPrincName, ref pAuthnLevel, pImpLevel, pPrivs, ref pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(ref uint pAuthnSvc, ref uint pAuthzSvc, string[] pServerPrincNameSa, ref uint pAuthnLevel, uint* pImpLevel, ref void* pPrivs, uint* pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(ref pAuthnSvc, ref pAuthzSvc, pServerPrincName, ref pAuthnLevel, pImpLevel, ref pPrivs, pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(ref uint pAuthnSvc, ref uint pAuthzSvc, string[] pServerPrincNameSa, ref uint pAuthnLevel, uint* pImpLevel, ref void* pPrivs, ref uint pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(ref pAuthnSvc, ref pAuthzSvc, pServerPrincName, ref pAuthnLevel, pImpLevel, ref pPrivs, ref pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(ref uint pAuthnSvc, ref uint pAuthzSvc, string[] pServerPrincNameSa, ref uint pAuthnLevel, ref uint pImpLevel, void** pPrivs, uint* pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(ref pAuthnSvc, ref pAuthzSvc, pServerPrincName, ref pAuthnLevel, ref pImpLevel, pPrivs, pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(ref uint pAuthnSvc, ref uint pAuthzSvc, string[] pServerPrincNameSa, ref uint pAuthnLevel, ref uint pImpLevel, void** pPrivs, ref uint pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(ref pAuthnSvc, ref pAuthzSvc, pServerPrincName, ref pAuthnLevel, ref pImpLevel, pPrivs, ref pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(ref uint pAuthnSvc, ref uint pAuthzSvc, string[] pServerPrincNameSa, ref uint pAuthnLevel, ref uint pImpLevel, ref void* pPrivs, uint* pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(ref pAuthnSvc, ref pAuthzSvc, pServerPrincName, ref pAuthnLevel, ref pImpLevel, ref pPrivs, pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryBlanket(ref uint pAuthnSvc, ref uint pAuthzSvc, string[] pServerPrincNameSa, ref uint pAuthnLevel, ref uint pImpLevel, ref void* pPrivs, ref uint pCapabilities)
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pServerPrincName = (char**) SilkMarshal.StringArrayToPtr(pServerPrincNameSa);
+            var ret = @this->QueryBlanket(ref pAuthnSvc, ref pAuthzSvc, pServerPrincName, ref pAuthnLevel, ref pImpLevel, ref pPrivs, ref pCapabilities);
+            SilkMarshal.CopyPtrToStringArray((nint) pServerPrincName, pServerPrincNameSa);
+            SilkMarshal.Free((nint) pServerPrincName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

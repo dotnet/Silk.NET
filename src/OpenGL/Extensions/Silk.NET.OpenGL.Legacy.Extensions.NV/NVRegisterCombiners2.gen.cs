@@ -68,6 +68,34 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         [NativeApi(EntryPoint = "glGetCombinerStageParameterfvNV", Convention = CallingConvention.Winapi)]
         public partial void GetCombinerStageParameter([Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
+        public unsafe float GetCombinerStageParameter([Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] NV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetCombinerStageParameter(stage, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetCombinerStageParameter([Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] CombinerParameterNV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetCombinerStageParameter(stage, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetCombinerStageParameter([Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] NV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetCombinerStageParameter(stage, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetCombinerStageParameter([Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] CombinerParameterNV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetCombinerStageParameter(stage, pname, out float silkRet);
+            return silkRet;
+        }
+
         public NVRegisterCombiners2(INativeContext ctx)
             : base(ctx)
         {

@@ -18,9 +18,12 @@ namespace Silk.NET.DXGI
 {
     [Guid("54ec77fa-1377-44e6-8c32-88fd5f44c84c")]
     [NativeName("Name", "IDXGIDevice")]
-    public unsafe partial struct IDXGIDevice
+    public unsafe partial struct IDXGIDevice : IComVtbl<IDXGIDevice>, IComVtbl<Silk.NET.DXGI.IDXGIObject>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("54ec77fa-1377-44e6-8c32-88fd5f44c84c");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator Silk.NET.DXGI.IDXGIObject(IDXGIDevice val)
             => Unsafe.As<IDXGIDevice, Silk.NET.DXGI.IDXGIObject>(ref val);
@@ -49,7 +52,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -60,7 +63,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -72,7 +75,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -86,7 +89,7 @@ namespace Silk.NET.DXGI
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -97,7 +100,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -106,7 +109,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -115,7 +118,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, uint, void*, int>)LpVtbl[3])(@this, Name, DataSize, pData);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, uint, void*, int>)@this->LpVtbl[3])(@this, Name, DataSize, pData);
             return ret;
         }
 
@@ -126,7 +129,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, uint, void*, int>)LpVtbl[3])(@this, Name, DataSize, pDataPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, uint, void*, int>)@this->LpVtbl[3])(@this, Name, DataSize, pDataPtr);
             }
             return ret;
         }
@@ -138,7 +141,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Guid* NamePtr = &Name)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, uint, void*, int>)LpVtbl[3])(@this, NamePtr, DataSize, pData);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, uint, void*, int>)@this->LpVtbl[3])(@this, NamePtr, DataSize, pData);
             }
             return ret;
         }
@@ -152,7 +155,7 @@ namespace Silk.NET.DXGI
             {
                 fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, uint, void*, int>)LpVtbl[3])(@this, NamePtr, DataSize, pDataPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, uint, void*, int>)@this->LpVtbl[3])(@this, NamePtr, DataSize, pDataPtr);
                 }
             }
             return ret;
@@ -163,7 +166,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknown);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[4])(@this, Name, pUnknown);
             return ret;
         }
 
@@ -174,7 +177,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pUnknownPtr = &pUnknown)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknownPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[4])(@this, Name, pUnknownPtr);
             }
             return ret;
         }
@@ -186,7 +189,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Guid* NamePtr = &Name)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknown);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[4])(@this, NamePtr, pUnknown);
             }
             return ret;
         }
@@ -200,7 +203,7 @@ namespace Silk.NET.DXGI
             {
                 fixed (Silk.NET.Core.Native.IUnknown* pUnknownPtr = &pUnknown)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknownPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[4])(@this, NamePtr, pUnknownPtr);
                 }
             }
             return ret;
@@ -211,7 +214,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSize, pData);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, Name, pDataSize, pData);
             return ret;
         }
 
@@ -222,7 +225,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSize, pDataPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, Name, pDataSize, pDataPtr);
             }
             return ret;
         }
@@ -234,7 +237,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (uint* pDataSizePtr = &pDataSize)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSizePtr, pData);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, Name, pDataSizePtr, pData);
             }
             return ret;
         }
@@ -248,7 +251,7 @@ namespace Silk.NET.DXGI
             {
                 fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSizePtr, pDataPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, Name, pDataSizePtr, pDataPtr);
                 }
             }
             return ret;
@@ -261,7 +264,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Guid* NamePtr = &Name)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSize, pData);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, NamePtr, pDataSize, pData);
             }
             return ret;
         }
@@ -275,7 +278,7 @@ namespace Silk.NET.DXGI
             {
                 fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSize, pDataPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, NamePtr, pDataSize, pDataPtr);
                 }
             }
             return ret;
@@ -290,7 +293,7 @@ namespace Silk.NET.DXGI
             {
                 fixed (uint* pDataSizePtr = &pDataSize)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSizePtr, pData);
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, NamePtr, pDataSizePtr, pData);
                 }
             }
             return ret;
@@ -307,7 +310,7 @@ namespace Silk.NET.DXGI
                 {
                     fixed (void* pDataPtr = &pData)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSizePtr, pDataPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, NamePtr, pDataSizePtr, pDataPtr);
                     }
                 }
             }
@@ -319,7 +322,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, void**, int>)LpVtbl[6])(@this, riid, ppParent);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, void**, int>)@this->LpVtbl[6])(@this, riid, ppParent);
             return ret;
         }
 
@@ -330,7 +333,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (void** ppParentPtr = &ppParent)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, void**, int>)LpVtbl[6])(@this, riid, ppParentPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, void**, int>)@this->LpVtbl[6])(@this, riid, ppParentPtr);
             }
             return ret;
         }
@@ -342,7 +345,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, void**, int>)LpVtbl[6])(@this, riidPtr, ppParent);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, void**, int>)@this->LpVtbl[6])(@this, riidPtr, ppParent);
             }
             return ret;
         }
@@ -356,7 +359,7 @@ namespace Silk.NET.DXGI
             {
                 fixed (void** ppParentPtr = &ppParent)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, void**, int>)LpVtbl[6])(@this, riidPtr, ppParentPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Guid*, void**, int>)@this->LpVtbl[6])(@this, riidPtr, ppParentPtr);
                 }
             }
             return ret;
@@ -367,7 +370,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Silk.NET.DXGI.IDXGIAdapter**, int>)LpVtbl[7])(@this, pAdapter);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Silk.NET.DXGI.IDXGIAdapter**, int>)@this->LpVtbl[7])(@this, pAdapter);
             return ret;
         }
 
@@ -378,7 +381,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Silk.NET.DXGI.IDXGIAdapter** pAdapterPtr = &pAdapter)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Silk.NET.DXGI.IDXGIAdapter**, int>)LpVtbl[7])(@this, pAdapterPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Silk.NET.DXGI.IDXGIAdapter**, int>)@this->LpVtbl[7])(@this, pAdapterPtr);
             }
             return ret;
         }
@@ -388,7 +391,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, Silk.NET.DXGI.IDXGISurface**, int>)LpVtbl[8])(@this, pDesc, NumSurfaces, Usage, pSharedResource, ppSurface);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, Silk.NET.DXGI.IDXGISurface**, int>)@this->LpVtbl[8])(@this, pDesc, NumSurfaces, Usage, pSharedResource, ppSurface);
             return ret;
         }
 
@@ -399,7 +402,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Silk.NET.DXGI.IDXGISurface** ppSurfacePtr = &ppSurface)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, Silk.NET.DXGI.IDXGISurface**, int>)LpVtbl[8])(@this, pDesc, NumSurfaces, Usage, pSharedResource, ppSurfacePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, Silk.NET.DXGI.IDXGISurface**, int>)@this->LpVtbl[8])(@this, pDesc, NumSurfaces, Usage, pSharedResource, ppSurfacePtr);
             }
             return ret;
         }
@@ -411,7 +414,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (SharedResource* pSharedResourcePtr = &pSharedResource)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, Silk.NET.DXGI.IDXGISurface**, int>)LpVtbl[8])(@this, pDesc, NumSurfaces, Usage, pSharedResourcePtr, ppSurface);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, Silk.NET.DXGI.IDXGISurface**, int>)@this->LpVtbl[8])(@this, pDesc, NumSurfaces, Usage, pSharedResourcePtr, ppSurface);
             }
             return ret;
         }
@@ -425,7 +428,7 @@ namespace Silk.NET.DXGI
             {
                 fixed (Silk.NET.DXGI.IDXGISurface** ppSurfacePtr = &ppSurface)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, Silk.NET.DXGI.IDXGISurface**, int>)LpVtbl[8])(@this, pDesc, NumSurfaces, Usage, pSharedResourcePtr, ppSurfacePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, Silk.NET.DXGI.IDXGISurface**, int>)@this->LpVtbl[8])(@this, pDesc, NumSurfaces, Usage, pSharedResourcePtr, ppSurfacePtr);
                 }
             }
             return ret;
@@ -438,7 +441,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (SurfaceDesc* pDescPtr = &pDesc)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, Silk.NET.DXGI.IDXGISurface**, int>)LpVtbl[8])(@this, pDescPtr, NumSurfaces, Usage, pSharedResource, ppSurface);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, Silk.NET.DXGI.IDXGISurface**, int>)@this->LpVtbl[8])(@this, pDescPtr, NumSurfaces, Usage, pSharedResource, ppSurface);
             }
             return ret;
         }
@@ -452,7 +455,7 @@ namespace Silk.NET.DXGI
             {
                 fixed (Silk.NET.DXGI.IDXGISurface** ppSurfacePtr = &ppSurface)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, Silk.NET.DXGI.IDXGISurface**, int>)LpVtbl[8])(@this, pDescPtr, NumSurfaces, Usage, pSharedResource, ppSurfacePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, Silk.NET.DXGI.IDXGISurface**, int>)@this->LpVtbl[8])(@this, pDescPtr, NumSurfaces, Usage, pSharedResource, ppSurfacePtr);
                 }
             }
             return ret;
@@ -467,7 +470,7 @@ namespace Silk.NET.DXGI
             {
                 fixed (SharedResource* pSharedResourcePtr = &pSharedResource)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, Silk.NET.DXGI.IDXGISurface**, int>)LpVtbl[8])(@this, pDescPtr, NumSurfaces, Usage, pSharedResourcePtr, ppSurface);
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, Silk.NET.DXGI.IDXGISurface**, int>)@this->LpVtbl[8])(@this, pDescPtr, NumSurfaces, Usage, pSharedResourcePtr, ppSurface);
                 }
             }
             return ret;
@@ -484,7 +487,7 @@ namespace Silk.NET.DXGI
                 {
                     fixed (Silk.NET.DXGI.IDXGISurface** ppSurfacePtr = &ppSurface)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, Silk.NET.DXGI.IDXGISurface**, int>)LpVtbl[8])(@this, pDescPtr, NumSurfaces, Usage, pSharedResourcePtr, ppSurfacePtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, Silk.NET.DXGI.IDXGISurface**, int>)@this->LpVtbl[8])(@this, pDescPtr, NumSurfaces, Usage, pSharedResourcePtr, ppSurfacePtr);
                     }
                 }
             }
@@ -496,7 +499,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Silk.NET.Core.Native.IUnknown**, Residency*, uint, int>)LpVtbl[9])(@this, ppResources, pResidencyStatus, NumResources);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Silk.NET.Core.Native.IUnknown**, Residency*, uint, int>)@this->LpVtbl[9])(@this, ppResources, pResidencyStatus, NumResources);
             return ret;
         }
 
@@ -507,7 +510,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Residency* pResidencyStatusPtr = &pResidencyStatus)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Silk.NET.Core.Native.IUnknown**, Residency*, uint, int>)LpVtbl[9])(@this, ppResources, pResidencyStatusPtr, NumResources);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Silk.NET.Core.Native.IUnknown**, Residency*, uint, int>)@this->LpVtbl[9])(@this, ppResources, pResidencyStatusPtr, NumResources);
             }
             return ret;
         }
@@ -519,7 +522,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown** ppResourcesPtr = &ppResources)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Silk.NET.Core.Native.IUnknown**, Residency*, uint, int>)LpVtbl[9])(@this, ppResourcesPtr, pResidencyStatus, NumResources);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Silk.NET.Core.Native.IUnknown**, Residency*, uint, int>)@this->LpVtbl[9])(@this, ppResourcesPtr, pResidencyStatus, NumResources);
             }
             return ret;
         }
@@ -533,7 +536,7 @@ namespace Silk.NET.DXGI
             {
                 fixed (Residency* pResidencyStatusPtr = &pResidencyStatus)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Silk.NET.Core.Native.IUnknown**, Residency*, uint, int>)LpVtbl[9])(@this, ppResourcesPtr, pResidencyStatusPtr, NumResources);
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, Silk.NET.Core.Native.IUnknown**, Residency*, uint, int>)@this->LpVtbl[9])(@this, ppResourcesPtr, pResidencyStatusPtr, NumResources);
                 }
             }
             return ret;
@@ -544,7 +547,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, int, int>)LpVtbl[10])(@this, Priority);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, int, int>)@this->LpVtbl[10])(@this, Priority);
             return ret;
         }
 
@@ -553,7 +556,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, int*, int>)LpVtbl[11])(@this, pPriority);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, int*, int>)@this->LpVtbl[11])(@this, pPriority);
             return ret;
         }
 
@@ -564,9 +567,117 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (int* pPriorityPtr = &pPriority)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, int*, int>)LpVtbl[11])(@this, pPriorityPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, int*, int>)@this->LpVtbl[11])(@this, pPriorityPtr);
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDXGIDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SetPrivateDataInterface<TI0>(Guid* Name, [Flow(FlowDirection.In)] ComPtr<TI0> pUnknown) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        {
+            var @this = (IDXGIDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetPrivateDataInterface(Name, (Silk.NET.Core.Native.IUnknown*) pUnknown.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetPrivateDataInterface<TI0>(ref Guid Name, [Flow(FlowDirection.In)] ComPtr<TI0> pUnknown) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        {
+            var @this = (IDXGIDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetPrivateDataInterface(ref Name, (Silk.NET.Core.Native.IUnknown*) pUnknown.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetParent<TI0>(out ComPtr<TI0> ppParent) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDXGIDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppParent = default;
+            return @this->GetParent(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppParent.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetAdapter<TI0>(ref ComPtr<TI0> pAdapter) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<TI0>
+        {
+            var @this = (IDXGIDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetAdapter((Silk.NET.DXGI.IDXGIAdapter**) pAdapter.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateSurface<TI0>(SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, SharedResource* pSharedResource, ref ComPtr<TI0> ppSurface) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISurface>, IComVtbl<TI0>
+        {
+            var @this = (IDXGIDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateSurface(pDesc, NumSurfaces, Usage, pSharedResource, (Silk.NET.DXGI.IDXGISurface**) ppSurface.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateSurface<TI0>(SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, ref SharedResource pSharedResource, ref ComPtr<TI0> ppSurface) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISurface>, IComVtbl<TI0>
+        {
+            var @this = (IDXGIDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateSurface(pDesc, NumSurfaces, Usage, ref pSharedResource, (Silk.NET.DXGI.IDXGISurface**) ppSurface.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateSurface<TI0>(ref SurfaceDesc pDesc, uint NumSurfaces, uint Usage, SharedResource* pSharedResource, ref ComPtr<TI0> ppSurface) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISurface>, IComVtbl<TI0>
+        {
+            var @this = (IDXGIDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateSurface(ref pDesc, NumSurfaces, Usage, pSharedResource, (Silk.NET.DXGI.IDXGISurface**) ppSurface.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateSurface<TI0>(ref SurfaceDesc pDesc, uint NumSurfaces, uint Usage, ref SharedResource pSharedResource, ref ComPtr<TI0> ppSurface) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISurface>, IComVtbl<TI0>
+        {
+            var @this = (IDXGIDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateSurface(ref pDesc, NumSurfaces, Usage, ref pSharedResource, (Silk.NET.DXGI.IDXGISurface**) ppSurface.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryResourceResidency<TI0>(ref ComPtr<TI0> ppResources, Residency* pResidencyStatus, uint NumResources) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        {
+            var @this = (IDXGIDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->QueryResourceResidency((Silk.NET.Core.Native.IUnknown**) ppResources.GetAddressOf(), pResidencyStatus, NumResources);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryResourceResidency<TI0>(ref ComPtr<TI0> ppResources, ref Residency pResidencyStatus, uint NumResources) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        {
+            var @this = (IDXGIDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->QueryResourceResidency((Silk.NET.Core.Native.IUnknown**) ppResources.GetAddressOf(), ref pResidencyStatus, NumResources);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDXGIDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> GetParent<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDXGIDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->GetParent(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

@@ -50,6 +50,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
             InstrumentsBuffer((uint) buffer.Length, out buffer.GetPinnableReference());
         }
 
+        public unsafe int InstrumentsBuffer([Flow(FlowDirection.In)] uint size)
+        {
+            // NonKhrReturnTypeOverloader
+            InstrumentsBuffer(size, out int silkRet);
+            return silkRet;
+        }
+
         public SgixInstruments(INativeContext ctx)
             : base(ctx)
         {

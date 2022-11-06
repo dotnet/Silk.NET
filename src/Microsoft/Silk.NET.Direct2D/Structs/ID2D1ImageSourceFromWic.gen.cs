@@ -18,9 +18,12 @@ namespace Silk.NET.Direct2D
 {
     [Guid("77395441-1c8f-4555-8683-f50dab0fe792")]
     [NativeName("Name", "ID2D1ImageSourceFromWic")]
-    public unsafe partial struct ID2D1ImageSourceFromWic
+    public unsafe partial struct ID2D1ImageSourceFromWic : IComVtbl<ID2D1ImageSourceFromWic>, IComVtbl<ID2D1ImageSource>, IComVtbl<ID2D1Image>, IComVtbl<ID2D1Resource>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("77395441-1c8f-4555-8683-f50dab0fe792");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator ID2D1ImageSource(ID2D1ImageSourceFromWic val)
             => Unsafe.As<ID2D1ImageSourceFromWic, ID2D1ImageSource>(ref val);
@@ -55,7 +58,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1ImageSourceFromWic*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1ImageSourceFromWic*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1ImageSourceFromWic*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -66,7 +69,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1ImageSourceFromWic*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1ImageSourceFromWic*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -78,7 +81,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1ImageSourceFromWic*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1ImageSourceFromWic*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -92,7 +95,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ImageSourceFromWic*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ImageSourceFromWic*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -103,7 +106,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1ImageSourceFromWic*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1ImageSourceFromWic*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1ImageSourceFromWic*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -112,7 +115,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1ImageSourceFromWic*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1ImageSourceFromWic*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1ImageSourceFromWic*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -120,7 +123,7 @@ namespace Silk.NET.Direct2D
         public readonly unsafe void GetFactory(ID2D1Factory** factory)
         {
             var @this = (ID2D1ImageSourceFromWic*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1ImageSourceFromWic*, ID2D1Factory**, void>)LpVtbl[3])(@this, factory);
+            ((delegate* unmanaged[Stdcall]<ID2D1ImageSourceFromWic*, ID2D1Factory**, void>)@this->LpVtbl[3])(@this, factory);
         }
 
         /// <summary>To be documented.</summary>
@@ -129,7 +132,7 @@ namespace Silk.NET.Direct2D
             var @this = (ID2D1ImageSourceFromWic*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Factory** factoryPtr = &factory)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1ImageSourceFromWic*, ID2D1Factory**, void>)LpVtbl[3])(@this, factoryPtr);
+                ((delegate* unmanaged[Stdcall]<ID2D1ImageSourceFromWic*, ID2D1Factory**, void>)@this->LpVtbl[3])(@this, factoryPtr);
             }
         }
 
@@ -138,7 +141,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1ImageSourceFromWic*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1ImageSourceFromWic*, int>)LpVtbl[4])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1ImageSourceFromWic*, int>)@this->LpVtbl[4])(@this);
             return ret;
         }
 
@@ -147,7 +150,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1ImageSourceFromWic*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1ImageSourceFromWic*, int*, int>)LpVtbl[5])(@this, resourcesDiscarded);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1ImageSourceFromWic*, int*, int>)@this->LpVtbl[5])(@this, resourcesDiscarded);
             return ret;
         }
 
@@ -158,7 +161,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (int* resourcesDiscardedPtr = &resourcesDiscarded)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1ImageSourceFromWic*, int*, int>)LpVtbl[5])(@this, resourcesDiscardedPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1ImageSourceFromWic*, int*, int>)@this->LpVtbl[5])(@this, resourcesDiscardedPtr);
             }
             return ret;
         }
@@ -168,7 +171,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1ImageSourceFromWic*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1ImageSourceFromWic*, Silk.NET.Maths.Box2D<uint>*, int>)LpVtbl[6])(@this, rectangleToFill);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1ImageSourceFromWic*, Silk.NET.Maths.Box2D<uint>*, int>)@this->LpVtbl[6])(@this, rectangleToFill);
             return ret;
         }
 
@@ -179,7 +182,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Maths.Box2D<uint>* rectangleToFillPtr = &rectangleToFill)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1ImageSourceFromWic*, Silk.NET.Maths.Box2D<uint>*, int>)LpVtbl[6])(@this, rectangleToFillPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1ImageSourceFromWic*, Silk.NET.Maths.Box2D<uint>*, int>)@this->LpVtbl[6])(@this, rectangleToFillPtr);
             }
             return ret;
         }
@@ -189,7 +192,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1ImageSourceFromWic*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1ImageSourceFromWic*, Silk.NET.Maths.Box2D<uint>*, int>)LpVtbl[7])(@this, rectangleToPreserve);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1ImageSourceFromWic*, Silk.NET.Maths.Box2D<uint>*, int>)@this->LpVtbl[7])(@this, rectangleToPreserve);
             return ret;
         }
 
@@ -200,7 +203,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Maths.Box2D<uint>* rectangleToPreservePtr = &rectangleToPreserve)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1ImageSourceFromWic*, Silk.NET.Maths.Box2D<uint>*, int>)LpVtbl[7])(@this, rectangleToPreservePtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1ImageSourceFromWic*, Silk.NET.Maths.Box2D<uint>*, int>)@this->LpVtbl[7])(@this, rectangleToPreservePtr);
             }
             return ret;
         }
@@ -209,7 +212,7 @@ namespace Silk.NET.Direct2D
         public readonly unsafe void GetSource(IWICBitmapSource** wicBitmapSource)
         {
             var @this = (ID2D1ImageSourceFromWic*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1ImageSourceFromWic*, IWICBitmapSource**, void>)LpVtbl[8])(@this, wicBitmapSource);
+            ((delegate* unmanaged[Stdcall]<ID2D1ImageSourceFromWic*, IWICBitmapSource**, void>)@this->LpVtbl[8])(@this, wicBitmapSource);
         }
 
         /// <summary>To be documented.</summary>
@@ -218,8 +221,34 @@ namespace Silk.NET.Direct2D
             var @this = (ID2D1ImageSourceFromWic*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (IWICBitmapSource** wicBitmapSourcePtr = &wicBitmapSource)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1ImageSourceFromWic*, IWICBitmapSource**, void>)LpVtbl[8])(@this, wicBitmapSourcePtr);
+                ((delegate* unmanaged[Stdcall]<ID2D1ImageSourceFromWic*, IWICBitmapSource**, void>)@this->LpVtbl[8])(@this, wicBitmapSourcePtr);
             }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID2D1ImageSourceFromWic*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void GetFactory<TI0>(ref ComPtr<TI0> factory) where TI0 : unmanaged, IComVtbl<ID2D1Factory>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1ImageSourceFromWic*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->GetFactory((ID2D1Factory**) factory.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID2D1ImageSourceFromWic*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

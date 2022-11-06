@@ -64,6 +64,7 @@ namespace Silk.NET.BuildTools
         [JsonProperty("args")] public string[] ClangArgs { get; set; }
         [JsonProperty("traverse")] public string[] Traverse { get; set; }
         [JsonProperty("classes")] public Dictionary<string, string> ClassMappings { get; set; }
+        [JsonProperty("comRefs")] public HashSet<string> ComRefs { get; set; }
     }
 
     public struct BakeryOptions

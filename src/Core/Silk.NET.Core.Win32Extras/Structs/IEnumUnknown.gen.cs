@@ -18,9 +18,12 @@ namespace Silk.NET.Core.Win32Extras
 {
     [Guid("00000100-0000-0000-c000-000000000046")]
     [NativeName("Name", "IEnumUnknown")]
-    public unsafe partial struct IEnumUnknown
+    public unsafe partial struct IEnumUnknown : IComVtbl<IEnumUnknown>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("00000100-0000-0000-c000-000000000046");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator Silk.NET.Core.Native.IUnknown(IEnumUnknown val)
             => Unsafe.As<IEnumUnknown, Silk.NET.Core.Native.IUnknown>(ref val);
@@ -46,7 +49,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IEnumUnknown*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IEnumUnknown*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Cdecl]<IEnumUnknown*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -57,7 +60,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IEnumUnknown*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IEnumUnknown*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -69,7 +72,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IEnumUnknown*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Cdecl]<IEnumUnknown*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -83,7 +86,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IEnumUnknown*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IEnumUnknown*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -94,7 +97,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IEnumUnknown*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IEnumUnknown*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<IEnumUnknown*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -103,7 +106,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IEnumUnknown*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IEnumUnknown*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<IEnumUnknown*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -112,7 +115,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IEnumUnknown*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IEnumUnknown*, uint, Silk.NET.Core.Native.IUnknown**, uint*, int>)LpVtbl[3])(@this, celt, rgelt, pceltFetched);
+            ret = ((delegate* unmanaged[Cdecl]<IEnumUnknown*, uint, Silk.NET.Core.Native.IUnknown**, uint*, int>)@this->LpVtbl[3])(@this, celt, rgelt, pceltFetched);
             return ret;
         }
 
@@ -123,7 +126,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (uint* pceltFetchedPtr = &pceltFetched)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IEnumUnknown*, uint, Silk.NET.Core.Native.IUnknown**, uint*, int>)LpVtbl[3])(@this, celt, rgelt, pceltFetchedPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IEnumUnknown*, uint, Silk.NET.Core.Native.IUnknown**, uint*, int>)@this->LpVtbl[3])(@this, celt, rgelt, pceltFetchedPtr);
             }
             return ret;
         }
@@ -135,7 +138,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown** rgeltPtr = &rgelt)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IEnumUnknown*, uint, Silk.NET.Core.Native.IUnknown**, uint*, int>)LpVtbl[3])(@this, celt, rgeltPtr, pceltFetched);
+                ret = ((delegate* unmanaged[Cdecl]<IEnumUnknown*, uint, Silk.NET.Core.Native.IUnknown**, uint*, int>)@this->LpVtbl[3])(@this, celt, rgeltPtr, pceltFetched);
             }
             return ret;
         }
@@ -149,7 +152,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pceltFetchedPtr = &pceltFetched)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IEnumUnknown*, uint, Silk.NET.Core.Native.IUnknown**, uint*, int>)LpVtbl[3])(@this, celt, rgeltPtr, pceltFetchedPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IEnumUnknown*, uint, Silk.NET.Core.Native.IUnknown**, uint*, int>)@this->LpVtbl[3])(@this, celt, rgeltPtr, pceltFetchedPtr);
                 }
             }
             return ret;
@@ -160,7 +163,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IEnumUnknown*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IEnumUnknown*, uint, int>)LpVtbl[4])(@this, celt);
+            ret = ((delegate* unmanaged[Cdecl]<IEnumUnknown*, uint, int>)@this->LpVtbl[4])(@this, celt);
             return ret;
         }
 
@@ -169,7 +172,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IEnumUnknown*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IEnumUnknown*, int>)LpVtbl[5])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<IEnumUnknown*, int>)@this->LpVtbl[5])(@this);
             return ret;
         }
 
@@ -178,7 +181,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IEnumUnknown*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IEnumUnknown*, IEnumUnknown**, int>)LpVtbl[6])(@this, ppenum);
+            ret = ((delegate* unmanaged[Cdecl]<IEnumUnknown*, IEnumUnknown**, int>)@this->LpVtbl[6])(@this, ppenum);
             return ret;
         }
 
@@ -189,9 +192,51 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (IEnumUnknown** ppenumPtr = &ppenum)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IEnumUnknown*, IEnumUnknown**, int>)LpVtbl[6])(@this, ppenumPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IEnumUnknown*, IEnumUnknown**, int>)@this->LpVtbl[6])(@this, ppenumPtr);
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IEnumUnknown*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Next<TI0>(uint celt, ref ComPtr<TI0> rgelt, uint* pceltFetched) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        {
+            var @this = (IEnumUnknown*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Next(celt, (Silk.NET.Core.Native.IUnknown**) rgelt.GetAddressOf(), pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int Next<TI0>(uint celt, ref ComPtr<TI0> rgelt, ref uint pceltFetched) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        {
+            var @this = (IEnumUnknown*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Next(celt, (Silk.NET.Core.Native.IUnknown**) rgelt.GetAddressOf(), ref pceltFetched);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int Clone<TI0>(ref ComPtr<TI0> ppenum) where TI0 : unmanaged, IComVtbl<IEnumUnknown>, IComVtbl<TI0>
+        {
+            var @this = (IEnumUnknown*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Clone((IEnumUnknown**) ppenum.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IEnumUnknown*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

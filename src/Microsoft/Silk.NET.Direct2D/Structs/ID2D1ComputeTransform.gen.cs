@@ -18,9 +18,12 @@ namespace Silk.NET.Direct2D
 {
     [Guid("0d85573c-01e3-4f7d-bfd9-0d60608bf3c3")]
     [NativeName("Name", "ID2D1ComputeTransform")]
-    public unsafe partial struct ID2D1ComputeTransform
+    public unsafe partial struct ID2D1ComputeTransform : IComVtbl<ID2D1ComputeTransform>, IComVtbl<ID2D1Transform>, IComVtbl<ID2D1TransformNode>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("0d85573c-01e3-4f7d-bfd9-0d60608bf3c3");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator ID2D1Transform(ID2D1ComputeTransform val)
             => Unsafe.As<ID2D1ComputeTransform, ID2D1Transform>(ref val);
@@ -52,7 +55,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1ComputeTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -63,7 +66,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -75,7 +78,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -89,7 +92,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -100,7 +103,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1ComputeTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -109,7 +112,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1ComputeTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -118,7 +121,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1ComputeTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, uint>)LpVtbl[3])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, uint>)@this->LpVtbl[3])(@this);
             return ret;
         }
 
@@ -127,7 +130,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1ComputeTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, int>)LpVtbl[4])(@this, outputRect, inputRects, inputRectsCount);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, int>)@this->LpVtbl[4])(@this, outputRect, inputRects, inputRectsCount);
             return ret;
         }
 
@@ -138,7 +141,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Maths.Box2D<int>* inputRectsPtr = &inputRects)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, int>)LpVtbl[4])(@this, outputRect, inputRectsPtr, inputRectsCount);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, int>)@this->LpVtbl[4])(@this, outputRect, inputRectsPtr, inputRectsCount);
             }
             return ret;
         }
@@ -150,7 +153,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Maths.Box2D<int>* outputRectPtr = &outputRect)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, int>)LpVtbl[4])(@this, outputRectPtr, inputRects, inputRectsCount);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, int>)@this->LpVtbl[4])(@this, outputRectPtr, inputRects, inputRectsCount);
             }
             return ret;
         }
@@ -164,7 +167,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (Silk.NET.Maths.Box2D<int>* inputRectsPtr = &inputRects)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, int>)LpVtbl[4])(@this, outputRectPtr, inputRectsPtr, inputRectsCount);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, int>)@this->LpVtbl[4])(@this, outputRectPtr, inputRectsPtr, inputRectsCount);
                 }
             }
             return ret;
@@ -175,7 +178,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1ComputeTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)LpVtbl[5])(@this, inputRects, inputOpaqueSubRects, inputRectCount, outputRect, outputOpaqueSubRect);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)@this->LpVtbl[5])(@this, inputRects, inputOpaqueSubRects, inputRectCount, outputRect, outputOpaqueSubRect);
             return ret;
         }
 
@@ -186,7 +189,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Maths.Box2D<int>* outputOpaqueSubRectPtr = &outputOpaqueSubRect)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)LpVtbl[5])(@this, inputRects, inputOpaqueSubRects, inputRectCount, outputRect, outputOpaqueSubRectPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)@this->LpVtbl[5])(@this, inputRects, inputOpaqueSubRects, inputRectCount, outputRect, outputOpaqueSubRectPtr);
             }
             return ret;
         }
@@ -198,7 +201,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Maths.Box2D<int>* outputRectPtr = &outputRect)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)LpVtbl[5])(@this, inputRects, inputOpaqueSubRects, inputRectCount, outputRectPtr, outputOpaqueSubRect);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)@this->LpVtbl[5])(@this, inputRects, inputOpaqueSubRects, inputRectCount, outputRectPtr, outputOpaqueSubRect);
             }
             return ret;
         }
@@ -212,7 +215,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (Silk.NET.Maths.Box2D<int>* outputOpaqueSubRectPtr = &outputOpaqueSubRect)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)LpVtbl[5])(@this, inputRects, inputOpaqueSubRects, inputRectCount, outputRectPtr, outputOpaqueSubRectPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)@this->LpVtbl[5])(@this, inputRects, inputOpaqueSubRects, inputRectCount, outputRectPtr, outputOpaqueSubRectPtr);
                 }
             }
             return ret;
@@ -225,7 +228,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Maths.Box2D<int>* inputOpaqueSubRectsPtr = &inputOpaqueSubRects)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)LpVtbl[5])(@this, inputRects, inputOpaqueSubRectsPtr, inputRectCount, outputRect, outputOpaqueSubRect);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)@this->LpVtbl[5])(@this, inputRects, inputOpaqueSubRectsPtr, inputRectCount, outputRect, outputOpaqueSubRect);
             }
             return ret;
         }
@@ -239,7 +242,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (Silk.NET.Maths.Box2D<int>* outputOpaqueSubRectPtr = &outputOpaqueSubRect)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)LpVtbl[5])(@this, inputRects, inputOpaqueSubRectsPtr, inputRectCount, outputRect, outputOpaqueSubRectPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)@this->LpVtbl[5])(@this, inputRects, inputOpaqueSubRectsPtr, inputRectCount, outputRect, outputOpaqueSubRectPtr);
                 }
             }
             return ret;
@@ -254,7 +257,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (Silk.NET.Maths.Box2D<int>* outputRectPtr = &outputRect)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)LpVtbl[5])(@this, inputRects, inputOpaqueSubRectsPtr, inputRectCount, outputRectPtr, outputOpaqueSubRect);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)@this->LpVtbl[5])(@this, inputRects, inputOpaqueSubRectsPtr, inputRectCount, outputRectPtr, outputOpaqueSubRect);
                 }
             }
             return ret;
@@ -271,7 +274,7 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (Silk.NET.Maths.Box2D<int>* outputOpaqueSubRectPtr = &outputOpaqueSubRect)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)LpVtbl[5])(@this, inputRects, inputOpaqueSubRectsPtr, inputRectCount, outputRectPtr, outputOpaqueSubRectPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)@this->LpVtbl[5])(@this, inputRects, inputOpaqueSubRectsPtr, inputRectCount, outputRectPtr, outputOpaqueSubRectPtr);
                     }
                 }
             }
@@ -285,7 +288,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Maths.Box2D<int>* inputRectsPtr = &inputRects)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)LpVtbl[5])(@this, inputRectsPtr, inputOpaqueSubRects, inputRectCount, outputRect, outputOpaqueSubRect);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)@this->LpVtbl[5])(@this, inputRectsPtr, inputOpaqueSubRects, inputRectCount, outputRect, outputOpaqueSubRect);
             }
             return ret;
         }
@@ -299,7 +302,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (Silk.NET.Maths.Box2D<int>* outputOpaqueSubRectPtr = &outputOpaqueSubRect)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)LpVtbl[5])(@this, inputRectsPtr, inputOpaqueSubRects, inputRectCount, outputRect, outputOpaqueSubRectPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)@this->LpVtbl[5])(@this, inputRectsPtr, inputOpaqueSubRects, inputRectCount, outputRect, outputOpaqueSubRectPtr);
                 }
             }
             return ret;
@@ -314,7 +317,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (Silk.NET.Maths.Box2D<int>* outputRectPtr = &outputRect)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)LpVtbl[5])(@this, inputRectsPtr, inputOpaqueSubRects, inputRectCount, outputRectPtr, outputOpaqueSubRect);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)@this->LpVtbl[5])(@this, inputRectsPtr, inputOpaqueSubRects, inputRectCount, outputRectPtr, outputOpaqueSubRect);
                 }
             }
             return ret;
@@ -331,7 +334,7 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (Silk.NET.Maths.Box2D<int>* outputOpaqueSubRectPtr = &outputOpaqueSubRect)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)LpVtbl[5])(@this, inputRectsPtr, inputOpaqueSubRects, inputRectCount, outputRectPtr, outputOpaqueSubRectPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)@this->LpVtbl[5])(@this, inputRectsPtr, inputOpaqueSubRects, inputRectCount, outputRectPtr, outputOpaqueSubRectPtr);
                     }
                 }
             }
@@ -347,7 +350,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (Silk.NET.Maths.Box2D<int>* inputOpaqueSubRectsPtr = &inputOpaqueSubRects)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)LpVtbl[5])(@this, inputRectsPtr, inputOpaqueSubRectsPtr, inputRectCount, outputRect, outputOpaqueSubRect);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)@this->LpVtbl[5])(@this, inputRectsPtr, inputOpaqueSubRectsPtr, inputRectCount, outputRect, outputOpaqueSubRect);
                 }
             }
             return ret;
@@ -364,7 +367,7 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (Silk.NET.Maths.Box2D<int>* outputOpaqueSubRectPtr = &outputOpaqueSubRect)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)LpVtbl[5])(@this, inputRectsPtr, inputOpaqueSubRectsPtr, inputRectCount, outputRect, outputOpaqueSubRectPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)@this->LpVtbl[5])(@this, inputRectsPtr, inputOpaqueSubRectsPtr, inputRectCount, outputRect, outputOpaqueSubRectPtr);
                     }
                 }
             }
@@ -382,7 +385,7 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (Silk.NET.Maths.Box2D<int>* outputRectPtr = &outputRect)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)LpVtbl[5])(@this, inputRectsPtr, inputOpaqueSubRectsPtr, inputRectCount, outputRectPtr, outputOpaqueSubRect);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)@this->LpVtbl[5])(@this, inputRectsPtr, inputOpaqueSubRectsPtr, inputRectCount, outputRectPtr, outputOpaqueSubRect);
                     }
                 }
             }
@@ -402,7 +405,7 @@ namespace Silk.NET.Direct2D
                     {
                         fixed (Silk.NET.Maths.Box2D<int>* outputOpaqueSubRectPtr = &outputOpaqueSubRect)
                         {
-                            ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)LpVtbl[5])(@this, inputRectsPtr, inputOpaqueSubRectsPtr, inputRectCount, outputRectPtr, outputOpaqueSubRectPtr);
+                            ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, uint, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, int>)@this->LpVtbl[5])(@this, inputRectsPtr, inputOpaqueSubRectsPtr, inputRectCount, outputRectPtr, outputOpaqueSubRectPtr);
                         }
                     }
                 }
@@ -415,7 +418,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1ComputeTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, uint, Silk.NET.Maths.Box2D<int>, Silk.NET.Maths.Box2D<int>*, int>)LpVtbl[6])(@this, inputIndex, invalidInputRect, invalidOutputRect);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, uint, Silk.NET.Maths.Box2D<int>, Silk.NET.Maths.Box2D<int>*, int>)@this->LpVtbl[6])(@this, inputIndex, invalidInputRect, invalidOutputRect);
             return ret;
         }
 
@@ -426,7 +429,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Maths.Box2D<int>* invalidOutputRectPtr = &invalidOutputRect)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, uint, Silk.NET.Maths.Box2D<int>, Silk.NET.Maths.Box2D<int>*, int>)LpVtbl[6])(@this, inputIndex, invalidInputRect, invalidOutputRectPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, uint, Silk.NET.Maths.Box2D<int>, Silk.NET.Maths.Box2D<int>*, int>)@this->LpVtbl[6])(@this, inputIndex, invalidInputRect, invalidOutputRectPtr);
             }
             return ret;
         }
@@ -436,7 +439,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1ComputeTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, ID2D1ComputeInfo*, int>)LpVtbl[7])(@this, computeInfo);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, ID2D1ComputeInfo*, int>)@this->LpVtbl[7])(@this, computeInfo);
             return ret;
         }
 
@@ -447,7 +450,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (ID2D1ComputeInfo* computeInfoPtr = &computeInfo)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, ID2D1ComputeInfo*, int>)LpVtbl[7])(@this, computeInfoPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, ID2D1ComputeInfo*, int>)@this->LpVtbl[7])(@this, computeInfoPtr);
             }
             return ret;
         }
@@ -457,7 +460,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1ComputeTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, uint*, uint*, uint*, int>)LpVtbl[8])(@this, outputRect, dimensionX, dimensionY, dimensionZ);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, uint*, uint*, uint*, int>)@this->LpVtbl[8])(@this, outputRect, dimensionX, dimensionY, dimensionZ);
             return ret;
         }
 
@@ -468,7 +471,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (uint* dimensionZPtr = &dimensionZ)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, uint*, uint*, uint*, int>)LpVtbl[8])(@this, outputRect, dimensionX, dimensionY, dimensionZPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, uint*, uint*, uint*, int>)@this->LpVtbl[8])(@this, outputRect, dimensionX, dimensionY, dimensionZPtr);
             }
             return ret;
         }
@@ -480,7 +483,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (uint* dimensionYPtr = &dimensionY)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, uint*, uint*, uint*, int>)LpVtbl[8])(@this, outputRect, dimensionX, dimensionYPtr, dimensionZ);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, uint*, uint*, uint*, int>)@this->LpVtbl[8])(@this, outputRect, dimensionX, dimensionYPtr, dimensionZ);
             }
             return ret;
         }
@@ -494,7 +497,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (uint* dimensionZPtr = &dimensionZ)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, uint*, uint*, uint*, int>)LpVtbl[8])(@this, outputRect, dimensionX, dimensionYPtr, dimensionZPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, uint*, uint*, uint*, int>)@this->LpVtbl[8])(@this, outputRect, dimensionX, dimensionYPtr, dimensionZPtr);
                 }
             }
             return ret;
@@ -507,7 +510,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (uint* dimensionXPtr = &dimensionX)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, uint*, uint*, uint*, int>)LpVtbl[8])(@this, outputRect, dimensionXPtr, dimensionY, dimensionZ);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, uint*, uint*, uint*, int>)@this->LpVtbl[8])(@this, outputRect, dimensionXPtr, dimensionY, dimensionZ);
             }
             return ret;
         }
@@ -521,7 +524,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (uint* dimensionZPtr = &dimensionZ)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, uint*, uint*, uint*, int>)LpVtbl[8])(@this, outputRect, dimensionXPtr, dimensionY, dimensionZPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, uint*, uint*, uint*, int>)@this->LpVtbl[8])(@this, outputRect, dimensionXPtr, dimensionY, dimensionZPtr);
                 }
             }
             return ret;
@@ -536,7 +539,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (uint* dimensionYPtr = &dimensionY)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, uint*, uint*, uint*, int>)LpVtbl[8])(@this, outputRect, dimensionXPtr, dimensionYPtr, dimensionZ);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, uint*, uint*, uint*, int>)@this->LpVtbl[8])(@this, outputRect, dimensionXPtr, dimensionYPtr, dimensionZ);
                 }
             }
             return ret;
@@ -553,7 +556,7 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (uint* dimensionZPtr = &dimensionZ)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, uint*, uint*, uint*, int>)LpVtbl[8])(@this, outputRect, dimensionXPtr, dimensionYPtr, dimensionZPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, uint*, uint*, uint*, int>)@this->LpVtbl[8])(@this, outputRect, dimensionXPtr, dimensionYPtr, dimensionZPtr);
                     }
                 }
             }
@@ -567,7 +570,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Maths.Box2D<int>* outputRectPtr = &outputRect)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, uint*, uint*, uint*, int>)LpVtbl[8])(@this, outputRectPtr, dimensionX, dimensionY, dimensionZ);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, uint*, uint*, uint*, int>)@this->LpVtbl[8])(@this, outputRectPtr, dimensionX, dimensionY, dimensionZ);
             }
             return ret;
         }
@@ -581,7 +584,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (uint* dimensionZPtr = &dimensionZ)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, uint*, uint*, uint*, int>)LpVtbl[8])(@this, outputRectPtr, dimensionX, dimensionY, dimensionZPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, uint*, uint*, uint*, int>)@this->LpVtbl[8])(@this, outputRectPtr, dimensionX, dimensionY, dimensionZPtr);
                 }
             }
             return ret;
@@ -596,7 +599,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (uint* dimensionYPtr = &dimensionY)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, uint*, uint*, uint*, int>)LpVtbl[8])(@this, outputRectPtr, dimensionX, dimensionYPtr, dimensionZ);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, uint*, uint*, uint*, int>)@this->LpVtbl[8])(@this, outputRectPtr, dimensionX, dimensionYPtr, dimensionZ);
                 }
             }
             return ret;
@@ -613,7 +616,7 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (uint* dimensionZPtr = &dimensionZ)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, uint*, uint*, uint*, int>)LpVtbl[8])(@this, outputRectPtr, dimensionX, dimensionYPtr, dimensionZPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, uint*, uint*, uint*, int>)@this->LpVtbl[8])(@this, outputRectPtr, dimensionX, dimensionYPtr, dimensionZPtr);
                     }
                 }
             }
@@ -629,7 +632,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (uint* dimensionXPtr = &dimensionX)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, uint*, uint*, uint*, int>)LpVtbl[8])(@this, outputRectPtr, dimensionXPtr, dimensionY, dimensionZ);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, uint*, uint*, uint*, int>)@this->LpVtbl[8])(@this, outputRectPtr, dimensionXPtr, dimensionY, dimensionZ);
                 }
             }
             return ret;
@@ -646,7 +649,7 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (uint* dimensionZPtr = &dimensionZ)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, uint*, uint*, uint*, int>)LpVtbl[8])(@this, outputRectPtr, dimensionXPtr, dimensionY, dimensionZPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, uint*, uint*, uint*, int>)@this->LpVtbl[8])(@this, outputRectPtr, dimensionXPtr, dimensionY, dimensionZPtr);
                     }
                 }
             }
@@ -664,7 +667,7 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (uint* dimensionYPtr = &dimensionY)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, uint*, uint*, uint*, int>)LpVtbl[8])(@this, outputRectPtr, dimensionXPtr, dimensionYPtr, dimensionZ);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, uint*, uint*, uint*, int>)@this->LpVtbl[8])(@this, outputRectPtr, dimensionXPtr, dimensionYPtr, dimensionZ);
                     }
                 }
             }
@@ -684,12 +687,38 @@ namespace Silk.NET.Direct2D
                     {
                         fixed (uint* dimensionZPtr = &dimensionZ)
                         {
-                            ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, uint*, uint*, uint*, int>)LpVtbl[8])(@this, outputRectPtr, dimensionXPtr, dimensionYPtr, dimensionZPtr);
+                            ret = ((delegate* unmanaged[Stdcall]<ID2D1ComputeTransform*, Silk.NET.Maths.Box2D<int>*, uint*, uint*, uint*, int>)@this->LpVtbl[8])(@this, outputRectPtr, dimensionXPtr, dimensionYPtr, dimensionZPtr);
                         }
                     }
                 }
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID2D1ComputeTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetComputeInfo<TI0>(ComPtr<TI0> computeInfo) where TI0 : unmanaged, IComVtbl<ID2D1ComputeInfo>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1ComputeTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetComputeInfo((ID2D1ComputeInfo*) computeInfo.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID2D1ComputeTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

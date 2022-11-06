@@ -112,6 +112,41 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             Uniform(location, (uint) value.Length, in value.GetPinnableReference());
         }
 
+        public unsafe ulong GetBufferParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetBufferParameter(target, pname, out ulong silkRet);
+            return silkRet;
+        }
+
+        public unsafe ulong GetBufferParameter([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] NV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetBufferParameter(target, pname, out ulong silkRet);
+            return silkRet;
+        }
+
+        public unsafe ulong GetNamedBufferParameter([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] NV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetNamedBufferParameter(buffer, pname, out ulong silkRet);
+            return silkRet;
+        }
+
+        public unsafe ulong GetNamedBufferParameter([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] BufferPNameARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetNamedBufferParameter(buffer, pname, out ulong silkRet);
+            return silkRet;
+        }
+
+        public unsafe ulong GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location)
+        {
+            // NonKhrReturnTypeOverloader
+            GetUniform(program, location, out ulong silkRet);
+            return silkRet;
+        }
+
         public NVShaderBufferLoad(INativeContext ctx)
             : base(ctx)
         {

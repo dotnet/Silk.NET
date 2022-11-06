@@ -18,9 +18,12 @@ namespace Silk.NET.Direct2D
 {
     [Guid("90f732e2-5092-4606-a819-8651970baccd")]
     [NativeName("Name", "ID2D1BoundsAdjustmentTransform")]
-    public unsafe partial struct ID2D1BoundsAdjustmentTransform
+    public unsafe partial struct ID2D1BoundsAdjustmentTransform : IComVtbl<ID2D1BoundsAdjustmentTransform>, IComVtbl<ID2D1TransformNode>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("90f732e2-5092-4606-a819-8651970baccd");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator ID2D1TransformNode(ID2D1BoundsAdjustmentTransform val)
             => Unsafe.As<ID2D1BoundsAdjustmentTransform, ID2D1TransformNode>(ref val);
@@ -49,7 +52,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1BoundsAdjustmentTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1BoundsAdjustmentTransform*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1BoundsAdjustmentTransform*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -60,7 +63,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1BoundsAdjustmentTransform*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1BoundsAdjustmentTransform*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -72,7 +75,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1BoundsAdjustmentTransform*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1BoundsAdjustmentTransform*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -86,7 +89,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1BoundsAdjustmentTransform*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1BoundsAdjustmentTransform*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -97,7 +100,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1BoundsAdjustmentTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1BoundsAdjustmentTransform*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1BoundsAdjustmentTransform*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -106,7 +109,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1BoundsAdjustmentTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1BoundsAdjustmentTransform*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1BoundsAdjustmentTransform*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -115,7 +118,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1BoundsAdjustmentTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1BoundsAdjustmentTransform*, uint>)LpVtbl[3])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1BoundsAdjustmentTransform*, uint>)@this->LpVtbl[3])(@this);
             return ret;
         }
 
@@ -123,7 +126,7 @@ namespace Silk.NET.Direct2D
         public readonly unsafe void SetOutputBounds(Silk.NET.Maths.Box2D<int>* outputBounds)
         {
             var @this = (ID2D1BoundsAdjustmentTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1BoundsAdjustmentTransform*, Silk.NET.Maths.Box2D<int>*, void>)LpVtbl[4])(@this, outputBounds);
+            ((delegate* unmanaged[Stdcall]<ID2D1BoundsAdjustmentTransform*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[4])(@this, outputBounds);
         }
 
         /// <summary>To be documented.</summary>
@@ -132,7 +135,7 @@ namespace Silk.NET.Direct2D
             var @this = (ID2D1BoundsAdjustmentTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Box2D<int>* outputBoundsPtr = &outputBounds)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1BoundsAdjustmentTransform*, Silk.NET.Maths.Box2D<int>*, void>)LpVtbl[4])(@this, outputBoundsPtr);
+                ((delegate* unmanaged[Stdcall]<ID2D1BoundsAdjustmentTransform*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[4])(@this, outputBoundsPtr);
             }
         }
 
@@ -140,7 +143,7 @@ namespace Silk.NET.Direct2D
         public readonly unsafe void GetOutputBounds(Silk.NET.Maths.Box2D<int>* outputBounds)
         {
             var @this = (ID2D1BoundsAdjustmentTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1BoundsAdjustmentTransform*, Silk.NET.Maths.Box2D<int>*, void>)LpVtbl[5])(@this, outputBounds);
+            ((delegate* unmanaged[Stdcall]<ID2D1BoundsAdjustmentTransform*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[5])(@this, outputBounds);
         }
 
         /// <summary>To be documented.</summary>
@@ -149,8 +152,26 @@ namespace Silk.NET.Direct2D
             var @this = (ID2D1BoundsAdjustmentTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Box2D<int>* outputBoundsPtr = &outputBounds)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1BoundsAdjustmentTransform*, Silk.NET.Maths.Box2D<int>*, void>)LpVtbl[5])(@this, outputBoundsPtr);
+                ((delegate* unmanaged[Stdcall]<ID2D1BoundsAdjustmentTransform*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[5])(@this, outputBoundsPtr);
             }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID2D1BoundsAdjustmentTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID2D1BoundsAdjustmentTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

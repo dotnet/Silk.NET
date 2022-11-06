@@ -1441,6 +1441,14 @@ namespace Silk.NET.Direct3D9
         [NativeApi(EntryPoint = "Direct3DCreate9Ex")]
         public unsafe partial int Direct3DCreate9Ex(uint SDKVersion, ref IDirect3D9Ex* arg1);
 
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2030, Column 16 in D:/Windows Kits/10/Include/10.0.22621.0/shared\\d3d9.h")]
+        public unsafe int Direct3DCreate9Ex<TI0>(uint SDKVersion, ref ComPtr<TI0> arg1) where TI0 : unmanaged, IComVtbl<IDirect3D9Ex>, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            return Direct3DCreate9Ex(SDKVersion, (IDirect3D9Ex**) arg1.GetAddressOf());
+        }
+
 
         public D3D9(INativeContext ctx)
             : base(ctx)

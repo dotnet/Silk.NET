@@ -18,9 +18,12 @@ namespace Silk.NET.Direct2D
 {
     [Guid("62baa2d2-ab54-41b7-b872-787e0106a421")]
     [NativeName("Name", "ID2D1PathGeometry1")]
-    public unsafe partial struct ID2D1PathGeometry1
+    public unsafe partial struct ID2D1PathGeometry1 : IComVtbl<ID2D1PathGeometry1>, IComVtbl<ID2D1PathGeometry>, IComVtbl<ID2D1Geometry>, IComVtbl<ID2D1Resource>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("62baa2d2-ab54-41b7-b872-787e0106a421");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator ID2D1PathGeometry(ID2D1PathGeometry1 val)
             => Unsafe.As<ID2D1PathGeometry1, ID2D1PathGeometry>(ref val);
@@ -55,7 +58,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -66,7 +69,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -78,7 +81,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -92,7 +95,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -103,7 +106,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -112,7 +115,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -120,7 +123,7 @@ namespace Silk.NET.Direct2D
         public readonly unsafe void GetFactory(ID2D1Factory** factory)
         {
             var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, ID2D1Factory**, void>)LpVtbl[3])(@this, factory);
+            ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, ID2D1Factory**, void>)@this->LpVtbl[3])(@this, factory);
         }
 
         /// <summary>To be documented.</summary>
@@ -129,7 +132,7 @@ namespace Silk.NET.Direct2D
             var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Factory** factoryPtr = &factory)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, ID2D1Factory**, void>)LpVtbl[3])(@this, factoryPtr);
+                ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, ID2D1Factory**, void>)@this->LpVtbl[3])(@this, factoryPtr);
             }
         }
 
@@ -138,7 +141,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Matrix3X2<float>*, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[4])(@this, worldTransform, bounds);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Matrix3X2<float>*, Silk.NET.Maths.Box2D<float>*, int>)@this->LpVtbl[4])(@this, worldTransform, bounds);
             return ret;
         }
 
@@ -149,7 +152,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Maths.Box2D<float>* boundsPtr = &bounds)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Matrix3X2<float>*, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[4])(@this, worldTransform, boundsPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Matrix3X2<float>*, Silk.NET.Maths.Box2D<float>*, int>)@this->LpVtbl[4])(@this, worldTransform, boundsPtr);
             }
             return ret;
         }
@@ -161,7 +164,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Maths.Matrix3X2<float>* worldTransformPtr = &worldTransform)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Matrix3X2<float>*, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[4])(@this, worldTransformPtr, bounds);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Matrix3X2<float>*, Silk.NET.Maths.Box2D<float>*, int>)@this->LpVtbl[4])(@this, worldTransformPtr, bounds);
             }
             return ret;
         }
@@ -175,7 +178,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (Silk.NET.Maths.Box2D<float>* boundsPtr = &bounds)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Matrix3X2<float>*, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[4])(@this, worldTransformPtr, boundsPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Matrix3X2<float>*, Silk.NET.Maths.Box2D<float>*, int>)@this->LpVtbl[4])(@this, worldTransformPtr, boundsPtr);
                 }
             }
             return ret;
@@ -186,7 +189,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[5])(@this, strokeWidth, strokeStyle, worldTransform, flatteningTolerance, bounds);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Box2D<float>*, int>)@this->LpVtbl[5])(@this, strokeWidth, strokeStyle, worldTransform, flatteningTolerance, bounds);
             return ret;
         }
 
@@ -197,7 +200,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Maths.Box2D<float>* boundsPtr = &bounds)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[5])(@this, strokeWidth, strokeStyle, worldTransform, flatteningTolerance, boundsPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Box2D<float>*, int>)@this->LpVtbl[5])(@this, strokeWidth, strokeStyle, worldTransform, flatteningTolerance, boundsPtr);
             }
             return ret;
         }
@@ -209,7 +212,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Maths.Matrix3X2<float>* worldTransformPtr = &worldTransform)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[5])(@this, strokeWidth, strokeStyle, worldTransformPtr, flatteningTolerance, bounds);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Box2D<float>*, int>)@this->LpVtbl[5])(@this, strokeWidth, strokeStyle, worldTransformPtr, flatteningTolerance, bounds);
             }
             return ret;
         }
@@ -223,7 +226,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (Silk.NET.Maths.Box2D<float>* boundsPtr = &bounds)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[5])(@this, strokeWidth, strokeStyle, worldTransformPtr, flatteningTolerance, boundsPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Box2D<float>*, int>)@this->LpVtbl[5])(@this, strokeWidth, strokeStyle, worldTransformPtr, flatteningTolerance, boundsPtr);
                 }
             }
             return ret;
@@ -236,7 +239,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (ID2D1StrokeStyle* strokeStylePtr = &strokeStyle)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[5])(@this, strokeWidth, strokeStylePtr, worldTransform, flatteningTolerance, bounds);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Box2D<float>*, int>)@this->LpVtbl[5])(@this, strokeWidth, strokeStylePtr, worldTransform, flatteningTolerance, bounds);
             }
             return ret;
         }
@@ -250,7 +253,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (Silk.NET.Maths.Box2D<float>* boundsPtr = &bounds)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[5])(@this, strokeWidth, strokeStylePtr, worldTransform, flatteningTolerance, boundsPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Box2D<float>*, int>)@this->LpVtbl[5])(@this, strokeWidth, strokeStylePtr, worldTransform, flatteningTolerance, boundsPtr);
                 }
             }
             return ret;
@@ -265,7 +268,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (Silk.NET.Maths.Matrix3X2<float>* worldTransformPtr = &worldTransform)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[5])(@this, strokeWidth, strokeStylePtr, worldTransformPtr, flatteningTolerance, bounds);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Box2D<float>*, int>)@this->LpVtbl[5])(@this, strokeWidth, strokeStylePtr, worldTransformPtr, flatteningTolerance, bounds);
                 }
             }
             return ret;
@@ -282,7 +285,7 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (Silk.NET.Maths.Box2D<float>* boundsPtr = &bounds)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[5])(@this, strokeWidth, strokeStylePtr, worldTransformPtr, flatteningTolerance, boundsPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Box2D<float>*, int>)@this->LpVtbl[5])(@this, strokeWidth, strokeStylePtr, worldTransformPtr, flatteningTolerance, boundsPtr);
                     }
                 }
             }
@@ -294,7 +297,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Vector2D<float>, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)LpVtbl[6])(@this, point, strokeWidth, strokeStyle, worldTransform, flatteningTolerance, contains);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Vector2D<float>, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)@this->LpVtbl[6])(@this, point, strokeWidth, strokeStyle, worldTransform, flatteningTolerance, contains);
             return ret;
         }
 
@@ -305,7 +308,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (int* containsPtr = &contains)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Vector2D<float>, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)LpVtbl[6])(@this, point, strokeWidth, strokeStyle, worldTransform, flatteningTolerance, containsPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Vector2D<float>, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)@this->LpVtbl[6])(@this, point, strokeWidth, strokeStyle, worldTransform, flatteningTolerance, containsPtr);
             }
             return ret;
         }
@@ -317,7 +320,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Maths.Matrix3X2<float>* worldTransformPtr = &worldTransform)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Vector2D<float>, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)LpVtbl[6])(@this, point, strokeWidth, strokeStyle, worldTransformPtr, flatteningTolerance, contains);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Vector2D<float>, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)@this->LpVtbl[6])(@this, point, strokeWidth, strokeStyle, worldTransformPtr, flatteningTolerance, contains);
             }
             return ret;
         }
@@ -331,7 +334,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (int* containsPtr = &contains)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Vector2D<float>, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)LpVtbl[6])(@this, point, strokeWidth, strokeStyle, worldTransformPtr, flatteningTolerance, containsPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Vector2D<float>, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)@this->LpVtbl[6])(@this, point, strokeWidth, strokeStyle, worldTransformPtr, flatteningTolerance, containsPtr);
                 }
             }
             return ret;
@@ -344,7 +347,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (ID2D1StrokeStyle* strokeStylePtr = &strokeStyle)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Vector2D<float>, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)LpVtbl[6])(@this, point, strokeWidth, strokeStylePtr, worldTransform, flatteningTolerance, contains);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Vector2D<float>, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)@this->LpVtbl[6])(@this, point, strokeWidth, strokeStylePtr, worldTransform, flatteningTolerance, contains);
             }
             return ret;
         }
@@ -358,7 +361,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (int* containsPtr = &contains)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Vector2D<float>, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)LpVtbl[6])(@this, point, strokeWidth, strokeStylePtr, worldTransform, flatteningTolerance, containsPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Vector2D<float>, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)@this->LpVtbl[6])(@this, point, strokeWidth, strokeStylePtr, worldTransform, flatteningTolerance, containsPtr);
                 }
             }
             return ret;
@@ -373,7 +376,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (Silk.NET.Maths.Matrix3X2<float>* worldTransformPtr = &worldTransform)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Vector2D<float>, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)LpVtbl[6])(@this, point, strokeWidth, strokeStylePtr, worldTransformPtr, flatteningTolerance, contains);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Vector2D<float>, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)@this->LpVtbl[6])(@this, point, strokeWidth, strokeStylePtr, worldTransformPtr, flatteningTolerance, contains);
                 }
             }
             return ret;
@@ -390,7 +393,7 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (int* containsPtr = &contains)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Vector2D<float>, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)LpVtbl[6])(@this, point, strokeWidth, strokeStylePtr, worldTransformPtr, flatteningTolerance, containsPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Vector2D<float>, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)@this->LpVtbl[6])(@this, point, strokeWidth, strokeStylePtr, worldTransformPtr, flatteningTolerance, containsPtr);
                     }
                 }
             }
@@ -402,7 +405,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)LpVtbl[7])(@this, point, worldTransform, flatteningTolerance, contains);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)@this->LpVtbl[7])(@this, point, worldTransform, flatteningTolerance, contains);
             return ret;
         }
 
@@ -413,7 +416,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (int* containsPtr = &contains)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)LpVtbl[7])(@this, point, worldTransform, flatteningTolerance, containsPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)@this->LpVtbl[7])(@this, point, worldTransform, flatteningTolerance, containsPtr);
             }
             return ret;
         }
@@ -425,7 +428,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Maths.Matrix3X2<float>* worldTransformPtr = &worldTransform)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)LpVtbl[7])(@this, point, worldTransformPtr, flatteningTolerance, contains);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)@this->LpVtbl[7])(@this, point, worldTransformPtr, flatteningTolerance, contains);
             }
             return ret;
         }
@@ -439,7 +442,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (int* containsPtr = &contains)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)LpVtbl[7])(@this, point, worldTransformPtr, flatteningTolerance, containsPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Vector2D<float>, Silk.NET.Maths.Matrix3X2<float>*, float, int*, int>)@this->LpVtbl[7])(@this, point, worldTransformPtr, flatteningTolerance, containsPtr);
                 }
             }
             return ret;
@@ -450,7 +453,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, ID2D1Geometry*, Silk.NET.Maths.Matrix3X2<float>*, float, GeometryRelation*, int>)LpVtbl[8])(@this, inputGeometry, inputGeometryTransform, flatteningTolerance, relation);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, ID2D1Geometry*, Silk.NET.Maths.Matrix3X2<float>*, float, GeometryRelation*, int>)@this->LpVtbl[8])(@this, inputGeometry, inputGeometryTransform, flatteningTolerance, relation);
             return ret;
         }
 
@@ -461,7 +464,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (GeometryRelation* relationPtr = &relation)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, ID2D1Geometry*, Silk.NET.Maths.Matrix3X2<float>*, float, GeometryRelation*, int>)LpVtbl[8])(@this, inputGeometry, inputGeometryTransform, flatteningTolerance, relationPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, ID2D1Geometry*, Silk.NET.Maths.Matrix3X2<float>*, float, GeometryRelation*, int>)@this->LpVtbl[8])(@this, inputGeometry, inputGeometryTransform, flatteningTolerance, relationPtr);
             }
             return ret;
         }
@@ -473,7 +476,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransformPtr = &inputGeometryTransform)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, ID2D1Geometry*, Silk.NET.Maths.Matrix3X2<float>*, float, GeometryRelation*, int>)LpVtbl[8])(@this, inputGeometry, inputGeometryTransformPtr, flatteningTolerance, relation);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, ID2D1Geometry*, Silk.NET.Maths.Matrix3X2<float>*, float, GeometryRelation*, int>)@this->LpVtbl[8])(@this, inputGeometry, inputGeometryTransformPtr, flatteningTolerance, relation);
             }
             return ret;
         }
@@ -487,7 +490,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (GeometryRelation* relationPtr = &relation)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, ID2D1Geometry*, Silk.NET.Maths.Matrix3X2<float>*, float, GeometryRelation*, int>)LpVtbl[8])(@this, inputGeometry, inputGeometryTransformPtr, flatteningTolerance, relationPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, ID2D1Geometry*, Silk.NET.Maths.Matrix3X2<float>*, float, GeometryRelation*, int>)@this->LpVtbl[8])(@this, inputGeometry, inputGeometryTransformPtr, flatteningTolerance, relationPtr);
                 }
             }
             return ret;
@@ -500,7 +503,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (ID2D1Geometry* inputGeometryPtr = &inputGeometry)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, ID2D1Geometry*, Silk.NET.Maths.Matrix3X2<float>*, float, GeometryRelation*, int>)LpVtbl[8])(@this, inputGeometryPtr, inputGeometryTransform, flatteningTolerance, relation);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, ID2D1Geometry*, Silk.NET.Maths.Matrix3X2<float>*, float, GeometryRelation*, int>)@this->LpVtbl[8])(@this, inputGeometryPtr, inputGeometryTransform, flatteningTolerance, relation);
             }
             return ret;
         }
@@ -514,7 +517,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (GeometryRelation* relationPtr = &relation)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, ID2D1Geometry*, Silk.NET.Maths.Matrix3X2<float>*, float, GeometryRelation*, int>)LpVtbl[8])(@this, inputGeometryPtr, inputGeometryTransform, flatteningTolerance, relationPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, ID2D1Geometry*, Silk.NET.Maths.Matrix3X2<float>*, float, GeometryRelation*, int>)@this->LpVtbl[8])(@this, inputGeometryPtr, inputGeometryTransform, flatteningTolerance, relationPtr);
                 }
             }
             return ret;
@@ -529,7 +532,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransformPtr = &inputGeometryTransform)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, ID2D1Geometry*, Silk.NET.Maths.Matrix3X2<float>*, float, GeometryRelation*, int>)LpVtbl[8])(@this, inputGeometryPtr, inputGeometryTransformPtr, flatteningTolerance, relation);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, ID2D1Geometry*, Silk.NET.Maths.Matrix3X2<float>*, float, GeometryRelation*, int>)@this->LpVtbl[8])(@this, inputGeometryPtr, inputGeometryTransformPtr, flatteningTolerance, relation);
                 }
             }
             return ret;
@@ -546,7 +549,7 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (GeometryRelation* relationPtr = &relation)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, ID2D1Geometry*, Silk.NET.Maths.Matrix3X2<float>*, float, GeometryRelation*, int>)LpVtbl[8])(@this, inputGeometryPtr, inputGeometryTransformPtr, flatteningTolerance, relationPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, ID2D1Geometry*, Silk.NET.Maths.Matrix3X2<float>*, float, GeometryRelation*, int>)@this->LpVtbl[8])(@this, inputGeometryPtr, inputGeometryTransformPtr, flatteningTolerance, relationPtr);
                     }
                 }
             }
@@ -558,7 +561,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, GeometrySimplificationOption, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)LpVtbl[9])(@this, simplificationOption, worldTransform, flatteningTolerance, geometrySink);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, GeometrySimplificationOption, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)@this->LpVtbl[9])(@this, simplificationOption, worldTransform, flatteningTolerance, geometrySink);
             return ret;
         }
 
@@ -569,7 +572,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (ID2D1SimplifiedGeometrySink* geometrySinkPtr = &geometrySink)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, GeometrySimplificationOption, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)LpVtbl[9])(@this, simplificationOption, worldTransform, flatteningTolerance, geometrySinkPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, GeometrySimplificationOption, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)@this->LpVtbl[9])(@this, simplificationOption, worldTransform, flatteningTolerance, geometrySinkPtr);
             }
             return ret;
         }
@@ -581,7 +584,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Maths.Matrix3X2<float>* worldTransformPtr = &worldTransform)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, GeometrySimplificationOption, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)LpVtbl[9])(@this, simplificationOption, worldTransformPtr, flatteningTolerance, geometrySink);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, GeometrySimplificationOption, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)@this->LpVtbl[9])(@this, simplificationOption, worldTransformPtr, flatteningTolerance, geometrySink);
             }
             return ret;
         }
@@ -595,7 +598,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (ID2D1SimplifiedGeometrySink* geometrySinkPtr = &geometrySink)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, GeometrySimplificationOption, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)LpVtbl[9])(@this, simplificationOption, worldTransformPtr, flatteningTolerance, geometrySinkPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, GeometrySimplificationOption, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)@this->LpVtbl[9])(@this, simplificationOption, worldTransformPtr, flatteningTolerance, geometrySinkPtr);
                 }
             }
             return ret;
@@ -606,7 +609,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1TessellationSink*, int>)LpVtbl[10])(@this, worldTransform, flatteningTolerance, tessellationSink);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1TessellationSink*, int>)@this->LpVtbl[10])(@this, worldTransform, flatteningTolerance, tessellationSink);
             return ret;
         }
 
@@ -617,7 +620,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (ID2D1TessellationSink* tessellationSinkPtr = &tessellationSink)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1TessellationSink*, int>)LpVtbl[10])(@this, worldTransform, flatteningTolerance, tessellationSinkPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1TessellationSink*, int>)@this->LpVtbl[10])(@this, worldTransform, flatteningTolerance, tessellationSinkPtr);
             }
             return ret;
         }
@@ -629,7 +632,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Maths.Matrix3X2<float>* worldTransformPtr = &worldTransform)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1TessellationSink*, int>)LpVtbl[10])(@this, worldTransformPtr, flatteningTolerance, tessellationSink);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1TessellationSink*, int>)@this->LpVtbl[10])(@this, worldTransformPtr, flatteningTolerance, tessellationSink);
             }
             return ret;
         }
@@ -643,7 +646,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (ID2D1TessellationSink* tessellationSinkPtr = &tessellationSink)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1TessellationSink*, int>)LpVtbl[10])(@this, worldTransformPtr, flatteningTolerance, tessellationSinkPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1TessellationSink*, int>)@this->LpVtbl[10])(@this, worldTransformPtr, flatteningTolerance, tessellationSinkPtr);
                 }
             }
             return ret;
@@ -654,7 +657,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, ID2D1Geometry*, CombineMode, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)LpVtbl[11])(@this, inputGeometry, combineMode, inputGeometryTransform, flatteningTolerance, geometrySink);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, ID2D1Geometry*, CombineMode, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)@this->LpVtbl[11])(@this, inputGeometry, combineMode, inputGeometryTransform, flatteningTolerance, geometrySink);
             return ret;
         }
 
@@ -665,7 +668,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (ID2D1SimplifiedGeometrySink* geometrySinkPtr = &geometrySink)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, ID2D1Geometry*, CombineMode, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)LpVtbl[11])(@this, inputGeometry, combineMode, inputGeometryTransform, flatteningTolerance, geometrySinkPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, ID2D1Geometry*, CombineMode, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)@this->LpVtbl[11])(@this, inputGeometry, combineMode, inputGeometryTransform, flatteningTolerance, geometrySinkPtr);
             }
             return ret;
         }
@@ -677,7 +680,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransformPtr = &inputGeometryTransform)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, ID2D1Geometry*, CombineMode, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)LpVtbl[11])(@this, inputGeometry, combineMode, inputGeometryTransformPtr, flatteningTolerance, geometrySink);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, ID2D1Geometry*, CombineMode, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)@this->LpVtbl[11])(@this, inputGeometry, combineMode, inputGeometryTransformPtr, flatteningTolerance, geometrySink);
             }
             return ret;
         }
@@ -691,7 +694,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (ID2D1SimplifiedGeometrySink* geometrySinkPtr = &geometrySink)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, ID2D1Geometry*, CombineMode, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)LpVtbl[11])(@this, inputGeometry, combineMode, inputGeometryTransformPtr, flatteningTolerance, geometrySinkPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, ID2D1Geometry*, CombineMode, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)@this->LpVtbl[11])(@this, inputGeometry, combineMode, inputGeometryTransformPtr, flatteningTolerance, geometrySinkPtr);
                 }
             }
             return ret;
@@ -704,7 +707,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (ID2D1Geometry* inputGeometryPtr = &inputGeometry)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, ID2D1Geometry*, CombineMode, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)LpVtbl[11])(@this, inputGeometryPtr, combineMode, inputGeometryTransform, flatteningTolerance, geometrySink);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, ID2D1Geometry*, CombineMode, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)@this->LpVtbl[11])(@this, inputGeometryPtr, combineMode, inputGeometryTransform, flatteningTolerance, geometrySink);
             }
             return ret;
         }
@@ -718,7 +721,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (ID2D1SimplifiedGeometrySink* geometrySinkPtr = &geometrySink)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, ID2D1Geometry*, CombineMode, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)LpVtbl[11])(@this, inputGeometryPtr, combineMode, inputGeometryTransform, flatteningTolerance, geometrySinkPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, ID2D1Geometry*, CombineMode, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)@this->LpVtbl[11])(@this, inputGeometryPtr, combineMode, inputGeometryTransform, flatteningTolerance, geometrySinkPtr);
                 }
             }
             return ret;
@@ -733,7 +736,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransformPtr = &inputGeometryTransform)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, ID2D1Geometry*, CombineMode, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)LpVtbl[11])(@this, inputGeometryPtr, combineMode, inputGeometryTransformPtr, flatteningTolerance, geometrySink);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, ID2D1Geometry*, CombineMode, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)@this->LpVtbl[11])(@this, inputGeometryPtr, combineMode, inputGeometryTransformPtr, flatteningTolerance, geometrySink);
                 }
             }
             return ret;
@@ -750,7 +753,7 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (ID2D1SimplifiedGeometrySink* geometrySinkPtr = &geometrySink)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, ID2D1Geometry*, CombineMode, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)LpVtbl[11])(@this, inputGeometryPtr, combineMode, inputGeometryTransformPtr, flatteningTolerance, geometrySinkPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, ID2D1Geometry*, CombineMode, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)@this->LpVtbl[11])(@this, inputGeometryPtr, combineMode, inputGeometryTransformPtr, flatteningTolerance, geometrySinkPtr);
                     }
                 }
             }
@@ -762,7 +765,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)LpVtbl[12])(@this, worldTransform, flatteningTolerance, geometrySink);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)@this->LpVtbl[12])(@this, worldTransform, flatteningTolerance, geometrySink);
             return ret;
         }
 
@@ -773,7 +776,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (ID2D1SimplifiedGeometrySink* geometrySinkPtr = &geometrySink)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)LpVtbl[12])(@this, worldTransform, flatteningTolerance, geometrySinkPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)@this->LpVtbl[12])(@this, worldTransform, flatteningTolerance, geometrySinkPtr);
             }
             return ret;
         }
@@ -785,7 +788,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Maths.Matrix3X2<float>* worldTransformPtr = &worldTransform)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)LpVtbl[12])(@this, worldTransformPtr, flatteningTolerance, geometrySink);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)@this->LpVtbl[12])(@this, worldTransformPtr, flatteningTolerance, geometrySink);
             }
             return ret;
         }
@@ -799,7 +802,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (ID2D1SimplifiedGeometrySink* geometrySinkPtr = &geometrySink)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)LpVtbl[12])(@this, worldTransformPtr, flatteningTolerance, geometrySinkPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)@this->LpVtbl[12])(@this, worldTransformPtr, flatteningTolerance, geometrySinkPtr);
                 }
             }
             return ret;
@@ -810,7 +813,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Matrix3X2<float>*, float, float*, int>)LpVtbl[13])(@this, worldTransform, flatteningTolerance, area);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Matrix3X2<float>*, float, float*, int>)@this->LpVtbl[13])(@this, worldTransform, flatteningTolerance, area);
             return ret;
         }
 
@@ -821,7 +824,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (float* areaPtr = &area)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Matrix3X2<float>*, float, float*, int>)LpVtbl[13])(@this, worldTransform, flatteningTolerance, areaPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Matrix3X2<float>*, float, float*, int>)@this->LpVtbl[13])(@this, worldTransform, flatteningTolerance, areaPtr);
             }
             return ret;
         }
@@ -833,7 +836,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Maths.Matrix3X2<float>* worldTransformPtr = &worldTransform)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Matrix3X2<float>*, float, float*, int>)LpVtbl[13])(@this, worldTransformPtr, flatteningTolerance, area);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Matrix3X2<float>*, float, float*, int>)@this->LpVtbl[13])(@this, worldTransformPtr, flatteningTolerance, area);
             }
             return ret;
         }
@@ -847,7 +850,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (float* areaPtr = &area)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Matrix3X2<float>*, float, float*, int>)LpVtbl[13])(@this, worldTransformPtr, flatteningTolerance, areaPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Matrix3X2<float>*, float, float*, int>)@this->LpVtbl[13])(@this, worldTransformPtr, flatteningTolerance, areaPtr);
                 }
             }
             return ret;
@@ -858,7 +861,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Matrix3X2<float>*, float, float*, int>)LpVtbl[14])(@this, worldTransform, flatteningTolerance, length);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Matrix3X2<float>*, float, float*, int>)@this->LpVtbl[14])(@this, worldTransform, flatteningTolerance, length);
             return ret;
         }
 
@@ -869,7 +872,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (float* lengthPtr = &length)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Matrix3X2<float>*, float, float*, int>)LpVtbl[14])(@this, worldTransform, flatteningTolerance, lengthPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Matrix3X2<float>*, float, float*, int>)@this->LpVtbl[14])(@this, worldTransform, flatteningTolerance, lengthPtr);
             }
             return ret;
         }
@@ -881,7 +884,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Maths.Matrix3X2<float>* worldTransformPtr = &worldTransform)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Matrix3X2<float>*, float, float*, int>)LpVtbl[14])(@this, worldTransformPtr, flatteningTolerance, length);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Matrix3X2<float>*, float, float*, int>)@this->LpVtbl[14])(@this, worldTransformPtr, flatteningTolerance, length);
             }
             return ret;
         }
@@ -895,7 +898,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (float* lengthPtr = &length)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Matrix3X2<float>*, float, float*, int>)LpVtbl[14])(@this, worldTransformPtr, flatteningTolerance, lengthPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, Silk.NET.Maths.Matrix3X2<float>*, float, float*, int>)@this->LpVtbl[14])(@this, worldTransformPtr, flatteningTolerance, lengthPtr);
                 }
             }
             return ret;
@@ -906,7 +909,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<float>*, int>)LpVtbl[15])(@this, length, worldTransform, flatteningTolerance, point, unitTangentVector);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<float>*, int>)@this->LpVtbl[15])(@this, length, worldTransform, flatteningTolerance, point, unitTangentVector);
             return ret;
         }
 
@@ -917,7 +920,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Maths.Vector2D<float>* unitTangentVectorPtr = &unitTangentVector)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<float>*, int>)LpVtbl[15])(@this, length, worldTransform, flatteningTolerance, point, unitTangentVectorPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<float>*, int>)@this->LpVtbl[15])(@this, length, worldTransform, flatteningTolerance, point, unitTangentVectorPtr);
             }
             return ret;
         }
@@ -929,7 +932,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Maths.Vector2D<float>* pointPtr = &point)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<float>*, int>)LpVtbl[15])(@this, length, worldTransform, flatteningTolerance, pointPtr, unitTangentVector);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<float>*, int>)@this->LpVtbl[15])(@this, length, worldTransform, flatteningTolerance, pointPtr, unitTangentVector);
             }
             return ret;
         }
@@ -943,7 +946,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (Silk.NET.Maths.Vector2D<float>* unitTangentVectorPtr = &unitTangentVector)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<float>*, int>)LpVtbl[15])(@this, length, worldTransform, flatteningTolerance, pointPtr, unitTangentVectorPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<float>*, int>)@this->LpVtbl[15])(@this, length, worldTransform, flatteningTolerance, pointPtr, unitTangentVectorPtr);
                 }
             }
             return ret;
@@ -956,7 +959,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Maths.Matrix3X2<float>* worldTransformPtr = &worldTransform)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<float>*, int>)LpVtbl[15])(@this, length, worldTransformPtr, flatteningTolerance, point, unitTangentVector);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<float>*, int>)@this->LpVtbl[15])(@this, length, worldTransformPtr, flatteningTolerance, point, unitTangentVector);
             }
             return ret;
         }
@@ -970,7 +973,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (Silk.NET.Maths.Vector2D<float>* unitTangentVectorPtr = &unitTangentVector)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<float>*, int>)LpVtbl[15])(@this, length, worldTransformPtr, flatteningTolerance, point, unitTangentVectorPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<float>*, int>)@this->LpVtbl[15])(@this, length, worldTransformPtr, flatteningTolerance, point, unitTangentVectorPtr);
                 }
             }
             return ret;
@@ -985,7 +988,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (Silk.NET.Maths.Vector2D<float>* pointPtr = &point)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<float>*, int>)LpVtbl[15])(@this, length, worldTransformPtr, flatteningTolerance, pointPtr, unitTangentVector);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<float>*, int>)@this->LpVtbl[15])(@this, length, worldTransformPtr, flatteningTolerance, pointPtr, unitTangentVector);
                 }
             }
             return ret;
@@ -1002,7 +1005,7 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (Silk.NET.Maths.Vector2D<float>* unitTangentVectorPtr = &unitTangentVector)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<float>*, int>)LpVtbl[15])(@this, length, worldTransformPtr, flatteningTolerance, pointPtr, unitTangentVectorPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, Silk.NET.Maths.Matrix3X2<float>*, float, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<float>*, int>)@this->LpVtbl[15])(@this, length, worldTransformPtr, flatteningTolerance, pointPtr, unitTangentVectorPtr);
                     }
                 }
             }
@@ -1014,7 +1017,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)LpVtbl[16])(@this, strokeWidth, strokeStyle, worldTransform, flatteningTolerance, geometrySink);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)@this->LpVtbl[16])(@this, strokeWidth, strokeStyle, worldTransform, flatteningTolerance, geometrySink);
             return ret;
         }
 
@@ -1025,7 +1028,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (ID2D1SimplifiedGeometrySink* geometrySinkPtr = &geometrySink)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)LpVtbl[16])(@this, strokeWidth, strokeStyle, worldTransform, flatteningTolerance, geometrySinkPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)@this->LpVtbl[16])(@this, strokeWidth, strokeStyle, worldTransform, flatteningTolerance, geometrySinkPtr);
             }
             return ret;
         }
@@ -1037,7 +1040,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Maths.Matrix3X2<float>* worldTransformPtr = &worldTransform)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)LpVtbl[16])(@this, strokeWidth, strokeStyle, worldTransformPtr, flatteningTolerance, geometrySink);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)@this->LpVtbl[16])(@this, strokeWidth, strokeStyle, worldTransformPtr, flatteningTolerance, geometrySink);
             }
             return ret;
         }
@@ -1051,7 +1054,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (ID2D1SimplifiedGeometrySink* geometrySinkPtr = &geometrySink)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)LpVtbl[16])(@this, strokeWidth, strokeStyle, worldTransformPtr, flatteningTolerance, geometrySinkPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)@this->LpVtbl[16])(@this, strokeWidth, strokeStyle, worldTransformPtr, flatteningTolerance, geometrySinkPtr);
                 }
             }
             return ret;
@@ -1064,7 +1067,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (ID2D1StrokeStyle* strokeStylePtr = &strokeStyle)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)LpVtbl[16])(@this, strokeWidth, strokeStylePtr, worldTransform, flatteningTolerance, geometrySink);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)@this->LpVtbl[16])(@this, strokeWidth, strokeStylePtr, worldTransform, flatteningTolerance, geometrySink);
             }
             return ret;
         }
@@ -1078,7 +1081,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (ID2D1SimplifiedGeometrySink* geometrySinkPtr = &geometrySink)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)LpVtbl[16])(@this, strokeWidth, strokeStylePtr, worldTransform, flatteningTolerance, geometrySinkPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)@this->LpVtbl[16])(@this, strokeWidth, strokeStylePtr, worldTransform, flatteningTolerance, geometrySinkPtr);
                 }
             }
             return ret;
@@ -1093,7 +1096,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (Silk.NET.Maths.Matrix3X2<float>* worldTransformPtr = &worldTransform)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)LpVtbl[16])(@this, strokeWidth, strokeStylePtr, worldTransformPtr, flatteningTolerance, geometrySink);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)@this->LpVtbl[16])(@this, strokeWidth, strokeStylePtr, worldTransformPtr, flatteningTolerance, geometrySink);
                 }
             }
             return ret;
@@ -1110,7 +1113,7 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (ID2D1SimplifiedGeometrySink* geometrySinkPtr = &geometrySink)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)LpVtbl[16])(@this, strokeWidth, strokeStylePtr, worldTransformPtr, flatteningTolerance, geometrySinkPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, ID2D1StrokeStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)@this->LpVtbl[16])(@this, strokeWidth, strokeStylePtr, worldTransformPtr, flatteningTolerance, geometrySinkPtr);
                     }
                 }
             }
@@ -1122,7 +1125,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, ID2D1GeometrySink**, int>)LpVtbl[17])(@this, geometrySink);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, ID2D1GeometrySink**, int>)@this->LpVtbl[17])(@this, geometrySink);
             return ret;
         }
 
@@ -1133,7 +1136,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (ID2D1GeometrySink** geometrySinkPtr = &geometrySink)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, ID2D1GeometrySink**, int>)LpVtbl[17])(@this, geometrySinkPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, ID2D1GeometrySink**, int>)@this->LpVtbl[17])(@this, geometrySinkPtr);
             }
             return ret;
         }
@@ -1143,7 +1146,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, ID2D1GeometrySink*, int>)LpVtbl[18])(@this, geometrySink);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, ID2D1GeometrySink*, int>)@this->LpVtbl[18])(@this, geometrySink);
             return ret;
         }
 
@@ -1154,7 +1157,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (ID2D1GeometrySink* geometrySinkPtr = &geometrySink)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, ID2D1GeometrySink*, int>)LpVtbl[18])(@this, geometrySinkPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, ID2D1GeometrySink*, int>)@this->LpVtbl[18])(@this, geometrySinkPtr);
             }
             return ret;
         }
@@ -1164,7 +1167,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, uint*, int>)LpVtbl[19])(@this, count);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, uint*, int>)@this->LpVtbl[19])(@this, count);
             return ret;
         }
 
@@ -1175,7 +1178,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (uint* countPtr = &count)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, uint*, int>)LpVtbl[19])(@this, countPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, uint*, int>)@this->LpVtbl[19])(@this, countPtr);
             }
             return ret;
         }
@@ -1185,7 +1188,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, uint*, int>)LpVtbl[20])(@this, count);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, uint*, int>)@this->LpVtbl[20])(@this, count);
             return ret;
         }
 
@@ -1196,7 +1199,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (uint* countPtr = &count)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, uint*, int>)LpVtbl[20])(@this, countPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, uint*, int>)@this->LpVtbl[20])(@this, countPtr);
             }
             return ret;
         }
@@ -1206,7 +1209,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, uint, Silk.NET.Maths.Matrix3X2<float>*, float, PointDescription*, int>)LpVtbl[21])(@this, length, startSegment, worldTransform, flatteningTolerance, pointDescription);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, uint, Silk.NET.Maths.Matrix3X2<float>*, float, PointDescription*, int>)@this->LpVtbl[21])(@this, length, startSegment, worldTransform, flatteningTolerance, pointDescription);
             return ret;
         }
 
@@ -1217,7 +1220,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (PointDescription* pointDescriptionPtr = &pointDescription)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, uint, Silk.NET.Maths.Matrix3X2<float>*, float, PointDescription*, int>)LpVtbl[21])(@this, length, startSegment, worldTransform, flatteningTolerance, pointDescriptionPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, uint, Silk.NET.Maths.Matrix3X2<float>*, float, PointDescription*, int>)@this->LpVtbl[21])(@this, length, startSegment, worldTransform, flatteningTolerance, pointDescriptionPtr);
             }
             return ret;
         }
@@ -1229,7 +1232,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Maths.Matrix3X2<float>* worldTransformPtr = &worldTransform)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, uint, Silk.NET.Maths.Matrix3X2<float>*, float, PointDescription*, int>)LpVtbl[21])(@this, length, startSegment, worldTransformPtr, flatteningTolerance, pointDescription);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, uint, Silk.NET.Maths.Matrix3X2<float>*, float, PointDescription*, int>)@this->LpVtbl[21])(@this, length, startSegment, worldTransformPtr, flatteningTolerance, pointDescription);
             }
             return ret;
         }
@@ -1243,10 +1246,292 @@ namespace Silk.NET.Direct2D
             {
                 fixed (PointDescription* pointDescriptionPtr = &pointDescription)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, uint, Silk.NET.Maths.Matrix3X2<float>*, float, PointDescription*, int>)LpVtbl[21])(@this, length, startSegment, worldTransformPtr, flatteningTolerance, pointDescriptionPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1PathGeometry1*, float, uint, Silk.NET.Maths.Matrix3X2<float>*, float, PointDescription*, int>)@this->LpVtbl[21])(@this, length, startSegment, worldTransformPtr, flatteningTolerance, pointDescriptionPtr);
                 }
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void GetFactory<TI0>(ref ComPtr<TI0> factory) where TI0 : unmanaged, IComVtbl<ID2D1Factory>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->GetFactory((ID2D1Factory**) factory.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetWidenedBounds<TI0>(float strokeWidth, ComPtr<TI0> strokeStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Silk.NET.Maths.Box2D<float>* bounds) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetWidenedBounds(strokeWidth, (ID2D1StrokeStyle*) strokeStyle.Handle, worldTransform, flatteningTolerance, bounds);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetWidenedBounds<TI0>(float strokeWidth, ComPtr<TI0> strokeStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref Silk.NET.Maths.Box2D<float> bounds) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetWidenedBounds(strokeWidth, (ID2D1StrokeStyle*) strokeStyle.Handle, worldTransform, flatteningTolerance, ref bounds);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetWidenedBounds<TI0>(float strokeWidth, ComPtr<TI0> strokeStyle, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, Silk.NET.Maths.Box2D<float>* bounds) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetWidenedBounds(strokeWidth, (ID2D1StrokeStyle*) strokeStyle.Handle, ref worldTransform, flatteningTolerance, bounds);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetWidenedBounds<TI0>(float strokeWidth, ComPtr<TI0> strokeStyle, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref Silk.NET.Maths.Box2D<float> bounds) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetWidenedBounds(strokeWidth, (ID2D1StrokeStyle*) strokeStyle.Handle, ref worldTransform, flatteningTolerance, ref bounds);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int StrokeContainsPoint<TI0>(Silk.NET.Maths.Vector2D<float> point, float strokeWidth, ComPtr<TI0> strokeStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, int* contains) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->StrokeContainsPoint(point, strokeWidth, (ID2D1StrokeStyle*) strokeStyle.Handle, worldTransform, flatteningTolerance, contains);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int StrokeContainsPoint<TI0>(Silk.NET.Maths.Vector2D<float> point, float strokeWidth, ComPtr<TI0> strokeStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref int contains) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->StrokeContainsPoint(point, strokeWidth, (ID2D1StrokeStyle*) strokeStyle.Handle, worldTransform, flatteningTolerance, ref contains);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int StrokeContainsPoint<TI0>(Silk.NET.Maths.Vector2D<float> point, float strokeWidth, ComPtr<TI0> strokeStyle, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, int* contains) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->StrokeContainsPoint(point, strokeWidth, (ID2D1StrokeStyle*) strokeStyle.Handle, ref worldTransform, flatteningTolerance, contains);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int StrokeContainsPoint<TI0>(Silk.NET.Maths.Vector2D<float> point, float strokeWidth, ComPtr<TI0> strokeStyle, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref int contains) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->StrokeContainsPoint(point, strokeWidth, (ID2D1StrokeStyle*) strokeStyle.Handle, ref worldTransform, flatteningTolerance, ref contains);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CompareWithGeometry<TI0>(ComPtr<TI0> inputGeometry, Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransform, float flatteningTolerance, GeometryRelation* relation) where TI0 : unmanaged, IComVtbl<ID2D1Geometry>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CompareWithGeometry((ID2D1Geometry*) inputGeometry.Handle, inputGeometryTransform, flatteningTolerance, relation);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CompareWithGeometry<TI0>(ComPtr<TI0> inputGeometry, Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransform, float flatteningTolerance, ref GeometryRelation relation) where TI0 : unmanaged, IComVtbl<ID2D1Geometry>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CompareWithGeometry((ID2D1Geometry*) inputGeometry.Handle, inputGeometryTransform, flatteningTolerance, ref relation);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CompareWithGeometry<TI0>(ComPtr<TI0> inputGeometry, ref Silk.NET.Maths.Matrix3X2<float> inputGeometryTransform, float flatteningTolerance, GeometryRelation* relation) where TI0 : unmanaged, IComVtbl<ID2D1Geometry>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CompareWithGeometry((ID2D1Geometry*) inputGeometry.Handle, ref inputGeometryTransform, flatteningTolerance, relation);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CompareWithGeometry<TI0>(ComPtr<TI0> inputGeometry, ref Silk.NET.Maths.Matrix3X2<float> inputGeometryTransform, float flatteningTolerance, ref GeometryRelation relation) where TI0 : unmanaged, IComVtbl<ID2D1Geometry>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CompareWithGeometry((ID2D1Geometry*) inputGeometry.Handle, ref inputGeometryTransform, flatteningTolerance, ref relation);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Simplify<TI0>(GeometrySimplificationOption simplificationOption, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ComPtr<TI0> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Simplify(simplificationOption, worldTransform, flatteningTolerance, (ID2D1SimplifiedGeometrySink*) geometrySink.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int Simplify<TI0>(GeometrySimplificationOption simplificationOption, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ComPtr<TI0> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Simplify(simplificationOption, ref worldTransform, flatteningTolerance, (ID2D1SimplifiedGeometrySink*) geometrySink.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Tessellate<TI0>(Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ComPtr<TI0> tessellationSink) where TI0 : unmanaged, IComVtbl<ID2D1TessellationSink>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Tessellate(worldTransform, flatteningTolerance, (ID2D1TessellationSink*) tessellationSink.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int Tessellate<TI0>(ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ComPtr<TI0> tessellationSink) where TI0 : unmanaged, IComVtbl<ID2D1TessellationSink>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Tessellate(ref worldTransform, flatteningTolerance, (ID2D1TessellationSink*) tessellationSink.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CombineWithGeometry<TI0, TI1>(ComPtr<TI0> inputGeometry, CombineMode combineMode, Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransform, float flatteningTolerance, ComPtr<TI1> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1Geometry>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI1>
+        {
+            var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CombineWithGeometry((ID2D1Geometry*) inputGeometry.Handle, combineMode, inputGeometryTransform, flatteningTolerance, (ID2D1SimplifiedGeometrySink*) geometrySink.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CombineWithGeometry<TI0>(ComPtr<TI0> inputGeometry, CombineMode combineMode, Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1Geometry>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CombineWithGeometry((ID2D1Geometry*) inputGeometry.Handle, combineMode, inputGeometryTransform, flatteningTolerance, ref geometrySink);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CombineWithGeometry<TI0, TI1>(ComPtr<TI0> inputGeometry, CombineMode combineMode, ref Silk.NET.Maths.Matrix3X2<float> inputGeometryTransform, float flatteningTolerance, ComPtr<TI1> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1Geometry>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI1>
+        {
+            var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CombineWithGeometry((ID2D1Geometry*) inputGeometry.Handle, combineMode, ref inputGeometryTransform, flatteningTolerance, (ID2D1SimplifiedGeometrySink*) geometrySink.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CombineWithGeometry<TI0>(ComPtr<TI0> inputGeometry, CombineMode combineMode, ref Silk.NET.Maths.Matrix3X2<float> inputGeometryTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1Geometry>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CombineWithGeometry((ID2D1Geometry*) inputGeometry.Handle, combineMode, ref inputGeometryTransform, flatteningTolerance, ref geometrySink);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CombineWithGeometry<TI0>(ref ID2D1Geometry inputGeometry, CombineMode combineMode, Silk.NET.Maths.Matrix3X2<float>* inputGeometryTransform, float flatteningTolerance, ComPtr<TI0> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CombineWithGeometry(ref inputGeometry, combineMode, inputGeometryTransform, flatteningTolerance, (ID2D1SimplifiedGeometrySink*) geometrySink.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CombineWithGeometry<TI0>(ref ID2D1Geometry inputGeometry, CombineMode combineMode, ref Silk.NET.Maths.Matrix3X2<float> inputGeometryTransform, float flatteningTolerance, ComPtr<TI0> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CombineWithGeometry(ref inputGeometry, combineMode, ref inputGeometryTransform, flatteningTolerance, (ID2D1SimplifiedGeometrySink*) geometrySink.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Outline<TI0>(Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ComPtr<TI0> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Outline(worldTransform, flatteningTolerance, (ID2D1SimplifiedGeometrySink*) geometrySink.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int Outline<TI0>(ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ComPtr<TI0> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Outline(ref worldTransform, flatteningTolerance, (ID2D1SimplifiedGeometrySink*) geometrySink.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Widen<TI0, TI1>(float strokeWidth, ComPtr<TI0> strokeStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ComPtr<TI1> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI1>
+        {
+            var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Widen(strokeWidth, (ID2D1StrokeStyle*) strokeStyle.Handle, worldTransform, flatteningTolerance, (ID2D1SimplifiedGeometrySink*) geometrySink.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Widen<TI0>(float strokeWidth, ComPtr<TI0> strokeStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Widen(strokeWidth, (ID2D1StrokeStyle*) strokeStyle.Handle, worldTransform, flatteningTolerance, ref geometrySink);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int Widen<TI0, TI1>(float strokeWidth, ComPtr<TI0> strokeStyle, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ComPtr<TI1> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI1>
+        {
+            var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Widen(strokeWidth, (ID2D1StrokeStyle*) strokeStyle.Handle, ref worldTransform, flatteningTolerance, (ID2D1SimplifiedGeometrySink*) geometrySink.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int Widen<TI0>(float strokeWidth, ComPtr<TI0> strokeStyle, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Widen(strokeWidth, (ID2D1StrokeStyle*) strokeStyle.Handle, ref worldTransform, flatteningTolerance, ref geometrySink);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Widen<TI0>(float strokeWidth, ref ID2D1StrokeStyle strokeStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ComPtr<TI0> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Widen(strokeWidth, ref strokeStyle, worldTransform, flatteningTolerance, (ID2D1SimplifiedGeometrySink*) geometrySink.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int Widen<TI0>(float strokeWidth, ref ID2D1StrokeStyle strokeStyle, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ComPtr<TI0> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Widen(strokeWidth, ref strokeStyle, ref worldTransform, flatteningTolerance, (ID2D1SimplifiedGeometrySink*) geometrySink.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int Open<TI0>(ref ComPtr<TI0> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1GeometrySink>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Open((ID2D1GeometrySink**) geometrySink.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int Stream<TI0>(ComPtr<TI0> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1GeometrySink>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Stream((ID2D1GeometrySink*) geometrySink.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID2D1PathGeometry1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

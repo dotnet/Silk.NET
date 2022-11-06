@@ -18,9 +18,12 @@ namespace Silk.NET.Direct3D9
 {
     [Guid("02177241-69fc-400c-8ff1-93a44df6861d")]
     [NativeName("Name", "IDirect3D9Ex")]
-    public unsafe partial struct IDirect3D9Ex
+    public unsafe partial struct IDirect3D9Ex : IComVtbl<IDirect3D9Ex>, IComVtbl<IDirect3D9>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("02177241-69fc-400c-8ff1-93a44df6861d");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator IDirect3D9(IDirect3D9Ex val)
             => Unsafe.As<IDirect3D9Ex, IDirect3D9>(ref val);
@@ -49,7 +52,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3D9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -60,7 +63,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -72,7 +75,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -86,7 +89,7 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -97,7 +100,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3D9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -106,7 +109,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3D9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -115,7 +118,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3D9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, void*, int>)LpVtbl[3])(@this, pInitializeFunction);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, void*, int>)@this->LpVtbl[3])(@this, pInitializeFunction);
             return ret;
         }
 
@@ -126,7 +129,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (void* pInitializeFunctionPtr = &pInitializeFunction)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, void*, int>)LpVtbl[3])(@this, pInitializeFunctionPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, void*, int>)@this->LpVtbl[3])(@this, pInitializeFunctionPtr);
             }
             return ret;
         }
@@ -136,7 +139,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3D9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint>)LpVtbl[4])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint>)@this->LpVtbl[4])(@this);
             return ret;
         }
 
@@ -145,7 +148,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3D9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, uint, AdapterIdentifier9*, int>)LpVtbl[5])(@this, Adapter, Flags, pIdentifier);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, uint, AdapterIdentifier9*, int>)@this->LpVtbl[5])(@this, Adapter, Flags, pIdentifier);
             return ret;
         }
 
@@ -156,7 +159,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (AdapterIdentifier9* pIdentifierPtr = &pIdentifier)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, uint, AdapterIdentifier9*, int>)LpVtbl[5])(@this, Adapter, Flags, pIdentifierPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, uint, AdapterIdentifier9*, int>)@this->LpVtbl[5])(@this, Adapter, Flags, pIdentifierPtr);
             }
             return ret;
         }
@@ -166,7 +169,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3D9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Format, uint>)LpVtbl[6])(@this, Adapter, Format);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Format, uint>)@this->LpVtbl[6])(@this, Adapter, Format);
             return ret;
         }
 
@@ -175,7 +178,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3D9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Format, uint, Displaymode*, int>)LpVtbl[7])(@this, Adapter, Format, Mode, pMode);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Format, uint, Displaymode*, int>)@this->LpVtbl[7])(@this, Adapter, Format, Mode, pMode);
             return ret;
         }
 
@@ -186,7 +189,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (Displaymode* pModePtr = &pMode)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Format, uint, Displaymode*, int>)LpVtbl[7])(@this, Adapter, Format, Mode, pModePtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Format, uint, Displaymode*, int>)@this->LpVtbl[7])(@this, Adapter, Format, Mode, pModePtr);
             }
             return ret;
         }
@@ -196,7 +199,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3D9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Displaymode*, int>)LpVtbl[8])(@this, Adapter, pMode);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Displaymode*, int>)@this->LpVtbl[8])(@this, Adapter, pMode);
             return ret;
         }
 
@@ -207,7 +210,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (Displaymode* pModePtr = &pMode)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Displaymode*, int>)LpVtbl[8])(@this, Adapter, pModePtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Displaymode*, int>)@this->LpVtbl[8])(@this, Adapter, pModePtr);
             }
             return ret;
         }
@@ -217,7 +220,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3D9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, Format, Format, int, int>)LpVtbl[9])(@this, Adapter, DevType, AdapterFormat, BackBufferFormat, bWindowed);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, Format, Format, int, int>)@this->LpVtbl[9])(@this, Adapter, DevType, AdapterFormat, BackBufferFormat, bWindowed);
             return ret;
         }
 
@@ -226,7 +229,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3D9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, Format, uint, Resourcetype, Format, int>)LpVtbl[10])(@this, Adapter, DeviceType, AdapterFormat, Usage, RType, CheckFormat);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, Format, uint, Resourcetype, Format, int>)@this->LpVtbl[10])(@this, Adapter, DeviceType, AdapterFormat, Usage, RType, CheckFormat);
             return ret;
         }
 
@@ -235,7 +238,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3D9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, Format, int, MultisampleType, uint*, int>)LpVtbl[11])(@this, Adapter, DeviceType, SurfaceFormat, Windowed, MultiSampleType, pQualityLevels);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, Format, int, MultisampleType, uint*, int>)@this->LpVtbl[11])(@this, Adapter, DeviceType, SurfaceFormat, Windowed, MultiSampleType, pQualityLevels);
             return ret;
         }
 
@@ -246,7 +249,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (uint* pQualityLevelsPtr = &pQualityLevels)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, Format, int, MultisampleType, uint*, int>)LpVtbl[11])(@this, Adapter, DeviceType, SurfaceFormat, Windowed, MultiSampleType, pQualityLevelsPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, Format, int, MultisampleType, uint*, int>)@this->LpVtbl[11])(@this, Adapter, DeviceType, SurfaceFormat, Windowed, MultiSampleType, pQualityLevelsPtr);
             }
             return ret;
         }
@@ -256,7 +259,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3D9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, Format, Format, Format, int>)LpVtbl[12])(@this, Adapter, DeviceType, AdapterFormat, RenderTargetFormat, DepthStencilFormat);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, Format, Format, Format, int>)@this->LpVtbl[12])(@this, Adapter, DeviceType, AdapterFormat, RenderTargetFormat, DepthStencilFormat);
             return ret;
         }
 
@@ -265,7 +268,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3D9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, Format, Format, int>)LpVtbl[13])(@this, Adapter, DeviceType, SourceFormat, TargetFormat);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, Format, Format, int>)@this->LpVtbl[13])(@this, Adapter, DeviceType, SourceFormat, TargetFormat);
             return ret;
         }
 
@@ -274,7 +277,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3D9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, Caps9*, int>)LpVtbl[14])(@this, Adapter, DeviceType, pCaps);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, Caps9*, int>)@this->LpVtbl[14])(@this, Adapter, DeviceType, pCaps);
             return ret;
         }
 
@@ -285,7 +288,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (Caps9* pCapsPtr = &pCaps)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, Caps9*, int>)LpVtbl[14])(@this, Adapter, DeviceType, pCapsPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, Caps9*, int>)@this->LpVtbl[14])(@this, Adapter, DeviceType, pCapsPtr);
             }
             return ret;
         }
@@ -295,7 +298,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3D9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             nint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, nint>)LpVtbl[15])(@this, Adapter);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, nint>)@this->LpVtbl[15])(@this, Adapter);
             return ret;
         }
 
@@ -304,7 +307,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3D9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, nint, uint, PresentParameters*, IDirect3DDevice9**, int>)LpVtbl[16])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParameters, ppReturnedDeviceInterface);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, nint, uint, PresentParameters*, IDirect3DDevice9**, int>)@this->LpVtbl[16])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParameters, ppReturnedDeviceInterface);
             return ret;
         }
 
@@ -315,7 +318,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (IDirect3DDevice9** ppReturnedDeviceInterfacePtr = &ppReturnedDeviceInterface)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, nint, uint, PresentParameters*, IDirect3DDevice9**, int>)LpVtbl[16])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParameters, ppReturnedDeviceInterfacePtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, nint, uint, PresentParameters*, IDirect3DDevice9**, int>)@this->LpVtbl[16])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParameters, ppReturnedDeviceInterfacePtr);
             }
             return ret;
         }
@@ -327,7 +330,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (PresentParameters* pPresentationParametersPtr = &pPresentationParameters)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, nint, uint, PresentParameters*, IDirect3DDevice9**, int>)LpVtbl[16])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParametersPtr, ppReturnedDeviceInterface);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, nint, uint, PresentParameters*, IDirect3DDevice9**, int>)@this->LpVtbl[16])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParametersPtr, ppReturnedDeviceInterface);
             }
             return ret;
         }
@@ -341,7 +344,7 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (IDirect3DDevice9** ppReturnedDeviceInterfacePtr = &ppReturnedDeviceInterface)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, nint, uint, PresentParameters*, IDirect3DDevice9**, int>)LpVtbl[16])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParametersPtr, ppReturnedDeviceInterfacePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, nint, uint, PresentParameters*, IDirect3DDevice9**, int>)@this->LpVtbl[16])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParametersPtr, ppReturnedDeviceInterfacePtr);
                 }
             }
             return ret;
@@ -352,7 +355,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3D9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Displaymodefilter*, uint>)LpVtbl[17])(@this, Adapter, pFilter);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Displaymodefilter*, uint>)@this->LpVtbl[17])(@this, Adapter, pFilter);
             return ret;
         }
 
@@ -363,7 +366,7 @@ namespace Silk.NET.Direct3D9
             uint ret = default;
             fixed (Displaymodefilter* pFilterPtr = &pFilter)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Displaymodefilter*, uint>)LpVtbl[17])(@this, Adapter, pFilterPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Displaymodefilter*, uint>)@this->LpVtbl[17])(@this, Adapter, pFilterPtr);
             }
             return ret;
         }
@@ -373,7 +376,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3D9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Displaymodefilter*, uint, Displaymodeex*, int>)LpVtbl[18])(@this, Adapter, pFilter, Mode, pMode);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Displaymodefilter*, uint, Displaymodeex*, int>)@this->LpVtbl[18])(@this, Adapter, pFilter, Mode, pMode);
             return ret;
         }
 
@@ -384,7 +387,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (Displaymodeex* pModePtr = &pMode)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Displaymodefilter*, uint, Displaymodeex*, int>)LpVtbl[18])(@this, Adapter, pFilter, Mode, pModePtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Displaymodefilter*, uint, Displaymodeex*, int>)@this->LpVtbl[18])(@this, Adapter, pFilter, Mode, pModePtr);
             }
             return ret;
         }
@@ -396,7 +399,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (Displaymodefilter* pFilterPtr = &pFilter)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Displaymodefilter*, uint, Displaymodeex*, int>)LpVtbl[18])(@this, Adapter, pFilterPtr, Mode, pMode);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Displaymodefilter*, uint, Displaymodeex*, int>)@this->LpVtbl[18])(@this, Adapter, pFilterPtr, Mode, pMode);
             }
             return ret;
         }
@@ -410,7 +413,7 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (Displaymodeex* pModePtr = &pMode)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Displaymodefilter*, uint, Displaymodeex*, int>)LpVtbl[18])(@this, Adapter, pFilterPtr, Mode, pModePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Displaymodefilter*, uint, Displaymodeex*, int>)@this->LpVtbl[18])(@this, Adapter, pFilterPtr, Mode, pModePtr);
                 }
             }
             return ret;
@@ -421,7 +424,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3D9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Displaymodeex*, Displayrotation*, int>)LpVtbl[19])(@this, Adapter, pMode, pRotation);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Displaymodeex*, Displayrotation*, int>)@this->LpVtbl[19])(@this, Adapter, pMode, pRotation);
             return ret;
         }
 
@@ -432,7 +435,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (Displayrotation* pRotationPtr = &pRotation)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Displaymodeex*, Displayrotation*, int>)LpVtbl[19])(@this, Adapter, pMode, pRotationPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Displaymodeex*, Displayrotation*, int>)@this->LpVtbl[19])(@this, Adapter, pMode, pRotationPtr);
             }
             return ret;
         }
@@ -444,7 +447,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (Displaymodeex* pModePtr = &pMode)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Displaymodeex*, Displayrotation*, int>)LpVtbl[19])(@this, Adapter, pModePtr, pRotation);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Displaymodeex*, Displayrotation*, int>)@this->LpVtbl[19])(@this, Adapter, pModePtr, pRotation);
             }
             return ret;
         }
@@ -458,7 +461,7 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (Displayrotation* pRotationPtr = &pRotation)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Displaymodeex*, Displayrotation*, int>)LpVtbl[19])(@this, Adapter, pModePtr, pRotationPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Displaymodeex*, Displayrotation*, int>)@this->LpVtbl[19])(@this, Adapter, pModePtr, pRotationPtr);
                 }
             }
             return ret;
@@ -469,7 +472,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3D9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, nint, uint, PresentParameters*, Displaymodeex*, IDirect3DDevice9Ex**, int>)LpVtbl[20])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParameters, pFullscreenDisplayMode, ppReturnedDeviceInterface);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, nint, uint, PresentParameters*, Displaymodeex*, IDirect3DDevice9Ex**, int>)@this->LpVtbl[20])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParameters, pFullscreenDisplayMode, ppReturnedDeviceInterface);
             return ret;
         }
 
@@ -480,7 +483,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (IDirect3DDevice9Ex** ppReturnedDeviceInterfacePtr = &ppReturnedDeviceInterface)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, nint, uint, PresentParameters*, Displaymodeex*, IDirect3DDevice9Ex**, int>)LpVtbl[20])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParameters, pFullscreenDisplayMode, ppReturnedDeviceInterfacePtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, nint, uint, PresentParameters*, Displaymodeex*, IDirect3DDevice9Ex**, int>)@this->LpVtbl[20])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParameters, pFullscreenDisplayMode, ppReturnedDeviceInterfacePtr);
             }
             return ret;
         }
@@ -492,7 +495,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (Displaymodeex* pFullscreenDisplayModePtr = &pFullscreenDisplayMode)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, nint, uint, PresentParameters*, Displaymodeex*, IDirect3DDevice9Ex**, int>)LpVtbl[20])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParameters, pFullscreenDisplayModePtr, ppReturnedDeviceInterface);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, nint, uint, PresentParameters*, Displaymodeex*, IDirect3DDevice9Ex**, int>)@this->LpVtbl[20])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParameters, pFullscreenDisplayModePtr, ppReturnedDeviceInterface);
             }
             return ret;
         }
@@ -506,7 +509,7 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (IDirect3DDevice9Ex** ppReturnedDeviceInterfacePtr = &ppReturnedDeviceInterface)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, nint, uint, PresentParameters*, Displaymodeex*, IDirect3DDevice9Ex**, int>)LpVtbl[20])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParameters, pFullscreenDisplayModePtr, ppReturnedDeviceInterfacePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, nint, uint, PresentParameters*, Displaymodeex*, IDirect3DDevice9Ex**, int>)@this->LpVtbl[20])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParameters, pFullscreenDisplayModePtr, ppReturnedDeviceInterfacePtr);
                 }
             }
             return ret;
@@ -519,7 +522,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (PresentParameters* pPresentationParametersPtr = &pPresentationParameters)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, nint, uint, PresentParameters*, Displaymodeex*, IDirect3DDevice9Ex**, int>)LpVtbl[20])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParametersPtr, pFullscreenDisplayMode, ppReturnedDeviceInterface);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, nint, uint, PresentParameters*, Displaymodeex*, IDirect3DDevice9Ex**, int>)@this->LpVtbl[20])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParametersPtr, pFullscreenDisplayMode, ppReturnedDeviceInterface);
             }
             return ret;
         }
@@ -533,7 +536,7 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (IDirect3DDevice9Ex** ppReturnedDeviceInterfacePtr = &ppReturnedDeviceInterface)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, nint, uint, PresentParameters*, Displaymodeex*, IDirect3DDevice9Ex**, int>)LpVtbl[20])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParametersPtr, pFullscreenDisplayMode, ppReturnedDeviceInterfacePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, nint, uint, PresentParameters*, Displaymodeex*, IDirect3DDevice9Ex**, int>)@this->LpVtbl[20])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParametersPtr, pFullscreenDisplayMode, ppReturnedDeviceInterfacePtr);
                 }
             }
             return ret;
@@ -548,7 +551,7 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (Displaymodeex* pFullscreenDisplayModePtr = &pFullscreenDisplayMode)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, nint, uint, PresentParameters*, Displaymodeex*, IDirect3DDevice9Ex**, int>)LpVtbl[20])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParametersPtr, pFullscreenDisplayModePtr, ppReturnedDeviceInterface);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, nint, uint, PresentParameters*, Displaymodeex*, IDirect3DDevice9Ex**, int>)@this->LpVtbl[20])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParametersPtr, pFullscreenDisplayModePtr, ppReturnedDeviceInterface);
                 }
             }
             return ret;
@@ -565,7 +568,7 @@ namespace Silk.NET.Direct3D9
                 {
                     fixed (IDirect3DDevice9Ex** ppReturnedDeviceInterfacePtr = &ppReturnedDeviceInterface)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, nint, uint, PresentParameters*, Displaymodeex*, IDirect3DDevice9Ex**, int>)LpVtbl[20])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParametersPtr, pFullscreenDisplayModePtr, ppReturnedDeviceInterfacePtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, nint, uint, PresentParameters*, Displaymodeex*, IDirect3DDevice9Ex**, int>)@this->LpVtbl[20])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParametersPtr, pFullscreenDisplayModePtr, ppReturnedDeviceInterfacePtr);
                     }
                 }
             }
@@ -577,7 +580,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3D9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Luid*, int>)LpVtbl[21])(@this, Adapter, pLUID);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Luid*, int>)@this->LpVtbl[21])(@this, Adapter, pLUID);
             return ret;
         }
 
@@ -588,9 +591,75 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (Luid* pLUIDPtr = &pLUID)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Luid*, int>)LpVtbl[21])(@this, Adapter, pLUIDPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Luid*, int>)@this->LpVtbl[21])(@this, Adapter, pLUIDPtr);
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDirect3D9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateDevice<TI0>(uint Adapter, Devtype DeviceType, nint hFocusWindow, uint BehaviorFlags, PresentParameters* pPresentationParameters, ref ComPtr<TI0> ppReturnedDeviceInterface) where TI0 : unmanaged, IComVtbl<IDirect3DDevice9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3D9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateDevice(Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParameters, (IDirect3DDevice9**) ppReturnedDeviceInterface.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateDevice<TI0>(uint Adapter, Devtype DeviceType, nint hFocusWindow, uint BehaviorFlags, ref PresentParameters pPresentationParameters, ref ComPtr<TI0> ppReturnedDeviceInterface) where TI0 : unmanaged, IComVtbl<IDirect3DDevice9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3D9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateDevice(Adapter, DeviceType, hFocusWindow, BehaviorFlags, ref pPresentationParameters, (IDirect3DDevice9**) ppReturnedDeviceInterface.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateDeviceEx<TI0>(uint Adapter, Devtype DeviceType, nint hFocusWindow, uint BehaviorFlags, PresentParameters* pPresentationParameters, Displaymodeex* pFullscreenDisplayMode, ref ComPtr<TI0> ppReturnedDeviceInterface) where TI0 : unmanaged, IComVtbl<IDirect3DDevice9Ex>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3D9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateDeviceEx(Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParameters, pFullscreenDisplayMode, (IDirect3DDevice9Ex**) ppReturnedDeviceInterface.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateDeviceEx<TI0>(uint Adapter, Devtype DeviceType, nint hFocusWindow, uint BehaviorFlags, PresentParameters* pPresentationParameters, ref Displaymodeex pFullscreenDisplayMode, ref ComPtr<TI0> ppReturnedDeviceInterface) where TI0 : unmanaged, IComVtbl<IDirect3DDevice9Ex>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3D9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateDeviceEx(Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParameters, ref pFullscreenDisplayMode, (IDirect3DDevice9Ex**) ppReturnedDeviceInterface.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateDeviceEx<TI0>(uint Adapter, Devtype DeviceType, nint hFocusWindow, uint BehaviorFlags, ref PresentParameters pPresentationParameters, Displaymodeex* pFullscreenDisplayMode, ref ComPtr<TI0> ppReturnedDeviceInterface) where TI0 : unmanaged, IComVtbl<IDirect3DDevice9Ex>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3D9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateDeviceEx(Adapter, DeviceType, hFocusWindow, BehaviorFlags, ref pPresentationParameters, pFullscreenDisplayMode, (IDirect3DDevice9Ex**) ppReturnedDeviceInterface.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateDeviceEx<TI0>(uint Adapter, Devtype DeviceType, nint hFocusWindow, uint BehaviorFlags, ref PresentParameters pPresentationParameters, ref Displaymodeex pFullscreenDisplayMode, ref ComPtr<TI0> ppReturnedDeviceInterface) where TI0 : unmanaged, IComVtbl<IDirect3DDevice9Ex>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3D9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateDeviceEx(Adapter, DeviceType, hFocusWindow, BehaviorFlags, ref pPresentationParameters, ref pFullscreenDisplayMode, (IDirect3DDevice9Ex**) ppReturnedDeviceInterface.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDirect3D9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

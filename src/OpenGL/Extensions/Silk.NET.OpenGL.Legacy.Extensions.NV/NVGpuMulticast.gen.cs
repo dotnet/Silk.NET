@@ -77,6 +77,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         [NativeApi(EntryPoint = "glRenderGpuMaskNV", Convention = CallingConvention.Winapi)]
         public partial void RenderGpuMask([Flow(FlowDirection.In)] uint mask);
 
+        public unsafe int MulticastGetQueryObject([Flow(FlowDirection.In)] uint gpu, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] NV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            MulticastGetQueryObject(gpu, id, pname, out int silkRet);
+            return silkRet;
+        }
+
         public NVGpuMulticast(INativeContext ctx)
             : base(ctx)
         {

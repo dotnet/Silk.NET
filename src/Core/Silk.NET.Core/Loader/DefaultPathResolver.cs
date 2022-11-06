@@ -74,18 +74,25 @@ namespace Silk.NET.Core.Loader
         /// </summary>
         public static readonly Func<string, IEnumerable<string>> MainModuleDirectoryResolver = name =>
         {
-            var mainModFname = Process.GetCurrentProcess().MainModule?.FileName;
-            // check that name doesn't have a directory name, we only want raw filenames so that the Path.Combine
-            // doesn't blow up.
-            if (!string.IsNullOrWhiteSpace(Path.GetDirectoryName(name)) && mainModFname is not null)
+            try
             {
-                mainModFname = Path.GetDirectoryName(mainModFname);
-                if (mainModFname is not null)
+                var mainModFname = Process.GetCurrentProcess().MainModule?.FileName;
+                // check that name doesn't have a directory name, we only want raw filenames so that the Path.Combine
+                // doesn't blow up.
+                if (!string.IsNullOrWhiteSpace(Path.GetDirectoryName(name)) && mainModFname is not null)
                 {
-                    return Enumerable.Repeat(Path.Combine(mainModFname, name), 1);
+                    mainModFname = Path.GetDirectoryName(mainModFname);
+                    if (mainModFname is not null)
+                    {
+                        return Enumerable.Repeat(Path.Combine(mainModFname, name), 1);
+                    }
                 }
             }
-            
+            catch
+            {
+                // System.Diagnostics.Process is not supported on the WASI-SDK
+            }
+
             return Enumerable.Empty<string>();
         };
 

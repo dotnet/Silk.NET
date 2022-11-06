@@ -18,9 +18,12 @@ namespace Silk.NET.Direct2D
 {
     [Guid("688d15c3-02b0-438d-b13a-d1b44c32c39a")]
     [NativeName("Name", "ID2D1ResourceTexture")]
-    public unsafe partial struct ID2D1ResourceTexture
+    public unsafe partial struct ID2D1ResourceTexture : IComVtbl<ID2D1ResourceTexture>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("688d15c3-02b0-438d-b13a-d1b44c32c39a");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator Silk.NET.Core.Native.IUnknown(ID2D1ResourceTexture val)
             => Unsafe.As<ID2D1ResourceTexture, Silk.NET.Core.Native.IUnknown>(ref val);
@@ -46,7 +49,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1ResourceTexture*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -57,7 +60,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -69,7 +72,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -83,7 +86,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -94,7 +97,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1ResourceTexture*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -103,7 +106,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1ResourceTexture*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -112,7 +115,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1ResourceTexture*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)LpVtbl[3])(@this, minimumExtents, maximimumExtents, strides, dimensions, data, dataCount);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)@this->LpVtbl[3])(@this, minimumExtents, maximimumExtents, strides, dimensions, data, dataCount);
             return ret;
         }
 
@@ -123,7 +126,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (byte* dataPtr = &data)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)LpVtbl[3])(@this, minimumExtents, maximimumExtents, strides, dimensions, dataPtr, dataCount);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)@this->LpVtbl[3])(@this, minimumExtents, maximimumExtents, strides, dimensions, dataPtr, dataCount);
             }
             return ret;
         }
@@ -134,7 +137,7 @@ namespace Silk.NET.Direct2D
             var @this = (ID2D1ResourceTexture*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var dataPtr = (byte*) SilkMarshal.StringToPtr(data, NativeStringEncoding.UTF8);
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)LpVtbl[3])(@this, minimumExtents, maximimumExtents, strides, dimensions, dataPtr, dataCount);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)@this->LpVtbl[3])(@this, minimumExtents, maximimumExtents, strides, dimensions, dataPtr, dataCount);
             SilkMarshal.Free((nint)dataPtr);
             return ret;
         }
@@ -146,7 +149,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (uint* stridesPtr = &strides)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)LpVtbl[3])(@this, minimumExtents, maximimumExtents, stridesPtr, dimensions, data, dataCount);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)@this->LpVtbl[3])(@this, minimumExtents, maximimumExtents, stridesPtr, dimensions, data, dataCount);
             }
             return ret;
         }
@@ -160,7 +163,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (byte* dataPtr = &data)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)LpVtbl[3])(@this, minimumExtents, maximimumExtents, stridesPtr, dimensions, dataPtr, dataCount);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)@this->LpVtbl[3])(@this, minimumExtents, maximimumExtents, stridesPtr, dimensions, dataPtr, dataCount);
                 }
             }
             return ret;
@@ -174,7 +177,7 @@ namespace Silk.NET.Direct2D
             fixed (uint* stridesPtr = &strides)
             {
             var dataPtr = (byte*) SilkMarshal.StringToPtr(data, NativeStringEncoding.UTF8);
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)LpVtbl[3])(@this, minimumExtents, maximimumExtents, stridesPtr, dimensions, dataPtr, dataCount);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)@this->LpVtbl[3])(@this, minimumExtents, maximimumExtents, stridesPtr, dimensions, dataPtr, dataCount);
             SilkMarshal.Free((nint)dataPtr);
             }
             return ret;
@@ -187,7 +190,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (uint* maximimumExtentsPtr = &maximimumExtents)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)LpVtbl[3])(@this, minimumExtents, maximimumExtentsPtr, strides, dimensions, data, dataCount);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)@this->LpVtbl[3])(@this, minimumExtents, maximimumExtentsPtr, strides, dimensions, data, dataCount);
             }
             return ret;
         }
@@ -201,7 +204,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (byte* dataPtr = &data)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)LpVtbl[3])(@this, minimumExtents, maximimumExtentsPtr, strides, dimensions, dataPtr, dataCount);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)@this->LpVtbl[3])(@this, minimumExtents, maximimumExtentsPtr, strides, dimensions, dataPtr, dataCount);
                 }
             }
             return ret;
@@ -215,7 +218,7 @@ namespace Silk.NET.Direct2D
             fixed (uint* maximimumExtentsPtr = &maximimumExtents)
             {
             var dataPtr = (byte*) SilkMarshal.StringToPtr(data, NativeStringEncoding.UTF8);
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)LpVtbl[3])(@this, minimumExtents, maximimumExtentsPtr, strides, dimensions, dataPtr, dataCount);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)@this->LpVtbl[3])(@this, minimumExtents, maximimumExtentsPtr, strides, dimensions, dataPtr, dataCount);
             SilkMarshal.Free((nint)dataPtr);
             }
             return ret;
@@ -230,7 +233,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (uint* stridesPtr = &strides)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)LpVtbl[3])(@this, minimumExtents, maximimumExtentsPtr, stridesPtr, dimensions, data, dataCount);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)@this->LpVtbl[3])(@this, minimumExtents, maximimumExtentsPtr, stridesPtr, dimensions, data, dataCount);
                 }
             }
             return ret;
@@ -247,7 +250,7 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (byte* dataPtr = &data)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)LpVtbl[3])(@this, minimumExtents, maximimumExtentsPtr, stridesPtr, dimensions, dataPtr, dataCount);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)@this->LpVtbl[3])(@this, minimumExtents, maximimumExtentsPtr, stridesPtr, dimensions, dataPtr, dataCount);
                     }
                 }
             }
@@ -264,7 +267,7 @@ namespace Silk.NET.Direct2D
                 fixed (uint* stridesPtr = &strides)
                 {
             var dataPtr = (byte*) SilkMarshal.StringToPtr(data, NativeStringEncoding.UTF8);
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)LpVtbl[3])(@this, minimumExtents, maximimumExtentsPtr, stridesPtr, dimensions, dataPtr, dataCount);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)@this->LpVtbl[3])(@this, minimumExtents, maximimumExtentsPtr, stridesPtr, dimensions, dataPtr, dataCount);
             SilkMarshal.Free((nint)dataPtr);
                 }
             }
@@ -278,7 +281,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (uint* minimumExtentsPtr = &minimumExtents)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)LpVtbl[3])(@this, minimumExtentsPtr, maximimumExtents, strides, dimensions, data, dataCount);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)@this->LpVtbl[3])(@this, minimumExtentsPtr, maximimumExtents, strides, dimensions, data, dataCount);
             }
             return ret;
         }
@@ -292,7 +295,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (byte* dataPtr = &data)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)LpVtbl[3])(@this, minimumExtentsPtr, maximimumExtents, strides, dimensions, dataPtr, dataCount);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)@this->LpVtbl[3])(@this, minimumExtentsPtr, maximimumExtents, strides, dimensions, dataPtr, dataCount);
                 }
             }
             return ret;
@@ -306,7 +309,7 @@ namespace Silk.NET.Direct2D
             fixed (uint* minimumExtentsPtr = &minimumExtents)
             {
             var dataPtr = (byte*) SilkMarshal.StringToPtr(data, NativeStringEncoding.UTF8);
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)LpVtbl[3])(@this, minimumExtentsPtr, maximimumExtents, strides, dimensions, dataPtr, dataCount);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)@this->LpVtbl[3])(@this, minimumExtentsPtr, maximimumExtents, strides, dimensions, dataPtr, dataCount);
             SilkMarshal.Free((nint)dataPtr);
             }
             return ret;
@@ -321,7 +324,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (uint* stridesPtr = &strides)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)LpVtbl[3])(@this, minimumExtentsPtr, maximimumExtents, stridesPtr, dimensions, data, dataCount);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)@this->LpVtbl[3])(@this, minimumExtentsPtr, maximimumExtents, stridesPtr, dimensions, data, dataCount);
                 }
             }
             return ret;
@@ -338,7 +341,7 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (byte* dataPtr = &data)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)LpVtbl[3])(@this, minimumExtentsPtr, maximimumExtents, stridesPtr, dimensions, dataPtr, dataCount);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)@this->LpVtbl[3])(@this, minimumExtentsPtr, maximimumExtents, stridesPtr, dimensions, dataPtr, dataCount);
                     }
                 }
             }
@@ -355,7 +358,7 @@ namespace Silk.NET.Direct2D
                 fixed (uint* stridesPtr = &strides)
                 {
             var dataPtr = (byte*) SilkMarshal.StringToPtr(data, NativeStringEncoding.UTF8);
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)LpVtbl[3])(@this, minimumExtentsPtr, maximimumExtents, stridesPtr, dimensions, dataPtr, dataCount);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)@this->LpVtbl[3])(@this, minimumExtentsPtr, maximimumExtents, stridesPtr, dimensions, dataPtr, dataCount);
             SilkMarshal.Free((nint)dataPtr);
                 }
             }
@@ -371,7 +374,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (uint* maximimumExtentsPtr = &maximimumExtents)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)LpVtbl[3])(@this, minimumExtentsPtr, maximimumExtentsPtr, strides, dimensions, data, dataCount);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)@this->LpVtbl[3])(@this, minimumExtentsPtr, maximimumExtentsPtr, strides, dimensions, data, dataCount);
                 }
             }
             return ret;
@@ -388,7 +391,7 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (byte* dataPtr = &data)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)LpVtbl[3])(@this, minimumExtentsPtr, maximimumExtentsPtr, strides, dimensions, dataPtr, dataCount);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)@this->LpVtbl[3])(@this, minimumExtentsPtr, maximimumExtentsPtr, strides, dimensions, dataPtr, dataCount);
                     }
                 }
             }
@@ -405,7 +408,7 @@ namespace Silk.NET.Direct2D
                 fixed (uint* maximimumExtentsPtr = &maximimumExtents)
                 {
             var dataPtr = (byte*) SilkMarshal.StringToPtr(data, NativeStringEncoding.UTF8);
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)LpVtbl[3])(@this, minimumExtentsPtr, maximimumExtentsPtr, strides, dimensions, dataPtr, dataCount);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)@this->LpVtbl[3])(@this, minimumExtentsPtr, maximimumExtentsPtr, strides, dimensions, dataPtr, dataCount);
             SilkMarshal.Free((nint)dataPtr);
                 }
             }
@@ -423,7 +426,7 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (uint* stridesPtr = &strides)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)LpVtbl[3])(@this, minimumExtentsPtr, maximimumExtentsPtr, stridesPtr, dimensions, data, dataCount);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)@this->LpVtbl[3])(@this, minimumExtentsPtr, maximimumExtentsPtr, stridesPtr, dimensions, data, dataCount);
                     }
                 }
             }
@@ -443,7 +446,7 @@ namespace Silk.NET.Direct2D
                     {
                         fixed (byte* dataPtr = &data)
                         {
-                            ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)LpVtbl[3])(@this, minimumExtentsPtr, maximimumExtentsPtr, stridesPtr, dimensions, dataPtr, dataCount);
+                            ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)@this->LpVtbl[3])(@this, minimumExtentsPtr, maximimumExtentsPtr, stridesPtr, dimensions, dataPtr, dataCount);
                         }
                     }
                 }
@@ -463,12 +466,30 @@ namespace Silk.NET.Direct2D
                     fixed (uint* stridesPtr = &strides)
                     {
             var dataPtr = (byte*) SilkMarshal.StringToPtr(data, NativeStringEncoding.UTF8);
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)LpVtbl[3])(@this, minimumExtentsPtr, maximimumExtentsPtr, stridesPtr, dimensions, dataPtr, dataCount);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)@this->LpVtbl[3])(@this, minimumExtentsPtr, maximimumExtentsPtr, stridesPtr, dimensions, dataPtr, dataCount);
             SilkMarshal.Free((nint)dataPtr);
                     }
                 }
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID2D1ResourceTexture*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID2D1ResourceTexture*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

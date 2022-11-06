@@ -74,6 +74,20 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         [NativeApi(EntryPoint = "glVertexAttribLPointer", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexAttribLPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribLType type, [Flow(FlowDirection.In)] uint stride, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* pointer);
 
+        public unsafe double GetVertexAttribL([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetVertexAttribL(index, pname, out double silkRet);
+            return silkRet;
+        }
+
+        public unsafe double GetVertexAttribL([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribEnum pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetVertexAttribL(index, pname, out double silkRet);
+            return silkRet;
+        }
+
         public ArbVertexAttrib64bit(INativeContext ctx)
             : base(ctx)
         {

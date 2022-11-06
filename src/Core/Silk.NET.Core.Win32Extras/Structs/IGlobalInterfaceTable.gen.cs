@@ -18,9 +18,12 @@ namespace Silk.NET.Core.Win32Extras
 {
     [Guid("00000146-0000-0000-c000-000000000046")]
     [NativeName("Name", "IGlobalInterfaceTable")]
-    public unsafe partial struct IGlobalInterfaceTable
+    public unsafe partial struct IGlobalInterfaceTable : IComVtbl<IGlobalInterfaceTable>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("00000146-0000-0000-c000-000000000046");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator Silk.NET.Core.Native.IUnknown(IGlobalInterfaceTable val)
             => Unsafe.As<IGlobalInterfaceTable, Silk.NET.Core.Native.IUnknown>(ref val);
@@ -46,7 +49,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IGlobalInterfaceTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -57,7 +60,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -69,7 +72,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -83,7 +86,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -94,7 +97,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IGlobalInterfaceTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -103,7 +106,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IGlobalInterfaceTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -112,7 +115,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IGlobalInterfaceTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, Silk.NET.Core.Native.IUnknown*, Guid*, uint*, int>)LpVtbl[3])(@this, pUnk, riid, pdwCookie);
+            ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, Silk.NET.Core.Native.IUnknown*, Guid*, uint*, int>)@this->LpVtbl[3])(@this, pUnk, riid, pdwCookie);
             return ret;
         }
 
@@ -123,7 +126,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (uint* pdwCookiePtr = &pdwCookie)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, Silk.NET.Core.Native.IUnknown*, Guid*, uint*, int>)LpVtbl[3])(@this, pUnk, riid, pdwCookiePtr);
+                ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, Silk.NET.Core.Native.IUnknown*, Guid*, uint*, int>)@this->LpVtbl[3])(@this, pUnk, riid, pdwCookiePtr);
             }
             return ret;
         }
@@ -135,7 +138,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, Silk.NET.Core.Native.IUnknown*, Guid*, uint*, int>)LpVtbl[3])(@this, pUnk, riidPtr, pdwCookie);
+                ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, Silk.NET.Core.Native.IUnknown*, Guid*, uint*, int>)@this->LpVtbl[3])(@this, pUnk, riidPtr, pdwCookie);
             }
             return ret;
         }
@@ -149,7 +152,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pdwCookiePtr = &pdwCookie)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, Silk.NET.Core.Native.IUnknown*, Guid*, uint*, int>)LpVtbl[3])(@this, pUnk, riidPtr, pdwCookiePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, Silk.NET.Core.Native.IUnknown*, Guid*, uint*, int>)@this->LpVtbl[3])(@this, pUnk, riidPtr, pdwCookiePtr);
                 }
             }
             return ret;
@@ -162,7 +165,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pUnkPtr = &pUnk)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, Silk.NET.Core.Native.IUnknown*, Guid*, uint*, int>)LpVtbl[3])(@this, pUnkPtr, riid, pdwCookie);
+                ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, Silk.NET.Core.Native.IUnknown*, Guid*, uint*, int>)@this->LpVtbl[3])(@this, pUnkPtr, riid, pdwCookie);
             }
             return ret;
         }
@@ -176,7 +179,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pdwCookiePtr = &pdwCookie)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, Silk.NET.Core.Native.IUnknown*, Guid*, uint*, int>)LpVtbl[3])(@this, pUnkPtr, riid, pdwCookiePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, Silk.NET.Core.Native.IUnknown*, Guid*, uint*, int>)@this->LpVtbl[3])(@this, pUnkPtr, riid, pdwCookiePtr);
                 }
             }
             return ret;
@@ -191,7 +194,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (Guid* riidPtr = &riid)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, Silk.NET.Core.Native.IUnknown*, Guid*, uint*, int>)LpVtbl[3])(@this, pUnkPtr, riidPtr, pdwCookie);
+                    ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, Silk.NET.Core.Native.IUnknown*, Guid*, uint*, int>)@this->LpVtbl[3])(@this, pUnkPtr, riidPtr, pdwCookie);
                 }
             }
             return ret;
@@ -208,7 +211,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (uint* pdwCookiePtr = &pdwCookie)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, Silk.NET.Core.Native.IUnknown*, Guid*, uint*, int>)LpVtbl[3])(@this, pUnkPtr, riidPtr, pdwCookiePtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, Silk.NET.Core.Native.IUnknown*, Guid*, uint*, int>)@this->LpVtbl[3])(@this, pUnkPtr, riidPtr, pdwCookiePtr);
                     }
                 }
             }
@@ -220,7 +223,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IGlobalInterfaceTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, uint, int>)LpVtbl[4])(@this, dwCookie);
+            ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, uint, int>)@this->LpVtbl[4])(@this, dwCookie);
             return ret;
         }
 
@@ -229,7 +232,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IGlobalInterfaceTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, uint, Guid*, void**, int>)LpVtbl[5])(@this, dwCookie, riid, ppv);
+            ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, uint, Guid*, void**, int>)@this->LpVtbl[5])(@this, dwCookie, riid, ppv);
             return ret;
         }
 
@@ -240,7 +243,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (void** ppvPtr = &ppv)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, uint, Guid*, void**, int>)LpVtbl[5])(@this, dwCookie, riid, ppvPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, uint, Guid*, void**, int>)@this->LpVtbl[5])(@this, dwCookie, riid, ppvPtr);
             }
             return ret;
         }
@@ -252,7 +255,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, uint, Guid*, void**, int>)LpVtbl[5])(@this, dwCookie, riidPtr, ppv);
+                ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, uint, Guid*, void**, int>)@this->LpVtbl[5])(@this, dwCookie, riidPtr, ppv);
             }
             return ret;
         }
@@ -266,10 +269,78 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (void** ppvPtr = &ppv)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, uint, Guid*, void**, int>)LpVtbl[5])(@this, dwCookie, riidPtr, ppvPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, uint, Guid*, void**, int>)@this->LpVtbl[5])(@this, dwCookie, riidPtr, ppvPtr);
                 }
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IGlobalInterfaceTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RegisterInterfaceInGlobal<TI0>(ComPtr<TI0> pUnk, Guid* riid, uint* pdwCookie) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        {
+            var @this = (IGlobalInterfaceTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->RegisterInterfaceInGlobal((Silk.NET.Core.Native.IUnknown*) pUnk.Handle, riid, pdwCookie);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RegisterInterfaceInGlobal<TI0>(ComPtr<TI0> pUnk, Guid* riid, ref uint pdwCookie) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        {
+            var @this = (IGlobalInterfaceTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->RegisterInterfaceInGlobal((Silk.NET.Core.Native.IUnknown*) pUnk.Handle, riid, ref pdwCookie);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RegisterInterfaceInGlobal<TI0>(ComPtr<TI0> pUnk, ref Guid riid, uint* pdwCookie) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        {
+            var @this = (IGlobalInterfaceTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->RegisterInterfaceInGlobal((Silk.NET.Core.Native.IUnknown*) pUnk.Handle, ref riid, pdwCookie);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int RegisterInterfaceInGlobal<TI0>(ComPtr<TI0> pUnk, ref Guid riid, ref uint pdwCookie) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        {
+            var @this = (IGlobalInterfaceTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->RegisterInterfaceInGlobal((Silk.NET.Core.Native.IUnknown*) pUnk.Handle, ref riid, ref pdwCookie);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetInterfaceFromGlobal<TI0>(uint dwCookie, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IGlobalInterfaceTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppv = default;
+            return @this->GetInterfaceFromGlobal(dwCookie, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppv.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IGlobalInterfaceTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> GetInterfaceFromGlobal<TI0>(uint dwCookie) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IGlobalInterfaceTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->GetInterfaceFromGlobal(dwCookie, out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

@@ -18,9 +18,12 @@ namespace Silk.NET.Direct2D
 {
     [Guid("b499923b-7029-478f-a8b3-432c7c5f5312")]
     [NativeName("Name", "ID2D1Ink")]
-    public unsafe partial struct ID2D1Ink
+    public unsafe partial struct ID2D1Ink : IComVtbl<ID2D1Ink>, IComVtbl<ID2D1Resource>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("b499923b-7029-478f-a8b3-432c7c5f5312");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator ID2D1Resource(ID2D1Ink val)
             => Unsafe.As<ID2D1Ink, ID2D1Resource>(ref val);
@@ -49,7 +52,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -60,7 +63,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -72,7 +75,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -86,7 +89,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -97,7 +100,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -106,7 +109,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -114,7 +117,7 @@ namespace Silk.NET.Direct2D
         public readonly unsafe void GetFactory(ID2D1Factory** factory)
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1Ink*, ID2D1Factory**, void>)LpVtbl[3])(@this, factory);
+            ((delegate* unmanaged[Stdcall]<ID2D1Ink*, ID2D1Factory**, void>)@this->LpVtbl[3])(@this, factory);
         }
 
         /// <summary>To be documented.</summary>
@@ -123,7 +126,7 @@ namespace Silk.NET.Direct2D
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Factory** factoryPtr = &factory)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1Ink*, ID2D1Factory**, void>)LpVtbl[3])(@this, factoryPtr);
+                ((delegate* unmanaged[Stdcall]<ID2D1Ink*, ID2D1Factory**, void>)@this->LpVtbl[3])(@this, factoryPtr);
             }
         }
 
@@ -131,7 +134,7 @@ namespace Silk.NET.Direct2D
         public readonly unsafe void SetStartPoint(InkPoint* startPoint)
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1Ink*, InkPoint*, void>)LpVtbl[4])(@this, startPoint);
+            ((delegate* unmanaged[Stdcall]<ID2D1Ink*, InkPoint*, void>)@this->LpVtbl[4])(@this, startPoint);
         }
 
         /// <summary>To be documented.</summary>
@@ -140,7 +143,7 @@ namespace Silk.NET.Direct2D
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (InkPoint* startPointPtr = &startPoint)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1Ink*, InkPoint*, void>)LpVtbl[4])(@this, startPointPtr);
+                ((delegate* unmanaged[Stdcall]<ID2D1Ink*, InkPoint*, void>)@this->LpVtbl[4])(@this, startPointPtr);
             }
         }
 
@@ -151,7 +154,7 @@ namespace Silk.NET.Direct2D
             var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             InkPoint* ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, InkPoint*, InkPoint*>)LpVtbl[5])(@this, pSilkDotNetReturnFixupResult);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, InkPoint*, InkPoint*>)@this->LpVtbl[5])(@this, pSilkDotNetReturnFixupResult);
             return *ret;
         }
 
@@ -160,7 +163,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, InkBezierSegment*, uint, int>)LpVtbl[6])(@this, segments, segmentsCount);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, InkBezierSegment*, uint, int>)@this->LpVtbl[6])(@this, segments, segmentsCount);
             return ret;
         }
 
@@ -171,7 +174,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (InkBezierSegment* segmentsPtr = &segments)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, InkBezierSegment*, uint, int>)LpVtbl[6])(@this, segmentsPtr, segmentsCount);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, InkBezierSegment*, uint, int>)@this->LpVtbl[6])(@this, segmentsPtr, segmentsCount);
             }
             return ret;
         }
@@ -181,7 +184,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, uint, int>)LpVtbl[7])(@this, segmentsCount);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, uint, int>)@this->LpVtbl[7])(@this, segmentsCount);
             return ret;
         }
 
@@ -190,7 +193,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, uint, InkBezierSegment*, uint, int>)LpVtbl[8])(@this, startSegment, segments, segmentsCount);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, uint, InkBezierSegment*, uint, int>)@this->LpVtbl[8])(@this, startSegment, segments, segmentsCount);
             return ret;
         }
 
@@ -201,7 +204,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (InkBezierSegment* segmentsPtr = &segments)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, uint, InkBezierSegment*, uint, int>)LpVtbl[8])(@this, startSegment, segmentsPtr, segmentsCount);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, uint, InkBezierSegment*, uint, int>)@this->LpVtbl[8])(@this, startSegment, segmentsPtr, segmentsCount);
             }
             return ret;
         }
@@ -211,7 +214,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, InkBezierSegment*, int>)LpVtbl[9])(@this, segment);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, InkBezierSegment*, int>)@this->LpVtbl[9])(@this, segment);
             return ret;
         }
 
@@ -222,7 +225,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (InkBezierSegment* segmentPtr = &segment)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, InkBezierSegment*, int>)LpVtbl[9])(@this, segmentPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, InkBezierSegment*, int>)@this->LpVtbl[9])(@this, segmentPtr);
             }
             return ret;
         }
@@ -232,7 +235,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, uint>)LpVtbl[10])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, uint>)@this->LpVtbl[10])(@this);
             return ret;
         }
 
@@ -241,7 +244,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, uint, InkBezierSegment*, uint, int>)LpVtbl[11])(@this, startSegment, segments, segmentsCount);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, uint, InkBezierSegment*, uint, int>)@this->LpVtbl[11])(@this, startSegment, segments, segmentsCount);
             return ret;
         }
 
@@ -252,7 +255,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (InkBezierSegment* segmentsPtr = &segments)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, uint, InkBezierSegment*, uint, int>)LpVtbl[11])(@this, startSegment, segmentsPtr, segmentsCount);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, uint, InkBezierSegment*, uint, int>)@this->LpVtbl[11])(@this, startSegment, segmentsPtr, segmentsCount);
             }
             return ret;
         }
@@ -262,7 +265,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, ID2D1InkStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)LpVtbl[12])(@this, inkStyle, worldTransform, flatteningTolerance, geometrySink);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, ID2D1InkStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)@this->LpVtbl[12])(@this, inkStyle, worldTransform, flatteningTolerance, geometrySink);
             return ret;
         }
 
@@ -273,7 +276,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (ID2D1SimplifiedGeometrySink* geometrySinkPtr = &geometrySink)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, ID2D1InkStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)LpVtbl[12])(@this, inkStyle, worldTransform, flatteningTolerance, geometrySinkPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, ID2D1InkStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)@this->LpVtbl[12])(@this, inkStyle, worldTransform, flatteningTolerance, geometrySinkPtr);
             }
             return ret;
         }
@@ -285,7 +288,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Maths.Matrix3X2<float>* worldTransformPtr = &worldTransform)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, ID2D1InkStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)LpVtbl[12])(@this, inkStyle, worldTransformPtr, flatteningTolerance, geometrySink);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, ID2D1InkStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)@this->LpVtbl[12])(@this, inkStyle, worldTransformPtr, flatteningTolerance, geometrySink);
             }
             return ret;
         }
@@ -299,7 +302,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (ID2D1SimplifiedGeometrySink* geometrySinkPtr = &geometrySink)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, ID2D1InkStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)LpVtbl[12])(@this, inkStyle, worldTransformPtr, flatteningTolerance, geometrySinkPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, ID2D1InkStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)@this->LpVtbl[12])(@this, inkStyle, worldTransformPtr, flatteningTolerance, geometrySinkPtr);
                 }
             }
             return ret;
@@ -312,7 +315,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (ID2D1InkStyle* inkStylePtr = &inkStyle)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, ID2D1InkStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)LpVtbl[12])(@this, inkStylePtr, worldTransform, flatteningTolerance, geometrySink);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, ID2D1InkStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)@this->LpVtbl[12])(@this, inkStylePtr, worldTransform, flatteningTolerance, geometrySink);
             }
             return ret;
         }
@@ -326,7 +329,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (ID2D1SimplifiedGeometrySink* geometrySinkPtr = &geometrySink)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, ID2D1InkStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)LpVtbl[12])(@this, inkStylePtr, worldTransform, flatteningTolerance, geometrySinkPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, ID2D1InkStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)@this->LpVtbl[12])(@this, inkStylePtr, worldTransform, flatteningTolerance, geometrySinkPtr);
                 }
             }
             return ret;
@@ -341,7 +344,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (Silk.NET.Maths.Matrix3X2<float>* worldTransformPtr = &worldTransform)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, ID2D1InkStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)LpVtbl[12])(@this, inkStylePtr, worldTransformPtr, flatteningTolerance, geometrySink);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, ID2D1InkStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)@this->LpVtbl[12])(@this, inkStylePtr, worldTransformPtr, flatteningTolerance, geometrySink);
                 }
             }
             return ret;
@@ -358,7 +361,7 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (ID2D1SimplifiedGeometrySink* geometrySinkPtr = &geometrySink)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, ID2D1InkStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)LpVtbl[12])(@this, inkStylePtr, worldTransformPtr, flatteningTolerance, geometrySinkPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, ID2D1InkStyle*, Silk.NET.Maths.Matrix3X2<float>*, float, ID2D1SimplifiedGeometrySink*, int>)@this->LpVtbl[12])(@this, inkStylePtr, worldTransformPtr, flatteningTolerance, geometrySinkPtr);
                     }
                 }
             }
@@ -370,7 +373,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, ID2D1InkStyle*, Silk.NET.Maths.Matrix3X2<float>*, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[13])(@this, inkStyle, worldTransform, bounds);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, ID2D1InkStyle*, Silk.NET.Maths.Matrix3X2<float>*, Silk.NET.Maths.Box2D<float>*, int>)@this->LpVtbl[13])(@this, inkStyle, worldTransform, bounds);
             return ret;
         }
 
@@ -381,7 +384,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Maths.Box2D<float>* boundsPtr = &bounds)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, ID2D1InkStyle*, Silk.NET.Maths.Matrix3X2<float>*, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[13])(@this, inkStyle, worldTransform, boundsPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, ID2D1InkStyle*, Silk.NET.Maths.Matrix3X2<float>*, Silk.NET.Maths.Box2D<float>*, int>)@this->LpVtbl[13])(@this, inkStyle, worldTransform, boundsPtr);
             }
             return ret;
         }
@@ -393,7 +396,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.Maths.Matrix3X2<float>* worldTransformPtr = &worldTransform)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, ID2D1InkStyle*, Silk.NET.Maths.Matrix3X2<float>*, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[13])(@this, inkStyle, worldTransformPtr, bounds);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, ID2D1InkStyle*, Silk.NET.Maths.Matrix3X2<float>*, Silk.NET.Maths.Box2D<float>*, int>)@this->LpVtbl[13])(@this, inkStyle, worldTransformPtr, bounds);
             }
             return ret;
         }
@@ -407,7 +410,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (Silk.NET.Maths.Box2D<float>* boundsPtr = &bounds)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, ID2D1InkStyle*, Silk.NET.Maths.Matrix3X2<float>*, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[13])(@this, inkStyle, worldTransformPtr, boundsPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, ID2D1InkStyle*, Silk.NET.Maths.Matrix3X2<float>*, Silk.NET.Maths.Box2D<float>*, int>)@this->LpVtbl[13])(@this, inkStyle, worldTransformPtr, boundsPtr);
                 }
             }
             return ret;
@@ -420,7 +423,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (ID2D1InkStyle* inkStylePtr = &inkStyle)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, ID2D1InkStyle*, Silk.NET.Maths.Matrix3X2<float>*, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[13])(@this, inkStylePtr, worldTransform, bounds);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, ID2D1InkStyle*, Silk.NET.Maths.Matrix3X2<float>*, Silk.NET.Maths.Box2D<float>*, int>)@this->LpVtbl[13])(@this, inkStylePtr, worldTransform, bounds);
             }
             return ret;
         }
@@ -434,7 +437,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (Silk.NET.Maths.Box2D<float>* boundsPtr = &bounds)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, ID2D1InkStyle*, Silk.NET.Maths.Matrix3X2<float>*, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[13])(@this, inkStylePtr, worldTransform, boundsPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, ID2D1InkStyle*, Silk.NET.Maths.Matrix3X2<float>*, Silk.NET.Maths.Box2D<float>*, int>)@this->LpVtbl[13])(@this, inkStylePtr, worldTransform, boundsPtr);
                 }
             }
             return ret;
@@ -449,7 +452,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (Silk.NET.Maths.Matrix3X2<float>* worldTransformPtr = &worldTransform)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, ID2D1InkStyle*, Silk.NET.Maths.Matrix3X2<float>*, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[13])(@this, inkStylePtr, worldTransformPtr, bounds);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, ID2D1InkStyle*, Silk.NET.Maths.Matrix3X2<float>*, Silk.NET.Maths.Box2D<float>*, int>)@this->LpVtbl[13])(@this, inkStylePtr, worldTransformPtr, bounds);
                 }
             }
             return ret;
@@ -466,11 +469,117 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (Silk.NET.Maths.Box2D<float>* boundsPtr = &bounds)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, ID2D1InkStyle*, Silk.NET.Maths.Matrix3X2<float>*, Silk.NET.Maths.Box2D<float>*, int>)LpVtbl[13])(@this, inkStylePtr, worldTransformPtr, boundsPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, ID2D1InkStyle*, Silk.NET.Maths.Matrix3X2<float>*, Silk.NET.Maths.Box2D<float>*, int>)@this->LpVtbl[13])(@this, inkStylePtr, worldTransformPtr, boundsPtr);
                     }
                 }
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void GetFactory<TI0>(ref ComPtr<TI0> factory) where TI0 : unmanaged, IComVtbl<ID2D1Factory>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->GetFactory((ID2D1Factory**) factory.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int StreamAsGeometry<TI0, TI1>(ComPtr<TI0> inkStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ComPtr<TI1> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI1>
+        {
+            var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->StreamAsGeometry((ID2D1InkStyle*) inkStyle.Handle, worldTransform, flatteningTolerance, (ID2D1SimplifiedGeometrySink*) geometrySink.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int StreamAsGeometry<TI0>(ComPtr<TI0> inkStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->StreamAsGeometry((ID2D1InkStyle*) inkStyle.Handle, worldTransform, flatteningTolerance, ref geometrySink);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int StreamAsGeometry<TI0, TI1>(ComPtr<TI0> inkStyle, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ComPtr<TI1> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI1>
+        {
+            var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->StreamAsGeometry((ID2D1InkStyle*) inkStyle.Handle, ref worldTransform, flatteningTolerance, (ID2D1SimplifiedGeometrySink*) geometrySink.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int StreamAsGeometry<TI0>(ComPtr<TI0> inkStyle, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->StreamAsGeometry((ID2D1InkStyle*) inkStyle.Handle, ref worldTransform, flatteningTolerance, ref geometrySink);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int StreamAsGeometry<TI0>(ref ID2D1InkStyle inkStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ComPtr<TI0> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->StreamAsGeometry(ref inkStyle, worldTransform, flatteningTolerance, (ID2D1SimplifiedGeometrySink*) geometrySink.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int StreamAsGeometry<TI0>(ref ID2D1InkStyle inkStyle, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ComPtr<TI0> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->StreamAsGeometry(ref inkStyle, ref worldTransform, flatteningTolerance, (ID2D1SimplifiedGeometrySink*) geometrySink.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetBounds<TI0>(ComPtr<TI0> inkStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, Silk.NET.Maths.Box2D<float>* bounds) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetBounds((ID2D1InkStyle*) inkStyle.Handle, worldTransform, bounds);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetBounds<TI0>(ComPtr<TI0> inkStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref Silk.NET.Maths.Box2D<float> bounds) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetBounds((ID2D1InkStyle*) inkStyle.Handle, worldTransform, ref bounds);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetBounds<TI0>(ComPtr<TI0> inkStyle, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, Silk.NET.Maths.Box2D<float>* bounds) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetBounds((ID2D1InkStyle*) inkStyle.Handle, ref worldTransform, bounds);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetBounds<TI0>(ComPtr<TI0> inkStyle, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, ref Silk.NET.Maths.Box2D<float> bounds) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetBounds((ID2D1InkStyle*) inkStyle.Handle, ref worldTransform, ref bounds);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID2D1Ink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

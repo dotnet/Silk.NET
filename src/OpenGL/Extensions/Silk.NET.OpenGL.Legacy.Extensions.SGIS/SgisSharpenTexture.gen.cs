@@ -64,6 +64,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
             SharpenTexFunc(target, (uint) points.Length, in points.GetPinnableReference());
         }
 
+        public unsafe float GetSharpenTexFunc([Flow(FlowDirection.In)] TextureTarget target)
+        {
+            // NonKhrReturnTypeOverloader
+            GetSharpenTexFunc(target, out float silkRet);
+            return silkRet;
+        }
+
         public SgisSharpenTexture(INativeContext ctx)
             : base(ctx)
         {

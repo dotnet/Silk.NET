@@ -18,9 +18,12 @@ namespace Silk.NET.Core.Win32Extras
 {
     [Guid("db2f3acb-2f86-11d1-8e04-00c04fb9989a")]
     [NativeName("Name", "AsyncIPipeByte")]
-    public unsafe partial struct AsyncIPipeByte
+    public unsafe partial struct AsyncIPipeByte : IComVtbl<AsyncIPipeByte>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("db2f3acb-2f86-11d1-8e04-00c04fb9989a");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator Silk.NET.Core.Native.IUnknown(AsyncIPipeByte val)
             => Unsafe.As<AsyncIPipeByte, Silk.NET.Core.Native.IUnknown>(ref val);
@@ -46,7 +49,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (AsyncIPipeByte*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<AsyncIPipeByte*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Cdecl]<AsyncIPipeByte*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -57,7 +60,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Cdecl]<AsyncIPipeByte*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Cdecl]<AsyncIPipeByte*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -69,7 +72,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<AsyncIPipeByte*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Cdecl]<AsyncIPipeByte*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -83,7 +86,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<AsyncIPipeByte*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<AsyncIPipeByte*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -94,7 +97,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (AsyncIPipeByte*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<AsyncIPipeByte*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<AsyncIPipeByte*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -103,7 +106,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (AsyncIPipeByte*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<AsyncIPipeByte*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<AsyncIPipeByte*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -112,7 +115,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (AsyncIPipeByte*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<AsyncIPipeByte*, uint, int>)LpVtbl[3])(@this, cRequest);
+            ret = ((delegate* unmanaged[Cdecl]<AsyncIPipeByte*, uint, int>)@this->LpVtbl[3])(@this, cRequest);
             return ret;
         }
 
@@ -121,7 +124,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (AsyncIPipeByte*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<AsyncIPipeByte*, byte*, uint*, int>)LpVtbl[4])(@this, buf, pcReturned);
+            ret = ((delegate* unmanaged[Cdecl]<AsyncIPipeByte*, byte*, uint*, int>)@this->LpVtbl[4])(@this, buf, pcReturned);
             return ret;
         }
 
@@ -132,7 +135,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (uint* pcReturnedPtr = &pcReturned)
             {
-                ret = ((delegate* unmanaged[Cdecl]<AsyncIPipeByte*, byte*, uint*, int>)LpVtbl[4])(@this, buf, pcReturnedPtr);
+                ret = ((delegate* unmanaged[Cdecl]<AsyncIPipeByte*, byte*, uint*, int>)@this->LpVtbl[4])(@this, buf, pcReturnedPtr);
             }
             return ret;
         }
@@ -144,7 +147,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (byte* bufPtr = &buf)
             {
-                ret = ((delegate* unmanaged[Cdecl]<AsyncIPipeByte*, byte*, uint*, int>)LpVtbl[4])(@this, bufPtr, pcReturned);
+                ret = ((delegate* unmanaged[Cdecl]<AsyncIPipeByte*, byte*, uint*, int>)@this->LpVtbl[4])(@this, bufPtr, pcReturned);
             }
             return ret;
         }
@@ -158,7 +161,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pcReturnedPtr = &pcReturned)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<AsyncIPipeByte*, byte*, uint*, int>)LpVtbl[4])(@this, bufPtr, pcReturnedPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<AsyncIPipeByte*, byte*, uint*, int>)@this->LpVtbl[4])(@this, bufPtr, pcReturnedPtr);
                 }
             }
             return ret;
@@ -170,7 +173,7 @@ namespace Silk.NET.Core.Win32Extras
             var @this = (AsyncIPipeByte*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var bufPtr = (byte*) SilkMarshal.StringToPtr(buf, NativeStringEncoding.UTF8);
-            ret = ((delegate* unmanaged[Cdecl]<AsyncIPipeByte*, byte*, uint*, int>)LpVtbl[4])(@this, bufPtr, pcReturned);
+            ret = ((delegate* unmanaged[Cdecl]<AsyncIPipeByte*, byte*, uint*, int>)@this->LpVtbl[4])(@this, bufPtr, pcReturned);
             SilkMarshal.Free((nint)bufPtr);
             return ret;
         }
@@ -183,7 +186,7 @@ namespace Silk.NET.Core.Win32Extras
             var bufPtr = (byte*) SilkMarshal.StringToPtr(buf, NativeStringEncoding.UTF8);
             fixed (uint* pcReturnedPtr = &pcReturned)
             {
-                ret = ((delegate* unmanaged[Cdecl]<AsyncIPipeByte*, byte*, uint*, int>)LpVtbl[4])(@this, bufPtr, pcReturnedPtr);
+                ret = ((delegate* unmanaged[Cdecl]<AsyncIPipeByte*, byte*, uint*, int>)@this->LpVtbl[4])(@this, bufPtr, pcReturnedPtr);
             }
             SilkMarshal.Free((nint)bufPtr);
             return ret;
@@ -194,7 +197,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (AsyncIPipeByte*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<AsyncIPipeByte*, byte*, uint, int>)LpVtbl[5])(@this, buf, cSent);
+            ret = ((delegate* unmanaged[Cdecl]<AsyncIPipeByte*, byte*, uint, int>)@this->LpVtbl[5])(@this, buf, cSent);
             return ret;
         }
 
@@ -205,7 +208,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (byte* bufPtr = &buf)
             {
-                ret = ((delegate* unmanaged[Cdecl]<AsyncIPipeByte*, byte*, uint, int>)LpVtbl[5])(@this, bufPtr, cSent);
+                ret = ((delegate* unmanaged[Cdecl]<AsyncIPipeByte*, byte*, uint, int>)@this->LpVtbl[5])(@this, bufPtr, cSent);
             }
             return ret;
         }
@@ -216,7 +219,7 @@ namespace Silk.NET.Core.Win32Extras
             var @this = (AsyncIPipeByte*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var bufPtr = (byte*) SilkMarshal.StringToPtr(buf, NativeStringEncoding.UTF8);
-            ret = ((delegate* unmanaged[Cdecl]<AsyncIPipeByte*, byte*, uint, int>)LpVtbl[5])(@this, bufPtr, cSent);
+            ret = ((delegate* unmanaged[Cdecl]<AsyncIPipeByte*, byte*, uint, int>)@this->LpVtbl[5])(@this, bufPtr, cSent);
             SilkMarshal.Free((nint)bufPtr);
             return ret;
         }
@@ -226,8 +229,26 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (AsyncIPipeByte*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<AsyncIPipeByte*, int>)LpVtbl[6])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<AsyncIPipeByte*, int>)@this->LpVtbl[6])(@this);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (AsyncIPipeByte*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (AsyncIPipeByte*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

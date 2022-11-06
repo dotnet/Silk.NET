@@ -5888,6 +5888,1033 @@ namespace Silk.NET.OpenCL
             return ret;
         }
 
+        public unsafe T0 Svmfree<T0>([Flow(FlowDirection.In)] nint context) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            Svmfree(context, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapBuffer([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapBuffer(command_queue, buffer, blocking_map, map_flags, offset, size, num_events_in_wait_list, event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapBuffer([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapBuffer(command_queue, buffer, blocking_map, map_flags, offset, size, num_events_in_wait_list, event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapBuffer([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapBuffer(command_queue, buffer, blocking_map, map_flags, offset, size, num_events_in_wait_list, in event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapBuffer([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapBuffer(command_queue, buffer, blocking_map, map_flags, offset, size, num_events_in_wait_list, in event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapBuffer([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapBuffer(command_queue, buffer, blocking_map, map_flags, offset, size, num_events_in_wait_list, event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapBuffer([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapBuffer(command_queue, buffer, blocking_map, map_flags, offset, size, num_events_in_wait_list, event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapBuffer([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapBuffer(command_queue, buffer, blocking_map, map_flags, offset, size, num_events_in_wait_list, in event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapBuffer([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapBuffer(command_queue, buffer, blocking_map, map_flags, offset, size, num_events_in_wait_list, in event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, region, image_row_pitch, image_slice_pitch, num_events_in_wait_list, event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, region, image_row_pitch, image_slice_pitch, num_events_in_wait_list, event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, region, image_row_pitch, image_slice_pitch, num_events_in_wait_list, in event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, region, image_row_pitch, image_slice_pitch, num_events_in_wait_list, in event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, region, image_row_pitch, out image_slice_pitch, num_events_in_wait_list, event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, region, image_row_pitch, out image_slice_pitch, num_events_in_wait_list, event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, region, image_row_pitch, out image_slice_pitch, num_events_in_wait_list, in event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, region, image_row_pitch, out image_slice_pitch, num_events_in_wait_list, in event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, region, out image_row_pitch, image_slice_pitch, num_events_in_wait_list, event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, region, out image_row_pitch, image_slice_pitch, num_events_in_wait_list, event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, region, out image_row_pitch, image_slice_pitch, num_events_in_wait_list, in event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, region, out image_row_pitch, image_slice_pitch, num_events_in_wait_list, in event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, region, out image_row_pitch, out image_slice_pitch, num_events_in_wait_list, event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, region, out image_row_pitch, out image_slice_pitch, num_events_in_wait_list, event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, region, out image_row_pitch, out image_slice_pitch, num_events_in_wait_list, in event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, region, out image_row_pitch, out image_slice_pitch, num_events_in_wait_list, in event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, in region, image_row_pitch, image_slice_pitch, num_events_in_wait_list, event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, in region, image_row_pitch, image_slice_pitch, num_events_in_wait_list, event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, in region, image_row_pitch, image_slice_pitch, num_events_in_wait_list, in event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, in region, image_row_pitch, image_slice_pitch, num_events_in_wait_list, in event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, in region, image_row_pitch, out image_slice_pitch, num_events_in_wait_list, event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, in region, image_row_pitch, out image_slice_pitch, num_events_in_wait_list, event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, in region, image_row_pitch, out image_slice_pitch, num_events_in_wait_list, in event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, in region, image_row_pitch, out image_slice_pitch, num_events_in_wait_list, in event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, in region, out image_row_pitch, image_slice_pitch, num_events_in_wait_list, event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, in region, out image_row_pitch, image_slice_pitch, num_events_in_wait_list, event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, in region, out image_row_pitch, image_slice_pitch, num_events_in_wait_list, in event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, in region, out image_row_pitch, image_slice_pitch, num_events_in_wait_list, in event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, in region, out image_row_pitch, out image_slice_pitch, num_events_in_wait_list, event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, in region, out image_row_pitch, out image_slice_pitch, num_events_in_wait_list, event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, in region, out image_row_pitch, out image_slice_pitch, num_events_in_wait_list, in event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, in region, out image_row_pitch, out image_slice_pitch, num_events_in_wait_list, in event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, region, image_row_pitch, image_slice_pitch, num_events_in_wait_list, event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, region, image_row_pitch, image_slice_pitch, num_events_in_wait_list, event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, region, image_row_pitch, image_slice_pitch, num_events_in_wait_list, in event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, region, image_row_pitch, image_slice_pitch, num_events_in_wait_list, in event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, region, image_row_pitch, out image_slice_pitch, num_events_in_wait_list, event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, region, image_row_pitch, out image_slice_pitch, num_events_in_wait_list, event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, region, image_row_pitch, out image_slice_pitch, num_events_in_wait_list, in event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, region, image_row_pitch, out image_slice_pitch, num_events_in_wait_list, in event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, region, out image_row_pitch, image_slice_pitch, num_events_in_wait_list, event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, region, out image_row_pitch, image_slice_pitch, num_events_in_wait_list, event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, region, out image_row_pitch, image_slice_pitch, num_events_in_wait_list, in event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, region, out image_row_pitch, image_slice_pitch, num_events_in_wait_list, in event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, region, out image_row_pitch, out image_slice_pitch, num_events_in_wait_list, event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, region, out image_row_pitch, out image_slice_pitch, num_events_in_wait_list, event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, region, out image_row_pitch, out image_slice_pitch, num_events_in_wait_list, in event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, region, out image_row_pitch, out image_slice_pitch, num_events_in_wait_list, in event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, in region, image_row_pitch, image_slice_pitch, num_events_in_wait_list, event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, in region, image_row_pitch, image_slice_pitch, num_events_in_wait_list, event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, in region, image_row_pitch, image_slice_pitch, num_events_in_wait_list, in event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, in region, image_row_pitch, image_slice_pitch, num_events_in_wait_list, in event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, in region, image_row_pitch, out image_slice_pitch, num_events_in_wait_list, event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, in region, image_row_pitch, out image_slice_pitch, num_events_in_wait_list, event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, in region, image_row_pitch, out image_slice_pitch, num_events_in_wait_list, in event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, in region, image_row_pitch, out image_slice_pitch, num_events_in_wait_list, in event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, in region, out image_row_pitch, image_slice_pitch, num_events_in_wait_list, event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, in region, out image_row_pitch, image_slice_pitch, num_events_in_wait_list, event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, in region, out image_row_pitch, image_slice_pitch, num_events_in_wait_list, in event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, in region, out image_row_pitch, image_slice_pitch, num_events_in_wait_list, in event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, in region, out image_row_pitch, out image_slice_pitch, num_events_in_wait_list, event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, in region, out image_row_pitch, out image_slice_pitch, num_events_in_wait_list, event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, in region, out image_row_pitch, out image_slice_pitch, num_events_in_wait_list, in event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, in region, out image_row_pitch, out image_slice_pitch, num_events_in_wait_list, in event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, region, image_row_pitch, image_slice_pitch, num_events_in_wait_list, event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, region, image_row_pitch, image_slice_pitch, num_events_in_wait_list, event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, region, image_row_pitch, image_slice_pitch, num_events_in_wait_list, in event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, region, image_row_pitch, image_slice_pitch, num_events_in_wait_list, in event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, region, image_row_pitch, out image_slice_pitch, num_events_in_wait_list, event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, region, image_row_pitch, out image_slice_pitch, num_events_in_wait_list, event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, region, image_row_pitch, out image_slice_pitch, num_events_in_wait_list, in event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, region, image_row_pitch, out image_slice_pitch, num_events_in_wait_list, in event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, region, out image_row_pitch, image_slice_pitch, num_events_in_wait_list, event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, region, out image_row_pitch, image_slice_pitch, num_events_in_wait_list, event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, region, out image_row_pitch, image_slice_pitch, num_events_in_wait_list, in event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, region, out image_row_pitch, image_slice_pitch, num_events_in_wait_list, in event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, region, out image_row_pitch, out image_slice_pitch, num_events_in_wait_list, event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, region, out image_row_pitch, out image_slice_pitch, num_events_in_wait_list, event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, region, out image_row_pitch, out image_slice_pitch, num_events_in_wait_list, in event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, region, out image_row_pitch, out image_slice_pitch, num_events_in_wait_list, in event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, in region, image_row_pitch, image_slice_pitch, num_events_in_wait_list, event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, in region, image_row_pitch, image_slice_pitch, num_events_in_wait_list, event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, in region, image_row_pitch, image_slice_pitch, num_events_in_wait_list, in event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, in region, image_row_pitch, image_slice_pitch, num_events_in_wait_list, in event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, in region, image_row_pitch, out image_slice_pitch, num_events_in_wait_list, event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, in region, image_row_pitch, out image_slice_pitch, num_events_in_wait_list, event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, in region, image_row_pitch, out image_slice_pitch, num_events_in_wait_list, in event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, in region, image_row_pitch, out image_slice_pitch, num_events_in_wait_list, in event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, in region, out image_row_pitch, image_slice_pitch, num_events_in_wait_list, event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, in region, out image_row_pitch, image_slice_pitch, num_events_in_wait_list, event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, in region, out image_row_pitch, image_slice_pitch, num_events_in_wait_list, in event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, in region, out image_row_pitch, image_slice_pitch, num_events_in_wait_list, in event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, in region, out image_row_pitch, out image_slice_pitch, num_events_in_wait_list, event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, in region, out image_row_pitch, out image_slice_pitch, num_events_in_wait_list, event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, in region, out image_row_pitch, out image_slice_pitch, num_events_in_wait_list, in event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, origin, in region, out image_row_pitch, out image_slice_pitch, num_events_in_wait_list, in event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, region, image_row_pitch, image_slice_pitch, num_events_in_wait_list, event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, region, image_row_pitch, image_slice_pitch, num_events_in_wait_list, event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, region, image_row_pitch, image_slice_pitch, num_events_in_wait_list, in event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, region, image_row_pitch, image_slice_pitch, num_events_in_wait_list, in event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, region, image_row_pitch, out image_slice_pitch, num_events_in_wait_list, event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, region, image_row_pitch, out image_slice_pitch, num_events_in_wait_list, event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, region, image_row_pitch, out image_slice_pitch, num_events_in_wait_list, in event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, region, image_row_pitch, out image_slice_pitch, num_events_in_wait_list, in event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, region, out image_row_pitch, image_slice_pitch, num_events_in_wait_list, event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, region, out image_row_pitch, image_slice_pitch, num_events_in_wait_list, event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, region, out image_row_pitch, image_slice_pitch, num_events_in_wait_list, in event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, region, out image_row_pitch, image_slice_pitch, num_events_in_wait_list, in event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, region, out image_row_pitch, out image_slice_pitch, num_events_in_wait_list, event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, region, out image_row_pitch, out image_slice_pitch, num_events_in_wait_list, event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, region, out image_row_pitch, out image_slice_pitch, num_events_in_wait_list, in event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, region, out image_row_pitch, out image_slice_pitch, num_events_in_wait_list, in event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, in region, image_row_pitch, image_slice_pitch, num_events_in_wait_list, event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, in region, image_row_pitch, image_slice_pitch, num_events_in_wait_list, event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, in region, image_row_pitch, image_slice_pitch, num_events_in_wait_list, in event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, in region, image_row_pitch, image_slice_pitch, num_events_in_wait_list, in event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, in region, image_row_pitch, out image_slice_pitch, num_events_in_wait_list, event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, in region, image_row_pitch, out image_slice_pitch, num_events_in_wait_list, event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, in region, image_row_pitch, out image_slice_pitch, num_events_in_wait_list, in event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] nuint* image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, in region, image_row_pitch, out image_slice_pitch, num_events_in_wait_list, in event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, in region, out image_row_pitch, image_slice_pitch, num_events_in_wait_list, event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, in region, out image_row_pitch, image_slice_pitch, num_events_in_wait_list, event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, in region, out image_row_pitch, image_slice_pitch, num_events_in_wait_list, in event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] nuint* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, in region, out image_row_pitch, image_slice_pitch, num_events_in_wait_list, in event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, in region, out image_row_pitch, out image_slice_pitch, num_events_in_wait_list, event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, in region, out image_row_pitch, out image_slice_pitch, num_events_in_wait_list, event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, in region, out image_row_pitch, out image_slice_pitch, num_events_in_wait_list, in event_wait_list, @event, out int silkRet);
+            return silkRet;
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public unsafe int EnqueueMapImage([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.Out)] out nuint image_row_pitch, [Flow(FlowDirection.Out)] out nuint image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event)
+        {
+            // NonKhrReturnTypeOverloader
+            EnqueueMapImage(command_queue, image, blocking_map, map_flags, in origin, in region, out image_row_pitch, out image_slice_pitch, num_events_in_wait_list, in event_wait_list, out @event, out int silkRet);
+            return silkRet;
+        }
+
 
         public CL(INativeContext ctx)
             : base(ctx)

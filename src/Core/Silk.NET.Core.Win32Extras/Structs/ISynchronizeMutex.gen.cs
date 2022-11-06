@@ -18,9 +18,12 @@ namespace Silk.NET.Core.Win32Extras
 {
     [Guid("00000025-0000-0000-c000-000000000046")]
     [NativeName("Name", "ISynchronizeMutex")]
-    public unsafe partial struct ISynchronizeMutex
+    public unsafe partial struct ISynchronizeMutex : IComVtbl<ISynchronizeMutex>, IComVtbl<ISynchronize>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("00000025-0000-0000-c000-000000000046");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator ISynchronize(ISynchronizeMutex val)
             => Unsafe.As<ISynchronizeMutex, ISynchronize>(ref val);
@@ -49,7 +52,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (ISynchronizeMutex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ISynchronizeMutex*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Cdecl]<ISynchronizeMutex*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -60,7 +63,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ISynchronizeMutex*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Cdecl]<ISynchronizeMutex*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -72,7 +75,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ISynchronizeMutex*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Cdecl]<ISynchronizeMutex*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -86,7 +89,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ISynchronizeMutex*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ISynchronizeMutex*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -97,7 +100,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (ISynchronizeMutex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ISynchronizeMutex*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<ISynchronizeMutex*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -106,7 +109,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (ISynchronizeMutex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ISynchronizeMutex*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<ISynchronizeMutex*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -115,7 +118,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (ISynchronizeMutex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ISynchronizeMutex*, uint, uint, int>)LpVtbl[3])(@this, dwFlags, dwMilliseconds);
+            ret = ((delegate* unmanaged[Cdecl]<ISynchronizeMutex*, uint, uint, int>)@this->LpVtbl[3])(@this, dwFlags, dwMilliseconds);
             return ret;
         }
 
@@ -124,7 +127,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (ISynchronizeMutex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ISynchronizeMutex*, int>)LpVtbl[4])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<ISynchronizeMutex*, int>)@this->LpVtbl[4])(@this);
             return ret;
         }
 
@@ -133,7 +136,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (ISynchronizeMutex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ISynchronizeMutex*, int>)LpVtbl[5])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<ISynchronizeMutex*, int>)@this->LpVtbl[5])(@this);
             return ret;
         }
 
@@ -142,8 +145,26 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (ISynchronizeMutex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ISynchronizeMutex*, int>)LpVtbl[6])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<ISynchronizeMutex*, int>)@this->LpVtbl[6])(@this);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ISynchronizeMutex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ISynchronizeMutex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

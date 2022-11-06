@@ -18,9 +18,12 @@ namespace Silk.NET.Direct3D11
 {
     [Guid("b2daad8b-03d4-4dbf-95eb-32ab4b63d0ab")]
     [NativeName("Name", "ID3DUserDefinedAnnotation")]
-    public unsafe partial struct ID3DUserDefinedAnnotation
+    public unsafe partial struct ID3DUserDefinedAnnotation : IComVtbl<ID3DUserDefinedAnnotation>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("b2daad8b-03d4-4dbf-95eb-32ab4b63d0ab");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator Silk.NET.Core.Native.IUnknown(ID3DUserDefinedAnnotation val)
             => Unsafe.As<ID3DUserDefinedAnnotation, Silk.NET.Core.Native.IUnknown>(ref val);
@@ -46,7 +49,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3DUserDefinedAnnotation*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -57,7 +60,7 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -69,7 +72,7 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -83,7 +86,7 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -94,7 +97,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3DUserDefinedAnnotation*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -103,7 +106,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3DUserDefinedAnnotation*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -112,7 +115,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3DUserDefinedAnnotation*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, char*, int>)LpVtbl[3])(@this, Name);
+            ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, char*, int>)@this->LpVtbl[3])(@this, Name);
             return ret;
         }
 
@@ -123,7 +126,7 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (char* NamePtr = &Name)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, char*, int>)LpVtbl[3])(@this, NamePtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, char*, int>)@this->LpVtbl[3])(@this, NamePtr);
             }
             return ret;
         }
@@ -134,7 +137,7 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3DUserDefinedAnnotation*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var NamePtr = (byte*) SilkMarshal.StringToPtr(Name, NativeStringEncoding.LPWStr);
-            ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, byte*, int>)LpVtbl[3])(@this, NamePtr);
+            ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, byte*, int>)@this->LpVtbl[3])(@this, NamePtr);
             SilkMarshal.Free((nint)NamePtr);
             return ret;
         }
@@ -144,7 +147,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3DUserDefinedAnnotation*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, int>)LpVtbl[4])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, int>)@this->LpVtbl[4])(@this);
             return ret;
         }
 
@@ -152,7 +155,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void SetMarker(char* Name)
         {
             var @this = (ID3DUserDefinedAnnotation*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, char*, void>)LpVtbl[5])(@this, Name);
+            ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, char*, void>)@this->LpVtbl[5])(@this, Name);
         }
 
         /// <summary>To be documented.</summary>
@@ -161,7 +164,7 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3DUserDefinedAnnotation*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (char* NamePtr = &Name)
             {
-                ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, char*, void>)LpVtbl[5])(@this, NamePtr);
+                ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, char*, void>)@this->LpVtbl[5])(@this, NamePtr);
             }
         }
 
@@ -170,7 +173,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3DUserDefinedAnnotation*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             var NamePtr = (byte*) SilkMarshal.StringToPtr(Name, NativeStringEncoding.LPWStr);
-            ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, byte*, void>)LpVtbl[5])(@this, NamePtr);
+            ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, byte*, void>)@this->LpVtbl[5])(@this, NamePtr);
             SilkMarshal.Free((nint)NamePtr);
         }
 
@@ -179,8 +182,26 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3DUserDefinedAnnotation*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, int>)LpVtbl[6])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, int>)@this->LpVtbl[6])(@this);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3DUserDefinedAnnotation*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3DUserDefinedAnnotation*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

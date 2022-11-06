@@ -18,9 +18,12 @@ namespace Silk.NET.Core.Win32Extras
 {
     [Guid("a5029fb6-3c34-11d1-9c99-00c04fb998aa")]
     [NativeName("Name", "IAsyncRpcChannelBuffer")]
-    public unsafe partial struct IAsyncRpcChannelBuffer
+    public unsafe partial struct IAsyncRpcChannelBuffer : IComVtbl<IAsyncRpcChannelBuffer>, IComVtbl<IRpcChannelBuffer2>, IComVtbl<IRpcChannelBuffer>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("a5029fb6-3c34-11d1-9c99-00c04fb998aa");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator IRpcChannelBuffer2(IAsyncRpcChannelBuffer val)
             => Unsafe.As<IAsyncRpcChannelBuffer, IRpcChannelBuffer2>(ref val);
@@ -52,7 +55,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IAsyncRpcChannelBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -63,7 +66,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -75,7 +78,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -89,7 +92,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -100,7 +103,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IAsyncRpcChannelBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -109,7 +112,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IAsyncRpcChannelBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -118,7 +121,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IAsyncRpcChannelBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, Guid*, int>)LpVtbl[3])(@this, pMessage, riid);
+            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, Guid*, int>)@this->LpVtbl[3])(@this, pMessage, riid);
             return ret;
         }
 
@@ -129,7 +132,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, Guid*, int>)LpVtbl[3])(@this, pMessage, riidPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, Guid*, int>)@this->LpVtbl[3])(@this, pMessage, riidPtr);
             }
             return ret;
         }
@@ -141,7 +144,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (TagRPCOLEMESSAGE* pMessagePtr = &pMessage)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, Guid*, int>)LpVtbl[3])(@this, pMessagePtr, riid);
+                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, Guid*, int>)@this->LpVtbl[3])(@this, pMessagePtr, riid);
             }
             return ret;
         }
@@ -155,7 +158,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (Guid* riidPtr = &riid)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, Guid*, int>)LpVtbl[3])(@this, pMessagePtr, riidPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, Guid*, int>)@this->LpVtbl[3])(@this, pMessagePtr, riidPtr);
                 }
             }
             return ret;
@@ -166,7 +169,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IAsyncRpcChannelBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, int>)LpVtbl[4])(@this, pMessage, pStatus);
+            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, int>)@this->LpVtbl[4])(@this, pMessage, pStatus);
             return ret;
         }
 
@@ -177,7 +180,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (uint* pStatusPtr = &pStatus)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, int>)LpVtbl[4])(@this, pMessage, pStatusPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, int>)@this->LpVtbl[4])(@this, pMessage, pStatusPtr);
             }
             return ret;
         }
@@ -189,7 +192,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (TagRPCOLEMESSAGE* pMessagePtr = &pMessage)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, int>)LpVtbl[4])(@this, pMessagePtr, pStatus);
+                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, int>)@this->LpVtbl[4])(@this, pMessagePtr, pStatus);
             }
             return ret;
         }
@@ -203,7 +206,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pStatusPtr = &pStatus)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, int>)LpVtbl[4])(@this, pMessagePtr, pStatusPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, int>)@this->LpVtbl[4])(@this, pMessagePtr, pStatusPtr);
                 }
             }
             return ret;
@@ -214,7 +217,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IAsyncRpcChannelBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, int>)LpVtbl[5])(@this, pMessage);
+            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, int>)@this->LpVtbl[5])(@this, pMessage);
             return ret;
         }
 
@@ -225,7 +228,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (TagRPCOLEMESSAGE* pMessagePtr = &pMessage)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, int>)LpVtbl[5])(@this, pMessagePtr);
+                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, int>)@this->LpVtbl[5])(@this, pMessagePtr);
             }
             return ret;
         }
@@ -235,7 +238,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IAsyncRpcChannelBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, uint*, void**, int>)LpVtbl[6])(@this, pdwDestContext, ppvDestContext);
+            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, uint*, void**, int>)@this->LpVtbl[6])(@this, pdwDestContext, ppvDestContext);
             return ret;
         }
 
@@ -246,7 +249,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (void** ppvDestContextPtr = &ppvDestContext)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, uint*, void**, int>)LpVtbl[6])(@this, pdwDestContext, ppvDestContextPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, uint*, void**, int>)@this->LpVtbl[6])(@this, pdwDestContext, ppvDestContextPtr);
             }
             return ret;
         }
@@ -258,7 +261,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (uint* pdwDestContextPtr = &pdwDestContext)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, uint*, void**, int>)LpVtbl[6])(@this, pdwDestContextPtr, ppvDestContext);
+                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, uint*, void**, int>)@this->LpVtbl[6])(@this, pdwDestContextPtr, ppvDestContext);
             }
             return ret;
         }
@@ -272,7 +275,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (void** ppvDestContextPtr = &ppvDestContext)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, uint*, void**, int>)LpVtbl[6])(@this, pdwDestContextPtr, ppvDestContextPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, uint*, void**, int>)@this->LpVtbl[6])(@this, pdwDestContextPtr, ppvDestContextPtr);
                 }
             }
             return ret;
@@ -283,7 +286,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IAsyncRpcChannelBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, int>)LpVtbl[7])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, int>)@this->LpVtbl[7])(@this);
             return ret;
         }
 
@@ -292,7 +295,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IAsyncRpcChannelBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, uint*, int>)LpVtbl[8])(@this, pdwVersion);
+            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, uint*, int>)@this->LpVtbl[8])(@this, pdwVersion);
             return ret;
         }
 
@@ -303,7 +306,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (uint* pdwVersionPtr = &pdwVersion)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, uint*, int>)LpVtbl[8])(@this, pdwVersionPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, uint*, int>)@this->LpVtbl[8])(@this, pdwVersionPtr);
             }
             return ret;
         }
@@ -313,7 +316,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IAsyncRpcChannelBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, ISynchronize*, uint*, int>)LpVtbl[9])(@this, pMsg, pSync, pulStatus);
+            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, ISynchronize*, uint*, int>)@this->LpVtbl[9])(@this, pMsg, pSync, pulStatus);
             return ret;
         }
 
@@ -324,7 +327,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (uint* pulStatusPtr = &pulStatus)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, ISynchronize*, uint*, int>)LpVtbl[9])(@this, pMsg, pSync, pulStatusPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, ISynchronize*, uint*, int>)@this->LpVtbl[9])(@this, pMsg, pSync, pulStatusPtr);
             }
             return ret;
         }
@@ -336,7 +339,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (ISynchronize* pSyncPtr = &pSync)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, ISynchronize*, uint*, int>)LpVtbl[9])(@this, pMsg, pSyncPtr, pulStatus);
+                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, ISynchronize*, uint*, int>)@this->LpVtbl[9])(@this, pMsg, pSyncPtr, pulStatus);
             }
             return ret;
         }
@@ -350,7 +353,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pulStatusPtr = &pulStatus)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, ISynchronize*, uint*, int>)LpVtbl[9])(@this, pMsg, pSyncPtr, pulStatusPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, ISynchronize*, uint*, int>)@this->LpVtbl[9])(@this, pMsg, pSyncPtr, pulStatusPtr);
                 }
             }
             return ret;
@@ -363,7 +366,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (TagRPCOLEMESSAGE* pMsgPtr = &pMsg)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, ISynchronize*, uint*, int>)LpVtbl[9])(@this, pMsgPtr, pSync, pulStatus);
+                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, ISynchronize*, uint*, int>)@this->LpVtbl[9])(@this, pMsgPtr, pSync, pulStatus);
             }
             return ret;
         }
@@ -377,7 +380,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pulStatusPtr = &pulStatus)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, ISynchronize*, uint*, int>)LpVtbl[9])(@this, pMsgPtr, pSync, pulStatusPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, ISynchronize*, uint*, int>)@this->LpVtbl[9])(@this, pMsgPtr, pSync, pulStatusPtr);
                 }
             }
             return ret;
@@ -392,7 +395,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (ISynchronize* pSyncPtr = &pSync)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, ISynchronize*, uint*, int>)LpVtbl[9])(@this, pMsgPtr, pSyncPtr, pulStatus);
+                    ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, ISynchronize*, uint*, int>)@this->LpVtbl[9])(@this, pMsgPtr, pSyncPtr, pulStatus);
                 }
             }
             return ret;
@@ -409,7 +412,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (uint* pulStatusPtr = &pulStatus)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, ISynchronize*, uint*, int>)LpVtbl[9])(@this, pMsgPtr, pSyncPtr, pulStatusPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, ISynchronize*, uint*, int>)@this->LpVtbl[9])(@this, pMsgPtr, pSyncPtr, pulStatusPtr);
                     }
                 }
             }
@@ -421,7 +424,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IAsyncRpcChannelBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, int>)LpVtbl[10])(@this, pMsg, pulStatus);
+            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, int>)@this->LpVtbl[10])(@this, pMsg, pulStatus);
             return ret;
         }
 
@@ -432,7 +435,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (uint* pulStatusPtr = &pulStatus)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, int>)LpVtbl[10])(@this, pMsg, pulStatusPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, int>)@this->LpVtbl[10])(@this, pMsg, pulStatusPtr);
             }
             return ret;
         }
@@ -444,7 +447,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (TagRPCOLEMESSAGE* pMsgPtr = &pMsg)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, int>)LpVtbl[10])(@this, pMsgPtr, pulStatus);
+                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, int>)@this->LpVtbl[10])(@this, pMsgPtr, pulStatus);
             }
             return ret;
         }
@@ -458,7 +461,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pulStatusPtr = &pulStatus)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, int>)LpVtbl[10])(@this, pMsgPtr, pulStatusPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, int>)@this->LpVtbl[10])(@this, pMsgPtr, pulStatusPtr);
                 }
             }
             return ret;
@@ -469,7 +472,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IAsyncRpcChannelBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, void**, int>)LpVtbl[11])(@this, pMsg, pdwDestContext, ppvDestContext);
+            ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, void**, int>)@this->LpVtbl[11])(@this, pMsg, pdwDestContext, ppvDestContext);
             return ret;
         }
 
@@ -480,7 +483,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (void** ppvDestContextPtr = &ppvDestContext)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, void**, int>)LpVtbl[11])(@this, pMsg, pdwDestContext, ppvDestContextPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, void**, int>)@this->LpVtbl[11])(@this, pMsg, pdwDestContext, ppvDestContextPtr);
             }
             return ret;
         }
@@ -492,7 +495,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (uint* pdwDestContextPtr = &pdwDestContext)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, void**, int>)LpVtbl[11])(@this, pMsg, pdwDestContextPtr, ppvDestContext);
+                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, void**, int>)@this->LpVtbl[11])(@this, pMsg, pdwDestContextPtr, ppvDestContext);
             }
             return ret;
         }
@@ -506,7 +509,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (void** ppvDestContextPtr = &ppvDestContext)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, void**, int>)LpVtbl[11])(@this, pMsg, pdwDestContextPtr, ppvDestContextPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, void**, int>)@this->LpVtbl[11])(@this, pMsg, pdwDestContextPtr, ppvDestContextPtr);
                 }
             }
             return ret;
@@ -519,7 +522,7 @@ namespace Silk.NET.Core.Win32Extras
             int ret = default;
             fixed (TagRPCOLEMESSAGE* pMsgPtr = &pMsg)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, void**, int>)LpVtbl[11])(@this, pMsgPtr, pdwDestContext, ppvDestContext);
+                ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, void**, int>)@this->LpVtbl[11])(@this, pMsgPtr, pdwDestContext, ppvDestContext);
             }
             return ret;
         }
@@ -533,7 +536,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (void** ppvDestContextPtr = &ppvDestContext)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, void**, int>)LpVtbl[11])(@this, pMsgPtr, pdwDestContext, ppvDestContextPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, void**, int>)@this->LpVtbl[11])(@this, pMsgPtr, pdwDestContext, ppvDestContextPtr);
                 }
             }
             return ret;
@@ -548,7 +551,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pdwDestContextPtr = &pdwDestContext)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, void**, int>)LpVtbl[11])(@this, pMsgPtr, pdwDestContextPtr, ppvDestContext);
+                    ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, void**, int>)@this->LpVtbl[11])(@this, pMsgPtr, pdwDestContextPtr, ppvDestContext);
                 }
             }
             return ret;
@@ -565,11 +568,61 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (void** ppvDestContextPtr = &ppvDestContext)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, void**, int>)LpVtbl[11])(@this, pMsgPtr, pdwDestContextPtr, ppvDestContextPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IAsyncRpcChannelBuffer*, TagRPCOLEMESSAGE*, uint*, void**, int>)@this->LpVtbl[11])(@this, pMsgPtr, pdwDestContextPtr, ppvDestContextPtr);
                     }
                 }
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IAsyncRpcChannelBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Send<TI0>(TagRPCOLEMESSAGE* pMsg, ComPtr<TI0> pSync, uint* pulStatus) where TI0 : unmanaged, IComVtbl<ISynchronize>, IComVtbl<TI0>
+        {
+            var @this = (IAsyncRpcChannelBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Send(pMsg, (ISynchronize*) pSync.Handle, pulStatus);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Send<TI0>(TagRPCOLEMESSAGE* pMsg, ComPtr<TI0> pSync, ref uint pulStatus) where TI0 : unmanaged, IComVtbl<ISynchronize>, IComVtbl<TI0>
+        {
+            var @this = (IAsyncRpcChannelBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Send(pMsg, (ISynchronize*) pSync.Handle, ref pulStatus);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Send<TI0>(ref TagRPCOLEMESSAGE pMsg, ComPtr<TI0> pSync, uint* pulStatus) where TI0 : unmanaged, IComVtbl<ISynchronize>, IComVtbl<TI0>
+        {
+            var @this = (IAsyncRpcChannelBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Send(ref pMsg, (ISynchronize*) pSync.Handle, pulStatus);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int Send<TI0>(ref TagRPCOLEMESSAGE pMsg, ComPtr<TI0> pSync, ref uint pulStatus) where TI0 : unmanaged, IComVtbl<ISynchronize>, IComVtbl<TI0>
+        {
+            var @this = (IAsyncRpcChannelBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Send(ref pMsg, (ISynchronize*) pSync.Handle, ref pulStatus);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IAsyncRpcChannelBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

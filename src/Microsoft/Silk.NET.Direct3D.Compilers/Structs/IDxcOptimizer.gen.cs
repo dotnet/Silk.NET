@@ -18,9 +18,12 @@ namespace Silk.NET.Direct3D.Compilers
 {
     [Guid("25740e2e-9cba-401b-9119-4fb42f39f270")]
     [NativeName("Name", "IDxcOptimizer")]
-    public unsafe partial struct IDxcOptimizer
+    public unsafe partial struct IDxcOptimizer : IComVtbl<IDxcOptimizer>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("25740e2e-9cba-401b-9119-4fb42f39f270");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDxcOptimizer val)
             => Unsafe.As<IDxcOptimizer, Silk.NET.Core.Native.IUnknown>(ref val);
@@ -46,7 +49,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -57,7 +60,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -69,7 +72,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -83,7 +86,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -94,7 +97,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -103,7 +106,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -112,7 +115,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, uint*, int>)LpVtbl[3])(@this, pCount);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, uint*, int>)@this->LpVtbl[3])(@this, pCount);
             return ret;
         }
 
@@ -123,7 +126,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (uint* pCountPtr = &pCount)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, uint*, int>)LpVtbl[3])(@this, pCountPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, uint*, int>)@this->LpVtbl[3])(@this, pCountPtr);
             }
             return ret;
         }
@@ -133,7 +136,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, uint, IDxcOptimizerPass**, int>)LpVtbl[4])(@this, index, ppResult);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, uint, IDxcOptimizerPass**, int>)@this->LpVtbl[4])(@this, index, ppResult);
             return ret;
         }
 
@@ -144,7 +147,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (IDxcOptimizerPass** ppResultPtr = &ppResult)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, uint, IDxcOptimizerPass**, int>)LpVtbl[4])(@this, index, ppResultPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, uint, IDxcOptimizerPass**, int>)@this->LpVtbl[4])(@this, index, ppResultPtr);
             }
             return ret;
         }
@@ -154,7 +157,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlob, ppOptions, optionCount, pOutputModule, ppOutputText);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)@this->LpVtbl[5])(@this, pBlob, ppOptions, optionCount, pOutputModule, ppOutputText);
             return ret;
         }
 
@@ -165,7 +168,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (IDxcBlobEncoding** ppOutputTextPtr = &ppOutputText)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlob, ppOptions, optionCount, pOutputModule, ppOutputTextPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)@this->LpVtbl[5])(@this, pBlob, ppOptions, optionCount, pOutputModule, ppOutputTextPtr);
             }
             return ret;
         }
@@ -177,7 +180,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (IDxcBlob** pOutputModulePtr = &pOutputModule)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlob, ppOptions, optionCount, pOutputModulePtr, ppOutputText);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)@this->LpVtbl[5])(@this, pBlob, ppOptions, optionCount, pOutputModulePtr, ppOutputText);
             }
             return ret;
         }
@@ -191,7 +194,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (IDxcBlobEncoding** ppOutputTextPtr = &ppOutputText)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlob, ppOptions, optionCount, pOutputModulePtr, ppOutputTextPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)@this->LpVtbl[5])(@this, pBlob, ppOptions, optionCount, pOutputModulePtr, ppOutputTextPtr);
                 }
             }
             return ret;
@@ -204,7 +207,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (char** ppOptionsPtr = &ppOptions)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlob, ppOptionsPtr, optionCount, pOutputModule, ppOutputText);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)@this->LpVtbl[5])(@this, pBlob, ppOptionsPtr, optionCount, pOutputModule, ppOutputText);
             }
             return ret;
         }
@@ -218,7 +221,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (IDxcBlobEncoding** ppOutputTextPtr = &ppOutputText)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlob, ppOptionsPtr, optionCount, pOutputModule, ppOutputTextPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)@this->LpVtbl[5])(@this, pBlob, ppOptionsPtr, optionCount, pOutputModule, ppOutputTextPtr);
                 }
             }
             return ret;
@@ -233,7 +236,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (IDxcBlob** pOutputModulePtr = &pOutputModule)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlob, ppOptionsPtr, optionCount, pOutputModulePtr, ppOutputText);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)@this->LpVtbl[5])(@this, pBlob, ppOptionsPtr, optionCount, pOutputModulePtr, ppOutputText);
                 }
             }
             return ret;
@@ -250,7 +253,7 @@ namespace Silk.NET.Direct3D.Compilers
                 {
                     fixed (IDxcBlobEncoding** ppOutputTextPtr = &ppOutputText)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlob, ppOptionsPtr, optionCount, pOutputModulePtr, ppOutputTextPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)@this->LpVtbl[5])(@this, pBlob, ppOptionsPtr, optionCount, pOutputModulePtr, ppOutputTextPtr);
                     }
                 }
             }
@@ -264,7 +267,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (IDxcBlob* pBlobPtr = &pBlob)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlobPtr, ppOptions, optionCount, pOutputModule, ppOutputText);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)@this->LpVtbl[5])(@this, pBlobPtr, ppOptions, optionCount, pOutputModule, ppOutputText);
             }
             return ret;
         }
@@ -278,7 +281,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (IDxcBlobEncoding** ppOutputTextPtr = &ppOutputText)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlobPtr, ppOptions, optionCount, pOutputModule, ppOutputTextPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)@this->LpVtbl[5])(@this, pBlobPtr, ppOptions, optionCount, pOutputModule, ppOutputTextPtr);
                 }
             }
             return ret;
@@ -293,7 +296,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (IDxcBlob** pOutputModulePtr = &pOutputModule)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlobPtr, ppOptions, optionCount, pOutputModulePtr, ppOutputText);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)@this->LpVtbl[5])(@this, pBlobPtr, ppOptions, optionCount, pOutputModulePtr, ppOutputText);
                 }
             }
             return ret;
@@ -310,7 +313,7 @@ namespace Silk.NET.Direct3D.Compilers
                 {
                     fixed (IDxcBlobEncoding** ppOutputTextPtr = &ppOutputText)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlobPtr, ppOptions, optionCount, pOutputModulePtr, ppOutputTextPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)@this->LpVtbl[5])(@this, pBlobPtr, ppOptions, optionCount, pOutputModulePtr, ppOutputTextPtr);
                     }
                 }
             }
@@ -326,7 +329,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (char** ppOptionsPtr = &ppOptions)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlobPtr, ppOptionsPtr, optionCount, pOutputModule, ppOutputText);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)@this->LpVtbl[5])(@this, pBlobPtr, ppOptionsPtr, optionCount, pOutputModule, ppOutputText);
                 }
             }
             return ret;
@@ -343,7 +346,7 @@ namespace Silk.NET.Direct3D.Compilers
                 {
                     fixed (IDxcBlobEncoding** ppOutputTextPtr = &ppOutputText)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlobPtr, ppOptionsPtr, optionCount, pOutputModule, ppOutputTextPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)@this->LpVtbl[5])(@this, pBlobPtr, ppOptionsPtr, optionCount, pOutputModule, ppOutputTextPtr);
                     }
                 }
             }
@@ -361,7 +364,7 @@ namespace Silk.NET.Direct3D.Compilers
                 {
                     fixed (IDxcBlob** pOutputModulePtr = &pOutputModule)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlobPtr, ppOptionsPtr, optionCount, pOutputModulePtr, ppOutputText);
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)@this->LpVtbl[5])(@this, pBlobPtr, ppOptionsPtr, optionCount, pOutputModulePtr, ppOutputText);
                     }
                 }
             }
@@ -381,12 +384,246 @@ namespace Silk.NET.Direct3D.Compilers
                     {
                         fixed (IDxcBlobEncoding** ppOutputTextPtr = &ppOutputText)
                         {
-                            ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlobPtr, ppOptionsPtr, optionCount, pOutputModulePtr, ppOutputTextPtr);
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)@this->LpVtbl[5])(@this, pBlobPtr, ppOptionsPtr, optionCount, pOutputModulePtr, ppOutputTextPtr);
                         }
                     }
                 }
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetAvailablePass<TI0>(uint index, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOptimizerPass>, IComVtbl<TI0>
+        {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetAvailablePass(index, (IDxcOptimizerPass**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RunOptimizer(IDxcBlob* pBlob, string[] ppOptionsSa, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText)
+        {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var ppOptions = (char**) SilkMarshal.StringArrayToPtr(ppOptionsSa);
+            var ret = @this->RunOptimizer(pBlob, ppOptions, optionCount, pOutputModule, ppOutputText);
+            SilkMarshal.CopyPtrToStringArray((nint) ppOptions, ppOptionsSa);
+            SilkMarshal.Free((nint) ppOptions);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RunOptimizer<TI0, TI1, TI2>(ComPtr<TI0> pBlob, char** ppOptions, uint optionCount, ref ComPtr<TI1> pOutputModule, ref ComPtr<TI2> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI2>
+        {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->RunOptimizer((IDxcBlob*) pBlob.Handle, ppOptions, optionCount, (IDxcBlob**) pOutputModule.GetAddressOf(), (IDxcBlobEncoding**) ppOutputText.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RunOptimizer(IDxcBlob* pBlob, string[] ppOptionsSa, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText)
+        {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var ppOptions = (char**) SilkMarshal.StringArrayToPtr(ppOptionsSa);
+            var ret = @this->RunOptimizer(pBlob, ppOptions, optionCount, pOutputModule, ref ppOutputText);
+            SilkMarshal.CopyPtrToStringArray((nint) ppOptions, ppOptionsSa);
+            SilkMarshal.Free((nint) ppOptions);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RunOptimizer<TI0, TI1>(ComPtr<TI0> pBlob, char** ppOptions, uint optionCount, ref ComPtr<TI1> pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI1>
+        {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->RunOptimizer((IDxcBlob*) pBlob.Handle, ppOptions, optionCount, (IDxcBlob**) pOutputModule.GetAddressOf(), ref ppOutputText);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RunOptimizer(IDxcBlob* pBlob, string[] ppOptionsSa, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText)
+        {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var ppOptions = (char**) SilkMarshal.StringArrayToPtr(ppOptionsSa);
+            var ret = @this->RunOptimizer(pBlob, ppOptions, optionCount, ref pOutputModule, ppOutputText);
+            SilkMarshal.CopyPtrToStringArray((nint) ppOptions, ppOptionsSa);
+            SilkMarshal.Free((nint) ppOptions);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RunOptimizer<TI0, TI1>(ComPtr<TI0> pBlob, char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref ComPtr<TI1> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI1>
+        {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->RunOptimizer((IDxcBlob*) pBlob.Handle, ppOptions, optionCount, ref pOutputModule, (IDxcBlobEncoding**) ppOutputText.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RunOptimizer(IDxcBlob* pBlob, string[] ppOptionsSa, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText)
+        {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var ppOptions = (char**) SilkMarshal.StringArrayToPtr(ppOptionsSa);
+            var ret = @this->RunOptimizer(pBlob, ppOptions, optionCount, ref pOutputModule, ref ppOutputText);
+            SilkMarshal.CopyPtrToStringArray((nint) ppOptions, ppOptionsSa);
+            SilkMarshal.Free((nint) ppOptions);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RunOptimizer<TI0>(ComPtr<TI0> pBlob, char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->RunOptimizer((IDxcBlob*) pBlob.Handle, ppOptions, optionCount, ref pOutputModule, ref ppOutputText);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RunOptimizer<TI0, TI1, TI2>(ComPtr<TI0> pBlob, ref char* ppOptions, uint optionCount, ref ComPtr<TI1> pOutputModule, ref ComPtr<TI2> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI2>
+        {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->RunOptimizer((IDxcBlob*) pBlob.Handle, ref ppOptions, optionCount, (IDxcBlob**) pOutputModule.GetAddressOf(), (IDxcBlobEncoding**) ppOutputText.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RunOptimizer<TI0, TI1>(ComPtr<TI0> pBlob, ref char* ppOptions, uint optionCount, ref ComPtr<TI1> pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI1>
+        {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->RunOptimizer((IDxcBlob*) pBlob.Handle, ref ppOptions, optionCount, (IDxcBlob**) pOutputModule.GetAddressOf(), ref ppOutputText);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RunOptimizer<TI0, TI1>(ComPtr<TI0> pBlob, ref char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref ComPtr<TI1> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI1>
+        {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->RunOptimizer((IDxcBlob*) pBlob.Handle, ref ppOptions, optionCount, ref pOutputModule, (IDxcBlobEncoding**) ppOutputText.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RunOptimizer<TI0>(ComPtr<TI0> pBlob, ref char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->RunOptimizer((IDxcBlob*) pBlob.Handle, ref ppOptions, optionCount, ref pOutputModule, ref ppOutputText);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RunOptimizer(ref IDxcBlob pBlob, string[] ppOptionsSa, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText)
+        {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var ppOptions = (char**) SilkMarshal.StringArrayToPtr(ppOptionsSa);
+            var ret = @this->RunOptimizer(ref pBlob, ppOptions, optionCount, pOutputModule, ppOutputText);
+            SilkMarshal.CopyPtrToStringArray((nint) ppOptions, ppOptionsSa);
+            SilkMarshal.Free((nint) ppOptions);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RunOptimizer<TI0, TI1>(ref IDxcBlob pBlob, char** ppOptions, uint optionCount, ref ComPtr<TI0> pOutputModule, ref ComPtr<TI1> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI1>
+        {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->RunOptimizer(ref pBlob, ppOptions, optionCount, (IDxcBlob**) pOutputModule.GetAddressOf(), (IDxcBlobEncoding**) ppOutputText.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RunOptimizer(ref IDxcBlob pBlob, string[] ppOptionsSa, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText)
+        {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var ppOptions = (char**) SilkMarshal.StringArrayToPtr(ppOptionsSa);
+            var ret = @this->RunOptimizer(ref pBlob, ppOptions, optionCount, pOutputModule, ref ppOutputText);
+            SilkMarshal.CopyPtrToStringArray((nint) ppOptions, ppOptionsSa);
+            SilkMarshal.Free((nint) ppOptions);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RunOptimizer<TI0>(ref IDxcBlob pBlob, char** ppOptions, uint optionCount, ref ComPtr<TI0> pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->RunOptimizer(ref pBlob, ppOptions, optionCount, (IDxcBlob**) pOutputModule.GetAddressOf(), ref ppOutputText);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RunOptimizer(ref IDxcBlob pBlob, string[] ppOptionsSa, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText)
+        {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var ppOptions = (char**) SilkMarshal.StringArrayToPtr(ppOptionsSa);
+            var ret = @this->RunOptimizer(ref pBlob, ppOptions, optionCount, ref pOutputModule, ppOutputText);
+            SilkMarshal.CopyPtrToStringArray((nint) ppOptions, ppOptionsSa);
+            SilkMarshal.Free((nint) ppOptions);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RunOptimizer<TI0>(ref IDxcBlob pBlob, char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref ComPtr<TI0> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
+        {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->RunOptimizer(ref pBlob, ppOptions, optionCount, ref pOutputModule, (IDxcBlobEncoding**) ppOutputText.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RunOptimizer(ref IDxcBlob pBlob, string[] ppOptionsSa, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText)
+        {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var ppOptions = (char**) SilkMarshal.StringArrayToPtr(ppOptionsSa);
+            var ret = @this->RunOptimizer(ref pBlob, ppOptions, optionCount, ref pOutputModule, ref ppOutputText);
+            SilkMarshal.CopyPtrToStringArray((nint) ppOptions, ppOptionsSa);
+            SilkMarshal.Free((nint) ppOptions);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RunOptimizer<TI0, TI1>(ref IDxcBlob pBlob, ref char* ppOptions, uint optionCount, ref ComPtr<TI0> pOutputModule, ref ComPtr<TI1> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI1>
+        {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->RunOptimizer(ref pBlob, ref ppOptions, optionCount, (IDxcBlob**) pOutputModule.GetAddressOf(), (IDxcBlobEncoding**) ppOutputText.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RunOptimizer<TI0>(ref IDxcBlob pBlob, ref char* ppOptions, uint optionCount, ref ComPtr<TI0> pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->RunOptimizer(ref pBlob, ref ppOptions, optionCount, (IDxcBlob**) pOutputModule.GetAddressOf(), ref ppOutputText);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RunOptimizer<TI0>(ref IDxcBlob pBlob, ref char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref ComPtr<TI0> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
+        {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->RunOptimizer(ref pBlob, ref ppOptions, optionCount, ref pOutputModule, (IDxcBlobEncoding**) ppOutputText.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

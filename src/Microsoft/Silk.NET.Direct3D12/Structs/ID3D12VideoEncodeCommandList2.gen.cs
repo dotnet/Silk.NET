@@ -18,9 +18,12 @@ namespace Silk.NET.Direct3D12
 {
     [Guid("895491e2-e701-46a9-9a1f-8d3480ed867a")]
     [NativeName("Name", "ID3D12VideoEncodeCommandList2")]
-    public unsafe partial struct ID3D12VideoEncodeCommandList2
+    public unsafe partial struct ID3D12VideoEncodeCommandList2 : IComVtbl<ID3D12VideoEncodeCommandList2>, IComVtbl<ID3D12VideoEncodeCommandList1>, IComVtbl<ID3D12VideoEncodeCommandList>, IComVtbl<ID3D12CommandList>, IComVtbl<ID3D12DeviceChild>, IComVtbl<ID3D12Object>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("895491e2-e701-46a9-9a1f-8d3480ed867a");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator ID3D12VideoEncodeCommandList1(ID3D12VideoEncodeCommandList2 val)
             => Unsafe.As<ID3D12VideoEncodeCommandList2, ID3D12VideoEncodeCommandList1>(ref val);
@@ -61,7 +64,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -72,7 +75,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -84,7 +87,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -98,7 +101,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -109,7 +112,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -118,7 +121,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -127,7 +130,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guid, pDataSize, pData);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guid, pDataSize, pData);
             return ret;
         }
 
@@ -138,7 +141,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guid, pDataSize, pDataPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guid, pDataSize, pDataPtr);
             }
             return ret;
         }
@@ -150,7 +153,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (uint* pDataSizePtr = &pDataSize)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guid, pDataSizePtr, pData);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guid, pDataSizePtr, pData);
             }
             return ret;
         }
@@ -164,7 +167,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guid, pDataSizePtr, pDataPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guid, pDataSizePtr, pDataPtr);
                 }
             }
             return ret;
@@ -177,7 +180,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guidPtr, pDataSize, pData);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guidPtr, pDataSize, pData);
             }
             return ret;
         }
@@ -191,7 +194,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guidPtr, pDataSize, pDataPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guidPtr, pDataSize, pDataPtr);
                 }
             }
             return ret;
@@ -206,7 +209,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (uint* pDataSizePtr = &pDataSize)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guidPtr, pDataSizePtr, pData);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guidPtr, pDataSizePtr, pData);
                 }
             }
             return ret;
@@ -223,7 +226,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (void* pDataPtr = &pData)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guidPtr, pDataSizePtr, pDataPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guidPtr, pDataSizePtr, pDataPtr);
                     }
                 }
             }
@@ -235,7 +238,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, uint, void*, int>)LpVtbl[4])(@this, guid, DataSize, pData);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, uint, void*, int>)@this->LpVtbl[4])(@this, guid, DataSize, pData);
             return ret;
         }
 
@@ -246,7 +249,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, uint, void*, int>)LpVtbl[4])(@this, guid, DataSize, pDataPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, uint, void*, int>)@this->LpVtbl[4])(@this, guid, DataSize, pDataPtr);
             }
             return ret;
         }
@@ -258,7 +261,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, uint, void*, int>)LpVtbl[4])(@this, guidPtr, DataSize, pData);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, uint, void*, int>)@this->LpVtbl[4])(@this, guidPtr, DataSize, pData);
             }
             return ret;
         }
@@ -272,7 +275,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, uint, void*, int>)LpVtbl[4])(@this, guidPtr, DataSize, pDataPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, uint, void*, int>)@this->LpVtbl[4])(@this, guidPtr, DataSize, pDataPtr);
                 }
             }
             return ret;
@@ -283,7 +286,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guid, pData);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[5])(@this, guid, pData);
             return ret;
         }
 
@@ -294,7 +297,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guid, pDataPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[5])(@this, guid, pDataPtr);
             }
             return ret;
         }
@@ -306,7 +309,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guidPtr, pData);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[5])(@this, guidPtr, pData);
             }
             return ret;
         }
@@ -320,7 +323,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guidPtr, pDataPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[5])(@this, guidPtr, pDataPtr);
                 }
             }
             return ret;
@@ -331,7 +334,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, char*, int>)LpVtbl[6])(@this, Name);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, char*, int>)@this->LpVtbl[6])(@this, Name);
             return ret;
         }
 
@@ -342,7 +345,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (char* NamePtr = &Name)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, char*, int>)LpVtbl[6])(@this, NamePtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, char*, int>)@this->LpVtbl[6])(@this, NamePtr);
             }
             return ret;
         }
@@ -353,7 +356,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var NamePtr = (byte*) SilkMarshal.StringToPtr(Name, NativeStringEncoding.LPWStr);
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, byte*, int>)LpVtbl[6])(@this, NamePtr);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, byte*, int>)@this->LpVtbl[6])(@this, NamePtr);
             SilkMarshal.Free((nint)NamePtr);
             return ret;
         }
@@ -363,7 +366,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, void**, int>)LpVtbl[7])(@this, riid, ppvDevice);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, void**, int>)@this->LpVtbl[7])(@this, riid, ppvDevice);
             return ret;
         }
 
@@ -374,7 +377,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (void** ppvDevicePtr = &ppvDevice)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, void**, int>)LpVtbl[7])(@this, riid, ppvDevicePtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, void**, int>)@this->LpVtbl[7])(@this, riid, ppvDevicePtr);
             }
             return ret;
         }
@@ -386,7 +389,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, void**, int>)LpVtbl[7])(@this, riidPtr, ppvDevice);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, void**, int>)@this->LpVtbl[7])(@this, riidPtr, ppvDevice);
             }
             return ret;
         }
@@ -400,7 +403,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void** ppvDevicePtr = &ppvDevice)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, void**, int>)LpVtbl[7])(@this, riidPtr, ppvDevicePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, Guid*, void**, int>)@this->LpVtbl[7])(@this, riidPtr, ppvDevicePtr);
                 }
             }
             return ret;
@@ -411,7 +414,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             CommandListType ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, CommandListType>)LpVtbl[8])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, CommandListType>)@this->LpVtbl[8])(@this);
             return ret;
         }
 
@@ -420,7 +423,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, int>)LpVtbl[9])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, int>)@this->LpVtbl[9])(@this);
             return ret;
         }
 
@@ -429,7 +432,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12CommandAllocator*, int>)LpVtbl[10])(@this, pAllocator);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12CommandAllocator*, int>)@this->LpVtbl[10])(@this, pAllocator);
             return ret;
         }
 
@@ -440,7 +443,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (ID3D12CommandAllocator* pAllocatorPtr = &pAllocator)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12CommandAllocator*, int>)LpVtbl[10])(@this, pAllocatorPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12CommandAllocator*, int>)@this->LpVtbl[10])(@this, pAllocatorPtr);
             }
             return ret;
         }
@@ -449,14 +452,14 @@ namespace Silk.NET.Direct3D12
         public readonly void ClearState()
         {
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, void>)LpVtbl[11])(@this);
+            ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, void>)@this->LpVtbl[11])(@this);
         }
 
         /// <summary>To be documented.</summary>
         public readonly unsafe void ResourceBarrier(uint NumBarriers, ResourceBarrier* pBarriers)
         {
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, uint, ResourceBarrier*, void>)LpVtbl[12])(@this, NumBarriers, pBarriers);
+            ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, uint, ResourceBarrier*, void>)@this->LpVtbl[12])(@this, NumBarriers, pBarriers);
         }
 
         /// <summary>To be documented.</summary>
@@ -465,7 +468,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ResourceBarrier* pBarriersPtr = &pBarriers)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, uint, ResourceBarrier*, void>)LpVtbl[12])(@this, NumBarriers, pBarriersPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, uint, ResourceBarrier*, void>)@this->LpVtbl[12])(@this, NumBarriers, pBarriersPtr);
             }
         }
 
@@ -473,7 +476,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void DiscardResource(ID3D12Resource* pResource, DiscardRegion* pRegion)
         {
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12Resource*, DiscardRegion*, void>)LpVtbl[13])(@this, pResource, pRegion);
+            ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12Resource*, DiscardRegion*, void>)@this->LpVtbl[13])(@this, pResource, pRegion);
         }
 
         /// <summary>To be documented.</summary>
@@ -482,7 +485,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (DiscardRegion* pRegionPtr = &pRegion)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12Resource*, DiscardRegion*, void>)LpVtbl[13])(@this, pResource, pRegionPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12Resource*, DiscardRegion*, void>)@this->LpVtbl[13])(@this, pResource, pRegionPtr);
             }
         }
 
@@ -492,7 +495,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pResourcePtr = &pResource)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12Resource*, DiscardRegion*, void>)LpVtbl[13])(@this, pResourcePtr, pRegion);
+                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12Resource*, DiscardRegion*, void>)@this->LpVtbl[13])(@this, pResourcePtr, pRegion);
             }
         }
 
@@ -504,7 +507,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (DiscardRegion* pRegionPtr = &pRegion)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12Resource*, DiscardRegion*, void>)LpVtbl[13])(@this, pResourcePtr, pRegionPtr);
+                    ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12Resource*, DiscardRegion*, void>)@this->LpVtbl[13])(@this, pResourcePtr, pRegionPtr);
                 }
             }
         }
@@ -513,7 +516,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void BeginQuery(ID3D12QueryHeap* pQueryHeap, QueryType Type, uint Index)
         {
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12QueryHeap*, QueryType, uint, void>)LpVtbl[14])(@this, pQueryHeap, Type, Index);
+            ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12QueryHeap*, QueryType, uint, void>)@this->LpVtbl[14])(@this, pQueryHeap, Type, Index);
         }
 
         /// <summary>To be documented.</summary>
@@ -522,7 +525,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12QueryHeap* pQueryHeapPtr = &pQueryHeap)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12QueryHeap*, QueryType, uint, void>)LpVtbl[14])(@this, pQueryHeapPtr, Type, Index);
+                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12QueryHeap*, QueryType, uint, void>)@this->LpVtbl[14])(@this, pQueryHeapPtr, Type, Index);
             }
         }
 
@@ -530,7 +533,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void EndQuery(ID3D12QueryHeap* pQueryHeap, QueryType Type, uint Index)
         {
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12QueryHeap*, QueryType, uint, void>)LpVtbl[15])(@this, pQueryHeap, Type, Index);
+            ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12QueryHeap*, QueryType, uint, void>)@this->LpVtbl[15])(@this, pQueryHeap, Type, Index);
         }
 
         /// <summary>To be documented.</summary>
@@ -539,7 +542,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12QueryHeap* pQueryHeapPtr = &pQueryHeap)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12QueryHeap*, QueryType, uint, void>)LpVtbl[15])(@this, pQueryHeapPtr, Type, Index);
+                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12QueryHeap*, QueryType, uint, void>)@this->LpVtbl[15])(@this, pQueryHeapPtr, Type, Index);
             }
         }
 
@@ -547,7 +550,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void ResolveQueryData(ID3D12QueryHeap* pQueryHeap, QueryType Type, uint StartIndex, uint NumQueries, ID3D12Resource* pDestinationBuffer, ulong AlignedDestinationBufferOffset)
         {
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12QueryHeap*, QueryType, uint, uint, ID3D12Resource*, ulong, void>)LpVtbl[16])(@this, pQueryHeap, Type, StartIndex, NumQueries, pDestinationBuffer, AlignedDestinationBufferOffset);
+            ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12QueryHeap*, QueryType, uint, uint, ID3D12Resource*, ulong, void>)@this->LpVtbl[16])(@this, pQueryHeap, Type, StartIndex, NumQueries, pDestinationBuffer, AlignedDestinationBufferOffset);
         }
 
         /// <summary>To be documented.</summary>
@@ -556,7 +559,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pDestinationBufferPtr = &pDestinationBuffer)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12QueryHeap*, QueryType, uint, uint, ID3D12Resource*, ulong, void>)LpVtbl[16])(@this, pQueryHeap, Type, StartIndex, NumQueries, pDestinationBufferPtr, AlignedDestinationBufferOffset);
+                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12QueryHeap*, QueryType, uint, uint, ID3D12Resource*, ulong, void>)@this->LpVtbl[16])(@this, pQueryHeap, Type, StartIndex, NumQueries, pDestinationBufferPtr, AlignedDestinationBufferOffset);
             }
         }
 
@@ -566,7 +569,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12QueryHeap* pQueryHeapPtr = &pQueryHeap)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12QueryHeap*, QueryType, uint, uint, ID3D12Resource*, ulong, void>)LpVtbl[16])(@this, pQueryHeapPtr, Type, StartIndex, NumQueries, pDestinationBuffer, AlignedDestinationBufferOffset);
+                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12QueryHeap*, QueryType, uint, uint, ID3D12Resource*, ulong, void>)@this->LpVtbl[16])(@this, pQueryHeapPtr, Type, StartIndex, NumQueries, pDestinationBuffer, AlignedDestinationBufferOffset);
             }
         }
 
@@ -578,7 +581,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (ID3D12Resource* pDestinationBufferPtr = &pDestinationBuffer)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12QueryHeap*, QueryType, uint, uint, ID3D12Resource*, ulong, void>)LpVtbl[16])(@this, pQueryHeapPtr, Type, StartIndex, NumQueries, pDestinationBufferPtr, AlignedDestinationBufferOffset);
+                    ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12QueryHeap*, QueryType, uint, uint, ID3D12Resource*, ulong, void>)@this->LpVtbl[16])(@this, pQueryHeapPtr, Type, StartIndex, NumQueries, pDestinationBufferPtr, AlignedDestinationBufferOffset);
                 }
             }
         }
@@ -587,7 +590,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void SetPredication(ID3D12Resource* pBuffer, ulong AlignedBufferOffset, PredicationOp Operation)
         {
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12Resource*, ulong, PredicationOp, void>)LpVtbl[17])(@this, pBuffer, AlignedBufferOffset, Operation);
+            ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12Resource*, ulong, PredicationOp, void>)@this->LpVtbl[17])(@this, pBuffer, AlignedBufferOffset, Operation);
         }
 
         /// <summary>To be documented.</summary>
@@ -596,7 +599,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pBufferPtr = &pBuffer)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12Resource*, ulong, PredicationOp, void>)LpVtbl[17])(@this, pBufferPtr, AlignedBufferOffset, Operation);
+                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12Resource*, ulong, PredicationOp, void>)@this->LpVtbl[17])(@this, pBufferPtr, AlignedBufferOffset, Operation);
             }
         }
 
@@ -604,7 +607,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void SetMarker(uint Metadata, void* pData, uint Size)
         {
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, uint, void*, uint, void>)LpVtbl[18])(@this, Metadata, pData, Size);
+            ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, uint, void*, uint, void>)@this->LpVtbl[18])(@this, Metadata, pData, Size);
         }
 
         /// <summary>To be documented.</summary>
@@ -613,7 +616,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (void* pDataPtr = &pData)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, uint, void*, uint, void>)LpVtbl[18])(@this, Metadata, pDataPtr, Size);
+                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, uint, void*, uint, void>)@this->LpVtbl[18])(@this, Metadata, pDataPtr, Size);
             }
         }
 
@@ -621,7 +624,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void BeginEvent(uint Metadata, void* pData, uint Size)
         {
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, uint, void*, uint, void>)LpVtbl[19])(@this, Metadata, pData, Size);
+            ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, uint, void*, uint, void>)@this->LpVtbl[19])(@this, Metadata, pData, Size);
         }
 
         /// <summary>To be documented.</summary>
@@ -630,7 +633,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (void* pDataPtr = &pData)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, uint, void*, uint, void>)LpVtbl[19])(@this, Metadata, pDataPtr, Size);
+                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, uint, void*, uint, void>)@this->LpVtbl[19])(@this, Metadata, pDataPtr, Size);
             }
         }
 
@@ -638,14 +641,14 @@ namespace Silk.NET.Direct3D12
         public readonly void EndEvent()
         {
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, void>)LpVtbl[20])(@this);
+            ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, void>)@this->LpVtbl[20])(@this);
         }
 
         /// <summary>To be documented.</summary>
         public readonly unsafe void EstimateMotion(ID3D12VideoMotionEstimator* pMotionEstimator, VideoMotionEstimatorOutput* pOutputArguments, VideoMotionEstimatorInput* pInputArguments)
         {
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoMotionEstimator*, VideoMotionEstimatorOutput*, VideoMotionEstimatorInput*, void>)LpVtbl[21])(@this, pMotionEstimator, pOutputArguments, pInputArguments);
+            ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoMotionEstimator*, VideoMotionEstimatorOutput*, VideoMotionEstimatorInput*, void>)@this->LpVtbl[21])(@this, pMotionEstimator, pOutputArguments, pInputArguments);
         }
 
         /// <summary>To be documented.</summary>
@@ -654,7 +657,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (VideoMotionEstimatorInput* pInputArgumentsPtr = &pInputArguments)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoMotionEstimator*, VideoMotionEstimatorOutput*, VideoMotionEstimatorInput*, void>)LpVtbl[21])(@this, pMotionEstimator, pOutputArguments, pInputArgumentsPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoMotionEstimator*, VideoMotionEstimatorOutput*, VideoMotionEstimatorInput*, void>)@this->LpVtbl[21])(@this, pMotionEstimator, pOutputArguments, pInputArgumentsPtr);
             }
         }
 
@@ -664,7 +667,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (VideoMotionEstimatorOutput* pOutputArgumentsPtr = &pOutputArguments)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoMotionEstimator*, VideoMotionEstimatorOutput*, VideoMotionEstimatorInput*, void>)LpVtbl[21])(@this, pMotionEstimator, pOutputArgumentsPtr, pInputArguments);
+                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoMotionEstimator*, VideoMotionEstimatorOutput*, VideoMotionEstimatorInput*, void>)@this->LpVtbl[21])(@this, pMotionEstimator, pOutputArgumentsPtr, pInputArguments);
             }
         }
 
@@ -676,7 +679,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (VideoMotionEstimatorInput* pInputArgumentsPtr = &pInputArguments)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoMotionEstimator*, VideoMotionEstimatorOutput*, VideoMotionEstimatorInput*, void>)LpVtbl[21])(@this, pMotionEstimator, pOutputArgumentsPtr, pInputArgumentsPtr);
+                    ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoMotionEstimator*, VideoMotionEstimatorOutput*, VideoMotionEstimatorInput*, void>)@this->LpVtbl[21])(@this, pMotionEstimator, pOutputArgumentsPtr, pInputArgumentsPtr);
                 }
             }
         }
@@ -687,7 +690,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12VideoMotionEstimator* pMotionEstimatorPtr = &pMotionEstimator)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoMotionEstimator*, VideoMotionEstimatorOutput*, VideoMotionEstimatorInput*, void>)LpVtbl[21])(@this, pMotionEstimatorPtr, pOutputArguments, pInputArguments);
+                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoMotionEstimator*, VideoMotionEstimatorOutput*, VideoMotionEstimatorInput*, void>)@this->LpVtbl[21])(@this, pMotionEstimatorPtr, pOutputArguments, pInputArguments);
             }
         }
 
@@ -699,7 +702,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (VideoMotionEstimatorInput* pInputArgumentsPtr = &pInputArguments)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoMotionEstimator*, VideoMotionEstimatorOutput*, VideoMotionEstimatorInput*, void>)LpVtbl[21])(@this, pMotionEstimatorPtr, pOutputArguments, pInputArgumentsPtr);
+                    ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoMotionEstimator*, VideoMotionEstimatorOutput*, VideoMotionEstimatorInput*, void>)@this->LpVtbl[21])(@this, pMotionEstimatorPtr, pOutputArguments, pInputArgumentsPtr);
                 }
             }
         }
@@ -712,7 +715,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (VideoMotionEstimatorOutput* pOutputArgumentsPtr = &pOutputArguments)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoMotionEstimator*, VideoMotionEstimatorOutput*, VideoMotionEstimatorInput*, void>)LpVtbl[21])(@this, pMotionEstimatorPtr, pOutputArgumentsPtr, pInputArguments);
+                    ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoMotionEstimator*, VideoMotionEstimatorOutput*, VideoMotionEstimatorInput*, void>)@this->LpVtbl[21])(@this, pMotionEstimatorPtr, pOutputArgumentsPtr, pInputArguments);
                 }
             }
         }
@@ -727,7 +730,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (VideoMotionEstimatorInput* pInputArgumentsPtr = &pInputArguments)
                     {
-                        ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoMotionEstimator*, VideoMotionEstimatorOutput*, VideoMotionEstimatorInput*, void>)LpVtbl[21])(@this, pMotionEstimatorPtr, pOutputArgumentsPtr, pInputArgumentsPtr);
+                        ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoMotionEstimator*, VideoMotionEstimatorOutput*, VideoMotionEstimatorInput*, void>)@this->LpVtbl[21])(@this, pMotionEstimatorPtr, pOutputArgumentsPtr, pInputArgumentsPtr);
                     }
                 }
             }
@@ -737,7 +740,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void ResolveMotionVectorHeap(ResolveVideoMotionVectorHeapOutput* pOutputArguments, ResolveVideoMotionVectorHeapInput* pInputArguments)
         {
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ResolveVideoMotionVectorHeapOutput*, ResolveVideoMotionVectorHeapInput*, void>)LpVtbl[22])(@this, pOutputArguments, pInputArguments);
+            ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ResolveVideoMotionVectorHeapOutput*, ResolveVideoMotionVectorHeapInput*, void>)@this->LpVtbl[22])(@this, pOutputArguments, pInputArguments);
         }
 
         /// <summary>To be documented.</summary>
@@ -746,7 +749,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ResolveVideoMotionVectorHeapInput* pInputArgumentsPtr = &pInputArguments)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ResolveVideoMotionVectorHeapOutput*, ResolveVideoMotionVectorHeapInput*, void>)LpVtbl[22])(@this, pOutputArguments, pInputArgumentsPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ResolveVideoMotionVectorHeapOutput*, ResolveVideoMotionVectorHeapInput*, void>)@this->LpVtbl[22])(@this, pOutputArguments, pInputArgumentsPtr);
             }
         }
 
@@ -756,7 +759,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ResolveVideoMotionVectorHeapOutput* pOutputArgumentsPtr = &pOutputArguments)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ResolveVideoMotionVectorHeapOutput*, ResolveVideoMotionVectorHeapInput*, void>)LpVtbl[22])(@this, pOutputArgumentsPtr, pInputArguments);
+                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ResolveVideoMotionVectorHeapOutput*, ResolveVideoMotionVectorHeapInput*, void>)@this->LpVtbl[22])(@this, pOutputArgumentsPtr, pInputArguments);
             }
         }
 
@@ -768,7 +771,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (ResolveVideoMotionVectorHeapInput* pInputArgumentsPtr = &pInputArguments)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ResolveVideoMotionVectorHeapOutput*, ResolveVideoMotionVectorHeapInput*, void>)LpVtbl[22])(@this, pOutputArgumentsPtr, pInputArgumentsPtr);
+                    ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ResolveVideoMotionVectorHeapOutput*, ResolveVideoMotionVectorHeapInput*, void>)@this->LpVtbl[22])(@this, pOutputArgumentsPtr, pInputArgumentsPtr);
                 }
             }
         }
@@ -777,7 +780,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void WriteBufferImmediate(uint Count, WritebufferimmediateParameter* pParams, WritebufferimmediateMode* pModes)
         {
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, uint, WritebufferimmediateParameter*, WritebufferimmediateMode*, void>)LpVtbl[23])(@this, Count, pParams, pModes);
+            ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, uint, WritebufferimmediateParameter*, WritebufferimmediateMode*, void>)@this->LpVtbl[23])(@this, Count, pParams, pModes);
         }
 
         /// <summary>To be documented.</summary>
@@ -786,7 +789,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (WritebufferimmediateMode* pModesPtr = &pModes)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, uint, WritebufferimmediateParameter*, WritebufferimmediateMode*, void>)LpVtbl[23])(@this, Count, pParams, pModesPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, uint, WritebufferimmediateParameter*, WritebufferimmediateMode*, void>)@this->LpVtbl[23])(@this, Count, pParams, pModesPtr);
             }
         }
 
@@ -796,7 +799,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (WritebufferimmediateParameter* pParamsPtr = &pParams)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, uint, WritebufferimmediateParameter*, WritebufferimmediateMode*, void>)LpVtbl[23])(@this, Count, pParamsPtr, pModes);
+                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, uint, WritebufferimmediateParameter*, WritebufferimmediateMode*, void>)@this->LpVtbl[23])(@this, Count, pParamsPtr, pModes);
             }
         }
 
@@ -808,7 +811,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (WritebufferimmediateMode* pModesPtr = &pModes)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, uint, WritebufferimmediateParameter*, WritebufferimmediateMode*, void>)LpVtbl[23])(@this, Count, pParamsPtr, pModesPtr);
+                    ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, uint, WritebufferimmediateParameter*, WritebufferimmediateMode*, void>)@this->LpVtbl[23])(@this, Count, pParamsPtr, pModesPtr);
                 }
             }
         }
@@ -817,7 +820,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void SetProtectedResourceSession(ID3D12ProtectedResourceSession* pProtectedResourceSession)
         {
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12ProtectedResourceSession*, void>)LpVtbl[24])(@this, pProtectedResourceSession);
+            ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12ProtectedResourceSession*, void>)@this->LpVtbl[24])(@this, pProtectedResourceSession);
         }
 
         /// <summary>To be documented.</summary>
@@ -826,7 +829,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12ProtectedResourceSession*, void>)LpVtbl[24])(@this, pProtectedResourceSessionPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12ProtectedResourceSession*, void>)@this->LpVtbl[24])(@this, pProtectedResourceSessionPtr);
             }
         }
 
@@ -834,7 +837,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void InitializeExtensionCommand(ID3D12VideoExtensionCommand* pExtensionCommand, void* pInitializationParameters, nuint InitializationParametersSizeInBytes)
         {
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoExtensionCommand*, void*, nuint, void>)LpVtbl[25])(@this, pExtensionCommand, pInitializationParameters, InitializationParametersSizeInBytes);
+            ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoExtensionCommand*, void*, nuint, void>)@this->LpVtbl[25])(@this, pExtensionCommand, pInitializationParameters, InitializationParametersSizeInBytes);
         }
 
         /// <summary>To be documented.</summary>
@@ -843,7 +846,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (void* pInitializationParametersPtr = &pInitializationParameters)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoExtensionCommand*, void*, nuint, void>)LpVtbl[25])(@this, pExtensionCommand, pInitializationParametersPtr, InitializationParametersSizeInBytes);
+                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoExtensionCommand*, void*, nuint, void>)@this->LpVtbl[25])(@this, pExtensionCommand, pInitializationParametersPtr, InitializationParametersSizeInBytes);
             }
         }
 
@@ -853,7 +856,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12VideoExtensionCommand* pExtensionCommandPtr = &pExtensionCommand)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoExtensionCommand*, void*, nuint, void>)LpVtbl[25])(@this, pExtensionCommandPtr, pInitializationParameters, InitializationParametersSizeInBytes);
+                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoExtensionCommand*, void*, nuint, void>)@this->LpVtbl[25])(@this, pExtensionCommandPtr, pInitializationParameters, InitializationParametersSizeInBytes);
             }
         }
 
@@ -865,7 +868,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void* pInitializationParametersPtr = &pInitializationParameters)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoExtensionCommand*, void*, nuint, void>)LpVtbl[25])(@this, pExtensionCommandPtr, pInitializationParametersPtr, InitializationParametersSizeInBytes);
+                    ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoExtensionCommand*, void*, nuint, void>)@this->LpVtbl[25])(@this, pExtensionCommandPtr, pInitializationParametersPtr, InitializationParametersSizeInBytes);
                 }
             }
         }
@@ -874,7 +877,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void ExecuteExtensionCommand(ID3D12VideoExtensionCommand* pExtensionCommand, void* pExecutionParameters, nuint ExecutionParametersSizeInBytes)
         {
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoExtensionCommand*, void*, nuint, void>)LpVtbl[26])(@this, pExtensionCommand, pExecutionParameters, ExecutionParametersSizeInBytes);
+            ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoExtensionCommand*, void*, nuint, void>)@this->LpVtbl[26])(@this, pExtensionCommand, pExecutionParameters, ExecutionParametersSizeInBytes);
         }
 
         /// <summary>To be documented.</summary>
@@ -883,7 +886,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (void* pExecutionParametersPtr = &pExecutionParameters)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoExtensionCommand*, void*, nuint, void>)LpVtbl[26])(@this, pExtensionCommand, pExecutionParametersPtr, ExecutionParametersSizeInBytes);
+                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoExtensionCommand*, void*, nuint, void>)@this->LpVtbl[26])(@this, pExtensionCommand, pExecutionParametersPtr, ExecutionParametersSizeInBytes);
             }
         }
 
@@ -893,7 +896,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12VideoExtensionCommand* pExtensionCommandPtr = &pExtensionCommand)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoExtensionCommand*, void*, nuint, void>)LpVtbl[26])(@this, pExtensionCommandPtr, pExecutionParameters, ExecutionParametersSizeInBytes);
+                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoExtensionCommand*, void*, nuint, void>)@this->LpVtbl[26])(@this, pExtensionCommandPtr, pExecutionParameters, ExecutionParametersSizeInBytes);
             }
         }
 
@@ -905,7 +908,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void* pExecutionParametersPtr = &pExecutionParameters)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoExtensionCommand*, void*, nuint, void>)LpVtbl[26])(@this, pExtensionCommandPtr, pExecutionParametersPtr, ExecutionParametersSizeInBytes);
+                    ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoExtensionCommand*, void*, nuint, void>)@this->LpVtbl[26])(@this, pExtensionCommandPtr, pExecutionParametersPtr, ExecutionParametersSizeInBytes);
                 }
             }
         }
@@ -914,7 +917,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void EncodeFrame(ID3D12VideoEncoder* pEncoder, ID3D12VideoEncoderHeap* pHeap, VideoEncoderEncodeframeInputArguments* pInputArguments, VideoEncoderEncodeframeOutputArguments* pOutputArguments)
         {
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoEncoder*, ID3D12VideoEncoderHeap*, VideoEncoderEncodeframeInputArguments*, VideoEncoderEncodeframeOutputArguments*, void>)LpVtbl[27])(@this, pEncoder, pHeap, pInputArguments, pOutputArguments);
+            ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoEncoder*, ID3D12VideoEncoderHeap*, VideoEncoderEncodeframeInputArguments*, VideoEncoderEncodeframeOutputArguments*, void>)@this->LpVtbl[27])(@this, pEncoder, pHeap, pInputArguments, pOutputArguments);
         }
 
         /// <summary>To be documented.</summary>
@@ -923,7 +926,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (VideoEncoderEncodeframeOutputArguments* pOutputArgumentsPtr = &pOutputArguments)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoEncoder*, ID3D12VideoEncoderHeap*, VideoEncoderEncodeframeInputArguments*, VideoEncoderEncodeframeOutputArguments*, void>)LpVtbl[27])(@this, pEncoder, pHeap, pInputArguments, pOutputArgumentsPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoEncoder*, ID3D12VideoEncoderHeap*, VideoEncoderEncodeframeInputArguments*, VideoEncoderEncodeframeOutputArguments*, void>)@this->LpVtbl[27])(@this, pEncoder, pHeap, pInputArguments, pOutputArgumentsPtr);
             }
         }
 
@@ -933,7 +936,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (VideoEncoderEncodeframeInputArguments* pInputArgumentsPtr = &pInputArguments)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoEncoder*, ID3D12VideoEncoderHeap*, VideoEncoderEncodeframeInputArguments*, VideoEncoderEncodeframeOutputArguments*, void>)LpVtbl[27])(@this, pEncoder, pHeap, pInputArgumentsPtr, pOutputArguments);
+                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoEncoder*, ID3D12VideoEncoderHeap*, VideoEncoderEncodeframeInputArguments*, VideoEncoderEncodeframeOutputArguments*, void>)@this->LpVtbl[27])(@this, pEncoder, pHeap, pInputArgumentsPtr, pOutputArguments);
             }
         }
 
@@ -945,7 +948,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (VideoEncoderEncodeframeOutputArguments* pOutputArgumentsPtr = &pOutputArguments)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoEncoder*, ID3D12VideoEncoderHeap*, VideoEncoderEncodeframeInputArguments*, VideoEncoderEncodeframeOutputArguments*, void>)LpVtbl[27])(@this, pEncoder, pHeap, pInputArgumentsPtr, pOutputArgumentsPtr);
+                    ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoEncoder*, ID3D12VideoEncoderHeap*, VideoEncoderEncodeframeInputArguments*, VideoEncoderEncodeframeOutputArguments*, void>)@this->LpVtbl[27])(@this, pEncoder, pHeap, pInputArgumentsPtr, pOutputArgumentsPtr);
                 }
             }
         }
@@ -956,7 +959,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12VideoEncoderHeap* pHeapPtr = &pHeap)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoEncoder*, ID3D12VideoEncoderHeap*, VideoEncoderEncodeframeInputArguments*, VideoEncoderEncodeframeOutputArguments*, void>)LpVtbl[27])(@this, pEncoder, pHeapPtr, pInputArguments, pOutputArguments);
+                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoEncoder*, ID3D12VideoEncoderHeap*, VideoEncoderEncodeframeInputArguments*, VideoEncoderEncodeframeOutputArguments*, void>)@this->LpVtbl[27])(@this, pEncoder, pHeapPtr, pInputArguments, pOutputArguments);
             }
         }
 
@@ -968,7 +971,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (VideoEncoderEncodeframeOutputArguments* pOutputArgumentsPtr = &pOutputArguments)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoEncoder*, ID3D12VideoEncoderHeap*, VideoEncoderEncodeframeInputArguments*, VideoEncoderEncodeframeOutputArguments*, void>)LpVtbl[27])(@this, pEncoder, pHeapPtr, pInputArguments, pOutputArgumentsPtr);
+                    ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoEncoder*, ID3D12VideoEncoderHeap*, VideoEncoderEncodeframeInputArguments*, VideoEncoderEncodeframeOutputArguments*, void>)@this->LpVtbl[27])(@this, pEncoder, pHeapPtr, pInputArguments, pOutputArgumentsPtr);
                 }
             }
         }
@@ -981,7 +984,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (VideoEncoderEncodeframeInputArguments* pInputArgumentsPtr = &pInputArguments)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoEncoder*, ID3D12VideoEncoderHeap*, VideoEncoderEncodeframeInputArguments*, VideoEncoderEncodeframeOutputArguments*, void>)LpVtbl[27])(@this, pEncoder, pHeapPtr, pInputArgumentsPtr, pOutputArguments);
+                    ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoEncoder*, ID3D12VideoEncoderHeap*, VideoEncoderEncodeframeInputArguments*, VideoEncoderEncodeframeOutputArguments*, void>)@this->LpVtbl[27])(@this, pEncoder, pHeapPtr, pInputArgumentsPtr, pOutputArguments);
                 }
             }
         }
@@ -996,7 +999,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (VideoEncoderEncodeframeOutputArguments* pOutputArgumentsPtr = &pOutputArguments)
                     {
-                        ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoEncoder*, ID3D12VideoEncoderHeap*, VideoEncoderEncodeframeInputArguments*, VideoEncoderEncodeframeOutputArguments*, void>)LpVtbl[27])(@this, pEncoder, pHeapPtr, pInputArgumentsPtr, pOutputArgumentsPtr);
+                        ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoEncoder*, ID3D12VideoEncoderHeap*, VideoEncoderEncodeframeInputArguments*, VideoEncoderEncodeframeOutputArguments*, void>)@this->LpVtbl[27])(@this, pEncoder, pHeapPtr, pInputArgumentsPtr, pOutputArgumentsPtr);
                     }
                 }
             }
@@ -1008,7 +1011,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12VideoEncoder* pEncoderPtr = &pEncoder)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoEncoder*, ID3D12VideoEncoderHeap*, VideoEncoderEncodeframeInputArguments*, VideoEncoderEncodeframeOutputArguments*, void>)LpVtbl[27])(@this, pEncoderPtr, pHeap, pInputArguments, pOutputArguments);
+                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoEncoder*, ID3D12VideoEncoderHeap*, VideoEncoderEncodeframeInputArguments*, VideoEncoderEncodeframeOutputArguments*, void>)@this->LpVtbl[27])(@this, pEncoderPtr, pHeap, pInputArguments, pOutputArguments);
             }
         }
 
@@ -1020,7 +1023,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (VideoEncoderEncodeframeOutputArguments* pOutputArgumentsPtr = &pOutputArguments)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoEncoder*, ID3D12VideoEncoderHeap*, VideoEncoderEncodeframeInputArguments*, VideoEncoderEncodeframeOutputArguments*, void>)LpVtbl[27])(@this, pEncoderPtr, pHeap, pInputArguments, pOutputArgumentsPtr);
+                    ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoEncoder*, ID3D12VideoEncoderHeap*, VideoEncoderEncodeframeInputArguments*, VideoEncoderEncodeframeOutputArguments*, void>)@this->LpVtbl[27])(@this, pEncoderPtr, pHeap, pInputArguments, pOutputArgumentsPtr);
                 }
             }
         }
@@ -1033,7 +1036,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (VideoEncoderEncodeframeInputArguments* pInputArgumentsPtr = &pInputArguments)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoEncoder*, ID3D12VideoEncoderHeap*, VideoEncoderEncodeframeInputArguments*, VideoEncoderEncodeframeOutputArguments*, void>)LpVtbl[27])(@this, pEncoderPtr, pHeap, pInputArgumentsPtr, pOutputArguments);
+                    ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoEncoder*, ID3D12VideoEncoderHeap*, VideoEncoderEncodeframeInputArguments*, VideoEncoderEncodeframeOutputArguments*, void>)@this->LpVtbl[27])(@this, pEncoderPtr, pHeap, pInputArgumentsPtr, pOutputArguments);
                 }
             }
         }
@@ -1048,7 +1051,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (VideoEncoderEncodeframeOutputArguments* pOutputArgumentsPtr = &pOutputArguments)
                     {
-                        ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoEncoder*, ID3D12VideoEncoderHeap*, VideoEncoderEncodeframeInputArguments*, VideoEncoderEncodeframeOutputArguments*, void>)LpVtbl[27])(@this, pEncoderPtr, pHeap, pInputArgumentsPtr, pOutputArgumentsPtr);
+                        ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoEncoder*, ID3D12VideoEncoderHeap*, VideoEncoderEncodeframeInputArguments*, VideoEncoderEncodeframeOutputArguments*, void>)@this->LpVtbl[27])(@this, pEncoderPtr, pHeap, pInputArgumentsPtr, pOutputArgumentsPtr);
                     }
                 }
             }
@@ -1062,7 +1065,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (ID3D12VideoEncoderHeap* pHeapPtr = &pHeap)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoEncoder*, ID3D12VideoEncoderHeap*, VideoEncoderEncodeframeInputArguments*, VideoEncoderEncodeframeOutputArguments*, void>)LpVtbl[27])(@this, pEncoderPtr, pHeapPtr, pInputArguments, pOutputArguments);
+                    ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoEncoder*, ID3D12VideoEncoderHeap*, VideoEncoderEncodeframeInputArguments*, VideoEncoderEncodeframeOutputArguments*, void>)@this->LpVtbl[27])(@this, pEncoderPtr, pHeapPtr, pInputArguments, pOutputArguments);
                 }
             }
         }
@@ -1077,7 +1080,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (VideoEncoderEncodeframeOutputArguments* pOutputArgumentsPtr = &pOutputArguments)
                     {
-                        ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoEncoder*, ID3D12VideoEncoderHeap*, VideoEncoderEncodeframeInputArguments*, VideoEncoderEncodeframeOutputArguments*, void>)LpVtbl[27])(@this, pEncoderPtr, pHeapPtr, pInputArguments, pOutputArgumentsPtr);
+                        ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoEncoder*, ID3D12VideoEncoderHeap*, VideoEncoderEncodeframeInputArguments*, VideoEncoderEncodeframeOutputArguments*, void>)@this->LpVtbl[27])(@this, pEncoderPtr, pHeapPtr, pInputArguments, pOutputArgumentsPtr);
                     }
                 }
             }
@@ -1093,7 +1096,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (VideoEncoderEncodeframeInputArguments* pInputArgumentsPtr = &pInputArguments)
                     {
-                        ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoEncoder*, ID3D12VideoEncoderHeap*, VideoEncoderEncodeframeInputArguments*, VideoEncoderEncodeframeOutputArguments*, void>)LpVtbl[27])(@this, pEncoderPtr, pHeapPtr, pInputArgumentsPtr, pOutputArguments);
+                        ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoEncoder*, ID3D12VideoEncoderHeap*, VideoEncoderEncodeframeInputArguments*, VideoEncoderEncodeframeOutputArguments*, void>)@this->LpVtbl[27])(@this, pEncoderPtr, pHeapPtr, pInputArgumentsPtr, pOutputArguments);
                     }
                 }
             }
@@ -1111,7 +1114,7 @@ namespace Silk.NET.Direct3D12
                     {
                         fixed (VideoEncoderEncodeframeOutputArguments* pOutputArgumentsPtr = &pOutputArguments)
                         {
-                            ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoEncoder*, ID3D12VideoEncoderHeap*, VideoEncoderEncodeframeInputArguments*, VideoEncoderEncodeframeOutputArguments*, void>)LpVtbl[27])(@this, pEncoderPtr, pHeapPtr, pInputArgumentsPtr, pOutputArgumentsPtr);
+                            ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, ID3D12VideoEncoder*, ID3D12VideoEncoderHeap*, VideoEncoderEncodeframeInputArguments*, VideoEncoderEncodeframeOutputArguments*, void>)@this->LpVtbl[27])(@this, pEncoderPtr, pHeapPtr, pInputArgumentsPtr, pOutputArgumentsPtr);
                         }
                     }
                 }
@@ -1122,7 +1125,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void ResolveEncoderOutputMetadata(VideoEncoderResolveMetadataInputArguments* pInputArguments, VideoEncoderResolveMetadataOutputArguments* pOutputArguments)
         {
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, VideoEncoderResolveMetadataInputArguments*, VideoEncoderResolveMetadataOutputArguments*, void>)LpVtbl[28])(@this, pInputArguments, pOutputArguments);
+            ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, VideoEncoderResolveMetadataInputArguments*, VideoEncoderResolveMetadataOutputArguments*, void>)@this->LpVtbl[28])(@this, pInputArguments, pOutputArguments);
         }
 
         /// <summary>To be documented.</summary>
@@ -1131,7 +1134,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (VideoEncoderResolveMetadataOutputArguments* pOutputArgumentsPtr = &pOutputArguments)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, VideoEncoderResolveMetadataInputArguments*, VideoEncoderResolveMetadataOutputArguments*, void>)LpVtbl[28])(@this, pInputArguments, pOutputArgumentsPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, VideoEncoderResolveMetadataInputArguments*, VideoEncoderResolveMetadataOutputArguments*, void>)@this->LpVtbl[28])(@this, pInputArguments, pOutputArgumentsPtr);
             }
         }
 
@@ -1141,7 +1144,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (VideoEncoderResolveMetadataInputArguments* pInputArgumentsPtr = &pInputArguments)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, VideoEncoderResolveMetadataInputArguments*, VideoEncoderResolveMetadataOutputArguments*, void>)LpVtbl[28])(@this, pInputArgumentsPtr, pOutputArguments);
+                ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, VideoEncoderResolveMetadataInputArguments*, VideoEncoderResolveMetadataOutputArguments*, void>)@this->LpVtbl[28])(@this, pInputArgumentsPtr, pOutputArguments);
             }
         }
 
@@ -1153,9 +1156,301 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (VideoEncoderResolveMetadataOutputArguments* pOutputArgumentsPtr = &pOutputArguments)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, VideoEncoderResolveMetadataInputArguments*, VideoEncoderResolveMetadataOutputArguments*, void>)LpVtbl[28])(@this, pInputArgumentsPtr, pOutputArgumentsPtr);
+                    ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList2*, VideoEncoderResolveMetadataInputArguments*, VideoEncoderResolveMetadataOutputArguments*, void>)@this->LpVtbl[28])(@this, pInputArgumentsPtr, pOutputArgumentsPtr);
                 }
             }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SetPrivateDataInterface<TI0>(Guid* guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetPrivateDataInterface(guid, (Silk.NET.Core.Native.IUnknown*) pData.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetPrivateDataInterface<TI0>(ref Guid guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetPrivateDataInterface(ref guid, (Silk.NET.Core.Native.IUnknown*) pData.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetDevice<TI0>(out ComPtr<TI0> ppvDevice) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvDevice = default;
+            return @this->GetDevice(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvDevice.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int Reset<TI0>(ComPtr<TI0> pAllocator) where TI0 : unmanaged, IComVtbl<ID3D12CommandAllocator>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Reset((ID3D12CommandAllocator*) pAllocator.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DiscardResource<TI0>(ComPtr<TI0> pResource, DiscardRegion* pRegion) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DiscardResource((ID3D12Resource*) pResource.Handle, pRegion);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void DiscardResource<TI0>(ComPtr<TI0> pResource, ref DiscardRegion pRegion) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DiscardResource((ID3D12Resource*) pResource.Handle, ref pRegion);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void BeginQuery<TI0>(ComPtr<TI0> pQueryHeap, QueryType Type, uint Index) where TI0 : unmanaged, IComVtbl<ID3D12QueryHeap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->BeginQuery((ID3D12QueryHeap*) pQueryHeap.Handle, Type, Index);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void EndQuery<TI0>(ComPtr<TI0> pQueryHeap, QueryType Type, uint Index) where TI0 : unmanaged, IComVtbl<ID3D12QueryHeap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->EndQuery((ID3D12QueryHeap*) pQueryHeap.Handle, Type, Index);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ResolveQueryData<TI0, TI1>(ComPtr<TI0> pQueryHeap, QueryType Type, uint StartIndex, uint NumQueries, ComPtr<TI1> pDestinationBuffer, ulong AlignedDestinationBufferOffset) where TI0 : unmanaged, IComVtbl<ID3D12QueryHeap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ResolveQueryData((ID3D12QueryHeap*) pQueryHeap.Handle, Type, StartIndex, NumQueries, (ID3D12Resource*) pDestinationBuffer.Handle, AlignedDestinationBufferOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ResolveQueryData<TI0>(ComPtr<TI0> pQueryHeap, QueryType Type, uint StartIndex, uint NumQueries, ref ID3D12Resource pDestinationBuffer, ulong AlignedDestinationBufferOffset) where TI0 : unmanaged, IComVtbl<ID3D12QueryHeap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ResolveQueryData((ID3D12QueryHeap*) pQueryHeap.Handle, Type, StartIndex, NumQueries, ref pDestinationBuffer, AlignedDestinationBufferOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ResolveQueryData<TI0>(ref ID3D12QueryHeap pQueryHeap, QueryType Type, uint StartIndex, uint NumQueries, ComPtr<TI0> pDestinationBuffer, ulong AlignedDestinationBufferOffset) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ResolveQueryData(ref pQueryHeap, Type, StartIndex, NumQueries, (ID3D12Resource*) pDestinationBuffer.Handle, AlignedDestinationBufferOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void SetPredication<TI0>(ComPtr<TI0> pBuffer, ulong AlignedBufferOffset, PredicationOp Operation) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->SetPredication((ID3D12Resource*) pBuffer.Handle, AlignedBufferOffset, Operation);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void EstimateMotion<TI0>(ComPtr<TI0> pMotionEstimator, VideoMotionEstimatorOutput* pOutputArguments, VideoMotionEstimatorInput* pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoMotionEstimator>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->EstimateMotion((ID3D12VideoMotionEstimator*) pMotionEstimator.Handle, pOutputArguments, pInputArguments);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void EstimateMotion<TI0>(ComPtr<TI0> pMotionEstimator, VideoMotionEstimatorOutput* pOutputArguments, ref VideoMotionEstimatorInput pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoMotionEstimator>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->EstimateMotion((ID3D12VideoMotionEstimator*) pMotionEstimator.Handle, pOutputArguments, ref pInputArguments);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void EstimateMotion<TI0>(ComPtr<TI0> pMotionEstimator, ref VideoMotionEstimatorOutput pOutputArguments, VideoMotionEstimatorInput* pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoMotionEstimator>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->EstimateMotion((ID3D12VideoMotionEstimator*) pMotionEstimator.Handle, ref pOutputArguments, pInputArguments);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void EstimateMotion<TI0>(ComPtr<TI0> pMotionEstimator, ref VideoMotionEstimatorOutput pOutputArguments, ref VideoMotionEstimatorInput pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoMotionEstimator>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->EstimateMotion((ID3D12VideoMotionEstimator*) pMotionEstimator.Handle, ref pOutputArguments, ref pInputArguments);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void SetProtectedResourceSession<TI0>(ComPtr<TI0> pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->SetProtectedResourceSession((ID3D12ProtectedResourceSession*) pProtectedResourceSession.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void InitializeExtensionCommand<TI0>(ComPtr<TI0> pExtensionCommand, void* pInitializationParameters, nuint InitializationParametersSizeInBytes) where TI0 : unmanaged, IComVtbl<ID3D12VideoExtensionCommand>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->InitializeExtensionCommand((ID3D12VideoExtensionCommand*) pExtensionCommand.Handle, pInitializationParameters, InitializationParametersSizeInBytes);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void InitializeExtensionCommand<T0, TI0>(ComPtr<TI0> pExtensionCommand, ref T0 pInitializationParameters, nuint InitializationParametersSizeInBytes) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12VideoExtensionCommand>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->InitializeExtensionCommand((ID3D12VideoExtensionCommand*) pExtensionCommand.Handle, ref pInitializationParameters, InitializationParametersSizeInBytes);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ExecuteExtensionCommand<TI0>(ComPtr<TI0> pExtensionCommand, void* pExecutionParameters, nuint ExecutionParametersSizeInBytes) where TI0 : unmanaged, IComVtbl<ID3D12VideoExtensionCommand>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ExecuteExtensionCommand((ID3D12VideoExtensionCommand*) pExtensionCommand.Handle, pExecutionParameters, ExecutionParametersSizeInBytes);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ExecuteExtensionCommand<T0, TI0>(ComPtr<TI0> pExtensionCommand, ref T0 pExecutionParameters, nuint ExecutionParametersSizeInBytes) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12VideoExtensionCommand>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ExecuteExtensionCommand((ID3D12VideoExtensionCommand*) pExtensionCommand.Handle, ref pExecutionParameters, ExecutionParametersSizeInBytes);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void EncodeFrame<TI0, TI1>(ComPtr<TI0> pEncoder, ComPtr<TI1> pHeap, VideoEncoderEncodeframeInputArguments* pInputArguments, VideoEncoderEncodeframeOutputArguments* pOutputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoEncoder>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12VideoEncoderHeap>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->EncodeFrame((ID3D12VideoEncoder*) pEncoder.Handle, (ID3D12VideoEncoderHeap*) pHeap.Handle, pInputArguments, pOutputArguments);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void EncodeFrame<TI0, TI1>(ComPtr<TI0> pEncoder, ComPtr<TI1> pHeap, VideoEncoderEncodeframeInputArguments* pInputArguments, ref VideoEncoderEncodeframeOutputArguments pOutputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoEncoder>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12VideoEncoderHeap>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->EncodeFrame((ID3D12VideoEncoder*) pEncoder.Handle, (ID3D12VideoEncoderHeap*) pHeap.Handle, pInputArguments, ref pOutputArguments);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void EncodeFrame<TI0, TI1>(ComPtr<TI0> pEncoder, ComPtr<TI1> pHeap, ref VideoEncoderEncodeframeInputArguments pInputArguments, VideoEncoderEncodeframeOutputArguments* pOutputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoEncoder>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12VideoEncoderHeap>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->EncodeFrame((ID3D12VideoEncoder*) pEncoder.Handle, (ID3D12VideoEncoderHeap*) pHeap.Handle, ref pInputArguments, pOutputArguments);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void EncodeFrame<TI0, TI1>(ComPtr<TI0> pEncoder, ComPtr<TI1> pHeap, ref VideoEncoderEncodeframeInputArguments pInputArguments, ref VideoEncoderEncodeframeOutputArguments pOutputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoEncoder>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12VideoEncoderHeap>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->EncodeFrame((ID3D12VideoEncoder*) pEncoder.Handle, (ID3D12VideoEncoderHeap*) pHeap.Handle, ref pInputArguments, ref pOutputArguments);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void EncodeFrame<TI0>(ComPtr<TI0> pEncoder, ref ID3D12VideoEncoderHeap pHeap, VideoEncoderEncodeframeInputArguments* pInputArguments, VideoEncoderEncodeframeOutputArguments* pOutputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoEncoder>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->EncodeFrame((ID3D12VideoEncoder*) pEncoder.Handle, ref pHeap, pInputArguments, pOutputArguments);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void EncodeFrame<TI0>(ComPtr<TI0> pEncoder, ref ID3D12VideoEncoderHeap pHeap, VideoEncoderEncodeframeInputArguments* pInputArguments, ref VideoEncoderEncodeframeOutputArguments pOutputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoEncoder>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->EncodeFrame((ID3D12VideoEncoder*) pEncoder.Handle, ref pHeap, pInputArguments, ref pOutputArguments);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void EncodeFrame<TI0>(ComPtr<TI0> pEncoder, ref ID3D12VideoEncoderHeap pHeap, ref VideoEncoderEncodeframeInputArguments pInputArguments, VideoEncoderEncodeframeOutputArguments* pOutputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoEncoder>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->EncodeFrame((ID3D12VideoEncoder*) pEncoder.Handle, ref pHeap, ref pInputArguments, pOutputArguments);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void EncodeFrame<TI0>(ComPtr<TI0> pEncoder, ref ID3D12VideoEncoderHeap pHeap, ref VideoEncoderEncodeframeInputArguments pInputArguments, ref VideoEncoderEncodeframeOutputArguments pOutputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoEncoder>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->EncodeFrame((ID3D12VideoEncoder*) pEncoder.Handle, ref pHeap, ref pInputArguments, ref pOutputArguments);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void EncodeFrame<TI0>(ref ID3D12VideoEncoder pEncoder, ComPtr<TI0> pHeap, VideoEncoderEncodeframeInputArguments* pInputArguments, VideoEncoderEncodeframeOutputArguments* pOutputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoEncoderHeap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->EncodeFrame(ref pEncoder, (ID3D12VideoEncoderHeap*) pHeap.Handle, pInputArguments, pOutputArguments);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void EncodeFrame<TI0>(ref ID3D12VideoEncoder pEncoder, ComPtr<TI0> pHeap, VideoEncoderEncodeframeInputArguments* pInputArguments, ref VideoEncoderEncodeframeOutputArguments pOutputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoEncoderHeap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->EncodeFrame(ref pEncoder, (ID3D12VideoEncoderHeap*) pHeap.Handle, pInputArguments, ref pOutputArguments);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void EncodeFrame<TI0>(ref ID3D12VideoEncoder pEncoder, ComPtr<TI0> pHeap, ref VideoEncoderEncodeframeInputArguments pInputArguments, VideoEncoderEncodeframeOutputArguments* pOutputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoEncoderHeap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->EncodeFrame(ref pEncoder, (ID3D12VideoEncoderHeap*) pHeap.Handle, ref pInputArguments, pOutputArguments);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void EncodeFrame<TI0>(ref ID3D12VideoEncoder pEncoder, ComPtr<TI0> pHeap, ref VideoEncoderEncodeframeInputArguments pInputArguments, ref VideoEncoderEncodeframeOutputArguments pOutputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoEncoderHeap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->EncodeFrame(ref pEncoder, (ID3D12VideoEncoderHeap*) pHeap.Handle, ref pInputArguments, ref pOutputArguments);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> GetDevice<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoEncodeCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->GetDevice(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

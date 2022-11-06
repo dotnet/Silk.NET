@@ -13435,14 +13435,14 @@ namespace Silk.NET.OpenGL.Legacy
         }
 
         [System.Obsolete("Deprecated in version 1.0")]
-        public static unsafe void GetMaterial(this GL thisApi, [Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetMaterial(this GL thisApi, [Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetMaterial(face, pname, out @params.GetPinnableReference());
         }
 
         [System.Obsolete("Deprecated in version 1.0")]
-        public static unsafe void GetMaterial(this GL thisApi, [Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetMaterial(this GL thisApi, [Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetMaterial(face, pname, out @params.GetPinnableReference());
@@ -13463,14 +13463,14 @@ namespace Silk.NET.OpenGL.Legacy
         }
 
         [System.Obsolete("Deprecated in version 1.0")]
-        public static unsafe void GetMaterial(this GL thisApi, [Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetMaterial(this GL thisApi, [Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetMaterial(face, pname, out @params.GetPinnableReference());
         }
 
         [System.Obsolete("Deprecated in version 1.0")]
-        public static unsafe void GetMaterial(this GL thisApi, [Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetMaterial(this GL thisApi, [Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetMaterial(face, pname, out @params.GetPinnableReference());
@@ -14013,14 +14013,14 @@ namespace Silk.NET.OpenGL.Legacy
         }
 
         [System.Obsolete("Deprecated in version 1.0")]
-        public static unsafe void Material(this GL thisApi, [Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+        public static unsafe void Material(this GL thisApi, [Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
         {
             // SpanOverloader
             thisApi.Material(face, pname, in @params.GetPinnableReference());
         }
 
         [System.Obsolete("Deprecated in version 1.0")]
-        public static unsafe void Material(this GL thisApi, [Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+        public static unsafe void Material(this GL thisApi, [Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
         {
             // SpanOverloader
             thisApi.Material(face, pname, in @params.GetPinnableReference());
@@ -14041,14 +14041,14 @@ namespace Silk.NET.OpenGL.Legacy
         }
 
         [System.Obsolete("Deprecated in version 1.0")]
-        public static unsafe void Material(this GL thisApi, [Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
+        public static unsafe void Material(this GL thisApi, [Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
         {
             // SpanOverloader
             thisApi.Material(face, pname, in @params.GetPinnableReference());
         }
 
         [System.Obsolete("Deprecated in version 1.0")]
-        public static unsafe void Material(this GL thisApi, [Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
+        public static unsafe void Material(this GL thisApi, [Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
         {
             // SpanOverloader
             thisApi.Material(face, pname, in @params.GetPinnableReference());

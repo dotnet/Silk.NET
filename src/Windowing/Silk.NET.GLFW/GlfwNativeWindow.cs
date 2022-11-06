@@ -39,6 +39,7 @@ namespace Silk.NET.GLFW
                 var hwnd = ((delegate* unmanaged[Cdecl]<WindowHandle*, nint>) getHwnd)(window);
                 Kind |= NativeWindowFlags.Win32;
                 Win32 = (hwnd, Win32GetDC(hwnd), GetWindowLongPtr(hwnd, GwlpHInstance));
+                DXHandle = hwnd;
                 return;
             }
 
@@ -65,6 +66,8 @@ namespace Silk.NET.GLFW
                 Wayland = ((nint) ((delegate* unmanaged[Cdecl]<void*>) getWaylandDisplay)(),
                     (nint) ((delegate* unmanaged[Cdecl]<WindowHandle*, void*>) getWaylandWindow)(window));
             }
+
+            DXHandle ??= (nint)window;
         }
         public NativeWindowFlags Kind { get; }
         public (nint Display, nuint Window)? X11 { get; }
@@ -77,5 +80,6 @@ namespace Silk.NET.GLFW
         public (nint Window, nint Surface)? Android { get; }
         public nint? Glfw { get; }
         public nint? Sdl { get; }
+        public nint? DXHandle { get; }
     }
 }

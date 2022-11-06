@@ -56,6 +56,34 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         [NativeApi(EntryPoint = "glGetFramebufferParameteriv", Convention = CallingConvention.Winapi)]
         public partial void GetFramebufferParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
+        public unsafe int GetFramebufferParameter([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetFramebufferParameter(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetFramebufferParameter([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetFramebufferParameter(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetFramebufferParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetFramebufferParameter(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetFramebufferParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetFramebufferParameter(target, pname, out int silkRet);
+            return silkRet;
+        }
+
         public ArbFramebufferNoAttachments(INativeContext ctx)
             : base(ctx)
         {

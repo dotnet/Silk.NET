@@ -18,9 +18,12 @@ namespace Silk.NET.Direct2D
 {
     [Guid("d55ba0a4-6405-4694-aef5-08ee1a4358b4")]
     [NativeName("Name", "ID2D1Device5")]
-    public unsafe partial struct ID2D1Device5
+    public unsafe partial struct ID2D1Device5 : IComVtbl<ID2D1Device5>, IComVtbl<ID2D1Device4>, IComVtbl<ID2D1Device3>, IComVtbl<ID2D1Device2>, IComVtbl<ID2D1Device1>, IComVtbl<ID2D1Device>, IComVtbl<ID2D1Resource>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("d55ba0a4-6405-4694-aef5-08ee1a4358b4");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator ID2D1Device4(ID2D1Device5 val)
             => Unsafe.As<ID2D1Device5, ID2D1Device4>(ref val);
@@ -64,7 +67,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -75,7 +78,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -87,7 +90,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -101,7 +104,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -112,7 +115,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -121,7 +124,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -129,7 +132,7 @@ namespace Silk.NET.Direct2D
         public readonly unsafe void GetFactory(ID2D1Factory** factory)
         {
             var @this = (ID2D1Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1Device5*, ID2D1Factory**, void>)LpVtbl[3])(@this, factory);
+            ((delegate* unmanaged[Stdcall]<ID2D1Device5*, ID2D1Factory**, void>)@this->LpVtbl[3])(@this, factory);
         }
 
         /// <summary>To be documented.</summary>
@@ -138,7 +141,7 @@ namespace Silk.NET.Direct2D
             var @this = (ID2D1Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Factory** factoryPtr = &factory)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1Device5*, ID2D1Factory**, void>)LpVtbl[3])(@this, factoryPtr);
+                ((delegate* unmanaged[Stdcall]<ID2D1Device5*, ID2D1Factory**, void>)@this->LpVtbl[3])(@this, factoryPtr);
             }
         }
 
@@ -147,7 +150,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, DeviceContextOptions, ID2D1DeviceContext**, int>)LpVtbl[4])(@this, options, deviceContext);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, DeviceContextOptions, ID2D1DeviceContext**, int>)@this->LpVtbl[4])(@this, options, deviceContext);
             return ret;
         }
 
@@ -158,7 +161,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (ID2D1DeviceContext** deviceContextPtr = &deviceContext)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, DeviceContextOptions, ID2D1DeviceContext**, int>)LpVtbl[4])(@this, options, deviceContextPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, DeviceContextOptions, ID2D1DeviceContext**, int>)@this->LpVtbl[4])(@this, options, deviceContextPtr);
             }
             return ret;
         }
@@ -168,7 +171,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, IWICImagingFactory*, IPrintDocumentPackageTarget*, PrintControlProperties*, ID2D1PrintControl**, int>)LpVtbl[5])(@this, wicFactory, documentTarget, printControlProperties, printControl);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, IWICImagingFactory*, IPrintDocumentPackageTarget*, PrintControlProperties*, ID2D1PrintControl**, int>)@this->LpVtbl[5])(@this, wicFactory, documentTarget, printControlProperties, printControl);
             return ret;
         }
 
@@ -179,7 +182,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (ID2D1PrintControl** printControlPtr = &printControl)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, IWICImagingFactory*, IPrintDocumentPackageTarget*, PrintControlProperties*, ID2D1PrintControl**, int>)LpVtbl[5])(@this, wicFactory, documentTarget, printControlProperties, printControlPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, IWICImagingFactory*, IPrintDocumentPackageTarget*, PrintControlProperties*, ID2D1PrintControl**, int>)@this->LpVtbl[5])(@this, wicFactory, documentTarget, printControlProperties, printControlPtr);
             }
             return ret;
         }
@@ -191,7 +194,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (PrintControlProperties* printControlPropertiesPtr = &printControlProperties)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, IWICImagingFactory*, IPrintDocumentPackageTarget*, PrintControlProperties*, ID2D1PrintControl**, int>)LpVtbl[5])(@this, wicFactory, documentTarget, printControlPropertiesPtr, printControl);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, IWICImagingFactory*, IPrintDocumentPackageTarget*, PrintControlProperties*, ID2D1PrintControl**, int>)@this->LpVtbl[5])(@this, wicFactory, documentTarget, printControlPropertiesPtr, printControl);
             }
             return ret;
         }
@@ -205,7 +208,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (ID2D1PrintControl** printControlPtr = &printControl)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, IWICImagingFactory*, IPrintDocumentPackageTarget*, PrintControlProperties*, ID2D1PrintControl**, int>)LpVtbl[5])(@this, wicFactory, documentTarget, printControlPropertiesPtr, printControlPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, IWICImagingFactory*, IPrintDocumentPackageTarget*, PrintControlProperties*, ID2D1PrintControl**, int>)@this->LpVtbl[5])(@this, wicFactory, documentTarget, printControlPropertiesPtr, printControlPtr);
                 }
             }
             return ret;
@@ -218,7 +221,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (IPrintDocumentPackageTarget* documentTargetPtr = &documentTarget)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, IWICImagingFactory*, IPrintDocumentPackageTarget*, PrintControlProperties*, ID2D1PrintControl**, int>)LpVtbl[5])(@this, wicFactory, documentTargetPtr, printControlProperties, printControl);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, IWICImagingFactory*, IPrintDocumentPackageTarget*, PrintControlProperties*, ID2D1PrintControl**, int>)@this->LpVtbl[5])(@this, wicFactory, documentTargetPtr, printControlProperties, printControl);
             }
             return ret;
         }
@@ -232,7 +235,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (ID2D1PrintControl** printControlPtr = &printControl)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, IWICImagingFactory*, IPrintDocumentPackageTarget*, PrintControlProperties*, ID2D1PrintControl**, int>)LpVtbl[5])(@this, wicFactory, documentTargetPtr, printControlProperties, printControlPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, IWICImagingFactory*, IPrintDocumentPackageTarget*, PrintControlProperties*, ID2D1PrintControl**, int>)@this->LpVtbl[5])(@this, wicFactory, documentTargetPtr, printControlProperties, printControlPtr);
                 }
             }
             return ret;
@@ -247,7 +250,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (PrintControlProperties* printControlPropertiesPtr = &printControlProperties)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, IWICImagingFactory*, IPrintDocumentPackageTarget*, PrintControlProperties*, ID2D1PrintControl**, int>)LpVtbl[5])(@this, wicFactory, documentTargetPtr, printControlPropertiesPtr, printControl);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, IWICImagingFactory*, IPrintDocumentPackageTarget*, PrintControlProperties*, ID2D1PrintControl**, int>)@this->LpVtbl[5])(@this, wicFactory, documentTargetPtr, printControlPropertiesPtr, printControl);
                 }
             }
             return ret;
@@ -264,7 +267,7 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (ID2D1PrintControl** printControlPtr = &printControl)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, IWICImagingFactory*, IPrintDocumentPackageTarget*, PrintControlProperties*, ID2D1PrintControl**, int>)LpVtbl[5])(@this, wicFactory, documentTargetPtr, printControlPropertiesPtr, printControlPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, IWICImagingFactory*, IPrintDocumentPackageTarget*, PrintControlProperties*, ID2D1PrintControl**, int>)@this->LpVtbl[5])(@this, wicFactory, documentTargetPtr, printControlPropertiesPtr, printControlPtr);
                     }
                 }
             }
@@ -278,7 +281,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (IWICImagingFactory* wicFactoryPtr = &wicFactory)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, IWICImagingFactory*, IPrintDocumentPackageTarget*, PrintControlProperties*, ID2D1PrintControl**, int>)LpVtbl[5])(@this, wicFactoryPtr, documentTarget, printControlProperties, printControl);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, IWICImagingFactory*, IPrintDocumentPackageTarget*, PrintControlProperties*, ID2D1PrintControl**, int>)@this->LpVtbl[5])(@this, wicFactoryPtr, documentTarget, printControlProperties, printControl);
             }
             return ret;
         }
@@ -292,7 +295,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (ID2D1PrintControl** printControlPtr = &printControl)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, IWICImagingFactory*, IPrintDocumentPackageTarget*, PrintControlProperties*, ID2D1PrintControl**, int>)LpVtbl[5])(@this, wicFactoryPtr, documentTarget, printControlProperties, printControlPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, IWICImagingFactory*, IPrintDocumentPackageTarget*, PrintControlProperties*, ID2D1PrintControl**, int>)@this->LpVtbl[5])(@this, wicFactoryPtr, documentTarget, printControlProperties, printControlPtr);
                 }
             }
             return ret;
@@ -307,7 +310,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (PrintControlProperties* printControlPropertiesPtr = &printControlProperties)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, IWICImagingFactory*, IPrintDocumentPackageTarget*, PrintControlProperties*, ID2D1PrintControl**, int>)LpVtbl[5])(@this, wicFactoryPtr, documentTarget, printControlPropertiesPtr, printControl);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, IWICImagingFactory*, IPrintDocumentPackageTarget*, PrintControlProperties*, ID2D1PrintControl**, int>)@this->LpVtbl[5])(@this, wicFactoryPtr, documentTarget, printControlPropertiesPtr, printControl);
                 }
             }
             return ret;
@@ -324,7 +327,7 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (ID2D1PrintControl** printControlPtr = &printControl)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, IWICImagingFactory*, IPrintDocumentPackageTarget*, PrintControlProperties*, ID2D1PrintControl**, int>)LpVtbl[5])(@this, wicFactoryPtr, documentTarget, printControlPropertiesPtr, printControlPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, IWICImagingFactory*, IPrintDocumentPackageTarget*, PrintControlProperties*, ID2D1PrintControl**, int>)@this->LpVtbl[5])(@this, wicFactoryPtr, documentTarget, printControlPropertiesPtr, printControlPtr);
                     }
                 }
             }
@@ -340,7 +343,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (IPrintDocumentPackageTarget* documentTargetPtr = &documentTarget)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, IWICImagingFactory*, IPrintDocumentPackageTarget*, PrintControlProperties*, ID2D1PrintControl**, int>)LpVtbl[5])(@this, wicFactoryPtr, documentTargetPtr, printControlProperties, printControl);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, IWICImagingFactory*, IPrintDocumentPackageTarget*, PrintControlProperties*, ID2D1PrintControl**, int>)@this->LpVtbl[5])(@this, wicFactoryPtr, documentTargetPtr, printControlProperties, printControl);
                 }
             }
             return ret;
@@ -357,7 +360,7 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (ID2D1PrintControl** printControlPtr = &printControl)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, IWICImagingFactory*, IPrintDocumentPackageTarget*, PrintControlProperties*, ID2D1PrintControl**, int>)LpVtbl[5])(@this, wicFactoryPtr, documentTargetPtr, printControlProperties, printControlPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, IWICImagingFactory*, IPrintDocumentPackageTarget*, PrintControlProperties*, ID2D1PrintControl**, int>)@this->LpVtbl[5])(@this, wicFactoryPtr, documentTargetPtr, printControlProperties, printControlPtr);
                     }
                 }
             }
@@ -375,7 +378,7 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (PrintControlProperties* printControlPropertiesPtr = &printControlProperties)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, IWICImagingFactory*, IPrintDocumentPackageTarget*, PrintControlProperties*, ID2D1PrintControl**, int>)LpVtbl[5])(@this, wicFactoryPtr, documentTargetPtr, printControlPropertiesPtr, printControl);
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, IWICImagingFactory*, IPrintDocumentPackageTarget*, PrintControlProperties*, ID2D1PrintControl**, int>)@this->LpVtbl[5])(@this, wicFactoryPtr, documentTargetPtr, printControlPropertiesPtr, printControl);
                     }
                 }
             }
@@ -395,7 +398,7 @@ namespace Silk.NET.Direct2D
                     {
                         fixed (ID2D1PrintControl** printControlPtr = &printControl)
                         {
-                            ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, IWICImagingFactory*, IPrintDocumentPackageTarget*, PrintControlProperties*, ID2D1PrintControl**, int>)LpVtbl[5])(@this, wicFactoryPtr, documentTargetPtr, printControlPropertiesPtr, printControlPtr);
+                            ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, IWICImagingFactory*, IPrintDocumentPackageTarget*, PrintControlProperties*, ID2D1PrintControl**, int>)@this->LpVtbl[5])(@this, wicFactoryPtr, documentTargetPtr, printControlPropertiesPtr, printControlPtr);
                         }
                     }
                 }
@@ -407,7 +410,7 @@ namespace Silk.NET.Direct2D
         public readonly void SetMaximumTextureMemory(ulong maximumInBytes)
         {
             var @this = (ID2D1Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1Device5*, ulong, void>)LpVtbl[6])(@this, maximumInBytes);
+            ((delegate* unmanaged[Stdcall]<ID2D1Device5*, ulong, void>)@this->LpVtbl[6])(@this, maximumInBytes);
         }
 
         /// <summary>To be documented.</summary>
@@ -415,7 +418,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ulong ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, ulong>)LpVtbl[7])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, ulong>)@this->LpVtbl[7])(@this);
             return ret;
         }
 
@@ -423,7 +426,7 @@ namespace Silk.NET.Direct2D
         public readonly void ClearResources(uint millisecondsSinceUse)
         {
             var @this = (ID2D1Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1Device5*, uint, void>)LpVtbl[8])(@this, millisecondsSinceUse);
+            ((delegate* unmanaged[Stdcall]<ID2D1Device5*, uint, void>)@this->LpVtbl[8])(@this, millisecondsSinceUse);
         }
 
         /// <summary>To be documented.</summary>
@@ -431,7 +434,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             RenderingPriority ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, RenderingPriority>)LpVtbl[9])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, RenderingPriority>)@this->LpVtbl[9])(@this);
             return ret;
         }
 
@@ -439,14 +442,14 @@ namespace Silk.NET.Direct2D
         public readonly void SetRenderingPriority(RenderingPriority renderingPriority)
         {
             var @this = (ID2D1Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1Device5*, RenderingPriority, void>)LpVtbl[10])(@this, renderingPriority);
+            ((delegate* unmanaged[Stdcall]<ID2D1Device5*, RenderingPriority, void>)@this->LpVtbl[10])(@this, renderingPriority);
         }
 
         /// <summary>To be documented.</summary>
         public readonly unsafe void FlushDeviceContexts(ID2D1Bitmap* bitmap)
         {
             var @this = (ID2D1Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1Device5*, ID2D1Bitmap*, void>)LpVtbl[11])(@this, bitmap);
+            ((delegate* unmanaged[Stdcall]<ID2D1Device5*, ID2D1Bitmap*, void>)@this->LpVtbl[11])(@this, bitmap);
         }
 
         /// <summary>To be documented.</summary>
@@ -455,7 +458,7 @@ namespace Silk.NET.Direct2D
             var @this = (ID2D1Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Bitmap* bitmapPtr = &bitmap)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1Device5*, ID2D1Bitmap*, void>)LpVtbl[11])(@this, bitmapPtr);
+                ((delegate* unmanaged[Stdcall]<ID2D1Device5*, ID2D1Bitmap*, void>)@this->LpVtbl[11])(@this, bitmapPtr);
             }
         }
 
@@ -464,7 +467,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, Silk.NET.DXGI.IDXGIDevice**, int>)LpVtbl[12])(@this, dxgiDevice);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, Silk.NET.DXGI.IDXGIDevice**, int>)@this->LpVtbl[12])(@this, dxgiDevice);
             return ret;
         }
 
@@ -475,7 +478,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Silk.NET.DXGI.IDXGIDevice** dxgiDevicePtr = &dxgiDevice)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, Silk.NET.DXGI.IDXGIDevice**, int>)LpVtbl[12])(@this, dxgiDevicePtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, Silk.NET.DXGI.IDXGIDevice**, int>)@this->LpVtbl[12])(@this, dxgiDevicePtr);
             }
             return ret;
         }
@@ -484,7 +487,7 @@ namespace Silk.NET.Direct2D
         public readonly void SetMaximumColorGlyphCacheMemory(ulong maximumInBytes)
         {
             var @this = (ID2D1Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1Device5*, ulong, void>)LpVtbl[13])(@this, maximumInBytes);
+            ((delegate* unmanaged[Stdcall]<ID2D1Device5*, ulong, void>)@this->LpVtbl[13])(@this, maximumInBytes);
         }
 
         /// <summary>To be documented.</summary>
@@ -492,8 +495,114 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ulong ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, ulong>)LpVtbl[14])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1Device5*, ulong>)@this->LpVtbl[14])(@this);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID2D1Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void GetFactory<TI0>(ref ComPtr<TI0> factory) where TI0 : unmanaged, IComVtbl<ID2D1Factory>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->GetFactory((ID2D1Factory**) factory.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateDeviceContext<TI0>(DeviceContextOptions options, ref ComPtr<TI0> deviceContext) where TI0 : unmanaged, IComVtbl<ID2D1DeviceContext>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateDeviceContext(options, (ID2D1DeviceContext**) deviceContext.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePrintControl<TI0>(IWICImagingFactory* wicFactory, IPrintDocumentPackageTarget* documentTarget, PrintControlProperties* printControlProperties, ref ComPtr<TI0> printControl) where TI0 : unmanaged, IComVtbl<ID2D1PrintControl>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreatePrintControl(wicFactory, documentTarget, printControlProperties, (ID2D1PrintControl**) printControl.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePrintControl<TI0>(IWICImagingFactory* wicFactory, IPrintDocumentPackageTarget* documentTarget, ref PrintControlProperties printControlProperties, ref ComPtr<TI0> printControl) where TI0 : unmanaged, IComVtbl<ID2D1PrintControl>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreatePrintControl(wicFactory, documentTarget, ref printControlProperties, (ID2D1PrintControl**) printControl.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePrintControl<TI0>(IWICImagingFactory* wicFactory, ref IPrintDocumentPackageTarget documentTarget, PrintControlProperties* printControlProperties, ref ComPtr<TI0> printControl) where TI0 : unmanaged, IComVtbl<ID2D1PrintControl>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreatePrintControl(wicFactory, ref documentTarget, printControlProperties, (ID2D1PrintControl**) printControl.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePrintControl<TI0>(IWICImagingFactory* wicFactory, ref IPrintDocumentPackageTarget documentTarget, ref PrintControlProperties printControlProperties, ref ComPtr<TI0> printControl) where TI0 : unmanaged, IComVtbl<ID2D1PrintControl>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreatePrintControl(wicFactory, ref documentTarget, ref printControlProperties, (ID2D1PrintControl**) printControl.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePrintControl<TI0>(ref IWICImagingFactory wicFactory, IPrintDocumentPackageTarget* documentTarget, PrintControlProperties* printControlProperties, ref ComPtr<TI0> printControl) where TI0 : unmanaged, IComVtbl<ID2D1PrintControl>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreatePrintControl(ref wicFactory, documentTarget, printControlProperties, (ID2D1PrintControl**) printControl.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePrintControl<TI0>(ref IWICImagingFactory wicFactory, IPrintDocumentPackageTarget* documentTarget, ref PrintControlProperties printControlProperties, ref ComPtr<TI0> printControl) where TI0 : unmanaged, IComVtbl<ID2D1PrintControl>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreatePrintControl(ref wicFactory, documentTarget, ref printControlProperties, (ID2D1PrintControl**) printControl.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePrintControl<TI0>(ref IWICImagingFactory wicFactory, ref IPrintDocumentPackageTarget documentTarget, PrintControlProperties* printControlProperties, ref ComPtr<TI0> printControl) where TI0 : unmanaged, IComVtbl<ID2D1PrintControl>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreatePrintControl(ref wicFactory, ref documentTarget, printControlProperties, (ID2D1PrintControl**) printControl.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreatePrintControl<TI0>(ref IWICImagingFactory wicFactory, ref IPrintDocumentPackageTarget documentTarget, ref PrintControlProperties printControlProperties, ref ComPtr<TI0> printControl) where TI0 : unmanaged, IComVtbl<ID2D1PrintControl>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreatePrintControl(ref wicFactory, ref documentTarget, ref printControlProperties, (ID2D1PrintControl**) printControl.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void FlushDeviceContexts<TI0>(ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->FlushDeviceContexts((ID2D1Bitmap*) bitmap.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID2D1Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

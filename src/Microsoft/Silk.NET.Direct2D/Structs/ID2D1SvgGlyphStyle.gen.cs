@@ -18,9 +18,12 @@ namespace Silk.NET.Direct2D
 {
     [Guid("af671749-d241-4db8-8e41-dcc2e5c1a438")]
     [NativeName("Name", "ID2D1SvgGlyphStyle")]
-    public unsafe partial struct ID2D1SvgGlyphStyle
+    public unsafe partial struct ID2D1SvgGlyphStyle : IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<ID2D1Resource>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("af671749-d241-4db8-8e41-dcc2e5c1a438");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator ID2D1Resource(ID2D1SvgGlyphStyle val)
             => Unsafe.As<ID2D1SvgGlyphStyle, ID2D1Resource>(ref val);
@@ -49,7 +52,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1SvgGlyphStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -60,7 +63,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -72,7 +75,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -86,7 +89,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -97,7 +100,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1SvgGlyphStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -106,7 +109,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1SvgGlyphStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -114,7 +117,7 @@ namespace Silk.NET.Direct2D
         public readonly unsafe void GetFactory(ID2D1Factory** factory)
         {
             var @this = (ID2D1SvgGlyphStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Factory**, void>)LpVtbl[3])(@this, factory);
+            ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Factory**, void>)@this->LpVtbl[3])(@this, factory);
         }
 
         /// <summary>To be documented.</summary>
@@ -123,7 +126,7 @@ namespace Silk.NET.Direct2D
             var @this = (ID2D1SvgGlyphStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Factory** factoryPtr = &factory)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Factory**, void>)LpVtbl[3])(@this, factoryPtr);
+                ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Factory**, void>)@this->LpVtbl[3])(@this, factoryPtr);
             }
         }
 
@@ -132,7 +135,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1SvgGlyphStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush*, int>)LpVtbl[4])(@this, brush);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush*, int>)@this->LpVtbl[4])(@this, brush);
             return ret;
         }
 
@@ -143,7 +146,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (ID2D1Brush* brushPtr = &brush)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush*, int>)LpVtbl[4])(@this, brushPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush*, int>)@this->LpVtbl[4])(@this, brushPtr);
             }
             return ret;
         }
@@ -152,7 +155,7 @@ namespace Silk.NET.Direct2D
         public readonly unsafe void GetFill(ID2D1Brush** brush)
         {
             var @this = (ID2D1SvgGlyphStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush**, void>)LpVtbl[5])(@this, brush);
+            ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush**, void>)@this->LpVtbl[5])(@this, brush);
         }
 
         /// <summary>To be documented.</summary>
@@ -161,7 +164,7 @@ namespace Silk.NET.Direct2D
             var @this = (ID2D1SvgGlyphStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Brush** brushPtr = &brush)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush**, void>)LpVtbl[5])(@this, brushPtr);
+                ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush**, void>)@this->LpVtbl[5])(@this, brushPtr);
             }
         }
 
@@ -170,7 +173,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1SvgGlyphStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush*, float, float*, uint, float, int>)LpVtbl[6])(@this, brush, strokeWidth, dashes, dashesCount, dashOffset);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush*, float, float*, uint, float, int>)@this->LpVtbl[6])(@this, brush, strokeWidth, dashes, dashesCount, dashOffset);
             return ret;
         }
 
@@ -181,7 +184,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (float* dashesPtr = &dashes)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush*, float, float*, uint, float, int>)LpVtbl[6])(@this, brush, strokeWidth, dashesPtr, dashesCount, dashOffset);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush*, float, float*, uint, float, int>)@this->LpVtbl[6])(@this, brush, strokeWidth, dashesPtr, dashesCount, dashOffset);
             }
             return ret;
         }
@@ -193,7 +196,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (ID2D1Brush* brushPtr = &brush)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush*, float, float*, uint, float, int>)LpVtbl[6])(@this, brushPtr, strokeWidth, dashes, dashesCount, dashOffset);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush*, float, float*, uint, float, int>)@this->LpVtbl[6])(@this, brushPtr, strokeWidth, dashes, dashesCount, dashOffset);
             }
             return ret;
         }
@@ -207,7 +210,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (float* dashesPtr = &dashes)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush*, float, float*, uint, float, int>)LpVtbl[6])(@this, brushPtr, strokeWidth, dashesPtr, dashesCount, dashOffset);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush*, float, float*, uint, float, int>)@this->LpVtbl[6])(@this, brushPtr, strokeWidth, dashesPtr, dashesCount, dashOffset);
                 }
             }
             return ret;
@@ -218,7 +221,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1SvgGlyphStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, uint>)LpVtbl[7])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, uint>)@this->LpVtbl[7])(@this);
             return ret;
         }
 
@@ -226,7 +229,7 @@ namespace Silk.NET.Direct2D
         public readonly unsafe void GetStroke(ID2D1Brush** brush, float* strokeWidth, float* dashes, uint dashesCount, float* dashOffset)
         {
             var @this = (ID2D1SvgGlyphStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush**, float*, float*, uint, float*, void>)LpVtbl[8])(@this, brush, strokeWidth, dashes, dashesCount, dashOffset);
+            ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush**, float*, float*, uint, float*, void>)@this->LpVtbl[8])(@this, brush, strokeWidth, dashes, dashesCount, dashOffset);
         }
 
         /// <summary>To be documented.</summary>
@@ -235,7 +238,7 @@ namespace Silk.NET.Direct2D
             var @this = (ID2D1SvgGlyphStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (float* dashOffsetPtr = &dashOffset)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush**, float*, float*, uint, float*, void>)LpVtbl[8])(@this, brush, strokeWidth, dashes, dashesCount, dashOffsetPtr);
+                ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush**, float*, float*, uint, float*, void>)@this->LpVtbl[8])(@this, brush, strokeWidth, dashes, dashesCount, dashOffsetPtr);
             }
         }
 
@@ -245,7 +248,7 @@ namespace Silk.NET.Direct2D
             var @this = (ID2D1SvgGlyphStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (float* dashesPtr = &dashes)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush**, float*, float*, uint, float*, void>)LpVtbl[8])(@this, brush, strokeWidth, dashesPtr, dashesCount, dashOffset);
+                ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush**, float*, float*, uint, float*, void>)@this->LpVtbl[8])(@this, brush, strokeWidth, dashesPtr, dashesCount, dashOffset);
             }
         }
 
@@ -257,7 +260,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (float* dashOffsetPtr = &dashOffset)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush**, float*, float*, uint, float*, void>)LpVtbl[8])(@this, brush, strokeWidth, dashesPtr, dashesCount, dashOffsetPtr);
+                    ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush**, float*, float*, uint, float*, void>)@this->LpVtbl[8])(@this, brush, strokeWidth, dashesPtr, dashesCount, dashOffsetPtr);
                 }
             }
         }
@@ -268,7 +271,7 @@ namespace Silk.NET.Direct2D
             var @this = (ID2D1SvgGlyphStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (float* strokeWidthPtr = &strokeWidth)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush**, float*, float*, uint, float*, void>)LpVtbl[8])(@this, brush, strokeWidthPtr, dashes, dashesCount, dashOffset);
+                ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush**, float*, float*, uint, float*, void>)@this->LpVtbl[8])(@this, brush, strokeWidthPtr, dashes, dashesCount, dashOffset);
             }
         }
 
@@ -280,7 +283,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (float* dashOffsetPtr = &dashOffset)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush**, float*, float*, uint, float*, void>)LpVtbl[8])(@this, brush, strokeWidthPtr, dashes, dashesCount, dashOffsetPtr);
+                    ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush**, float*, float*, uint, float*, void>)@this->LpVtbl[8])(@this, brush, strokeWidthPtr, dashes, dashesCount, dashOffsetPtr);
                 }
             }
         }
@@ -293,7 +296,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (float* dashesPtr = &dashes)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush**, float*, float*, uint, float*, void>)LpVtbl[8])(@this, brush, strokeWidthPtr, dashesPtr, dashesCount, dashOffset);
+                    ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush**, float*, float*, uint, float*, void>)@this->LpVtbl[8])(@this, brush, strokeWidthPtr, dashesPtr, dashesCount, dashOffset);
                 }
             }
         }
@@ -308,7 +311,7 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (float* dashOffsetPtr = &dashOffset)
                     {
-                        ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush**, float*, float*, uint, float*, void>)LpVtbl[8])(@this, brush, strokeWidthPtr, dashesPtr, dashesCount, dashOffsetPtr);
+                        ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush**, float*, float*, uint, float*, void>)@this->LpVtbl[8])(@this, brush, strokeWidthPtr, dashesPtr, dashesCount, dashOffsetPtr);
                     }
                 }
             }
@@ -320,7 +323,7 @@ namespace Silk.NET.Direct2D
             var @this = (ID2D1SvgGlyphStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Brush** brushPtr = &brush)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush**, float*, float*, uint, float*, void>)LpVtbl[8])(@this, brushPtr, strokeWidth, dashes, dashesCount, dashOffset);
+                ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush**, float*, float*, uint, float*, void>)@this->LpVtbl[8])(@this, brushPtr, strokeWidth, dashes, dashesCount, dashOffset);
             }
         }
 
@@ -332,7 +335,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (float* dashOffsetPtr = &dashOffset)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush**, float*, float*, uint, float*, void>)LpVtbl[8])(@this, brushPtr, strokeWidth, dashes, dashesCount, dashOffsetPtr);
+                    ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush**, float*, float*, uint, float*, void>)@this->LpVtbl[8])(@this, brushPtr, strokeWidth, dashes, dashesCount, dashOffsetPtr);
                 }
             }
         }
@@ -345,7 +348,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (float* dashesPtr = &dashes)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush**, float*, float*, uint, float*, void>)LpVtbl[8])(@this, brushPtr, strokeWidth, dashesPtr, dashesCount, dashOffset);
+                    ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush**, float*, float*, uint, float*, void>)@this->LpVtbl[8])(@this, brushPtr, strokeWidth, dashesPtr, dashesCount, dashOffset);
                 }
             }
         }
@@ -360,7 +363,7 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (float* dashOffsetPtr = &dashOffset)
                     {
-                        ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush**, float*, float*, uint, float*, void>)LpVtbl[8])(@this, brushPtr, strokeWidth, dashesPtr, dashesCount, dashOffsetPtr);
+                        ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush**, float*, float*, uint, float*, void>)@this->LpVtbl[8])(@this, brushPtr, strokeWidth, dashesPtr, dashesCount, dashOffsetPtr);
                     }
                 }
             }
@@ -374,7 +377,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (float* strokeWidthPtr = &strokeWidth)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush**, float*, float*, uint, float*, void>)LpVtbl[8])(@this, brushPtr, strokeWidthPtr, dashes, dashesCount, dashOffset);
+                    ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush**, float*, float*, uint, float*, void>)@this->LpVtbl[8])(@this, brushPtr, strokeWidthPtr, dashes, dashesCount, dashOffset);
                 }
             }
         }
@@ -389,7 +392,7 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (float* dashOffsetPtr = &dashOffset)
                     {
-                        ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush**, float*, float*, uint, float*, void>)LpVtbl[8])(@this, brushPtr, strokeWidthPtr, dashes, dashesCount, dashOffsetPtr);
+                        ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush**, float*, float*, uint, float*, void>)@this->LpVtbl[8])(@this, brushPtr, strokeWidthPtr, dashes, dashesCount, dashOffsetPtr);
                     }
                 }
             }
@@ -405,7 +408,7 @@ namespace Silk.NET.Direct2D
                 {
                     fixed (float* dashesPtr = &dashes)
                     {
-                        ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush**, float*, float*, uint, float*, void>)LpVtbl[8])(@this, brushPtr, strokeWidthPtr, dashesPtr, dashesCount, dashOffset);
+                        ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush**, float*, float*, uint, float*, void>)@this->LpVtbl[8])(@this, brushPtr, strokeWidthPtr, dashesPtr, dashesCount, dashOffset);
                     }
                 }
             }
@@ -423,11 +426,133 @@ namespace Silk.NET.Direct2D
                     {
                         fixed (float* dashOffsetPtr = &dashOffset)
                         {
-                            ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush**, float*, float*, uint, float*, void>)LpVtbl[8])(@this, brushPtr, strokeWidthPtr, dashesPtr, dashesCount, dashOffsetPtr);
+                            ((delegate* unmanaged[Stdcall]<ID2D1SvgGlyphStyle*, ID2D1Brush**, float*, float*, uint, float*, void>)@this->LpVtbl[8])(@this, brushPtr, strokeWidthPtr, dashesPtr, dashesCount, dashOffsetPtr);
                         }
                     }
                 }
             }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID2D1SvgGlyphStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void GetFactory<TI0>(ref ComPtr<TI0> factory) where TI0 : unmanaged, IComVtbl<ID2D1Factory>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1SvgGlyphStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->GetFactory((ID2D1Factory**) factory.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetFill<TI0>(ComPtr<TI0> brush) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1SvgGlyphStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetFill((ID2D1Brush*) brush.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void GetFill<TI0>(ref ComPtr<TI0> brush) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1SvgGlyphStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->GetFill((ID2D1Brush**) brush.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SetStroke<TI0>(ComPtr<TI0> brush, float strokeWidth, float* dashes, uint dashesCount, float dashOffset) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1SvgGlyphStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetStroke((ID2D1Brush*) brush.Handle, strokeWidth, dashes, dashesCount, dashOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetStroke<TI0>(ComPtr<TI0> brush, float strokeWidth, ref float dashes, uint dashesCount, float dashOffset) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1SvgGlyphStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetStroke((ID2D1Brush*) brush.Handle, strokeWidth, ref dashes, dashesCount, dashOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetStroke<TI0>(ref ComPtr<TI0> brush, float* strokeWidth, float* dashes, uint dashesCount, float* dashOffset) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1SvgGlyphStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->GetStroke((ID2D1Brush**) brush.GetAddressOf(), strokeWidth, dashes, dashesCount, dashOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetStroke<TI0>(ref ComPtr<TI0> brush, float* strokeWidth, float* dashes, uint dashesCount, ref float dashOffset) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1SvgGlyphStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->GetStroke((ID2D1Brush**) brush.GetAddressOf(), strokeWidth, dashes, dashesCount, ref dashOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetStroke<TI0>(ref ComPtr<TI0> brush, float* strokeWidth, ref float dashes, uint dashesCount, float* dashOffset) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1SvgGlyphStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->GetStroke((ID2D1Brush**) brush.GetAddressOf(), strokeWidth, ref dashes, dashesCount, dashOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetStroke<TI0>(ref ComPtr<TI0> brush, float* strokeWidth, ref float dashes, uint dashesCount, ref float dashOffset) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1SvgGlyphStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->GetStroke((ID2D1Brush**) brush.GetAddressOf(), strokeWidth, ref dashes, dashesCount, ref dashOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetStroke<TI0>(ref ComPtr<TI0> brush, ref float strokeWidth, float* dashes, uint dashesCount, float* dashOffset) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1SvgGlyphStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->GetStroke((ID2D1Brush**) brush.GetAddressOf(), ref strokeWidth, dashes, dashesCount, dashOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetStroke<TI0>(ref ComPtr<TI0> brush, ref float strokeWidth, float* dashes, uint dashesCount, ref float dashOffset) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1SvgGlyphStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->GetStroke((ID2D1Brush**) brush.GetAddressOf(), ref strokeWidth, dashes, dashesCount, ref dashOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetStroke<TI0>(ref ComPtr<TI0> brush, ref float strokeWidth, ref float dashes, uint dashesCount, float* dashOffset) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1SvgGlyphStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->GetStroke((ID2D1Brush**) brush.GetAddressOf(), ref strokeWidth, ref dashes, dashesCount, dashOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void GetStroke<TI0>(ref ComPtr<TI0> brush, ref float strokeWidth, ref float dashes, uint dashesCount, ref float dashOffset) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1SvgGlyphStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->GetStroke((ID2D1Brush**) brush.GetAddressOf(), ref strokeWidth, ref dashes, dashesCount, ref dashOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID2D1SvgGlyphStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

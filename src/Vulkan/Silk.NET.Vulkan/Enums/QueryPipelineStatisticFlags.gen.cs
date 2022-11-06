@@ -48,6 +48,12 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"ComputeShaderInvocationsBit\"")]
         [NativeName("Name", "VK_QUERY_PIPELINE_STATISTIC_COMPUTE_SHADER_INVOCATIONS_BIT")]
         QueryPipelineStatisticComputeShaderInvocationsBit = 1024,
+        [Obsolete("Deprecated in favour of \"TaskShaderInvocationsBitExt\"")]
+        [NativeName("Name", "VK_QUERY_PIPELINE_STATISTIC_TASK_SHADER_INVOCATIONS_BIT_EXT")]
+        QueryPipelineStatisticTaskShaderInvocationsBitExt = 2048,
+        [Obsolete("Deprecated in favour of \"MeshShaderInvocationsBitExt\"")]
+        [NativeName("Name", "VK_QUERY_PIPELINE_STATISTIC_MESH_SHADER_INVOCATIONS_BIT_EXT")]
+        QueryPipelineStatisticMeshShaderInvocationsBitExt = 4096,
         [NativeName("Name", "VK_QUERY_PIPELINE_STATISTIC_INPUT_ASSEMBLY_VERTICES_BIT")]
         InputAssemblyVerticesBit = 1,
         [NativeName("Name", "VK_QUERY_PIPELINE_STATISTIC_INPUT_ASSEMBLY_PRIMITIVES_BIT")]
@@ -70,5 +76,9 @@ namespace Silk.NET.Vulkan
         TessellationEvaluationShaderInvocationsBit = 512,
         [NativeName("Name", "VK_QUERY_PIPELINE_STATISTIC_COMPUTE_SHADER_INVOCATIONS_BIT")]
         ComputeShaderInvocationsBit = 1024,
+        [NativeName("Name", "VK_QUERY_PIPELINE_STATISTIC_TASK_SHADER_INVOCATIONS_BIT_EXT")]
+        TaskShaderInvocationsBitExt = 2048,
+        [NativeName("Name", "VK_QUERY_PIPELINE_STATISTIC_MESH_SHADER_INVOCATIONS_BIT_EXT")]
+        MeshShaderInvocationsBitExt = 4096,
     }
 }

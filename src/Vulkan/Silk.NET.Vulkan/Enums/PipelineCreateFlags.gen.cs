@@ -102,15 +102,18 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"CreateDepthStencilAttachmentFeedbackLoopBitExt\"")]
         [NativeName("Name", "VK_PIPELINE_CREATE_DEPTH_STENCIL_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT")]
         PipelineCreateDepthStencilAttachmentFeedbackLoopBitExt = 67108864,
-        [Obsolete("Deprecated in favour of \"CreateReserved24BitNV\"")]
-        [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_24_BIT_NV")]
-        PipelineCreateReserved24BitNV = 16777216,
+        [Obsolete("Deprecated in favour of \"CreateRayTracingOpacityMicromapBitExt\"")]
+        [NativeName("Name", "VK_PIPELINE_CREATE_RAY_TRACING_OPACITY_MICROMAP_BIT_EXT")]
+        PipelineCreateRayTracingOpacityMicromapBitExt = 16777216,
         [Obsolete("Deprecated in favour of \"CreateReservedBit28NV\"")]
         [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_BIT_28_NV")]
         PipelineCreateReservedBit28NV = 268435456,
-        [Obsolete("Deprecated in favour of \"CreateReserved27BitExt\"")]
-        [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_27_BIT_EXT")]
-        PipelineCreateReserved27BitExt = 134217728,
+        [Obsolete("Deprecated in favour of \"CreateNoProtectedAccessBitExt\"")]
+        [NativeName("Name", "VK_PIPELINE_CREATE_NO_PROTECTED_ACCESS_BIT_EXT")]
+        PipelineCreateNoProtectedAccessBitExt = 134217728,
+        [Obsolete("Deprecated in favour of \"CreateProtectedAccessOnlyBitExt\"")]
+        [NativeName("Name", "VK_PIPELINE_CREATE_PROTECTED_ACCESS_ONLY_BIT_EXT")]
+        PipelineCreateProtectedAccessOnlyBitExt = 1073741824,
         [Obsolete("Deprecated in favour of \"CreateViewIndexFromDeviceIndexBit\"")]
         [NativeName("Name", "VK_PIPELINE_CREATE_VIEW_INDEX_FROM_DEVICE_INDEX_BIT")]
         PipelineCreateViewIndexFromDeviceIndexBit = 8,
@@ -184,12 +187,14 @@ namespace Silk.NET.Vulkan
         CreateColorAttachmentFeedbackLoopBitExt = 33554432,
         [NativeName("Name", "VK_PIPELINE_CREATE_DEPTH_STENCIL_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT")]
         CreateDepthStencilAttachmentFeedbackLoopBitExt = 67108864,
-        [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_24_BIT_NV")]
-        CreateReserved24BitNV = 16777216,
+        [NativeName("Name", "VK_PIPELINE_CREATE_RAY_TRACING_OPACITY_MICROMAP_BIT_EXT")]
+        CreateRayTracingOpacityMicromapBitExt = 16777216,
         [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_BIT_28_NV")]
         CreateReservedBit28NV = 268435456,
-        [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_27_BIT_EXT")]
-        CreateReserved27BitExt = 134217728,
+        [NativeName("Name", "VK_PIPELINE_CREATE_NO_PROTECTED_ACCESS_BIT_EXT")]
+        CreateNoProtectedAccessBitExt = 134217728,
+        [NativeName("Name", "VK_PIPELINE_CREATE_PROTECTED_ACCESS_ONLY_BIT_EXT")]
+        CreateProtectedAccessOnlyBitExt = 1073741824,
         [NativeName("Name", "VK_PIPELINE_CREATE_VIEW_INDEX_FROM_DEVICE_INDEX_BIT")]
         CreateViewIndexFromDeviceIndexBit = 8,
         [NativeName("Name", "VK_PIPELINE_CREATE_DISPATCH_BASE_BIT")]

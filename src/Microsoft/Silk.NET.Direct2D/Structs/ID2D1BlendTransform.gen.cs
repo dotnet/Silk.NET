@@ -18,9 +18,12 @@ namespace Silk.NET.Direct2D
 {
     [Guid("63ac0b32-ba44-450f-8806-7f4ca1ff2f1b")]
     [NativeName("Name", "ID2D1BlendTransform")]
-    public unsafe partial struct ID2D1BlendTransform
+    public unsafe partial struct ID2D1BlendTransform : IComVtbl<ID2D1BlendTransform>, IComVtbl<ID2D1ConcreteTransform>, IComVtbl<ID2D1TransformNode>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("63ac0b32-ba44-450f-8806-7f4ca1ff2f1b");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator ID2D1ConcreteTransform(ID2D1BlendTransform val)
             => Unsafe.As<ID2D1BlendTransform, ID2D1ConcreteTransform>(ref val);
@@ -52,7 +55,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1BlendTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1BlendTransform*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1BlendTransform*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -63,7 +66,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1BlendTransform*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1BlendTransform*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -75,7 +78,7 @@ namespace Silk.NET.Direct2D
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1BlendTransform*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1BlendTransform*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -89,7 +92,7 @@ namespace Silk.NET.Direct2D
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1BlendTransform*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1BlendTransform*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -100,7 +103,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1BlendTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1BlendTransform*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1BlendTransform*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -109,7 +112,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1BlendTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1BlendTransform*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1BlendTransform*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -118,7 +121,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1BlendTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1BlendTransform*, uint>)LpVtbl[3])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1BlendTransform*, uint>)@this->LpVtbl[3])(@this);
             return ret;
         }
 
@@ -127,7 +130,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1BlendTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1BlendTransform*, BufferPrecision, ChannelDepth, int>)LpVtbl[4])(@this, bufferPrecision, channelDepth);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1BlendTransform*, BufferPrecision, ChannelDepth, int>)@this->LpVtbl[4])(@this, bufferPrecision, channelDepth);
             return ret;
         }
 
@@ -135,14 +138,14 @@ namespace Silk.NET.Direct2D
         public readonly void SetCached(int isCached)
         {
             var @this = (ID2D1BlendTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1BlendTransform*, int, void>)LpVtbl[5])(@this, isCached);
+            ((delegate* unmanaged[Stdcall]<ID2D1BlendTransform*, int, void>)@this->LpVtbl[5])(@this, isCached);
         }
 
         /// <summary>To be documented.</summary>
         public readonly unsafe void SetDescription(BlendDescription* description)
         {
             var @this = (ID2D1BlendTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1BlendTransform*, BlendDescription*, void>)LpVtbl[6])(@this, description);
+            ((delegate* unmanaged[Stdcall]<ID2D1BlendTransform*, BlendDescription*, void>)@this->LpVtbl[6])(@this, description);
         }
 
         /// <summary>To be documented.</summary>
@@ -151,7 +154,7 @@ namespace Silk.NET.Direct2D
             var @this = (ID2D1BlendTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (BlendDescription* descriptionPtr = &description)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1BlendTransform*, BlendDescription*, void>)LpVtbl[6])(@this, descriptionPtr);
+                ((delegate* unmanaged[Stdcall]<ID2D1BlendTransform*, BlendDescription*, void>)@this->LpVtbl[6])(@this, descriptionPtr);
             }
         }
 
@@ -159,7 +162,7 @@ namespace Silk.NET.Direct2D
         public readonly unsafe void GetDescription(BlendDescription* description)
         {
             var @this = (ID2D1BlendTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1BlendTransform*, BlendDescription*, void>)LpVtbl[7])(@this, description);
+            ((delegate* unmanaged[Stdcall]<ID2D1BlendTransform*, BlendDescription*, void>)@this->LpVtbl[7])(@this, description);
         }
 
         /// <summary>To be documented.</summary>
@@ -168,8 +171,26 @@ namespace Silk.NET.Direct2D
             var @this = (ID2D1BlendTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (BlendDescription* descriptionPtr = &description)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1BlendTransform*, BlendDescription*, void>)LpVtbl[7])(@this, descriptionPtr);
+                ((delegate* unmanaged[Stdcall]<ID2D1BlendTransform*, BlendDescription*, void>)@this->LpVtbl[7])(@this, descriptionPtr);
             }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID2D1BlendTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID2D1BlendTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

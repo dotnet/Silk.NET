@@ -1427,6 +1427,335 @@ namespace Silk.NET.OpenGL.Extensions.ARB
             VertexArrayVertexBuffers(vaobj, first, (uint) strides.Length, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), in strides.GetPinnableReference());
         }
 
+        public unsafe uint CreateBuffers([Flow(FlowDirection.In)] uint n)
+        {
+            // NonKhrReturnTypeOverloader
+            CreateBuffers(n, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe uint CreateFramebuffers([Flow(FlowDirection.In)] uint n)
+        {
+            // NonKhrReturnTypeOverloader
+            CreateFramebuffers(n, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe uint CreateProgramPipelines([Flow(FlowDirection.In)] uint n)
+        {
+            // NonKhrReturnTypeOverloader
+            CreateProgramPipelines(n, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe uint CreateQueries([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint n)
+        {
+            // NonKhrReturnTypeOverloader
+            CreateQueries(target, n, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe uint CreateQueries([Flow(FlowDirection.In)] QueryTarget target, [Flow(FlowDirection.In)] uint n)
+        {
+            // NonKhrReturnTypeOverloader
+            CreateQueries(target, n, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe uint CreateRenderbuffers([Flow(FlowDirection.In)] uint n)
+        {
+            // NonKhrReturnTypeOverloader
+            CreateRenderbuffers(n, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe uint CreateSamplers([Flow(FlowDirection.In)] uint n)
+        {
+            // NonKhrReturnTypeOverloader
+            CreateSamplers(n, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe uint CreateTextures([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint n)
+        {
+            // NonKhrReturnTypeOverloader
+            CreateTextures(target, n, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe uint CreateTextures([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint n)
+        {
+            // NonKhrReturnTypeOverloader
+            CreateTextures(target, n, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe uint CreateTransformFeedbacks([Flow(FlowDirection.In)] uint n)
+        {
+            // NonKhrReturnTypeOverloader
+            CreateTransformFeedbacks(n, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe uint CreateVertexArrays([Flow(FlowDirection.In)] uint n)
+        {
+            // NonKhrReturnTypeOverloader
+            CreateVertexArrays(n, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetCompressedTextureImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetCompressedTextureImage(texture, level, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetNamedBufferParameter([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetNamedBufferParameter(buffer, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetNamedBufferParameter([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] BufferPNameARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetNamedBufferParameter(buffer, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe void* GetNamedBufferPointer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetNamedBufferPointer(buffer, pname, out void* silkRet);
+            return silkRet;
+        }
+
+        public unsafe void* GetNamedBufferPointer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] BufferPointerNameARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetNamedBufferPointer(buffer, pname, out void* silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetNamedBufferSubData<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetNamedBufferSubData(buffer, offset, size, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetNamedFramebufferAttachmentParameter([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] ARB attachment, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetNamedFramebufferAttachmentParameter(framebuffer, attachment, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetNamedFramebufferAttachmentParameter([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] ARB attachment, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetNamedFramebufferAttachmentParameter(framebuffer, attachment, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetNamedFramebufferAttachmentParameter([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetNamedFramebufferAttachmentParameter(framebuffer, attachment, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetNamedFramebufferAttachmentParameter([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetNamedFramebufferAttachmentParameter(framebuffer, attachment, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetNamedFramebufferParameter([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetNamedFramebufferParameter(framebuffer, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetNamedFramebufferParameter([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] GetFramebufferParameter pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetNamedFramebufferParameter(framebuffer, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetNamedRenderbufferParameter([Flow(FlowDirection.In)] uint renderbuffer, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetNamedRenderbufferParameter(renderbuffer, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetNamedRenderbufferParameter([Flow(FlowDirection.In)] uint renderbuffer, [Flow(FlowDirection.In)] RenderbufferParameterName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetNamedRenderbufferParameter(renderbuffer, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetTextureImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetTextureImage(texture, level, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetTextureImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetTextureImage(texture, level, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetTextureImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetTextureImage(texture, level, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetTextureImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetTextureImage(texture, level, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetTextureLevelParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTextureLevelParameter(texture, level, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetTextureLevelParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GetTextureParameter pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTextureLevelParameter(texture, level, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetTextureParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTextureParameter(texture, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetTextureParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] GetTextureParameter pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTextureParameter(texture, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetTextureParameterI([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTextureParameterI(texture, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetTextureParameterI([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] GetTextureParameter pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTextureParameterI(texture, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetTransformFeedback([Flow(FlowDirection.In)] uint xfb, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTransformFeedback(xfb, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetTransformFeedback([Flow(FlowDirection.In)] uint xfb, [Flow(FlowDirection.In)] TransformFeedbackPName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTransformFeedback(xfb, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetTransformFeedback([Flow(FlowDirection.In)] uint xfb, [Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.In)] uint index)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTransformFeedback(xfb, pname, index, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetTransformFeedback([Flow(FlowDirection.In)] uint xfb, [Flow(FlowDirection.In)] TransformFeedbackPName pname, [Flow(FlowDirection.In)] uint index)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTransformFeedback(xfb, pname, index, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe long GetTransformFeedbacki64([Flow(FlowDirection.In)] uint xfb, [Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.In)] uint index)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTransformFeedbacki64(xfb, pname, index, out long silkRet);
+            return silkRet;
+        }
+
+        public unsafe long GetTransformFeedbacki64([Flow(FlowDirection.In)] uint xfb, [Flow(FlowDirection.In)] TransformFeedbackPName pname, [Flow(FlowDirection.In)] uint index)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTransformFeedbacki64(xfb, pname, index, out long silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetVertexArray([Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetVertexArray(vaobj, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetVertexArray([Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] VertexArrayPName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetVertexArray(vaobj, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetVertexArrayIndexed([Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetVertexArrayIndexed(vaobj, index, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetVertexArrayIndexed([Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexArrayPName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetVertexArrayIndexed(vaobj, index, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe long GetVertexArrayIndexed64([Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetVertexArrayIndexed64(vaobj, index, pname, out long silkRet);
+            return silkRet;
+        }
+
+        public unsafe long GetVertexArrayIndexed64([Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexArrayPName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetVertexArrayIndexed64(vaobj, index, pname, out long silkRet);
+            return silkRet;
+        }
+
         public ArbDirectStateAccess(INativeContext ctx)
             : base(ctx)
         {

@@ -230,6 +230,125 @@ namespace Silk.NET.OpenGL.Extensions.ARB
             SilkMarshal.Free((nint) uniformNames);
         }
 
+        public unsafe int GetActiveUniformBlock([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveUniformBlock(program, uniformBlockIndex, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetActiveUniformBlock([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] UniformBlockPName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveUniformBlock(program, uniformBlockIndex, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetActiveUniformBlockName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveUniformBlockName(program, uniformBlockIndex, bufSize, length, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetActiveUniformBlockName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveUniformBlockName(program, uniformBlockIndex, bufSize, out length, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetActiveUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformIndex, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveUniformName(program, uniformIndex, bufSize, length, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetActiveUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformIndex, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveUniformName(program, uniformIndex, bufSize, out length, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetActiveUniforms([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformCount, [Count(Parameter = "uniformCount"), Flow(FlowDirection.In)] uint* uniformIndices, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveUniforms(program, uniformCount, uniformIndices, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetActiveUniforms([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformCount, [Count(Parameter = "uniformCount"), Flow(FlowDirection.In)] in uint uniformIndices, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveUniforms(program, uniformCount, in uniformIndices, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetActiveUniforms([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformCount, [Count(Parameter = "uniformCount"), Flow(FlowDirection.In)] uint* uniformIndices, [Flow(FlowDirection.In)] UniformPName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveUniforms(program, uniformCount, uniformIndices, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetActiveUniforms([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformCount, [Count(Parameter = "uniformCount"), Flow(FlowDirection.In)] in uint uniformIndices, [Flow(FlowDirection.In)] UniformPName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveUniforms(program, uniformCount, in uniformIndices, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetInteger([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index)
+        {
+            // NonKhrReturnTypeOverloader
+            GetInteger(target, index, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetInteger([Flow(FlowDirection.In)] GetPName target, [Flow(FlowDirection.In)] uint index)
+        {
+            // NonKhrReturnTypeOverloader
+            GetInteger(target, index, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe uint GetUniformIndices([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformCount, [Count(Computed = "uniformCount"), Flow(FlowDirection.In)] byte** uniformNames)
+        {
+            // NonKhrReturnTypeOverloader
+            GetUniformIndices(program, uniformCount, uniformNames, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe uint GetUniformIndices([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformCount, [Count(Computed = "uniformCount"), Flow(FlowDirection.In)] in byte* uniformNames)
+        {
+            // NonKhrReturnTypeOverloader
+            GetUniformIndices(program, uniformCount, in uniformNames, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetActiveUniforms([Flow(FlowDirection.In)] uint program, [Count(Parameter = "uniformCount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> uniformIndices, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveUniforms(program, uniformIndices, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetActiveUniforms([Flow(FlowDirection.In)] uint program, [Count(Parameter = "uniformCount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> uniformIndices, [Flow(FlowDirection.In)] UniformPName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveUniforms(program, uniformIndices, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe uint GetUniformIndices([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformCount, [Count(Computed = "uniformCount"), Flow(FlowDirection.In)] string[] uniformNamesSa)
+        {
+            // NonKhrReturnTypeOverloader
+            GetUniformIndices(program, uniformCount, uniformNamesSa, out uint silkRet);
+            return silkRet;
+        }
+
         public ArbUniformBufferObject(INativeContext ctx)
             : base(ctx)
         {

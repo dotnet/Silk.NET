@@ -24,5 +24,7 @@ namespace Silk.NET.OpenGLES
         [System.Obsolete]
         [NativeName("Name", "GL_Q")]
         Q = 0x2003,
+        [NativeName("Name", "GL_TEXTURE_GEN_STR_OES")]
+        TextureGenStrOes = 0x8D60,
     }
 }

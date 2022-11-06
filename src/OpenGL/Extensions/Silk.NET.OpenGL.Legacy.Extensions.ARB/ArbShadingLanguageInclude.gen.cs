@@ -323,6 +323,76 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             NamedString(type, namelen, name, (int) @string.Length, in @string.GetPinnableReference());
         }
 
+        public unsafe byte GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] byte* name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen)
+        {
+            // NonKhrReturnTypeOverloader
+            GetNamedString(namelen, name, bufSize, stringlen, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] byte* name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen)
+        {
+            // NonKhrReturnTypeOverloader
+            GetNamedString(namelen, name, bufSize, out stringlen, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] in byte name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen)
+        {
+            // NonKhrReturnTypeOverloader
+            GetNamedString(namelen, in name, bufSize, stringlen, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] in byte name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen)
+        {
+            // NonKhrReturnTypeOverloader
+            GetNamedString(namelen, in name, bufSize, out stringlen, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen)
+        {
+            // NonKhrReturnTypeOverloader
+            GetNamedString(namelen, name, bufSize, stringlen, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen)
+        {
+            // NonKhrReturnTypeOverloader
+            GetNamedString(namelen, name, bufSize, out stringlen, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] byte* name, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetNamedString(namelen, name, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] in byte name, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetNamedString(namelen, in name, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetNamedString(namelen, name, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetNamedString([Count(Parameter = "namelen"), Flow(FlowDirection.In)] ReadOnlySpan<byte> name, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetNamedString(name, pname, out int silkRet);
+            return silkRet;
+        }
+
         public ArbShadingLanguageInclude(INativeContext ctx)
             : base(ctx)
         {

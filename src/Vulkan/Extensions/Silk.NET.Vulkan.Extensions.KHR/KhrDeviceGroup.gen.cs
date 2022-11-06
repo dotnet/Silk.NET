@@ -85,6 +85,14 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         [NativeApi(EntryPoint = "vkGetPhysicalDevicePresentRectanglesKHR", Convention = CallingConvention.Winapi)]
         public partial Result GetPhysicalDevicePresentRectangles([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] ref uint pRectCount, [Count(Parameter = "pRectCount"), Flow(FlowDirection.Out)] out Rect2D pRects);
 
+        /// <summary>To be documented.</summary>
+        public unsafe PeerMemoryFeatureFlags GetDeviceGroupPeerMemoryFeatures([Count(Count = 0)] Device device, [Count(Count = 0)] uint heapIndex, [Count(Count = 0)] uint localDeviceIndex, [Count(Count = 0)] uint remoteDeviceIndex)
+        {
+            // NonKhrReturnTypeOverloader
+            GetDeviceGroupPeerMemoryFeatures(device, heapIndex, localDeviceIndex, remoteDeviceIndex, out PeerMemoryFeatureFlags silkRet);
+            return silkRet;
+        }
+
         public KhrDeviceGroup(INativeContext ctx)
             : base(ctx)
         {
