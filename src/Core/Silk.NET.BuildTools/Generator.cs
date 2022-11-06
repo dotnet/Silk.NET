@@ -224,7 +224,9 @@ namespace Silk.NET.BuildTools
 
                         //If the created profile contains a root project, then its likely the core profile
                         if(createdProfile.Projects.Any(x => x.Value.IsRoot))
+                        {
                             coreProfile ??= createdProfile;
+                        }
 
                         profiles.Add(createdProfile);
                     }

@@ -206,7 +206,9 @@ namespace Silk.NET.BuildTools.Cpp
                 (indexOfOpenSqBracket + 1, indexOfCloseSqBracket - indexOfOpenSqBracket - 1);
 
             if(projectName != "Core" && coreProfile == null) 
+            {
                 throw new InvalidOperationException("The core profile/source file must come first!");
+            }
 
             var className = destInfo.Substring(indexOfCloseSqBracket + 1);
             var project = profile.Projects[projectName] = new Project
