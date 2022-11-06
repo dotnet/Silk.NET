@@ -45,9 +45,6 @@ namespace Silk.NET.Windowing.Glfw
             _initialMonitor = monitor;
             _localTitleCache = optionsCache.Title;
             SharedContext = optionsCache.SharedContext;
-            
-            IsContextControlDisabled = optionsCache.IsContextControlDisabled;
-            ShouldSwapAutomatically  = optionsCache.ShouldSwapAutomatically;
         }
 
         protected override Vector2D<int> CoreSize
