@@ -332,8 +332,10 @@ namespace Silk.NET.BuildTools.Bind
                         {
                             var coreProject = profile.Projects["Core"];
 
-                            if(coreProject.Classes.Any(x => x.NativeApis.Any(x => x.Value.Functions.Any(x => x.NativeName == function.NativeName))))
+                            if (coreProject.Classes.Any(x => x.NativeApis.Any(x => x.Value.Functions.Any(x => x.NativeName == function.NativeName))))
+                            {
                                 continue;
+                            }
                             
                             AddInjectionAttributes(function, task);
 
