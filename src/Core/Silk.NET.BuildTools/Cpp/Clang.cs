@@ -216,7 +216,6 @@ namespace Silk.NET.BuildTools.Cpp
                         ? string.Empty
                         : $".{projectName}",
                 ComRefs = task.ClangOpts.ComRefs ?? new HashSet<string>(),
-                ClassName = className
             };
 
             if (projectName != "Core")
@@ -232,7 +231,7 @@ namespace Silk.NET.BuildTools.Cpp
 
             var @class = new Class
             {
-                ClassName = project.IsRoot ? className : coreProfile?.Projects["Core"].ClassName,
+                ClassName = project.IsRoot ? className : coreProfile?.Projects["Core"].Classes[0].ClassName,
                 Constants = constants,
                 NativeApis = { [fileName] = new NativeApiSet { Name = "I" + className, Functions = functions } }
             };
