@@ -46,8 +46,13 @@ public static unsafe class WebGPUTexturedQuad
     private static Texture*     _Texture;
     private static TextureView* _TextureView;
     private static Sampler*     _Sampler;
-    
-    private static BindGroup*   _BindGroup;
+
+    private static BindGroup*       _TextureBindGroup;
+    private static BindGroupLayout* _TextureSamplerBindGroupLayout;
+
+    private static Buffer*          _ProjectionMatrixBuffer;
+    private static BindGroupLayout* _ProjectionMatrixBindGroupLayout;
+    private static BindGroup*       _ProjectionMatrixBindGroup;
 
     public static void Main(string[] args)
     {
@@ -110,7 +115,7 @@ public static unsafe class WebGPUTexturedQuad
 
         { //Get device
             var requiredLimits = stackalloc RequiredLimits[1];
-            requiredLimits->Limits.MaxBindGroups = 1;
+            requiredLimits->Limits.MaxBindGroups = 2;
 
             var deviceDescriptor = new DeviceDescriptor
             {
@@ -144,7 +149,7 @@ public static unsafe class WebGPUTexturedQuad
 
             var shaderModuleDescriptor = new ShaderModuleDescriptor
             {
-                NextInChain = (ChainedStruct*) (&wgslDescriptor),
+                NextInChain = (ChainedStruct*) (&wgslDescriptor)
             };
 
             _Shader = wgpu.DeviceCreateShaderModule(_Device, ref shaderModuleDescriptor);
@@ -177,107 +182,6 @@ public static unsafe class WebGPUTexturedQuad
             ArrayStride    = (ulong) sizeof(Vertex)
         };
         //Create vertex buffer layout
-
-        { //Create pipeline
-            var blendState = new BlendState
-            {
-                Color = new BlendComponent
-                {
-                    SrcFactor = BlendFactor.SrcAlpha,
-                    DstFactor = BlendFactor.OneMinusSrcAlpha,
-                    Operation = BlendOperation.None
-                },
-                Alpha = new BlendComponent
-                {
-                    SrcFactor = BlendFactor.One,
-                    DstFactor = BlendFactor.OneMinusSrcAlpha,
-                    Operation = BlendOperation.Add
-                }
-            };
-
-            var colorTargetState = new ColorTargetState
-            {
-                Format    = _SwapChainFormat,
-                Blend     = &blendState,
-                WriteMask = ColorWriteMask.All
-            };
-
-            var fragmentState = new FragmentState
-            {
-                Module      = _Shader,
-                TargetCount = 1,
-                Targets     = &colorTargetState,
-                EntryPoint  = (byte*) SilkMarshal.StringToPtr("fs_main")
-            };
-
-            var renderPipelineDescriptor = new RenderPipelineDescriptor
-            {
-                Vertex = new VertexState
-                {
-                    Module      = _Shader,
-                    EntryPoint  = (byte*) SilkMarshal.StringToPtr("vs_main"),
-                    Buffers     = &vertexBufferLayout,
-                    BufferCount = 1
-                },
-                Primitive = new PrimitiveState
-                {
-                    Topology         = PrimitiveTopology.TriangleList,
-                    StripIndexFormat = IndexFormat.Undefined,
-                    FrontFace        = FrontFace.Ccw,
-                    CullMode         = CullMode.None
-                },
-                Multisample = new MultisampleState
-                {
-                    Count                  = 1,
-                    Mask                   = ~0u,
-                    AlphaToCoverageEnabled = false
-                },
-                Fragment     = &fragmentState,
-                DepthStencil = null,
-            };
-
-            _Pipeline = wgpu.DeviceCreateRenderPipeline(_Device, ref renderPipelineDescriptor);
-
-            Console.WriteLine($"Created pipeline {(nuint) _Pipeline:X}");
-        } //Create pipeline
-
-        { //Create vertex buffer
-            var descriptor = new BufferDescriptor
-            {
-                Size  = _VertexBufferSize = (ulong) (sizeof(Vertex) * 6),
-                Usage = BufferUsage.Vertex | BufferUsage.CopyDst
-            };
-
-            _VertexBuffer = wgpu.DeviceCreateBuffer(_Device, ref descriptor);
-
-            //Get a queue
-            var queue = wgpu.DeviceGetQueue(_Device);
-
-            var data = stackalloc Vertex[6];
-
-            //Fill data with a quad with a CCW front face
-            data[0] = new Vertex(new Vector2(-0.5f, -0.5f), new Vector2(0, 1)); //Top left
-            data[1] = new Vertex(new Vector2(0.5f, -0.5f), new Vector2(1, 1));   //Top right
-            data[2] = new Vertex(new Vector2(0.5f, 0.5f), new Vector2(1, 0));     //Bottom right
-            data[3] = new Vertex(new Vector2(-0.5f, -0.5f), new Vector2(0, 1)); //Top left
-            data[4] = new Vertex(new Vector2(0.5f, 0.5f), new Vector2(1, 0));     //Bottom right
-            data[5] = new Vertex(new Vector2(-0.5f, 0.5f), new Vector2(0, 0));   //Bottom left
-
-            //Write the data to the buffer
-            wgpu.QueueWriteBuffer(queue, _VertexBuffer, 0, data, (nuint) _VertexBufferSize);
-
-            var commandEncoderDescriptor = new CommandEncoderDescriptor();
-
-            //Create a new command encoder
-            var commandEncoder = wgpu.DeviceCreateCommandEncoder(_Device, ref commandEncoderDescriptor);
-
-            var commandBufferDescriptor = new CommandBufferDescriptor();
-
-            //Finish the command encoder
-            var commandBuffer = wgpu.CommandEncoderFinish(commandEncoder, ref commandBufferDescriptor);
-
-            wgpu.QueueSubmit(queue, 1, &commandBuffer);
-        } //Create vertex buffer
 
         { //Create texture and texture view
             var image = Image.Load<Rgba32>("silk.png");
@@ -312,12 +216,13 @@ public static unsafe class WebGPUTexturedQuad
             _TextureView = wgpu.TextureCreateView(_Texture, ref viewDescriptor);
 
             var queue = wgpu.DeviceGetQueue(_Device);
-            
+
             var commandEncoderDescriptor = new CommandEncoderDescriptor();
-            
+
             var commandEncoder = wgpu.DeviceCreateCommandEncoder(_Device, ref commandEncoderDescriptor);
 
-            image.ProcessPixelRows(
+            image.ProcessPixelRows
+            (
                 x =>
                 {
                     for (var i = 0; i < x.Height; i++)
@@ -331,10 +236,10 @@ public static unsafe class WebGPUTexturedQuad
                             MipLevel = 0,
                             Origin   = new Origin3D(0, (uint) i, 0)
                         };
-                        
+
                         var layout = new TextureDataLayout
                         {
-                            BytesPerRow = (uint) (x.Width * sizeof(Rgba32)),
+                            BytesPerRow  = (uint) (x.Width * sizeof(Rgba32)),
                             RowsPerImage = (uint) x.Height
                         };
                         // layout.Offset = layout.BytesPerRow * (uint) i;
@@ -346,41 +251,42 @@ public static unsafe class WebGPUTexturedQuad
                             DepthOrArrayLayers = 1
                         };
 
-                        fixed(void* dataPtr = imageRow)
-                            wgpu.QueueWriteTexture(queue, ref imageCopyTexture, dataPtr, (nuint)(sizeof(Rgba32) * imageRow.Length), ref layout, ref extent);
+                        fixed (void* dataPtr = imageRow)
+                            wgpu.QueueWriteTexture(queue, ref imageCopyTexture, dataPtr, (nuint) (sizeof(Rgba32) * imageRow.Length), ref layout, ref extent);
                     }
-                });
-            
+                }
+            );
+
             var commandBufferDescriptor = new CommandBufferDescriptor();
-            
+
             var commandBuffer = wgpu.CommandEncoderFinish(commandEncoder, ref commandBufferDescriptor);
-            
+
             wgpu.QueueSubmit(queue, 1, &commandBuffer);
         } //Create texture and texture view
 
         { //Create sampler
             var descriptor = new SamplerDescriptor
             {
-                Compare = CompareFunction.Undefined,
+                Compare      = CompareFunction.Undefined,
                 MipmapFilter = MipmapFilterMode.Linear,
-                MagFilter = FilterMode.Linear,
-                MinFilter = FilterMode.Linear
+                MagFilter    = FilterMode.Linear,
+                MinFilter    = FilterMode.Linear
             };
 
             _Sampler = wgpu.DeviceCreateSampler(_Device, ref descriptor);
         } //Create sampler
 
-        { //Create bind group
+        { //Create bind group for sampler and textureview
             var entries = stackalloc BindGroupLayoutEntry[2];
             entries[0] = new BindGroupLayoutEntry
             {
-                Binding = 0, 
+                Binding = 0,
                 Texture = new TextureBindingLayout
                 {
-                    Multisampled = false, 
-                    SampleType = TextureSampleType.Float, 
+                    Multisampled  = false,
+                    SampleType    = TextureSampleType.Float,
                     ViewDimension = TextureViewDimension.TextureViewDimension2D
-                }, 
+                },
                 Visibility = ShaderStage.Fragment
             };
             entries[1] = new BindGroupLayoutEntry
@@ -389,22 +295,22 @@ public static unsafe class WebGPUTexturedQuad
                 Sampler = new SamplerBindingLayout
                 {
                     Type = SamplerBindingType.Filtering
-                }, 
+                },
                 Visibility = ShaderStage.Fragment
             };
-            
+
             var layoutDescriptor = new BindGroupLayoutDescriptor
             {
-                Entries = entries,
+                Entries    = entries,
                 EntryCount = 2
             };
 
-            var bindGroupLayout = wgpu.DeviceCreateBindGroupLayout(_Device, ref layoutDescriptor);
+            _TextureSamplerBindGroupLayout = wgpu.DeviceCreateBindGroupLayout(_Device, ref layoutDescriptor);
 
             var bindGroupEntries = stackalloc BindGroupEntry[2];
             bindGroupEntries[0] = new BindGroupEntry
             {
-                Binding = 0, 
+                Binding     = 0,
                 TextureView = _TextureView
             };
             bindGroupEntries[1] = new BindGroupEntry
@@ -415,15 +321,202 @@ public static unsafe class WebGPUTexturedQuad
 
             var descriptor = new BindGroupDescriptor
             {
-                Entries = bindGroupEntries,
+                Entries    = bindGroupEntries,
                 EntryCount = 2,
-                Layout = bindGroupLayout
+                Layout     = _TextureSamplerBindGroupLayout
             };
 
-            _BindGroup = wgpu.DeviceCreateBindGroup(_Device, ref descriptor);
-        } //Create bind group
+            _TextureBindGroup = wgpu.DeviceCreateBindGroup(_Device, ref descriptor);
+        } //Create bind group for sampler and texture view
+
+        { //Create buffer to store projection matrix
+            var descriptor = new BufferDescriptor
+            {
+                Size             = (ulong) sizeof(Matrix4x4),
+                Usage            = BufferUsage.Uniform | BufferUsage.CopyDst,
+                MappedAtCreation = false
+            };
+
+            _ProjectionMatrixBuffer = wgpu.DeviceCreateBuffer(_Device, ref descriptor);
+
+            UpdateProjectionMatrix();
+        } //Create buffer to store projection matrix
+
+        { //Create bind group for projection matrix
+            var entry = new BindGroupLayoutEntry
+            {
+                Binding = 0,
+                Buffer = new BufferBindingLayout
+                {
+                    Type           = BufferBindingType.Uniform,
+                    MinBindingSize = (ulong) sizeof(Matrix4x4)
+                },
+                Visibility = ShaderStage.Vertex,
+            };
+
+            var layoutDescriptor = new BindGroupLayoutDescriptor
+            {
+                Entries    = &entry,
+                EntryCount = 1
+            };
+
+            _ProjectionMatrixBindGroupLayout = wgpu.DeviceCreateBindGroupLayout(_Device, ref layoutDescriptor);
+
+            var bindGroupEntry = new BindGroupEntry
+            {
+                Binding = 0,
+                Buffer  = _ProjectionMatrixBuffer
+            };
+
+            var descriptor = new BindGroupDescriptor
+            {
+                Entries    = &bindGroupEntry,
+                EntryCount = 1,
+                Layout     = _ProjectionMatrixBindGroupLayout
+            };
+
+            _ProjectionMatrixBindGroup = wgpu.DeviceCreateBindGroup(_Device, ref descriptor);
+        } //Create bind group for projection matrix
+
+        { //Create pipeline
+            var blendState = new BlendState
+            {
+                Color = new BlendComponent
+                {
+                    SrcFactor = BlendFactor.SrcAlpha,
+                    DstFactor = BlendFactor.OneMinusSrcAlpha,
+                    Operation = BlendOperation.None
+                },
+                Alpha = new BlendComponent
+                {
+                    SrcFactor = BlendFactor.One,
+                    DstFactor = BlendFactor.OneMinusSrcAlpha,
+                    Operation = BlendOperation.Add
+                }
+            };
+
+            var colorTargetState = new ColorTargetState
+            {
+                Format    = _SwapChainFormat,
+                Blend     = &blendState,
+                WriteMask = ColorWriteMask.All
+            };
+
+            var fragmentState = new FragmentState
+            {
+                Module      = _Shader,
+                TargetCount = 1,
+                Targets     = &colorTargetState,
+                EntryPoint  = (byte*) SilkMarshal.StringToPtr("fs_main")
+            };
+
+            var bindGroupLayouts = stackalloc BindGroupLayout*[2];
+            bindGroupLayouts[0] = _TextureSamplerBindGroupLayout;
+            bindGroupLayouts[1] = _ProjectionMatrixBindGroupLayout;
+
+            var pipelineLayoutDescriptor = new PipelineLayoutDescriptor
+            {
+                BindGroupLayoutCount = 2,
+                BindGroupLayouts     = bindGroupLayouts
+            };
+
+            var pipelineLayout = wgpu.DeviceCreatePipelineLayout(_Device, ref pipelineLayoutDescriptor);
+
+            var renderPipelineDescriptor = new RenderPipelineDescriptor
+            {
+                Vertex = new VertexState
+                {
+                    Module      = _Shader,
+                    EntryPoint  = (byte*) SilkMarshal.StringToPtr("vs_main"),
+                    Buffers     = &vertexBufferLayout,
+                    BufferCount = 1
+                },
+                Primitive = new PrimitiveState
+                {
+                    Topology         = PrimitiveTopology.TriangleList,
+                    StripIndexFormat = IndexFormat.Undefined,
+                    FrontFace        = FrontFace.Ccw,
+                    CullMode         = CullMode.None
+                },
+                Multisample = new MultisampleState
+                {
+                    Count                  = 1,
+                    Mask                   = ~0u,
+                    AlphaToCoverageEnabled = false
+                },
+                Fragment     = &fragmentState,
+                DepthStencil = null,
+                Layout       = pipelineLayout
+            };
+
+            _Pipeline = wgpu.DeviceCreateRenderPipeline(_Device, ref renderPipelineDescriptor);
+
+            Console.WriteLine($"Created pipeline {(nuint) _Pipeline:X}");
+        } //Create pipeline
+
+        { //Create vertex buffer
+            var descriptor = new BufferDescriptor
+            {
+                Size  = _VertexBufferSize = (ulong) (sizeof(Vertex) * 6),
+                Usage = BufferUsage.Vertex | BufferUsage.CopyDst
+            };
+
+            _VertexBuffer = wgpu.DeviceCreateBuffer(_Device, ref descriptor);
+
+            //Get a queue
+            var queue = wgpu.DeviceGetQueue(_Device);
+
+            var data = stackalloc Vertex[6];
+
+            const float xPos   = 100;
+            const float yPos   = 100;
+            const float width  = 271;
+            const float height = 271;
+            
+            //Fill data with a quad with a CCW front face
+            data[0] = new Vertex(new Vector2(xPos, yPos), new Vector2(0, 0)); //Top left
+            data[1] = new Vertex(new Vector2(xPos + width, yPos), new Vector2(1, 0));  //Top right
+            data[2] = new Vertex(new Vector2(xPos + width, yPos + height), new Vector2(1, 1));   //Bottom right
+            data[3] = new Vertex(new Vector2(xPos, yPos), new Vector2(0, 0)); //Top left
+            data[4] = new Vertex(new Vector2(xPos + width, yPos + height), new Vector2(1, 1));   //Bottom right
+            data[5] = new Vertex(new Vector2(xPos, yPos + height), new Vector2(0, 1));  //Bottom left
+
+            //Write the data to the buffer
+            wgpu.QueueWriteBuffer(queue, _VertexBuffer, 0, data, (nuint) _VertexBufferSize);
+
+            var commandEncoderDescriptor = new CommandEncoderDescriptor();
+
+            //Create a new command encoder
+            var commandEncoder = wgpu.DeviceCreateCommandEncoder(_Device, ref commandEncoderDescriptor);
+
+            var commandBufferDescriptor = new CommandBufferDescriptor();
+
+            //Finish the command encoder
+            var commandBuffer = wgpu.CommandEncoderFinish(commandEncoder, ref commandBufferDescriptor);
+
+            wgpu.QueueSubmit(queue, 1, &commandBuffer);
+        } //Create vertex buffer
 
         CreateSwapchain();
+    }
+
+    private static void UpdateProjectionMatrix()
+    {
+        var queue = wgpu.DeviceGetQueue(_Device);
+
+        var commandEncoderDescriptor = new CommandEncoderDescriptor();
+
+        var commandEncoder = wgpu.DeviceCreateCommandEncoder(_Device, ref commandEncoderDescriptor);
+
+        var projectionMatrix = Matrix4x4.CreateOrthographicOffCenter(0, _Window.Size.X, _Window.Size.Y, 0, 0, 1);
+
+        wgpu.QueueWriteBuffer(queue, _ProjectionMatrixBuffer, 0, &projectionMatrix, (nuint) sizeof(Matrix4x4));
+
+        var commandBufferDescriptor = new CommandBufferDescriptor();
+
+        var commandBuffer = wgpu.CommandEncoderFinish(commandEncoder, ref commandBufferDescriptor);
+
+        wgpu.QueueSubmit(queue, 1, &commandBuffer);
     }
 
     private static void WindowOnRender(double delta)
@@ -479,7 +572,8 @@ public static unsafe class WebGPUTexturedQuad
         var renderPass = wgpu.CommandEncoderBeginRenderPass(encoder, ref renderPassDescriptor);
 
         wgpu.RenderPassEncoderSetPipeline(renderPass, _Pipeline);
-        wgpu.RenderPassEncoderSetBindGroup(renderPass, 0, _BindGroup, 0, null);
+        wgpu.RenderPassEncoderSetBindGroup(renderPass, 0, _TextureBindGroup, 0, null);
+        wgpu.RenderPassEncoderSetBindGroup(renderPass, 1, _ProjectionMatrixBindGroup, 0, null);
         wgpu.RenderPassEncoderSetVertexBuffer(renderPass, 0, _VertexBuffer, 0, _VertexBufferSize);
         wgpu.RenderPassEncoderDraw(renderPass, 6, 1, 0, 0);
 
@@ -511,6 +605,7 @@ public static unsafe class WebGPUTexturedQuad
     private static void FramebufferResize(Vector2D<int> obj)
     {
         CreateSwapchain();
+        UpdateProjectionMatrix();
     }
 
     private static void CreateSwapchain()
