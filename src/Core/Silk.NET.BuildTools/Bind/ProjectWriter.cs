@@ -66,8 +66,10 @@ namespace Silk.NET.BuildTools.Bind
             (
                 x =>
                 {
-                    if(coreProject != project && coreProject.Structs.Any(y => y.NativeName == x.NativeName))
+                    if (coreProject != project && coreProject.Structs.Any(y => y.NativeName == x.NativeName))
+                    {
                         return;
+                    }
 
                     x.WriteStruct
                     (
