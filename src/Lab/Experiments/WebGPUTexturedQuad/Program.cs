@@ -352,13 +352,14 @@ public static unsafe class WebGPUTexturedQuad
                 Visibility = ShaderStage.Vertex,
             };
 
-            var layoutDescriptor = new BindGroupLayoutDescriptor
-            {
-                Entries    = &entry,
-                EntryCount = 1
-            };
-
-            _ProjectionMatrixBindGroupLayout = wgpu.DeviceCreateBindGroupLayout(_Device, layoutDescriptor);
+            _ProjectionMatrixBindGroupLayout = wgpu.DeviceCreateBindGroupLayout
+            (
+                _Device, new BindGroupLayoutDescriptor
+                {
+                    Entries    = &entry,
+                    EntryCount = 1
+                }
+            );
 
             var bindGroupEntry = new BindGroupEntry
             {
@@ -366,14 +367,15 @@ public static unsafe class WebGPUTexturedQuad
                 Buffer  = _ProjectionMatrixBuffer
             };
 
-            var descriptor = new BindGroupDescriptor
-            {
-                Entries    = &bindGroupEntry,
-                EntryCount = 1,
-                Layout     = _ProjectionMatrixBindGroupLayout
-            };
-
-            _ProjectionMatrixBindGroup = wgpu.DeviceCreateBindGroup(_Device, descriptor);
+            _ProjectionMatrixBindGroup = wgpu.DeviceCreateBindGroup
+            (
+                _Device, new BindGroupDescriptor
+                {
+                    Entries    = &bindGroupEntry,
+                    EntryCount = 1,
+                    Layout     = _ProjectionMatrixBindGroupLayout
+                }
+            );
         } //Create bind group for projection matrix
 
         { //Create pipeline
