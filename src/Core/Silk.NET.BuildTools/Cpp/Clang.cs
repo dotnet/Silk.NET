@@ -223,7 +223,14 @@ namespace Silk.NET.BuildTools.Cpp
             }
 
             var nativeApiSetName = destInfo.Substring(indexOfCloseSqBracket + 1);
-            var className = projectNameSplit.Length > 1 ? projectNameSplit[1] : coreProfile?.Projects["Core"].Classes[0].ClassName ?? nativeApiSetName;
+            if (projectName != "Core" && projectNameSplit.Length <= 1)
+            {
+                throw new InvalidOperationException("The core class name must be provided for extension projects. Example: \"[ProjectName:CoreClassName]ExtensionClassName\"")
+            }
+            
+            var className = projectNameSplit.Length > 1
+                ? projectNameSplit[1]
+                : nativeApiSetName;
             var project = profile.Projects[projectName] = new Project
             {
                 IsRoot = projectName == "Core",
