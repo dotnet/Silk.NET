@@ -2,7 +2,9 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using System.Runtime.InteropServices;
 using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Native;
 
 namespace Silk.NET.WebGPU;
 
@@ -22,7 +24,21 @@ public static class WebGPUSurface
     {
         var descriptor = new SurfaceDescriptor();
 
-        if (view.Native.X11 != null)
+        if (RuntimeInformation.IsOSPlatform(OSPlatform.Create("BROWSER")))
+        {
+            var htmlDescriptor = new SurfaceDescriptorFromCanvasHTMLSelector
+            {
+                Chain = new ChainedStruct
+                {
+                    Next  = null,
+                    SType = SType.SurfaceDescriptorFromCanvasHtmlselector
+                },
+                Selector = (byte*) SilkMarshal.StringToPtr("canvas")
+            };
+
+            descriptor.NextInChain = (ChainedStruct*) (&htmlDescriptor); 
+        }
+        else if (view.Native.X11 != null)
         {
             var xlibDescriptor = new SurfaceDescriptorFromXlibWindow
             {
@@ -102,6 +118,15 @@ public static class WebGPUSurface
             throw new PlatformNotSupportedException($"Your platform is not supported! {view.Native.Kind}");
         }
 
-        return wgpu.InstanceCreateSurface(instance, ref descriptor);
+        var surface = wgpu.InstanceCreateSurface(instance, ref descriptor);
+
+        if (descriptor.NextInChain->Next->SType == SType.SurfaceDescriptorFromCanvasHtmlselector)
+        {
+            var htmlDescriptor = (SurfaceDescriptorFromCanvasHTMLSelector*) descriptor.NextInChain;
+            
+            SilkMarshal.Free((IntPtr) htmlDescriptor->Selector);
+        }
+        
+        return surface;
     }
 }
