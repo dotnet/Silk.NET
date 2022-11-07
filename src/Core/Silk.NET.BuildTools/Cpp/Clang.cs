@@ -109,7 +109,7 @@ namespace Silk.NET.BuildTools.Cpp
             }
         }
 
-        public static unsafe Profile GenerateProfile(string fileName, Stream input, BindTask task, Profile? coreProfile)
+        public static unsafe Profile GenerateProfile(string fileName, Stream input, BindTask task)
         {
             Console.WriteLine($"clangsharp {typeof(Attr).Assembly.GetName().Version} for {clang.getClangVersion()}");
             var profile = new Profile
@@ -217,15 +217,10 @@ namespace Silk.NET.BuildTools.Cpp
 
             var projectName = projectNameSplit[0];
 
-            if(projectName != "Core" && coreProfile == null) 
-            {
-                throw new InvalidOperationException("The core profile/source file must come first!");
-            }
-
             var nativeApiSetName = destInfo.Substring(indexOfCloseSqBracket + 1);
             if (projectName != "Core" && projectNameSplit.Length <= 1)
             {
-                throw new InvalidOperationException("The core class name must be provided for extension projects. Example: \"[ProjectName:CoreClassName]ExtensionClassName\"")
+                throw new InvalidOperationException("The core class name must be provided for extension projects. Example: \"[ProjectName:CoreClassName]ExtensionClassName\"");
             }
             
             var className = projectNameSplit.Length > 1

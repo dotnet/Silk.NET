@@ -217,18 +217,9 @@ namespace Silk.NET.BuildTools
                         }
                     }
                     ClangConfig.SubstituteWindowsSdkPath(ref task);
-                    Profile coreProfile = null;
                     foreach (var src in task.Sources)
                     {
-                        var createdProfile = Clang.GenerateProfile(Path.GetFileName(src), File.OpenRead(GetPath(src)), task, coreProfile);
-
-                        //If the created profile contains a root project with classes, then its likely the core profile
-                        if(createdProfile.Projects.Any(x => x.Value.IsRoot && x.Value.Classes?.Count != 0))
-                        {
-                            coreProfile ??= createdProfile;
-                        }
-
-                        profiles.Add(createdProfile);
+                        profiles.Add( Clang.GenerateProfile(Path.GetFileName(src), File.OpenRead(GetPath(src)), task));
                     }
                 }
 
