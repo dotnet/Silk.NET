@@ -392,8 +392,10 @@ namespace Silk.NET.BuildTools.Bind
                         {
                             var coreProject = profile.Projects["Core"];
 
-                            if(coreProject.Classes.Any(x => x.NativeApis.Any(x => x.Value.Functions.Any(x => x.NativeName == overload.Signature.NativeName))))
+                            if (coreProject.Classes.Any(x => x.NativeApis.Any(x => x.Value.Functions.Any(x => x.NativeName == overload.Signature.NativeName))))
+                            {
                                 continue;
+                            }
 
                             var sw2u = overload.Signature.Kind == SignatureKind.PotentiallyConflictingOverload
                                 ? swOverloads ??= CreateOverloadsFile(folder, name, true)
