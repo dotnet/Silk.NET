@@ -852,6 +852,11 @@ namespace Silk.NET.BuildTools.Cpp
                 }
                 else if (type is PointerType pointerType)
                 {
+                    if (pointerType.Handle.IsConstQualified || (pointerType.PointeeType.Handle.IsConstQualified && !pointerType.PointeeType.IsPointerType))
+                    {
+                        flow = FlowDirection.In;
+                    }
+
                     ret = GetType(pointerType.PointeeType, out _, ref flow, out _);
                     ret.IndirectionLevels++;
                 }

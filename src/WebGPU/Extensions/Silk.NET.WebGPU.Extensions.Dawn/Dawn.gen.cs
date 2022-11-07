@@ -23,22 +23,22 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1601, Column 24 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuAdapterCreateDevice")]
-        public unsafe partial Device* AdapterCreateDevice(Adapter* adapter, DeviceDescriptor* descriptor);
+        public unsafe partial Device* AdapterCreateDevice(Adapter* adapter, [Flow(FlowDirection.In)] DeviceDescriptor* descriptor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1601, Column 24 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuAdapterCreateDevice")]
-        public unsafe partial Device* AdapterCreateDevice(Adapter* adapter, ref DeviceDescriptor descriptor);
+        public unsafe partial Device* AdapterCreateDevice(Adapter* adapter, [Flow(FlowDirection.In)] in DeviceDescriptor descriptor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1601, Column 24 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuAdapterCreateDevice")]
-        public unsafe partial Device* AdapterCreateDevice(ref Adapter adapter, DeviceDescriptor* descriptor);
+        public unsafe partial Device* AdapterCreateDevice(ref Adapter adapter, [Flow(FlowDirection.In)] DeviceDescriptor* descriptor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1601, Column 24 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuAdapterCreateDevice")]
-        public unsafe partial Device* AdapterCreateDevice(ref Adapter adapter, ref DeviceDescriptor descriptor);
+        public unsafe partial Device* AdapterCreateDevice(ref Adapter adapter, [Flow(FlowDirection.In)] in DeviceDescriptor descriptor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1607, Column 18 in dawn-webgpu.h")]
@@ -143,172 +143,172 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1645, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuCommandEncoderCopyTextureToTextureInternal")]
-        public unsafe partial void CommandEncoderCopyTextureToTextureInternal(CommandEncoder* commandEncoder, ImageCopyTexture* source, ImageCopyTexture* destination, Extent3D* copySize);
+        public unsafe partial void CommandEncoderCopyTextureToTextureInternal(CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] Extent3D* copySize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1645, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuCommandEncoderCopyTextureToTextureInternal")]
-        public unsafe partial void CommandEncoderCopyTextureToTextureInternal(CommandEncoder* commandEncoder, ImageCopyTexture* source, ImageCopyTexture* destination, ref Extent3D copySize);
+        public unsafe partial void CommandEncoderCopyTextureToTextureInternal(CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] in Extent3D copySize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1645, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuCommandEncoderCopyTextureToTextureInternal")]
-        public unsafe partial void CommandEncoderCopyTextureToTextureInternal(CommandEncoder* commandEncoder, ImageCopyTexture* source, ref ImageCopyTexture destination, Extent3D* copySize);
+        public unsafe partial void CommandEncoderCopyTextureToTextureInternal(CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] Extent3D* copySize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1645, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuCommandEncoderCopyTextureToTextureInternal")]
-        public unsafe partial void CommandEncoderCopyTextureToTextureInternal(CommandEncoder* commandEncoder, ImageCopyTexture* source, ref ImageCopyTexture destination, ref Extent3D copySize);
+        public unsafe partial void CommandEncoderCopyTextureToTextureInternal(CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] in Extent3D copySize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1645, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuCommandEncoderCopyTextureToTextureInternal")]
-        public unsafe partial void CommandEncoderCopyTextureToTextureInternal(CommandEncoder* commandEncoder, ref ImageCopyTexture source, ImageCopyTexture* destination, Extent3D* copySize);
+        public unsafe partial void CommandEncoderCopyTextureToTextureInternal(CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] in ImageCopyTexture source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] Extent3D* copySize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1645, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuCommandEncoderCopyTextureToTextureInternal")]
-        public unsafe partial void CommandEncoderCopyTextureToTextureInternal(CommandEncoder* commandEncoder, ref ImageCopyTexture source, ImageCopyTexture* destination, ref Extent3D copySize);
+        public unsafe partial void CommandEncoderCopyTextureToTextureInternal(CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] in ImageCopyTexture source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] in Extent3D copySize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1645, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuCommandEncoderCopyTextureToTextureInternal")]
-        public unsafe partial void CommandEncoderCopyTextureToTextureInternal(CommandEncoder* commandEncoder, ref ImageCopyTexture source, ref ImageCopyTexture destination, Extent3D* copySize);
+        public unsafe partial void CommandEncoderCopyTextureToTextureInternal(CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] in ImageCopyTexture source, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] Extent3D* copySize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1645, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuCommandEncoderCopyTextureToTextureInternal")]
-        public unsafe partial void CommandEncoderCopyTextureToTextureInternal(CommandEncoder* commandEncoder, ref ImageCopyTexture source, ref ImageCopyTexture destination, ref Extent3D copySize);
+        public unsafe partial void CommandEncoderCopyTextureToTextureInternal(CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] in ImageCopyTexture source, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] in Extent3D copySize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1645, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuCommandEncoderCopyTextureToTextureInternal")]
-        public unsafe partial void CommandEncoderCopyTextureToTextureInternal(ref CommandEncoder commandEncoder, ImageCopyTexture* source, ImageCopyTexture* destination, Extent3D* copySize);
+        public unsafe partial void CommandEncoderCopyTextureToTextureInternal(ref CommandEncoder commandEncoder, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] Extent3D* copySize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1645, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuCommandEncoderCopyTextureToTextureInternal")]
-        public unsafe partial void CommandEncoderCopyTextureToTextureInternal(ref CommandEncoder commandEncoder, ImageCopyTexture* source, ImageCopyTexture* destination, ref Extent3D copySize);
+        public unsafe partial void CommandEncoderCopyTextureToTextureInternal(ref CommandEncoder commandEncoder, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] in Extent3D copySize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1645, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuCommandEncoderCopyTextureToTextureInternal")]
-        public unsafe partial void CommandEncoderCopyTextureToTextureInternal(ref CommandEncoder commandEncoder, ImageCopyTexture* source, ref ImageCopyTexture destination, Extent3D* copySize);
+        public unsafe partial void CommandEncoderCopyTextureToTextureInternal(ref CommandEncoder commandEncoder, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] Extent3D* copySize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1645, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuCommandEncoderCopyTextureToTextureInternal")]
-        public unsafe partial void CommandEncoderCopyTextureToTextureInternal(ref CommandEncoder commandEncoder, ImageCopyTexture* source, ref ImageCopyTexture destination, ref Extent3D copySize);
+        public unsafe partial void CommandEncoderCopyTextureToTextureInternal(ref CommandEncoder commandEncoder, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] in Extent3D copySize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1645, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuCommandEncoderCopyTextureToTextureInternal")]
-        public unsafe partial void CommandEncoderCopyTextureToTextureInternal(ref CommandEncoder commandEncoder, ref ImageCopyTexture source, ImageCopyTexture* destination, Extent3D* copySize);
+        public unsafe partial void CommandEncoderCopyTextureToTextureInternal(ref CommandEncoder commandEncoder, [Flow(FlowDirection.In)] in ImageCopyTexture source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] Extent3D* copySize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1645, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuCommandEncoderCopyTextureToTextureInternal")]
-        public unsafe partial void CommandEncoderCopyTextureToTextureInternal(ref CommandEncoder commandEncoder, ref ImageCopyTexture source, ImageCopyTexture* destination, ref Extent3D copySize);
+        public unsafe partial void CommandEncoderCopyTextureToTextureInternal(ref CommandEncoder commandEncoder, [Flow(FlowDirection.In)] in ImageCopyTexture source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] in Extent3D copySize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1645, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuCommandEncoderCopyTextureToTextureInternal")]
-        public unsafe partial void CommandEncoderCopyTextureToTextureInternal(ref CommandEncoder commandEncoder, ref ImageCopyTexture source, ref ImageCopyTexture destination, Extent3D* copySize);
+        public unsafe partial void CommandEncoderCopyTextureToTextureInternal(ref CommandEncoder commandEncoder, [Flow(FlowDirection.In)] in ImageCopyTexture source, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] Extent3D* copySize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1645, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuCommandEncoderCopyTextureToTextureInternal")]
-        public partial void CommandEncoderCopyTextureToTextureInternal(ref CommandEncoder commandEncoder, ref ImageCopyTexture source, ref ImageCopyTexture destination, ref Extent3D copySize);
+        public partial void CommandEncoderCopyTextureToTextureInternal(ref CommandEncoder commandEncoder, [Flow(FlowDirection.In)] in ImageCopyTexture source, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] in Extent3D copySize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1647, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuCommandEncoderInjectValidationError")]
-        public unsafe partial void CommandEncoderInjectValidationError(CommandEncoder* commandEncoder, byte* message);
+        public unsafe partial void CommandEncoderInjectValidationError(CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] byte* message);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1647, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuCommandEncoderInjectValidationError")]
-        public unsafe partial void CommandEncoderInjectValidationError(CommandEncoder* commandEncoder, ref byte message);
+        public unsafe partial void CommandEncoderInjectValidationError(CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] in byte message);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1647, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuCommandEncoderInjectValidationError")]
-        public unsafe partial void CommandEncoderInjectValidationError(CommandEncoder* commandEncoder, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string message);
+        public unsafe partial void CommandEncoderInjectValidationError(CommandEncoder* commandEncoder, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string message);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1647, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuCommandEncoderInjectValidationError")]
-        public unsafe partial void CommandEncoderInjectValidationError(ref CommandEncoder commandEncoder, byte* message);
+        public unsafe partial void CommandEncoderInjectValidationError(ref CommandEncoder commandEncoder, [Flow(FlowDirection.In)] byte* message);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1647, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuCommandEncoderInjectValidationError")]
-        public partial void CommandEncoderInjectValidationError(ref CommandEncoder commandEncoder, ref byte message);
+        public partial void CommandEncoderInjectValidationError(ref CommandEncoder commandEncoder, [Flow(FlowDirection.In)] in byte message);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1647, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuCommandEncoderInjectValidationError")]
-        public partial void CommandEncoderInjectValidationError(ref CommandEncoder commandEncoder, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string message);
+        public partial void CommandEncoderInjectValidationError(ref CommandEncoder commandEncoder, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string message);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1653, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuCommandEncoderWriteBuffer")]
-        public unsafe partial void CommandEncoderWriteBuffer(CommandEncoder* commandEncoder, Buffer* buffer, ulong bufferOffset, byte* data, ulong size);
+        public unsafe partial void CommandEncoderWriteBuffer(CommandEncoder* commandEncoder, Buffer* buffer, ulong bufferOffset, [Flow(FlowDirection.In)] byte* data, ulong size);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1653, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuCommandEncoderWriteBuffer")]
-        public unsafe partial void CommandEncoderWriteBuffer(CommandEncoder* commandEncoder, Buffer* buffer, ulong bufferOffset, ref byte data, ulong size);
+        public unsafe partial void CommandEncoderWriteBuffer(CommandEncoder* commandEncoder, Buffer* buffer, ulong bufferOffset, [Flow(FlowDirection.In)] in byte data, ulong size);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1653, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuCommandEncoderWriteBuffer")]
-        public unsafe partial void CommandEncoderWriteBuffer(CommandEncoder* commandEncoder, Buffer* buffer, ulong bufferOffset, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, ulong size);
+        public unsafe partial void CommandEncoderWriteBuffer(CommandEncoder* commandEncoder, Buffer* buffer, ulong bufferOffset, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, ulong size);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1653, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuCommandEncoderWriteBuffer")]
-        public unsafe partial void CommandEncoderWriteBuffer(CommandEncoder* commandEncoder, ref Buffer buffer, ulong bufferOffset, byte* data, ulong size);
+        public unsafe partial void CommandEncoderWriteBuffer(CommandEncoder* commandEncoder, ref Buffer buffer, ulong bufferOffset, [Flow(FlowDirection.In)] byte* data, ulong size);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1653, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuCommandEncoderWriteBuffer")]
-        public unsafe partial void CommandEncoderWriteBuffer(CommandEncoder* commandEncoder, ref Buffer buffer, ulong bufferOffset, ref byte data, ulong size);
+        public unsafe partial void CommandEncoderWriteBuffer(CommandEncoder* commandEncoder, ref Buffer buffer, ulong bufferOffset, [Flow(FlowDirection.In)] in byte data, ulong size);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1653, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuCommandEncoderWriteBuffer")]
-        public unsafe partial void CommandEncoderWriteBuffer(CommandEncoder* commandEncoder, ref Buffer buffer, ulong bufferOffset, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, ulong size);
+        public unsafe partial void CommandEncoderWriteBuffer(CommandEncoder* commandEncoder, ref Buffer buffer, ulong bufferOffset, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, ulong size);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1653, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuCommandEncoderWriteBuffer")]
-        public unsafe partial void CommandEncoderWriteBuffer(ref CommandEncoder commandEncoder, Buffer* buffer, ulong bufferOffset, byte* data, ulong size);
+        public unsafe partial void CommandEncoderWriteBuffer(ref CommandEncoder commandEncoder, Buffer* buffer, ulong bufferOffset, [Flow(FlowDirection.In)] byte* data, ulong size);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1653, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuCommandEncoderWriteBuffer")]
-        public unsafe partial void CommandEncoderWriteBuffer(ref CommandEncoder commandEncoder, Buffer* buffer, ulong bufferOffset, ref byte data, ulong size);
+        public unsafe partial void CommandEncoderWriteBuffer(ref CommandEncoder commandEncoder, Buffer* buffer, ulong bufferOffset, [Flow(FlowDirection.In)] in byte data, ulong size);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1653, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuCommandEncoderWriteBuffer")]
-        public unsafe partial void CommandEncoderWriteBuffer(ref CommandEncoder commandEncoder, Buffer* buffer, ulong bufferOffset, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, ulong size);
+        public unsafe partial void CommandEncoderWriteBuffer(ref CommandEncoder commandEncoder, Buffer* buffer, ulong bufferOffset, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, ulong size);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1653, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuCommandEncoderWriteBuffer")]
-        public unsafe partial void CommandEncoderWriteBuffer(ref CommandEncoder commandEncoder, ref Buffer buffer, ulong bufferOffset, byte* data, ulong size);
+        public unsafe partial void CommandEncoderWriteBuffer(ref CommandEncoder commandEncoder, ref Buffer buffer, ulong bufferOffset, [Flow(FlowDirection.In)] byte* data, ulong size);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1653, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuCommandEncoderWriteBuffer")]
-        public partial void CommandEncoderWriteBuffer(ref CommandEncoder commandEncoder, ref Buffer buffer, ulong bufferOffset, ref byte data, ulong size);
+        public partial void CommandEncoderWriteBuffer(ref CommandEncoder commandEncoder, ref Buffer buffer, ulong bufferOffset, [Flow(FlowDirection.In)] in byte data, ulong size);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1653, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuCommandEncoderWriteBuffer")]
-        public partial void CommandEncoderWriteBuffer(ref CommandEncoder commandEncoder, ref Buffer buffer, ulong bufferOffset, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, ulong size);
+        public partial void CommandEncoderWriteBuffer(ref CommandEncoder commandEncoder, ref Buffer buffer, ulong bufferOffset, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, ulong size);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1655, Column 18 in dawn-webgpu.h")]
@@ -453,72 +453,72 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1690, Column 25 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceCreateErrorTexture")]
-        public unsafe partial Texture* DeviceCreateErrorTexture(Device* device, TextureDescriptor* descriptor);
+        public unsafe partial Texture* DeviceCreateErrorTexture(Device* device, [Flow(FlowDirection.In)] TextureDescriptor* descriptor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1690, Column 25 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceCreateErrorTexture")]
-        public unsafe partial Texture* DeviceCreateErrorTexture(Device* device, ref TextureDescriptor descriptor);
+        public unsafe partial Texture* DeviceCreateErrorTexture(Device* device, [Flow(FlowDirection.In)] in TextureDescriptor descriptor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1690, Column 25 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceCreateErrorTexture")]
-        public unsafe partial Texture* DeviceCreateErrorTexture(ref Device device, TextureDescriptor* descriptor);
+        public unsafe partial Texture* DeviceCreateErrorTexture(ref Device device, [Flow(FlowDirection.In)] TextureDescriptor* descriptor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1690, Column 25 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceCreateErrorTexture")]
-        public unsafe partial Texture* DeviceCreateErrorTexture(ref Device device, ref TextureDescriptor descriptor);
+        public unsafe partial Texture* DeviceCreateErrorTexture(ref Device device, [Flow(FlowDirection.In)] in TextureDescriptor descriptor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1691, Column 33 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceCreateExternalTexture")]
-        public unsafe partial ExternalTextureImpl* DeviceCreateExternalTexture(Device* device, ExternalTextureDescriptor* externalTextureDescriptor);
+        public unsafe partial ExternalTextureImpl* DeviceCreateExternalTexture(Device* device, [Flow(FlowDirection.In)] ExternalTextureDescriptor* externalTextureDescriptor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1691, Column 33 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceCreateExternalTexture")]
-        public unsafe partial ExternalTextureImpl* DeviceCreateExternalTexture(Device* device, ref ExternalTextureDescriptor externalTextureDescriptor);
+        public unsafe partial ExternalTextureImpl* DeviceCreateExternalTexture(Device* device, [Flow(FlowDirection.In)] in ExternalTextureDescriptor externalTextureDescriptor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1691, Column 33 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceCreateExternalTexture")]
-        public unsafe partial ExternalTextureImpl* DeviceCreateExternalTexture(ref Device device, ExternalTextureDescriptor* externalTextureDescriptor);
+        public unsafe partial ExternalTextureImpl* DeviceCreateExternalTexture(ref Device device, [Flow(FlowDirection.In)] ExternalTextureDescriptor* externalTextureDescriptor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1691, Column 33 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceCreateExternalTexture")]
-        public unsafe partial ExternalTextureImpl* DeviceCreateExternalTexture(ref Device device, ref ExternalTextureDescriptor externalTextureDescriptor);
+        public unsafe partial ExternalTextureImpl* DeviceCreateExternalTexture(ref Device device, [Flow(FlowDirection.In)] in ExternalTextureDescriptor externalTextureDescriptor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1703, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceForceLoss")]
-        public unsafe partial void DeviceForceLoss(Device* device, DeviceLostReason type, byte* message);
+        public unsafe partial void DeviceForceLoss(Device* device, DeviceLostReason type, [Flow(FlowDirection.In)] byte* message);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1703, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceForceLoss")]
-        public unsafe partial void DeviceForceLoss(Device* device, DeviceLostReason type, ref byte message);
+        public unsafe partial void DeviceForceLoss(Device* device, DeviceLostReason type, [Flow(FlowDirection.In)] in byte message);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1703, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceForceLoss")]
-        public unsafe partial void DeviceForceLoss(Device* device, DeviceLostReason type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string message);
+        public unsafe partial void DeviceForceLoss(Device* device, DeviceLostReason type, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string message);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1703, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceForceLoss")]
-        public unsafe partial void DeviceForceLoss(ref Device device, DeviceLostReason type, byte* message);
+        public unsafe partial void DeviceForceLoss(ref Device device, DeviceLostReason type, [Flow(FlowDirection.In)] byte* message);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1703, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceForceLoss")]
-        public partial void DeviceForceLoss(ref Device device, DeviceLostReason type, ref byte message);
+        public partial void DeviceForceLoss(ref Device device, DeviceLostReason type, [Flow(FlowDirection.In)] in byte message);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1703, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceForceLoss")]
-        public partial void DeviceForceLoss(ref Device device, DeviceLostReason type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string message);
+        public partial void DeviceForceLoss(ref Device device, DeviceLostReason type, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string message);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1704, Column 25 in dawn-webgpu.h")]
@@ -533,32 +533,32 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1708, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceInjectError")]
-        public unsafe partial void DeviceInjectError(Device* device, ErrorType type, byte* message);
+        public unsafe partial void DeviceInjectError(Device* device, ErrorType type, [Flow(FlowDirection.In)] byte* message);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1708, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceInjectError")]
-        public unsafe partial void DeviceInjectError(Device* device, ErrorType type, ref byte message);
+        public unsafe partial void DeviceInjectError(Device* device, ErrorType type, [Flow(FlowDirection.In)] in byte message);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1708, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceInjectError")]
-        public unsafe partial void DeviceInjectError(Device* device, ErrorType type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string message);
+        public unsafe partial void DeviceInjectError(Device* device, ErrorType type, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string message);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1708, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceInjectError")]
-        public unsafe partial void DeviceInjectError(ref Device device, ErrorType type, byte* message);
+        public unsafe partial void DeviceInjectError(ref Device device, ErrorType type, [Flow(FlowDirection.In)] byte* message);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1708, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceInjectError")]
-        public partial void DeviceInjectError(ref Device device, ErrorType type, ref byte message);
+        public partial void DeviceInjectError(ref Device device, ErrorType type, [Flow(FlowDirection.In)] in byte message);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1708, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceInjectError")]
-        public partial void DeviceInjectError(ref Device device, ErrorType type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string message);
+        public partial void DeviceInjectError(ref Device device, ErrorType type, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string message);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1713, Column 18 in dawn-webgpu.h")]
@@ -623,32 +623,32 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1721, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuExternalTextureSetLabel")]
-        public unsafe partial void ExternalTextureSetLabel(ExternalTextureImpl* externalTexture, byte* label);
+        public unsafe partial void ExternalTextureSetLabel(ExternalTextureImpl* externalTexture, [Flow(FlowDirection.In)] byte* label);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1721, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuExternalTextureSetLabel")]
-        public unsafe partial void ExternalTextureSetLabel(ExternalTextureImpl* externalTexture, ref byte label);
+        public unsafe partial void ExternalTextureSetLabel(ExternalTextureImpl* externalTexture, [Flow(FlowDirection.In)] in byte label);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1721, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuExternalTextureSetLabel")]
-        public unsafe partial void ExternalTextureSetLabel(ExternalTextureImpl* externalTexture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string label);
+        public unsafe partial void ExternalTextureSetLabel(ExternalTextureImpl* externalTexture, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string label);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1721, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuExternalTextureSetLabel")]
-        public unsafe partial void ExternalTextureSetLabel(ref ExternalTextureImpl externalTexture, byte* label);
+        public unsafe partial void ExternalTextureSetLabel(ref ExternalTextureImpl externalTexture, [Flow(FlowDirection.In)] byte* label);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1721, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuExternalTextureSetLabel")]
-        public partial void ExternalTextureSetLabel(ref ExternalTextureImpl externalTexture, ref byte label);
+        public partial void ExternalTextureSetLabel(ref ExternalTextureImpl externalTexture, [Flow(FlowDirection.In)] in byte label);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1721, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuExternalTextureSetLabel")]
-        public partial void ExternalTextureSetLabel(ref ExternalTextureImpl externalTexture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string label);
+        public partial void ExternalTextureSetLabel(ref ExternalTextureImpl externalTexture, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string label);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1722, Column 18 in dawn-webgpu.h")]
@@ -733,322 +733,322 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, ImageCopyExternalTexture* source, ImageCopyTexture* destination, Extent3D* copySize, CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, ImageCopyExternalTexture* source, ImageCopyTexture* destination, Extent3D* copySize, ref CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] in CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, ImageCopyExternalTexture* source, ImageCopyTexture* destination, ref Extent3D copySize, CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] in Extent3D copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, ImageCopyExternalTexture* source, ImageCopyTexture* destination, ref Extent3D copySize, ref CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] in Extent3D copySize, [Flow(FlowDirection.In)] in CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, ImageCopyExternalTexture* source, ref ImageCopyTexture destination, Extent3D* copySize, CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, ImageCopyExternalTexture* source, ref ImageCopyTexture destination, Extent3D* copySize, ref CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] in CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, ImageCopyExternalTexture* source, ref ImageCopyTexture destination, ref Extent3D copySize, CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] in Extent3D copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, ImageCopyExternalTexture* source, ref ImageCopyTexture destination, ref Extent3D copySize, ref CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] in Extent3D copySize, [Flow(FlowDirection.In)] in CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, ref ImageCopyExternalTexture source, ImageCopyTexture* destination, Extent3D* copySize, CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(FlowDirection.In)] in ImageCopyExternalTexture source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, ref ImageCopyExternalTexture source, ImageCopyTexture* destination, Extent3D* copySize, ref CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(FlowDirection.In)] in ImageCopyExternalTexture source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] in CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, ref ImageCopyExternalTexture source, ImageCopyTexture* destination, ref Extent3D copySize, CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(FlowDirection.In)] in ImageCopyExternalTexture source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] in Extent3D copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, ref ImageCopyExternalTexture source, ImageCopyTexture* destination, ref Extent3D copySize, ref CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(FlowDirection.In)] in ImageCopyExternalTexture source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] in Extent3D copySize, [Flow(FlowDirection.In)] in CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, ref ImageCopyExternalTexture source, ref ImageCopyTexture destination, Extent3D* copySize, CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(FlowDirection.In)] in ImageCopyExternalTexture source, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, ref ImageCopyExternalTexture source, ref ImageCopyTexture destination, Extent3D* copySize, ref CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(FlowDirection.In)] in ImageCopyExternalTexture source, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] in CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, ref ImageCopyExternalTexture source, ref ImageCopyTexture destination, ref Extent3D copySize, CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(FlowDirection.In)] in ImageCopyExternalTexture source, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] in Extent3D copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, ref ImageCopyExternalTexture source, ref ImageCopyTexture destination, ref Extent3D copySize, ref CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(FlowDirection.In)] in ImageCopyExternalTexture source, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] in Extent3D copySize, [Flow(FlowDirection.In)] in CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(ref Queue queue, ImageCopyExternalTexture* source, ImageCopyTexture* destination, Extent3D* copySize, CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(ref Queue queue, [Flow(FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(ref Queue queue, ImageCopyExternalTexture* source, ImageCopyTexture* destination, Extent3D* copySize, ref CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(ref Queue queue, [Flow(FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] in CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(ref Queue queue, ImageCopyExternalTexture* source, ImageCopyTexture* destination, ref Extent3D copySize, CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(ref Queue queue, [Flow(FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] in Extent3D copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(ref Queue queue, ImageCopyExternalTexture* source, ImageCopyTexture* destination, ref Extent3D copySize, ref CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(ref Queue queue, [Flow(FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] in Extent3D copySize, [Flow(FlowDirection.In)] in CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(ref Queue queue, ImageCopyExternalTexture* source, ref ImageCopyTexture destination, Extent3D* copySize, CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(ref Queue queue, [Flow(FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(ref Queue queue, ImageCopyExternalTexture* source, ref ImageCopyTexture destination, Extent3D* copySize, ref CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(ref Queue queue, [Flow(FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] in CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(ref Queue queue, ImageCopyExternalTexture* source, ref ImageCopyTexture destination, ref Extent3D copySize, CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(ref Queue queue, [Flow(FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] in Extent3D copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(ref Queue queue, ImageCopyExternalTexture* source, ref ImageCopyTexture destination, ref Extent3D copySize, ref CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(ref Queue queue, [Flow(FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] in Extent3D copySize, [Flow(FlowDirection.In)] in CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(ref Queue queue, ref ImageCopyExternalTexture source, ImageCopyTexture* destination, Extent3D* copySize, CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(ref Queue queue, [Flow(FlowDirection.In)] in ImageCopyExternalTexture source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(ref Queue queue, ref ImageCopyExternalTexture source, ImageCopyTexture* destination, Extent3D* copySize, ref CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(ref Queue queue, [Flow(FlowDirection.In)] in ImageCopyExternalTexture source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] in CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(ref Queue queue, ref ImageCopyExternalTexture source, ImageCopyTexture* destination, ref Extent3D copySize, CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(ref Queue queue, [Flow(FlowDirection.In)] in ImageCopyExternalTexture source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] in Extent3D copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(ref Queue queue, ref ImageCopyExternalTexture source, ImageCopyTexture* destination, ref Extent3D copySize, ref CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(ref Queue queue, [Flow(FlowDirection.In)] in ImageCopyExternalTexture source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] in Extent3D copySize, [Flow(FlowDirection.In)] in CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(ref Queue queue, ref ImageCopyExternalTexture source, ref ImageCopyTexture destination, Extent3D* copySize, CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(ref Queue queue, [Flow(FlowDirection.In)] in ImageCopyExternalTexture source, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(ref Queue queue, ref ImageCopyExternalTexture source, ref ImageCopyTexture destination, Extent3D* copySize, ref CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(ref Queue queue, [Flow(FlowDirection.In)] in ImageCopyExternalTexture source, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] in CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(ref Queue queue, ref ImageCopyExternalTexture source, ref ImageCopyTexture destination, ref Extent3D copySize, CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(ref Queue queue, [Flow(FlowDirection.In)] in ImageCopyExternalTexture source, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] in Extent3D copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public partial void QueueCopyExternalTextureForBrowser(ref Queue queue, ref ImageCopyExternalTexture source, ref ImageCopyTexture destination, ref Extent3D copySize, ref CopyTextureForBrowserOptions options);
+        public partial void QueueCopyExternalTextureForBrowser(ref Queue queue, [Flow(FlowDirection.In)] in ImageCopyExternalTexture source, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] in Extent3D copySize, [Flow(FlowDirection.In)] in CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, ImageCopyTexture* source, ImageCopyTexture* destination, Extent3D* copySize, CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, ImageCopyTexture* source, ImageCopyTexture* destination, Extent3D* copySize, ref CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] in CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, ImageCopyTexture* source, ImageCopyTexture* destination, ref Extent3D copySize, CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] in Extent3D copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, ImageCopyTexture* source, ImageCopyTexture* destination, ref Extent3D copySize, ref CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] in Extent3D copySize, [Flow(FlowDirection.In)] in CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, ImageCopyTexture* source, ref ImageCopyTexture destination, Extent3D* copySize, CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, ImageCopyTexture* source, ref ImageCopyTexture destination, Extent3D* copySize, ref CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] in CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, ImageCopyTexture* source, ref ImageCopyTexture destination, ref Extent3D copySize, CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] in Extent3D copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, ImageCopyTexture* source, ref ImageCopyTexture destination, ref Extent3D copySize, ref CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] in Extent3D copySize, [Flow(FlowDirection.In)] in CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, ref ImageCopyTexture source, ImageCopyTexture* destination, Extent3D* copySize, CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(FlowDirection.In)] in ImageCopyTexture source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, ref ImageCopyTexture source, ImageCopyTexture* destination, Extent3D* copySize, ref CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(FlowDirection.In)] in ImageCopyTexture source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] in CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, ref ImageCopyTexture source, ImageCopyTexture* destination, ref Extent3D copySize, CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(FlowDirection.In)] in ImageCopyTexture source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] in Extent3D copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, ref ImageCopyTexture source, ImageCopyTexture* destination, ref Extent3D copySize, ref CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(FlowDirection.In)] in ImageCopyTexture source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] in Extent3D copySize, [Flow(FlowDirection.In)] in CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, ref ImageCopyTexture source, ref ImageCopyTexture destination, Extent3D* copySize, CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(FlowDirection.In)] in ImageCopyTexture source, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, ref ImageCopyTexture source, ref ImageCopyTexture destination, Extent3D* copySize, ref CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(FlowDirection.In)] in ImageCopyTexture source, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] in CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, ref ImageCopyTexture source, ref ImageCopyTexture destination, ref Extent3D copySize, CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(FlowDirection.In)] in ImageCopyTexture source, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] in Extent3D copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, ref ImageCopyTexture source, ref ImageCopyTexture destination, ref Extent3D copySize, ref CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(FlowDirection.In)] in ImageCopyTexture source, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] in Extent3D copySize, [Flow(FlowDirection.In)] in CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(ref Queue queue, ImageCopyTexture* source, ImageCopyTexture* destination, Extent3D* copySize, CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyTextureForBrowser(ref Queue queue, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(ref Queue queue, ImageCopyTexture* source, ImageCopyTexture* destination, Extent3D* copySize, ref CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyTextureForBrowser(ref Queue queue, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] in CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(ref Queue queue, ImageCopyTexture* source, ImageCopyTexture* destination, ref Extent3D copySize, CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyTextureForBrowser(ref Queue queue, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] in Extent3D copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(ref Queue queue, ImageCopyTexture* source, ImageCopyTexture* destination, ref Extent3D copySize, ref CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyTextureForBrowser(ref Queue queue, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] in Extent3D copySize, [Flow(FlowDirection.In)] in CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(ref Queue queue, ImageCopyTexture* source, ref ImageCopyTexture destination, Extent3D* copySize, CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyTextureForBrowser(ref Queue queue, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(ref Queue queue, ImageCopyTexture* source, ref ImageCopyTexture destination, Extent3D* copySize, ref CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyTextureForBrowser(ref Queue queue, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] in CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(ref Queue queue, ImageCopyTexture* source, ref ImageCopyTexture destination, ref Extent3D copySize, CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyTextureForBrowser(ref Queue queue, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] in Extent3D copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(ref Queue queue, ImageCopyTexture* source, ref ImageCopyTexture destination, ref Extent3D copySize, ref CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyTextureForBrowser(ref Queue queue, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] in Extent3D copySize, [Flow(FlowDirection.In)] in CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(ref Queue queue, ref ImageCopyTexture source, ImageCopyTexture* destination, Extent3D* copySize, CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyTextureForBrowser(ref Queue queue, [Flow(FlowDirection.In)] in ImageCopyTexture source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(ref Queue queue, ref ImageCopyTexture source, ImageCopyTexture* destination, Extent3D* copySize, ref CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyTextureForBrowser(ref Queue queue, [Flow(FlowDirection.In)] in ImageCopyTexture source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] in CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(ref Queue queue, ref ImageCopyTexture source, ImageCopyTexture* destination, ref Extent3D copySize, CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyTextureForBrowser(ref Queue queue, [Flow(FlowDirection.In)] in ImageCopyTexture source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] in Extent3D copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(ref Queue queue, ref ImageCopyTexture source, ImageCopyTexture* destination, ref Extent3D copySize, ref CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyTextureForBrowser(ref Queue queue, [Flow(FlowDirection.In)] in ImageCopyTexture source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] in Extent3D copySize, [Flow(FlowDirection.In)] in CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(ref Queue queue, ref ImageCopyTexture source, ref ImageCopyTexture destination, Extent3D* copySize, CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyTextureForBrowser(ref Queue queue, [Flow(FlowDirection.In)] in ImageCopyTexture source, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(ref Queue queue, ref ImageCopyTexture source, ref ImageCopyTexture destination, Extent3D* copySize, ref CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyTextureForBrowser(ref Queue queue, [Flow(FlowDirection.In)] in ImageCopyTexture source, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] in CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(ref Queue queue, ref ImageCopyTexture source, ref ImageCopyTexture destination, ref Extent3D copySize, CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyTextureForBrowser(ref Queue queue, [Flow(FlowDirection.In)] in ImageCopyTexture source, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] in Extent3D copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public partial void QueueCopyTextureForBrowser(ref Queue queue, ref ImageCopyTexture source, ref ImageCopyTexture destination, ref Extent3D copySize, ref CopyTextureForBrowserOptions options);
+        public partial void QueueCopyTextureForBrowser(ref Queue queue, [Flow(FlowDirection.In)] in ImageCopyTexture source, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] in Extent3D copySize, [Flow(FlowDirection.In)] in CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1752, Column 18 in dawn-webgpu.h")]

@@ -18,15 +18,15 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
     {
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1601, Column 24 in dawn-webgpu.h")]
-        public static unsafe Device* AdapterCreateDevice(this Dawn thisApi, Adapter* adapter, Span<DeviceDescriptor> descriptor)
+        public static unsafe Device* AdapterCreateDevice(this Dawn thisApi, Adapter* adapter, [Flow(FlowDirection.In)] ReadOnlySpan<DeviceDescriptor> descriptor)
         {
             // SpanOverloader
-            return thisApi.AdapterCreateDevice(adapter, ref descriptor.GetPinnableReference());
+            return thisApi.AdapterCreateDevice(adapter, in descriptor.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1601, Column 24 in dawn-webgpu.h")]
-        public static unsafe Device* AdapterCreateDevice(this Dawn thisApi, Span<Adapter> adapter, DeviceDescriptor* descriptor)
+        public static unsafe Device* AdapterCreateDevice(this Dawn thisApi, Span<Adapter> adapter, [Flow(FlowDirection.In)] DeviceDescriptor* descriptor)
         {
             // SpanOverloader
             return thisApi.AdapterCreateDevice(ref adapter.GetPinnableReference(), descriptor);
@@ -34,10 +34,10 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1601, Column 24 in dawn-webgpu.h")]
-        public static unsafe Device* AdapterCreateDevice(this Dawn thisApi, Span<Adapter> adapter, Span<DeviceDescriptor> descriptor)
+        public static unsafe Device* AdapterCreateDevice(this Dawn thisApi, Span<Adapter> adapter, [Flow(FlowDirection.In)] ReadOnlySpan<DeviceDescriptor> descriptor)
         {
             // SpanOverloader
-            return thisApi.AdapterCreateDevice(ref adapter.GetPinnableReference(), ref descriptor.GetPinnableReference());
+            return thisApi.AdapterCreateDevice(ref adapter.GetPinnableReference(), in descriptor.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -122,63 +122,63 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1645, Column 18 in dawn-webgpu.h")]
-        public static unsafe void CommandEncoderCopyTextureToTextureInternal(this Dawn thisApi, CommandEncoder* commandEncoder, ImageCopyTexture* source, ImageCopyTexture* destination, Span<Extent3D> copySize)
+        public static unsafe void CommandEncoderCopyTextureToTextureInternal(this Dawn thisApi, CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize)
         {
             // SpanOverloader
-            thisApi.CommandEncoderCopyTextureToTextureInternal(commandEncoder, source, destination, ref copySize.GetPinnableReference());
+            thisApi.CommandEncoderCopyTextureToTextureInternal(commandEncoder, source, destination, in copySize.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1645, Column 18 in dawn-webgpu.h")]
-        public static unsafe void CommandEncoderCopyTextureToTextureInternal(this Dawn thisApi, CommandEncoder* commandEncoder, ImageCopyTexture* source, Span<ImageCopyTexture> destination, Extent3D* copySize)
+        public static unsafe void CommandEncoderCopyTextureToTextureInternal(this Dawn thisApi, CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] Extent3D* copySize)
         {
             // SpanOverloader
-            thisApi.CommandEncoderCopyTextureToTextureInternal(commandEncoder, source, ref destination.GetPinnableReference(), copySize);
+            thisApi.CommandEncoderCopyTextureToTextureInternal(commandEncoder, source, in destination.GetPinnableReference(), copySize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1645, Column 18 in dawn-webgpu.h")]
-        public static unsafe void CommandEncoderCopyTextureToTextureInternal(this Dawn thisApi, CommandEncoder* commandEncoder, ImageCopyTexture* source, Span<ImageCopyTexture> destination, Span<Extent3D> copySize)
+        public static unsafe void CommandEncoderCopyTextureToTextureInternal(this Dawn thisApi, CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize)
         {
             // SpanOverloader
-            thisApi.CommandEncoderCopyTextureToTextureInternal(commandEncoder, source, ref destination.GetPinnableReference(), ref copySize.GetPinnableReference());
+            thisApi.CommandEncoderCopyTextureToTextureInternal(commandEncoder, source, in destination.GetPinnableReference(), in copySize.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1645, Column 18 in dawn-webgpu.h")]
-        public static unsafe void CommandEncoderCopyTextureToTextureInternal(this Dawn thisApi, CommandEncoder* commandEncoder, Span<ImageCopyTexture> source, ImageCopyTexture* destination, Extent3D* copySize)
+        public static unsafe void CommandEncoderCopyTextureToTextureInternal(this Dawn thisApi, CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] Extent3D* copySize)
         {
             // SpanOverloader
-            thisApi.CommandEncoderCopyTextureToTextureInternal(commandEncoder, ref source.GetPinnableReference(), destination, copySize);
+            thisApi.CommandEncoderCopyTextureToTextureInternal(commandEncoder, in source.GetPinnableReference(), destination, copySize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1645, Column 18 in dawn-webgpu.h")]
-        public static unsafe void CommandEncoderCopyTextureToTextureInternal(this Dawn thisApi, CommandEncoder* commandEncoder, Span<ImageCopyTexture> source, ImageCopyTexture* destination, Span<Extent3D> copySize)
+        public static unsafe void CommandEncoderCopyTextureToTextureInternal(this Dawn thisApi, CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize)
         {
             // SpanOverloader
-            thisApi.CommandEncoderCopyTextureToTextureInternal(commandEncoder, ref source.GetPinnableReference(), destination, ref copySize.GetPinnableReference());
+            thisApi.CommandEncoderCopyTextureToTextureInternal(commandEncoder, in source.GetPinnableReference(), destination, in copySize.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1645, Column 18 in dawn-webgpu.h")]
-        public static unsafe void CommandEncoderCopyTextureToTextureInternal(this Dawn thisApi, CommandEncoder* commandEncoder, Span<ImageCopyTexture> source, Span<ImageCopyTexture> destination, Extent3D* copySize)
+        public static unsafe void CommandEncoderCopyTextureToTextureInternal(this Dawn thisApi, CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] Extent3D* copySize)
         {
             // SpanOverloader
-            thisApi.CommandEncoderCopyTextureToTextureInternal(commandEncoder, ref source.GetPinnableReference(), ref destination.GetPinnableReference(), copySize);
+            thisApi.CommandEncoderCopyTextureToTextureInternal(commandEncoder, in source.GetPinnableReference(), in destination.GetPinnableReference(), copySize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1645, Column 18 in dawn-webgpu.h")]
-        public static unsafe void CommandEncoderCopyTextureToTextureInternal(this Dawn thisApi, CommandEncoder* commandEncoder, Span<ImageCopyTexture> source, Span<ImageCopyTexture> destination, Span<Extent3D> copySize)
+        public static unsafe void CommandEncoderCopyTextureToTextureInternal(this Dawn thisApi, CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize)
         {
             // SpanOverloader
-            thisApi.CommandEncoderCopyTextureToTextureInternal(commandEncoder, ref source.GetPinnableReference(), ref destination.GetPinnableReference(), ref copySize.GetPinnableReference());
+            thisApi.CommandEncoderCopyTextureToTextureInternal(commandEncoder, in source.GetPinnableReference(), in destination.GetPinnableReference(), in copySize.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1645, Column 18 in dawn-webgpu.h")]
-        public static unsafe void CommandEncoderCopyTextureToTextureInternal(this Dawn thisApi, Span<CommandEncoder> commandEncoder, ImageCopyTexture* source, ImageCopyTexture* destination, Extent3D* copySize)
+        public static unsafe void CommandEncoderCopyTextureToTextureInternal(this Dawn thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] Extent3D* copySize)
         {
             // SpanOverloader
             thisApi.CommandEncoderCopyTextureToTextureInternal(ref commandEncoder.GetPinnableReference(), source, destination, copySize);
@@ -186,71 +186,71 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1645, Column 18 in dawn-webgpu.h")]
-        public static unsafe void CommandEncoderCopyTextureToTextureInternal(this Dawn thisApi, Span<CommandEncoder> commandEncoder, ImageCopyTexture* source, ImageCopyTexture* destination, Span<Extent3D> copySize)
+        public static unsafe void CommandEncoderCopyTextureToTextureInternal(this Dawn thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize)
         {
             // SpanOverloader
-            thisApi.CommandEncoderCopyTextureToTextureInternal(ref commandEncoder.GetPinnableReference(), source, destination, ref copySize.GetPinnableReference());
+            thisApi.CommandEncoderCopyTextureToTextureInternal(ref commandEncoder.GetPinnableReference(), source, destination, in copySize.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1645, Column 18 in dawn-webgpu.h")]
-        public static unsafe void CommandEncoderCopyTextureToTextureInternal(this Dawn thisApi, Span<CommandEncoder> commandEncoder, ImageCopyTexture* source, Span<ImageCopyTexture> destination, Extent3D* copySize)
+        public static unsafe void CommandEncoderCopyTextureToTextureInternal(this Dawn thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] Extent3D* copySize)
         {
             // SpanOverloader
-            thisApi.CommandEncoderCopyTextureToTextureInternal(ref commandEncoder.GetPinnableReference(), source, ref destination.GetPinnableReference(), copySize);
+            thisApi.CommandEncoderCopyTextureToTextureInternal(ref commandEncoder.GetPinnableReference(), source, in destination.GetPinnableReference(), copySize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1645, Column 18 in dawn-webgpu.h")]
-        public static unsafe void CommandEncoderCopyTextureToTextureInternal(this Dawn thisApi, Span<CommandEncoder> commandEncoder, ImageCopyTexture* source, Span<ImageCopyTexture> destination, Span<Extent3D> copySize)
+        public static unsafe void CommandEncoderCopyTextureToTextureInternal(this Dawn thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize)
         {
             // SpanOverloader
-            thisApi.CommandEncoderCopyTextureToTextureInternal(ref commandEncoder.GetPinnableReference(), source, ref destination.GetPinnableReference(), ref copySize.GetPinnableReference());
+            thisApi.CommandEncoderCopyTextureToTextureInternal(ref commandEncoder.GetPinnableReference(), source, in destination.GetPinnableReference(), in copySize.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1645, Column 18 in dawn-webgpu.h")]
-        public static unsafe void CommandEncoderCopyTextureToTextureInternal(this Dawn thisApi, Span<CommandEncoder> commandEncoder, Span<ImageCopyTexture> source, ImageCopyTexture* destination, Extent3D* copySize)
+        public static unsafe void CommandEncoderCopyTextureToTextureInternal(this Dawn thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] Extent3D* copySize)
         {
             // SpanOverloader
-            thisApi.CommandEncoderCopyTextureToTextureInternal(ref commandEncoder.GetPinnableReference(), ref source.GetPinnableReference(), destination, copySize);
+            thisApi.CommandEncoderCopyTextureToTextureInternal(ref commandEncoder.GetPinnableReference(), in source.GetPinnableReference(), destination, copySize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1645, Column 18 in dawn-webgpu.h")]
-        public static unsafe void CommandEncoderCopyTextureToTextureInternal(this Dawn thisApi, Span<CommandEncoder> commandEncoder, Span<ImageCopyTexture> source, ImageCopyTexture* destination, Span<Extent3D> copySize)
+        public static unsafe void CommandEncoderCopyTextureToTextureInternal(this Dawn thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize)
         {
             // SpanOverloader
-            thisApi.CommandEncoderCopyTextureToTextureInternal(ref commandEncoder.GetPinnableReference(), ref source.GetPinnableReference(), destination, ref copySize.GetPinnableReference());
+            thisApi.CommandEncoderCopyTextureToTextureInternal(ref commandEncoder.GetPinnableReference(), in source.GetPinnableReference(), destination, in copySize.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1645, Column 18 in dawn-webgpu.h")]
-        public static unsafe void CommandEncoderCopyTextureToTextureInternal(this Dawn thisApi, Span<CommandEncoder> commandEncoder, Span<ImageCopyTexture> source, Span<ImageCopyTexture> destination, Extent3D* copySize)
+        public static unsafe void CommandEncoderCopyTextureToTextureInternal(this Dawn thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] Extent3D* copySize)
         {
             // SpanOverloader
-            thisApi.CommandEncoderCopyTextureToTextureInternal(ref commandEncoder.GetPinnableReference(), ref source.GetPinnableReference(), ref destination.GetPinnableReference(), copySize);
+            thisApi.CommandEncoderCopyTextureToTextureInternal(ref commandEncoder.GetPinnableReference(), in source.GetPinnableReference(), in destination.GetPinnableReference(), copySize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1645, Column 18 in dawn-webgpu.h")]
-        public static unsafe void CommandEncoderCopyTextureToTextureInternal(this Dawn thisApi, Span<CommandEncoder> commandEncoder, Span<ImageCopyTexture> source, Span<ImageCopyTexture> destination, Span<Extent3D> copySize)
+        public static unsafe void CommandEncoderCopyTextureToTextureInternal(this Dawn thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize)
         {
             // SpanOverloader
-            thisApi.CommandEncoderCopyTextureToTextureInternal(ref commandEncoder.GetPinnableReference(), ref source.GetPinnableReference(), ref destination.GetPinnableReference(), ref copySize.GetPinnableReference());
+            thisApi.CommandEncoderCopyTextureToTextureInternal(ref commandEncoder.GetPinnableReference(), in source.GetPinnableReference(), in destination.GetPinnableReference(), in copySize.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1647, Column 18 in dawn-webgpu.h")]
-        public static unsafe void CommandEncoderInjectValidationError(this Dawn thisApi, CommandEncoder* commandEncoder, Span<byte> message)
+        public static unsafe void CommandEncoderInjectValidationError(this Dawn thisApi, CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<byte> message)
         {
             // SpanOverloader
-            thisApi.CommandEncoderInjectValidationError(commandEncoder, ref message.GetPinnableReference());
+            thisApi.CommandEncoderInjectValidationError(commandEncoder, in message.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1647, Column 18 in dawn-webgpu.h")]
-        public static unsafe void CommandEncoderInjectValidationError(this Dawn thisApi, Span<CommandEncoder> commandEncoder, byte* message)
+        public static unsafe void CommandEncoderInjectValidationError(this Dawn thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] byte* message)
         {
             // SpanOverloader
             thisApi.CommandEncoderInjectValidationError(ref commandEncoder.GetPinnableReference(), message);
@@ -258,15 +258,15 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1647, Column 18 in dawn-webgpu.h")]
-        public static unsafe void CommandEncoderInjectValidationError(this Dawn thisApi, Span<CommandEncoder> commandEncoder, Span<byte> message)
+        public static unsafe void CommandEncoderInjectValidationError(this Dawn thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<byte> message)
         {
             // SpanOverloader
-            thisApi.CommandEncoderInjectValidationError(ref commandEncoder.GetPinnableReference(), ref message.GetPinnableReference());
+            thisApi.CommandEncoderInjectValidationError(ref commandEncoder.GetPinnableReference(), in message.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1647, Column 18 in dawn-webgpu.h")]
-        public static unsafe void CommandEncoderInjectValidationError(this Dawn thisApi, Span<CommandEncoder> commandEncoder, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string message)
+        public static unsafe void CommandEncoderInjectValidationError(this Dawn thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string message)
         {
             // SpanOverloader
             thisApi.CommandEncoderInjectValidationError(ref commandEncoder.GetPinnableReference(), message);
@@ -274,31 +274,15 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1653, Column 18 in dawn-webgpu.h")]
-        public static unsafe void CommandEncoderWriteBuffer(this Dawn thisApi, CommandEncoder* commandEncoder, Buffer* buffer, ulong bufferOffset, Span<byte> data, ulong size)
+        public static unsafe void CommandEncoderWriteBuffer(this Dawn thisApi, CommandEncoder* commandEncoder, Buffer* buffer, ulong bufferOffset, [Flow(FlowDirection.In)] ReadOnlySpan<byte> data, ulong size)
         {
             // SpanOverloader
-            thisApi.CommandEncoderWriteBuffer(commandEncoder, buffer, bufferOffset, ref data.GetPinnableReference(), size);
+            thisApi.CommandEncoderWriteBuffer(commandEncoder, buffer, bufferOffset, in data.GetPinnableReference(), size);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1653, Column 18 in dawn-webgpu.h")]
-        public static unsafe void CommandEncoderWriteBuffer(this Dawn thisApi, CommandEncoder* commandEncoder, Span<Buffer> buffer, ulong bufferOffset, byte* data, ulong size)
-        {
-            // SpanOverloader
-            thisApi.CommandEncoderWriteBuffer(commandEncoder, ref buffer.GetPinnableReference(), bufferOffset, data, size);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1653, Column 18 in dawn-webgpu.h")]
-        public static unsafe void CommandEncoderWriteBuffer(this Dawn thisApi, CommandEncoder* commandEncoder, Span<Buffer> buffer, ulong bufferOffset, Span<byte> data, ulong size)
-        {
-            // SpanOverloader
-            thisApi.CommandEncoderWriteBuffer(commandEncoder, ref buffer.GetPinnableReference(), bufferOffset, ref data.GetPinnableReference(), size);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1653, Column 18 in dawn-webgpu.h")]
-        public static unsafe void CommandEncoderWriteBuffer(this Dawn thisApi, CommandEncoder* commandEncoder, Span<Buffer> buffer, ulong bufferOffset, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, ulong size)
+        public static unsafe void CommandEncoderWriteBuffer(this Dawn thisApi, CommandEncoder* commandEncoder, Span<Buffer> buffer, ulong bufferOffset, [Flow(FlowDirection.In)] byte* data, ulong size)
         {
             // SpanOverloader
             thisApi.CommandEncoderWriteBuffer(commandEncoder, ref buffer.GetPinnableReference(), bufferOffset, data, size);
@@ -306,7 +290,23 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1653, Column 18 in dawn-webgpu.h")]
-        public static unsafe void CommandEncoderWriteBuffer(this Dawn thisApi, Span<CommandEncoder> commandEncoder, Buffer* buffer, ulong bufferOffset, byte* data, ulong size)
+        public static unsafe void CommandEncoderWriteBuffer(this Dawn thisApi, CommandEncoder* commandEncoder, Span<Buffer> buffer, ulong bufferOffset, [Flow(FlowDirection.In)] ReadOnlySpan<byte> data, ulong size)
+        {
+            // SpanOverloader
+            thisApi.CommandEncoderWriteBuffer(commandEncoder, ref buffer.GetPinnableReference(), bufferOffset, in data.GetPinnableReference(), size);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1653, Column 18 in dawn-webgpu.h")]
+        public static unsafe void CommandEncoderWriteBuffer(this Dawn thisApi, CommandEncoder* commandEncoder, Span<Buffer> buffer, ulong bufferOffset, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, ulong size)
+        {
+            // SpanOverloader
+            thisApi.CommandEncoderWriteBuffer(commandEncoder, ref buffer.GetPinnableReference(), bufferOffset, data, size);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1653, Column 18 in dawn-webgpu.h")]
+        public static unsafe void CommandEncoderWriteBuffer(this Dawn thisApi, Span<CommandEncoder> commandEncoder, Buffer* buffer, ulong bufferOffset, [Flow(FlowDirection.In)] byte* data, ulong size)
         {
             // SpanOverloader
             thisApi.CommandEncoderWriteBuffer(ref commandEncoder.GetPinnableReference(), buffer, bufferOffset, data, size);
@@ -314,15 +314,15 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1653, Column 18 in dawn-webgpu.h")]
-        public static unsafe void CommandEncoderWriteBuffer(this Dawn thisApi, Span<CommandEncoder> commandEncoder, Buffer* buffer, ulong bufferOffset, Span<byte> data, ulong size)
+        public static unsafe void CommandEncoderWriteBuffer(this Dawn thisApi, Span<CommandEncoder> commandEncoder, Buffer* buffer, ulong bufferOffset, [Flow(FlowDirection.In)] ReadOnlySpan<byte> data, ulong size)
         {
             // SpanOverloader
-            thisApi.CommandEncoderWriteBuffer(ref commandEncoder.GetPinnableReference(), buffer, bufferOffset, ref data.GetPinnableReference(), size);
+            thisApi.CommandEncoderWriteBuffer(ref commandEncoder.GetPinnableReference(), buffer, bufferOffset, in data.GetPinnableReference(), size);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1653, Column 18 in dawn-webgpu.h")]
-        public static unsafe void CommandEncoderWriteBuffer(this Dawn thisApi, Span<CommandEncoder> commandEncoder, Buffer* buffer, ulong bufferOffset, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, ulong size)
+        public static unsafe void CommandEncoderWriteBuffer(this Dawn thisApi, Span<CommandEncoder> commandEncoder, Buffer* buffer, ulong bufferOffset, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, ulong size)
         {
             // SpanOverloader
             thisApi.CommandEncoderWriteBuffer(ref commandEncoder.GetPinnableReference(), buffer, bufferOffset, data, size);
@@ -330,7 +330,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1653, Column 18 in dawn-webgpu.h")]
-        public static unsafe void CommandEncoderWriteBuffer(this Dawn thisApi, Span<CommandEncoder> commandEncoder, Span<Buffer> buffer, ulong bufferOffset, byte* data, ulong size)
+        public static unsafe void CommandEncoderWriteBuffer(this Dawn thisApi, Span<CommandEncoder> commandEncoder, Span<Buffer> buffer, ulong bufferOffset, [Flow(FlowDirection.In)] byte* data, ulong size)
         {
             // SpanOverloader
             thisApi.CommandEncoderWriteBuffer(ref commandEncoder.GetPinnableReference(), ref buffer.GetPinnableReference(), bufferOffset, data, size);
@@ -338,15 +338,15 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1653, Column 18 in dawn-webgpu.h")]
-        public static unsafe void CommandEncoderWriteBuffer(this Dawn thisApi, Span<CommandEncoder> commandEncoder, Span<Buffer> buffer, ulong bufferOffset, Span<byte> data, ulong size)
+        public static unsafe void CommandEncoderWriteBuffer(this Dawn thisApi, Span<CommandEncoder> commandEncoder, Span<Buffer> buffer, ulong bufferOffset, [Flow(FlowDirection.In)] ReadOnlySpan<byte> data, ulong size)
         {
             // SpanOverloader
-            thisApi.CommandEncoderWriteBuffer(ref commandEncoder.GetPinnableReference(), ref buffer.GetPinnableReference(), bufferOffset, ref data.GetPinnableReference(), size);
+            thisApi.CommandEncoderWriteBuffer(ref commandEncoder.GetPinnableReference(), ref buffer.GetPinnableReference(), bufferOffset, in data.GetPinnableReference(), size);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1653, Column 18 in dawn-webgpu.h")]
-        public static unsafe void CommandEncoderWriteBuffer(this Dawn thisApi, Span<CommandEncoder> commandEncoder, Span<Buffer> buffer, ulong bufferOffset, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, ulong size)
+        public static unsafe void CommandEncoderWriteBuffer(this Dawn thisApi, Span<CommandEncoder> commandEncoder, Span<Buffer> buffer, ulong bufferOffset, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, ulong size)
         {
             // SpanOverloader
             thisApi.CommandEncoderWriteBuffer(ref commandEncoder.GetPinnableReference(), ref buffer.GetPinnableReference(), bufferOffset, data, size);
@@ -482,15 +482,15 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1690, Column 25 in dawn-webgpu.h")]
-        public static unsafe Texture* DeviceCreateErrorTexture(this Dawn thisApi, Device* device, Span<TextureDescriptor> descriptor)
+        public static unsafe Texture* DeviceCreateErrorTexture(this Dawn thisApi, Device* device, [Flow(FlowDirection.In)] ReadOnlySpan<TextureDescriptor> descriptor)
         {
             // SpanOverloader
-            return thisApi.DeviceCreateErrorTexture(device, ref descriptor.GetPinnableReference());
+            return thisApi.DeviceCreateErrorTexture(device, in descriptor.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1690, Column 25 in dawn-webgpu.h")]
-        public static unsafe Texture* DeviceCreateErrorTexture(this Dawn thisApi, Span<Device> device, TextureDescriptor* descriptor)
+        public static unsafe Texture* DeviceCreateErrorTexture(this Dawn thisApi, Span<Device> device, [Flow(FlowDirection.In)] TextureDescriptor* descriptor)
         {
             // SpanOverloader
             return thisApi.DeviceCreateErrorTexture(ref device.GetPinnableReference(), descriptor);
@@ -498,23 +498,23 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1690, Column 25 in dawn-webgpu.h")]
-        public static unsafe Texture* DeviceCreateErrorTexture(this Dawn thisApi, Span<Device> device, Span<TextureDescriptor> descriptor)
+        public static unsafe Texture* DeviceCreateErrorTexture(this Dawn thisApi, Span<Device> device, [Flow(FlowDirection.In)] ReadOnlySpan<TextureDescriptor> descriptor)
         {
             // SpanOverloader
-            return thisApi.DeviceCreateErrorTexture(ref device.GetPinnableReference(), ref descriptor.GetPinnableReference());
+            return thisApi.DeviceCreateErrorTexture(ref device.GetPinnableReference(), in descriptor.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1691, Column 33 in dawn-webgpu.h")]
-        public static unsafe ExternalTextureImpl* DeviceCreateExternalTexture(this Dawn thisApi, Device* device, Span<ExternalTextureDescriptor> externalTextureDescriptor)
+        public static unsafe ExternalTextureImpl* DeviceCreateExternalTexture(this Dawn thisApi, Device* device, [Flow(FlowDirection.In)] ReadOnlySpan<ExternalTextureDescriptor> externalTextureDescriptor)
         {
             // SpanOverloader
-            return thisApi.DeviceCreateExternalTexture(device, ref externalTextureDescriptor.GetPinnableReference());
+            return thisApi.DeviceCreateExternalTexture(device, in externalTextureDescriptor.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1691, Column 33 in dawn-webgpu.h")]
-        public static unsafe ExternalTextureImpl* DeviceCreateExternalTexture(this Dawn thisApi, Span<Device> device, ExternalTextureDescriptor* externalTextureDescriptor)
+        public static unsafe ExternalTextureImpl* DeviceCreateExternalTexture(this Dawn thisApi, Span<Device> device, [Flow(FlowDirection.In)] ExternalTextureDescriptor* externalTextureDescriptor)
         {
             // SpanOverloader
             return thisApi.DeviceCreateExternalTexture(ref device.GetPinnableReference(), externalTextureDescriptor);
@@ -522,23 +522,23 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1691, Column 33 in dawn-webgpu.h")]
-        public static unsafe ExternalTextureImpl* DeviceCreateExternalTexture(this Dawn thisApi, Span<Device> device, Span<ExternalTextureDescriptor> externalTextureDescriptor)
+        public static unsafe ExternalTextureImpl* DeviceCreateExternalTexture(this Dawn thisApi, Span<Device> device, [Flow(FlowDirection.In)] ReadOnlySpan<ExternalTextureDescriptor> externalTextureDescriptor)
         {
             // SpanOverloader
-            return thisApi.DeviceCreateExternalTexture(ref device.GetPinnableReference(), ref externalTextureDescriptor.GetPinnableReference());
+            return thisApi.DeviceCreateExternalTexture(ref device.GetPinnableReference(), in externalTextureDescriptor.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1703, Column 18 in dawn-webgpu.h")]
-        public static unsafe void DeviceForceLoss(this Dawn thisApi, Device* device, DeviceLostReason type, Span<byte> message)
+        public static unsafe void DeviceForceLoss(this Dawn thisApi, Device* device, DeviceLostReason type, [Flow(FlowDirection.In)] ReadOnlySpan<byte> message)
         {
             // SpanOverloader
-            thisApi.DeviceForceLoss(device, type, ref message.GetPinnableReference());
+            thisApi.DeviceForceLoss(device, type, in message.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1703, Column 18 in dawn-webgpu.h")]
-        public static unsafe void DeviceForceLoss(this Dawn thisApi, Span<Device> device, DeviceLostReason type, byte* message)
+        public static unsafe void DeviceForceLoss(this Dawn thisApi, Span<Device> device, DeviceLostReason type, [Flow(FlowDirection.In)] byte* message)
         {
             // SpanOverloader
             thisApi.DeviceForceLoss(ref device.GetPinnableReference(), type, message);
@@ -546,15 +546,15 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1703, Column 18 in dawn-webgpu.h")]
-        public static unsafe void DeviceForceLoss(this Dawn thisApi, Span<Device> device, DeviceLostReason type, Span<byte> message)
+        public static unsafe void DeviceForceLoss(this Dawn thisApi, Span<Device> device, DeviceLostReason type, [Flow(FlowDirection.In)] ReadOnlySpan<byte> message)
         {
             // SpanOverloader
-            thisApi.DeviceForceLoss(ref device.GetPinnableReference(), type, ref message.GetPinnableReference());
+            thisApi.DeviceForceLoss(ref device.GetPinnableReference(), type, in message.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1703, Column 18 in dawn-webgpu.h")]
-        public static unsafe void DeviceForceLoss(this Dawn thisApi, Span<Device> device, DeviceLostReason type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string message)
+        public static unsafe void DeviceForceLoss(this Dawn thisApi, Span<Device> device, DeviceLostReason type, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string message)
         {
             // SpanOverloader
             thisApi.DeviceForceLoss(ref device.GetPinnableReference(), type, message);
@@ -570,15 +570,15 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1708, Column 18 in dawn-webgpu.h")]
-        public static unsafe void DeviceInjectError(this Dawn thisApi, Device* device, ErrorType type, Span<byte> message)
+        public static unsafe void DeviceInjectError(this Dawn thisApi, Device* device, ErrorType type, [Flow(FlowDirection.In)] ReadOnlySpan<byte> message)
         {
             // SpanOverloader
-            thisApi.DeviceInjectError(device, type, ref message.GetPinnableReference());
+            thisApi.DeviceInjectError(device, type, in message.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1708, Column 18 in dawn-webgpu.h")]
-        public static unsafe void DeviceInjectError(this Dawn thisApi, Span<Device> device, ErrorType type, byte* message)
+        public static unsafe void DeviceInjectError(this Dawn thisApi, Span<Device> device, ErrorType type, [Flow(FlowDirection.In)] byte* message)
         {
             // SpanOverloader
             thisApi.DeviceInjectError(ref device.GetPinnableReference(), type, message);
@@ -586,15 +586,15 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1708, Column 18 in dawn-webgpu.h")]
-        public static unsafe void DeviceInjectError(this Dawn thisApi, Span<Device> device, ErrorType type, Span<byte> message)
+        public static unsafe void DeviceInjectError(this Dawn thisApi, Span<Device> device, ErrorType type, [Flow(FlowDirection.In)] ReadOnlySpan<byte> message)
         {
             // SpanOverloader
-            thisApi.DeviceInjectError(ref device.GetPinnableReference(), type, ref message.GetPinnableReference());
+            thisApi.DeviceInjectError(ref device.GetPinnableReference(), type, in message.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1708, Column 18 in dawn-webgpu.h")]
-        public static unsafe void DeviceInjectError(this Dawn thisApi, Span<Device> device, ErrorType type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string message)
+        public static unsafe void DeviceInjectError(this Dawn thisApi, Span<Device> device, ErrorType type, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string message)
         {
             // SpanOverloader
             thisApi.DeviceInjectError(ref device.GetPinnableReference(), type, message);
@@ -658,15 +658,15 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1721, Column 18 in dawn-webgpu.h")]
-        public static unsafe void ExternalTextureSetLabel(this Dawn thisApi, ExternalTextureImpl* externalTexture, Span<byte> label)
+        public static unsafe void ExternalTextureSetLabel(this Dawn thisApi, ExternalTextureImpl* externalTexture, [Flow(FlowDirection.In)] ReadOnlySpan<byte> label)
         {
             // SpanOverloader
-            thisApi.ExternalTextureSetLabel(externalTexture, ref label.GetPinnableReference());
+            thisApi.ExternalTextureSetLabel(externalTexture, in label.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1721, Column 18 in dawn-webgpu.h")]
-        public static unsafe void ExternalTextureSetLabel(this Dawn thisApi, Span<ExternalTextureImpl> externalTexture, byte* label)
+        public static unsafe void ExternalTextureSetLabel(this Dawn thisApi, Span<ExternalTextureImpl> externalTexture, [Flow(FlowDirection.In)] byte* label)
         {
             // SpanOverloader
             thisApi.ExternalTextureSetLabel(ref externalTexture.GetPinnableReference(), label);
@@ -674,15 +674,15 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1721, Column 18 in dawn-webgpu.h")]
-        public static unsafe void ExternalTextureSetLabel(this Dawn thisApi, Span<ExternalTextureImpl> externalTexture, Span<byte> label)
+        public static unsafe void ExternalTextureSetLabel(this Dawn thisApi, Span<ExternalTextureImpl> externalTexture, [Flow(FlowDirection.In)] ReadOnlySpan<byte> label)
         {
             // SpanOverloader
-            thisApi.ExternalTextureSetLabel(ref externalTexture.GetPinnableReference(), ref label.GetPinnableReference());
+            thisApi.ExternalTextureSetLabel(ref externalTexture.GetPinnableReference(), in label.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1721, Column 18 in dawn-webgpu.h")]
-        public static unsafe void ExternalTextureSetLabel(this Dawn thisApi, Span<ExternalTextureImpl> externalTexture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string label)
+        public static unsafe void ExternalTextureSetLabel(this Dawn thisApi, Span<ExternalTextureImpl> externalTexture, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string label)
         {
             // SpanOverloader
             thisApi.ExternalTextureSetLabel(ref externalTexture.GetPinnableReference(), label);
@@ -754,127 +754,127 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, ImageCopyExternalTexture* source, ImageCopyTexture* destination, Extent3D* copySize, Span<CopyTextureForBrowserOptions> options)
+        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
-            thisApi.QueueCopyExternalTextureForBrowser(queue, source, destination, copySize, ref options.GetPinnableReference());
+            thisApi.QueueCopyExternalTextureForBrowser(queue, source, destination, copySize, in options.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, ImageCopyExternalTexture* source, ImageCopyTexture* destination, Span<Extent3D> copySize, CopyTextureForBrowserOptions* options)
+        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options)
         {
             // SpanOverloader
-            thisApi.QueueCopyExternalTextureForBrowser(queue, source, destination, ref copySize.GetPinnableReference(), options);
+            thisApi.QueueCopyExternalTextureForBrowser(queue, source, destination, in copySize.GetPinnableReference(), options);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, ImageCopyExternalTexture* source, ImageCopyTexture* destination, Span<Extent3D> copySize, Span<CopyTextureForBrowserOptions> options)
+        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
-            thisApi.QueueCopyExternalTextureForBrowser(queue, source, destination, ref copySize.GetPinnableReference(), ref options.GetPinnableReference());
+            thisApi.QueueCopyExternalTextureForBrowser(queue, source, destination, in copySize.GetPinnableReference(), in options.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, ImageCopyExternalTexture* source, Span<ImageCopyTexture> destination, Extent3D* copySize, CopyTextureForBrowserOptions* options)
+        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options)
         {
             // SpanOverloader
-            thisApi.QueueCopyExternalTextureForBrowser(queue, source, ref destination.GetPinnableReference(), copySize, options);
+            thisApi.QueueCopyExternalTextureForBrowser(queue, source, in destination.GetPinnableReference(), copySize, options);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, ImageCopyExternalTexture* source, Span<ImageCopyTexture> destination, Extent3D* copySize, Span<CopyTextureForBrowserOptions> options)
+        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
-            thisApi.QueueCopyExternalTextureForBrowser(queue, source, ref destination.GetPinnableReference(), copySize, ref options.GetPinnableReference());
+            thisApi.QueueCopyExternalTextureForBrowser(queue, source, in destination.GetPinnableReference(), copySize, in options.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, ImageCopyExternalTexture* source, Span<ImageCopyTexture> destination, Span<Extent3D> copySize, CopyTextureForBrowserOptions* options)
+        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options)
         {
             // SpanOverloader
-            thisApi.QueueCopyExternalTextureForBrowser(queue, source, ref destination.GetPinnableReference(), ref copySize.GetPinnableReference(), options);
+            thisApi.QueueCopyExternalTextureForBrowser(queue, source, in destination.GetPinnableReference(), in copySize.GetPinnableReference(), options);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, ImageCopyExternalTexture* source, Span<ImageCopyTexture> destination, Span<Extent3D> copySize, Span<CopyTextureForBrowserOptions> options)
+        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
-            thisApi.QueueCopyExternalTextureForBrowser(queue, source, ref destination.GetPinnableReference(), ref copySize.GetPinnableReference(), ref options.GetPinnableReference());
+            thisApi.QueueCopyExternalTextureForBrowser(queue, source, in destination.GetPinnableReference(), in copySize.GetPinnableReference(), in options.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, Span<ImageCopyExternalTexture> source, ImageCopyTexture* destination, Extent3D* copySize, CopyTextureForBrowserOptions* options)
+        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyExternalTexture> source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options)
         {
             // SpanOverloader
-            thisApi.QueueCopyExternalTextureForBrowser(queue, ref source.GetPinnableReference(), destination, copySize, options);
+            thisApi.QueueCopyExternalTextureForBrowser(queue, in source.GetPinnableReference(), destination, copySize, options);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, Span<ImageCopyExternalTexture> source, ImageCopyTexture* destination, Extent3D* copySize, Span<CopyTextureForBrowserOptions> options)
+        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyExternalTexture> source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
-            thisApi.QueueCopyExternalTextureForBrowser(queue, ref source.GetPinnableReference(), destination, copySize, ref options.GetPinnableReference());
+            thisApi.QueueCopyExternalTextureForBrowser(queue, in source.GetPinnableReference(), destination, copySize, in options.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, Span<ImageCopyExternalTexture> source, ImageCopyTexture* destination, Span<Extent3D> copySize, CopyTextureForBrowserOptions* options)
+        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyExternalTexture> source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options)
         {
             // SpanOverloader
-            thisApi.QueueCopyExternalTextureForBrowser(queue, ref source.GetPinnableReference(), destination, ref copySize.GetPinnableReference(), options);
+            thisApi.QueueCopyExternalTextureForBrowser(queue, in source.GetPinnableReference(), destination, in copySize.GetPinnableReference(), options);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, Span<ImageCopyExternalTexture> source, ImageCopyTexture* destination, Span<Extent3D> copySize, Span<CopyTextureForBrowserOptions> options)
+        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyExternalTexture> source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
-            thisApi.QueueCopyExternalTextureForBrowser(queue, ref source.GetPinnableReference(), destination, ref copySize.GetPinnableReference(), ref options.GetPinnableReference());
+            thisApi.QueueCopyExternalTextureForBrowser(queue, in source.GetPinnableReference(), destination, in copySize.GetPinnableReference(), in options.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, Span<ImageCopyExternalTexture> source, Span<ImageCopyTexture> destination, Extent3D* copySize, CopyTextureForBrowserOptions* options)
+        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyExternalTexture> source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options)
         {
             // SpanOverloader
-            thisApi.QueueCopyExternalTextureForBrowser(queue, ref source.GetPinnableReference(), ref destination.GetPinnableReference(), copySize, options);
+            thisApi.QueueCopyExternalTextureForBrowser(queue, in source.GetPinnableReference(), in destination.GetPinnableReference(), copySize, options);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, Span<ImageCopyExternalTexture> source, Span<ImageCopyTexture> destination, Extent3D* copySize, Span<CopyTextureForBrowserOptions> options)
+        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyExternalTexture> source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
-            thisApi.QueueCopyExternalTextureForBrowser(queue, ref source.GetPinnableReference(), ref destination.GetPinnableReference(), copySize, ref options.GetPinnableReference());
+            thisApi.QueueCopyExternalTextureForBrowser(queue, in source.GetPinnableReference(), in destination.GetPinnableReference(), copySize, in options.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, Span<ImageCopyExternalTexture> source, Span<ImageCopyTexture> destination, Span<Extent3D> copySize, CopyTextureForBrowserOptions* options)
+        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyExternalTexture> source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options)
         {
             // SpanOverloader
-            thisApi.QueueCopyExternalTextureForBrowser(queue, ref source.GetPinnableReference(), ref destination.GetPinnableReference(), ref copySize.GetPinnableReference(), options);
+            thisApi.QueueCopyExternalTextureForBrowser(queue, in source.GetPinnableReference(), in destination.GetPinnableReference(), in copySize.GetPinnableReference(), options);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, Span<ImageCopyExternalTexture> source, Span<ImageCopyTexture> destination, Span<Extent3D> copySize, Span<CopyTextureForBrowserOptions> options)
+        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyExternalTexture> source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
-            thisApi.QueueCopyExternalTextureForBrowser(queue, ref source.GetPinnableReference(), ref destination.GetPinnableReference(), ref copySize.GetPinnableReference(), ref options.GetPinnableReference());
+            thisApi.QueueCopyExternalTextureForBrowser(queue, in source.GetPinnableReference(), in destination.GetPinnableReference(), in copySize.GetPinnableReference(), in options.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Span<Queue> queue, ImageCopyExternalTexture* source, ImageCopyTexture* destination, Extent3D* copySize, CopyTextureForBrowserOptions* options)
+        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options)
         {
             // SpanOverloader
             thisApi.QueueCopyExternalTextureForBrowser(ref queue.GetPinnableReference(), source, destination, copySize, options);
@@ -882,247 +882,247 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Span<Queue> queue, ImageCopyExternalTexture* source, ImageCopyTexture* destination, Extent3D* copySize, Span<CopyTextureForBrowserOptions> options)
+        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
-            thisApi.QueueCopyExternalTextureForBrowser(ref queue.GetPinnableReference(), source, destination, copySize, ref options.GetPinnableReference());
+            thisApi.QueueCopyExternalTextureForBrowser(ref queue.GetPinnableReference(), source, destination, copySize, in options.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Span<Queue> queue, ImageCopyExternalTexture* source, ImageCopyTexture* destination, Span<Extent3D> copySize, CopyTextureForBrowserOptions* options)
+        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options)
         {
             // SpanOverloader
-            thisApi.QueueCopyExternalTextureForBrowser(ref queue.GetPinnableReference(), source, destination, ref copySize.GetPinnableReference(), options);
+            thisApi.QueueCopyExternalTextureForBrowser(ref queue.GetPinnableReference(), source, destination, in copySize.GetPinnableReference(), options);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Span<Queue> queue, ImageCopyExternalTexture* source, ImageCopyTexture* destination, Span<Extent3D> copySize, Span<CopyTextureForBrowserOptions> options)
+        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
-            thisApi.QueueCopyExternalTextureForBrowser(ref queue.GetPinnableReference(), source, destination, ref copySize.GetPinnableReference(), ref options.GetPinnableReference());
+            thisApi.QueueCopyExternalTextureForBrowser(ref queue.GetPinnableReference(), source, destination, in copySize.GetPinnableReference(), in options.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Span<Queue> queue, ImageCopyExternalTexture* source, Span<ImageCopyTexture> destination, Extent3D* copySize, CopyTextureForBrowserOptions* options)
+        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options)
         {
             // SpanOverloader
-            thisApi.QueueCopyExternalTextureForBrowser(ref queue.GetPinnableReference(), source, ref destination.GetPinnableReference(), copySize, options);
+            thisApi.QueueCopyExternalTextureForBrowser(ref queue.GetPinnableReference(), source, in destination.GetPinnableReference(), copySize, options);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Span<Queue> queue, ImageCopyExternalTexture* source, Span<ImageCopyTexture> destination, Extent3D* copySize, Span<CopyTextureForBrowserOptions> options)
+        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
-            thisApi.QueueCopyExternalTextureForBrowser(ref queue.GetPinnableReference(), source, ref destination.GetPinnableReference(), copySize, ref options.GetPinnableReference());
+            thisApi.QueueCopyExternalTextureForBrowser(ref queue.GetPinnableReference(), source, in destination.GetPinnableReference(), copySize, in options.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Span<Queue> queue, ImageCopyExternalTexture* source, Span<ImageCopyTexture> destination, Span<Extent3D> copySize, CopyTextureForBrowserOptions* options)
+        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options)
         {
             // SpanOverloader
-            thisApi.QueueCopyExternalTextureForBrowser(ref queue.GetPinnableReference(), source, ref destination.GetPinnableReference(), ref copySize.GetPinnableReference(), options);
+            thisApi.QueueCopyExternalTextureForBrowser(ref queue.GetPinnableReference(), source, in destination.GetPinnableReference(), in copySize.GetPinnableReference(), options);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Span<Queue> queue, ImageCopyExternalTexture* source, Span<ImageCopyTexture> destination, Span<Extent3D> copySize, Span<CopyTextureForBrowserOptions> options)
+        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
-            thisApi.QueueCopyExternalTextureForBrowser(ref queue.GetPinnableReference(), source, ref destination.GetPinnableReference(), ref copySize.GetPinnableReference(), ref options.GetPinnableReference());
+            thisApi.QueueCopyExternalTextureForBrowser(ref queue.GetPinnableReference(), source, in destination.GetPinnableReference(), in copySize.GetPinnableReference(), in options.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Span<Queue> queue, Span<ImageCopyExternalTexture> source, ImageCopyTexture* destination, Extent3D* copySize, CopyTextureForBrowserOptions* options)
+        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyExternalTexture> source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options)
         {
             // SpanOverloader
-            thisApi.QueueCopyExternalTextureForBrowser(ref queue.GetPinnableReference(), ref source.GetPinnableReference(), destination, copySize, options);
+            thisApi.QueueCopyExternalTextureForBrowser(ref queue.GetPinnableReference(), in source.GetPinnableReference(), destination, copySize, options);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Span<Queue> queue, Span<ImageCopyExternalTexture> source, ImageCopyTexture* destination, Extent3D* copySize, Span<CopyTextureForBrowserOptions> options)
+        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyExternalTexture> source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
-            thisApi.QueueCopyExternalTextureForBrowser(ref queue.GetPinnableReference(), ref source.GetPinnableReference(), destination, copySize, ref options.GetPinnableReference());
+            thisApi.QueueCopyExternalTextureForBrowser(ref queue.GetPinnableReference(), in source.GetPinnableReference(), destination, copySize, in options.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Span<Queue> queue, Span<ImageCopyExternalTexture> source, ImageCopyTexture* destination, Span<Extent3D> copySize, CopyTextureForBrowserOptions* options)
+        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyExternalTexture> source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options)
         {
             // SpanOverloader
-            thisApi.QueueCopyExternalTextureForBrowser(ref queue.GetPinnableReference(), ref source.GetPinnableReference(), destination, ref copySize.GetPinnableReference(), options);
+            thisApi.QueueCopyExternalTextureForBrowser(ref queue.GetPinnableReference(), in source.GetPinnableReference(), destination, in copySize.GetPinnableReference(), options);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Span<Queue> queue, Span<ImageCopyExternalTexture> source, ImageCopyTexture* destination, Span<Extent3D> copySize, Span<CopyTextureForBrowserOptions> options)
+        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyExternalTexture> source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
-            thisApi.QueueCopyExternalTextureForBrowser(ref queue.GetPinnableReference(), ref source.GetPinnableReference(), destination, ref copySize.GetPinnableReference(), ref options.GetPinnableReference());
+            thisApi.QueueCopyExternalTextureForBrowser(ref queue.GetPinnableReference(), in source.GetPinnableReference(), destination, in copySize.GetPinnableReference(), in options.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Span<Queue> queue, Span<ImageCopyExternalTexture> source, Span<ImageCopyTexture> destination, Extent3D* copySize, CopyTextureForBrowserOptions* options)
+        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyExternalTexture> source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options)
         {
             // SpanOverloader
-            thisApi.QueueCopyExternalTextureForBrowser(ref queue.GetPinnableReference(), ref source.GetPinnableReference(), ref destination.GetPinnableReference(), copySize, options);
+            thisApi.QueueCopyExternalTextureForBrowser(ref queue.GetPinnableReference(), in source.GetPinnableReference(), in destination.GetPinnableReference(), copySize, options);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Span<Queue> queue, Span<ImageCopyExternalTexture> source, Span<ImageCopyTexture> destination, Extent3D* copySize, Span<CopyTextureForBrowserOptions> options)
+        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyExternalTexture> source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
-            thisApi.QueueCopyExternalTextureForBrowser(ref queue.GetPinnableReference(), ref source.GetPinnableReference(), ref destination.GetPinnableReference(), copySize, ref options.GetPinnableReference());
+            thisApi.QueueCopyExternalTextureForBrowser(ref queue.GetPinnableReference(), in source.GetPinnableReference(), in destination.GetPinnableReference(), copySize, in options.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Span<Queue> queue, Span<ImageCopyExternalTexture> source, Span<ImageCopyTexture> destination, Span<Extent3D> copySize, CopyTextureForBrowserOptions* options)
+        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyExternalTexture> source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options)
         {
             // SpanOverloader
-            thisApi.QueueCopyExternalTextureForBrowser(ref queue.GetPinnableReference(), ref source.GetPinnableReference(), ref destination.GetPinnableReference(), ref copySize.GetPinnableReference(), options);
+            thisApi.QueueCopyExternalTextureForBrowser(ref queue.GetPinnableReference(), in source.GetPinnableReference(), in destination.GetPinnableReference(), in copySize.GetPinnableReference(), options);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1745, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Span<Queue> queue, Span<ImageCopyExternalTexture> source, Span<ImageCopyTexture> destination, Span<Extent3D> copySize, Span<CopyTextureForBrowserOptions> options)
+        public static unsafe void QueueCopyExternalTextureForBrowser(this Dawn thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyExternalTexture> source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
-            thisApi.QueueCopyExternalTextureForBrowser(ref queue.GetPinnableReference(), ref source.GetPinnableReference(), ref destination.GetPinnableReference(), ref copySize.GetPinnableReference(), ref options.GetPinnableReference());
+            thisApi.QueueCopyExternalTextureForBrowser(ref queue.GetPinnableReference(), in source.GetPinnableReference(), in destination.GetPinnableReference(), in copySize.GetPinnableReference(), in options.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, ImageCopyTexture* source, ImageCopyTexture* destination, Extent3D* copySize, Span<CopyTextureForBrowserOptions> options)
+        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
-            thisApi.QueueCopyTextureForBrowser(queue, source, destination, copySize, ref options.GetPinnableReference());
+            thisApi.QueueCopyTextureForBrowser(queue, source, destination, copySize, in options.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, ImageCopyTexture* source, ImageCopyTexture* destination, Span<Extent3D> copySize, CopyTextureForBrowserOptions* options)
+        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options)
         {
             // SpanOverloader
-            thisApi.QueueCopyTextureForBrowser(queue, source, destination, ref copySize.GetPinnableReference(), options);
+            thisApi.QueueCopyTextureForBrowser(queue, source, destination, in copySize.GetPinnableReference(), options);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, ImageCopyTexture* source, ImageCopyTexture* destination, Span<Extent3D> copySize, Span<CopyTextureForBrowserOptions> options)
+        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
-            thisApi.QueueCopyTextureForBrowser(queue, source, destination, ref copySize.GetPinnableReference(), ref options.GetPinnableReference());
+            thisApi.QueueCopyTextureForBrowser(queue, source, destination, in copySize.GetPinnableReference(), in options.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, ImageCopyTexture* source, Span<ImageCopyTexture> destination, Extent3D* copySize, CopyTextureForBrowserOptions* options)
+        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options)
         {
             // SpanOverloader
-            thisApi.QueueCopyTextureForBrowser(queue, source, ref destination.GetPinnableReference(), copySize, options);
+            thisApi.QueueCopyTextureForBrowser(queue, source, in destination.GetPinnableReference(), copySize, options);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, ImageCopyTexture* source, Span<ImageCopyTexture> destination, Extent3D* copySize, Span<CopyTextureForBrowserOptions> options)
+        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
-            thisApi.QueueCopyTextureForBrowser(queue, source, ref destination.GetPinnableReference(), copySize, ref options.GetPinnableReference());
+            thisApi.QueueCopyTextureForBrowser(queue, source, in destination.GetPinnableReference(), copySize, in options.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, ImageCopyTexture* source, Span<ImageCopyTexture> destination, Span<Extent3D> copySize, CopyTextureForBrowserOptions* options)
+        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options)
         {
             // SpanOverloader
-            thisApi.QueueCopyTextureForBrowser(queue, source, ref destination.GetPinnableReference(), ref copySize.GetPinnableReference(), options);
+            thisApi.QueueCopyTextureForBrowser(queue, source, in destination.GetPinnableReference(), in copySize.GetPinnableReference(), options);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, ImageCopyTexture* source, Span<ImageCopyTexture> destination, Span<Extent3D> copySize, Span<CopyTextureForBrowserOptions> options)
+        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
-            thisApi.QueueCopyTextureForBrowser(queue, source, ref destination.GetPinnableReference(), ref copySize.GetPinnableReference(), ref options.GetPinnableReference());
+            thisApi.QueueCopyTextureForBrowser(queue, source, in destination.GetPinnableReference(), in copySize.GetPinnableReference(), in options.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, Span<ImageCopyTexture> source, ImageCopyTexture* destination, Extent3D* copySize, CopyTextureForBrowserOptions* options)
+        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options)
         {
             // SpanOverloader
-            thisApi.QueueCopyTextureForBrowser(queue, ref source.GetPinnableReference(), destination, copySize, options);
+            thisApi.QueueCopyTextureForBrowser(queue, in source.GetPinnableReference(), destination, copySize, options);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, Span<ImageCopyTexture> source, ImageCopyTexture* destination, Extent3D* copySize, Span<CopyTextureForBrowserOptions> options)
+        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
-            thisApi.QueueCopyTextureForBrowser(queue, ref source.GetPinnableReference(), destination, copySize, ref options.GetPinnableReference());
+            thisApi.QueueCopyTextureForBrowser(queue, in source.GetPinnableReference(), destination, copySize, in options.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, Span<ImageCopyTexture> source, ImageCopyTexture* destination, Span<Extent3D> copySize, CopyTextureForBrowserOptions* options)
+        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options)
         {
             // SpanOverloader
-            thisApi.QueueCopyTextureForBrowser(queue, ref source.GetPinnableReference(), destination, ref copySize.GetPinnableReference(), options);
+            thisApi.QueueCopyTextureForBrowser(queue, in source.GetPinnableReference(), destination, in copySize.GetPinnableReference(), options);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, Span<ImageCopyTexture> source, ImageCopyTexture* destination, Span<Extent3D> copySize, Span<CopyTextureForBrowserOptions> options)
+        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
-            thisApi.QueueCopyTextureForBrowser(queue, ref source.GetPinnableReference(), destination, ref copySize.GetPinnableReference(), ref options.GetPinnableReference());
+            thisApi.QueueCopyTextureForBrowser(queue, in source.GetPinnableReference(), destination, in copySize.GetPinnableReference(), in options.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, Span<ImageCopyTexture> source, Span<ImageCopyTexture> destination, Extent3D* copySize, CopyTextureForBrowserOptions* options)
+        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options)
         {
             // SpanOverloader
-            thisApi.QueueCopyTextureForBrowser(queue, ref source.GetPinnableReference(), ref destination.GetPinnableReference(), copySize, options);
+            thisApi.QueueCopyTextureForBrowser(queue, in source.GetPinnableReference(), in destination.GetPinnableReference(), copySize, options);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, Span<ImageCopyTexture> source, Span<ImageCopyTexture> destination, Extent3D* copySize, Span<CopyTextureForBrowserOptions> options)
+        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
-            thisApi.QueueCopyTextureForBrowser(queue, ref source.GetPinnableReference(), ref destination.GetPinnableReference(), copySize, ref options.GetPinnableReference());
+            thisApi.QueueCopyTextureForBrowser(queue, in source.GetPinnableReference(), in destination.GetPinnableReference(), copySize, in options.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, Span<ImageCopyTexture> source, Span<ImageCopyTexture> destination, Span<Extent3D> copySize, CopyTextureForBrowserOptions* options)
+        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options)
         {
             // SpanOverloader
-            thisApi.QueueCopyTextureForBrowser(queue, ref source.GetPinnableReference(), ref destination.GetPinnableReference(), ref copySize.GetPinnableReference(), options);
+            thisApi.QueueCopyTextureForBrowser(queue, in source.GetPinnableReference(), in destination.GetPinnableReference(), in copySize.GetPinnableReference(), options);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, Span<ImageCopyTexture> source, Span<ImageCopyTexture> destination, Span<Extent3D> copySize, Span<CopyTextureForBrowserOptions> options)
+        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Queue* queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
-            thisApi.QueueCopyTextureForBrowser(queue, ref source.GetPinnableReference(), ref destination.GetPinnableReference(), ref copySize.GetPinnableReference(), ref options.GetPinnableReference());
+            thisApi.QueueCopyTextureForBrowser(queue, in source.GetPinnableReference(), in destination.GetPinnableReference(), in copySize.GetPinnableReference(), in options.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Span<Queue> queue, ImageCopyTexture* source, ImageCopyTexture* destination, Extent3D* copySize, CopyTextureForBrowserOptions* options)
+        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options)
         {
             // SpanOverloader
             thisApi.QueueCopyTextureForBrowser(ref queue.GetPinnableReference(), source, destination, copySize, options);
@@ -1130,122 +1130,122 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Span<Queue> queue, ImageCopyTexture* source, ImageCopyTexture* destination, Extent3D* copySize, Span<CopyTextureForBrowserOptions> options)
+        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
-            thisApi.QueueCopyTextureForBrowser(ref queue.GetPinnableReference(), source, destination, copySize, ref options.GetPinnableReference());
+            thisApi.QueueCopyTextureForBrowser(ref queue.GetPinnableReference(), source, destination, copySize, in options.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Span<Queue> queue, ImageCopyTexture* source, ImageCopyTexture* destination, Span<Extent3D> copySize, CopyTextureForBrowserOptions* options)
+        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options)
         {
             // SpanOverloader
-            thisApi.QueueCopyTextureForBrowser(ref queue.GetPinnableReference(), source, destination, ref copySize.GetPinnableReference(), options);
+            thisApi.QueueCopyTextureForBrowser(ref queue.GetPinnableReference(), source, destination, in copySize.GetPinnableReference(), options);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Span<Queue> queue, ImageCopyTexture* source, ImageCopyTexture* destination, Span<Extent3D> copySize, Span<CopyTextureForBrowserOptions> options)
+        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
-            thisApi.QueueCopyTextureForBrowser(ref queue.GetPinnableReference(), source, destination, ref copySize.GetPinnableReference(), ref options.GetPinnableReference());
+            thisApi.QueueCopyTextureForBrowser(ref queue.GetPinnableReference(), source, destination, in copySize.GetPinnableReference(), in options.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Span<Queue> queue, ImageCopyTexture* source, Span<ImageCopyTexture> destination, Extent3D* copySize, CopyTextureForBrowserOptions* options)
+        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options)
         {
             // SpanOverloader
-            thisApi.QueueCopyTextureForBrowser(ref queue.GetPinnableReference(), source, ref destination.GetPinnableReference(), copySize, options);
+            thisApi.QueueCopyTextureForBrowser(ref queue.GetPinnableReference(), source, in destination.GetPinnableReference(), copySize, options);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Span<Queue> queue, ImageCopyTexture* source, Span<ImageCopyTexture> destination, Extent3D* copySize, Span<CopyTextureForBrowserOptions> options)
+        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
-            thisApi.QueueCopyTextureForBrowser(ref queue.GetPinnableReference(), source, ref destination.GetPinnableReference(), copySize, ref options.GetPinnableReference());
+            thisApi.QueueCopyTextureForBrowser(ref queue.GetPinnableReference(), source, in destination.GetPinnableReference(), copySize, in options.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Span<Queue> queue, ImageCopyTexture* source, Span<ImageCopyTexture> destination, Span<Extent3D> copySize, CopyTextureForBrowserOptions* options)
+        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options)
         {
             // SpanOverloader
-            thisApi.QueueCopyTextureForBrowser(ref queue.GetPinnableReference(), source, ref destination.GetPinnableReference(), ref copySize.GetPinnableReference(), options);
+            thisApi.QueueCopyTextureForBrowser(ref queue.GetPinnableReference(), source, in destination.GetPinnableReference(), in copySize.GetPinnableReference(), options);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Span<Queue> queue, ImageCopyTexture* source, Span<ImageCopyTexture> destination, Span<Extent3D> copySize, Span<CopyTextureForBrowserOptions> options)
+        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
-            thisApi.QueueCopyTextureForBrowser(ref queue.GetPinnableReference(), source, ref destination.GetPinnableReference(), ref copySize.GetPinnableReference(), ref options.GetPinnableReference());
+            thisApi.QueueCopyTextureForBrowser(ref queue.GetPinnableReference(), source, in destination.GetPinnableReference(), in copySize.GetPinnableReference(), in options.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Span<Queue> queue, Span<ImageCopyTexture> source, ImageCopyTexture* destination, Extent3D* copySize, CopyTextureForBrowserOptions* options)
+        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options)
         {
             // SpanOverloader
-            thisApi.QueueCopyTextureForBrowser(ref queue.GetPinnableReference(), ref source.GetPinnableReference(), destination, copySize, options);
+            thisApi.QueueCopyTextureForBrowser(ref queue.GetPinnableReference(), in source.GetPinnableReference(), destination, copySize, options);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Span<Queue> queue, Span<ImageCopyTexture> source, ImageCopyTexture* destination, Extent3D* copySize, Span<CopyTextureForBrowserOptions> options)
+        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
-            thisApi.QueueCopyTextureForBrowser(ref queue.GetPinnableReference(), ref source.GetPinnableReference(), destination, copySize, ref options.GetPinnableReference());
+            thisApi.QueueCopyTextureForBrowser(ref queue.GetPinnableReference(), in source.GetPinnableReference(), destination, copySize, in options.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Span<Queue> queue, Span<ImageCopyTexture> source, ImageCopyTexture* destination, Span<Extent3D> copySize, CopyTextureForBrowserOptions* options)
+        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options)
         {
             // SpanOverloader
-            thisApi.QueueCopyTextureForBrowser(ref queue.GetPinnableReference(), ref source.GetPinnableReference(), destination, ref copySize.GetPinnableReference(), options);
+            thisApi.QueueCopyTextureForBrowser(ref queue.GetPinnableReference(), in source.GetPinnableReference(), destination, in copySize.GetPinnableReference(), options);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Span<Queue> queue, Span<ImageCopyTexture> source, ImageCopyTexture* destination, Span<Extent3D> copySize, Span<CopyTextureForBrowserOptions> options)
+        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
-            thisApi.QueueCopyTextureForBrowser(ref queue.GetPinnableReference(), ref source.GetPinnableReference(), destination, ref copySize.GetPinnableReference(), ref options.GetPinnableReference());
+            thisApi.QueueCopyTextureForBrowser(ref queue.GetPinnableReference(), in source.GetPinnableReference(), destination, in copySize.GetPinnableReference(), in options.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Span<Queue> queue, Span<ImageCopyTexture> source, Span<ImageCopyTexture> destination, Extent3D* copySize, CopyTextureForBrowserOptions* options)
+        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options)
         {
             // SpanOverloader
-            thisApi.QueueCopyTextureForBrowser(ref queue.GetPinnableReference(), ref source.GetPinnableReference(), ref destination.GetPinnableReference(), copySize, options);
+            thisApi.QueueCopyTextureForBrowser(ref queue.GetPinnableReference(), in source.GetPinnableReference(), in destination.GetPinnableReference(), copySize, options);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Span<Queue> queue, Span<ImageCopyTexture> source, Span<ImageCopyTexture> destination, Extent3D* copySize, Span<CopyTextureForBrowserOptions> options)
+        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] Extent3D* copySize, [Flow(FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
-            thisApi.QueueCopyTextureForBrowser(ref queue.GetPinnableReference(), ref source.GetPinnableReference(), ref destination.GetPinnableReference(), copySize, ref options.GetPinnableReference());
+            thisApi.QueueCopyTextureForBrowser(ref queue.GetPinnableReference(), in source.GetPinnableReference(), in destination.GetPinnableReference(), copySize, in options.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Span<Queue> queue, Span<ImageCopyTexture> source, Span<ImageCopyTexture> destination, Span<Extent3D> copySize, CopyTextureForBrowserOptions* options)
+        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(FlowDirection.In)] CopyTextureForBrowserOptions* options)
         {
             // SpanOverloader
-            thisApi.QueueCopyTextureForBrowser(ref queue.GetPinnableReference(), ref source.GetPinnableReference(), ref destination.GetPinnableReference(), ref copySize.GetPinnableReference(), options);
+            thisApi.QueueCopyTextureForBrowser(ref queue.GetPinnableReference(), in source.GetPinnableReference(), in destination.GetPinnableReference(), in copySize.GetPinnableReference(), options);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1746, Column 18 in dawn-webgpu.h")]
-        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Span<Queue> queue, Span<ImageCopyTexture> source, Span<ImageCopyTexture> destination, Span<Extent3D> copySize, Span<CopyTextureForBrowserOptions> options)
+        public static unsafe void QueueCopyTextureForBrowser(this Dawn thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize, [Flow(FlowDirection.In)] ReadOnlySpan<CopyTextureForBrowserOptions> options)
         {
             // SpanOverloader
-            thisApi.QueueCopyTextureForBrowser(ref queue.GetPinnableReference(), ref source.GetPinnableReference(), ref destination.GetPinnableReference(), ref copySize.GetPinnableReference(), ref options.GetPinnableReference());
+            thisApi.QueueCopyTextureForBrowser(ref queue.GetPinnableReference(), in source.GetPinnableReference(), in destination.GetPinnableReference(), in copySize.GetPinnableReference(), in options.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
