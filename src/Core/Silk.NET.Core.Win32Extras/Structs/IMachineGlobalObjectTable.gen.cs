@@ -873,7 +873,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->RegisterObject(clsid, identifier, (Silk.NET.Core.Native.IUnknown*) object.Handle, token);
+            return @this->RegisterObject(clsid, identifier, (Silk.NET.Core.Native.IUnknown*) @object.Handle, token);
         }
 
         /// <summary>To be documented.</summary>
@@ -881,7 +881,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->RegisterObject(clsid, identifier, (Silk.NET.Core.Native.IUnknown*) object.Handle, ref token);
+            return @this->RegisterObject(clsid, identifier, (Silk.NET.Core.Native.IUnknown*) @object.Handle, ref token);
         }
 
         /// <summary>To be documented.</summary>
@@ -889,7 +889,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->RegisterObject(clsid, ref identifier, (Silk.NET.Core.Native.IUnknown*) object.Handle, token);
+            return @this->RegisterObject(clsid, ref identifier, (Silk.NET.Core.Native.IUnknown*) @object.Handle, token);
         }
 
         /// <summary>To be documented.</summary>
@@ -897,7 +897,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->RegisterObject(clsid, ref identifier, (Silk.NET.Core.Native.IUnknown*) object.Handle, ref token);
+            return @this->RegisterObject(clsid, ref identifier, (Silk.NET.Core.Native.IUnknown*) @object.Handle, ref token);
         }
 
         /// <summary>To be documented.</summary>
@@ -905,7 +905,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->RegisterObject(clsid, identifier, (Silk.NET.Core.Native.IUnknown*) object.Handle, token);
+            return @this->RegisterObject(clsid, identifier, (Silk.NET.Core.Native.IUnknown*) @object.Handle, token);
         }
 
         /// <summary>To be documented.</summary>
@@ -913,7 +913,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->RegisterObject(clsid, identifier, (Silk.NET.Core.Native.IUnknown*) object.Handle, ref token);
+            return @this->RegisterObject(clsid, identifier, (Silk.NET.Core.Native.IUnknown*) @object.Handle, ref token);
         }
 
         /// <summary>To be documented.</summary>
@@ -921,7 +921,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->RegisterObject(ref clsid, identifier, (Silk.NET.Core.Native.IUnknown*) object.Handle, token);
+            return @this->RegisterObject(ref clsid, identifier, (Silk.NET.Core.Native.IUnknown*) @object.Handle, token);
         }
 
         /// <summary>To be documented.</summary>
@@ -929,7 +929,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->RegisterObject(ref clsid, identifier, (Silk.NET.Core.Native.IUnknown*) object.Handle, ref token);
+            return @this->RegisterObject(ref clsid, identifier, (Silk.NET.Core.Native.IUnknown*) @object.Handle, ref token);
         }
 
         /// <summary>To be documented.</summary>
@@ -937,7 +937,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->RegisterObject(ref clsid, ref identifier, (Silk.NET.Core.Native.IUnknown*) object.Handle, token);
+            return @this->RegisterObject(ref clsid, ref identifier, (Silk.NET.Core.Native.IUnknown*) @object.Handle, token);
         }
 
         /// <summary>To be documented.</summary>
@@ -945,7 +945,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->RegisterObject(ref clsid, ref identifier, (Silk.NET.Core.Native.IUnknown*) object.Handle, ref token);
+            return @this->RegisterObject(ref clsid, ref identifier, (Silk.NET.Core.Native.IUnknown*) @object.Handle, ref token);
         }
 
         /// <summary>To be documented.</summary>
@@ -953,7 +953,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->RegisterObject(ref clsid, identifier, (Silk.NET.Core.Native.IUnknown*) object.Handle, token);
+            return @this->RegisterObject(ref clsid, identifier, (Silk.NET.Core.Native.IUnknown*) @object.Handle, token);
         }
 
         /// <summary>To be documented.</summary>
@@ -961,7 +961,7 @@ namespace Silk.NET.Core.Win32Extras
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->RegisterObject(ref clsid, identifier, (Silk.NET.Core.Native.IUnknown*) object.Handle, ref token);
+            return @this->RegisterObject(ref clsid, identifier, (Silk.NET.Core.Native.IUnknown*) @object.Handle, ref token);
         }
 
         /// <summary>To be documented.</summary>

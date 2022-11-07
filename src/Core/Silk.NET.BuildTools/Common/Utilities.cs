@@ -102,6 +102,14 @@ namespace Silk.NET.BuildTools.Common
             "namespace",
             "string"
         };
+        
+        /// <summary>
+        /// Escapes the given string using an at symbol if needed.
+        /// </summary>
+        /// <param name="s">String to escape.</param>
+        /// <returns>Escaped string.</returns>
+        public static string AtEscape(this string s)
+            => CSharpKeywords.Contains(s) ? $"@{s}" : s;
 
         /// <summary>
         /// An extension method which returns the given enumerable without duplicate elements.

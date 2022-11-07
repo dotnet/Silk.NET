@@ -26,7 +26,8 @@ namespace Silk.NET.DirectStorage
             ErrorFirstFailureUnion? anonymous = null,
             ErrorParametersRequest? request = null,
             ErrorParametersStatus? status = null,
-            ErrorParametersSignal? signal = null
+            ErrorParametersSignal? signal = null,
+            ErrorParametersEvent? @event = null
         ) : this()
         {
             if (hResult is not null)
@@ -58,6 +59,11 @@ namespace Silk.NET.DirectStorage
             {
                 Signal = signal.Value;
             }
+
+            if (@event is not null)
+            {
+                Event = @event.Value;
+            }
         }
 
 
@@ -72,7 +78,7 @@ namespace Silk.NET.DirectStorage
         public CommandType CommandType;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_dstorage_L506_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_dstorage_L552_C5")]
         [NativeName("Name", "anonymous1")]
         public ErrorFirstFailureUnion Anonymous;
 #if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
@@ -114,6 +120,20 @@ namespace Silk.NET.DirectStorage
         {
             get => Anonymous.Signal;
             set => Anonymous.Signal = value;
+        }
+#endif
+
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
+        public ref ErrorParametersEvent Event
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].Event;
+        }
+#else
+        public ErrorParametersEvent Event
+        {
+            get => Anonymous.Event;
+            set => Anonymous.Event = value;
         }
 #endif
 

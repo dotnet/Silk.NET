@@ -863,7 +863,7 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->RegisterObject(clsid, identifier, (Silk.NET.Core.Native.IUnknown*) object.Handle, token);
+        return @this->RegisterObject(clsid, identifier, (Silk.NET.Core.Native.IUnknown*) @object.Handle, token);
     }
 
     /// <summary>To be documented.</summary>
@@ -871,7 +871,7 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->RegisterObject(clsid, identifier, (Silk.NET.Core.Native.IUnknown*) object.Handle, ref token);
+        return @this->RegisterObject(clsid, identifier, (Silk.NET.Core.Native.IUnknown*) @object.Handle, ref token);
     }
 
     /// <summary>To be documented.</summary>
@@ -903,7 +903,7 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->RegisterObject(clsid, ref identifier, (Silk.NET.Core.Native.IUnknown*) object.Handle, token);
+        return @this->RegisterObject(clsid, ref identifier, (Silk.NET.Core.Native.IUnknown*) @object.Handle, token);
     }
 
     /// <summary>To be documented.</summary>
@@ -919,7 +919,7 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->RegisterObject(clsid, ref identifier, (Silk.NET.Core.Native.IUnknown*) object.Handle, ref token);
+        return @this->RegisterObject(clsid, ref identifier, (Silk.NET.Core.Native.IUnknown*) @object.Handle, ref token);
     }
 
     /// <summary>To be documented.</summary>
@@ -943,7 +943,7 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->RegisterObject(clsid, identifier, (Silk.NET.Core.Native.IUnknown*) object.Handle, token);
+        return @this->RegisterObject(clsid, identifier, (Silk.NET.Core.Native.IUnknown*) @object.Handle, token);
     }
 
     /// <summary>To be documented.</summary>
@@ -951,7 +951,7 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->RegisterObject(clsid, identifier, (Silk.NET.Core.Native.IUnknown*) object.Handle, ref token);
+        return @this->RegisterObject(clsid, identifier, (Silk.NET.Core.Native.IUnknown*) @object.Handle, ref token);
     }
 
     /// <summary>To be documented.</summary>
@@ -983,7 +983,7 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->RegisterObject(ref clsid, identifier, (Silk.NET.Core.Native.IUnknown*) object.Handle, token);
+        return @this->RegisterObject(ref clsid, identifier, (Silk.NET.Core.Native.IUnknown*) @object.Handle, token);
     }
 
     /// <summary>To be documented.</summary>
@@ -999,7 +999,7 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->RegisterObject(ref clsid, identifier, (Silk.NET.Core.Native.IUnknown*) object.Handle, ref token);
+        return @this->RegisterObject(ref clsid, identifier, (Silk.NET.Core.Native.IUnknown*) @object.Handle, ref token);
     }
 
     /// <summary>To be documented.</summary>
@@ -1031,7 +1031,7 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->RegisterObject(ref clsid, ref identifier, (Silk.NET.Core.Native.IUnknown*) object.Handle, token);
+        return @this->RegisterObject(ref clsid, ref identifier, (Silk.NET.Core.Native.IUnknown*) @object.Handle, token);
     }
 
     /// <summary>To be documented.</summary>
@@ -1047,7 +1047,7 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->RegisterObject(ref clsid, ref identifier, (Silk.NET.Core.Native.IUnknown*) object.Handle, ref token);
+        return @this->RegisterObject(ref clsid, ref identifier, (Silk.NET.Core.Native.IUnknown*) @object.Handle, ref token);
     }
 
     /// <summary>To be documented.</summary>
@@ -1079,7 +1079,7 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->RegisterObject(ref clsid, identifier, (Silk.NET.Core.Native.IUnknown*) object.Handle, token);
+        return @this->RegisterObject(ref clsid, identifier, (Silk.NET.Core.Native.IUnknown*) @object.Handle, token);
     }
 
     /// <summary>To be documented.</summary>
@@ -1095,7 +1095,7 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->RegisterObject(ref clsid, identifier, (Silk.NET.Core.Native.IUnknown*) object.Handle, ref token);
+        return @this->RegisterObject(ref clsid, identifier, (Silk.NET.Core.Native.IUnknown*) @object.Handle, ref token);
     }
 
     /// <summary>To be documented.</summary>
