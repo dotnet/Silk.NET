@@ -118,9 +118,9 @@ public static class WebGPUSurface
             throw new PlatformNotSupportedException($"Your platform is not supported! {view.Native.Kind}");
         }
 
-        var surface = wgpu.InstanceCreateSurface(instance, ref descriptor);
+        var surface = wgpu.InstanceCreateSurface(instance, descriptor);
 
-        if (descriptor.NextInChain->Next->SType == SType.SurfaceDescriptorFromCanvasHtmlselector)
+        if (descriptor.NextInChain->SType == SType.SurfaceDescriptorFromCanvasHtmlselector)
         {
             var htmlDescriptor = (SurfaceDescriptorFromCanvasHTMLSelector*) descriptor.NextInChain;
             
