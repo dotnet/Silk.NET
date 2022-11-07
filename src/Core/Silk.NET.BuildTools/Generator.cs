@@ -219,7 +219,7 @@ namespace Silk.NET.BuildTools
                     ClangConfig.SubstituteWindowsSdkPath(ref task);
                     foreach (var src in task.Sources)
                     {
-                        profiles.Add( Clang.GenerateProfile(Path.GetFileName(src), File.OpenRead(GetPath(src)), task));
+                        profiles.Add(Clang.GenerateProfile(Path.GetFileName(src), File.OpenRead(GetPath(src)), task));
                     }
                 }
 
