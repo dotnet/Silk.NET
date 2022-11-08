@@ -493,5 +493,13 @@ namespace Silk.NET.SDL
         KAudiorewind = 0x4000011D,
         [NativeName("Name", "SDLK_AUDIOFASTFORWARD")]
         KAudiofastforward = 0x4000011E,
+        [NativeName("Name", "SDLK_SOFTLEFT")]
+        KSoftleft = 0x4000011F,
+        [NativeName("Name", "SDLK_SOFTRIGHT")]
+        KSoftright = 0x40000120,
+        [NativeName("Name", "SDLK_CALL")]
+        KCall = 0x40000121,
+        [NativeName("Name", "SDLK_ENDCALL")]
+        KEndcall = 0x40000122,
     }
 }

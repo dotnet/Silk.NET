@@ -18,18 +18,18 @@ namespace Silk.NET.DXGI
 {
     [Guid("9d8e1289-d7b3-465f-8126-250e349af85d")]
     [NativeName("Name", "IDXGIKeyedMutex")]
-    public unsafe partial struct IDXGIKeyedMutex : IComVtbl<IDXGIKeyedMutex>, IComVtbl<IDXGIDeviceSubObject>, IComVtbl<IDXGIObject>, IComVtbl<Silk.NET.Core.Native.IUnknown>
+    public unsafe partial struct IDXGIKeyedMutex : IComVtbl<IDXGIKeyedMutex>, IComVtbl<Silk.NET.DXGI.IDXGIDeviceSubObject>, IComVtbl<Silk.NET.DXGI.IDXGIObject>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("9d8e1289-d7b3-465f-8126-250e349af85d");
 
         void*** IComVtbl.AsVtblPtr()
             => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
-        public static implicit operator IDXGIDeviceSubObject(IDXGIKeyedMutex val)
-            => Unsafe.As<IDXGIKeyedMutex, IDXGIDeviceSubObject>(ref val);
+        public static implicit operator Silk.NET.DXGI.IDXGIDeviceSubObject(IDXGIKeyedMutex val)
+            => Unsafe.As<IDXGIKeyedMutex, Silk.NET.DXGI.IDXGIDeviceSubObject>(ref val);
 
-        public static implicit operator IDXGIObject(IDXGIKeyedMutex val)
-            => Unsafe.As<IDXGIKeyedMutex, IDXGIObject>(ref val);
+        public static implicit operator Silk.NET.DXGI.IDXGIObject(IDXGIKeyedMutex val)
+            => Unsafe.As<IDXGIKeyedMutex, Silk.NET.DXGI.IDXGIObject>(ref val);
 
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGIKeyedMutex val)
             => Unsafe.As<IDXGIKeyedMutex, Silk.NET.Core.Native.IUnknown>(ref val);

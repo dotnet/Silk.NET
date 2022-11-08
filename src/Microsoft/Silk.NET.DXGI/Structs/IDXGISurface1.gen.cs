@@ -18,21 +18,21 @@ namespace Silk.NET.DXGI
 {
     [Guid("4ae63092-6327-4c1b-80ae-bfe12ea32b86")]
     [NativeName("Name", "IDXGISurface1")]
-    public unsafe partial struct IDXGISurface1 : IComVtbl<IDXGISurface1>, IComVtbl<IDXGISurface>, IComVtbl<IDXGIDeviceSubObject>, IComVtbl<IDXGIObject>, IComVtbl<Silk.NET.Core.Native.IUnknown>
+    public unsafe partial struct IDXGISurface1 : IComVtbl<IDXGISurface1>, IComVtbl<Silk.NET.DXGI.IDXGISurface>, IComVtbl<Silk.NET.DXGI.IDXGIDeviceSubObject>, IComVtbl<Silk.NET.DXGI.IDXGIObject>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("4ae63092-6327-4c1b-80ae-bfe12ea32b86");
 
         void*** IComVtbl.AsVtblPtr()
             => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
-        public static implicit operator IDXGISurface(IDXGISurface1 val)
-            => Unsafe.As<IDXGISurface1, IDXGISurface>(ref val);
+        public static implicit operator Silk.NET.DXGI.IDXGISurface(IDXGISurface1 val)
+            => Unsafe.As<IDXGISurface1, Silk.NET.DXGI.IDXGISurface>(ref val);
 
-        public static implicit operator IDXGIDeviceSubObject(IDXGISurface1 val)
-            => Unsafe.As<IDXGISurface1, IDXGIDeviceSubObject>(ref val);
+        public static implicit operator Silk.NET.DXGI.IDXGIDeviceSubObject(IDXGISurface1 val)
+            => Unsafe.As<IDXGISurface1, Silk.NET.DXGI.IDXGIDeviceSubObject>(ref val);
 
-        public static implicit operator IDXGIObject(IDXGISurface1 val)
-            => Unsafe.As<IDXGISurface1, IDXGIObject>(ref val);
+        public static implicit operator Silk.NET.DXGI.IDXGIObject(IDXGISurface1 val)
+            => Unsafe.As<IDXGISurface1, Silk.NET.DXGI.IDXGIObject>(ref val);
 
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGISurface1 val)
             => Unsafe.As<IDXGISurface1, Silk.NET.Core.Native.IUnknown>(ref val);
@@ -492,22 +492,22 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ReleaseDC(Silk.NET.Maths.Rectangle<int>* pDirtyRect)
+        public readonly unsafe int ReleaseDC(Silk.NET.Maths.Box2D<int>* pDirtyRect)
         {
             var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGISurface1*, Silk.NET.Maths.Rectangle<int>*, int>)@this->LpVtbl[12])(@this, pDirtyRect);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGISurface1*, Silk.NET.Maths.Box2D<int>*, int>)@this->LpVtbl[12])(@this, pDirtyRect);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int ReleaseDC(ref Silk.NET.Maths.Rectangle<int> pDirtyRect)
+        public readonly int ReleaseDC(ref Silk.NET.Maths.Box2D<int> pDirtyRect)
         {
             var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<int>* pDirtyRectPtr = &pDirtyRect)
+            fixed (Silk.NET.Maths.Box2D<int>* pDirtyRectPtr = &pDirtyRect)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGISurface1*, Silk.NET.Maths.Rectangle<int>*, int>)@this->LpVtbl[12])(@this, pDirtyRectPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGISurface1*, Silk.NET.Maths.Box2D<int>*, int>)@this->LpVtbl[12])(@this, pDirtyRectPtr);
             }
             return ret;
         }

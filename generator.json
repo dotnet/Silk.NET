@@ -748,11 +748,12 @@
                 "ID3D11Device",
                 "SDL_main",
                 "SDL_SysWMmsg",
-                "SDL_Rect"
+                "SDL_Rect",
+                "ID3D12Device"
             ],
             "rename": {
-                "__AnonymousEnum_SDL_shape_L80_C9": "WindowShapeModeVal",
-                "__AnonymousEnum_SDL_stdinc_L167_C9": "SdlBool",
+                "__AnonymousEnum_SDL_shape_L85_C9": "WindowShapeModeVal",
+                "SDL_bool": "SdlBool",
                 "_comment_0": "Remove this in 3.0, use native names",
                 "__AnonymousRecord_SDL_gamecontroller_L87_C5": "GameControllerBindValue",
                 "__AnonymousRecord_SDL_gamecontroller_L91_C9": "GameControllerHatValue",
@@ -813,7 +814,8 @@
                     "SDL_SysWMmsg": "SysWMMsg",
                     "SDL_Rect": "Silk.NET.Maths.Rectangle<int>",
                     "SDL_bool": "SdlBool",
-                    "ID3D11Device": "Silk.NET.Core.Native.IUnknown"
+                    "ID3D11Device": "Silk.NET.Core.Native.IUnknown",
+                    "ID3D12Device": "Silk.NET.Core.Native.IUnknown"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json"
@@ -849,12 +851,14 @@
                     "-Ibuild/include"
                 ],
                 "traverse": [
+					
                 ],
                 "classes": {
-                    "d3dcommon.h": "[Core]D3DCommon"
+                    "d3dcommon.h": "[Core]D3DCommon",
                 }
             },
             "exclude": [
+				
             ],
             "rename": {
                 "_D3D_CBUFFER_TYPE": "D3DCBufferType",
@@ -862,7 +866,8 @@
             },
             "bakery": {
                 "profileNames": [
-                    "d3dcommon"
+                    "d3dcommon",
+					"silk.net.core.native.dcommon"
                 ]
             },
             "output": {
@@ -907,12 +912,15 @@
                     "-Ibuild/include"
                 ],
                 "traverse": [
+                    "$windowsSdkDir/Include/$windowsSdkVersion/shared/rpcdcep.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/shared/WTypesbase.h",
                     "$windowsSdkDir/Include/$windowsSdkVersion/shared/evntrace.h",
                     "$windowsSdkDir/Include/$windowsSdkVersion/um/minwinbase.h",
                     "$windowsSdkDir/Include/$windowsSdkVersion/um/timezoneapi.h",
                     "$windowsSdkDir/Include/$windowsSdkVersion/um/winnt.h",
                     "$windowsSdkDir/Include/$windowsSdkVersion/um/handleapi.h",
-                    "$windowsSdkDir/Include/$windowsSdkVersion/um/fileapi.h"
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/fileapi.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/objidlbase.h"
                 ],
                 "classes": {
                     "win32extras.h": "[Core]Windows"
@@ -945,7 +953,8 @@
                     "_TIME_ZONE_INFORMATION": "TimeZoneInformation",
                     "_WNODE_HEADER": "WnodeHeader",
                     "_EXCEPTION_RECORD": "ExceptionRecord",
-                    "_FILE_SEGMENT_ELEMENT": "FileSegmentElement"
+                    "_FILE_SEGMENT_ELEMENT": "FileSegmentElement",
+					"_RPC_MESSAGE": "RPCMessage"
                 },
                 {
                     "$include.dxTypemap": "build/dx_typemap.json",
@@ -1130,6 +1139,131 @@
                     "_D3DPOOL": "Silk.NET.Direct3D9.Pool",
                     "_EVENT_TRACE_HEADER": "Silk.NET.Core.Win32Extras.EventTraceHeader"
                 },
+                {
+                    "$include.dxTypemap": "build/dx_typemap.json",
+                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                }
+            ]
+        },
+		{
+            "profileName": "D2D",
+            "sources": [
+				"build/include/silk.net.direct2d.dcommon.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1_1.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1_2.h",
+				"build/include/silk.net.direct2d.d2d1effects.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1effectauthor.h",
+				"$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1svg.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1_3.h",
+				"$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1effectauthor_1.h"
+            ],
+            "mode": "Clang",
+            "cacheDir": "build/cache",
+            "cacheKey": "d2d",
+            "controlDescriptors": [
+                "convert-windows-only"
+            ],
+            "converter": {},
+            "prefix": "D2D1_",
+            "clang": {
+                "args": [
+                    "--language=c++",
+                    "--std=c++17",
+                    "-m32",
+                    "-Wno-expansion-to-defined",
+                    "-Wno-ignored-attributes",
+                    "-Wno-ignored-pragma-intrinsic",
+                    "-Wno-nonportable-include-path",
+                    "-Wno-pragma-pack",
+                    "-I$windowsSdkIncludes",
+                    "-Ibuild/include"
+                ],
+                "traverse": [
+					"$windowsSdkDir/Include/$windowsSdkVersion/um/dcommon.h",
+					"$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1effects.h",
+					"$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1effects_1.h",
+					"$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1effects_2.h",
+					"$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1helper.h",
+					"$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1_1helper.h",
+					"$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1_2helper.h",
+					"$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1_3helper.h",
+					"$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1effecthelpers.h",
+					"$windowsSdkDir/Include/$windowsSdkVersion/um/d2dbasetypes.h",
+					"$windowsSdkDir/Include/$windowsSdkVersion/um/D2DErr.h"
+                ],
+                "classes": {
+					"silk.net.direct2d.dcommon.h": "[Core]D2D",
+                    "d2d1.h": "[Core]D2D",
+                    "d2d1_1.h": "[Core]D2D",
+                    "d2d1_2.h": "[Core]D2D",
+					"silk.net.direct2d.d2d1effects.h": "[Core]D2D",
+                    "d2d1effectauthor.h": "[Core]D2D",
+                    "d2d1svg.h": "[Core]D2D",
+					"d2d1_3.h": "[Core]D2D",
+					"d2d1effectauthor_1.h": "[Core]D2D"
+                }
+            },
+            "exclude": [
+				"D2D_VECTOR_2F",
+				"D2D_VECTOR_3F",
+				"D2D_VECTOR_4F",
+				"D2D_POINT_2U",
+				"D2D_POINT_2F",
+				"D2D_POINT_2L",
+				"D2D_RECT_F",
+				"D2D_RECT_U",
+				"D2D_RECT_L",
+				"D2D_SIZE_F",
+				"D2D_SIZE_U",
+				"D2D_MATRIX_3X2_F",
+				"D2D_MATRIX_4X3_F",
+				"D2D_MATRIX_4X4_F",
+				"D2D_MATRIX_5X4_F",
+				"D2D1_POINT_2U",
+				"D2D1_POINT_2F",
+				"D2D1_POINT_2L",
+				"D2D1_RECT_F",
+				"D2D1_RECT_U",
+				"D2D1_RECT_L",
+				"D2D1_SIZE_F",
+				"D2D1_SIZE_U",
+				"D2D1GetGradientMeshInteriorPointsFromCoonsPatch"
+            ],
+            "rename": {
+				
+            },
+            "bakery": {
+                "profileNames": [
+					"silk.net.direct2d.dcommon",
+                    "d2d1",
+                    "d2d1_1",
+                    "d2d1_2",
+					"silk.net.direct2d.d2d1effects",
+                    "d2d1effectauthor",
+					"d2d1svg",
+                    "d2d1_3",
+					"d2d1effectauthor_1"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/Microsoft",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.Direct2D",
+            "extensionsNamespace": "Silk.NET.Direct2D.Extensions",
+            "nameContainer": {
+                "linux-x64": "libd2d1.so",
+                "win-x64": "d2d1.dll",
+                "win-x86": "d2d1.dll",
+                "osx-x64": "libd2d1.dylib",
+                "android": "libd2d1.so",
+                "iOS": "__Internal",
+                "className": "D2DLibraryNameContainer"
+            },
+            "typeMaps": [
                 {
                     "$include.dxTypemap": "build/dx_typemap.json",
                     "$include.commonTypeMap": "build/csharp_typemap.json"
@@ -1772,91 +1906,6 @@
             "typeMaps": [
                 {
                 },
-                {
-                    "$include.dxTypemap": "build/dx_typemap.json",
-                    "$include.commonTypeMap": "build/csharp_typemap.json"
-                }
-            ]
-        },
-        {
-            "profileName": "D2D1",
-            "sources": [
-                "src/Microsoft/Silk.NET.Direct2D1/D2D1.h"
-            ],
-            "mode": "Clang",
-            "cacheDir": "build/cache",
-            "cacheKey": "d2d1",
-            "controlDescriptors": [
-                "convert-windows-only",
-                "Currently disabled due to bakery bugs.",
-                "no-convert",
-                "no-bind"
-            ],
-            "converter": {},
-            "prefix": "D2D1",
-            "clang": {
-                "args": [
-                    "--language=c++",
-                    "--std=c++17",
-                    "-m32",
-                    "-Wno-expansion-to-defined",
-                    "-Wno-ignored-attributes",
-                    "-Wno-ignored-pragma-intrinsic",
-                    "-Wno-nonportable-include-path",
-                    "-Wno-pragma-pack",
-                    "-I$windowsSdkIncludes",
-                    "-Ibuild/include"
-                ],
-                "traverse": [
-                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1.h",
-                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1effectauthor.h",
-                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1effectauthor_1.h",
-                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1effecthelpers.h",
-                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1effects.h",
-                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1effects_1.h",
-                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1effects_2.h",
-                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1helper.h",
-                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1svg.h",
-                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1_1.h",
-                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1_1helper.h",
-                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1_2.h",
-                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1_2helper.h",
-                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1_3.h",
-                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1_3helper.h",
-                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2dbasetypes.h",
-                    "$windowsSdkDir/Include/$windowsSdkVersion/um/D2DErr.h"
-                ],
-                "classes": {
-                    "D2D1.h": "[Core]D2D1"
-                }
-            },
-            "exclude": [
-            ],
-            "rename": {
-            },
-            "bakery": {
-                "profileNames": [
-                    "D2D1"
-                ]
-            },
-            "output": {
-                "mode": "Default",
-                "path": "src/Microsoft",
-                "licenseFile": "build/LICENSE_HEADER.txt",
-                "props": "build/props/bindings.props"
-            },
-            "namespace": "Silk.NET.Direct2D1",
-            "extensionsNamespace": "Silk.NET.Direct2D1.Extensions",
-            "nameContainer": {
-                "linux-x64": "libd2d1.so",
-                "win-x64": "d2d1.dll",
-                "win-x86": "d2d1.dll",
-                "osx-x64": "libd2d1.dylib",
-                "android": "libd2d1.so",
-                "iOS": "__Internal",
-                "className": "D2D1LibraryNameContainer"
-            },
-            "typeMaps": [
                 {
                     "$include.dxTypemap": "build/dx_typemap.json",
                     "$include.commonTypeMap": "build/csharp_typemap.json"

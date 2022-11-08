@@ -10,7 +10,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.SDL
 {
     [Flags]
-    [NativeName("AnonymousName", "__AnonymousEnum_SDL_keycode_L327_C9")]
+    [NativeName("AnonymousName", "__AnonymousEnum_SDL_keycode_L332_C9")]
     [NativeName("Name", "SDL_Keymod")]
     public enum Keymod : int
     {
@@ -50,9 +50,9 @@ namespace Silk.NET.SDL
         [Obsolete("Deprecated in favour of \"Mode\"")]
         [NativeName("Name", "KMOD_MODE")]
         KmodMode = 0x4000,
-        [Obsolete("Deprecated in favour of \"Reserved\"")]
-        [NativeName("Name", "KMOD_RESERVED")]
-        KmodReserved = 0x8000,
+        [Obsolete("Deprecated in favour of \"Scroll\"")]
+        [NativeName("Name", "KMOD_SCROLL")]
+        KmodScroll = 0x8000,
         [Obsolete("Deprecated in favour of \"Ctrl\"")]
         [NativeName("Name", "KMOD_CTRL")]
         KmodCtrl = 0xC0,
@@ -65,6 +65,9 @@ namespace Silk.NET.SDL
         [Obsolete("Deprecated in favour of \"Gui\"")]
         [NativeName("Name", "KMOD_GUI")]
         KmodGui = 0xC00,
+        [Obsolete("Deprecated in favour of \"Reserved\"")]
+        [NativeName("Name", "KMOD_RESERVED")]
+        KmodReserved = 0x8000,
         [NativeName("Name", "KMOD_NONE")]
         None = 0x0,
         [NativeName("Name", "KMOD_LSHIFT")]
@@ -89,8 +92,8 @@ namespace Silk.NET.SDL
         Caps = 0x2000,
         [NativeName("Name", "KMOD_MODE")]
         Mode = 0x4000,
-        [NativeName("Name", "KMOD_RESERVED")]
-        Reserved = 0x8000,
+        [NativeName("Name", "KMOD_SCROLL")]
+        Scroll = 0x8000,
         [NativeName("Name", "KMOD_CTRL")]
         Ctrl = 0xC0,
         [NativeName("Name", "KMOD_SHIFT")]
@@ -99,5 +102,7 @@ namespace Silk.NET.SDL
         Alt = 0x300,
         [NativeName("Name", "KMOD_GUI")]
         Gui = 0xC00,
+        [NativeName("Name", "KMOD_RESERVED")]
+        Reserved = 0x8000,
     }
 }

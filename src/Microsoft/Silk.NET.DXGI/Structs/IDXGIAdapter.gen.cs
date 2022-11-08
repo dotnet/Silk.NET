@@ -18,15 +18,15 @@ namespace Silk.NET.DXGI
 {
     [Guid("2411e7e1-12ac-4ccf-bd14-9798e8534dc0")]
     [NativeName("Name", "IDXGIAdapter")]
-    public unsafe partial struct IDXGIAdapter : IComVtbl<IDXGIAdapter>, IComVtbl<IDXGIObject>, IComVtbl<Silk.NET.Core.Native.IUnknown>
+    public unsafe partial struct IDXGIAdapter : IComVtbl<IDXGIAdapter>, IComVtbl<Silk.NET.DXGI.IDXGIObject>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("2411e7e1-12ac-4ccf-bd14-9798e8534dc0");
 
         void*** IComVtbl.AsVtblPtr()
             => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
-        public static implicit operator IDXGIObject(IDXGIAdapter val)
-            => Unsafe.As<IDXGIAdapter, IDXGIObject>(ref val);
+        public static implicit operator Silk.NET.DXGI.IDXGIObject(IDXGIAdapter val)
+            => Unsafe.As<IDXGIAdapter, Silk.NET.DXGI.IDXGIObject>(ref val);
 
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGIAdapter val)
             => Unsafe.As<IDXGIAdapter, Silk.NET.Core.Native.IUnknown>(ref val);

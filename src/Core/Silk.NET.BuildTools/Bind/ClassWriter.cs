@@ -1,4 +1,4 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
+// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
@@ -84,8 +84,12 @@ namespace Silk.NET.BuildTools.Bind
                 {
                     var allFunctions = @class.NativeApis.SelectMany
                             (x => x.Value.Functions)
-                        .RemoveDuplicates()
+                        .RemoveDuplicatesFast(GetSignature)
                         .ToArray();
+
+                    static string GetSignature(Function func) 
+                        => func.ToString(null, returnType: false, appendAttributes: false);
+
                     var sw = new StreamWriter(Path.Combine(folder, $"{@class.ClassName}.gen.cs")) {NewLine = "\n"};
                     StreamWriter? swOverloads = null;
                     sw.Write(task.LicenseText());
@@ -172,7 +176,7 @@ namespace Silk.NET.BuildTools.Bind
                         sw.WriteLine();
                     }
 
-                    foreach (var overload in Overloader.GetOverloads(allFunctions, profile.Projects["Core"], task.Task.OverloaderExclusions))
+                    foreach (var overload in Overloader.GetOverloads(allFunctions, profile.Projects["Core"], task.Task.OverloaderExclusions, true))
                     {
                         var sw2u = overload.Signature.Kind == SignatureKind.PotentiallyConflictingOverload
                             ? swOverloads ??= CreateOverloadsFile(folder, @class.ClassName, false)

@@ -966,8 +966,21 @@ namespace Silk.NET.BuildTools.Cpp
                                 ? "Anonymous"
                                 : $"Anonymous{nestedRecordFieldCount}";
                             var nestedName = GetAnonymousName(nestedRecordDecl, "Record");
+                            
+                            var parent = recordDecl;
+                            var typeSuffix = "";
+                            if (string.IsNullOrWhiteSpace(recordDecl.Name))
+                            {
+                                typeSuffix = recordDecl.CursorKindSpelling.Remove(recordDecl.CursorKindSpelling.Length - 4);
+                                parent = parent.Parent as RecordDecl;
+                                while (string.IsNullOrWhiteSpace(parent.Name))
+                                {
+                                    typeSuffix = parent.CursorKindSpelling.Remove(parent.CursorKindSpelling.Length - 4) + typeSuffix;
+                                    parent = parent.Parent as RecordDecl;
+                                }
+                            }
                             var nestedNameMapped = remappedNativeName ?? Naming.TranslateVariable
-                                (Naming.TrimName(recordDecl.Name, task), task.FunctionPrefix);
+                                (Naming.TrimName(parent.Name + typeSuffix, task), task.FunctionPrefix);
                             var ret = new Field
                             {
                                 Name = Naming.TranslateLite
@@ -1210,9 +1223,17 @@ namespace Silk.NET.BuildTools.Cpp
                             }
                         }
 
-                        if (task.ExcludedNativeNames?.Contains(nativeName) ?? false)
+                        if (task.ExcludedNativeNames is not null)
                         {
-                            break;
+                            var declaration = recordDecl;
+                            while (declaration is not null && string.IsNullOrEmpty(declaration.Name))
+                                declaration = declaration.Parent as RecordDecl;
+
+                            var excludedName = declaration is null ? nativeName : declaration.Name;
+                            if (task.ExcludedNativeNames?.Contains(excludedName) ?? false)
+                            {
+                                break;
+                            }
                         }
 
                         string name = null;

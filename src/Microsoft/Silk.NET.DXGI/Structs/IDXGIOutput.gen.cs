@@ -18,15 +18,15 @@ namespace Silk.NET.DXGI
 {
     [Guid("ae02eedb-c735-4690-8d52-5a8dc20213aa")]
     [NativeName("Name", "IDXGIOutput")]
-    public unsafe partial struct IDXGIOutput : IComVtbl<IDXGIOutput>, IComVtbl<IDXGIObject>, IComVtbl<Silk.NET.Core.Native.IUnknown>
+    public unsafe partial struct IDXGIOutput : IComVtbl<IDXGIOutput>, IComVtbl<Silk.NET.DXGI.IDXGIObject>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("ae02eedb-c735-4690-8d52-5a8dc20213aa");
 
         void*** IComVtbl.AsVtblPtr()
             => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
-        public static implicit operator IDXGIObject(IDXGIOutput val)
-            => Unsafe.As<IDXGIOutput, IDXGIObject>(ref val);
+        public static implicit operator Silk.NET.DXGI.IDXGIObject(IDXGIOutput val)
+            => Unsafe.As<IDXGIOutput, Silk.NET.DXGI.IDXGIObject>(ref val);
 
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGIOutput val)
             => Unsafe.As<IDXGIOutput, Silk.NET.Core.Native.IUnknown>(ref val);
@@ -643,43 +643,43 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetDisplaySurface(IDXGISurface* pScanoutSurface)
+        public readonly unsafe int SetDisplaySurface(Silk.NET.DXGI.IDXGISurface* pScanoutSurface)
         {
             var @this = (IDXGIOutput*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput*, IDXGISurface*, int>)@this->LpVtbl[16])(@this, pScanoutSurface);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput*, Silk.NET.DXGI.IDXGISurface*, int>)@this->LpVtbl[16])(@this, pScanoutSurface);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetDisplaySurface(ref IDXGISurface pScanoutSurface)
+        public readonly int SetDisplaySurface(ref Silk.NET.DXGI.IDXGISurface pScanoutSurface)
         {
             var @this = (IDXGIOutput*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (IDXGISurface* pScanoutSurfacePtr = &pScanoutSurface)
+            fixed (Silk.NET.DXGI.IDXGISurface* pScanoutSurfacePtr = &pScanoutSurface)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput*, IDXGISurface*, int>)@this->LpVtbl[16])(@this, pScanoutSurfacePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput*, Silk.NET.DXGI.IDXGISurface*, int>)@this->LpVtbl[16])(@this, pScanoutSurfacePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDisplaySurfaceData(IDXGISurface* pDestination)
+        public readonly unsafe int GetDisplaySurfaceData(Silk.NET.DXGI.IDXGISurface* pDestination)
         {
             var @this = (IDXGIOutput*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput*, IDXGISurface*, int>)@this->LpVtbl[17])(@this, pDestination);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput*, Silk.NET.DXGI.IDXGISurface*, int>)@this->LpVtbl[17])(@this, pDestination);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetDisplaySurfaceData(ref IDXGISurface pDestination)
+        public readonly int GetDisplaySurfaceData(ref Silk.NET.DXGI.IDXGISurface pDestination)
         {
             var @this = (IDXGIOutput*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (IDXGISurface* pDestinationPtr = &pDestination)
+            fixed (Silk.NET.DXGI.IDXGISurface* pDestinationPtr = &pDestination)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput*, IDXGISurface*, int>)@this->LpVtbl[17])(@this, pDestinationPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput*, Silk.NET.DXGI.IDXGISurface*, int>)@this->LpVtbl[17])(@this, pDestinationPtr);
             }
             return ret;
         }
@@ -780,19 +780,19 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetDisplaySurface<TI0>(ComPtr<TI0> pScanoutSurface) where TI0 : unmanaged, IComVtbl<IDXGISurface>, IComVtbl<TI0>
+        public readonly int SetDisplaySurface<TI0>(ComPtr<TI0> pScanoutSurface) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISurface>, IComVtbl<TI0>
         {
             var @this = (IDXGIOutput*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->SetDisplaySurface((IDXGISurface*) pScanoutSurface.Handle);
+            return @this->SetDisplaySurface((Silk.NET.DXGI.IDXGISurface*) pScanoutSurface.Handle);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetDisplaySurfaceData<TI0>(ComPtr<TI0> pDestination) where TI0 : unmanaged, IComVtbl<IDXGISurface>, IComVtbl<TI0>
+        public readonly int GetDisplaySurfaceData<TI0>(ComPtr<TI0> pDestination) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISurface>, IComVtbl<TI0>
         {
             var @this = (IDXGIOutput*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->GetDisplaySurfaceData((IDXGISurface*) pDestination.Handle);
+            return @this->GetDisplaySurfaceData((Silk.NET.DXGI.IDXGISurface*) pDestination.Handle);
         }
 
         /// <summary>To be documented.</summary>
