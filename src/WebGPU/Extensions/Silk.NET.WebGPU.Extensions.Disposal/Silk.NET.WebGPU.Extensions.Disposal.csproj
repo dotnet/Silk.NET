@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netstandard2.0</TargetFramework>
+        <TargetFrameworks>netstandard2.0;netstandard2.1;netcoreapp3.1;net5.0</TargetFrameworks>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
 
@@ -11,4 +11,5 @@
       <ProjectReference Include="..\Silk.NET.WebGPU.Extensions.WGPU\Silk.NET.WebGPU.Extensions.WGPU.csproj" />
     </ItemGroup>
 
+    <Import Project="..\..\..\..\build\props\bindings.props" />
 </Project>
