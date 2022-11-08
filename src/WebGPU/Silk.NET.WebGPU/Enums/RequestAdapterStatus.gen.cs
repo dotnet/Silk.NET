@@ -15,21 +15,6 @@ namespace Silk.NET.WebGPU
     {
         [NativeName("Name", "")]
         None = 0,
-        [Obsolete("Deprecated in favour of \"Success\"")]
-        [NativeName("Name", "WGPURequestAdapterStatus_Success")]
-        RequestAdapterStatusSuccess = 0x0,
-        [Obsolete("Deprecated in favour of \"Unavailable\"")]
-        [NativeName("Name", "WGPURequestAdapterStatus_Unavailable")]
-        RequestAdapterStatusUnavailable = 0x1,
-        [Obsolete("Deprecated in favour of \"Error\"")]
-        [NativeName("Name", "WGPURequestAdapterStatus_Error")]
-        RequestAdapterStatusError = 0x2,
-        [Obsolete("Deprecated in favour of \"Unknown\"")]
-        [NativeName("Name", "WGPURequestAdapterStatus_Unknown")]
-        RequestAdapterStatusUnknown = 0x3,
-        [Obsolete("Deprecated in favour of \"Force32\"")]
-        [NativeName("Name", "WGPURequestAdapterStatus_Force32")]
-        RequestAdapterStatusForce32 = 0x7FFFFFFF,
         [NativeName("Name", "WGPURequestAdapterStatus_Success")]
         Success = 0x0,
         [NativeName("Name", "WGPURequestAdapterStatus_Unavailable")]

@@ -15,18 +15,6 @@ namespace Silk.NET.WebGPU
     {
         [NativeName("Name", "")]
         None = 0,
-        [Obsolete("Deprecated in favour of \"Immediate\"")]
-        [NativeName("Name", "WGPUPresentMode_Immediate")]
-        PresentModeImmediate = 0x0,
-        [Obsolete("Deprecated in favour of \"Mailbox\"")]
-        [NativeName("Name", "WGPUPresentMode_Mailbox")]
-        PresentModeMailbox = 0x1,
-        [Obsolete("Deprecated in favour of \"Fifo\"")]
-        [NativeName("Name", "WGPUPresentMode_Fifo")]
-        PresentModeFifo = 0x2,
-        [Obsolete("Deprecated in favour of \"Force32\"")]
-        [NativeName("Name", "WGPUPresentMode_Force32")]
-        PresentModeForce32 = 0x7FFFFFFF,
         [NativeName("Name", "WGPUPresentMode_Immediate")]
         Immediate = 0x0,
         [NativeName("Name", "WGPUPresentMode_Mailbox")]

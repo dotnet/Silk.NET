@@ -15,21 +15,6 @@ namespace Silk.NET.WebGPU
     {
         [NativeName("Name", "")]
         None = 0,
-        [Obsolete("Deprecated in favour of \"Undefined\"")]
-        [NativeName("Name", "WGPUBufferBindingType_Undefined")]
-        BufferBindingTypeUndefined = 0x0,
-        [Obsolete("Deprecated in favour of \"Uniform\"")]
-        [NativeName("Name", "WGPUBufferBindingType_Uniform")]
-        BufferBindingTypeUniform = 0x1,
-        [Obsolete("Deprecated in favour of \"Storage\"")]
-        [NativeName("Name", "WGPUBufferBindingType_Storage")]
-        BufferBindingTypeStorage = 0x2,
-        [Obsolete("Deprecated in favour of \"ReadOnlyStorage\"")]
-        [NativeName("Name", "WGPUBufferBindingType_ReadOnlyStorage")]
-        BufferBindingTypeReadOnlyStorage = 0x3,
-        [Obsolete("Deprecated in favour of \"Force32\"")]
-        [NativeName("Name", "WGPUBufferBindingType_Force32")]
-        BufferBindingTypeForce32 = 0x7FFFFFFF,
         [NativeName("Name", "WGPUBufferBindingType_Undefined")]
         Undefined = 0x0,
         [NativeName("Name", "WGPUBufferBindingType_Uniform")]

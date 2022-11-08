@@ -15,27 +15,6 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
     {
         [NativeName("Name", "")]
         None = 0,
-        [Obsolete("Deprecated in favour of \"Off\"")]
-        [NativeName("Name", "WGPULogLevel_Off")]
-        LogLevelOff = 0x0,
-        [Obsolete("Deprecated in favour of \"Error\"")]
-        [NativeName("Name", "WGPULogLevel_Error")]
-        LogLevelError = 0x1,
-        [Obsolete("Deprecated in favour of \"Warn\"")]
-        [NativeName("Name", "WGPULogLevel_Warn")]
-        LogLevelWarn = 0x2,
-        [Obsolete("Deprecated in favour of \"Info\"")]
-        [NativeName("Name", "WGPULogLevel_Info")]
-        LogLevelInfo = 0x3,
-        [Obsolete("Deprecated in favour of \"Debug\"")]
-        [NativeName("Name", "WGPULogLevel_Debug")]
-        LogLevelDebug = 0x4,
-        [Obsolete("Deprecated in favour of \"Trace\"")]
-        [NativeName("Name", "WGPULogLevel_Trace")]
-        LogLevelTrace = 0x5,
-        [Obsolete("Deprecated in favour of \"Force32\"")]
-        [NativeName("Name", "WGPULogLevel_Force32")]
-        LogLevelForce32 = 0x7FFFFFFF,
         [NativeName("Name", "WGPULogLevel_Off")]
         Off = 0x0,
         [NativeName("Name", "WGPULogLevel_Error")]

@@ -2008,7 +2008,8 @@
             "cacheDir": "build/cache",
             "cacheKey": "webgpu",
             "controlDescriptors": [
-                "convert-windows-only"
+                "convert-windows-only",
+                "no-obsolete-enum"
             ],
             "converter": {},
             "prefix": "wgpu",

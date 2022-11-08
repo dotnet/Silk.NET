@@ -15,21 +15,6 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
     {
         [NativeName("Name", "")]
         None = 0,
-        [Obsolete("Deprecated in favour of \"Verbose\"")]
-        [NativeName("Name", "WGPULoggingType_Verbose")]
-        LoggingTypeVerbose = 0x0,
-        [Obsolete("Deprecated in favour of \"Info\"")]
-        [NativeName("Name", "WGPULoggingType_Info")]
-        LoggingTypeInfo = 0x1,
-        [Obsolete("Deprecated in favour of \"Warning\"")]
-        [NativeName("Name", "WGPULoggingType_Warning")]
-        LoggingTypeWarning = 0x2,
-        [Obsolete("Deprecated in favour of \"Error\"")]
-        [NativeName("Name", "WGPULoggingType_Error")]
-        LoggingTypeError = 0x3,
-        [Obsolete("Deprecated in favour of \"Force32\"")]
-        [NativeName("Name", "WGPULoggingType_Force32")]
-        LoggingTypeForce32 = 0x7FFFFFFF,
         [NativeName("Name", "WGPULoggingType_Verbose")]
         Verbose = 0x0,
         [NativeName("Name", "WGPULoggingType_Info")]

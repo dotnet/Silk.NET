@@ -15,18 +15,6 @@ namespace Silk.NET.WebGPU
     {
         [NativeName("Name", "")]
         None = 0,
-        [Obsolete("Deprecated in favour of \"Vertex\"")]
-        [NativeName("Name", "WGPUVertexStepMode_Vertex")]
-        VertexStepModeVertex = 0x0,
-        [Obsolete("Deprecated in favour of \"Instance\"")]
-        [NativeName("Name", "WGPUVertexStepMode_Instance")]
-        VertexStepModeInstance = 0x1,
-        [Obsolete("Deprecated in favour of \"VertexBufferNotUsed\"")]
-        [NativeName("Name", "WGPUVertexStepMode_VertexBufferNotUsed")]
-        VertexStepModeVertexBufferNotUsed = 0x2,
-        [Obsolete("Deprecated in favour of \"Force32\"")]
-        [NativeName("Name", "WGPUVertexStepMode_Force32")]
-        VertexStepModeForce32 = 0x7FFFFFFF,
         [NativeName("Name", "WGPUVertexStepMode_Vertex")]
         Vertex = 0x0,
         [NativeName("Name", "WGPUVertexStepMode_Instance")]

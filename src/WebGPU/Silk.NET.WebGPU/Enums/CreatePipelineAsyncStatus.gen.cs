@@ -15,24 +15,6 @@ namespace Silk.NET.WebGPU
     {
         [NativeName("Name", "")]
         None = 0,
-        [Obsolete("Deprecated in favour of \"Success\"")]
-        [NativeName("Name", "WGPUCreatePipelineAsyncStatus_Success")]
-        CreatePipelineAsyncStatusSuccess = 0x0,
-        [Obsolete("Deprecated in favour of \"Error\"")]
-        [NativeName("Name", "WGPUCreatePipelineAsyncStatus_Error")]
-        CreatePipelineAsyncStatusError = 0x1,
-        [Obsolete("Deprecated in favour of \"DeviceLost\"")]
-        [NativeName("Name", "WGPUCreatePipelineAsyncStatus_DeviceLost")]
-        CreatePipelineAsyncStatusDeviceLost = 0x2,
-        [Obsolete("Deprecated in favour of \"DeviceDestroyed\"")]
-        [NativeName("Name", "WGPUCreatePipelineAsyncStatus_DeviceDestroyed")]
-        CreatePipelineAsyncStatusDeviceDestroyed = 0x3,
-        [Obsolete("Deprecated in favour of \"Unknown\"")]
-        [NativeName("Name", "WGPUCreatePipelineAsyncStatus_Unknown")]
-        CreatePipelineAsyncStatusUnknown = 0x4,
-        [Obsolete("Deprecated in favour of \"Force32\"")]
-        [NativeName("Name", "WGPUCreatePipelineAsyncStatus_Force32")]
-        CreatePipelineAsyncStatusForce32 = 0x7FFFFFFF,
         [NativeName("Name", "WGPUCreatePipelineAsyncStatus_Success")]
         Success = 0x0,
         [NativeName("Name", "WGPUCreatePipelineAsyncStatus_Error")]

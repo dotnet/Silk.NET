@@ -15,21 +15,6 @@ namespace Silk.NET.WebGPU
     {
         [NativeName("Name", "")]
         None = 0,
-        [Obsolete("Deprecated in favour of \"Success\"")]
-        [NativeName("Name", "WGPUQueueWorkDoneStatus_Success")]
-        QueueWorkDoneStatusSuccess = 0x0,
-        [Obsolete("Deprecated in favour of \"Error\"")]
-        [NativeName("Name", "WGPUQueueWorkDoneStatus_Error")]
-        QueueWorkDoneStatusError = 0x1,
-        [Obsolete("Deprecated in favour of \"Unknown\"")]
-        [NativeName("Name", "WGPUQueueWorkDoneStatus_Unknown")]
-        QueueWorkDoneStatusUnknown = 0x2,
-        [Obsolete("Deprecated in favour of \"DeviceLost\"")]
-        [NativeName("Name", "WGPUQueueWorkDoneStatus_DeviceLost")]
-        QueueWorkDoneStatusDeviceLost = 0x3,
-        [Obsolete("Deprecated in favour of \"Force32\"")]
-        [NativeName("Name", "WGPUQueueWorkDoneStatus_Force32")]
-        QueueWorkDoneStatusForce32 = 0x7FFFFFFF,
         [NativeName("Name", "WGPUQueueWorkDoneStatus_Success")]
         Success = 0x0,
         [NativeName("Name", "WGPUQueueWorkDoneStatus_Error")]
