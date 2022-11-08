@@ -4705,7 +4705,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1HwndRenderTarget*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->DrawTextA(string, stringLength, textFormat, layoutRect, (ID2D1Brush*) defaultFillBrush.Handle, options, measuringMode);
+            @this->DrawTextA(@string, stringLength, textFormat, layoutRect, (ID2D1Brush*) defaultFillBrush.Handle, options, measuringMode);
         }
 
         /// <summary>To be documented.</summary>
@@ -4713,7 +4713,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1HwndRenderTarget*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->DrawTextA(string, stringLength, textFormat, ref layoutRect, (ID2D1Brush*) defaultFillBrush.Handle, options, measuringMode);
+            @this->DrawTextA(@string, stringLength, textFormat, ref layoutRect, (ID2D1Brush*) defaultFillBrush.Handle, options, measuringMode);
         }
 
         /// <summary>To be documented.</summary>
@@ -4721,7 +4721,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1HwndRenderTarget*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->DrawTextA(string, stringLength, ref textFormat, layoutRect, (ID2D1Brush*) defaultFillBrush.Handle, options, measuringMode);
+            @this->DrawTextA(@string, stringLength, ref textFormat, layoutRect, (ID2D1Brush*) defaultFillBrush.Handle, options, measuringMode);
         }
 
         /// <summary>To be documented.</summary>
@@ -4729,7 +4729,7 @@ namespace Silk.NET.Direct2D
         {
             var @this = (ID2D1HwndRenderTarget*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->DrawTextA(string, stringLength, ref textFormat, ref layoutRect, (ID2D1Brush*) defaultFillBrush.Handle, options, measuringMode);
+            @this->DrawTextA(@string, stringLength, ref textFormat, ref layoutRect, (ID2D1Brush*) defaultFillBrush.Handle, options, measuringMode);
         }
 
         /// <summary>To be documented.</summary>

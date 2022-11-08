@@ -7558,7 +7558,7 @@ public unsafe static class D2D1DeviceContext1VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DrawTextA(string, stringLength, textFormat, layoutRect, (ID2D1Brush*) defaultFillBrush.Handle, options, measuringMode);
+        @this->DrawTextA(@string, stringLength, textFormat, layoutRect, (ID2D1Brush*) defaultFillBrush.Handle, options, measuringMode);
     }
 
     /// <summary>To be documented.</summary>
@@ -7582,7 +7582,7 @@ public unsafe static class D2D1DeviceContext1VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DrawTextA(string, stringLength, textFormat, ref layoutRect, (ID2D1Brush*) defaultFillBrush.Handle, options, measuringMode);
+        @this->DrawTextA(@string, stringLength, textFormat, ref layoutRect, (ID2D1Brush*) defaultFillBrush.Handle, options, measuringMode);
     }
 
     /// <summary>To be documented.</summary>
@@ -7606,7 +7606,7 @@ public unsafe static class D2D1DeviceContext1VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DrawTextA(string, stringLength, ref textFormat, layoutRect, (ID2D1Brush*) defaultFillBrush.Handle, options, measuringMode);
+        @this->DrawTextA(@string, stringLength, ref textFormat, layoutRect, (ID2D1Brush*) defaultFillBrush.Handle, options, measuringMode);
     }
 
     /// <summary>To be documented.</summary>
@@ -7630,7 +7630,7 @@ public unsafe static class D2D1DeviceContext1VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DrawTextA(string, stringLength, ref textFormat, ref layoutRect, (ID2D1Brush*) defaultFillBrush.Handle, options, measuringMode);
+        @this->DrawTextA(@string, stringLength, ref textFormat, ref layoutRect, (ID2D1Brush*) defaultFillBrush.Handle, options, measuringMode);
     }
 
     /// <summary>To be documented.</summary>

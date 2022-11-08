@@ -29,7 +29,7 @@ public class ComPtrOverloader : IComplexFunctionOverloader
     public bool TryGetFunctionVariant(Function original, out ImplementedFunction varied, Project core)
     {
         var inv = original.Parameters
-            .Select(x => (!x.Type.IsIn ? !x.Type.IsOut ? !x.Type.IsByRef ? "" : "ref " : "out " : "in ") + x.Name)
+            .Select(x => (!x.Type.IsIn ? !x.Type.IsOut ? !x.Type.IsByRef ? "" : "ref " : "out " : "in ") + x.Name.AtEscape())
             .ToList();
 
         var parameters = original.Parameters.ToList();
