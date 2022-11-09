@@ -157,17 +157,17 @@ namespace Silk.NET.BuildTools.Common
         {
             foreach (var constant in constants)
             {
-                constant.Type = MapOne(map, constant.Type);
+                constant.Type = MapOne(map, constant.Type, constant.Type.OriginalName);
             }
         }
 
         public static void Map(Dictionary<string, string> map, Function function)
         {
-            function.ReturnType = MapOne(map, function.ReturnType);
+            function.ReturnType = MapOne(map, function.ReturnType, function.ReturnType.OriginalName);
 
             foreach (var parameter in function.Parameters)
             {
-                parameter.Type = MapOne(map, parameter.Type);
+                parameter.Type = MapOne(map, parameter.Type, parameter.Type.OriginalName);
             }
         }
 

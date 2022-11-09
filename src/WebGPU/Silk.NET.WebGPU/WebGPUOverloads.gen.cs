@@ -298,7 +298,7 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1427, Column 18 in webgpu.h")]
-        public static unsafe void BufferMapAsync<T0>(this WebGPU thisApi, Buffer* buffer, uint mode, nuint offset, nuint size, PfnBufferMapCallback callback, Span<T0> userdata) where T0 : unmanaged
+        public static unsafe void BufferMapAsync<T0>(this WebGPU thisApi, Buffer* buffer, Silk.NET.WebGPU.MapMode mode, nuint offset, nuint size, PfnBufferMapCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.BufferMapAsync(buffer, mode, offset, size, callback, ref userdata.GetPinnableReference());
@@ -306,7 +306,7 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1427, Column 18 in webgpu.h")]
-        public static unsafe void BufferMapAsync(this WebGPU thisApi, Span<Buffer> buffer, uint mode, nuint offset, nuint size, PfnBufferMapCallback callback, void* userdata)
+        public static unsafe void BufferMapAsync(this WebGPU thisApi, Span<Buffer> buffer, Silk.NET.WebGPU.MapMode mode, nuint offset, nuint size, PfnBufferMapCallback callback, void* userdata)
         {
             // SpanOverloader
             thisApi.BufferMapAsync(ref buffer.GetPinnableReference(), mode, offset, size, callback, userdata);
@@ -314,7 +314,7 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1427, Column 18 in webgpu.h")]
-        public static unsafe void BufferMapAsync<T0>(this WebGPU thisApi, Span<Buffer> buffer, uint mode, nuint offset, nuint size, PfnBufferMapCallback callback, Span<T0> userdata) where T0 : unmanaged
+        public static unsafe void BufferMapAsync<T0>(this WebGPU thisApi, Span<Buffer> buffer, Silk.NET.WebGPU.MapMode mode, nuint offset, nuint size, PfnBufferMapCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.BufferMapAsync(ref buffer.GetPinnableReference(), mode, offset, size, callback, ref userdata.GetPinnableReference());
@@ -2258,7 +2258,7 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1511, Column 18 in webgpu.h")]
-        public static unsafe void QueueSubmit(this WebGPU thisApi, Span<Queue> queue, uint commandCount, [Flow(FlowDirection.In)] CommandBuffer** commands)
+        public static unsafe void QueueSubmit(this WebGPU thisApi, Span<Queue> queue, uint commandCount, CommandBuffer** commands)
         {
             // SpanOverloader
             thisApi.QueueSubmit(ref queue.GetPinnableReference(), commandCount, commands);
@@ -2266,10 +2266,10 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1511, Column 18 in webgpu.h")]
-        public static unsafe void QueueSubmit(this WebGPU thisApi, Span<Queue> queue, uint commandCount, [Flow(FlowDirection.In)] in CommandBuffer* commands)
+        public static unsafe void QueueSubmit(this WebGPU thisApi, Span<Queue> queue, uint commandCount, ref CommandBuffer* commands)
         {
             // SpanOverloader
-            thisApi.QueueSubmit(ref queue.GetPinnableReference(), commandCount, in commands);
+            thisApi.QueueSubmit(ref queue.GetPinnableReference(), commandCount, ref commands);
         }
 
         /// <summary>To be documented.</summary>
@@ -3018,7 +3018,7 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1540, Column 18 in webgpu.h")]
-        public static unsafe void RenderPassEncoderExecuteBundles(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder, uint bundlesCount, [Flow(FlowDirection.In)] RenderBundle** bundles)
+        public static unsafe void RenderPassEncoderExecuteBundles(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder, uint bundlesCount, RenderBundle** bundles)
         {
             // SpanOverloader
             thisApi.RenderPassEncoderExecuteBundles(ref renderPassEncoder.GetPinnableReference(), bundlesCount, bundles);
@@ -3026,10 +3026,10 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1540, Column 18 in webgpu.h")]
-        public static unsafe void RenderPassEncoderExecuteBundles(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder, uint bundlesCount, [Flow(FlowDirection.In)] in RenderBundle* bundles)
+        public static unsafe void RenderPassEncoderExecuteBundles(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder, uint bundlesCount, ref RenderBundle* bundles)
         {
             // SpanOverloader
-            thisApi.RenderPassEncoderExecuteBundles(ref renderPassEncoder.GetPinnableReference(), bundlesCount, in bundles);
+            thisApi.RenderPassEncoderExecuteBundles(ref renderPassEncoder.GetPinnableReference(), bundlesCount, ref bundles);
         }
 
         /// <summary>To be documented.</summary>

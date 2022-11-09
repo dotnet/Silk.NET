@@ -301,22 +301,22 @@ namespace Silk.NET.WebGPU
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1427, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuBufferMapAsync")]
-        public unsafe partial void BufferMapAsync(Buffer* buffer, uint mode, nuint offset, nuint size, PfnBufferMapCallback callback, void* userdata);
+        public unsafe partial void BufferMapAsync(Buffer* buffer, Silk.NET.WebGPU.MapMode mode, nuint offset, nuint size, PfnBufferMapCallback callback, void* userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1427, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuBufferMapAsync")]
-        public unsafe partial void BufferMapAsync<T0>(Buffer* buffer, uint mode, nuint offset, nuint size, PfnBufferMapCallback callback, ref T0 userdata) where T0 : unmanaged;
+        public unsafe partial void BufferMapAsync<T0>(Buffer* buffer, Silk.NET.WebGPU.MapMode mode, nuint offset, nuint size, PfnBufferMapCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1427, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuBufferMapAsync")]
-        public unsafe partial void BufferMapAsync(ref Buffer buffer, uint mode, nuint offset, nuint size, PfnBufferMapCallback callback, void* userdata);
+        public unsafe partial void BufferMapAsync(ref Buffer buffer, Silk.NET.WebGPU.MapMode mode, nuint offset, nuint size, PfnBufferMapCallback callback, void* userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1427, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuBufferMapAsync")]
-        public partial void BufferMapAsync<T0>(ref Buffer buffer, uint mode, nuint offset, nuint size, PfnBufferMapCallback callback, ref T0 userdata) where T0 : unmanaged;
+        public partial void BufferMapAsync<T0>(ref Buffer buffer, Silk.NET.WebGPU.MapMode mode, nuint offset, nuint size, PfnBufferMapCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1428, Column 18 in webgpu.h")]
@@ -1921,22 +1921,22 @@ namespace Silk.NET.WebGPU
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1511, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueSubmit")]
-        public unsafe partial void QueueSubmit(Queue* queue, uint commandCount, [Flow(FlowDirection.In)] CommandBuffer** commands);
+        public unsafe partial void QueueSubmit(Queue* queue, uint commandCount, CommandBuffer** commands);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1511, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueSubmit")]
-        public unsafe partial void QueueSubmit(Queue* queue, uint commandCount, [Flow(FlowDirection.In)] in CommandBuffer* commands);
+        public unsafe partial void QueueSubmit(Queue* queue, uint commandCount, ref CommandBuffer* commands);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1511, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueSubmit")]
-        public unsafe partial void QueueSubmit(ref Queue queue, uint commandCount, [Flow(FlowDirection.In)] CommandBuffer** commands);
+        public unsafe partial void QueueSubmit(ref Queue queue, uint commandCount, CommandBuffer** commands);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1511, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueSubmit")]
-        public unsafe partial void QueueSubmit(ref Queue queue, uint commandCount, [Flow(FlowDirection.In)] in CommandBuffer* commands);
+        public unsafe partial void QueueSubmit(ref Queue queue, uint commandCount, ref CommandBuffer* commands);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1512, Column 18 in webgpu.h")]
@@ -2541,22 +2541,22 @@ namespace Silk.NET.WebGPU
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1540, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuRenderPassEncoderExecuteBundles")]
-        public unsafe partial void RenderPassEncoderExecuteBundles(RenderPassEncoder* renderPassEncoder, uint bundlesCount, [Flow(FlowDirection.In)] RenderBundle** bundles);
+        public unsafe partial void RenderPassEncoderExecuteBundles(RenderPassEncoder* renderPassEncoder, uint bundlesCount, RenderBundle** bundles);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1540, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuRenderPassEncoderExecuteBundles")]
-        public unsafe partial void RenderPassEncoderExecuteBundles(RenderPassEncoder* renderPassEncoder, uint bundlesCount, [Flow(FlowDirection.In)] in RenderBundle* bundles);
+        public unsafe partial void RenderPassEncoderExecuteBundles(RenderPassEncoder* renderPassEncoder, uint bundlesCount, ref RenderBundle* bundles);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1540, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuRenderPassEncoderExecuteBundles")]
-        public unsafe partial void RenderPassEncoderExecuteBundles(ref RenderPassEncoder renderPassEncoder, uint bundlesCount, [Flow(FlowDirection.In)] RenderBundle** bundles);
+        public unsafe partial void RenderPassEncoderExecuteBundles(ref RenderPassEncoder renderPassEncoder, uint bundlesCount, RenderBundle** bundles);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1540, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuRenderPassEncoderExecuteBundles")]
-        public unsafe partial void RenderPassEncoderExecuteBundles(ref RenderPassEncoder renderPassEncoder, uint bundlesCount, [Flow(FlowDirection.In)] in RenderBundle* bundles);
+        public unsafe partial void RenderPassEncoderExecuteBundles(ref RenderPassEncoder renderPassEncoder, uint bundlesCount, ref RenderBundle* bundles);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1541, Column 18 in webgpu.h")]

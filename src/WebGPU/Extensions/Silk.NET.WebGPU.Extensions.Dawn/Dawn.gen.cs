@@ -1243,12 +1243,12 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1824, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuSwapChainConfigure")]
-        public unsafe partial void SwapChainConfigure(SwapChain* swapChain, TextureFormat format, uint allowedUsage, uint width, uint height);
+        public unsafe partial void SwapChainConfigure(SwapChain* swapChain, TextureFormat format, Silk.NET.WebGPU.TextureUsage allowedUsage, uint width, uint height);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1824, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuSwapChainConfigure")]
-        public partial void SwapChainConfigure(ref SwapChain swapChain, TextureFormat format, uint allowedUsage, uint width, uint height);
+        public partial void SwapChainConfigure(ref SwapChain swapChain, TextureFormat format, Silk.NET.WebGPU.TextureUsage allowedUsage, uint width, uint height);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1827, Column 18 in dawn-webgpu.h")]

@@ -33,22 +33,22 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 144, Column 21 in wgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueSubmitForIndex")]
-        public unsafe partial ulong QueueSubmitForIndex(Queue* queue, uint commandCount, [Flow(FlowDirection.In)] CommandBuffer** commands);
+        public unsafe partial ulong QueueSubmitForIndex(Queue* queue, uint commandCount, CommandBuffer** commands);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 144, Column 21 in wgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueSubmitForIndex")]
-        public unsafe partial ulong QueueSubmitForIndex(Queue* queue, uint commandCount, [Flow(FlowDirection.In)] in CommandBuffer* commands);
+        public unsafe partial ulong QueueSubmitForIndex(Queue* queue, uint commandCount, ref CommandBuffer* commands);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 144, Column 21 in wgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueSubmitForIndex")]
-        public unsafe partial ulong QueueSubmitForIndex(ref Queue queue, uint commandCount, [Flow(FlowDirection.In)] CommandBuffer** commands);
+        public unsafe partial ulong QueueSubmitForIndex(ref Queue queue, uint commandCount, CommandBuffer** commands);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 144, Column 21 in wgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueSubmitForIndex")]
-        public unsafe partial ulong QueueSubmitForIndex(ref Queue queue, uint commandCount, [Flow(FlowDirection.In)] in CommandBuffer* commands);
+        public unsafe partial ulong QueueSubmitForIndex(ref Queue queue, uint commandCount, ref CommandBuffer* commands);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 147, Column 6 in wgpu.h")]
@@ -173,22 +173,22 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 163, Column 6 in wgpu.h")]
         [NativeApi(EntryPoint = "wgpuRenderPassEncoderSetPushConstants")]
-        public unsafe partial void RenderPassEncoderSetPushConstants(RenderPassEncoder* encoder, uint stages, uint offset, uint sizeBytes, [Flow(FlowDirection.In)] void* data);
+        public unsafe partial void RenderPassEncoderSetPushConstants(RenderPassEncoder* encoder, Silk.NET.WebGPU.ShaderStage stages, uint offset, uint sizeBytes, [Flow(FlowDirection.In)] void* data);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 163, Column 6 in wgpu.h")]
         [NativeApi(EntryPoint = "wgpuRenderPassEncoderSetPushConstants")]
-        public unsafe partial void RenderPassEncoderSetPushConstants<T0>(RenderPassEncoder* encoder, uint stages, uint offset, uint sizeBytes, [Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+        public unsafe partial void RenderPassEncoderSetPushConstants<T0>(RenderPassEncoder* encoder, Silk.NET.WebGPU.ShaderStage stages, uint offset, uint sizeBytes, [Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 163, Column 6 in wgpu.h")]
         [NativeApi(EntryPoint = "wgpuRenderPassEncoderSetPushConstants")]
-        public unsafe partial void RenderPassEncoderSetPushConstants(ref RenderPassEncoder encoder, uint stages, uint offset, uint sizeBytes, [Flow(FlowDirection.In)] void* data);
+        public unsafe partial void RenderPassEncoderSetPushConstants(ref RenderPassEncoder encoder, Silk.NET.WebGPU.ShaderStage stages, uint offset, uint sizeBytes, [Flow(FlowDirection.In)] void* data);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 163, Column 6 in wgpu.h")]
         [NativeApi(EntryPoint = "wgpuRenderPassEncoderSetPushConstants")]
-        public partial void RenderPassEncoderSetPushConstants<T0>(ref RenderPassEncoder encoder, uint stages, uint offset, uint sizeBytes, [Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+        public partial void RenderPassEncoderSetPushConstants<T0>(ref RenderPassEncoder encoder, Silk.NET.WebGPU.ShaderStage stages, uint offset, uint sizeBytes, [Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 165, Column 6 in wgpu.h")]
