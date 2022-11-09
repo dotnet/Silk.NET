@@ -181,7 +181,7 @@ fn main(@builtin(global_invocation_id) global_id: vec3<u32>) {
 
         wgpu.QueueSubmit(queue, 1, cmdBuffer);
 
-        wgpu.BufferMapAsync(stagingBuffer, (uint) MapMode.Read, 0, numbersSize, new PfnBufferMapCallback(
+        wgpu.BufferMapAsync(stagingBuffer, MapMode.Read, 0, numbersSize, new PfnBufferMapCallback(
                                 (arg0, data) =>
                                 {
                                     Console.WriteLine($"status: {arg0}");
