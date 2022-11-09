@@ -17,6 +17,7 @@ namespace Silk.NET.GLFW
     /// </summary>
     //public partial class Glfw : NativeAPI, IGlfw
     [NativeApi(Prefix = "glfw")]
+    [PInvokeOverride(0, "glfw3")]
     public partial class Glfw : NativeAPI
     {
         /// <summary>

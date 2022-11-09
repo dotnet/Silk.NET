@@ -27,5 +27,8 @@ namespace Silk.NET.WebGPU
 
         /// <inheritdoc />
         public override string Windows86 => "libwgpu.dll";
+        
+        /// <inheritdoc />
+        public override string Browser => "WebGPU";
     }
 }

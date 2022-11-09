@@ -2085,6 +2085,7 @@
                 "win-x86": "libwgpu.dll",
                 "osx-x64": "libwgpu.dylib",
                 "android": "libwgpu.so",
+                "browser": "libWebGPU",
                 "className": "WebGPULibraryNameContainer"
             },
             "typeMaps": [

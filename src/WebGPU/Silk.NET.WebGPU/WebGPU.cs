@@ -13,6 +13,7 @@ using static Silk.NET.Core.Attributes.ExtensionAttribute;
 
 namespace Silk.NET.WebGPU
 {
+    [PInvokeOverride(0, "libWebGPU")]
     public partial class WebGPU
     {
         public static WebGPU GetApi()
