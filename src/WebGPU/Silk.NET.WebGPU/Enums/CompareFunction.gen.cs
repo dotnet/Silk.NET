@@ -12,36 +12,6 @@ namespace Silk.NET.WebGPU
     [NativeName("Name", "WGPUCompareFunction")]
     public enum CompareFunction : int
     {
-        [Obsolete("Deprecated in favour of \"Undefined\"")]
-        [NativeName("Name", "WGPUCompareFunction_Undefined")]
-        CompareFunctionUndefined = 0x0,
-        [Obsolete("Deprecated in favour of \"Never\"")]
-        [NativeName("Name", "WGPUCompareFunction_Never")]
-        CompareFunctionNever = 0x1,
-        [Obsolete("Deprecated in favour of \"Less\"")]
-        [NativeName("Name", "WGPUCompareFunction_Less")]
-        CompareFunctionLess = 0x2,
-        [Obsolete("Deprecated in favour of \"LessEqual\"")]
-        [NativeName("Name", "WGPUCompareFunction_LessEqual")]
-        CompareFunctionLessEqual = 0x3,
-        [Obsolete("Deprecated in favour of \"Greater\"")]
-        [NativeName("Name", "WGPUCompareFunction_Greater")]
-        CompareFunctionGreater = 0x4,
-        [Obsolete("Deprecated in favour of \"GreaterEqual\"")]
-        [NativeName("Name", "WGPUCompareFunction_GreaterEqual")]
-        CompareFunctionGreaterEqual = 0x5,
-        [Obsolete("Deprecated in favour of \"Equal\"")]
-        [NativeName("Name", "WGPUCompareFunction_Equal")]
-        CompareFunctionEqual = 0x6,
-        [Obsolete("Deprecated in favour of \"NotEqual\"")]
-        [NativeName("Name", "WGPUCompareFunction_NotEqual")]
-        CompareFunctionNotEqual = 0x7,
-        [Obsolete("Deprecated in favour of \"Always\"")]
-        [NativeName("Name", "WGPUCompareFunction_Always")]
-        CompareFunctionAlways = 0x8,
-        [Obsolete("Deprecated in favour of \"Force32\"")]
-        [NativeName("Name", "WGPUCompareFunction_Force32")]
-        CompareFunctionForce32 = 0x7FFFFFFF,
         [NativeName("Name", "WGPUCompareFunction_Undefined")]
         Undefined = 0x0,
         [NativeName("Name", "WGPUCompareFunction_Never")]

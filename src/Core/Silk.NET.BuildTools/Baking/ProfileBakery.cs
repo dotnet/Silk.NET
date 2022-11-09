@@ -268,10 +268,20 @@ namespace Silk.NET.BuildTools.Baking
                 {
                     foreach (var @interface in @class.NativeApis)
                     {
+                        var functionChecker = new Dictionary<string, List<Function>>();
                         var functions = new List<Function>();
                         foreach (var f in @interface.Value.Functions)
                         {
-                            if (functions.Any(x => x.Equals(f))) continue;
+                            var signature = f.ToString(null, returnType:false, appendAttributes: false);
+                            if (functionChecker.ContainsKey(signature))
+                            {
+                                if (functionChecker[signature].Any(x => x.Equals(f))) continue;
+                                functionChecker[signature].Add(f);
+                            }
+                            else
+                            {
+                                functionChecker.Add(signature, new List<Function>() { f });
+                            }
                             functions.Add(f);
                         }
 

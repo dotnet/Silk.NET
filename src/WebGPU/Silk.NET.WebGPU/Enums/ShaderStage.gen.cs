@@ -13,21 +13,6 @@ namespace Silk.NET.WebGPU
     [NativeName("Name", "WGPUShaderStage")]
     public enum ShaderStage : int
     {
-        [Obsolete("Deprecated in favour of \"None\"")]
-        [NativeName("Name", "WGPUShaderStage_None")]
-        ShaderStageNone = 0x0,
-        [Obsolete("Deprecated in favour of \"Vertex\"")]
-        [NativeName("Name", "WGPUShaderStage_Vertex")]
-        ShaderStageVertex = 0x1,
-        [Obsolete("Deprecated in favour of \"Fragment\"")]
-        [NativeName("Name", "WGPUShaderStage_Fragment")]
-        ShaderStageFragment = 0x2,
-        [Obsolete("Deprecated in favour of \"Compute\"")]
-        [NativeName("Name", "WGPUShaderStage_Compute")]
-        ShaderStageCompute = 0x4,
-        [Obsolete("Deprecated in favour of \"Force32\"")]
-        [NativeName("Name", "WGPUShaderStage_Force32")]
-        ShaderStageForce32 = 0x7FFFFFFF,
         [NativeName("Name", "WGPUShaderStage_None")]
         None = 0x0,
         [NativeName("Name", "WGPUShaderStage_Vertex")]

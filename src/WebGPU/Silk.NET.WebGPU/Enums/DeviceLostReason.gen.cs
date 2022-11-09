@@ -15,15 +15,6 @@ namespace Silk.NET.WebGPU
     {
         [NativeName("Name", "")]
         None = 0,
-        [Obsolete("Deprecated in favour of \"Undefined\"")]
-        [NativeName("Name", "WGPUDeviceLostReason_Undefined")]
-        DeviceLostReasonUndefined = 0x0,
-        [Obsolete("Deprecated in favour of \"Destroyed\"")]
-        [NativeName("Name", "WGPUDeviceLostReason_Destroyed")]
-        DeviceLostReasonDestroyed = 0x1,
-        [Obsolete("Deprecated in favour of \"Force32\"")]
-        [NativeName("Name", "WGPUDeviceLostReason_Force32")]
-        DeviceLostReasonForce32 = 0x7FFFFFFF,
         [NativeName("Name", "WGPUDeviceLostReason_Undefined")]
         Undefined = 0x0,
         [NativeName("Name", "WGPUDeviceLostReason_Destroyed")]

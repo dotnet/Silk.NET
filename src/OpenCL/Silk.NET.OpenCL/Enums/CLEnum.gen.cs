@@ -2234,6 +2234,10 @@ namespace Silk.NET.OpenCL
         MemAllocFlagsImg = 0x40D7,
         [NativeName("Name", "CL_DEVICE_HANDLE_LIST_KHR")]
         DeviceHandleListKhr = 0x2051,
+        [NativeName("Name", "CL_MEM_LOCALLY_UNCACHED_RESOURCE_INTEL")]
+        MemLocallyUncachedResourceIntel = 0x4218,
+        [NativeName("Name", "CL_MEM_DEVICE_ID_INTEL")]
+        MemDeviceIDIntel = 0x4219,
         [NativeName("Name", "CL_PIPE_PACKET_SIZE")]
         PacketSize = 0x1120,
         [NativeName("Name", "CL_PIPE_PACKET_SIZE")]

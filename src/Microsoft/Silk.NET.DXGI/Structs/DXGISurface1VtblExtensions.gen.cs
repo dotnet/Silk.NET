@@ -457,22 +457,22 @@ public unsafe static class DXGISurface1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ReleaseDC(this ComPtr<IDXGISurface1> thisVtbl, Silk.NET.Maths.Rectangle<int>* pDirtyRect)
+    public static unsafe int ReleaseDC(this ComPtr<IDXGISurface1> thisVtbl, Silk.NET.Maths.Box2D<int>* pDirtyRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGISurface1*, Silk.NET.Maths.Rectangle<int>*, int>)@this->LpVtbl[12])(@this, pDirtyRect);
+        ret = ((delegate* unmanaged[Stdcall]<IDXGISurface1*, Silk.NET.Maths.Box2D<int>*, int>)@this->LpVtbl[12])(@this, pDirtyRect);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int ReleaseDC(this ComPtr<IDXGISurface1> thisVtbl, ref Silk.NET.Maths.Rectangle<int> pDirtyRect)
+    public static int ReleaseDC(this ComPtr<IDXGISurface1> thisVtbl, ref Silk.NET.Maths.Box2D<int> pDirtyRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (Silk.NET.Maths.Rectangle<int>* pDirtyRectPtr = &pDirtyRect)
+        fixed (Silk.NET.Maths.Box2D<int>* pDirtyRectPtr = &pDirtyRect)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDXGISurface1*, Silk.NET.Maths.Rectangle<int>*, int>)@this->LpVtbl[12])(@this, pDirtyRectPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGISurface1*, Silk.NET.Maths.Box2D<int>*, int>)@this->LpVtbl[12])(@this, pDirtyRectPtr);
         }
         return ret;
     }
@@ -697,7 +697,7 @@ public unsafe static class DXGISurface1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ReleaseDC(this ComPtr<IDXGISurface1> thisVtbl, Span<Silk.NET.Maths.Rectangle<int>> pDirtyRect)
+    public static int ReleaseDC(this ComPtr<IDXGISurface1> thisVtbl, Span<Silk.NET.Maths.Box2D<int>> pDirtyRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

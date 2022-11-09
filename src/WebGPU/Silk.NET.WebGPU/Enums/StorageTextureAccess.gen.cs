@@ -15,15 +15,6 @@ namespace Silk.NET.WebGPU
     {
         [NativeName("Name", "")]
         None = 0,
-        [Obsolete("Deprecated in favour of \"Undefined\"")]
-        [NativeName("Name", "WGPUStorageTextureAccess_Undefined")]
-        StorageTextureAccessUndefined = 0x0,
-        [Obsolete("Deprecated in favour of \"WriteOnly\"")]
-        [NativeName("Name", "WGPUStorageTextureAccess_WriteOnly")]
-        StorageTextureAccessWriteOnly = 0x1,
-        [Obsolete("Deprecated in favour of \"Force32\"")]
-        [NativeName("Name", "WGPUStorageTextureAccess_Force32")]
-        StorageTextureAccessForce32 = 0x7FFFFFFF,
         [NativeName("Name", "WGPUStorageTextureAccess_Undefined")]
         Undefined = 0x0,
         [NativeName("Name", "WGPUStorageTextureAccess_WriteOnly")]

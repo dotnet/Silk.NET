@@ -15,24 +15,6 @@ namespace Silk.NET.WebGPU
     {
         [NativeName("Name", "")]
         None = 0,
-        [Obsolete("Deprecated in favour of \"Add\"")]
-        [NativeName("Name", "WGPUBlendOperation_Add")]
-        BlendOperationAdd = 0x0,
-        [Obsolete("Deprecated in favour of \"Subtract\"")]
-        [NativeName("Name", "WGPUBlendOperation_Subtract")]
-        BlendOperationSubtract = 0x1,
-        [Obsolete("Deprecated in favour of \"ReverseSubtract\"")]
-        [NativeName("Name", "WGPUBlendOperation_ReverseSubtract")]
-        BlendOperationReverseSubtract = 0x2,
-        [Obsolete("Deprecated in favour of \"Min\"")]
-        [NativeName("Name", "WGPUBlendOperation_Min")]
-        BlendOperationMin = 0x3,
-        [Obsolete("Deprecated in favour of \"Max\"")]
-        [NativeName("Name", "WGPUBlendOperation_Max")]
-        BlendOperationMax = 0x4,
-        [Obsolete("Deprecated in favour of \"Force32\"")]
-        [NativeName("Name", "WGPUBlendOperation_Force32")]
-        BlendOperationForce32 = 0x7FFFFFFF,
         [NativeName("Name", "WGPUBlendOperation_Add")]
         Add = 0x0,
         [NativeName("Name", "WGPUBlendOperation_Subtract")]

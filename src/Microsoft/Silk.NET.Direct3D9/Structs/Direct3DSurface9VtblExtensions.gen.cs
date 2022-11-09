@@ -386,48 +386,48 @@ public unsafe static class Direct3DSurface9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LockRect(this ComPtr<IDirect3DSurface9> thisVtbl, LockedRect* pLockedRect, Silk.NET.Maths.Rectangle<int>* pRect, uint Flags)
+    public static unsafe int LockRect(this ComPtr<IDirect3DSurface9> thisVtbl, LockedRect* pLockedRect, Silk.NET.Maths.Box2D<int>* pRect, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DSurface9*, LockedRect*, Silk.NET.Maths.Rectangle<int>*, uint, int>)@this->LpVtbl[13])(@this, pLockedRect, pRect, Flags);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DSurface9*, LockedRect*, Silk.NET.Maths.Box2D<int>*, uint, int>)@this->LpVtbl[13])(@this, pLockedRect, pRect, Flags);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LockRect(this ComPtr<IDirect3DSurface9> thisVtbl, LockedRect* pLockedRect, ref Silk.NET.Maths.Rectangle<int> pRect, uint Flags)
+    public static unsafe int LockRect(this ComPtr<IDirect3DSurface9> thisVtbl, LockedRect* pLockedRect, ref Silk.NET.Maths.Box2D<int> pRect, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+        fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DSurface9*, LockedRect*, Silk.NET.Maths.Rectangle<int>*, uint, int>)@this->LpVtbl[13])(@this, pLockedRect, pRectPtr, Flags);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DSurface9*, LockedRect*, Silk.NET.Maths.Box2D<int>*, uint, int>)@this->LpVtbl[13])(@this, pLockedRect, pRectPtr, Flags);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LockRect(this ComPtr<IDirect3DSurface9> thisVtbl, ref LockedRect pLockedRect, Silk.NET.Maths.Rectangle<int>* pRect, uint Flags)
+    public static unsafe int LockRect(this ComPtr<IDirect3DSurface9> thisVtbl, ref LockedRect pLockedRect, Silk.NET.Maths.Box2D<int>* pRect, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (LockedRect* pLockedRectPtr = &pLockedRect)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DSurface9*, LockedRect*, Silk.NET.Maths.Rectangle<int>*, uint, int>)@this->LpVtbl[13])(@this, pLockedRectPtr, pRect, Flags);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DSurface9*, LockedRect*, Silk.NET.Maths.Box2D<int>*, uint, int>)@this->LpVtbl[13])(@this, pLockedRectPtr, pRect, Flags);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int LockRect(this ComPtr<IDirect3DSurface9> thisVtbl, ref LockedRect pLockedRect, ref Silk.NET.Maths.Rectangle<int> pRect, uint Flags)
+    public static int LockRect(this ComPtr<IDirect3DSurface9> thisVtbl, ref LockedRect pLockedRect, ref Silk.NET.Maths.Box2D<int> pRect, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (LockedRect* pLockedRectPtr = &pLockedRect)
         {
-            fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+            fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DSurface9*, LockedRect*, Silk.NET.Maths.Rectangle<int>*, uint, int>)@this->LpVtbl[13])(@this, pLockedRectPtr, pRectPtr, Flags);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DSurface9*, LockedRect*, Silk.NET.Maths.Box2D<int>*, uint, int>)@this->LpVtbl[13])(@this, pLockedRectPtr, pRectPtr, Flags);
             }
         }
         return ret;
@@ -627,7 +627,7 @@ public unsafe static class Direct3DSurface9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LockRect(this ComPtr<IDirect3DSurface9> thisVtbl, LockedRect* pLockedRect, Span<Silk.NET.Maths.Rectangle<int>> pRect, uint Flags)
+    public static unsafe int LockRect(this ComPtr<IDirect3DSurface9> thisVtbl, LockedRect* pLockedRect, Span<Silk.NET.Maths.Box2D<int>> pRect, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -635,7 +635,7 @@ public unsafe static class Direct3DSurface9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LockRect(this ComPtr<IDirect3DSurface9> thisVtbl, Span<LockedRect> pLockedRect, Silk.NET.Maths.Rectangle<int>* pRect, uint Flags)
+    public static unsafe int LockRect(this ComPtr<IDirect3DSurface9> thisVtbl, Span<LockedRect> pLockedRect, Silk.NET.Maths.Box2D<int>* pRect, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -643,7 +643,7 @@ public unsafe static class Direct3DSurface9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int LockRect(this ComPtr<IDirect3DSurface9> thisVtbl, Span<LockedRect> pLockedRect, Span<Silk.NET.Maths.Rectangle<int>> pRect, uint Flags)
+    public static int LockRect(this ComPtr<IDirect3DSurface9> thisVtbl, Span<LockedRect> pLockedRect, Span<Silk.NET.Maths.Box2D<int>> pRect, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

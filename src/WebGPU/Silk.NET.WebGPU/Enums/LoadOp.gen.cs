@@ -15,18 +15,6 @@ namespace Silk.NET.WebGPU
     {
         [NativeName("Name", "")]
         None = 0,
-        [Obsolete("Deprecated in favour of \"Undefined\"")]
-        [NativeName("Name", "WGPULoadOp_Undefined")]
-        LoadOpUndefined = 0x0,
-        [Obsolete("Deprecated in favour of \"Clear\"")]
-        [NativeName("Name", "WGPULoadOp_Clear")]
-        LoadOpClear = 0x1,
-        [Obsolete("Deprecated in favour of \"Load\"")]
-        [NativeName("Name", "WGPULoadOp_Load")]
-        LoadOpLoad = 0x2,
-        [Obsolete("Deprecated in favour of \"Force32\"")]
-        [NativeName("Name", "WGPULoadOp_Force32")]
-        LoadOpForce32 = 0x7FFFFFFF,
         [NativeName("Name", "WGPULoadOp_Undefined")]
         Undefined = 0x0,
         [NativeName("Name", "WGPULoadOp_Clear")]

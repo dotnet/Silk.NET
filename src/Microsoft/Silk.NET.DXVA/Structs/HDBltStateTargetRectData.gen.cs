@@ -22,7 +22,7 @@ namespace Silk.NET.DXVA
         public HDBltStateTargetRectData
         (
             int? enable = null,
-            Silk.NET.Maths.Rectangle<int>? targetRect = null
+            Silk.NET.Maths.Box2D<int>? targetRect = null
         ) : this()
         {
             if (enable is not null)
@@ -45,6 +45,6 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "RECT")]
         [NativeName("Type.Name", "RECT")]
         [NativeName("Name", "TargetRect")]
-        public Silk.NET.Maths.Rectangle<int> TargetRect;
+        public Silk.NET.Maths.Box2D<int> TargetRect;
     }
 }

@@ -94,43 +94,43 @@ public unsafe static class DXGIDecodeSwapChainVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetSourceRect(this ComPtr<IDXGIDecodeSwapChain> thisVtbl, Silk.NET.Maths.Rectangle<int>* pRect)
+    public static unsafe int SetSourceRect(this ComPtr<IDXGIDecodeSwapChain> thisVtbl, Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)@this->LpVtbl[4])(@this, pRect);
+        ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Box2D<int>*, int>)@this->LpVtbl[4])(@this, pRect);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetSourceRect(this ComPtr<IDXGIDecodeSwapChain> thisVtbl, ref Silk.NET.Maths.Rectangle<int> pRect)
+    public static int SetSourceRect(this ComPtr<IDXGIDecodeSwapChain> thisVtbl, ref Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+        fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)@this->LpVtbl[4])(@this, pRectPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Box2D<int>*, int>)@this->LpVtbl[4])(@this, pRectPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetTargetRect(this ComPtr<IDXGIDecodeSwapChain> thisVtbl, Silk.NET.Maths.Rectangle<int>* pRect)
+    public static unsafe int SetTargetRect(this ComPtr<IDXGIDecodeSwapChain> thisVtbl, Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)@this->LpVtbl[5])(@this, pRect);
+        ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Box2D<int>*, int>)@this->LpVtbl[5])(@this, pRect);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetTargetRect(this ComPtr<IDXGIDecodeSwapChain> thisVtbl, ref Silk.NET.Maths.Rectangle<int> pRect)
+    public static int SetTargetRect(this ComPtr<IDXGIDecodeSwapChain> thisVtbl, ref Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+        fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)@this->LpVtbl[5])(@this, pRectPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Box2D<int>*, int>)@this->LpVtbl[5])(@this, pRectPtr);
         }
         return ret;
     }
@@ -145,43 +145,43 @@ public unsafe static class DXGIDecodeSwapChainVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetSourceRect(this ComPtr<IDXGIDecodeSwapChain> thisVtbl, Silk.NET.Maths.Rectangle<int>* pRect)
+    public static unsafe int GetSourceRect(this ComPtr<IDXGIDecodeSwapChain> thisVtbl, Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)@this->LpVtbl[7])(@this, pRect);
+        ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Box2D<int>*, int>)@this->LpVtbl[7])(@this, pRect);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetSourceRect(this ComPtr<IDXGIDecodeSwapChain> thisVtbl, ref Silk.NET.Maths.Rectangle<int> pRect)
+    public static int GetSourceRect(this ComPtr<IDXGIDecodeSwapChain> thisVtbl, ref Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+        fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)@this->LpVtbl[7])(@this, pRectPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Box2D<int>*, int>)@this->LpVtbl[7])(@this, pRectPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetTargetRect(this ComPtr<IDXGIDecodeSwapChain> thisVtbl, Silk.NET.Maths.Rectangle<int>* pRect)
+    public static unsafe int GetTargetRect(this ComPtr<IDXGIDecodeSwapChain> thisVtbl, Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)@this->LpVtbl[8])(@this, pRect);
+        ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Box2D<int>*, int>)@this->LpVtbl[8])(@this, pRect);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetTargetRect(this ComPtr<IDXGIDecodeSwapChain> thisVtbl, ref Silk.NET.Maths.Rectangle<int> pRect)
+    public static int GetTargetRect(this ComPtr<IDXGIDecodeSwapChain> thisVtbl, ref Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+        fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)@this->LpVtbl[8])(@this, pRectPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Box2D<int>*, int>)@this->LpVtbl[8])(@this, pRectPtr);
         }
         return ret;
     }
@@ -278,7 +278,7 @@ public unsafe static class DXGIDecodeSwapChainVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetSourceRect(this ComPtr<IDXGIDecodeSwapChain> thisVtbl, Span<Silk.NET.Maths.Rectangle<int>> pRect)
+    public static int SetSourceRect(this ComPtr<IDXGIDecodeSwapChain> thisVtbl, Span<Silk.NET.Maths.Box2D<int>> pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -286,7 +286,7 @@ public unsafe static class DXGIDecodeSwapChainVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetTargetRect(this ComPtr<IDXGIDecodeSwapChain> thisVtbl, Span<Silk.NET.Maths.Rectangle<int>> pRect)
+    public static int SetTargetRect(this ComPtr<IDXGIDecodeSwapChain> thisVtbl, Span<Silk.NET.Maths.Box2D<int>> pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -294,7 +294,7 @@ public unsafe static class DXGIDecodeSwapChainVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetSourceRect(this ComPtr<IDXGIDecodeSwapChain> thisVtbl, Span<Silk.NET.Maths.Rectangle<int>> pRect)
+    public static int GetSourceRect(this ComPtr<IDXGIDecodeSwapChain> thisVtbl, Span<Silk.NET.Maths.Box2D<int>> pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -302,7 +302,7 @@ public unsafe static class DXGIDecodeSwapChainVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetTargetRect(this ComPtr<IDXGIDecodeSwapChain> thisVtbl, Span<Silk.NET.Maths.Rectangle<int>> pRect)
+    public static int GetTargetRect(this ComPtr<IDXGIDecodeSwapChain> thisVtbl, Span<Silk.NET.Maths.Box2D<int>> pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

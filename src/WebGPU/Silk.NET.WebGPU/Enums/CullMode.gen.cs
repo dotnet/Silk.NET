@@ -13,18 +13,6 @@ namespace Silk.NET.WebGPU
     [NativeName("Name", "WGPUCullMode")]
     public enum CullMode : int
     {
-        [Obsolete("Deprecated in favour of \"None\"")]
-        [NativeName("Name", "WGPUCullMode_None")]
-        CullModeNone = 0x0,
-        [Obsolete("Deprecated in favour of \"Front\"")]
-        [NativeName("Name", "WGPUCullMode_Front")]
-        CullModeFront = 0x1,
-        [Obsolete("Deprecated in favour of \"Back\"")]
-        [NativeName("Name", "WGPUCullMode_Back")]
-        CullModeBack = 0x2,
-        [Obsolete("Deprecated in favour of \"Force32\"")]
-        [NativeName("Name", "WGPUCullMode_Force32")]
-        CullModeForce32 = 0x7FFFFFFF,
         [NativeName("Name", "WGPUCullMode_None")]
         None = 0x0,
         [NativeName("Name", "WGPUCullMode_Front")]

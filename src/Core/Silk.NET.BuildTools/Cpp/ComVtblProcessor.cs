@@ -1,4 +1,4 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
+// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
@@ -152,16 +152,19 @@ namespace Silk.NET.BuildTools.Cpp
             for (var i = 0; i < function.Parameters.Count; i++)
             {
                 var parameter = function.Parameters[i];
+
+                string name = Utilities.CSharpKeywords.Contains(parameter.Name) ? $"@{parameter.Name}" : parameter.Name;
+
                 if (parameter.Type.Name == "string")
                 {
                     var nativeStringEncoding = parameter.Type.MapNativeString();
-                    sb.Append($"var {parameter.Name}Ptr = (byte*) SilkMarshal.StringToPtr({parameter.Name}, ");
+                    sb.Append($"var {parameter.Name}Ptr = (byte*) SilkMarshal.StringToPtr({name}, ");
                     sb.AppendLine($"{nativeStringEncoding});");
                     if (parameter.Type.IsIn || parameter.Type.IsByRef)
                     {
                         sb.AppendLine($"var {parameter.Name}Pp = &{parameter.Name}Ptr;");
                         parameterInvocations.Add
-                            ((new Type {Name = "byte", IndirectionLevels = 2}, $"{parameter.Name}Pp"));
+                            ((new Type {Name = "byte", IndirectionLevels = 2}, $"{name}Pp"));
                     }
                     else if (parameter.Type.IsOut)
                     {
@@ -184,7 +187,7 @@ namespace Silk.NET.BuildTools.Cpp
                         {
                             if (parameter.Type.IsByRef)
                             {
-                                sb.Append($"{parameter.Name} = SilkMarshal.PtrToString(*{parameter.Name}Pp, ");
+                                sb.Append($"{name} = SilkMarshal.PtrToString(*{parameter.Name}Pp, ");
                                 sb.AppendLine($"{nativeStringEncoding});");
                             }
 
@@ -203,7 +206,7 @@ namespace Silk.NET.BuildTools.Cpp
                         .Build();
                     sb.AppendLine
                     (
-                        ind + $"fixed ({noRef} {parameter.Name}Ptr = &{parameter.Name})"
+                        ind + $"fixed ({noRef} {parameter.Name}Ptr = &{name})"
                     );
                     sb.AppendLine(ind + "{");
                     parameterInvocations.Add((noRef, $"{parameter.Name}Ptr"));
@@ -219,7 +222,7 @@ namespace Silk.NET.BuildTools.Cpp
                 }
                 else
                 {
-                    parameterInvocations.Add((parameter.Type, parameter.Name));
+                    parameterInvocations.Add((parameter.Type, name));
                 }
             }
 

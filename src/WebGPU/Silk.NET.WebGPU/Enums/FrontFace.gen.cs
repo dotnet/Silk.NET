@@ -15,15 +15,6 @@ namespace Silk.NET.WebGPU
     {
         [NativeName("Name", "")]
         None = 0,
-        [Obsolete("Deprecated in favour of \"Ccw\"")]
-        [NativeName("Name", "WGPUFrontFace_CCW")]
-        FrontFaceCcw = 0x0,
-        [Obsolete("Deprecated in favour of \"CW\"")]
-        [NativeName("Name", "WGPUFrontFace_CW")]
-        FrontFaceCW = 0x1,
-        [Obsolete("Deprecated in favour of \"Force32\"")]
-        [NativeName("Name", "WGPUFrontFace_Force32")]
-        FrontFaceForce32 = 0x7FFFFFFF,
         [NativeName("Name", "WGPUFrontFace_CCW")]
         Ccw = 0x0,
         [NativeName("Name", "WGPUFrontFace_CW")]

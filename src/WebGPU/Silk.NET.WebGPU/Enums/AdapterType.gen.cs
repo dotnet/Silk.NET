@@ -15,21 +15,6 @@ namespace Silk.NET.WebGPU
     {
         [NativeName("Name", "")]
         None = 0,
-        [Obsolete("Deprecated in favour of \"DiscreteGpu\"")]
-        [NativeName("Name", "WGPUAdapterType_DiscreteGPU")]
-        AdapterTypeDiscreteGpu = 0x0,
-        [Obsolete("Deprecated in favour of \"IntegratedGpu\"")]
-        [NativeName("Name", "WGPUAdapterType_IntegratedGPU")]
-        AdapterTypeIntegratedGpu = 0x1,
-        [Obsolete("Deprecated in favour of \"Cpu\"")]
-        [NativeName("Name", "WGPUAdapterType_CPU")]
-        AdapterTypeCpu = 0x2,
-        [Obsolete("Deprecated in favour of \"Unknown\"")]
-        [NativeName("Name", "WGPUAdapterType_Unknown")]
-        AdapterTypeUnknown = 0x3,
-        [Obsolete("Deprecated in favour of \"Force32\"")]
-        [NativeName("Name", "WGPUAdapterType_Force32")]
-        AdapterTypeForce32 = 0x7FFFFFFF,
         [NativeName("Name", "WGPUAdapterType_DiscreteGPU")]
         DiscreteGpu = 0x0,
         [NativeName("Name", "WGPUAdapterType_IntegratedGPU")]

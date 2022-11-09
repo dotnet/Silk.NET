@@ -15,18 +15,6 @@ namespace Silk.NET.WebGPU
     {
         [NativeName("Name", "")]
         None = 0,
-        [Obsolete("Deprecated in favour of \"Error\"")]
-        [NativeName("Name", "WGPUCompilationMessageType_Error")]
-        CompilationMessageTypeError = 0x0,
-        [Obsolete("Deprecated in favour of \"Warning\"")]
-        [NativeName("Name", "WGPUCompilationMessageType_Warning")]
-        CompilationMessageTypeWarning = 0x1,
-        [Obsolete("Deprecated in favour of \"Info\"")]
-        [NativeName("Name", "WGPUCompilationMessageType_Info")]
-        CompilationMessageTypeInfo = 0x2,
-        [Obsolete("Deprecated in favour of \"Force32\"")]
-        [NativeName("Name", "WGPUCompilationMessageType_Force32")]
-        CompilationMessageTypeForce32 = 0x7FFFFFFF,
         [NativeName("Name", "WGPUCompilationMessageType_Error")]
         Error = 0x0,
         [NativeName("Name", "WGPUCompilationMessageType_Warning")]

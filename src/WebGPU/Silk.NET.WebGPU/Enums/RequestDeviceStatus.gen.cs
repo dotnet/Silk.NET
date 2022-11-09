@@ -15,18 +15,6 @@ namespace Silk.NET.WebGPU
     {
         [NativeName("Name", "")]
         None = 0,
-        [Obsolete("Deprecated in favour of \"Success\"")]
-        [NativeName("Name", "WGPURequestDeviceStatus_Success")]
-        RequestDeviceStatusSuccess = 0x0,
-        [Obsolete("Deprecated in favour of \"Error\"")]
-        [NativeName("Name", "WGPURequestDeviceStatus_Error")]
-        RequestDeviceStatusError = 0x1,
-        [Obsolete("Deprecated in favour of \"Unknown\"")]
-        [NativeName("Name", "WGPURequestDeviceStatus_Unknown")]
-        RequestDeviceStatusUnknown = 0x2,
-        [Obsolete("Deprecated in favour of \"Force32\"")]
-        [NativeName("Name", "WGPURequestDeviceStatus_Force32")]
-        RequestDeviceStatusForce32 = 0x7FFFFFFF,
         [NativeName("Name", "WGPURequestDeviceStatus_Success")]
         Success = 0x0,
         [NativeName("Name", "WGPURequestDeviceStatus_Error")]

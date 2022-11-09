@@ -15,18 +15,6 @@ namespace Silk.NET.WebGPU
     {
         [NativeName("Name", "")]
         None = 0,
-        [Obsolete("Deprecated in favour of \"Validation\"")]
-        [NativeName("Name", "WGPUErrorFilter_Validation")]
-        ErrorFilterValidation = 0x0,
-        [Obsolete("Deprecated in favour of \"OutOfMemory\"")]
-        [NativeName("Name", "WGPUErrorFilter_OutOfMemory")]
-        ErrorFilterOutOfMemory = 0x1,
-        [Obsolete("Deprecated in favour of \"Internal\"")]
-        [NativeName("Name", "WGPUErrorFilter_Internal")]
-        ErrorFilterInternal = 0x2,
-        [Obsolete("Deprecated in favour of \"Force32\"")]
-        [NativeName("Name", "WGPUErrorFilter_Force32")]
-        ErrorFilterForce32 = 0x7FFFFFFF,
         [NativeName("Name", "WGPUErrorFilter_Validation")]
         Validation = 0x0,
         [NativeName("Name", "WGPUErrorFilter_OutOfMemory")]

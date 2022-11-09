@@ -1348,19 +1348,19 @@ public unsafe static class D3D11DeviceContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void RSSetScissorRects(this ComPtr<ID3D11DeviceContext1> thisVtbl, uint NumRects, Silk.NET.Maths.Rectangle<int>* pRects)
+    public static unsafe void RSSetScissorRects(this ComPtr<ID3D11DeviceContext1> thisVtbl, uint NumRects, Silk.NET.Maths.Box2D<int>* pRects)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, uint, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[45])(@this, NumRects, pRects);
+        ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[45])(@this, NumRects, pRects);
     }
 
     /// <summary>To be documented.</summary>
-    public static void RSSetScissorRects(this ComPtr<ID3D11DeviceContext1> thisVtbl, uint NumRects, ref Silk.NET.Maths.Rectangle<int> pRects)
+    public static void RSSetScissorRects(this ComPtr<ID3D11DeviceContext1> thisVtbl, uint NumRects, ref Silk.NET.Maths.Box2D<int> pRects)
     {
         var @this = thisVtbl.Handle;
-        fixed (Silk.NET.Maths.Rectangle<int>* pRectsPtr = &pRects)
+        fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, uint, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[45])(@this, NumRects, pRectsPtr);
+            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[45])(@this, NumRects, pRectsPtr);
         }
     }
 
@@ -3216,41 +3216,41 @@ public unsafe static class D3D11DeviceContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void RSGetScissorRects(this ComPtr<ID3D11DeviceContext1> thisVtbl, uint* pNumRects, Silk.NET.Maths.Rectangle<int>* pRects)
+    public static unsafe void RSGetScissorRects(this ComPtr<ID3D11DeviceContext1> thisVtbl, uint* pNumRects, Silk.NET.Maths.Box2D<int>* pRects)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, uint*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[96])(@this, pNumRects, pRects);
+        ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, uint*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[96])(@this, pNumRects, pRects);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void RSGetScissorRects(this ComPtr<ID3D11DeviceContext1> thisVtbl, uint* pNumRects, ref Silk.NET.Maths.Rectangle<int> pRects)
+    public static unsafe void RSGetScissorRects(this ComPtr<ID3D11DeviceContext1> thisVtbl, uint* pNumRects, ref Silk.NET.Maths.Box2D<int> pRects)
     {
         var @this = thisVtbl.Handle;
-        fixed (Silk.NET.Maths.Rectangle<int>* pRectsPtr = &pRects)
+        fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, uint*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[96])(@this, pNumRects, pRectsPtr);
+            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, uint*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[96])(@this, pNumRects, pRectsPtr);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void RSGetScissorRects(this ComPtr<ID3D11DeviceContext1> thisVtbl, ref uint pNumRects, Silk.NET.Maths.Rectangle<int>* pRects)
+    public static unsafe void RSGetScissorRects(this ComPtr<ID3D11DeviceContext1> thisVtbl, ref uint pNumRects, Silk.NET.Maths.Box2D<int>* pRects)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* pNumRectsPtr = &pNumRects)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, uint*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[96])(@this, pNumRectsPtr, pRects);
+            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, uint*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[96])(@this, pNumRectsPtr, pRects);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static void RSGetScissorRects(this ComPtr<ID3D11DeviceContext1> thisVtbl, ref uint pNumRects, ref Silk.NET.Maths.Rectangle<int> pRects)
+    public static void RSGetScissorRects(this ComPtr<ID3D11DeviceContext1> thisVtbl, ref uint pNumRects, ref Silk.NET.Maths.Box2D<int> pRects)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* pNumRectsPtr = &pNumRects)
         {
-            fixed (Silk.NET.Maths.Rectangle<int>* pRectsPtr = &pRects)
+            fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, uint*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[96])(@this, pNumRectsPtr, pRectsPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, uint*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[96])(@this, pNumRectsPtr, pRectsPtr);
             }
         }
     }
@@ -5117,133 +5117,133 @@ public unsafe static class D3D11DeviceContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearView(this ComPtr<ID3D11DeviceContext1> thisVtbl, ID3D11View* pView, [Count(Count = 4)] float* Color, Silk.NET.Maths.Rectangle<int>* pRect, uint NumRects)
+    public static unsafe void ClearView(this ComPtr<ID3D11DeviceContext1> thisVtbl, ID3D11View* pView, [Count(Count = 4)] float* Color, Silk.NET.Maths.Box2D<int>* pRect, uint NumRects)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, ID3D11View*, float*, Silk.NET.Maths.Rectangle<int>*, uint, void>)@this->LpVtbl[132])(@this, pView, Color, pRect, NumRects);
+        ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, ID3D11View*, float*, Silk.NET.Maths.Box2D<int>*, uint, void>)@this->LpVtbl[132])(@this, pView, Color, pRect, NumRects);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearView(this ComPtr<ID3D11DeviceContext1> thisVtbl, ID3D11View* pView, [Count(Count = 4)] float* Color, ref Silk.NET.Maths.Rectangle<int> pRect, uint NumRects)
+    public static unsafe void ClearView(this ComPtr<ID3D11DeviceContext1> thisVtbl, ID3D11View* pView, [Count(Count = 4)] float* Color, ref Silk.NET.Maths.Box2D<int> pRect, uint NumRects)
     {
         var @this = thisVtbl.Handle;
-        fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+        fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, ID3D11View*, float*, Silk.NET.Maths.Rectangle<int>*, uint, void>)@this->LpVtbl[132])(@this, pView, Color, pRectPtr, NumRects);
+            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, ID3D11View*, float*, Silk.NET.Maths.Box2D<int>*, uint, void>)@this->LpVtbl[132])(@this, pView, Color, pRectPtr, NumRects);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearView(this ComPtr<ID3D11DeviceContext1> thisVtbl, ID3D11View* pView, [Count(Count = 4)] ref float Color, Silk.NET.Maths.Rectangle<int>* pRect, uint NumRects)
+    public static unsafe void ClearView(this ComPtr<ID3D11DeviceContext1> thisVtbl, ID3D11View* pView, [Count(Count = 4)] ref float Color, Silk.NET.Maths.Box2D<int>* pRect, uint NumRects)
     {
         var @this = thisVtbl.Handle;
         fixed (float* ColorPtr = &Color)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, ID3D11View*, float*, Silk.NET.Maths.Rectangle<int>*, uint, void>)@this->LpVtbl[132])(@this, pView, ColorPtr, pRect, NumRects);
+            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, ID3D11View*, float*, Silk.NET.Maths.Box2D<int>*, uint, void>)@this->LpVtbl[132])(@this, pView, ColorPtr, pRect, NumRects);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearView(this ComPtr<ID3D11DeviceContext1> thisVtbl, ID3D11View* pView, [Count(Count = 4)] ref float Color, ref Silk.NET.Maths.Rectangle<int> pRect, uint NumRects)
+    public static unsafe void ClearView(this ComPtr<ID3D11DeviceContext1> thisVtbl, ID3D11View* pView, [Count(Count = 4)] ref float Color, ref Silk.NET.Maths.Box2D<int> pRect, uint NumRects)
     {
         var @this = thisVtbl.Handle;
         fixed (float* ColorPtr = &Color)
         {
-            fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+            fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, ID3D11View*, float*, Silk.NET.Maths.Rectangle<int>*, uint, void>)@this->LpVtbl[132])(@this, pView, ColorPtr, pRectPtr, NumRects);
+                ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, ID3D11View*, float*, Silk.NET.Maths.Box2D<int>*, uint, void>)@this->LpVtbl[132])(@this, pView, ColorPtr, pRectPtr, NumRects);
             }
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearView(this ComPtr<ID3D11DeviceContext1> thisVtbl, ref ID3D11View pView, [Count(Count = 4)] float* Color, Silk.NET.Maths.Rectangle<int>* pRect, uint NumRects)
+    public static unsafe void ClearView(this ComPtr<ID3D11DeviceContext1> thisVtbl, ref ID3D11View pView, [Count(Count = 4)] float* Color, Silk.NET.Maths.Box2D<int>* pRect, uint NumRects)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11View* pViewPtr = &pView)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, ID3D11View*, float*, Silk.NET.Maths.Rectangle<int>*, uint, void>)@this->LpVtbl[132])(@this, pViewPtr, Color, pRect, NumRects);
+            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, ID3D11View*, float*, Silk.NET.Maths.Box2D<int>*, uint, void>)@this->LpVtbl[132])(@this, pViewPtr, Color, pRect, NumRects);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearView(this ComPtr<ID3D11DeviceContext1> thisVtbl, ref ID3D11View pView, [Count(Count = 4)] float* Color, ref Silk.NET.Maths.Rectangle<int> pRect, uint NumRects)
+    public static unsafe void ClearView(this ComPtr<ID3D11DeviceContext1> thisVtbl, ref ID3D11View pView, [Count(Count = 4)] float* Color, ref Silk.NET.Maths.Box2D<int> pRect, uint NumRects)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11View* pViewPtr = &pView)
         {
-            fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+            fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, ID3D11View*, float*, Silk.NET.Maths.Rectangle<int>*, uint, void>)@this->LpVtbl[132])(@this, pViewPtr, Color, pRectPtr, NumRects);
+                ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, ID3D11View*, float*, Silk.NET.Maths.Box2D<int>*, uint, void>)@this->LpVtbl[132])(@this, pViewPtr, Color, pRectPtr, NumRects);
             }
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearView(this ComPtr<ID3D11DeviceContext1> thisVtbl, ref ID3D11View pView, [Count(Count = 4)] ref float Color, Silk.NET.Maths.Rectangle<int>* pRect, uint NumRects)
+    public static unsafe void ClearView(this ComPtr<ID3D11DeviceContext1> thisVtbl, ref ID3D11View pView, [Count(Count = 4)] ref float Color, Silk.NET.Maths.Box2D<int>* pRect, uint NumRects)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11View* pViewPtr = &pView)
         {
             fixed (float* ColorPtr = &Color)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, ID3D11View*, float*, Silk.NET.Maths.Rectangle<int>*, uint, void>)@this->LpVtbl[132])(@this, pViewPtr, ColorPtr, pRect, NumRects);
+                ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, ID3D11View*, float*, Silk.NET.Maths.Box2D<int>*, uint, void>)@this->LpVtbl[132])(@this, pViewPtr, ColorPtr, pRect, NumRects);
             }
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static void ClearView(this ComPtr<ID3D11DeviceContext1> thisVtbl, ref ID3D11View pView, [Count(Count = 4)] ref float Color, ref Silk.NET.Maths.Rectangle<int> pRect, uint NumRects)
+    public static void ClearView(this ComPtr<ID3D11DeviceContext1> thisVtbl, ref ID3D11View pView, [Count(Count = 4)] ref float Color, ref Silk.NET.Maths.Box2D<int> pRect, uint NumRects)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11View* pViewPtr = &pView)
         {
             fixed (float* ColorPtr = &Color)
             {
-                fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+                fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, ID3D11View*, float*, Silk.NET.Maths.Rectangle<int>*, uint, void>)@this->LpVtbl[132])(@this, pViewPtr, ColorPtr, pRectPtr, NumRects);
+                    ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, ID3D11View*, float*, Silk.NET.Maths.Box2D<int>*, uint, void>)@this->LpVtbl[132])(@this, pViewPtr, ColorPtr, pRectPtr, NumRects);
                 }
             }
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DiscardView1(this ComPtr<ID3D11DeviceContext1> thisVtbl, ID3D11View* pResourceView, Silk.NET.Maths.Rectangle<int>* pRects, uint NumRects)
+    public static unsafe void DiscardView1(this ComPtr<ID3D11DeviceContext1> thisVtbl, ID3D11View* pResourceView, Silk.NET.Maths.Box2D<int>* pRects, uint NumRects)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, ID3D11View*, Silk.NET.Maths.Rectangle<int>*, uint, void>)@this->LpVtbl[133])(@this, pResourceView, pRects, NumRects);
+        ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, ID3D11View*, Silk.NET.Maths.Box2D<int>*, uint, void>)@this->LpVtbl[133])(@this, pResourceView, pRects, NumRects);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DiscardView1(this ComPtr<ID3D11DeviceContext1> thisVtbl, ID3D11View* pResourceView, ref Silk.NET.Maths.Rectangle<int> pRects, uint NumRects)
+    public static unsafe void DiscardView1(this ComPtr<ID3D11DeviceContext1> thisVtbl, ID3D11View* pResourceView, ref Silk.NET.Maths.Box2D<int> pRects, uint NumRects)
     {
         var @this = thisVtbl.Handle;
-        fixed (Silk.NET.Maths.Rectangle<int>* pRectsPtr = &pRects)
+        fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, ID3D11View*, Silk.NET.Maths.Rectangle<int>*, uint, void>)@this->LpVtbl[133])(@this, pResourceView, pRectsPtr, NumRects);
+            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, ID3D11View*, Silk.NET.Maths.Box2D<int>*, uint, void>)@this->LpVtbl[133])(@this, pResourceView, pRectsPtr, NumRects);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DiscardView1(this ComPtr<ID3D11DeviceContext1> thisVtbl, ref ID3D11View pResourceView, Silk.NET.Maths.Rectangle<int>* pRects, uint NumRects)
+    public static unsafe void DiscardView1(this ComPtr<ID3D11DeviceContext1> thisVtbl, ref ID3D11View pResourceView, Silk.NET.Maths.Box2D<int>* pRects, uint NumRects)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11View* pResourceViewPtr = &pResourceView)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, ID3D11View*, Silk.NET.Maths.Rectangle<int>*, uint, void>)@this->LpVtbl[133])(@this, pResourceViewPtr, pRects, NumRects);
+            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, ID3D11View*, Silk.NET.Maths.Box2D<int>*, uint, void>)@this->LpVtbl[133])(@this, pResourceViewPtr, pRects, NumRects);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static void DiscardView1(this ComPtr<ID3D11DeviceContext1> thisVtbl, ref ID3D11View pResourceView, ref Silk.NET.Maths.Rectangle<int> pRects, uint NumRects)
+    public static void DiscardView1(this ComPtr<ID3D11DeviceContext1> thisVtbl, ref ID3D11View pResourceView, ref Silk.NET.Maths.Box2D<int> pRects, uint NumRects)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11View* pResourceViewPtr = &pResourceView)
         {
-            fixed (Silk.NET.Maths.Rectangle<int>* pRectsPtr = &pRects)
+            fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, ID3D11View*, Silk.NET.Maths.Rectangle<int>*, uint, void>)@this->LpVtbl[133])(@this, pResourceViewPtr, pRectsPtr, NumRects);
+                ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, ID3D11View*, Silk.NET.Maths.Box2D<int>*, uint, void>)@this->LpVtbl[133])(@this, pResourceViewPtr, pRectsPtr, NumRects);
             }
         }
     }
@@ -6258,7 +6258,7 @@ public unsafe static class D3D11DeviceContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void RSSetScissorRects(this ComPtr<ID3D11DeviceContext1> thisVtbl, uint NumRects, Span<Silk.NET.Maths.Rectangle<int>> pRects)
+    public static void RSSetScissorRects(this ComPtr<ID3D11DeviceContext1> thisVtbl, uint NumRects, Span<Silk.NET.Maths.Box2D<int>> pRects)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -7778,7 +7778,7 @@ public unsafe static class D3D11DeviceContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void RSGetScissorRects(this ComPtr<ID3D11DeviceContext1> thisVtbl, uint* pNumRects, Span<Silk.NET.Maths.Rectangle<int>> pRects)
+    public static unsafe void RSGetScissorRects(this ComPtr<ID3D11DeviceContext1> thisVtbl, uint* pNumRects, Span<Silk.NET.Maths.Box2D<int>> pRects)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -7786,7 +7786,7 @@ public unsafe static class D3D11DeviceContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void RSGetScissorRects(this ComPtr<ID3D11DeviceContext1> thisVtbl, Span<uint> pNumRects, Silk.NET.Maths.Rectangle<int>* pRects)
+    public static unsafe void RSGetScissorRects(this ComPtr<ID3D11DeviceContext1> thisVtbl, Span<uint> pNumRects, Silk.NET.Maths.Box2D<int>* pRects)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -7794,7 +7794,7 @@ public unsafe static class D3D11DeviceContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void RSGetScissorRects(this ComPtr<ID3D11DeviceContext1> thisVtbl, Span<uint> pNumRects, Span<Silk.NET.Maths.Rectangle<int>> pRects)
+    public static void RSGetScissorRects(this ComPtr<ID3D11DeviceContext1> thisVtbl, Span<uint> pNumRects, Span<Silk.NET.Maths.Box2D<int>> pRects)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9354,7 +9354,7 @@ public unsafe static class D3D11DeviceContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearView<TI0>(this ComPtr<ID3D11DeviceContext1> thisVtbl, ComPtr<TI0> pView, [Count(Count = 4)] float* Color, Silk.NET.Maths.Rectangle<int>* pRect, uint NumRects) where TI0 : unmanaged, IComVtbl<ID3D11View>, IComVtbl<TI0>
+    public static unsafe void ClearView<TI0>(this ComPtr<ID3D11DeviceContext1> thisVtbl, ComPtr<TI0> pView, [Count(Count = 4)] float* Color, Silk.NET.Maths.Box2D<int>* pRect, uint NumRects) where TI0 : unmanaged, IComVtbl<ID3D11View>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9362,7 +9362,7 @@ public unsafe static class D3D11DeviceContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearView(this ComPtr<ID3D11DeviceContext1> thisVtbl, ID3D11View* pView, [Count(Count = 4)] float* Color, Span<Silk.NET.Maths.Rectangle<int>> pRect, uint NumRects)
+    public static unsafe void ClearView(this ComPtr<ID3D11DeviceContext1> thisVtbl, ID3D11View* pView, [Count(Count = 4)] float* Color, Span<Silk.NET.Maths.Box2D<int>> pRect, uint NumRects)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9370,7 +9370,7 @@ public unsafe static class D3D11DeviceContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearView<TI0>(this ComPtr<ID3D11DeviceContext1> thisVtbl, ComPtr<TI0> pView, [Count(Count = 4)] float* Color, ref Silk.NET.Maths.Rectangle<int> pRect, uint NumRects) where TI0 : unmanaged, IComVtbl<ID3D11View>, IComVtbl<TI0>
+    public static unsafe void ClearView<TI0>(this ComPtr<ID3D11DeviceContext1> thisVtbl, ComPtr<TI0> pView, [Count(Count = 4)] float* Color, ref Silk.NET.Maths.Box2D<int> pRect, uint NumRects) where TI0 : unmanaged, IComVtbl<ID3D11View>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9378,7 +9378,7 @@ public unsafe static class D3D11DeviceContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearView(this ComPtr<ID3D11DeviceContext1> thisVtbl, ID3D11View* pView, [Count(Count = 4)] Span<float> Color, Silk.NET.Maths.Rectangle<int>* pRect, uint NumRects)
+    public static unsafe void ClearView(this ComPtr<ID3D11DeviceContext1> thisVtbl, ID3D11View* pView, [Count(Count = 4)] Span<float> Color, Silk.NET.Maths.Box2D<int>* pRect, uint NumRects)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9386,7 +9386,7 @@ public unsafe static class D3D11DeviceContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearView<TI0>(this ComPtr<ID3D11DeviceContext1> thisVtbl, ComPtr<TI0> pView, [Count(Count = 4)] ref float Color, Silk.NET.Maths.Rectangle<int>* pRect, uint NumRects) where TI0 : unmanaged, IComVtbl<ID3D11View>, IComVtbl<TI0>
+    public static unsafe void ClearView<TI0>(this ComPtr<ID3D11DeviceContext1> thisVtbl, ComPtr<TI0> pView, [Count(Count = 4)] ref float Color, Silk.NET.Maths.Box2D<int>* pRect, uint NumRects) where TI0 : unmanaged, IComVtbl<ID3D11View>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9394,7 +9394,7 @@ public unsafe static class D3D11DeviceContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearView(this ComPtr<ID3D11DeviceContext1> thisVtbl, ID3D11View* pView, [Count(Count = 4)] Span<float> Color, Span<Silk.NET.Maths.Rectangle<int>> pRect, uint NumRects)
+    public static unsafe void ClearView(this ComPtr<ID3D11DeviceContext1> thisVtbl, ID3D11View* pView, [Count(Count = 4)] Span<float> Color, Span<Silk.NET.Maths.Box2D<int>> pRect, uint NumRects)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9402,7 +9402,7 @@ public unsafe static class D3D11DeviceContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void ClearView<TI0>(this ComPtr<ID3D11DeviceContext1> thisVtbl, ComPtr<TI0> pView, [Count(Count = 4)] ref float Color, ref Silk.NET.Maths.Rectangle<int> pRect, uint NumRects) where TI0 : unmanaged, IComVtbl<ID3D11View>, IComVtbl<TI0>
+    public static void ClearView<TI0>(this ComPtr<ID3D11DeviceContext1> thisVtbl, ComPtr<TI0> pView, [Count(Count = 4)] ref float Color, ref Silk.NET.Maths.Box2D<int> pRect, uint NumRects) where TI0 : unmanaged, IComVtbl<ID3D11View>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9410,7 +9410,7 @@ public unsafe static class D3D11DeviceContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearView(this ComPtr<ID3D11DeviceContext1> thisVtbl, Span<ID3D11View> pView, [Count(Count = 4)] float* Color, Silk.NET.Maths.Rectangle<int>* pRect, uint NumRects)
+    public static unsafe void ClearView(this ComPtr<ID3D11DeviceContext1> thisVtbl, Span<ID3D11View> pView, [Count(Count = 4)] float* Color, Silk.NET.Maths.Box2D<int>* pRect, uint NumRects)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9418,7 +9418,7 @@ public unsafe static class D3D11DeviceContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearView(this ComPtr<ID3D11DeviceContext1> thisVtbl, Span<ID3D11View> pView, [Count(Count = 4)] float* Color, Span<Silk.NET.Maths.Rectangle<int>> pRect, uint NumRects)
+    public static unsafe void ClearView(this ComPtr<ID3D11DeviceContext1> thisVtbl, Span<ID3D11View> pView, [Count(Count = 4)] float* Color, Span<Silk.NET.Maths.Box2D<int>> pRect, uint NumRects)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9426,7 +9426,7 @@ public unsafe static class D3D11DeviceContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearView(this ComPtr<ID3D11DeviceContext1> thisVtbl, Span<ID3D11View> pView, [Count(Count = 4)] Span<float> Color, Silk.NET.Maths.Rectangle<int>* pRect, uint NumRects)
+    public static unsafe void ClearView(this ComPtr<ID3D11DeviceContext1> thisVtbl, Span<ID3D11View> pView, [Count(Count = 4)] Span<float> Color, Silk.NET.Maths.Box2D<int>* pRect, uint NumRects)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9434,7 +9434,7 @@ public unsafe static class D3D11DeviceContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void ClearView(this ComPtr<ID3D11DeviceContext1> thisVtbl, Span<ID3D11View> pView, [Count(Count = 4)] Span<float> Color, Span<Silk.NET.Maths.Rectangle<int>> pRect, uint NumRects)
+    public static void ClearView(this ComPtr<ID3D11DeviceContext1> thisVtbl, Span<ID3D11View> pView, [Count(Count = 4)] Span<float> Color, Span<Silk.NET.Maths.Box2D<int>> pRect, uint NumRects)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9442,7 +9442,7 @@ public unsafe static class D3D11DeviceContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DiscardView1<TI0>(this ComPtr<ID3D11DeviceContext1> thisVtbl, ComPtr<TI0> pResourceView, Silk.NET.Maths.Rectangle<int>* pRects, uint NumRects) where TI0 : unmanaged, IComVtbl<ID3D11View>, IComVtbl<TI0>
+    public static unsafe void DiscardView1<TI0>(this ComPtr<ID3D11DeviceContext1> thisVtbl, ComPtr<TI0> pResourceView, Silk.NET.Maths.Box2D<int>* pRects, uint NumRects) where TI0 : unmanaged, IComVtbl<ID3D11View>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9450,7 +9450,7 @@ public unsafe static class D3D11DeviceContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DiscardView1(this ComPtr<ID3D11DeviceContext1> thisVtbl, ID3D11View* pResourceView, Span<Silk.NET.Maths.Rectangle<int>> pRects, uint NumRects)
+    public static unsafe void DiscardView1(this ComPtr<ID3D11DeviceContext1> thisVtbl, ID3D11View* pResourceView, Span<Silk.NET.Maths.Box2D<int>> pRects, uint NumRects)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9458,7 +9458,7 @@ public unsafe static class D3D11DeviceContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DiscardView1<TI0>(this ComPtr<ID3D11DeviceContext1> thisVtbl, ComPtr<TI0> pResourceView, ref Silk.NET.Maths.Rectangle<int> pRects, uint NumRects) where TI0 : unmanaged, IComVtbl<ID3D11View>, IComVtbl<TI0>
+    public static void DiscardView1<TI0>(this ComPtr<ID3D11DeviceContext1> thisVtbl, ComPtr<TI0> pResourceView, ref Silk.NET.Maths.Box2D<int> pRects, uint NumRects) where TI0 : unmanaged, IComVtbl<ID3D11View>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9466,7 +9466,7 @@ public unsafe static class D3D11DeviceContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DiscardView1(this ComPtr<ID3D11DeviceContext1> thisVtbl, Span<ID3D11View> pResourceView, Silk.NET.Maths.Rectangle<int>* pRects, uint NumRects)
+    public static unsafe void DiscardView1(this ComPtr<ID3D11DeviceContext1> thisVtbl, Span<ID3D11View> pResourceView, Silk.NET.Maths.Box2D<int>* pRects, uint NumRects)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9474,7 +9474,7 @@ public unsafe static class D3D11DeviceContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DiscardView1(this ComPtr<ID3D11DeviceContext1> thisVtbl, Span<ID3D11View> pResourceView, Span<Silk.NET.Maths.Rectangle<int>> pRects, uint NumRects)
+    public static void DiscardView1(this ComPtr<ID3D11DeviceContext1> thisVtbl, Span<ID3D11View> pResourceView, Span<Silk.NET.Maths.Box2D<int>> pRects, uint NumRects)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

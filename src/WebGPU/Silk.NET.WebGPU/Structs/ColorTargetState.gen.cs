@@ -24,7 +24,7 @@ namespace Silk.NET.WebGPU
             ChainedStruct* nextInChain = null,
             TextureFormat? format = null,
             BlendState* blend = null,
-            uint? writeMask = null
+            Silk.NET.WebGPU.ColorWriteMask? writeMask = null
         ) : this()
         {
             if (nextInChain is not null)
@@ -67,6 +67,6 @@ namespace Silk.NET.WebGPU
         [NativeName("Type", "WGPUColorWriteMaskFlags")]
         [NativeName("Type.Name", "WGPUColorWriteMaskFlags")]
         [NativeName("Name", "writeMask")]
-        public uint WriteMask;
+        public Silk.NET.WebGPU.ColorWriteMask WriteMask;
     }
 }

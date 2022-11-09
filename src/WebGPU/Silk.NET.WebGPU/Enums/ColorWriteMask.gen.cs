@@ -13,27 +13,6 @@ namespace Silk.NET.WebGPU
     [NativeName("Name", "WGPUColorWriteMask")]
     public enum ColorWriteMask : int
     {
-        [Obsolete("Deprecated in favour of \"None\"")]
-        [NativeName("Name", "WGPUColorWriteMask_None")]
-        ColorWriteMaskNone = 0x0,
-        [Obsolete("Deprecated in favour of \"Red\"")]
-        [NativeName("Name", "WGPUColorWriteMask_Red")]
-        ColorWriteMaskRed = 0x1,
-        [Obsolete("Deprecated in favour of \"Green\"")]
-        [NativeName("Name", "WGPUColorWriteMask_Green")]
-        ColorWriteMaskGreen = 0x2,
-        [Obsolete("Deprecated in favour of \"Blue\"")]
-        [NativeName("Name", "WGPUColorWriteMask_Blue")]
-        ColorWriteMaskBlue = 0x4,
-        [Obsolete("Deprecated in favour of \"Alpha\"")]
-        [NativeName("Name", "WGPUColorWriteMask_Alpha")]
-        ColorWriteMaskAlpha = 0x8,
-        [Obsolete("Deprecated in favour of \"All\"")]
-        [NativeName("Name", "WGPUColorWriteMask_All")]
-        ColorWriteMaskAll = 0xF,
-        [Obsolete("Deprecated in favour of \"Force32\"")]
-        [NativeName("Name", "WGPUColorWriteMask_Force32")]
-        ColorWriteMaskForce32 = 0x7FFFFFFF,
         [NativeName("Name", "WGPUColorWriteMask_None")]
         None = 0x0,
         [NativeName("Name", "WGPUColorWriteMask_Red")]

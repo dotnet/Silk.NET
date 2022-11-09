@@ -15,15 +15,6 @@ namespace Silk.NET.WebGPU
     {
         [NativeName("Name", "")]
         None = 0,
-        [Obsolete("Deprecated in favour of \"Beginning\"")]
-        [NativeName("Name", "WGPURenderPassTimestampLocation_Beginning")]
-        RenderPassTimestampLocationBeginning = 0x0,
-        [Obsolete("Deprecated in favour of \"End\"")]
-        [NativeName("Name", "WGPURenderPassTimestampLocation_End")]
-        RenderPassTimestampLocationEnd = 0x1,
-        [Obsolete("Deprecated in favour of \"Force32\"")]
-        [NativeName("Name", "WGPURenderPassTimestampLocation_Force32")]
-        RenderPassTimestampLocationForce32 = 0x7FFFFFFF,
         [NativeName("Name", "WGPURenderPassTimestampLocation_Beginning")]
         Beginning = 0x0,
         [NativeName("Name", "WGPURenderPassTimestampLocation_End")]

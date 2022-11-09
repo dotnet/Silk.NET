@@ -15,18 +15,6 @@ namespace Silk.NET.WebGPU
     {
         [NativeName("Name", "")]
         None = 0,
-        [Obsolete("Deprecated in favour of \"Undefined\"")]
-        [NativeName("Name", "WGPUPowerPreference_Undefined")]
-        PowerPreferenceUndefined = 0x0,
-        [Obsolete("Deprecated in favour of \"LowPower\"")]
-        [NativeName("Name", "WGPUPowerPreference_LowPower")]
-        PowerPreferenceLowPower = 0x1,
-        [Obsolete("Deprecated in favour of \"HighPerformance\"")]
-        [NativeName("Name", "WGPUPowerPreference_HighPerformance")]
-        PowerPreferenceHighPerformance = 0x2,
-        [Obsolete("Deprecated in favour of \"Force32\"")]
-        [NativeName("Name", "WGPUPowerPreference_Force32")]
-        PowerPreferenceForce32 = 0x7FFFFFFF,
         [NativeName("Name", "WGPUPowerPreference_Undefined")]
         Undefined = 0x0,
         [NativeName("Name", "WGPUPowerPreference_LowPower")]

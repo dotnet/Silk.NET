@@ -29,7 +29,7 @@ public class ComPtrOverloader : IComplexFunctionOverloader
     public bool TryGetFunctionVariant(Function original, out ImplementedFunction varied, Project core)
     {
         var inv = original.Parameters
-            .Select(x => (!x.Type.IsIn ? !x.Type.IsOut ? !x.Type.IsByRef ? "" : "ref " : "out " : "in ") + x.Name)
+            .Select(x => (!x.Type.IsIn ? !x.Type.IsOut ? !x.Type.IsByRef ? "" : "ref " : "out " : "in ") + x.Name.AtEscape())
             .ToList();
 
         var parameters = original.Parameters.ToList();
@@ -58,7 +58,7 @@ public class ComPtrOverloader : IComplexFunctionOverloader
                     )
                 );
 
-                inv[i + 1] = $"({parameters[i - nrm].Type}) {parameters[i - nrm].Name}.GetAddressOf()";
+                inv[i + 1] = $"({parameters[i - nrm].Type}) {parameters[i - nrm].Name.AtEscape()}.GetAddressOf()";
                 parameters[i - nrm] = new ParameterSignatureBuilder(parameters[i - nrm])
                     .WithType
                     (
@@ -75,7 +75,7 @@ public class ComPtrOverloader : IComplexFunctionOverloader
 
                 if (@out)
                 {
-                    sb.AppendLine($"{parameters[i - nrm].Name} = default;");
+                    sb.AppendLine($"{parameters[i - nrm].Name.AtEscape()} = default;");
                 }
 
                 nrm++; // we've removed the guid parameter
@@ -92,7 +92,7 @@ public class ComPtrOverloader : IComplexFunctionOverloader
                         new[] { "unmanaged", $"IComVtbl<{parameters[i - nrm].Type.Name}>", $"IComVtbl<TI{nti}>" }
                     )
                 );
-                inv[i] = $"({parameters[i - nrm].Type}) {parameters[i - nrm].Name}.GetAddressOf()";
+                inv[i] = $"({parameters[i - nrm].Type}) {parameters[i - nrm].Name.AtEscape()}.GetAddressOf()";
                 parameters[i - nrm] = new ParameterSignatureBuilder(parameters[i - nrm])
                     .WithType
                     (
@@ -117,7 +117,7 @@ public class ComPtrOverloader : IComplexFunctionOverloader
                         new[] { "unmanaged", $"IComVtbl<{parameters[i - nrm].Type.Name}>", $"IComVtbl<TI{nti}>" }
                     )
                 );
-                inv[i] = $"({parameters[i - nrm].Type}) {parameters[i - nrm].Name}.Handle";
+                inv[i] = $"({parameters[i - nrm].Type}) {parameters[i - nrm].Name.AtEscape()}.Handle";
                 parameters[i - nrm] = new ParameterSignatureBuilder(parameters[i - nrm])
                     .WithType
                     (

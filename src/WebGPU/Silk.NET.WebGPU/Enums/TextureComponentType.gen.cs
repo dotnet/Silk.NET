@@ -15,21 +15,6 @@ namespace Silk.NET.WebGPU
     {
         [NativeName("Name", "")]
         None = 0,
-        [Obsolete("Deprecated in favour of \"Float\"")]
-        [NativeName("Name", "WGPUTextureComponentType_Float")]
-        TextureComponentTypeFloat = 0x0,
-        [Obsolete("Deprecated in favour of \"Sint\"")]
-        [NativeName("Name", "WGPUTextureComponentType_Sint")]
-        TextureComponentTypeSint = 0x1,
-        [Obsolete("Deprecated in favour of \"Uint\"")]
-        [NativeName("Name", "WGPUTextureComponentType_Uint")]
-        TextureComponentTypeUint = 0x2,
-        [Obsolete("Deprecated in favour of \"DepthComparison\"")]
-        [NativeName("Name", "WGPUTextureComponentType_DepthComparison")]
-        TextureComponentTypeDepthComparison = 0x3,
-        [Obsolete("Deprecated in favour of \"Force32\"")]
-        [NativeName("Name", "WGPUTextureComponentType_Force32")]
-        TextureComponentTypeForce32 = 0x7FFFFFFF,
         [NativeName("Name", "WGPUTextureComponentType_Float")]
         Float = 0x0,
         [NativeName("Name", "WGPUTextureComponentType_Sint")]

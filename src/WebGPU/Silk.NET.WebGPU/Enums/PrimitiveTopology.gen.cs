@@ -15,24 +15,6 @@ namespace Silk.NET.WebGPU
     {
         [NativeName("Name", "")]
         None = 0,
-        [Obsolete("Deprecated in favour of \"PointList\"")]
-        [NativeName("Name", "WGPUPrimitiveTopology_PointList")]
-        PrimitiveTopologyPointList = 0x0,
-        [Obsolete("Deprecated in favour of \"LineList\"")]
-        [NativeName("Name", "WGPUPrimitiveTopology_LineList")]
-        PrimitiveTopologyLineList = 0x1,
-        [Obsolete("Deprecated in favour of \"LineStrip\"")]
-        [NativeName("Name", "WGPUPrimitiveTopology_LineStrip")]
-        PrimitiveTopologyLineStrip = 0x2,
-        [Obsolete("Deprecated in favour of \"TriangleList\"")]
-        [NativeName("Name", "WGPUPrimitiveTopology_TriangleList")]
-        PrimitiveTopologyTriangleList = 0x3,
-        [Obsolete("Deprecated in favour of \"TriangleStrip\"")]
-        [NativeName("Name", "WGPUPrimitiveTopology_TriangleStrip")]
-        PrimitiveTopologyTriangleStrip = 0x4,
-        [Obsolete("Deprecated in favour of \"Force32\"")]
-        [NativeName("Name", "WGPUPrimitiveTopology_Force32")]
-        PrimitiveTopologyForce32 = 0x7FFFFFFF,
         [NativeName("Name", "WGPUPrimitiveTopology_PointList")]
         PointList = 0x0,
         [NativeName("Name", "WGPUPrimitiveTopology_LineList")]

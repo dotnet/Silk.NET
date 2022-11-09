@@ -15,15 +15,6 @@ namespace Silk.NET.WebGPU
     {
         [NativeName("Name", "")]
         None = 0,
-        [Obsolete("Deprecated in favour of \"Nearest\"")]
-        [NativeName("Name", "WGPUFilterMode_Nearest")]
-        FilterModeNearest = 0x0,
-        [Obsolete("Deprecated in favour of \"Linear\"")]
-        [NativeName("Name", "WGPUFilterMode_Linear")]
-        FilterModeLinear = 0x1,
-        [Obsolete("Deprecated in favour of \"Force32\"")]
-        [NativeName("Name", "WGPUFilterMode_Force32")]
-        FilterModeForce32 = 0x7FFFFFFF,
         [NativeName("Name", "WGPUFilterMode_Nearest")]
         Nearest = 0x0,
         [NativeName("Name", "WGPUFilterMode_Linear")]

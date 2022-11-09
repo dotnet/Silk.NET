@@ -411,48 +411,48 @@ public unsafe static class Direct3DCubeTexture9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LockRect(this ComPtr<IDirect3DCubeTexture9> thisVtbl, CubemapFaces FaceType, uint Level, LockedRect* pLockedRect, Silk.NET.Maths.Rectangle<int>* pRect, uint Flags)
+    public static unsafe int LockRect(this ComPtr<IDirect3DCubeTexture9> thisVtbl, CubemapFaces FaceType, uint Level, LockedRect* pLockedRect, Silk.NET.Maths.Box2D<int>* pRect, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, CubemapFaces, uint, LockedRect*, Silk.NET.Maths.Rectangle<int>*, uint, int>)@this->LpVtbl[19])(@this, FaceType, Level, pLockedRect, pRect, Flags);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, CubemapFaces, uint, LockedRect*, Silk.NET.Maths.Box2D<int>*, uint, int>)@this->LpVtbl[19])(@this, FaceType, Level, pLockedRect, pRect, Flags);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LockRect(this ComPtr<IDirect3DCubeTexture9> thisVtbl, CubemapFaces FaceType, uint Level, LockedRect* pLockedRect, ref Silk.NET.Maths.Rectangle<int> pRect, uint Flags)
+    public static unsafe int LockRect(this ComPtr<IDirect3DCubeTexture9> thisVtbl, CubemapFaces FaceType, uint Level, LockedRect* pLockedRect, ref Silk.NET.Maths.Box2D<int> pRect, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+        fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, CubemapFaces, uint, LockedRect*, Silk.NET.Maths.Rectangle<int>*, uint, int>)@this->LpVtbl[19])(@this, FaceType, Level, pLockedRect, pRectPtr, Flags);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, CubemapFaces, uint, LockedRect*, Silk.NET.Maths.Box2D<int>*, uint, int>)@this->LpVtbl[19])(@this, FaceType, Level, pLockedRect, pRectPtr, Flags);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LockRect(this ComPtr<IDirect3DCubeTexture9> thisVtbl, CubemapFaces FaceType, uint Level, ref LockedRect pLockedRect, Silk.NET.Maths.Rectangle<int>* pRect, uint Flags)
+    public static unsafe int LockRect(this ComPtr<IDirect3DCubeTexture9> thisVtbl, CubemapFaces FaceType, uint Level, ref LockedRect pLockedRect, Silk.NET.Maths.Box2D<int>* pRect, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (LockedRect* pLockedRectPtr = &pLockedRect)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, CubemapFaces, uint, LockedRect*, Silk.NET.Maths.Rectangle<int>*, uint, int>)@this->LpVtbl[19])(@this, FaceType, Level, pLockedRectPtr, pRect, Flags);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, CubemapFaces, uint, LockedRect*, Silk.NET.Maths.Box2D<int>*, uint, int>)@this->LpVtbl[19])(@this, FaceType, Level, pLockedRectPtr, pRect, Flags);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int LockRect(this ComPtr<IDirect3DCubeTexture9> thisVtbl, CubemapFaces FaceType, uint Level, ref LockedRect pLockedRect, ref Silk.NET.Maths.Rectangle<int> pRect, uint Flags)
+    public static int LockRect(this ComPtr<IDirect3DCubeTexture9> thisVtbl, CubemapFaces FaceType, uint Level, ref LockedRect pLockedRect, ref Silk.NET.Maths.Box2D<int> pRect, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (LockedRect* pLockedRectPtr = &pLockedRect)
         {
-            fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+            fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, CubemapFaces, uint, LockedRect*, Silk.NET.Maths.Rectangle<int>*, uint, int>)@this->LpVtbl[19])(@this, FaceType, Level, pLockedRectPtr, pRectPtr, Flags);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, CubemapFaces, uint, LockedRect*, Silk.NET.Maths.Box2D<int>*, uint, int>)@this->LpVtbl[19])(@this, FaceType, Level, pLockedRectPtr, pRectPtr, Flags);
             }
         }
         return ret;
@@ -468,22 +468,22 @@ public unsafe static class Direct3DCubeTexture9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddDirtyRect(this ComPtr<IDirect3DCubeTexture9> thisVtbl, CubemapFaces FaceType, Silk.NET.Maths.Rectangle<int>* pDirtyRect)
+    public static unsafe int AddDirtyRect(this ComPtr<IDirect3DCubeTexture9> thisVtbl, CubemapFaces FaceType, Silk.NET.Maths.Box2D<int>* pDirtyRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, CubemapFaces, Silk.NET.Maths.Rectangle<int>*, int>)@this->LpVtbl[21])(@this, FaceType, pDirtyRect);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, CubemapFaces, Silk.NET.Maths.Box2D<int>*, int>)@this->LpVtbl[21])(@this, FaceType, pDirtyRect);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddDirtyRect(this ComPtr<IDirect3DCubeTexture9> thisVtbl, CubemapFaces FaceType, ref Silk.NET.Maths.Rectangle<int> pDirtyRect)
+    public static int AddDirtyRect(this ComPtr<IDirect3DCubeTexture9> thisVtbl, CubemapFaces FaceType, ref Silk.NET.Maths.Box2D<int> pDirtyRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (Silk.NET.Maths.Rectangle<int>* pDirtyRectPtr = &pDirtyRect)
+        fixed (Silk.NET.Maths.Box2D<int>* pDirtyRectPtr = &pDirtyRect)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, CubemapFaces, Silk.NET.Maths.Rectangle<int>*, int>)@this->LpVtbl[21])(@this, FaceType, pDirtyRectPtr);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, CubemapFaces, Silk.NET.Maths.Box2D<int>*, int>)@this->LpVtbl[21])(@this, FaceType, pDirtyRectPtr);
         }
         return ret;
     }
@@ -626,7 +626,7 @@ public unsafe static class Direct3DCubeTexture9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LockRect(this ComPtr<IDirect3DCubeTexture9> thisVtbl, CubemapFaces FaceType, uint Level, LockedRect* pLockedRect, Span<Silk.NET.Maths.Rectangle<int>> pRect, uint Flags)
+    public static unsafe int LockRect(this ComPtr<IDirect3DCubeTexture9> thisVtbl, CubemapFaces FaceType, uint Level, LockedRect* pLockedRect, Span<Silk.NET.Maths.Box2D<int>> pRect, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -634,7 +634,7 @@ public unsafe static class Direct3DCubeTexture9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LockRect(this ComPtr<IDirect3DCubeTexture9> thisVtbl, CubemapFaces FaceType, uint Level, Span<LockedRect> pLockedRect, Silk.NET.Maths.Rectangle<int>* pRect, uint Flags)
+    public static unsafe int LockRect(this ComPtr<IDirect3DCubeTexture9> thisVtbl, CubemapFaces FaceType, uint Level, Span<LockedRect> pLockedRect, Silk.NET.Maths.Box2D<int>* pRect, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -642,7 +642,7 @@ public unsafe static class Direct3DCubeTexture9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int LockRect(this ComPtr<IDirect3DCubeTexture9> thisVtbl, CubemapFaces FaceType, uint Level, Span<LockedRect> pLockedRect, Span<Silk.NET.Maths.Rectangle<int>> pRect, uint Flags)
+    public static int LockRect(this ComPtr<IDirect3DCubeTexture9> thisVtbl, CubemapFaces FaceType, uint Level, Span<LockedRect> pLockedRect, Span<Silk.NET.Maths.Box2D<int>> pRect, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -650,7 +650,7 @@ public unsafe static class Direct3DCubeTexture9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddDirtyRect(this ComPtr<IDirect3DCubeTexture9> thisVtbl, CubemapFaces FaceType, Span<Silk.NET.Maths.Rectangle<int>> pDirtyRect)
+    public static int AddDirtyRect(this ComPtr<IDirect3DCubeTexture9> thisVtbl, CubemapFaces FaceType, Span<Silk.NET.Maths.Box2D<int>> pDirtyRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
