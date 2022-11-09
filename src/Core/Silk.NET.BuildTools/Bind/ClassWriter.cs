@@ -330,6 +330,13 @@ namespace Silk.NET.BuildTools.Bind
                         sw.WriteLine($"        public const string ExtensionName = \"{key}\";");
                         foreach (var function in i.Functions)
                         {
+                            var coreProject = profile.Projects["Core"];
+
+                            if (coreProject.Classes.Any(x => x.NativeApis.Any(x => x.Value.Functions.Any(x => x.NativeName == function.NativeName))))
+                            {
+                                continue;
+                            }
+                            
                             AddInjectionAttributes(function, task);
 
                             if (!string.IsNullOrWhiteSpace(function.PreprocessorConditions))
@@ -383,6 +390,13 @@ namespace Silk.NET.BuildTools.Bind
 
                         foreach (var overload in Overloader.GetOverloads(i.Functions, profile.Projects["Core"], task.Task.OverloaderExclusions))
                         {
+                            var coreProject = profile.Projects["Core"];
+
+                            if (coreProject.Classes.Any(x => x.NativeApis.Any(x => x.Value.Functions.Any(x => x.NativeName == overload.Signature.NativeName))))
+                            {
+                                continue;
+                            }
+
                             var sw2u = overload.Signature.Kind == SignatureKind.PotentiallyConflictingOverload
                                 ? swOverloads ??= CreateOverloadsFile(folder, name, true)
                                 : sw;

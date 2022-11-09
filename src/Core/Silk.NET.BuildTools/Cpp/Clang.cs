@@ -202,14 +202,37 @@ namespace Silk.NET.BuildTools.Cpp
             var destInfo = task.ClangOpts.ClassMappings[fileName];
             var indexOfOpenSqBracket = destInfo.IndexOf('[');
             var indexOfCloseSqBracket = destInfo.LastIndexOf(']');
-            var projectName = destInfo.Substring
-                (indexOfOpenSqBracket + 1, indexOfCloseSqBracket - indexOfOpenSqBracket - 1);
-            var className = destInfo.Substring(indexOfCloseSqBracket + 1);
+            var projectNameSplit = destInfo.Substring
+                (indexOfOpenSqBracket + 1, indexOfCloseSqBracket - indexOfOpenSqBracket - 1).Split(':');
+
+            if (projectNameSplit.Length == 0) 
+            {
+                throw new ArgumentException("Missing project name!");
+            }
+
+            if (projectNameSplit.Length > 2)
+            {
+                throw new ArgumentException("Too many splits in the project name!");
+            }
+
+            var projectName = projectNameSplit[0];
+
+            var nativeApiSetName = destInfo.Substring(indexOfCloseSqBracket + 1);
+            if (projectName != "Core" && projectNameSplit.Length <= 1)
+            {
+                throw new InvalidOperationException("The core class name must be provided for extension projects. Example: \"[ProjectName:CoreClassName]ExtensionClassName\"");
+            }
+            
+            var className = projectNameSplit.Length > 1
+                ? projectNameSplit[1]
+                : nativeApiSetName;
             var project = profile.Projects[projectName] = new Project
             {
                 IsRoot = projectName == "Core",
-                Namespace = projectName == "Core" ? task.Namespace : $"{task.ExtensionsNamespace}.{projectName}",
-                ComRefs = task.ClangOpts.ComRefs ?? new HashSet<string>()
+                Namespace = projectName == "Core"
+                        ? string.Empty
+                        : $".{projectName}",
+                ComRefs = task.ClangOpts.ComRefs ?? new HashSet<string>(),
             };
 
             if (projectName != "Core")
@@ -227,7 +250,7 @@ namespace Silk.NET.BuildTools.Cpp
             {
                 ClassName = className,
                 Constants = constants,
-                NativeApis = { [fileName] = new NativeApiSet { Name = "I" + className, Functions = functions } }
+                NativeApis = { [fileName] = new NativeApiSet { Name = "I" + nativeApiSetName, Functions = functions } }
             };
             project.Structs = structs;
             project.Enums = enums;
@@ -829,6 +852,11 @@ namespace Silk.NET.BuildTools.Cpp
                 }
                 else if (type is PointerType pointerType)
                 {
+                    if (pointerType.Handle.IsConstQualified || (pointerType.PointeeType.Handle.IsConstQualified && !pointerType.PointeeType.IsPointerType))
+                    {
+                        flow = FlowDirection.In;
+                    }
+
                     ret = GetType(pointerType.PointeeType, out _, ref flow, out _);
                     ret.IndirectionLevels++;
                 }

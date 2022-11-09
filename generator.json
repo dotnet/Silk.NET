@@ -1911,6 +1911,194 @@
                     "$include.commonTypeMap": "build/csharp_typemap.json"
                 }
             ]
+        },
+        {
+            "profileName": "D2D1",
+            "sources": [
+                "src/Microsoft/Silk.NET.Direct2D1/D2D1.h"
+            ],
+            "mode": "Clang",
+            "cacheDir": "build/cache",
+            "cacheKey": "d2d1",
+            "controlDescriptors": [
+                "convert-windows-only",
+                "Currently disabled due to bakery bugs.",
+                "no-convert",
+                "no-bind"
+            ],
+            "converter": {},
+            "prefix": "D2D1",
+            "clang": {
+                "args": [
+                    "--language=c++",
+                    "--std=c++17",
+                    "-m32",
+                    "-Wno-expansion-to-defined",
+                    "-Wno-ignored-attributes",
+                    "-Wno-ignored-pragma-intrinsic",
+                    "-Wno-nonportable-include-path",
+                    "-Wno-pragma-pack",
+                    "-I$windowsSdkIncludes",
+                    "-Ibuild/include"
+                ],
+                "traverse": [
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1effectauthor.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1effectauthor_1.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1effecthelpers.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1effects.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1effects_1.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1effects_2.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1helper.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1svg.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1_1.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1_1helper.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1_2.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1_2helper.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1_3.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1_3helper.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2dbasetypes.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/D2DErr.h"
+                ],
+                "classes": {
+                    "D2D1.h": "[Core]D2D1"
+                }
+            },
+            "exclude": [
+            ],
+            "rename": {
+            },
+            "bakery": {
+                "profileNames": [
+                    "D2D1"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/Microsoft",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.Direct2D1",
+            "extensionsNamespace": "Silk.NET.Direct2D1.Extensions",
+            "nameContainer": {
+                "linux-x64": "libd2d1.so",
+                "win-x64": "d2d1.dll",
+                "win-x86": "d2d1.dll",
+                "osx-x64": "libd2d1.dylib",
+                "android": "libd2d1.so",
+                "iOS": "__Internal",
+                "className": "D2D1LibraryNameContainer"
+            },
+            "typeMaps": [
+                {
+                    "$include.dxTypemap": "build/dx_typemap.json",
+                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                }
+            ]
+        },
+        {
+            "profileName": "webgpu",
+            "sources": [
+                "build/submodules/webgpu-headers/webgpu.h",
+                "build/submodules/wgpu-native/ffi/wgpu.h",
+                "build/submodules/dawn/out/Debug/gen/include/dawn/dawn-webgpu.h"
+            ],
+            "mode": "Clang",
+            "cacheDir": "build/cache",
+            "cacheKey": "webgpu",
+            "controlDescriptors": [
+                "convert-windows-only",
+                "no-obsolete-enum"
+            ],
+            "converter": {},
+            "prefix": "wgpu",
+            "clang": {
+                "args": [
+                    "--language=c++",
+                    "--std=c++17",
+                    "-m64",
+                    "-Wno-expansion-to-defined",
+                    "-Wno-ignored-attributes",
+                    "-Wno-ignored-pragma-intrinsic",
+                    "-Wno-nonportable-include-path",
+                    "-Wno-pragma-pack",
+                    "-I$windowsSdkIncludes",
+                    "-Ibuild/submodules/wgpu-native/ffi"
+                ],
+                "traverse": [
+                    "build/submodules/webgpu-headers/*.h",
+                    "build/submodules/wgpu-native/*.h"
+                ],
+                "classes": {
+                    "webgpu.h": "[Core]WebGPU",
+                    "wgpu.h": "[WGPU:WebGPU]Wgpu",
+                    "dawn-webgpu.h": "[Dawn:WebGPU]Dawn"
+                }
+            },
+            "exclude": [
+                
+            ],
+            "rename": {
+                "WGPUComputePipelineImpl": "ComputePipeline",
+                "WGPUAdapterImpl": "Adapter",
+                "WGPUBindGroupImpl": "BindGroup",
+                "WGPUBindGroupLayoutImpl": "BindGroupLayout",
+                "WGPUBufferImpl": "Buffer",
+                "WGPUCommandBufferImpl": "CommandBuffer",
+                "WGPUCommandEncoderImpl": "CommandEncoder",
+                "WGPUComputePassEncoderImpl": "ComputePassEncoder",
+                "WGPUDeviceImpl": "Device",
+                "WGPUInstanceImpl": "Instance",
+                "WGPUPipelineLayoutImpl": "PipelineLayout",
+                "WGPUQuerySetImpl": "QuerySet",
+                "WGPUQueueImpl": "Queue",
+                "WGPURenderBundleEncoderImpl": "RenderBundleEncoder",
+                "WGPURenderBundleImpl": "RenderBundle",
+                "WGPURenderPassEncoderImpl": "RenderPassEncoder",
+                "WGPURenderPipelineImpl": "RenderPipeline",
+                "WGPUSamplerImpl": "Sampler",
+                "WGPUShaderModuleImpl": "ShaderModule",
+                "WGPUSurfaceImpl": "Surface",
+                "WGPUSwapChainImpl": "SwapChain",
+                "WGPUTextureImpl": "Texture",
+                "WGPUTextureViewImpl": "TextureView"
+            },
+            "bakery": {
+                "profileNames": [
+                    "webgpu",
+                    "wgpu",
+                    "dawn-webgpu"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/WebGPU",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.WebGPU",
+            "extensionsNamespace": "Silk.NET.WebGPU.Extensions",
+            "nameContainer": {
+                "linux-x64": "libwgpu.so",
+                "win-x64": "libwgpu.dll",
+                "win-x86": "libwgpu.dll",
+                "osx-x64": "libwgpu.dylib",
+                "android": "libwgpu.so",
+                "className": "WebGPULibraryNameContainer"
+            },
+            "typeMaps": [
+                {
+                    "WGPUColorWriteMaskFlags": "Silk.NET.WebGPU.ColorWriteMask",
+                    "WGPUBufferUsageFlags": "Silk.NET.WebGPU.BufferUsage",
+                    "WGPUMapModeFlags": "Silk.NET.WebGPU.MapMode",
+                    "WGPUShaderStageFlags": "Silk.NET.WebGPU.ShaderStage",
+                    "WGPUTextureUsageFlags": "Silk.NET.WebGPU.TextureUsage"
+                },
+                {
+                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                }
+            ]
         }
     ]
 }
