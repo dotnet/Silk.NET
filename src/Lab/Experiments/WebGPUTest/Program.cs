@@ -179,7 +179,7 @@ fn main(@builtin(global_invocation_id) global_id: vec3<u32>) {
         fixed (uint* numberPtr = numbers)
             wgpu.QueueWriteBuffer(queue, storageBuffer, 0, numberPtr, numbersSize);
 
-        wgpu.QueueSubmit(queue, 1, cmdBuffer);
+        wgpu.QueueSubmit(queue, 1, &cmdBuffer);
 
         wgpu.BufferMapAsync(stagingBuffer, MapMode.Read, 0, numbersSize, new PfnBufferMapCallback(
                                 (arg0, data) =>
