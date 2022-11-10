@@ -695,41 +695,41 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetOutputTargetRect(ID3D11VideoProcessor* pVideoProcessor, int Enable, Silk.NET.Maths.Rectangle<int>* pRect)
+        public readonly unsafe void VideoProcessorSetOutputTargetRect(ID3D11VideoProcessor* pVideoProcessor, int Enable, Silk.NET.Maths.Box2D<int>* pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[13])(@this, pVideoProcessor, Enable, pRect);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[13])(@this, pVideoProcessor, Enable, pRect);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetOutputTargetRect(ID3D11VideoProcessor* pVideoProcessor, int Enable, ref Silk.NET.Maths.Rectangle<int> pRect)
+        public readonly unsafe void VideoProcessorSetOutputTargetRect(ID3D11VideoProcessor* pVideoProcessor, int Enable, ref Silk.NET.Maths.Box2D<int> pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+            fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[13])(@this, pVideoProcessor, Enable, pRectPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[13])(@this, pVideoProcessor, Enable, pRectPtr);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetOutputTargetRect(ref ID3D11VideoProcessor pVideoProcessor, int Enable, Silk.NET.Maths.Rectangle<int>* pRect)
+        public readonly unsafe void VideoProcessorSetOutputTargetRect(ref ID3D11VideoProcessor pVideoProcessor, int Enable, Silk.NET.Maths.Box2D<int>* pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[13])(@this, pVideoProcessorPtr, Enable, pRect);
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[13])(@this, pVideoProcessorPtr, Enable, pRect);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void VideoProcessorSetOutputTargetRect(ref ID3D11VideoProcessor pVideoProcessor, int Enable, ref Silk.NET.Maths.Rectangle<int> pRect)
+        public readonly void VideoProcessorSetOutputTargetRect(ref ID3D11VideoProcessor pVideoProcessor, int Enable, ref Silk.NET.Maths.Box2D<int> pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+                fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[13])(@this, pVideoProcessorPtr, Enable, pRectPtr);
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[13])(@this, pVideoProcessorPtr, Enable, pRectPtr);
                 }
             }
         }
@@ -974,92 +974,92 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorGetOutputTargetRect(ID3D11VideoProcessor* pVideoProcessor, int* Enabled, Silk.NET.Maths.Rectangle<int>* pRect)
+        public readonly unsafe void VideoProcessorGetOutputTargetRect(ID3D11VideoProcessor* pVideoProcessor, int* Enabled, Silk.NET.Maths.Box2D<int>* pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[20])(@this, pVideoProcessor, Enabled, pRect);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[20])(@this, pVideoProcessor, Enabled, pRect);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorGetOutputTargetRect(ID3D11VideoProcessor* pVideoProcessor, int* Enabled, ref Silk.NET.Maths.Rectangle<int> pRect)
+        public readonly unsafe void VideoProcessorGetOutputTargetRect(ID3D11VideoProcessor* pVideoProcessor, int* Enabled, ref Silk.NET.Maths.Box2D<int> pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+            fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[20])(@this, pVideoProcessor, Enabled, pRectPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[20])(@this, pVideoProcessor, Enabled, pRectPtr);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorGetOutputTargetRect(ID3D11VideoProcessor* pVideoProcessor, ref int Enabled, Silk.NET.Maths.Rectangle<int>* pRect)
+        public readonly unsafe void VideoProcessorGetOutputTargetRect(ID3D11VideoProcessor* pVideoProcessor, ref int Enabled, Silk.NET.Maths.Box2D<int>* pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (int* EnabledPtr = &Enabled)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[20])(@this, pVideoProcessor, EnabledPtr, pRect);
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[20])(@this, pVideoProcessor, EnabledPtr, pRect);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorGetOutputTargetRect(ID3D11VideoProcessor* pVideoProcessor, ref int Enabled, ref Silk.NET.Maths.Rectangle<int> pRect)
+        public readonly unsafe void VideoProcessorGetOutputTargetRect(ID3D11VideoProcessor* pVideoProcessor, ref int Enabled, ref Silk.NET.Maths.Box2D<int> pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (int* EnabledPtr = &Enabled)
             {
-                fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+                fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[20])(@this, pVideoProcessor, EnabledPtr, pRectPtr);
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[20])(@this, pVideoProcessor, EnabledPtr, pRectPtr);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorGetOutputTargetRect(ref ID3D11VideoProcessor pVideoProcessor, int* Enabled, Silk.NET.Maths.Rectangle<int>* pRect)
+        public readonly unsafe void VideoProcessorGetOutputTargetRect(ref ID3D11VideoProcessor pVideoProcessor, int* Enabled, Silk.NET.Maths.Box2D<int>* pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[20])(@this, pVideoProcessorPtr, Enabled, pRect);
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[20])(@this, pVideoProcessorPtr, Enabled, pRect);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorGetOutputTargetRect(ref ID3D11VideoProcessor pVideoProcessor, int* Enabled, ref Silk.NET.Maths.Rectangle<int> pRect)
+        public readonly unsafe void VideoProcessorGetOutputTargetRect(ref ID3D11VideoProcessor pVideoProcessor, int* Enabled, ref Silk.NET.Maths.Box2D<int> pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+                fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[20])(@this, pVideoProcessorPtr, Enabled, pRectPtr);
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[20])(@this, pVideoProcessorPtr, Enabled, pRectPtr);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorGetOutputTargetRect(ref ID3D11VideoProcessor pVideoProcessor, ref int Enabled, Silk.NET.Maths.Rectangle<int>* pRect)
+        public readonly unsafe void VideoProcessorGetOutputTargetRect(ref ID3D11VideoProcessor pVideoProcessor, ref int Enabled, Silk.NET.Maths.Box2D<int>* pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
                 fixed (int* EnabledPtr = &Enabled)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[20])(@this, pVideoProcessorPtr, EnabledPtr, pRect);
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[20])(@this, pVideoProcessorPtr, EnabledPtr, pRect);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void VideoProcessorGetOutputTargetRect(ref ID3D11VideoProcessor pVideoProcessor, ref int Enabled, ref Silk.NET.Maths.Rectangle<int> pRect)
+        public readonly void VideoProcessorGetOutputTargetRect(ref ID3D11VideoProcessor pVideoProcessor, ref int Enabled, ref Silk.NET.Maths.Box2D<int> pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
                 fixed (int* EnabledPtr = &Enabled)
                 {
-                    fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+                    fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
                     {
-                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[20])(@this, pVideoProcessorPtr, EnabledPtr, pRectPtr);
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[20])(@this, pVideoProcessorPtr, EnabledPtr, pRectPtr);
                     }
                 }
             }
@@ -1627,81 +1627,81 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetStreamSourceRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Rectangle<int>* pRect)
+        public readonly unsafe void VideoProcessorSetStreamSourceRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Box2D<int>* pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[30])(@this, pVideoProcessor, StreamIndex, Enable, pRect);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[30])(@this, pVideoProcessor, StreamIndex, Enable, pRect);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetStreamSourceRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Maths.Rectangle<int> pRect)
+        public readonly unsafe void VideoProcessorSetStreamSourceRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Maths.Box2D<int> pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+            fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[30])(@this, pVideoProcessor, StreamIndex, Enable, pRectPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[30])(@this, pVideoProcessor, StreamIndex, Enable, pRectPtr);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetStreamSourceRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Rectangle<int>* pRect)
+        public readonly unsafe void VideoProcessorSetStreamSourceRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Box2D<int>* pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[30])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRect);
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[30])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRect);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void VideoProcessorSetStreamSourceRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Maths.Rectangle<int> pRect)
+        public readonly void VideoProcessorSetStreamSourceRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Maths.Box2D<int> pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+                fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[30])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRectPtr);
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[30])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRectPtr);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetStreamDestRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Rectangle<int>* pRect)
+        public readonly unsafe void VideoProcessorSetStreamDestRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Box2D<int>* pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[31])(@this, pVideoProcessor, StreamIndex, Enable, pRect);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[31])(@this, pVideoProcessor, StreamIndex, Enable, pRect);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetStreamDestRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Maths.Rectangle<int> pRect)
+        public readonly unsafe void VideoProcessorSetStreamDestRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Maths.Box2D<int> pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+            fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[31])(@this, pVideoProcessor, StreamIndex, Enable, pRectPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[31])(@this, pVideoProcessor, StreamIndex, Enable, pRectPtr);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetStreamDestRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Rectangle<int>* pRect)
+        public readonly unsafe void VideoProcessorSetStreamDestRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Box2D<int>* pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[31])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRect);
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[31])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRect);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void VideoProcessorSetStreamDestRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Maths.Rectangle<int> pRect)
+        public readonly void VideoProcessorSetStreamDestRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Maths.Box2D<int> pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+                fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[31])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRectPtr);
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[31])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRectPtr);
                 }
             }
         }
@@ -2320,184 +2320,184 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorGetStreamSourceRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int* pEnabled, Silk.NET.Maths.Rectangle<int>* pRect)
+        public readonly unsafe void VideoProcessorGetStreamSourceRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int* pEnabled, Silk.NET.Maths.Box2D<int>* pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[43])(@this, pVideoProcessor, StreamIndex, pEnabled, pRect);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[43])(@this, pVideoProcessor, StreamIndex, pEnabled, pRect);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorGetStreamSourceRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int* pEnabled, ref Silk.NET.Maths.Rectangle<int> pRect)
+        public readonly unsafe void VideoProcessorGetStreamSourceRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int* pEnabled, ref Silk.NET.Maths.Box2D<int> pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+            fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[43])(@this, pVideoProcessor, StreamIndex, pEnabled, pRectPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[43])(@this, pVideoProcessor, StreamIndex, pEnabled, pRectPtr);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorGetStreamSourceRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, ref int pEnabled, Silk.NET.Maths.Rectangle<int>* pRect)
+        public readonly unsafe void VideoProcessorGetStreamSourceRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, ref int pEnabled, Silk.NET.Maths.Box2D<int>* pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (int* pEnabledPtr = &pEnabled)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[43])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pRect);
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[43])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pRect);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorGetStreamSourceRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, ref int pEnabled, ref Silk.NET.Maths.Rectangle<int> pRect)
+        public readonly unsafe void VideoProcessorGetStreamSourceRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, ref int pEnabled, ref Silk.NET.Maths.Box2D<int> pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (int* pEnabledPtr = &pEnabled)
             {
-                fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+                fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[43])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pRectPtr);
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[43])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pRectPtr);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorGetStreamSourceRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int* pEnabled, Silk.NET.Maths.Rectangle<int>* pRect)
+        public readonly unsafe void VideoProcessorGetStreamSourceRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int* pEnabled, Silk.NET.Maths.Box2D<int>* pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[43])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pRect);
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[43])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pRect);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorGetStreamSourceRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int* pEnabled, ref Silk.NET.Maths.Rectangle<int> pRect)
+        public readonly unsafe void VideoProcessorGetStreamSourceRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int* pEnabled, ref Silk.NET.Maths.Box2D<int> pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+                fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[43])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pRectPtr);
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[43])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pRectPtr);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorGetStreamSourceRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, ref int pEnabled, Silk.NET.Maths.Rectangle<int>* pRect)
+        public readonly unsafe void VideoProcessorGetStreamSourceRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, ref int pEnabled, Silk.NET.Maths.Box2D<int>* pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
                 fixed (int* pEnabledPtr = &pEnabled)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[43])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pRect);
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[43])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pRect);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void VideoProcessorGetStreamSourceRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, ref int pEnabled, ref Silk.NET.Maths.Rectangle<int> pRect)
+        public readonly void VideoProcessorGetStreamSourceRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, ref int pEnabled, ref Silk.NET.Maths.Box2D<int> pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
                 fixed (int* pEnabledPtr = &pEnabled)
                 {
-                    fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+                    fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
                     {
-                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[43])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pRectPtr);
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[43])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pRectPtr);
                     }
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorGetStreamDestRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int* pEnabled, Silk.NET.Maths.Rectangle<int>* pRect)
+        public readonly unsafe void VideoProcessorGetStreamDestRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int* pEnabled, Silk.NET.Maths.Box2D<int>* pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[44])(@this, pVideoProcessor, StreamIndex, pEnabled, pRect);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[44])(@this, pVideoProcessor, StreamIndex, pEnabled, pRect);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorGetStreamDestRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int* pEnabled, ref Silk.NET.Maths.Rectangle<int> pRect)
+        public readonly unsafe void VideoProcessorGetStreamDestRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int* pEnabled, ref Silk.NET.Maths.Box2D<int> pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+            fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[44])(@this, pVideoProcessor, StreamIndex, pEnabled, pRectPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[44])(@this, pVideoProcessor, StreamIndex, pEnabled, pRectPtr);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorGetStreamDestRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, ref int pEnabled, Silk.NET.Maths.Rectangle<int>* pRect)
+        public readonly unsafe void VideoProcessorGetStreamDestRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, ref int pEnabled, Silk.NET.Maths.Box2D<int>* pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (int* pEnabledPtr = &pEnabled)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[44])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pRect);
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[44])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pRect);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorGetStreamDestRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, ref int pEnabled, ref Silk.NET.Maths.Rectangle<int> pRect)
+        public readonly unsafe void VideoProcessorGetStreamDestRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, ref int pEnabled, ref Silk.NET.Maths.Box2D<int> pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (int* pEnabledPtr = &pEnabled)
             {
-                fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+                fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[44])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pRectPtr);
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[44])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pRectPtr);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorGetStreamDestRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int* pEnabled, Silk.NET.Maths.Rectangle<int>* pRect)
+        public readonly unsafe void VideoProcessorGetStreamDestRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int* pEnabled, Silk.NET.Maths.Box2D<int>* pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[44])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pRect);
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[44])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pRect);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorGetStreamDestRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int* pEnabled, ref Silk.NET.Maths.Rectangle<int> pRect)
+        public readonly unsafe void VideoProcessorGetStreamDestRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int* pEnabled, ref Silk.NET.Maths.Box2D<int> pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+                fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[44])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pRectPtr);
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[44])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pRectPtr);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorGetStreamDestRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, ref int pEnabled, Silk.NET.Maths.Rectangle<int>* pRect)
+        public readonly unsafe void VideoProcessorGetStreamDestRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, ref int pEnabled, Silk.NET.Maths.Box2D<int>* pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
                 fixed (int* pEnabledPtr = &pEnabled)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[44])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pRect);
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[44])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pRect);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void VideoProcessorGetStreamDestRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, ref int pEnabled, ref Silk.NET.Maths.Rectangle<int> pRect)
+        public readonly void VideoProcessorGetStreamDestRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, ref int pEnabled, ref Silk.NET.Maths.Box2D<int> pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
                 fixed (int* pEnabledPtr = &pEnabled)
                 {
-                    fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+                    fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
                     {
-                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[44])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pRectPtr);
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[44])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pRectPtr);
                     }
                 }
             }
@@ -8627,7 +8627,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetOutputTargetRect<TI0>(ComPtr<TI0> pVideoProcessor, int Enable, Silk.NET.Maths.Rectangle<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe void VideoProcessorSetOutputTargetRect<TI0>(ComPtr<TI0> pVideoProcessor, int Enable, Silk.NET.Maths.Box2D<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8635,7 +8635,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void VideoProcessorSetOutputTargetRect<TI0>(ComPtr<TI0> pVideoProcessor, int Enable, ref Silk.NET.Maths.Rectangle<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly void VideoProcessorSetOutputTargetRect<TI0>(ComPtr<TI0> pVideoProcessor, int Enable, ref Silk.NET.Maths.Box2D<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8731,7 +8731,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorGetOutputTargetRect<TI0>(ComPtr<TI0> pVideoProcessor, int* Enabled, Silk.NET.Maths.Rectangle<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe void VideoProcessorGetOutputTargetRect<TI0>(ComPtr<TI0> pVideoProcessor, int* Enabled, Silk.NET.Maths.Box2D<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8739,7 +8739,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorGetOutputTargetRect<TI0>(ComPtr<TI0> pVideoProcessor, int* Enabled, ref Silk.NET.Maths.Rectangle<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe void VideoProcessorGetOutputTargetRect<TI0>(ComPtr<TI0> pVideoProcessor, int* Enabled, ref Silk.NET.Maths.Box2D<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8747,7 +8747,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorGetOutputTargetRect<TI0>(ComPtr<TI0> pVideoProcessor, ref int Enabled, Silk.NET.Maths.Rectangle<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe void VideoProcessorGetOutputTargetRect<TI0>(ComPtr<TI0> pVideoProcessor, ref int Enabled, Silk.NET.Maths.Box2D<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8755,7 +8755,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void VideoProcessorGetOutputTargetRect<TI0>(ComPtr<TI0> pVideoProcessor, ref int Enabled, ref Silk.NET.Maths.Rectangle<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly void VideoProcessorGetOutputTargetRect<TI0>(ComPtr<TI0> pVideoProcessor, ref int Enabled, ref Silk.NET.Maths.Box2D<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8963,7 +8963,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetStreamSourceRect<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Rectangle<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe void VideoProcessorSetStreamSourceRect<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Box2D<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8971,7 +8971,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void VideoProcessorSetStreamSourceRect<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Maths.Rectangle<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly void VideoProcessorSetStreamSourceRect<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Maths.Box2D<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8979,7 +8979,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetStreamDestRect<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Rectangle<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe void VideoProcessorSetStreamDestRect<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Box2D<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8987,7 +8987,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void VideoProcessorSetStreamDestRect<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Maths.Rectangle<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly void VideoProcessorSetStreamDestRect<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Maths.Box2D<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9211,7 +9211,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorGetStreamSourceRect<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnabled, Silk.NET.Maths.Rectangle<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe void VideoProcessorGetStreamSourceRect<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnabled, Silk.NET.Maths.Box2D<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9219,7 +9219,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorGetStreamSourceRect<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnabled, ref Silk.NET.Maths.Rectangle<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe void VideoProcessorGetStreamSourceRect<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnabled, ref Silk.NET.Maths.Box2D<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9227,7 +9227,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorGetStreamSourceRect<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnabled, Silk.NET.Maths.Rectangle<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe void VideoProcessorGetStreamSourceRect<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnabled, Silk.NET.Maths.Box2D<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9235,7 +9235,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void VideoProcessorGetStreamSourceRect<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnabled, ref Silk.NET.Maths.Rectangle<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly void VideoProcessorGetStreamSourceRect<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnabled, ref Silk.NET.Maths.Box2D<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9243,7 +9243,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorGetStreamDestRect<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnabled, Silk.NET.Maths.Rectangle<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe void VideoProcessorGetStreamDestRect<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnabled, Silk.NET.Maths.Box2D<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9251,7 +9251,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorGetStreamDestRect<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnabled, ref Silk.NET.Maths.Rectangle<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe void VideoProcessorGetStreamDestRect<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnabled, ref Silk.NET.Maths.Box2D<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9259,7 +9259,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorGetStreamDestRect<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnabled, Silk.NET.Maths.Rectangle<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe void VideoProcessorGetStreamDestRect<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnabled, Silk.NET.Maths.Box2D<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9267,7 +9267,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void VideoProcessorGetStreamDestRect<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnabled, ref Silk.NET.Maths.Rectangle<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly void VideoProcessorGetStreamDestRect<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnabled, ref Silk.NET.Maths.Box2D<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

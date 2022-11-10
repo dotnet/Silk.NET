@@ -22,7 +22,7 @@ namespace Silk.NET.DXVA
         public DXVA2Videoprocessblt
         (
             long? targetFrame = null,
-            Silk.NET.Maths.Rectangle<int>? targetRect = null,
+            Silk.NET.Maths.Box2D<int>? targetRect = null,
             Silk.NET.Maths.Vector2D<int>? constrictionSize = null,
             uint? streamingFlags = null,
             DXVA2AYUVSample16? backgroundColor = null,
@@ -123,7 +123,7 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "RECT")]
         [NativeName("Type.Name", "RECT")]
         [NativeName("Name", "TargetRect")]
-        public Silk.NET.Maths.Rectangle<int> TargetRect;
+        public Silk.NET.Maths.Box2D<int> TargetRect;
 
         [NativeName("Type", "SIZE")]
         [NativeName("Type.Name", "SIZE")]

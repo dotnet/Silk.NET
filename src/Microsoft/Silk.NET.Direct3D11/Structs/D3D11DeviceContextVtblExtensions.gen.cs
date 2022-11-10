@@ -1348,19 +1348,19 @@ public unsafe static class D3D11DeviceContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void RSSetScissorRects(this ComPtr<ID3D11DeviceContext> thisVtbl, uint NumRects, Silk.NET.Maths.Rectangle<int>* pRects)
+    public static unsafe void RSSetScissorRects(this ComPtr<ID3D11DeviceContext> thisVtbl, uint NumRects, Silk.NET.Maths.Box2D<int>* pRects)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, uint, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[45])(@this, NumRects, pRects);
+        ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[45])(@this, NumRects, pRects);
     }
 
     /// <summary>To be documented.</summary>
-    public static void RSSetScissorRects(this ComPtr<ID3D11DeviceContext> thisVtbl, uint NumRects, ref Silk.NET.Maths.Rectangle<int> pRects)
+    public static void RSSetScissorRects(this ComPtr<ID3D11DeviceContext> thisVtbl, uint NumRects, ref Silk.NET.Maths.Box2D<int> pRects)
     {
         var @this = thisVtbl.Handle;
-        fixed (Silk.NET.Maths.Rectangle<int>* pRectsPtr = &pRects)
+        fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, uint, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[45])(@this, NumRects, pRectsPtr);
+            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[45])(@this, NumRects, pRectsPtr);
         }
     }
 
@@ -3216,41 +3216,41 @@ public unsafe static class D3D11DeviceContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void RSGetScissorRects(this ComPtr<ID3D11DeviceContext> thisVtbl, uint* pNumRects, Silk.NET.Maths.Rectangle<int>* pRects)
+    public static unsafe void RSGetScissorRects(this ComPtr<ID3D11DeviceContext> thisVtbl, uint* pNumRects, Silk.NET.Maths.Box2D<int>* pRects)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, uint*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[96])(@this, pNumRects, pRects);
+        ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, uint*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[96])(@this, pNumRects, pRects);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void RSGetScissorRects(this ComPtr<ID3D11DeviceContext> thisVtbl, uint* pNumRects, ref Silk.NET.Maths.Rectangle<int> pRects)
+    public static unsafe void RSGetScissorRects(this ComPtr<ID3D11DeviceContext> thisVtbl, uint* pNumRects, ref Silk.NET.Maths.Box2D<int> pRects)
     {
         var @this = thisVtbl.Handle;
-        fixed (Silk.NET.Maths.Rectangle<int>* pRectsPtr = &pRects)
+        fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, uint*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[96])(@this, pNumRects, pRectsPtr);
+            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, uint*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[96])(@this, pNumRects, pRectsPtr);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void RSGetScissorRects(this ComPtr<ID3D11DeviceContext> thisVtbl, ref uint pNumRects, Silk.NET.Maths.Rectangle<int>* pRects)
+    public static unsafe void RSGetScissorRects(this ComPtr<ID3D11DeviceContext> thisVtbl, ref uint pNumRects, Silk.NET.Maths.Box2D<int>* pRects)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* pNumRectsPtr = &pNumRects)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, uint*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[96])(@this, pNumRectsPtr, pRects);
+            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, uint*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[96])(@this, pNumRectsPtr, pRects);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static void RSGetScissorRects(this ComPtr<ID3D11DeviceContext> thisVtbl, ref uint pNumRects, ref Silk.NET.Maths.Rectangle<int> pRects)
+    public static void RSGetScissorRects(this ComPtr<ID3D11DeviceContext> thisVtbl, ref uint pNumRects, ref Silk.NET.Maths.Box2D<int> pRects)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* pNumRectsPtr = &pNumRects)
         {
-            fixed (Silk.NET.Maths.Rectangle<int>* pRectsPtr = &pRects)
+            fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, uint*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[96])(@this, pNumRectsPtr, pRectsPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, uint*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[96])(@this, pNumRectsPtr, pRectsPtr);
             }
         }
     }
@@ -4764,7 +4764,7 @@ public unsafe static class D3D11DeviceContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void RSSetScissorRects(this ComPtr<ID3D11DeviceContext> thisVtbl, uint NumRects, Span<Silk.NET.Maths.Rectangle<int>> pRects)
+    public static void RSSetScissorRects(this ComPtr<ID3D11DeviceContext> thisVtbl, uint NumRects, Span<Silk.NET.Maths.Box2D<int>> pRects)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -6284,7 +6284,7 @@ public unsafe static class D3D11DeviceContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void RSGetScissorRects(this ComPtr<ID3D11DeviceContext> thisVtbl, uint* pNumRects, Span<Silk.NET.Maths.Rectangle<int>> pRects)
+    public static unsafe void RSGetScissorRects(this ComPtr<ID3D11DeviceContext> thisVtbl, uint* pNumRects, Span<Silk.NET.Maths.Box2D<int>> pRects)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -6292,7 +6292,7 @@ public unsafe static class D3D11DeviceContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void RSGetScissorRects(this ComPtr<ID3D11DeviceContext> thisVtbl, Span<uint> pNumRects, Silk.NET.Maths.Rectangle<int>* pRects)
+    public static unsafe void RSGetScissorRects(this ComPtr<ID3D11DeviceContext> thisVtbl, Span<uint> pNumRects, Silk.NET.Maths.Box2D<int>* pRects)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -6300,7 +6300,7 @@ public unsafe static class D3D11DeviceContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void RSGetScissorRects(this ComPtr<ID3D11DeviceContext> thisVtbl, Span<uint> pNumRects, Span<Silk.NET.Maths.Rectangle<int>> pRects)
+    public static void RSGetScissorRects(this ComPtr<ID3D11DeviceContext> thisVtbl, Span<uint> pNumRects, Span<Silk.NET.Maths.Box2D<int>> pRects)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

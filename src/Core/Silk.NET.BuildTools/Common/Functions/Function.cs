@@ -118,7 +118,9 @@ namespace Silk.NET.BuildTools.Common.Functions
             bool accessibility = false,
             bool @static = false,
             bool semicolon = true,
-            bool @delegate = false)
+            bool @delegate = false,
+            bool returnType = true,
+            bool appendAttributes = true)
         {
             var sb = new StringBuilder();
 
@@ -127,12 +129,12 @@ namespace Silk.NET.BuildTools.Common.Functions
                 sb.AppendLine($"[UnmanagedFunctionPointer(CallingConvention.{Convention})]");
             }
 
-            GetDeclarationString(sb, @unsafe, partial, accessibility, @static, @delegate);
+            GetDeclarationString(sb, @unsafe, partial, accessibility, @static, @delegate, returnType);
 
             sb.Append("(");
             if (Parameters.Count > 0)
             {
-                var parameterDeclarations = Parameters.Select(GetDeclarationString).ToList();
+                var parameterDeclarations = Parameters.Select((param) => { return GetDeclarationString(param, appendAttributes); }).ToList();
                 for (var index = 0; index < parameterDeclarations.Count; index++)
                 {
                     if (index != 0)
@@ -178,7 +180,8 @@ namespace Silk.NET.BuildTools.Common.Functions
             bool partial = false,
             bool accessibility = false,
             bool @static = false,
-            bool @delegate = false)
+            bool @delegate = false,
+            bool returnType = true)
         {
             if (accessibility)
             {
@@ -218,8 +221,11 @@ namespace Silk.NET.BuildTools.Common.Functions
                 sb.Append("delegate ");
             }
 
-            sb.Append(ReturnType);
-            sb.Append(" ");
+            if (returnType)
+            {
+                sb.Append(ReturnType);
+                sb.Append(" ");
+            }
 
             sb.Append(Name);
             if (GenericTypeParameters.Count != 0)
@@ -232,48 +238,51 @@ namespace Silk.NET.BuildTools.Common.Functions
             }
         }
 
-                private static string GetDeclarationString(Parameter parameter)
+        private static string GetDeclarationString(Parameter parameter, bool appendAttributes = true)
         {
             var sb = new StringBuilder();
 
-            var attributes = new List<string>();
-
-            if (!(parameter.Count is null))
+            if (appendAttributes)
             {
-                if (parameter.Count.IsStatic)
-                {
-                    attributes.Add($"Count(Count = {parameter.Count.StaticCount})");
-                }
-                else if (parameter.Count.IsComputed)
-                {
-                    var parameterList = string.Join(", ", parameter.Count.ComputedFromNames).Replace("\\", "\\\\");
-                    attributes.Add($"Count(Computed = \"{parameterList}\")");
-                }
-                else if (parameter.Count.IsReference)
-                {
-                    // ReSharper disable once PossibleNullReferenceException
-                    attributes.Add($"Count(Parameter = \"{parameter.Count.ValueReference}\")");
-                }
-            }
+                var attributes = new List<string>();
 
-            // ReSharper disable once SwitchStatementMissingSomeCases
-            switch (parameter.Flow)
-            {
-                case FlowDirection.In:
-                    attributes.Add("Flow(FlowDirection.In)");
-                    break;
-                case FlowDirection.Out:
-                    attributes.Add("Flow(FlowDirection.Out)");
-                    break;
-            }
+                if (!(parameter.Count is null))
+                {
+                    if (parameter.Count.IsStatic)
+                    {
+                        attributes.Add($"Count(Count = {parameter.Count.StaticCount})");
+                    }
+                    else if (parameter.Count.IsComputed)
+                    {
+                        var parameterList = string.Join(", ", parameter.Count.ComputedFromNames).Replace("\\", "\\\\");
+                        attributes.Add($"Count(Computed = \"{parameterList}\")");
+                    }
+                    else if (parameter.Count.IsReference)
+                    {
+                        // ReSharper disable once PossibleNullReferenceException
+                        attributes.Add($"Count(Parameter = \"{parameter.Count.ValueReference}\")");
+                    }
+                }
 
-            attributes.AddRange(parameter.Attributes.Select(x => x.Name + "(" + string.Join(", ", x.Arguments) + ")"));
+                // ReSharper disable once SwitchStatementMissingSomeCases
+                switch (parameter.Flow)
+                {
+                    case FlowDirection.In:
+                        attributes.Add("Flow(FlowDirection.In)");
+                        break;
+                    case FlowDirection.Out:
+                        attributes.Add("Flow(FlowDirection.Out)");
+                        break;
+                }
 
-            if (attributes.Count != 0)
-            {
-                sb.Append("[");
-                sb.Append(string.Join(", ", attributes));
-                sb.Append("] ");
+                attributes.AddRange(parameter.Attributes.Select(x => x.Name + "(" + string.Join(", ", x.Arguments) + ")"));
+
+                if (attributes.Count != 0)
+                {
+                    sb.Append("[");
+                    sb.Append(string.Join(", ", attributes));
+                    sb.Append("] ");
+                }
             }
 
             sb.Append(parameter.Type);

@@ -18,15 +18,15 @@ namespace Silk.NET.DXGI
 {
     [Guid("54ec77fa-1377-44e6-8c32-88fd5f44c84c")]
     [NativeName("Name", "IDXGIDevice")]
-    public unsafe partial struct IDXGIDevice : IComVtbl<IDXGIDevice>, IComVtbl<IDXGIObject>, IComVtbl<Silk.NET.Core.Native.IUnknown>
+    public unsafe partial struct IDXGIDevice : IComVtbl<IDXGIDevice>, IComVtbl<Silk.NET.DXGI.IDXGIObject>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("54ec77fa-1377-44e6-8c32-88fd5f44c84c");
 
         void*** IComVtbl.AsVtblPtr()
             => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
-        public static implicit operator IDXGIObject(IDXGIDevice val)
-            => Unsafe.As<IDXGIDevice, IDXGIObject>(ref val);
+        public static implicit operator Silk.NET.DXGI.IDXGIObject(IDXGIDevice val)
+            => Unsafe.As<IDXGIDevice, Silk.NET.DXGI.IDXGIObject>(ref val);
 
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGIDevice val)
             => Unsafe.As<IDXGIDevice, Silk.NET.Core.Native.IUnknown>(ref val);
@@ -387,82 +387,82 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSurface(SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, SharedResource* pSharedResource, IDXGISurface** ppSurface)
+        public readonly unsafe int CreateSurface(SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, SharedResource* pSharedResource, Silk.NET.DXGI.IDXGISurface** ppSurface)
         {
             var @this = (IDXGIDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, IDXGISurface**, int>)@this->LpVtbl[8])(@this, pDesc, NumSurfaces, Usage, pSharedResource, ppSurface);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, Silk.NET.DXGI.IDXGISurface**, int>)@this->LpVtbl[8])(@this, pDesc, NumSurfaces, Usage, pSharedResource, ppSurface);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSurface(SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, SharedResource* pSharedResource, ref IDXGISurface* ppSurface)
+        public readonly unsafe int CreateSurface(SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, SharedResource* pSharedResource, ref Silk.NET.DXGI.IDXGISurface* ppSurface)
         {
             var @this = (IDXGIDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (IDXGISurface** ppSurfacePtr = &ppSurface)
+            fixed (Silk.NET.DXGI.IDXGISurface** ppSurfacePtr = &ppSurface)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, IDXGISurface**, int>)@this->LpVtbl[8])(@this, pDesc, NumSurfaces, Usage, pSharedResource, ppSurfacePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, Silk.NET.DXGI.IDXGISurface**, int>)@this->LpVtbl[8])(@this, pDesc, NumSurfaces, Usage, pSharedResource, ppSurfacePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSurface(SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, ref SharedResource pSharedResource, IDXGISurface** ppSurface)
+        public readonly unsafe int CreateSurface(SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, ref SharedResource pSharedResource, Silk.NET.DXGI.IDXGISurface** ppSurface)
         {
             var @this = (IDXGIDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (SharedResource* pSharedResourcePtr = &pSharedResource)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, IDXGISurface**, int>)@this->LpVtbl[8])(@this, pDesc, NumSurfaces, Usage, pSharedResourcePtr, ppSurface);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, Silk.NET.DXGI.IDXGISurface**, int>)@this->LpVtbl[8])(@this, pDesc, NumSurfaces, Usage, pSharedResourcePtr, ppSurface);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSurface(SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, ref SharedResource pSharedResource, ref IDXGISurface* ppSurface)
+        public readonly unsafe int CreateSurface(SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, ref SharedResource pSharedResource, ref Silk.NET.DXGI.IDXGISurface* ppSurface)
         {
             var @this = (IDXGIDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (SharedResource* pSharedResourcePtr = &pSharedResource)
             {
-                fixed (IDXGISurface** ppSurfacePtr = &ppSurface)
+                fixed (Silk.NET.DXGI.IDXGISurface** ppSurfacePtr = &ppSurface)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, IDXGISurface**, int>)@this->LpVtbl[8])(@this, pDesc, NumSurfaces, Usage, pSharedResourcePtr, ppSurfacePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, Silk.NET.DXGI.IDXGISurface**, int>)@this->LpVtbl[8])(@this, pDesc, NumSurfaces, Usage, pSharedResourcePtr, ppSurfacePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSurface(ref SurfaceDesc pDesc, uint NumSurfaces, uint Usage, SharedResource* pSharedResource, IDXGISurface** ppSurface)
+        public readonly unsafe int CreateSurface(ref SurfaceDesc pDesc, uint NumSurfaces, uint Usage, SharedResource* pSharedResource, Silk.NET.DXGI.IDXGISurface** ppSurface)
         {
             var @this = (IDXGIDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (SurfaceDesc* pDescPtr = &pDesc)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, IDXGISurface**, int>)@this->LpVtbl[8])(@this, pDescPtr, NumSurfaces, Usage, pSharedResource, ppSurface);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, Silk.NET.DXGI.IDXGISurface**, int>)@this->LpVtbl[8])(@this, pDescPtr, NumSurfaces, Usage, pSharedResource, ppSurface);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSurface(ref SurfaceDesc pDesc, uint NumSurfaces, uint Usage, SharedResource* pSharedResource, ref IDXGISurface* ppSurface)
+        public readonly unsafe int CreateSurface(ref SurfaceDesc pDesc, uint NumSurfaces, uint Usage, SharedResource* pSharedResource, ref Silk.NET.DXGI.IDXGISurface* ppSurface)
         {
             var @this = (IDXGIDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (SurfaceDesc* pDescPtr = &pDesc)
             {
-                fixed (IDXGISurface** ppSurfacePtr = &ppSurface)
+                fixed (Silk.NET.DXGI.IDXGISurface** ppSurfacePtr = &ppSurface)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, IDXGISurface**, int>)@this->LpVtbl[8])(@this, pDescPtr, NumSurfaces, Usage, pSharedResource, ppSurfacePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, Silk.NET.DXGI.IDXGISurface**, int>)@this->LpVtbl[8])(@this, pDescPtr, NumSurfaces, Usage, pSharedResource, ppSurfacePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSurface(ref SurfaceDesc pDesc, uint NumSurfaces, uint Usage, ref SharedResource pSharedResource, IDXGISurface** ppSurface)
+        public readonly unsafe int CreateSurface(ref SurfaceDesc pDesc, uint NumSurfaces, uint Usage, ref SharedResource pSharedResource, Silk.NET.DXGI.IDXGISurface** ppSurface)
         {
             var @this = (IDXGIDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -470,14 +470,14 @@ namespace Silk.NET.DXGI
             {
                 fixed (SharedResource* pSharedResourcePtr = &pSharedResource)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, IDXGISurface**, int>)@this->LpVtbl[8])(@this, pDescPtr, NumSurfaces, Usage, pSharedResourcePtr, ppSurface);
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, Silk.NET.DXGI.IDXGISurface**, int>)@this->LpVtbl[8])(@this, pDescPtr, NumSurfaces, Usage, pSharedResourcePtr, ppSurface);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSurface(ref SurfaceDesc pDesc, uint NumSurfaces, uint Usage, ref SharedResource pSharedResource, ref IDXGISurface* ppSurface)
+        public readonly unsafe int CreateSurface(ref SurfaceDesc pDesc, uint NumSurfaces, uint Usage, ref SharedResource pSharedResource, ref Silk.NET.DXGI.IDXGISurface* ppSurface)
         {
             var @this = (IDXGIDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -485,9 +485,9 @@ namespace Silk.NET.DXGI
             {
                 fixed (SharedResource* pSharedResourcePtr = &pSharedResource)
                 {
-                    fixed (IDXGISurface** ppSurfacePtr = &ppSurface)
+                    fixed (Silk.NET.DXGI.IDXGISurface** ppSurfacePtr = &ppSurface)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, IDXGISurface**, int>)@this->LpVtbl[8])(@this, pDescPtr, NumSurfaces, Usage, pSharedResourcePtr, ppSurfacePtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, Silk.NET.DXGI.IDXGISurface**, int>)@this->LpVtbl[8])(@this, pDescPtr, NumSurfaces, Usage, pSharedResourcePtr, ppSurfacePtr);
                     }
                 }
             }
@@ -615,35 +615,35 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSurface<TI0>(SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, SharedResource* pSharedResource, ref ComPtr<TI0> ppSurface) where TI0 : unmanaged, IComVtbl<IDXGISurface>, IComVtbl<TI0>
+        public readonly unsafe int CreateSurface<TI0>(SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, SharedResource* pSharedResource, ref ComPtr<TI0> ppSurface) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISurface>, IComVtbl<TI0>
         {
             var @this = (IDXGIDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateSurface(pDesc, NumSurfaces, Usage, pSharedResource, (IDXGISurface**) ppSurface.GetAddressOf());
+            return @this->CreateSurface(pDesc, NumSurfaces, Usage, pSharedResource, (Silk.NET.DXGI.IDXGISurface**) ppSurface.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSurface<TI0>(SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, ref SharedResource pSharedResource, ref ComPtr<TI0> ppSurface) where TI0 : unmanaged, IComVtbl<IDXGISurface>, IComVtbl<TI0>
+        public readonly unsafe int CreateSurface<TI0>(SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, ref SharedResource pSharedResource, ref ComPtr<TI0> ppSurface) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISurface>, IComVtbl<TI0>
         {
             var @this = (IDXGIDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateSurface(pDesc, NumSurfaces, Usage, ref pSharedResource, (IDXGISurface**) ppSurface.GetAddressOf());
+            return @this->CreateSurface(pDesc, NumSurfaces, Usage, ref pSharedResource, (Silk.NET.DXGI.IDXGISurface**) ppSurface.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSurface<TI0>(ref SurfaceDesc pDesc, uint NumSurfaces, uint Usage, SharedResource* pSharedResource, ref ComPtr<TI0> ppSurface) where TI0 : unmanaged, IComVtbl<IDXGISurface>, IComVtbl<TI0>
+        public readonly unsafe int CreateSurface<TI0>(ref SurfaceDesc pDesc, uint NumSurfaces, uint Usage, SharedResource* pSharedResource, ref ComPtr<TI0> ppSurface) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISurface>, IComVtbl<TI0>
         {
             var @this = (IDXGIDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateSurface(ref pDesc, NumSurfaces, Usage, pSharedResource, (IDXGISurface**) ppSurface.GetAddressOf());
+            return @this->CreateSurface(ref pDesc, NumSurfaces, Usage, pSharedResource, (Silk.NET.DXGI.IDXGISurface**) ppSurface.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateSurface<TI0>(ref SurfaceDesc pDesc, uint NumSurfaces, uint Usage, ref SharedResource pSharedResource, ref ComPtr<TI0> ppSurface) where TI0 : unmanaged, IComVtbl<IDXGISurface>, IComVtbl<TI0>
+        public readonly int CreateSurface<TI0>(ref SurfaceDesc pDesc, uint NumSurfaces, uint Usage, ref SharedResource pSharedResource, ref ComPtr<TI0> ppSurface) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISurface>, IComVtbl<TI0>
         {
             var @this = (IDXGIDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateSurface(ref pDesc, NumSurfaces, Usage, ref pSharedResource, (IDXGISurface**) ppSurface.GetAddressOf());
+            return @this->CreateSurface(ref pDesc, NumSurfaces, Usage, ref pSharedResource, (Silk.NET.DXGI.IDXGISurface**) ppSurface.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
