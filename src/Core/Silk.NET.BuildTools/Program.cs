@@ -16,9 +16,9 @@ using Silk.NET.BuildTools.Common;
 
 namespace Silk.NET.BuildTools
 {
-    internal class Program
+    public class Program
     {
-        private static int Main(string[] args)
+        public static int Main(string[] args)
         {
             Console.WriteLine("Silk.NET Build Tools");
             Console.WriteLine("Copyright (C) .NET Foundation and Contributors");
@@ -119,7 +119,7 @@ namespace Silk.NET.BuildTools
             return 0;
         }
 
-        internal class ConsoleWriter : TextWriter
+        public class ConsoleWriter : TextWriter
         {
             internal static ConsoleWriter Instance { get; private set; }
             public ThreadLocal<string> CurrentName { get; private set; } = new ThreadLocal<string>();
