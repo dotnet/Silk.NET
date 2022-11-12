@@ -894,19 +894,19 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void SetPredication(ID3D11Predicate* pPredicate, bool PredicateValue)
+        public readonly unsafe void SetPredication(ID3D11Predicate* pPredicate, int PredicateValue)
         {
             var @this = (ID3D11DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext4*, ID3D11Predicate*, bool, void>)@this->LpVtbl[30])(@this, pPredicate, PredicateValue);
+            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext4*, ID3D11Predicate*, int, void>)@this->LpVtbl[30])(@this, pPredicate, PredicateValue);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetPredication(ref ID3D11Predicate pPredicate, bool PredicateValue)
+        public readonly void SetPredication(ref ID3D11Predicate pPredicate, int PredicateValue)
         {
             var @this = (ID3D11DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Predicate* pPredicatePtr = &pPredicate)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext4*, ID3D11Predicate*, bool, void>)@this->LpVtbl[30])(@this, pPredicatePtr, PredicateValue);
+                ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext4*, ID3D11Predicate*, int, void>)@this->LpVtbl[30])(@this, pPredicatePtr, PredicateValue);
             }
         }
 
@@ -1902,19 +1902,19 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ExecuteCommandList(ID3D11CommandList* pCommandList, bool RestoreContextState)
+        public readonly unsafe void ExecuteCommandList(ID3D11CommandList* pCommandList, int RestoreContextState)
         {
             var @this = (ID3D11DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext4*, ID3D11CommandList*, bool, void>)@this->LpVtbl[58])(@this, pCommandList, RestoreContextState);
+            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext4*, ID3D11CommandList*, int, void>)@this->LpVtbl[58])(@this, pCommandList, RestoreContextState);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void ExecuteCommandList(ref ID3D11CommandList pCommandList, bool RestoreContextState)
+        public readonly void ExecuteCommandList(ref ID3D11CommandList pCommandList, int RestoreContextState)
         {
             var @this = (ID3D11DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11CommandList* pCommandListPtr = &pCommandList)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext4*, ID3D11CommandList*, bool, void>)@this->LpVtbl[58])(@this, pCommandListPtr, RestoreContextState);
+                ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext4*, ID3D11CommandList*, int, void>)@this->LpVtbl[58])(@this, pCommandListPtr, RestoreContextState);
             }
         }
 
@@ -3775,22 +3775,22 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FinishCommandList(bool RestoreDeferredContextState, ID3D11CommandList** ppCommandList)
+        public readonly unsafe int FinishCommandList(int RestoreDeferredContextState, ID3D11CommandList** ppCommandList)
         {
             var @this = (ID3D11DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext4*, bool, ID3D11CommandList**, int>)@this->LpVtbl[114])(@this, RestoreDeferredContextState, ppCommandList);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext4*, int, ID3D11CommandList**, int>)@this->LpVtbl[114])(@this, RestoreDeferredContextState, ppCommandList);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FinishCommandList(bool RestoreDeferredContextState, ref ID3D11CommandList* ppCommandList)
+        public readonly unsafe int FinishCommandList(int RestoreDeferredContextState, ref ID3D11CommandList* ppCommandList)
         {
             var @this = (ID3D11DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11CommandList** ppCommandListPtr = &ppCommandList)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext4*, bool, ID3D11CommandList**, int>)@this->LpVtbl[114])(@this, RestoreDeferredContextState, ppCommandListPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext4*, int, ID3D11CommandList**, int>)@this->LpVtbl[114])(@this, RestoreDeferredContextState, ppCommandListPtr);
             }
             return ret;
         }
@@ -8791,46 +8791,64 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly bool IsAnnotationEnabled()
+        public readonly int IsAnnotationEnabled()
         {
             var @this = (ID3D11DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            bool ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext4*, bool>)@this->LpVtbl[140])(@this);
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext4*, int>)@this->LpVtbl[140])(@this);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void SetMarkerInt([Flow(FlowDirection.In)] nint* pLabel, int Data)
+        public readonly unsafe void SetMarkerInt([Flow(FlowDirection.In)] char* pLabel, int Data)
         {
             var @this = (ID3D11DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext4*, nint*, int, void>)@this->LpVtbl[141])(@this, pLabel, Data);
+            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext4*, char*, int, void>)@this->LpVtbl[141])(@this, pLabel, Data);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetMarkerInt([Flow(FlowDirection.In)] in nint pLabel, int Data)
+        public readonly void SetMarkerInt([Flow(FlowDirection.In)] in char pLabel, int Data)
         {
             var @this = (ID3D11DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (nint* pLabelPtr = &pLabel)
+            fixed (char* pLabelPtr = &pLabel)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext4*, nint*, int, void>)@this->LpVtbl[141])(@this, pLabelPtr, Data);
+                ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext4*, char*, int, void>)@this->LpVtbl[141])(@this, pLabelPtr, Data);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void BeginEventInt([Flow(FlowDirection.In)] nint* pLabel, int Data)
+        public readonly void SetMarkerInt([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pLabel, int Data)
         {
             var @this = (ID3D11DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext4*, nint*, int, void>)@this->LpVtbl[142])(@this, pLabel, Data);
+            var pLabelPtr = (byte*) SilkMarshal.StringToPtr(pLabel, NativeStringEncoding.LPWStr);
+            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext4*, byte*, int, void>)@this->LpVtbl[141])(@this, pLabelPtr, Data);
+            SilkMarshal.Free((nint)pLabelPtr);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void BeginEventInt([Flow(FlowDirection.In)] in nint pLabel, int Data)
+        public readonly unsafe void BeginEventInt([Flow(FlowDirection.In)] char* pLabel, int Data)
         {
             var @this = (ID3D11DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (nint* pLabelPtr = &pLabel)
+            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext4*, char*, int, void>)@this->LpVtbl[142])(@this, pLabel, Data);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void BeginEventInt([Flow(FlowDirection.In)] in char pLabel, int Data)
+        {
+            var @this = (ID3D11DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (char* pLabelPtr = &pLabel)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext4*, nint*, int, void>)@this->LpVtbl[142])(@this, pLabelPtr, Data);
+                ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext4*, char*, int, void>)@this->LpVtbl[142])(@this, pLabelPtr, Data);
             }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void BeginEventInt([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pLabel, int Data)
+        {
+            var @this = (ID3D11DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            var pLabelPtr = (byte*) SilkMarshal.StringToPtr(pLabel, NativeStringEncoding.LPWStr);
+            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext4*, byte*, int, void>)@this->LpVtbl[142])(@this, pLabelPtr, Data);
+            SilkMarshal.Free((nint)pLabelPtr);
         }
 
         /// <summary>To be documented.</summary>
@@ -8841,27 +8859,27 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void Flush1(ContextType ContextType, nint* hEvent)
+        public readonly unsafe void Flush1(ContextType ContextType, void* hEvent)
         {
             var @this = (ID3D11DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext4*, ContextType, nint*, void>)@this->LpVtbl[144])(@this, ContextType, hEvent);
+            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext4*, ContextType, void*, void>)@this->LpVtbl[144])(@this, ContextType, hEvent);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void Flush1(ContextType ContextType, ref nint hEvent)
+        public readonly void Flush1<T0>(ContextType ContextType, ref T0 hEvent) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (nint* hEventPtr = &hEvent)
+            fixed (void* hEventPtr = &hEvent)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext4*, ContextType, nint*, void>)@this->LpVtbl[144])(@this, ContextType, hEventPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext4*, ContextType, void*, void>)@this->LpVtbl[144])(@this, ContextType, hEventPtr);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetHardwareProtectionState(bool HwProtectionEnable)
+        public readonly void SetHardwareProtectionState(int HwProtectionEnable)
         {
             var @this = (ID3D11DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext4*, bool, void>)@this->LpVtbl[145])(@this, HwProtectionEnable);
+            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext4*, int, void>)@this->LpVtbl[145])(@this, HwProtectionEnable);
         }
 
         /// <summary>To be documented.</summary>
@@ -9189,7 +9207,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetPredication<TI0>(ComPtr<TI0> pPredicate, bool PredicateValue) where TI0 : unmanaged, IComVtbl<ID3D11Predicate>, IComVtbl<TI0>
+        public readonly void SetPredication<TI0>(ComPtr<TI0> pPredicate, int PredicateValue) where TI0 : unmanaged, IComVtbl<ID3D11Predicate>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9653,7 +9671,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void ExecuteCommandList<TI0>(ComPtr<TI0> pCommandList, bool RestoreContextState) where TI0 : unmanaged, IComVtbl<ID3D11CommandList>, IComVtbl<TI0>
+        public readonly void ExecuteCommandList<TI0>(ComPtr<TI0> pCommandList, int RestoreContextState) where TI0 : unmanaged, IComVtbl<ID3D11CommandList>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10493,7 +10511,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int FinishCommandList<TI0>(bool RestoreDeferredContextState, ref ComPtr<TI0> ppCommandList) where TI0 : unmanaged, IComVtbl<ID3D11CommandList>, IComVtbl<TI0>
+        public readonly int FinishCommandList<TI0>(int RestoreDeferredContextState, ref ComPtr<TI0> ppCommandList) where TI0 : unmanaged, IComVtbl<ID3D11CommandList>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

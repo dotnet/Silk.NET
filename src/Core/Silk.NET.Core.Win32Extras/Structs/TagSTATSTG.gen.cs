@@ -23,16 +23,16 @@ namespace Silk.NET.Core.Win32Extras
         public TagSTATSTG
         (
             char* pwcsName = null,
-            int? type = null,
+            uint? type = null,
             ulong? cbSize = null,
-            Silk.NET.Core.Win32Extras.Filetime? mtime = null,
-            Silk.NET.Core.Win32Extras.Filetime? ctime = null,
-            Silk.NET.Core.Win32Extras.Filetime? atime = null,
-            int? grfMode = null,
-            int? grfLocksSupported = null,
+            Filetime? mtime = null,
+            Filetime? ctime = null,
+            Filetime? atime = null,
+            uint? grfMode = null,
+            uint? grfLocksSupported = null,
             Guid? clsid = null,
-            int? grfStateBits = null,
-            int? reserved = null
+            uint? grfStateBits = null,
+            uint? reserved = null
         ) : this()
         {
             if (pwcsName is not null)
@@ -100,7 +100,7 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "type")]
-        public int Type;
+        public uint Type;
 
         [NativeName("Type", "ULARGE_INTEGER")]
         [NativeName("Type.Name", "ULARGE_INTEGER")]
@@ -110,27 +110,27 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "FILETIME")]
         [NativeName("Type.Name", "FILETIME")]
         [NativeName("Name", "mtime")]
-        public Silk.NET.Core.Win32Extras.Filetime Mtime;
+        public Filetime Mtime;
 
         [NativeName("Type", "FILETIME")]
         [NativeName("Type.Name", "FILETIME")]
         [NativeName("Name", "ctime")]
-        public Silk.NET.Core.Win32Extras.Filetime Ctime;
+        public Filetime Ctime;
 
         [NativeName("Type", "FILETIME")]
         [NativeName("Type.Name", "FILETIME")]
         [NativeName("Name", "atime")]
-        public Silk.NET.Core.Win32Extras.Filetime Atime;
+        public Filetime Atime;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "grfMode")]
-        public int GrfMode;
+        public uint GrfMode;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "grfLocksSupported")]
-        public int GrfLocksSupported;
+        public uint GrfLocksSupported;
 
         [NativeName("Type", "CLSID")]
         [NativeName("Type.Name", "CLSID")]
@@ -140,11 +140,11 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "grfStateBits")]
-        public int GrfStateBits;
+        public uint GrfStateBits;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "reserved")]
-        public int Reserved;
+        public uint Reserved;
     }
 }

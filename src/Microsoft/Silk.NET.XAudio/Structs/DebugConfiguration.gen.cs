@@ -24,10 +24,10 @@ namespace Silk.NET.XAudio
         (
             uint? traceMask = null,
             uint? breakMask = null,
-            bool? logThreadID = null,
-            bool? logFileline = null,
-            bool? logFunctionName = null,
-            bool? logTiming = null
+            int? logThreadID = null,
+            int? logFileline = null,
+            int? logFunctionName = null,
+            int? logTiming = null
         ) : this()
         {
             if (traceMask is not null)
@@ -75,21 +75,21 @@ namespace Silk.NET.XAudio
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "LogThreadID")]
-        public bool LogThreadID;
+        public int LogThreadID;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "LogFileline")]
-        public bool LogFileline;
+        public int LogFileline;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "LogFunctionName")]
-        public bool LogFunctionName;
+        public int LogFunctionName;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "LogTiming")]
-        public bool LogTiming;
+        public int LogTiming;
     }
 }

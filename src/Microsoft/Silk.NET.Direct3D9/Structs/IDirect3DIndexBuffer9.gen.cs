@@ -135,40 +135,40 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData(Guid* refguid, [Flow(FlowDirection.In)] void* pData, int SizeOfData, int Flags)
+        public readonly unsafe int SetPrivateData(Guid* refguid, [Flow(FlowDirection.In)] void* pData, uint SizeOfData, uint Flags)
         {
             var @this = (IDirect3DIndexBuffer9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DIndexBuffer9*, Guid*, void*, int, int, int>)@this->LpVtbl[4])(@this, refguid, pData, SizeOfData, Flags);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DIndexBuffer9*, Guid*, void*, uint, uint, int>)@this->LpVtbl[4])(@this, refguid, pData, SizeOfData, Flags);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData<T0>(Guid* refguid, [Flow(FlowDirection.In)] in T0 pData, int SizeOfData, int Flags) where T0 : unmanaged
+        public readonly unsafe int SetPrivateData<T0>(Guid* refguid, [Flow(FlowDirection.In)] in T0 pData, uint SizeOfData, uint Flags) where T0 : unmanaged
         {
             var @this = (IDirect3DIndexBuffer9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DIndexBuffer9*, Guid*, void*, int, int, int>)@this->LpVtbl[4])(@this, refguid, pDataPtr, SizeOfData, Flags);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DIndexBuffer9*, Guid*, void*, uint, uint, int>)@this->LpVtbl[4])(@this, refguid, pDataPtr, SizeOfData, Flags);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData(ref Guid refguid, [Flow(FlowDirection.In)] void* pData, int SizeOfData, int Flags)
+        public readonly unsafe int SetPrivateData(ref Guid refguid, [Flow(FlowDirection.In)] void* pData, uint SizeOfData, uint Flags)
         {
             var @this = (IDirect3DIndexBuffer9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* refguidPtr = &refguid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DIndexBuffer9*, Guid*, void*, int, int, int>)@this->LpVtbl[4])(@this, refguidPtr, pData, SizeOfData, Flags);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DIndexBuffer9*, Guid*, void*, uint, uint, int>)@this->LpVtbl[4])(@this, refguidPtr, pData, SizeOfData, Flags);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetPrivateData<T0>(ref Guid refguid, [Flow(FlowDirection.In)] in T0 pData, int SizeOfData, int Flags) where T0 : unmanaged
+        public readonly int SetPrivateData<T0>(ref Guid refguid, [Flow(FlowDirection.In)] in T0 pData, uint SizeOfData, uint Flags) where T0 : unmanaged
         {
             var @this = (IDirect3DIndexBuffer9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -176,7 +176,7 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DIndexBuffer9*, Guid*, void*, int, int, int>)@this->LpVtbl[4])(@this, refguidPtr, pDataPtr, SizeOfData, Flags);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DIndexBuffer9*, Guid*, void*, uint, uint, int>)@this->LpVtbl[4])(@this, refguidPtr, pDataPtr, SizeOfData, Flags);
                 }
             }
             return ret;
@@ -312,20 +312,20 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetPriority(int PriorityNew)
+        public readonly uint SetPriority(uint PriorityNew)
         {
             var @this = (IDirect3DIndexBuffer9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DIndexBuffer9*, int, int>)@this->LpVtbl[7])(@this, PriorityNew);
+            uint ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DIndexBuffer9*, uint, uint>)@this->LpVtbl[7])(@this, PriorityNew);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetPriority()
+        public readonly uint GetPriority()
         {
             var @this = (IDirect3DIndexBuffer9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DIndexBuffer9*, int>)@this->LpVtbl[8])(@this);
+            uint ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DIndexBuffer9*, uint>)@this->LpVtbl[8])(@this);
             return ret;
         }
 
@@ -346,22 +346,22 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Lock(uint OffsetToLock, uint SizeToLock, void** ppbData, int Flags)
+        public readonly unsafe int Lock(uint OffsetToLock, uint SizeToLock, void** ppbData, uint Flags)
         {
             var @this = (IDirect3DIndexBuffer9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DIndexBuffer9*, uint, uint, void**, int, int>)@this->LpVtbl[11])(@this, OffsetToLock, SizeToLock, ppbData, Flags);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DIndexBuffer9*, uint, uint, void**, uint, int>)@this->LpVtbl[11])(@this, OffsetToLock, SizeToLock, ppbData, Flags);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Lock(uint OffsetToLock, uint SizeToLock, ref void* ppbData, int Flags)
+        public readonly unsafe int Lock(uint OffsetToLock, uint SizeToLock, ref void* ppbData, uint Flags)
         {
             var @this = (IDirect3DIndexBuffer9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (void** ppbDataPtr = &ppbData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DIndexBuffer9*, uint, uint, void**, int, int>)@this->LpVtbl[11])(@this, OffsetToLock, SizeToLock, ppbDataPtr, Flags);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DIndexBuffer9*, uint, uint, void**, uint, int>)@this->LpVtbl[11])(@this, OffsetToLock, SizeToLock, ppbDataPtr, Flags);
             }
             return ret;
         }

@@ -21,7 +21,7 @@ namespace Silk.NET.Direct3D11
     {
         public FeatureDataD3D9Options
         (
-            bool? fullNonPow2TextureSupport = null
+            int? fullNonPow2TextureSupport = null
         ) : this()
         {
             if (fullNonPow2TextureSupport is not null)
@@ -34,6 +34,6 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "FullNonPow2TextureSupport")]
-        public bool FullNonPow2TextureSupport;
+        public int FullNonPow2TextureSupport;
     }
 }

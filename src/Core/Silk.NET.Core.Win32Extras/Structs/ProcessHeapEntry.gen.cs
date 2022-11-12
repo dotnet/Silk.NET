@@ -22,7 +22,7 @@ namespace Silk.NET.Core.Win32Extras
         public ProcessHeapEntry
         (
             void* lpData = null,
-            int? cbData = null,
+            uint? cbData = null,
             byte? cbOverhead = null,
             byte? iRegionIndex = null,
             ushort? wFlags = null,
@@ -81,7 +81,7 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "cbData")]
-        public int CbData;
+        public uint CbData;
 
         [NativeName("Type", "BYTE")]
         [NativeName("Type.Name", "BYTE")]

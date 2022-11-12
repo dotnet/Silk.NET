@@ -579,20 +579,20 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly bool IsCurrent()
+        public readonly int IsCurrent()
         {
             var @this = (IDXGIFactory4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            bool ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory4*, bool>)@this->LpVtbl[13])(@this);
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory4*, int>)@this->LpVtbl[13])(@this);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly bool IsWindowedStereoEnabled()
+        public readonly int IsWindowedStereoEnabled()
         {
             var @this = (IDXGIFactory4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            bool ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory4*, bool>)@this->LpVtbl[14])(@this);
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory4*, int>)@this->LpVtbl[14])(@this);
             return ret;
         }
 
@@ -1653,48 +1653,48 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSharedResourceAdapterLuid(nint* hResource, Luid* pLuid)
+        public readonly unsafe int GetSharedResourceAdapterLuid(void* hResource, Luid* pLuid)
         {
             var @this = (IDXGIFactory4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory4*, nint*, Luid*, int>)@this->LpVtbl[17])(@this, hResource, pLuid);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory4*, void*, Luid*, int>)@this->LpVtbl[17])(@this, hResource, pLuid);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSharedResourceAdapterLuid(nint* hResource, ref Luid pLuid)
+        public readonly unsafe int GetSharedResourceAdapterLuid(void* hResource, ref Luid pLuid)
         {
             var @this = (IDXGIFactory4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Luid* pLuidPtr = &pLuid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory4*, nint*, Luid*, int>)@this->LpVtbl[17])(@this, hResource, pLuidPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory4*, void*, Luid*, int>)@this->LpVtbl[17])(@this, hResource, pLuidPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSharedResourceAdapterLuid(ref nint hResource, Luid* pLuid)
+        public readonly unsafe int GetSharedResourceAdapterLuid<T0>(ref T0 hResource, Luid* pLuid) where T0 : unmanaged
         {
             var @this = (IDXGIFactory4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* hResourcePtr = &hResource)
+            fixed (void* hResourcePtr = &hResource)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory4*, nint*, Luid*, int>)@this->LpVtbl[17])(@this, hResourcePtr, pLuid);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory4*, void*, Luid*, int>)@this->LpVtbl[17])(@this, hResourcePtr, pLuid);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetSharedResourceAdapterLuid(ref nint hResource, ref Luid pLuid)
+        public readonly int GetSharedResourceAdapterLuid<T0>(ref T0 hResource, ref Luid pLuid) where T0 : unmanaged
         {
             var @this = (IDXGIFactory4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* hResourcePtr = &hResource)
+            fixed (void* hResourcePtr = &hResource)
             {
                 fixed (Luid* pLuidPtr = &pLuid)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory4*, nint*, Luid*, int>)@this->LpVtbl[17])(@this, hResourcePtr, pLuidPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory4*, void*, Luid*, int>)@this->LpVtbl[17])(@this, hResourcePtr, pLuidPtr);
                 }
             }
             return ret;
@@ -1722,58 +1722,58 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterStereoStatusEvent(nint* hEvent, uint* pdwCookie)
+        public readonly unsafe int RegisterStereoStatusEvent(void* hEvent, uint* pdwCookie)
         {
             var @this = (IDXGIFactory4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory4*, nint*, uint*, int>)@this->LpVtbl[19])(@this, hEvent, pdwCookie);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory4*, void*, uint*, int>)@this->LpVtbl[19])(@this, hEvent, pdwCookie);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterStereoStatusEvent(nint* hEvent, ref uint pdwCookie)
+        public readonly unsafe int RegisterStereoStatusEvent(void* hEvent, ref uint pdwCookie)
         {
             var @this = (IDXGIFactory4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (uint* pdwCookiePtr = &pdwCookie)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory4*, nint*, uint*, int>)@this->LpVtbl[19])(@this, hEvent, pdwCookiePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory4*, void*, uint*, int>)@this->LpVtbl[19])(@this, hEvent, pdwCookiePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterStereoStatusEvent(ref nint hEvent, uint* pdwCookie)
+        public readonly unsafe int RegisterStereoStatusEvent<T0>(ref T0 hEvent, uint* pdwCookie) where T0 : unmanaged
         {
             var @this = (IDXGIFactory4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* hEventPtr = &hEvent)
+            fixed (void* hEventPtr = &hEvent)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory4*, nint*, uint*, int>)@this->LpVtbl[19])(@this, hEventPtr, pdwCookie);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory4*, void*, uint*, int>)@this->LpVtbl[19])(@this, hEventPtr, pdwCookie);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int RegisterStereoStatusEvent(ref nint hEvent, ref uint pdwCookie)
+        public readonly int RegisterStereoStatusEvent<T0>(ref T0 hEvent, ref uint pdwCookie) where T0 : unmanaged
         {
             var @this = (IDXGIFactory4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* hEventPtr = &hEvent)
+            fixed (void* hEventPtr = &hEvent)
             {
                 fixed (uint* pdwCookiePtr = &pdwCookie)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory4*, nint*, uint*, int>)@this->LpVtbl[19])(@this, hEventPtr, pdwCookiePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory4*, void*, uint*, int>)@this->LpVtbl[19])(@this, hEventPtr, pdwCookiePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void UnregisterStereoStatus(int dwCookie)
+        public readonly void UnregisterStereoStatus(uint dwCookie)
         {
             var @this = (IDXGIFactory4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<IDXGIFactory4*, int, void>)@this->LpVtbl[20])(@this, dwCookie);
+            ((delegate* unmanaged[Stdcall]<IDXGIFactory4*, uint, void>)@this->LpVtbl[20])(@this, dwCookie);
         }
 
         /// <summary>To be documented.</summary>
@@ -1798,58 +1798,58 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterOcclusionStatusEvent(nint* hEvent, uint* pdwCookie)
+        public readonly unsafe int RegisterOcclusionStatusEvent(void* hEvent, uint* pdwCookie)
         {
             var @this = (IDXGIFactory4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory4*, nint*, uint*, int>)@this->LpVtbl[22])(@this, hEvent, pdwCookie);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory4*, void*, uint*, int>)@this->LpVtbl[22])(@this, hEvent, pdwCookie);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterOcclusionStatusEvent(nint* hEvent, ref uint pdwCookie)
+        public readonly unsafe int RegisterOcclusionStatusEvent(void* hEvent, ref uint pdwCookie)
         {
             var @this = (IDXGIFactory4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (uint* pdwCookiePtr = &pdwCookie)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory4*, nint*, uint*, int>)@this->LpVtbl[22])(@this, hEvent, pdwCookiePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory4*, void*, uint*, int>)@this->LpVtbl[22])(@this, hEvent, pdwCookiePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterOcclusionStatusEvent(ref nint hEvent, uint* pdwCookie)
+        public readonly unsafe int RegisterOcclusionStatusEvent<T0>(ref T0 hEvent, uint* pdwCookie) where T0 : unmanaged
         {
             var @this = (IDXGIFactory4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* hEventPtr = &hEvent)
+            fixed (void* hEventPtr = &hEvent)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory4*, nint*, uint*, int>)@this->LpVtbl[22])(@this, hEventPtr, pdwCookie);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory4*, void*, uint*, int>)@this->LpVtbl[22])(@this, hEventPtr, pdwCookie);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int RegisterOcclusionStatusEvent(ref nint hEvent, ref uint pdwCookie)
+        public readonly int RegisterOcclusionStatusEvent<T0>(ref T0 hEvent, ref uint pdwCookie) where T0 : unmanaged
         {
             var @this = (IDXGIFactory4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* hEventPtr = &hEvent)
+            fixed (void* hEventPtr = &hEvent)
             {
                 fixed (uint* pdwCookiePtr = &pdwCookie)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory4*, nint*, uint*, int>)@this->LpVtbl[22])(@this, hEventPtr, pdwCookiePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory4*, void*, uint*, int>)@this->LpVtbl[22])(@this, hEventPtr, pdwCookiePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void UnregisterOcclusionStatus(int dwCookie)
+        public readonly void UnregisterOcclusionStatus(uint dwCookie)
         {
             var @this = (IDXGIFactory4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<IDXGIFactory4*, int, void>)@this->LpVtbl[23])(@this, dwCookie);
+            ((delegate* unmanaged[Stdcall]<IDXGIFactory4*, uint, void>)@this->LpVtbl[23])(@this, dwCookie);
         }
 
         /// <summary>To be documented.</summary>

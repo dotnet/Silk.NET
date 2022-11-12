@@ -289,23 +289,34 @@ public unsafe static class D3D12ResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetName(this ComPtr<ID3D12Resource> thisVtbl, [Flow(FlowDirection.In)] nint* Name)
+    public static unsafe int SetName(this ComPtr<ID3D12Resource> thisVtbl, [Flow(FlowDirection.In)] char* Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12Resource*, nint*, int>)@this->LpVtbl[6])(@this, Name);
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12Resource*, char*, int>)@this->LpVtbl[6])(@this, Name);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName(this ComPtr<ID3D12Resource> thisVtbl, [Flow(FlowDirection.In)] in nint Name)
+    public static int SetName(this ComPtr<ID3D12Resource> thisVtbl, [Flow(FlowDirection.In)] in char Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (nint* NamePtr = &Name)
+        fixed (char* NamePtr = &Name)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12Resource*, nint*, int>)@this->LpVtbl[6])(@this, NamePtr);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12Resource*, char*, int>)@this->LpVtbl[6])(@this, NamePtr);
         }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetName(this ComPtr<ID3D12Resource> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        var NamePtr = (byte*) SilkMarshal.StringToPtr(Name, NativeStringEncoding.LPWStr);
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12Resource*, byte*, int>)@this->LpVtbl[6])(@this, NamePtr);
+        SilkMarshal.Free((nint)NamePtr);
         return ret;
     }
 
@@ -730,7 +741,7 @@ public unsafe static class D3D12ResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName(this ComPtr<ID3D12Resource> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<nint> Name)
+    public static int SetName(this ComPtr<ID3D12Resource> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> Name)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

@@ -21,10 +21,10 @@ namespace Silk.NET.DXVA
     {
         public VideoDesc
         (
-            int? size = null,
-            int? sampleWidth = null,
-            int? sampleHeight = null,
-            int? sampleFormat = null,
+            uint? size = null,
+            uint? sampleWidth = null,
+            uint? sampleHeight = null,
+            uint? sampleFormat = null,
             Silk.NET.Direct3D9.Format? d3dFormat = null,
             Frequency? inputSampleFreq = null,
             Frequency? outputFrameFreq = null
@@ -70,22 +70,22 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "Size")]
-        public int Size;
+        public uint Size;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "SampleWidth")]
-        public int SampleWidth;
+        public uint SampleWidth;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "SampleHeight")]
-        public int SampleHeight;
+        public uint SampleHeight;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "SampleFormat")]
-        public int SampleFormat;
+        public uint SampleFormat;
 
         [NativeName("Type", "D3DFORMAT")]
         [NativeName("Type.Name", "D3DFORMAT")]

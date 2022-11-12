@@ -49,24 +49,33 @@ public unsafe static class D3D12ShaderReflectionConstantBufferVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ID3D12ShaderReflectionVariable* GetVariableByName(this ComPtr<ID3D12ShaderReflectionConstantBuffer> thisVtbl, [Flow(FlowDirection.In)] string* Name)
+    public static unsafe ID3D12ShaderReflectionVariable* GetVariableByName(this ComPtr<ID3D12ShaderReflectionConstantBuffer> thisVtbl, [Flow(FlowDirection.In)] byte* Name)
+    {
+        var @this = thisVtbl.Handle;
+        ID3D12ShaderReflectionVariable* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12ShaderReflectionConstantBuffer*, byte*, ID3D12ShaderReflectionVariable*>)@this->LpVtbl[2])(@this, Name);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ID3D12ShaderReflectionVariable* GetVariableByName(this ComPtr<ID3D12ShaderReflectionConstantBuffer> thisVtbl, [Flow(FlowDirection.In)] in byte Name)
+    {
+        var @this = thisVtbl.Handle;
+        ID3D12ShaderReflectionVariable* ret = default;
+        fixed (byte* NamePtr = &Name)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12ShaderReflectionConstantBuffer*, byte*, ID3D12ShaderReflectionVariable*>)@this->LpVtbl[2])(@this, NamePtr);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ID3D12ShaderReflectionVariable* GetVariableByName(this ComPtr<ID3D12ShaderReflectionConstantBuffer> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string Name)
     {
         var @this = thisVtbl.Handle;
         ID3D12ShaderReflectionVariable* ret = default;
         var NamePtr = (byte*) SilkMarshal.StringToPtr(Name, NativeStringEncoding.LPStr);
         ret = ((delegate* unmanaged[Stdcall]<ID3D12ShaderReflectionConstantBuffer*, byte*, ID3D12ShaderReflectionVariable*>)@this->LpVtbl[2])(@this, NamePtr);
-        SilkMarshal.Free((nint)NamePtr);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe ID3D12ShaderReflectionVariable* GetVariableByName(this ComPtr<ID3D12ShaderReflectionConstantBuffer> thisVtbl, [Flow(FlowDirection.In)] in string Name)
-    {
-        var @this = thisVtbl.Handle;
-        ID3D12ShaderReflectionVariable* ret = default;
-        var NamePtr = (byte*) SilkMarshal.StringToPtr(Name, NativeStringEncoding.LPStr);
-        var NamePp = &NamePtr;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12ShaderReflectionConstantBuffer*, byte**, ID3D12ShaderReflectionVariable*>)@this->LpVtbl[2])(@this, NamePp);
         SilkMarshal.Free((nint)NamePtr);
         return ret;
     }
@@ -80,7 +89,7 @@ public unsafe static class D3D12ShaderReflectionConstantBufferVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ID3D12ShaderReflectionVariable* GetVariableByName(this ComPtr<ID3D12ShaderReflectionConstantBuffer> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<string> Name)
+    public static unsafe ID3D12ShaderReflectionVariable* GetVariableByName(this ComPtr<ID3D12ShaderReflectionConstantBuffer> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<byte> Name)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

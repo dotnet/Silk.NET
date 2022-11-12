@@ -509,7 +509,28 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMessage(Guid Producer, InfoQueueMessageCategory Category, InfoQueueMessageSeverity Severity, int ID, [Flow(FlowDirection.In)] string* pDescription)
+        public readonly unsafe int AddMessage(Guid Producer, InfoQueueMessageCategory Category, InfoQueueMessageSeverity Severity, int ID, [Flow(FlowDirection.In)] byte* pDescription)
+        {
+            var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, InfoQueueMessageSeverity, int, byte*, int>)@this->LpVtbl[30])(@this, Producer, Category, Severity, ID, pDescription);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int AddMessage(Guid Producer, InfoQueueMessageCategory Category, InfoQueueMessageSeverity Severity, int ID, [Flow(FlowDirection.In)] in byte pDescription)
+        {
+            var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (byte* pDescriptionPtr = &pDescription)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, InfoQueueMessageSeverity, int, byte*, int>)@this->LpVtbl[30])(@this, Producer, Category, Severity, ID, pDescriptionPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int AddMessage(Guid Producer, InfoQueueMessageCategory Category, InfoQueueMessageSeverity Severity, int ID, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDescription)
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -520,19 +541,28 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int AddMessage(Guid Producer, InfoQueueMessageCategory Category, InfoQueueMessageSeverity Severity, int ID, [Flow(FlowDirection.In)] in string pDescription)
+        public readonly unsafe int AddApplicationMessage(InfoQueueMessageSeverity Severity, [Flow(FlowDirection.In)] byte* pDescription)
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pDescriptionPtr = (byte*) SilkMarshal.StringToPtr(pDescription, NativeStringEncoding.LPStr);
-            var pDescriptionPp = &pDescriptionPtr;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, InfoQueueMessageSeverity, int, byte**, int>)@this->LpVtbl[30])(@this, Producer, Category, Severity, ID, pDescriptionPp);
-            SilkMarshal.Free((nint)pDescriptionPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, InfoQueueMessageSeverity, byte*, int>)@this->LpVtbl[31])(@this, Severity, pDescription);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddApplicationMessage(InfoQueueMessageSeverity Severity, [Flow(FlowDirection.In)] string* pDescription)
+        public readonly int AddApplicationMessage(InfoQueueMessageSeverity Severity, [Flow(FlowDirection.In)] in byte pDescription)
+        {
+            var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (byte* pDescriptionPtr = &pDescription)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, InfoQueueMessageSeverity, byte*, int>)@this->LpVtbl[31])(@this, Severity, pDescriptionPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int AddApplicationMessage(InfoQueueMessageSeverity Severity, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDescription)
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -543,84 +573,72 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int AddApplicationMessage(InfoQueueMessageSeverity Severity, [Flow(FlowDirection.In)] in string pDescription)
+        public readonly int SetBreakOnCategory(Guid Producer, InfoQueueMessageCategory Category, int bEnable)
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pDescriptionPtr = (byte*) SilkMarshal.StringToPtr(pDescription, NativeStringEncoding.LPStr);
-            var pDescriptionPp = &pDescriptionPtr;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, InfoQueueMessageSeverity, byte**, int>)@this->LpVtbl[31])(@this, Severity, pDescriptionPp);
-            SilkMarshal.Free((nint)pDescriptionPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, int, int>)@this->LpVtbl[32])(@this, Producer, Category, bEnable);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetBreakOnCategory(Guid Producer, InfoQueueMessageCategory Category, bool bEnable)
+        public readonly int SetBreakOnSeverity(Guid Producer, InfoQueueMessageSeverity Severity, int bEnable)
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, bool, int>)@this->LpVtbl[32])(@this, Producer, Category, bEnable);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageSeverity, int, int>)@this->LpVtbl[33])(@this, Producer, Severity, bEnable);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetBreakOnSeverity(Guid Producer, InfoQueueMessageSeverity Severity, bool bEnable)
+        public readonly int SetBreakOnID(Guid Producer, int ID, int bEnable)
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageSeverity, bool, int>)@this->LpVtbl[33])(@this, Producer, Severity, bEnable);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int, int, int>)@this->LpVtbl[34])(@this, Producer, ID, bEnable);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetBreakOnID(Guid Producer, int ID, bool bEnable)
+        public readonly int GetBreakOnCategory(Guid Producer, InfoQueueMessageCategory Category)
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int, bool, int>)@this->LpVtbl[34])(@this, Producer, ID, bEnable);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, int>)@this->LpVtbl[35])(@this, Producer, Category);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly bool GetBreakOnCategory(Guid Producer, InfoQueueMessageCategory Category)
+        public readonly int GetBreakOnSeverity(Guid Producer, InfoQueueMessageSeverity Severity)
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            bool ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, bool>)@this->LpVtbl[35])(@this, Producer, Category);
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageSeverity, int>)@this->LpVtbl[36])(@this, Producer, Severity);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly bool GetBreakOnSeverity(Guid Producer, InfoQueueMessageSeverity Severity)
+        public readonly int GetBreakOnID(Guid Producer, int ID)
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            bool ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageSeverity, bool>)@this->LpVtbl[36])(@this, Producer, Severity);
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int, int>)@this->LpVtbl[37])(@this, Producer, ID);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly bool GetBreakOnID(Guid Producer, int ID)
+        public readonly void SetMuteDebugOutput(Guid Producer, int bMute)
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            bool ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int, bool>)@this->LpVtbl[37])(@this, Producer, ID);
-            return ret;
+            ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int, void>)@this->LpVtbl[38])(@this, Producer, bMute);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetMuteDebugOutput(Guid Producer, bool bMute)
+        public readonly int GetMuteDebugOutput(Guid Producer)
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, bool, void>)@this->LpVtbl[38])(@this, Producer, bMute);
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly bool GetMuteDebugOutput(Guid Producer)
-        {
-            var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            bool ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, bool>)@this->LpVtbl[39])(@this, Producer);
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int>)@this->LpVtbl[39])(@this, Producer);
             return ret;
         }
 

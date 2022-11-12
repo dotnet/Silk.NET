@@ -22,7 +22,7 @@ namespace Silk.NET.Core.Win32Extras
         public ReasonContext
         (
             uint? version = null,
-            int? flags = null,
+            uint? flags = null,
             ReasonContextReason? reason = null
         ) : this()
         {
@@ -51,7 +51,7 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "Flags")]
-        public int Flags;
+        public uint Flags;
 
         [NativeName("Type", "union (unnamed union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\minwinbase.h:273:5)")]
         [NativeName("Type.Name", "union (unnamed union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\minwinbase.h:273:5)")]

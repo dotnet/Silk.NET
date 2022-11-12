@@ -218,7 +218,7 @@ namespace Silk.NET.Direct2D
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3691, Column 5 in d2d1.h")]
-        public static unsafe bool D2D1IsMatrixInvertible(this D2D thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> matrix)
+        public static unsafe int D2D1IsMatrixInvertible(this D2D thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> matrix)
         {
             // SpanOverloader
             return thisApi.D2D1IsMatrixInvertible(in matrix.GetPinnableReference());
@@ -226,7 +226,7 @@ namespace Silk.NET.Direct2D
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3696, Column 5 in d2d1.h")]
-        public static unsafe bool D2D1InvertMatrix(this D2D thisApi, Span<Silk.NET.Maths.Matrix3X2<float>> matrix)
+        public static unsafe int D2D1InvertMatrix(this D2D thisApi, Span<Silk.NET.Maths.Matrix3X2<float>> matrix)
         {
             // SpanOverloader
             return thisApi.D2D1InvertMatrix(ref matrix.GetPinnableReference());

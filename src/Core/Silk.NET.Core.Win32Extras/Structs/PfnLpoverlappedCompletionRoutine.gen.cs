@@ -19,10 +19,10 @@ namespace Silk.NET.Core.Win32Extras
     public unsafe readonly struct PfnLpoverlappedCompletionRoutine : IDisposable
     {
         private readonly void* _handle;
-        public delegate* unmanaged[Cdecl]<int, int, Overlapped*, void> Handle => (delegate* unmanaged[Cdecl]<int, int, Overlapped*, void>) _handle;
+        public delegate* unmanaged[Cdecl]<uint, uint, Overlapped*, void> Handle => (delegate* unmanaged[Cdecl]<uint, uint, Overlapped*, void>) _handle;
         public PfnLpoverlappedCompletionRoutine
         (
-            delegate* unmanaged[Cdecl]<int, int, Overlapped*, void> ptr
+            delegate* unmanaged[Cdecl]<uint, uint, Overlapped*, void> ptr
         ) => _handle = ptr;
 
         public PfnLpoverlappedCompletionRoutine
@@ -35,7 +35,7 @@ namespace Silk.NET.Core.Win32Extras
 
         public static implicit operator nint(PfnLpoverlappedCompletionRoutine pfn) => (nint) pfn.Handle;
         public static explicit operator PfnLpoverlappedCompletionRoutine(nint pfn)
-            => new PfnLpoverlappedCompletionRoutine((delegate* unmanaged[Cdecl]<int, int, Overlapped*, void>) pfn);
+            => new PfnLpoverlappedCompletionRoutine((delegate* unmanaged[Cdecl]<uint, uint, Overlapped*, void>) pfn);
 
         public static implicit operator PfnLpoverlappedCompletionRoutine(LpoverlappedCompletionRoutine proc)
             => new PfnLpoverlappedCompletionRoutine(proc);
@@ -43,11 +43,11 @@ namespace Silk.NET.Core.Win32Extras
         public static explicit operator LpoverlappedCompletionRoutine(PfnLpoverlappedCompletionRoutine pfn)
             => SilkMarshal.PtrToDelegate<LpoverlappedCompletionRoutine>(pfn);
 
-        public static implicit operator delegate* unmanaged[Cdecl]<int, int, Overlapped*, void>(PfnLpoverlappedCompletionRoutine pfn) => pfn.Handle;
-        public static implicit operator PfnLpoverlappedCompletionRoutine(delegate* unmanaged[Cdecl]<int, int, Overlapped*, void> ptr) => new PfnLpoverlappedCompletionRoutine(ptr);
+        public static implicit operator delegate* unmanaged[Cdecl]<uint, uint, Overlapped*, void>(PfnLpoverlappedCompletionRoutine pfn) => pfn.Handle;
+        public static implicit operator PfnLpoverlappedCompletionRoutine(delegate* unmanaged[Cdecl]<uint, uint, Overlapped*, void> ptr) => new PfnLpoverlappedCompletionRoutine(ptr);
     }
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate void LpoverlappedCompletionRoutine(int arg0, int arg1, Overlapped* arg2);
+    public unsafe delegate void LpoverlappedCompletionRoutine(uint arg0, uint arg1, Overlapped* arg2);
 }
 

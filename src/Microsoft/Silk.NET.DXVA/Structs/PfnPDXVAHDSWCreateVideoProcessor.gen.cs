@@ -19,10 +19,10 @@ namespace Silk.NET.DXVA
     public unsafe readonly struct PfnPDXVAHDSWCreateVideoProcessor : IDisposable
     {
         private readonly void* _handle;
-        public delegate* unmanaged[Cdecl]<nint*, Guid*, void**, int> Handle => (delegate* unmanaged[Cdecl]<nint*, Guid*, void**, int>) _handle;
+        public delegate* unmanaged[Cdecl]<void*, Guid*, void**, int> Handle => (delegate* unmanaged[Cdecl]<void*, Guid*, void**, int>) _handle;
         public PfnPDXVAHDSWCreateVideoProcessor
         (
-            delegate* unmanaged[Cdecl]<nint*, Guid*, void**, int> ptr
+            delegate* unmanaged[Cdecl]<void*, Guid*, void**, int> ptr
         ) => _handle = ptr;
 
         public PfnPDXVAHDSWCreateVideoProcessor
@@ -35,7 +35,7 @@ namespace Silk.NET.DXVA
 
         public static implicit operator nint(PfnPDXVAHDSWCreateVideoProcessor pfn) => (nint) pfn.Handle;
         public static explicit operator PfnPDXVAHDSWCreateVideoProcessor(nint pfn)
-            => new PfnPDXVAHDSWCreateVideoProcessor((delegate* unmanaged[Cdecl]<nint*, Guid*, void**, int>) pfn);
+            => new PfnPDXVAHDSWCreateVideoProcessor((delegate* unmanaged[Cdecl]<void*, Guid*, void**, int>) pfn);
 
         public static implicit operator PfnPDXVAHDSWCreateVideoProcessor(PDXVAHDSWCreateVideoProcessor proc)
             => new PfnPDXVAHDSWCreateVideoProcessor(proc);
@@ -43,11 +43,11 @@ namespace Silk.NET.DXVA
         public static explicit operator PDXVAHDSWCreateVideoProcessor(PfnPDXVAHDSWCreateVideoProcessor pfn)
             => SilkMarshal.PtrToDelegate<PDXVAHDSWCreateVideoProcessor>(pfn);
 
-        public static implicit operator delegate* unmanaged[Cdecl]<nint*, Guid*, void**, int>(PfnPDXVAHDSWCreateVideoProcessor pfn) => pfn.Handle;
-        public static implicit operator PfnPDXVAHDSWCreateVideoProcessor(delegate* unmanaged[Cdecl]<nint*, Guid*, void**, int> ptr) => new PfnPDXVAHDSWCreateVideoProcessor(ptr);
+        public static implicit operator delegate* unmanaged[Cdecl]<void*, Guid*, void**, int>(PfnPDXVAHDSWCreateVideoProcessor pfn) => pfn.Handle;
+        public static implicit operator PfnPDXVAHDSWCreateVideoProcessor(delegate* unmanaged[Cdecl]<void*, Guid*, void**, int> ptr) => new PfnPDXVAHDSWCreateVideoProcessor(ptr);
     }
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate int PDXVAHDSWCreateVideoProcessor(nint* arg0, Guid* arg1, void** arg2);
+    public unsafe delegate int PDXVAHDSWCreateVideoProcessor(void* arg0, Guid* arg1, void** arg2);
 }
 

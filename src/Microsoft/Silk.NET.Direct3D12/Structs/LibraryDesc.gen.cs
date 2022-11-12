@@ -21,7 +21,7 @@ namespace Silk.NET.Direct3D12
     {
         public LibraryDesc
         (
-            string* creator = null,
+            byte* creator = null,
             uint? flags = null,
             uint? functionCount = null
         ) : this()
@@ -46,7 +46,7 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "LPCSTR")]
         [NativeName("Type.Name", "LPCSTR")]
         [NativeName("Name", "Creator")]
-        public string* Creator;
+        public byte* Creator;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]

@@ -28,7 +28,7 @@ namespace Silk.NET.Direct3D11
             uint? baseConstantBufferOffset = null,
             uint? baseTexture = null,
             uint? baseSampler = null,
-            bool? created = null
+            int? created = null
         ) : this()
         {
             if (instanceId is not null)
@@ -111,6 +111,6 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "Created")]
-        public bool Created;
+        public int Created;
     }
 }

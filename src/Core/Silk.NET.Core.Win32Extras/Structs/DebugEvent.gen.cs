@@ -21,9 +21,9 @@ namespace Silk.NET.Core.Win32Extras
     {
         public DebugEvent
         (
-            int? dwDebugEventCode = null,
-            int? dwProcessId = null,
-            int? dwThreadId = null,
+            uint? dwDebugEventCode = null,
+            uint? dwProcessId = null,
+            uint? dwThreadId = null,
             DebugEventU? u = null
         ) : this()
         {
@@ -52,17 +52,17 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "dwDebugEventCode")]
-        public int DwDebugEventCode;
+        public uint DwDebugEventCode;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "dwProcessId")]
-        public int DwProcessId;
+        public uint DwProcessId;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "dwThreadId")]
-        public int DwThreadId;
+        public uint DwThreadId;
 
         [NativeName("Type", "union (unnamed union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\minwinbase.h:370:5)")]
         [NativeName("Type.Name", "union (unnamed union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\minwinbase.h:370:5)")]

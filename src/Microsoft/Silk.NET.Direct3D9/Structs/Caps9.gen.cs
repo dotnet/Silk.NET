@@ -23,73 +23,73 @@ namespace Silk.NET.Direct3D9
         (
             Devtype? deviceType = null,
             uint? adapterOrdinal = null,
-            int? caps = null,
-            int? caps2 = null,
-            int? caps3 = null,
-            int? presentationIntervals = null,
-            int? cursorCaps = null,
-            int? devCaps = null,
-            int? primitiveMiscCaps = null,
-            int? rasterCaps = null,
-            int? zCmpCaps = null,
-            int? srcBlendCaps = null,
-            int? destBlendCaps = null,
-            int? alphaCmpCaps = null,
-            int? shadeCaps = null,
-            int? textureCaps = null,
-            int? textureFilterCaps = null,
-            int? cubeTextureFilterCaps = null,
-            int? volumeTextureFilterCaps = null,
-            int? textureAddressCaps = null,
-            int? volumeTextureAddressCaps = null,
-            int? lineCaps = null,
-            int? maxTextureWidth = null,
-            int? maxTextureHeight = null,
-            int? maxVolumeExtent = null,
-            int? maxTextureRepeat = null,
-            int? maxTextureAspectRatio = null,
-            int? maxAnisotropy = null,
+            uint? caps = null,
+            uint? caps2 = null,
+            uint? caps3 = null,
+            uint? presentationIntervals = null,
+            uint? cursorCaps = null,
+            uint? devCaps = null,
+            uint? primitiveMiscCaps = null,
+            uint? rasterCaps = null,
+            uint? zCmpCaps = null,
+            uint? srcBlendCaps = null,
+            uint? destBlendCaps = null,
+            uint? alphaCmpCaps = null,
+            uint? shadeCaps = null,
+            uint? textureCaps = null,
+            uint? textureFilterCaps = null,
+            uint? cubeTextureFilterCaps = null,
+            uint? volumeTextureFilterCaps = null,
+            uint? textureAddressCaps = null,
+            uint? volumeTextureAddressCaps = null,
+            uint? lineCaps = null,
+            uint? maxTextureWidth = null,
+            uint? maxTextureHeight = null,
+            uint? maxVolumeExtent = null,
+            uint? maxTextureRepeat = null,
+            uint? maxTextureAspectRatio = null,
+            uint? maxAnisotropy = null,
             float? maxVertexW = null,
             float? guardBandLeft = null,
             float? guardBandTop = null,
             float? guardBandRight = null,
             float? guardBandBottom = null,
             float? extentsAdjust = null,
-            int? stencilCaps = null,
-            int? fVFCaps = null,
-            int? textureOpCaps = null,
-            int? maxTextureBlendStages = null,
-            int? maxSimultaneousTextures = null,
-            int? vertexProcessingCaps = null,
-            int? maxActiveLights = null,
-            int? maxUserClipPlanes = null,
-            int? maxVertexBlendMatrices = null,
-            int? maxVertexBlendMatrixIndex = null,
+            uint? stencilCaps = null,
+            uint? fVFCaps = null,
+            uint? textureOpCaps = null,
+            uint? maxTextureBlendStages = null,
+            uint? maxSimultaneousTextures = null,
+            uint? vertexProcessingCaps = null,
+            uint? maxActiveLights = null,
+            uint? maxUserClipPlanes = null,
+            uint? maxVertexBlendMatrices = null,
+            uint? maxVertexBlendMatrixIndex = null,
             float? maxPointSize = null,
-            int? maxPrimitiveCount = null,
-            int? maxVertexIndex = null,
-            int? maxStreams = null,
-            int? maxStreamStride = null,
-            int? vertexShaderVersion = null,
-            int? maxVertexShaderConst = null,
-            int? pixelShaderVersion = null,
+            uint? maxPrimitiveCount = null,
+            uint? maxVertexIndex = null,
+            uint? maxStreams = null,
+            uint? maxStreamStride = null,
+            uint? vertexShaderVersion = null,
+            uint? maxVertexShaderConst = null,
+            uint? pixelShaderVersion = null,
             float? pixelShader1xMaxValue = null,
-            int? devCaps2 = null,
+            uint? devCaps2 = null,
             float? maxNpatchTessellationLevel = null,
-            int? reserved5 = null,
+            uint? reserved5 = null,
             uint? masterAdapterOrdinal = null,
             uint? adapterOrdinalInGroup = null,
             uint? numberOfAdaptersInGroup = null,
-            int? declTypes = null,
-            int? numSimultaneousRTs = null,
-            int? stretchRectFilterCaps = null,
+            uint? declTypes = null,
+            uint? numSimultaneousRTs = null,
+            uint? stretchRectFilterCaps = null,
             Vshadercaps20? vS20Caps = null,
             Pshadercaps20? pS20Caps = null,
-            int? vertexTextureFilterCaps = null,
-            int? maxVShaderInstructionsExecuted = null,
-            int? maxPShaderInstructionsExecuted = null,
-            int? maxVertexShader30InstructionSlots = null,
-            int? maxPixelShader30InstructionSlots = null
+            uint? vertexTextureFilterCaps = null,
+            uint? maxVShaderInstructionsExecuted = null,
+            uint? maxPShaderInstructionsExecuted = null,
+            uint? maxVertexShader30InstructionSlots = null,
+            uint? maxPixelShader30InstructionSlots = null
         ) : this()
         {
             if (deviceType is not null)
@@ -452,132 +452,132 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "Caps")]
-        public int Caps;
+        public uint Caps;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "Caps2")]
-        public int Caps2;
+        public uint Caps2;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "Caps3")]
-        public int Caps3;
+        public uint Caps3;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "PresentationIntervals")]
-        public int PresentationIntervals;
+        public uint PresentationIntervals;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "CursorCaps")]
-        public int CursorCaps;
+        public uint CursorCaps;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "DevCaps")]
-        public int DevCaps;
+        public uint DevCaps;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "PrimitiveMiscCaps")]
-        public int PrimitiveMiscCaps;
+        public uint PrimitiveMiscCaps;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "RasterCaps")]
-        public int RasterCaps;
+        public uint RasterCaps;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "ZCmpCaps")]
-        public int ZCmpCaps;
+        public uint ZCmpCaps;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "SrcBlendCaps")]
-        public int SrcBlendCaps;
+        public uint SrcBlendCaps;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "DestBlendCaps")]
-        public int DestBlendCaps;
+        public uint DestBlendCaps;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "AlphaCmpCaps")]
-        public int AlphaCmpCaps;
+        public uint AlphaCmpCaps;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "ShadeCaps")]
-        public int ShadeCaps;
+        public uint ShadeCaps;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "TextureCaps")]
-        public int TextureCaps;
+        public uint TextureCaps;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "TextureFilterCaps")]
-        public int TextureFilterCaps;
+        public uint TextureFilterCaps;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "CubeTextureFilterCaps")]
-        public int CubeTextureFilterCaps;
+        public uint CubeTextureFilterCaps;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "VolumeTextureFilterCaps")]
-        public int VolumeTextureFilterCaps;
+        public uint VolumeTextureFilterCaps;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "TextureAddressCaps")]
-        public int TextureAddressCaps;
+        public uint TextureAddressCaps;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "VolumeTextureAddressCaps")]
-        public int VolumeTextureAddressCaps;
+        public uint VolumeTextureAddressCaps;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "LineCaps")]
-        public int LineCaps;
+        public uint LineCaps;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "MaxTextureWidth")]
-        public int MaxTextureWidth;
+        public uint MaxTextureWidth;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "MaxTextureHeight")]
-        public int MaxTextureHeight;
+        public uint MaxTextureHeight;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "MaxVolumeExtent")]
-        public int MaxVolumeExtent;
+        public uint MaxVolumeExtent;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "MaxTextureRepeat")]
-        public int MaxTextureRepeat;
+        public uint MaxTextureRepeat;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "MaxTextureAspectRatio")]
-        public int MaxTextureAspectRatio;
+        public uint MaxTextureAspectRatio;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "MaxAnisotropy")]
-        public int MaxAnisotropy;
+        public uint MaxAnisotropy;
 
         [NativeName("Type", "float")]
         [NativeName("Type.Name", "float")]
@@ -612,52 +612,52 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "StencilCaps")]
-        public int StencilCaps;
+        public uint StencilCaps;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "FVFCaps")]
-        public int FVFCaps;
+        public uint FVFCaps;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "TextureOpCaps")]
-        public int TextureOpCaps;
+        public uint TextureOpCaps;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "MaxTextureBlendStages")]
-        public int MaxTextureBlendStages;
+        public uint MaxTextureBlendStages;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "MaxSimultaneousTextures")]
-        public int MaxSimultaneousTextures;
+        public uint MaxSimultaneousTextures;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "VertexProcessingCaps")]
-        public int VertexProcessingCaps;
+        public uint VertexProcessingCaps;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "MaxActiveLights")]
-        public int MaxActiveLights;
+        public uint MaxActiveLights;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "MaxUserClipPlanes")]
-        public int MaxUserClipPlanes;
+        public uint MaxUserClipPlanes;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "MaxVertexBlendMatrices")]
-        public int MaxVertexBlendMatrices;
+        public uint MaxVertexBlendMatrices;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "MaxVertexBlendMatrixIndex")]
-        public int MaxVertexBlendMatrixIndex;
+        public uint MaxVertexBlendMatrixIndex;
 
         [NativeName("Type", "float")]
         [NativeName("Type.Name", "float")]
@@ -667,37 +667,37 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "MaxPrimitiveCount")]
-        public int MaxPrimitiveCount;
+        public uint MaxPrimitiveCount;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "MaxVertexIndex")]
-        public int MaxVertexIndex;
+        public uint MaxVertexIndex;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "MaxStreams")]
-        public int MaxStreams;
+        public uint MaxStreams;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "MaxStreamStride")]
-        public int MaxStreamStride;
+        public uint MaxStreamStride;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "VertexShaderVersion")]
-        public int VertexShaderVersion;
+        public uint VertexShaderVersion;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "MaxVertexShaderConst")]
-        public int MaxVertexShaderConst;
+        public uint MaxVertexShaderConst;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "PixelShaderVersion")]
-        public int PixelShaderVersion;
+        public uint PixelShaderVersion;
 
         [NativeName("Type", "float")]
         [NativeName("Type.Name", "float")]
@@ -707,7 +707,7 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "DevCaps2")]
-        public int DevCaps2;
+        public uint DevCaps2;
 
         [NativeName("Type", "float")]
         [NativeName("Type.Name", "float")]
@@ -717,7 +717,7 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "Reserved5")]
-        public int Reserved5;
+        public uint Reserved5;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]
@@ -737,17 +737,17 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "DeclTypes")]
-        public int DeclTypes;
+        public uint DeclTypes;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "NumSimultaneousRTs")]
-        public int NumSimultaneousRTs;
+        public uint NumSimultaneousRTs;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "StretchRectFilterCaps")]
-        public int StretchRectFilterCaps;
+        public uint StretchRectFilterCaps;
 
         [NativeName("Type", "D3DVSHADERCAPS2_0")]
         [NativeName("Type.Name", "D3DVSHADERCAPS2_0")]
@@ -762,26 +762,26 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "VertexTextureFilterCaps")]
-        public int VertexTextureFilterCaps;
+        public uint VertexTextureFilterCaps;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "MaxVShaderInstructionsExecuted")]
-        public int MaxVShaderInstructionsExecuted;
+        public uint MaxVShaderInstructionsExecuted;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "MaxPShaderInstructionsExecuted")]
-        public int MaxPShaderInstructionsExecuted;
+        public uint MaxPShaderInstructionsExecuted;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "MaxVertexShader30InstructionSlots")]
-        public int MaxVertexShader30InstructionSlots;
+        public uint MaxVertexShader30InstructionSlots;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "MaxPixelShader30InstructionSlots")]
-        public int MaxPixelShader30InstructionSlots;
+        public uint MaxPixelShader30InstructionSlots;
     }
 }

@@ -130,17 +130,17 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetEnableGPUBasedValidation(bool Enable)
+        public readonly void SetEnableGPUBasedValidation(int Enable)
         {
             var @this = (ID3D12Debug6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12Debug6*, bool, void>)@this->LpVtbl[4])(@this, Enable);
+            ((delegate* unmanaged[Stdcall]<ID3D12Debug6*, int, void>)@this->LpVtbl[4])(@this, Enable);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetEnableSynchronizedCommandQueueValidation(bool Enable)
+        public readonly void SetEnableSynchronizedCommandQueueValidation(int Enable)
         {
             var @this = (ID3D12Debug6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12Debug6*, bool, void>)@this->LpVtbl[5])(@this, Enable);
+            ((delegate* unmanaged[Stdcall]<ID3D12Debug6*, int, void>)@this->LpVtbl[5])(@this, Enable);
         }
 
         /// <summary>To be documented.</summary>
@@ -158,17 +158,17 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetEnableAutoName(bool Enable)
+        public readonly void SetEnableAutoName(int Enable)
         {
             var @this = (ID3D12Debug6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12Debug6*, bool, void>)@this->LpVtbl[8])(@this, Enable);
+            ((delegate* unmanaged[Stdcall]<ID3D12Debug6*, int, void>)@this->LpVtbl[8])(@this, Enable);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetForceLegacyBarrierValidation(bool Enable)
+        public readonly void SetForceLegacyBarrierValidation(int Enable)
         {
             var @this = (ID3D12Debug6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12Debug6*, bool, void>)@this->LpVtbl[9])(@this, Enable);
+            ((delegate* unmanaged[Stdcall]<ID3D12Debug6*, int, void>)@this->LpVtbl[9])(@this, Enable);
         }
 
         /// <summary>To be documented.</summary>

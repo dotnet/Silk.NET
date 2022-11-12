@@ -22,8 +22,8 @@ namespace Silk.NET.DXVA
         public BufferInfo
         (
             void* pCompSurface = null,
-            int? dataOffset = null,
-            int? dataSize = null
+            uint? dataOffset = null,
+            uint? dataSize = null
         ) : this()
         {
             if (pCompSurface is not null)
@@ -51,11 +51,11 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "DataOffset")]
-        public int DataOffset;
+        public uint DataOffset;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "DataSize")]
-        public int DataSize;
+        public uint DataSize;
     }
 }

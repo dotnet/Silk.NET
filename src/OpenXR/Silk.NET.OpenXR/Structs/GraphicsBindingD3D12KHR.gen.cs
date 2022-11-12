@@ -23,8 +23,8 @@ namespace Silk.NET.OpenXR
         (
             StructureType? type = StructureType.TypeGraphicsBindingD3D12Khr,
             void* next = null,
-            void** device = null,
-            void** queue = null
+            void* device = null,
+            void* queue = null
         ) : this()
         {
             if (type is not null)
@@ -62,11 +62,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type", "ID3D12Device*")]
         [NativeName("Type.Name", "ID3D12Device")]
         [NativeName("Name", "device")]
-        public void** Device;
+        public void* Device;
 /// <summary></summary>
         [NativeName("Type", "ID3D12CommandQueue*")]
         [NativeName("Type.Name", "ID3D12CommandQueue")]
         [NativeName("Name", "queue")]
-        public void** Queue;
+        public void* Queue;
     }
 }

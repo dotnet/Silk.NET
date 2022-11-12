@@ -23,14 +23,14 @@ namespace Silk.NET.Direct3D11
         (
             FillMode? fillMode = null,
             CullMode? cullMode = null,
-            bool? frontCounterClockwise = null,
+            int? frontCounterClockwise = null,
             int? depthBias = null,
             float? depthBiasClamp = null,
             float? slopeScaledDepthBias = null,
-            bool? depthClipEnable = null,
-            bool? scissorEnable = null,
-            bool? multisampleEnable = null,
-            bool? antialiasedLineEnable = null,
+            int? depthClipEnable = null,
+            int? scissorEnable = null,
+            int? multisampleEnable = null,
+            int? antialiasedLineEnable = null,
             uint? forcedSampleCount = null
         ) : this()
         {
@@ -104,7 +104,7 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "FrontCounterClockwise")]
-        public bool FrontCounterClockwise;
+        public int FrontCounterClockwise;
 
         [NativeName("Type", "INT")]
         [NativeName("Type.Name", "INT")]
@@ -124,22 +124,22 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "DepthClipEnable")]
-        public bool DepthClipEnable;
+        public int DepthClipEnable;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "ScissorEnable")]
-        public bool ScissorEnable;
+        public int ScissorEnable;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "MultisampleEnable")]
-        public bool MultisampleEnable;
+        public int MultisampleEnable;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "AntialiasedLineEnable")]
-        public bool AntialiasedLineEnable;
+        public int AntialiasedLineEnable;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]

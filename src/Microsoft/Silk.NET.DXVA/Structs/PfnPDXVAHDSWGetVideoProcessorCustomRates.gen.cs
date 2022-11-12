@@ -19,10 +19,10 @@ namespace Silk.NET.DXVA
     public unsafe readonly struct PfnPDXVAHDSWGetVideoProcessorCustomRates : IDisposable
     {
         private readonly void* _handle;
-        public delegate* unmanaged[Cdecl]<nint*, Guid*, uint, HDCustomRateData*, int> Handle => (delegate* unmanaged[Cdecl]<nint*, Guid*, uint, HDCustomRateData*, int>) _handle;
+        public delegate* unmanaged[Cdecl]<void*, Guid*, uint, HDCustomRateData*, int> Handle => (delegate* unmanaged[Cdecl]<void*, Guid*, uint, HDCustomRateData*, int>) _handle;
         public PfnPDXVAHDSWGetVideoProcessorCustomRates
         (
-            delegate* unmanaged[Cdecl]<nint*, Guid*, uint, HDCustomRateData*, int> ptr
+            delegate* unmanaged[Cdecl]<void*, Guid*, uint, HDCustomRateData*, int> ptr
         ) => _handle = ptr;
 
         public PfnPDXVAHDSWGetVideoProcessorCustomRates
@@ -35,7 +35,7 @@ namespace Silk.NET.DXVA
 
         public static implicit operator nint(PfnPDXVAHDSWGetVideoProcessorCustomRates pfn) => (nint) pfn.Handle;
         public static explicit operator PfnPDXVAHDSWGetVideoProcessorCustomRates(nint pfn)
-            => new PfnPDXVAHDSWGetVideoProcessorCustomRates((delegate* unmanaged[Cdecl]<nint*, Guid*, uint, HDCustomRateData*, int>) pfn);
+            => new PfnPDXVAHDSWGetVideoProcessorCustomRates((delegate* unmanaged[Cdecl]<void*, Guid*, uint, HDCustomRateData*, int>) pfn);
 
         public static implicit operator PfnPDXVAHDSWGetVideoProcessorCustomRates(PDXVAHDSWGetVideoProcessorCustomRates proc)
             => new PfnPDXVAHDSWGetVideoProcessorCustomRates(proc);
@@ -43,11 +43,11 @@ namespace Silk.NET.DXVA
         public static explicit operator PDXVAHDSWGetVideoProcessorCustomRates(PfnPDXVAHDSWGetVideoProcessorCustomRates pfn)
             => SilkMarshal.PtrToDelegate<PDXVAHDSWGetVideoProcessorCustomRates>(pfn);
 
-        public static implicit operator delegate* unmanaged[Cdecl]<nint*, Guid*, uint, HDCustomRateData*, int>(PfnPDXVAHDSWGetVideoProcessorCustomRates pfn) => pfn.Handle;
-        public static implicit operator PfnPDXVAHDSWGetVideoProcessorCustomRates(delegate* unmanaged[Cdecl]<nint*, Guid*, uint, HDCustomRateData*, int> ptr) => new PfnPDXVAHDSWGetVideoProcessorCustomRates(ptr);
+        public static implicit operator delegate* unmanaged[Cdecl]<void*, Guid*, uint, HDCustomRateData*, int>(PfnPDXVAHDSWGetVideoProcessorCustomRates pfn) => pfn.Handle;
+        public static implicit operator PfnPDXVAHDSWGetVideoProcessorCustomRates(delegate* unmanaged[Cdecl]<void*, Guid*, uint, HDCustomRateData*, int> ptr) => new PfnPDXVAHDSWGetVideoProcessorCustomRates(ptr);
     }
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate int PDXVAHDSWGetVideoProcessorCustomRates(nint* arg0, Guid* arg1, uint arg2, HDCustomRateData* arg3);
+    public unsafe delegate int PDXVAHDSWGetVideoProcessorCustomRates(void* arg0, Guid* arg1, uint arg2, HDCustomRateData* arg3);
 }
 

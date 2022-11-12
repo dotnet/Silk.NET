@@ -538,20 +538,20 @@ public unsafe static class DXGIFactory6VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static bool IsCurrent(this ComPtr<IDXGIFactory6> thisVtbl)
+    public static int IsCurrent(this ComPtr<IDXGIFactory6> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        bool ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory6*, bool>)@this->LpVtbl[13])(@this);
+        int ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory6*, int>)@this->LpVtbl[13])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static bool IsWindowedStereoEnabled(this ComPtr<IDXGIFactory6> thisVtbl)
+    public static int IsWindowedStereoEnabled(this ComPtr<IDXGIFactory6> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        bool ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory6*, bool>)@this->LpVtbl[14])(@this);
+        int ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory6*, int>)@this->LpVtbl[14])(@this);
         return ret;
     }
 
@@ -1612,48 +1612,48 @@ public unsafe static class DXGIFactory6VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetSharedResourceAdapterLuid(this ComPtr<IDXGIFactory6> thisVtbl, nint* hResource, Luid* pLuid)
+    public static unsafe int GetSharedResourceAdapterLuid(this ComPtr<IDXGIFactory6> thisVtbl, void* hResource, Luid* pLuid)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory6*, nint*, Luid*, int>)@this->LpVtbl[17])(@this, hResource, pLuid);
+        ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory6*, void*, Luid*, int>)@this->LpVtbl[17])(@this, hResource, pLuid);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetSharedResourceAdapterLuid(this ComPtr<IDXGIFactory6> thisVtbl, nint* hResource, ref Luid pLuid)
+    public static unsafe int GetSharedResourceAdapterLuid(this ComPtr<IDXGIFactory6> thisVtbl, void* hResource, ref Luid pLuid)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Luid* pLuidPtr = &pLuid)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory6*, nint*, Luid*, int>)@this->LpVtbl[17])(@this, hResource, pLuidPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory6*, void*, Luid*, int>)@this->LpVtbl[17])(@this, hResource, pLuidPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetSharedResourceAdapterLuid(this ComPtr<IDXGIFactory6> thisVtbl, ref nint hResource, Luid* pLuid)
+    public static unsafe int GetSharedResourceAdapterLuid<T0>(this ComPtr<IDXGIFactory6> thisVtbl, ref T0 hResource, Luid* pLuid) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (nint* hResourcePtr = &hResource)
+        fixed (void* hResourcePtr = &hResource)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory6*, nint*, Luid*, int>)@this->LpVtbl[17])(@this, hResourcePtr, pLuid);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory6*, void*, Luid*, int>)@this->LpVtbl[17])(@this, hResourcePtr, pLuid);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetSharedResourceAdapterLuid(this ComPtr<IDXGIFactory6> thisVtbl, ref nint hResource, ref Luid pLuid)
+    public static int GetSharedResourceAdapterLuid<T0>(this ComPtr<IDXGIFactory6> thisVtbl, ref T0 hResource, ref Luid pLuid) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (nint* hResourcePtr = &hResource)
+        fixed (void* hResourcePtr = &hResource)
         {
             fixed (Luid* pLuidPtr = &pLuid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory6*, nint*, Luid*, int>)@this->LpVtbl[17])(@this, hResourcePtr, pLuidPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory6*, void*, Luid*, int>)@this->LpVtbl[17])(@this, hResourcePtr, pLuidPtr);
             }
         }
         return ret;
@@ -1681,58 +1681,58 @@ public unsafe static class DXGIFactory6VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterStereoStatusEvent(this ComPtr<IDXGIFactory6> thisVtbl, nint* hEvent, uint* pdwCookie)
+    public static unsafe int RegisterStereoStatusEvent(this ComPtr<IDXGIFactory6> thisVtbl, void* hEvent, uint* pdwCookie)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory6*, nint*, uint*, int>)@this->LpVtbl[19])(@this, hEvent, pdwCookie);
+        ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory6*, void*, uint*, int>)@this->LpVtbl[19])(@this, hEvent, pdwCookie);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterStereoStatusEvent(this ComPtr<IDXGIFactory6> thisVtbl, nint* hEvent, ref uint pdwCookie)
+    public static unsafe int RegisterStereoStatusEvent(this ComPtr<IDXGIFactory6> thisVtbl, void* hEvent, ref uint pdwCookie)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pdwCookiePtr = &pdwCookie)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory6*, nint*, uint*, int>)@this->LpVtbl[19])(@this, hEvent, pdwCookiePtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory6*, void*, uint*, int>)@this->LpVtbl[19])(@this, hEvent, pdwCookiePtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterStereoStatusEvent(this ComPtr<IDXGIFactory6> thisVtbl, ref nint hEvent, uint* pdwCookie)
+    public static unsafe int RegisterStereoStatusEvent<T0>(this ComPtr<IDXGIFactory6> thisVtbl, ref T0 hEvent, uint* pdwCookie) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (nint* hEventPtr = &hEvent)
+        fixed (void* hEventPtr = &hEvent)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory6*, nint*, uint*, int>)@this->LpVtbl[19])(@this, hEventPtr, pdwCookie);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory6*, void*, uint*, int>)@this->LpVtbl[19])(@this, hEventPtr, pdwCookie);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int RegisterStereoStatusEvent(this ComPtr<IDXGIFactory6> thisVtbl, ref nint hEvent, ref uint pdwCookie)
+    public static int RegisterStereoStatusEvent<T0>(this ComPtr<IDXGIFactory6> thisVtbl, ref T0 hEvent, ref uint pdwCookie) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (nint* hEventPtr = &hEvent)
+        fixed (void* hEventPtr = &hEvent)
         {
             fixed (uint* pdwCookiePtr = &pdwCookie)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory6*, nint*, uint*, int>)@this->LpVtbl[19])(@this, hEventPtr, pdwCookiePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory6*, void*, uint*, int>)@this->LpVtbl[19])(@this, hEventPtr, pdwCookiePtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static void UnregisterStereoStatus(this ComPtr<IDXGIFactory6> thisVtbl, int dwCookie)
+    public static void UnregisterStereoStatus(this ComPtr<IDXGIFactory6> thisVtbl, uint dwCookie)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<IDXGIFactory6*, int, void>)@this->LpVtbl[20])(@this, dwCookie);
+        ((delegate* unmanaged[Stdcall]<IDXGIFactory6*, uint, void>)@this->LpVtbl[20])(@this, dwCookie);
     }
 
     /// <summary>To be documented.</summary>
@@ -1757,58 +1757,58 @@ public unsafe static class DXGIFactory6VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterOcclusionStatusEvent(this ComPtr<IDXGIFactory6> thisVtbl, nint* hEvent, uint* pdwCookie)
+    public static unsafe int RegisterOcclusionStatusEvent(this ComPtr<IDXGIFactory6> thisVtbl, void* hEvent, uint* pdwCookie)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory6*, nint*, uint*, int>)@this->LpVtbl[22])(@this, hEvent, pdwCookie);
+        ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory6*, void*, uint*, int>)@this->LpVtbl[22])(@this, hEvent, pdwCookie);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterOcclusionStatusEvent(this ComPtr<IDXGIFactory6> thisVtbl, nint* hEvent, ref uint pdwCookie)
+    public static unsafe int RegisterOcclusionStatusEvent(this ComPtr<IDXGIFactory6> thisVtbl, void* hEvent, ref uint pdwCookie)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pdwCookiePtr = &pdwCookie)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory6*, nint*, uint*, int>)@this->LpVtbl[22])(@this, hEvent, pdwCookiePtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory6*, void*, uint*, int>)@this->LpVtbl[22])(@this, hEvent, pdwCookiePtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterOcclusionStatusEvent(this ComPtr<IDXGIFactory6> thisVtbl, ref nint hEvent, uint* pdwCookie)
+    public static unsafe int RegisterOcclusionStatusEvent<T0>(this ComPtr<IDXGIFactory6> thisVtbl, ref T0 hEvent, uint* pdwCookie) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (nint* hEventPtr = &hEvent)
+        fixed (void* hEventPtr = &hEvent)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory6*, nint*, uint*, int>)@this->LpVtbl[22])(@this, hEventPtr, pdwCookie);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory6*, void*, uint*, int>)@this->LpVtbl[22])(@this, hEventPtr, pdwCookie);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int RegisterOcclusionStatusEvent(this ComPtr<IDXGIFactory6> thisVtbl, ref nint hEvent, ref uint pdwCookie)
+    public static int RegisterOcclusionStatusEvent<T0>(this ComPtr<IDXGIFactory6> thisVtbl, ref T0 hEvent, ref uint pdwCookie) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (nint* hEventPtr = &hEvent)
+        fixed (void* hEventPtr = &hEvent)
         {
             fixed (uint* pdwCookiePtr = &pdwCookie)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory6*, nint*, uint*, int>)@this->LpVtbl[22])(@this, hEventPtr, pdwCookiePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory6*, void*, uint*, int>)@this->LpVtbl[22])(@this, hEventPtr, pdwCookiePtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static void UnregisterOcclusionStatus(this ComPtr<IDXGIFactory6> thisVtbl, int dwCookie)
+    public static void UnregisterOcclusionStatus(this ComPtr<IDXGIFactory6> thisVtbl, uint dwCookie)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<IDXGIFactory6*, int, void>)@this->LpVtbl[23])(@this, dwCookie);
+        ((delegate* unmanaged[Stdcall]<IDXGIFactory6*, uint, void>)@this->LpVtbl[23])(@this, dwCookie);
     }
 
     /// <summary>To be documented.</summary>
@@ -3468,7 +3468,7 @@ public unsafe static class DXGIFactory6VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetSharedResourceAdapterLuid(this ComPtr<IDXGIFactory6> thisVtbl, nint* hResource, Span<Luid> pLuid)
+    public static unsafe int GetSharedResourceAdapterLuid(this ComPtr<IDXGIFactory6> thisVtbl, void* hResource, Span<Luid> pLuid)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3476,7 +3476,7 @@ public unsafe static class DXGIFactory6VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetSharedResourceAdapterLuid(this ComPtr<IDXGIFactory6> thisVtbl, Span<nint> hResource, Luid* pLuid)
+    public static unsafe int GetSharedResourceAdapterLuid<T0>(this ComPtr<IDXGIFactory6> thisVtbl, Span<T0> hResource, Luid* pLuid) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3484,7 +3484,7 @@ public unsafe static class DXGIFactory6VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetSharedResourceAdapterLuid(this ComPtr<IDXGIFactory6> thisVtbl, Span<nint> hResource, Span<Luid> pLuid)
+    public static int GetSharedResourceAdapterLuid<T0>(this ComPtr<IDXGIFactory6> thisVtbl, Span<T0> hResource, Span<Luid> pLuid) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3500,7 +3500,7 @@ public unsafe static class DXGIFactory6VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterStereoStatusEvent(this ComPtr<IDXGIFactory6> thisVtbl, nint* hEvent, Span<uint> pdwCookie)
+    public static unsafe int RegisterStereoStatusEvent(this ComPtr<IDXGIFactory6> thisVtbl, void* hEvent, Span<uint> pdwCookie)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3508,7 +3508,7 @@ public unsafe static class DXGIFactory6VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterStereoStatusEvent(this ComPtr<IDXGIFactory6> thisVtbl, Span<nint> hEvent, uint* pdwCookie)
+    public static unsafe int RegisterStereoStatusEvent<T0>(this ComPtr<IDXGIFactory6> thisVtbl, Span<T0> hEvent, uint* pdwCookie) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3516,7 +3516,7 @@ public unsafe static class DXGIFactory6VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int RegisterStereoStatusEvent(this ComPtr<IDXGIFactory6> thisVtbl, Span<nint> hEvent, Span<uint> pdwCookie)
+    public static int RegisterStereoStatusEvent<T0>(this ComPtr<IDXGIFactory6> thisVtbl, Span<T0> hEvent, Span<uint> pdwCookie) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3532,7 +3532,7 @@ public unsafe static class DXGIFactory6VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterOcclusionStatusEvent(this ComPtr<IDXGIFactory6> thisVtbl, nint* hEvent, Span<uint> pdwCookie)
+    public static unsafe int RegisterOcclusionStatusEvent(this ComPtr<IDXGIFactory6> thisVtbl, void* hEvent, Span<uint> pdwCookie)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3540,7 +3540,7 @@ public unsafe static class DXGIFactory6VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterOcclusionStatusEvent(this ComPtr<IDXGIFactory6> thisVtbl, Span<nint> hEvent, uint* pdwCookie)
+    public static unsafe int RegisterOcclusionStatusEvent<T0>(this ComPtr<IDXGIFactory6> thisVtbl, Span<T0> hEvent, uint* pdwCookie) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -3548,7 +3548,7 @@ public unsafe static class DXGIFactory6VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int RegisterOcclusionStatusEvent(this ComPtr<IDXGIFactory6> thisVtbl, Span<nint> hEvent, Span<uint> pdwCookie)
+    public static int RegisterOcclusionStatusEvent<T0>(this ComPtr<IDXGIFactory6> thisVtbl, Span<T0> hEvent, Span<uint> pdwCookie) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

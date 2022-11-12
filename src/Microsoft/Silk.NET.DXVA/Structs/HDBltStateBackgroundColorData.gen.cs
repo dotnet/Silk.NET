@@ -21,7 +21,7 @@ namespace Silk.NET.DXVA
     {
         public HDBltStateBackgroundColorData
         (
-            bool? yCbCr = null,
+            int? yCbCr = null,
             HDColor? backgroundColor = null
         ) : this()
         {
@@ -40,7 +40,7 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "YCbCr")]
-        public bool YCbCr;
+        public int YCbCr;
 
         [NativeName("Type", "DXVAHD_COLOR")]
         [NativeName("Type.Name", "DXVAHD_COLOR")]

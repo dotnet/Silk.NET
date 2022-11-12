@@ -385,11 +385,11 @@ public unsafe static class DXGIKeyedMutexVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AcquireSync(this ComPtr<IDXGIKeyedMutex> thisVtbl, ulong Key, int dwMilliseconds)
+    public static int AcquireSync(this ComPtr<IDXGIKeyedMutex> thisVtbl, ulong Key, uint dwMilliseconds)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGIKeyedMutex*, ulong, int, int>)@this->LpVtbl[8])(@this, Key, dwMilliseconds);
+        ret = ((delegate* unmanaged[Stdcall]<IDXGIKeyedMutex*, ulong, uint, int>)@this->LpVtbl[8])(@this, Key, dwMilliseconds);
         return ret;
     }
 

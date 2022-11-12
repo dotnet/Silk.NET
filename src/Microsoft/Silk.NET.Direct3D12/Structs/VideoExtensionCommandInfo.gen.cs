@@ -16,13 +16,14 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
     [NativeName("Name", "D3D12_VIDEO_EXTENSION_COMMAND_INFO")]
     public unsafe partial struct VideoExtensionCommandInfo
     {
         public VideoExtensionCommandInfo
         (
             Guid? commandId = null,
-            nint* name = null,
+            char* name = null,
             CommandListSupportFlags? commandListSupportFlags = null
         ) : this()
         {
@@ -51,7 +52,7 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "LPCWSTR")]
         [NativeName("Type.Name", "LPCWSTR")]
         [NativeName("Name", "Name")]
-        public nint* Name;
+        public char* Name;
 
         [NativeName("Type", "D3D12_COMMAND_LIST_SUPPORT_FLAGS")]
         [NativeName("Type.Name", "D3D12_COMMAND_LIST_SUPPORT_FLAGS")]

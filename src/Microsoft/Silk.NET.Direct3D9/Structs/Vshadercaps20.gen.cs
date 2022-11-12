@@ -21,7 +21,7 @@ namespace Silk.NET.Direct3D9
     {
         public Vshadercaps20
         (
-            int? caps = null,
+            uint? caps = null,
             int? dynamicFlowControlDepth = null,
             int? numTemps = null,
             int? staticFlowControlDepth = null
@@ -52,7 +52,7 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "Caps")]
-        public int Caps;
+        public uint Caps;
 
         [NativeName("Type", "INT")]
         [NativeName("Type.Name", "INT")]

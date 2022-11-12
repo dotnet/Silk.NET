@@ -24,7 +24,7 @@ namespace Silk.NET.Core.Win32Extras
             nuint? lpCompletionKey = null,
             Overlapped* lpOverlapped = null,
             nuint? @internal = null,
-            int? dwNumberOfBytesTransferred = null
+            uint? dwNumberOfBytesTransferred = null
         ) : this()
         {
             if (lpCompletionKey is not null)
@@ -67,6 +67,6 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "dwNumberOfBytesTransferred")]
-        public int DwNumberOfBytesTransferred;
+        public uint DwNumberOfBytesTransferred;
     }
 }

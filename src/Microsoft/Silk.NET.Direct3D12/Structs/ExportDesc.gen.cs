@@ -16,13 +16,14 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
     [NativeName("Name", "D3D12_EXPORT_DESC")]
     public unsafe partial struct ExportDesc
     {
         public ExportDesc
         (
-            nint* name = null,
-            nint* exportToRename = null,
+            char* name = null,
+            char* exportToRename = null,
             ExportFlags? flags = null
         ) : this()
         {
@@ -46,12 +47,12 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "LPCWSTR")]
         [NativeName("Type.Name", "LPCWSTR")]
         [NativeName("Name", "Name")]
-        public nint* Name;
+        public char* Name;
 
         [NativeName("Type", "LPCWSTR")]
         [NativeName("Type.Name", "LPCWSTR")]
         [NativeName("Name", "ExportToRename")]
-        public nint* ExportToRename;
+        public char* ExportToRename;
 
         [NativeName("Type", "D3D12_EXPORT_FLAGS")]
         [NativeName("Type.Name", "D3D12_EXPORT_FLAGS")]

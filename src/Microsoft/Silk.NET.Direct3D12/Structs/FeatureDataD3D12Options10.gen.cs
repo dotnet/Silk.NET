@@ -21,8 +21,8 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataD3D12Options10
         (
-            bool? variableRateShadingSumCombinerSupported = null,
-            bool? meshShaderPerPrimitiveShadingRateSupported = null
+            int? variableRateShadingSumCombinerSupported = null,
+            int? meshShaderPerPrimitiveShadingRateSupported = null
         ) : this()
         {
             if (variableRateShadingSumCombinerSupported is not null)
@@ -40,11 +40,11 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "VariableRateShadingSumCombinerSupported")]
-        public bool VariableRateShadingSumCombinerSupported;
+        public int VariableRateShadingSumCombinerSupported;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "MeshShaderPerPrimitiveShadingRateSupported")]
-        public bool MeshShaderPerPrimitiveShadingRateSupported;
+        public int MeshShaderPerPrimitiveShadingRateSupported;
     }
 }

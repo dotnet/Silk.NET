@@ -85,44 +85,66 @@ public unsafe static class D3D12StateObjectPropertiesVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void* GetShaderIdentifier(this ComPtr<ID3D12StateObjectProperties> thisVtbl, [Flow(FlowDirection.In)] nint* pExportName)
+    public static unsafe void* GetShaderIdentifier(this ComPtr<ID3D12StateObjectProperties> thisVtbl, [Flow(FlowDirection.In)] char* pExportName)
     {
         var @this = thisVtbl.Handle;
         void* ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12StateObjectProperties*, nint*, void*>)@this->LpVtbl[3])(@this, pExportName);
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12StateObjectProperties*, char*, void*>)@this->LpVtbl[3])(@this, pExportName);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void* GetShaderIdentifier(this ComPtr<ID3D12StateObjectProperties> thisVtbl, [Flow(FlowDirection.In)] in nint pExportName)
+    public static unsafe void* GetShaderIdentifier(this ComPtr<ID3D12StateObjectProperties> thisVtbl, [Flow(FlowDirection.In)] in char pExportName)
     {
         var @this = thisVtbl.Handle;
         void* ret = default;
-        fixed (nint* pExportNamePtr = &pExportName)
+        fixed (char* pExportNamePtr = &pExportName)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12StateObjectProperties*, nint*, void*>)@this->LpVtbl[3])(@this, pExportNamePtr);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12StateObjectProperties*, char*, void*>)@this->LpVtbl[3])(@this, pExportNamePtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ulong GetShaderStackSize(this ComPtr<ID3D12StateObjectProperties> thisVtbl, [Flow(FlowDirection.In)] nint* pExportName)
+    public static unsafe void* GetShaderIdentifier(this ComPtr<ID3D12StateObjectProperties> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pExportName)
     {
         var @this = thisVtbl.Handle;
-        ulong ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12StateObjectProperties*, nint*, ulong>)@this->LpVtbl[4])(@this, pExportName);
+        void* ret = default;
+        var pExportNamePtr = (byte*) SilkMarshal.StringToPtr(pExportName, NativeStringEncoding.LPWStr);
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12StateObjectProperties*, byte*, void*>)@this->LpVtbl[3])(@this, pExportNamePtr);
+        SilkMarshal.Free((nint)pExportNamePtr);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static ulong GetShaderStackSize(this ComPtr<ID3D12StateObjectProperties> thisVtbl, [Flow(FlowDirection.In)] in nint pExportName)
+    public static unsafe ulong GetShaderStackSize(this ComPtr<ID3D12StateObjectProperties> thisVtbl, [Flow(FlowDirection.In)] char* pExportName)
     {
         var @this = thisVtbl.Handle;
         ulong ret = default;
-        fixed (nint* pExportNamePtr = &pExportName)
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12StateObjectProperties*, char*, ulong>)@this->LpVtbl[4])(@this, pExportName);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ulong GetShaderStackSize(this ComPtr<ID3D12StateObjectProperties> thisVtbl, [Flow(FlowDirection.In)] in char pExportName)
+    {
+        var @this = thisVtbl.Handle;
+        ulong ret = default;
+        fixed (char* pExportNamePtr = &pExportName)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12StateObjectProperties*, nint*, ulong>)@this->LpVtbl[4])(@this, pExportNamePtr);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12StateObjectProperties*, char*, ulong>)@this->LpVtbl[4])(@this, pExportNamePtr);
         }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ulong GetShaderStackSize(this ComPtr<ID3D12StateObjectProperties> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pExportName)
+    {
+        var @this = thisVtbl.Handle;
+        ulong ret = default;
+        var pExportNamePtr = (byte*) SilkMarshal.StringToPtr(pExportName, NativeStringEncoding.LPWStr);
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12StateObjectProperties*, byte*, ulong>)@this->LpVtbl[4])(@this, pExportNamePtr);
+        SilkMarshal.Free((nint)pExportNamePtr);
         return ret;
     }
 
@@ -168,7 +190,7 @@ public unsafe static class D3D12StateObjectPropertiesVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void* GetShaderIdentifier(this ComPtr<ID3D12StateObjectProperties> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<nint> pExportName)
+    public static unsafe void* GetShaderIdentifier(this ComPtr<ID3D12StateObjectProperties> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> pExportName)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -176,7 +198,7 @@ public unsafe static class D3D12StateObjectPropertiesVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ulong GetShaderStackSize(this ComPtr<ID3D12StateObjectProperties> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<nint> pExportName)
+    public static ulong GetShaderStackSize(this ComPtr<ID3D12StateObjectProperties> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> pExportName)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

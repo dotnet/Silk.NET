@@ -28,7 +28,7 @@ namespace Silk.NET.DXVA
             uint? colorSpace = null,
             uint? outputFrame = null,
             uint? streamCount = null,
-            bool? enter = null
+            int? enter = null
         ) : this()
         {
             if (pObject is not null)
@@ -111,6 +111,6 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "Enter")]
-        public bool Enter;
+        public int Enter;
     }
 }

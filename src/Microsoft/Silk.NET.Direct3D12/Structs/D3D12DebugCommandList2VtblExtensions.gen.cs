@@ -85,22 +85,22 @@ public unsafe static class D3D12DebugCommandList2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe bool AssertResourceState(this ComPtr<ID3D12DebugCommandList2> thisVtbl, ID3D12Resource* pResource, uint Subresource, uint State)
+    public static unsafe int AssertResourceState(this ComPtr<ID3D12DebugCommandList2> thisVtbl, ID3D12Resource* pResource, uint Subresource, uint State)
     {
         var @this = thisVtbl.Handle;
-        bool ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12DebugCommandList2*, ID3D12Resource*, uint, uint, bool>)@this->LpVtbl[3])(@this, pResource, Subresource, State);
+        int ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12DebugCommandList2*, ID3D12Resource*, uint, uint, int>)@this->LpVtbl[3])(@this, pResource, Subresource, State);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static bool AssertResourceState(this ComPtr<ID3D12DebugCommandList2> thisVtbl, ref ID3D12Resource pResource, uint Subresource, uint State)
+    public static int AssertResourceState(this ComPtr<ID3D12DebugCommandList2> thisVtbl, ref ID3D12Resource pResource, uint Subresource, uint State)
     {
         var @this = thisVtbl.Handle;
-        bool ret = default;
+        int ret = default;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12DebugCommandList2*, ID3D12Resource*, uint, uint, bool>)@this->LpVtbl[3])(@this, pResourcePtr, Subresource, State);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12DebugCommandList2*, ID3D12Resource*, uint, uint, int>)@this->LpVtbl[3])(@this, pResourcePtr, Subresource, State);
         }
         return ret;
     }
@@ -191,7 +191,7 @@ public unsafe static class D3D12DebugCommandList2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static bool AssertResourceState<TI0>(this ComPtr<ID3D12DebugCommandList2> thisVtbl, ComPtr<TI0> pResource, uint Subresource, uint State) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static int AssertResourceState<TI0>(this ComPtr<ID3D12DebugCommandList2> thisVtbl, ComPtr<TI0> pResource, uint Subresource, uint State) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -199,7 +199,7 @@ public unsafe static class D3D12DebugCommandList2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static bool AssertResourceState(this ComPtr<ID3D12DebugCommandList2> thisVtbl, Span<ID3D12Resource> pResource, uint Subresource, uint State)
+    public static int AssertResourceState(this ComPtr<ID3D12DebugCommandList2> thisVtbl, Span<ID3D12Resource> pResource, uint Subresource, uint State)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

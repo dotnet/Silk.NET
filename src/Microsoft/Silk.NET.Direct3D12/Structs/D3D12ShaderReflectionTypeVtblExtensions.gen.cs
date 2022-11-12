@@ -49,7 +49,28 @@ public unsafe static class D3D12ShaderReflectionTypeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ID3D12ShaderReflectionType* GetMemberTypeByName(this ComPtr<ID3D12ShaderReflectionType> thisVtbl, [Flow(FlowDirection.In)] string* Name)
+    public static unsafe ID3D12ShaderReflectionType* GetMemberTypeByName(this ComPtr<ID3D12ShaderReflectionType> thisVtbl, [Flow(FlowDirection.In)] byte* Name)
+    {
+        var @this = thisVtbl.Handle;
+        ID3D12ShaderReflectionType* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12ShaderReflectionType*, byte*, ID3D12ShaderReflectionType*>)@this->LpVtbl[2])(@this, Name);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ID3D12ShaderReflectionType* GetMemberTypeByName(this ComPtr<ID3D12ShaderReflectionType> thisVtbl, [Flow(FlowDirection.In)] in byte Name)
+    {
+        var @this = thisVtbl.Handle;
+        ID3D12ShaderReflectionType* ret = default;
+        fixed (byte* NamePtr = &Name)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12ShaderReflectionType*, byte*, ID3D12ShaderReflectionType*>)@this->LpVtbl[2])(@this, NamePtr);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ID3D12ShaderReflectionType* GetMemberTypeByName(this ComPtr<ID3D12ShaderReflectionType> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string Name)
     {
         var @this = thisVtbl.Handle;
         ID3D12ShaderReflectionType* ret = default;
@@ -60,23 +81,21 @@ public unsafe static class D3D12ShaderReflectionTypeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ID3D12ShaderReflectionType* GetMemberTypeByName(this ComPtr<ID3D12ShaderReflectionType> thisVtbl, [Flow(FlowDirection.In)] in string Name)
+    public static unsafe byte* GetMemberTypeName(this ComPtr<ID3D12ShaderReflectionType> thisVtbl, uint Index)
     {
         var @this = thisVtbl.Handle;
-        ID3D12ShaderReflectionType* ret = default;
-        var NamePtr = (byte*) SilkMarshal.StringToPtr(Name, NativeStringEncoding.LPStr);
-        var NamePp = &NamePtr;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12ShaderReflectionType*, byte**, ID3D12ShaderReflectionType*>)@this->LpVtbl[2])(@this, NamePp);
-        SilkMarshal.Free((nint)NamePtr);
+        byte* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12ShaderReflectionType*, uint, byte*>)@this->LpVtbl[3])(@this, Index);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe string* GetMemberTypeName(this ComPtr<ID3D12ShaderReflectionType> thisVtbl, uint Index)
+    [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)]
+    public static string GetMemberTypeNameS(this ComPtr<ID3D12ShaderReflectionType> thisVtbl, uint Index)
     {
         var @this = thisVtbl.Handle;
-        string* ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12ShaderReflectionType*, uint, string*>)@this->LpVtbl[3])(@this, Index);
+        string ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12ShaderReflectionType*, uint, string>)@this->LpVtbl[3])(@this, Index);
         return ret;
     }
 
@@ -188,7 +207,7 @@ public unsafe static class D3D12ShaderReflectionTypeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ID3D12ShaderReflectionType* GetMemberTypeByName(this ComPtr<ID3D12ShaderReflectionType> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<string> Name)
+    public static unsafe ID3D12ShaderReflectionType* GetMemberTypeByName(this ComPtr<ID3D12ShaderReflectionType> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<byte> Name)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

@@ -289,23 +289,34 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] nint* Name)
+    public static unsafe int SetName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] char* Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, nint*, int>)@this->LpVtbl[6])(@this, Name);
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, char*, int>)@this->LpVtbl[6])(@this, Name);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in nint Name)
+    public static int SetName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in char Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (nint* NamePtr = &Name)
+        fixed (char* NamePtr = &Name)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, nint*, int>)@this->LpVtbl[6])(@this, NamePtr);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, char*, int>)@this->LpVtbl[6])(@this, NamePtr);
         }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        var NamePtr = (byte*) SilkMarshal.StringToPtr(Name, NativeStringEncoding.LPWStr);
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, byte*, int>)@this->LpVtbl[6])(@this, NamePtr);
+        SilkMarshal.Free((nint)NamePtr);
         return ret;
     }
 
@@ -3078,107 +3089,132 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, int Access, [Flow(FlowDirection.In)] nint* Name, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In)] char* Name, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, int, nint*, void**, int>)@this->LpVtbl[31])(@this, pObject, pAttributes, Access, Name, pHandle);
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)@this->LpVtbl[31])(@this, pObject, pAttributes, Access, Name, pHandle);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, int Access, [Flow(FlowDirection.In)] nint* Name, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In)] char* Name, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** pHandlePtr = &pHandle)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, int, nint*, void**, int>)@this->LpVtbl[31])(@this, pObject, pAttributes, Access, Name, pHandlePtr);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)@this->LpVtbl[31])(@this, pObject, pAttributes, Access, Name, pHandlePtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, int Access, [Flow(FlowDirection.In)] in nint Name, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In)] in char Name, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (nint* NamePtr = &Name)
+        fixed (char* NamePtr = &Name)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, int, nint*, void**, int>)@this->LpVtbl[31])(@this, pObject, pAttributes, Access, NamePtr, pHandle);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)@this->LpVtbl[31])(@this, pObject, pAttributes, Access, NamePtr, pHandle);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, int Access, [Flow(FlowDirection.In)] in nint Name, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In)] in char Name, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (nint* NamePtr = &Name)
-        {
-            fixed (void** pHandlePtr = &pHandle)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, int, nint*, void**, int>)@this->LpVtbl[31])(@this, pObject, pAttributes, Access, NamePtr, pHandlePtr);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, int Access, [Flow(FlowDirection.In)] nint* Name, void** pHandle)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, int, nint*, void**, int>)@this->LpVtbl[31])(@this, pObject, pAttributesPtr, Access, Name, pHandle);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, int Access, [Flow(FlowDirection.In)] nint* Name, ref void* pHandle)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
+        fixed (char* NamePtr = &Name)
         {
             fixed (void** pHandlePtr = &pHandle)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, int, nint*, void**, int>)@this->LpVtbl[31])(@this, pObject, pAttributesPtr, Access, Name, pHandlePtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)@this->LpVtbl[31])(@this, pObject, pAttributes, Access, NamePtr, pHandlePtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, int Access, [Flow(FlowDirection.In)] in nint Name, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, void** pHandle)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        var NamePtr = (byte*) SilkMarshal.StringToPtr(Name, NativeStringEncoding.LPWStr);
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)@this->LpVtbl[31])(@this, pObject, pAttributes, Access, NamePtr, pHandle);
+        SilkMarshal.Free((nint)NamePtr);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, ref void* pHandle)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        var NamePtr = (byte*) SilkMarshal.StringToPtr(Name, NativeStringEncoding.LPWStr);
+        fixed (void** pHandlePtr = &pHandle)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)@this->LpVtbl[31])(@this, pObject, pAttributes, Access, NamePtr, pHandlePtr);
+        }
+        SilkMarshal.Free((nint)NamePtr);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(FlowDirection.In)] char* Name, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
         {
-            fixed (nint* NamePtr = &Name)
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)@this->LpVtbl[31])(@this, pObject, pAttributesPtr, Access, Name, pHandle);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(FlowDirection.In)] char* Name, ref void* pHandle)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
+        {
+            fixed (void** pHandlePtr = &pHandle)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, int, nint*, void**, int>)@this->LpVtbl[31])(@this, pObject, pAttributesPtr, Access, NamePtr, pHandle);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)@this->LpVtbl[31])(@this, pObject, pAttributesPtr, Access, Name, pHandlePtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, int Access, [Flow(FlowDirection.In)] in nint Name, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(FlowDirection.In)] in char Name, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
         {
-            fixed (nint* NamePtr = &Name)
+            fixed (char* NamePtr = &Name)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)@this->LpVtbl[31])(@this, pObject, pAttributesPtr, Access, NamePtr, pHandle);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(FlowDirection.In)] in char Name, ref void* pHandle)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
+        {
+            fixed (char* NamePtr = &Name)
             {
                 fixed (void** pHandlePtr = &pHandle)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, int, nint*, void**, int>)@this->LpVtbl[31])(@this, pObject, pAttributesPtr, Access, NamePtr, pHandlePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)@this->LpVtbl[31])(@this, pObject, pAttributesPtr, Access, NamePtr, pHandlePtr);
                 }
             }
         }
@@ -3186,19 +3222,50 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12DeviceChild pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, int Access, [Flow(FlowDirection.In)] nint* Name, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (ID3D12DeviceChild* pObjectPtr = &pObject)
+        fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, int, nint*, void**, int>)@this->LpVtbl[31])(@this, pObjectPtr, pAttributes, Access, Name, pHandle);
+        var NamePtr = (byte*) SilkMarshal.StringToPtr(Name, NativeStringEncoding.LPWStr);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)@this->LpVtbl[31])(@this, pObject, pAttributesPtr, Access, NamePtr, pHandle);
+        SilkMarshal.Free((nint)NamePtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12DeviceChild pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, int Access, [Flow(FlowDirection.In)] nint* Name, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, ref void* pHandle)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
+        {
+        var NamePtr = (byte*) SilkMarshal.StringToPtr(Name, NativeStringEncoding.LPWStr);
+            fixed (void** pHandlePtr = &pHandle)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)@this->LpVtbl[31])(@this, pObject, pAttributesPtr, Access, NamePtr, pHandlePtr);
+            }
+        SilkMarshal.Free((nint)NamePtr);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12DeviceChild pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In)] char* Name, void** pHandle)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (ID3D12DeviceChild* pObjectPtr = &pObject)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)@this->LpVtbl[31])(@this, pObjectPtr, pAttributes, Access, Name, pHandle);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12DeviceChild pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In)] char* Name, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3206,72 +3273,39 @@ public unsafe static class D3D12Device7VtblExtensions
         {
             fixed (void** pHandlePtr = &pHandle)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, int, nint*, void**, int>)@this->LpVtbl[31])(@this, pObjectPtr, pAttributes, Access, Name, pHandlePtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)@this->LpVtbl[31])(@this, pObjectPtr, pAttributes, Access, Name, pHandlePtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12DeviceChild pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, int Access, [Flow(FlowDirection.In)] in nint Name, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12DeviceChild pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In)] in char Name, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D12DeviceChild* pObjectPtr = &pObject)
         {
-            fixed (nint* NamePtr = &Name)
+            fixed (char* NamePtr = &Name)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, int, nint*, void**, int>)@this->LpVtbl[31])(@this, pObjectPtr, pAttributes, Access, NamePtr, pHandle);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)@this->LpVtbl[31])(@this, pObjectPtr, pAttributes, Access, NamePtr, pHandle);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12DeviceChild pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, int Access, [Flow(FlowDirection.In)] in nint Name, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12DeviceChild pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In)] in char Name, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D12DeviceChild* pObjectPtr = &pObject)
         {
-            fixed (nint* NamePtr = &Name)
-            {
-                fixed (void** pHandlePtr = &pHandle)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, int, nint*, void**, int>)@this->LpVtbl[31])(@this, pObjectPtr, pAttributes, Access, NamePtr, pHandlePtr);
-                }
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12DeviceChild pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, int Access, [Flow(FlowDirection.In)] nint* Name, void** pHandle)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (ID3D12DeviceChild* pObjectPtr = &pObject)
-        {
-            fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, int, nint*, void**, int>)@this->LpVtbl[31])(@this, pObjectPtr, pAttributesPtr, Access, Name, pHandle);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12DeviceChild pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, int Access, [Flow(FlowDirection.In)] nint* Name, ref void* pHandle)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (ID3D12DeviceChild* pObjectPtr = &pObject)
-        {
-            fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
+            fixed (char* NamePtr = &Name)
             {
                 fixed (void** pHandlePtr = &pHandle)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, int, nint*, void**, int>)@this->LpVtbl[31])(@this, pObjectPtr, pAttributesPtr, Access, Name, pHandlePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)@this->LpVtbl[31])(@this, pObjectPtr, pAttributes, Access, NamePtr, pHandlePtr);
                 }
             }
         }
@@ -3279,7 +3313,38 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12DeviceChild pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, int Access, [Flow(FlowDirection.In)] in nint Name, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12DeviceChild pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, void** pHandle)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (ID3D12DeviceChild* pObjectPtr = &pObject)
+        {
+        var NamePtr = (byte*) SilkMarshal.StringToPtr(Name, NativeStringEncoding.LPWStr);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)@this->LpVtbl[31])(@this, pObjectPtr, pAttributes, Access, NamePtr, pHandle);
+        SilkMarshal.Free((nint)NamePtr);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12DeviceChild pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, ref void* pHandle)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (ID3D12DeviceChild* pObjectPtr = &pObject)
+        {
+        var NamePtr = (byte*) SilkMarshal.StringToPtr(Name, NativeStringEncoding.LPWStr);
+            fixed (void** pHandlePtr = &pHandle)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)@this->LpVtbl[31])(@this, pObjectPtr, pAttributes, Access, NamePtr, pHandlePtr);
+            }
+        SilkMarshal.Free((nint)NamePtr);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12DeviceChild pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(FlowDirection.In)] char* Name, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3287,9 +3352,24 @@ public unsafe static class D3D12Device7VtblExtensions
         {
             fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
             {
-                fixed (nint* NamePtr = &Name)
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)@this->LpVtbl[31])(@this, pObjectPtr, pAttributesPtr, Access, Name, pHandle);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12DeviceChild pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(FlowDirection.In)] char* Name, ref void* pHandle)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (ID3D12DeviceChild* pObjectPtr = &pObject)
+        {
+            fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
+            {
+                fixed (void** pHandlePtr = &pHandle)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, int, nint*, void**, int>)@this->LpVtbl[31])(@this, pObjectPtr, pAttributesPtr, Access, NamePtr, pHandle);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)@this->LpVtbl[31])(@this, pObjectPtr, pAttributesPtr, Access, Name, pHandlePtr);
                 }
             }
         }
@@ -3297,7 +3377,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12DeviceChild pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, int Access, [Flow(FlowDirection.In)] in nint Name, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12DeviceChild pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(FlowDirection.In)] in char Name, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3305,11 +3385,29 @@ public unsafe static class D3D12Device7VtblExtensions
         {
             fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
             {
-                fixed (nint* NamePtr = &Name)
+                fixed (char* NamePtr = &Name)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)@this->LpVtbl[31])(@this, pObjectPtr, pAttributesPtr, Access, NamePtr, pHandle);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12DeviceChild pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(FlowDirection.In)] in char Name, ref void* pHandle)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (ID3D12DeviceChild* pObjectPtr = &pObject)
+        {
+            fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
+            {
+                fixed (char* NamePtr = &Name)
                 {
                     fixed (void** pHandlePtr = &pHandle)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, int, nint*, void**, int>)@this->LpVtbl[31])(@this, pObjectPtr, pAttributesPtr, Access, NamePtr, pHandlePtr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)@this->LpVtbl[31])(@this, pObjectPtr, pAttributesPtr, Access, NamePtr, pHandlePtr);
                     }
                 }
             }
@@ -3318,40 +3416,77 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, nint* NTHandle, Guid* riid, void** ppvObj)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12DeviceChild pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, nint*, Guid*, void**, int>)@this->LpVtbl[32])(@this, NTHandle, riid, ppvObj);
+        fixed (ID3D12DeviceChild* pObjectPtr = &pObject)
+        {
+            fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
+            {
+        var NamePtr = (byte*) SilkMarshal.StringToPtr(Name, NativeStringEncoding.LPWStr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)@this->LpVtbl[31])(@this, pObjectPtr, pAttributesPtr, Access, NamePtr, pHandle);
+        SilkMarshal.Free((nint)NamePtr);
+            }
+        }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, nint* NTHandle, Guid* riid, ref void* ppvObj)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref ID3D12DeviceChild pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, ref void* pHandle)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (ID3D12DeviceChild* pObjectPtr = &pObject)
+        {
+            fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
+            {
+        var NamePtr = (byte*) SilkMarshal.StringToPtr(Name, NativeStringEncoding.LPWStr);
+                fixed (void** pHandlePtr = &pHandle)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)@this->LpVtbl[31])(@this, pObjectPtr, pAttributesPtr, Access, NamePtr, pHandlePtr);
+                }
+        SilkMarshal.Free((nint)NamePtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int OpenSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, void* NTHandle, Guid* riid, void** ppvObj)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, void*, Guid*, void**, int>)@this->LpVtbl[32])(@this, NTHandle, riid, ppvObj);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int OpenSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, void* NTHandle, Guid* riid, ref void* ppvObj)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppvObjPtr = &ppvObj)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, nint*, Guid*, void**, int>)@this->LpVtbl[32])(@this, NTHandle, riid, ppvObjPtr);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, void*, Guid*, void**, int>)@this->LpVtbl[32])(@this, NTHandle, riid, ppvObjPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, nint* NTHandle, ref Guid riid, void** ppvObj)
+    public static unsafe int OpenSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, void* NTHandle, ref Guid riid, void** ppvObj)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, nint*, Guid*, void**, int>)@this->LpVtbl[32])(@this, NTHandle, riidPtr, ppvObj);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, void*, Guid*, void**, int>)@this->LpVtbl[32])(@this, NTHandle, riidPtr, ppvObj);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, nint* NTHandle, ref Guid riid, ref void* ppvObj)
+    public static unsafe int OpenSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, void* NTHandle, ref Guid riid, ref void* ppvObj)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3359,66 +3494,66 @@ public unsafe static class D3D12Device7VtblExtensions
         {
             fixed (void** ppvObjPtr = &ppvObj)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, nint*, Guid*, void**, int>)@this->LpVtbl[32])(@this, NTHandle, riidPtr, ppvObjPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, void*, Guid*, void**, int>)@this->LpVtbl[32])(@this, NTHandle, riidPtr, ppvObjPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref nint NTHandle, Guid* riid, void** ppvObj)
+    public static unsafe int OpenSharedHandle<T0>(this ComPtr<ID3D12Device7> thisVtbl, ref T0 NTHandle, Guid* riid, void** ppvObj) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (nint* NTHandlePtr = &NTHandle)
+        fixed (void* NTHandlePtr = &NTHandle)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, nint*, Guid*, void**, int>)@this->LpVtbl[32])(@this, NTHandlePtr, riid, ppvObj);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, void*, Guid*, void**, int>)@this->LpVtbl[32])(@this, NTHandlePtr, riid, ppvObj);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref nint NTHandle, Guid* riid, ref void* ppvObj)
+    public static unsafe int OpenSharedHandle<T0>(this ComPtr<ID3D12Device7> thisVtbl, ref T0 NTHandle, Guid* riid, ref void* ppvObj) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (nint* NTHandlePtr = &NTHandle)
+        fixed (void* NTHandlePtr = &NTHandle)
         {
             fixed (void** ppvObjPtr = &ppvObj)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, nint*, Guid*, void**, int>)@this->LpVtbl[32])(@this, NTHandlePtr, riid, ppvObjPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, void*, Guid*, void**, int>)@this->LpVtbl[32])(@this, NTHandlePtr, riid, ppvObjPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref nint NTHandle, ref Guid riid, void** ppvObj)
+    public static unsafe int OpenSharedHandle<T0>(this ComPtr<ID3D12Device7> thisVtbl, ref T0 NTHandle, ref Guid riid, void** ppvObj) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (nint* NTHandlePtr = &NTHandle)
+        fixed (void* NTHandlePtr = &NTHandle)
         {
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, nint*, Guid*, void**, int>)@this->LpVtbl[32])(@this, NTHandlePtr, riidPtr, ppvObj);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, void*, Guid*, void**, int>)@this->LpVtbl[32])(@this, NTHandlePtr, riidPtr, ppvObj);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ref nint NTHandle, ref Guid riid, ref void* ppvObj)
+    public static unsafe int OpenSharedHandle<T0>(this ComPtr<ID3D12Device7> thisVtbl, ref T0 NTHandle, ref Guid riid, ref void* ppvObj) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (nint* NTHandlePtr = &NTHandle)
+        fixed (void* NTHandlePtr = &NTHandle)
         {
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppvObjPtr = &ppvObj)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, nint*, Guid*, void**, int>)@this->LpVtbl[32])(@this, NTHandlePtr, riidPtr, ppvObjPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, void*, Guid*, void**, int>)@this->LpVtbl[32])(@this, NTHandlePtr, riidPtr, ppvObjPtr);
                 }
             }
         }
@@ -3426,50 +3561,75 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedHandleByName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] nint* Name, int Access, void** pNTHandle)
+    public static unsafe int OpenSharedHandleByName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] char* Name, uint Access, void** pNTHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, nint*, int, void**, int>)@this->LpVtbl[33])(@this, Name, Access, pNTHandle);
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, char*, uint, void**, int>)@this->LpVtbl[33])(@this, Name, Access, pNTHandle);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedHandleByName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] nint* Name, int Access, ref void* pNTHandle)
+    public static unsafe int OpenSharedHandleByName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] char* Name, uint Access, ref void* pNTHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** pNTHandlePtr = &pNTHandle)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, nint*, int, void**, int>)@this->LpVtbl[33])(@this, Name, Access, pNTHandlePtr);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, char*, uint, void**, int>)@this->LpVtbl[33])(@this, Name, Access, pNTHandlePtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedHandleByName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in nint Name, int Access, void** pNTHandle)
+    public static unsafe int OpenSharedHandleByName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in char Name, uint Access, void** pNTHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (nint* NamePtr = &Name)
+        fixed (char* NamePtr = &Name)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, nint*, int, void**, int>)@this->LpVtbl[33])(@this, NamePtr, Access, pNTHandle);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, char*, uint, void**, int>)@this->LpVtbl[33])(@this, NamePtr, Access, pNTHandle);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedHandleByName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in nint Name, int Access, ref void* pNTHandle)
+    public static unsafe int OpenSharedHandleByName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in char Name, uint Access, ref void* pNTHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (nint* NamePtr = &Name)
+        fixed (char* NamePtr = &Name)
         {
             fixed (void** pNTHandlePtr = &pNTHandle)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, nint*, int, void**, int>)@this->LpVtbl[33])(@this, NamePtr, Access, pNTHandlePtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, char*, uint, void**, int>)@this->LpVtbl[33])(@this, NamePtr, Access, pNTHandlePtr);
             }
         }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int OpenSharedHandleByName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, uint Access, void** pNTHandle)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        var NamePtr = (byte*) SilkMarshal.StringToPtr(Name, NativeStringEncoding.LPWStr);
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, byte*, uint, void**, int>)@this->LpVtbl[33])(@this, NamePtr, Access, pNTHandle);
+        SilkMarshal.Free((nint)NamePtr);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int OpenSharedHandleByName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, uint Access, ref void* pNTHandle)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        var NamePtr = (byte*) SilkMarshal.StringToPtr(Name, NativeStringEncoding.LPWStr);
+        fixed (void** pNTHandlePtr = &pNTHandle)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, byte*, uint, void**, int>)@this->LpVtbl[33])(@this, NamePtr, Access, pNTHandlePtr);
+        }
+        SilkMarshal.Free((nint)NamePtr);
         return ret;
     }
 
@@ -4145,11 +4305,11 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetStablePowerState(this ComPtr<ID3D12Device7> thisVtbl, bool Enable)
+    public static int SetStablePowerState(this ComPtr<ID3D12Device7> thisVtbl, int Enable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, bool, int>)@this->LpVtbl[40])(@this, Enable);
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, int, int>)@this->LpVtbl[40])(@this, Enable);
         return ret;
     }
 
@@ -5535,82 +5695,82 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetEventOnMultipleFenceCompletion(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ID3D12Fence** ppFences, [Flow(FlowDirection.In)] ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, nint* hEvent)
+    public static unsafe int SetEventOnMultipleFenceCompletion(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ID3D12Fence** ppFences, [Flow(FlowDirection.In)] ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, void* hEvent)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12Fence**, ulong*, uint, MultipleFenceWaitFlags, nint*, int>)@this->LpVtbl[45])(@this, ppFences, pFenceValues, NumFences, Flags, hEvent);
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12Fence**, ulong*, uint, MultipleFenceWaitFlags, void*, int>)@this->LpVtbl[45])(@this, ppFences, pFenceValues, NumFences, Flags, hEvent);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetEventOnMultipleFenceCompletion(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ID3D12Fence** ppFences, [Flow(FlowDirection.In)] ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, ref nint hEvent)
+    public static unsafe int SetEventOnMultipleFenceCompletion<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ID3D12Fence** ppFences, [Flow(FlowDirection.In)] ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, ref T0 hEvent) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (nint* hEventPtr = &hEvent)
+        fixed (void* hEventPtr = &hEvent)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12Fence**, ulong*, uint, MultipleFenceWaitFlags, nint*, int>)@this->LpVtbl[45])(@this, ppFences, pFenceValues, NumFences, Flags, hEventPtr);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12Fence**, ulong*, uint, MultipleFenceWaitFlags, void*, int>)@this->LpVtbl[45])(@this, ppFences, pFenceValues, NumFences, Flags, hEventPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetEventOnMultipleFenceCompletion(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ID3D12Fence** ppFences, [Flow(FlowDirection.In)] in ulong pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, nint* hEvent)
+    public static unsafe int SetEventOnMultipleFenceCompletion(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ID3D12Fence** ppFences, [Flow(FlowDirection.In)] in ulong pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, void* hEvent)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ulong* pFenceValuesPtr = &pFenceValues)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12Fence**, ulong*, uint, MultipleFenceWaitFlags, nint*, int>)@this->LpVtbl[45])(@this, ppFences, pFenceValuesPtr, NumFences, Flags, hEvent);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12Fence**, ulong*, uint, MultipleFenceWaitFlags, void*, int>)@this->LpVtbl[45])(@this, ppFences, pFenceValuesPtr, NumFences, Flags, hEvent);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetEventOnMultipleFenceCompletion(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ID3D12Fence** ppFences, [Flow(FlowDirection.In)] in ulong pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, ref nint hEvent)
+    public static unsafe int SetEventOnMultipleFenceCompletion<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ID3D12Fence** ppFences, [Flow(FlowDirection.In)] in ulong pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, ref T0 hEvent) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ulong* pFenceValuesPtr = &pFenceValues)
         {
-            fixed (nint* hEventPtr = &hEvent)
+            fixed (void* hEventPtr = &hEvent)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12Fence**, ulong*, uint, MultipleFenceWaitFlags, nint*, int>)@this->LpVtbl[45])(@this, ppFences, pFenceValuesPtr, NumFences, Flags, hEventPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12Fence**, ulong*, uint, MultipleFenceWaitFlags, void*, int>)@this->LpVtbl[45])(@this, ppFences, pFenceValuesPtr, NumFences, Flags, hEventPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetEventOnMultipleFenceCompletion(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ID3D12Fence* ppFences, [Flow(FlowDirection.In)] ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, nint* hEvent)
+    public static unsafe int SetEventOnMultipleFenceCompletion(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ID3D12Fence* ppFences, [Flow(FlowDirection.In)] ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, void* hEvent)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D12Fence** ppFencesPtr = &ppFences)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12Fence**, ulong*, uint, MultipleFenceWaitFlags, nint*, int>)@this->LpVtbl[45])(@this, ppFencesPtr, pFenceValues, NumFences, Flags, hEvent);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12Fence**, ulong*, uint, MultipleFenceWaitFlags, void*, int>)@this->LpVtbl[45])(@this, ppFencesPtr, pFenceValues, NumFences, Flags, hEvent);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetEventOnMultipleFenceCompletion(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ID3D12Fence* ppFences, [Flow(FlowDirection.In)] ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, ref nint hEvent)
+    public static unsafe int SetEventOnMultipleFenceCompletion<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ID3D12Fence* ppFences, [Flow(FlowDirection.In)] ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, ref T0 hEvent) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D12Fence** ppFencesPtr = &ppFences)
         {
-            fixed (nint* hEventPtr = &hEvent)
+            fixed (void* hEventPtr = &hEvent)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12Fence**, ulong*, uint, MultipleFenceWaitFlags, nint*, int>)@this->LpVtbl[45])(@this, ppFencesPtr, pFenceValues, NumFences, Flags, hEventPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12Fence**, ulong*, uint, MultipleFenceWaitFlags, void*, int>)@this->LpVtbl[45])(@this, ppFencesPtr, pFenceValues, NumFences, Flags, hEventPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetEventOnMultipleFenceCompletion(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ID3D12Fence* ppFences, [Flow(FlowDirection.In)] in ulong pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, nint* hEvent)
+    public static unsafe int SetEventOnMultipleFenceCompletion(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ID3D12Fence* ppFences, [Flow(FlowDirection.In)] in ulong pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, void* hEvent)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5618,14 +5778,14 @@ public unsafe static class D3D12Device7VtblExtensions
         {
             fixed (ulong* pFenceValuesPtr = &pFenceValues)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12Fence**, ulong*, uint, MultipleFenceWaitFlags, nint*, int>)@this->LpVtbl[45])(@this, ppFencesPtr, pFenceValuesPtr, NumFences, Flags, hEvent);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12Fence**, ulong*, uint, MultipleFenceWaitFlags, void*, int>)@this->LpVtbl[45])(@this, ppFencesPtr, pFenceValuesPtr, NumFences, Flags, hEvent);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetEventOnMultipleFenceCompletion(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ID3D12Fence* ppFences, [Flow(FlowDirection.In)] in ulong pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, ref nint hEvent)
+    public static unsafe int SetEventOnMultipleFenceCompletion<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ID3D12Fence* ppFences, [Flow(FlowDirection.In)] in ulong pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, ref T0 hEvent) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5633,9 +5793,9 @@ public unsafe static class D3D12Device7VtblExtensions
         {
             fixed (ulong* pFenceValuesPtr = &pFenceValues)
             {
-                fixed (nint* hEventPtr = &hEvent)
+                fixed (void* hEventPtr = &hEvent)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12Fence**, ulong*, uint, MultipleFenceWaitFlags, nint*, int>)@this->LpVtbl[45])(@this, ppFencesPtr, pFenceValuesPtr, NumFences, Flags, hEventPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, ID3D12Fence**, ulong*, uint, MultipleFenceWaitFlags, void*, int>)@this->LpVtbl[45])(@this, ppFencesPtr, pFenceValuesPtr, NumFences, Flags, hEventPtr);
                 }
             }
         }
@@ -5907,40 +6067,40 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenExistingHeapFromFileMapping(this ComPtr<ID3D12Device7> thisVtbl, nint* hFileMapping, Guid* riid, void** ppvHeap)
+    public static unsafe int OpenExistingHeapFromFileMapping(this ComPtr<ID3D12Device7> thisVtbl, void* hFileMapping, Guid* riid, void** ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, nint*, Guid*, void**, int>)@this->LpVtbl[49])(@this, hFileMapping, riid, ppvHeap);
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, void*, Guid*, void**, int>)@this->LpVtbl[49])(@this, hFileMapping, riid, ppvHeap);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenExistingHeapFromFileMapping(this ComPtr<ID3D12Device7> thisVtbl, nint* hFileMapping, Guid* riid, ref void* ppvHeap)
+    public static unsafe int OpenExistingHeapFromFileMapping(this ComPtr<ID3D12Device7> thisVtbl, void* hFileMapping, Guid* riid, ref void* ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppvHeapPtr = &ppvHeap)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, nint*, Guid*, void**, int>)@this->LpVtbl[49])(@this, hFileMapping, riid, ppvHeapPtr);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, void*, Guid*, void**, int>)@this->LpVtbl[49])(@this, hFileMapping, riid, ppvHeapPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenExistingHeapFromFileMapping(this ComPtr<ID3D12Device7> thisVtbl, nint* hFileMapping, ref Guid riid, void** ppvHeap)
+    public static unsafe int OpenExistingHeapFromFileMapping(this ComPtr<ID3D12Device7> thisVtbl, void* hFileMapping, ref Guid riid, void** ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, nint*, Guid*, void**, int>)@this->LpVtbl[49])(@this, hFileMapping, riidPtr, ppvHeap);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, void*, Guid*, void**, int>)@this->LpVtbl[49])(@this, hFileMapping, riidPtr, ppvHeap);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenExistingHeapFromFileMapping(this ComPtr<ID3D12Device7> thisVtbl, nint* hFileMapping, ref Guid riid, ref void* ppvHeap)
+    public static unsafe int OpenExistingHeapFromFileMapping(this ComPtr<ID3D12Device7> thisVtbl, void* hFileMapping, ref Guid riid, ref void* ppvHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5948,66 +6108,66 @@ public unsafe static class D3D12Device7VtblExtensions
         {
             fixed (void** ppvHeapPtr = &ppvHeap)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, nint*, Guid*, void**, int>)@this->LpVtbl[49])(@this, hFileMapping, riidPtr, ppvHeapPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, void*, Guid*, void**, int>)@this->LpVtbl[49])(@this, hFileMapping, riidPtr, ppvHeapPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenExistingHeapFromFileMapping(this ComPtr<ID3D12Device7> thisVtbl, ref nint hFileMapping, Guid* riid, void** ppvHeap)
+    public static unsafe int OpenExistingHeapFromFileMapping<T0>(this ComPtr<ID3D12Device7> thisVtbl, ref T0 hFileMapping, Guid* riid, void** ppvHeap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (nint* hFileMappingPtr = &hFileMapping)
+        fixed (void* hFileMappingPtr = &hFileMapping)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, nint*, Guid*, void**, int>)@this->LpVtbl[49])(@this, hFileMappingPtr, riid, ppvHeap);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, void*, Guid*, void**, int>)@this->LpVtbl[49])(@this, hFileMappingPtr, riid, ppvHeap);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenExistingHeapFromFileMapping(this ComPtr<ID3D12Device7> thisVtbl, ref nint hFileMapping, Guid* riid, ref void* ppvHeap)
+    public static unsafe int OpenExistingHeapFromFileMapping<T0>(this ComPtr<ID3D12Device7> thisVtbl, ref T0 hFileMapping, Guid* riid, ref void* ppvHeap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (nint* hFileMappingPtr = &hFileMapping)
+        fixed (void* hFileMappingPtr = &hFileMapping)
         {
             fixed (void** ppvHeapPtr = &ppvHeap)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, nint*, Guid*, void**, int>)@this->LpVtbl[49])(@this, hFileMappingPtr, riid, ppvHeapPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, void*, Guid*, void**, int>)@this->LpVtbl[49])(@this, hFileMappingPtr, riid, ppvHeapPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenExistingHeapFromFileMapping(this ComPtr<ID3D12Device7> thisVtbl, ref nint hFileMapping, ref Guid riid, void** ppvHeap)
+    public static unsafe int OpenExistingHeapFromFileMapping<T0>(this ComPtr<ID3D12Device7> thisVtbl, ref T0 hFileMapping, ref Guid riid, void** ppvHeap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (nint* hFileMappingPtr = &hFileMapping)
+        fixed (void* hFileMappingPtr = &hFileMapping)
         {
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, nint*, Guid*, void**, int>)@this->LpVtbl[49])(@this, hFileMappingPtr, riidPtr, ppvHeap);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, void*, Guid*, void**, int>)@this->LpVtbl[49])(@this, hFileMappingPtr, riidPtr, ppvHeap);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenExistingHeapFromFileMapping(this ComPtr<ID3D12Device7> thisVtbl, ref nint hFileMapping, ref Guid riid, ref void* ppvHeap)
+    public static unsafe int OpenExistingHeapFromFileMapping<T0>(this ComPtr<ID3D12Device7> thisVtbl, ref T0 hFileMapping, ref Guid riid, ref void* ppvHeap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (nint* hFileMappingPtr = &hFileMapping)
+        fixed (void* hFileMappingPtr = &hFileMapping)
         {
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppvHeapPtr = &ppvHeap)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, nint*, Guid*, void**, int>)@this->LpVtbl[49])(@this, hFileMappingPtr, riidPtr, ppvHeapPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, void*, Guid*, void**, int>)@this->LpVtbl[49])(@this, hFileMappingPtr, riidPtr, ppvHeapPtr);
                 }
             }
         }
@@ -9007,48 +9167,48 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetBackgroundProcessingMode(this ComPtr<ID3D12Device7> thisVtbl, BackgroundProcessingMode Mode, MeasurementsAction MeasurementsAction, nint* hEventToSignalUponCompletion, int* pbFurtherMeasurementsDesired)
+    public static unsafe int SetBackgroundProcessingMode(this ComPtr<ID3D12Device7> thisVtbl, BackgroundProcessingMode Mode, MeasurementsAction MeasurementsAction, void* hEventToSignalUponCompletion, int* pbFurtherMeasurementsDesired)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, BackgroundProcessingMode, MeasurementsAction, nint*, int*, int>)@this->LpVtbl[65])(@this, Mode, MeasurementsAction, hEventToSignalUponCompletion, pbFurtherMeasurementsDesired);
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, BackgroundProcessingMode, MeasurementsAction, void*, int*, int>)@this->LpVtbl[65])(@this, Mode, MeasurementsAction, hEventToSignalUponCompletion, pbFurtherMeasurementsDesired);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetBackgroundProcessingMode(this ComPtr<ID3D12Device7> thisVtbl, BackgroundProcessingMode Mode, MeasurementsAction MeasurementsAction, nint* hEventToSignalUponCompletion, ref int pbFurtherMeasurementsDesired)
+    public static unsafe int SetBackgroundProcessingMode(this ComPtr<ID3D12Device7> thisVtbl, BackgroundProcessingMode Mode, MeasurementsAction MeasurementsAction, void* hEventToSignalUponCompletion, ref int pbFurtherMeasurementsDesired)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (int* pbFurtherMeasurementsDesiredPtr = &pbFurtherMeasurementsDesired)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, BackgroundProcessingMode, MeasurementsAction, nint*, int*, int>)@this->LpVtbl[65])(@this, Mode, MeasurementsAction, hEventToSignalUponCompletion, pbFurtherMeasurementsDesiredPtr);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, BackgroundProcessingMode, MeasurementsAction, void*, int*, int>)@this->LpVtbl[65])(@this, Mode, MeasurementsAction, hEventToSignalUponCompletion, pbFurtherMeasurementsDesiredPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetBackgroundProcessingMode(this ComPtr<ID3D12Device7> thisVtbl, BackgroundProcessingMode Mode, MeasurementsAction MeasurementsAction, ref nint hEventToSignalUponCompletion, int* pbFurtherMeasurementsDesired)
+    public static unsafe int SetBackgroundProcessingMode<T0>(this ComPtr<ID3D12Device7> thisVtbl, BackgroundProcessingMode Mode, MeasurementsAction MeasurementsAction, ref T0 hEventToSignalUponCompletion, int* pbFurtherMeasurementsDesired) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (nint* hEventToSignalUponCompletionPtr = &hEventToSignalUponCompletion)
+        fixed (void* hEventToSignalUponCompletionPtr = &hEventToSignalUponCompletion)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, BackgroundProcessingMode, MeasurementsAction, nint*, int*, int>)@this->LpVtbl[65])(@this, Mode, MeasurementsAction, hEventToSignalUponCompletionPtr, pbFurtherMeasurementsDesired);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, BackgroundProcessingMode, MeasurementsAction, void*, int*, int>)@this->LpVtbl[65])(@this, Mode, MeasurementsAction, hEventToSignalUponCompletionPtr, pbFurtherMeasurementsDesired);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetBackgroundProcessingMode(this ComPtr<ID3D12Device7> thisVtbl, BackgroundProcessingMode Mode, MeasurementsAction MeasurementsAction, ref nint hEventToSignalUponCompletion, ref int pbFurtherMeasurementsDesired)
+    public static int SetBackgroundProcessingMode<T0>(this ComPtr<ID3D12Device7> thisVtbl, BackgroundProcessingMode Mode, MeasurementsAction MeasurementsAction, ref T0 hEventToSignalUponCompletion, ref int pbFurtherMeasurementsDesired) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (nint* hEventToSignalUponCompletionPtr = &hEventToSignalUponCompletion)
+        fixed (void* hEventToSignalUponCompletionPtr = &hEventToSignalUponCompletion)
         {
             fixed (int* pbFurtherMeasurementsDesiredPtr = &pbFurtherMeasurementsDesired)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, BackgroundProcessingMode, MeasurementsAction, nint*, int*, int>)@this->LpVtbl[65])(@this, Mode, MeasurementsAction, hEventToSignalUponCompletionPtr, pbFurtherMeasurementsDesiredPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device7*, BackgroundProcessingMode, MeasurementsAction, void*, int*, int>)@this->LpVtbl[65])(@this, Mode, MeasurementsAction, hEventToSignalUponCompletionPtr, pbFurtherMeasurementsDesiredPtr);
             }
         }
         return ret;
@@ -9548,7 +9708,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<nint> Name)
+    public static int SetName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> Name)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11441,7 +11601,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, int Access, [Flow(FlowDirection.In)] nint* Name, void** pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
+    public static unsafe int CreateSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In)] char* Name, void** pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11449,7 +11609,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, int Access, [Flow(FlowDirection.In)] nint* Name, ref void* pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
+    public static unsafe int CreateSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In)] char* Name, ref void* pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11457,7 +11617,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, int Access, [Flow(FlowDirection.In)] ReadOnlySpan<nint> Name, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In)] ReadOnlySpan<char> Name, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11465,7 +11625,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, int Access, [Flow(FlowDirection.In)] in nint Name, void** pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
+    public static unsafe int CreateSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In)] in char Name, void** pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11473,7 +11633,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, int Access, [Flow(FlowDirection.In)] ReadOnlySpan<nint> Name, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In)] ReadOnlySpan<char> Name, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11481,7 +11641,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, int Access, [Flow(FlowDirection.In)] in nint Name, ref void* pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
+    public static unsafe int CreateSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In)] in char Name, ref void* pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11489,7 +11649,23 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, int Access, [Flow(FlowDirection.In)] nint* Name, void** pHandle)
+    public static unsafe int CreateSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, void** pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateSharedHandle((ID3D12DeviceChild*) pObject.Handle, pAttributes, Access, Name, pHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, ref void* pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateSharedHandle((ID3D12DeviceChild*) pObject.Handle, pAttributes, Access, Name, ref pHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, [Flow(FlowDirection.In)] char* Name, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11497,7 +11673,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, int Access, [Flow(FlowDirection.In)] nint* Name, void** pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
+    public static unsafe int CreateSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(FlowDirection.In)] char* Name, void** pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11505,7 +11681,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, int Access, [Flow(FlowDirection.In)] nint* Name, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, [Flow(FlowDirection.In)] char* Name, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11513,7 +11689,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, int Access, [Flow(FlowDirection.In)] nint* Name, ref void* pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
+    public static unsafe int CreateSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(FlowDirection.In)] char* Name, ref void* pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11521,7 +11697,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, int Access, [Flow(FlowDirection.In)] ReadOnlySpan<nint> Name, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, [Flow(FlowDirection.In)] ReadOnlySpan<char> Name, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11529,7 +11705,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, int Access, [Flow(FlowDirection.In)] in nint Name, void** pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
+    public static unsafe int CreateSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(FlowDirection.In)] in char Name, void** pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11537,7 +11713,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, int Access, [Flow(FlowDirection.In)] ReadOnlySpan<nint> Name, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, [Flow(FlowDirection.In)] ReadOnlySpan<char> Name, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11545,7 +11721,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, int Access, [Flow(FlowDirection.In)] in nint Name, ref void* pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
+    public static unsafe int CreateSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(FlowDirection.In)] in char Name, ref void* pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11553,7 +11729,39 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12DeviceChild> pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, int Access, [Flow(FlowDirection.In)] nint* Name, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, void** pHandle)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateSharedHandle(pObject, in pAttributes.GetPinnableReference(), Access, Name, pHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, void** pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateSharedHandle((ID3D12DeviceChild*) pObject.Handle, in pAttributes, Access, Name, pHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, ID3D12DeviceChild* pObject, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, ref void* pHandle)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateSharedHandle(pObject, in pAttributes.GetPinnableReference(), Access, Name, ref pHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ComPtr<TI0> pObject, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, ref void* pHandle) where TI0 : unmanaged, IComVtbl<ID3D12DeviceChild>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateSharedHandle((ID3D12DeviceChild*) pObject.Handle, in pAttributes, Access, Name, ref pHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12DeviceChild> pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In)] char* Name, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11561,7 +11769,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12DeviceChild> pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, int Access, [Flow(FlowDirection.In)] nint* Name, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12DeviceChild> pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In)] char* Name, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11569,7 +11777,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12DeviceChild> pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, int Access, [Flow(FlowDirection.In)] ReadOnlySpan<nint> Name, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12DeviceChild> pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In)] ReadOnlySpan<char> Name, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11577,7 +11785,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12DeviceChild> pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, int Access, [Flow(FlowDirection.In)] ReadOnlySpan<nint> Name, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12DeviceChild> pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In)] ReadOnlySpan<char> Name, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11585,7 +11793,23 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12DeviceChild> pObject, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, int Access, [Flow(FlowDirection.In)] nint* Name, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12DeviceChild> pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, void** pHandle)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateSharedHandle(ref pObject.GetPinnableReference(), pAttributes, Access, Name, pHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12DeviceChild> pObject, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, ref void* pHandle)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateSharedHandle(ref pObject.GetPinnableReference(), pAttributes, Access, Name, ref pHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12DeviceChild> pObject, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, [Flow(FlowDirection.In)] char* Name, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11593,7 +11817,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12DeviceChild> pObject, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, int Access, [Flow(FlowDirection.In)] nint* Name, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12DeviceChild> pObject, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, [Flow(FlowDirection.In)] char* Name, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11601,7 +11825,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12DeviceChild> pObject, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, int Access, [Flow(FlowDirection.In)] ReadOnlySpan<nint> Name, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12DeviceChild> pObject, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, [Flow(FlowDirection.In)] ReadOnlySpan<char> Name, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11609,7 +11833,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12DeviceChild> pObject, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, int Access, [Flow(FlowDirection.In)] ReadOnlySpan<nint> Name, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12DeviceChild> pObject, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, [Flow(FlowDirection.In)] ReadOnlySpan<char> Name, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11617,7 +11841,23 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, nint* NTHandle, out ComPtr<TI0> ppvObj) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12DeviceChild> pObject, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, void** pHandle)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateSharedHandle(ref pObject.GetPinnableReference(), in pAttributes.GetPinnableReference(), Access, Name, pHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<ID3D12DeviceChild> pObject, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, ref void* pHandle)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateSharedHandle(ref pObject.GetPinnableReference(), in pAttributes.GetPinnableReference(), Access, Name, ref pHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int OpenSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, void* NTHandle, out ComPtr<TI0> ppvObj) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11626,7 +11866,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, nint* NTHandle, Span<Guid> riid, void** ppvObj)
+    public static unsafe int OpenSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, void* NTHandle, Span<Guid> riid, void** ppvObj)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11634,7 +11874,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, nint* NTHandle, Span<Guid> riid, ref void* ppvObj)
+    public static unsafe int OpenSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, void* NTHandle, Span<Guid> riid, ref void* ppvObj)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11642,7 +11882,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<nint> NTHandle, Guid* riid, void** ppvObj)
+    public static unsafe int OpenSharedHandle<T0>(this ComPtr<ID3D12Device7> thisVtbl, Span<T0> NTHandle, Guid* riid, void** ppvObj) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11650,7 +11890,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int OpenSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ref nint NTHandle, out ComPtr<TI0> ppvObj) where TI0 : unmanaged, IComVtbl<TI0>
+    public static int OpenSharedHandle<T0, TI0>(this ComPtr<ID3D12Device7> thisVtbl, ref T0 NTHandle, out ComPtr<TI0> ppvObj) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11659,7 +11899,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<nint> NTHandle, Guid* riid, ref void* ppvObj)
+    public static unsafe int OpenSharedHandle<T0>(this ComPtr<ID3D12Device7> thisVtbl, Span<T0> NTHandle, Guid* riid, ref void* ppvObj) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11667,7 +11907,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<nint> NTHandle, Span<Guid> riid, void** ppvObj)
+    public static unsafe int OpenSharedHandle<T0>(this ComPtr<ID3D12Device7> thisVtbl, Span<T0> NTHandle, Span<Guid> riid, void** ppvObj) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11675,7 +11915,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedHandle(this ComPtr<ID3D12Device7> thisVtbl, Span<nint> NTHandle, Span<Guid> riid, ref void* ppvObj)
+    public static unsafe int OpenSharedHandle<T0>(this ComPtr<ID3D12Device7> thisVtbl, Span<T0> NTHandle, Span<Guid> riid, ref void* ppvObj) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11683,7 +11923,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedHandleByName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<nint> Name, int Access, void** pNTHandle)
+    public static unsafe int OpenSharedHandleByName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> Name, uint Access, void** pNTHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11691,7 +11931,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedHandleByName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<nint> Name, int Access, ref void* pNTHandle)
+    public static unsafe int OpenSharedHandleByName(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> Name, uint Access, ref void* pNTHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13076,7 +13316,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetEventOnMultipleFenceCompletion<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppFences, [Flow(FlowDirection.In)] ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, nint* hEvent) where TI0 : unmanaged, IComVtbl<ID3D12Fence>, IComVtbl<TI0>
+    public static unsafe int SetEventOnMultipleFenceCompletion<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppFences, [Flow(FlowDirection.In)] ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, void* hEvent) where TI0 : unmanaged, IComVtbl<ID3D12Fence>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13084,7 +13324,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetEventOnMultipleFenceCompletion(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ID3D12Fence** ppFences, [Flow(FlowDirection.In)] ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, Span<nint> hEvent)
+    public static unsafe int SetEventOnMultipleFenceCompletion<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ID3D12Fence** ppFences, [Flow(FlowDirection.In)] ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, Span<T0> hEvent) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13092,7 +13332,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetEventOnMultipleFenceCompletion<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppFences, [Flow(FlowDirection.In)] ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, ref nint hEvent) where TI0 : unmanaged, IComVtbl<ID3D12Fence>, IComVtbl<TI0>
+    public static unsafe int SetEventOnMultipleFenceCompletion<T0, TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppFences, [Flow(FlowDirection.In)] ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, ref T0 hEvent) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12Fence>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13100,7 +13340,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetEventOnMultipleFenceCompletion(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ID3D12Fence** ppFences, [Flow(FlowDirection.In)] ReadOnlySpan<ulong> pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, nint* hEvent)
+    public static unsafe int SetEventOnMultipleFenceCompletion(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ID3D12Fence** ppFences, [Flow(FlowDirection.In)] ReadOnlySpan<ulong> pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, void* hEvent)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13108,7 +13348,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetEventOnMultipleFenceCompletion<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppFences, [Flow(FlowDirection.In)] in ulong pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, nint* hEvent) where TI0 : unmanaged, IComVtbl<ID3D12Fence>, IComVtbl<TI0>
+    public static unsafe int SetEventOnMultipleFenceCompletion<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppFences, [Flow(FlowDirection.In)] in ulong pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, void* hEvent) where TI0 : unmanaged, IComVtbl<ID3D12Fence>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13116,7 +13356,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetEventOnMultipleFenceCompletion(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ID3D12Fence** ppFences, [Flow(FlowDirection.In)] ReadOnlySpan<ulong> pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, Span<nint> hEvent)
+    public static unsafe int SetEventOnMultipleFenceCompletion<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ID3D12Fence** ppFences, [Flow(FlowDirection.In)] ReadOnlySpan<ulong> pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, Span<T0> hEvent) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13124,7 +13364,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetEventOnMultipleFenceCompletion<TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppFences, [Flow(FlowDirection.In)] in ulong pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, ref nint hEvent) where TI0 : unmanaged, IComVtbl<ID3D12Fence>, IComVtbl<TI0>
+    public static int SetEventOnMultipleFenceCompletion<T0, TI0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppFences, [Flow(FlowDirection.In)] in ulong pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, ref T0 hEvent) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12Fence>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13132,7 +13372,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetEventOnMultipleFenceCompletion(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ID3D12Fence* ppFences, [Flow(FlowDirection.In)] ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, Span<nint> hEvent)
+    public static unsafe int SetEventOnMultipleFenceCompletion<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ID3D12Fence* ppFences, [Flow(FlowDirection.In)] ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, Span<T0> hEvent) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13140,7 +13380,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetEventOnMultipleFenceCompletion(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ID3D12Fence* ppFences, [Flow(FlowDirection.In)] ReadOnlySpan<ulong> pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, nint* hEvent)
+    public static unsafe int SetEventOnMultipleFenceCompletion(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ID3D12Fence* ppFences, [Flow(FlowDirection.In)] ReadOnlySpan<ulong> pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, void* hEvent)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13148,7 +13388,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetEventOnMultipleFenceCompletion(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ID3D12Fence* ppFences, [Flow(FlowDirection.In)] ReadOnlySpan<ulong> pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, Span<nint> hEvent)
+    public static unsafe int SetEventOnMultipleFenceCompletion<T0>(this ComPtr<ID3D12Device7> thisVtbl, [Flow(FlowDirection.In)] in ID3D12Fence* ppFences, [Flow(FlowDirection.In)] ReadOnlySpan<ulong> pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, Span<T0> hEvent) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13320,7 +13560,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenExistingHeapFromFileMapping<TI0>(this ComPtr<ID3D12Device7> thisVtbl, nint* hFileMapping, out ComPtr<TI0> ppvHeap) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int OpenExistingHeapFromFileMapping<TI0>(this ComPtr<ID3D12Device7> thisVtbl, void* hFileMapping, out ComPtr<TI0> ppvHeap) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13329,7 +13569,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenExistingHeapFromFileMapping(this ComPtr<ID3D12Device7> thisVtbl, nint* hFileMapping, Span<Guid> riid, void** ppvHeap)
+    public static unsafe int OpenExistingHeapFromFileMapping(this ComPtr<ID3D12Device7> thisVtbl, void* hFileMapping, Span<Guid> riid, void** ppvHeap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13337,7 +13577,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenExistingHeapFromFileMapping(this ComPtr<ID3D12Device7> thisVtbl, nint* hFileMapping, Span<Guid> riid, ref void* ppvHeap)
+    public static unsafe int OpenExistingHeapFromFileMapping(this ComPtr<ID3D12Device7> thisVtbl, void* hFileMapping, Span<Guid> riid, ref void* ppvHeap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13345,7 +13585,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenExistingHeapFromFileMapping(this ComPtr<ID3D12Device7> thisVtbl, Span<nint> hFileMapping, Guid* riid, void** ppvHeap)
+    public static unsafe int OpenExistingHeapFromFileMapping<T0>(this ComPtr<ID3D12Device7> thisVtbl, Span<T0> hFileMapping, Guid* riid, void** ppvHeap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13353,7 +13593,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int OpenExistingHeapFromFileMapping<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ref nint hFileMapping, out ComPtr<TI0> ppvHeap) where TI0 : unmanaged, IComVtbl<TI0>
+    public static int OpenExistingHeapFromFileMapping<T0, TI0>(this ComPtr<ID3D12Device7> thisVtbl, ref T0 hFileMapping, out ComPtr<TI0> ppvHeap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13362,7 +13602,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenExistingHeapFromFileMapping(this ComPtr<ID3D12Device7> thisVtbl, Span<nint> hFileMapping, Guid* riid, ref void* ppvHeap)
+    public static unsafe int OpenExistingHeapFromFileMapping<T0>(this ComPtr<ID3D12Device7> thisVtbl, Span<T0> hFileMapping, Guid* riid, ref void* ppvHeap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13370,7 +13610,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenExistingHeapFromFileMapping(this ComPtr<ID3D12Device7> thisVtbl, Span<nint> hFileMapping, Span<Guid> riid, void** ppvHeap)
+    public static unsafe int OpenExistingHeapFromFileMapping<T0>(this ComPtr<ID3D12Device7> thisVtbl, Span<T0> hFileMapping, Span<Guid> riid, void** ppvHeap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13378,7 +13618,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenExistingHeapFromFileMapping(this ComPtr<ID3D12Device7> thisVtbl, Span<nint> hFileMapping, Span<Guid> riid, ref void* ppvHeap)
+    public static unsafe int OpenExistingHeapFromFileMapping<T0>(this ComPtr<ID3D12Device7> thisVtbl, Span<T0> hFileMapping, Span<Guid> riid, ref void* ppvHeap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15457,7 +15697,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetBackgroundProcessingMode(this ComPtr<ID3D12Device7> thisVtbl, BackgroundProcessingMode Mode, MeasurementsAction MeasurementsAction, nint* hEventToSignalUponCompletion, Span<int> pbFurtherMeasurementsDesired)
+    public static unsafe int SetBackgroundProcessingMode(this ComPtr<ID3D12Device7> thisVtbl, BackgroundProcessingMode Mode, MeasurementsAction MeasurementsAction, void* hEventToSignalUponCompletion, Span<int> pbFurtherMeasurementsDesired)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15465,7 +15705,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetBackgroundProcessingMode(this ComPtr<ID3D12Device7> thisVtbl, BackgroundProcessingMode Mode, MeasurementsAction MeasurementsAction, Span<nint> hEventToSignalUponCompletion, int* pbFurtherMeasurementsDesired)
+    public static unsafe int SetBackgroundProcessingMode<T0>(this ComPtr<ID3D12Device7> thisVtbl, BackgroundProcessingMode Mode, MeasurementsAction MeasurementsAction, Span<T0> hEventToSignalUponCompletion, int* pbFurtherMeasurementsDesired) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15473,7 +15713,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetBackgroundProcessingMode(this ComPtr<ID3D12Device7> thisVtbl, BackgroundProcessingMode Mode, MeasurementsAction MeasurementsAction, Span<nint> hEventToSignalUponCompletion, Span<int> pbFurtherMeasurementsDesired)
+    public static int SetBackgroundProcessingMode<T0>(this ComPtr<ID3D12Device7> thisVtbl, BackgroundProcessingMode Mode, MeasurementsAction MeasurementsAction, Span<T0> hEventToSignalUponCompletion, Span<int> pbFurtherMeasurementsDesired) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -16085,7 +16325,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> OpenSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, nint* NTHandle) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> OpenSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, void* NTHandle) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16094,7 +16334,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> OpenSharedHandle<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ref nint NTHandle) where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> OpenSharedHandle<T0, TI0>(this ComPtr<ID3D12Device7> thisVtbl, ref T0 NTHandle) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16220,7 +16460,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> OpenExistingHeapFromFileMapping<TI0>(this ComPtr<ID3D12Device7> thisVtbl, nint* hFileMapping) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> OpenExistingHeapFromFileMapping<TI0>(this ComPtr<ID3D12Device7> thisVtbl, void* hFileMapping) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -16229,7 +16469,7 @@ public unsafe static class D3D12Device7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> OpenExistingHeapFromFileMapping<TI0>(this ComPtr<ID3D12Device7> thisVtbl, ref nint hFileMapping) where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> OpenExistingHeapFromFileMapping<T0, TI0>(this ComPtr<ID3D12Device7> thisVtbl, ref T0 hFileMapping) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader

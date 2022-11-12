@@ -85,24 +85,33 @@ public unsafe static class D3D12SDKConfigurationVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetSDKVersion(this ComPtr<ID3D12SDKConfiguration> thisVtbl, uint SDKVersion, [Flow(FlowDirection.In)] string* SDKPath)
+    public static unsafe int SetSDKVersion(this ComPtr<ID3D12SDKConfiguration> thisVtbl, uint SDKVersion, [Flow(FlowDirection.In)] byte* SDKPath)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12SDKConfiguration*, uint, byte*, int>)@this->LpVtbl[3])(@this, SDKVersion, SDKPath);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetSDKVersion(this ComPtr<ID3D12SDKConfiguration> thisVtbl, uint SDKVersion, [Flow(FlowDirection.In)] in byte SDKPath)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (byte* SDKPathPtr = &SDKPath)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12SDKConfiguration*, uint, byte*, int>)@this->LpVtbl[3])(@this, SDKVersion, SDKPathPtr);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetSDKVersion(this ComPtr<ID3D12SDKConfiguration> thisVtbl, uint SDKVersion, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string SDKPath)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         var SDKPathPtr = (byte*) SilkMarshal.StringToPtr(SDKPath, NativeStringEncoding.LPStr);
         ret = ((delegate* unmanaged[Stdcall]<ID3D12SDKConfiguration*, uint, byte*, int>)@this->LpVtbl[3])(@this, SDKVersion, SDKPathPtr);
-        SilkMarshal.Free((nint)SDKPathPtr);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int SetSDKVersion(this ComPtr<ID3D12SDKConfiguration> thisVtbl, uint SDKVersion, [Flow(FlowDirection.In)] in string SDKPath)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        var SDKPathPtr = (byte*) SilkMarshal.StringToPtr(SDKPath, NativeStringEncoding.LPStr);
-        var SDKPathPp = &SDKPathPtr;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12SDKConfiguration*, uint, byte**, int>)@this->LpVtbl[3])(@this, SDKVersion, SDKPathPp);
         SilkMarshal.Free((nint)SDKPathPtr);
         return ret;
     }
@@ -133,7 +142,7 @@ public unsafe static class D3D12SDKConfigurationVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetSDKVersion(this ComPtr<ID3D12SDKConfiguration> thisVtbl, uint SDKVersion, [Flow(FlowDirection.In)] ReadOnlySpan<string> SDKPath)
+    public static int SetSDKVersion(this ComPtr<ID3D12SDKConfiguration> thisVtbl, uint SDKVersion, [Flow(FlowDirection.In)] ReadOnlySpan<byte> SDKPath)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

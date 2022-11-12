@@ -111,20 +111,20 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int AddConnection(int extconn, int reserved)
+        public readonly uint AddConnection(uint extconn, uint reserved)
         {
             var @this = (IExternalConnection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IExternalConnection*, int, int, int>)@this->LpVtbl[3])(@this, extconn, reserved);
+            uint ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IExternalConnection*, uint, uint, uint>)@this->LpVtbl[3])(@this, extconn, reserved);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int ReleaseConnection(int extconn, int reserved, bool fLastReleaseCloses)
+        public readonly uint ReleaseConnection(uint extconn, uint reserved, int fLastReleaseCloses)
         {
             var @this = (IExternalConnection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IExternalConnection*, int, int, bool, int>)@this->LpVtbl[4])(@this, extconn, reserved, fLastReleaseCloses);
+            uint ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IExternalConnection*, uint, uint, int, uint>)@this->LpVtbl[4])(@this, extconn, reserved, fLastReleaseCloses);
             return ret;
         }
 

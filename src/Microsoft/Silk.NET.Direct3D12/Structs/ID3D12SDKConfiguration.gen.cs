@@ -111,24 +111,33 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetSDKVersion(uint SDKVersion, [Flow(FlowDirection.In)] string* SDKPath)
+        public readonly unsafe int SetSDKVersion(uint SDKVersion, [Flow(FlowDirection.In)] byte* SDKPath)
+        {
+            var @this = (ID3D12SDKConfiguration*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12SDKConfiguration*, uint, byte*, int>)@this->LpVtbl[3])(@this, SDKVersion, SDKPath);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetSDKVersion(uint SDKVersion, [Flow(FlowDirection.In)] in byte SDKPath)
+        {
+            var @this = (ID3D12SDKConfiguration*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (byte* SDKPathPtr = &SDKPath)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12SDKConfiguration*, uint, byte*, int>)@this->LpVtbl[3])(@this, SDKVersion, SDKPathPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetSDKVersion(uint SDKVersion, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string SDKPath)
         {
             var @this = (ID3D12SDKConfiguration*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var SDKPathPtr = (byte*) SilkMarshal.StringToPtr(SDKPath, NativeStringEncoding.LPStr);
             ret = ((delegate* unmanaged[Stdcall]<ID3D12SDKConfiguration*, uint, byte*, int>)@this->LpVtbl[3])(@this, SDKVersion, SDKPathPtr);
-            SilkMarshal.Free((nint)SDKPathPtr);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int SetSDKVersion(uint SDKVersion, [Flow(FlowDirection.In)] in string SDKPath)
-        {
-            var @this = (ID3D12SDKConfiguration*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            var SDKPathPtr = (byte*) SilkMarshal.StringToPtr(SDKPath, NativeStringEncoding.LPStr);
-            var SDKPathPp = &SDKPathPtr;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12SDKConfiguration*, uint, byte**, int>)@this->LpVtbl[3])(@this, SDKVersion, SDKPathPp);
             SilkMarshal.Free((nint)SDKPathPtr);
             return ret;
         }

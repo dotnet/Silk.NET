@@ -115,40 +115,40 @@ public unsafe static class Direct3DQuery9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetDataSize(this ComPtr<IDirect3DQuery9> thisVtbl)
+    public static uint GetDataSize(this ComPtr<IDirect3DQuery9> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DQuery9*, int>)@this->LpVtbl[5])(@this);
+        uint ret = default;
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DQuery9*, uint>)@this->LpVtbl[5])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int Issue(this ComPtr<IDirect3DQuery9> thisVtbl, int dwIssueFlags)
+    public static int Issue(this ComPtr<IDirect3DQuery9> thisVtbl, uint dwIssueFlags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DQuery9*, int, int>)@this->LpVtbl[6])(@this, dwIssueFlags);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DQuery9*, uint, int>)@this->LpVtbl[6])(@this, dwIssueFlags);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetData(this ComPtr<IDirect3DQuery9> thisVtbl, void* pData, int dwSize, int dwGetDataFlags)
+    public static unsafe int GetData(this ComPtr<IDirect3DQuery9> thisVtbl, void* pData, uint dwSize, uint dwGetDataFlags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DQuery9*, void*, int, int, int>)@this->LpVtbl[7])(@this, pData, dwSize, dwGetDataFlags);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DQuery9*, void*, uint, uint, int>)@this->LpVtbl[7])(@this, pData, dwSize, dwGetDataFlags);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetData<T0>(this ComPtr<IDirect3DQuery9> thisVtbl, ref T0 pData, int dwSize, int dwGetDataFlags) where T0 : unmanaged
+    public static int GetData<T0>(this ComPtr<IDirect3DQuery9> thisVtbl, ref T0 pData, uint dwSize, uint dwGetDataFlags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void* pDataPtr = &pData)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DQuery9*, void*, int, int, int>)@this->LpVtbl[7])(@this, pDataPtr, dwSize, dwGetDataFlags);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DQuery9*, void*, uint, uint, int>)@this->LpVtbl[7])(@this, pDataPtr, dwSize, dwGetDataFlags);
         }
         return ret;
     }
@@ -187,7 +187,7 @@ public unsafe static class Direct3DQuery9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetData<T0>(this ComPtr<IDirect3DQuery9> thisVtbl, Span<T0> pData, int dwSize, int dwGetDataFlags) where T0 : unmanaged
+    public static int GetData<T0>(this ComPtr<IDirect3DQuery9> thisVtbl, Span<T0> pData, uint dwSize, uint dwGetDataFlags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

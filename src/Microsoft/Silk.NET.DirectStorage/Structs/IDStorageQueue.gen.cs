@@ -183,11 +183,11 @@ namespace Silk.NET.DirectStorage
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe nint* GetErrorEvent()
+        public readonly unsafe void* GetErrorEvent()
         {
             var @this = (IDStorageQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            nint* ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDStorageQueue*, nint*>)@this->LpVtbl[9])(@this);
+            void* ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDStorageQueue*, void*>)@this->LpVtbl[9])(@this);
             return ret;
         }
 

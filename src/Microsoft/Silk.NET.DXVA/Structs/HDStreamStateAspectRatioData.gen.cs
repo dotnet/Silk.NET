@@ -21,7 +21,7 @@ namespace Silk.NET.DXVA
     {
         public HDStreamStateAspectRatioData
         (
-            bool? enable = null,
+            int? enable = null,
             HDRational? sourceAspectRatio = null,
             HDRational? destinationAspectRatio = null
         ) : this()
@@ -46,7 +46,7 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "Enable")]
-        public bool Enable;
+        public int Enable;
 
         [NativeName("Type", "DXVAHD_RATIONAL")]
         [NativeName("Type.Name", "DXVAHD_RATIONAL")]

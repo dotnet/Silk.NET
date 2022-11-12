@@ -25,7 +25,7 @@ namespace Silk.NET.DXVA
             uint? streamNumber = null,
             HDStreamState? state = null,
             uint? dataSize = null,
-            bool? setState = null
+            int? setState = null
         ) : this()
         {
             if (pObject is not null)
@@ -78,6 +78,6 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "SetState")]
-        public bool SetState;
+        public int SetState;
     }
 }

@@ -50,6 +50,8 @@ namespace Silk.NET.BuildTools.Converters
 
             foreach (var profile in profiles)
             {
+                bool mapNative = task.Controls.Contains("typemap-native");
+
                 ctor.WriteFunctions(profile, functions, task);
                 ctor.WriteEnums(profile, enums, task);
                 ctor.WriteStructs(profile, structs, task);
@@ -60,13 +62,13 @@ namespace Silk.NET.BuildTools.Converters
                     (
                         typeMap,
                         profile.Projects.Values.SelectMany(x => x.Classes.SelectMany(y => y.NativeApis.Values))
-                            .SelectMany(x => x.Functions)
+                            .SelectMany(x => x.Functions), mapNative
                     );
                 }
 
                 foreach (var typeMap in task.TypeMaps)
                 {
-                    TypeMapper.Map(typeMap, structs);
+                    TypeMapper.Map(typeMap, structs, mapNative);
                 }
 
                 foreach (var kvp in profile.Projects)
@@ -75,7 +77,7 @@ namespace Silk.NET.BuildTools.Converters
                     {
                         foreach (var constant in @class.Constants)
                         {
-                            constant.Type = TypeMapper.MapOne(task.TypeMaps, constant.Type);
+                            constant.Type = TypeMapper.MapOne(task.TypeMaps, constant.Type, mapNative, constant.Name);
                         }
                     }
                 }

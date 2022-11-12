@@ -21,10 +21,10 @@ namespace Silk.NET.Direct3D11
     {
         public CD3D11DepthStencilDesc
         (
-            bool? depthEnable = null,
+            int? depthEnable = null,
             DepthWriteMask? depthWriteMask = null,
             ComparisonFunc? depthFunc = null,
-            bool? stencilEnable = null,
+            int? stencilEnable = null,
             byte? stencilReadMask = null,
             byte? stencilWriteMask = null,
             DepthStencilopDesc? frontFace = null,
@@ -76,7 +76,7 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "DepthEnable")]
-        public bool DepthEnable;
+        public int DepthEnable;
 
         [NativeName("Type", "D3D11_DEPTH_WRITE_MASK")]
         [NativeName("Type.Name", "D3D11_DEPTH_WRITE_MASK")]
@@ -91,7 +91,7 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "StencilEnable")]
-        public bool StencilEnable;
+        public int StencilEnable;
 
         [NativeName("Type", "UINT8")]
         [NativeName("Type.Name", "UINT8")]

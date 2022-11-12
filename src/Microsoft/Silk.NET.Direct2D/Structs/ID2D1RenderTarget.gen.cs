@@ -3589,22 +3589,22 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe bool IsSupported([Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties)
+        public readonly unsafe int IsSupported([Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties)
         {
             var @this = (ID2D1RenderTarget*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            bool ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1RenderTarget*, RenderTargetProperties*, bool>)@this->LpVtbl[56])(@this, renderTargetProperties);
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1RenderTarget*, RenderTargetProperties*, int>)@this->LpVtbl[56])(@this, renderTargetProperties);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly bool IsSupported([Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties)
+        public readonly int IsSupported([Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties)
         {
             var @this = (ID2D1RenderTarget*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            bool ret = default;
+            int ret = default;
             fixed (RenderTargetProperties* renderTargetPropertiesPtr = &renderTargetProperties)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1RenderTarget*, RenderTargetProperties*, bool>)@this->LpVtbl[56])(@this, renderTargetPropertiesPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1RenderTarget*, RenderTargetProperties*, int>)@this->LpVtbl[56])(@this, renderTargetPropertiesPtr);
             }
             return ret;
         }

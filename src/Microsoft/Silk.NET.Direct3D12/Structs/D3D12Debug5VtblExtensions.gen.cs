@@ -92,17 +92,17 @@ public unsafe static class D3D12Debug5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetEnableGPUBasedValidation(this ComPtr<ID3D12Debug5> thisVtbl, bool Enable)
+    public static void SetEnableGPUBasedValidation(this ComPtr<ID3D12Debug5> thisVtbl, int Enable)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D12Debug5*, bool, void>)@this->LpVtbl[4])(@this, Enable);
+        ((delegate* unmanaged[Stdcall]<ID3D12Debug5*, int, void>)@this->LpVtbl[4])(@this, Enable);
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetEnableSynchronizedCommandQueueValidation(this ComPtr<ID3D12Debug5> thisVtbl, bool Enable)
+    public static void SetEnableSynchronizedCommandQueueValidation(this ComPtr<ID3D12Debug5> thisVtbl, int Enable)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D12Debug5*, bool, void>)@this->LpVtbl[5])(@this, Enable);
+        ((delegate* unmanaged[Stdcall]<ID3D12Debug5*, int, void>)@this->LpVtbl[5])(@this, Enable);
     }
 
     /// <summary>To be documented.</summary>
@@ -120,10 +120,10 @@ public unsafe static class D3D12Debug5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetEnableAutoName(this ComPtr<ID3D12Debug5> thisVtbl, bool Enable)
+    public static void SetEnableAutoName(this ComPtr<ID3D12Debug5> thisVtbl, int Enable)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D12Debug5*, bool, void>)@this->LpVtbl[8])(@this, Enable);
+        ((delegate* unmanaged[Stdcall]<ID3D12Debug5*, int, void>)@this->LpVtbl[8])(@this, Enable);
     }
 
     /// <summary>To be documented.</summary>

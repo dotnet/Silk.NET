@@ -137,11 +137,11 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly bool IsLeakTrackingEnabledForThread()
+        public readonly int IsLeakTrackingEnabledForThread()
         {
             var @this = (IDXGIDebug1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            bool ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIDebug1*, bool>)@this->LpVtbl[6])(@this);
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIDebug1*, int>)@this->LpVtbl[6])(@this);
             return ret;
         }
 

@@ -21,11 +21,11 @@ namespace Silk.NET.Direct3D12
     {
         public ShaderVariableDesc
         (
-            string* name = null,
+            byte* name = null,
             uint? startOffset = null,
             uint? size = null,
             uint? uFlags = null,
-            nint* defaultValue = null,
+            void* defaultValue = null,
             uint? startTexture = null,
             uint? textureSize = null,
             uint? startSampler = null,
@@ -82,7 +82,7 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "LPCSTR")]
         [NativeName("Type.Name", "LPCSTR")]
         [NativeName("Name", "Name")]
-        public string* Name;
+        public byte* Name;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]
@@ -102,7 +102,7 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "LPVOID")]
         [NativeName("Type.Name", "LPVOID")]
         [NativeName("Name", "DefaultValue")]
-        public nint* DefaultValue;
+        public void* DefaultValue;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]

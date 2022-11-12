@@ -21,16 +21,16 @@ namespace Silk.NET.Core.Win32Extras
     {
         public ByHandleFileInformation
         (
-            int? dwFileAttributes = null,
-            Silk.NET.Core.Win32Extras.Filetime? ftCreationTime = null,
-            Silk.NET.Core.Win32Extras.Filetime? ftLastAccessTime = null,
-            Silk.NET.Core.Win32Extras.Filetime? ftLastWriteTime = null,
-            int? dwVolumeSerialNumber = null,
-            int? nFileSizeHigh = null,
-            int? nFileSizeLow = null,
-            int? nNumberOfLinks = null,
-            int? nFileIndexHigh = null,
-            int? nFileIndexLow = null
+            uint? dwFileAttributes = null,
+            Filetime? ftCreationTime = null,
+            Filetime? ftLastAccessTime = null,
+            Filetime? ftLastWriteTime = null,
+            uint? dwVolumeSerialNumber = null,
+            uint? nFileSizeHigh = null,
+            uint? nFileSizeLow = null,
+            uint? nNumberOfLinks = null,
+            uint? nFileIndexHigh = null,
+            uint? nFileIndexLow = null
         ) : this()
         {
             if (dwFileAttributes is not null)
@@ -88,51 +88,51 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "dwFileAttributes")]
-        public int DwFileAttributes;
+        public uint DwFileAttributes;
 
         [NativeName("Type", "FILETIME")]
         [NativeName("Type.Name", "FILETIME")]
         [NativeName("Name", "ftCreationTime")]
-        public Silk.NET.Core.Win32Extras.Filetime FtCreationTime;
+        public Filetime FtCreationTime;
 
         [NativeName("Type", "FILETIME")]
         [NativeName("Type.Name", "FILETIME")]
         [NativeName("Name", "ftLastAccessTime")]
-        public Silk.NET.Core.Win32Extras.Filetime FtLastAccessTime;
+        public Filetime FtLastAccessTime;
 
         [NativeName("Type", "FILETIME")]
         [NativeName("Type.Name", "FILETIME")]
         [NativeName("Name", "ftLastWriteTime")]
-        public Silk.NET.Core.Win32Extras.Filetime FtLastWriteTime;
+        public Filetime FtLastWriteTime;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "dwVolumeSerialNumber")]
-        public int DwVolumeSerialNumber;
+        public uint DwVolumeSerialNumber;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "nFileSizeHigh")]
-        public int NFileSizeHigh;
+        public uint NFileSizeHigh;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "nFileSizeLow")]
-        public int NFileSizeLow;
+        public uint NFileSizeLow;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "nNumberOfLinks")]
-        public int NNumberOfLinks;
+        public uint NNumberOfLinks;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "nFileIndexHigh")]
-        public int NFileIndexHigh;
+        public uint NFileIndexHigh;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "nFileIndexLow")]
-        public int NFileIndexLow;
+        public uint NFileIndexLow;
     }
 }

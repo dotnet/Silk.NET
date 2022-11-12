@@ -21,7 +21,7 @@ namespace Silk.NET.Direct3D12
     {
         public ShaderBufferDesc
         (
-            string* name = null,
+            byte* name = null,
             Silk.NET.Core.Native.D3DCBufferType? type = null,
             uint? variables = null,
             uint? size = null,
@@ -58,7 +58,7 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "LPCSTR")]
         [NativeName("Type.Name", "LPCSTR")]
         [NativeName("Name", "Name")]
-        public string* Name;
+        public byte* Name;
 
         [NativeName("Type", "D3D_CBUFFER_TYPE")]
         [NativeName("Type.Name", "D3D_CBUFFER_TYPE")]

@@ -3554,22 +3554,22 @@ public unsafe static class D2D1RenderTargetVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe bool IsSupported(this ComPtr<ID2D1RenderTarget> thisVtbl, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties)
+    public static unsafe int IsSupported(this ComPtr<ID2D1RenderTarget> thisVtbl, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties)
     {
         var @this = thisVtbl.Handle;
-        bool ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1RenderTarget*, RenderTargetProperties*, bool>)@this->LpVtbl[56])(@this, renderTargetProperties);
+        int ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1RenderTarget*, RenderTargetProperties*, int>)@this->LpVtbl[56])(@this, renderTargetProperties);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static bool IsSupported(this ComPtr<ID2D1RenderTarget> thisVtbl, [Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties)
+    public static int IsSupported(this ComPtr<ID2D1RenderTarget> thisVtbl, [Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties)
     {
         var @this = thisVtbl.Handle;
-        bool ret = default;
+        int ret = default;
         fixed (RenderTargetProperties* renderTargetPropertiesPtr = &renderTargetProperties)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1RenderTarget*, RenderTargetProperties*, bool>)@this->LpVtbl[56])(@this, renderTargetPropertiesPtr);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1RenderTarget*, RenderTargetProperties*, int>)@this->LpVtbl[56])(@this, renderTargetPropertiesPtr);
         }
         return ret;
     }
@@ -6512,7 +6512,7 @@ public unsafe static class D2D1RenderTargetVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static bool IsSupported(this ComPtr<ID2D1RenderTarget> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<RenderTargetProperties> renderTargetProperties)
+    public static int IsSupported(this ComPtr<ID2D1RenderTarget> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<RenderTargetProperties> renderTargetProperties)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

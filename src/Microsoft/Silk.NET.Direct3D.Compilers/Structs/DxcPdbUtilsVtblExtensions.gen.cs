@@ -469,11 +469,11 @@ public unsafe static class DxcPdbUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static bool IsFullPDB(this ComPtr<IDxcPdbUtils> thisVtbl)
+    public static int IsFullPDB(this ComPtr<IDxcPdbUtils> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        bool ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDxcPdbUtils*, bool>)@this->LpVtbl[20])(@this);
+        int ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<IDxcPdbUtils*, int>)@this->LpVtbl[20])(@this);
         return ret;
     }
 

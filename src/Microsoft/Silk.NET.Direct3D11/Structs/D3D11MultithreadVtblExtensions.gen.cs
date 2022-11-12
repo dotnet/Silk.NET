@@ -99,20 +99,20 @@ public unsafe static class D3D11MultithreadVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static bool SetMultithreadProtected(this ComPtr<ID3D11Multithread> thisVtbl, bool bMTProtect)
+    public static int SetMultithreadProtected(this ComPtr<ID3D11Multithread> thisVtbl, int bMTProtect)
     {
         var @this = thisVtbl.Handle;
-        bool ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D11Multithread*, bool, bool>)@this->LpVtbl[5])(@this, bMTProtect);
+        int ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D11Multithread*, int, int>)@this->LpVtbl[5])(@this, bMTProtect);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static bool GetMultithreadProtected(this ComPtr<ID3D11Multithread> thisVtbl)
+    public static int GetMultithreadProtected(this ComPtr<ID3D11Multithread> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        bool ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D11Multithread*, bool>)@this->LpVtbl[6])(@this);
+        int ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D11Multithread*, int>)@this->LpVtbl[6])(@this);
         return ret;
     }
 

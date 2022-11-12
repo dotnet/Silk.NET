@@ -26,13 +26,13 @@ namespace Silk.NET.Direct3D9
             Format? backBufferFormat = null,
             uint? backBufferCount = null,
             MultisampleType? multiSampleType = null,
-            int? multiSampleQuality = null,
+            uint? multiSampleQuality = null,
             Swapeffect? swapEffect = null,
             nint? hDeviceWindow = null,
-            bool? windowed = null,
-            bool? enableAutoDepthStencil = null,
+            int? windowed = null,
+            int? enableAutoDepthStencil = null,
             Format? autoDepthStencilFormat = null,
-            int? flags = null,
+            uint? flags = null,
             uint? fullScreenRefreshRateInHz = null,
             uint? presentationInterval = null
         ) : this()
@@ -137,7 +137,7 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "MultiSampleQuality")]
-        public int MultiSampleQuality;
+        public uint MultiSampleQuality;
 
         [NativeName("Type", "D3DSWAPEFFECT")]
         [NativeName("Type.Name", "D3DSWAPEFFECT")]
@@ -152,12 +152,12 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "Windowed")]
-        public bool Windowed;
+        public int Windowed;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "EnableAutoDepthStencil")]
-        public bool EnableAutoDepthStencil;
+        public int EnableAutoDepthStencil;
 
         [NativeName("Type", "D3DFORMAT")]
         [NativeName("Type.Name", "D3DFORMAT")]
@@ -167,7 +167,7 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "Flags")]
-        public int Flags;
+        public uint Flags;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]

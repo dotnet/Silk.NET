@@ -21,11 +21,11 @@ namespace Silk.NET.DXVA
     {
         public CompBufferInfo
         (
-            int? numCompBuffers = null,
-            int? widthToCreate = null,
-            int? heightToCreate = null,
-            int? bytesToAllocate = null,
-            int? usage = null,
+            uint? numCompBuffers = null,
+            uint? widthToCreate = null,
+            uint? heightToCreate = null,
+            uint? bytesToAllocate = null,
+            uint? usage = null,
             Silk.NET.Direct3D9.Pool? pool = null,
             Silk.NET.Direct3D9.Format? format = null
         ) : this()
@@ -70,27 +70,27 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "NumCompBuffers")]
-        public int NumCompBuffers;
+        public uint NumCompBuffers;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "WidthToCreate")]
-        public int WidthToCreate;
+        public uint WidthToCreate;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "HeightToCreate")]
-        public int HeightToCreate;
+        public uint HeightToCreate;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "BytesToAllocate")]
-        public int BytesToAllocate;
+        public uint BytesToAllocate;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "Usage")]
-        public int Usage;
+        public uint Usage;
 
         [NativeName("Type", "D3DPOOL")]
         [NativeName("Type.Name", "D3DPOOL")]

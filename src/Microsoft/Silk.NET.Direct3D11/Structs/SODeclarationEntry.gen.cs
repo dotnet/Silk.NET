@@ -22,7 +22,7 @@ namespace Silk.NET.Direct3D11
         public SODeclarationEntry
         (
             uint? stream = null,
-            string* semanticName = null,
+            byte* semanticName = null,
             uint? semanticIndex = null,
             byte? startComponent = null,
             byte? componentCount = null,
@@ -69,7 +69,7 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "LPCSTR")]
         [NativeName("Type.Name", "LPCSTR")]
         [NativeName("Name", "SemanticName")]
-        public string* SemanticName;
+        public byte* SemanticName;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]

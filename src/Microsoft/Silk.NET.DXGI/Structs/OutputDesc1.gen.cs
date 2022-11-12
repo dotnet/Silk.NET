@@ -23,11 +23,11 @@ namespace Silk.NET.DXGI
         public OutputDesc1
         (
             Silk.NET.Maths.Box2D<int>? desktopCoordinates = null,
-            bool? attachedToDesktop = null,
+            int? attachedToDesktop = null,
             ModeRotation? rotation = null,
             nint? monitor = null,
             uint? bitsPerColor = null,
-            Silk.NET.DXGI.ColorSpaceType? colorSpace = null,
+            ColorSpaceType? colorSpace = null,
             float? minLuminance = null,
             float? maxLuminance = null,
             float? maxFullFrameLuminance = null
@@ -92,7 +92,7 @@ namespace Silk.NET.DXGI
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "AttachedToDesktop")]
-        public bool AttachedToDesktop;
+        public int AttachedToDesktop;
 
         [NativeName("Type", "DXGI_MODE_ROTATION")]
         [NativeName("Type.Name", "DXGI_MODE_ROTATION")]
@@ -112,7 +112,7 @@ namespace Silk.NET.DXGI
         [NativeName("Type", "DXGI_COLOR_SPACE_TYPE")]
         [NativeName("Type.Name", "DXGI_COLOR_SPACE_TYPE")]
         [NativeName("Name", "ColorSpace")]
-        public Silk.NET.DXGI.ColorSpaceType ColorSpace;
+        public ColorSpaceType ColorSpace;
         [NativeName("Type", "FLOAT [2]")]
         [NativeName("Type.Name", "FLOAT [2]")]
         [NativeName("Name", "RedPrimary")]

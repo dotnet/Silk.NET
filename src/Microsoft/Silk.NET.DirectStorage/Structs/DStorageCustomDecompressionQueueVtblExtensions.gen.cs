@@ -85,11 +85,11 @@ public unsafe static class DStorageCustomDecompressionQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe nint* GetEvent(this ComPtr<IDStorageCustomDecompressionQueue> thisVtbl)
+    public static unsafe void* GetEvent(this ComPtr<IDStorageCustomDecompressionQueue> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        nint* ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDStorageCustomDecompressionQueue*, nint*>)@this->LpVtbl[3])(@this);
+        void* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<IDStorageCustomDecompressionQueue*, void*>)@this->LpVtbl[3])(@this);
         return ret;
     }
 

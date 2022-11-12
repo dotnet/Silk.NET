@@ -21,8 +21,8 @@ namespace Silk.NET.DXVA
     {
         public UncompDataInfo
         (
-            int? uncompWidth = null,
-            int? uncompHeight = null,
+            uint? uncompWidth = null,
+            uint? uncompHeight = null,
             Silk.NET.Direct3D9.Format? uncompFormat = null
         ) : this()
         {
@@ -46,12 +46,12 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "UncompWidth")]
-        public int UncompWidth;
+        public uint UncompWidth;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "UncompHeight")]
-        public int UncompHeight;
+        public uint UncompHeight;
 
         [NativeName("Type", "D3DFORMAT")]
         [NativeName("Type.Name", "D3DFORMAT")]

@@ -22,9 +22,9 @@ namespace Silk.NET.Direct3D9
         public AuthenticatedchannelConfigurecryptosession
         (
             AuthenticatedchannelConfigureInput? parameters = null,
-            nint* dXVA2DecodeHandle = null,
-            nint* cryptoSessionHandle = null,
-            nint* deviceHandle = null
+            void* dXVA2DecodeHandle = null,
+            void* cryptoSessionHandle = null,
+            void* deviceHandle = null
         ) : this()
         {
             if (parameters is not null)
@@ -57,16 +57,16 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type", "HANDLE")]
         [NativeName("Type.Name", "HANDLE")]
         [NativeName("Name", "DXVA2DecodeHandle")]
-        public nint* DXVA2DecodeHandle;
+        public void* DXVA2DecodeHandle;
 
         [NativeName("Type", "HANDLE")]
         [NativeName("Type.Name", "HANDLE")]
         [NativeName("Name", "CryptoSessionHandle")]
-        public nint* CryptoSessionHandle;
+        public void* CryptoSessionHandle;
 
         [NativeName("Type", "HANDLE")]
         [NativeName("Type.Name", "HANDLE")]
         [NativeName("Name", "DeviceHandle")]
-        public nint* DeviceHandle;
+        public void* DeviceHandle;
     }
 }

@@ -16,13 +16,14 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D.Compilers
 {
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
     [NativeName("Name", "DxcDefine")]
     public unsafe partial struct Define
     {
         public Define
         (
-            nint* name = null,
-            nint* value = null
+            char* name = null,
+            char* value = null
         ) : this()
         {
             if (name is not null)
@@ -40,11 +41,11 @@ namespace Silk.NET.Direct3D.Compilers
         [NativeName("Type", "LPCWSTR")]
         [NativeName("Type.Name", "LPCWSTR")]
         [NativeName("Name", "Name")]
-        public nint* Name;
+        public char* Name;
 
         [NativeName("Type", "LPCWSTR")]
         [NativeName("Type.Name", "LPCWSTR")]
         [NativeName("Name", "Value")]
-        public nint* Value;
+        public char* Value;
     }
 }

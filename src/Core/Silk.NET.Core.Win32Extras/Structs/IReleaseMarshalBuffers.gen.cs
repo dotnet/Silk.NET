@@ -111,40 +111,40 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ReleaseMarshalBuffer(TagRPCOLEMESSAGE* pMsg, int dwFlags, Silk.NET.Core.Native.IUnknown* pChnl)
+        public readonly unsafe int ReleaseMarshalBuffer(TagRPCOLEMESSAGE* pMsg, uint dwFlags, Silk.NET.Core.Native.IUnknown* pChnl)
         {
             var @this = (IReleaseMarshalBuffers*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IReleaseMarshalBuffers*, TagRPCOLEMESSAGE*, int, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[3])(@this, pMsg, dwFlags, pChnl);
+            ret = ((delegate* unmanaged[Cdecl]<IReleaseMarshalBuffers*, TagRPCOLEMESSAGE*, uint, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[3])(@this, pMsg, dwFlags, pChnl);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ReleaseMarshalBuffer(TagRPCOLEMESSAGE* pMsg, int dwFlags, ref Silk.NET.Core.Native.IUnknown pChnl)
+        public readonly unsafe int ReleaseMarshalBuffer(TagRPCOLEMESSAGE* pMsg, uint dwFlags, ref Silk.NET.Core.Native.IUnknown pChnl)
         {
             var @this = (IReleaseMarshalBuffers*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pChnlPtr = &pChnl)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IReleaseMarshalBuffers*, TagRPCOLEMESSAGE*, int, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[3])(@this, pMsg, dwFlags, pChnlPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IReleaseMarshalBuffers*, TagRPCOLEMESSAGE*, uint, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[3])(@this, pMsg, dwFlags, pChnlPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ReleaseMarshalBuffer(ref TagRPCOLEMESSAGE pMsg, int dwFlags, Silk.NET.Core.Native.IUnknown* pChnl)
+        public readonly unsafe int ReleaseMarshalBuffer(ref TagRPCOLEMESSAGE pMsg, uint dwFlags, Silk.NET.Core.Native.IUnknown* pChnl)
         {
             var @this = (IReleaseMarshalBuffers*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (TagRPCOLEMESSAGE* pMsgPtr = &pMsg)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IReleaseMarshalBuffers*, TagRPCOLEMESSAGE*, int, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[3])(@this, pMsgPtr, dwFlags, pChnl);
+                ret = ((delegate* unmanaged[Cdecl]<IReleaseMarshalBuffers*, TagRPCOLEMESSAGE*, uint, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[3])(@this, pMsgPtr, dwFlags, pChnl);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int ReleaseMarshalBuffer(ref TagRPCOLEMESSAGE pMsg, int dwFlags, ref Silk.NET.Core.Native.IUnknown pChnl)
+        public readonly int ReleaseMarshalBuffer(ref TagRPCOLEMESSAGE pMsg, uint dwFlags, ref Silk.NET.Core.Native.IUnknown pChnl)
         {
             var @this = (IReleaseMarshalBuffers*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -152,7 +152,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (Silk.NET.Core.Native.IUnknown* pChnlPtr = &pChnl)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IReleaseMarshalBuffers*, TagRPCOLEMESSAGE*, int, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[3])(@this, pMsgPtr, dwFlags, pChnlPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IReleaseMarshalBuffers*, TagRPCOLEMESSAGE*, uint, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[3])(@this, pMsgPtr, dwFlags, pChnlPtr);
                 }
             }
             return ret;
@@ -168,7 +168,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ReleaseMarshalBuffer<TI0>(TagRPCOLEMESSAGE* pMsg, int dwFlags, ComPtr<TI0> pChnl) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly unsafe int ReleaseMarshalBuffer<TI0>(TagRPCOLEMESSAGE* pMsg, uint dwFlags, ComPtr<TI0> pChnl) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (IReleaseMarshalBuffers*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -176,7 +176,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int ReleaseMarshalBuffer<TI0>(ref TagRPCOLEMESSAGE pMsg, int dwFlags, ComPtr<TI0> pChnl) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly int ReleaseMarshalBuffer<TI0>(ref TagRPCOLEMESSAGE pMsg, uint dwFlags, ComPtr<TI0> pChnl) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (IReleaseMarshalBuffers*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

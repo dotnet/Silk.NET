@@ -21,8 +21,8 @@ namespace Silk.NET.Direct3D12
     {
         public BlendDesc
         (
-            bool? alphaToCoverageEnable = null,
-            bool? independentBlendEnable = null
+            int? alphaToCoverageEnable = null,
+            int? independentBlendEnable = null
         ) : this()
         {
             if (alphaToCoverageEnable is not null)
@@ -40,12 +40,12 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "AlphaToCoverageEnable")]
-        public bool AlphaToCoverageEnable;
+        public int AlphaToCoverageEnable;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "IndependentBlendEnable")]
-        public bool IndependentBlendEnable;
+        public int IndependentBlendEnable;
         
         [NativeName("Type", "D3D12_RENDER_TARGET_BLEND_DESC [8]")]
         [NativeName("Type.Name", "D3D12_RENDER_TARGET_BLEND_DESC [8]")]

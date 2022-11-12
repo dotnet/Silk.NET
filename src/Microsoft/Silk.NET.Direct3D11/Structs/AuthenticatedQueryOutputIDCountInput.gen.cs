@@ -22,8 +22,8 @@ namespace Silk.NET.Direct3D11
         public AuthenticatedQueryOutputIDCountInput
         (
             AuthenticatedQueryInput? input = null,
-            nint* deviceHandle = null,
-            nint* cryptoSessionHandle = null
+            void* deviceHandle = null,
+            void* cryptoSessionHandle = null
         ) : this()
         {
             if (input is not null)
@@ -51,11 +51,11 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "HANDLE")]
         [NativeName("Type.Name", "HANDLE")]
         [NativeName("Name", "DeviceHandle")]
-        public nint* DeviceHandle;
+        public void* DeviceHandle;
 
         [NativeName("Type", "HANDLE")]
         [NativeName("Type.Name", "HANDLE")]
         [NativeName("Name", "CryptoSessionHandle")]
-        public nint* CryptoSessionHandle;
+        public void* CryptoSessionHandle;
     }
 }

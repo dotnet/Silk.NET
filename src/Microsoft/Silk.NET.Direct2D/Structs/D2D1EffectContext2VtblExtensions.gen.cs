@@ -626,22 +626,22 @@ public unsafe static class D2D1EffectContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe bool IsShaderLoaded(this ComPtr<ID2D1EffectContext2> thisVtbl, Guid* shaderId)
+    public static unsafe int IsShaderLoaded(this ComPtr<ID2D1EffectContext2> thisVtbl, Guid* shaderId)
     {
         var @this = thisVtbl.Handle;
-        bool ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectContext2*, Guid*, bool>)@this->LpVtbl[14])(@this, shaderId);
+        int ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectContext2*, Guid*, int>)@this->LpVtbl[14])(@this, shaderId);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static bool IsShaderLoaded(this ComPtr<ID2D1EffectContext2> thisVtbl, ref Guid shaderId)
+    public static int IsShaderLoaded(this ComPtr<ID2D1EffectContext2> thisVtbl, ref Guid shaderId)
     {
         var @this = thisVtbl.Handle;
-        bool ret = default;
+        int ret = default;
         fixed (Guid* shaderIdPtr = &shaderId)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectContext2*, Guid*, bool>)@this->LpVtbl[14])(@this, shaderIdPtr);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectContext2*, Guid*, int>)@this->LpVtbl[14])(@this, shaderIdPtr);
         }
         return ret;
     }
@@ -1998,11 +1998,11 @@ public unsafe static class D2D1EffectContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static bool IsBufferPrecisionSupported(this ComPtr<ID2D1EffectContext2> thisVtbl, BufferPrecision bufferPrecision)
+    public static int IsBufferPrecisionSupported(this ComPtr<ID2D1EffectContext2> thisVtbl, BufferPrecision bufferPrecision)
     {
         var @this = thisVtbl.Handle;
-        bool ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectContext2*, BufferPrecision, bool>)@this->LpVtbl[23])(@this, bufferPrecision);
+        int ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectContext2*, BufferPrecision, int>)@this->LpVtbl[23])(@this, bufferPrecision);
         return ret;
     }
 
@@ -2762,7 +2762,7 @@ public unsafe static class D2D1EffectContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static bool IsShaderLoaded(this ComPtr<ID2D1EffectContext2> thisVtbl, Span<Guid> shaderId)
+    public static int IsShaderLoaded(this ComPtr<ID2D1EffectContext2> thisVtbl, Span<Guid> shaderId)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

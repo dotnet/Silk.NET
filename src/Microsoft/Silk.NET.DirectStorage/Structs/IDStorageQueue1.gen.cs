@@ -186,11 +186,11 @@ namespace Silk.NET.DirectStorage
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe nint* GetErrorEvent()
+        public readonly unsafe void* GetErrorEvent()
         {
             var @this = (IDStorageQueue1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            nint* ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDStorageQueue1*, nint*>)@this->LpVtbl[9])(@this);
+            void* ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDStorageQueue1*, void*>)@this->LpVtbl[9])(@this);
             return ret;
         }
 
@@ -229,19 +229,19 @@ namespace Silk.NET.DirectStorage
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void EnqueueSetEvent(nint* handle)
+        public readonly unsafe void EnqueueSetEvent(void* handle)
         {
             var @this = (IDStorageQueue1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<IDStorageQueue1*, nint*, void>)@this->LpVtbl[12])(@this, handle);
+            ((delegate* unmanaged[Stdcall]<IDStorageQueue1*, void*, void>)@this->LpVtbl[12])(@this, handle);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void EnqueueSetEvent(ref nint handle)
+        public readonly void EnqueueSetEvent<T0>(ref T0 handle) where T0 : unmanaged
         {
             var @this = (IDStorageQueue1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (nint* handlePtr = &handle)
+            fixed (void* handlePtr = &handle)
             {
-                ((delegate* unmanaged[Stdcall]<IDStorageQueue1*, nint*, void>)@this->LpVtbl[12])(@this, handlePtr);
+                ((delegate* unmanaged[Stdcall]<IDStorageQueue1*, void*, void>)@this->LpVtbl[12])(@this, handlePtr);
             }
         }
 

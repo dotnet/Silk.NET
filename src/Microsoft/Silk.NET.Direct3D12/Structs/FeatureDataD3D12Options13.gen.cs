@@ -21,12 +21,12 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataD3D12Options13
         (
-            bool? unrestrictedBufferTextureCopyPitchSupported = null,
-            bool? unrestrictedVertexElementAlignmentSupported = null,
-            bool? invertedViewportHeightFlipsYSupported = null,
-            bool? invertedViewportDepthFlipsZSupported = null,
-            bool? textureCopyBetweenDimensionsSupported = null,
-            bool? alphaBlendFactorSupported = null
+            int? unrestrictedBufferTextureCopyPitchSupported = null,
+            int? unrestrictedVertexElementAlignmentSupported = null,
+            int? invertedViewportHeightFlipsYSupported = null,
+            int? invertedViewportDepthFlipsZSupported = null,
+            int? textureCopyBetweenDimensionsSupported = null,
+            int? alphaBlendFactorSupported = null
         ) : this()
         {
             if (unrestrictedBufferTextureCopyPitchSupported is not null)
@@ -64,31 +64,31 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "UnrestrictedBufferTextureCopyPitchSupported")]
-        public bool UnrestrictedBufferTextureCopyPitchSupported;
+        public int UnrestrictedBufferTextureCopyPitchSupported;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "UnrestrictedVertexElementAlignmentSupported")]
-        public bool UnrestrictedVertexElementAlignmentSupported;
+        public int UnrestrictedVertexElementAlignmentSupported;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "InvertedViewportHeightFlipsYSupported")]
-        public bool InvertedViewportHeightFlipsYSupported;
+        public int InvertedViewportHeightFlipsYSupported;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "InvertedViewportDepthFlipsZSupported")]
-        public bool InvertedViewportDepthFlipsZSupported;
+        public int InvertedViewportDepthFlipsZSupported;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "TextureCopyBetweenDimensionsSupported")]
-        public bool TextureCopyBetweenDimensionsSupported;
+        public int TextureCopyBetweenDimensionsSupported;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "AlphaBlendFactorSupported")]
-        public bool AlphaBlendFactorSupported;
+        public int AlphaBlendFactorSupported;
     }
 }

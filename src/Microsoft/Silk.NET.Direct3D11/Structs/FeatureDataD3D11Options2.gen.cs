@@ -21,14 +21,14 @@ namespace Silk.NET.Direct3D11
     {
         public FeatureDataD3D11Options2
         (
-            bool? pSSpecifiedStencilRefSupported = null,
-            bool? typedUAVLoadAdditionalFormats = null,
-            bool? rOVsSupported = null,
+            int? pSSpecifiedStencilRefSupported = null,
+            int? typedUAVLoadAdditionalFormats = null,
+            int? rOVsSupported = null,
             ConservativeRasterizationTier? conservativeRasterizationTier = null,
             TiledResourcesTier? tiledResourcesTier = null,
-            bool? mapOnDefaultTextures = null,
-            bool? standardSwizzle = null,
-            bool? unifiedMemoryArchitecture = null
+            int? mapOnDefaultTextures = null,
+            int? standardSwizzle = null,
+            int? unifiedMemoryArchitecture = null
         ) : this()
         {
             if (pSSpecifiedStencilRefSupported is not null)
@@ -76,17 +76,17 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "PSSpecifiedStencilRefSupported")]
-        public bool PSSpecifiedStencilRefSupported;
+        public int PSSpecifiedStencilRefSupported;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "TypedUAVLoadAdditionalFormats")]
-        public bool TypedUAVLoadAdditionalFormats;
+        public int TypedUAVLoadAdditionalFormats;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "ROVsSupported")]
-        public bool ROVsSupported;
+        public int ROVsSupported;
 
         [NativeName("Type", "D3D11_CONSERVATIVE_RASTERIZATION_TIER")]
         [NativeName("Type.Name", "D3D11_CONSERVATIVE_RASTERIZATION_TIER")]
@@ -101,16 +101,16 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "MapOnDefaultTextures")]
-        public bool MapOnDefaultTextures;
+        public int MapOnDefaultTextures;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "StandardSwizzle")]
-        public bool StandardSwizzle;
+        public int StandardSwizzle;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "UnifiedMemoryArchitecture")]
-        public bool UnifiedMemoryArchitecture;
+        public int UnifiedMemoryArchitecture;
     }
 }

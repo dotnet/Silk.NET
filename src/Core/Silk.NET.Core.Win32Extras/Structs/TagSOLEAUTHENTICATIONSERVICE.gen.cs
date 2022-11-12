@@ -22,8 +22,8 @@ namespace Silk.NET.Core.Win32Extras
     {
         public TagSOLEAUTHENTICATIONSERVICE
         (
-            int? dwAuthnSvc = null,
-            int? dwAuthzSvc = null,
+            uint? dwAuthnSvc = null,
+            uint? dwAuthzSvc = null,
             char* pPrincipalName = null,
             int? hr = null
         ) : this()
@@ -53,12 +53,12 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "dwAuthnSvc")]
-        public int DwAuthnSvc;
+        public uint DwAuthnSvc;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "dwAuthzSvc")]
-        public int DwAuthzSvc;
+        public uint DwAuthzSvc;
 
         [NativeName("Type", "OLECHAR *")]
         [NativeName("Type.Name", "OLECHAR *")]

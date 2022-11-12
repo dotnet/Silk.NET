@@ -85,11 +85,11 @@ public unsafe static class DxcBlobVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe nint* GetBufferPointer(this ComPtr<IDxcBlob> thisVtbl)
+    public static unsafe void* GetBufferPointer(this ComPtr<IDxcBlob> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        nint* ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDxcBlob*, nint*>)@this->LpVtbl[3])(@this);
+        void* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<IDxcBlob*, void*>)@this->LpVtbl[3])(@this);
         return ret;
     }
 

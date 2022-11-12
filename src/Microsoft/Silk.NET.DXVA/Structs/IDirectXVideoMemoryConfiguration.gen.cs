@@ -111,22 +111,22 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetAvailableSurfaceTypeByIndex(int dwTypeIndex, MIDLMIDLItfDxva2api000000060001* pdwType)
+        public readonly unsafe int GetAvailableSurfaceTypeByIndex(uint dwTypeIndex, MIDLMIDLItfDxva2api000000060001* pdwType)
         {
             var @this = (IDirectXVideoMemoryConfiguration*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoMemoryConfiguration*, int, MIDLMIDLItfDxva2api000000060001*, int>)@this->LpVtbl[3])(@this, dwTypeIndex, pdwType);
+            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoMemoryConfiguration*, uint, MIDLMIDLItfDxva2api000000060001*, int>)@this->LpVtbl[3])(@this, dwTypeIndex, pdwType);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetAvailableSurfaceTypeByIndex(int dwTypeIndex, ref MIDLMIDLItfDxva2api000000060001 pdwType)
+        public readonly int GetAvailableSurfaceTypeByIndex(uint dwTypeIndex, ref MIDLMIDLItfDxva2api000000060001 pdwType)
         {
             var @this = (IDirectXVideoMemoryConfiguration*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (MIDLMIDLItfDxva2api000000060001* pdwTypePtr = &pdwType)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoMemoryConfiguration*, int, MIDLMIDLItfDxva2api000000060001*, int>)@this->LpVtbl[3])(@this, dwTypeIndex, pdwTypePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoMemoryConfiguration*, uint, MIDLMIDLItfDxva2api000000060001*, int>)@this->LpVtbl[3])(@this, dwTypeIndex, pdwTypePtr);
             }
             return ret;
         }

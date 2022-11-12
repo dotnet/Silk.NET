@@ -85,22 +85,22 @@ public unsafe static class D2D1GdiMetafileSink1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ProcessRecord(this ComPtr<ID2D1GdiMetafileSink1> thisVtbl, int recordType, [Flow(FlowDirection.In)] void* recordData, int recordDataSize)
+    public static unsafe int ProcessRecord(this ComPtr<ID2D1GdiMetafileSink1> thisVtbl, uint recordType, [Flow(FlowDirection.In)] void* recordData, uint recordDataSize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1GdiMetafileSink1*, int, void*, int, int>)@this->LpVtbl[3])(@this, recordType, recordData, recordDataSize);
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1GdiMetafileSink1*, uint, void*, uint, int>)@this->LpVtbl[3])(@this, recordType, recordData, recordDataSize);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int ProcessRecord<T0>(this ComPtr<ID2D1GdiMetafileSink1> thisVtbl, int recordType, [Flow(FlowDirection.In)] in T0 recordData, int recordDataSize) where T0 : unmanaged
+    public static int ProcessRecord<T0>(this ComPtr<ID2D1GdiMetafileSink1> thisVtbl, uint recordType, [Flow(FlowDirection.In)] in T0 recordData, uint recordDataSize) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void* recordDataPtr = &recordData)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1GdiMetafileSink1*, int, void*, int, int>)@this->LpVtbl[3])(@this, recordType, recordDataPtr, recordDataSize);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1GdiMetafileSink1*, uint, void*, uint, int>)@this->LpVtbl[3])(@this, recordType, recordDataPtr, recordDataSize);
         }
         return ret;
     }
@@ -131,7 +131,7 @@ public unsafe static class D2D1GdiMetafileSink1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ProcessRecord<T0>(this ComPtr<ID2D1GdiMetafileSink1> thisVtbl, int recordType, [Flow(FlowDirection.In)] ReadOnlySpan<T0> recordData, int recordDataSize) where T0 : unmanaged
+    public static int ProcessRecord<T0>(this ComPtr<ID2D1GdiMetafileSink1> thisVtbl, uint recordType, [Flow(FlowDirection.In)] ReadOnlySpan<T0> recordData, uint recordDataSize) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

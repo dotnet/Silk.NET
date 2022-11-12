@@ -72,24 +72,33 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ID3D11ShaderReflectionVariable* GetVariableByName([Flow(FlowDirection.In)] string* Name)
+        public readonly unsafe ID3D11ShaderReflectionVariable* GetVariableByName([Flow(FlowDirection.In)] byte* Name)
+        {
+            var @this = (ID3D11ShaderReflectionConstantBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ID3D11ShaderReflectionVariable* ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderReflectionConstantBuffer*, byte*, ID3D11ShaderReflectionVariable*>)@this->LpVtbl[2])(@this, Name);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe ID3D11ShaderReflectionVariable* GetVariableByName([Flow(FlowDirection.In)] in byte Name)
+        {
+            var @this = (ID3D11ShaderReflectionConstantBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ID3D11ShaderReflectionVariable* ret = default;
+            fixed (byte* NamePtr = &Name)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderReflectionConstantBuffer*, byte*, ID3D11ShaderReflectionVariable*>)@this->LpVtbl[2])(@this, NamePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe ID3D11ShaderReflectionVariable* GetVariableByName([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string Name)
         {
             var @this = (ID3D11ShaderReflectionConstantBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ID3D11ShaderReflectionVariable* ret = default;
             var NamePtr = (byte*) SilkMarshal.StringToPtr(Name, NativeStringEncoding.LPStr);
             ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderReflectionConstantBuffer*, byte*, ID3D11ShaderReflectionVariable*>)@this->LpVtbl[2])(@this, NamePtr);
-            SilkMarshal.Free((nint)NamePtr);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe ID3D11ShaderReflectionVariable* GetVariableByName([Flow(FlowDirection.In)] in string Name)
-        {
-            var @this = (ID3D11ShaderReflectionConstantBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ID3D11ShaderReflectionVariable* ret = default;
-            var NamePtr = (byte*) SilkMarshal.StringToPtr(Name, NativeStringEncoding.LPStr);
-            var NamePp = &NamePtr;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderReflectionConstantBuffer*, byte**, ID3D11ShaderReflectionVariable*>)@this->LpVtbl[2])(@this, NamePp);
             SilkMarshal.Free((nint)NamePtr);
             return ret;
         }

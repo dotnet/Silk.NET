@@ -16,13 +16,14 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
     [NativeName("Name", "D3D12_META_COMMAND_DESC")]
     public unsafe partial struct MetaCommandDesc
     {
         public MetaCommandDesc
         (
             Guid? id = null,
-            nint* name = null,
+            char* name = null,
             GraphicsStates? initializationDirtyState = null,
             GraphicsStates? executionDirtyState = null
         ) : this()
@@ -57,7 +58,7 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "LPCWSTR")]
         [NativeName("Type.Name", "LPCWSTR")]
         [NativeName("Name", "Name")]
-        public nint* Name;
+        public char* Name;
 
         [NativeName("Type", "D3D12_GRAPHICS_STATES")]
         [NativeName("Type.Name", "D3D12_GRAPHICS_STATES")]

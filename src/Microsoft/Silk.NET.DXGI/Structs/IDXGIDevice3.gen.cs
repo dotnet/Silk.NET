@@ -681,22 +681,22 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int EnqueueSetEvent(nint* hEvent)
+        public readonly unsafe int EnqueueSetEvent(void* hEvent)
         {
             var @this = (IDXGIDevice3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice3*, nint*, int>)@this->LpVtbl[16])(@this, hEvent);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice3*, void*, int>)@this->LpVtbl[16])(@this, hEvent);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int EnqueueSetEvent(ref nint hEvent)
+        public readonly int EnqueueSetEvent<T0>(ref T0 hEvent) where T0 : unmanaged
         {
             var @this = (IDXGIDevice3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* hEventPtr = &hEvent)
+            fixed (void* hEventPtr = &hEvent)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice3*, nint*, int>)@this->LpVtbl[16])(@this, hEventPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice3*, void*, int>)@this->LpVtbl[16])(@this, hEventPtr);
             }
             return ret;
         }

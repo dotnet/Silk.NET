@@ -23,10 +23,10 @@ namespace Silk.NET.Direct3D9
         (
             Format? format = null,
             Resourcetype? type = null,
-            int? usage = null,
+            uint? usage = null,
             Pool? pool = null,
             MultisampleType? multiSampleType = null,
-            int? multiSampleQuality = null,
+            uint? multiSampleQuality = null,
             uint? width = null,
             uint? height = null
         ) : this()
@@ -86,7 +86,7 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "Usage")]
-        public int Usage;
+        public uint Usage;
 
         [NativeName("Type", "D3DPOOL")]
         [NativeName("Type.Name", "D3DPOOL")]
@@ -101,7 +101,7 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "MultiSampleQuality")]
-        public int MultiSampleQuality;
+        public uint MultiSampleQuality;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]

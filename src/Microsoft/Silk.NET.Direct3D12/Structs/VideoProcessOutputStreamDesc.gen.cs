@@ -26,7 +26,7 @@ namespace Silk.NET.Direct3D12
             VideoProcessAlphaFillMode? alphaFillMode = null,
             uint? alphaFillModeSourceStreamIndex = null,
             Silk.NET.DXGI.Rational? frameRate = null,
-            bool? enableStereo = null
+            int? enableStereo = null
         ) : this()
         {
             if (format is not null)
@@ -93,6 +93,6 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "EnableStereo")]
-        public bool EnableStereo;
+        public int EnableStereo;
     }
 }

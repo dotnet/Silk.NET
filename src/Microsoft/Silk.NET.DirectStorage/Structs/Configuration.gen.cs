@@ -23,11 +23,11 @@ namespace Silk.NET.DirectStorage
         (
             uint? numSubmitThreads = null,
             int? numBuiltInCpuDecompressionThreads = null,
-            bool? forceMappingLayer = null,
-            bool? disableBypassIO = null,
-            bool? disableTelemetry = null,
-            bool? disableGpuDecompressionMetacommand = null,
-            bool? disableGpuDecompression = null
+            int? forceMappingLayer = null,
+            int? disableBypassIO = null,
+            int? disableTelemetry = null,
+            int? disableGpuDecompressionMetacommand = null,
+            int? disableGpuDecompression = null
         ) : this()
         {
             if (numSubmitThreads is not null)
@@ -80,26 +80,26 @@ namespace Silk.NET.DirectStorage
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "ForceMappingLayer")]
-        public bool ForceMappingLayer;
+        public int ForceMappingLayer;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "DisableBypassIO")]
-        public bool DisableBypassIO;
+        public int DisableBypassIO;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "DisableTelemetry")]
-        public bool DisableTelemetry;
+        public int DisableTelemetry;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "DisableGpuDecompressionMetacommand")]
-        public bool DisableGpuDecompressionMetacommand;
+        public int DisableGpuDecompressionMetacommand;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "DisableGpuDecompression")]
-        public bool DisableGpuDecompression;
+        public int DisableGpuDecompression;
     }
 }

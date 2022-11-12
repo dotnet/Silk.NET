@@ -21,7 +21,7 @@ namespace Silk.NET.Core.Win32Extras
     {
         public TagSOLEAUTHENTICATIONLIST
         (
-            int? cAuthInfo = null,
+            uint? cAuthInfo = null,
             TagSOLEAUTHENTICATIONINFO* aAuthInfo = null
         ) : this()
         {
@@ -40,7 +40,7 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "cAuthInfo")]
-        public int CAuthInfo;
+        public uint CAuthInfo;
 
         [NativeName("Type", "SOLE_AUTHENTICATION_INFO *")]
         [NativeName("Type.Name", "SOLE_AUTHENTICATION_INFO *")]

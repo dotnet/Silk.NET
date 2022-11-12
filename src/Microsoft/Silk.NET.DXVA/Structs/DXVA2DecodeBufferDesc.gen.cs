@@ -21,7 +21,7 @@ namespace Silk.NET.DXVA
     {
         public DXVA2DecodeBufferDesc
         (
-            int? compressedBufferType = null,
+            uint? compressedBufferType = null,
             uint? bufferIndex = null,
             uint? dataOffset = null,
             uint? dataSize = null,
@@ -94,7 +94,7 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "CompressedBufferType")]
-        public int CompressedBufferType;
+        public uint CompressedBufferType;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]

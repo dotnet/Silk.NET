@@ -111,22 +111,22 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ProcessRecord(int recordType, [Flow(FlowDirection.In)] void* recordData, int recordDataSize)
+        public readonly unsafe int ProcessRecord(uint recordType, [Flow(FlowDirection.In)] void* recordData, uint recordDataSize)
         {
             var @this = (ID2D1GdiMetafileSink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1GdiMetafileSink*, int, void*, int, int>)@this->LpVtbl[3])(@this, recordType, recordData, recordDataSize);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1GdiMetafileSink*, uint, void*, uint, int>)@this->LpVtbl[3])(@this, recordType, recordData, recordDataSize);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int ProcessRecord<T0>(int recordType, [Flow(FlowDirection.In)] in T0 recordData, int recordDataSize) where T0 : unmanaged
+        public readonly int ProcessRecord<T0>(uint recordType, [Flow(FlowDirection.In)] in T0 recordData, uint recordDataSize) where T0 : unmanaged
         {
             var @this = (ID2D1GdiMetafileSink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (void* recordDataPtr = &recordData)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1GdiMetafileSink*, int, void*, int, int>)@this->LpVtbl[3])(@this, recordType, recordDataPtr, recordDataSize);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1GdiMetafileSink*, uint, void*, uint, int>)@this->LpVtbl[3])(@this, recordType, recordDataPtr, recordDataSize);
             }
             return ret;
         }

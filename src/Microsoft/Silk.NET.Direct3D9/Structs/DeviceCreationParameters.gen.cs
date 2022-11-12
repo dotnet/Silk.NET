@@ -24,7 +24,7 @@ namespace Silk.NET.Direct3D9
             uint? adapterOrdinal = null,
             Devtype? deviceType = null,
             nint? hFocusWindow = null,
-            int? behaviorFlags = null
+            uint? behaviorFlags = null
         ) : this()
         {
             if (adapterOrdinal is not null)
@@ -67,6 +67,6 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "BehaviorFlags")]
-        public int BehaviorFlags;
+        public uint BehaviorFlags;
     }
 }

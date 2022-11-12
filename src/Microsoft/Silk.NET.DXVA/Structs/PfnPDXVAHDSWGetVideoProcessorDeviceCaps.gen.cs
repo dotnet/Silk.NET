@@ -19,10 +19,10 @@ namespace Silk.NET.DXVA
     public unsafe readonly struct PfnPDXVAHDSWGetVideoProcessorDeviceCaps : IDisposable
     {
         private readonly void* _handle;
-        public delegate* unmanaged[Cdecl]<nint*, HDContentDesc*, HDDeviceUsage, HDVpdevcaps*, int> Handle => (delegate* unmanaged[Cdecl]<nint*, HDContentDesc*, HDDeviceUsage, HDVpdevcaps*, int>) _handle;
+        public delegate* unmanaged[Cdecl]<void*, HDContentDesc*, HDDeviceUsage, HDVpdevcaps*, int> Handle => (delegate* unmanaged[Cdecl]<void*, HDContentDesc*, HDDeviceUsage, HDVpdevcaps*, int>) _handle;
         public PfnPDXVAHDSWGetVideoProcessorDeviceCaps
         (
-            delegate* unmanaged[Cdecl]<nint*, HDContentDesc*, HDDeviceUsage, HDVpdevcaps*, int> ptr
+            delegate* unmanaged[Cdecl]<void*, HDContentDesc*, HDDeviceUsage, HDVpdevcaps*, int> ptr
         ) => _handle = ptr;
 
         public PfnPDXVAHDSWGetVideoProcessorDeviceCaps
@@ -35,7 +35,7 @@ namespace Silk.NET.DXVA
 
         public static implicit operator nint(PfnPDXVAHDSWGetVideoProcessorDeviceCaps pfn) => (nint) pfn.Handle;
         public static explicit operator PfnPDXVAHDSWGetVideoProcessorDeviceCaps(nint pfn)
-            => new PfnPDXVAHDSWGetVideoProcessorDeviceCaps((delegate* unmanaged[Cdecl]<nint*, HDContentDesc*, HDDeviceUsage, HDVpdevcaps*, int>) pfn);
+            => new PfnPDXVAHDSWGetVideoProcessorDeviceCaps((delegate* unmanaged[Cdecl]<void*, HDContentDesc*, HDDeviceUsage, HDVpdevcaps*, int>) pfn);
 
         public static implicit operator PfnPDXVAHDSWGetVideoProcessorDeviceCaps(PDXVAHDSWGetVideoProcessorDeviceCaps proc)
             => new PfnPDXVAHDSWGetVideoProcessorDeviceCaps(proc);
@@ -43,11 +43,11 @@ namespace Silk.NET.DXVA
         public static explicit operator PDXVAHDSWGetVideoProcessorDeviceCaps(PfnPDXVAHDSWGetVideoProcessorDeviceCaps pfn)
             => SilkMarshal.PtrToDelegate<PDXVAHDSWGetVideoProcessorDeviceCaps>(pfn);
 
-        public static implicit operator delegate* unmanaged[Cdecl]<nint*, HDContentDesc*, HDDeviceUsage, HDVpdevcaps*, int>(PfnPDXVAHDSWGetVideoProcessorDeviceCaps pfn) => pfn.Handle;
-        public static implicit operator PfnPDXVAHDSWGetVideoProcessorDeviceCaps(delegate* unmanaged[Cdecl]<nint*, HDContentDesc*, HDDeviceUsage, HDVpdevcaps*, int> ptr) => new PfnPDXVAHDSWGetVideoProcessorDeviceCaps(ptr);
+        public static implicit operator delegate* unmanaged[Cdecl]<void*, HDContentDesc*, HDDeviceUsage, HDVpdevcaps*, int>(PfnPDXVAHDSWGetVideoProcessorDeviceCaps pfn) => pfn.Handle;
+        public static implicit operator PfnPDXVAHDSWGetVideoProcessorDeviceCaps(delegate* unmanaged[Cdecl]<void*, HDContentDesc*, HDDeviceUsage, HDVpdevcaps*, int> ptr) => new PfnPDXVAHDSWGetVideoProcessorDeviceCaps(ptr);
     }
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate int PDXVAHDSWGetVideoProcessorDeviceCaps(nint* arg0, HDContentDesc* arg1, HDDeviceUsage arg2, HDVpdevcaps* arg3);
+    public unsafe delegate int PDXVAHDSWGetVideoProcessorDeviceCaps(void* arg0, HDContentDesc* arg1, HDDeviceUsage arg2, HDVpdevcaps* arg3);
 }
 

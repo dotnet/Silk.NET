@@ -570,11 +570,11 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly bool IsCurrent()
+        public readonly int IsCurrent()
         {
             var @this = (IDXGIFactory1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            bool ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory1*, bool>)@this->LpVtbl[13])(@this);
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory1*, int>)@this->LpVtbl[13])(@this);
             return ret;
         }
 

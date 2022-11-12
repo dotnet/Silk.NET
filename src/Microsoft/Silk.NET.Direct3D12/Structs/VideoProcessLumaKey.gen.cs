@@ -21,7 +21,7 @@ namespace Silk.NET.Direct3D12
     {
         public VideoProcessLumaKey
         (
-            bool? enable = null,
+            int? enable = null,
             float? lower = null,
             float? upper = null
         ) : this()
@@ -46,7 +46,7 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "Enable")]
-        public bool Enable;
+        public int Enable;
 
         [NativeName("Type", "FLOAT")]
         [NativeName("Type.Name", "FLOAT")]

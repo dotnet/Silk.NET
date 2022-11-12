@@ -45,7 +45,7 @@ namespace Silk.NET.XAudio
             float? decayTime = null,
             float? density = null,
             float? roomSize = null,
-            bool? disableLateField = null
+            int? disableLateField = null
         ) : this()
         {
             if (wetDryMix is not null)
@@ -288,6 +288,6 @@ namespace Silk.NET.XAudio
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "DisableLateField")]
-        public bool DisableLateField;
+        public int DisableLateField;
     }
 }

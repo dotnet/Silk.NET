@@ -111,18 +111,18 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void EnableShaderInstrumentation(bool bEnable)
+        public readonly void EnableShaderInstrumentation(int bEnable)
         {
             var @this = (ID3D12Tools*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12Tools*, bool, void>)@this->LpVtbl[3])(@this, bEnable);
+            ((delegate* unmanaged[Stdcall]<ID3D12Tools*, int, void>)@this->LpVtbl[3])(@this, bEnable);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly bool ShaderInstrumentationEnabled()
+        public readonly int ShaderInstrumentationEnabled()
         {
             var @this = (ID3D12Tools*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            bool ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12Tools*, bool>)@this->LpVtbl[4])(@this);
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12Tools*, int>)@this->LpVtbl[4])(@this);
             return ret;
         }
 

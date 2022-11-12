@@ -19,10 +19,10 @@ namespace Silk.NET.Core.Win32Extras
     public unsafe readonly struct PfnPthreadStartRoutine : IDisposable
     {
         private readonly void* _handle;
-        public delegate* unmanaged[Cdecl]<nint*, int> Handle => (delegate* unmanaged[Cdecl]<nint*, int>) _handle;
+        public delegate* unmanaged[Cdecl]<void*, uint> Handle => (delegate* unmanaged[Cdecl]<void*, uint>) _handle;
         public PfnPthreadStartRoutine
         (
-            delegate* unmanaged[Cdecl]<nint*, int> ptr
+            delegate* unmanaged[Cdecl]<void*, uint> ptr
         ) => _handle = ptr;
 
         public PfnPthreadStartRoutine
@@ -35,7 +35,7 @@ namespace Silk.NET.Core.Win32Extras
 
         public static implicit operator nint(PfnPthreadStartRoutine pfn) => (nint) pfn.Handle;
         public static explicit operator PfnPthreadStartRoutine(nint pfn)
-            => new PfnPthreadStartRoutine((delegate* unmanaged[Cdecl]<nint*, int>) pfn);
+            => new PfnPthreadStartRoutine((delegate* unmanaged[Cdecl]<void*, uint>) pfn);
 
         public static implicit operator PfnPthreadStartRoutine(PthreadStartRoutine proc)
             => new PfnPthreadStartRoutine(proc);
@@ -43,11 +43,11 @@ namespace Silk.NET.Core.Win32Extras
         public static explicit operator PthreadStartRoutine(PfnPthreadStartRoutine pfn)
             => SilkMarshal.PtrToDelegate<PthreadStartRoutine>(pfn);
 
-        public static implicit operator delegate* unmanaged[Cdecl]<nint*, int>(PfnPthreadStartRoutine pfn) => pfn.Handle;
-        public static implicit operator PfnPthreadStartRoutine(delegate* unmanaged[Cdecl]<nint*, int> ptr) => new PfnPthreadStartRoutine(ptr);
+        public static implicit operator delegate* unmanaged[Cdecl]<void*, uint>(PfnPthreadStartRoutine pfn) => pfn.Handle;
+        public static implicit operator PfnPthreadStartRoutine(delegate* unmanaged[Cdecl]<void*, uint> ptr) => new PfnPthreadStartRoutine(ptr);
     }
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate int PthreadStartRoutine(nint* arg0);
+    public unsafe delegate uint PthreadStartRoutine(void* arg0);
 }
 

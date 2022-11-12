@@ -22,12 +22,12 @@ namespace Silk.NET.Direct3D9
         public AdapterIdentifier9
         (
             long? driverVersion = null,
-            int? vendorId = null,
-            int? deviceId = null,
-            int? subSysId = null,
-            int? revision = null,
+            uint? vendorId = null,
+            uint? deviceId = null,
+            uint? subSysId = null,
+            uint? revision = null,
             Guid? deviceIdentifier = null,
-            int? wHQLLevel = null
+            uint? wHQLLevel = null
         ) : this()
         {
             if (driverVersion is not null)
@@ -87,22 +87,22 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "VendorId")]
-        public int VendorId;
+        public uint VendorId;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "DeviceId")]
-        public int DeviceId;
+        public uint DeviceId;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "SubSysId")]
-        public int SubSysId;
+        public uint SubSysId;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "Revision")]
-        public int Revision;
+        public uint Revision;
 
         [NativeName("Type", "GUID")]
         [NativeName("Type.Name", "GUID")]
@@ -112,6 +112,6 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "WHQLLevel")]
-        public int WHQLLevel;
+        public uint WHQLLevel;
     }
 }

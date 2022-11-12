@@ -25,7 +25,7 @@ namespace Silk.NET.Direct3D12
             VideoEncoderCodec? codec = null,
             VideoEncoderProfileDesc? profile = null,
             Silk.NET.DXGI.Format? format = null,
-            bool? isSupported = null
+            int? isSupported = null
         ) : this()
         {
             if (nodeIndex is not null)
@@ -78,6 +78,6 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "IsSupported")]
-        public bool IsSupported;
+        public int IsSupported;
     }
 }

@@ -85,11 +85,11 @@ public unsafe static class D3D10BlobVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe nint* GetBufferPointer(this ComPtr<ID3D10Blob> thisVtbl)
+    public static unsafe void* GetBufferPointer(this ComPtr<ID3D10Blob> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        nint* ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D10Blob*, nint*>)@this->LpVtbl[3])(@this);
+        void* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D10Blob*, void*>)@this->LpVtbl[3])(@this);
         return ret;
     }
 

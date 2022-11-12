@@ -29,8 +29,8 @@ namespace Silk.NET.Vulkan.Video
             byte? numRefIdxL1ActiveMinus1 = null,
             StdVideoH264CabacInitIdc? cabacInitIdc = null,
             StdVideoH264DisableDeblockingFilterIdc? disableDeblockingFilterIdc = null,
-            sbyte? sliceAlphaC0OffsetDiv2 = null,
-            sbyte? sliceBetaOffsetDiv2 = null,
+            byte? sliceAlphaC0OffsetDiv2 = null,
+            byte? sliceBetaOffsetDiv2 = null,
             StdVideoEncodeH264WeightTable* pWeightTable = null
         ) : this()
         {
@@ -134,12 +134,12 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type", "int8_t")]
         [NativeName("Type.Name", "int8_t")]
         [NativeName("Name", "slice_alpha_c0_offset_div2")]
-        public sbyte SliceAlphaC0OffsetDiv2;
+        public byte SliceAlphaC0OffsetDiv2;
 
         [NativeName("Type", "int8_t")]
         [NativeName("Type.Name", "int8_t")]
         [NativeName("Name", "slice_beta_offset_div2")]
-        public sbyte SliceBetaOffsetDiv2;
+        public byte SliceBetaOffsetDiv2;
 
         [NativeName("Type", "const StdVideoEncodeH264WeightTable *")]
         [NativeName("Type.Name", "const StdVideoEncodeH264WeightTable *")]

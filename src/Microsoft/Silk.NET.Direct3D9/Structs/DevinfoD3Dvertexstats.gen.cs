@@ -21,8 +21,8 @@ namespace Silk.NET.Direct3D9
     {
         public DevinfoD3Dvertexstats
         (
-            int? numRenderedTriangles = null,
-            int? numExtraClippingTriangles = null
+            uint? numRenderedTriangles = null,
+            uint? numExtraClippingTriangles = null
         ) : this()
         {
             if (numRenderedTriangles is not null)
@@ -40,11 +40,11 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "NumRenderedTriangles")]
-        public int NumRenderedTriangles;
+        public uint NumRenderedTriangles;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "NumExtraClippingTriangles")]
-        public int NumExtraClippingTriangles;
+        public uint NumExtraClippingTriangles;
     }
 }

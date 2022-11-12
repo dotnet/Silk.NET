@@ -21,11 +21,11 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataD3D12Options9
         (
-            bool? meshShaderPipelineStatsSupported = null,
-            bool? meshShaderSupportsFullRangeRenderTargetArrayIndex = null,
-            bool? atomicInt64OnTypedResourceSupported = null,
-            bool? atomicInt64OnGroupSharedSupported = null,
-            bool? derivativesInMeshAndAmplificationShadersSupported = null,
+            int? meshShaderPipelineStatsSupported = null,
+            int? meshShaderSupportsFullRangeRenderTargetArrayIndex = null,
+            int? atomicInt64OnTypedResourceSupported = null,
+            int? atomicInt64OnGroupSharedSupported = null,
+            int? derivativesInMeshAndAmplificationShadersSupported = null,
             WaveMmaTier? waveMMATier = null
         ) : this()
         {
@@ -64,27 +64,27 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "MeshShaderPipelineStatsSupported")]
-        public bool MeshShaderPipelineStatsSupported;
+        public int MeshShaderPipelineStatsSupported;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "MeshShaderSupportsFullRangeRenderTargetArrayIndex")]
-        public bool MeshShaderSupportsFullRangeRenderTargetArrayIndex;
+        public int MeshShaderSupportsFullRangeRenderTargetArrayIndex;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "AtomicInt64OnTypedResourceSupported")]
-        public bool AtomicInt64OnTypedResourceSupported;
+        public int AtomicInt64OnTypedResourceSupported;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "AtomicInt64OnGroupSharedSupported")]
-        public bool AtomicInt64OnGroupSharedSupported;
+        public int AtomicInt64OnGroupSharedSupported;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "DerivativesInMeshAndAmplificationShadersSupported")]
-        public bool DerivativesInMeshAndAmplificationShadersSupported;
+        public int DerivativesInMeshAndAmplificationShadersSupported;
 
         [NativeName("Type", "D3D12_WAVE_MMA_TIER")]
         [NativeName("Type.Name", "D3D12_WAVE_MMA_TIER")]

@@ -28,16 +28,16 @@ namespace Silk.NET.Direct3D12
             Silk.NET.DXGI.Rational? frameRate = null,
             VideoSizeRange? sourceSizeRange = null,
             VideoSizeRange? destinationSizeRange = null,
-            bool? enableOrientation = null,
+            int? enableOrientation = null,
             VideoProcessFilterFlags? filterFlags = null,
             VideoFrameStereoFormat? stereoFormat = null,
             VideoFieldType? fieldType = null,
             VideoProcessDeinterlaceFlags? deinterlaceMode = null,
-            bool? enableAlphaBlending = null,
+            int? enableAlphaBlending = null,
             VideoProcessLumaKey? lumaKey = null,
             uint? numPastFrames = null,
             uint? numFutureFrames = null,
-            bool? enableAutoProcessing = null
+            int? enableAutoProcessing = null
         ) : this()
         {
             if (format is not null)
@@ -165,7 +165,7 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "EnableOrientation")]
-        public bool EnableOrientation;
+        public int EnableOrientation;
 
         [NativeName("Type", "D3D12_VIDEO_PROCESS_FILTER_FLAGS")]
         [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_FILTER_FLAGS")]
@@ -190,7 +190,7 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "EnableAlphaBlending")]
-        public bool EnableAlphaBlending;
+        public int EnableAlphaBlending;
 
         [NativeName("Type", "D3D12_VIDEO_PROCESS_LUMA_KEY")]
         [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_LUMA_KEY")]
@@ -210,6 +210,6 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "EnableAutoProcessing")]
-        public bool EnableAutoProcessing;
+        public int EnableAutoProcessing;
     }
 }

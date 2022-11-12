@@ -22,7 +22,7 @@ namespace Silk.NET.Direct3D12
     {
         public DxilSubobjectToExportsAssociation
         (
-            nint* subobjectToAssociate = null,
+            char* subobjectToAssociate = null,
             uint? numExports = null,
             char** pExports = null
         ) : this()
@@ -47,7 +47,7 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "LPCWSTR")]
         [NativeName("Type.Name", "LPCWSTR")]
         [NativeName("Name", "SubobjectToAssociate")]
-        public nint* SubobjectToAssociate;
+        public char* SubobjectToAssociate;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]

@@ -436,22 +436,22 @@ public unsafe static class DXGISurface2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDC(this ComPtr<IDXGISurface2> thisVtbl, bool Discard, nint* phdc)
+    public static unsafe int GetDC(this ComPtr<IDXGISurface2> thisVtbl, int Discard, nint* phdc)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, bool, nint*, int>)@this->LpVtbl[11])(@this, Discard, phdc);
+        ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, int, nint*, int>)@this->LpVtbl[11])(@this, Discard, phdc);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetDC(this ComPtr<IDXGISurface2> thisVtbl, bool Discard, ref nint phdc)
+    public static int GetDC(this ComPtr<IDXGISurface2> thisVtbl, int Discard, ref nint phdc)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (nint* phdcPtr = &phdc)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, bool, nint*, int>)@this->LpVtbl[11])(@this, Discard, phdcPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, int, nint*, int>)@this->LpVtbl[11])(@this, Discard, phdcPtr);
         }
         return ret;
     }
@@ -797,7 +797,7 @@ public unsafe static class DXGISurface2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetDC(this ComPtr<IDXGISurface2> thisVtbl, bool Discard, Span<nint> phdc)
+    public static int GetDC(this ComPtr<IDXGISurface2> thisVtbl, int Discard, Span<nint> phdc)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

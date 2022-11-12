@@ -22,7 +22,7 @@ namespace Silk.NET.Direct3D11
         public TraceStep
         (
             uint? iD = null,
-            bool? instructionActive = null,
+            int? instructionActive = null,
             byte? numRegistersWritten = null,
             byte? numRegistersRead = null,
             ushort? miscOperations = null,
@@ -75,7 +75,7 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "InstructionActive")]
-        public bool InstructionActive;
+        public int InstructionActive;
 
         [NativeName("Type", "UINT8")]
         [NativeName("Type.Name", "UINT8")]

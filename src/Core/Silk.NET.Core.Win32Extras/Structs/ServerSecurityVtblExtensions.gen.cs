@@ -2599,11 +2599,11 @@ public unsafe static class ServerSecurityVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static bool IsImpersonating(this ComPtr<IServerSecurity> thisVtbl)
+    public static int IsImpersonating(this ComPtr<IServerSecurity> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        bool ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, bool>)@this->LpVtbl[6])(@this);
+        int ret = default;
+        ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, int>)@this->LpVtbl[6])(@this);
         return ret;
     }
 

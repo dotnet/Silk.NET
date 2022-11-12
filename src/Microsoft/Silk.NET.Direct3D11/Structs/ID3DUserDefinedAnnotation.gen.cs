@@ -111,23 +111,34 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BeginEvent([Flow(FlowDirection.In)] nint* Name)
+        public readonly unsafe int BeginEvent([Flow(FlowDirection.In)] char* Name)
         {
             var @this = (ID3DUserDefinedAnnotation*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, nint*, int>)@this->LpVtbl[3])(@this, Name);
+            ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, char*, int>)@this->LpVtbl[3])(@this, Name);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int BeginEvent([Flow(FlowDirection.In)] in nint Name)
+        public readonly int BeginEvent([Flow(FlowDirection.In)] in char Name)
         {
             var @this = (ID3DUserDefinedAnnotation*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* NamePtr = &Name)
+            fixed (char* NamePtr = &Name)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, nint*, int>)@this->LpVtbl[3])(@this, NamePtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, char*, int>)@this->LpVtbl[3])(@this, NamePtr);
             }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int BeginEvent([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
+        {
+            var @this = (ID3DUserDefinedAnnotation*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var NamePtr = (byte*) SilkMarshal.StringToPtr(Name, NativeStringEncoding.LPWStr);
+            ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, byte*, int>)@this->LpVtbl[3])(@this, NamePtr);
+            SilkMarshal.Free((nint)NamePtr);
             return ret;
         }
 
@@ -141,28 +152,37 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void SetMarker([Flow(FlowDirection.In)] nint* Name)
+        public readonly unsafe void SetMarker([Flow(FlowDirection.In)] char* Name)
         {
             var @this = (ID3DUserDefinedAnnotation*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, nint*, void>)@this->LpVtbl[5])(@this, Name);
+            ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, char*, void>)@this->LpVtbl[5])(@this, Name);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetMarker([Flow(FlowDirection.In)] in nint Name)
+        public readonly void SetMarker([Flow(FlowDirection.In)] in char Name)
         {
             var @this = (ID3DUserDefinedAnnotation*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (nint* NamePtr = &Name)
+            fixed (char* NamePtr = &Name)
             {
-                ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, nint*, void>)@this->LpVtbl[5])(@this, NamePtr);
+                ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, char*, void>)@this->LpVtbl[5])(@this, NamePtr);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly bool GetStatus()
+        public readonly void SetMarker([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
         {
             var @this = (ID3DUserDefinedAnnotation*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            bool ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, bool>)@this->LpVtbl[6])(@this);
+            var NamePtr = (byte*) SilkMarshal.StringToPtr(Name, NativeStringEncoding.LPWStr);
+            ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, byte*, void>)@this->LpVtbl[5])(@this, NamePtr);
+            SilkMarshal.Free((nint)NamePtr);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetStatus()
+        {
+            var @this = (ID3DUserDefinedAnnotation*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, int>)@this->LpVtbl[6])(@this);
             return ret;
         }
 

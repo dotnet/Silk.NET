@@ -23,7 +23,7 @@ namespace Silk.NET.Direct3D9
         (
             ulong? bytesEvictedFromProcess = null,
             ulong? sizeOfInefficientAllocation = null,
-            int? levelOfEfficiency = null
+            uint? levelOfEfficiency = null
         ) : this()
         {
             if (bytesEvictedFromProcess is not null)
@@ -56,6 +56,6 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "LevelOfEfficiency")]
-        public int LevelOfEfficiency;
+        public uint LevelOfEfficiency;
     }
 }

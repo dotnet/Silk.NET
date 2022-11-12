@@ -23,10 +23,10 @@ namespace Silk.NET.Direct3D9
         (
             Format? format = null,
             Resourcetype? type = null,
-            int? usage = null,
+            uint? usage = null,
             Pool? pool = null,
             uint? size = null,
-            int? fVF = null
+            uint? fVF = null
         ) : this()
         {
             if (format is not null)
@@ -74,7 +74,7 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "Usage")]
-        public int Usage;
+        public uint Usage;
 
         [NativeName("Type", "D3DPOOL")]
         [NativeName("Type.Name", "D3DPOOL")]
@@ -89,6 +89,6 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "FVF")]
-        public int FVF;
+        public uint FVF;
     }
 }

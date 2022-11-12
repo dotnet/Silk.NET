@@ -33,7 +33,7 @@ namespace Silk.NET.Direct3D11
             uint? reservedBits = null,
             void* pIV = null,
             uint? iVSize = null,
-            bool? partialEncryption = null,
+            int? partialEncryption = null,
             EncryptedBlockInfo? encryptedBlockInfo = null
         ) : this()
         {
@@ -172,7 +172,7 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "PartialEncryption")]
-        public bool PartialEncryption;
+        public int PartialEncryption;
 
         [NativeName("Type", "D3D11_ENCRYPTED_BLOCK_INFO")]
         [NativeName("Type.Name", "D3D11_ENCRYPTED_BLOCK_INFO")]

@@ -22,7 +22,7 @@ namespace Silk.NET.Direct3D9
         public AuthenticatedchannelQueryInput
         (
             Guid? queryType = null,
-            nint* hChannel = null,
+            void* hChannel = null,
             uint? sequenceNumber = null
         ) : this()
         {
@@ -51,7 +51,7 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type", "HANDLE")]
         [NativeName("Type.Name", "HANDLE")]
         [NativeName("Name", "hChannel")]
-        public nint* HChannel;
+        public void* HChannel;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]

@@ -106,22 +106,22 @@ public unsafe static class SynchronizeContainerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WaitMultiple(this ComPtr<ISynchronizeContainer> thisVtbl, int dwFlags, int dwTimeOut, ISynchronize** ppSync)
+    public static unsafe int WaitMultiple(this ComPtr<ISynchronizeContainer> thisVtbl, uint dwFlags, uint dwTimeOut, ISynchronize** ppSync)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<ISynchronizeContainer*, int, int, ISynchronize**, int>)@this->LpVtbl[4])(@this, dwFlags, dwTimeOut, ppSync);
+        ret = ((delegate* unmanaged[Cdecl]<ISynchronizeContainer*, uint, uint, ISynchronize**, int>)@this->LpVtbl[4])(@this, dwFlags, dwTimeOut, ppSync);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WaitMultiple(this ComPtr<ISynchronizeContainer> thisVtbl, int dwFlags, int dwTimeOut, ref ISynchronize* ppSync)
+    public static unsafe int WaitMultiple(this ComPtr<ISynchronizeContainer> thisVtbl, uint dwFlags, uint dwTimeOut, ref ISynchronize* ppSync)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ISynchronize** ppSyncPtr = &ppSync)
         {
-            ret = ((delegate* unmanaged[Cdecl]<ISynchronizeContainer*, int, int, ISynchronize**, int>)@this->LpVtbl[4])(@this, dwFlags, dwTimeOut, ppSyncPtr);
+            ret = ((delegate* unmanaged[Cdecl]<ISynchronizeContainer*, uint, uint, ISynchronize**, int>)@this->LpVtbl[4])(@this, dwFlags, dwTimeOut, ppSyncPtr);
         }
         return ret;
     }
@@ -168,7 +168,7 @@ public unsafe static class SynchronizeContainerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int WaitMultiple<TI0>(this ComPtr<ISynchronizeContainer> thisVtbl, int dwFlags, int dwTimeOut, ref ComPtr<TI0> ppSync) where TI0 : unmanaged, IComVtbl<ISynchronize>, IComVtbl<TI0>
+    public static int WaitMultiple<TI0>(this ComPtr<ISynchronizeContainer> thisVtbl, uint dwFlags, uint dwTimeOut, ref ComPtr<TI0> ppSync) where TI0 : unmanaged, IComVtbl<ISynchronize>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

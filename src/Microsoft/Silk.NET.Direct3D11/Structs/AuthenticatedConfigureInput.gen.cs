@@ -23,7 +23,7 @@ namespace Silk.NET.Direct3D11
         (
             OMAC? omac = null,
             Guid? configureType = null,
-            nint* hChannel = null,
+            void* hChannel = null,
             uint? sequenceNumber = null
         ) : this()
         {
@@ -62,7 +62,7 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "HANDLE")]
         [NativeName("Type.Name", "HANDLE")]
         [NativeName("Name", "hChannel")]
-        public nint* HChannel;
+        public void* HChannel;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]

@@ -658,22 +658,22 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe bool IsShaderLoaded(Guid* shaderId)
+        public readonly unsafe int IsShaderLoaded(Guid* shaderId)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            bool ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectContext2*, Guid*, bool>)@this->LpVtbl[14])(@this, shaderId);
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectContext2*, Guid*, int>)@this->LpVtbl[14])(@this, shaderId);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly bool IsShaderLoaded(ref Guid shaderId)
+        public readonly int IsShaderLoaded(ref Guid shaderId)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            bool ret = default;
+            int ret = default;
             fixed (Guid* shaderIdPtr = &shaderId)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectContext2*, Guid*, bool>)@this->LpVtbl[14])(@this, shaderIdPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectContext2*, Guid*, int>)@this->LpVtbl[14])(@this, shaderIdPtr);
             }
             return ret;
         }
@@ -2030,11 +2030,11 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly bool IsBufferPrecisionSupported(BufferPrecision bufferPrecision)
+        public readonly int IsBufferPrecisionSupported(BufferPrecision bufferPrecision)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            bool ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectContext2*, BufferPrecision, bool>)@this->LpVtbl[23])(@this, bufferPrecision);
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectContext2*, BufferPrecision, int>)@this->LpVtbl[23])(@this, bufferPrecision);
             return ret;
         }
 

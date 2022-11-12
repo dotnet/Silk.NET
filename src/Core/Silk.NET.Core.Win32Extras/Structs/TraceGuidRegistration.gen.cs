@@ -22,7 +22,7 @@ namespace Silk.NET.Core.Win32Extras
         public TraceGuidRegistration
         (
             Guid* guid = null,
-            nint* regHandle = null
+            void* regHandle = null
         ) : this()
         {
             if (guid is not null)
@@ -45,6 +45,6 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "HANDLE")]
         [NativeName("Type.Name", "HANDLE")]
         [NativeName("Name", "RegHandle")]
-        public nint* RegHandle;
+        public void* RegHandle;
     }
 }

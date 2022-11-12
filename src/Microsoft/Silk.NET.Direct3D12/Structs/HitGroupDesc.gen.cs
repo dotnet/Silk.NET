@@ -16,16 +16,17 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
     [NativeName("Name", "D3D12_HIT_GROUP_DESC")]
     public unsafe partial struct HitGroupDesc
     {
         public HitGroupDesc
         (
-            nint* hitGroupExport = null,
+            char* hitGroupExport = null,
             HitGroupType? type = null,
-            nint* anyHitShaderImport = null,
-            nint* closestHitShaderImport = null,
-            nint* intersectionShaderImport = null
+            char* anyHitShaderImport = null,
+            char* closestHitShaderImport = null,
+            char* intersectionShaderImport = null
         ) : this()
         {
             if (hitGroupExport is not null)
@@ -58,7 +59,7 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "LPCWSTR")]
         [NativeName("Type.Name", "LPCWSTR")]
         [NativeName("Name", "HitGroupExport")]
-        public nint* HitGroupExport;
+        public char* HitGroupExport;
 
         [NativeName("Type", "D3D12_HIT_GROUP_TYPE")]
         [NativeName("Type.Name", "D3D12_HIT_GROUP_TYPE")]
@@ -68,16 +69,16 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "LPCWSTR")]
         [NativeName("Type.Name", "LPCWSTR")]
         [NativeName("Name", "AnyHitShaderImport")]
-        public nint* AnyHitShaderImport;
+        public char* AnyHitShaderImport;
 
         [NativeName("Type", "LPCWSTR")]
         [NativeName("Type.Name", "LPCWSTR")]
         [NativeName("Name", "ClosestHitShaderImport")]
-        public nint* ClosestHitShaderImport;
+        public char* ClosestHitShaderImport;
 
         [NativeName("Type", "LPCWSTR")]
         [NativeName("Type.Name", "LPCWSTR")]
         [NativeName("Name", "IntersectionShaderImport")]
-        public nint* IntersectionShaderImport;
+        public char* IntersectionShaderImport;
     }
 }

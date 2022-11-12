@@ -24,7 +24,7 @@ namespace Silk.NET.Direct3D11
             AuthenticatedQueryOutput? output = null,
             uint? processIndex = null,
             AuthenticatedProcessIdentifierType? processIdentifier = null,
-            nint* processHandle = null
+            void* processHandle = null
         ) : this()
         {
             if (output is not null)
@@ -67,6 +67,6 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "HANDLE")]
         [NativeName("Type.Name", "HANDLE")]
         [NativeName("Name", "ProcessHandle")]
-        public nint* ProcessHandle;
+        public void* ProcessHandle;
     }
 }

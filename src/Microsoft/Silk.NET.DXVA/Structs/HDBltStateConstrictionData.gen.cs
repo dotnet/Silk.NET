@@ -21,7 +21,7 @@ namespace Silk.NET.DXVA
     {
         public HDBltStateConstrictionData
         (
-            bool? enable = null,
+            int? enable = null,
             Silk.NET.Maths.Vector2D<int>? size = null
         ) : this()
         {
@@ -40,7 +40,7 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "Enable")]
-        public bool Enable;
+        public int Enable;
 
         [NativeName("Type", "SIZE")]
         [NativeName("Type.Name", "SIZE")]

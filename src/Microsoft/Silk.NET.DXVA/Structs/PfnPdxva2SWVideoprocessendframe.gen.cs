@@ -19,10 +19,10 @@ namespace Silk.NET.DXVA
     public unsafe readonly struct PfnPdxva2SWVideoprocessendframe : IDisposable
     {
         private readonly void* _handle;
-        public delegate* unmanaged[Cdecl]<nint*, void**, int> Handle => (delegate* unmanaged[Cdecl]<nint*, void**, int>) _handle;
+        public delegate* unmanaged[Cdecl]<void*, void**, int> Handle => (delegate* unmanaged[Cdecl]<void*, void**, int>) _handle;
         public PfnPdxva2SWVideoprocessendframe
         (
-            delegate* unmanaged[Cdecl]<nint*, void**, int> ptr
+            delegate* unmanaged[Cdecl]<void*, void**, int> ptr
         ) => _handle = ptr;
 
         public PfnPdxva2SWVideoprocessendframe
@@ -35,7 +35,7 @@ namespace Silk.NET.DXVA
 
         public static implicit operator nint(PfnPdxva2SWVideoprocessendframe pfn) => (nint) pfn.Handle;
         public static explicit operator PfnPdxva2SWVideoprocessendframe(nint pfn)
-            => new PfnPdxva2SWVideoprocessendframe((delegate* unmanaged[Cdecl]<nint*, void**, int>) pfn);
+            => new PfnPdxva2SWVideoprocessendframe((delegate* unmanaged[Cdecl]<void*, void**, int>) pfn);
 
         public static implicit operator PfnPdxva2SWVideoprocessendframe(Pdxva2SWVideoprocessendframe proc)
             => new PfnPdxva2SWVideoprocessendframe(proc);
@@ -43,11 +43,11 @@ namespace Silk.NET.DXVA
         public static explicit operator Pdxva2SWVideoprocessendframe(PfnPdxva2SWVideoprocessendframe pfn)
             => SilkMarshal.PtrToDelegate<Pdxva2SWVideoprocessendframe>(pfn);
 
-        public static implicit operator delegate* unmanaged[Cdecl]<nint*, void**, int>(PfnPdxva2SWVideoprocessendframe pfn) => pfn.Handle;
-        public static implicit operator PfnPdxva2SWVideoprocessendframe(delegate* unmanaged[Cdecl]<nint*, void**, int> ptr) => new PfnPdxva2SWVideoprocessendframe(ptr);
+        public static implicit operator delegate* unmanaged[Cdecl]<void*, void**, int>(PfnPdxva2SWVideoprocessendframe pfn) => pfn.Handle;
+        public static implicit operator PfnPdxva2SWVideoprocessendframe(delegate* unmanaged[Cdecl]<void*, void**, int> ptr) => new PfnPdxva2SWVideoprocessendframe(ptr);
     }
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate int Pdxva2SWVideoprocessendframe(nint* arg0, void** arg1);
+    public unsafe delegate int Pdxva2SWVideoprocessendframe(void* arg0, void** arg1);
 }
 

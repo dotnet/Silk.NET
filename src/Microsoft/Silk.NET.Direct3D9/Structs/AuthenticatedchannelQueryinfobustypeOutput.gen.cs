@@ -23,8 +23,8 @@ namespace Silk.NET.Direct3D9
         (
             AuthenticatedchannelQueryOutput? output = null,
             Bustype? busType = null,
-            bool? bAccessibleInContiguousBlocks = null,
-            bool? bAccessibleInNonContiguousBlocks = null
+            int? bAccessibleInContiguousBlocks = null,
+            int? bAccessibleInNonContiguousBlocks = null
         ) : this()
         {
             if (output is not null)
@@ -62,11 +62,11 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "bAccessibleInContiguousBlocks")]
-        public bool BAccessibleInContiguousBlocks;
+        public int BAccessibleInContiguousBlocks;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "bAccessibleInNonContiguousBlocks")]
-        public bool BAccessibleInNonContiguousBlocks;
+        public int BAccessibleInNonContiguousBlocks;
     }
 }

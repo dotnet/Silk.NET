@@ -21,10 +21,10 @@ namespace Silk.NET.Direct3D11
     {
         public FeatureDataD3D9Options1
         (
-            bool? fullNonPow2TextureSupported = null,
-            bool? depthAsTextureWithLessEqualComparisonFilterSupported = null,
-            bool? simpleInstancingSupported = null,
-            bool? textureCubeFaceRenderTargetWithNonCubeDepthStencilSupported = null
+            int? fullNonPow2TextureSupported = null,
+            int? depthAsTextureWithLessEqualComparisonFilterSupported = null,
+            int? simpleInstancingSupported = null,
+            int? textureCubeFaceRenderTargetWithNonCubeDepthStencilSupported = null
         ) : this()
         {
             if (fullNonPow2TextureSupported is not null)
@@ -52,21 +52,21 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "FullNonPow2TextureSupported")]
-        public bool FullNonPow2TextureSupported;
+        public int FullNonPow2TextureSupported;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "DepthAsTextureWithLessEqualComparisonFilterSupported")]
-        public bool DepthAsTextureWithLessEqualComparisonFilterSupported;
+        public int DepthAsTextureWithLessEqualComparisonFilterSupported;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "SimpleInstancingSupported")]
-        public bool SimpleInstancingSupported;
+        public int SimpleInstancingSupported;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "TextureCubeFaceRenderTargetWithNonCubeDepthStencilSupported")]
-        public bool TextureCubeFaceRenderTargetWithNonCubeDepthStencilSupported;
+        public int TextureCubeFaceRenderTargetWithNonCubeDepthStencilSupported;
     }
 }

@@ -23,7 +23,7 @@ namespace Silk.NET.OpenXR
         (
             StructureType? type = StructureType.TypeGraphicsBindingD3D11Khr,
             void* next = null,
-            void** device = null
+            void* device = null
         ) : this()
         {
             if (type is not null)
@@ -56,6 +56,6 @@ namespace Silk.NET.OpenXR
         [NativeName("Type", "ID3D11Device*")]
         [NativeName("Type.Name", "ID3D11Device")]
         [NativeName("Name", "device")]
-        public void** Device;
+        public void* Device;
     }
 }

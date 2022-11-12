@@ -21,7 +21,7 @@ namespace Silk.NET.Direct3D11
     {
         public FeatureDataD3D9SimpleInstancingSupport
         (
-            bool? simpleInstancingSupported = null
+            int? simpleInstancingSupported = null
         ) : this()
         {
             if (simpleInstancingSupported is not null)
@@ -34,6 +34,6 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "SimpleInstancingSupported")]
-        public bool SimpleInstancingSupported;
+        public int SimpleInstancingSupported;
     }
 }

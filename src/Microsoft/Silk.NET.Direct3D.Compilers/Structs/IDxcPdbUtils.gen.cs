@@ -495,11 +495,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly bool IsFullPDB()
+        public readonly int IsFullPDB()
         {
             var @this = (IDxcPdbUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            bool ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDxcPdbUtils*, bool>)@this->LpVtbl[20])(@this);
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDxcPdbUtils*, int>)@this->LpVtbl[20])(@this);
             return ret;
         }
 

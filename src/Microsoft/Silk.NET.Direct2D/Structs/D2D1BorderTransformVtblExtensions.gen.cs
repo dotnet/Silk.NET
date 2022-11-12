@@ -103,10 +103,10 @@ public unsafe static class D2D1BorderTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetCached(this ComPtr<ID2D1BorderTransform> thisVtbl, bool isCached)
+    public static void SetCached(this ComPtr<ID2D1BorderTransform> thisVtbl, int isCached)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID2D1BorderTransform*, bool, void>)@this->LpVtbl[5])(@this, isCached);
+        ((delegate* unmanaged[Stdcall]<ID2D1BorderTransform*, int, void>)@this->LpVtbl[5])(@this, isCached);
     }
 
     /// <summary>To be documented.</summary>

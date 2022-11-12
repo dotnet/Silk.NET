@@ -474,22 +474,22 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDC(bool Discard, nint* phdc)
+        public readonly unsafe int GetDC(int Discard, nint* phdc)
         {
             var @this = (IDXGISurface2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, bool, nint*, int>)@this->LpVtbl[11])(@this, Discard, phdc);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, int, nint*, int>)@this->LpVtbl[11])(@this, Discard, phdc);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetDC(bool Discard, ref nint phdc)
+        public readonly int GetDC(int Discard, ref nint phdc)
         {
             var @this = (IDXGISurface2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (nint* phdcPtr = &phdc)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, bool, nint*, int>)@this->LpVtbl[11])(@this, Discard, phdcPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, int, nint*, int>)@this->LpVtbl[11])(@this, Discard, phdcPtr);
             }
             return ret;
         }

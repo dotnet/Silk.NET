@@ -465,7 +465,28 @@ public unsafe static class D3D12InfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMessage(this ComPtr<ID3D12InfoQueue> thisVtbl, MessageCategory Category, MessageSeverity Severity, MessageID ID, [Flow(FlowDirection.In)] string* pDescription)
+    public static unsafe int AddMessage(this ComPtr<ID3D12InfoQueue> thisVtbl, MessageCategory Category, MessageSeverity Severity, MessageID ID, [Flow(FlowDirection.In)] byte* pDescription)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue*, MessageCategory, MessageSeverity, MessageID, byte*, int>)@this->LpVtbl[28])(@this, Category, Severity, ID, pDescription);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int AddMessage(this ComPtr<ID3D12InfoQueue> thisVtbl, MessageCategory Category, MessageSeverity Severity, MessageID ID, [Flow(FlowDirection.In)] in byte pDescription)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (byte* pDescriptionPtr = &pDescription)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue*, MessageCategory, MessageSeverity, MessageID, byte*, int>)@this->LpVtbl[28])(@this, Category, Severity, ID, pDescriptionPtr);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int AddMessage(this ComPtr<ID3D12InfoQueue> thisVtbl, MessageCategory Category, MessageSeverity Severity, MessageID ID, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDescription)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -476,19 +497,28 @@ public unsafe static class D3D12InfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddMessage(this ComPtr<ID3D12InfoQueue> thisVtbl, MessageCategory Category, MessageSeverity Severity, MessageID ID, [Flow(FlowDirection.In)] in string pDescription)
+    public static unsafe int AddApplicationMessage(this ComPtr<ID3D12InfoQueue> thisVtbl, MessageSeverity Severity, [Flow(FlowDirection.In)] byte* pDescription)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        var pDescriptionPtr = (byte*) SilkMarshal.StringToPtr(pDescription, NativeStringEncoding.LPStr);
-        var pDescriptionPp = &pDescriptionPtr;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue*, MessageCategory, MessageSeverity, MessageID, byte**, int>)@this->LpVtbl[28])(@this, Category, Severity, ID, pDescriptionPp);
-        SilkMarshal.Free((nint)pDescriptionPtr);
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue*, MessageSeverity, byte*, int>)@this->LpVtbl[29])(@this, Severity, pDescription);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddApplicationMessage(this ComPtr<ID3D12InfoQueue> thisVtbl, MessageSeverity Severity, [Flow(FlowDirection.In)] string* pDescription)
+    public static int AddApplicationMessage(this ComPtr<ID3D12InfoQueue> thisVtbl, MessageSeverity Severity, [Flow(FlowDirection.In)] in byte pDescription)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (byte* pDescriptionPtr = &pDescription)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue*, MessageSeverity, byte*, int>)@this->LpVtbl[29])(@this, Severity, pDescriptionPtr);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int AddApplicationMessage(this ComPtr<ID3D12InfoQueue> thisVtbl, MessageSeverity Severity, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDescription)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -499,84 +529,72 @@ public unsafe static class D3D12InfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddApplicationMessage(this ComPtr<ID3D12InfoQueue> thisVtbl, MessageSeverity Severity, [Flow(FlowDirection.In)] in string pDescription)
+    public static int SetBreakOnCategory(this ComPtr<ID3D12InfoQueue> thisVtbl, MessageCategory Category, int bEnable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        var pDescriptionPtr = (byte*) SilkMarshal.StringToPtr(pDescription, NativeStringEncoding.LPStr);
-        var pDescriptionPp = &pDescriptionPtr;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue*, MessageSeverity, byte**, int>)@this->LpVtbl[29])(@this, Severity, pDescriptionPp);
-        SilkMarshal.Free((nint)pDescriptionPtr);
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue*, MessageCategory, int, int>)@this->LpVtbl[30])(@this, Category, bEnable);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetBreakOnCategory(this ComPtr<ID3D12InfoQueue> thisVtbl, MessageCategory Category, bool bEnable)
+    public static int SetBreakOnSeverity(this ComPtr<ID3D12InfoQueue> thisVtbl, MessageSeverity Severity, int bEnable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue*, MessageCategory, bool, int>)@this->LpVtbl[30])(@this, Category, bEnable);
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue*, MessageSeverity, int, int>)@this->LpVtbl[31])(@this, Severity, bEnable);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetBreakOnSeverity(this ComPtr<ID3D12InfoQueue> thisVtbl, MessageSeverity Severity, bool bEnable)
+    public static int SetBreakOnID(this ComPtr<ID3D12InfoQueue> thisVtbl, MessageID ID, int bEnable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue*, MessageSeverity, bool, int>)@this->LpVtbl[31])(@this, Severity, bEnable);
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue*, MessageID, int, int>)@this->LpVtbl[32])(@this, ID, bEnable);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetBreakOnID(this ComPtr<ID3D12InfoQueue> thisVtbl, MessageID ID, bool bEnable)
+    public static int GetBreakOnCategory(this ComPtr<ID3D12InfoQueue> thisVtbl, MessageCategory Category)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue*, MessageID, bool, int>)@this->LpVtbl[32])(@this, ID, bEnable);
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue*, MessageCategory, int>)@this->LpVtbl[33])(@this, Category);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static bool GetBreakOnCategory(this ComPtr<ID3D12InfoQueue> thisVtbl, MessageCategory Category)
+    public static int GetBreakOnSeverity(this ComPtr<ID3D12InfoQueue> thisVtbl, MessageSeverity Severity)
     {
         var @this = thisVtbl.Handle;
-        bool ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue*, MessageCategory, bool>)@this->LpVtbl[33])(@this, Category);
+        int ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue*, MessageSeverity, int>)@this->LpVtbl[34])(@this, Severity);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static bool GetBreakOnSeverity(this ComPtr<ID3D12InfoQueue> thisVtbl, MessageSeverity Severity)
+    public static int GetBreakOnID(this ComPtr<ID3D12InfoQueue> thisVtbl, MessageID ID)
     {
         var @this = thisVtbl.Handle;
-        bool ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue*, MessageSeverity, bool>)@this->LpVtbl[34])(@this, Severity);
+        int ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue*, MessageID, int>)@this->LpVtbl[35])(@this, ID);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static bool GetBreakOnID(this ComPtr<ID3D12InfoQueue> thisVtbl, MessageID ID)
+    public static void SetMuteDebugOutput(this ComPtr<ID3D12InfoQueue> thisVtbl, int bMute)
     {
         var @this = thisVtbl.Handle;
-        bool ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue*, MessageID, bool>)@this->LpVtbl[35])(@this, ID);
-        return ret;
+        ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue*, int, void>)@this->LpVtbl[36])(@this, bMute);
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetMuteDebugOutput(this ComPtr<ID3D12InfoQueue> thisVtbl, bool bMute)
+    public static int GetMuteDebugOutput(this ComPtr<ID3D12InfoQueue> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue*, bool, void>)@this->LpVtbl[36])(@this, bMute);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static bool GetMuteDebugOutput(this ComPtr<ID3D12InfoQueue> thisVtbl)
-    {
-        var @this = thisVtbl.Handle;
-        bool ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue*, bool>)@this->LpVtbl[37])(@this);
+        int ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue*, int>)@this->LpVtbl[37])(@this);
         return ret;
     }
 
@@ -710,7 +728,7 @@ public unsafe static class D3D12InfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddMessage(this ComPtr<ID3D12InfoQueue> thisVtbl, MessageCategory Category, MessageSeverity Severity, MessageID ID, [Flow(FlowDirection.In)] ReadOnlySpan<string> pDescription)
+    public static int AddMessage(this ComPtr<ID3D12InfoQueue> thisVtbl, MessageCategory Category, MessageSeverity Severity, MessageID ID, [Flow(FlowDirection.In)] ReadOnlySpan<byte> pDescription)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -718,7 +736,7 @@ public unsafe static class D3D12InfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddApplicationMessage(this ComPtr<ID3D12InfoQueue> thisVtbl, MessageSeverity Severity, [Flow(FlowDirection.In)] ReadOnlySpan<string> pDescription)
+    public static int AddApplicationMessage(this ComPtr<ID3D12InfoQueue> thisVtbl, MessageSeverity Severity, [Flow(FlowDirection.In)] ReadOnlySpan<byte> pDescription)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

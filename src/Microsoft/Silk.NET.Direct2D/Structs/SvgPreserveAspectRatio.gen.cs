@@ -21,7 +21,7 @@ namespace Silk.NET.Direct2D
     {
         public SvgPreserveAspectRatio
         (
-            bool? defer = null,
+            int? defer = null,
             SvgAspectAlign? align = null,
             SvgAspectScaling? meetOrSlice = null
         ) : this()
@@ -46,7 +46,7 @@ namespace Silk.NET.Direct2D
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "defer")]
-        public bool Defer;
+        public int Defer;
 
         [NativeName("Type", "D2D1_SVG_ASPECT_ALIGN")]
         [NativeName("Type.Name", "D2D1_SVG_ASPECT_ALIGN")]

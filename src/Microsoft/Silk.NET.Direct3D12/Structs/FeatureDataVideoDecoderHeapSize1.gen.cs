@@ -22,7 +22,7 @@ namespace Silk.NET.Direct3D12
         public FeatureDataVideoDecoderHeapSize1
         (
             VideoDecoderHeapDesc? videoDecoderHeapDesc = null,
-            bool? @protected = null,
+            int? @protected = null,
             ulong? memoryPoolL0Size = null,
             ulong? memoryPoolL1Size = null
         ) : this()
@@ -57,7 +57,7 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "Protected")]
-        public bool Protected;
+        public int Protected;
 
         [NativeName("Type", "UINT64")]
         [NativeName("Type.Name", "UINT64")]

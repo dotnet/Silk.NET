@@ -21,12 +21,12 @@ namespace Silk.NET.DXVA
     {
         public DeinterlaceBlt
         (
-            int? size = null,
-            int? reserved = null,
+            uint? size = null,
+            uint? reserved = null,
             long? rtTarget = null,
             Silk.NET.Maths.Box2D<int>? dstRect = null,
             Silk.NET.Maths.Box2D<int>? srcRect = null,
-            int? numSourceSurfaces = null,
+            uint? numSourceSurfaces = null,
             float? alpha = null
         ) : this()
         {
@@ -70,12 +70,12 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "Size")]
-        public int Size;
+        public uint Size;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "Reserved")]
-        public int Reserved;
+        public uint Reserved;
 
         [NativeName("Type", "REFERENCE_TIME")]
         [NativeName("Type.Name", "REFERENCE_TIME")]
@@ -95,7 +95,7 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "NumSourceSurfaces")]
-        public int NumSourceSurfaces;
+        public uint NumSourceSurfaces;
 
         [NativeName("Type", "FLOAT")]
         [NativeName("Type.Name", "FLOAT")]

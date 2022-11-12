@@ -103,10 +103,10 @@ public unsafe static class D2D1BlendTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetCached(this ComPtr<ID2D1BlendTransform> thisVtbl, bool isCached)
+    public static void SetCached(this ComPtr<ID2D1BlendTransform> thisVtbl, int isCached)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID2D1BlendTransform*, bool, void>)@this->LpVtbl[5])(@this, isCached);
+        ((delegate* unmanaged[Stdcall]<ID2D1BlendTransform*, int, void>)@this->LpVtbl[5])(@this, isCached);
     }
 
     /// <summary>To be documented.</summary>

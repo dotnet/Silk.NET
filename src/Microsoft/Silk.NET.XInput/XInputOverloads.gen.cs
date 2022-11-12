@@ -18,7 +18,7 @@ namespace Silk.NET.XInput
     {
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 258, Column 14 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\Xinput.h")]
-        public static unsafe int GetState(this XInput thisApi, int dwUserIndex, Span<State> pState)
+        public static unsafe uint GetState(this XInput thisApi, uint dwUserIndex, Span<State> pState)
         {
             // SpanOverloader
             return thisApi.GetState(dwUserIndex, ref pState.GetPinnableReference());
@@ -26,7 +26,7 @@ namespace Silk.NET.XInput
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 264, Column 14 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\Xinput.h")]
-        public static unsafe int SetState(this XInput thisApi, int dwUserIndex, Span<Vibration> pVibration)
+        public static unsafe uint SetState(this XInput thisApi, uint dwUserIndex, Span<Vibration> pVibration)
         {
             // SpanOverloader
             return thisApi.SetState(dwUserIndex, ref pVibration.GetPinnableReference());
@@ -34,7 +34,7 @@ namespace Silk.NET.XInput
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 270, Column 14 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\Xinput.h")]
-        public static unsafe int GetCapabilities(this XInput thisApi, int dwUserIndex, int dwFlags, Span<Capabilities> pCapabilities)
+        public static unsafe uint GetCapabilities(this XInput thisApi, uint dwUserIndex, uint dwFlags, Span<Capabilities> pCapabilities)
         {
             // SpanOverloader
             return thisApi.GetCapabilities(dwUserIndex, dwFlags, ref pCapabilities.GetPinnableReference());
@@ -42,7 +42,7 @@ namespace Silk.NET.XInput
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\Xinput.h")]
-        public static unsafe int GetAudioDeviceIds(this XInput thisApi, int dwUserIndex, char* pRenderDeviceId, uint* pRenderCount, char* pCaptureDeviceId, Span<uint> pCaptureCount)
+        public static unsafe uint GetAudioDeviceIds(this XInput thisApi, uint dwUserIndex, char* pRenderDeviceId, uint* pRenderCount, char* pCaptureDeviceId, Span<uint> pCaptureCount)
         {
             // SpanOverloader
             return thisApi.GetAudioDeviceIds(dwUserIndex, pRenderDeviceId, pRenderCount, pCaptureDeviceId, ref pCaptureCount.GetPinnableReference());
@@ -50,7 +50,7 @@ namespace Silk.NET.XInput
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\Xinput.h")]
-        public static unsafe int GetAudioDeviceIds(this XInput thisApi, int dwUserIndex, char* pRenderDeviceId, uint* pRenderCount, Span<char> pCaptureDeviceId, uint* pCaptureCount)
+        public static unsafe uint GetAudioDeviceIds(this XInput thisApi, uint dwUserIndex, char* pRenderDeviceId, uint* pRenderCount, Span<char> pCaptureDeviceId, uint* pCaptureCount)
         {
             // SpanOverloader
             return thisApi.GetAudioDeviceIds(dwUserIndex, pRenderDeviceId, pRenderCount, ref pCaptureDeviceId.GetPinnableReference(), pCaptureCount);
@@ -58,7 +58,7 @@ namespace Silk.NET.XInput
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\Xinput.h")]
-        public static unsafe int GetAudioDeviceIds(this XInput thisApi, int dwUserIndex, char* pRenderDeviceId, uint* pRenderCount, Span<char> pCaptureDeviceId, Span<uint> pCaptureCount)
+        public static unsafe uint GetAudioDeviceIds(this XInput thisApi, uint dwUserIndex, char* pRenderDeviceId, uint* pRenderCount, Span<char> pCaptureDeviceId, Span<uint> pCaptureCount)
         {
             // SpanOverloader
             return thisApi.GetAudioDeviceIds(dwUserIndex, pRenderDeviceId, pRenderCount, ref pCaptureDeviceId.GetPinnableReference(), ref pCaptureCount.GetPinnableReference());
@@ -66,7 +66,7 @@ namespace Silk.NET.XInput
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\Xinput.h")]
-        public static unsafe int GetAudioDeviceIds(this XInput thisApi, int dwUserIndex, char* pRenderDeviceId, uint* pRenderCount, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pCaptureDeviceId, Span<uint> pCaptureCount)
+        public static unsafe uint GetAudioDeviceIds(this XInput thisApi, uint dwUserIndex, char* pRenderDeviceId, uint* pRenderCount, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pCaptureDeviceId, Span<uint> pCaptureCount)
         {
             // SpanOverloader
             return thisApi.GetAudioDeviceIds(dwUserIndex, pRenderDeviceId, pRenderCount, pCaptureDeviceId, ref pCaptureCount.GetPinnableReference());
@@ -74,7 +74,7 @@ namespace Silk.NET.XInput
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\Xinput.h")]
-        public static unsafe int GetAudioDeviceIds(this XInput thisApi, int dwUserIndex, char* pRenderDeviceId, Span<uint> pRenderCount, char* pCaptureDeviceId, uint* pCaptureCount)
+        public static unsafe uint GetAudioDeviceIds(this XInput thisApi, uint dwUserIndex, char* pRenderDeviceId, Span<uint> pRenderCount, char* pCaptureDeviceId, uint* pCaptureCount)
         {
             // SpanOverloader
             return thisApi.GetAudioDeviceIds(dwUserIndex, pRenderDeviceId, ref pRenderCount.GetPinnableReference(), pCaptureDeviceId, pCaptureCount);
@@ -82,7 +82,7 @@ namespace Silk.NET.XInput
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\Xinput.h")]
-        public static unsafe int GetAudioDeviceIds(this XInput thisApi, int dwUserIndex, char* pRenderDeviceId, Span<uint> pRenderCount, char* pCaptureDeviceId, Span<uint> pCaptureCount)
+        public static unsafe uint GetAudioDeviceIds(this XInput thisApi, uint dwUserIndex, char* pRenderDeviceId, Span<uint> pRenderCount, char* pCaptureDeviceId, Span<uint> pCaptureCount)
         {
             // SpanOverloader
             return thisApi.GetAudioDeviceIds(dwUserIndex, pRenderDeviceId, ref pRenderCount.GetPinnableReference(), pCaptureDeviceId, ref pCaptureCount.GetPinnableReference());
@@ -90,7 +90,7 @@ namespace Silk.NET.XInput
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\Xinput.h")]
-        public static unsafe int GetAudioDeviceIds(this XInput thisApi, int dwUserIndex, char* pRenderDeviceId, Span<uint> pRenderCount, Span<char> pCaptureDeviceId, uint* pCaptureCount)
+        public static unsafe uint GetAudioDeviceIds(this XInput thisApi, uint dwUserIndex, char* pRenderDeviceId, Span<uint> pRenderCount, Span<char> pCaptureDeviceId, uint* pCaptureCount)
         {
             // SpanOverloader
             return thisApi.GetAudioDeviceIds(dwUserIndex, pRenderDeviceId, ref pRenderCount.GetPinnableReference(), ref pCaptureDeviceId.GetPinnableReference(), pCaptureCount);
@@ -98,7 +98,7 @@ namespace Silk.NET.XInput
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\Xinput.h")]
-        public static unsafe int GetAudioDeviceIds(this XInput thisApi, int dwUserIndex, char* pRenderDeviceId, Span<uint> pRenderCount, Span<char> pCaptureDeviceId, Span<uint> pCaptureCount)
+        public static unsafe uint GetAudioDeviceIds(this XInput thisApi, uint dwUserIndex, char* pRenderDeviceId, Span<uint> pRenderCount, Span<char> pCaptureDeviceId, Span<uint> pCaptureCount)
         {
             // SpanOverloader
             return thisApi.GetAudioDeviceIds(dwUserIndex, pRenderDeviceId, ref pRenderCount.GetPinnableReference(), ref pCaptureDeviceId.GetPinnableReference(), ref pCaptureCount.GetPinnableReference());
@@ -106,7 +106,7 @@ namespace Silk.NET.XInput
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\Xinput.h")]
-        public static unsafe int GetAudioDeviceIds(this XInput thisApi, int dwUserIndex, char* pRenderDeviceId, Span<uint> pRenderCount, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pCaptureDeviceId, uint* pCaptureCount)
+        public static unsafe uint GetAudioDeviceIds(this XInput thisApi, uint dwUserIndex, char* pRenderDeviceId, Span<uint> pRenderCount, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pCaptureDeviceId, uint* pCaptureCount)
         {
             // SpanOverloader
             return thisApi.GetAudioDeviceIds(dwUserIndex, pRenderDeviceId, ref pRenderCount.GetPinnableReference(), pCaptureDeviceId, pCaptureCount);
@@ -114,7 +114,7 @@ namespace Silk.NET.XInput
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\Xinput.h")]
-        public static unsafe int GetAudioDeviceIds(this XInput thisApi, int dwUserIndex, char* pRenderDeviceId, Span<uint> pRenderCount, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pCaptureDeviceId, Span<uint> pCaptureCount)
+        public static unsafe uint GetAudioDeviceIds(this XInput thisApi, uint dwUserIndex, char* pRenderDeviceId, Span<uint> pRenderCount, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pCaptureDeviceId, Span<uint> pCaptureCount)
         {
             // SpanOverloader
             return thisApi.GetAudioDeviceIds(dwUserIndex, pRenderDeviceId, ref pRenderCount.GetPinnableReference(), pCaptureDeviceId, ref pCaptureCount.GetPinnableReference());
@@ -122,7 +122,7 @@ namespace Silk.NET.XInput
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\Xinput.h")]
-        public static unsafe int GetAudioDeviceIds(this XInput thisApi, int dwUserIndex, Span<char> pRenderDeviceId, uint* pRenderCount, char* pCaptureDeviceId, uint* pCaptureCount)
+        public static unsafe uint GetAudioDeviceIds(this XInput thisApi, uint dwUserIndex, Span<char> pRenderDeviceId, uint* pRenderCount, char* pCaptureDeviceId, uint* pCaptureCount)
         {
             // SpanOverloader
             return thisApi.GetAudioDeviceIds(dwUserIndex, ref pRenderDeviceId.GetPinnableReference(), pRenderCount, pCaptureDeviceId, pCaptureCount);
@@ -130,7 +130,7 @@ namespace Silk.NET.XInput
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\Xinput.h")]
-        public static unsafe int GetAudioDeviceIds(this XInput thisApi, int dwUserIndex, Span<char> pRenderDeviceId, uint* pRenderCount, char* pCaptureDeviceId, Span<uint> pCaptureCount)
+        public static unsafe uint GetAudioDeviceIds(this XInput thisApi, uint dwUserIndex, Span<char> pRenderDeviceId, uint* pRenderCount, char* pCaptureDeviceId, Span<uint> pCaptureCount)
         {
             // SpanOverloader
             return thisApi.GetAudioDeviceIds(dwUserIndex, ref pRenderDeviceId.GetPinnableReference(), pRenderCount, pCaptureDeviceId, ref pCaptureCount.GetPinnableReference());
@@ -138,7 +138,7 @@ namespace Silk.NET.XInput
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\Xinput.h")]
-        public static unsafe int GetAudioDeviceIds(this XInput thisApi, int dwUserIndex, Span<char> pRenderDeviceId, uint* pRenderCount, Span<char> pCaptureDeviceId, uint* pCaptureCount)
+        public static unsafe uint GetAudioDeviceIds(this XInput thisApi, uint dwUserIndex, Span<char> pRenderDeviceId, uint* pRenderCount, Span<char> pCaptureDeviceId, uint* pCaptureCount)
         {
             // SpanOverloader
             return thisApi.GetAudioDeviceIds(dwUserIndex, ref pRenderDeviceId.GetPinnableReference(), pRenderCount, ref pCaptureDeviceId.GetPinnableReference(), pCaptureCount);
@@ -146,7 +146,7 @@ namespace Silk.NET.XInput
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\Xinput.h")]
-        public static unsafe int GetAudioDeviceIds(this XInput thisApi, int dwUserIndex, Span<char> pRenderDeviceId, uint* pRenderCount, Span<char> pCaptureDeviceId, Span<uint> pCaptureCount)
+        public static unsafe uint GetAudioDeviceIds(this XInput thisApi, uint dwUserIndex, Span<char> pRenderDeviceId, uint* pRenderCount, Span<char> pCaptureDeviceId, Span<uint> pCaptureCount)
         {
             // SpanOverloader
             return thisApi.GetAudioDeviceIds(dwUserIndex, ref pRenderDeviceId.GetPinnableReference(), pRenderCount, ref pCaptureDeviceId.GetPinnableReference(), ref pCaptureCount.GetPinnableReference());
@@ -154,7 +154,7 @@ namespace Silk.NET.XInput
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\Xinput.h")]
-        public static unsafe int GetAudioDeviceIds(this XInput thisApi, int dwUserIndex, Span<char> pRenderDeviceId, uint* pRenderCount, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pCaptureDeviceId, uint* pCaptureCount)
+        public static unsafe uint GetAudioDeviceIds(this XInput thisApi, uint dwUserIndex, Span<char> pRenderDeviceId, uint* pRenderCount, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pCaptureDeviceId, uint* pCaptureCount)
         {
             // SpanOverloader
             return thisApi.GetAudioDeviceIds(dwUserIndex, ref pRenderDeviceId.GetPinnableReference(), pRenderCount, pCaptureDeviceId, pCaptureCount);
@@ -162,7 +162,7 @@ namespace Silk.NET.XInput
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\Xinput.h")]
-        public static unsafe int GetAudioDeviceIds(this XInput thisApi, int dwUserIndex, Span<char> pRenderDeviceId, uint* pRenderCount, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pCaptureDeviceId, Span<uint> pCaptureCount)
+        public static unsafe uint GetAudioDeviceIds(this XInput thisApi, uint dwUserIndex, Span<char> pRenderDeviceId, uint* pRenderCount, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pCaptureDeviceId, Span<uint> pCaptureCount)
         {
             // SpanOverloader
             return thisApi.GetAudioDeviceIds(dwUserIndex, ref pRenderDeviceId.GetPinnableReference(), pRenderCount, pCaptureDeviceId, ref pCaptureCount.GetPinnableReference());
@@ -170,7 +170,7 @@ namespace Silk.NET.XInput
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\Xinput.h")]
-        public static unsafe int GetAudioDeviceIds(this XInput thisApi, int dwUserIndex, Span<char> pRenderDeviceId, Span<uint> pRenderCount, char* pCaptureDeviceId, uint* pCaptureCount)
+        public static unsafe uint GetAudioDeviceIds(this XInput thisApi, uint dwUserIndex, Span<char> pRenderDeviceId, Span<uint> pRenderCount, char* pCaptureDeviceId, uint* pCaptureCount)
         {
             // SpanOverloader
             return thisApi.GetAudioDeviceIds(dwUserIndex, ref pRenderDeviceId.GetPinnableReference(), ref pRenderCount.GetPinnableReference(), pCaptureDeviceId, pCaptureCount);
@@ -178,7 +178,7 @@ namespace Silk.NET.XInput
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\Xinput.h")]
-        public static unsafe int GetAudioDeviceIds(this XInput thisApi, int dwUserIndex, Span<char> pRenderDeviceId, Span<uint> pRenderCount, char* pCaptureDeviceId, Span<uint> pCaptureCount)
+        public static unsafe uint GetAudioDeviceIds(this XInput thisApi, uint dwUserIndex, Span<char> pRenderDeviceId, Span<uint> pRenderCount, char* pCaptureDeviceId, Span<uint> pCaptureCount)
         {
             // SpanOverloader
             return thisApi.GetAudioDeviceIds(dwUserIndex, ref pRenderDeviceId.GetPinnableReference(), ref pRenderCount.GetPinnableReference(), pCaptureDeviceId, ref pCaptureCount.GetPinnableReference());
@@ -186,7 +186,7 @@ namespace Silk.NET.XInput
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\Xinput.h")]
-        public static unsafe int GetAudioDeviceIds(this XInput thisApi, int dwUserIndex, Span<char> pRenderDeviceId, Span<uint> pRenderCount, Span<char> pCaptureDeviceId, uint* pCaptureCount)
+        public static unsafe uint GetAudioDeviceIds(this XInput thisApi, uint dwUserIndex, Span<char> pRenderDeviceId, Span<uint> pRenderCount, Span<char> pCaptureDeviceId, uint* pCaptureCount)
         {
             // SpanOverloader
             return thisApi.GetAudioDeviceIds(dwUserIndex, ref pRenderDeviceId.GetPinnableReference(), ref pRenderCount.GetPinnableReference(), ref pCaptureDeviceId.GetPinnableReference(), pCaptureCount);
@@ -194,7 +194,7 @@ namespace Silk.NET.XInput
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\Xinput.h")]
-        public static unsafe int GetAudioDeviceIds(this XInput thisApi, int dwUserIndex, Span<char> pRenderDeviceId, Span<uint> pRenderCount, Span<char> pCaptureDeviceId, Span<uint> pCaptureCount)
+        public static unsafe uint GetAudioDeviceIds(this XInput thisApi, uint dwUserIndex, Span<char> pRenderDeviceId, Span<uint> pRenderCount, Span<char> pCaptureDeviceId, Span<uint> pCaptureCount)
         {
             // SpanOverloader
             return thisApi.GetAudioDeviceIds(dwUserIndex, ref pRenderDeviceId.GetPinnableReference(), ref pRenderCount.GetPinnableReference(), ref pCaptureDeviceId.GetPinnableReference(), ref pCaptureCount.GetPinnableReference());
@@ -202,7 +202,7 @@ namespace Silk.NET.XInput
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\Xinput.h")]
-        public static unsafe int GetAudioDeviceIds(this XInput thisApi, int dwUserIndex, Span<char> pRenderDeviceId, Span<uint> pRenderCount, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pCaptureDeviceId, uint* pCaptureCount)
+        public static unsafe uint GetAudioDeviceIds(this XInput thisApi, uint dwUserIndex, Span<char> pRenderDeviceId, Span<uint> pRenderCount, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pCaptureDeviceId, uint* pCaptureCount)
         {
             // SpanOverloader
             return thisApi.GetAudioDeviceIds(dwUserIndex, ref pRenderDeviceId.GetPinnableReference(), ref pRenderCount.GetPinnableReference(), pCaptureDeviceId, pCaptureCount);
@@ -210,7 +210,7 @@ namespace Silk.NET.XInput
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\Xinput.h")]
-        public static unsafe int GetAudioDeviceIds(this XInput thisApi, int dwUserIndex, Span<char> pRenderDeviceId, Span<uint> pRenderCount, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pCaptureDeviceId, Span<uint> pCaptureCount)
+        public static unsafe uint GetAudioDeviceIds(this XInput thisApi, uint dwUserIndex, Span<char> pRenderDeviceId, Span<uint> pRenderCount, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pCaptureDeviceId, Span<uint> pCaptureCount)
         {
             // SpanOverloader
             return thisApi.GetAudioDeviceIds(dwUserIndex, ref pRenderDeviceId.GetPinnableReference(), ref pRenderCount.GetPinnableReference(), pCaptureDeviceId, ref pCaptureCount.GetPinnableReference());
@@ -218,7 +218,7 @@ namespace Silk.NET.XInput
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\Xinput.h")]
-        public static unsafe int GetAudioDeviceIds(this XInput thisApi, int dwUserIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pRenderDeviceId, uint* pRenderCount, char* pCaptureDeviceId, Span<uint> pCaptureCount)
+        public static unsafe uint GetAudioDeviceIds(this XInput thisApi, uint dwUserIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pRenderDeviceId, uint* pRenderCount, char* pCaptureDeviceId, Span<uint> pCaptureCount)
         {
             // SpanOverloader
             return thisApi.GetAudioDeviceIds(dwUserIndex, pRenderDeviceId, pRenderCount, pCaptureDeviceId, ref pCaptureCount.GetPinnableReference());
@@ -226,7 +226,7 @@ namespace Silk.NET.XInput
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\Xinput.h")]
-        public static unsafe int GetAudioDeviceIds(this XInput thisApi, int dwUserIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pRenderDeviceId, uint* pRenderCount, Span<char> pCaptureDeviceId, uint* pCaptureCount)
+        public static unsafe uint GetAudioDeviceIds(this XInput thisApi, uint dwUserIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pRenderDeviceId, uint* pRenderCount, Span<char> pCaptureDeviceId, uint* pCaptureCount)
         {
             // SpanOverloader
             return thisApi.GetAudioDeviceIds(dwUserIndex, pRenderDeviceId, pRenderCount, ref pCaptureDeviceId.GetPinnableReference(), pCaptureCount);
@@ -234,7 +234,7 @@ namespace Silk.NET.XInput
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\Xinput.h")]
-        public static unsafe int GetAudioDeviceIds(this XInput thisApi, int dwUserIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pRenderDeviceId, uint* pRenderCount, Span<char> pCaptureDeviceId, Span<uint> pCaptureCount)
+        public static unsafe uint GetAudioDeviceIds(this XInput thisApi, uint dwUserIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pRenderDeviceId, uint* pRenderCount, Span<char> pCaptureDeviceId, Span<uint> pCaptureCount)
         {
             // SpanOverloader
             return thisApi.GetAudioDeviceIds(dwUserIndex, pRenderDeviceId, pRenderCount, ref pCaptureDeviceId.GetPinnableReference(), ref pCaptureCount.GetPinnableReference());
@@ -242,7 +242,7 @@ namespace Silk.NET.XInput
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\Xinput.h")]
-        public static unsafe int GetAudioDeviceIds(this XInput thisApi, int dwUserIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pRenderDeviceId, uint* pRenderCount, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pCaptureDeviceId, Span<uint> pCaptureCount)
+        public static unsafe uint GetAudioDeviceIds(this XInput thisApi, uint dwUserIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pRenderDeviceId, uint* pRenderCount, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pCaptureDeviceId, Span<uint> pCaptureCount)
         {
             // SpanOverloader
             return thisApi.GetAudioDeviceIds(dwUserIndex, pRenderDeviceId, pRenderCount, pCaptureDeviceId, ref pCaptureCount.GetPinnableReference());
@@ -250,7 +250,7 @@ namespace Silk.NET.XInput
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\Xinput.h")]
-        public static unsafe int GetAudioDeviceIds(this XInput thisApi, int dwUserIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pRenderDeviceId, Span<uint> pRenderCount, char* pCaptureDeviceId, uint* pCaptureCount)
+        public static unsafe uint GetAudioDeviceIds(this XInput thisApi, uint dwUserIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pRenderDeviceId, Span<uint> pRenderCount, char* pCaptureDeviceId, uint* pCaptureCount)
         {
             // SpanOverloader
             return thisApi.GetAudioDeviceIds(dwUserIndex, pRenderDeviceId, ref pRenderCount.GetPinnableReference(), pCaptureDeviceId, pCaptureCount);
@@ -258,7 +258,7 @@ namespace Silk.NET.XInput
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\Xinput.h")]
-        public static unsafe int GetAudioDeviceIds(this XInput thisApi, int dwUserIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pRenderDeviceId, Span<uint> pRenderCount, char* pCaptureDeviceId, Span<uint> pCaptureCount)
+        public static unsafe uint GetAudioDeviceIds(this XInput thisApi, uint dwUserIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pRenderDeviceId, Span<uint> pRenderCount, char* pCaptureDeviceId, Span<uint> pCaptureCount)
         {
             // SpanOverloader
             return thisApi.GetAudioDeviceIds(dwUserIndex, pRenderDeviceId, ref pRenderCount.GetPinnableReference(), pCaptureDeviceId, ref pCaptureCount.GetPinnableReference());
@@ -266,7 +266,7 @@ namespace Silk.NET.XInput
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\Xinput.h")]
-        public static unsafe int GetAudioDeviceIds(this XInput thisApi, int dwUserIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pRenderDeviceId, Span<uint> pRenderCount, Span<char> pCaptureDeviceId, uint* pCaptureCount)
+        public static unsafe uint GetAudioDeviceIds(this XInput thisApi, uint dwUserIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pRenderDeviceId, Span<uint> pRenderCount, Span<char> pCaptureDeviceId, uint* pCaptureCount)
         {
             // SpanOverloader
             return thisApi.GetAudioDeviceIds(dwUserIndex, pRenderDeviceId, ref pRenderCount.GetPinnableReference(), ref pCaptureDeviceId.GetPinnableReference(), pCaptureCount);
@@ -274,7 +274,7 @@ namespace Silk.NET.XInput
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\Xinput.h")]
-        public static unsafe int GetAudioDeviceIds(this XInput thisApi, int dwUserIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pRenderDeviceId, Span<uint> pRenderCount, Span<char> pCaptureDeviceId, Span<uint> pCaptureCount)
+        public static unsafe uint GetAudioDeviceIds(this XInput thisApi, uint dwUserIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pRenderDeviceId, Span<uint> pRenderCount, Span<char> pCaptureDeviceId, Span<uint> pCaptureCount)
         {
             // SpanOverloader
             return thisApi.GetAudioDeviceIds(dwUserIndex, pRenderDeviceId, ref pRenderCount.GetPinnableReference(), ref pCaptureDeviceId.GetPinnableReference(), ref pCaptureCount.GetPinnableReference());
@@ -282,7 +282,7 @@ namespace Silk.NET.XInput
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\Xinput.h")]
-        public static unsafe int GetAudioDeviceIds(this XInput thisApi, int dwUserIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pRenderDeviceId, Span<uint> pRenderCount, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pCaptureDeviceId, uint* pCaptureCount)
+        public static unsafe uint GetAudioDeviceIds(this XInput thisApi, uint dwUserIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pRenderDeviceId, Span<uint> pRenderCount, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pCaptureDeviceId, uint* pCaptureCount)
         {
             // SpanOverloader
             return thisApi.GetAudioDeviceIds(dwUserIndex, pRenderDeviceId, ref pRenderCount.GetPinnableReference(), pCaptureDeviceId, pCaptureCount);
@@ -290,7 +290,7 @@ namespace Silk.NET.XInput
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\Xinput.h")]
-        public static unsafe int GetAudioDeviceIds(this XInput thisApi, int dwUserIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pRenderDeviceId, Span<uint> pRenderCount, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pCaptureDeviceId, Span<uint> pCaptureCount)
+        public static unsafe uint GetAudioDeviceIds(this XInput thisApi, uint dwUserIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pRenderDeviceId, Span<uint> pRenderCount, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pCaptureDeviceId, Span<uint> pCaptureCount)
         {
             // SpanOverloader
             return thisApi.GetAudioDeviceIds(dwUserIndex, pRenderDeviceId, ref pRenderCount.GetPinnableReference(), pCaptureDeviceId, ref pCaptureCount.GetPinnableReference());
@@ -298,7 +298,7 @@ namespace Silk.NET.XInput
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 297, Column 14 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\Xinput.h")]
-        public static unsafe int GetBatteryInformation(this XInput thisApi, int dwUserIndex, byte devType, Span<BatteryInformation> pBatteryInformation)
+        public static unsafe uint GetBatteryInformation(this XInput thisApi, uint dwUserIndex, byte devType, Span<BatteryInformation> pBatteryInformation)
         {
             // SpanOverloader
             return thisApi.GetBatteryInformation(dwUserIndex, devType, ref pBatteryInformation.GetPinnableReference());
@@ -306,7 +306,7 @@ namespace Silk.NET.XInput
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 304, Column 14 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\Xinput.h")]
-        public static unsafe int GetKeystroke(this XInput thisApi, int dwUserIndex, int dwReserved, Span<Keystroke> pKeystroke)
+        public static unsafe uint GetKeystroke(this XInput thisApi, uint dwUserIndex, uint dwReserved, Span<Keystroke> pKeystroke)
         {
             // SpanOverloader
             return thisApi.GetKeystroke(dwUserIndex, dwReserved, ref pKeystroke.GetPinnableReference());

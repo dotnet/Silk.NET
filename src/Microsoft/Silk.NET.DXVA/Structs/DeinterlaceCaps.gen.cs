@@ -21,11 +21,11 @@ namespace Silk.NET.DXVA
     {
         public DeinterlaceCaps
         (
-            int? size = null,
-            int? numPreviousOutputFrames = null,
-            int? inputPool = null,
-            int? numForwardRefSamples = null,
-            int? numBackwardRefSamples = null,
+            uint? size = null,
+            uint? numPreviousOutputFrames = null,
+            uint? inputPool = null,
+            uint? numForwardRefSamples = null,
+            uint? numBackwardRefSamples = null,
             Silk.NET.Direct3D9.Format? d3dOutputFormat = null,
             VideoProcessCaps? videoProcessingCaps = null,
             DeinterlaceTech? deinterlaceTechnology = null
@@ -76,27 +76,27 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "Size")]
-        public int Size;
+        public uint Size;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "NumPreviousOutputFrames")]
-        public int NumPreviousOutputFrames;
+        public uint NumPreviousOutputFrames;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "InputPool")]
-        public int InputPool;
+        public uint InputPool;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "NumForwardRefSamples")]
-        public int NumForwardRefSamples;
+        public uint NumForwardRefSamples;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "NumBackwardRefSamples")]
-        public int NumBackwardRefSamples;
+        public uint NumBackwardRefSamples;
 
         [NativeName("Type", "D3DFORMAT")]
         [NativeName("Type.Name", "D3DFORMAT")]

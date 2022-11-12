@@ -21,8 +21,8 @@ namespace Silk.NET.Direct3D11
     {
         public FeatureDataThreading
         (
-            bool? driverConcurrentCreates = null,
-            bool? driverCommandLists = null
+            int? driverConcurrentCreates = null,
+            int? driverCommandLists = null
         ) : this()
         {
             if (driverConcurrentCreates is not null)
@@ -40,11 +40,11 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "DriverConcurrentCreates")]
-        public bool DriverConcurrentCreates;
+        public int DriverConcurrentCreates;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "DriverCommandLists")]
-        public bool DriverCommandLists;
+        public int DriverCommandLists;
     }
 }

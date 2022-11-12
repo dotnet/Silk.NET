@@ -106,40 +106,40 @@ public unsafe static class Direct3DTexture9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<IDirect3DTexture9> thisVtbl, Guid* refguid, [Flow(FlowDirection.In)] void* pData, int SizeOfData, int Flags)
+    public static unsafe int SetPrivateData(this ComPtr<IDirect3DTexture9> thisVtbl, Guid* refguid, [Flow(FlowDirection.In)] void* pData, uint SizeOfData, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Guid*, void*, int, int, int>)@this->LpVtbl[4])(@this, refguid, pData, SizeOfData, Flags);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Guid*, void*, uint, uint, int>)@this->LpVtbl[4])(@this, refguid, pData, SizeOfData, Flags);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<IDirect3DTexture9> thisVtbl, Guid* refguid, [Flow(FlowDirection.In)] in T0 pData, int SizeOfData, int Flags) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<IDirect3DTexture9> thisVtbl, Guid* refguid, [Flow(FlowDirection.In)] in T0 pData, uint SizeOfData, uint Flags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void* pDataPtr = &pData)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Guid*, void*, int, int, int>)@this->LpVtbl[4])(@this, refguid, pDataPtr, SizeOfData, Flags);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Guid*, void*, uint, uint, int>)@this->LpVtbl[4])(@this, refguid, pDataPtr, SizeOfData, Flags);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<IDirect3DTexture9> thisVtbl, ref Guid refguid, [Flow(FlowDirection.In)] void* pData, int SizeOfData, int Flags)
+    public static unsafe int SetPrivateData(this ComPtr<IDirect3DTexture9> thisVtbl, ref Guid refguid, [Flow(FlowDirection.In)] void* pData, uint SizeOfData, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* refguidPtr = &refguid)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Guid*, void*, int, int, int>)@this->LpVtbl[4])(@this, refguidPtr, pData, SizeOfData, Flags);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Guid*, void*, uint, uint, int>)@this->LpVtbl[4])(@this, refguidPtr, pData, SizeOfData, Flags);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<IDirect3DTexture9> thisVtbl, ref Guid refguid, [Flow(FlowDirection.In)] in T0 pData, int SizeOfData, int Flags) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<IDirect3DTexture9> thisVtbl, ref Guid refguid, [Flow(FlowDirection.In)] in T0 pData, uint SizeOfData, uint Flags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -147,7 +147,7 @@ public unsafe static class Direct3DTexture9VtblExtensions
         {
             fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Guid*, void*, int, int, int>)@this->LpVtbl[4])(@this, refguidPtr, pDataPtr, SizeOfData, Flags);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Guid*, void*, uint, uint, int>)@this->LpVtbl[4])(@this, refguidPtr, pDataPtr, SizeOfData, Flags);
             }
         }
         return ret;
@@ -283,20 +283,20 @@ public unsafe static class Direct3DTexture9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPriority(this ComPtr<IDirect3DTexture9> thisVtbl, int PriorityNew)
+    public static uint SetPriority(this ComPtr<IDirect3DTexture9> thisVtbl, uint PriorityNew)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, int, int>)@this->LpVtbl[7])(@this, PriorityNew);
+        uint ret = default;
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint, uint>)@this->LpVtbl[7])(@this, PriorityNew);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetPriority(this ComPtr<IDirect3DTexture9> thisVtbl)
+    public static uint GetPriority(this ComPtr<IDirect3DTexture9> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, int>)@this->LpVtbl[8])(@this);
+        uint ret = default;
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint>)@this->LpVtbl[8])(@this);
         return ret;
     }
 
@@ -317,29 +317,29 @@ public unsafe static class Direct3DTexture9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetLOD(this ComPtr<IDirect3DTexture9> thisVtbl, int LODNew)
+    public static uint SetLOD(this ComPtr<IDirect3DTexture9> thisVtbl, uint LODNew)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, int, int>)@this->LpVtbl[11])(@this, LODNew);
+        uint ret = default;
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint, uint>)@this->LpVtbl[11])(@this, LODNew);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetLOD(this ComPtr<IDirect3DTexture9> thisVtbl)
+    public static uint GetLOD(this ComPtr<IDirect3DTexture9> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, int>)@this->LpVtbl[12])(@this);
+        uint ret = default;
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint>)@this->LpVtbl[12])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetLevelCount(this ComPtr<IDirect3DTexture9> thisVtbl)
+    public static uint GetLevelCount(this ComPtr<IDirect3DTexture9> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, int>)@this->LpVtbl[13])(@this);
+        uint ret = default;
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint>)@this->LpVtbl[13])(@this);
         return ret;
     }
 
@@ -411,40 +411,40 @@ public unsafe static class Direct3DTexture9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LockRect(this ComPtr<IDirect3DTexture9> thisVtbl, uint Level, LockedRect* pLockedRect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect, int Flags)
+    public static unsafe int LockRect(this ComPtr<IDirect3DTexture9> thisVtbl, uint Level, LockedRect* pLockedRect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint, LockedRect*, Silk.NET.Maths.Box2D<int>*, int, int>)@this->LpVtbl[19])(@this, Level, pLockedRect, pRect, Flags);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint, LockedRect*, Silk.NET.Maths.Box2D<int>*, uint, int>)@this->LpVtbl[19])(@this, Level, pLockedRect, pRect, Flags);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LockRect(this ComPtr<IDirect3DTexture9> thisVtbl, uint Level, LockedRect* pLockedRect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect, int Flags)
+    public static unsafe int LockRect(this ComPtr<IDirect3DTexture9> thisVtbl, uint Level, LockedRect* pLockedRect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint, LockedRect*, Silk.NET.Maths.Box2D<int>*, int, int>)@this->LpVtbl[19])(@this, Level, pLockedRect, pRectPtr, Flags);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint, LockedRect*, Silk.NET.Maths.Box2D<int>*, uint, int>)@this->LpVtbl[19])(@this, Level, pLockedRect, pRectPtr, Flags);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LockRect(this ComPtr<IDirect3DTexture9> thisVtbl, uint Level, ref LockedRect pLockedRect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect, int Flags)
+    public static unsafe int LockRect(this ComPtr<IDirect3DTexture9> thisVtbl, uint Level, ref LockedRect pLockedRect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (LockedRect* pLockedRectPtr = &pLockedRect)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint, LockedRect*, Silk.NET.Maths.Box2D<int>*, int, int>)@this->LpVtbl[19])(@this, Level, pLockedRectPtr, pRect, Flags);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint, LockedRect*, Silk.NET.Maths.Box2D<int>*, uint, int>)@this->LpVtbl[19])(@this, Level, pLockedRectPtr, pRect, Flags);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int LockRect(this ComPtr<IDirect3DTexture9> thisVtbl, uint Level, ref LockedRect pLockedRect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect, int Flags)
+    public static int LockRect(this ComPtr<IDirect3DTexture9> thisVtbl, uint Level, ref LockedRect pLockedRect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -452,7 +452,7 @@ public unsafe static class Direct3DTexture9VtblExtensions
         {
             fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint, LockedRect*, Silk.NET.Maths.Box2D<int>*, int, int>)@this->LpVtbl[19])(@this, Level, pLockedRectPtr, pRectPtr, Flags);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint, LockedRect*, Silk.NET.Maths.Box2D<int>*, uint, int>)@this->LpVtbl[19])(@this, Level, pLockedRectPtr, pRectPtr, Flags);
             }
         }
         return ret;
@@ -522,7 +522,7 @@ public unsafe static class Direct3DTexture9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<IDirect3DTexture9> thisVtbl, Guid* refguid, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData, int SizeOfData, int Flags) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<IDirect3DTexture9> thisVtbl, Guid* refguid, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData, uint SizeOfData, uint Flags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -530,7 +530,7 @@ public unsafe static class Direct3DTexture9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<IDirect3DTexture9> thisVtbl, Span<Guid> refguid, [Flow(FlowDirection.In)] void* pData, int SizeOfData, int Flags)
+    public static unsafe int SetPrivateData(this ComPtr<IDirect3DTexture9> thisVtbl, Span<Guid> refguid, [Flow(FlowDirection.In)] void* pData, uint SizeOfData, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -538,7 +538,7 @@ public unsafe static class Direct3DTexture9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<IDirect3DTexture9> thisVtbl, Span<Guid> refguid, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData, int SizeOfData, int Flags) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<IDirect3DTexture9> thisVtbl, Span<Guid> refguid, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData, uint SizeOfData, uint Flags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -626,7 +626,7 @@ public unsafe static class Direct3DTexture9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LockRect(this ComPtr<IDirect3DTexture9> thisVtbl, uint Level, LockedRect* pLockedRect, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pRect, int Flags)
+    public static unsafe int LockRect(this ComPtr<IDirect3DTexture9> thisVtbl, uint Level, LockedRect* pLockedRect, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pRect, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -634,7 +634,7 @@ public unsafe static class Direct3DTexture9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LockRect(this ComPtr<IDirect3DTexture9> thisVtbl, uint Level, Span<LockedRect> pLockedRect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect, int Flags)
+    public static unsafe int LockRect(this ComPtr<IDirect3DTexture9> thisVtbl, uint Level, Span<LockedRect> pLockedRect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -642,7 +642,7 @@ public unsafe static class Direct3DTexture9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int LockRect(this ComPtr<IDirect3DTexture9> thisVtbl, uint Level, Span<LockedRect> pLockedRect, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pRect, int Flags)
+    public static int LockRect(this ComPtr<IDirect3DTexture9> thisVtbl, uint Level, Span<LockedRect> pLockedRect, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pRect, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

@@ -33,7 +33,7 @@ namespace Silk.NET.DXVA
             DXVA2FilterValues? noiseFilterChroma = null,
             DXVA2FilterValues? detailFilterLuma = null,
             DXVA2FilterValues? detailFilterChroma = null,
-            int? destData = null
+            uint? destData = null
         ) : this()
         {
             if (targetFrame is not null)
@@ -166,6 +166,6 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "DestData")]
-        public int DestData;
+        public uint DestData;
     }
 }

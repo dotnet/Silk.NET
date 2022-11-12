@@ -759,109 +759,165 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In)] nint* szDeviceId, [Flow(FlowDirection.In)] EffectChain* pEffectChain, AudioStreamCategory StreamCategory)
+    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In)] char* szDeviceId, [Flow(FlowDirection.In)] EffectChain* pEffectChain, AudioStreamCategory StreamCategory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, nint*, EffectChain*, AudioStreamCategory, int>)@this->LpVtbl[7])(@this, ppMasteringVoice, InputChannels, InputSampleRate, Flags, szDeviceId, pEffectChain, StreamCategory);
+        ret = ((delegate* unmanaged[Stdcall]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, char*, EffectChain*, AudioStreamCategory, int>)@this->LpVtbl[7])(@this, ppMasteringVoice, InputChannels, InputSampleRate, Flags, szDeviceId, pEffectChain, StreamCategory);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In)] nint* szDeviceId, [Flow(FlowDirection.In)] in EffectChain pEffectChain, AudioStreamCategory StreamCategory)
+    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In)] char* szDeviceId, [Flow(FlowDirection.In)] in EffectChain pEffectChain, AudioStreamCategory StreamCategory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (EffectChain* pEffectChainPtr = &pEffectChain)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, nint*, EffectChain*, AudioStreamCategory, int>)@this->LpVtbl[7])(@this, ppMasteringVoice, InputChannels, InputSampleRate, Flags, szDeviceId, pEffectChainPtr, StreamCategory);
+            ret = ((delegate* unmanaged[Stdcall]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, char*, EffectChain*, AudioStreamCategory, int>)@this->LpVtbl[7])(@this, ppMasteringVoice, InputChannels, InputSampleRate, Flags, szDeviceId, pEffectChainPtr, StreamCategory);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In)] in nint szDeviceId, [Flow(FlowDirection.In)] EffectChain* pEffectChain, AudioStreamCategory StreamCategory)
+    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In)] in char szDeviceId, [Flow(FlowDirection.In)] EffectChain* pEffectChain, AudioStreamCategory StreamCategory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (nint* szDeviceIdPtr = &szDeviceId)
+        fixed (char* szDeviceIdPtr = &szDeviceId)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, nint*, EffectChain*, AudioStreamCategory, int>)@this->LpVtbl[7])(@this, ppMasteringVoice, InputChannels, InputSampleRate, Flags, szDeviceIdPtr, pEffectChain, StreamCategory);
+            ret = ((delegate* unmanaged[Stdcall]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, char*, EffectChain*, AudioStreamCategory, int>)@this->LpVtbl[7])(@this, ppMasteringVoice, InputChannels, InputSampleRate, Flags, szDeviceIdPtr, pEffectChain, StreamCategory);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In)] in nint szDeviceId, [Flow(FlowDirection.In)] in EffectChain pEffectChain, AudioStreamCategory StreamCategory)
+    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In)] in char szDeviceId, [Flow(FlowDirection.In)] in EffectChain pEffectChain, AudioStreamCategory StreamCategory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (nint* szDeviceIdPtr = &szDeviceId)
-        {
-            fixed (EffectChain* pEffectChainPtr = &pEffectChain)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, nint*, EffectChain*, AudioStreamCategory, int>)@this->LpVtbl[7])(@this, ppMasteringVoice, InputChannels, InputSampleRate, Flags, szDeviceIdPtr, pEffectChainPtr, StreamCategory);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In)] nint* szDeviceId, [Flow(FlowDirection.In)] EffectChain* pEffectChain, AudioStreamCategory StreamCategory)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (IXAudio2MasteringVoice** ppMasteringVoicePtr = &ppMasteringVoice)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, nint*, EffectChain*, AudioStreamCategory, int>)@this->LpVtbl[7])(@this, ppMasteringVoicePtr, InputChannels, InputSampleRate, Flags, szDeviceId, pEffectChain, StreamCategory);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In)] nint* szDeviceId, [Flow(FlowDirection.In)] in EffectChain pEffectChain, AudioStreamCategory StreamCategory)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (IXAudio2MasteringVoice** ppMasteringVoicePtr = &ppMasteringVoice)
+        fixed (char* szDeviceIdPtr = &szDeviceId)
         {
             fixed (EffectChain* pEffectChainPtr = &pEffectChain)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, nint*, EffectChain*, AudioStreamCategory, int>)@this->LpVtbl[7])(@this, ppMasteringVoicePtr, InputChannels, InputSampleRate, Flags, szDeviceId, pEffectChainPtr, StreamCategory);
+                ret = ((delegate* unmanaged[Stdcall]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, char*, EffectChain*, AudioStreamCategory, int>)@this->LpVtbl[7])(@this, ppMasteringVoice, InputChannels, InputSampleRate, Flags, szDeviceIdPtr, pEffectChainPtr, StreamCategory);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In)] in nint szDeviceId, [Flow(FlowDirection.In)] EffectChain* pEffectChain, AudioStreamCategory StreamCategory)
+    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string szDeviceId, [Flow(FlowDirection.In)] EffectChain* pEffectChain, AudioStreamCategory StreamCategory)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        var szDeviceIdPtr = (byte*) SilkMarshal.StringToPtr(szDeviceId, NativeStringEncoding.LPWStr);
+        ret = ((delegate* unmanaged[Stdcall]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, byte*, EffectChain*, AudioStreamCategory, int>)@this->LpVtbl[7])(@this, ppMasteringVoice, InputChannels, InputSampleRate, Flags, szDeviceIdPtr, pEffectChain, StreamCategory);
+        SilkMarshal.Free((nint)szDeviceIdPtr);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string szDeviceId, [Flow(FlowDirection.In)] in EffectChain pEffectChain, AudioStreamCategory StreamCategory)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        var szDeviceIdPtr = (byte*) SilkMarshal.StringToPtr(szDeviceId, NativeStringEncoding.LPWStr);
+        fixed (EffectChain* pEffectChainPtr = &pEffectChain)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, byte*, EffectChain*, AudioStreamCategory, int>)@this->LpVtbl[7])(@this, ppMasteringVoice, InputChannels, InputSampleRate, Flags, szDeviceIdPtr, pEffectChainPtr, StreamCategory);
+        }
+        SilkMarshal.Free((nint)szDeviceIdPtr);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In)] char* szDeviceId, [Flow(FlowDirection.In)] EffectChain* pEffectChain, AudioStreamCategory StreamCategory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IXAudio2MasteringVoice** ppMasteringVoicePtr = &ppMasteringVoice)
         {
-            fixed (nint* szDeviceIdPtr = &szDeviceId)
+            ret = ((delegate* unmanaged[Stdcall]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, char*, EffectChain*, AudioStreamCategory, int>)@this->LpVtbl[7])(@this, ppMasteringVoicePtr, InputChannels, InputSampleRate, Flags, szDeviceId, pEffectChain, StreamCategory);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In)] char* szDeviceId, [Flow(FlowDirection.In)] in EffectChain pEffectChain, AudioStreamCategory StreamCategory)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (IXAudio2MasteringVoice** ppMasteringVoicePtr = &ppMasteringVoice)
+        {
+            fixed (EffectChain* pEffectChainPtr = &pEffectChain)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, nint*, EffectChain*, AudioStreamCategory, int>)@this->LpVtbl[7])(@this, ppMasteringVoicePtr, InputChannels, InputSampleRate, Flags, szDeviceIdPtr, pEffectChain, StreamCategory);
+                ret = ((delegate* unmanaged[Stdcall]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, char*, EffectChain*, AudioStreamCategory, int>)@this->LpVtbl[7])(@this, ppMasteringVoicePtr, InputChannels, InputSampleRate, Flags, szDeviceId, pEffectChainPtr, StreamCategory);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In)] in nint szDeviceId, [Flow(FlowDirection.In)] in EffectChain pEffectChain, AudioStreamCategory StreamCategory)
+    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In)] in char szDeviceId, [Flow(FlowDirection.In)] EffectChain* pEffectChain, AudioStreamCategory StreamCategory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IXAudio2MasteringVoice** ppMasteringVoicePtr = &ppMasteringVoice)
         {
-            fixed (nint* szDeviceIdPtr = &szDeviceId)
+            fixed (char* szDeviceIdPtr = &szDeviceId)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, char*, EffectChain*, AudioStreamCategory, int>)@this->LpVtbl[7])(@this, ppMasteringVoicePtr, InputChannels, InputSampleRate, Flags, szDeviceIdPtr, pEffectChain, StreamCategory);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In)] in char szDeviceId, [Flow(FlowDirection.In)] in EffectChain pEffectChain, AudioStreamCategory StreamCategory)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (IXAudio2MasteringVoice** ppMasteringVoicePtr = &ppMasteringVoice)
+        {
+            fixed (char* szDeviceIdPtr = &szDeviceId)
             {
                 fixed (EffectChain* pEffectChainPtr = &pEffectChain)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, nint*, EffectChain*, AudioStreamCategory, int>)@this->LpVtbl[7])(@this, ppMasteringVoicePtr, InputChannels, InputSampleRate, Flags, szDeviceIdPtr, pEffectChainPtr, StreamCategory);
+                    ret = ((delegate* unmanaged[Stdcall]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, char*, EffectChain*, AudioStreamCategory, int>)@this->LpVtbl[7])(@this, ppMasteringVoicePtr, InputChannels, InputSampleRate, Flags, szDeviceIdPtr, pEffectChainPtr, StreamCategory);
                 }
             }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string szDeviceId, [Flow(FlowDirection.In)] EffectChain* pEffectChain, AudioStreamCategory StreamCategory)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (IXAudio2MasteringVoice** ppMasteringVoicePtr = &ppMasteringVoice)
+        {
+        var szDeviceIdPtr = (byte*) SilkMarshal.StringToPtr(szDeviceId, NativeStringEncoding.LPWStr);
+            ret = ((delegate* unmanaged[Stdcall]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, byte*, EffectChain*, AudioStreamCategory, int>)@this->LpVtbl[7])(@this, ppMasteringVoicePtr, InputChannels, InputSampleRate, Flags, szDeviceIdPtr, pEffectChain, StreamCategory);
+        SilkMarshal.Free((nint)szDeviceIdPtr);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string szDeviceId, [Flow(FlowDirection.In)] in EffectChain pEffectChain, AudioStreamCategory StreamCategory)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (IXAudio2MasteringVoice** ppMasteringVoicePtr = &ppMasteringVoice)
+        {
+        var szDeviceIdPtr = (byte*) SilkMarshal.StringToPtr(szDeviceId, NativeStringEncoding.LPWStr);
+            fixed (EffectChain* pEffectChainPtr = &pEffectChain)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, byte*, EffectChain*, AudioStreamCategory, int>)@this->LpVtbl[7])(@this, ppMasteringVoicePtr, InputChannels, InputSampleRate, Flags, szDeviceIdPtr, pEffectChainPtr, StreamCategory);
+            }
+        SilkMarshal.Free((nint)szDeviceIdPtr);
         }
         return ret;
     }
@@ -1278,7 +1334,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In)] nint* szDeviceId, [Flow(FlowDirection.In)] ReadOnlySpan<EffectChain> pEffectChain, AudioStreamCategory StreamCategory)
+    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In)] char* szDeviceId, [Flow(FlowDirection.In)] ReadOnlySpan<EffectChain> pEffectChain, AudioStreamCategory StreamCategory)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1286,7 +1342,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In)] ReadOnlySpan<nint> szDeviceId, [Flow(FlowDirection.In)] EffectChain* pEffectChain, AudioStreamCategory StreamCategory)
+    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In)] ReadOnlySpan<char> szDeviceId, [Flow(FlowDirection.In)] EffectChain* pEffectChain, AudioStreamCategory StreamCategory)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1294,7 +1350,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In)] ReadOnlySpan<nint> szDeviceId, [Flow(FlowDirection.In)] ReadOnlySpan<EffectChain> pEffectChain, AudioStreamCategory StreamCategory)
+    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In)] ReadOnlySpan<char> szDeviceId, [Flow(FlowDirection.In)] ReadOnlySpan<EffectChain> pEffectChain, AudioStreamCategory StreamCategory)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1302,7 +1358,15 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In)] nint* szDeviceId, [Flow(FlowDirection.In)] ReadOnlySpan<EffectChain> pEffectChain, AudioStreamCategory StreamCategory)
+    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string szDeviceId, [Flow(FlowDirection.In)] ReadOnlySpan<EffectChain> pEffectChain, AudioStreamCategory StreamCategory)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateMasteringVoice(ppMasteringVoice, InputChannels, InputSampleRate, Flags, szDeviceId, in pEffectChain.GetPinnableReference(), StreamCategory);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In)] char* szDeviceId, [Flow(FlowDirection.In)] ReadOnlySpan<EffectChain> pEffectChain, AudioStreamCategory StreamCategory)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1310,7 +1374,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In)] ReadOnlySpan<nint> szDeviceId, [Flow(FlowDirection.In)] EffectChain* pEffectChain, AudioStreamCategory StreamCategory)
+    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In)] ReadOnlySpan<char> szDeviceId, [Flow(FlowDirection.In)] EffectChain* pEffectChain, AudioStreamCategory StreamCategory)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1318,11 +1382,19 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In)] ReadOnlySpan<nint> szDeviceId, [Flow(FlowDirection.In)] ReadOnlySpan<EffectChain> pEffectChain, AudioStreamCategory StreamCategory)
+    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In)] ReadOnlySpan<char> szDeviceId, [Flow(FlowDirection.In)] ReadOnlySpan<EffectChain> pEffectChain, AudioStreamCategory StreamCategory)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateMasteringVoice(ref ppMasteringVoice, InputChannels, InputSampleRate, Flags, in szDeviceId.GetPinnableReference(), in pEffectChain.GetPinnableReference(), StreamCategory);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string szDeviceId, [Flow(FlowDirection.In)] ReadOnlySpan<EffectChain> pEffectChain, AudioStreamCategory StreamCategory)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateMasteringVoice(ref ppMasteringVoice, InputChannels, InputSampleRate, Flags, szDeviceId, in pEffectChain.GetPinnableReference(), StreamCategory);
     }
 
     /// <summary>To be documented.</summary>

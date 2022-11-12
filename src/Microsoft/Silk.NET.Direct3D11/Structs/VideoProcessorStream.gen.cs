@@ -21,7 +21,7 @@ namespace Silk.NET.Direct3D11
     {
         public VideoProcessorStream
         (
-            bool? enable = null,
+            int? enable = null,
             uint? outputIndex = null,
             uint? inputFrameOrField = null,
             uint? pastFrames = null,
@@ -94,7 +94,7 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "Enable")]
-        public bool Enable;
+        public int Enable;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]

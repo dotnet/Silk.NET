@@ -21,7 +21,7 @@ namespace Silk.NET.DXGI
     {
         public SharedResource
         (
-            nint* handle = null
+            void* handle = null
         ) : this()
         {
             if (handle is not null)
@@ -34,6 +34,6 @@ namespace Silk.NET.DXGI
         [NativeName("Type", "HANDLE")]
         [NativeName("Type.Name", "HANDLE")]
         [NativeName("Name", "Handle")]
-        public nint* Handle;
+        public void* Handle;
     }
 }

@@ -228,22 +228,22 @@ namespace Silk.NET.Direct2D
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3691, Column 5 in d2d1.h")]
         [NativeApi(EntryPoint = "D2D1IsMatrixInvertible", Convention = CallingConvention.StdCall)]
-        public unsafe partial bool D2D1IsMatrixInvertible([Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* matrix);
+        public unsafe partial int D2D1IsMatrixInvertible([Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* matrix);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3691, Column 5 in d2d1.h")]
         [NativeApi(EntryPoint = "D2D1IsMatrixInvertible", Convention = CallingConvention.StdCall)]
-        public partial bool D2D1IsMatrixInvertible([Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> matrix);
+        public partial int D2D1IsMatrixInvertible([Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> matrix);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3696, Column 5 in d2d1.h")]
         [NativeApi(EntryPoint = "D2D1InvertMatrix", Convention = CallingConvention.StdCall)]
-        public unsafe partial bool D2D1InvertMatrix(Silk.NET.Maths.Matrix3X2<float>* matrix);
+        public unsafe partial int D2D1InvertMatrix(Silk.NET.Maths.Matrix3X2<float>* matrix);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3696, Column 5 in d2d1.h")]
         [NativeApi(EntryPoint = "D2D1InvertMatrix", Convention = CallingConvention.StdCall)]
-        public partial bool D2D1InvertMatrix(ref Silk.NET.Maths.Matrix3X2<float> matrix);
+        public partial int D2D1InvertMatrix(ref Silk.NET.Maths.Matrix3X2<float> matrix);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 5 in d2d1_1.h")]

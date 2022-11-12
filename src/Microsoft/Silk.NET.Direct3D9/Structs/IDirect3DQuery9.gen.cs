@@ -141,40 +141,40 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetDataSize()
+        public readonly uint GetDataSize()
         {
             var @this = (IDirect3DQuery9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DQuery9*, int>)@this->LpVtbl[5])(@this);
+            uint ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DQuery9*, uint>)@this->LpVtbl[5])(@this);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Issue(int dwIssueFlags)
+        public readonly int Issue(uint dwIssueFlags)
         {
             var @this = (IDirect3DQuery9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DQuery9*, int, int>)@this->LpVtbl[6])(@this, dwIssueFlags);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DQuery9*, uint, int>)@this->LpVtbl[6])(@this, dwIssueFlags);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetData(void* pData, int dwSize, int dwGetDataFlags)
+        public readonly unsafe int GetData(void* pData, uint dwSize, uint dwGetDataFlags)
         {
             var @this = (IDirect3DQuery9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DQuery9*, void*, int, int, int>)@this->LpVtbl[7])(@this, pData, dwSize, dwGetDataFlags);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DQuery9*, void*, uint, uint, int>)@this->LpVtbl[7])(@this, pData, dwSize, dwGetDataFlags);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetData<T0>(ref T0 pData, int dwSize, int dwGetDataFlags) where T0 : unmanaged
+        public readonly int GetData<T0>(ref T0 pData, uint dwSize, uint dwGetDataFlags) where T0 : unmanaged
         {
             var @this = (IDirect3DQuery9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DQuery9*, void*, int, int, int>)@this->LpVtbl[7])(@this, pDataPtr, dwSize, dwGetDataFlags);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DQuery9*, void*, uint, uint, int>)@this->LpVtbl[7])(@this, pDataPtr, dwSize, dwGetDataFlags);
             }
             return ret;
         }

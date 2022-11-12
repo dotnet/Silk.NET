@@ -2625,11 +2625,11 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly bool IsImpersonating()
+        public readonly int IsImpersonating()
         {
             var @this = (IServerSecurity*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            bool ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, bool>)@this->LpVtbl[6])(@this);
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IServerSecurity*, int>)@this->LpVtbl[6])(@this);
             return ret;
         }
 

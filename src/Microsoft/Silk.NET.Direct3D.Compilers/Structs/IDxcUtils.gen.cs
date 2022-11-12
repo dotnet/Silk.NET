@@ -363,40 +363,40 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadFile([Flow(FlowDirection.In)] nint* pFileName, uint* pCodePage, IDxcBlobEncoding** pBlobEncoding)
+        public readonly unsafe int LoadFile([Flow(FlowDirection.In)] char* pFileName, uint* pCodePage, IDxcBlobEncoding** pBlobEncoding)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, uint*, IDxcBlobEncoding**, int>)@this->LpVtbl[7])(@this, pFileName, pCodePage, pBlobEncoding);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, uint*, IDxcBlobEncoding**, int>)@this->LpVtbl[7])(@this, pFileName, pCodePage, pBlobEncoding);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadFile([Flow(FlowDirection.In)] nint* pFileName, uint* pCodePage, ref IDxcBlobEncoding* pBlobEncoding)
+        public readonly unsafe int LoadFile([Flow(FlowDirection.In)] char* pFileName, uint* pCodePage, ref IDxcBlobEncoding* pBlobEncoding)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, uint*, IDxcBlobEncoding**, int>)@this->LpVtbl[7])(@this, pFileName, pCodePage, pBlobEncodingPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, uint*, IDxcBlobEncoding**, int>)@this->LpVtbl[7])(@this, pFileName, pCodePage, pBlobEncodingPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadFile([Flow(FlowDirection.In)] nint* pFileName, ref uint pCodePage, IDxcBlobEncoding** pBlobEncoding)
+        public readonly unsafe int LoadFile([Flow(FlowDirection.In)] char* pFileName, ref uint pCodePage, IDxcBlobEncoding** pBlobEncoding)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (uint* pCodePagePtr = &pCodePage)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, uint*, IDxcBlobEncoding**, int>)@this->LpVtbl[7])(@this, pFileName, pCodePagePtr, pBlobEncoding);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, uint*, IDxcBlobEncoding**, int>)@this->LpVtbl[7])(@this, pFileName, pCodePagePtr, pBlobEncoding);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadFile([Flow(FlowDirection.In)] nint* pFileName, ref uint pCodePage, ref IDxcBlobEncoding* pBlobEncoding)
+        public readonly unsafe int LoadFile([Flow(FlowDirection.In)] char* pFileName, ref uint pCodePage, ref IDxcBlobEncoding* pBlobEncoding)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -404,69 +404,125 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, uint*, IDxcBlobEncoding**, int>)@this->LpVtbl[7])(@this, pFileName, pCodePagePtr, pBlobEncodingPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, uint*, IDxcBlobEncoding**, int>)@this->LpVtbl[7])(@this, pFileName, pCodePagePtr, pBlobEncodingPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadFile([Flow(FlowDirection.In)] in nint pFileName, uint* pCodePage, IDxcBlobEncoding** pBlobEncoding)
+        public readonly unsafe int LoadFile([Flow(FlowDirection.In)] in char pFileName, uint* pCodePage, IDxcBlobEncoding** pBlobEncoding)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pFileNamePtr = &pFileName)
+            fixed (char* pFileNamePtr = &pFileName)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, uint*, IDxcBlobEncoding**, int>)@this->LpVtbl[7])(@this, pFileNamePtr, pCodePage, pBlobEncoding);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, uint*, IDxcBlobEncoding**, int>)@this->LpVtbl[7])(@this, pFileNamePtr, pCodePage, pBlobEncoding);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadFile([Flow(FlowDirection.In)] in nint pFileName, uint* pCodePage, ref IDxcBlobEncoding* pBlobEncoding)
+        public readonly unsafe int LoadFile([Flow(FlowDirection.In)] in char pFileName, uint* pCodePage, ref IDxcBlobEncoding* pBlobEncoding)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pFileNamePtr = &pFileName)
+            fixed (char* pFileNamePtr = &pFileName)
             {
                 fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, uint*, IDxcBlobEncoding**, int>)@this->LpVtbl[7])(@this, pFileNamePtr, pCodePage, pBlobEncodingPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, uint*, IDxcBlobEncoding**, int>)@this->LpVtbl[7])(@this, pFileNamePtr, pCodePage, pBlobEncodingPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadFile([Flow(FlowDirection.In)] in nint pFileName, ref uint pCodePage, IDxcBlobEncoding** pBlobEncoding)
+        public readonly unsafe int LoadFile([Flow(FlowDirection.In)] in char pFileName, ref uint pCodePage, IDxcBlobEncoding** pBlobEncoding)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pFileNamePtr = &pFileName)
+            fixed (char* pFileNamePtr = &pFileName)
             {
                 fixed (uint* pCodePagePtr = &pCodePage)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, uint*, IDxcBlobEncoding**, int>)@this->LpVtbl[7])(@this, pFileNamePtr, pCodePagePtr, pBlobEncoding);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, uint*, IDxcBlobEncoding**, int>)@this->LpVtbl[7])(@this, pFileNamePtr, pCodePagePtr, pBlobEncoding);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadFile([Flow(FlowDirection.In)] in nint pFileName, ref uint pCodePage, ref IDxcBlobEncoding* pBlobEncoding)
+        public readonly unsafe int LoadFile([Flow(FlowDirection.In)] in char pFileName, ref uint pCodePage, ref IDxcBlobEncoding* pBlobEncoding)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pFileNamePtr = &pFileName)
+            fixed (char* pFileNamePtr = &pFileName)
             {
                 fixed (uint* pCodePagePtr = &pCodePage)
                 {
                     fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, uint*, IDxcBlobEncoding**, int>)@this->LpVtbl[7])(@this, pFileNamePtr, pCodePagePtr, pBlobEncodingPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, uint*, IDxcBlobEncoding**, int>)@this->LpVtbl[7])(@this, pFileNamePtr, pCodePagePtr, pBlobEncodingPtr);
                     }
                 }
             }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int LoadFile([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pFileName, uint* pCodePage, IDxcBlobEncoding** pBlobEncoding)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pFileNamePtr = (byte*) SilkMarshal.StringToPtr(pFileName, NativeStringEncoding.LPWStr);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, uint*, IDxcBlobEncoding**, int>)@this->LpVtbl[7])(@this, pFileNamePtr, pCodePage, pBlobEncoding);
+            SilkMarshal.Free((nint)pFileNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int LoadFile([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pFileName, uint* pCodePage, ref IDxcBlobEncoding* pBlobEncoding)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pFileNamePtr = (byte*) SilkMarshal.StringToPtr(pFileName, NativeStringEncoding.LPWStr);
+            fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, uint*, IDxcBlobEncoding**, int>)@this->LpVtbl[7])(@this, pFileNamePtr, pCodePage, pBlobEncodingPtr);
+            }
+            SilkMarshal.Free((nint)pFileNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int LoadFile([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pFileName, ref uint pCodePage, IDxcBlobEncoding** pBlobEncoding)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pFileNamePtr = (byte*) SilkMarshal.StringToPtr(pFileName, NativeStringEncoding.LPWStr);
+            fixed (uint* pCodePagePtr = &pCodePage)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, uint*, IDxcBlobEncoding**, int>)@this->LpVtbl[7])(@this, pFileNamePtr, pCodePagePtr, pBlobEncoding);
+            }
+            SilkMarshal.Free((nint)pFileNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int LoadFile([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pFileName, ref uint pCodePage, ref IDxcBlobEncoding* pBlobEncoding)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pFileNamePtr = (byte*) SilkMarshal.StringToPtr(pFileName, NativeStringEncoding.LPWStr);
+            fixed (uint* pCodePagePtr = &pCodePage)
+            {
+                fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, uint*, IDxcBlobEncoding**, int>)@this->LpVtbl[7])(@this, pFileNamePtr, pCodePagePtr, pBlobEncodingPtr);
+                }
+            }
+            SilkMarshal.Free((nint)pFileNamePtr);
             return ret;
         }
 
@@ -852,40 +908,40 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgsPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgsPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Define* pDefinesPtr = &pDefines)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefinesPtr, defineCount, ppArgs);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefinesPtr, defineCount, ppArgs);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -893,26 +949,26 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefinesPtr, defineCount, ppArgsPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (char** pArgumentsPtr = &pArguments)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPoint, pTargetProfile, pArgumentsPtr, argCount, pDefines, defineCount, ppArgs);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPoint, pTargetProfile, pArgumentsPtr, argCount, pDefines, defineCount, ppArgs);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -920,14 +976,14 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPoint, pTargetProfile, pArgumentsPtr, argCount, pDefines, defineCount, ppArgsPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPoint, pTargetProfile, pArgumentsPtr, argCount, pDefines, defineCount, ppArgsPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -935,14 +991,14 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (Define* pDefinesPtr = &pDefines)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPoint, pTargetProfile, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgs);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPoint, pTargetProfile, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgs);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -952,7 +1008,7 @@ namespace Silk.NET.Direct3D.Compilers
                 {
                     fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPoint, pTargetProfile, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPoint, pTargetProfile, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgsPtr);
                     }
                 }
             }
@@ -960,59 +1016,59 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pTargetProfilePtr = &pTargetProfile)
+            fixed (char* pTargetProfilePtr = &pTargetProfile)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPoint, pTargetProfilePtr, pArguments, argCount, pDefines, defineCount, ppArgs);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPoint, pTargetProfilePtr, pArguments, argCount, pDefines, defineCount, ppArgs);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pTargetProfilePtr = &pTargetProfile)
+            fixed (char* pTargetProfilePtr = &pTargetProfile)
             {
                 fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPoint, pTargetProfilePtr, pArguments, argCount, pDefines, defineCount, ppArgsPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPoint, pTargetProfilePtr, pArguments, argCount, pDefines, defineCount, ppArgsPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pTargetProfilePtr = &pTargetProfile)
+            fixed (char* pTargetProfilePtr = &pTargetProfile)
             {
                 fixed (Define* pDefinesPtr = &pDefines)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPoint, pTargetProfilePtr, pArguments, argCount, pDefinesPtr, defineCount, ppArgs);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPoint, pTargetProfilePtr, pArguments, argCount, pDefinesPtr, defineCount, ppArgs);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pTargetProfilePtr = &pTargetProfile)
+            fixed (char* pTargetProfilePtr = &pTargetProfile)
             {
                 fixed (Define* pDefinesPtr = &pDefines)
                 {
                     fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPoint, pTargetProfilePtr, pArguments, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPoint, pTargetProfilePtr, pArguments, argCount, pDefinesPtr, defineCount, ppArgsPtr);
                     }
                 }
             }
@@ -1020,32 +1076,32 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pTargetProfilePtr = &pTargetProfile)
+            fixed (char* pTargetProfilePtr = &pTargetProfile)
             {
                 fixed (char** pArgumentsPtr = &pArguments)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPoint, pTargetProfilePtr, pArgumentsPtr, argCount, pDefines, defineCount, ppArgs);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPoint, pTargetProfilePtr, pArgumentsPtr, argCount, pDefines, defineCount, ppArgs);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pTargetProfilePtr = &pTargetProfile)
+            fixed (char* pTargetProfilePtr = &pTargetProfile)
             {
                 fixed (char** pArgumentsPtr = &pArguments)
                 {
                     fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPoint, pTargetProfilePtr, pArgumentsPtr, argCount, pDefines, defineCount, ppArgsPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPoint, pTargetProfilePtr, pArgumentsPtr, argCount, pDefines, defineCount, ppArgsPtr);
                     }
                 }
             }
@@ -1053,17 +1109,17 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pTargetProfilePtr = &pTargetProfile)
+            fixed (char* pTargetProfilePtr = &pTargetProfile)
             {
                 fixed (char** pArgumentsPtr = &pArguments)
                 {
                     fixed (Define* pDefinesPtr = &pDefines)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPoint, pTargetProfilePtr, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgs);
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPoint, pTargetProfilePtr, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgs);
                     }
                 }
             }
@@ -1071,11 +1127,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pTargetProfilePtr = &pTargetProfile)
+            fixed (char* pTargetProfilePtr = &pTargetProfile)
             {
                 fixed (char** pArgumentsPtr = &pArguments)
                 {
@@ -1083,7 +1139,7 @@ namespace Silk.NET.Direct3D.Compilers
                     {
                         fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
                         {
-                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPoint, pTargetProfilePtr, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPoint, pTargetProfilePtr, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgsPtr);
                         }
                     }
                 }
@@ -1092,59 +1148,183 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pEntryPointPtr = &pEntryPoint)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
-            }
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPoint, pTargetProfilePtr, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.Free((nint)pTargetProfilePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pEntryPointPtr = &pEntryPoint)
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+            fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPoint, pTargetProfilePtr, pArguments, argCount, pDefines, defineCount, ppArgsPtr);
+            }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+            fixed (Define* pDefinesPtr = &pDefines)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPoint, pTargetProfilePtr, pArguments, argCount, pDefinesPtr, defineCount, ppArgs);
+            }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+            fixed (Define* pDefinesPtr = &pDefines)
             {
                 fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgsPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPoint, pTargetProfilePtr, pArguments, argCount, pDefinesPtr, defineCount, ppArgsPtr);
                 }
             }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pEntryPointPtr = &pEntryPoint)
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+            fixed (char** pArgumentsPtr = &pArguments)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPoint, pTargetProfilePtr, pArgumentsPtr, argCount, pDefines, defineCount, ppArgs);
+            }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+            fixed (char** pArgumentsPtr = &pArguments)
+            {
+                fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPoint, pTargetProfilePtr, pArgumentsPtr, argCount, pDefines, defineCount, ppArgsPtr);
+                }
+            }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+            fixed (char** pArgumentsPtr = &pArguments)
             {
                 fixed (Define* pDefinesPtr = &pDefines)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfile, pArguments, argCount, pDefinesPtr, defineCount, ppArgs);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPoint, pTargetProfilePtr, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgs);
                 }
             }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pEntryPointPtr = &pEntryPoint)
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+            fixed (char** pArgumentsPtr = &pArguments)
             {
                 fixed (Define* pDefinesPtr = &pDefines)
                 {
                     fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfile, pArguments, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPoint, pTargetProfilePtr, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                    }
+                }
+            }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pEntryPointPtr = &pEntryPoint)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pEntryPointPtr = &pEntryPoint)
+            {
+                fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgsPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pEntryPointPtr = &pEntryPoint)
+            {
+                fixed (Define* pDefinesPtr = &pDefines)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfile, pArguments, argCount, pDefinesPtr, defineCount, ppArgs);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pEntryPointPtr = &pEntryPoint)
+            {
+                fixed (Define* pDefinesPtr = &pDefines)
+                {
+                    fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfile, pArguments, argCount, pDefinesPtr, defineCount, ppArgsPtr);
                     }
                 }
             }
@@ -1152,32 +1332,32 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pEntryPointPtr = &pEntryPoint)
+            fixed (char* pEntryPointPtr = &pEntryPoint)
             {
                 fixed (char** pArgumentsPtr = &pArguments)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfile, pArgumentsPtr, argCount, pDefines, defineCount, ppArgs);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfile, pArgumentsPtr, argCount, pDefines, defineCount, ppArgs);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pEntryPointPtr = &pEntryPoint)
+            fixed (char* pEntryPointPtr = &pEntryPoint)
             {
                 fixed (char** pArgumentsPtr = &pArguments)
                 {
                     fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfile, pArgumentsPtr, argCount, pDefines, defineCount, ppArgsPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfile, pArgumentsPtr, argCount, pDefines, defineCount, ppArgsPtr);
                     }
                 }
             }
@@ -1185,17 +1365,17 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pEntryPointPtr = &pEntryPoint)
+            fixed (char* pEntryPointPtr = &pEntryPoint)
             {
                 fixed (char** pArgumentsPtr = &pArguments)
                 {
                     fixed (Define* pDefinesPtr = &pDefines)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfile, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgs);
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfile, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgs);
                     }
                 }
             }
@@ -1203,11 +1383,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pEntryPointPtr = &pEntryPoint)
+            fixed (char* pEntryPointPtr = &pEntryPoint)
             {
                 fixed (char** pArgumentsPtr = &pArguments)
                 {
@@ -1215,7 +1395,7 @@ namespace Silk.NET.Direct3D.Compilers
                     {
                         fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
                         {
-                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfile, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfile, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgsPtr);
                         }
                     }
                 }
@@ -1224,32 +1404,32 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pEntryPointPtr = &pEntryPoint)
+            fixed (char* pEntryPointPtr = &pEntryPoint)
             {
-                fixed (nint* pTargetProfilePtr = &pTargetProfile)
+                fixed (char* pTargetProfilePtr = &pTargetProfile)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefines, defineCount, ppArgs);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefines, defineCount, ppArgs);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pEntryPointPtr = &pEntryPoint)
+            fixed (char* pEntryPointPtr = &pEntryPoint)
             {
-                fixed (nint* pTargetProfilePtr = &pTargetProfile)
+                fixed (char* pTargetProfilePtr = &pTargetProfile)
                 {
                     fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefines, defineCount, ppArgsPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefines, defineCount, ppArgsPtr);
                     }
                 }
             }
@@ -1257,17 +1437,17 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pEntryPointPtr = &pEntryPoint)
+            fixed (char* pEntryPointPtr = &pEntryPoint)
             {
-                fixed (nint* pTargetProfilePtr = &pTargetProfile)
+                fixed (char* pTargetProfilePtr = &pTargetProfile)
                 {
                     fixed (Define* pDefinesPtr = &pDefines)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefinesPtr, defineCount, ppArgs);
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefinesPtr, defineCount, ppArgs);
                     }
                 }
             }
@@ -1275,19 +1455,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pEntryPointPtr = &pEntryPoint)
+            fixed (char* pEntryPointPtr = &pEntryPoint)
             {
-                fixed (nint* pTargetProfilePtr = &pTargetProfile)
+                fixed (char* pTargetProfilePtr = &pTargetProfile)
                 {
                     fixed (Define* pDefinesPtr = &pDefines)
                     {
                         fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
                         {
-                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefinesPtr, defineCount, ppArgsPtr);
                         }
                     }
                 }
@@ -1296,17 +1476,17 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pEntryPointPtr = &pEntryPoint)
+            fixed (char* pEntryPointPtr = &pEntryPoint)
             {
-                fixed (nint* pTargetProfilePtr = &pTargetProfile)
+                fixed (char* pTargetProfilePtr = &pTargetProfile)
                 {
                     fixed (char** pArgumentsPtr = &pArguments)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefines, defineCount, ppArgs);
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefines, defineCount, ppArgs);
                     }
                 }
             }
@@ -1314,19 +1494,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pEntryPointPtr = &pEntryPoint)
+            fixed (char* pEntryPointPtr = &pEntryPoint)
             {
-                fixed (nint* pTargetProfilePtr = &pTargetProfile)
+                fixed (char* pTargetProfilePtr = &pTargetProfile)
                 {
                     fixed (char** pArgumentsPtr = &pArguments)
                     {
                         fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
                         {
-                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefines, defineCount, ppArgsPtr);
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefines, defineCount, ppArgsPtr);
                         }
                     }
                 }
@@ -1335,19 +1515,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pEntryPointPtr = &pEntryPoint)
+            fixed (char* pEntryPointPtr = &pEntryPoint)
             {
-                fixed (nint* pTargetProfilePtr = &pTargetProfile)
+                fixed (char* pTargetProfilePtr = &pTargetProfile)
                 {
                     fixed (char** pArgumentsPtr = &pArguments)
                     {
                         fixed (Define* pDefinesPtr = &pDefines)
                         {
-                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgs);
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgs);
                         }
                     }
                 }
@@ -1356,13 +1536,13 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pEntryPointPtr = &pEntryPoint)
+            fixed (char* pEntryPointPtr = &pEntryPoint)
             {
-                fixed (nint* pTargetProfilePtr = &pTargetProfile)
+                fixed (char* pTargetProfilePtr = &pTargetProfile)
                 {
                     fixed (char** pArgumentsPtr = &pArguments)
                     {
@@ -1370,7 +1550,7 @@ namespace Silk.NET.Direct3D.Compilers
                         {
                             fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
                             {
-                                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgsPtr);
                             }
                         }
                     }
@@ -1380,122 +1560,409 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pSourceNamePtr = &pSourceName)
+            fixed (char* pEntryPointPtr = &pEntryPoint)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.Free((nint)pTargetProfilePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pSourceNamePtr = &pSourceName)
+            fixed (char* pEntryPointPtr = &pEntryPoint)
+            {
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+                fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefines, defineCount, ppArgsPtr);
+                }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pEntryPointPtr = &pEntryPoint)
+            {
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+                fixed (Define* pDefinesPtr = &pDefines)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefinesPtr, defineCount, ppArgs);
+                }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pEntryPointPtr = &pEntryPoint)
+            {
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+                fixed (Define* pDefinesPtr = &pDefines)
+                {
+                    fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                    }
+                }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pEntryPointPtr = &pEntryPoint)
+            {
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+                fixed (char** pArgumentsPtr = &pArguments)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefines, defineCount, ppArgs);
+                }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pEntryPointPtr = &pEntryPoint)
+            {
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+                fixed (char** pArgumentsPtr = &pArguments)
+                {
+                    fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefines, defineCount, ppArgsPtr);
+                    }
+                }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pEntryPointPtr = &pEntryPoint)
+            {
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+                fixed (char** pArgumentsPtr = &pArguments)
+                {
+                    fixed (Define* pDefinesPtr = &pDefines)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgs);
+                    }
+                }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pEntryPointPtr = &pEntryPoint)
+            {
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+                fixed (char** pArgumentsPtr = &pArguments)
+                {
+                    fixed (Define* pDefinesPtr = &pDefines)
+                    {
+                        fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                        }
+                    }
+                }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgsPtr);
+            }
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            fixed (Define* pDefinesPtr = &pDefines)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfile, pArguments, argCount, pDefinesPtr, defineCount, ppArgs);
+            }
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            fixed (Define* pDefinesPtr = &pDefines)
             {
                 fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgsPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfile, pArguments, argCount, pDefinesPtr, defineCount, ppArgsPtr);
                 }
             }
+            SilkMarshal.Free((nint)pEntryPointPtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pSourceNamePtr = &pSourceName)
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            fixed (char** pArgumentsPtr = &pArguments)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfile, pArgumentsPtr, argCount, pDefines, defineCount, ppArgs);
+            }
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            fixed (char** pArgumentsPtr = &pArguments)
+            {
+                fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfile, pArgumentsPtr, argCount, pDefines, defineCount, ppArgsPtr);
+                }
+            }
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            fixed (char** pArgumentsPtr = &pArguments)
             {
                 fixed (Define* pDefinesPtr = &pDefines)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfile, pArguments, argCount, pDefinesPtr, defineCount, ppArgs);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfile, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgs);
                 }
             }
+            SilkMarshal.Free((nint)pEntryPointPtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pSourceNamePtr = &pSourceName)
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            fixed (char** pArgumentsPtr = &pArguments)
             {
                 fixed (Define* pDefinesPtr = &pDefines)
                 {
                     fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfile, pArguments, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfile, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgsPtr);
                     }
                 }
             }
+            SilkMarshal.Free((nint)pEntryPointPtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pSourceNamePtr = &pSourceName)
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            fixed (char* pTargetProfilePtr = &pTargetProfile)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefines, defineCount, ppArgs);
+            }
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            fixed (char* pTargetProfilePtr = &pTargetProfile)
+            {
+                fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefines, defineCount, ppArgsPtr);
+                }
+            }
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            fixed (char* pTargetProfilePtr = &pTargetProfile)
+            {
+                fixed (Define* pDefinesPtr = &pDefines)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefinesPtr, defineCount, ppArgs);
+                }
+            }
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            fixed (char* pTargetProfilePtr = &pTargetProfile)
+            {
+                fixed (Define* pDefinesPtr = &pDefines)
+                {
+                    fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                    }
+                }
+            }
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            fixed (char* pTargetProfilePtr = &pTargetProfile)
             {
                 fixed (char** pArgumentsPtr = &pArguments)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfile, pArgumentsPtr, argCount, pDefines, defineCount, ppArgs);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefines, defineCount, ppArgs);
                 }
             }
+            SilkMarshal.Free((nint)pEntryPointPtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pSourceNamePtr = &pSourceName)
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            fixed (char* pTargetProfilePtr = &pTargetProfile)
             {
                 fixed (char** pArgumentsPtr = &pArguments)
                 {
                     fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfile, pArgumentsPtr, argCount, pDefines, defineCount, ppArgsPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefines, defineCount, ppArgsPtr);
                     }
                 }
             }
+            SilkMarshal.Free((nint)pEntryPointPtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pSourceNamePtr = &pSourceName)
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            fixed (char* pTargetProfilePtr = &pTargetProfile)
             {
                 fixed (char** pArgumentsPtr = &pArguments)
                 {
                     fixed (Define* pDefinesPtr = &pDefines)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfile, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgs);
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgs);
                     }
                 }
             }
+            SilkMarshal.Free((nint)pEntryPointPtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pSourceNamePtr = &pSourceName)
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            fixed (char* pTargetProfilePtr = &pTargetProfile)
             {
                 fixed (char** pArgumentsPtr = &pArguments)
                 {
@@ -1503,41 +1970,209 @@ namespace Silk.NET.Direct3D.Compilers
                     {
                         fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
                         {
-                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfile, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgsPtr);
                         }
                     }
                 }
             }
+            SilkMarshal.Free((nint)pEntryPointPtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pSourceNamePtr = &pSourceName)
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+            fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
             {
-                fixed (nint* pTargetProfilePtr = &pTargetProfile)
+                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefines, defineCount, ppArgsPtr);
+            }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+            fixed (Define* pDefinesPtr = &pDefines)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefinesPtr, defineCount, ppArgs);
+            }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+            fixed (Define* pDefinesPtr = &pDefines)
+            {
+                fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfilePtr, pArguments, argCount, pDefines, defineCount, ppArgs);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefinesPtr, defineCount, ppArgsPtr);
                 }
             }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pEntryPointPtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pSourceNamePtr = &pSourceName)
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+            fixed (char** pArgumentsPtr = &pArguments)
             {
-                fixed (nint* pTargetProfilePtr = &pTargetProfile)
+                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefines, defineCount, ppArgs);
+            }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+            fixed (char** pArgumentsPtr = &pArguments)
+            {
+                fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefines, defineCount, ppArgsPtr);
+                }
+            }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+            fixed (char** pArgumentsPtr = &pArguments)
+            {
+                fixed (Define* pDefinesPtr = &pDefines)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgs);
+                }
+            }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+            fixed (char** pArgumentsPtr = &pArguments)
+            {
+                fixed (Define* pDefinesPtr = &pDefines)
                 {
                     fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfilePtr, pArguments, argCount, pDefines, defineCount, ppArgsPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceName, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                    }
+                }
+            }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+                fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgsPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+                fixed (Define* pDefinesPtr = &pDefines)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfile, pArguments, argCount, pDefinesPtr, defineCount, ppArgs);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+                fixed (Define* pDefinesPtr = &pDefines)
+                {
+                    fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfile, pArguments, argCount, pDefinesPtr, defineCount, ppArgsPtr);
                     }
                 }
             }
@@ -1545,17 +2180,50 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pSourceNamePtr = &pSourceName)
+            fixed (char* pSourceNamePtr = &pSourceName)
             {
-                fixed (nint* pTargetProfilePtr = &pTargetProfile)
+                fixed (char** pArgumentsPtr = &pArguments)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfile, pArgumentsPtr, argCount, pDefines, defineCount, ppArgs);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+                fixed (char** pArgumentsPtr = &pArguments)
+                {
+                    fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfile, pArgumentsPtr, argCount, pDefines, defineCount, ppArgsPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+                fixed (char** pArgumentsPtr = &pArguments)
                 {
                     fixed (Define* pDefinesPtr = &pDefines)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfilePtr, pArguments, argCount, pDefinesPtr, defineCount, ppArgs);
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfile, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgs);
                     }
                 }
             }
@@ -1563,19 +2231,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pSourceNamePtr = &pSourceName)
+            fixed (char* pSourceNamePtr = &pSourceName)
             {
-                fixed (nint* pTargetProfilePtr = &pTargetProfile)
+                fixed (char** pArgumentsPtr = &pArguments)
                 {
                     fixed (Define* pDefinesPtr = &pDefines)
                     {
                         fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
                         {
-                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfilePtr, pArguments, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfile, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgsPtr);
                         }
                     }
                 }
@@ -1584,17 +2252,32 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pSourceNamePtr = &pSourceName)
+            fixed (char* pSourceNamePtr = &pSourceName)
             {
-                fixed (nint* pTargetProfilePtr = &pTargetProfile)
+                fixed (char* pTargetProfilePtr = &pTargetProfile)
                 {
-                    fixed (char** pArgumentsPtr = &pArguments)
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfilePtr, pArguments, argCount, pDefines, defineCount, ppArgs);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+                fixed (char* pTargetProfilePtr = &pTargetProfile)
+                {
+                    fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfilePtr, pArgumentsPtr, argCount, pDefines, defineCount, ppArgs);
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfilePtr, pArguments, argCount, pDefines, defineCount, ppArgsPtr);
                     }
                 }
             }
@@ -1602,19 +2285,37 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pSourceNamePtr = &pSourceName)
+            fixed (char* pSourceNamePtr = &pSourceName)
             {
-                fixed (nint* pTargetProfilePtr = &pTargetProfile)
+                fixed (char* pTargetProfilePtr = &pTargetProfile)
                 {
-                    fixed (char** pArgumentsPtr = &pArguments)
+                    fixed (Define* pDefinesPtr = &pDefines)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfilePtr, pArguments, argCount, pDefinesPtr, defineCount, ppArgs);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+                fixed (char* pTargetProfilePtr = &pTargetProfile)
+                {
+                    fixed (Define* pDefinesPtr = &pDefines)
                     {
                         fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
                         {
-                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfilePtr, pArgumentsPtr, argCount, pDefines, defineCount, ppArgsPtr);
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfilePtr, pArguments, argCount, pDefinesPtr, defineCount, ppArgsPtr);
                         }
                     }
                 }
@@ -1623,19 +2324,58 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pSourceNamePtr = &pSourceName)
+            fixed (char* pSourceNamePtr = &pSourceName)
             {
-                fixed (nint* pTargetProfilePtr = &pTargetProfile)
+                fixed (char* pTargetProfilePtr = &pTargetProfile)
+                {
+                    fixed (char** pArgumentsPtr = &pArguments)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfilePtr, pArgumentsPtr, argCount, pDefines, defineCount, ppArgs);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+                fixed (char* pTargetProfilePtr = &pTargetProfile)
+                {
+                    fixed (char** pArgumentsPtr = &pArguments)
+                    {
+                        fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfilePtr, pArgumentsPtr, argCount, pDefines, defineCount, ppArgsPtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+                fixed (char* pTargetProfilePtr = &pTargetProfile)
                 {
                     fixed (char** pArgumentsPtr = &pArguments)
                     {
                         fixed (Define* pDefinesPtr = &pDefines)
                         {
-                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfilePtr, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgs);
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfilePtr, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgs);
                         }
                     }
                 }
@@ -1644,13 +2384,13 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pSourceNamePtr = &pSourceName)
+            fixed (char* pSourceNamePtr = &pSourceName)
             {
-                fixed (nint* pTargetProfilePtr = &pTargetProfile)
+                fixed (char* pTargetProfilePtr = &pTargetProfile)
                 {
                     fixed (char** pArgumentsPtr = &pArguments)
                     {
@@ -1658,7 +2398,7 @@ namespace Silk.NET.Direct3D.Compilers
                         {
                             fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
                             {
-                                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfilePtr, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfilePtr, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgsPtr);
                             }
                         }
                     }
@@ -1668,70 +2408,218 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pSourceNamePtr = &pSourceName)
+            fixed (char* pSourceNamePtr = &pSourceName)
             {
-                fixed (nint* pEntryPointPtr = &pEntryPoint)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
-                }
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfilePtr, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.Free((nint)pTargetProfilePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pSourceNamePtr = &pSourceName)
+            fixed (char* pSourceNamePtr = &pSourceName)
             {
-                fixed (nint* pEntryPointPtr = &pEntryPoint)
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+                fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfilePtr, pArguments, argCount, pDefines, defineCount, ppArgsPtr);
+                }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+                fixed (Define* pDefinesPtr = &pDefines)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfilePtr, pArguments, argCount, pDefinesPtr, defineCount, ppArgs);
+                }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+                fixed (Define* pDefinesPtr = &pDefines)
                 {
                     fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgsPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfilePtr, pArguments, argCount, pDefinesPtr, defineCount, ppArgsPtr);
                     }
                 }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pSourceNamePtr = &pSourceName)
+            fixed (char* pSourceNamePtr = &pSourceName)
             {
-                fixed (nint* pEntryPointPtr = &pEntryPoint)
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+                fixed (char** pArgumentsPtr = &pArguments)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfilePtr, pArgumentsPtr, argCount, pDefines, defineCount, ppArgs);
+                }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+                fixed (char** pArgumentsPtr = &pArguments)
+                {
+                    fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfilePtr, pArgumentsPtr, argCount, pDefines, defineCount, ppArgsPtr);
+                    }
+                }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+                fixed (char** pArgumentsPtr = &pArguments)
                 {
                     fixed (Define* pDefinesPtr = &pDefines)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfile, pArguments, argCount, pDefinesPtr, defineCount, ppArgs);
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfilePtr, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgs);
                     }
                 }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pSourceNamePtr = &pSourceName)
+            fixed (char* pSourceNamePtr = &pSourceName)
             {
-                fixed (nint* pEntryPointPtr = &pEntryPoint)
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+                fixed (char** pArgumentsPtr = &pArguments)
                 {
                     fixed (Define* pDefinesPtr = &pDefines)
                     {
                         fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
                         {
-                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfile, pArguments, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfilePtr, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                        }
+                    }
+                }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+                fixed (char* pEntryPointPtr = &pEntryPoint)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+                fixed (char* pEntryPointPtr = &pEntryPoint)
+                {
+                    fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgsPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+                fixed (char* pEntryPointPtr = &pEntryPoint)
+                {
+                    fixed (Define* pDefinesPtr = &pDefines)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfile, pArguments, argCount, pDefinesPtr, defineCount, ppArgs);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+                fixed (char* pEntryPointPtr = &pEntryPoint)
+                {
+                    fixed (Define* pDefinesPtr = &pDefines)
+                    {
+                        fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfile, pArguments, argCount, pDefinesPtr, defineCount, ppArgsPtr);
                         }
                     }
                 }
@@ -1740,17 +2628,17 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pSourceNamePtr = &pSourceName)
+            fixed (char* pSourceNamePtr = &pSourceName)
             {
-                fixed (nint* pEntryPointPtr = &pEntryPoint)
+                fixed (char* pEntryPointPtr = &pEntryPoint)
                 {
                     fixed (char** pArgumentsPtr = &pArguments)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfile, pArgumentsPtr, argCount, pDefines, defineCount, ppArgs);
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfile, pArgumentsPtr, argCount, pDefines, defineCount, ppArgs);
                     }
                 }
             }
@@ -1758,19 +2646,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pSourceNamePtr = &pSourceName)
+            fixed (char* pSourceNamePtr = &pSourceName)
             {
-                fixed (nint* pEntryPointPtr = &pEntryPoint)
+                fixed (char* pEntryPointPtr = &pEntryPoint)
                 {
                     fixed (char** pArgumentsPtr = &pArguments)
                     {
                         fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
                         {
-                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfile, pArgumentsPtr, argCount, pDefines, defineCount, ppArgsPtr);
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfile, pArgumentsPtr, argCount, pDefines, defineCount, ppArgsPtr);
                         }
                     }
                 }
@@ -1779,19 +2667,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pSourceNamePtr = &pSourceName)
+            fixed (char* pSourceNamePtr = &pSourceName)
             {
-                fixed (nint* pEntryPointPtr = &pEntryPoint)
+                fixed (char* pEntryPointPtr = &pEntryPoint)
                 {
                     fixed (char** pArgumentsPtr = &pArguments)
                     {
                         fixed (Define* pDefinesPtr = &pDefines)
                         {
-                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfile, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgs);
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfile, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgs);
                         }
                     }
                 }
@@ -1800,13 +2688,13 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pSourceNamePtr = &pSourceName)
+            fixed (char* pSourceNamePtr = &pSourceName)
             {
-                fixed (nint* pEntryPointPtr = &pEntryPoint)
+                fixed (char* pEntryPointPtr = &pEntryPoint)
                 {
                     fixed (char** pArgumentsPtr = &pArguments)
                     {
@@ -1814,7 +2702,7 @@ namespace Silk.NET.Direct3D.Compilers
                         {
                             fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
                             {
-                                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfile, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfile, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgsPtr);
                             }
                         }
                     }
@@ -1824,17 +2712,17 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pSourceNamePtr = &pSourceName)
+            fixed (char* pSourceNamePtr = &pSourceName)
             {
-                fixed (nint* pEntryPointPtr = &pEntryPoint)
+                fixed (char* pEntryPointPtr = &pEntryPoint)
                 {
-                    fixed (nint* pTargetProfilePtr = &pTargetProfile)
+                    fixed (char* pTargetProfilePtr = &pTargetProfile)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefines, defineCount, ppArgs);
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefines, defineCount, ppArgs);
                     }
                 }
             }
@@ -1842,19 +2730,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pSourceNamePtr = &pSourceName)
+            fixed (char* pSourceNamePtr = &pSourceName)
             {
-                fixed (nint* pEntryPointPtr = &pEntryPoint)
+                fixed (char* pEntryPointPtr = &pEntryPoint)
                 {
-                    fixed (nint* pTargetProfilePtr = &pTargetProfile)
+                    fixed (char* pTargetProfilePtr = &pTargetProfile)
                     {
                         fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
                         {
-                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefines, defineCount, ppArgsPtr);
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefines, defineCount, ppArgsPtr);
                         }
                     }
                 }
@@ -1863,19 +2751,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pSourceNamePtr = &pSourceName)
+            fixed (char* pSourceNamePtr = &pSourceName)
             {
-                fixed (nint* pEntryPointPtr = &pEntryPoint)
+                fixed (char* pEntryPointPtr = &pEntryPoint)
                 {
-                    fixed (nint* pTargetProfilePtr = &pTargetProfile)
+                    fixed (char* pTargetProfilePtr = &pTargetProfile)
                     {
                         fixed (Define* pDefinesPtr = &pDefines)
                         {
-                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefinesPtr, defineCount, ppArgs);
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefinesPtr, defineCount, ppArgs);
                         }
                     }
                 }
@@ -1884,21 +2772,21 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pSourceNamePtr = &pSourceName)
+            fixed (char* pSourceNamePtr = &pSourceName)
             {
-                fixed (nint* pEntryPointPtr = &pEntryPoint)
+                fixed (char* pEntryPointPtr = &pEntryPoint)
                 {
-                    fixed (nint* pTargetProfilePtr = &pTargetProfile)
+                    fixed (char* pTargetProfilePtr = &pTargetProfile)
                     {
                         fixed (Define* pDefinesPtr = &pDefines)
                         {
                             fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
                             {
-                                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefinesPtr, defineCount, ppArgsPtr);
                             }
                         }
                     }
@@ -1908,19 +2796,19 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pSourceNamePtr = &pSourceName)
+            fixed (char* pSourceNamePtr = &pSourceName)
             {
-                fixed (nint* pEntryPointPtr = &pEntryPoint)
+                fixed (char* pEntryPointPtr = &pEntryPoint)
                 {
-                    fixed (nint* pTargetProfilePtr = &pTargetProfile)
+                    fixed (char* pTargetProfilePtr = &pTargetProfile)
                     {
                         fixed (char** pArgumentsPtr = &pArguments)
                         {
-                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefines, defineCount, ppArgs);
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefines, defineCount, ppArgs);
                         }
                     }
                 }
@@ -1929,21 +2817,21 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pSourceNamePtr = &pSourceName)
+            fixed (char* pSourceNamePtr = &pSourceName)
             {
-                fixed (nint* pEntryPointPtr = &pEntryPoint)
+                fixed (char* pEntryPointPtr = &pEntryPoint)
                 {
-                    fixed (nint* pTargetProfilePtr = &pTargetProfile)
+                    fixed (char* pTargetProfilePtr = &pTargetProfile)
                     {
                         fixed (char** pArgumentsPtr = &pArguments)
                         {
                             fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
                             {
-                                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefines, defineCount, ppArgsPtr);
+                                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefines, defineCount, ppArgsPtr);
                             }
                         }
                     }
@@ -1953,21 +2841,21 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pSourceNamePtr = &pSourceName)
+            fixed (char* pSourceNamePtr = &pSourceName)
             {
-                fixed (nint* pEntryPointPtr = &pEntryPoint)
+                fixed (char* pEntryPointPtr = &pEntryPoint)
                 {
-                    fixed (nint* pTargetProfilePtr = &pTargetProfile)
+                    fixed (char* pTargetProfilePtr = &pTargetProfile)
                     {
                         fixed (char** pArgumentsPtr = &pArguments)
                         {
                             fixed (Define* pDefinesPtr = &pDefines)
                             {
-                                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgs);
+                                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgs);
                             }
                         }
                     }
@@ -1977,15 +2865,15 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (nint* pSourceNamePtr = &pSourceName)
+            fixed (char* pSourceNamePtr = &pSourceName)
             {
-                fixed (nint* pEntryPointPtr = &pEntryPoint)
+                fixed (char* pEntryPointPtr = &pEntryPoint)
                 {
-                    fixed (nint* pTargetProfilePtr = &pTargetProfile)
+                    fixed (char* pTargetProfilePtr = &pTargetProfile)
                     {
                         fixed (char** pArgumentsPtr = &pArguments)
                         {
@@ -1993,13 +2881,2025 @@ namespace Silk.NET.Direct3D.Compilers
                             {
                                 fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
                                 {
-                                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, nint*, nint*, nint*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgsPtr);
                                 }
                             }
                         }
                     }
                 }
             }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+                fixed (char* pEntryPointPtr = &pEntryPoint)
+                {
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+                fixed (char* pEntryPointPtr = &pEntryPoint)
+                {
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+                    fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefines, defineCount, ppArgsPtr);
+                    }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+                fixed (char* pEntryPointPtr = &pEntryPoint)
+                {
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+                    fixed (Define* pDefinesPtr = &pDefines)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefinesPtr, defineCount, ppArgs);
+                    }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+                fixed (char* pEntryPointPtr = &pEntryPoint)
+                {
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+                    fixed (Define* pDefinesPtr = &pDefines)
+                    {
+                        fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                        }
+                    }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+                fixed (char* pEntryPointPtr = &pEntryPoint)
+                {
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+                    fixed (char** pArgumentsPtr = &pArguments)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefines, defineCount, ppArgs);
+                    }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+                fixed (char* pEntryPointPtr = &pEntryPoint)
+                {
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+                    fixed (char** pArgumentsPtr = &pArguments)
+                    {
+                        fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefines, defineCount, ppArgsPtr);
+                        }
+                    }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+                fixed (char* pEntryPointPtr = &pEntryPoint)
+                {
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+                    fixed (char** pArgumentsPtr = &pArguments)
+                    {
+                        fixed (Define* pDefinesPtr = &pDefines)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgs);
+                        }
+                    }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+                fixed (char* pEntryPointPtr = &pEntryPoint)
+                {
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+                    fixed (char** pArgumentsPtr = &pArguments)
+                    {
+                        fixed (Define* pDefinesPtr = &pDefines)
+                        {
+                            fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                            {
+                                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                            }
+                        }
+                    }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+                fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgsPtr);
+                }
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+                fixed (Define* pDefinesPtr = &pDefines)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfile, pArguments, argCount, pDefinesPtr, defineCount, ppArgs);
+                }
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+                fixed (Define* pDefinesPtr = &pDefines)
+                {
+                    fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfile, pArguments, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                    }
+                }
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+                fixed (char** pArgumentsPtr = &pArguments)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfile, pArgumentsPtr, argCount, pDefines, defineCount, ppArgs);
+                }
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+                fixed (char** pArgumentsPtr = &pArguments)
+                {
+                    fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfile, pArgumentsPtr, argCount, pDefines, defineCount, ppArgsPtr);
+                    }
+                }
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+                fixed (char** pArgumentsPtr = &pArguments)
+                {
+                    fixed (Define* pDefinesPtr = &pDefines)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfile, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgs);
+                    }
+                }
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+                fixed (char** pArgumentsPtr = &pArguments)
+                {
+                    fixed (Define* pDefinesPtr = &pDefines)
+                    {
+                        fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfile, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                        }
+                    }
+                }
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+                fixed (char* pTargetProfilePtr = &pTargetProfile)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefines, defineCount, ppArgs);
+                }
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+                fixed (char* pTargetProfilePtr = &pTargetProfile)
+                {
+                    fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefines, defineCount, ppArgsPtr);
+                    }
+                }
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+                fixed (char* pTargetProfilePtr = &pTargetProfile)
+                {
+                    fixed (Define* pDefinesPtr = &pDefines)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefinesPtr, defineCount, ppArgs);
+                    }
+                }
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+                fixed (char* pTargetProfilePtr = &pTargetProfile)
+                {
+                    fixed (Define* pDefinesPtr = &pDefines)
+                    {
+                        fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                        }
+                    }
+                }
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+                fixed (char* pTargetProfilePtr = &pTargetProfile)
+                {
+                    fixed (char** pArgumentsPtr = &pArguments)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefines, defineCount, ppArgs);
+                    }
+                }
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+                fixed (char* pTargetProfilePtr = &pTargetProfile)
+                {
+                    fixed (char** pArgumentsPtr = &pArguments)
+                    {
+                        fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefines, defineCount, ppArgsPtr);
+                        }
+                    }
+                }
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+                fixed (char* pTargetProfilePtr = &pTargetProfile)
+                {
+                    fixed (char** pArgumentsPtr = &pArguments)
+                    {
+                        fixed (Define* pDefinesPtr = &pDefines)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgs);
+                        }
+                    }
+                }
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+                fixed (char* pTargetProfilePtr = &pTargetProfile)
+                {
+                    fixed (char** pArgumentsPtr = &pArguments)
+                    {
+                        fixed (Define* pDefinesPtr = &pDefines)
+                        {
+                            fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                            {
+                                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                            }
+                        }
+                    }
+                }
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+                fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefines, defineCount, ppArgsPtr);
+                }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+                fixed (Define* pDefinesPtr = &pDefines)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefinesPtr, defineCount, ppArgs);
+                }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+                fixed (Define* pDefinesPtr = &pDefines)
+                {
+                    fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                    }
+                }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+                fixed (char** pArgumentsPtr = &pArguments)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefines, defineCount, ppArgs);
+                }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+                fixed (char** pArgumentsPtr = &pArguments)
+                {
+                    fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefines, defineCount, ppArgsPtr);
+                    }
+                }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+                fixed (char** pArgumentsPtr = &pArguments)
+                {
+                    fixed (Define* pDefinesPtr = &pDefines)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgs);
+                    }
+                }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pSourceNamePtr = &pSourceName)
+            {
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+                fixed (char** pArgumentsPtr = &pArguments)
+                {
+                    fixed (Define* pDefinesPtr = &pDefines)
+                    {
+                        fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, char*, byte*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                        }
+                    }
+                }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgsPtr);
+            }
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            fixed (Define* pDefinesPtr = &pDefines)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfile, pArguments, argCount, pDefinesPtr, defineCount, ppArgs);
+            }
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            fixed (Define* pDefinesPtr = &pDefines)
+            {
+                fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfile, pArguments, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                }
+            }
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            fixed (char** pArgumentsPtr = &pArguments)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfile, pArgumentsPtr, argCount, pDefines, defineCount, ppArgs);
+            }
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            fixed (char** pArgumentsPtr = &pArguments)
+            {
+                fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfile, pArgumentsPtr, argCount, pDefines, defineCount, ppArgsPtr);
+                }
+            }
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            fixed (char** pArgumentsPtr = &pArguments)
+            {
+                fixed (Define* pDefinesPtr = &pDefines)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfile, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgs);
+                }
+            }
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            fixed (char** pArgumentsPtr = &pArguments)
+            {
+                fixed (Define* pDefinesPtr = &pDefines)
+                {
+                    fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfile, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                    }
+                }
+            }
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            fixed (char* pTargetProfilePtr = &pTargetProfile)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfilePtr, pArguments, argCount, pDefines, defineCount, ppArgs);
+            }
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            fixed (char* pTargetProfilePtr = &pTargetProfile)
+            {
+                fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfilePtr, pArguments, argCount, pDefines, defineCount, ppArgsPtr);
+                }
+            }
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            fixed (char* pTargetProfilePtr = &pTargetProfile)
+            {
+                fixed (Define* pDefinesPtr = &pDefines)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfilePtr, pArguments, argCount, pDefinesPtr, defineCount, ppArgs);
+                }
+            }
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            fixed (char* pTargetProfilePtr = &pTargetProfile)
+            {
+                fixed (Define* pDefinesPtr = &pDefines)
+                {
+                    fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfilePtr, pArguments, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                    }
+                }
+            }
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            fixed (char* pTargetProfilePtr = &pTargetProfile)
+            {
+                fixed (char** pArgumentsPtr = &pArguments)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfilePtr, pArgumentsPtr, argCount, pDefines, defineCount, ppArgs);
+                }
+            }
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            fixed (char* pTargetProfilePtr = &pTargetProfile)
+            {
+                fixed (char** pArgumentsPtr = &pArguments)
+                {
+                    fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfilePtr, pArgumentsPtr, argCount, pDefines, defineCount, ppArgsPtr);
+                    }
+                }
+            }
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            fixed (char* pTargetProfilePtr = &pTargetProfile)
+            {
+                fixed (char** pArgumentsPtr = &pArguments)
+                {
+                    fixed (Define* pDefinesPtr = &pDefines)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfilePtr, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgs);
+                    }
+                }
+            }
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            fixed (char* pTargetProfilePtr = &pTargetProfile)
+            {
+                fixed (char** pArgumentsPtr = &pArguments)
+                {
+                    fixed (Define* pDefinesPtr = &pDefines)
+                    {
+                        fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfilePtr, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                        }
+                    }
+                }
+            }
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfilePtr, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+            fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfilePtr, pArguments, argCount, pDefines, defineCount, ppArgsPtr);
+            }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+            fixed (Define* pDefinesPtr = &pDefines)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfilePtr, pArguments, argCount, pDefinesPtr, defineCount, ppArgs);
+            }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+            fixed (Define* pDefinesPtr = &pDefines)
+            {
+                fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfilePtr, pArguments, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                }
+            }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+            fixed (char** pArgumentsPtr = &pArguments)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfilePtr, pArgumentsPtr, argCount, pDefines, defineCount, ppArgs);
+            }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+            fixed (char** pArgumentsPtr = &pArguments)
+            {
+                fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfilePtr, pArgumentsPtr, argCount, pDefines, defineCount, ppArgsPtr);
+                }
+            }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+            fixed (char** pArgumentsPtr = &pArguments)
+            {
+                fixed (Define* pDefinesPtr = &pDefines)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfilePtr, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgs);
+                }
+            }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+            fixed (char** pArgumentsPtr = &pArguments)
+            {
+                fixed (Define* pDefinesPtr = &pDefines)
+                {
+                    fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPoint, pTargetProfilePtr, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                    }
+                }
+            }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            fixed (char* pEntryPointPtr = &pEntryPoint)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            }
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            fixed (char* pEntryPointPtr = &pEntryPoint)
+            {
+                fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgsPtr);
+                }
+            }
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            fixed (char* pEntryPointPtr = &pEntryPoint)
+            {
+                fixed (Define* pDefinesPtr = &pDefines)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfile, pArguments, argCount, pDefinesPtr, defineCount, ppArgs);
+                }
+            }
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            fixed (char* pEntryPointPtr = &pEntryPoint)
+            {
+                fixed (Define* pDefinesPtr = &pDefines)
+                {
+                    fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfile, pArguments, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                    }
+                }
+            }
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            fixed (char* pEntryPointPtr = &pEntryPoint)
+            {
+                fixed (char** pArgumentsPtr = &pArguments)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfile, pArgumentsPtr, argCount, pDefines, defineCount, ppArgs);
+                }
+            }
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            fixed (char* pEntryPointPtr = &pEntryPoint)
+            {
+                fixed (char** pArgumentsPtr = &pArguments)
+                {
+                    fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfile, pArgumentsPtr, argCount, pDefines, defineCount, ppArgsPtr);
+                    }
+                }
+            }
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            fixed (char* pEntryPointPtr = &pEntryPoint)
+            {
+                fixed (char** pArgumentsPtr = &pArguments)
+                {
+                    fixed (Define* pDefinesPtr = &pDefines)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfile, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgs);
+                    }
+                }
+            }
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            fixed (char* pEntryPointPtr = &pEntryPoint)
+            {
+                fixed (char** pArgumentsPtr = &pArguments)
+                {
+                    fixed (Define* pDefinesPtr = &pDefines)
+                    {
+                        fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfile, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                        }
+                    }
+                }
+            }
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            fixed (char* pEntryPointPtr = &pEntryPoint)
+            {
+                fixed (char* pTargetProfilePtr = &pTargetProfile)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefines, defineCount, ppArgs);
+                }
+            }
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            fixed (char* pEntryPointPtr = &pEntryPoint)
+            {
+                fixed (char* pTargetProfilePtr = &pTargetProfile)
+                {
+                    fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefines, defineCount, ppArgsPtr);
+                    }
+                }
+            }
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            fixed (char* pEntryPointPtr = &pEntryPoint)
+            {
+                fixed (char* pTargetProfilePtr = &pTargetProfile)
+                {
+                    fixed (Define* pDefinesPtr = &pDefines)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefinesPtr, defineCount, ppArgs);
+                    }
+                }
+            }
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            fixed (char* pEntryPointPtr = &pEntryPoint)
+            {
+                fixed (char* pTargetProfilePtr = &pTargetProfile)
+                {
+                    fixed (Define* pDefinesPtr = &pDefines)
+                    {
+                        fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                        }
+                    }
+                }
+            }
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            fixed (char* pEntryPointPtr = &pEntryPoint)
+            {
+                fixed (char* pTargetProfilePtr = &pTargetProfile)
+                {
+                    fixed (char** pArgumentsPtr = &pArguments)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefines, defineCount, ppArgs);
+                    }
+                }
+            }
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            fixed (char* pEntryPointPtr = &pEntryPoint)
+            {
+                fixed (char* pTargetProfilePtr = &pTargetProfile)
+                {
+                    fixed (char** pArgumentsPtr = &pArguments)
+                    {
+                        fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefines, defineCount, ppArgsPtr);
+                        }
+                    }
+                }
+            }
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            fixed (char* pEntryPointPtr = &pEntryPoint)
+            {
+                fixed (char* pTargetProfilePtr = &pTargetProfile)
+                {
+                    fixed (char** pArgumentsPtr = &pArguments)
+                    {
+                        fixed (Define* pDefinesPtr = &pDefines)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgs);
+                        }
+                    }
+                }
+            }
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            fixed (char* pEntryPointPtr = &pEntryPoint)
+            {
+                fixed (char* pTargetProfilePtr = &pTargetProfile)
+                {
+                    fixed (char** pArgumentsPtr = &pArguments)
+                    {
+                        fixed (Define* pDefinesPtr = &pDefines)
+                        {
+                            fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                            {
+                                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                            }
+                        }
+                    }
+                }
+            }
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            fixed (char* pEntryPointPtr = &pEntryPoint)
+            {
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            }
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            fixed (char* pEntryPointPtr = &pEntryPoint)
+            {
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+                fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefines, defineCount, ppArgsPtr);
+                }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            }
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            fixed (char* pEntryPointPtr = &pEntryPoint)
+            {
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+                fixed (Define* pDefinesPtr = &pDefines)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefinesPtr, defineCount, ppArgs);
+                }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            }
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            fixed (char* pEntryPointPtr = &pEntryPoint)
+            {
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+                fixed (Define* pDefinesPtr = &pDefines)
+                {
+                    fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                    }
+                }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            }
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            fixed (char* pEntryPointPtr = &pEntryPoint)
+            {
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+                fixed (char** pArgumentsPtr = &pArguments)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefines, defineCount, ppArgs);
+                }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            }
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            fixed (char* pEntryPointPtr = &pEntryPoint)
+            {
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+                fixed (char** pArgumentsPtr = &pArguments)
+                {
+                    fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefines, defineCount, ppArgsPtr);
+                    }
+                }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            }
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            fixed (char* pEntryPointPtr = &pEntryPoint)
+            {
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+                fixed (char** pArgumentsPtr = &pArguments)
+                {
+                    fixed (Define* pDefinesPtr = &pDefines)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgs);
+                    }
+                }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            }
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            fixed (char* pEntryPointPtr = &pEntryPoint)
+            {
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+                fixed (char** pArgumentsPtr = &pArguments)
+                {
+                    fixed (Define* pDefinesPtr = &pDefines)
+                    {
+                        fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, char*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                        }
+                    }
+                }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            }
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgsPtr);
+            }
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            fixed (Define* pDefinesPtr = &pDefines)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfile, pArguments, argCount, pDefinesPtr, defineCount, ppArgs);
+            }
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            fixed (Define* pDefinesPtr = &pDefines)
+            {
+                fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfile, pArguments, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                }
+            }
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            fixed (char** pArgumentsPtr = &pArguments)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfile, pArgumentsPtr, argCount, pDefines, defineCount, ppArgs);
+            }
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            fixed (char** pArgumentsPtr = &pArguments)
+            {
+                fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfile, pArgumentsPtr, argCount, pDefines, defineCount, ppArgsPtr);
+                }
+            }
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            fixed (char** pArgumentsPtr = &pArguments)
+            {
+                fixed (Define* pDefinesPtr = &pDefines)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfile, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgs);
+                }
+            }
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            fixed (char** pArgumentsPtr = &pArguments)
+            {
+                fixed (Define* pDefinesPtr = &pDefines)
+                {
+                    fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfile, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                    }
+                }
+            }
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            fixed (char* pTargetProfilePtr = &pTargetProfile)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefines, defineCount, ppArgs);
+            }
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            fixed (char* pTargetProfilePtr = &pTargetProfile)
+            {
+                fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefines, defineCount, ppArgsPtr);
+                }
+            }
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            fixed (char* pTargetProfilePtr = &pTargetProfile)
+            {
+                fixed (Define* pDefinesPtr = &pDefines)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefinesPtr, defineCount, ppArgs);
+                }
+            }
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            fixed (char* pTargetProfilePtr = &pTargetProfile)
+            {
+                fixed (Define* pDefinesPtr = &pDefines)
+                {
+                    fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                    }
+                }
+            }
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            fixed (char* pTargetProfilePtr = &pTargetProfile)
+            {
+                fixed (char** pArgumentsPtr = &pArguments)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefines, defineCount, ppArgs);
+                }
+            }
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            fixed (char* pTargetProfilePtr = &pTargetProfile)
+            {
+                fixed (char** pArgumentsPtr = &pArguments)
+                {
+                    fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefines, defineCount, ppArgsPtr);
+                    }
+                }
+            }
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            fixed (char* pTargetProfilePtr = &pTargetProfile)
+            {
+                fixed (char** pArgumentsPtr = &pArguments)
+                {
+                    fixed (Define* pDefinesPtr = &pDefines)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgs);
+                    }
+                }
+            }
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            fixed (char* pTargetProfilePtr = &pTargetProfile)
+            {
+                fixed (char** pArgumentsPtr = &pArguments)
+                {
+                    fixed (Define* pDefinesPtr = &pDefines)
+                    {
+                        fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, byte*, char*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                        }
+                    }
+                }
+            }
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, byte*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+            fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, byte*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefines, defineCount, ppArgsPtr);
+            }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+            fixed (Define* pDefinesPtr = &pDefines)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, byte*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefinesPtr, defineCount, ppArgs);
+            }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+            fixed (Define* pDefinesPtr = &pDefines)
+            {
+                fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, byte*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArguments, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                }
+            }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+            fixed (char** pArgumentsPtr = &pArguments)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, byte*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefines, defineCount, ppArgs);
+            }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+            fixed (char** pArgumentsPtr = &pArguments)
+            {
+                fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, byte*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefines, defineCount, ppArgsPtr);
+                }
+            }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+            fixed (char** pArgumentsPtr = &pArguments)
+            {
+                fixed (Define* pDefinesPtr = &pDefines)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, byte*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgs);
+                }
+            }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            SilkMarshal.Free((nint)pSourceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSourceNamePtr = (byte*) SilkMarshal.StringToPtr(pSourceName, NativeStringEncoding.LPWStr);
+            var pEntryPointPtr = (byte*) SilkMarshal.StringToPtr(pEntryPoint, NativeStringEncoding.LPWStr);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+            fixed (char** pArgumentsPtr = &pArguments)
+            {
+                fixed (Define* pDefinesPtr = &pDefines)
+                {
+                    fixed (IDxcCompilerArgs** ppArgsPtr = &ppArgs)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, byte*, byte*, byte*, char**, uint, Define*, uint, IDxcCompilerArgs**, int>)@this->LpVtbl[14])(@this, pSourceNamePtr, pEntryPointPtr, pTargetProfilePtr, pArgumentsPtr, argCount, pDefinesPtr, defineCount, ppArgsPtr);
+                    }
+                }
+            }
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pEntryPointPtr);
+            SilkMarshal.Free((nint)pSourceNamePtr);
             return ret;
         }
 
@@ -2225,7 +5125,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadFile<TI0>([Flow(FlowDirection.In)] nint* pFileName, uint* pCodePage, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
+        public readonly unsafe int LoadFile<TI0>([Flow(FlowDirection.In)] char* pFileName, uint* pCodePage, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2233,7 +5133,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadFile<TI0>([Flow(FlowDirection.In)] nint* pFileName, ref uint pCodePage, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
+        public readonly unsafe int LoadFile<TI0>([Flow(FlowDirection.In)] char* pFileName, ref uint pCodePage, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2241,7 +5141,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadFile<TI0>([Flow(FlowDirection.In)] in nint pFileName, uint* pCodePage, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
+        public readonly unsafe int LoadFile<TI0>([Flow(FlowDirection.In)] in char pFileName, uint* pCodePage, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2249,11 +5149,27 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int LoadFile<TI0>([Flow(FlowDirection.In)] in nint pFileName, ref uint pCodePage, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
+        public readonly int LoadFile<TI0>([Flow(FlowDirection.In)] in char pFileName, ref uint pCodePage, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             return @this->LoadFile(in pFileName, ref pCodePage, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int LoadFile<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pFileName, uint* pCodePage, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->LoadFile(pFileName, pCodePage, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int LoadFile<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pFileName, ref uint pCodePage, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->LoadFile(pFileName, ref pCodePage, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -2347,7 +5263,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -2359,7 +5275,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2367,7 +5283,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -2379,7 +5295,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -2391,7 +5307,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2399,7 +5315,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -2411,7 +5327,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2419,7 +5335,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2427,7 +5343,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -2439,7 +5355,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2447,7 +5363,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -2459,7 +5375,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -2471,7 +5387,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2479,7 +5395,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -2491,7 +5407,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2499,7 +5415,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2507,7 +5423,87 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, in pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, in pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -2519,7 +5515,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2527,7 +5523,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -2539,7 +5535,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -2551,7 +5547,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2559,7 +5555,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -2571,7 +5567,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2579,7 +5575,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2587,7 +5583,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -2599,7 +5595,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2607,7 +5603,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -2619,7 +5615,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -2631,7 +5627,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2639,7 +5635,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -2651,7 +5647,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2659,7 +5655,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] nint* pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2667,7 +5663,327 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, in pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, in pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, in pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, in pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, in pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, in pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, in pEntryPoint, pTargetProfile, in pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, in pEntryPoint, pTargetProfile, in pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, in pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, in pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, in pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, pEntryPoint, in pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, in pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, in pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, pEntryPoint, in pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, in pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, pEntryPoint, in pTargetProfile, in pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, pEntryPoint, in pTargetProfile, in pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, in pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] char* pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, in pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -2679,7 +5995,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2687,7 +6003,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -2699,7 +6015,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -2711,7 +6027,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2719,7 +6035,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -2731,7 +6047,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2739,7 +6055,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2747,7 +6063,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -2759,7 +6075,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2767,7 +6083,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -2779,7 +6095,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -2791,7 +6107,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2799,7 +6115,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -2811,7 +6127,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2819,7 +6135,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] nint* pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2827,7 +6143,87 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(in pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(in pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(in pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(in pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(in pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(in pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(in pSourceName, pEntryPoint, pTargetProfile, in pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(in pSourceName, pEntryPoint, pTargetProfile, in pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -2839,7 +6235,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2847,7 +6243,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -2859,7 +6255,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -2871,7 +6267,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2879,7 +6275,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -2891,7 +6287,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2899,7 +6295,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] nint* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2907,7 +6303,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -2919,7 +6315,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2927,7 +6323,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -2939,7 +6335,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -2951,7 +6347,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2959,7 +6355,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -2971,7 +6367,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2979,11 +6375,1051 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in nint pSourceName, [Flow(FlowDirection.In)] in nint pEntryPoint, [Flow(FlowDirection.In)] in nint pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             return @this->BuildArguments(in pSourceName, in pEntryPoint, in pTargetProfile, in pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(in pSourceName, in pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(in pSourceName, in pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(in pSourceName, in pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(in pSourceName, in pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(in pSourceName, in pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(in pSourceName, in pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(in pSourceName, in pEntryPoint, pTargetProfile, in pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(in pSourceName, in pEntryPoint, pTargetProfile, in pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(in pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(in pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(in pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(in pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(in pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(in pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(in pSourceName, pEntryPoint, pTargetProfile, in pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(in pSourceName, pEntryPoint, pTargetProfile, in pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(in pSourceName, pEntryPoint, in pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(in pSourceName, pEntryPoint, in pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(in pSourceName, pEntryPoint, in pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(in pSourceName, pEntryPoint, in pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(in pSourceName, pEntryPoint, in pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(in pSourceName, pEntryPoint, in pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(in pSourceName, pEntryPoint, in pTargetProfile, in pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(in pSourceName, pEntryPoint, in pTargetProfile, in pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(in pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(in pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(in pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(in pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(in pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(in pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(in pSourceName, pEntryPoint, pTargetProfile, in pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In)] in char pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(in pSourceName, pEntryPoint, pTargetProfile, in pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, in pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, in pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, in pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, pEntryPoint, in pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, in pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, in pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, pEntryPoint, in pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, in pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, pEntryPoint, in pTargetProfile, in pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, pEntryPoint, in pTargetProfile, in pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, in pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] char* pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, in pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, in pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, in pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, in pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, in pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, in pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, in pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, in pEntryPoint, pTargetProfile, in pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, in pEntryPoint, pTargetProfile, in pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, in pEntryPoint, in pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, in pEntryPoint, in pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, in pEntryPoint, in pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, in pEntryPoint, in pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, in pEntryPoint, in pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, in pEntryPoint, in pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, in pEntryPoint, in pTargetProfile, in pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, in pEntryPoint, in pTargetProfile, in pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, in pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, in pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, in pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, in pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, in pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, in pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, in pEntryPoint, pTargetProfile, in pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In)] in char pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, in pEntryPoint, pTargetProfile, in pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, in pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] char* pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, in pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, in pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, pEntryPoint, in pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, in pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, in pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, pEntryPoint, in pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, in pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, pEntryPoint, in pTargetProfile, in pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In)] in char pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, pEntryPoint, in pTargetProfile, in pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, in pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(FlowDirection.In)] in char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0>
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, in pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>

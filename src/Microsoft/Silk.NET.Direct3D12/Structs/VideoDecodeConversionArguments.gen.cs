@@ -21,7 +21,7 @@ namespace Silk.NET.Direct3D12
     {
         public VideoDecodeConversionArguments
         (
-            bool? enable = null,
+            int? enable = null,
             ID3D12Resource* pReferenceTexture2D = null,
             uint? referenceSubresource = null,
             Silk.NET.DXGI.ColorSpaceType? outputColorSpace = null,
@@ -58,7 +58,7 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "Enable")]
-        public bool Enable;
+        public int Enable;
 
         [NativeName("Type", "ID3D12Resource *")]
         [NativeName("Type.Name", "ID3D12Resource *")]

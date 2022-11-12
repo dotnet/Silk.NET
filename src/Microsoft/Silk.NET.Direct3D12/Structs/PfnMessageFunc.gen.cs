@@ -19,10 +19,10 @@ namespace Silk.NET.Direct3D12
     public unsafe readonly struct PfnMessageFunc : IDisposable
     {
         private readonly void* _handle;
-        public delegate* unmanaged[Cdecl]<MessageCategory, MessageSeverity, MessageID, string*, void*, void> Handle => (delegate* unmanaged[Cdecl]<MessageCategory, MessageSeverity, MessageID, string*, void*, void>) _handle;
+        public delegate* unmanaged[Cdecl]<MessageCategory, MessageSeverity, MessageID, byte*, void*, void> Handle => (delegate* unmanaged[Cdecl]<MessageCategory, MessageSeverity, MessageID, byte*, void*, void>) _handle;
         public PfnMessageFunc
         (
-            delegate* unmanaged[Cdecl]<MessageCategory, MessageSeverity, MessageID, string*, void*, void> ptr
+            delegate* unmanaged[Cdecl]<MessageCategory, MessageSeverity, MessageID, byte*, void*, void> ptr
         ) => _handle = ptr;
 
         public PfnMessageFunc
@@ -35,7 +35,7 @@ namespace Silk.NET.Direct3D12
 
         public static implicit operator nint(PfnMessageFunc pfn) => (nint) pfn.Handle;
         public static explicit operator PfnMessageFunc(nint pfn)
-            => new PfnMessageFunc((delegate* unmanaged[Cdecl]<MessageCategory, MessageSeverity, MessageID, string*, void*, void>) pfn);
+            => new PfnMessageFunc((delegate* unmanaged[Cdecl]<MessageCategory, MessageSeverity, MessageID, byte*, void*, void>) pfn);
 
         public static implicit operator PfnMessageFunc(MessageFunc proc)
             => new PfnMessageFunc(proc);
@@ -43,11 +43,11 @@ namespace Silk.NET.Direct3D12
         public static explicit operator MessageFunc(PfnMessageFunc pfn)
             => SilkMarshal.PtrToDelegate<MessageFunc>(pfn);
 
-        public static implicit operator delegate* unmanaged[Cdecl]<MessageCategory, MessageSeverity, MessageID, string*, void*, void>(PfnMessageFunc pfn) => pfn.Handle;
-        public static implicit operator PfnMessageFunc(delegate* unmanaged[Cdecl]<MessageCategory, MessageSeverity, MessageID, string*, void*, void> ptr) => new PfnMessageFunc(ptr);
+        public static implicit operator delegate* unmanaged[Cdecl]<MessageCategory, MessageSeverity, MessageID, byte*, void*, void>(PfnMessageFunc pfn) => pfn.Handle;
+        public static implicit operator PfnMessageFunc(delegate* unmanaged[Cdecl]<MessageCategory, MessageSeverity, MessageID, byte*, void*, void> ptr) => new PfnMessageFunc(ptr);
     }
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate void MessageFunc(MessageCategory arg0, MessageSeverity arg1, MessageID arg2, string* arg3, void* arg4);
+    public unsafe delegate void MessageFunc(MessageCategory arg0, MessageSeverity arg1, MessageID arg2, byte* arg3, void* arg4);
 }
 

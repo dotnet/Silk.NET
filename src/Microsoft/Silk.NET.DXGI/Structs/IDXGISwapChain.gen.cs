@@ -474,22 +474,22 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetFullscreenState(bool Fullscreen, IDXGIOutput* pTarget)
+        public readonly unsafe int SetFullscreenState(int Fullscreen, IDXGIOutput* pTarget)
         {
             var @this = (IDXGISwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain*, bool, IDXGIOutput*, int>)@this->LpVtbl[10])(@this, Fullscreen, pTarget);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain*, int, IDXGIOutput*, int>)@this->LpVtbl[10])(@this, Fullscreen, pTarget);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetFullscreenState(bool Fullscreen, ref IDXGIOutput pTarget)
+        public readonly int SetFullscreenState(int Fullscreen, ref IDXGIOutput pTarget)
         {
             var @this = (IDXGISwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IDXGIOutput* pTargetPtr = &pTarget)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain*, bool, IDXGIOutput*, int>)@this->LpVtbl[10])(@this, Fullscreen, pTargetPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain*, int, IDXGIOutput*, int>)@this->LpVtbl[10])(@this, Fullscreen, pTargetPtr);
             }
             return ret;
         }
@@ -709,7 +709,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetFullscreenState<TI0>(bool Fullscreen, ComPtr<TI0> pTarget) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0>
+        public readonly int SetFullscreenState<TI0>(int Fullscreen, ComPtr<TI0> pTarget) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0>
         {
             var @this = (IDXGISwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

@@ -85,11 +85,11 @@ public unsafe static class ProcessInitControlVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ResetInitializerTimeout(this ComPtr<IProcessInitControl> thisVtbl, int dwSecondsRemaining)
+    public static int ResetInitializerTimeout(this ComPtr<IProcessInitControl> thisVtbl, uint dwSecondsRemaining)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IProcessInitControl*, int, int>)@this->LpVtbl[3])(@this, dwSecondsRemaining);
+        ret = ((delegate* unmanaged[Cdecl]<IProcessInitControl*, uint, int>)@this->LpVtbl[3])(@this, dwSecondsRemaining);
         return ret;
     }
 

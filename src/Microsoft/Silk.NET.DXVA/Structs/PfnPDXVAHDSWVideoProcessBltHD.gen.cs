@@ -19,10 +19,10 @@ namespace Silk.NET.DXVA
     public unsafe readonly struct PfnPDXVAHDSWVideoProcessBltHD : IDisposable
     {
         private readonly void* _handle;
-        public delegate* unmanaged[Cdecl]<nint*, Silk.NET.Direct3D9.IDirect3DSurface9*, uint, uint, HDStreamData*, int> Handle => (delegate* unmanaged[Cdecl]<nint*, Silk.NET.Direct3D9.IDirect3DSurface9*, uint, uint, HDStreamData*, int>) _handle;
+        public delegate* unmanaged[Cdecl]<void*, Silk.NET.Direct3D9.IDirect3DSurface9*, uint, uint, HDStreamData*, int> Handle => (delegate* unmanaged[Cdecl]<void*, Silk.NET.Direct3D9.IDirect3DSurface9*, uint, uint, HDStreamData*, int>) _handle;
         public PfnPDXVAHDSWVideoProcessBltHD
         (
-            delegate* unmanaged[Cdecl]<nint*, Silk.NET.Direct3D9.IDirect3DSurface9*, uint, uint, HDStreamData*, int> ptr
+            delegate* unmanaged[Cdecl]<void*, Silk.NET.Direct3D9.IDirect3DSurface9*, uint, uint, HDStreamData*, int> ptr
         ) => _handle = ptr;
 
         public PfnPDXVAHDSWVideoProcessBltHD
@@ -35,7 +35,7 @@ namespace Silk.NET.DXVA
 
         public static implicit operator nint(PfnPDXVAHDSWVideoProcessBltHD pfn) => (nint) pfn.Handle;
         public static explicit operator PfnPDXVAHDSWVideoProcessBltHD(nint pfn)
-            => new PfnPDXVAHDSWVideoProcessBltHD((delegate* unmanaged[Cdecl]<nint*, Silk.NET.Direct3D9.IDirect3DSurface9*, uint, uint, HDStreamData*, int>) pfn);
+            => new PfnPDXVAHDSWVideoProcessBltHD((delegate* unmanaged[Cdecl]<void*, Silk.NET.Direct3D9.IDirect3DSurface9*, uint, uint, HDStreamData*, int>) pfn);
 
         public static implicit operator PfnPDXVAHDSWVideoProcessBltHD(PDXVAHDSWVideoProcessBltHD proc)
             => new PfnPDXVAHDSWVideoProcessBltHD(proc);
@@ -43,11 +43,11 @@ namespace Silk.NET.DXVA
         public static explicit operator PDXVAHDSWVideoProcessBltHD(PfnPDXVAHDSWVideoProcessBltHD pfn)
             => SilkMarshal.PtrToDelegate<PDXVAHDSWVideoProcessBltHD>(pfn);
 
-        public static implicit operator delegate* unmanaged[Cdecl]<nint*, Silk.NET.Direct3D9.IDirect3DSurface9*, uint, uint, HDStreamData*, int>(PfnPDXVAHDSWVideoProcessBltHD pfn) => pfn.Handle;
-        public static implicit operator PfnPDXVAHDSWVideoProcessBltHD(delegate* unmanaged[Cdecl]<nint*, Silk.NET.Direct3D9.IDirect3DSurface9*, uint, uint, HDStreamData*, int> ptr) => new PfnPDXVAHDSWVideoProcessBltHD(ptr);
+        public static implicit operator delegate* unmanaged[Cdecl]<void*, Silk.NET.Direct3D9.IDirect3DSurface9*, uint, uint, HDStreamData*, int>(PfnPDXVAHDSWVideoProcessBltHD pfn) => pfn.Handle;
+        public static implicit operator PfnPDXVAHDSWVideoProcessBltHD(delegate* unmanaged[Cdecl]<void*, Silk.NET.Direct3D9.IDirect3DSurface9*, uint, uint, HDStreamData*, int> ptr) => new PfnPDXVAHDSWVideoProcessBltHD(ptr);
     }
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate int PDXVAHDSWVideoProcessBltHD(nint* arg0, Silk.NET.Direct3D9.IDirect3DSurface9* arg1, uint arg2, uint arg3, HDStreamData* arg4);
+    public unsafe delegate int PDXVAHDSWVideoProcessBltHD(void* arg0, Silk.NET.Direct3D9.IDirect3DSurface9* arg1, uint arg2, uint arg3, HDStreamData* arg4);
 }
 

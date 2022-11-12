@@ -21,8 +21,8 @@ namespace Silk.NET.DXVA
     {
         public Frequency
         (
-            int? numerator = null,
-            int? denominator = null
+            uint? numerator = null,
+            uint? denominator = null
         ) : this()
         {
             if (numerator is not null)
@@ -40,11 +40,11 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "Numerator")]
-        public int Numerator;
+        public uint Numerator;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "Denominator")]
-        public int Denominator;
+        public uint Denominator;
     }
 }

@@ -417,11 +417,11 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int AcquireSync(ulong Key, int dwMilliseconds)
+        public readonly int AcquireSync(ulong Key, uint dwMilliseconds)
         {
             var @this = (IDXGIKeyedMutex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIKeyedMutex*, ulong, int, int>)@this->LpVtbl[8])(@this, Key, dwMilliseconds);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIKeyedMutex*, ulong, uint, int>)@this->LpVtbl[8])(@this, Key, dwMilliseconds);
             return ret;
         }
 

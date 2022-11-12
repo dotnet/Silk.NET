@@ -1369,12 +1369,17 @@ namespace Silk.NET.Direct3D9
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 315, Column 12 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared\\d3d9.h")]
         [NativeApi(EntryPoint = "D3DPERF_BeginEvent")]
-        public unsafe partial int PERFBeginEvent(uint col, [Flow(FlowDirection.In)] nint* wszName);
+        public unsafe partial int PERFBeginEvent(uint col, [Flow(FlowDirection.In)] char* wszName);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 315, Column 12 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared\\d3d9.h")]
         [NativeApi(EntryPoint = "D3DPERF_BeginEvent")]
-        public partial int PERFBeginEvent(uint col, [Flow(FlowDirection.In)] in nint wszName);
+        public partial int PERFBeginEvent(uint col, [Flow(FlowDirection.In)] in char wszName);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 315, Column 12 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared\\d3d9.h")]
+        [NativeApi(EntryPoint = "D3DPERF_BeginEvent")]
+        public partial int PERFBeginEvent(uint col, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string wszName);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 316, Column 12 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared\\d3d9.h")]
@@ -1384,37 +1389,47 @@ namespace Silk.NET.Direct3D9
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 317, Column 13 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared\\d3d9.h")]
         [NativeApi(EntryPoint = "D3DPERF_SetMarker")]
-        public unsafe partial void PERFSetMarker(uint col, [Flow(FlowDirection.In)] nint* wszName);
+        public unsafe partial void PERFSetMarker(uint col, [Flow(FlowDirection.In)] char* wszName);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 317, Column 13 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared\\d3d9.h")]
         [NativeApi(EntryPoint = "D3DPERF_SetMarker")]
-        public partial void PERFSetMarker(uint col, [Flow(FlowDirection.In)] in nint wszName);
+        public partial void PERFSetMarker(uint col, [Flow(FlowDirection.In)] in char wszName);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 317, Column 13 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared\\d3d9.h")]
+        [NativeApi(EntryPoint = "D3DPERF_SetMarker")]
+        public partial void PERFSetMarker(uint col, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string wszName);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 318, Column 13 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared\\d3d9.h")]
         [NativeApi(EntryPoint = "D3DPERF_SetRegion")]
-        public unsafe partial void PERFSetRegion(uint col, [Flow(FlowDirection.In)] nint* wszName);
+        public unsafe partial void PERFSetRegion(uint col, [Flow(FlowDirection.In)] char* wszName);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 318, Column 13 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared\\d3d9.h")]
         [NativeApi(EntryPoint = "D3DPERF_SetRegion")]
-        public partial void PERFSetRegion(uint col, [Flow(FlowDirection.In)] in nint wszName);
+        public partial void PERFSetRegion(uint col, [Flow(FlowDirection.In)] in char wszName);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 318, Column 13 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared\\d3d9.h")]
+        [NativeApi(EntryPoint = "D3DPERF_SetRegion")]
+        public partial void PERFSetRegion(uint col, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string wszName);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 319, Column 13 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared\\d3d9.h")]
         [NativeApi(EntryPoint = "D3DPERF_QueryRepeatFrame")]
-        public partial bool PERFQueryRepeatFrame();
+        public partial int PERFQueryRepeatFrame();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 321, Column 13 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared\\d3d9.h")]
         [NativeApi(EntryPoint = "D3DPERF_SetOptions")]
-        public partial void PERFSetOptions(int dwOptions);
+        public partial void PERFSetOptions(uint dwOptions);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 322, Column 14 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared\\d3d9.h")]
         [NativeApi(EntryPoint = "D3DPERF_GetStatus")]
-        public partial int PERFGetStatus();
+        public partial uint PERFGetStatus();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2030, Column 16 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared\\d3d9.h")]

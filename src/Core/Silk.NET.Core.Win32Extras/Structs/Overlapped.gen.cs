@@ -24,10 +24,10 @@ namespace Silk.NET.Core.Win32Extras
             nuint? @internal = null,
             nuint? internalHigh = null,
             OverlappedUnion? anonymous = null,
-            nint* hEvent = null,
+            void* hEvent = null,
             void* pointer = null,
-            int? offset = null,
-            int? offsetHigh = null
+            uint? offset = null,
+            uint? offsetHigh = null
         ) : this()
         {
             if (@internal is not null)
@@ -85,7 +85,7 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "HANDLE")]
         [NativeName("Type.Name", "HANDLE")]
         [NativeName("Name", "hEvent")]
-        public nint* HEvent;
+        public void* HEvent;
 #if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref void* Pointer
         {
@@ -101,13 +101,13 @@ namespace Silk.NET.Core.Win32Extras
 #endif
 
 #if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
-        public ref int Offset
+        public ref uint Offset
         {
             [MethodImpl((MethodImplOptions) 768)]
             get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].Offset;
         }
 #else
-        public int Offset
+        public uint Offset
         {
             get => Anonymous.Offset;
             set => Anonymous.Offset = value;
@@ -115,13 +115,13 @@ namespace Silk.NET.Core.Win32Extras
 #endif
 
 #if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
-        public ref int OffsetHigh
+        public ref uint OffsetHigh
         {
             [MethodImpl((MethodImplOptions) 768)]
             get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].OffsetHigh;
         }
 #else
-        public int OffsetHigh
+        public uint OffsetHigh
         {
             get => Anonymous.OffsetHigh;
             set => Anonymous.OffsetHigh = value;

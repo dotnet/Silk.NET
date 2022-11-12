@@ -21,7 +21,7 @@ namespace Silk.NET.Core.Win32Extras
     {
         public UnloadDllDebugInfo
         (
-            nint* lpBaseOfDll = null
+            void* lpBaseOfDll = null
         ) : this()
         {
             if (lpBaseOfDll is not null)
@@ -34,6 +34,6 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "LPVOID")]
         [NativeName("Type.Name", "LPVOID")]
         [NativeName("Name", "lpBaseOfDll")]
-        public nint* LpBaseOfDll;
+        public void* LpBaseOfDll;
     }
 }

@@ -115,22 +115,22 @@ public unsafe static class Direct3D9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetAdapterIdentifier(this ComPtr<IDirect3D9> thisVtbl, uint Adapter, int Flags, AdapterIdentifier9* pIdentifier)
+    public static unsafe int GetAdapterIdentifier(this ComPtr<IDirect3D9> thisVtbl, uint Adapter, uint Flags, AdapterIdentifier9* pIdentifier)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, int, AdapterIdentifier9*, int>)@this->LpVtbl[5])(@this, Adapter, Flags, pIdentifier);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, uint, AdapterIdentifier9*, int>)@this->LpVtbl[5])(@this, Adapter, Flags, pIdentifier);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetAdapterIdentifier(this ComPtr<IDirect3D9> thisVtbl, uint Adapter, int Flags, ref AdapterIdentifier9 pIdentifier)
+    public static int GetAdapterIdentifier(this ComPtr<IDirect3D9> thisVtbl, uint Adapter, uint Flags, ref AdapterIdentifier9 pIdentifier)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (AdapterIdentifier9* pIdentifierPtr = &pIdentifier)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, int, AdapterIdentifier9*, int>)@this->LpVtbl[5])(@this, Adapter, Flags, pIdentifierPtr);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, uint, AdapterIdentifier9*, int>)@this->LpVtbl[5])(@this, Adapter, Flags, pIdentifierPtr);
         }
         return ret;
     }
@@ -187,40 +187,40 @@ public unsafe static class Direct3D9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CheckDeviceType(this ComPtr<IDirect3D9> thisVtbl, uint Adapter, Devtype DevType, Format AdapterFormat, Format BackBufferFormat, bool bWindowed)
+    public static int CheckDeviceType(this ComPtr<IDirect3D9> thisVtbl, uint Adapter, Devtype DevType, Format AdapterFormat, Format BackBufferFormat, int bWindowed)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, Format, Format, bool, int>)@this->LpVtbl[9])(@this, Adapter, DevType, AdapterFormat, BackBufferFormat, bWindowed);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, Format, Format, int, int>)@this->LpVtbl[9])(@this, Adapter, DevType, AdapterFormat, BackBufferFormat, bWindowed);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int CheckDeviceFormat(this ComPtr<IDirect3D9> thisVtbl, uint Adapter, Devtype DeviceType, Format AdapterFormat, int Usage, Resourcetype RType, Format CheckFormat)
+    public static int CheckDeviceFormat(this ComPtr<IDirect3D9> thisVtbl, uint Adapter, Devtype DeviceType, Format AdapterFormat, uint Usage, Resourcetype RType, Format CheckFormat)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, Format, int, Resourcetype, Format, int>)@this->LpVtbl[10])(@this, Adapter, DeviceType, AdapterFormat, Usage, RType, CheckFormat);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, Format, uint, Resourcetype, Format, int>)@this->LpVtbl[10])(@this, Adapter, DeviceType, AdapterFormat, Usage, RType, CheckFormat);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CheckDeviceMultiSampleType(this ComPtr<IDirect3D9> thisVtbl, uint Adapter, Devtype DeviceType, Format SurfaceFormat, bool Windowed, MultisampleType MultiSampleType, uint* pQualityLevels)
+    public static unsafe int CheckDeviceMultiSampleType(this ComPtr<IDirect3D9> thisVtbl, uint Adapter, Devtype DeviceType, Format SurfaceFormat, int Windowed, MultisampleType MultiSampleType, uint* pQualityLevels)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, Format, bool, MultisampleType, uint*, int>)@this->LpVtbl[11])(@this, Adapter, DeviceType, SurfaceFormat, Windowed, MultiSampleType, pQualityLevels);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, Format, int, MultisampleType, uint*, int>)@this->LpVtbl[11])(@this, Adapter, DeviceType, SurfaceFormat, Windowed, MultiSampleType, pQualityLevels);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int CheckDeviceMultiSampleType(this ComPtr<IDirect3D9> thisVtbl, uint Adapter, Devtype DeviceType, Format SurfaceFormat, bool Windowed, MultisampleType MultiSampleType, ref uint pQualityLevels)
+    public static int CheckDeviceMultiSampleType(this ComPtr<IDirect3D9> thisVtbl, uint Adapter, Devtype DeviceType, Format SurfaceFormat, int Windowed, MultisampleType MultiSampleType, ref uint pQualityLevels)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pQualityLevelsPtr = &pQualityLevels)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, Format, bool, MultisampleType, uint*, int>)@this->LpVtbl[11])(@this, Adapter, DeviceType, SurfaceFormat, Windowed, MultiSampleType, pQualityLevelsPtr);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, Format, int, MultisampleType, uint*, int>)@this->LpVtbl[11])(@this, Adapter, DeviceType, SurfaceFormat, Windowed, MultiSampleType, pQualityLevelsPtr);
         }
         return ret;
     }
@@ -274,40 +274,40 @@ public unsafe static class Direct3D9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDevice(this ComPtr<IDirect3D9> thisVtbl, uint Adapter, Devtype DeviceType, nint hFocusWindow, int BehaviorFlags, PresentParameters* pPresentationParameters, IDirect3DDevice9** ppReturnedDeviceInterface)
+    public static unsafe int CreateDevice(this ComPtr<IDirect3D9> thisVtbl, uint Adapter, Devtype DeviceType, nint hFocusWindow, uint BehaviorFlags, PresentParameters* pPresentationParameters, IDirect3DDevice9** ppReturnedDeviceInterface)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, nint, int, PresentParameters*, IDirect3DDevice9**, int>)@this->LpVtbl[16])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParameters, ppReturnedDeviceInterface);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, nint, uint, PresentParameters*, IDirect3DDevice9**, int>)@this->LpVtbl[16])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParameters, ppReturnedDeviceInterface);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDevice(this ComPtr<IDirect3D9> thisVtbl, uint Adapter, Devtype DeviceType, nint hFocusWindow, int BehaviorFlags, PresentParameters* pPresentationParameters, ref IDirect3DDevice9* ppReturnedDeviceInterface)
+    public static unsafe int CreateDevice(this ComPtr<IDirect3D9> thisVtbl, uint Adapter, Devtype DeviceType, nint hFocusWindow, uint BehaviorFlags, PresentParameters* pPresentationParameters, ref IDirect3DDevice9* ppReturnedDeviceInterface)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDirect3DDevice9** ppReturnedDeviceInterfacePtr = &ppReturnedDeviceInterface)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, nint, int, PresentParameters*, IDirect3DDevice9**, int>)@this->LpVtbl[16])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParameters, ppReturnedDeviceInterfacePtr);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, nint, uint, PresentParameters*, IDirect3DDevice9**, int>)@this->LpVtbl[16])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParameters, ppReturnedDeviceInterfacePtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDevice(this ComPtr<IDirect3D9> thisVtbl, uint Adapter, Devtype DeviceType, nint hFocusWindow, int BehaviorFlags, ref PresentParameters pPresentationParameters, IDirect3DDevice9** ppReturnedDeviceInterface)
+    public static unsafe int CreateDevice(this ComPtr<IDirect3D9> thisVtbl, uint Adapter, Devtype DeviceType, nint hFocusWindow, uint BehaviorFlags, ref PresentParameters pPresentationParameters, IDirect3DDevice9** ppReturnedDeviceInterface)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (PresentParameters* pPresentationParametersPtr = &pPresentationParameters)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, nint, int, PresentParameters*, IDirect3DDevice9**, int>)@this->LpVtbl[16])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParametersPtr, ppReturnedDeviceInterface);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, nint, uint, PresentParameters*, IDirect3DDevice9**, int>)@this->LpVtbl[16])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParametersPtr, ppReturnedDeviceInterface);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDevice(this ComPtr<IDirect3D9> thisVtbl, uint Adapter, Devtype DeviceType, nint hFocusWindow, int BehaviorFlags, ref PresentParameters pPresentationParameters, ref IDirect3DDevice9* ppReturnedDeviceInterface)
+    public static unsafe int CreateDevice(this ComPtr<IDirect3D9> thisVtbl, uint Adapter, Devtype DeviceType, nint hFocusWindow, uint BehaviorFlags, ref PresentParameters pPresentationParameters, ref IDirect3DDevice9* ppReturnedDeviceInterface)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -315,7 +315,7 @@ public unsafe static class Direct3D9VtblExtensions
         {
             fixed (IDirect3DDevice9** ppReturnedDeviceInterfacePtr = &ppReturnedDeviceInterface)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, nint, int, PresentParameters*, IDirect3DDevice9**, int>)@this->LpVtbl[16])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParametersPtr, ppReturnedDeviceInterfacePtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, nint, uint, PresentParameters*, IDirect3DDevice9**, int>)@this->LpVtbl[16])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParametersPtr, ppReturnedDeviceInterfacePtr);
             }
         }
         return ret;
@@ -355,7 +355,7 @@ public unsafe static class Direct3D9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetAdapterIdentifier(this ComPtr<IDirect3D9> thisVtbl, uint Adapter, int Flags, Span<AdapterIdentifier9> pIdentifier)
+    public static int GetAdapterIdentifier(this ComPtr<IDirect3D9> thisVtbl, uint Adapter, uint Flags, Span<AdapterIdentifier9> pIdentifier)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -379,7 +379,7 @@ public unsafe static class Direct3D9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CheckDeviceMultiSampleType(this ComPtr<IDirect3D9> thisVtbl, uint Adapter, Devtype DeviceType, Format SurfaceFormat, bool Windowed, MultisampleType MultiSampleType, Span<uint> pQualityLevels)
+    public static int CheckDeviceMultiSampleType(this ComPtr<IDirect3D9> thisVtbl, uint Adapter, Devtype DeviceType, Format SurfaceFormat, int Windowed, MultisampleType MultiSampleType, Span<uint> pQualityLevels)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -395,7 +395,7 @@ public unsafe static class Direct3D9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDevice<TI0>(this ComPtr<IDirect3D9> thisVtbl, uint Adapter, Devtype DeviceType, nint hFocusWindow, int BehaviorFlags, PresentParameters* pPresentationParameters, ref ComPtr<TI0> ppReturnedDeviceInterface) where TI0 : unmanaged, IComVtbl<IDirect3DDevice9>, IComVtbl<TI0>
+    public static unsafe int CreateDevice<TI0>(this ComPtr<IDirect3D9> thisVtbl, uint Adapter, Devtype DeviceType, nint hFocusWindow, uint BehaviorFlags, PresentParameters* pPresentationParameters, ref ComPtr<TI0> ppReturnedDeviceInterface) where TI0 : unmanaged, IComVtbl<IDirect3DDevice9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -403,7 +403,7 @@ public unsafe static class Direct3D9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDevice(this ComPtr<IDirect3D9> thisVtbl, uint Adapter, Devtype DeviceType, nint hFocusWindow, int BehaviorFlags, Span<PresentParameters> pPresentationParameters, IDirect3DDevice9** ppReturnedDeviceInterface)
+    public static unsafe int CreateDevice(this ComPtr<IDirect3D9> thisVtbl, uint Adapter, Devtype DeviceType, nint hFocusWindow, uint BehaviorFlags, Span<PresentParameters> pPresentationParameters, IDirect3DDevice9** ppReturnedDeviceInterface)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -411,7 +411,7 @@ public unsafe static class Direct3D9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateDevice<TI0>(this ComPtr<IDirect3D9> thisVtbl, uint Adapter, Devtype DeviceType, nint hFocusWindow, int BehaviorFlags, ref PresentParameters pPresentationParameters, ref ComPtr<TI0> ppReturnedDeviceInterface) where TI0 : unmanaged, IComVtbl<IDirect3DDevice9>, IComVtbl<TI0>
+    public static int CreateDevice<TI0>(this ComPtr<IDirect3D9> thisVtbl, uint Adapter, Devtype DeviceType, nint hFocusWindow, uint BehaviorFlags, ref PresentParameters pPresentationParameters, ref ComPtr<TI0> ppReturnedDeviceInterface) where TI0 : unmanaged, IComVtbl<IDirect3DDevice9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -419,7 +419,7 @@ public unsafe static class Direct3D9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDevice(this ComPtr<IDirect3D9> thisVtbl, uint Adapter, Devtype DeviceType, nint hFocusWindow, int BehaviorFlags, Span<PresentParameters> pPresentationParameters, ref IDirect3DDevice9* ppReturnedDeviceInterface)
+    public static unsafe int CreateDevice(this ComPtr<IDirect3D9> thisVtbl, uint Adapter, Devtype DeviceType, nint hFocusWindow, uint BehaviorFlags, Span<PresentParameters> pPresentationParameters, ref IDirect3DDevice9* ppReturnedDeviceInterface)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

@@ -552,22 +552,22 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int TakeOwnership(Silk.NET.Core.Native.IUnknown* pDevice, bool Exclusive)
+        public readonly unsafe int TakeOwnership(Silk.NET.Core.Native.IUnknown* pDevice, int Exclusive)
         {
             var @this = (IDXGIOutput*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput*, Silk.NET.Core.Native.IUnknown*, bool, int>)@this->LpVtbl[11])(@this, pDevice, Exclusive);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput*, Silk.NET.Core.Native.IUnknown*, int, int>)@this->LpVtbl[11])(@this, pDevice, Exclusive);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int TakeOwnership(ref Silk.NET.Core.Native.IUnknown pDevice, bool Exclusive)
+        public readonly int TakeOwnership(ref Silk.NET.Core.Native.IUnknown pDevice, int Exclusive)
         {
             var @this = (IDXGIOutput*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput*, Silk.NET.Core.Native.IUnknown*, bool, int>)@this->LpVtbl[11])(@this, pDevicePtr, Exclusive);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput*, Silk.NET.Core.Native.IUnknown*, int, int>)@this->LpVtbl[11])(@this, pDevicePtr, Exclusive);
             }
             return ret;
         }
@@ -772,7 +772,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int TakeOwnership<TI0>(ComPtr<TI0> pDevice, bool Exclusive) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly int TakeOwnership<TI0>(ComPtr<TI0> pDevice, int Exclusive) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (IDXGIOutput*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

@@ -853,19 +853,19 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SetPredication(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Predicate* pPredicate, bool PredicateValue)
+    public static unsafe void SetPredication(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Predicate* pPredicate, int PredicateValue)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11Predicate*, bool, void>)@this->LpVtbl[30])(@this, pPredicate, PredicateValue);
+        ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11Predicate*, int, void>)@this->LpVtbl[30])(@this, pPredicate, PredicateValue);
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetPredication(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Predicate pPredicate, bool PredicateValue)
+    public static void SetPredication(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Predicate pPredicate, int PredicateValue)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Predicate* pPredicatePtr = &pPredicate)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11Predicate*, bool, void>)@this->LpVtbl[30])(@this, pPredicatePtr, PredicateValue);
+            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11Predicate*, int, void>)@this->LpVtbl[30])(@this, pPredicatePtr, PredicateValue);
         }
     }
 
@@ -1861,19 +1861,19 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ExecuteCommandList(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11CommandList* pCommandList, bool RestoreContextState)
+    public static unsafe void ExecuteCommandList(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11CommandList* pCommandList, int RestoreContextState)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11CommandList*, bool, void>)@this->LpVtbl[58])(@this, pCommandList, RestoreContextState);
+        ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11CommandList*, int, void>)@this->LpVtbl[58])(@this, pCommandList, RestoreContextState);
     }
 
     /// <summary>To be documented.</summary>
-    public static void ExecuteCommandList(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11CommandList pCommandList, bool RestoreContextState)
+    public static void ExecuteCommandList(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11CommandList pCommandList, int RestoreContextState)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CommandList* pCommandListPtr = &pCommandList)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11CommandList*, bool, void>)@this->LpVtbl[58])(@this, pCommandListPtr, RestoreContextState);
+            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11CommandList*, int, void>)@this->LpVtbl[58])(@this, pCommandListPtr, RestoreContextState);
         }
     }
 
@@ -3734,22 +3734,22 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FinishCommandList(this ComPtr<ID3D11DeviceContext3> thisVtbl, bool RestoreDeferredContextState, ID3D11CommandList** ppCommandList)
+    public static unsafe int FinishCommandList(this ComPtr<ID3D11DeviceContext3> thisVtbl, int RestoreDeferredContextState, ID3D11CommandList** ppCommandList)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, bool, ID3D11CommandList**, int>)@this->LpVtbl[114])(@this, RestoreDeferredContextState, ppCommandList);
+        ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, int, ID3D11CommandList**, int>)@this->LpVtbl[114])(@this, RestoreDeferredContextState, ppCommandList);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FinishCommandList(this ComPtr<ID3D11DeviceContext3> thisVtbl, bool RestoreDeferredContextState, ref ID3D11CommandList* ppCommandList)
+    public static unsafe int FinishCommandList(this ComPtr<ID3D11DeviceContext3> thisVtbl, int RestoreDeferredContextState, ref ID3D11CommandList* ppCommandList)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D11CommandList** ppCommandListPtr = &ppCommandList)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, bool, ID3D11CommandList**, int>)@this->LpVtbl[114])(@this, RestoreDeferredContextState, ppCommandListPtr);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, int, ID3D11CommandList**, int>)@this->LpVtbl[114])(@this, RestoreDeferredContextState, ppCommandListPtr);
         }
         return ret;
     }
@@ -8750,46 +8750,64 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static bool IsAnnotationEnabled(this ComPtr<ID3D11DeviceContext3> thisVtbl)
+    public static int IsAnnotationEnabled(this ComPtr<ID3D11DeviceContext3> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        bool ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, bool>)@this->LpVtbl[140])(@this);
+        int ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, int>)@this->LpVtbl[140])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SetMarkerInt(this ComPtr<ID3D11DeviceContext3> thisVtbl, [Flow(FlowDirection.In)] nint* pLabel, int Data)
+    public static unsafe void SetMarkerInt(this ComPtr<ID3D11DeviceContext3> thisVtbl, [Flow(FlowDirection.In)] char* pLabel, int Data)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, nint*, int, void>)@this->LpVtbl[141])(@this, pLabel, Data);
+        ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, char*, int, void>)@this->LpVtbl[141])(@this, pLabel, Data);
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetMarkerInt(this ComPtr<ID3D11DeviceContext3> thisVtbl, [Flow(FlowDirection.In)] in nint pLabel, int Data)
+    public static void SetMarkerInt(this ComPtr<ID3D11DeviceContext3> thisVtbl, [Flow(FlowDirection.In)] in char pLabel, int Data)
     {
         var @this = thisVtbl.Handle;
-        fixed (nint* pLabelPtr = &pLabel)
+        fixed (char* pLabelPtr = &pLabel)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, nint*, int, void>)@this->LpVtbl[141])(@this, pLabelPtr, Data);
+            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, char*, int, void>)@this->LpVtbl[141])(@this, pLabelPtr, Data);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void BeginEventInt(this ComPtr<ID3D11DeviceContext3> thisVtbl, [Flow(FlowDirection.In)] nint* pLabel, int Data)
+    public static void SetMarkerInt(this ComPtr<ID3D11DeviceContext3> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pLabel, int Data)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, nint*, int, void>)@this->LpVtbl[142])(@this, pLabel, Data);
+        var pLabelPtr = (byte*) SilkMarshal.StringToPtr(pLabel, NativeStringEncoding.LPWStr);
+        ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, byte*, int, void>)@this->LpVtbl[141])(@this, pLabelPtr, Data);
+        SilkMarshal.Free((nint)pLabelPtr);
     }
 
     /// <summary>To be documented.</summary>
-    public static void BeginEventInt(this ComPtr<ID3D11DeviceContext3> thisVtbl, [Flow(FlowDirection.In)] in nint pLabel, int Data)
+    public static unsafe void BeginEventInt(this ComPtr<ID3D11DeviceContext3> thisVtbl, [Flow(FlowDirection.In)] char* pLabel, int Data)
     {
         var @this = thisVtbl.Handle;
-        fixed (nint* pLabelPtr = &pLabel)
+        ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, char*, int, void>)@this->LpVtbl[142])(@this, pLabel, Data);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void BeginEventInt(this ComPtr<ID3D11DeviceContext3> thisVtbl, [Flow(FlowDirection.In)] in char pLabel, int Data)
+    {
+        var @this = thisVtbl.Handle;
+        fixed (char* pLabelPtr = &pLabel)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, nint*, int, void>)@this->LpVtbl[142])(@this, pLabelPtr, Data);
+            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, char*, int, void>)@this->LpVtbl[142])(@this, pLabelPtr, Data);
         }
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void BeginEventInt(this ComPtr<ID3D11DeviceContext3> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pLabel, int Data)
+    {
+        var @this = thisVtbl.Handle;
+        var pLabelPtr = (byte*) SilkMarshal.StringToPtr(pLabel, NativeStringEncoding.LPWStr);
+        ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, byte*, int, void>)@this->LpVtbl[142])(@this, pLabelPtr, Data);
+        SilkMarshal.Free((nint)pLabelPtr);
     }
 
     /// <summary>To be documented.</summary>
@@ -8800,27 +8818,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void Flush1(this ComPtr<ID3D11DeviceContext3> thisVtbl, ContextType ContextType, nint* hEvent)
+    public static unsafe void Flush1(this ComPtr<ID3D11DeviceContext3> thisVtbl, ContextType ContextType, void* hEvent)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ContextType, nint*, void>)@this->LpVtbl[144])(@this, ContextType, hEvent);
+        ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ContextType, void*, void>)@this->LpVtbl[144])(@this, ContextType, hEvent);
     }
 
     /// <summary>To be documented.</summary>
-    public static void Flush1(this ComPtr<ID3D11DeviceContext3> thisVtbl, ContextType ContextType, ref nint hEvent)
+    public static void Flush1<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ContextType ContextType, ref T0 hEvent) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
-        fixed (nint* hEventPtr = &hEvent)
+        fixed (void* hEventPtr = &hEvent)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ContextType, nint*, void>)@this->LpVtbl[144])(@this, ContextType, hEventPtr);
+            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ContextType, void*, void>)@this->LpVtbl[144])(@this, ContextType, hEventPtr);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetHardwareProtectionState(this ComPtr<ID3D11DeviceContext3> thisVtbl, bool HwProtectionEnable)
+    public static void SetHardwareProtectionState(this ComPtr<ID3D11DeviceContext3> thisVtbl, int HwProtectionEnable)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, bool, void>)@this->LpVtbl[145])(@this, HwProtectionEnable);
+        ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, int, void>)@this->LpVtbl[145])(@this, HwProtectionEnable);
     }
 
     /// <summary>To be documented.</summary>
@@ -9410,7 +9428,7 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetPredication<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pPredicate, bool PredicateValue) where TI0 : unmanaged, IComVtbl<ID3D11Predicate>, IComVtbl<TI0>
+    public static void SetPredication<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pPredicate, int PredicateValue) where TI0 : unmanaged, IComVtbl<ID3D11Predicate>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9418,7 +9436,7 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetPredication(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Predicate> pPredicate, bool PredicateValue)
+    public static void SetPredication(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Predicate> pPredicate, int PredicateValue)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10378,7 +10396,7 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void ExecuteCommandList<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pCommandList, bool RestoreContextState) where TI0 : unmanaged, IComVtbl<ID3D11CommandList>, IComVtbl<TI0>
+    public static void ExecuteCommandList<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pCommandList, int RestoreContextState) where TI0 : unmanaged, IComVtbl<ID3D11CommandList>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10386,7 +10404,7 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void ExecuteCommandList(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11CommandList> pCommandList, bool RestoreContextState)
+    public static void ExecuteCommandList(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11CommandList> pCommandList, int RestoreContextState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11714,7 +11732,7 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int FinishCommandList<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, bool RestoreDeferredContextState, ref ComPtr<TI0> ppCommandList) where TI0 : unmanaged, IComVtbl<ID3D11CommandList>, IComVtbl<TI0>
+    public static int FinishCommandList<TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, int RestoreDeferredContextState, ref ComPtr<TI0> ppCommandList) where TI0 : unmanaged, IComVtbl<ID3D11CommandList>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15762,7 +15780,7 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetMarkerInt(this ComPtr<ID3D11DeviceContext3> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<nint> pLabel, int Data)
+    public static void SetMarkerInt(this ComPtr<ID3D11DeviceContext3> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> pLabel, int Data)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15770,7 +15788,7 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void BeginEventInt(this ComPtr<ID3D11DeviceContext3> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<nint> pLabel, int Data)
+    public static void BeginEventInt(this ComPtr<ID3D11DeviceContext3> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> pLabel, int Data)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -15778,7 +15796,7 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void Flush1(this ComPtr<ID3D11DeviceContext3> thisVtbl, ContextType ContextType, Span<nint> hEvent)
+    public static void Flush1<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ContextType ContextType, Span<T0> hEvent) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

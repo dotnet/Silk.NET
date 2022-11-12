@@ -28,7 +28,7 @@ namespace Silk.NET.DXVA
             Silk.NET.Maths.Box2D<int>? srcRect = null,
             Silk.NET.Maths.Box2D<int>? dstRect = null,
             DXVA2Fixed32? planarAlpha = null,
-            int? sampleData = null
+            uint? sampleData = null
         ) : this()
         {
             if (start is not null)
@@ -157,6 +157,6 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "SampleData")]
-        public int SampleData;
+        public uint SampleData;
     }
 }

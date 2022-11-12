@@ -85,40 +85,40 @@ public unsafe static class ActivationFilterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int HandleActivation(this ComPtr<IActivationFilter> thisVtbl, int dwActivationType, Guid* rclsid, Guid* pReplacementClsId)
+    public static unsafe int HandleActivation(this ComPtr<IActivationFilter> thisVtbl, uint dwActivationType, Guid* rclsid, Guid* pReplacementClsId)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IActivationFilter*, int, Guid*, Guid*, int>)@this->LpVtbl[3])(@this, dwActivationType, rclsid, pReplacementClsId);
+        ret = ((delegate* unmanaged[Cdecl]<IActivationFilter*, uint, Guid*, Guid*, int>)@this->LpVtbl[3])(@this, dwActivationType, rclsid, pReplacementClsId);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int HandleActivation(this ComPtr<IActivationFilter> thisVtbl, int dwActivationType, Guid* rclsid, ref Guid pReplacementClsId)
+    public static unsafe int HandleActivation(this ComPtr<IActivationFilter> thisVtbl, uint dwActivationType, Guid* rclsid, ref Guid pReplacementClsId)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* pReplacementClsIdPtr = &pReplacementClsId)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IActivationFilter*, int, Guid*, Guid*, int>)@this->LpVtbl[3])(@this, dwActivationType, rclsid, pReplacementClsIdPtr);
+            ret = ((delegate* unmanaged[Cdecl]<IActivationFilter*, uint, Guid*, Guid*, int>)@this->LpVtbl[3])(@this, dwActivationType, rclsid, pReplacementClsIdPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int HandleActivation(this ComPtr<IActivationFilter> thisVtbl, int dwActivationType, ref Guid rclsid, Guid* pReplacementClsId)
+    public static unsafe int HandleActivation(this ComPtr<IActivationFilter> thisVtbl, uint dwActivationType, ref Guid rclsid, Guid* pReplacementClsId)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* rclsidPtr = &rclsid)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IActivationFilter*, int, Guid*, Guid*, int>)@this->LpVtbl[3])(@this, dwActivationType, rclsidPtr, pReplacementClsId);
+            ret = ((delegate* unmanaged[Cdecl]<IActivationFilter*, uint, Guid*, Guid*, int>)@this->LpVtbl[3])(@this, dwActivationType, rclsidPtr, pReplacementClsId);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int HandleActivation(this ComPtr<IActivationFilter> thisVtbl, int dwActivationType, ref Guid rclsid, ref Guid pReplacementClsId)
+    public static int HandleActivation(this ComPtr<IActivationFilter> thisVtbl, uint dwActivationType, ref Guid rclsid, ref Guid pReplacementClsId)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -126,7 +126,7 @@ public unsafe static class ActivationFilterVtblExtensions
         {
             fixed (Guid* pReplacementClsIdPtr = &pReplacementClsId)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IActivationFilter*, int, Guid*, Guid*, int>)@this->LpVtbl[3])(@this, dwActivationType, rclsidPtr, pReplacementClsIdPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IActivationFilter*, uint, Guid*, Guid*, int>)@this->LpVtbl[3])(@this, dwActivationType, rclsidPtr, pReplacementClsIdPtr);
             }
         }
         return ret;
@@ -158,7 +158,7 @@ public unsafe static class ActivationFilterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int HandleActivation(this ComPtr<IActivationFilter> thisVtbl, int dwActivationType, Guid* rclsid, Span<Guid> pReplacementClsId)
+    public static unsafe int HandleActivation(this ComPtr<IActivationFilter> thisVtbl, uint dwActivationType, Guid* rclsid, Span<Guid> pReplacementClsId)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -166,7 +166,7 @@ public unsafe static class ActivationFilterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int HandleActivation(this ComPtr<IActivationFilter> thisVtbl, int dwActivationType, Span<Guid> rclsid, Guid* pReplacementClsId)
+    public static unsafe int HandleActivation(this ComPtr<IActivationFilter> thisVtbl, uint dwActivationType, Span<Guid> rclsid, Guid* pReplacementClsId)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -174,7 +174,7 @@ public unsafe static class ActivationFilterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int HandleActivation(this ComPtr<IActivationFilter> thisVtbl, int dwActivationType, Span<Guid> rclsid, Span<Guid> pReplacementClsId)
+    public static int HandleActivation(this ComPtr<IActivationFilter> thisVtbl, uint dwActivationType, Span<Guid> rclsid, Span<Guid> pReplacementClsId)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

@@ -478,109 +478,165 @@ public unsafe static class DXGIResource1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<IDXGIResource1> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, int dwAccess, [Flow(FlowDirection.In)] nint* lpName, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<IDXGIResource1> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, [Flow(FlowDirection.In)] char* lpName, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, int, nint*, void**, int>)@this->LpVtbl[13])(@this, pAttributes, dwAccess, lpName, pHandle);
+        ret = ((delegate* unmanaged[Stdcall]<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)@this->LpVtbl[13])(@this, pAttributes, dwAccess, lpName, pHandle);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<IDXGIResource1> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, int dwAccess, [Flow(FlowDirection.In)] nint* lpName, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<IDXGIResource1> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, [Flow(FlowDirection.In)] char* lpName, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** pHandlePtr = &pHandle)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, int, nint*, void**, int>)@this->LpVtbl[13])(@this, pAttributes, dwAccess, lpName, pHandlePtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)@this->LpVtbl[13])(@this, pAttributes, dwAccess, lpName, pHandlePtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<IDXGIResource1> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, int dwAccess, [Flow(FlowDirection.In)] in nint lpName, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<IDXGIResource1> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, [Flow(FlowDirection.In)] in char lpName, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (nint* lpNamePtr = &lpName)
+        fixed (char* lpNamePtr = &lpName)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, int, nint*, void**, int>)@this->LpVtbl[13])(@this, pAttributes, dwAccess, lpNamePtr, pHandle);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)@this->LpVtbl[13])(@this, pAttributes, dwAccess, lpNamePtr, pHandle);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<IDXGIResource1> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, int dwAccess, [Flow(FlowDirection.In)] in nint lpName, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<IDXGIResource1> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, [Flow(FlowDirection.In)] in char lpName, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (nint* lpNamePtr = &lpName)
-        {
-            fixed (void** pHandlePtr = &pHandle)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, int, nint*, void**, int>)@this->LpVtbl[13])(@this, pAttributes, dwAccess, lpNamePtr, pHandlePtr);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<IDXGIResource1> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, int dwAccess, [Flow(FlowDirection.In)] nint* lpName, void** pHandle)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, int, nint*, void**, int>)@this->LpVtbl[13])(@this, pAttributesPtr, dwAccess, lpName, pHandle);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<IDXGIResource1> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, int dwAccess, [Flow(FlowDirection.In)] nint* lpName, ref void* pHandle)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
+        fixed (char* lpNamePtr = &lpName)
         {
             fixed (void** pHandlePtr = &pHandle)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, int, nint*, void**, int>)@this->LpVtbl[13])(@this, pAttributesPtr, dwAccess, lpName, pHandlePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)@this->LpVtbl[13])(@this, pAttributes, dwAccess, lpNamePtr, pHandlePtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<IDXGIResource1> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, int dwAccess, [Flow(FlowDirection.In)] in nint lpName, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<IDXGIResource1> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpName, void** pHandle)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        var lpNamePtr = (byte*) SilkMarshal.StringToPtr(lpName, NativeStringEncoding.LPWStr);
+        ret = ((delegate* unmanaged[Stdcall]<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)@this->LpVtbl[13])(@this, pAttributes, dwAccess, lpNamePtr, pHandle);
+        SilkMarshal.Free((nint)lpNamePtr);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle(this ComPtr<IDXGIResource1> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpName, ref void* pHandle)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        var lpNamePtr = (byte*) SilkMarshal.StringToPtr(lpName, NativeStringEncoding.LPWStr);
+        fixed (void** pHandlePtr = &pHandle)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)@this->LpVtbl[13])(@this, pAttributes, dwAccess, lpNamePtr, pHandlePtr);
+        }
+        SilkMarshal.Free((nint)lpNamePtr);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle(this ComPtr<IDXGIResource1> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, [Flow(FlowDirection.In)] char* lpName, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
         {
-            fixed (nint* lpNamePtr = &lpName)
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)@this->LpVtbl[13])(@this, pAttributesPtr, dwAccess, lpName, pHandle);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle(this ComPtr<IDXGIResource1> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, [Flow(FlowDirection.In)] char* lpName, ref void* pHandle)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
+        {
+            fixed (void** pHandlePtr = &pHandle)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, int, nint*, void**, int>)@this->LpVtbl[13])(@this, pAttributesPtr, dwAccess, lpNamePtr, pHandle);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)@this->LpVtbl[13])(@this, pAttributesPtr, dwAccess, lpName, pHandlePtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<IDXGIResource1> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, int dwAccess, [Flow(FlowDirection.In)] in nint lpName, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<IDXGIResource1> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, [Flow(FlowDirection.In)] in char lpName, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
         {
-            fixed (nint* lpNamePtr = &lpName)
+            fixed (char* lpNamePtr = &lpName)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)@this->LpVtbl[13])(@this, pAttributesPtr, dwAccess, lpNamePtr, pHandle);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle(this ComPtr<IDXGIResource1> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, [Flow(FlowDirection.In)] in char lpName, ref void* pHandle)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
+        {
+            fixed (char* lpNamePtr = &lpName)
             {
                 fixed (void** pHandlePtr = &pHandle)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, int, nint*, void**, int>)@this->LpVtbl[13])(@this, pAttributesPtr, dwAccess, lpNamePtr, pHandlePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)@this->LpVtbl[13])(@this, pAttributesPtr, dwAccess, lpNamePtr, pHandlePtr);
                 }
             }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle(this ComPtr<IDXGIResource1> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpName, void** pHandle)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
+        {
+        var lpNamePtr = (byte*) SilkMarshal.StringToPtr(lpName, NativeStringEncoding.LPWStr);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)@this->LpVtbl[13])(@this, pAttributesPtr, dwAccess, lpNamePtr, pHandle);
+        SilkMarshal.Free((nint)lpNamePtr);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle(this ComPtr<IDXGIResource1> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpName, ref void* pHandle)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
+        {
+        var lpNamePtr = (byte*) SilkMarshal.StringToPtr(lpName, NativeStringEncoding.LPWStr);
+            fixed (void** pHandlePtr = &pHandle)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)@this->LpVtbl[13])(@this, pAttributesPtr, dwAccess, lpNamePtr, pHandlePtr);
+            }
+        SilkMarshal.Free((nint)lpNamePtr);
         }
         return ret;
     }
@@ -805,7 +861,7 @@ public unsafe static class DXGIResource1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<IDXGIResource1> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, int dwAccess, [Flow(FlowDirection.In)] ReadOnlySpan<nint> lpName, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<IDXGIResource1> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, [Flow(FlowDirection.In)] ReadOnlySpan<char> lpName, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -813,7 +869,7 @@ public unsafe static class DXGIResource1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<IDXGIResource1> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, int dwAccess, [Flow(FlowDirection.In)] ReadOnlySpan<nint> lpName, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<IDXGIResource1> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, [Flow(FlowDirection.In)] ReadOnlySpan<char> lpName, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -821,7 +877,7 @@ public unsafe static class DXGIResource1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<IDXGIResource1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, int dwAccess, [Flow(FlowDirection.In)] nint* lpName, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<IDXGIResource1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint dwAccess, [Flow(FlowDirection.In)] char* lpName, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -829,7 +885,7 @@ public unsafe static class DXGIResource1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<IDXGIResource1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, int dwAccess, [Flow(FlowDirection.In)] nint* lpName, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<IDXGIResource1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint dwAccess, [Flow(FlowDirection.In)] char* lpName, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -837,7 +893,7 @@ public unsafe static class DXGIResource1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<IDXGIResource1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, int dwAccess, [Flow(FlowDirection.In)] ReadOnlySpan<nint> lpName, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<IDXGIResource1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint dwAccess, [Flow(FlowDirection.In)] ReadOnlySpan<char> lpName, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -845,11 +901,27 @@ public unsafe static class DXGIResource1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<IDXGIResource1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, int dwAccess, [Flow(FlowDirection.In)] ReadOnlySpan<nint> lpName, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<IDXGIResource1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint dwAccess, [Flow(FlowDirection.In)] ReadOnlySpan<char> lpName, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateSharedHandle(in pAttributes.GetPinnableReference(), dwAccess, in lpName.GetPinnableReference(), ref pHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle(this ComPtr<IDXGIResource1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint dwAccess, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpName, void** pHandle)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateSharedHandle(in pAttributes.GetPinnableReference(), dwAccess, lpName, pHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle(this ComPtr<IDXGIResource1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint dwAccess, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpName, ref void* pHandle)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateSharedHandle(in pAttributes.GetPinnableReference(), dwAccess, lpName, ref pHandle);
     }
 
     /// <summary>To be documented.</summary>

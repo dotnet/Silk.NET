@@ -21,10 +21,10 @@ namespace Silk.NET.Direct3D9
     {
         public DevinfoVcache
         (
-            int? pattern = null,
-            int? optMethod = null,
-            int? cacheSize = null,
-            int? magicNumber = null
+            uint? pattern = null,
+            uint? optMethod = null,
+            uint? cacheSize = null,
+            uint? magicNumber = null
         ) : this()
         {
             if (pattern is not null)
@@ -52,21 +52,21 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "Pattern")]
-        public int Pattern;
+        public uint Pattern;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "OptMethod")]
-        public int OptMethod;
+        public uint OptMethod;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "CacheSize")]
-        public int CacheSize;
+        public uint CacheSize;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "MagicNumber")]
-        public int MagicNumber;
+        public uint MagicNumber;
     }
 }

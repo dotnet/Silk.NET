@@ -643,22 +643,22 @@ public unsafe static class DXGIDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int EnqueueSetEvent(this ComPtr<IDXGIDevice2> thisVtbl, nint* hEvent)
+    public static unsafe int EnqueueSetEvent(this ComPtr<IDXGIDevice2> thisVtbl, void* hEvent)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice2*, nint*, int>)@this->LpVtbl[16])(@this, hEvent);
+        ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice2*, void*, int>)@this->LpVtbl[16])(@this, hEvent);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int EnqueueSetEvent(this ComPtr<IDXGIDevice2> thisVtbl, ref nint hEvent)
+    public static int EnqueueSetEvent<T0>(this ComPtr<IDXGIDevice2> thisVtbl, ref T0 hEvent) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (nint* hEventPtr = &hEvent)
+        fixed (void* hEventPtr = &hEvent)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice2*, nint*, int>)@this->LpVtbl[16])(@this, hEventPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice2*, void*, int>)@this->LpVtbl[16])(@this, hEventPtr);
         }
         return ret;
     }
@@ -1010,7 +1010,7 @@ public unsafe static class DXGIDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int EnqueueSetEvent(this ComPtr<IDXGIDevice2> thisVtbl, Span<nint> hEvent)
+    public static int EnqueueSetEvent<T0>(this ComPtr<IDXGIDevice2> thisVtbl, Span<T0> hEvent) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

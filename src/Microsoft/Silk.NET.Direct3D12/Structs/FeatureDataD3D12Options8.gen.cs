@@ -21,7 +21,7 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataD3D12Options8
         (
-            bool? unalignedBlockTexturesSupported = null
+            int? unalignedBlockTexturesSupported = null
         ) : this()
         {
             if (unalignedBlockTexturesSupported is not null)
@@ -34,6 +34,6 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "UnalignedBlockTexturesSupported")]
-        public bool UnalignedBlockTexturesSupported;
+        public int UnalignedBlockTexturesSupported;
     }
 }

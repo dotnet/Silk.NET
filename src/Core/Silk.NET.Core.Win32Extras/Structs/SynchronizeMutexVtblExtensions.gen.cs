@@ -85,11 +85,11 @@ public unsafe static class SynchronizeMutexVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Wait(this ComPtr<ISynchronizeMutex> thisVtbl, int dwFlags, int dwMilliseconds)
+    public static int Wait(this ComPtr<ISynchronizeMutex> thisVtbl, uint dwFlags, uint dwMilliseconds)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<ISynchronizeMutex*, int, int, int>)@this->LpVtbl[3])(@this, dwFlags, dwMilliseconds);
+        ret = ((delegate* unmanaged[Cdecl]<ISynchronizeMutex*, uint, uint, int>)@this->LpVtbl[3])(@this, dwFlags, dwMilliseconds);
         return ret;
     }
 

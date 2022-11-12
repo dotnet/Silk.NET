@@ -21,8 +21,8 @@ namespace Silk.NET.Direct3D11
     {
         public ParameterDesc
         (
-            string* name = null,
-            string* semanticName = null,
+            byte* name = null,
+            byte* semanticName = null,
             Silk.NET.Core.Native.D3DShaderVariableType? type = null,
             Silk.NET.Core.Native.D3DShaderVariableClass? @class = null,
             uint? rows = null,
@@ -100,12 +100,12 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "LPCSTR")]
         [NativeName("Type.Name", "LPCSTR")]
         [NativeName("Name", "Name")]
-        public string* Name;
+        public byte* Name;
 
         [NativeName("Type", "LPCSTR")]
         [NativeName("Type.Name", "LPCSTR")]
         [NativeName("Name", "SemanticName")]
-        public string* SemanticName;
+        public byte* SemanticName;
 
         [NativeName("Type", "D3D_SHADER_VARIABLE_TYPE")]
         [NativeName("Type.Name", "D3D_SHADER_VARIABLE_TYPE")]

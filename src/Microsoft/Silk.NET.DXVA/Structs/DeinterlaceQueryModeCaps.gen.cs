@@ -21,7 +21,7 @@ namespace Silk.NET.DXVA
     {
         public DeinterlaceQueryModeCaps
         (
-            int? size = null,
+            uint? size = null,
             Guid? guid = null,
             VideoDesc? videoDesc = null
         ) : this()
@@ -46,7 +46,7 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "Size")]
-        public int Size;
+        public uint Size;
 
         [NativeName("Type", "GUID")]
         [NativeName("Type.Name", "GUID")]

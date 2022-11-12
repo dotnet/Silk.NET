@@ -23,7 +23,7 @@ namespace Silk.NET.DXGI
         (
             uint? width = null,
             uint? height = null,
-            Silk.NET.DXGI.Rational? refreshRate = null,
+            Rational? refreshRate = null,
             Silk.NET.DXGI.Format? format = null,
             ModeScanlineOrder? scanlineOrdering = null,
             ModeScaling? scaling = null
@@ -74,7 +74,7 @@ namespace Silk.NET.DXGI
         [NativeName("Type", "DXGI_RATIONAL")]
         [NativeName("Type.Name", "DXGI_RATIONAL")]
         [NativeName("Name", "RefreshRate")]
-        public Silk.NET.DXGI.Rational RefreshRate;
+        public Rational RefreshRate;
 
         [NativeName("Type", "DXGI_FORMAT")]
         [NativeName("Type.Name", "DXGI_FORMAT")]

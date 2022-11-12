@@ -2611,40 +2611,40 @@ public unsafe static class D3D11DeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedResource(this ComPtr<ID3D11Device> thisVtbl, nint* hResource, Guid* ReturnedInterface, void** ppResource)
+    public static unsafe int OpenSharedResource(this ComPtr<ID3D11Device> thisVtbl, void* hResource, Guid* ReturnedInterface, void** ppResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D11Device*, nint*, Guid*, void**, int>)@this->LpVtbl[28])(@this, hResource, ReturnedInterface, ppResource);
+        ret = ((delegate* unmanaged[Stdcall]<ID3D11Device*, void*, Guid*, void**, int>)@this->LpVtbl[28])(@this, hResource, ReturnedInterface, ppResource);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedResource(this ComPtr<ID3D11Device> thisVtbl, nint* hResource, Guid* ReturnedInterface, ref void* ppResource)
+    public static unsafe int OpenSharedResource(this ComPtr<ID3D11Device> thisVtbl, void* hResource, Guid* ReturnedInterface, ref void* ppResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppResourcePtr = &ppResource)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11Device*, nint*, Guid*, void**, int>)@this->LpVtbl[28])(@this, hResource, ReturnedInterface, ppResourcePtr);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Device*, void*, Guid*, void**, int>)@this->LpVtbl[28])(@this, hResource, ReturnedInterface, ppResourcePtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedResource(this ComPtr<ID3D11Device> thisVtbl, nint* hResource, ref Guid ReturnedInterface, void** ppResource)
+    public static unsafe int OpenSharedResource(this ComPtr<ID3D11Device> thisVtbl, void* hResource, ref Guid ReturnedInterface, void** ppResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* ReturnedInterfacePtr = &ReturnedInterface)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11Device*, nint*, Guid*, void**, int>)@this->LpVtbl[28])(@this, hResource, ReturnedInterfacePtr, ppResource);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Device*, void*, Guid*, void**, int>)@this->LpVtbl[28])(@this, hResource, ReturnedInterfacePtr, ppResource);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedResource(this ComPtr<ID3D11Device> thisVtbl, nint* hResource, ref Guid ReturnedInterface, ref void* ppResource)
+    public static unsafe int OpenSharedResource(this ComPtr<ID3D11Device> thisVtbl, void* hResource, ref Guid ReturnedInterface, ref void* ppResource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2652,66 +2652,66 @@ public unsafe static class D3D11DeviceVtblExtensions
         {
             fixed (void** ppResourcePtr = &ppResource)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device*, nint*, Guid*, void**, int>)@this->LpVtbl[28])(@this, hResource, ReturnedInterfacePtr, ppResourcePtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device*, void*, Guid*, void**, int>)@this->LpVtbl[28])(@this, hResource, ReturnedInterfacePtr, ppResourcePtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedResource(this ComPtr<ID3D11Device> thisVtbl, ref nint hResource, Guid* ReturnedInterface, void** ppResource)
+    public static unsafe int OpenSharedResource<T0>(this ComPtr<ID3D11Device> thisVtbl, ref T0 hResource, Guid* ReturnedInterface, void** ppResource) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (nint* hResourcePtr = &hResource)
+        fixed (void* hResourcePtr = &hResource)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11Device*, nint*, Guid*, void**, int>)@this->LpVtbl[28])(@this, hResourcePtr, ReturnedInterface, ppResource);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Device*, void*, Guid*, void**, int>)@this->LpVtbl[28])(@this, hResourcePtr, ReturnedInterface, ppResource);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedResource(this ComPtr<ID3D11Device> thisVtbl, ref nint hResource, Guid* ReturnedInterface, ref void* ppResource)
+    public static unsafe int OpenSharedResource<T0>(this ComPtr<ID3D11Device> thisVtbl, ref T0 hResource, Guid* ReturnedInterface, ref void* ppResource) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (nint* hResourcePtr = &hResource)
+        fixed (void* hResourcePtr = &hResource)
         {
             fixed (void** ppResourcePtr = &ppResource)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device*, nint*, Guid*, void**, int>)@this->LpVtbl[28])(@this, hResourcePtr, ReturnedInterface, ppResourcePtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device*, void*, Guid*, void**, int>)@this->LpVtbl[28])(@this, hResourcePtr, ReturnedInterface, ppResourcePtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedResource(this ComPtr<ID3D11Device> thisVtbl, ref nint hResource, ref Guid ReturnedInterface, void** ppResource)
+    public static unsafe int OpenSharedResource<T0>(this ComPtr<ID3D11Device> thisVtbl, ref T0 hResource, ref Guid ReturnedInterface, void** ppResource) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (nint* hResourcePtr = &hResource)
+        fixed (void* hResourcePtr = &hResource)
         {
             fixed (Guid* ReturnedInterfacePtr = &ReturnedInterface)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device*, nint*, Guid*, void**, int>)@this->LpVtbl[28])(@this, hResourcePtr, ReturnedInterfacePtr, ppResource);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device*, void*, Guid*, void**, int>)@this->LpVtbl[28])(@this, hResourcePtr, ReturnedInterfacePtr, ppResource);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedResource(this ComPtr<ID3D11Device> thisVtbl, ref nint hResource, ref Guid ReturnedInterface, ref void* ppResource)
+    public static unsafe int OpenSharedResource<T0>(this ComPtr<ID3D11Device> thisVtbl, ref T0 hResource, ref Guid ReturnedInterface, ref void* ppResource) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (nint* hResourcePtr = &hResource)
+        fixed (void* hResourcePtr = &hResource)
         {
             fixed (Guid* ReturnedInterfacePtr = &ReturnedInterface)
             {
                 fixed (void** ppResourcePtr = &ppResource)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device*, nint*, Guid*, void**, int>)@this->LpVtbl[28])(@this, hResourcePtr, ReturnedInterfacePtr, ppResourcePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device*, void*, Guid*, void**, int>)@this->LpVtbl[28])(@this, hResourcePtr, ReturnedInterfacePtr, ppResourcePtr);
                 }
             }
         }
@@ -44866,7 +44866,7 @@ public unsafe static class D3D11DeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedResource<TI0>(this ComPtr<ID3D11Device> thisVtbl, nint* hResource, out ComPtr<TI0> ppResource) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int OpenSharedResource<TI0>(this ComPtr<ID3D11Device> thisVtbl, void* hResource, out ComPtr<TI0> ppResource) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -44875,7 +44875,7 @@ public unsafe static class D3D11DeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedResource(this ComPtr<ID3D11Device> thisVtbl, nint* hResource, Span<Guid> ReturnedInterface, void** ppResource)
+    public static unsafe int OpenSharedResource(this ComPtr<ID3D11Device> thisVtbl, void* hResource, Span<Guid> ReturnedInterface, void** ppResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -44883,7 +44883,7 @@ public unsafe static class D3D11DeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedResource(this ComPtr<ID3D11Device> thisVtbl, nint* hResource, Span<Guid> ReturnedInterface, ref void* ppResource)
+    public static unsafe int OpenSharedResource(this ComPtr<ID3D11Device> thisVtbl, void* hResource, Span<Guid> ReturnedInterface, ref void* ppResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -44891,7 +44891,7 @@ public unsafe static class D3D11DeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedResource(this ComPtr<ID3D11Device> thisVtbl, Span<nint> hResource, Guid* ReturnedInterface, void** ppResource)
+    public static unsafe int OpenSharedResource<T0>(this ComPtr<ID3D11Device> thisVtbl, Span<T0> hResource, Guid* ReturnedInterface, void** ppResource) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -44899,7 +44899,7 @@ public unsafe static class D3D11DeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int OpenSharedResource<TI0>(this ComPtr<ID3D11Device> thisVtbl, ref nint hResource, out ComPtr<TI0> ppResource) where TI0 : unmanaged, IComVtbl<TI0>
+    public static int OpenSharedResource<T0, TI0>(this ComPtr<ID3D11Device> thisVtbl, ref T0 hResource, out ComPtr<TI0> ppResource) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -44908,7 +44908,7 @@ public unsafe static class D3D11DeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedResource(this ComPtr<ID3D11Device> thisVtbl, Span<nint> hResource, Guid* ReturnedInterface, ref void* ppResource)
+    public static unsafe int OpenSharedResource<T0>(this ComPtr<ID3D11Device> thisVtbl, Span<T0> hResource, Guid* ReturnedInterface, ref void* ppResource) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -44916,7 +44916,7 @@ public unsafe static class D3D11DeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedResource(this ComPtr<ID3D11Device> thisVtbl, Span<nint> hResource, Span<Guid> ReturnedInterface, void** ppResource)
+    public static unsafe int OpenSharedResource<T0>(this ComPtr<ID3D11Device> thisVtbl, Span<T0> hResource, Span<Guid> ReturnedInterface, void** ppResource) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -44924,7 +44924,7 @@ public unsafe static class D3D11DeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedResource(this ComPtr<ID3D11Device> thisVtbl, Span<nint> hResource, Span<Guid> ReturnedInterface, ref void* ppResource)
+    public static unsafe int OpenSharedResource<T0>(this ComPtr<ID3D11Device> thisVtbl, Span<T0> hResource, Span<Guid> ReturnedInterface, ref void* ppResource) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -58861,7 +58861,7 @@ public unsafe static class D3D11DeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> OpenSharedResource<TI0>(this ComPtr<ID3D11Device> thisVtbl, nint* hResource) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> OpenSharedResource<TI0>(this ComPtr<ID3D11Device> thisVtbl, void* hResource) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -58870,7 +58870,7 @@ public unsafe static class D3D11DeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> OpenSharedResource<TI0>(this ComPtr<ID3D11Device> thisVtbl, ref nint hResource) where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> OpenSharedResource<T0, TI0>(this ComPtr<ID3D11Device> thisVtbl, ref T0 hResource) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader

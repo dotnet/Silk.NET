@@ -3601,22 +3601,22 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe bool IsSupported([Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties)
+        public readonly unsafe int IsSupported([Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties)
         {
             var @this = (ID2D1DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            bool ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext3*, RenderTargetProperties*, bool>)@this->LpVtbl[56])(@this, renderTargetProperties);
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext3*, RenderTargetProperties*, int>)@this->LpVtbl[56])(@this, renderTargetProperties);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly bool IsSupported([Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties)
+        public readonly int IsSupported([Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties)
         {
             var @this = (ID2D1DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            bool ret = default;
+            int ret = default;
             fixed (RenderTargetProperties* renderTargetPropertiesPtr = &renderTargetProperties)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext3*, RenderTargetProperties*, bool>)@this->LpVtbl[56])(@this, renderTargetPropertiesPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext3*, RenderTargetProperties*, int>)@this->LpVtbl[56])(@this, renderTargetPropertiesPtr);
             }
             return ret;
         }
@@ -4233,20 +4233,20 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly bool IsDxgiFormatSupported(Silk.NET.DXGI.Format format)
+        public readonly int IsDxgiFormatSupported(Silk.NET.DXGI.Format format)
         {
             var @this = (ID2D1DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            bool ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext3*, Silk.NET.DXGI.Format, bool>)@this->LpVtbl[64])(@this, format);
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext3*, Silk.NET.DXGI.Format, int>)@this->LpVtbl[64])(@this, format);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly bool IsBufferPrecisionSupported(BufferPrecision bufferPrecision)
+        public readonly int IsBufferPrecisionSupported(BufferPrecision bufferPrecision)
         {
             var @this = (ID2D1DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            bool ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext3*, BufferPrecision, bool>)@this->LpVtbl[65])(@this, bufferPrecision);
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext3*, BufferPrecision, int>)@this->LpVtbl[65])(@this, bufferPrecision);
             return ret;
         }
 
